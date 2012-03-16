@@ -1,6 +1,6 @@
 /*	This file was automatically created by
  *	Reverse Engineering Compiler 1.6 (C) Giampiero Caprino (Mar 31 2002)
- *	Input file: 'hd.xx'
+ *	Input file: './from_rec/hd/ia32_elf_stripped/subject.exe'
  */
 
 /*	Procedure: 0x080484A0 - 0x080484A7

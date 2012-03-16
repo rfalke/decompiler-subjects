@@ -1,6 +1,6 @@
 /*	This file was automatically created by
- *	Reverse Engineering Compiler 1.6 (C) Giampiero Caprino (Sep 19 2000)
- *	Input file: 'hd.x'
+ *	Reverse Engineering Compiler 1.6 (C) Giampiero Caprino (Mar 31 2002)
+ *	Input file: './from_rec/hd/ia32_elf_from_rec/subject.exe'
  */
 
 /*	Procedure: 0x080484A0 - 0x080484A7
@@ -169,7 +169,8 @@ _start()
     atexit(_fini);
     _init();
     main();
-    exit(eax);
+    (save)eax;
+    exit();
     (restore)ebx;
     eax = 1;
     asm("int 0x80");
@@ -255,13 +256,13 @@ dumpline(unsigned char  * p, unsigned long  offset, int cnt)
 
 
 
-    sprintf( & buff, "%08lX:", offset);
+    sprintf( & buff, 0x80489c8, offset);
     if(cnt > 16) {
         cnt = 16;
     }
     for(c = 0; cnt > c; c = c + 1) {
         ecx = c;
-        sprintf( & buff + ecx + ecx + ecx + 9, " %02lX", *(p + c) & 255);
+        sprintf( & buff + ecx + ecx + ecx + 9, 0x80489cf, *(p + c) & 255);
     }
     while(1) {
         eax = c;
@@ -269,10 +270,10 @@ dumpline(unsigned char  * p, unsigned long  offset, int cnt)
         if(eax > 15) {
             break;
         }
-        strcat( & buff, " ");
+        strcat( & buff, 0x80489d6);
     }
     len = strlen( & buff);
-    strcpy( & buff + len, " |");
+    strcpy( & buff + len, 0x80489da);
     for(c = 0; cnt > c; c = c + 1) {
         eax = len + c;
         edx = & buff;
@@ -283,8 +284,8 @@ dumpline(unsigned char  * p, unsigned long  offset, int cnt)
         *(len + c + & buff) = 32;
         c = c + 1;
     }
-    strcpy( & buff + len + c, "|");
-    return(printf("%s\n", & buff));
+    strcpy( & buff + len + c, 0x80489de);
+    return(printf(0x80489e0, & buff));
 }
 
 /*	Procedure: 0x080487E3 - 0x080487EF
@@ -320,7 +321,7 @@ hexdump(char  * fname)
         perror(fname);
         eax = 1;
     } else {
-        fp = fopen(fname, "rb");
+        fp = fopen(fname, 0x80489e4);
         if(fp == 0) {
             perror(fname);
             eax = 1;
@@ -460,7 +461,7 @@ init_dummy()
 
 }
 
-/*	Procedure: 0x080489B7 - 0x080489BF
+/*	Procedure: 0x080489B7 - 0x080489B7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -502,14 +503,14 @@ L080489C8()
 
 /* address  size  */
 /* 0x080484a0      24 */ /* unknown */ void 	_init;
-/* 0x080484b8       0 */ char  *	strcpy(char  *, char  *);
+/* 0x080484b8       1 */ /* unknown */ void 	strcpy;
 /* 0x080484e8      16 */ /* unknown */ void 	_xstat;
 /* 0x080484f8      16 */ /* unknown */ void 	__libc_init;
-/* 0x08048508       0 */ char  *	strcat(char  *, char  *);
-/* 0x08048558      16 */ int	atexit(/* unknown */ void  *);
-/* 0x08048568      16 */ void 	exit(int);
+/* 0x08048508       1 */ /* unknown */ void 	strcat;
+/* 0x08048558      16 */ /* unknown */ void 	atexit;
+/* 0x08048568      16 */ /* unknown */ void 	exit;
 /* 0x08048578      16 */ /* unknown */ void 	__setfpucw;
-/* 0x08048588      24 */ unsigned int	strlen(char  *);
+/* 0x08048588      24 */ /* unknown */ void 	strlen;
 /* 0x080485a0       0 */ /* unknown */ void 	_start;
 /* 0x080485a0       0 */ /* unknown */ void 	___crt_dummy__;
 /* 0x08048610       0 */ /* unknown */ void 	done;
@@ -523,7 +524,7 @@ L080489C8()
 /* 0x08048980      48 */ /* unknown */ void 	__do_global_ctors_aux;
 /* 0x080489b0       0 */ /* unknown */ void 	init_dummy;
 /* 0x080489b8       1 */ /* unknown */ void 	_etext;
-/* 0x080489c0       1 */ /* unknown */ void  *	_fini;
+/* 0x080489c0       1 */ /* unknown */ void 	_fini;
 /* 0x080499e8       0 */ /* unknown */ void 	__environ;
 /* 0x080499e8       4 */ /* unknown */ void 	environ;
 /* 0x080499ec       0 */ /* unknown */ void 	force_to_data;
@@ -577,11 +578,14 @@ option: +fullscreen
 option: -genpattern
 option: -help
 option: -hexconst
+option: -html
 option: +insertlabels
 option: -int16
 option: +int32
 option: -interactive
+option: -isvb5
 option: +locals
+option: -nohtmltabs
 option: -nostackoffs
 option: -objdump
 option: -okclone
