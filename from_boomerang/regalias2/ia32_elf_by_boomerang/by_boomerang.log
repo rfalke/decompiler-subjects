@@ -1,0 +1,36 @@
+got filename regalias.c for main
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   29 {*32* eax, *32* r25, *32* r26} := CALL printf(
+                *c** local0 := "%08X
+"
+                *u32* local1 := (((0x87654321@31:8) | 18) & 0xffff00ff) | 0x3400
+              )
+              Reaching definitions: r10=18,   r14=52,   r24=(((0x87654321@31:8) | 18) & 0xffff00ff) | 0x3400,
+                r26=(((0x87654321@31:8) | 18) & 0xffff00ff) | 0x3400,   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=(((0x87654321@31:8) | 18) & 0xffff00ff) | 0x3400,
+                m[r28{0} - 24]=(((0x87654321@31:8) | 18) & 0xffff00ff) | 0x3400,   m[r28{0} - 28]=0x8048478,
+                m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,   %flags=SUBFLAGS32( r28{0} - 12, 8, r28{0} - 20 ),
+                %ZF=(r28{0} - 20) = 0,   %CF=(r28{0} - 12) <u 8
+              Live variables: eax in proc main
+result:    0 *32* eax := -

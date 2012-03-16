@@ -1,0 +1,24 @@
+ERROR: attempted to decode outside any known segment 0x10010434
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 8 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 8 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g5 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g5 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   15 {*v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "%d "
+                *j32* g4 := 1
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000828,   r4=1,   r5=r5{0},   r9=0,   r30=0x10000000,
+                r31=1,   r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 8]=r30{0},
+                m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main

@@ -1,0 +1,213 @@
+after removing matching assigns (t[WILDSTR]).
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 12 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 16 to local table
+TYPE ERROR: at address 0xfffffff0, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r14{0} - 16 to local table
+TYPE ERROR: at address 0xfffffff0, overlapping type double does not resolve to compound or array
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 12 to local table
+TYPE ERROR: at address 0xfffffff4, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 16 to local table
+TYPE ERROR: at address 0xfffffff0, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r14{0} - 16 to local table
+TYPE ERROR: at address 0xfffffff0, overlapping type double does not resolve to compound or array
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 12 to local table
+TYPE ERROR: at address 0xfffffff4, overlapping type double does not resolve to compound or array
+local o0 has type char * that doesn't agree with type of define void of a library, why?
+local o1 has type float * that doesn't agree with type of define void of a library, why?
+local o2 has type double that doesn't agree with type of define void of a library, why?
+local o6 has type void * that doesn't agree with type of define void of a library, why?
+local o0 has type void that doesn't agree with type of define __size32 of a library, why?
+local o1 has type void that doesn't agree with type of define __size32 of a library, why?
+local o2 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   31 {*v* r11, *v* r12, *v* r13, *v* r15} := CALL scanf(
+                *c** o0 := "%f"
+                *f32** o1 := a[local0]
+              )
+              Reaching definitions: r8=0x108c8,   r9=r14{0} - 20,   r10=0x10800,   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 120,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r37=r37{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 12]=m[r14{0} - 12]{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   49 {*v* r11, *v* r12, *32* r13, *v* r15} := CALL printf(
+                *c** o0 := "a is %f, b is %f
+"
+                *f64* o1 := fsize(32,64,global3)
+                *f64* o2 := local1
+              )
+              Reaching definitions: r1=0x10800,   r8=0x108d0,   r9=fsize(32,64,global3),   r10=m[r14{0} - 12]{0},
+                r11=fsize(32,64,m[r14{0} - 20]{0}),   r12=m[r14{0} - 12]{0},   r13=r13{31},   r14=r14{0} - 120,
+                r15=r15{31},   r16=fsize(32,64,global3),   r17=m[r14{0} - 12]{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r34=m[r14{0} - 20]{0},
+                r35=global3,   r37=r37{0},   r64=fsize(32,64,global3),   r66=fsize(32,64,m[r14{0} - 20]{0}),
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 12]=m[r14{0} - 12]{0},   m[r14{0} - 16]=fsize(32,64,global3),
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   68 {*v* r11, *v* r12, *v* r13, *v* r15} := CALL puts(
+                *c** o0 := "Not Equal"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x10800 | 232,   r9=r9{139},   r10=r10{140},   r11=r11{141},
+                r12=0x10800,   r13=r13{143},   r14=r14{0} - 120,   r15=r15{145},   r16=fsize(32,64,global3),
+                r17=0x10800,   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,
+                r37=r37{147},   r64=fsize(32,64,global3),   r66=fsize(32,64,m[r14{0} - 20]{0}),   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 12]=m[r14{0} - 12]{0},
+                m[r14{0} - 16]=fsize(32,64,global3),   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},
+                tmp=r14{0},   tmpf=tmpf{148},   %fflags=%fflags{149},   %ZF=%ZF{150},   %CF=%CF{151}
+              Live variables:  in proc main
+dest is not lib
+call:   59 {*v* r11, *v* r12, *v* r13, *v* r15} := CALL puts(
+                *c** o0 := "Equal"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x108f8,   r9=r9{49},   r10=r10{49},   r11=0x10800,   r12=0x10800,
+                r13=r13{49},   r14=r14{0} - 120,   r15=r15{49},   r16=fsize(32,64,global3),   r17=0x10800,   r18=r18{0}
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,   r37=r37{0},
+                r64=fsize(32,64,global3),   r66=fsize(32,64,m[r14{0} - 20]{0}),   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 12]=m[r14{0} - 12]{0},
+                m[r14{0} - 16]=fsize(32,64,global3),   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},
+                tmp=r14{0},   tmpf=global3 -f m[r14{0} - 20]{0},   %fflags=SETFFLAGS( global3, m[r14{0} - 20]{0} ),
+                %ZF=SETFFLAGS( global3, m[r14{0} - 20]{0} ),   %CF=SETFFLAGS( global3, m[r14{0} - 20]{0} )
+              Live variables:  in proc main
+dest is not lib
+call:  107 {*v* r11, *v* r12, *v* r13, *32* r15} := CALL puts(
+                *c** o0 := "Greater"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x10900,   r9=r9{153},   r10=r10{154},   r11=r11{155},
+                r12=r12{156},   r13=0x10800,   r14=r14{0} - 120,   r15=0x10800,   r16=0x10800,   r17=0x10800,
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,   r37=r37{161},
+                r38=global3,   r64=fsize(32,64,global3),   r66=fsize(32,64,m[r14{0} - 20]{0}),   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 12]=m[r14{0} - 12]{0},
+                m[r14{0} - 16]=fsize(32,64,global3),   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},
+                tmp=r14{0},   tmpf=global3 -f m[r14{0} - 20]{0},   %fflags=SETFFLAGS( global3, m[r14{0} - 20]{0} ),
+                %ZF=SETFFLAGS( global3, m[r14{0} - 20]{0} ),   %CF=SETFFLAGS( global3, m[r14{0} - 20]{0} )
+              Live variables:  in proc main
+dest is not lib
+call:  102 {*v* r11, *v* r12, *v* r13, *32* r15} := CALL puts(
+                *c** o0 := "Less or Equal"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x10908,   r9=r9{167},   r10=r10{168},   r11=r11{169},
+                r12=r12{170},   r13=r13{171},   r14=r14{0} - 120,   r15=r15{173},   r16=0x10800,   r17=0x10800,
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,   r37=r37{161},
+                r38=global3,   r39=global3,   r64=fsize(32,64,global3),   r66=fsize(32,64,m[r14{0} - 20]{0}),
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 12]=m[r14{0} - 12]{0},   m[r14{0} - 16]=fsize(32,64,global3),
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0},   tmpf=global3 -f m[r14{0} - 20]{0}
+                %fflags=SETFFLAGS( global3, m[r14{0} - 20]{0} ),   %ZF=SETFFLAGS( global3, m[r14{0} - 20]{0} ),
+                %CF=SETFFLAGS( global3, m[r14{0} - 20]{0} )
+              Live variables:  in proc main
+dest is not lib
+call:   98 {*v* r11, *v* r12, *v* r13, *32* r15} := CALL puts(
+                *c** o0 := "Greater or Equal"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x10918,   r9=r9{177},   r10=r10{178},   r11=r11{179},
+                r12=r12{180},   r13=r13{181},   r14=r14{0} - 120,   r15=r15{183},   r16=0x10800,   r17=0x10800,
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=0x10800,
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,   r37=r37{161},
+                r38=global3,   r39=global3,   r40=global3,   r64=fsize(32,64,global3),
+                r66=fsize(32,64,m[r14{0} - 20]{0}),   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 12]=m[r14{0} - 12]{0},   m[r14{0} - 16]=fsize(32,64,global3),
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0},   tmpf=global3 -f m[r14{0} - 20]{0}
+                %fflags=SETFFLAGS( global3, m[r14{0} - 20]{0} ),   %ZF=SETFFLAGS( global3, m[r14{0} - 20]{0} ),
+                %CF=SETFFLAGS( global3, m[r14{0} - 20]{0} )
+              Live variables:  in proc main
+dest is not lib
+call:   95 {*v* r11, *v* r12, *v* r13, *32* r15} := CALL puts(
+                *c** o0 := "Less"
+              )
+              Reaching definitions: r1=0x10800,   r8=0x10930,   r9=0x10800,   r10=0x10800,   r11=r11{188},
+                r12=r12{189},   r13=r13{190},   r14=r14{0} - 120,   r15=r15{192},   r16=0x10800,   r17=0x10800,
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=0x10800,
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=m[r14{0} - 20]{0},   r33=global3,   r34=m[r14{0} - 20]{0},   r35=global3,   r37=r37{161},
+                r38=global3,   r39=global3,   r40=global3,   r41=global3,   r64=fsize(32,64,global3),
+                r66=fsize(32,64,m[r14{0} - 20]{0}),   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 12]=m[r14{0} - 12]{0},   m[r14{0} - 16]=fsize(32,64,global3),
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0},   tmpf=global3 -f m[r14{0} - 20]{0}
+                %fflags=SETFFLAGS( global3, m[r14{0} - 20]{0} ),   %ZF=SETFFLAGS( global3, m[r14{0} - 20]{0} ),
+                %CF=SETFFLAGS( global3, m[r14{0} - 20]{0} )
+              Live variables:  in proc main

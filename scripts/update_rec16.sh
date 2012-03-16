@@ -9,7 +9,7 @@ if test -z "$REC16DIR"; then
     exit 1
 fi
 
-find . -name subject.exe | grep -v ppc_macho | grep -v hppa | while read line
+find . -name subject.exe | sort | grep -v ppc_macho | grep -v hppa | while read line
 do
   echo -n "decompiling $line"
   dir=$(dirname $line)

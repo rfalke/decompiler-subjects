@@ -1,0 +1,106 @@
+got filename semi.c for main
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+local esp has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   53 *32* eax := CALL printf(
+                *c** local0 := "9"
+              )
+              Reaching definitions: r24=r24{82},   r25=r25{83},   r26=r26{84},   r28=(r28{0} - 12) - 20,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=9,   m[r28{0} - 28]=0x804849e
+                m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,   %flags=SUBFLAGS32( r28{0} - 12, 12, (r28{0} - 12) - 12 ),
+                %ZF=((r28{0} - 12) - 12) = 0,   %CF=(r28{0} - 12) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:   37 *32* eax := CALL printf(
+                *c** local0 := "5"
+              )
+              Reaching definitions: r24=r24{90},   r25=r25{91},   r26=r26{92},   r28=(r28{0} - 12) - 20,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=5,   m[r28{0} - 28]=0x804849c
+                m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,   %flags=SUBFLAGS32( r28{0} - 12, 12, (r28{0} - 12) - 12 ),
+                %ZF=((r28{0} - 12) - 12) = 0,   %CF=(r28{0} - 12) <u 12
+              Live variables: eax,  ecx,  edx in proc main
+result:    0 *32* eax := -

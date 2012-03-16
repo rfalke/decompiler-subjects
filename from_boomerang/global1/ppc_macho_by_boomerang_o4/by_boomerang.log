@@ -1,0 +1,41 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x6c of type __size64 which weaves after <noname> at 0x68 of type __size64
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   81 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 772
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r3=machine("%LR") + 772,   r4=r4{73}
+                r5=machine("%LR"),   r6=machine("%LR"),   r7=machine("%LR"),   r29=machine("%LR") + 824,
+                r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},
+                m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   87 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 780
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 780,   r4=r4{82},   r5=r5{81},   r6=r6{81},   r7=r7{81},   r8=r8{81},   r9=r9{81},
+                r10=r10{81},   r11=r11{81},   r12=r12{81},   r29=machine("%LR") + 824,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main

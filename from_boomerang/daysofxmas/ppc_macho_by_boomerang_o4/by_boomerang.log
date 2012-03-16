@@ -1,0 +1,116 @@
+Unknown library function __swbuf
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} + 96 to local table
+in proc main adding addrExp r1{0} + 100 to local table
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 96 to local table
+in proc main adding addrExp r1{0} + 100 to local table
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 96 to local table
+in proc main adding addrExp r1{0} + 100 to local table
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 96 to local table
+in proc main adding addrExp r1{0} + 100 to local table
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local g4 has type char *[] * that doesn't agree with type of define __size32 of a library, why?
+local g5_1 has type union { unsigned int x281; char x282; char x268; char x254; char x240; char x226; char x212; char x198; char x184; char x170; char x156; char x142; char x128; char x114; char x100; char x86; char x72; char x58; char x44; char x30; char x8; } that doesn't agree with type of define union { unsigned int x7; char x8; } of a library, why?
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:  200 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=r2{190},   r3=-61,
+                r4=sgnex(8,32,r2{190}),   r5=machine("%LR") + 0x5f8,   r6=machine("%LR"),   r7=r7{0},   r9=r9{0},
+                r12=r12{0},   r28=r4{0},   r29=r5{0},   r30=0,   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},
+                r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( sgnex(8,32,r2{190}), 47, 0 ),   %ZF=0 = 0,
+                %CF=sgnex(8,32,r2{190}) <u 47
+              Live variables:  in proc main
+dest is not lib
+call:  187 <all> := CALL main(<all>)
+              Reaching definitions: 
+              Live variables:  in proc main
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:  166 {*union* g5_1, *32* r6, *32* r7, *i32* g8, *j32* r9, *32* g10, *32* r11, *i32* g12} := CALL __swbuf(
+              )
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=sgnex(8,32,r4{142}),   r4=r10{144} + 88,   r5=r5{138},   r6=r6{1},   r7=r7{0},   r8=r8{147},
+                r9=r8{147} - 1,   r10=r10{144},   r11=machine("%LR"),   r12=r12{152},   r28=r4{0},   r29=r5{0},
+                r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},
+                r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},   m[r1{0} + 104]=r[tmp + 28]{0},
+                m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},
+                %flags=%flags{283},   %ZF=%ZF{284},   %CF=%CF{285}
+              Live variables:  in proc main
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:  112 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=-94,   r4=r3{0} - 27,   r5=r5{0},   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, r4{0}, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u r4{0}
+              Live variables:  in proc main
+dest is not lib
+call:  106 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=r3{0} + 1,   r4=r4{0},   r5=r5{0},   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, r4{0}, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u r4{0}
+              Live variables:  in proc main
+dest is not lib
+call:   85 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=-86,   r4=0,   r5=r5{0} + 1,   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, 2, 4 ),   %ZF=4 = 0,   %CF=r3{0} <u 2
+              Live variables:  in proc main

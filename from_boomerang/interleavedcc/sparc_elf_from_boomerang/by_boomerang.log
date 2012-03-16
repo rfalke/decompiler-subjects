@@ -1,0 +1,184 @@
+after removing matching assigns (t[WILDSTR]).
+in proc interleaved adding addrExp r14{0} + 72 to local table
+in proc interleaved adding addrExp r14{0} + 76 to local table
+finding final parameters for interleaved
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r8
+found new parameter r8
+after removing matching assigns (t[WILDSTR]).
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+finding final parameters for interleaved
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r8
+found new parameter r8
+local o0 has type int that doesn't agree with type of define void of a library, why?
+local o1 has type __size32 that doesn't agree with type of define void of a library, why?
+local o2 has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   34 {*j32* o0, *32* r32, *32* r0, *32* r33, *v* %fflags} := CALL interleaved(
+                *i32* o0 := 1
+                *32* o1 := 0x40000000
+                *32* o2 := 0x40400000
+              )
+              Reaching definitions: r8=1,   r9=0x40000000,   r10=0x40400000,   r11=r11{0},   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 112,   r15=r15{0},   r16=0x116c8,   r17=0x40000000,   r18=0x40400000,   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r14{0} - 112
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:   37 {*v* o0, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0_1 := "Call with  1, 2.0, 3.0: %d
+"
+                *j32* o1 := o0
+              )
+              Reaching definitions: r0=r0{34},   r8=0x116c8,   r9=r8{34},   r10=0x40400000,   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=0x116c8,   r17=0x40000000,   r18=0x40400000,
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r32=r32{34},
+                r33=r33{34},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{34}
+              Live variables:  in proc main
+dest is not lib
+call:   43 {*j32* o0, *32* r32, *32* r0, *32* r33, *v* %fflags} := CALL interleaved(
+                *i32* o0 := -1
+                *32* o1 := 0x40000000
+                *32* o2 := 0x40400000
+              )
+              Reaching definitions: r0=r0{34},   r8=-1,   r9=0x40000000,   r10=0x40400000,   r11=r11{37},   r12=r12{37}
+                r13=r13{37},   r14=r14{0} - 112,   r15=r15{37},   r16=0x116e8,   r17=0x40000000,   r18=0x40400000,
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r32=r32{34},
+                r33=r33{34},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{34}
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:   46 {*v* o0, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0 := "Call with -1, 2.0, 3.0: %d
+"
+                *j32* o1 := o0
+              )
+              Reaching definitions: r0=r0{43},   r8=0x116e8,   r9=r8{43},   r10=0x40400000,   r11=r11{37},
+                r12=r12{37},   r13=r13{37},   r14=r14{0} - 112,   r15=r15{37},   r16=0x116e8,   r17=0x40000000,
+                r18=0x40400000,   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=r32{43},   r33=r33{43},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{43}
+              Live variables:  in proc main
+dest is not lib
+call:   52 {*j32* o0, *32* r32, *32* r0, *32* r33, *v* %fflags} := CALL interleaved(
+                *i32* o0 := 1
+                *32* o1 := 0x40000000
+                *32* o2 := 0x40000000
+              )
+              Reaching definitions: r0=r0{43},   r8=1,   r9=0x40000000,   r10=0x40000000,   r11=r11{46},   r12=r12{46},
+                r13=r13{46},   r14=r14{0} - 112,   r15=r15{46},   r16=0x11708,   r17=0x40000000,   r18=0x40400000,
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r32=r32{43},
+                r33=r33{43},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{43}
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:   55 {*v* o0, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0 := "Call with  1, 2.0, 2.0: %d
+"
+                *j32* o1 := o0
+              )
+              Reaching definitions: r0=r0{52},   r8=0x11708,   r9=r8{52},   r10=0x40000000,   r11=r11{46},
+                r12=r12{46},   r13=r13{46},   r14=r14{0} - 112,   r15=r15{46},   r16=0x11708,   r17=0x40000000,
+                r18=0x40400000,   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=r32{52},   r33=r33{52},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{52}
+              Live variables:  in proc main
+dest is not lib
+call:   61 {*j32* o0, *32* r32, *32* r0, *32* r33, *v* %fflags} := CALL interleaved(
+                *i32* o0 := -1
+                *32* o1 := 0x40000000
+                *32* o2 := 0x40000000
+              )
+              Reaching definitions: r0=r0{52},   r8=-1,   r9=0x40000000,   r10=0x40000000,   r11=r11{55},   r12=r12{55}
+                r13=r13{55},   r14=r14{0} - 112,   r15=r15{55},   r16=0x11728,   r17=0x40000000,   r18=0x40400000,
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   r32=r32{52},
+                r33=r33{52},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{52}
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:   64 {*v* o0, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0 := "Call with -1, 2.0, 2.0: %d
+"
+                *j32* o1 := o0
+              )
+              Reaching definitions: r0=r0{61},   r8=0x11728,   r9=r8{61},   r10=0x40000000,   r11=r11{55},
+                r12=r12{55},   r13=r13{55},   r14=r14{0} - 112,   r15=r15{55},   r16=0x11728,   r17=0x40000000,
+                r18=0x40400000,   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                r32=r32{61},   r33=r33{61},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 112,   %fflags=%fflags{61}
+              Live variables:  in proc main

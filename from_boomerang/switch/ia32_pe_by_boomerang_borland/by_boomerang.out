@@ -1,0 +1,52 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 5 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering proc1
+   considering proc2
+    considering proc4
+    decompiling proc4
+    considering proc3
+    decompiling proc3
+rt   decompiling proc2
+prr   reconsidering proc2
+    considering proc8
+    decompiling proc8
+t    considering proc5
+     considering proc12
+     decompiling proc12
+prt     considering proc11
+     decompiling proc11
+rt    decompiling proc5
+prtt    considering proc6
+    decompiling proc6
+rpt    considering proc7
+    decompiling proc7
+rt    considering proc9
+    decompiling proc9
+    considering proc10
+    decompiling proc10
+r   decompiling proc2
+pprprprrrrrpprrprttttttttttttttttttprr  decompiling proc1
+p decompiling main
+ reconsidering main
+ decompiling main
+rtrglobal type analysis for main
+tglobal type analysis for proc1
+global type analysis for proc2
+tttttglobal type analysis for proc3
+tglobal type analysis for proc4
+global type analysis for proc5
+tglobal type analysis for proc6
+global type analysis for proc7
+tglobal type analysis for proc8
+global type analysis for proc9
+global type analysis for proc10
+global type analysis for proc11
+global type analysis for proc12
+rrrrrrrrr transforming out of SSA form proc2 with 193 BBsiiiiiiiiiiiiiiiiiiiiiiiiboomerang: db/exp.cpp:104: Unary::Unary(OPER, Exp*): Assertion `subExp1' failed.

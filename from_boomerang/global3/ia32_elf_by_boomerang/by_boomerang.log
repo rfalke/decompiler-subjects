@@ -1,0 +1,85 @@
+got filename global3.c for main
+got filename global3.c for foo1
+got filename global3.c for foo2
+assgn   11 *32* m[r28 - 4] := m[0x8049474]
+assgn   13 *32* m[r28 - 4] := m[0x8049470]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc foo2 adding addrExp r28{0} - 4 to local table
+in proc foo2 adding addrExp r28{0} - 20 to local table
+in proc foo2 adding addrExp r28{0} - 24 to local table
+in proc foo2 adding addrExp r28{0} - 28 to local table
+in proc foo2 adding addrExp r28{0} - 32 to local table
+WARNING: size 0x20 meet with /*signed?*/long long; allowing temporarily
+integer size 0x40 meet with SizeType size 0x20!
+in proc foo2 adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc foo2 adding addrExp r28{0} - 20 to local table
+in proc foo2 adding addrExp r28{0} - 24 to local table
+in proc foo2 adding addrExp r28{0} - 28 to local table
+in proc foo2 adding addrExp r28{0} - 32 to local table
+finding final parameters for foo2
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc foo1 adding addrExp r28{0} - 4 to local table
+in proc foo1 adding addrExp r28{0} - 16 to local table
+finding final parameters for foo1
+assgn   18 *32* m[r28 - 4] := m[0x8049478]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+finding final parameters for foo1
+finding final parameters for foo2
+finding final parameters for foo1
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   14 {*32* r25, *32* r26} := CALL foo1(
+              )
+              Reaching definitions: r24=0,   r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=%pc,   tmp1=r28{0} - 12,   %flags=SUBFLAGS32( r28{0} - 12, 0, r28{0} - 12 ),
+                %ZF=(r28{0} - 12) = 0,   %CF=(r28{0} - 12) <u 0
+              Live variables:  in proc main
+dest is not lib
+call:   25 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "b = %i
+"
+                *j32* local1 := b
+              )
+              Reaching definitions: r24=r24{14},   r25=r25{14},   r26=r26{14},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   m[r28{0} - 24]=b,   m[r28{0} - 28]=0x804844e,
+                m[r28{0} - 32]=%pc,   tmp1=(r28{0} - 16) + 4,   %flags=SUBFLAGS32( r28{0} - 12, 8, r28{0} - 20 ),
+                %ZF=(r28{0} - 20) = 0,   %CF=(r28{0} - 12) <u 8
+              Live variables:  in proc main
+dest is not lib
+call:   10 {*32* r24, *32* r25, *32* r26, *v* r28} := CALL foo2(
+              )
+              Reaching definitions: r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,
+                tmp1=r28{0} - 4,   %flags=SUBFLAGS32( r28{0} - 4, 8, r28{0} - 12 ),   %ZF=(r28{0} - 12) = 0,
+                %CF=(r28{0} - 4) <u 8
+              Live variables:  in proc foo1
+dest is not lib
+call:   20 {*32* r24, *32* r25, *32* r26} := CALL printf(
+                *c** local0 := "a = %lld
+"
+                *j64* local1 := a
+              )
+              Reaching definitions: r28=r28{0} - 32,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=global1
+                m[r28{0} - 24]=a,   m[r28{0} - 28]=0x8048444,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 4, r28{0} - 16 ),   %ZF=(r28{0} - 16) = 0,   %CF=(r28{0} - 12) <u 4
+              Live variables:  in proc foo2

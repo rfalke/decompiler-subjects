@@ -1,0 +1,275 @@
+Unknown library function __xstat
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} - 92 to local table
+in proc main adding addrExp r1{0} - 84 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} - 76 to local table
+in proc main adding addrExp r1{0} - 72 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 64 to local table
+in proc main adding addrExp r1{0} - 60 to local table
+in proc main adding addrExp r1{0} - 52 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 112 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} - 92 to local table
+in proc main adding addrExp r1{0} - 84 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} - 76 to local table
+in proc main adding addrExp r1{0} - 72 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 64 to local table
+in proc main adding addrExp r1{0} - 60 to local table
+in proc main adding addrExp r1{0} - 52 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 112 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 84 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} - 76 to local table
+in proc main adding addrExp r1{0} - 72 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 52 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type void that doesn't agree with type of define /*signed?*/int of a library, why?
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   10 {*j32* g3_1, *v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL __xstat(
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=3,   r4=r4{7},   r5=r1{0} - 96,   m[r1{0} + 4]=machine("%LR"),
+                m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 40]=m[r1{0} - 40]{0},
+                m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},   m[r1{0} - 52]=m[r1{0} - 52]{0},
+                m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},
+                m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},   m[r1{0} - 80]=m[r1{0} - 80]{0},
+                m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},   m[r1{0} - 96]=m[r1{0} - 96]{0},
+                m[r1{0} - 112]=r1{0}
+              Live variables: g3_1 in proc main
+result:    0 *j32* g3_1 := -
+dest is not lib
+call:   17 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "res: %i
+"
+                *j32* g4 := g3_1
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000930,   r4=r3{10},   r5=r5{10},   r6=r6{10},   r7=r7{10}
+                r8=0x10000000,   r9=r9{10},   r10=r10{10},   r11=r11{10},   r12=r12{10},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   25 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "dev: %i
+"
+                *j32* g4 := 0x10000000
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x1000093c,   r4=0x10000000,   r5=m[r1{0} - 96]{0},
+                r6=m[r1{0} - 92]{0},   r7=r7{17},   r8=r8{17},   r9=r9{17},   r10=r10{17},   r11=r11{17},   r12=r12{17}
+                r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=m[r1{0} - 48]{0},   m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},
+                m[r1{0} - 64]=m[r1{0} - 64]{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},
+                m[r1{0} - 76]=m[r1{0} - 76]{0},   m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},
+                m[r1{0} - 92]=m[r1{0} - 92]{0},   m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   32 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "ino: %i
+"
+                *j32* g4 := local0
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000948,   r4=m[r1{0} - 84]{0},   r5=r5{25},   r6=r6{25},
+                r7=0x10000000,   r8=r8{25},   r9=r9{25},   r10=r10{25},   r11=r11{25},   r12=r12{25},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   39 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "mode: %i
+"
+                *j32* g4 := local1
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000954,   r4=m[r1{0} - 80]{0},   r5=r5{32},
+                r6=0x10000000,   r7=r7{32},   r8=r8{32},   r9=r9{32},   r10=r10{32},   r11=r11{32},   r12=r12{32},
+                r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=m[r1{0} - 48]{0},   m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},
+                m[r1{0} - 64]=m[r1{0} - 64]{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},
+                m[r1{0} - 76]=m[r1{0} - 76]{0},   m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},
+                m[r1{0} - 92]=m[r1{0} - 92]{0},   m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   46 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "nlink: %i
+"
+                *j32* g4 := local2
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000960,   r4=m[r1{0} - 76]{0},   r5=0x10000000,
+                r6=r6{39},   r7=r7{39},   r8=r8{39},   r9=r9{39},   r10=r10{39},   r11=r11{39},   r12=r12{39},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   53 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "uid: %i
+"
+                *j32* g4 := local3
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x1000096c,   r4=m[r1{0} - 72]{0},   r5=r5{46},   r6=r6{46},
+                r7=r7{46},   r8=r8{46},   r9=r9{46},   r10=r10{46},   r11=r11{46},   r12=0x10000000,   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   60 {*j32* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "gid: %i
+"
+                *j32* g4 := local4
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000978,   r4=m[r1{0} - 68]{0},   r5=r5{53},   r6=r6{53},
+                r7=r7{53},   r8=r8{53},   r9=r9{53},   r10=r10{53},   r11=0x10000000,   r12=r12{53},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables: g4 in proc main
+result:    0 *j32* g4 := -
+dest is not lib
+call:   68 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "rdev: %i
+"
+                *j32* g4 := g4
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000984,   r4=r4{60},   r5=m[r1{0} - 64]{0},
+                r6=m[r1{0} - 60]{0},   r7=r7{60},   r8=r8{60},   r9=r9{60},   r10=0x10000000,   r11=r11{60},
+                r12=r12{60},   r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=m[r1{0} - 48]{0},   m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},
+                m[r1{0} - 64]=m[r1{0} - 64]{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},
+                m[r1{0} - 76]=m[r1{0} - 76]{0},   m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},
+                m[r1{0} - 92]=m[r1{0} - 92]{0},   m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   75 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "size: %i
+"
+                *j32* g4 := local5
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x10000990,   r4=m[r1{0} - 52]{0},   r5=r5{68},   r6=r6{68},
+                r7=r7{68},   r8=r8{68},   r9=0x10000000,   r10=r10{68},   r11=r11{68},   r12=r12{68},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   82 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "blksize: %i
+"
+                *j32* g4 := local6
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x1000099c,   r4=m[r1{0} - 48]{0},   r5=r5{75},   r6=r6{75},
+                r7=r7{75},   r8=0x10000000,   r9=r9{75},   r10=r10{75},   r11=r11{75},   r12=r12{75},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   89 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "blocks: %i
+"
+                *j32* g4 := local7
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x100009ac,   r4=m[r1{0} - 44]{0},   r5=r5{82},   r6=r6{82},
+                r7=0x10000000,   r8=r8{82},   r9=r9{82},   r10=r10{82},   r11=r11{82},   r12=r12{82},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   96 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "atime: %i
+"
+                *j32* g4 := local8
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x100009b8,   r4=m[r1{0} - 40]{0},   r5=r5{89},
+                r6=0x10000000,   r7=r7{89},   r8=r8{89},   r9=r9{89},   r10=r10{89},   r11=r11{89},   r12=r12{89},
+                r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=m[r1{0} - 48]{0},   m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},
+                m[r1{0} - 64]=m[r1{0} - 64]{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},
+                m[r1{0} - 76]=m[r1{0} - 76]{0},   m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},
+                m[r1{0} - 92]=m[r1{0} - 92]{0},   m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:  103 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "mtime: %i
+"
+                *j32* g4 := local9
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x100009c4,   r4=m[r1{0} - 32]{0},   r5=0x10000000,
+                r6=r6{96},   r7=r7{96},   r8=r8{96},   r9=r9{96},   r10=r10{96},   r11=r11{96},   r12=r12{96},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:  110 {*v* g4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "ctime: %i
+"
+                *j32* g4 := local10
+              )
+              Reaching definitions: r1=r1{0} - 112,   r3=0x100009d0,   r4=m[r1{0} - 24]{0},   r5=r5{103},   r6=r6{103},
+                r7=r7{103},   r8=r8{103},   r9=r9{103},   r10=r10{103},   r11=r11{103},   r12=r12{103},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 24]=m[r1{0} - 24]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 40]=m[r1{0} - 40]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=m[r1{0} - 48]{0},
+                m[r1{0} - 52]=m[r1{0} - 52]{0},   m[r1{0} - 60]=m[r1{0} - 60]{0},   m[r1{0} - 64]=m[r1{0} - 64]{0},
+                m[r1{0} - 68]=m[r1{0} - 68]{0},   m[r1{0} - 72]=m[r1{0} - 72]{0},   m[r1{0} - 76]=m[r1{0} - 76]{0},
+                m[r1{0} - 80]=m[r1{0} - 80]{0},   m[r1{0} - 84]=m[r1{0} - 84]{0},   m[r1{0} - 92]=m[r1{0} - 92]{0},
+                m[r1{0} - 96]=m[r1{0} - 96]{0},   m[r1{0} - 112]=r1{0}
+              Live variables:  in proc main

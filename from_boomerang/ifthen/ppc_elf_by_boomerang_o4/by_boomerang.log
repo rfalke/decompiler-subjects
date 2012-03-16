@@ -1,0 +1,37 @@
+Unknown library function putchar
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type int that doesn't agree with type of define void of a library, why?
+local g4 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   11 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL puts(
+                *c** g3 := "Figure 19.2"
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000868,   r4=r4{0},   r5=0x10000000,   r6=machine("%LR"),
+                r31=r3{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   15 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL putchar(
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=49,   r4=r4{11},   r5=r5{11},   r6=r6{11},   r7=r7{11},
+                r8=r8{11},   r9=r9{11},   r10=r10{11},   r11=r11{11},   r12=r12{11},   r31=r3{0},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   26 {*32* g4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "C is %d
+"
+                *i32* g4 := g4 + argc
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000874,   r4=r4{32} + r3{0},   r5=r5{15},   r6=r6{15},
+                r7=r7{15},   r8=r8{15},   r9=r9{15},   r10=r10{15},   r11=r11{15},   r12=r12{15},   r31=r3{0},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0},
+                %flags=SUBFLAGSNS( r3{0}, 3, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 3
+              Live variables:  in proc main

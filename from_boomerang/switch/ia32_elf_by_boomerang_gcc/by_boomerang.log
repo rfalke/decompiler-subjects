@@ -1,0 +1,51 @@
+COMPUTED JUMP at 0x804892a, pDest = m[(r24 * 4) + 0x8048934]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+=== about to restart decompilation of main because indirect jumps or calls have been analysed
+
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+could not set type for unknown parameter expression m[r28{0} + 4]
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   34 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := local0
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=(r28{0} - 8) - 4,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{44},
+                m[r28{0} - 12]=%pc,   tmp1=m[r28{0} + 4]{0} - 7,
+                %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),   %ZF=(m[r28{0} + 4]{0} - 7) = 0,
+                %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main

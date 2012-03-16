@@ -1,0 +1,256 @@
+Unknown library function putchar
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+TYPE ERROR: Existing type at address 0x4 is not structure or array type
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+TYPE ERROR: Existing type at address 0x4 is not structure or array type
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+TYPE ERROR: Existing type at address 0x4 is not structure or array type
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} - 28 to local table
+TYPE ERROR: Existing type at address 0xffffffe4 is not structure or array type
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+TYPE ERROR: Existing type at address 0x4 is not structure or array type
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+dest is not lib
+call:  200 {*32* g0, *[c*]** g3_1, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* CR1} := CALL main(
+                *i32* g3 := -61
+                *union* g4 := (g0 rl 0) & 255
+                *[c*]** g5 := 0x10000c5c
+              )
+              Reaching definitions: r0=(r0{190} rl 0) & 255,   r1=r1{0} - 48,   r3=-61,   r4=(r0{190} rl 0) & 255,
+                r5=0x10000c5c,   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=0x10000000,   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r31=r1{0} - 48,   r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},
+                r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 28]=0,   m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},
+                m[r1{0} - 48]=r1{0},   tmp_mask=255,   %flags=SUBFLAGSNS( (r0{184} rl 0) & 255, 47, 7 ),   %ZF=7 = 0,
+                %CF=((r0{184} rl 0) & 255) <u 47
+              Live variables: g3_1 in proc main
+result:    0 *[c*]** g3_1 := -
+dest is not lib
+call:  210 {*32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := 0
+                *[c*]** g4 := g3_1
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r0=r5{0} + 1,   r1=r1{0} - 48,   r3=0,   r4=r3{200},   r5=r5{0} + 1,   r6=r6{200},
+                r7=r7{200},   r8=r8{200},   r9=r5{0},   r10=r10{200},   r11=r3{200},   r12=r12{200},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=0,   m[r1{0} - 32]=r5{0},
+                m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},   <all>=<all>{200},
+                tmp_mask=tmp_mask{200},   %flags=%flags{200},   %ZF=%ZF{200},   %CF=%CF{200}
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:  178 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := 2
+                *[c*]** g4 := 2
+                *[c*]** g5 := 0x10000c58
+              )
+              Reaching definitions: r0=r3{0},   r1=r1{0} - 48,   r3=2,   r4=2,   r5=0x10000c58,   r6=r6{0},   r7=r7{0},
+                r8=r8{0},   r9=0x10000000,   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 48,   r64=r64{0},
+                r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, 0, 7 ),   %ZF=7 = 0,   %CF=r3{0} <u 0
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:  165 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := ((((CR0 * 0x10000000) + ((CR1 * 0x1000000) + ((CR2 * 0x100000) + ((CR3 * 0x10000) + ((CR4 * 0x1000) + ((CR5 * 256) + ((CR6 * 16) + CR7))))))) rl 31) & 1) + argc
+                *[c*]** g4 := argv
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r0=r5{0} + 1,   r1=r1{0} - 48,
+                r3=((((r64{0} * 0x10000000) + ((r65{0} * 0x1000000) + ((r66{0} * 0x100000) + ((r67{0} * 0x10000) + ((r68{0} * 0x1000) + ((r69{0} * 256) + ((r70{0} * 16) + r71{0}))))))) rl 31) & 1) + r3{0},
+                r4=r4{0},   r5=r5{0} + 1,   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},
+                r11=((((r64{0} * 0x10000000) + ((r65{0} * 0x1000000) + ((r66{0} * 0x100000) + ((r67{0} * 0x10000) + ((r68{0} * 0x1000) + ((r69{0} * 256) + ((r70{0} * 16) + r71{0}))))))) rl 31) & 1) + r3{0},
+                r12=r12{0},   r31=r1{0} - 48,   r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},
+                r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},
+                m[r1{0} - 48]=r1{0},   tmp_mask=1,   %flags=SUBFLAGSNS( (r0{148} rl 0) & 255, 47, 7 ),   %ZF=7 = 0,
+                %CF=((r0{148} rl 0) & 255) <u 47
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:  144 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := -65
+                *[c*]** g4 := argv
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r0=r5{0} + 1,   r1=r1{0} - 48,   r3=-65,   r4=r4{0},   r5=r5{0} + 1,   r6=r6{0},
+                r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=255,   %flags=SUBFLAGSNS( r4{0}, (r0{119} rl 0) & 255, 7 ),   %ZF=7 = 0,
+                %CF=r4{0} <u ((r0{119} rl 0) & 255)
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:  133 {*i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12} := CALL putchar(
+              )
+              Reaching definitions: r0=(r0{127} rl 0) & 255,   r1=r1{0} - 48,   r3=(r0{127} rl 0) & 255,   r4=r4{0},
+                r5=r5{0},   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r5{0} + 31,   r10=r10{0},   r11=r11{0},   r12=r12{0}
+                r31=r1{0} - 48,   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},
+                r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},
+                m[r1{0} - 48]=r1{0},   tmp_mask=255,   %flags=SUBFLAGSNS( r4{0}, (r0{119} rl 0) & 255, 7 ),   %ZF=7 = 0
+                %CF=r4{0} <u ((r0{119} rl 0) & 255)
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:  111 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *union* g3 := argv
+                *union* g4 := argc
+                *[c*]** g5 := 0x10000abc
+              )
+              Reaching definitions: r0=r3{0},   r1=r1{0} - 48,   r3=r4{0},   r4=r3{0},   r5=0x10000abc,   r6=r6{0},
+                r7=r7{0},   r8=r8{0},   r9=0x10000000,   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, -72, 7 ),   %ZF=7 = 0,   %CF=r3{0} <u -72
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:   24 {*32* g0, *j32* g3, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* CR1} := CALL main(
+                *i32* g3 := -86
+                *[c*]** g4 := 0
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r0=r5{0} + 1,   r1=r1{0} - 48,   r3=-86,   r4=0,   r5=r5{0} + 1,   r6=r6{0},
+                r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, 2, 7 ),   %ZF=7 = 0,   %CF=r3{0} <u 2
+              Live variables: g3 in proc main
+result:    0 *j32* g3 := -
+dest is not lib
+call:   37 {*32* g0, *j32* g3, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* CR1} := CALL main(
+                *i32* g3 := -87
+                *union* g4 := 1 - argv
+                *union* g5 := g3 + envp
+              )
+              Reaching definitions: r0=1 - r4{0},   r1=r1{0} - 48,   r3=-87,   r4=1 - r4{0},   r5=r3{24} + r5{0},
+                r6=r6{24},   r7=r7{24},   r8=r8{24},   r9=r3{24} + r5{0},   r10=r10{24},   r11=r11{24},   r12=r12{24},
+                r31=r1{0} - 48,   r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},
+                r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},
+                m[r1{0} - 48]=r1{0},   <all>=<all>{24},   tmp_mask=tmp_mask{24},
+                %flags=SUBFLAGSX( 1 - r4{0}, 1, 1 - r4{0} ),   %ZF=(1 - r4{0}) = 0,   %CF=(1 - r4{0}) <u 1
+              Live variables: g3 in proc main
+result:    0 *j32* g3 := -
+dest is not lib
+call:   47 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := -79
+                *[c*]** g4 := -13
+                *union* g5 := g3 + envp
+              )
+              Reaching definitions: r0=r3{37} + r5{0},   r1=r1{0} - 48,   r3=-79,   r4=-13,   r5=r3{37} + r5{0},
+                r6=r6{37},   r7=r7{37},   r8=r8{37},   r9=r3{37},   r10=r10{37},   r11=r11{37},   r12=r12{37},
+                r31=r1{0} - 48,   r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},
+                r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},
+                m[r1{0} - 48]=r1{0},   <all>=<all>{37},   tmp_mask=tmp_mask{37},   %flags=%flags{37},   %ZF=%ZF{37},
+                %CF=%CF{37}
+              Live variables:  in proc main
+dest is not lib
+call:   60 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *[c*]** r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := argc + 1
+                *[c*]** g4 := argv
+                *union* g5 := envp
+              )
+              Reaching definitions: r0=r3{0} + 1,   r1=r1{0} - 48,   r3=r3{0} + 1,   r4=r4{0},   r5=r5{0},   r6=r6{0},
+                r7=r7{0},   r8=r8{0},   r9=r3{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, r4{0}, 7 ),   %ZF=7 = 0,   %CF=r3{0} <u r4{0}
+              Live variables:  in proc main
+dest is not lib
+call:   69 {*32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := -94
+                *union* g4 := argc - 27
+                *union* g5 := envp
+              )
+              Reaching definitions: r0=r3{0} - 27,   r1=r1{0} - 48,   r3=-94,   r4=r3{0} - 27,   r5=r5{0},   r6=r6{248}
+                r7=r7{249},   r8=r8{250},   r9=r3{0},   r10=r10{252},   r11=r11{253},   r12=r12{254},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                tmp_mask=tmp_mask{257},   %flags=%flags{258},   %ZF=%ZF{259},   %CF=%CF{260}
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:   88 {*i32* g0, *i32* g3, *32* r6, *32* r7, *32* r8, *union* r9, *32* r10, *32* r11, *32* r12, *u32* CR1} := CALL main(
+                *i32* g3 := 2
+                *[c*]** g4 := argv + 1
+                *[c*]** g5 := 0x10000ab0
+              )
+              Reaching definitions: r0=r4{0} + 1,   r1=r1{0} - 48,   r3=2,   r4=r4{0} + 1,   r5=0x10000ab0,   r6=r6{69}
+                r7=r7{69},   r8=r8{69},   r9=0x10000000,   r10=r10{69},   r11=r11{69},   r12=r12{69},   r31=r1{0} - 48,
+                r64=r64{0},   r65=0,   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0}
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r5{0},   m[r1{0} - 36]=r4{0},   m[r1{0} - 40]=r3{0},   m[r1{0} - 48]=r1{0},
+                <all>=<all>{69},   tmp_mask=tmp_mask{69},   %flags=SUBFLAGSNS( r4{0}, 12, 7 ),   %ZF=0,
+                %CF=r4{0} <u 12
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -

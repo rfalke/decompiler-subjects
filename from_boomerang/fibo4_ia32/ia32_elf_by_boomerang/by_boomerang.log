@@ -1,0 +1,155 @@
+got filename fibo.c for main
+got filename fibo.c for fib
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib ###
+in proc fib adding addrExp r28{0} - 16 to local table
+in proc fib adding addrExp r28{0} - 20 to local table
+in proc fib adding addrExp r28{0} - 4 to local table
+in proc fib adding addrExp r28{0} - 8 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 16 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 16 to local table
+in proc fib adding addrExp r28{0} - 20 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc fib adding addrExp r28{0} - 8 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+in proc fib adding addrExp r28{0} - 20 to local table
+TYPE ERROR: Existing type at address 0xffffffec is not structure or array type
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param r30
+found new parameter r30
+potential param r25
+found new parameter r25
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param r30
+found new parameter r30
+potential param r25
+found new parameter r25
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 52 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 52 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param r30
+found new parameter r30
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param r30
+found new parameter r30
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   31 {*32* eax, *v* r25, *v* r26} := CALL printf(
+                *c** local1 := "Input number: "
+              )
+              Reaching definitions: r24=16,   r28=r28{0} - 64,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 60]=0x80484ec,   m[r28{0} - 64]=%pc,   tmp1=r28{0} - 44,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, r28{0} - 56 ),   %ZF=(r28{0} - 56) = 0,   %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:   46 {*32* eax, *32* r25, *v* r26} := CALL scanf(
+                *c** local1 := "%d"
+                *i32** local2 := a[local0]
+              )
+              Reaching definitions: r24=r28{0} - 12,   r25=r25{31},   r26=r26{31},   r28=r28{0} - 64,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 56]=r28{0} - 12,
+                m[r28{0} - 60]=0x80484fb,   m[r28{0} - 64]=%pc,   tmp1=r28{0} - 44,
+                %flags=SUBFLAGS32( r28{0} - 44, 8, r28{0} - 52 ),   %ZF=(r28{0} - 52) = 0,   %CF=(r28{0} - 44) <u 8
+              Live variables:  in proc main
+dest is not lib
+call:   54 {*j32* eax, *32* r25} := CALL fib(
+                *i32* esi := local0
+              )
+              Reaching definitions: r24=r24{46},   r25=r25{46},   r26=r26{46},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                r30=m[r28{0} - 12]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 48]=%pc,   m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80484fb,   m[r28{0} - 64]=%pc,
+                tmp1=(r28{0} - 64) + 4,   %flags=ADDFLAGS32( r28{0} - 60, 16, r28{0} - 44 ),
+                %ZF=ADDFLAGS32( r28{0} - 60, 16, r28{0} - 44 ),   %CF=ADDFLAGS32( r28{0} - 60, 16, r28{0} - 44 )
+              Live variables: eax in proc main
+result:    0 *j32* eax := -
+dest is not lib
+call:   69 {*32* eax, *32* r25, *32* r26} := CALL printf(
+                *c** local1 := "fibonacci(%d) = %d
+"
+                *i32* local3 := local0
+                *j32* local4 := eax
+              )
+              Reaching definitions: r24=m[r28{0} - 12]{0},   r25=r25{54},   r26=r26{46},   r28=r28{0} - 64,
+                r29=r28{0} - 4,   r30=m[r28{0} - 12]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r24{54},   m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 48]=%pc,
+                m[r28{0} - 52]=r24{54},   m[r28{0} - 56]=m[r28{0} - 12]{0},   m[r28{0} - 60]=0x80484fe,
+                m[r28{0} - 64]=%pc,   tmp1=(r28{0} - 48) + 4,   %flags=SUBFLAGS32( r28{0} - 44, 4, r28{0} - 48 ),
+                %ZF=(r28{0} - 48) = 0,   %CF=(r28{0} - 44) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   17 {*32* eax_1, *32* r25} := CALL fib(
+                *i32* esi := param1 - 1
+              )
+              Reaching definitions: r24=r24{0},   r25=r25{0},   r27=r27{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                r30=r30{0} - 1,   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},   m[r28{0} - 12]=r30{0},
+                m[r28{0} - 16]=%pc,   m[r28{0} - 20]=m[r28{0} - 20]{0},   tmp1=r30{0},
+                %flags=LOGICALFLAGS32( r30{0} - 1 ),   %ZF=LOGICALFLAGS32( r30{0} - 1 ),
+                %CF=LOGICALFLAGS32( r30{0} - 1 )
+              Live variables: eax_1 in proc fib
+result:    0 *32* eax_1 := -
+dest is not lib
+call:   30 {*32* eax, *32* r25} := CALL fib(
+                *i32* esi := param1 - 2
+              )
+              Reaching definitions: r24=r24{17},   r25=r25{17},   r27=r27{0},   r28=r28{0} - 20,   r29=r28{0} - 4,
+                r30=r30{0} - 2,   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},   m[r28{0} - 12]=r30{0},
+                m[r28{0} - 16]=r24{17},   m[r28{0} - 20]=%pc,   <all>=<all>{17},   tmp1=r30{0},
+                %flags=SUBFLAGS32( r30{0}, 2, r30{0} - 2 ),   %ZF=(r30{0} - 2) = 0,   %CF=r30{0} <u 2
+              Live variables: eax in proc fib
+result:    0 *32* eax := -

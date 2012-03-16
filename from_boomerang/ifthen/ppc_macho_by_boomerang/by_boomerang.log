@@ -1,0 +1,68 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g3 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   79 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 748
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=0,   r1=r1{0} - 96,   r3=machine("%LR") + 748,
+                r4=r4{0},   r5=r5{0},   r30=r1{0} - 96,   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=0,   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   90 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 764
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=0,   r1=r1{0} - 96,   r3=machine("%LR") + 764,
+                r4=r4{79},   r5=r5{79},   r6=r6{79},   r7=r7{79},   r8=r8{79},   r9=r9{79},   r10=r10{79},
+                r11=r11{79},   r12=r12{79},   r30=r1{0} - 96,   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 24]=r3{0},   m[r1{0} - 28]=0,   m[r1{0} - 32]=1,   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:  111 {*32* g3, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 768
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=m[r1{0} - 28]{181} + r3{0},   r1=r1{0} - 96,
+                r3=machine("%LR") + 768,   r4=m[r1{0} - 28]{181} + r3{0},   r5=r5{90},   r6=r6{90},   r7=r7{90},
+                r8=r8{90},   r9=m[r1{0} - 28]{181},   r10=r10{90},   r11=r11{90},   r12=r12{90},   r30=r1{0} - 96,
+                r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 20]=m[r1{0} - 28]{181} + r3{0},   m[r1{0} - 24]=r3{0},   m[r1{0} - 28]=m[r1{0} - 28]{181},
+                m[r1{0} - 32]=4,   m[r1{0} - 96]=r1{0},   tmp=31,   %flags=SUBFLAGSNS( r3{0}, 3, 0 ),   %ZF=0 = 0,
+                %CF=r3{0} <u 3
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -

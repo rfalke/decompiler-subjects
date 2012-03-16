@@ -1,0 +1,711 @@
+Unknown library function __libc_start_main
+Unknown library function __cxa_atexit
+COMPUTED JUMP at 0x8049920, pDest = m[(r27 * 4) + 0x804a608]
+Unknown library function vfprintf
+Unknown library function __overflow
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc proc2 adding addrExp r28{0} - 4 to local table
+in proc proc2 adding addrExp r28{0} - 8 to local table
+in proc proc2 adding addrExp r28{0} - 12 to local table
+in proc proc2 adding addrExp r28{0} - 12 to local table
+in proc proc2 adding addrExp r28{0} - 16 to local table
+in proc proc2 adding addrExp r28{0} - 20 to local table
+in proc proc2 adding addrExp r28{0} - 24 to local table
+finding final parameters for proc2
+assgn   17 *32* r26 := m[0x804b928]
+assgn   34 *32* r26 := m[0x804b7e0]
+assgn   50 *32* r26 := m[0x804b7e0]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc proc4 adding addrExp r28{0} - 4 to local table
+in proc proc4 adding addrExp r28{0} - 20 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 20 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 20 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 20 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 20 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+in proc proc4 adding addrExp r28{0} - 24 to local table
+in proc proc4 adding addrExp r28{0} - 32 to local table
+in proc proc4 adding addrExp r28{0} - 28 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffe4 existing type char * but added type int
+in proc proc4 adding addrExp r28{0} - 32 to local table
+finding final parameters for proc4
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+assgn   80 *32* r24 := m[0x804b7d0]
+after removing matching assigns (%pc).
+=== about to restart decompilation of proc5 because indirect jumps or calls have been analysed
+
+assgn   88 *32* r24 := m[0x804b7d0]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure proc5 ###
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 4 to local table
+in proc proc5 adding addrExp r28{0} - 8 to local table
+in proc proc5 adding addrExp r28{0} - 12 to local table
+in proc proc5 adding addrExp r28{0} - 16 to local table
+in proc proc5 adding addrExp r28{0} - 20 to local table
+in proc proc5 adding addrExp r28{0} - 24 to local table
+in proc proc5 adding addrExp r28{0} - 28 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 32 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE ERROR: Existing type at address 0xffffffdc is not structure or array type
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffdc existing type int but added type __size32 *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd4 existing type FILE * but added type char *
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 32 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure proc5 ###
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc proc5 adding addrExp r28{0} - 8 to local table
+in proc proc5 adding addrExp r28{0} - 12 to local table
+in proc proc5 adding addrExp r28{0} - 16 to local table
+in proc proc5 adding addrExp r28{0} - 20 to local table
+in proc proc5 adding addrExp r28{0} - 24 to local table
+in proc proc5 adding addrExp r28{0} - 28 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffdc existing type int but added type char[] *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 32 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE ERROR: Existing type at address 0xffffffdc is not structure or array type
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffdc existing type int but added type __size32 *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd8 existing type char * but added type FILE *
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+in proc proc5 adding addrExp r28{0} - 32 to local table
+in proc proc5 adding addrExp r28{0} - 44 to local table
+in proc proc5 adding addrExp r28{0} - 36 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffdc existing type int but added type char[] *
+in proc proc5 adding addrExp r28{0} - 40 to local table
+in proc proc5 adding addrExp r28{0} - 48 to local table
+finding final parameters for proc5
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} - 40]
+found new parameter m[r28{0} - 40]
+finding final parameters for proc5
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} - 40]
+found new parameter m[r28{0} - 40]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 4 to local table
+in proc proc3 adding addrExp r28{0} - 12 to local table
+in proc proc3 adding addrExp r28{0} - 16 to local table
+in proc proc3 adding addrExp r28{0} - 20 to local table
+in proc proc3 adding addrExp r28{0} - 24 to local table
+in proc proc3 adding addrExp r28{0} - 28 to local table
+in proc proc3 adding addrExp r28{0} - 32 to local table
+finding final parameters for proc3
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} - 72]
+found new parameter m[r28{0} - 72]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+assgn   90 *32* r24 := m[0x804b7e0]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+TYPE ERROR: Existing type at address 0xffffffec is not structure or array type
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+TYPE ERROR: Existing type at address 0xffffffd4 is not structure or array type
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure proc5 ###
+in proc proc5 adding addrExp r28{0} - 40 to local table
+finding final parameters for proc2
+finding final parameters for proc3
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} - 72]
+found new parameter m[r28{0} - 72]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+local ecx has type __size32 that doesn't agree with type of define void of a library, why?
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+local eax has type __size32 * that doesn't agree with type of define __size32 of a library, why?
+local edx has type FILE * that doesn't agree with type of define void of a library, why?
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+local eax has type char * that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define char * of a library, why?
+local eax has type char * that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define char * of a library, why?
+local eax has type char * that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define char * of a library, why?
+local eax has type char * that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local eax has type __size32 that doesn't agree with type of define char * of a library, why?
+local eax has type char * that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define union { unsigned int x3; __size8 * x4; } of a library, why?
+local eax has type union { unsigned int x3; __size8 * x4; } that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   19 {*32* eax, *v* ecx, *v* r26} := CALL setlocale(
+                *i32* local0 := 6
+                *c** local1 := ""
+              )
+              Reaching definitions: r24=0x804a01c,   r27=m[r28{0} + 8]{0},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 40]=0x804a01c,   m[r28{0} - 44]=6,
+                m[r28{0} - 48]=%pc,   tmp1=r28{0} - 4,   tmpb=tmpb{0},
+                %flags=SUBFLAGS32( r28{0} - 4, 40, r28{0} - 44 ),   %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 4) <u 40
+              Live variables:  in proc main
+dest is not lib
+call:   26 {*32* eax, *v* ecx, *v* r26} := CALL bindtextdomain(
+                *c** local2 := "coreutils"
+                *c** local1 := "/usr/share/locale"
+              )
+              Reaching definitions: r24=0x804a033,   r25=r25{19},   r26=r26{19},   r27=m[r28{0} + 8]{0},
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 40]=0x804a033,
+                m[r28{0} - 44]=0x804a07d,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 4,   tmpb=tmpb{0},
+                %flags=SUBFLAGS32( r28{0} - 4, 40, r28{0} - 44 ),   %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 4) <u 40
+              Live variables:  in proc main
+dest is not lib
+call:   31 {*32* eax, *v* ecx, *v* r26} := CALL textdomain(
+                *c** local2 := "coreutils"
+              )
+              Reaching definitions: r24=r24{26},   r25=r25{26},   r26=r26{26},   r27=m[r28{0} + 8]{0},
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 40]=0x804a033,
+                m[r28{0} - 44]=0x804a07d,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 4,   tmpb=tmpb{0},
+                %flags=SUBFLAGS32( r28{0} - 4, 40, r28{0} - 44 ),   %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 4) <u 40
+              Live variables:  in proc main
+dest is not lib
+call:   36 {*32* eax, *v* ecx, *32* r26} := CALL proc2(
+              )
+              Reaching definitions: r24=r24{31},   r25=r25{31},   r26=r26{31},   r27=m[r28{0} + 8]{0},
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 40]=0x804a033,
+                m[r28{0} - 44]=0x8048c20,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 4,   tmpb=tmpb{0},
+                %flags=SUBFLAGS32( r28{0} - 4, 40, r28{0} - 44 ),   %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 4) <u 40
+              Live variables:  in proc main
+dest is not lib
+call:   50 {*32* eax, *v* ecx, *32* r26} := CALL getenv(
+                *c** local2 := "POSIXLY_CORRECT"
+              )
+              Reaching definitions: r24=r24{36},   r25=r25{36},   r26=r26{36},   r27=m[r28{0} + 8]{0},
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 40]=0x804a033,
+                m[r28{0} - 44]=0x804a045,   m[r28{0} - 48]=%pc,   tmp1=tmp1{37},   tmpb=tmpb{0},
+                %flags=SUBFLAGS32( m[r28{0} + 4], 2, tmp1{37} ),   %ZF=tmp1{37} = 0,   %CF=m[r28{0} + 4] <u 2
+              Live variables: eax in proc main
+result:    0 *32* eax := -
+dest is not lib
+call:  104 CALL proc4(
+                *i32* local0 := 0
+              )
+              Reaching definitions: r24=7,   r25=r25{125},   r26=r26{50},   r27=m[r28{0} + 8]{0},   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=r30{126},   r31=r31{127},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=r24{55},
+                m[r28{0} - 40]=0x804a033,   m[r28{0} - 44]=0,   m[r28{0} - 48]=%pc,   tmp1=r24{50},   tmpb=tmpb{128},
+                %flags=%flags{129},   %ZF=%ZF{130},   %CF=%CF{131}
+              Live variables:  in proc main
+dest is not lib
+call:   98 *32* eax := CALL proc3(
+                *c** m[r28 - 72] := m[r28 - 72]
+                *FILE** m[r28 + 4] := m[r28 + 4]
+                *[c]** m[r28 + 8] := m[r28 + 8]
+                *[c]** m[r28 + 12] := m[r28 + 12]
+                *[c]** m[r28 + 16] := m[r28 + 16]
+                *32* m[r28 + 20] := m[r28 + 20]
+              )
+              Reaching definitions: 
+              Live variables:  in proc main
+dest is not lib
+call:   44 {*32* eax, *v* ecx, *v* r26} := CALL exit(
+                *i32* m[r28 + 4] := m[r28 + 4]
+              )
+              Reaching definitions: 
+              Live variables:  in proc main
+dest is not lib
+call:   29 {*32* eax, *32* r25, *32* r26, *v* r28} := CALL __cxa_atexit(
+              )
+              Reaching definitions: r24=r24{13},   r26=r26{37},   r27=%pc + 0x1893,   r28=r28{0} - 24,   r29=r28{0} - 4
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=r26{37},   m[r28{0} - 16]=0,   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,
+                tmp1=r24{13},   %flags=LOGICALFLAGS32( r24{13} ),   %ZF=LOGICALFLAGS32( r24{13} ),
+                %CF=LOGICALFLAGS32( r24{13} )
+              Live variables:  in proc proc2
+dest is not lib
+call:   20 CALL proc5(
+                *c** local0 := param1
+                *FILE** local1 := param2
+                *[c]** local2 := param3
+                *[c]** local3 := param4
+                *[c]** local4 := param5
+                *32** local5 := a[param6]
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 12]=r28{0} + 20,   m[r28{0} - 16]=m[r28{0} + 16]{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=m[r28{0} + 4]{0},   m[r28{0} - 32]=%pc,
+                m[r28{0} - 72]=m[r28{0} - 72]{0},   tmp1=r28{0} - 4,   %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 )
+                %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc3
+dest is not lib
+call:   15 {*c** eax, *v* r25, *v* edx} := CALL dcgettext(
+                *c** local0 := 0
+                *c** local1 := "Usage: %s [ignored command line arguments]
+  or:  %s OPTION
+Exit with a status code indicating success.
+
+These option names may not be abbreviated.
+
+"
+                *i32* local2 := 5
+              )
+              Reaching definitions: r24=0x8049f08,   r26=5,   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=0x8049f08,
+                m[r28{0} - 28]=0,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables: eax in proc proc4
+result:    0 *c** eax := -
+dest is not lib
+call:   23 {*32* eax, *v* r25, *v* edx} := CALL printf(
+                *c** local0 := eax
+              )
+              Reaching definitions: r24=r24{15},   r25=r25{15},   r26=global4,   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=global4,
+                m[r28{0} - 24]=global4,   m[r28{0} - 28]=r24{15},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc4
+dest is not lib
+call:   32 {*c** eax, *v* r25, *v* edx} := CALL dcgettext(
+                *c** local0 := 0
+                *c** local1 := "      --help     display this help and exit
+"
+                *i32* local2 := 5
+              )
+              Reaching definitions: r24=0x8049fa0,   r25=r25{23},   r26=r26{23},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=0x8049fa0,
+                m[r28{0} - 28]=0,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables: eax in proc proc4
+result:    0 *c** eax := -
+dest is not lib
+call:   39 {*32* eax, *v* r25, *v* edx} := CALL fputs_unlocked(
+                *c** local0 := eax
+                *FILE** local3 := edx
+              )
+              Reaching definitions: r24=r24{32},   r25=r25{32},   r26=r26{34},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=r26{34},
+                m[r28{0} - 28]=r24{32},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc4
+dest is not lib
+call:   48 {*c** eax, *v* r25, *v* edx} := CALL dcgettext(
+                *c** local0 := 0
+                *c** local1 := "      --version  output version information and exit
+"
+                *i32* local2 := 5
+              )
+              Reaching definitions: r24=0x8049fd0,   r25=r25{39},   r26=r26{39},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=0x8049fd0,
+                m[r28{0} - 28]=0,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables: eax in proc proc4
+result:    0 *c** eax := -
+dest is not lib
+call:   55 {*32* eax, *v* r25, *v* edx} := CALL fputs_unlocked(
+                *c** local0 := eax
+                *FILE** local3 := edx
+              )
+              Reaching definitions: r24=r24{48},   r25=r25{48},   r26=r26{50},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=r26{50},
+                m[r28{0} - 28]=r24{48},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc4
+dest is not lib
+call:   64 {*c** eax, *v* r25, *v* edx} := CALL dcgettext(
+                *c** local0 := 0
+                *c** local1 := "
+Report bugs to <%s>.
+"
+                *i32* local2 := 5
+              )
+              Reaching definitions: r24=5,   r25=0x804a006,   r26=r26{55},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=0x804a006,
+                m[r28{0} - 28]=0,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables: eax in proc proc4
+result:    0 *c** eax := -
+dest is not lib
+call:   71 {*32* eax, *v* r25, *v* edx} := CALL printf(
+                *c** local0 := eax
+              )
+              Reaching definitions: r24=r24{64},   r25=r25{64},   r26=0x804a01d,   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,   m[r28{0} - 24]=0x804a01d,
+                m[r28{0} - 28]=r24{64},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc4
+dest is not lib
+call:   77 {*32* eax, *v* r25, *v* edx} := CALL exit(
+                *i32* local4 := param1
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0},   r25=r25{71},   r26=r26{71},   r28=r28{0} - 32,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 20]=5,
+                m[r28{0} - 24]=0x804a01d,   m[r28{0} - 28]=m[r28{0} + 4]{0},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 24, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 4) <u 24
+              Live variables:  in proc proc4
+dest is not lib
+call:  191 {*32* eax, *v* r25, *v* r26} := CALL fprintf(
+                *FILE** local0 := param2
+                *c** local1 := "%s %s
+"
+                *[c]** local2 := param4
+                *[c]** local3 := param5
+              )
+              Reaching definitions: r24=0x804a5ff,   r25=m[r28{0} + 8]{0},   r26=m[r28{0} + 20]{0} + 4,   r27=0,
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} + 12]{0},   m[r28{0} - 24]=m[r28{0} + 16]{0},
+                m[r28{0} - 32]=m[r28{0} + 16]{0},   m[r28{0} - 36]=m[r28{0} + 12]{0},   m[r28{0} - 40]=0x804a5ff,
+                m[r28{0} - 44]=m[r28{0} + 4]{0},   m[r28{0} - 48]=%pc,   tmp1=m[r28{0} + 8]{0},
+                %flags=LOGICALFLAGS32( m[r28{0} + 8]{0} ),   %ZF=LOGICALFLAGS32( m[r28{0} + 8]{0} ),
+                %CF=LOGICALFLAGS32( m[r28{0} + 8]{0} )
+              Live variables:  in proc proc5
+dest is not lib
+call:   53 {*32* eax, *v* r25, *v* r26} := CALL fprintf(
+                *FILE** local0 := param2
+                *c** local1 := "%s (%s) %s
+"
+                *[c]** local2 := param3
+                *[c]** local3 := param4
+                *[c]** local4 := param5
+              )
+              Reaching definitions: r24=0x804a5b0,   r25=m[r28{0} + 8]{0},   r26=m[r28{0} + 20]{0} + 4,   r27=0,
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} + 12]{0},   m[r28{0} - 24]=m[r28{0} + 16]{0},
+                m[r28{0} - 28]=m[r28{0} + 16]{0},   m[r28{0} - 32]=m[r28{0} + 12]{0},   m[r28{0} - 36]=m[r28{0} + 8]{0}
+                m[r28{0} - 40]=0x804a5b0,   m[r28{0} - 44]=m[r28{0} + 4]{0},   m[r28{0} - 48]=%pc,
+                tmp1=m[r28{0} + 8]{0},   %flags=LOGICALFLAGS32( m[r28{0} + 8]{0} ),
+                %ZF=LOGICALFLAGS32( m[r28{0} + 8]{0} ),   %CF=LOGICALFLAGS32( m[r28{0} + 8]{0} )
+              Live variables:  in proc proc5
+dest is not lib
+call:   71 {*32* eax, *v* r25, *v* r26} := CALL dcgettext(
+                *c** local5 := 0
+                *c** local1 := param1
+                *i32* local6 := 5
+              )
+              Reaching definitions: r24=r24{23},   r25=m[r28{0} + 8]{0},   r26=m[r28{0} + 20]{0} + 4,   r27=0,
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} + 12]{0},   m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=5,
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 44]=0,   m[r28{0} - 48]=%pc,   tmp1=-9,
+                %flags=SUBFLAGS32( 0, 9, -9 ),   %ZF=-9 = 0,   %CF=0 <u 9
+              Live variables:  in proc proc5
+dest is not lib
+call:   78 {*32* eax, *32* r25, *32* r26} := CALL vfprintf(
+              )
+              Reaching definitions: r24=r24{71},   r25=r25{71},   r26=r26{71},   r27=0,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=m[r28{0} + 20]{0},   m[r28{0} - 40]=r24{71},
+                m[r28{0} - 44]=m[r28{0} + 4]{0},   m[r28{0} - 48]=%pc,   tmp1=-9,   %flags=SUBFLAGS32( 0, 9, -9 ),
+                %ZF=0,   %CF=1
+              Live variables:  in proc proc5
+dest is not lib
+call:   93 {*32* eax, *32* r25, *32* r26} := CALL fputs_unlocked(
+                *c** local5 := eax
+                *FILE** local7 := param2
+              )
+              Reaching definitions: r24=r24{88},   r25=r25{198},   r26=r26{199},   r27=r27{200},   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=m[r28{0} + 20]{0},   m[r28{0} - 40]=m[r28{0} + 4]{0}
+                m[r28{0} - 44]=r24{88},   m[r28{0} - 48]=%pc,   tmp1=tmp1{202},   %flags=%flags{203},   %ZF=%ZF{204},
+                %CF=%CF{205}
+              Live variables:  in proc proc5
+dest is not lib
+call:  111 {*c** eax, *v* r25, *v* r26} := CALL dcgettext(
+                *c** local5 := 0
+                *c** local1 := "This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+"
+                *i32* local6 := 5
+              )
+              Reaching definitions: r24=0x804a3e0,   r25=r25{207},   r26=5,   r27=r27{200},   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 4]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=5,   m[r28{0} - 40]=0x804a3e0,   m[r28{0} - 44]=0,
+                m[r28{0} - 48]=%pc,   tmp1=tmp1{210},   %flags=%flags{211},   %ZF=%ZF{212},   %CF=%CF{213}
+              Live variables: eax in proc proc5
+result:    0 *c** eax := -
+dest is not lib
+call:  124 {*32* eax, *v* r25, *v* r26} := CALL fputs_unlocked(
+                *c** local8 := eax
+                *FILE** local9 := param2
+              )
+              Reaching definitions: r24=r24{111},   r25=r25{111},   r26=r26{111},   r27=r27{0},   r28=r28{0},
+                r29=r29{0},   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=r24{111},   m[r28{0} + 8]=m[r28{0} + 4]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=5,   m[r28{0} - 40]=0x804a3e0,   m[r28{0} - 44]=0,
+                m[r28{0} - 48]=%pc,   tmp1=r28{0} - 44,   %flags=ADDFLAGS32( r28{0} - 44, 28, r28{0} - 16 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 28, r28{0} - 16 ),   %CF=ADDFLAGS32( r28{0} - 44, 28, r28{0} - 16 )
+              Live variables:  in proc proc5
+dest is not lib
+call:  132 {*union* eax, *32* r25, *32* r26} := CALL __overflow(
+              )
+              Reaching definitions: r24=r24{94},   r25=10,   r26=r26{93},   r27=r27{200},   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=m[r28{0} + 20]{0},   m[r28{0} - 40]=10,
+                m[r28{0} - 44]=m[r28{0} + 4]{0},   m[r28{0} - 48]=%pc,   tmp1=tmp1{95},
+                %flags=SUBFLAGS32( r24{94}, m[m[r28{0} + 4]{0} + 24], tmp1{95} ),   %ZF=tmp1{95} = 0,
+                %CF=r24{94} <u m[m[r28{0} + 4]{0} + 24]
+              Live variables:  in proc proc5
+dest is not lib
+call:  140 {*union* eax, *32* r25, *32* r26} := CALL __overflow(
+              )
+              Reaching definitions: r24=r24{79},   r25=r25{78},   r26=r26{78},   r27=10,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=m[r28{0} + 12]{0},
+                m[r28{0} - 24]=m[r28{0} + 16]{0},   m[r28{0} - 36]=m[r28{0} + 20]{0},   m[r28{0} - 40]=10,
+                m[r28{0} - 44]=m[r28{0} + 4]{0},   m[r28{0} - 48]=%pc,   tmp1=tmp1{80},
+                %flags=SUBFLAGS32( r24{79}, m[m[r28{0} + 4]{0} + 24], tmp1{80} ),   %ZF=tmp1{80} = 0,
+                %CF=r24{79} <u m[m[r28{0} + 4]{0} + 24]
+              Live variables:  in proc proc5
+dest is not lib
+call:   60 {*32* eax, *v* r25, *v* r26} := CALL abort(
+              )
+              Reaching definitions: r24=r24{23},   r25=m[r28{0} + 8]{0},   r26=m[r28{0} + 20]{0} + 4,   r27=0,
+                r28=r28{0} - 48,   r29=r28{0} - 4,   r30=m[r28{0} + 4]{0},   r31=m[r28{0} + 20]{0},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} + 20]=m[r28{0} + 20]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} + 12]{0},   m[r28{0} - 24]=m[r28{0} + 16]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 48]=%pc,   tmp1=-9,   %flags=SUBFLAGS32( 0, 9, -9 ),
+                %ZF=-9 = 0,   %CF=0 <u 9
+              Live variables:  in proc proc5

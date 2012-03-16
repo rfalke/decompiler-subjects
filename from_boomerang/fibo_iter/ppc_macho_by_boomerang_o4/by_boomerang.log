@@ -1,0 +1,35 @@
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   12 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 832
+              )
+              Reaching definitions: r1=r1{0} - 96,   r2=machine("%LR"),   r3=machine("%LR") + 832,   r4=r4{0},
+                r5=r5{0},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   18 {*v* r4, *32* r5, *v* r6, *v* r7, *v* r8, *32* r9, *v* r10, *v* r11, *v* r12} := CALL scanf(
+                *c** g3 := machine("%LR") + 848
+              )
+              Reaching definitions: r1=r1{0} - 96,   r2=machine("%LR"),   r3=machine("%LR") + 848,   r4=r1{0} - 32,
+                r5=r5{12},   r6=r6{12},   r7=r7{12},   r8=r8{12},   r9=r9{12},   r10=r10{12},   r11=r11{12},
+                r12=r12{12},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),   m[r1{0} - 4]=r31{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   38 {*v* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 852
+              )
+              Reaching definitions: r0=r0{45},   r1=r1{0} - 96,   r2=machine("%LR"),   r3=machine("%LR") + 852,
+                r4=m[r1{0} - 32]{0},   r5=r0{45},   r6=r6{18},   r7=r7{18},   r8=machine("%LR"),   r9=r9{47},
+                r10=r10{18},   r11=r11{18},   r12=r12{18},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   %flags=%flags{48},
+                %ZF=%ZF{49},   %CF=%CF{50}
+              Live variables:  in proc main

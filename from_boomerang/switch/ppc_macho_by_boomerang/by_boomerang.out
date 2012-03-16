@@ -1,0 +1,31 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 1 procs
+decompiling...
+decompiling entry point main
+ considering main
+ decompiling main
+global type analysis for main
+generating code...
+WARNING: no out edge for this BB in main:
+Invalid BB:
+in edges: 1ca4 
+out edges: 
+00001ca8
+00001cac
+00001cb0
+00001cb4
+00001cb8
+00001cbc
+00001cc0
+00001cc4
+00001cc8
+00001ccc
+00001cd0   87 GOTO machine("%CTR")
+00001cd4
+
+output written to _output/subject
+completed in 0 secs.

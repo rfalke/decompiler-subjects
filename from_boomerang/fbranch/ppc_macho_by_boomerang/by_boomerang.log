@@ -1,0 +1,164 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 112 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+TYPE ERROR: at address 0xffffffe0, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r1{0} - 32 to local table
+TYPE ERROR: at address 0xffffffe0, overlapping type double does not resolve to compound or array
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 44 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g3 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   80 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL scanf(
+                *c** g3 := machine("%LR") + 972
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 972,   r4=r1{0} - 44,   r5=r5{0},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r71=r71{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=0x40a00000,   m[r1{0} - 112]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:  105 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 976
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 976,   r4=fsize(32,64,0x40a00000),   r5=m[r1{0} - 28]{0},   r6=r32{83},
+                r7=m[r1{0} - 28]{0},   r8=r8{80},   r9=r32{83},   r10=m[r1{0} - 28]{0},   r11=r11{80},   r12=r12{80},
+                r30=r1{0} - 112,   r31=machine("%LR"),   r32=r32{83},   r33=fsize(32,64,0x40a00000),   r34=r32{83},
+                r44=r32{83},   r45=fsize(32,64,0x40a00000),   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r32{83},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=0x40a00000,
+                m[r1{0} - 112]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:  115 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 996
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 996,   r4=r4{105},   r5=r5{105},   r6=r6{105},   r7=r7{105},   r8=r8{105},
+                r9=r9{105},   r10=r10{105},   r11=r11{105},   r12=r12{105},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=r32{107},   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=fsize(32,64,0x40a00000),   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r32{83},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=0x40a00000,
+                m[r1{0} - 112]=r1{0},   tmp=31,   %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r32{107}, 0 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{107}, 0 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{107}, 0 )
+              Live variables:  in proc main
+dest is not lib
+call:  125 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 0x3ec
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 0x3ec,   r4=r4{238},   r5=r5{239},   r6=r6{240},   r7=r7{241},   r8=r8{242},
+                r9=r9{243},   r10=r10{244},   r11=r11{245},   r12=r12{246},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=fsize(32,64,0x40a00000),   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=r45{117},   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r32{83},
+                m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=0x40a00000,   m[r1{0} - 112]=r1{0},   tmp=31,
+                %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r45{117}, 0 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{117}, 0 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{117}, 0 )
+              Live variables:  in proc main
+dest is not lib
+call:  135 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 0x3f8
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 0x3f8,   r4=r4{248},   r5=r5{249},   r6=r6{250},   r7=r7{251},   r8=r8{252},
+                r9=r9{253},   r10=r10{254},   r11=r11{255},   r12=r12{256},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=fsize(32,64,0x40a00000),   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=r45{127},   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r32{83},
+                m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=0x40a00000,   m[r1{0} - 112]=r1{0},   tmp=31,
+                %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r45{127}, 0 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{127}, 0 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{127}, 0 )
+              Live variables:  in proc main
+dest is not lib
+call:  146 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 0x404
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 0x404,   r4=r4{258},   r5=r5{259},   r6=r6{260},   r7=r7{261},   r8=r8{262},
+                r9=r9{263},   r10=r10{264},   r11=r11{265},   r12=r12{266},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=r32{137},   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=fsize(32,64,0x40a00000),   r64=(r71{0}@0:0) | (r71{0}@2:2),   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r32{83},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=0x40a00000,   m[r1{0} - 112]=r1{0},   tmp=31,
+                %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r32{137}, 7 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{137}, 7 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{137}, 7 )
+              Live variables:  in proc main
+dest is not lib
+call:  157 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 0x414
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 0x414,   r4=r4{268},   r5=r5{269},   r6=r6{270},   r7=r7{271},   r8=r8{272},
+                r9=r9{273},   r10=r10{274},   r11=r11{275},   r12=r12{276},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=r32{148},   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=fsize(32,64,0x40a00000),   r64=(r71{0}@1:1) | (r71{0}@2:2),   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 28]=m[r1{0} - 28]{0},   m[r1{0} - 32]=r32{83},   m[r1{0} - 44]=m[r1{0} - 44]{0},
+                m[r1{0} - 48]=0x40a00000,   m[r1{0} - 112]=r1{0},   tmp=31,
+                %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r32{148}, 7 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{148}, 7 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r32{148}, 7 )
+              Live variables:  in proc main
+dest is not lib
+call:  167 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 0x428
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r1{0} - 44,   r1=r1{0} - 112,
+                r3=machine("%LR") + 0x428,   r4=r4{278},   r5=r5{279},   r6=r6{280},   r7=r7{281},   r8=r8{282},
+                r9=r9{283},   r10=r10{284},   r11=r11{285},   r12=r12{286},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=fsize(32,64,0x40a00000),   r33=fsize(32,64,0x40a00000),   r34=r32{83},   r44=r32{83},
+                r45=r45{159},   r64=(r71{0}@1:1) | (r71{0}@2:2),   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=r32{83},   m[r1{0} - 44]=m[r1{0} - 44]{0},   m[r1{0} - 48]=0x40a00000,
+                m[r1{0} - 112]=r1{0},   tmp=31,   %flags=SETFFLAGSN( fsize(32,64,0x40a00000), r45{159}, 0 ),
+                %ZF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{159}, 0 ),
+                %CF=SETFFLAGSN( fsize(32,64,0x40a00000), r45{159}, 0 )
+              Live variables:  in proc main

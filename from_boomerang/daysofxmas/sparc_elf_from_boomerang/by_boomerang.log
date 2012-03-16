@@ -1,0 +1,252 @@
+Unknown library function __flsbuf
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local o0 has type int that doesn't agree with type of define union { int x13; void * x14; } of a library, why?
+local o1 has type union { char *[] * x286; /*signed?*/int x287; } that doesn't agree with type of define union { int x15; void * x16; } of a library, why?
+dest is not lib
+call:   83 {*union* o0, *j32* r0} := CALL main(
+                *union* o0 := o0_1
+                *union* o1 := o1
+                *union* o2 := o2
+              )
+              Reaching definitions: r0=r0{281},   r8=r8{282},   r9=r9{283},   r10=r10{284},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r24{298},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=tmp{306},
+                %flags=%flags{307},   %ZF=%ZF{308},   %CF=%CF{309}
+              Live variables: o0 in proc main
+result:    0 *union* o0 := -
+dest is not lib
+call:  177 {*union* o0, *union* o1, *union* o2, *32* r11, *32* r12, *32* r13, *v* r14, *32* r15} := CALL __flsbuf(
+              )
+              Reaching definitions: r0=global21 - 1,   r8=r8{175},   r9=0x20cf0,   r10=r10{0} + 1,   r11=0x20cf0,
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},
+                tmp=global21 - 1,   %flags=SUBFLAGS( global21 - 1, 0, global21 - 1 ),   %ZF=(global21 - 1) = 0,
+                %CF=(global21 - 1) <u 0
+              Live variables: o0 in proc main
+result:    0 *union* o0 := -
+dest is not lib
+call:  127 {*[c*]** o0_1, *32* r0} := CALL main(
+                *i32* o0 := -61
+                *union* o1 := o1
+                *[c*]** o2 := 0x10948
+              )
+              Reaching definitions: r0=r9{118} - 47,   r8=-61,   r9=r9{118},   r10=0x10948,   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=0,   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r9{118},
+                %flags=SUBFLAGS( r9{118}, 47, r9{118} - 47 ),   %ZF=(r9{118} - 47) = 0,   %CF=r9{118} <u 47
+              Live variables: o0_1 in proc main
+result:    0 *[c*]** o0_1 := -
+dest is not lib
+call:  132 {*i32* o0, *32* r0} := CALL main(
+                *i32* o0 := 0
+                *[c*]** o1 := o0_1
+                *union* o2 := envp + 1
+              )
+              Reaching definitions: r0=r0{127},   r8=0,   r9=r8{127},   r10=r10{0} + 1,   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=0,   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   <all>=<all>{127},   tmp=r10{0},   %flags=%flags{127},
+                %ZF=%ZF{127},   %CF=%CF{127}
+              Live variables: o0 in proc main
+result:    0 *i32* o0 := -
+dest is not lib
+call:   92 {*j32* o0, *32* r0} := CALL main(
+                *i32* o0 := -86
+                *[c*]** o1 := 0
+                *union* o2 := envp + 1
+              )
+              Reaching definitions: r0=r8{0} - 2,   r8=-86,   r9=0,   r10=r10{0} + 1,   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r10{0},
+                %flags=SUBFLAGS( r8{0}, 2, r8{0} - 2 ),   %ZF=(r8{0} - 2) = 0,   %CF=r8{0} <u 2
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:  100 {*j32* o0, *32* r0} := CALL main(
+                *i32* o0 := -87
+                *union* o1 := 1 - argv
+                *union* o2 := envp + o0
+              )
+              Reaching definitions: r0=r0{92},   r8=-87,   r9=1 - r9{0},   r10=r10{0} + r8{92},   r11=r11{0},
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},
+                <all>=<all>{92},   tmp=1,   %flags=%flags{92},   %ZF=%ZF{92},   %CF=%CF{92}
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:  106 {*i32* o0, *j32* r0} := CALL main(
+                *i32* o0 := -79
+                *[c*]** o1 := -13
+                *union* o2 := envp + o0
+              )
+              Reaching definitions: r0=r0{100},   r8=-79,   r9=-13,   r10=r10{0} + r8{100},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   <all>=<all>{100},   tmp=r10{0},
+                %flags=%flags{100},   %ZF=%ZF{100},   %CF=%CF{100}
+              Live variables:  in proc main
+dest is not lib
+call:   88 {*32* o0, *union* r0} := CALL main(
+                *i32* o0 := argc + 1
+                *[c*]** o1 := argv
+                *union* o2 := envp
+              )
+              Reaching definitions: r0=r8{0} - r9{0},   r8=r8{0} + 1,   r9=r9{0},   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},
+                tmp=r8{0},   %flags=SUBFLAGS( r8{0}, r9{0}, r8{0} - r9{0} ),   %ZF=(r8{0} - r9{0}) = 0,
+                %CF=r8{0} <u r9{0}
+              Live variables:  in proc main
+dest is not lib
+call:   62 {*union* o0, *32* r0} := CALL main(
+                *i32* o0 := -94
+                *union* o1 := argc - 27
+                *union* o2 := envp
+              )
+              Reaching definitions: r0=r0{252},   r8=-94,   r9=r8{0} - 27,   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r8{0},   %flags=%flags{278},
+                %ZF=%ZF{279},   %CF=%CF{280}
+              Live variables: o0 in proc main
+result:    0 *union* o0 := -

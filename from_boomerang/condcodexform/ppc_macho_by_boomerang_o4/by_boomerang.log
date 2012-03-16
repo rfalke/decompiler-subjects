@@ -1,0 +1,53 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+local g3 has type __size32 that doesn't agree with type of define void of a library, why?
+local g4 has type __size32 that doesn't agree with type of define void of a library, why?
+local g8 has type __size32 that doesn't agree with type of define void of a library, why?
+local g9 has type __size32 that doesn't agree with type of define void of a library, why?
+local g10 has type __size32 that doesn't agree with type of define void of a library, why?
+local g11 has type __size32 that doesn't agree with type of define void of a library, why?
+local g12 has type __size32 that doesn't agree with type of define void of a library, why?
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:   83 {*v* g3, *v* g4, *v* r5, *v* r6, *v* r7, *v* g8, *v* g9, *v* g10, *v* g11, *v* g12} := CALL puts(
+                *c** g3 := g3
+              )
+              Reaching definitions: r0=r0{119},   r1=r1{0} - 80,   r2=machine("%LR"),   r3=r3{133},   r4=r4{122},
+                r5=r5{123},   r6=r6{124},   r7=r7{125},   r8=r8{134},   r9=r9{135},   r10=r10{127},   r11=r11{128},
+                r12=r12{129},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r4{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 80]=r1{0},
+                %flags=SUBFLAGSNS( r3{121}, 0, 4 ),   %ZF=4 = 0,   %CF=r3{121} <u 0
+              Live variables:  in proc main
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge

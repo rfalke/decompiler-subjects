@@ -1,0 +1,674 @@
+Unknown library function __swbuf
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure __sputc ###
+in proc __sputc adding addrExp r1{0} + 27 to local table
+in proc __sputc adding addrExp r1{0} + 112 to local table
+in proc __sputc adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc __sputc adding addrExp r1{0} + 8 to local table
+in proc __sputc adding addrExp r1{0} - 96 to local table
+in proc __sputc adding addrExp r1{0} + 24 to local table
+TYPE ERROR: at address 0x18, overlapping type /*signed?*/int does not resolve to compound or array
+in proc __sputc adding addrExp r1{0} + 28 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+finding final parameters for __sputc
+potential param r1
+found new parameter r1
+potential param r[tmp + 30]
+found new parameter r[tmp + 30]
+potential param r4
+found new parameter r4
+potential param m[r1{0} + 27]
+found new parameter m[r1{0} + 27]
+potential param r5
+found new parameter r5
+potential param r6
+found new parameter r6
+potential param r7
+found new parameter r7
+potential param r8
+found new parameter r8
+potential param r12
+found new parameter r12
+after removing matching assigns (%pc).
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 69 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} + 28 to local table
+in proc main adding addrExp r1{0} + 32 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} + 28 to local table
+in proc main adding addrExp r1{0} + 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} + 28 to local table
+in proc main adding addrExp r1{0} + 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} + 28 to local table
+in proc main adding addrExp r1{0} + 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc main adding addrExp r1{0} + 24 to local table
+in proc main adding addrExp r1{0} + 28 to local table
+in proc main adding addrExp r1{0} + 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r1{0} - 96 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 69 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure __sputc ###
+in proc __sputc adding addrExp r1{0} + 27 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+in proc __sputc adding addrExp r1{0} - 32 to local table
+finding final parameters for __sputc
+potential param r1
+found new parameter r1
+potential param r4
+found new parameter r4
+potential param m[r1{0} + 27]
+found new parameter m[r1{0} + 27]
+local g11 has type __size8 * that doesn't agree with type of define void * of a library, why?
+dest is not lib
+call:  252 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* g0, *[c*]** g3_1, *32* g4, *32* g5, *32* r6, *32* r7, *32* r8, *32* g9, *32* r10, *32* r11, *32* r12, *32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -61
+                *union* g4 := sgnex(8,32,g0)
+                *[c*]** g5 := machine("%LR") + 0x770
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=sgnex(8,32,r0{244}),   r1=r1{0} - 96,   r3=-61,   r4=sgnex(8,32,r0{244})
+                r5=machine("%LR") + 0x770,   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=0,
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},
+                %flags=SUBFLAGSNS( sgnex(8,32,r0{239}), 47, 0 ),   %ZF=0 = 0,   %CF=sgnex(8,32,r0{239}) <u 47
+              Live variables: g3_1 in proc main
+result:    0 *[c*]** g3_1 := -
+dest is not lib
+call:  261 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := 0
+                *[c*]** g4 := g3_1
+                *[c*]** g5 := g9 + 1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{252},   r[1 + 30]=r[1 + 30]{252},
+                r[2 + 30]=r[2 + 30]{252},   r[3 + 30]=r[3 + 30]{252},   r[4 + 30]=r[4 + 30]{252},
+                r[5 + 30]=r[5 + 30]{252},   r[6 + 30]=r[6 + 30]{252},   r[7 + 30]=r[7 + 30]{252},
+                r[8 + 30]=r[8 + 30]{252},   r[9 + 30]=r[9 + 30]{252},   r[10 + 30]=r[10 + 30]{252},
+                r[11 + 30]=r[11 + 30]{252},   r[12 + 30]=r[12 + 30]{252},   r[13 + 30]=r[13 + 30]{252},
+                r[14 + 30]=r[14 + 30]{252},   r[15 + 30]=r[15 + 30]{252},   r[16 + 30]=r[16 + 30]{252},
+                r[17 + 30]=r[17 + 30]{252},   r[18 + 30]=r[18 + 30]{252},   r[19 + 30]=r[19 + 30]{252},
+                r[20 + 30]=r[20 + 30]{252},   r[21 + 30]=r[21 + 30]{252},   r[22 + 30]=r[22 + 30]{252},
+                r[23 + 30]=r[23 + 30]{252},   r[24 + 30]=r[24 + 30]{252},   r[25 + 30]=r[25 + 30]{252},
+                r[26 + 30]=r[26 + 30]{252},   r[27 + 30]=r[27 + 30]{252},   r[28 + 30]=r[28 + 30]{252},
+                r[29 + 30]=r[29 + 30]{252},   r[30 + 30]=r[30 + 30]{252},   r[31 + 30]=r[31 + 30]{0},
+                r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{252},
+                r[1 + 30]=r[1 + 30]{252},   r[2 + 30]=r[2 + 30]{252},   r[3 + 30]=r[3 + 30]{252},
+                r[4 + 30]=r[4 + 30]{252},   r[5 + 30]=r[5 + 30]{252},   r[6 + 30]=r[6 + 30]{252},
+                r[7 + 30]=r[7 + 30]{252},   r[8 + 30]=r[8 + 30]{252},   r[9 + 30]=r[9 + 30]{252},
+                r[10 + 30]=r[10 + 30]{252},   r[11 + 30]=r[11 + 30]{252},   r[12 + 30]=r[12 + 30]{252},
+                r[13 + 30]=r[13 + 30]{252},   r[14 + 30]=r[14 + 30]{252},   r[15 + 30]=r[15 + 30]{252},
+                r[16 + 30]=r[16 + 30]{252},   r[17 + 30]=r[17 + 30]{252},   r[18 + 30]=r[18 + 30]{252},
+                r[19 + 30]=r[19 + 30]{252},   r[20 + 30]=r[20 + 30]{252},   r[21 + 30]=r[21 + 30]{252},
+                r[22 + 30]=r[22 + 30]{252},   r[23 + 30]=r[23 + 30]{252},   r[24 + 30]=r[24 + 30]{252},
+                r[25 + 30]=r[25 + 30]{252},   r[26 + 30]=r[26 + 30]{252},   r[27 + 30]=r[27 + 30]{252},
+                r[28 + 30]=r[28 + 30]{252},   r[29 + 30]=r[29 + 30]{252},   r[30 + 30]=r[30 + 30]{252},
+                r[31 + 30]=r[31 + 30]{0},   r[31 + 30]=r[31 + 30]{0},   r[tmp{387} + 30]=r[tmp{387} + 30]{0},
+                r[0 + 30]=r[0 + 30]{252},   r[1 + 30]=r[1 + 30]{252},   r[2 + 30]=r[2 + 30]{252},
+                r[3 + 30]=r[3 + 30]{252},   r[4 + 30]=r[4 + 30]{252},   r[5 + 30]=r[5 + 30]{252},
+                r[6 + 30]=r[6 + 30]{252},   r[7 + 30]=r[7 + 30]{252},   r[8 + 30]=r[8 + 30]{252},
+                r[9 + 30]=r[9 + 30]{252},   r[10 + 30]=r[10 + 30]{252},   r[11 + 30]=r[11 + 30]{252},
+                r[12 + 30]=r[12 + 30]{252},   r[13 + 30]=r[13 + 30]{252},   r[14 + 30]=r[14 + 30]{252},
+                r[15 + 30]=r[15 + 30]{252},   r[16 + 30]=r[16 + 30]{252},   r[17 + 30]=r[17 + 30]{252},
+                r[18 + 30]=r[18 + 30]{252},   r[19 + 30]=r[19 + 30]{252},   r[20 + 30]=r[20 + 30]{252},
+                r[21 + 30]=r[21 + 30]{252},   r[22 + 30]=r[22 + 30]{252},   r[23 + 30]=r[23 + 30]{252},
+                r[24 + 30]=r[24 + 30]{252},   r[25 + 30]=r[25 + 30]{252},   r[26 + 30]=r[26 + 30]{252},
+                r[27 + 30]=r[27 + 30]{252},   r[28 + 30]=r[28 + 30]{252},   r[29 + 30]=r[29 + 30]{252},
+                r[30 + 30]=r[30 + 30]{252},   r[31 + 30]=r[31 + 30]{0},   r0=r9{254} + 1,   r1=(r1{0} - 96) + 0,   r3=0
+                r4=r3{252},   r5=r9{254} + 1,   r6=r6{252},   r7=r7{252},   r8=r8{252},   r9=r9{254},   r10=r10{252},
+                r11=r3{252},   r12=r12{252},   r30=r30{252},   r31=r31{252},   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{252},   r61=r61{252},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=0,
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   <all>=<all>{252},   tmp=tmp{252},
+                tmp_mask=tmp_mask{252},   %flags=%flags{252},   %ZF=%ZF{252},   %CF=%CF{252}
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  233 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := 2
+                *[c*]** g4 := 2
+                *[c*]** g5 := machine("%LR") + 0x76c
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=r3{0},   r1=r1{0} - 96,   r3=2,   r4=2,   r5=machine("%LR") + 0x76c,
+                r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},
+                r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},   r42=r42{0},
+                r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},   r49=r49{0},
+                r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},   r56=r56{0},
+                r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},   r65=r65{0},
+                r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},
+                %flags=SUBFLAGSNS( r3{0}, 0, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 0
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  221 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := ((((CR0 * 0x10000000) + ((CR1 * 0x1000000) + ((CR2 * 0x100000) + ((CR3 * 0x10000) + ((CR4 * 0x1000) + ((CR5 * 256) + ((CR6 * 16) + CR7))))))) rl 31) & 1) + argc
+                *[c*]** g4 := argv
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=r5{0} + 1,   r1=r1{0} - 96,
+                r3=((((r64{0} * 0x10000000) + ((r65{0} * 0x1000000) + ((r66{0} * 0x100000) + ((r67{0} * 0x10000) + ((r68{0} * 0x1000) + ((r69{0} * 256) + ((r70{0} * 16) + r71{0}))))))) rl 31) & 1) + r3{0},
+                r4=r4{0},   r5=r5{0} + 1,   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},
+                r11=((((r64{0} * 0x10000000) + ((r65{0} * 0x1000000) + ((r66{0} * 0x100000) + ((r67{0} * 0x10000) + ((r68{0} * 0x1000) + ((r69{0} * 256) + ((r70{0} * 16) + r71{0}))))))) rl 31) & 1) + r3{0},
+                r12=r12{0},   r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=1,
+                %flags=SUBFLAGSNS( sgnex(8,32,r0{206}), 47, 7 ),   %ZF=7 = 0,   %CF=sgnex(8,32,r0{206}) <u 47
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  202 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -65
+                *[c*]** g4 := argv
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=r5{0} + 1,   r1=r1{0} - 96,   r3=-65,   r4=r4{0},   r5=r5{0} + 1,
+                r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},
+                r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},   r42=r42{0},
+                r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},   r49=r49{0},
+                r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},   r56=r56{0},
+                r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},   r65=r65{0},
+                r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},
+                %flags=SUBFLAGSNS( r4{0}, sgnex(8,32,r0{177}), 0 ),   %ZF=0 = 0,   %CF=r4{0} <u sgnex(8,32,r0{177})
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  192 {*32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *64* r60, *64* r61} := CALL __sputc(
+                *v*** g4 := g4 + 88
+                *u8* local8 := local8
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=sgnex(8,32,r0{184}),   r1=r1{0} - 96,   r3=sgnex(8,32,r0{184}),
+                r4=r4{188} + 88,   r5=r5{0},   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=machine("%LR"),   r10=r10{0},
+                r11=r11{0},   r12=r12{0},   r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},
+                r41=r41{0},   r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},
+                r48=r48{0},   r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},
+                r55=r55{0},   r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},
+                r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},
+                r71=r71{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},
+                m[r1{0} + 32]=r5{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r4{0}, sgnex(8,32,r0{177}), 0 ),   %ZF=0 = 0,
+                %CF=r4{0} <u sgnex(8,32,r0{177})
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  169 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *union* g3 := argv
+                *union* g4 := argc
+                *[c*]** g5 := machine("%LR") + 0x5d0
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=r3{0},   r1=r1{0} - 96,   r3=r4{0},   r4=r3{0},
+                r5=machine("%LR") + 0x5d0,   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=-72,   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r30=r1{0} - 96,   r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},
+                %flags=SUBFLAGSNS( r3{0}, -72, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u -72
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:   88 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* g0, *32* g3, *32* g4, *32* g5, *32* r6, *32* r7, *32* r8, *32* g9, *32* r10, *32* r11, *32* r12, *32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -86
+                *[c*]** g4 := 0
+                *union* g5 := envp + 1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r0=r5{0} + 1,   r1=r1{0} - 96,   r3=-86,   r4=0,   r5=r5{0} + 1,   r6=r6{0}
+                r7=r7{0},   r8=r8{0},   r9=r5{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r30=r1{0} - 96,
+                r31=machine("%LR"),   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},
+                r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},   r42=r42{0},   r43=r43{0},   r44=r44{0},
+                r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},   r49=r49{0},   r50=r50{0},   r51=r51{0},
+                r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},   r56=r56{0},   r57=r57{0},   r58=r58{0},
+                r59=r59{0},   r60=r60{0},   r61=r61{0},   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 69]=m[r1{0} - 69]{0},
+                m[r1{0} - 96]=r1{0},   tmp=31,   tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, 2, 0 ),   %ZF=0 = 0,
+                %CF=r3{0} <u 2
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:  100 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* g0, *32* g3, *32* g4, *32* g5, *32* r6, *32* r7, *32* r8, *32* g9, *32* r10, *32* r11, *32* r12, *32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -87
+                *[c*]** g4 := 1 - g0
+                *[c*]** g5 := g3 + g0_1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{88},   r[1 + 30]=r[1 + 30]{88},
+                r[2 + 30]=r[2 + 30]{88},   r[3 + 30]=r[3 + 30]{88},   r[4 + 30]=r[4 + 30]{88},
+                r[5 + 30]=r[5 + 30]{88},   r[6 + 30]=r[6 + 30]{88},   r[7 + 30]=r[7 + 30]{88},
+                r[8 + 30]=r[8 + 30]{88},   r[9 + 30]=r[9 + 30]{88},   r[10 + 30]=r[10 + 30]{88},
+                r[11 + 30]=r[11 + 30]{88},   r[12 + 30]=r[12 + 30]{88},   r[13 + 30]=r[13 + 30]{88},
+                r[14 + 30]=r[14 + 30]{88},   r[15 + 30]=r[15 + 30]{88},   r[16 + 30]=r[16 + 30]{88},
+                r[17 + 30]=r[17 + 30]{88},   r[18 + 30]=r[18 + 30]{88},   r[19 + 30]=r[19 + 30]{88},
+                r[20 + 30]=r[20 + 30]{88},   r[21 + 30]=r[21 + 30]{88},   r[22 + 30]=r[22 + 30]{88},
+                r[23 + 30]=r[23 + 30]{88},   r[24 + 30]=r[24 + 30]{88},   r[25 + 30]=r[25 + 30]{88},
+                r[26 + 30]=r[26 + 30]{88},   r[27 + 30]=r[27 + 30]{88},   r[28 + 30]=r[28 + 30]{88},
+                r[29 + 30]=r[29 + 30]{88},   r[30 + 30]=r[30 + 30]{88},   r[31 + 30]=r[31 + 30]{0},
+                r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{88},
+                r[1 + 30]=r[1 + 30]{88},   r[2 + 30]=r[2 + 30]{88},   r[3 + 30]=r[3 + 30]{88},
+                r[4 + 30]=r[4 + 30]{88},   r[5 + 30]=r[5 + 30]{88},   r[6 + 30]=r[6 + 30]{88},
+                r[7 + 30]=r[7 + 30]{88},   r[8 + 30]=r[8 + 30]{88},   r[9 + 30]=r[9 + 30]{88},
+                r[10 + 30]=r[10 + 30]{88},   r[11 + 30]=r[11 + 30]{88},   r[12 + 30]=r[12 + 30]{88},
+                r[13 + 30]=r[13 + 30]{88},   r[14 + 30]=r[14 + 30]{88},   r[15 + 30]=r[15 + 30]{88},
+                r[16 + 30]=r[16 + 30]{88},   r[17 + 30]=r[17 + 30]{88},   r[18 + 30]=r[18 + 30]{88},
+                r[19 + 30]=r[19 + 30]{88},   r[20 + 30]=r[20 + 30]{88},   r[21 + 30]=r[21 + 30]{88},
+                r[22 + 30]=r[22 + 30]{88},   r[23 + 30]=r[23 + 30]{88},   r[24 + 30]=r[24 + 30]{88},
+                r[25 + 30]=r[25 + 30]{88},   r[26 + 30]=r[26 + 30]{88},   r[27 + 30]=r[27 + 30]{88},
+                r[28 + 30]=r[28 + 30]{88},   r[29 + 30]=r[29 + 30]{88},   r[30 + 30]=r[30 + 30]{88},
+                r[31 + 30]=r[31 + 30]{0},   r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[0 + 30]=r[0 + 30]{88},
+                r[1 + 30]=r[1 + 30]{88},   r[2 + 30]=r[2 + 30]{88},   r[3 + 30]=r[3 + 30]{88},
+                r[4 + 30]=r[4 + 30]{88},   r[5 + 30]=r[5 + 30]{88},   r[6 + 30]=r[6 + 30]{88},
+                r[7 + 30]=r[7 + 30]{88},   r[8 + 30]=r[8 + 30]{88},   r[9 + 30]=r[9 + 30]{88},
+                r[10 + 30]=r[10 + 30]{88},   r[11 + 30]=r[11 + 30]{88},   r[12 + 30]=r[12 + 30]{88},
+                r[13 + 30]=r[13 + 30]{88},   r[14 + 30]=r[14 + 30]{88},   r[15 + 30]=r[15 + 30]{88},
+                r[16 + 30]=r[16 + 30]{88},   r[17 + 30]=r[17 + 30]{88},   r[18 + 30]=r[18 + 30]{88},
+                r[19 + 30]=r[19 + 30]{88},   r[20 + 30]=r[20 + 30]{88},   r[21 + 30]=r[21 + 30]{88},
+                r[22 + 30]=r[22 + 30]{88},   r[23 + 30]=r[23 + 30]{88},   r[24 + 30]=r[24 + 30]{88},
+                r[25 + 30]=r[25 + 30]{88},   r[26 + 30]=r[26 + 30]{88},   r[27 + 30]=r[27 + 30]{88},
+                r[28 + 30]=r[28 + 30]{88},   r[29 + 30]=r[29 + 30]{88},   r[30 + 30]=r[30 + 30]{88},
+                r[31 + 30]=r[31 + 30]{0},   r0=1 - r0{92},   r1=(r1{0} - 96) + 0,   r3=-87,   r4=1 - r0{92},
+                r5=r3{88} + r0{90},   r6=r6{88},   r7=r7{88},   r8=r8{88},   r9=r3{88} + r0{90},   r10=r10{88},
+                r11=r11{88},   r12=r12{88},   r30=r30{88},   r31=r31{88},   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{88},   r61=r61{88},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   <all>=<all>{88},   tmp=tmp{88},
+                tmp_mask=tmp_mask{88},   %flags=SUBFLAGSX( 1 - r0{92}, 1, 1 - r0{92} ),   %ZF=(1 - r0{92}) = 0,
+                %CF=(1 - r0{92}) <u 1
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:  109 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *[c*]** g5, *32* r6, *32* r7, *32* r8, *32* g9, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -79
+                *[c*]** g4 := -13
+                *[c*]** g5 := g3 + g0
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{100},   r[1 + 30]=r[1 + 30]{100},
+                r[2 + 30]=r[2 + 30]{100},   r[3 + 30]=r[3 + 30]{100},   r[4 + 30]=r[4 + 30]{100},
+                r[5 + 30]=r[5 + 30]{100},   r[6 + 30]=r[6 + 30]{100},   r[7 + 30]=r[7 + 30]{100},
+                r[8 + 30]=r[8 + 30]{100},   r[9 + 30]=r[9 + 30]{100},   r[10 + 30]=r[10 + 30]{100},
+                r[11 + 30]=r[11 + 30]{100},   r[12 + 30]=r[12 + 30]{100},   r[13 + 30]=r[13 + 30]{100},
+                r[14 + 30]=r[14 + 30]{100},   r[15 + 30]=r[15 + 30]{100},   r[16 + 30]=r[16 + 30]{100},
+                r[17 + 30]=r[17 + 30]{100},   r[18 + 30]=r[18 + 30]{100},   r[19 + 30]=r[19 + 30]{100},
+                r[20 + 30]=r[20 + 30]{100},   r[21 + 30]=r[21 + 30]{100},   r[22 + 30]=r[22 + 30]{100},
+                r[23 + 30]=r[23 + 30]{100},   r[24 + 30]=r[24 + 30]{100},   r[25 + 30]=r[25 + 30]{100},
+                r[26 + 30]=r[26 + 30]{100},   r[27 + 30]=r[27 + 30]{100},   r[28 + 30]=r[28 + 30]{100},
+                r[29 + 30]=r[29 + 30]{100},   r[30 + 30]=r[30 + 30]{100},   r[31 + 30]=r[31 + 30]{0},
+                r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[31 + 30]=r[31 + 30]{0},   r[0 + 30]=r[0 + 30]{100},
+                r[1 + 30]=r[1 + 30]{100},   r[2 + 30]=r[2 + 30]{100},   r[3 + 30]=r[3 + 30]{100},
+                r[4 + 30]=r[4 + 30]{100},   r[5 + 30]=r[5 + 30]{100},   r[6 + 30]=r[6 + 30]{100},
+                r[7 + 30]=r[7 + 30]{100},   r[8 + 30]=r[8 + 30]{100},   r[9 + 30]=r[9 + 30]{100},
+                r[10 + 30]=r[10 + 30]{100},   r[11 + 30]=r[11 + 30]{100},   r[12 + 30]=r[12 + 30]{100},
+                r[13 + 30]=r[13 + 30]{100},   r[14 + 30]=r[14 + 30]{100},   r[15 + 30]=r[15 + 30]{100},
+                r[16 + 30]=r[16 + 30]{100},   r[17 + 30]=r[17 + 30]{100},   r[18 + 30]=r[18 + 30]{100},
+                r[19 + 30]=r[19 + 30]{100},   r[20 + 30]=r[20 + 30]{100},   r[21 + 30]=r[21 + 30]{100},
+                r[22 + 30]=r[22 + 30]{100},   r[23 + 30]=r[23 + 30]{100},   r[24 + 30]=r[24 + 30]{100},
+                r[25 + 30]=r[25 + 30]{100},   r[26 + 30]=r[26 + 30]{100},   r[27 + 30]=r[27 + 30]{100},
+                r[28 + 30]=r[28 + 30]{100},   r[29 + 30]=r[29 + 30]{100},   r[30 + 30]=r[30 + 30]{100},
+                r[31 + 30]=r[31 + 30]{0},   r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[0 + 30]=r[0 + 30]{100},
+                r[1 + 30]=r[1 + 30]{100},   r[2 + 30]=r[2 + 30]{100},   r[3 + 30]=r[3 + 30]{100},
+                r[4 + 30]=r[4 + 30]{100},   r[5 + 30]=r[5 + 30]{100},   r[6 + 30]=r[6 + 30]{100},
+                r[7 + 30]=r[7 + 30]{100},   r[8 + 30]=r[8 + 30]{100},   r[9 + 30]=r[9 + 30]{100},
+                r[10 + 30]=r[10 + 30]{100},   r[11 + 30]=r[11 + 30]{100},   r[12 + 30]=r[12 + 30]{100},
+                r[13 + 30]=r[13 + 30]{100},   r[14 + 30]=r[14 + 30]{100},   r[15 + 30]=r[15 + 30]{100},
+                r[16 + 30]=r[16 + 30]{100},   r[17 + 30]=r[17 + 30]{100},   r[18 + 30]=r[18 + 30]{100},
+                r[19 + 30]=r[19 + 30]{100},   r[20 + 30]=r[20 + 30]{100},   r[21 + 30]=r[21 + 30]{100},
+                r[22 + 30]=r[22 + 30]{100},   r[23 + 30]=r[23 + 30]{100},   r[24 + 30]=r[24 + 30]{100},
+                r[25 + 30]=r[25 + 30]{100},   r[26 + 30]=r[26 + 30]{100},   r[27 + 30]=r[27 + 30]{100},
+                r[28 + 30]=r[28 + 30]{100},   r[29 + 30]=r[29 + 30]{100},   r[30 + 30]=r[30 + 30]{100},
+                r[31 + 30]=r[31 + 30]{0},   r0=r3{100} + r0{102},   r1=((r1{0} - 96) + 0) + 0,   r3=-79,   r4=-13,
+                r5=r3{100} + r0{102},   r6=r6{100},   r7=r7{100},   r8=r8{100},   r9=r3{100},   r10=r10{100},
+                r11=r11{100},   r12=r12{100},   r30=r30{100},   r31=r31{100},   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{100},   r61=r61{100},   r64=r64{0},
+                r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   <all>=<all>{100},   tmp=tmp{100},
+                tmp_mask=tmp_mask{100},   %flags=%flags{100},   %ZF=%ZF{100},   %CF=%CF{100}
+              Live variables: g30 in proc main
+result:    0 *j32* g30 := -
+dest is not lib
+call:  121 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *[c*]** g5, *32* r6, *32* r7, *32* r8, *i32* g9, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := g9 + 1
+                *[c*]** g4 := g4
+                *[c*]** g5 := g5_1
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r61{0},   r[0 + 30]=r30{0},   r[1 + 30]=r31{0},   r[2 + 30]=r32{0},   r[3 + 30]=r33{0},
+                r[4 + 30]=r34{0},   r[5 + 30]=r35{0},   r[6 + 30]=r36{0},   r[7 + 30]=r37{0},   r[8 + 30]=r38{0},
+                r[9 + 30]=r39{0},   r[10 + 30]=r40{0},   r[11 + 30]=r41{0},   r[12 + 30]=r42{0},   r[13 + 30]=r43{0},
+                r[14 + 30]=r44{0},   r[15 + 30]=r45{0},   r[16 + 30]=r46{0},   r[17 + 30]=r47{0},   r[18 + 30]=r48{0},
+                r[19 + 30]=r49{0},   r[20 + 30]=r50{0},   r[21 + 30]=r51{0},   r[22 + 30]=r52{0},   r[23 + 30]=r53{0},
+                r[24 + 30]=r54{0},   r[25 + 30]=r55{0},   r[26 + 30]=r56{0},   r[27 + 30]=r57{0},   r[28 + 30]=r58{0},
+                r[29 + 30]=r59{0},   r[30 + 30]=r60{0},   r[31 + 30]=r61{0},   r0=r9{114} + 1,   r1=r1{0} - 96,
+                r3=r9{114} + 1,   r4=r4{117},   r5=r5{118},   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r9{114},
+                r10=r10{0},   r11=r11{0},   r12=r12{0},   r30=r30{383},   r31=r31{384},   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},
+                r41=r41{0},   r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},
+                r48=r48{0},   r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},
+                r55=r55{0},   r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   r61=r61{0},
+                r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},
+                r71=r71{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},
+                m[r1{0} + 32]=r5{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 69]=m[r1{0} - 69]{0},   m[r1{0} - 96]=r1{0},   tmp=tmp{387}
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r0{110}, r9{111}, 0 ),   %ZF=0 = 0,   %CF=r0{110} <u r9{111}
+              Live variables:  in proc main
+dest is not lib
+call:  129 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := -94
+                *[c*]** g4 := g9_1 - 27
+                *[c*]** g5 := g5
+              )
+              Reaching definitions: r[31 + 30]=r61{0},   r[tmp{387} + 30]=r[tmp{387} + 30]{0},
+                r[tmp + 30]=r[tmp + 30]{0},   r[0 + 30]=r[0 + 30]{393},   r[1 + 30]=r[1 + 30]{394},   r[2 + 30]=r32{0},
+                r[3 + 30]=r33{0},   r[4 + 30]=r34{0},   r[5 + 30]=r35{0},   r[6 + 30]=r36{0},   r[7 + 30]=r37{0},
+                r[8 + 30]=r38{0},   r[9 + 30]=r39{0},   r[10 + 30]=r40{0},   r[11 + 30]=r41{0},   r[12 + 30]=r42{0},
+                r[13 + 30]=r43{0},   r[14 + 30]=r44{0},   r[15 + 30]=r45{0},   r[16 + 30]=r46{0},   r[17 + 30]=r47{0},
+                r[18 + 30]=r48{0},   r[19 + 30]=r49{0},   r[20 + 30]=r50{0},   r[21 + 30]=r51{0},   r[22 + 30]=r52{0},
+                r[23 + 30]=r53{0},   r[24 + 30]=r54{0},   r[25 + 30]=r55{0},   r[26 + 30]=r56{0},   r[27 + 30]=r57{0},
+                r[28 + 30]=r58{0},   r[29 + 30]=r59{0},   r[30 + 30]=r[30 + 30]{423},   r[31 + 30]=r[31 + 30]{424},
+                r0=r9{122} - 27,   r1=r1{0} - 96,   r3=-94,   r4=r9{122} - 27,   r5=r5{126},   r6=r6{430},   r7=r7{431}
+                r8=r8{432},   r9=r9{122},   r10=r10{434},   r11=r11{435},   r12=r12{436},   r30=r30{437},
+                r31=r31{438},   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},
+                r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},   r42=r42{0},   r43=r43{0},   r44=r44{0},
+                r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},   r49=r49{0},   r50=r50{0},   r51=r51{0},
+                r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},   r56=r56{0},   r57=r57{0},   r58=r58{0},
+                r59=r59{0},   r60=r60{439},   r61=r61{440},   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 69]=m[r1{0} - 69]{0},
+                m[r1{0} - 96]=r1{0},   tmp=tmp{441},   tmp_mask=tmp_mask{442},   %flags=%flags{443},   %ZF=%ZF{444},
+                %CF=%CF{445}
+              Live variables: g3,  g30,  g31 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+result:    0 *32* g31 := -
+dest is not lib
+call:  147 {*32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *i32* g0, *i32* g3, *[c*]** g4, *union* g5, *32* r6, *32* r7, *32* r8, *union* g9_1, *32* r10, *32* r11, *32* r12, *j32* g30, *32* g31, *64* r60, *64* r61} := CALL main(
+                *i32* g3 := 2
+                *[c*]** g4 := g9 + 1
+                *[c*]** g5 := g31 + 0x5c4
+              )
+              Reaching definitions: r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[tmp + 30]=r[tmp + 30]{0},
+                r[31 + 30]=r61{0},   r[0 + 30]=r[0 + 30]{129},   r[1 + 30]=r[1 + 30]{129},   r[2 + 30]=r[2 + 30]{129},
+                r[3 + 30]=r[3 + 30]{129},   r[4 + 30]=r[4 + 30]{129},   r[5 + 30]=r[5 + 30]{129},
+                r[6 + 30]=r[6 + 30]{129},   r[7 + 30]=r[7 + 30]{129},   r[8 + 30]=r[8 + 30]{129},
+                r[9 + 30]=r[9 + 30]{129},   r[10 + 30]=r[10 + 30]{129},   r[11 + 30]=r[11 + 30]{129},
+                r[12 + 30]=r[12 + 30]{129},   r[13 + 30]=r[13 + 30]{129},   r[14 + 30]=r[14 + 30]{129},
+                r[15 + 30]=r[15 + 30]{129},   r[16 + 30]=r[16 + 30]{129},   r[17 + 30]=r[17 + 30]{129},
+                r[18 + 30]=r[18 + 30]{129},   r[19 + 30]=r[19 + 30]{129},   r[20 + 30]=r[20 + 30]{129},
+                r[21 + 30]=r[21 + 30]{129},   r[22 + 30]=r[22 + 30]{129},   r[23 + 30]=r[23 + 30]{129},
+                r[24 + 30]=r[24 + 30]{129},   r[25 + 30]=r[25 + 30]{129},   r[26 + 30]=r[26 + 30]{129},
+                r[27 + 30]=r[27 + 30]{129},   r[28 + 30]=r[28 + 30]{129},   r[29 + 30]=r[29 + 30]{129},
+                r[30 + 30]=r[30 + 30]{129},   r[31 + 30]=r61{0},   r[tmp{387} + 30]=r[tmp{387} + 30]{0},
+                r[31 + 30]=r61{0},   r[0 + 30]=r[0 + 30]{129},   r[1 + 30]=r[1 + 30]{129},   r[2 + 30]=r[2 + 30]{129},
+                r[3 + 30]=r[3 + 30]{129},   r[4 + 30]=r[4 + 30]{129},   r[5 + 30]=r[5 + 30]{129},
+                r[6 + 30]=r[6 + 30]{129},   r[7 + 30]=r[7 + 30]{129},   r[8 + 30]=r[8 + 30]{129},
+                r[9 + 30]=r[9 + 30]{129},   r[10 + 30]=r[10 + 30]{129},   r[11 + 30]=r[11 + 30]{129},
+                r[12 + 30]=r[12 + 30]{129},   r[13 + 30]=r[13 + 30]{129},   r[14 + 30]=r[14 + 30]{129},
+                r[15 + 30]=r[15 + 30]{129},   r[16 + 30]=r[16 + 30]{129},   r[17 + 30]=r[17 + 30]{129},
+                r[18 + 30]=r[18 + 30]{129},   r[19 + 30]=r[19 + 30]{129},   r[20 + 30]=r[20 + 30]{129},
+                r[21 + 30]=r[21 + 30]{129},   r[22 + 30]=r[22 + 30]{129},   r[23 + 30]=r[23 + 30]{129},
+                r[24 + 30]=r[24 + 30]{129},   r[25 + 30]=r[25 + 30]{129},   r[26 + 30]=r[26 + 30]{129},
+                r[27 + 30]=r[27 + 30]{129},   r[28 + 30]=r[28 + 30]{129},   r[29 + 30]=r[29 + 30]{129},
+                r[30 + 30]=r[30 + 30]{129},   r[31 + 30]=r61{0},   r[31 + 30]=r61{0},
+                r[tmp{387} + 30]=r[tmp{387} + 30]{0},   r[0 + 30]=r[0 + 30]{129},   r[1 + 30]=r[1 + 30]{129},
+                r[2 + 30]=r[2 + 30]{129},   r[3 + 30]=r[3 + 30]{129},   r[4 + 30]=r[4 + 30]{129},
+                r[5 + 30]=r[5 + 30]{129},   r[6 + 30]=r[6 + 30]{129},   r[7 + 30]=r[7 + 30]{129},
+                r[8 + 30]=r[8 + 30]{129},   r[9 + 30]=r[9 + 30]{129},   r[10 + 30]=r[10 + 30]{129},
+                r[11 + 30]=r[11 + 30]{129},   r[12 + 30]=r[12 + 30]{129},   r[13 + 30]=r[13 + 30]{129},
+                r[14 + 30]=r[14 + 30]{129},   r[15 + 30]=r[15 + 30]{129},   r[16 + 30]=r[16 + 30]{129},
+                r[17 + 30]=r[17 + 30]{129},   r[18 + 30]=r[18 + 30]{129},   r[19 + 30]=r[19 + 30]{129},
+                r[20 + 30]=r[20 + 30]{129},   r[21 + 30]=r[21 + 30]{129},   r[22 + 30]=r[22 + 30]{129},
+                r[23 + 30]=r[23 + 30]{129},   r[24 + 30]=r[24 + 30]{129},   r[25 + 30]=r[25 + 30]{129},
+                r[26 + 30]=r[26 + 30]{129},   r[27 + 30]=r[27 + 30]{129},   r[28 + 30]=r[28 + 30]{129},
+                r[29 + 30]=r[29 + 30]{129},   r[30 + 30]=r[30 + 30]{129},   r[31 + 30]=r61{0},   r0=r9{139} + 1,
+                r1=(r1{0} - 96) + 0,   r3=2,   r4=r9{139} + 1,   r5=r31{129} + 0x5c4,   r6=r6{129},   r7=r7{129},
+                r8=r8{129},   r9=r9{139},   r10=r10{129},   r11=r11{129},   r12=r12{129},   r30=r30{129},
+                r31=r31{129},   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},
+                r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},   r42=r42{0},   r43=r43{0},   r44=r44{0},
+                r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},   r49=r49{0},   r50=r50{0},   r51=r51{0},
+                r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},   r56=r56{0},   r57=r57{0},   r58=r58{0},
+                r59=r59{0},   r60=r60{129},   r61=r61{129},   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 28]=r4{0},   m[r1{0} + 32]=r5{0},   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 69]=m[r1{0} - 69]{0},
+                m[r1{0} - 96]=r1{0},   <all>=<all>{129},   tmp=tmp{129},   tmp_mask=tmp_mask{129},
+                %flags=SUBFLAGSNS( r0{136}, 12, 0 ),   %ZF=0 = 0,   %CF=r0{136} <u 12
+              Live variables: g3,  g30 in proc main
+result:    0 *i32* g3 := -
+result:    0 *j32* g30 := -
+dest is not lib
+call:  105 {*j32* g3, *v*** r4, *32* r5, *32* r6, *32* r7, *32* r8, *v*** r10, *v** g11, *32* r12} := CALL __swbuf(
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=r0{183},   r1=r1{0} - 96,   r3=r3{0},   r4=r4{0},
+                r5=r5{0},   r6=r6{0},   r7=r7{0},   r8=r8{0},   r9=r9{81},   r11=r4{0},   r12=r12{0},   r30=r1{0} - 96,
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 27]=m[r1{0} + 27]{0},
+                m[r1{0} + 28]=r4{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 96]=r1{0},   tmp=31,   %flags=%flags{184},   %ZF=%ZF{185},   %CF=%CF{186}
+              Live variables: g3 in proc __sputc
+result:    0 *j32* g3 := -

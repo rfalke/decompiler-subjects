@@ -1,0 +1,20 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 1 procs
+decompiling...
+decompiling entry point main
+ considering main
+ decompiling main
+pprptttttttttttpglobal type analysis for main
+generating code...
+WARNING: no out edge for this BB in main:
+Invalid BB:
+in edges: 80485ec 
+out edges: 
+080485f1
+
+output written to _output/subject
+completed in 0 secs.

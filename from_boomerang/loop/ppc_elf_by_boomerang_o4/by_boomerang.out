@@ -1,0 +1,29 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+warning: textDelta different for section .got (ignoring).
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 1 procs
+decompiling...
+decompiling entry point main
+ considering main
+ decompiling main
+global type analysis for main
+generating code...
+WARNING: no out edge for this BB in main:
+Invalid BB:
+in edges: 
+out edges: 
+00000000    0 *i32* argc := -
+            0 *[c*]** argv := -
+            0 *[c*]** envp := -
+10000418
+1000041c
+10000420
+10000424
+10000428
+1000042c
+
+output written to _output/subject
+completed in 0 secs.

@@ -1,0 +1,60 @@
+ERROR: attempted to decode outside any known segment 0x10010460
+ERROR: attempted to decode outside any known segment 0x10010478
+ERROR: attempted to decode outside any known segment 0x10010484
+ERROR: attempted to decode outside any known segment 0x1001049c
+ERROR: attempted to decode outside any known segment 0x10010508
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g8 has type __size32 that doesn't agree with type of define void of a library, why?
+local g9 has type __size32 that doesn't agree with type of define void of a library, why?
+local g10 has type __size32 that doesn't agree with type of define void of a library, why?
+local g11 has type __size32 that doesn't agree with type of define void of a library, why?
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:   62 {*v* r4, *v* r5, *v* r6, *v* r7, *v* g8, *v* g9, *v* g10, *v* g11, *v* r12} := CALL puts(
+                *c** g3 := "Pass"
+              )
+              Reaching definitions: r0=r0{117},   r1=r1{0} - 32,   r3=0x10000958,   r4=0x10000000,   r5=r5{120},
+                r6=r6{121},   r7=0x10000000,   r8=r8{123},   r9=r9{124},   r10=r10{125},   r11=0x10000000,
+                r12=r12{127},   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},
+                r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=m[r1{0} - 4]{6},
+                m[r1{0} - 32]=r1{0},   %flags=SUBFLAGSNS( r0{117}, 0, 4 ),   %ZF=4 = 0,   %CF=r0{117} <u 0
+              Live variables:  in proc main
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+found seq with more than one outedge!
+taken branch is first out edge
+dest is not lib
+call:   32 {*v* r4, *v* r5, *v* r6, *v* r7, *v* g8, *v* g9, *v* g10, *v* g11, *v* r12} := CALL puts(
+                *c** g3 := "Failed!"
+              )
+              Reaching definitions: r0=0,   r1=r1{0} - 32,   r3=0x10000950,   r4=r4{101},   r5=0x10000418,   r6=r6{102}
+                r7=0x10000000,   r8=0x10000000,   r9=r9{103},   r10=0x10000428,   r11=r11{105},   r12=0x10000000,
+                r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},
+                r71=r71{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=m[r1{0} - 4]{6},   m[r1{0} - 32]=r1{0},
+                %flags=SUBFLAGSNS( 0, 0, 4 ),   %ZF=4 = 0,   %CF=0 <u 0
+              Live variables:  in proc main

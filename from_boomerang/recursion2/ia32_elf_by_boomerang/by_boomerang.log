@@ -1,0 +1,563 @@
+assgn    7 *32* r24 := m[0x8049824]
+assgn   12 *32* r24 := m[0x8049824]
+assgn   20 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x8049828]
+assgn   12 *32* r24 := m[0x8049828]
+assgn   20 *32* r24 := m[0x804984c]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f ###
+in proc f adding addrExp r28{0} - 16 to local table
+in proc f adding addrExp r28{0} - 4 to local table
+in proc f adding addrExp r28{0} - 16 to local table
+in proc f adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc f adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for f
+potential param r28
+found new parameter r28
+in proc g adding addrExp r28{0} - 16 to local table
+in proc g adding addrExp r28{0} - 4 to local table
+in proc g adding addrExp r28{0} - 16 to local table
+in proc g adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc g adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for g
+potential param r28
+found new parameter r28
+finding final parameters for f
+finding final parameters for g
+assgn    4 *32* r24 := m[0x804984c]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc i adding addrExp r28{0} - 4 to local table
+finding final parameters for i
+assgn    7 *32* r24 := m[0x8049830]
+assgn   12 *32* r24 := m[0x8049830]
+assgn   20 *32* r24 := m[0x804984c]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc h adding addrExp r28{0} - 16 to local table
+in proc h adding addrExp r28{0} - 4 to local table
+in proc h adding addrExp r28{0} - 16 to local table
+in proc h adding addrExp r28{0} - 16 to local table
+finding final parameters for h
+potential param r28
+found new parameter r28
+assgn    7 *32* r24 := m[0x8049810]
+assgn   12 *32* r24 := m[0x8049810]
+assgn   26 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x8049814]
+assgn   12 *32* r24 := m[0x8049814]
+assgn   26 *32* r24 := m[0x8049820]
+assgn   31 *32* r24 := m[0x8049820]
+assgn   39 *32* r24 := m[0x804982c]
+assgn   44 *32* r24 := m[0x804982c]
+assgn   52 *32* r24 := m[0x8049834]
+assgn   57 *32* r24 := m[0x8049834]
+assgn   71 *32* r24 := m[0x8049840]
+assgn   76 *32* r24 := m[0x8049840]
+assgn   90 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x8049818]
+assgn   12 *32* r24 := m[0x8049818]
+assgn   26 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x8049838]
+assgn   12 *32* r24 := m[0x8049838]
+assgn   26 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x8049844]
+assgn   12 *32* r24 := m[0x8049844]
+assgn   26 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x804981c]
+assgn   12 *32* r24 := m[0x804981c]
+assgn   26 *32* r24 := m[0x804984c]
+assgn    7 *32* r24 := m[0x804983c]
+assgn   12 *32* r24 := m[0x804983c]
+assgn   29 *32* r24 := m[0x804984c]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure b ###
+in proc b adding addrExp r28{0} - 16 to local table
+in proc b adding addrExp r28{0} - 4 to local table
+in proc b adding addrExp r28{0} - 16 to local table
+in proc b adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc b adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for b
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure c ###
+in proc c adding addrExp r28{0} - 16 to local table
+in proc c adding addrExp r28{0} - 4 to local table
+in proc c adding addrExp r28{0} - 16 to local table
+in proc c adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc c adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+in proc c adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc c adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+in proc c adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc c adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure d ###
+in proc d adding addrExp r28{0} - 16 to local table
+in proc d adding addrExp r28{0} - 4 to local table
+in proc d adding addrExp r28{0} - 16 to local table
+in proc d adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc d adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for d
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure j ###
+in proc j adding addrExp r28{0} - 16 to local table
+in proc j adding addrExp r28{0} - 4 to local table
+in proc j adding addrExp r28{0} - 16 to local table
+in proc j adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc j adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for j
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+in proc l adding addrExp r28{0} - 16 to local table
+in proc l adding addrExp r28{0} - 4 to local table
+in proc l adding addrExp r28{0} - 16 to local table
+in proc l adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc l adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for l
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+in proc e adding addrExp r28{0} - 16 to local table
+in proc e adding addrExp r28{0} - 4 to local table
+in proc e adding addrExp r28{0} - 16 to local table
+in proc e adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc e adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for e
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+in proc k adding addrExp r28{0} - 16 to local table
+in proc k adding addrExp r28{0} - 4 to local table
+in proc k adding addrExp r28{0} - 16 to local table
+in proc k adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc k adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+finding final parameters for k
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for b
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for d
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for j
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for l
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for e
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for k
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn   45 *32* r24 := m[0x804984c]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure b ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure c ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure d ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure h ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure j ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure l ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure e ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure g ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure i ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure k ###
+finding final parameters for b
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for l
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for b
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for e
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for d
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for f
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for g
+finding final parameters for h
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for j
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for l
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for c
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for e
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for d
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for k
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for g
+finding final parameters for f
+finding final parameters for i
+finding final parameters for h
+finding final parameters for k
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for j
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+local ecx has type __size32 that doesn't agree with type of define void of a library, why?
+local edx has type __size32 that doesn't agree with type of define void of a library, why?
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+local ecx has type void that doesn't agree with type of define __size32 of a library, why?
+local edx has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   28 {*j32* ecx, *j32* edx} := CALL b(
+                *32* ecx := 55
+                *32* edx := 99
+              )
+              Reaching definitions: r24=16,   r25=55,   r26=99,   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables: ecx,  edx in proc main
+result:    0 *j32* ecx := -
+result:    0 *j32* edx := -
+dest is not lib
+call:   41 {*v* ecx, *v* edx} := CALL printf(
+                *c** local0 := "ecx is %d, edx is %d
+"
+                *j32* local1 := edx
+                *j32* local2 := ecx
+              )
+              Reaching definitions: r24=r24{28},   r25=r25{28},   r26=r26{28},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r25{28},   m[r28{0} - 40]=r26{28},
+                m[r28{0} - 44]=0x80486e4,   m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 32) + 4,
+                %flags=SUBFLAGS32( r28{0} - 28, 4, r28{0} - 32 ),   %ZF=(r28{0} - 32) = 0,   %CF=(r28{0} - 28) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   56 {*32* ecx, *32* edx} := CALL printf(
+                *c** local0 := "res is %d
+"
+                *j32* local1 := res
+              )
+              Reaching definitions: r24=res,   r25=r25{41},   r26=r26{41},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r25{28},   m[r28{0} - 40]=res,
+                m[r28{0} - 44]=0x80486fa,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 28,
+                %flags=SUBFLAGS32( r28{0} - 28, 8, r28{0} - 36 ),   %ZF=(r28{0} - 36) = 0,   %CF=(r28{0} - 28) <u 8
+              Live variables:  in proc main
+dest is not lib
+call:   22 {*32* r24, *32* ecx, *32* edx_1, *v* r28} := CALL c(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=b_c,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( b_c ),
+                %ZF=LOGICALFLAGS32( b_c ),   %CF=LOGICALFLAGS32( b_c )
+              Live variables: ecx,  edx_1 in proc b
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+dest is not lib
+call:   22 {*32* r24, *32* ecx, *32* edx_1, *v** esp} := CALL d(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=c_d,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( c_d ),
+                %ZF=LOGICALFLAGS32( c_d ),   %CF=LOGICALFLAGS32( c_d )
+              Live variables: ecx,  edx_1,  esp in proc c
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+result:    0 *v** esp := -
+dest is not lib
+call:   38 {*i32* r24, *v* esp} := CALL f(
+              )
+              Reaching definitions: r24=c_f,   r25=r25{102},   r26=r26{103},   r28=r28{104} - 4,   r29=r29{105},
+                m[r28{0} - 4]=m[r28{0} - 4]{132},   m[r28{0} - 16]=m[r28{0} - 16]{133},   tmp1=c_f,
+                %flags=LOGICALFLAGS32( c_f ),   %ZF=LOGICALFLAGS32( c_f ),   %CF=LOGICALFLAGS32( c_f )
+              Live variables:  in proc c
+dest is not lib
+call:   51 {*i32* r24, *v* esp} := CALL h(
+              )
+              Reaching definitions: r24=c_h,   r25=r25{102},   r26=r26{103},   r28=r28{104} - 4,   r29=r29{105},
+                m[r28{0} - 4]=m[r28{0} - 4]{132},   m[r28{0} - 16]=m[r28{0} - 16]{133},   tmp1=c_h,
+                %flags=LOGICALFLAGS32( c_h ),   %ZF=LOGICALFLAGS32( c_h ),   %CF=LOGICALFLAGS32( c_h )
+              Live variables:  in proc c
+dest is not lib
+call:   67 {*32* r24, *32* ecx, *32* edx_2, *v** esp} := CALL j(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=c_j,   r25=r26{103},   r26=r25{102},   r28=r28{104} - 4,   r29=r29{105},
+                m[r28{0} - 4]=m[r28{0} - 4]{132},   m[r28{0} - 16]=m[r28{0} - 16]{133},   tmp1=r26{103},
+                %flags=LOGICALFLAGS32( c_j ),   %ZF=LOGICALFLAGS32( c_j ),   %CF=LOGICALFLAGS32( c_j )
+              Live variables: ecx,  edx_2,  esp in proc c
+result:    0 *32* ecx := -
+result:    0 *32* edx_2 := -
+result:    0 *v** esp := -
+dest is not lib
+call:   86 {*32* r24, *32* ecx, *32* edx_3, *v* esp} := CALL l(
+                *32* ecx := edx
+                *32* edx := ecx
+              )
+              Reaching definitions: r24=c_l,   r25=r26{116},   r26=r25{115},   r28=r28{117} - 4,   r29=r29{118},
+                m[r28{0} - 4]=m[r28{0} - 4]{134},   m[r28{0} - 16]=m[r28{0} - 16]{135},   tmp1=r26{116},
+                %flags=LOGICALFLAGS32( c_l ),   %ZF=LOGICALFLAGS32( c_l ),   %CF=LOGICALFLAGS32( c_l )
+              Live variables: ecx,  edx_3 in proc c
+result:    0 *32* ecx := -
+result:    0 *32* edx_3 := -
+dest is not lib
+call:   22 {*32* r24, *32* ecx, *32* edx_1, *v* r28} := CALL e(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=d_e,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( d_e ),
+                %ZF=LOGICALFLAGS32( d_e ),   %CF=LOGICALFLAGS32( d_e )
+              Live variables: ecx,  edx_1 in proc d
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+dest is not lib
+call:   19 {*32* r24, *v* r28} := CALL g(
+              )
+              Reaching definitions: r24=f_g,   r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=%pc,   tmp1=f_g,   %flags=LOGICALFLAGS32( f_g ),   %ZF=LOGICALFLAGS32( f_g ),
+                %CF=LOGICALFLAGS32( f_g )
+              Live variables:  in proc f
+dest is not lib
+call:   19 {*i32* r24, *v* r28} := CALL i(
+              )
+              Reaching definitions: r24=h_i,   r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=%pc,   tmp1=h_i,   %flags=LOGICALFLAGS32( h_i ),   %ZF=LOGICALFLAGS32( h_i ),
+                %CF=LOGICALFLAGS32( h_i )
+              Live variables:  in proc h
+dest is not lib
+call:   22 {*32* r24, *32* ecx, *32* edx_1, *v* r28} := CALL k(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=j_k,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( j_k ),
+                %ZF=LOGICALFLAGS32( j_k ),   %CF=LOGICALFLAGS32( j_k )
+              Live variables: ecx,  edx_1 in proc j
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+dest is not lib
+call:   22 {*i32* r24, *32* ecx, *32* edx_1, *32* r28} := CALL b(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=l_b,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( l_b ),
+                %ZF=LOGICALFLAGS32( l_b ),   %CF=LOGICALFLAGS32( l_b )
+              Live variables: ecx,  edx_1 in proc l
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+dest is not lib
+call:   22 {*i32* r24, *32* ecx, *32* edx_1, *32* r28} := CALL c(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=e_c,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( e_c ),
+                %ZF=LOGICALFLAGS32( e_c ),   %CF=LOGICALFLAGS32( e_c )
+              Live variables: ecx,  edx_1 in proc e
+result:    0 *32* ecx := -
+result:    0 *32* edx_1 := -
+dest is not lib
+call:   19 {*i32* r24, *32* r28} := CALL f(
+              )
+              Reaching definitions: r24=g_f,   r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=%pc,   tmp1=g_f,   %flags=LOGICALFLAGS32( g_f ),   %ZF=LOGICALFLAGS32( g_f ),
+                %CF=LOGICALFLAGS32( g_f )
+              Live variables:  in proc g
+dest is not lib
+call:   22 {*i32* r24, *32* ecx_1, *32* edx, *32* r28} := CALL e(
+                *32* ecx := param2
+                *32* edx := param1
+              )
+              Reaching definitions: r24=k_e,   r25=r26{0},   r26=r25{0},   r28=r28{0} - 16,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   tmp1=r26{0},   %flags=LOGICALFLAGS32( k_e ),
+                %ZF=LOGICALFLAGS32( k_e ),   %CF=LOGICALFLAGS32( k_e )
+              Live variables: ecx_1,  edx in proc k
+result:    0 *32* ecx_1 := -
+result:    0 *32* edx := -

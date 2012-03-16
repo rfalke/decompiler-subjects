@@ -1,0 +1,29 @@
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type double that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   16 {*v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := "a = %f
+"
+                *f64* g4 := 0.0000
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000898,   r4=12,   r5=r5{0},   r6=0x10000000,
+                r7=machine("%LR"),   r29=0x10010000,   r33=a,   r65=-1,   m[r1{0} + 4]=machine("%LR"),
+                m[r1{0} - 12]=r29{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   23 {*32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "b = %i
+"
+                *j32* g4 := b
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x100008a0,   r4=b,   r5=0x10000000,   r6=r6{16},   r7=r7{16},
+                r8=r8{16},   r9=r9{16},   r10=r10{16},   r11=r11{16},   r12=r12{16},   r29=0x10010000,   r33=a,   r65=0
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main

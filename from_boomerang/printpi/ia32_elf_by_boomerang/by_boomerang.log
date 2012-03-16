@@ -1,0 +1,31 @@
+got filename printpi.c for main
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   41 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Pi is about %.5f
+"
+                *f64* local1 := 3.1416
+              )
+              Reaching definitions: r24=0,   r28=r28{0} - 32,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=fsize(32,80,0x40490fda),
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40490fda,   m[r28{0} - 24]=fsize(80,64,fsize(32,80,0x40490fda))
+                m[r28{0} - 28]=0x804840c,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,   tmpD9=fsize(32,80,0x40490fda),
+                %flags=SUBFLAGS32( r28{0} - 12, 4, r28{0} - 16 ),   %ZF=(r28{0} - 16) = 0,   %CF=(r28{0} - 12) <u 4
+              Live variables:  in proc main

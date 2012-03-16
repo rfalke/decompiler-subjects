@@ -1,0 +1,555 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib1 ###
+in proc fib1 adding addrExp r1{0} + 112 to local table
+in proc fib1 adding addrExp r1{0} + 116 to local table
+in proc fib1 adding addrExp r1{0} + 8 to local table
+in proc fib1 adding addrExp r1{0} - 80 to local table
+in proc fib1 adding addrExp r1{0} + 24 to local table
+finding final parameters for fib1
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+in proc fib2 adding addrExp r1{0} - 32 to local table
+in proc fib2 adding addrExp r1{0} + 104 to local table
+in proc fib2 adding addrExp r1{0} + 108 to local table
+in proc fib2 adding addrExp r1{0} + 112 to local table
+in proc fib2 adding addrExp r1{0} + 8 to local table
+in proc fib2 adding addrExp r1{0} - 96 to local table
+in proc fib2 adding addrExp r1{0} + 24 to local table
+in proc fib2 adding addrExp r1{0} - 32 to local table
+in proc fib2 adding addrExp r1{0} + 8 to local table
+TYPE ERROR: Existing type at address 0x8 is not structure or array type
+in proc fib2 adding addrExp r1{0} + 24 to local table
+in proc fib2 adding addrExp r1{0} + 104 to local table
+in proc fib2 adding addrExp r1{0} + 108 to local table
+in proc fib2 adding addrExp r1{0} + 112 to local table
+in proc fib2 adding addrExp r1{0} - 32 to local table
+in proc fib2 adding addrExp r1{0} - 96 to local table
+finding final parameters for fib2
+potential param r[tmp + 29]
+found new parameter r[tmp + 29]
+potential param r3
+found new parameter r3
+potential param r9
+found new parameter r9
+potential param r29
+found new parameter r29
+finding final parameters for fib1
+finding final parameters for fib2
+potential param r[tmp + 29]
+found new parameter r[tmp + 29]
+potential param r3
+found new parameter r3
+potential param r9
+found new parameter r9
+potential param r29
+found new parameter r29
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib1 ###
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib2 ###
+finding final parameters for fib1
+potential param r60
+found new parameter r60
+potential param r9
+found new parameter r9
+potential param r29
+found new parameter r29
+finding final parameters for fib2
+potential param r[tmp + 29]
+found new parameter r[tmp + 29]
+potential param r3
+found new parameter r3
+potential param r9
+found new parameter r9
+potential param r29
+found new parameter r29
+finding final parameters for fib2
+potential param r3
+found new parameter r3
+finding final parameters for fib1
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   76 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 720
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=machine("%LR") + 720,   r4=r4{0},   r5=r5{0},   r30=r1{0} - 96,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   82 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL scanf(
+                *c** g3 := machine("%LR") + 736
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=machine("%LR") + 736,   r4=r1{0} - 32,   r5=r5{76},   r6=r6{76},   r7=r7{76},   r8=r8{76},
+                r9=r9{76},   r10=r10{76},   r11=r11{76},   r12=r12{76},   r30=r1{0} - 96,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables: r9 in proc main
+result:    0 *v* r9 := -
+dest is not lib
+call:   86 {*32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *32* g3, *64* r60, *64* r61} := CALL fib1(
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=m[r1{0} - 32]{0},   r4=r4{82},   r5=r5{82},   r6=r6{82},   r7=r7{82},   r8=r8{82},   r9=r9{82},
+                r10=r10{82},   r11=r11{82},   r12=r12{82},   r30=r1{0} - 96,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables: g3,  g30 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:   95 {*v* g3, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 740
+              )
+              Reaching definitions: r[tmp{80} + 30]=r[tmp{80} + 30]{86},   r[tmp{82} + 30]=r[tmp{82} + 30]{86},
+                r[tmp{84} + 30]=r[tmp{84} + 30]{86},   r[tmp{86} + 30]=r[tmp{86} + 30]{86},
+                r[tmp{88} + 30]=r[tmp{88} + 30]{86},   r[tmp{90} + 30]=r[tmp{90} + 30]{86},
+                r[tmp{92} + 30]=r[tmp{92} + 30]{86},   r[tmp{94} + 30]=r[tmp{94} + 30]{86},
+                r[tmp{96} + 30]=r[tmp{96} + 30]{86},   r[tmp{98} + 30]=r[tmp{98} + 30]{86},
+                r[tmp{100} + 30]=r[tmp{100} + 30]{86},   r[tmp{102} + 30]=r[tmp{102} + 30]{86},
+                r[tmp{104} + 30]=r[tmp{104} + 30]{86},   r[tmp{106} + 30]=r[tmp{106} + 30]{86},
+                r[tmp{108} + 30]=r[tmp{108} + 30]{86},   r[tmp{110} + 30]=r[tmp{110} + 30]{86},
+                r[tmp{112} + 30]=r[tmp{112} + 30]{86},   r[tmp{114} + 30]=r[tmp{114} + 30]{86},
+                r[tmp{116} + 30]=r[tmp{116} + 30]{86},   r[tmp{118} + 30]=r[tmp{118} + 30]{86},
+                r[tmp{120} + 30]=r[tmp{120} + 30]{86},   r[tmp{122} + 30]=r[tmp{122} + 30]{86},
+                r[tmp{124} + 30]=r[tmp{124} + 30]{86},   r[tmp{126} + 30]=r[tmp{126} + 30]{86},
+                r[tmp{128} + 30]=r[tmp{128} + 30]{86},   r[tmp{130} + 30]=r[tmp{130} + 30]{86},
+                r[tmp{132} + 30]=r[tmp{132} + 30]{86},   r[tmp{134} + 30]=r[tmp{134} + 30]{86},
+                r[tmp{136} + 30]=r[tmp{136} + 30]{86},   r[tmp{138} + 30]=r[tmp{138} + 30]{86},
+                r[tmp{140} + 30]=r[tmp{140} + 30]{86},   r[tmp{142} + 30]=r[tmp{142} + 30]{86},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[tmp + 30]=r[tmp + 30]{0},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},
+                r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},
+                r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},
+                r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},
+                r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},
+                r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},
+                r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},
+                r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},
+                r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},
+                r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},
+                r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},
+                r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},
+                r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},
+                r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},
+                r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},
+                r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},
+                r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},
+                r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},
+                r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},
+                r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},
+                r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},
+                r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},
+                r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},
+                r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},
+                r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},
+                r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},
+                r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},
+                r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},
+                r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},
+                r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},
+                r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},
+                r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},
+                r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},
+                r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},
+                r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},
+                r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},
+                r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},
+                r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},
+                r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},
+                r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},
+                r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},
+                r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},
+                r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},
+                r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},
+                r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},
+                r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},
+                r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},
+                r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},
+                r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},
+                r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},
+                r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},
+                r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},
+                r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},
+                r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},
+                r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},
+                r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},
+                r[1 + 30]=r[1 + 30]{86},   r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},
+                r[4 + 30]=r[4 + 30]{86},   r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},
+                r[7 + 30]=r[7 + 30]{86},   r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},
+                r[10 + 30]=r[10 + 30]{86},   r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},
+                r[13 + 30]=r[13 + 30]{86},   r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},
+                r[16 + 30]=r[16 + 30]{86},   r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},
+                r[19 + 30]=r[19 + 30]{86},   r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},
+                r[22 + 30]=r[22 + 30]{86},   r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},
+                r[25 + 30]=r[25 + 30]{86},   r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},
+                r[28 + 30]=r[28 + 30]{86},   r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},
+                r[31 + 30]=r[31 + 30]{86},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r0=r3{86},
+                r1=r1{0} - 96,   r3=machine("%LR") + 740,   r4=r4{91},   r5=r5{92},   r6=r6{82},   r7=r7{82},
+                r8=r8{82},   r9=r9{82},   r10=r10{82},   r11=r11{82},   r12=r12{82},   r30=r30{86},
+                r31=machine("%LR"),   r60=r60{86},   r61=r61{86},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   74 {*32* r[1 + 29], *32* r[2 + 29], *32* r[3 + 29], *32* r[4 + 29], *32* r[5 + 29], *32* r[6 + 29], *32* r[7 + 29], *32* r[8 + 29], *32* r[9 + 29], *32* r[10 + 29], *32* r[11 + 29], *32* r[12 + 29], *32* r[13 + 29], *32* r[14 + 29], *32* r[15 + 29], *32* r[16 + 29], *32* r[17 + 29], *32* r[18 + 29], *32* r[19 + 29], *32* r[20 + 29], *32* r[21 + 29], *32* r[22 + 29], *32* r[23 + 29], *32* r[24 + 29], *32* r[25 + 29], *32* r[26 + 29], *32* r[27 + 29], *32* r[28 + 29], *32* r[29 + 29], *32* r[30 + 29], *32* r0, *32* g3, *32* r9, *32* r29, *32* g30, *32* r31, *64* r32, *64* r33, *64* r34, *64* r35, *64* r36, *64* r37, *64* r38, *64* r39, *64* r40, *64* r41, *64* r42, *64* r43, *64* r44, *64* r45, *64* r46, *64* r47, *64* r48, *64* r49, *64* r50, *64* r51, *64* r52, *64* r53, *64* r54, *64* r55, *64* r56, *64* r57, *64* r58, *64* r59, *64* r60} := CALL fib2(
+                *i32* g3 := g3
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 80,   r3=r3{0},
+                r9=r9{0},   r29=r29{0},   r30=r1{0} - 80,   r60=r60{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables: g3,  g30 in proc fib1
+result:    0 *32* g3 := -
+result:    0 *32* g30 := -
+dest is not lib
+call:   79 {*32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *32* g3, *32* g30, *64* r60, *64* r61} := CALL fib1(
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r0=r3{0} - 1,   r1=r1{0} - 96,   r3=r3{0} - 1,
+                r9=r3{0},   r29=r29{0},   r30=r1{0} - 96,   r31=r31{0},   r32=r32{0},   r33=r33{0},   r34=r34{0},
+                r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},   r39=r39{0},   r40=r40{0},   r41=r41{0},
+                r42=r42{0},   r43=r43{0},   r44=r44{0},   r45=r45{0},   r46=r46{0},   r47=r47{0},   r48=r48{0},
+                r49=r49{0},   r50=r50{0},   r51=r51{0},   r52=r52{0},   r53=r53{0},   r54=r54{0},   r55=r55{0},
+                r56=r56{0},   r57=r57{0},   r58=r58{0},   r59=r59{0},   r60=r60{0},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 24]=r3{0},   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31,
+                %flags=SUBFLAGSNS( r3{0}, 1, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 1
+              Live variables:  in proc fib2
+dest is not lib
+call:   86 {*32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[tmp + 30], *32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *i32* g3, *32* g30_2, *64* r60, *64* r61} := CALL fib1(
+              )
+              Reaching definitions: r[tmp{80} + 30]=r[tmp{80} + 30]{79},   r[tmp{82} + 30]=r[tmp{82} + 30]{79},
+                r[tmp{84} + 30]=r[tmp{84} + 30]{79},   r[tmp{86} + 30]=r[tmp{86} + 30]{79},
+                r[tmp{88} + 30]=r[tmp{88} + 30]{79},   r[tmp{90} + 30]=r[tmp{90} + 30]{79},
+                r[tmp{92} + 30]=r[tmp{92} + 30]{79},   r[tmp{94} + 30]=r[tmp{94} + 30]{79},
+                r[tmp{96} + 30]=r[tmp{96} + 30]{79},   r[tmp{98} + 30]=r[tmp{98} + 30]{79},
+                r[tmp{100} + 30]=r[tmp{100} + 30]{79},   r[tmp{102} + 30]=r[tmp{102} + 30]{79},
+                r[tmp{104} + 30]=r[tmp{104} + 30]{79},   r[tmp{106} + 30]=r[tmp{106} + 30]{79},
+                r[tmp{108} + 30]=r[tmp{108} + 30]{79},   r[tmp{110} + 30]=r[tmp{110} + 30]{79},
+                r[tmp{112} + 30]=r[tmp{112} + 30]{79},   r[tmp{114} + 30]=r[tmp{114} + 30]{79},
+                r[tmp{116} + 30]=r[tmp{116} + 30]{79},   r[tmp{118} + 30]=r[tmp{118} + 30]{79},
+                r[tmp{120} + 30]=r[tmp{120} + 30]{79},   r[tmp{122} + 30]=r[tmp{122} + 30]{79},
+                r[tmp{124} + 30]=r[tmp{124} + 30]{79},   r[tmp{126} + 30]=r[tmp{126} + 30]{79},
+                r[tmp{128} + 30]=r[tmp{128} + 30]{79},   r[tmp{130} + 30]=r[tmp{130} + 30]{79},
+                r[tmp{132} + 30]=r[tmp{132} + 30]{79},   r[tmp{134} + 30]=r[tmp{134} + 30]{79},
+                r[tmp{136} + 30]=r[tmp{136} + 30]{79},   r[tmp{138} + 30]=r[tmp{138} + 30]{79},
+                r[tmp{140} + 30]=r[tmp{140} + 30]{79},   r[tmp{142} + 30]=r[tmp{142} + 30]{79},
+                r[tmp + 29]=r[tmp + 29]{0},   r[31 + 29]=r[31 + 29]{79},   r[0 + 29]=r[0 + 29]{79},
+                r[0 + 30]=r[0 + 30]{79},   r[1 + 29]=r[1 + 29]{79},   r[1 + 30]=r[1 + 30]{79},
+                r[2 + 29]=r[2 + 29]{79},   r[2 + 30]=r[2 + 30]{79},   r[3 + 29]=r[3 + 29]{79},
+                r[3 + 30]=r[3 + 30]{79},   r[4 + 29]=r[4 + 29]{79},   r[4 + 30]=r[4 + 30]{79},
+                r[5 + 29]=r[5 + 29]{79},   r[5 + 30]=r[5 + 30]{79},   r[6 + 29]=r[6 + 29]{79},
+                r[6 + 30]=r[6 + 30]{79},   r[7 + 29]=r[7 + 29]{79},   r[7 + 30]=r[7 + 30]{79},
+                r[8 + 29]=r[8 + 29]{79},   r[8 + 30]=r[8 + 30]{79},   r[9 + 29]=r[9 + 29]{79},
+                r[9 + 30]=r[9 + 30]{79},   r[10 + 29]=r[10 + 29]{79},   r[10 + 30]=r[10 + 30]{79},
+                r[11 + 29]=r[11 + 29]{79},   r[11 + 30]=r[11 + 30]{79},   r[12 + 29]=r[12 + 29]{79},
+                r[12 + 30]=r[12 + 30]{79},   r[13 + 29]=r[13 + 29]{79},   r[13 + 30]=r[13 + 30]{79},
+                r[14 + 29]=r[14 + 29]{79},   r[15 + 29]=r[15 + 29]{79},   r[16 + 29]=r[16 + 29]{79},
+                r[17 + 29]=r[17 + 29]{79},   r[18 + 29]=r[18 + 29]{79},   r[19 + 29]=r[19 + 29]{79},
+                r[20 + 29]=r[20 + 29]{79},   r[21 + 29]=r[21 + 29]{79},   r[22 + 29]=r[22 + 29]{79},
+                r[23 + 29]=r[23 + 29]{79},   r[24 + 29]=r[24 + 29]{79},   r[25 + 29]=r[25 + 29]{79},
+                r[26 + 29]=r[26 + 29]{79},   r[27 + 29]=r[27 + 29]{79},   r[28 + 29]=r[28 + 29]{79},
+                r[29 + 29]=r[29 + 29]{79},   r[30 + 29]=r[30 + 29]{79},   r[31 + 29]=r[31 + 29]{79},
+                r[31 + 29]=r60{79},   r[0 + 29]=r[0 + 29]{79},   r[1 + 29]=r30{79},   r[2 + 29]=r31{79},
+                r[3 + 29]=r32{79},   r[4 + 29]=r33{79},   r[5 + 29]=r34{79},   r[6 + 29]=r35{79},   r[7 + 29]=r36{79},
+                r[8 + 29]=r37{79},   r[9 + 29]=r38{79},   r[10 + 29]=r39{79},   r[11 + 29]=r40{79},
+                r[12 + 29]=r41{79},   r[13 + 29]=r42{79},   r[14 + 29]=r43{79},   r[14 + 30]=r[14 + 30]{79},
+                r[15 + 29]=r44{79},   r[15 + 30]=r[15 + 30]{79},   r[16 + 29]=r45{79},   r[16 + 30]=r[16 + 30]{79},
+                r[17 + 29]=r46{79},   r[17 + 30]=r[17 + 30]{79},   r[18 + 29]=r47{79},   r[18 + 30]=r[18 + 30]{79},
+                r[19 + 29]=r48{79},   r[19 + 30]=r[19 + 30]{79},   r[20 + 29]=r49{79},   r[20 + 30]=r[20 + 30]{79},
+                r[21 + 29]=r50{79},   r[21 + 30]=r[21 + 30]{79},   r[22 + 29]=r51{79},   r[22 + 30]=r[22 + 30]{79},
+                r[23 + 29]=r52{79},   r[23 + 30]=r[23 + 30]{79},   r[24 + 29]=r53{79},   r[24 + 30]=r[24 + 30]{79},
+                r[25 + 29]=r54{79},   r[25 + 30]=r[25 + 30]{79},   r[26 + 29]=r55{79},   r[26 + 30]=r[26 + 30]{79},
+                r[27 + 29]=r56{79},   r[27 + 30]=r[27 + 30]{79},   r[28 + 29]=r57{79},   r[28 + 30]=r[28 + 30]{79},
+                r[29 + 29]=r58{79},   r[29 + 30]=r[29 + 30]{79},   r[30 + 29]=r59{79},   r[30 + 30]=r[30 + 30]{79},
+                r[31 + 29]=r[31 + 29]{79},   r[31 + 30]=r[31 + 30]{79},   r0=r9{81} - 2,   r1=r1{0} - 96,
+                r3=r9{81} - 2,   r9=r9{81},   r29=r3{79},   r30=r30{79},   r31=r31{79},   r32=r32{79},   r33=r33{79},
+                r34=r34{79},   r35=r35{79},   r36=r36{79},   r37=r37{79},   r38=r38{79},   r39=r39{79},   r40=r40{79},
+                r41=r41{79},   r42=r42{79},   r43=r43{79},   r44=r44{79},   r45=r45{79},   r46=r46{79},   r47=r47{79},
+                r48=r48{79},   r49=r49{79},   r50=r50{79},   r51=r51{79},   r52=r52{79},   r53=r53{79},   r54=r54{79},
+                r55=r55{79},   r56=r56{79},   r57=r57{79},   r58=r58{79},   r59=r59{79},   r60=r60{79},   r61=r61{79},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 104]=r[tmp + 29]{0},
+                m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 96]=r1{0},   <all>=<all>{79},   tmp=tmp{79},   %flags=%flags{79},   %ZF=%ZF{79},
+                %CF=%CF{79}
+              Live variables: g29,  g3,  g30_2 in proc fib2
+result:    0 *i32* g3 := -
+result:    0 *32* g30_2 := -

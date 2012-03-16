@@ -1,0 +1,346 @@
+Unknown library function f_setarg
+Unknown library function f_setsig
+Unknown library function f_init
+Unknown library function s_wsle
+Unknown library function do_lio
+Unknown library function e_wsle
+Unknown library function s_rsle
+Unknown library function e_rsle
+COMPUTED JUMP at 0x804875e, pDest = r24
+Unknown library function __cxa_atexit
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc atexit adding addrExp r28{0} - 4 to local table
+in proc atexit adding addrExp r28{0} - 8 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+in proc atexit adding addrExp r28{0} - 16 to local table
+in proc atexit adding addrExp r28{0} - 20 to local table
+in proc atexit adding addrExp r28{0} - 24 to local table
+finding final parameters for atexit
+after removing matching assigns (%pc).
+=== about to restart decompilation of MAIN__ because indirect jumps or calls have been analysed
+
+after removing matching assigns (%pc).
+in proc MAIN__ adding addrExp r28{0} - 8 to local table
+in proc MAIN__ adding addrExp r28{0} - 4 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 16 to local table
+in proc MAIN__ adding addrExp r28{0} - 16 to local table
+in proc MAIN__ adding addrExp r28{0} - 16 to local table
+in proc MAIN__ adding addrExp r28{0} - 16 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 32 to local table
+in proc MAIN__ adding addrExp r28{0} - 36 to local table
+in proc MAIN__ adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc MAIN__ adding addrExp r28{0} - 44 to local table
+TYPE ERROR: Existing type at address 0xffffffd4 is not structure or array type
+in proc MAIN__ adding addrExp r28{0} - 48 to local table
+finding final parameters for MAIN__
+potential param r28
+found new parameter r28
+potential param m[r28{0} - 8]
+found new parameter m[r28{0} - 8]
+finding final parameters for MAIN__
+potential param r28
+found new parameter r28
+potential param m[r28{0} - 8]
+found new parameter m[r28{0} - 8]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc MAIN__ adding addrExp r28{0} - 8 to local table
+finding final parameters for atexit
+finding final parameters for MAIN__
+potential param r28
+found new parameter r28
+potential param m[r28{0} - 8]
+found new parameter m[r28{0} - 8]
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local edx has type __size32 * that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   17 {*32* r24, *v* r25, *v* r26} := CALL f_setarg(
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=m[r28{0} + 4]{0},
+                m[r28{0} - 32]=%pc,   m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   21 {*32* r24, *v* r25, *v* r26} := CALL f_setsig(
+              )
+              Reaching definitions: r24=r24{17},   r25=r25{17},   r26=r26{17},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=m[r28{0} + 4]{0},
+                m[r28{0} - 32]=%pc,   m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   25 {*32* r24, *v* r25, *v* r26} := CALL f_init(
+              )
+              Reaching definitions: r24=r24{21},   r25=r25{21},   r26=r26{21},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=m[r28{0} + 4]{0},
+                m[r28{0} - 32]=%pc,   m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   30 {*32* r24, *v* r25, *32* r26} := CALL atexit(
+              )
+              Reaching definitions: r24=r24{25},   r25=r25{25},   r26=r26{25},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=0x8048584,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   34 {*v* r24, *v* r25, *v* r26} := CALL MAIN__(
+                *32* local0 := local0
+              )
+              Reaching definitions: r24=r24{30},   r25=r25{30},   r26=r26{30},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=0x8048584,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   39 {*32* r24, *v* r25, *v* r26} := CALL exit(
+                *i32* local1 := 0
+              )
+              Reaching definitions: r24=r24{34},   r25=r25{34},   r26=r26{34},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} + 8]{0},   m[r28{0} - 28]=0,   m[r28{0} - 32]=%pc,
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 16, r28{0} - 28 ),   %ZF=(r28{0} - 28) = 0,   %CF=(r28{0} - 12) <u 16
+              Live variables:  in proc main
+dest is not lib
+call:   29 {*32* r24, *32* r25, *32* edx, *v* r28} := CALL __cxa_atexit(
+              )
+              Reaching definitions: r24=r24{37},   r26=r26{13},   r27=%pc + 0x11a7,   r28=r28{0} - 24,   r29=r28{0} - 4
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=r24{37},   m[r28{0} - 16]=0,   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,
+                tmp1=r26{13},   %flags=LOGICALFLAGS32( r26{13} ),   %ZF=LOGICALFLAGS32( r26{13} ),
+                %CF=LOGICALFLAGS32( r26{13} )
+              Live variables:  in proc atexit
+dest is not lib
+call:   15 {*32* r24, *v* r25, *v* r26} := CALL s_wsle(
+              )
+              Reaching definitions: r28=r28{0} - 48,   r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 44]=0x8049afc,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 28,
+                %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),   %ZF=(r28{0} - 40) = 0,   %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   30 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r24{15},   r25=r25{15},   r26=r26{15},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 32]=10,   m[r28{0} - 36]=0x804897c
+                m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,
+                %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   37 {*32* r24, *v* r25, *v* r26} := CALL e_wsle(
+              )
+              Reaching definitions: r24=r24{30},   r25=r25{30},   r26=r26{30},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 32]=%pc,
+                m[r28{0} - 36]=0x804897c,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   46 {*32* r24, *v* r25, *v* r26} := CALL s_rsle(
+              )
+              Reaching definitions: r24=r24{37},   r25=r25{37},   r26=r26{37},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 32]=%pc,
+                m[r28{0} - 36]=0x804897c,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x8049b10,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 32) + 4,   %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),   %ZF=(r28{0} - 40) = 0,
+                %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   62 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r28{0} - 8,   r25=r25{46},   r26=r26{46},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 32]=4,   m[r28{0} - 36]=r28{0} - 8
+                m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489b0,   m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,
+                %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   69 {*32* r24, *v* r25, *v* r26} := CALL e_rsle(
+              )
+              Reaching definitions: r24=r24{62},   r25=r25{62},   r26=r26{62},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 32]=%pc,
+                m[r28{0} - 36]=r28{0} - 8,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489b0,   m[r28{0} - 48]=%pc
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:   92 {*32* r24, *v* r25, *v* r26} := CALL s_wsle(
+              )
+              Reaching definitions: r24=0x8048760,   r25=r25{69},   r26=r26{69},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r28{0} - 8,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x8049b24
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 32) + 4,   %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),
+                %ZF=(r28{0} - 40) = 0,   %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  107 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r24{92},   r25=r25{92},   r26=r26{92},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,   m[r28{0} - 32]=18
+                m[r28{0} - 36]=0x8048986,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  114 {*32* r24, *32* r25, *32* r26} := CALL e_wsle(
+              )
+              Reaching definitions: r24=r24{107},   r25=r25{107},   r26=r26{107},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=0x8048986,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  124 {*32* r24, *v* r25, *v* r26} := CALL s_wsle(
+              )
+              Reaching definitions: r24=0x8048760,   r25=r25{69},   r26=r26{69},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r28{0} - 8,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x8049b38
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 32) + 4,   %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),
+                %ZF=(r28{0} - 40) = 0,   %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  139 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r24{124},   r25=r25{124},   r26=r26{124},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,   m[r28{0} - 32]=4,
+                m[r28{0} - 36]=0x8048998,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  146 {*32* r24, *32* r25, *32* r26} := CALL e_wsle(
+              )
+              Reaching definitions: r24=r24{139},   r25=r25{139},   r26=r26{139},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=0x8048998,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  156 {*32* r24, *v* r25, *v* r26} := CALL s_wsle(
+              )
+              Reaching definitions: r24=0x8048760,   r25=r25{69},   r26=r26{69},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r28{0} - 8,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x8049b4c
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 32) + 4,   %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),
+                %ZF=(r28{0} - 40) = 0,   %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  171 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r24{156},   r25=r25{156},   r26=r26{156},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,   m[r28{0} - 32]=6,
+                m[r28{0} - 36]=0x804899c,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  178 {*32* r24, *32* r25, *32* r26} := CALL e_wsle(
+              )
+              Reaching definitions: r24=r24{171},   r25=r25{171},   r26=r26{171},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=0x804899c,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  188 {*32* r24, *v* r25, *v* r26} := CALL s_wsle(
+              )
+              Reaching definitions: r24=0x8048760,   r25=r25{69},   r26=r26{69},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=r28{0} - 8,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x8049b60
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 32) + 4,   %flags=SUBFLAGS32( r28{0} - 28, 12, r28{0} - 40 ),
+                %ZF=(r28{0} - 40) = 0,   %CF=(r28{0} - 28) <u 12
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  203 {*32* r24, *v* r25, *v* r26} := CALL do_lio(
+              )
+              Reaching definitions: r24=r24{188},   r25=r25{188},   r26=r26{188},   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,   m[r28{0} - 32]=5,
+                m[r28{0} - 36]=0x80489a2,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,   m[r28{0} - 48]=%pc,
+                tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__
+dest is not lib
+call:  210 {*32* r24, *32* r25, *32* r26} := CALL e_wsle(
+              )
+              Reaching definitions: r24=r24{203},   r25=r25{203},   r26=r26{203},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 16]=0x8048760,
+                m[r28{0} - 32]=%pc,   m[r28{0} - 36]=0x80489a2,   m[r28{0} - 40]=0x80489a8,   m[r28{0} - 44]=0x80489ac,
+                m[r28{0} - 48]=%pc,   tmp1=(r28{0} - 48) + 4,   %flags=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),
+                %ZF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 ),   %CF=ADDFLAGS32( r28{0} - 44, 16, r28{0} - 28 )
+              Live variables:  in proc MAIN__

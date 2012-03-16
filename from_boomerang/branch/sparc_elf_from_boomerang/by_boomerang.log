@@ -1,0 +1,283 @@
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+local o0 has type char * that doesn't agree with type of define void of a library, why?
+local o1 has type int * that doesn't agree with type of define void of a library, why?
+local o6 has type void * that doesn't agree with type of define void of a library, why?
+local o1 has type void that doesn't agree with type of define __size32 of a library, why?
+local o0 has type void that doesn't agree with type of define __size32 of a library, why?
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+local o0 has type void that doesn't agree with type of define __size32 of a library, why?
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+local o0 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   32 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL scanf(
+                *c** o0 := "%d"
+                *i32** o1 := a[local0]
+              )
+              Reaching definitions: r8=0x11728,   r9=r14{0} - 20,   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 120,   r15=r15{0},   r16=0x11728,   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},
+                m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   36 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL scanf(
+                *c** o0 := "%d"
+                *u32** o1 := a[local1]
+              )
+              Reaching definitions: r8=0x11728,   r9=r14{0} - 24,   r10=r10{32},   r11=r11{32},   r12=r12{32},
+                r13=r13{32},   r14=r14{0} - 120,   r15=r15{32},   r16=0x11728,   r17=r17{0},   r18=r18{0},   r19=r19{0}
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},
+                m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   45 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Equal
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11730,   r9=r9{36},   r10=r10{36},   r11=r11{36},
+                r12=r12{36},   r13=r13{36},   r14=r14{0} - 120,   r15=r15{36},   r16=5,   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main
+dest is not lib
+call:   53 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Not Equal
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11738,   r9=r9{164},   r10=r10{165},
+                r11=r11{166},   r12=r12{167},   r13=r13{168},   r14=r14{0} - 120,   r15=r15{170},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=%ZF{173},   %CF=%CF{174}
+              Live variables:  in proc main
+dest is not lib
+call:   61 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Greater
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11748,   r9=r9{176},   r10=r10{177},
+                r11=r11{178},   r12=r12{179},   r13=r13{180},   r14=r14{0} - 120,   r15=r15{182},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main
+dest is not lib
+call:   69 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Less or Equal
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11758,   r9=r9{184},   r10=r10{185},
+                r11=r11{186},   r12=r12{187},   r13=r13{188},   r14=r14{0} - 120,   r15=r15{190},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main
+dest is not lib
+call:   77 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Greater or Equal
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11768,   r9=r9{193},   r10=r10{194},
+                r11=r11{195},   r12=r12{196},   r13=r13{197},   r14=r14{0} - 120,   r15=r15{199},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=%ZF{202},   %CF=%CF{203}
+              Live variables:  in proc main
+dest is not lib
+call:   85 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Less
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x11780,   r9=r9{205},   r10=r10{206},
+                r11=r11{207},   r12=r12{208},   r13=r13{209},   r14=r14{0} - 120,   r15=r15{211},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main
+dest is not lib
+call:   93 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Greater Unsigned
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 24]{0},   r8=0x11788,   r9=r9{85},   r10=r10{85},   r11=r11{85},
+                r12=r12{85},   r13=r13{85},   r14=r14{0} - 120,   r15=r15{85},   r16=5,   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 24]{0}, 5 - m[r14{0} - 24]{0} ),   %ZF=(5 - m[r14{0} - 24]{0}) = 0,
+                %CF=5 <u m[r14{0} - 24]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  101 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Less or Equal Unsigned
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 24]{0},   r8=0x117a0,   r9=r9{213},   r10=r10{214},
+                r11=r11{215},   r12=r12{216},   r13=r13{217},   r14=r14{0} - 120,   r15=r15{219},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 24]{0}, 5 - m[r14{0} - 24]{0} ),   %ZF=(5 - m[r14{0} - 24]{0}) = 0,
+                %CF=5 <u m[r14{0} - 24]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  109 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Carry Clear
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 24]{0},   r8=0x117b8,   r9=r9{221},   r10=r10{222},
+                r11=r11{223},   r12=r12{224},   r13=r13{225},   r14=r14{0} - 120,   r15=r15{227},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 24]{0}, 5 - m[r14{0} - 24]{0} ),   %ZF=(5 - m[r14{0} - 24]{0}) = 0,
+                %CF=5 <u m[r14{0} - 24]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  117 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Carry Set
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 24]{0},   r8=0x117c8,   r9=r9{229},   r10=r10{230},
+                r11=r11{231},   r12=r12{232},   r13=r13{233},   r14=r14{0} - 120,   r15=r15{235},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 24]{0}, 5 - m[r14{0} - 24]{0} ),   %ZF=(5 - m[r14{0} - 24]{0}) = 0,
+                %CF=5 <u m[r14{0} - 24]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  125 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Minus
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x117d8,   r9=r9{237},   r10=r10{238},
+                r11=r11{239},   r12=r12{240},   r13=r13{241},   r14=r14{0} - 120,   r15=r15{243},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  133 {*v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Plus
+"
+              )
+              Reaching definitions: r0=5 - m[r14{0} - 20]{0},   r8=0x117e0,   r9=r9{245},   r10=r10{246},
+                r11=r11{247},   r12=r12{248},   r13=r13{249},   r14=r14{0} - 120,   r15=r15{251},   r16=5,   r17=r17{0}
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0} - 24]=m[r14{0} - 24]{0},   m[r14{0}]=r16{0},   tmp=5,
+                %flags=SUBFLAGS( 5, m[r14{0} - 20]{0}, 5 - m[r14{0} - 20]{0} ),   %ZF=(5 - m[r14{0} - 20]{0}) = 0,
+                %CF=5 <u m[r14{0} - 20]{0}
+              Live variables:  in proc main

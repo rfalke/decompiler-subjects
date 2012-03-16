@@ -1,0 +1,61 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+warning: textDelta different for section .got (ignoring).
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 1 procs
+decompiling...
+decompiling entry point main
+ considering main
+ decompiling main
+rrrrprrrtglobal type analysis for main
+generating code...
+WARNING: no out edge for this BB in main:
+Invalid BB:
+in edges: 100004e0 
+out edges: 
+100004e4
+100004e8
+100004ec
+100004f0
+100004f4
+100004f8
+100004fc
+10000500
+10000504
+10000508
+1000050c
+10000510
+10000514
+10000518
+1000051c
+10000520
+10000524
+10000528
+1000052c
+10000530
+10000534
+10000538
+1000053c
+10000540
+10000544
+10000548
+1000054c
+10000550
+10000554
+
+WARNING: no out edge for this BB in main:
+L4: Invalid BB:
+in edges: 10000594 
+out edges: 
+1001057c
+
+WARNING: no out edge for this BB in main:
+L5: Invalid BB:
+in edges: 100005a8 
+out edges: 
+100104d8
+
+output written to _output/subject
+completed in 1 sec.

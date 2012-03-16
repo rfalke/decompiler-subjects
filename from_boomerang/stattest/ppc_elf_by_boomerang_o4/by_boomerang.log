@@ -1,0 +1,36 @@
+Unknown library function __xstat
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 128 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 128 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g5 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g5 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   12 {*j32* g3_1, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL __xstat(
+              )
+              Reaching definitions: r1=r1{0} - 128,   r3=3,   r4=0x10000838,   r5=r1{0} - 112,   r29=r29{0},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},
+                m[r1{0} - 128]=r1{0}
+              Live variables: g3_1 in proc main
+result:    0 *j32* g3_1 := -
+dest is not lib
+call:   21 {*v* g3, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "Stat returns %d; size of file is %d
+"
+                *j32* g4 := g3_1
+                *j32* g5 := local0
+              )
+              Reaching definitions: r1=r1{0} - 128,   r3=0x10000850,   r4=r3{12},   r5=m[r1{0} - 68]{0},   r6=r6{12},
+                r7=r7{12},   r8=r8{12},   r9=r9{12},   r10=r10{12},   r11=r11{12},   r12=r12{12},   r29=r3{12},   r65=0
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},   m[r1{0} - 68]=m[r1{0} - 68]{0},
+                m[r1{0} - 128]=r1{0}
+              Live variables:  in proc main

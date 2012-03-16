@@ -1,0 +1,3 @@
+Error: Instruction at 0x1d90 branches beyond end of section, to 0x11d8c
+Unknown library function putchar
+Error: Instruction at 0x1d80 branches beyond end of section, to 0x11d58

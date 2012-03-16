@@ -1,0 +1,74 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x6c of type __size64 which weaves after <noname> at 0x68 of type __size64
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type int that doesn't agree with type of define void of a library, why?
+local g4 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   77 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 788
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r3=machine("%LR") + 788,   r4=-2,
+                r5=machine("%LR"),   r29=r3{0},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   83 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 788
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 788,   r4=-2,   r5=r5{77},   r6=r6{77},   r7=r7{77},   r8=r8{77},   r9=r9{77},
+                r10=r10{77},   r11=r11{77},   r12=r12{77},   r29=r3{0},   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   89 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 788
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 788,   r4=0,   r5=r5{83},   r6=r6{83},   r7=r7{83},   r8=r8{83},   r9=r9{83},
+                r10=r10{83},   r11=r11{83},   r12=r12{83},   r29=r3{0},   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:  101 {*v* g4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 788
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 788,   r4=r4{178},   r5=r5{89},   r6=r6{89},   r7=r7{89},   r8=machine("%LR"),
+                r9=r9{89},   r10=r10{89},   r11=r11{89},   r12=r12{89},   r29=r3{0},   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31,   %flags=SUBFLAGSNS( r4{177}, 3, 0 ),
+                %ZF=0 = 0,   %CF=r4{177} <u 3
+              Live variables:  in proc main
+dest is not lib
+call:  107 {*32* g4, *32* r5, *v* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 788
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 788,   r4=3,   r5=r5{101},   r6=r6{101},   r7=machine("%LR"),   r8=r8{101},
+                r9=r9{101},   r10=r10{101},   r11=r11{101},   r12=r12{101},   r29=r3{0},   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},
+                m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31,   %flags=SUBFLAGSNS( r4{177}, 3, 0 ),
+                %ZF=0 = 0,   %CF=r4{177} <u 3
+              Live variables:  in proc main

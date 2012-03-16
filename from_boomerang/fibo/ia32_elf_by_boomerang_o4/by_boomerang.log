@@ -1,0 +1,173 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib ###
+in proc fib adding addrExp r28{0} - 16 to local table
+in proc fib adding addrExp r28{0} - 20 to local table
+in proc fib adding addrExp r28{0} - 24 to local table
+in proc fib adding addrExp r28{0} - 4 to local table
+in proc fib adding addrExp r28{0} - 8 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 16 to local table
+in proc fib adding addrExp r28{0} - 20 to local table
+in proc fib adding addrExp r28{0} - 20 to local table
+in proc fib adding addrExp r28{0} - 24 to local table
+in proc fib adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc fib adding addrExp r28{0} - 8 to local table
+in proc fib adding addrExp r28{0} - 12 to local table
+in proc fib adding addrExp r28{0} - 16 to local table
+TYPE ERROR: Existing type at address 0xfffffff0 is not structure or array type
+in proc fib adding addrExp r28{0} - 20 to local table
+TYPE ERROR: Existing type at address 0xffffffec is not structure or array type
+in proc fib adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+finding final parameters for fib
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+local eax has type int that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   16 {*32* eax, *v* r25, *v* r26} := CALL printf(
+                *c** local1 := "Input number: "
+              )
+              Reaching definitions: r27=r27{0},   r28=r28{0} - 24,   r29=r28{0} - 4,   r30=r30{0},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r30{0},
+                m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=0x80488b8,   m[r28{0} - 24]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 4, r28{0} - 8 ),   %ZF=(r28{0} - 8) = 0,   %CF=(r28{0} - 4) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   25 {*32* eax, *v* r25, *v* r26} := CALL scanf(
+                *c** local2 := "%d"
+                *i32** local3 := a[local0]
+              )
+              Reaching definitions: r24=r28{0} - 8,   r25=r25{16},   r26=r26{16},   r27=r27{0},   r28=r28{0} - 32,
+                r29=r28{0} - 4,   r30=r30{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},
+                m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},   m[r28{0} - 20]=0x80488b8,   m[r28{0} - 24]=r28{0} - 8
+                m[r28{0} - 28]=0x80488c7,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 4, r28{0} - 8 ),   %ZF=(r28{0} - 8) = 0,   %CF=(r28{0} - 4) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   39 *32* eax_1 := CALL fib(
+                *i32* local4 := local4
+              )
+              Reaching definitions: r24=m[r28{0} - 8]{0} - 1,   r25=r25{25},   r26=r26{25},   r27=m[r28{0} - 8]{0},
+                r28=r28{0} - 24,   r29=r28{0} - 4,   r30=r30{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} - 20]{34},   m[r28{0} - 24]=%pc,   m[r28{0} - 28]=0x80488c7,
+                m[r28{0} - 32]=%pc,   tmp1=m[r28{0} - 8]{0} - 1,
+                %flags=SUBFLAGS32( m[r28{0} - 8]{0}, 1, m[r28{0} - 8]{0} - 1 ),   %ZF=(m[r28{0} - 8]{0} - 1) = 0,
+                %CF=m[r28{0} - 8]{0} <u 1
+              Live variables: eax_1 in proc main
+result:    0 *32* eax_1 := -
+dest is not lib
+call:   47 *32* eax := CALL fib(
+                *i32* local5 := local5
+              )
+              Reaching definitions: r24=m[r28{0} - 8]{0} - 2,   r25=r25{25},   r26=r26{25},   r27=m[r28{0} - 8]{0},
+                r28=r28{0} - 28,   r29=r28{0} - 4,   r30=r24{39},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=m[r28{0} - 20]{34},   m[r28{0} - 24]=m[r28{0} - 24]{42},   m[r28{0} - 28]=%pc,
+                m[r28{0} - 32]=%pc,   tmp1=m[r28{0} - 8]{0} - 1,
+                %flags=SUBFLAGS32( m[r28{0} - 8]{0}, 1, m[r28{0} - 8]{0} - 1 ),   %ZF=(m[r28{0} - 8]{0} - 1) = 0,
+                %CF=m[r28{0} - 8]{0} <u 1
+              Live variables: eax in proc main
+result:    0 *32* eax := -
+dest is not lib
+call:   65 {*32* eax, *32* r25, *32* r26} := CALL printf(
+                *c** local2 := "fibonacci(%d) = %d
+"
+                *i32* local5 := local0
+                *i32* local4 := eax
+              )
+              Reaching definitions: r24=r24{79},   r25=r25{25},   r26=r26{25},   r27=m[r28{0} - 8]{0},
+                r28=(r28{0} - 16) - 16,   r29=r28{0} - 4,   r30=r30{81},   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r30{0},   m[r28{0} - 16]=r27{0},
+                m[r28{0} - 20]=r24{79},   m[r28{0} - 24]=m[r28{0} - 8]{0},   m[r28{0} - 28]=0x80488ca,
+                m[r28{0} - 32]=%pc,   tmp1=tmp1{82},   %flags=%flags{83},   %ZF=%ZF{84},   %CF=%CF{85}
+              Live variables:  in proc main
+dest is not lib
+call:   18 *32* eax_1 := CALL fib(
+                *i32* local3 := param1 - 1
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 1,   r27=m[r28{0} + 4]{0},   r28=r28{0} - 20,
+                r29=r28{0} - 4,   r30=r30{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r30{0},   m[r28{0} - 12]=r27{0},   m[r28{0} - 16]=m[r28{0} + 4]{0} - 1,
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=m[r28{0} - 24]{0},   tmp1=m[r28{0} + 4]{0} - 1,
+                %flags=SUBFLAGS32( m[r28{0} + 4]{0}, 1, m[r28{0} + 4]{0} - 1 ),   %ZF=(m[r28{0} + 4]{0} - 1) = 0,
+                %CF=m[r28{0} + 4]{0} <u 1
+              Live variables: eax_1 in proc fib
+result:    0 *32* eax_1 := -
+dest is not lib
+call:   26 *32* eax := CALL fib(
+                *i32* local4 := param1 - 2
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r27=m[r28{0} + 4]{0},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r30=r24{18},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=r30{0},   m[r28{0} - 12]=r27{0},   m[r28{0} - 16]=m[r28{0} + 4]{0} - 1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0} - 2,   m[r28{0} - 24]=%pc,   <all>=<all>{18},   tmp1=tmp1{18},
+                %flags=%flags{18},   %ZF=%ZF{18},   %CF=%CF{18}
+              Live variables: eax in proc fib
+result:    0 *32* eax := -

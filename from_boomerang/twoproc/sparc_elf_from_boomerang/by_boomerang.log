@@ -1,0 +1,70 @@
+after removing matching assigns (t[WILDSTR]).
+finding final parameters for proc1
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+after removing matching assigns (t[WILDSTR]).
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+dest is not lib
+call:   29 *j32* o0 := CALL proc1(
+                *32* o0 := 11
+                *32* o1 := 4
+              )
+              Reaching definitions: r8=11,   r9=4,   r10=r10{0},   r11=r11{0},   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 96,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},
+                r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables: o0 in proc main
+result:    0 *j32* o0 := -
+dest is not lib
+call:   59 {*32* o0, *32* r10, *32* r11, *32* r12, *32* r13, *v* r14, *32* r15} := CALL printf(
+                *c** o0 := "%i
+"
+                *j32* o1 := o0
+              )
+              Reaching definitions: r2=0x20800,   r8=0x20858,   r9=r8{29},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0},   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r24{0},   r25=r25{0},   r26=r26{0},
+                r27=r27{0},   r28=r28{0},   r29=r29{0},   r30=r30{0},   r31=r31{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=0x20858
+              Live variables: o0 in proc main
+result:    0 *32* o0 := -

@@ -1,0 +1,104 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 1 procs
+decompiling...
+decompiling entry point main
+ considering main
+rpttglobal type analysis for main
+tigenerating code...
+WARNING: no out edge for this BB in main:
+L9: Invalid BB:
+in edges: 1a80 1a78 1b64 1ba0 1ba4 1b20 
+out edges: 
+00000000
+00001ba8
+00001bac
+00001bb0
+00001bb4
+00001bb8
+00001bbc
+00001bc0
+
+WARNING: no out edge for this BB in main:
+Call BB:
+in edges: 1b78 
+out edges: 
+00001b7c
+00001b80
+00001b84
+00001b88  200 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=r2{190},   r3=-61,
+                r4=sgnex(8,32,r2{190}),   r5=machine("%LR") + 0x5f8,   r6=machine("%LR"),   r7=r7{0},   r9=r9{0},
+                r12=r12{0},   r28=r4{0},   r29=r5{0},   r30=0,   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},
+                r66=r66{0},   r67=r67{0},   r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( sgnex(8,32,r2{190}), 47, 0 ),   %ZF=0 = 0,
+                %CF=sgnex(8,32,r2{190}) <u 47
+              Live variables: 
+
+WARNING: no out edge for this BB in main:
+L6: Call BB:
+in edges: 1a70 1aa4 1b58 1b44 1b2c 
+out edges: 
+00000000
+00001b5c  187 <all> := CALL main(<all>)
+              Reaching definitions: 
+              Live variables: 
+
+WARNING: no out edge for this BB in main:
+L3: Call BB:
+in edges: 1a28 
+out edges: 
+00001a3c
+00001a40
+00001a44
+00001a48  112 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=-94,   r4=r3{0} - 27,   r5=r5{0},   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, r4{0}, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u r4{0}
+              Live variables: 
+
+WARNING: no out edge for this BB in main:
+Call BB:
+in edges: 1a28 
+out edges: 
+00001a2c
+00001a30
+00001a34
+00001a38  106 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=r3{0} + 1,   r4=r4{0},   r5=r5{0},   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, r4{0}, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u r4{0}
+              Live variables: 
+
+WARNING: no out edge for this BB in main:
+Call BB:
+in edges: 19f0 
+out edges: 
+000019f4
+000019f8
+000019fc
+00001a00   85 <all> := CALL main(<all>)
+              Reaching definitions: r[tmp + 28]=r[tmp + 28]{0},   r0=r0{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=-86,   r4=0,   r5=r5{0} + 1,   r6=r6{1},   r7=r7{0},   r9=r9{0},   r12=r12{0},   r28=r4{0},
+                r29=r5{0},   r30=r3{0},   r31=machine("%LR"),   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0},
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=r6{1},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 96]=r[tmp + 28]{0},   m[r1{0} + 100]=r[tmp + 28]{0},
+                m[r1{0} + 104]=r[tmp + 28]{0},   m[r1{0} + 108]=r[tmp + 28]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                tmp_mask=tmp_mask{0},   %flags=SUBFLAGSNS( r3{0}, 2, 4 ),   %ZF=4 = 0,   %CF=r3{0} <u 2
+              Live variables: 
+
+output written to _output/subject
+completed in 0 secs.

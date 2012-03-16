@@ -1,0 +1,121 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 72 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 64 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 60 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 56 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 52 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 80 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 72 to local table
+in proc main adding addrExp r1{0} - 68 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 44 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 64 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 60 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 56 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 52 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 40 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 36 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+local g3 has type char * that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:  133 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "Failed!
+"
+              )
+              Reaching definitions: r0=m[r1{0} - 48]{172},   r1=r1{0} - 80,   r3=0x10000acc,   r4=r4{0},
+                r9=0x10000000,   r11=r11{153},   r31=r1{0} - 80,   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0}
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),
+                m[r1{0} - 4]=r31{0},   m[r1{0} - 24]=m[r1{0} - 24]{171},   m[r1{0} - 28]=m[r1{0} - 28]{170},
+                m[r1{0} - 32]=m[r1{0} - 32]{169},   m[r1{0} - 36]=m[r1{0} - 36]{168},
+                m[r1{0} - 40]=m[r1{0} - 40]{167},   m[r1{0} - 44]=m[r1{0} - 40]{167},
+                m[r1{0} - 48]=m[r1{0} - 48]{172},   m[r1{0} - 52]=m[r1{0} - 24]{171},
+                m[r1{0} - 56]=m[r1{0} - 28]{170},   m[r1{0} - 60]=m[r1{0} - 32]{169},
+                m[r1{0} - 64]=m[r1{0} - 36]{168},   m[r1{0} - 68]=r4{0},   m[r1{0} - 72]=r3{0},   m[r1{0} - 80]=r1{0},
+                %flags=SUBFLAGSNS( m[r1{0} - 48]{172}, 0, 7 ),   %ZF=7 = 0,   %CF=m[r1{0} - 48]{172} <u 0
+              Live variables:  in proc main
+dest is not lib
+call:  127 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "Pass
+"
+              )
+              Reaching definitions: r0=m[r1{0} - 48]{172},   r1=r1{0} - 80,   r3=0x10000ac4,   r4=r4{0},
+                r9=0x10000000,   r11=r11{153},   r31=r1{0} - 80,   r64=r64{0},   r65=r65{0},   r66=r66{0},   r67=r67{0}
+                r68=r68{0},   r69=r69{0},   r70=r70{0},   r71=r71{0},   m[r1{0} + 4]=machine("%LR"),
+                m[r1{0} - 4]=r31{0},   m[r1{0} - 24]=m[r1{0} - 24]{171},   m[r1{0} - 28]=m[r1{0} - 28]{170},
+                m[r1{0} - 32]=m[r1{0} - 32]{169},   m[r1{0} - 36]=m[r1{0} - 36]{168},
+                m[r1{0} - 40]=m[r1{0} - 40]{167},   m[r1{0} - 44]=m[r1{0} - 40]{167},
+                m[r1{0} - 48]=m[r1{0} - 48]{172},   m[r1{0} - 52]=m[r1{0} - 24]{171},
+                m[r1{0} - 56]=m[r1{0} - 28]{170},   m[r1{0} - 60]=m[r1{0} - 32]{169},
+                m[r1{0} - 64]=m[r1{0} - 36]{168},   m[r1{0} - 68]=r4{0},   m[r1{0} - 72]=r3{0},   m[r1{0} - 80]=r1{0},
+                %flags=SUBFLAGSNS( m[r1{0} - 48]{172}, 0, 7 ),   %ZF=7 = 0,   %CF=m[r1{0} - 48]{172} <u 0
+              Live variables:  in proc main

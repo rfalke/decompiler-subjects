@@ -1,0 +1,61 @@
+ERROR: attempted to decode outside any known segment 0x1001057c
+ERROR: attempted to decode outside any known segment 0x100104d8
+ERROR: attempted to decode outside any known segment 0x100104b8
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 112 to local table
+in proc main adding addrExp r1{0} - 128 to local table
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 8 to local table
+in proc main adding addrExp r1{0} - 16 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} - 112 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 112 to local table
+local g3 has type size_t that doesn't agree with type of define __size32 of a library, why?
+local g5 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g9 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local g3 has type __size32 that doesn't agree with type of define int of a library, why?
+local g3 has type int that doesn't agree with type of define void of a library, why?
+local g5 has type void that doesn't agree with type of define __size32 of a library, why?
+local g9 has type void that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   19 {*32* g3, *v* r4, *v* g5, *v* r6, *v* r7, *v* r8, *v* g9, *v* r10, *v* r11, *v* r12} := CALL malloc(
+                *size_t* g3 := 12
+              )
+              Reaching definitions: r1=r1{0} - 128,   r3=12,   r4=r4{0},   r5=r5{0},   r25=0x10000000,   r26=1,
+                r27=r1{0} - 112,   r28=r28{0},   r29=r29{0},   r30=r30{0},   r31=r31{0},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 8]=r30{0},   m[r1{0} - 12]=r29{0},
+                m[r1{0} - 16]=r28{0},   m[r1{0} - 20]=r27{0},   m[r1{0} - 24]=r26{0},   m[r1{0} - 28]=r25{0},
+                m[r1{0} - 112]=m[r1{0} - 112]{0},   m[r1{0} - 128]=r1{0}
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:   28 {*i32* g3, *v* r4, *v* g5, *v* r6, *v* r7, *j32* r8, *v* g9, *32* r10, *j32* r11, *v* r12} := CALL strlen(
+                *[c]** g3 := g3
+              )
+              Reaching definitions: r0=0x10000990,   r1=r1{0} - 128,   r3=r3{25},   r4=0x10000000,   r5=r5{19},
+                r6=r6{19},   r7=r7{19},   r8=r8{19},   r9=r9{19},   r10=r10{19},   r11=r11{19},   r12=r12{19},
+                r25=0x10000000,   r26=1,   r27=r1{0} - 112,   r28=r28{0},   r29=r29{0},   r30=r3{19} + 4,   r31=r31{0},
+                r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 8]=r30{0},
+                m[r1{0} - 12]=r29{0},   m[r1{0} - 16]=r28{0},   m[r1{0} - 20]=r27{0},   m[r1{0} - 24]=r26{0},
+                m[r1{0} - 28]=r25{0},   m[r1{0} - 112]=m[r1{0} - 112]{0},   m[r1{0} - 128]=r1{0}
+              Live variables: g3 in proc main
+result:    0 *i32* g3 := -
+dest is not lib
+call:   86 {*v* g3, *v* r4, *v* g5, *v* r6, *v* r7, *v* r8, *v* g9, *v* r10, *v* r11, *v* r12} := CALL puts(
+                *c** g3_1 := a[local0]
+              )
+              Reaching definitions: r0=0x10000990,   r1=r1{0} - 128,   r3=r1{0} - 112,   r4=r4{28},   r5=r5{110},
+                r6=r6{28},   r7=r7{28},   r8=r8{111},   r9=r9{112},   r10=r10{113},   r11=r11{114},   r12=r12{28},
+                r25=0x10000000,   r26=1,   r27=r1{0} - 112,   r28=(r31{109} rl 3) & -7,   r29=1,   r30=r3{19} + 4,
+                r31=r31{109},   r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 8]=r30{0},
+                m[r1{0} - 12]=r29{0},   m[r1{0} - 16]=r28{0},   m[r1{0} - 20]=r27{0},   m[r1{0} - 24]=r26{0},
+                m[r1{0} - 28]=r25{0},   m[r1{0} - 112]=m[r1{0} - 112]{0},   m[r1{0} - 128]=r1{0},   tmp_mask=-7,
+                %flags=%flags{115},   %ZF=%ZF{116},   %CF=%CF{117}
+              Live variables:  in proc main

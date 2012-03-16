@@ -1,0 +1,35 @@
+after removing matching assigns (%pc).
+size 0x20 meet with size 0x1!
+size 0x1 meet with size 0x20!
+size 0x1 meet with size 0x20!
+size 0x20 meet with size 0x1!
+size 0x1 meet with size 0x20!
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   27 {*v* g3, *32* r5, *v* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "Result is %d
+"
+                *j32* g4 := 0
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000828,   r4=0,   r5=machine("%LR"),   r31=0,   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0},
+                %flags=SUBFLAGSNS( r3{0}, 1, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 1
+              Live variables:  in proc main
+dest is not lib
+call:   15 {*v* g3, *32* r5, *v* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "Result is %d
+"
+                *j32* g4 := 1
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=0x10000828,   r4=1,   r5=machine("%LR"),   r31=1,   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0},
+                %flags=SUBFLAGSNS( r3{0}, 1, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 1
+              Live variables:  in proc main

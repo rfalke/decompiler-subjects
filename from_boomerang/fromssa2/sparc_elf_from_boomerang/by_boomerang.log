@@ -1,0 +1,72 @@
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+local o1 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+local o2 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   33 {*v* o0, *32* r11, *32* r12, *32* r13, *v* r14, *32* r15} := CALL printf(
+                *c** o0 := "%d "
+                *j32* o1 := o0_1 + 1
+              )
+              Reaching definitions: r0=r0{72},   r8=0x10768,   r9=r8{73} + 1,   r10=r10{75},   r11=r11{76},
+                r12=r12{77},   r13=r13{78},   r14=r14{0} - 112,   r15=r15{80},   r16=0x10400,   r17=r17{0},
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{73} + 1,
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},
+                tmp=r8{73},   %flags=%flags{83},   %ZF=%ZF{84},   %CF=%CF{85}
+              Live variables:  in proc main
+dest is not lib
+call:   43 {*v* o0, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0 := "a is %d, x is %d
+"
+                *j32* o1 := o0_1 + 1
+                *j32* o2 := o0_1 + 1
+              )
+              Reaching definitions: r0=r8{73} - 8,   r1=0x10400,   r8=0x10770,   r9=r8{73} + 1,   r10=r8{73} + 1,
+                r11=r11{33},   r12=r12{33},   r13=r13{33},   r14=r14{0} - 112,   r15=r15{33},   r16=0x10400,
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{73} + 1,   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r8{73} + 1,   %flags=SUBFLAGS( r8{73} + 1, 9, r8{73} - 8 ),
+                %ZF=(r8{73} - 8) = 0,   %CF=(r8{73} + 1) <u 9
+              Live variables:  in proc main

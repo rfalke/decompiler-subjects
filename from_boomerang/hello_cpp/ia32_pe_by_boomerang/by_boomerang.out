@@ -1,0 +1,9 @@
+Warning! Microdisassembler out of step at offset 0x11d0a
+Warning! Microdisassembler out of step at offset 0x11d0a
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+decoding anything undecoded...

@@ -1,0 +1,74 @@
+after removing matching assigns (%pc).
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 4 to local table
+in proc fib adding addrExp r1{0} - 12 to local table
+in proc fib adding addrExp r1{0} + 4 to local table
+in proc fib adding addrExp r1{0} + 4 to local table
+TYPE ERROR: Existing type at address 0x4 is not structure or array type
+in proc fib adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc fib adding addrExp r1{0} - 12 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+finding final parameters for fib
+potential param r3
+found new parameter r3
+finding final parameters for fib
+potential param r3
+found new parameter r3
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 12 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+finding final parameters for fib
+potential param r3
+found new parameter r3
+local g3 has type int that doesn't agree with type of define void of a library, why?
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    9 {*32* g3_2, *32* r5} := CALL fib(
+                *i32* g3 := 9
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=9,   r4=r4{0},   r5=r5{0},   r29=r29{0},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},   m[r1{0} - 32]=r1{0}
+              Live variables: g3_2 in proc main
+result:    0 *32* g3_2 := -
+dest is not lib
+call:   14 {*32* g3, *32* r5} := CALL fib(
+                *i32* g3 := 8
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=8,   r4=r4{9},   r5=r5{9},   r29=r3{9},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},   m[r1{0} - 32]=r1{0}
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:   22 {*v* g3, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3_1 := "%i
+"
+                *j32* g4 := g3_2 + g3
+              )
+              Reaching definitions: r0=r3{9} + r3{14},   r1=r1{0} - 32,   r3=0x10000864,   r4=r3{9} + r3{14},
+                r5=r5{14},   r29=r3{9},   r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 12]=r29{0},
+                m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   14 {*j32* g3_1, *32* g4, *32* r5} := CALL fib(
+                *i32* g3 := param1 - 1
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=r3{0} - 1,   r4=machine("%LR"),   r5=r5{0},   r29=r3{0},
+                r31=r3{0},   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 12]=r29{0},
+                m[r1{0} - 32]=r1{0},   %flags=SUBFLAGSNS( r3{0}, 1, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 1
+              Live variables: g3_1 in proc fib
+result:    0 *j32* g3_1 := -
+dest is not lib
+call:   19 {*j32* g3, *32* g4, *32* r5} := CALL fib(
+                *i32* g3 := param1 - 2
+              )
+              Reaching definitions: r1=r1{0} - 32,   r3=r3{0} - 2,   r4=r4{14},   r5=r5{14},   r29=r3{14},   r31=r3{0},
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 12]=r29{0},   m[r1{0} - 32]=r1{0},
+                <all>=<all>{14},   %flags=%flags{14},   %ZF=%ZF{14},   %CF=%CF{14}
+              Live variables: g3,  g4 in proc fib
+result:    0 *j32* g3 := -
+result:    0 *32* g4 := -

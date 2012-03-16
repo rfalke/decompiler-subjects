@@ -1,0 +1,243 @@
+got filename fbranch.c for main
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 72 to local table
+in proc main adding addrExp r28{0} - 76 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+TYPE ERROR: attempt to insert item <noname> at 0xffffffbc of type double which weaves after <noname> at 0xffffffb8 of type double
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 56 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 72 to local table
+in proc main adding addrExp r28{0} - 76 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+in proc main adding addrExp r28{0} - 60 to local table
+in proc main adding addrExp r28{0} - 64 to local table
+TYPE ERROR: at address 0xffffffc0, overlapping type union { double x1; unsigned int x2; } does not resolve to compound or array
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+TYPE ERROR: attempt to insert item <noname> at 0xffffffbc of type double which weaves after <noname> at 0xffffffb8 of type double
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local eax has type __size32 that doesn't agree with type of define /*signed?*/int of a library, why?
+dest is not lib
+call:   43 {*v* r25, *v* r26} := CALL scanf(
+                *c** local2 := "%f"
+                *f32** local3 := a[local0]
+              )
+              Reaching definitions: r12=(r28{0} - 12)@15:8,   r24=r28{0} - 12,   r28=r28{0} - 64,   r29=r28{0} - 4,
+                r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r38{0},
+                r39=r39{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485c0,
+                m[r28{0} - 64]=%pc,   m[r28{0} - 68]=m[r28{0} - 68]{0},   tmp1=r28{0} - 44,
+                %flags=SUBFLAGS32( r28{0} - 44, 8, r28{0} - 52 ),   %ZF=(r28{0} - 52) = 0,   %CF=(r28{0} - 44) <u 8
+              Live variables:  in proc main
+dest is not lib
+call:  100 {*32* r25, *32* r26} := CALL printf(
+                *c** local4 := "a is %f, b is %f
+"
+                *f64* local5 := 5.0000
+                *f64* local1 := local1
+              )
+              Reaching definitions: r12=(r28{0} - 12)@15:8,   r24=r24{43},   r25=r25{43},   r26=r26{43},
+                r28=r28{0} - 80,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},   r34=r34{0},   r35=r35{0},   r36=r36{0}
+                r37=r37{0},   r38=r32{56},   r39=fsize(32,80,0x40a00000),   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 56]=r28{0} - 12,
+                m[r28{0} - 60]=0x80485c0,   m[r28{0} - 64]=fsize(80,64,r32{56}),   m[r28{0} - 68]=m[r28{0} - 68]{0},
+                m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),   m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,
+                tmp1=r28{0} - 44,   tmpD=fsize(32,80,0x40a00000),   tmpD9=fsize(32,80,0x40a00000),
+                %flags=SUBFLAGS32( r28{0} - 44, 12, r28{0} - 56 ),   %ZF=(r28{0} - 56) = 0,   %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  167 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Equal"
+              )
+              Reaching definitions: r8=0,   r12=(SETFFLAGS( fsize(32,80,0x40a00000), r32{113} )) & 69,
+                r24=((((r24{100} & 0xffff00ff) | ((SETFFLAGS( fsize(32,80,0x40a00000), r32{113} )) * 256))@31:8) & 0xffff00ff) | (((SETFFLAGS( fsize(32,80,0x40a00000), r32{113} )) & 69) * 256),
+                r25=r25{100},   r26=r26{100},   r28=r28{0} - 64,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=fsize(32,80,0x40a00000),   r39=r32{113},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485d5,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=fsize(32,80,0x40a00000) -f r32{113},   tmpD1=fsize(32,80,0x40a00000),   tmpD2=r32{113},
+                tmpD9=r32{113},   tmpb=((SETFFLAGS( fsize(32,80,0x40a00000), r32{113} )) & 69) - 64,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, r28{0} - 56 ),
+                %fflags=SETFFLAGS( fsize(32,80,0x40a00000), r32{113} ),   %ZF=(r28{0} - 56) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  236 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Not Equal"
+              )
+              Reaching definitions: r8=0,   r12=((SETFFLAGS( fsize(32,80,0x40a00000), r32{180} )) & 69) ^ 64,
+                r24=((((((r24{506} & 0xffff00ff) | ((SETFFLAGS( fsize(32,80,0x40a00000), r32{180} )) * 256))@31:8) & 0xffff00ff) | (((SETFFLAGS( fsize(32,80,0x40a00000), r32{180} )) & 69) * 256)) & 0xffff00ff) | ((((SETFFLAGS( fsize(32,80,0x40a00000), r32{180} )) & 69) ^ 64) * 256),
+                r25=r25{507},   r26=r26{508},   r28=(r28{0} - 44) - 20,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=fsize(32,80,0x40a00000),   r39=r32{180},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485db,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=fsize(32,80,0x40a00000) -f r32{180},   tmpD1=fsize(32,80,0x40a00000),   tmpD2=r32{180},
+                tmpD9=r32{180},   tmpb=((SETFFLAGS( fsize(32,80,0x40a00000), r32{113} )) & 69) - 64,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, (r28{0} - 44) - 12 ),
+                %fflags=SETFFLAGS( fsize(32,80,0x40a00000), r32{180} ),   %ZF=((r28{0} - 44) - 12) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  299 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Greater"
+              )
+              Reaching definitions: r8=0,   r12=SETFFLAGS( fsize(32,80,0x40a00000), r32{249} ),
+                r24=((r24{514} & 0xffff00ff) | ((SETFFLAGS( fsize(32,80,0x40a00000), r32{249} )) * 256))@31:8,
+                r25=r25{515},   r26=r26{516},   r28=(r28{0} - 44) - 20,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=fsize(32,80,0x40a00000),   r39=r32{249},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485e5,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=fsize(32,80,0x40a00000) -f r32{249},   tmpD1=fsize(32,80,0x40a00000),   tmpD2=r32{249},
+                tmpD9=r32{249},   tmpb=(SETFFLAGS( fsize(32,80,0x40a00000), r32{249} )) & 69,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, (r28{0} - 44) - 12 ),
+                %fflags=SETFFLAGS( fsize(32,80,0x40a00000), r32{249} ),   %ZF=((r28{0} - 44) - 12) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  365 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Less or Equal"
+              )
+              Reaching definitions: r8=0,   r12=SETFFLAGS( r32{312}, fsize(32,80,0x40a00000) ),
+                r24=((r24{522} & 0xffff00ff) | ((SETFFLAGS( r32{312}, fsize(32,80,0x40a00000) )) * 256))@31:8,
+                r25=r25{523},   r26=r26{524},   r28=(r28{0} - 44) - 20,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r32{312},   r39=fsize(32,80,0x40a00000),
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485ed,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=r32{312} -f fsize(32,80,0x40a00000),   tmpD1=r32{312},   tmpD2=fsize(32,80,0x40a00000),
+                tmpD9=fsize(32,80,0x40a00000),   tmpb=(SETFFLAGS( r32{312}, fsize(32,80,0x40a00000) )) & 5,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, (r28{0} - 44) - 12 ),
+                %fflags=SETFFLAGS( r32{312}, fsize(32,80,0x40a00000) ),   %ZF=((r28{0} - 44) - 12) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  428 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Greater or Equal"
+              )
+              Reaching definitions: r8=0,   r12=SETFFLAGS( fsize(32,80,0x40a00000), r32{378} ),
+                r24=((r24{530} & 0xffff00ff) | ((SETFFLAGS( fsize(32,80,0x40a00000), r32{378} )) * 256))@31:8,
+                r25=r25{531},   r26=r26{532},   r28=(r28{0} - 44) - 20,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=fsize(32,80,0x40a00000),   r39=r32{378},
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x80485fb,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=fsize(32,80,0x40a00000) -f r32{378},   tmpD1=fsize(32,80,0x40a00000),   tmpD2=r32{378},
+                tmpD9=r32{378},   tmpb=(SETFFLAGS( fsize(32,80,0x40a00000), r32{378} )) & 5,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, (r28{0} - 44) - 12 ),
+                %fflags=SETFFLAGS( fsize(32,80,0x40a00000), r32{378} ),   %ZF=((r28{0} - 44) - 12) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  494 {*32* r25, *32* r26} := CALL puts(
+                *c** local2 := "Less"
+              )
+              Reaching definitions: r8=0,   r12=SETFFLAGS( r32{441}, fsize(32,80,0x40a00000) ),
+                r24=((r24{538} & 0xffff00ff) | ((SETFFLAGS( r32{441}, fsize(32,80,0x40a00000) )) * 256))@31:8,
+                r25=r25{539},   r26=r26{540},   r28=(r28{0} - 44) - 20,   r29=r28{0} - 4,   r32=r32{0},   r33=r33{0},
+                r34=r34{0},   r35=r35{0},   r36=r36{0},   r37=r37{0},   r38=r32{441},   r39=fsize(32,80,0x40a00000),
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x40a00000,   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 56]=r28{0} - 12,   m[r28{0} - 60]=0x804860c,   m[r28{0} - 64]=%pc,
+                m[r28{0} - 68]=m[r28{0} - 68]{0},   m[r28{0} - 72]=fsize(80,64,fsize(32,80,0x40a00000)),
+                m[r28{0} - 76]=0x80485c3,   m[r28{0} - 80]=%pc,   tmp1=r28{0} - 44,
+                tmpD=r32{441} -f fsize(32,80,0x40a00000),   tmpD1=r32{441},   tmpD2=fsize(32,80,0x40a00000),
+                tmpD9=fsize(32,80,0x40a00000),   tmpb=(SETFFLAGS( r32{441}, fsize(32,80,0x40a00000) )) & 69,
+                %flags=SUBFLAGS32( r28{0} - 44, 12, (r28{0} - 44) - 12 ),
+                %fflags=SETFFLAGS( r32{441}, fsize(32,80,0x40a00000) ),   %ZF=((r28{0} - 44) - 12) = 0,
+                %CF=(r28{0} - 44) <u 12
+              Live variables:  in proc main

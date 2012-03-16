@@ -1,0 +1,131 @@
+after removing matching assigns (t[WILDSTR]).
+finding final parameters for addem
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+finding final parameters for passem
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+after removing matching assigns (t[WILDSTR]).
+in proc main adding addrExp r14{0} - 4 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type /*signed?*/int does not resolve to compound or array
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type /*signed?*/int does not resolve to compound or array
+finding final parameters for passem
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+finding final parameters for addem
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+finding final parameters for passem
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+local o1 has type __size32 that doesn't agree with type of define void of a library, why?
+local o2 has type __size32 that doesn't agree with type of define void of a library, why?
+local o3 has type /*signed?*/int * that doesn't agree with type of define void of a library, why?
+local o6 has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   32 *32* r1 := CALL passem(
+                *32* o0 := 5
+                *32* o1 := 10
+                *32* o2 := 40
+                *j32** o3 := a[local0]
+              )
+              Reaching definitions: r8=5,   r9=10,   r10=40,   r11=r14{0} - 4,   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 104,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},
+                r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 4]=m[r14{0} - 4]{0},   m[r14{0}]=r16{0},   tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   37 {*v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Fifty five is %d
+"
+                *j32* o1 := local0
+              )
+              Reaching definitions: r1=0x20800,   r8=0x20b60,   r9=m[r14{0} - 4]{0},   r10=40,   r11=r14{0} - 4,
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 104,   r15=r15{32},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 4]=m[r14{0} - 4]{0},   m[r14{0}]=r16{0},   tmp=0x20800
+              Live variables:  in proc main
+dest is not lib
+call:    2 *32* r1 := CALL addem(
+                *32* o0 := param1
+                *32* o1 := param2
+                *32* o2 := param3
+                *32** o3 := param4
+              )
+              Reaching definitions: r1=r15{0},   r8=r8{0},   r9=r9{0},   r10=r10{0},   r11=r11{0},   r15=r15{0}
+              Live variables:  in proc passem

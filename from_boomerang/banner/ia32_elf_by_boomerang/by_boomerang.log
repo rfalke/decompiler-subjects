@@ -1,0 +1,240 @@
+got filename banner.c for main
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 124 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 176 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 124 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 172 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 128 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 136 to local table
+in proc main adding addrExp r28{0} - 140 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 144 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+local edx has type unsigned int that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local eax has type __size32 that doesn't agree with type of define int of a library, why?
+local edx has type __size32 that doesn't agree with type of define __size32 * of a library, why?
+local eax has type int that doesn't agree with type of define __size32 of a library, why?
+local edx has type __size32 * that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   20 {*32* eax, *32* r25, *v* esp} := CALL malloc(
+                *size_t* local9 := 12
+              )
+              Reaching definitions: r8=0,   r24=0,   r28=r28{0} - 176,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 24]=m[r28{0} - 24]{0},   m[r28{0} - 28]=m[r28{0} - 28]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 124]=m[r28{0} - 124]{0},
+                m[r28{0} - 128]=m[r28{0} - 128]{0},   m[r28{0} - 132]=m[r28{0} - 132]{0},
+                m[r28{0} - 136]=m[r28{0} - 136]{0},   m[r28{0} - 140]=m[r28{0} - 140]{0},
+                m[r28{0} - 144]=m[r28{0} - 144]{0},   m[r28{0} - 172]=12,   m[r28{0} - 176]=%pc,   tmp1=r28{0} - 156,
+                tmpb=tmpb{0},   %flags=SUBFLAGS32( r28{0} - 156, 12, r28{0} - 168 ),   %ZF=(r28{0} - 168) = 0,
+                %CF=(r28{0} - 156) <u 12
+              Live variables: eax in proc main
+result:    0 *32* eax := -
+dest is not lib
+call:   57 {*i32* eax, *v* r25, *v* esp} := CALL strlen(
+                *[c]** local12 := local12
+              )
+              Reaching definitions: r8=truncu(32,8,m[r28{0} - 20]{355}),   r24=m[r28{0} - 20]{355},   r25=r25{300},
+                r26=r26{301},   r28=(r28{0} - 156) - 20,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=m[r28{0} - 16]{41},   m[r28{0} - 20]=m[r28{0} - 20]{355},
+                m[r28{0} - 24]=m[r28{0} - 24]{356},   m[r28{0} - 28]=m[r28{0} - 28]{357},
+                m[r28{0} - 32]=m[r28{0} - 32]{358},   m[r28{0} - 36]=m[r28{0} - 36]{359},
+                m[r28{0} - 40]=m[r28{0} - 40]{360},   m[r28{0} - 124]=m[r28{0} - 124]{0},
+                m[r28{0} - 128]=m[r28{0} - 128]{361},   m[r28{0} - 132]=m[r28{0} - 132]{362},
+                m[r28{0} - 136]=m[r28{0} - 136]{363},   m[r28{0} - 140]=m[r28{0} - 140]{364},
+                m[r28{0} - 144]=m[r28{0} - 144]{365},   m[r28{0} - 172]=m[r28{0} - 172]{52},   m[r28{0} - 176]=%pc,
+                tmp1=r28{0} - 156,   tmpb=tmpb{304},   %flags=SUBFLAGS32( r28{0} - 156, 12, (r28{0} - 156) - 12 ),
+                %ZF=((r28{0} - 156) - 12) = 0,   %CF=(r28{0} - 156) <u 12
+              Live variables: eax in proc main
+result:    0 *i32* eax := -
+dest is not lib
+call:  262 {*32* eax, *v* r25, *v* esp} := CALL puts(
+                *c** local12 := a[local8]
+              )
+              Reaching definitions: r8=truncu(32,8,r28{0} - 124),   r24=r28{0} - 124,   r25=r25{310},   r26=r26{320},
+                r28=(r28{0} - 156) - 20,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=m[r28{0} - 16]{41},   m[r28{0} - 20]=m[r28{0} - 20]{355},
+                m[r28{0} - 24]=m[r28{0} - 24]{369},   m[r28{0} - 28]=m[r28{0} - 28]{397},
+                m[r28{0} - 32]=m[r28{0} - 32]{381},   m[r28{0} - 36]=m[r28{0} - 36]{368},
+                m[r28{0} - 40]=m[r28{0} - 40]{382},   m[r28{0} - 124]=m[r28{0} - 124]{0},
+                m[r28{0} - 128]=m[r28{0} - 128]{383},   m[r28{0} - 132]=m[r28{0} - 132]{384},
+                m[r28{0} - 136]=m[r28{0} - 136]{385},   m[r28{0} - 140]=m[r28{0} - 140]{386},
+                m[r28{0} - 144]=m[r28{0} - 144]{387},   m[r28{0} - 172]=r28{0} - 124,   m[r28{0} - 176]=%pc,
+                tmp1=r28{0} - 156,   tmpb=tmpb{350},   %flags=SUBFLAGS32( r28{0} - 156, 12, (r28{0} - 156) - 12 ),
+                %ZF=((r28{0} - 156) - 12) = 0,   %CF=(r28{0} - 156) <u 12
+              Live variables:  in proc main
+dest is not lib
+call:  280 {*32* eax, *32* r25, *v* esp} := CALL puts(
+                *c** local12 := ""
+              )
+              Reaching definitions: r8=r8{308},   r24=r24{309},   r25=r25{310},   r26=r26{311},
+                r28=(r28{0} - 156) - 20,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=m[r28{0} - 16]{41},   m[r28{0} - 20]=m[r28{0} - 20]{355},
+                m[r28{0} - 24]=m[r28{0} - 24]{369},   m[r28{0} - 28]=m[r28{0} - 28]{370},
+                m[r28{0} - 32]=m[r28{0} - 32]{371},   m[r28{0} - 36]=m[r28{0} - 36]{368},
+                m[r28{0} - 40]=m[r28{0} - 40]{372},   m[r28{0} - 124]=m[r28{0} - 124]{0},
+                m[r28{0} - 128]=m[r28{0} - 128]{373},   m[r28{0} - 132]=m[r28{0} - 132]{374},
+                m[r28{0} - 136]=m[r28{0} - 136]{375},   m[r28{0} - 140]=m[r28{0} - 140]{376},
+                m[r28{0} - 144]=m[r28{0} - 144]{377},   m[r28{0} - 172]=0x8049b04,   m[r28{0} - 176]=%pc,
+                tmp1=r28{0} - 156,   tmpb=tmpb{314},   %flags=SUBFLAGS32( r28{0} - 156, 12, (r28{0} - 156) - 12 ),
+                %ZF=((r28{0} - 156) - 12) = 0,   %CF=(r28{0} - 156) <u 12
+              Live variables:  in proc main

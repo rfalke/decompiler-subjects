@@ -1,0 +1,42 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc twice adding addrExp r28{0} - 4 to local table
+finding final parameters for twice
+potential param r27
+found new parameter r27
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type unsigned int does not resolve to compound or array
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type /*signed?*/int does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    5 *j32* eax := CALL twice(
+                *32* ebx := argc
+              )
+              Reaching definitions: r27=m[r28{0} + 4]{0},   r28=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=%pc
+              Live variables: eax in proc main
+result:    0 *j32* eax := -
+dest is not lib
+call:   13 {*32* eax, *32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Result is %d
+"
+                *j32* local1 := eax
+              )
+              Reaching definitions: r24=r24{5},   r27=m[r28{0} + 4]{0},   r28=r28{0} - 12,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r24{5},   m[r28{0} - 8]=0x8048448,   m[r28{0} - 12]=%pc
+              Live variables:  in proc main

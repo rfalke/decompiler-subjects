@@ -1,0 +1,19 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+warning: textDelta different for section .got (ignoring).
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 3 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering fib1
+   considering fib2
+ decompiling main
+trglobal type analysis for main
+global type analysis for fib1
+global type analysis for fib2
+generating code...
+output written to _output/subject
+completed in 1 sec.

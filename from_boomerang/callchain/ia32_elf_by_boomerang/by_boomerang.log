@@ -1,0 +1,104 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc add15 adding addrExp r28{0} - 4 to local table
+finding final parameters for add15
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc add10 adding addrExp r28{0} - 4 to local table
+finding final parameters for add10
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc add5 adding addrExp r28{0} - 4 to local table
+finding final parameters for add5
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (%pc).
+in proc printarg adding addrExp r28{0} - 4 to local table
+in proc printarg adding addrExp r28{0} - 8 to local table
+in proc printarg adding addrExp r28{0} - 12 to local table
+in proc printarg adding addrExp r28{0} - 16 to local table
+in proc printarg adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc printarg adding addrExp r28{0} - 8 to local table
+in proc printarg adding addrExp r28{0} - 12 to local table
+in proc printarg adding addrExp r28{0} - 16 to local table
+finding final parameters for printarg
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+finding final parameters for printarg
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    9 *32* eax := CALL add15(
+                *32* local0 := 25
+              )
+              Reaching definitions: r28=r28{0} - 12,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=25,   m[r28{0} - 12]=%pc
+              Live variables: eax in proc main
+result:    0 *32* eax := -
+dest is not lib
+call:   15 *32* eax := CALL add10(
+                *32* local1 := eax
+              )
+              Reaching definitions: r24=r24{9},   r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=25,   m[r28{0} - 12]=r24{9},   m[r28{0} - 16]=%pc
+              Live variables: eax in proc main
+result:    0 *32* eax := -
+dest is not lib
+call:   21 *j32* eax := CALL add5(
+                *32* local2 := eax
+              )
+              Reaching definitions: r24=r24{15},   r28=r28{0} - 20,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=25,   m[r28{0} - 12]=r24{9},   m[r28{0} - 16]=r24{15},   m[r28{0} - 20]=%pc
+              Live variables: eax in proc main
+result:    0 *j32* eax := -
+dest is not lib
+call:   27 {*v* eax, *32* r25, *32* r26} := CALL printarg(
+                *j32* local3 := eax
+              )
+              Reaching definitions: r24=r24{21},   r28=r28{0} - 24,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=25,   m[r28{0} - 12]=r24{9},   m[r28{0} - 16]=r24{15},   m[r28{0} - 20]=r24{21},
+                m[r28{0} - 24]=%pc
+              Live variables:  in proc main
+dest is not lib
+call:   11 {*32* r24, *32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Fifty five is %d
+"
+                *j32* local1 := param1
+              )
+              Reaching definitions: r28=r28{0} - 16,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} + 4]{0},   m[r28{0} - 12]=0x80494b8,
+                m[r28{0} - 16]=%pc
+              Live variables:  in proc printarg

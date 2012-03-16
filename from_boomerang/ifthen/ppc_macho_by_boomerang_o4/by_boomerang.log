@@ -1,0 +1,50 @@
+Unknown library function putchar
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 104 to local table
+in proc main adding addrExp r1{0} + 108 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   77 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL puts(
+                *c** g3 := machine("%LR") + 744
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),
+                r3=machine("%LR") + 744,   r29=0,   r30=r3{0},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   81 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL putchar(
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r1=r1{0} - 80,   r2=machine("%LR"),   r3=49,
+                r4=r4{77},   r5=r5{77},   r6=r6{77},   r7=r7{77},   r8=r8{77},   r9=r9{77},   r10=r10{77},
+                r11=r11{77},   r12=r12{77},   r29=0,   r30=r3{0},   r31=machine("%LR"),   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 104]=r[tmp + 29]{0},   m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:  155 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 756
+              )
+              Reaching definitions: r[tmp + 29]=r[tmp + 29]{0},   r[0 + 29]=r[0 + 29]{92},   r[1 + 29]=r[1 + 29]{94},
+                r[2 + 29]=r[2 + 29]{96},   r[3 + 29]=r[3 + 29]{98},   r[4 + 29]=r[4 + 29]{100},
+                r[5 + 29]=r[5 + 29]{102},   r[6 + 29]=r[6 + 29]{104},   r[7 + 29]=r[7 + 29]{106},
+                r[8 + 29]=r[8 + 29]{108},   r[9 + 29]=r[9 + 29]{110},   r[10 + 29]=r[10 + 29]{112},
+                r[11 + 29]=r[11 + 29]{114},   r[12 + 29]=r[12 + 29]{116},   r[13 + 29]=r[13 + 29]{118},
+                r[14 + 29]=r[14 + 29]{120},   r[15 + 29]=r[15 + 29]{122},   r[16 + 29]=r[16 + 29]{124},
+                r[17 + 29]=r[17 + 29]{126},   r[18 + 29]=r[18 + 29]{128},   r[19 + 29]=r[19 + 29]{130},
+                r[20 + 29]=r[20 + 29]{132},   r[21 + 29]=r[21 + 29]{134},   r[22 + 29]=r[22 + 29]{136},
+                r[23 + 29]=r[23 + 29]{138},   r[24 + 29]=r[24 + 29]{140},   r[25 + 29]=r[25 + 29]{142},
+                r[26 + 29]=r[26 + 29]{144},   r[27 + 29]=r[27 + 29]{146},   r[28 + 29]=r[28 + 29]{148},
+                r[29 + 29]=r[tmp + 29]{0},   r[30 + 29]=r[tmp + 29]{0},   r[31 + 29]=r[tmp + 29]{0},   r1=r1{0},
+                r2=machine("%LR"),   r3=machine("%LR") + 756,   r4=r29{157} + r3{0},   r5=machine("%LR"),
+                r6=machine("%LR"),   r7=r7{81},   r8=r8{81},   r9=r9{81},   r10=r10{81},   r11=r11{81},   r12=r12{81},
+                r29=r29{157},   r30=r3{0},   r31=machine("%LR"),   r58=r[tmp + 29]{0},   r59=r[tmp + 29]{0},
+                r60=r[tmp + 29]{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 104]=r[tmp + 29]{0},
+                m[r1{0} + 108]=r[tmp + 29]{0},   m[r1{0} + 112]=r[tmp + 29]{0},   m[r1{0} - 80]=r1{0},   tmp=31,
+                %flags=SUBFLAGSNS( r3{0}, 3, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 3
+              Live variables:  in proc main

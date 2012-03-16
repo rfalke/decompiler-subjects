@@ -1,0 +1,117 @@
+COMPUTED JUMP at 0x8048978, pDest = m[(r24 * 4) + 0x80489e8]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+=== about to restart decompilation of main because indirect jumps or calls have been analysed
+
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+could not set type for unknown parameter expression m[r28{0} + 4]
+local esp has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   34 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Two!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b58,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:   50 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Three!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b64,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:   66 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Four!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b70,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:   82 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Five!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b7c,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:   98 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Six!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b88,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:  114 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Seven!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049b94,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main
+dest is not lib
+call:   16 {*32* r25, *32* r26} := CALL printf(
+                *c** local0 := "Other!
+"
+              )
+              Reaching definitions: r24=m[r28{0} + 4]{0} - 2,   r28=r28{0} - 12,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x8049ba0,   m[r28{0} - 12]=%pc
+                tmp1=m[r28{0} + 4]{0} - 7,   %flags=SUBFLAGS32( m[r28{0} + 4]{0} - 2, 5, m[r28{0} + 4]{0} - 7 ),
+                %ZF=(m[r28{0} + 4]{0} - 7) = 0,   %CF=(m[r28{0} + 4]{0} - 2) <u 5
+              Live variables:  in proc main

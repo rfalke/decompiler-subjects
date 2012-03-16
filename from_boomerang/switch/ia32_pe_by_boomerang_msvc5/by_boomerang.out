@@ -1,0 +1,123 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 18 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering proc1
+   considering proc2
+    considering proc5
+    decompiling proc5
+    considering proc6
+     considering proc8
+      considering proc9
+       considering proc11
+        considering proc13
+        decompiling proc13
+rrprtttt        considering proc14
+        decompiling proc14
+prrttt       decompiling proc11
+prprrrrptttttt      decompiling proc9
+r      considering proc10
+      decompiling proc10
+     decompiling proc8
+rptt    decompiling proc6
+r   decompiling proc2
+rt   considering proc3
+   decompiling proc3
+pr   reconsidering proc3
+    considering proc18
+     considering proc23
+      considering proc24
+      decompiling proc24
+t      considering proc12
+       considering proc15
+        considering proc17
+        decompiling proc17
+        considering proc16
+        decompiling proc16
+rt       decompiling proc15
+prrt      decompiling proc12
+rprrrprtttt     decompiling proc23
+prrttttp    decompiling proc18
+r    considering proc19
+    decompiling proc19
+    considering proc20
+    decompiling proc20
+tr    considering proc21
+    decompiling proc21
+pt    considering proc22
+    decompiling proc22
+rtt   decompiling proc3
+prrrpr   reconsidering proc3
+    considering proc25
+    decompiling proc25
+    considering proc26
+    decompiling proc26
+r    considering proc27
+    decompiling proc27
+pt    considering proc28
+    decompiling proc28
+rtp   decompiling proc3
+rrrrprprrprrrrrrpprrprttttttttttttttttttttrprrr   considering proc4
+    considering proc7
+    decompiling proc7
+prt   decompiling proc4
+t  decompiling proc1
+rpt decompiling main
+ reconsidering main
+ decompiling main
+rt considering proc29
+  considering proc30
+   considering proc32
+    considering proc33
+    decompiling proc33
+rprrttt    considering proc34
+    decompiling proc34
+prrtt   decompiling proc32
+rprrrprtttttttr   considering proc31
+   decompiling proc31
+p  decompiling proc30
+rt decompiling proc29
+global type analysis for main
+global type analysis for proc1
+global type analysis for proc2
+tglobal type analysis for proc3
+tttttttttglobal type analysis for proc4
+global type analysis for proc5
+tglobal type analysis for proc6
+global type analysis for proc7
+global type analysis for proc8
+tglobal type analysis for proc9
+global type analysis for proc10
+global type analysis for proc11
+tttglobal type analysis for proc12
+tglobal type analysis for proc13
+tglobal type analysis for proc14
+ttglobal type analysis for proc15
+global type analysis for proc16
+global type analysis for proc17
+tglobal type analysis for proc18
+global type analysis for proc19
+global type analysis for proc20
+tglobal type analysis for proc21
+global type analysis for proc22
+tglobal type analysis for proc23
+tglobal type analysis for proc24
+global type analysis for proc25
+global type analysis for proc26
+global type analysis for proc27
+tglobal type analysis for proc28
+global type analysis for proc29
+global type analysis for proc30
+global type analysis for proc31
+tglobal type analysis for proc32
+tttglobal type analysis for proc33
+tglobal type analysis for proc34
+rrrrrrrrrrrrrrrrrri transforming out of SSA form proc3 with 176 BBsiiiiiiiiiiiiiiiiiiii
+iiiiiiiiiiiiiiiiiiiiiiiiigenerating code...
+ggggggggggggggggggggggggggggggoutput written to _output/subject
+completed in 7 secs.

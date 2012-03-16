@@ -1,0 +1,80 @@
+after removing matching assigns (%pc).
+in proc foo2 adding addrExp r1{0} - 32 to local table
+in proc foo2 adding addrExp r1{0} - 4 to local table
+in proc foo2 adding addrExp r1{0} + 4 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure foo2 ###
+in proc foo2 adding addrExp r1{0} - 32 to local table
+in proc foo2 adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc foo2 adding addrExp r1{0} + 4 to local table
+finding final parameters for foo2
+potential param r1
+found new parameter r1
+potential param r4
+found new parameter r4
+after removing matching assigns (%pc).
+integer size 0x40 meet with SizeType size 0x20!
+WARNING: size 0x20 meet with /*signed?*/long long; allowing temporarily
+in proc foo1 adding addrExp r1{0} - 32 to local table
+in proc foo1 adding addrExp r1{0} - 4 to local table
+in proc foo1 adding addrExp r1{0} + 4 to local table
+finding final parameters for foo1
+potential param r1
+found new parameter r1
+potential param r4
+found new parameter r4
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+finding final parameters for foo1
+potential param r4
+found new parameter r4
+finding final parameters for foo2
+potential param r4
+found new parameter r4
+finding final parameters for foo1
+potential param r4
+found new parameter r4
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g4 has type union { /*signed?*/long long x3; char *[] * x4; } that doesn't agree with type of define __size32 of a library, why?
+local g3 has type char * that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:    9 {*32* r0, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* r65} := CALL foo1(
+                *union* g4 := argv
+              )
+              Reaching definitions: r0=machine("%LR"),   r1=r1{0} - 32,   r3=r3{0},   r4=r4{0},   r5=r5{0},
+                r31=r1{0} - 32,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:   17 {*32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *v* r11, *32* r12} := CALL printf(
+                *c** g3 := "b = %i
+"
+                *j32* g4 := b
+              )
+              Reaching definitions: r0=r0{9},   r1=r1{0} - 32,   r3=0x1000089c,   r4=b,   r5=r5{9},   r6=r6{9},
+                r7=r7{9},   r8=r8{9},   r9=0x10010000,   r10=r10{9},   r11=0x10000000,   r12=r12{9},   r31=r1{0} - 32,
+                r65=0,   m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc main
+dest is not lib
+call:    9 {*32* r0, *32* r3, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* r65} := CALL foo2(
+                *j64* g4 := param1
+              )
+              Reaching definitions: r0=machine("%LR"),   r1=r1{0} - 32,   r4=r4{0},   r31=r1{0} - 32,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc foo1
+dest is not lib
+call:   19 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *v* r11, *32* r12} := CALL printf(
+                *c** g3 := "a = %lld
+"
+                *j64* g4 := param1
+              )
+              Reaching definitions: r0=12,   r1=r1{0} - 32,   r3=0x10000890,   r4=r4{0},   r5=a,   r6=global3,
+                r9=0x10000000,   r11=0x100109b0,   r31=r1{0} - 32,   r65=0,   m[r1{0} + 4]=machine("%LR"),
+                m[r1{0} - 4]=r31{0},   m[r1{0} - 32]=r1{0}
+              Live variables:  in proc foo2

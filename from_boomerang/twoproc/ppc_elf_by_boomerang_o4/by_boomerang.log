@@ -1,0 +1,17 @@
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 16 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 16 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+local g3 has type char * that doesn't agree with type of define __size32 of a library, why?
+local g4 has type /*signed?*/int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   11 {*32* g3, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "%i
+"
+                *j32* g4 := 7
+              )
+              Reaching definitions: r1=r1{0} - 16,   r3=0x100007f0,   r4=7,   r5=r5{0},   r65=0,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 16]=r1{0}
+              Live variables: g3 in proc main
+result:    0 *32* g3 := -

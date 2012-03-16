@@ -1,0 +1,196 @@
+after removing matching assigns (t[WILDSTR]).
+in proc fib adding addrExp r14{0} to local table
+in proc fib adding addrExp r14{0} + 4 to local table
+in proc fib adding addrExp r14{0} + 8 to local table
+in proc fib adding addrExp r14{0} + 12 to local table
+in proc fib adding addrExp r14{0} + 16 to local table
+in proc fib adding addrExp r14{0} + 20 to local table
+in proc fib adding addrExp r14{0} + 24 to local table
+in proc fib adding addrExp r14{0} + 28 to local table
+in proc fib adding addrExp r14{0} + 32 to local table
+in proc fib adding addrExp r14{0} + 36 to local table
+in proc fib adding addrExp r14{0} + 40 to local table
+in proc fib adding addrExp r14{0} + 44 to local table
+in proc fib adding addrExp r14{0} + 48 to local table
+in proc fib adding addrExp r14{0} + 52 to local table
+in proc fib adding addrExp r14{0} + 56 to local table
+in proc fib adding addrExp r14{0} + 60 to local table
+in proc fib adding addrExp r14{0} + 4 to local table
+in proc fib adding addrExp r14{0} + 8 to local table
+in proc fib adding addrExp r14{0} + 12 to local table
+in proc fib adding addrExp r14{0} + 16 to local table
+in proc fib adding addrExp r14{0} + 20 to local table
+in proc fib adding addrExp r14{0} + 24 to local table
+in proc fib adding addrExp r14{0} + 28 to local table
+in proc fib adding addrExp r14{0} + 32 to local table
+in proc fib adding addrExp r14{0} + 36 to local table
+in proc fib adding addrExp r14{0} + 40 to local table
+in proc fib adding addrExp r14{0} + 44 to local table
+in proc fib adding addrExp r14{0} + 48 to local table
+in proc fib adding addrExp r14{0} + 52 to local table
+in proc fib adding addrExp r14{0} + 56 to local table
+in proc fib adding addrExp r14{0} + 60 to local table
+in proc fib adding addrExp r14{0} to local table
+finding final parameters for fib
+potential param r8
+found new parameter r8
+finding final parameters for fib
+potential param r8
+found new parameter r8
+after removing matching assigns (t[WILDSTR]).
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+finding final parameters for fib
+potential param r8
+found new parameter r8
+local o0 has type char * that doesn't agree with type of define void of a library, why?
+local o1 has type int * that doesn't agree with type of define void of a library, why?
+local o2 has type int that doesn't agree with type of define void of a library, why?
+local o6 has type void * that doesn't agree with type of define void of a library, why?
+local o0 has type void that doesn't agree with type of define __size32 of a library, why?
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   29 {*v* o0, *v* o2, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Input number: "
+              )
+              Reaching definitions: r8=0x11688,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 120,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},
+                r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=r14{0} - 120
+              Live variables:  in proc main
+dest is not lib
+call:   34 {*32* o0, *v* o2, *v* r11, *v* r12, *v* r13, *v* r15} := CALL scanf(
+                *c** o0 := "%d"
+                *i32** o1 := a[local0]
+              )
+              Reaching definitions: r8=0x11698,   r9=r14{0} - 20,   r10=r10{29},   r11=r11{29},   r12=r12{29},
+                r13=r13{29},   r14=r14{0} - 120,   r15=r15{29},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},
+                tmp=r14{0}
+              Live variables:  in proc main
+dest is not lib
+call:   43 {*32* o0_2, *32* r0} := CALL fib(
+                *i32* o0 := local0 - 1
+              )
+              Reaching definitions: r0=m[r14{0} - 20]{0} - 1,   r8=m[r14{0} - 20]{0} - 1,   r9=r9{34},
+                r10=m[r14{0} - 20]{0},   r11=r11{34},   r12=r12{34},   r13=r13{34},   r14=r14{0} - 120,   r15=r15{34},
+                r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},
+                r23=r23{0},   r24=m[r14{0} - 20]{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},
+                r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=m[r14{0} - 20]{0},
+                %flags=SUBFLAGS( m[r14{0} - 20]{0}, 1, m[r14{0} - 20]{0} - 1 ),   %ZF=(m[r14{0} - 20]{0} - 1) = 0,
+                %CF=m[r14{0} - 20]{0} <u 1
+              Live variables: o0_2 in proc main
+result:    0 *32* o0_2 := -
+dest is not lib
+call:   47 {*32* o0, *j32* r0} := CALL fib(
+                *i32* o0 := local0 - 2
+              )
+              Reaching definitions: r0=r0{43},   r8=m[r14{0} - 20]{0} - 2,   r9=r9{34},   r10=m[r14{0} - 20]{0},
+                r11=r11{34},   r12=r12{34},   r13=r13{34},   r14=r14{0} - 120,   r15=r15{34},   r16=r8{43},
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=m[r14{0} - 20]{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},
+                r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=m[r14{0} - 20]{0},
+                %flags=SUBFLAGS( m[r14{0} - 20]{0}, 1, m[r14{0} - 20]{0} - 1 ),   %ZF=(m[r14{0} - 20]{0} - 1) = 0,
+                %CF=m[r14{0} - 20]{0} <u 1
+              Live variables: o0 in proc main
+result:    0 *32* o0 := -
+dest is not lib
+call:   53 {*v* o0, *v* o2, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "fibonacci(%d) = %d
+"
+                *i32* o1 := local0
+                *i32* o2 := o2
+              )
+              Reaching definitions: r0=r0{82},   r8=0x116a0,   r9=m[r14{0} - 20]{0},   r10=r10{84},   r11=r11{34},
+                r12=r12{34},   r13=r13{34},   r14=r14{0} - 120,   r15=r15{34},   r16=r16{85},   r17=r17{0},
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=m[r14{0} - 20]{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},
+                r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{0},   m[r14{0}]=r16{0},   tmp=tmp{86},
+                %flags=SUBFLAGS( m[r14{0} - 20]{0}, 1, m[r14{0} - 20]{0} - 1 ),   %ZF=(m[r14{0} - 20]{0} - 1) = 0,
+                %CF=m[r14{0} - 20]{0} <u 1
+              Live variables:  in proc main
+dest is not lib
+call:   34 {*i32* o0_1, *32* r0} := CALL fib(
+                *i32* o0 := param1 - 1
+              )
+              Reaching definitions: r0=r8{0} - 1,   r8=r8{0} - 1,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r8{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r8{0},
+                %flags=SUBFLAGS( r8{0}, 1, r8{0} - 1 ),   %ZF=(r8{0} - 1) = 0,   %CF=r8{0} <u 1
+              Live variables: o0_1 in proc fib
+result:    0 *i32* o0_1 := -
+dest is not lib
+call:   38 {*i32* o0, *j32* r0} := CALL fib(
+                *i32* o0 := param1 - 2
+              )
+              Reaching definitions: r0=r0{34},   r8=r8{0} - 2,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r8{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{34},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   <all>=<all>{34},   tmp=r8{0},
+                %flags=%flags{34},   %ZF=%ZF{34},   %CF=%CF{34}
+              Live variables: o0 in proc fib
+result:    0 *i32* o0 := -

@@ -1,0 +1,99 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure foo2 ###
+in proc foo2 adding addrExp r1{0} + 112 to local table
+in proc foo2 adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc foo2 adding addrExp r1{0} + 8 to local table
+in proc foo2 adding addrExp r1{0} - 80 to local table
+finding final parameters for foo2
+potential param r1
+found new parameter r1
+potential param r[tmp + 30]
+found new parameter r[tmp + 30]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc foo1 adding addrExp r1{0} + 112 to local table
+in proc foo1 adding addrExp r1{0} + 116 to local table
+in proc foo1 adding addrExp r1{0} + 8 to local table
+in proc foo1 adding addrExp r1{0} - 80 to local table
+finding final parameters for foo1
+potential param r[tmp + 30]
+found new parameter r[tmp + 30]
+potential param r61
+found new parameter r61
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x20 meet with size 0x40!
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 80 to local table
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+finding final parameters for foo1
+potential param r61
+found new parameter r61
+finding final parameters for foo2
+finding final parameters for foo1
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+local g3 has type char * that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   74 {*32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* r30, *32* g31, *64* r60} := CALL foo1(
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 80,   r3=r3{0},
+                r4=r4{0},   r5=r5{0},   r30=r1{0} - 80,   r31=machine("%LR"),   r61=r61{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables: g31 in proc main
+result:    0 *32* g31 := -
+dest is not lib
+call:   82 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := g31 + 660
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r[0 + 30]=r[0 + 30]{74},   r[1 + 30]=r[1 + 30]{74},
+                r[2 + 30]=r[2 + 30]{74},   r[3 + 30]=r[3 + 30]{74},   r[4 + 30]=r[4 + 30]{74},
+                r[5 + 30]=r[5 + 30]{74},   r[6 + 30]=r[6 + 30]{74},   r[7 + 30]=r[7 + 30]{74},
+                r[8 + 30]=r[8 + 30]{74},   r[9 + 30]=r[9 + 30]{74},   r[10 + 30]=r[10 + 30]{74},
+                r[11 + 30]=r[11 + 30]{74},   r[12 + 30]=r[12 + 30]{74},   r[13 + 30]=r[13 + 30]{74},
+                r[14 + 30]=r[14 + 30]{74},   r[15 + 30]=r[15 + 30]{74},   r[16 + 30]=r[16 + 30]{74},
+                r[17 + 30]=r[17 + 30]{74},   r[18 + 30]=r[18 + 30]{74},   r[19 + 30]=r[19 + 30]{74},
+                r[20 + 30]=r[20 + 30]{74},   r[21 + 30]=r[21 + 30]{74},   r[22 + 30]=r[22 + 30]{74},
+                r[23 + 30]=r[23 + 30]{74},   r[24 + 30]=r[24 + 30]{74},   r[25 + 30]=r[25 + 30]{74},
+                r[26 + 30]=r[26 + 30]{74},   r[27 + 30]=r[27 + 30]{74},   r[28 + 30]=r[28 + 30]{74},
+                r[29 + 30]=r[29 + 30]{74},   r[30 + 30]=r[30 + 30]{74},   r[31 + 30]=r[31 + 30]{74},   r0=r0{74},
+                r1=r1{0} - 80,   r3=r31{74} + 660,   r4=r4{79},   r5=r5{74},   r6=r6{74},   r7=r7{74},   r8=r8{74},
+                r9=r31{74} + 708,   r10=r10{74},   r11=r11{74},   r12=r12{74},   r30=r30{74},   r31=r31{74},
+                r60=r60{74},   r61=r61{74},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   72 {*32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *32* r3, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12, *32* r30, *32* g31_1, *64* r60, *64* r61} := CALL foo2(
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 80,   r30=r1{0} - 80,
+                r61=r61{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables: g31_1 in proc foo1
+result:    0 *32* g31_1 := -
+dest is not lib
+call:   84 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 784
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=12,   r1=r1{0} - 80,   r3=machine("%LR") + 784,
+                r4=r4{80},   r5=r5{81},   r9=machine("%LR") + 836,   r30=r1{0} - 80,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 80]=r1{0},   tmp=31
+              Live variables:  in proc foo2

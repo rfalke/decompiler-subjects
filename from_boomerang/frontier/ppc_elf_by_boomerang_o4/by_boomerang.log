@@ -1,0 +1,5 @@
+ERROR: attempted to decode outside any known segment 0x1001040c
+ERROR: attempted to decode outside any known segment 0x10010404
+ERROR: attempted to decode outside any known segment 0x10010414
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###

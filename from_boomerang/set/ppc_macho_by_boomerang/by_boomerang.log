@@ -1,0 +1,42 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} + 24 to local table
+WARNING: size 0x20 meet with unsigned char; allowing temporarily
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 31 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   89 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 688
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=sgnex(8,32,r0{82}),   r1=r1{0} - 96,
+                r3=machine("%LR") + 688,   r4=sgnex(8,32,r0{82}),   r5=r5{0},   r30=r1{0} - 96,   r31=machine("%LR"),
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 24]=r3{0},   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 31]=m[r1{0} - 31]{162},   m[r1{0} - 32]=m[r1{0} - 32]{81},
+                m[r1{0} - 96]=r1{0},   tmp=31,   %flags=SUBFLAGSNS( r3{0}, 1, 0 ),   %ZF=0 = 0,   %CF=r3{0} <u 1
+              Live variables:  in proc main

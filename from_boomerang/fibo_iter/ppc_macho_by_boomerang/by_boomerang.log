@@ -1,0 +1,128 @@
+after removing matching assigns (t[WILDSTR]).
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+in proc fib adding addrExp r1{0} - 36 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} + 112 to local table
+in proc fib adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc fib adding addrExp r1{0} - 80 to local table
+in proc fib adding addrExp r1{0} + 24 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 36 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 36 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 36 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+finding final parameters for fib
+potential param r1
+found new parameter r1
+potential param r[tmp + 30]
+found new parameter r[tmp + 30]
+potential param r3
+found new parameter r3
+potential param r9
+found new parameter r9
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 96 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fib ###
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 44 to local table
+in proc fib adding addrExp r1{0} - 40 to local table
+in proc fib adding addrExp r1{0} - 48 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+in proc fib adding addrExp r1{0} - 32 to local table
+finding final parameters for fib
+potential param r1
+found new parameter r1
+potential param r3
+found new parameter r3
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   76 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 720
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=machine("%LR") + 720,   r4=r4{0},   r5=r5{0},   r30=r1{0} - 96,   r31=machine("%LR"),   r61=r61{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   82 {*v* g3, *v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *i32* r9, *v* r10, *v* r11, *v* r12} := CALL scanf(
+                *c** g3 := machine("%LR") + 736
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=machine("%LR") + 736,   r4=r1{0} - 32,   r5=r5{76},   r6=r6{76},   r7=r7{76},   r8=r8{76},
+                r9=r9{76},   r10=r10{76},   r11=r11{76},   r12=r12{76},   r30=r1{0} - 96,   r31=machine("%LR"),
+                r61=r61{0},   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main
+dest is not lib
+call:   86 {*32* r[0 + 30], *32* r[1 + 30], *32* r[2 + 30], *32* r[3 + 30], *32* r[4 + 30], *32* r[5 + 30], *32* r[6 + 30], *32* r[7 + 30], *32* r[8 + 30], *32* r[9 + 30], *32* r[10 + 30], *32* r[11 + 30], *32* r[12 + 30], *32* r[13 + 30], *32* r[14 + 30], *32* r[15 + 30], *32* r[16 + 30], *32* r[17 + 30], *32* r[18 + 30], *32* r[19 + 30], *32* r[20 + 30], *32* r[21 + 30], *32* r[22 + 30], *32* r[23 + 30], *32* r[24 + 30], *32* r[25 + 30], *32* r[26 + 30], *32* r[27 + 30], *32* r[28 + 30], *32* r[29 + 30], *32* r[30 + 30], *32* r[31 + 30], *32* r0, *32* g3, *32* r9, *64* r60, *64* r61} := CALL fib(
+                *i32* g3 := local0
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 96,
+                r3=m[r1{0} - 32]{0},   r4=r4{82},   r5=r5{82},   r6=r6{82},   r7=r7{82},   r8=r8{82},   r9=r9{82},
+                r10=r10{82},   r11=r11{82},   r12=r12{82},   r30=r1{0} - 96,   r31=machine("%LR"),   r61=r61{0},
+                m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},
+                m[r1{0} - 32]=m[r1{0} - 32]{0},   m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables: g3,  g30 in proc main
+result:    0 *32* g3 := -
+dest is not lib
+call:   95 {*v* g3, *32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 740
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r[0 + 30]=r[0 + 30]{86},   r[1 + 30]=r[1 + 30]{86},
+                r[2 + 30]=r[2 + 30]{86},   r[3 + 30]=r[3 + 30]{86},   r[4 + 30]=r[4 + 30]{86},
+                r[5 + 30]=r[5 + 30]{86},   r[6 + 30]=r[6 + 30]{86},   r[7 + 30]=r[7 + 30]{86},
+                r[8 + 30]=r[8 + 30]{86},   r[9 + 30]=r[9 + 30]{86},   r[10 + 30]=r[10 + 30]{86},
+                r[11 + 30]=r[11 + 30]{86},   r[12 + 30]=r[12 + 30]{86},   r[13 + 30]=r[13 + 30]{86},
+                r[14 + 30]=r[14 + 30]{86},   r[15 + 30]=r[15 + 30]{86},   r[16 + 30]=r[16 + 30]{86},
+                r[17 + 30]=r[17 + 30]{86},   r[18 + 30]=r[18 + 30]{86},   r[19 + 30]=r[19 + 30]{86},
+                r[20 + 30]=r[20 + 30]{86},   r[21 + 30]=r[21 + 30]{86},   r[22 + 30]=r[22 + 30]{86},
+                r[23 + 30]=r[23 + 30]{86},   r[24 + 30]=r[24 + 30]{86},   r[25 + 30]=r[25 + 30]{86},
+                r[26 + 30]=r[26 + 30]{86},   r[27 + 30]=r[27 + 30]{86},   r[28 + 30]=r[28 + 30]{86},
+                r[29 + 30]=r[29 + 30]{86},   r[30 + 30]=r[30 + 30]{86},   r[31 + 30]=r[31 + 30]{86},   r0=r3{86},
+                r1=r1{0} - 96,   r3=machine("%LR") + 740,   r4=r4{91},   r5=r5{92},   r6=r6{82},   r7=r7{82},
+                r8=r8{82},   r9=r9{86},   r10=r10{82},   r11=r11{82},   r12=r12{82},   r30=r30{86},
+                r31=machine("%LR"),   r60=r60{86},   r61=r61{86},   m[r1{0} + 8]=machine("%LR"),
+                m[r1{0} + 112]=r[tmp + 30]{0},   m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 32]=m[r1{0} - 32]{0},
+                m[r1{0} - 96]=r1{0},   tmp=31
+              Live variables:  in proc main

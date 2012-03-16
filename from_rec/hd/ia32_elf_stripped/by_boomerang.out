@@ -1,0 +1,85 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x80485c7, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x8048615, ignoring.
+main function not found
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x80485c7, ignoring.
+decoding anything undecoded...
+finishing decode...
+found 9 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering _init
+   considering proc2
+   decompiling proc2
+  decompiling _init
+  considering proc1
+   considering proc3
+    considering proc5
+    decompiling proc5
+    considering proc6
+    decompiling proc6
+rprttrttt   decompiling proc3
+prrt  decompiling proc1
+r decompiling _start
+pt considering _fini
+  considering proc4
+  decompiling proc4
+rt decompiling _fini
+global type analysis for _init
+global type analysis for proc1
+global type analysis for _start
+global type analysis for _fini
+global type analysis for proc2
+global type analysis for proc3
+global type analysis for proc4
+global type analysis for proc5
+global type analysis for proc6
+triiiigenerating code...
+goutput written to _output/subject
+completed in 0 secs.

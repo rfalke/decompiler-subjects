@@ -1,0 +1,67 @@
+ERROR: attempted to decode outside any known segment 0x100104e0
+ERROR: attempted to decode outside any known segment 0x10010444
+after removing matching assigns (%pc).
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 32 to local table
+in proc main adding addrExp r1{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r1{0} + 4 to local table
+in proc main adding addrExp r1{0} - 24 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+in proc main adding addrExp r1{0} - 20 to local table
+dest is not lib
+call:   46 {*i32* r3, *[c*]** r4, *[c*]** r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "9"
+              )
+              Reaching definitions: r0=9,   r1=r1{0} - 32,   r3=0x100008e0,   r4=r4{0},   r5=r5{0},   r6=r6{0},
+                r7=r7{0},   r8=r8{0},   r9=0x10000000,   r10=r10{0},   r11=r11{0},   r12=r12{0},   r31=r1{0} - 32,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 20]=9,   m[r1{0} - 24]=r3{0},
+                m[r1{0} - 32]=r1{0},   %flags=%flags{94},   %ZF=%ZF{95},   %CF=%CF{96}
+              Live variables:  in proc main
+dest is not lib
+call:   35 {*i32* r3, *[c*]** r4, *[c*]** r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := "5"
+              )
+              Reaching definitions: r0=5,   r1=r1{0} - 32,   r3=0x100008dc,   r4=r4{81},   r5=r5{82},   r6=r6{83},
+                r7=r7{84},   r8=r8{85},   r9=0x10000000,   r10=r10{87},   r11=r11{88},   r12=r12{89},   r31=r1{0} - 32,
+                m[r1{0} + 4]=machine("%LR"),   m[r1{0} - 4]=r31{0},   m[r1{0} - 20]=5,   m[r1{0} - 24]=r3{0},
+                m[r1{0} - 32]=r1{0},   %flags=%flags{90},   %ZF=%ZF{91},   %CF=%CF{92}
+              Live variables:  in proc main

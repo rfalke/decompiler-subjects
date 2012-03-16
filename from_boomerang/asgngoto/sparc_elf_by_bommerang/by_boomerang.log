@@ -1,0 +1,451 @@
+Unknown library function signal
+Unknown library function __filbuf
+got filename open.c for f__bufadj
+Unknown library function fputs
+Unknown library function __flsbuf
+Unknown library function fstat
+Unknown library function isatty
+Unknown library function fflush
+Unknown library function __urem64
+Unknown library function __udiv64
+got filename open.c for opn_err
+Unknown library function rewind
+Unknown library function unlink
+finding final parameters for f_setarg
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+after removing matching assigns (t[WILDSTR]).
+in proc f_setsig adding addrExp r14{0} to local table
+in proc f_setsig adding addrExp r14{0} + 4 to local table
+in proc f_setsig adding addrExp r14{0} + 8 to local table
+in proc f_setsig adding addrExp r14{0} + 12 to local table
+in proc f_setsig adding addrExp r14{0} + 16 to local table
+in proc f_setsig adding addrExp r14{0} + 20 to local table
+in proc f_setsig adding addrExp r14{0} + 24 to local table
+in proc f_setsig adding addrExp r14{0} + 28 to local table
+in proc f_setsig adding addrExp r14{0} + 32 to local table
+in proc f_setsig adding addrExp r14{0} + 36 to local table
+in proc f_setsig adding addrExp r14{0} + 40 to local table
+in proc f_setsig adding addrExp r14{0} + 44 to local table
+in proc f_setsig adding addrExp r14{0} + 48 to local table
+in proc f_setsig adding addrExp r14{0} + 52 to local table
+in proc f_setsig adding addrExp r14{0} + 56 to local table
+in proc f_setsig adding addrExp r14{0} + 60 to local table
+finding final parameters for f_setsig
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f__canseek ###
+in proc f__canseek adding addrExp r14{0} to local table
+in proc f__canseek adding addrExp r14{0} + 4 to local table
+in proc f__canseek adding addrExp r14{0} + 8 to local table
+in proc f__canseek adding addrExp r14{0} + 12 to local table
+in proc f__canseek adding addrExp r14{0} + 16 to local table
+in proc f__canseek adding addrExp r14{0} + 20 to local table
+in proc f__canseek adding addrExp r14{0} + 24 to local table
+in proc f__canseek adding addrExp r14{0} + 28 to local table
+in proc f__canseek adding addrExp r14{0} + 32 to local table
+in proc f__canseek adding addrExp r14{0} + 36 to local table
+in proc f__canseek adding addrExp r14{0} + 40 to local table
+in proc f__canseek adding addrExp r14{0} + 44 to local table
+in proc f__canseek adding addrExp r14{0} + 48 to local table
+in proc f__canseek adding addrExp r14{0} + 52 to local table
+in proc f__canseek adding addrExp r14{0} + 56 to local table
+in proc f__canseek adding addrExp r14{0} + 60 to local table
+finding final parameters for f__canseek
+potential param r14
+found new parameter r14
+potential param r8
+found new parameter r8
+potential param m[r14{0} - 132]
+found new parameter m[r14{0} - 132]
+potential param m[r14{0} - 128]
+found new parameter m[r14{0} - 128]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f__fatal ###
+in proc f__fatal adding addrExp r14{0} to local table
+in proc f__fatal adding addrExp r14{0} + 4 to local table
+in proc f__fatal adding addrExp r14{0} + 8 to local table
+in proc f__fatal adding addrExp r14{0} + 12 to local table
+in proc f__fatal adding addrExp r14{0} + 16 to local table
+in proc f__fatal adding addrExp r14{0} + 20 to local table
+in proc f__fatal adding addrExp r14{0} + 24 to local table
+in proc f__fatal adding addrExp r14{0} + 28 to local table
+in proc f__fatal adding addrExp r14{0} + 32 to local table
+in proc f__fatal adding addrExp r14{0} + 36 to local table
+in proc f__fatal adding addrExp r14{0} + 40 to local table
+in proc f__fatal adding addrExp r14{0} + 44 to local table
+in proc f__fatal adding addrExp r14{0} + 48 to local table
+in proc f__fatal adding addrExp r14{0} + 52 to local table
+in proc f__fatal adding addrExp r14{0} + 56 to local table
+in proc f__fatal adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f__fatal ###
+in proc f__fatal adding addrExp r14{0} to local table
+in proc f__fatal adding addrExp r14{0} + 4 to local table
+in proc f__fatal adding addrExp r14{0} + 8 to local table
+in proc f__fatal adding addrExp r14{0} + 12 to local table
+in proc f__fatal adding addrExp r14{0} + 16 to local table
+in proc f__fatal adding addrExp r14{0} + 20 to local table
+in proc f__fatal adding addrExp r14{0} + 24 to local table
+in proc f__fatal adding addrExp r14{0} + 28 to local table
+in proc f__fatal adding addrExp r14{0} + 32 to local table
+in proc f__fatal adding addrExp r14{0} + 36 to local table
+in proc f__fatal adding addrExp r14{0} + 40 to local table
+in proc f__fatal adding addrExp r14{0} + 44 to local table
+in proc f__fatal adding addrExp r14{0} + 48 to local table
+in proc f__fatal adding addrExp r14{0} + 52 to local table
+in proc f__fatal adding addrExp r14{0} + 56 to local table
+in proc f__fatal adding addrExp r14{0} + 60 to local table
+finding final parameters for f__fatal
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure sig_die ###
+in proc sig_die adding addrExp r14{0} to local table
+in proc sig_die adding addrExp r14{0} + 4 to local table
+in proc sig_die adding addrExp r14{0} + 8 to local table
+in proc sig_die adding addrExp r14{0} + 12 to local table
+in proc sig_die adding addrExp r14{0} + 16 to local table
+in proc sig_die adding addrExp r14{0} + 20 to local table
+in proc sig_die adding addrExp r14{0} + 24 to local table
+in proc sig_die adding addrExp r14{0} + 28 to local table
+in proc sig_die adding addrExp r14{0} + 32 to local table
+in proc sig_die adding addrExp r14{0} + 36 to local table
+in proc sig_die adding addrExp r14{0} + 40 to local table
+in proc sig_die adding addrExp r14{0} + 44 to local table
+in proc sig_die adding addrExp r14{0} + 48 to local table
+in proc sig_die adding addrExp r14{0} + 52 to local table
+in proc sig_die adding addrExp r14{0} + 56 to local table
+in proc sig_die adding addrExp r14{0} + 60 to local table
+in proc sig_die adding addrExp r14 to local table
+in proc sig_die adding addrExp r14 + 4 to local table
+in proc sig_die adding addrExp r14 + 8 to local table
+in proc sig_die adding addrExp r14 + 12 to local table
+in proc sig_die adding addrExp r14 + 16 to local table
+in proc sig_die adding addrExp r14 + 20 to local table
+in proc sig_die adding addrExp r14 + 24 to local table
+in proc sig_die adding addrExp r14 + 28 to local table
+in proc sig_die adding addrExp r14 + 32 to local table
+in proc sig_die adding addrExp r14 + 36 to local table
+in proc sig_die adding addrExp r14 + 40 to local table
+in proc sig_die adding addrExp r14 + 44 to local table
+in proc sig_die adding addrExp r14 + 48 to local table
+in proc sig_die adding addrExp r14 + 52 to local table
+in proc sig_die adding addrExp r14 + 56 to local table
+in proc sig_die adding addrExp r14 + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure sig_die ###
+in proc sig_die adding addrExp r14{0} to local table
+in proc sig_die adding addrExp r14{0} + 4 to local table
+in proc sig_die adding addrExp r14{0} + 8 to local table
+in proc sig_die adding addrExp r14{0} + 12 to local table
+in proc sig_die adding addrExp r14{0} + 16 to local table
+in proc sig_die adding addrExp r14{0} + 20 to local table
+in proc sig_die adding addrExp r14{0} + 24 to local table
+in proc sig_die adding addrExp r14{0} + 28 to local table
+in proc sig_die adding addrExp r14{0} + 32 to local table
+in proc sig_die adding addrExp r14{0} + 36 to local table
+in proc sig_die adding addrExp r14{0} + 40 to local table
+in proc sig_die adding addrExp r14{0} + 44 to local table
+in proc sig_die adding addrExp r14{0} + 48 to local table
+in proc sig_die adding addrExp r14{0} + 52 to local table
+in proc sig_die adding addrExp r14{0} + 56 to local table
+in proc sig_die adding addrExp r14{0} + 60 to local table
+in proc sig_die adding addrExp r14 to local table
+in proc sig_die adding addrExp r14 + 4 to local table
+in proc sig_die adding addrExp r14 + 8 to local table
+in proc sig_die adding addrExp r14 + 12 to local table
+in proc sig_die adding addrExp r14 + 16 to local table
+in proc sig_die adding addrExp r14 + 20 to local table
+in proc sig_die adding addrExp r14 + 24 to local table
+in proc sig_die adding addrExp r14 + 28 to local table
+in proc sig_die adding addrExp r14 + 32 to local table
+in proc sig_die adding addrExp r14 + 36 to local table
+in proc sig_die adding addrExp r14 + 40 to local table
+in proc sig_die adding addrExp r14 + 44 to local table
+in proc sig_die adding addrExp r14 + 48 to local table
+in proc sig_die adding addrExp r14 + 52 to local table
+in proc sig_die adding addrExp r14 + 56 to local table
+in proc sig_die adding addrExp r14 + 60 to local table
+finding final parameters for sig_die
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f_exit ###
+in proc f_exit adding addrExp r14{0} to local table
+in proc f_exit adding addrExp r14{0} + 4 to local table
+in proc f_exit adding addrExp r14{0} + 8 to local table
+in proc f_exit adding addrExp r14{0} + 12 to local table
+in proc f_exit adding addrExp r14{0} + 16 to local table
+in proc f_exit adding addrExp r14{0} + 20 to local table
+in proc f_exit adding addrExp r14{0} + 24 to local table
+in proc f_exit adding addrExp r14{0} + 28 to local table
+in proc f_exit adding addrExp r14{0} + 32 to local table
+in proc f_exit adding addrExp r14{0} + 36 to local table
+in proc f_exit adding addrExp r14{0} + 40 to local table
+in proc f_exit adding addrExp r14{0} + 44 to local table
+in proc f_exit adding addrExp r14{0} + 48 to local table
+in proc f_exit adding addrExp r14{0} + 52 to local table
+in proc f_exit adding addrExp r14{0} + 56 to local table
+in proc f_exit adding addrExp r14{0} + 60 to local table
+in proc f_exit adding addrExp r14{0} + 4 to local table
+in proc f_exit adding addrExp r14{0} + 8 to local table
+in proc f_exit adding addrExp r14{0} + 12 to local table
+in proc f_exit adding addrExp r14{0} + 16 to local table
+in proc f_exit adding addrExp r14{0} + 20 to local table
+in proc f_exit adding addrExp r14{0} + 24 to local table
+in proc f_exit adding addrExp r14{0} + 28 to local table
+in proc f_exit adding addrExp r14{0} + 32 to local table
+in proc f_exit adding addrExp r14{0} + 36 to local table
+in proc f_exit adding addrExp r14{0} + 40 to local table
+in proc f_exit adding addrExp r14{0} + 44 to local table
+in proc f_exit adding addrExp r14{0} + 48 to local table
+in proc f_exit adding addrExp r14{0} + 52 to local table
+in proc f_exit adding addrExp r14{0} + 56 to local table
+in proc f_exit adding addrExp r14{0} + 60 to local table
+in proc f_exit adding addrExp r14{0} to local table
+finding final parameters for f_exit
+potential param r14
+found new parameter r14
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+potential param r12
+found new parameter r12
+potential param r13
+found new parameter r13
+potential param r15
+found new parameter r15
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f_clos ###
+in proc f_clos adding addrExp r14{0} to local table
+in proc f_clos adding addrExp r14{0} + 4 to local table
+in proc f_clos adding addrExp r14{0} + 8 to local table
+in proc f_clos adding addrExp r14{0} + 12 to local table
+in proc f_clos adding addrExp r14{0} + 16 to local table
+in proc f_clos adding addrExp r14{0} + 20 to local table
+in proc f_clos adding addrExp r14{0} + 24 to local table
+in proc f_clos adding addrExp r14{0} + 28 to local table
+in proc f_clos adding addrExp r14{0} + 32 to local table
+in proc f_clos adding addrExp r14{0} + 36 to local table
+in proc f_clos adding addrExp r14{0} + 40 to local table
+in proc f_clos adding addrExp r14{0} + 44 to local table
+in proc f_clos adding addrExp r14{0} + 48 to local table
+in proc f_clos adding addrExp r14{0} + 52 to local table
+in proc f_clos adding addrExp r14{0} + 56 to local table
+in proc f_clos adding addrExp r14{0} + 60 to local table
+in proc f_clos adding addrExp r14{0} + 4 to local table
+in proc f_clos adding addrExp r14{0} + 8 to local table
+in proc f_clos adding addrExp r14{0} + 12 to local table
+in proc f_clos adding addrExp r14{0} + 16 to local table
+in proc f_clos adding addrExp r14{0} + 20 to local table
+in proc f_clos adding addrExp r14{0} + 24 to local table
+in proc f_clos adding addrExp r14{0} + 28 to local table
+in proc f_clos adding addrExp r14{0} + 32 to local table
+in proc f_clos adding addrExp r14{0} + 36 to local table
+in proc f_clos adding addrExp r14{0} + 40 to local table
+in proc f_clos adding addrExp r14{0} + 44 to local table
+in proc f_clos adding addrExp r14{0} + 48 to local table
+in proc f_clos adding addrExp r14{0} + 52 to local table
+in proc f_clos adding addrExp r14{0} + 56 to local table
+in proc f_clos adding addrExp r14{0} + 60 to local table
+in proc f_clos adding addrExp r14{0} to local table
+in proc f_clos adding addrExp r14{0} + 4 to local table
+in proc f_clos adding addrExp r14{0} + 8 to local table
+in proc f_clos adding addrExp r14{0} + 12 to local table
+in proc f_clos adding addrExp r14{0} + 16 to local table
+in proc f_clos adding addrExp r14{0} + 20 to local table
+in proc f_clos adding addrExp r14{0} + 24 to local table
+in proc f_clos adding addrExp r14{0} + 28 to local table
+in proc f_clos adding addrExp r14{0} + 32 to local table
+in proc f_clos adding addrExp r14{0} + 36 to local table
+in proc f_clos adding addrExp r14{0} + 40 to local table
+in proc f_clos adding addrExp r14{0} + 44 to local table
+in proc f_clos adding addrExp r14{0} + 48 to local table
+in proc f_clos adding addrExp r14{0} + 52 to local table
+in proc f_clos adding addrExp r14{0} + 56 to local table
+in proc f_clos adding addrExp r14{0} + 60 to local table
+in proc f_clos adding addrExp r14{0} to local table
+in proc f_clos adding addrExp r14{0} + 4 to local table
+in proc f_clos adding addrExp r14{0} + 8 to local table
+in proc f_clos adding addrExp r14{0} + 12 to local table
+in proc f_clos adding addrExp r14{0} + 16 to local table
+in proc f_clos adding addrExp r14{0} + 20 to local table
+in proc f_clos adding addrExp r14{0} + 24 to local table
+in proc f_clos adding addrExp r14{0} + 28 to local table
+in proc f_clos adding addrExp r14{0} + 32 to local table
+in proc f_clos adding addrExp r14{0} + 36 to local table
+in proc f_clos adding addrExp r14{0} + 40 to local table
+in proc f_clos adding addrExp r14{0} + 44 to local table
+in proc f_clos adding addrExp r14{0} + 48 to local table
+in proc f_clos adding addrExp r14{0} + 52 to local table
+in proc f_clos adding addrExp r14{0} + 56 to local table
+in proc f_clos adding addrExp r14{0} + 60 to local table
+in proc f_clos adding addrExp r14{0} to local table
+in proc f_clos adding addrExp r14{0} + 4 to local table
+in proc f_clos adding addrExp r14{0} + 8 to local table
+in proc f_clos adding addrExp r14{0} + 12 to local table
+in proc f_clos adding addrExp r14{0} + 16 to local table
+in proc f_clos adding addrExp r14{0} + 20 to local table
+in proc f_clos adding addrExp r14{0} + 24 to local table
+in proc f_clos adding addrExp r14{0} + 28 to local table
+in proc f_clos adding addrExp r14{0} + 32 to local table
+in proc f_clos adding addrExp r14{0} + 36 to local table
+in proc f_clos adding addrExp r14{0} + 40 to local table
+in proc f_clos adding addrExp r14{0} + 44 to local table
+in proc f_clos adding addrExp r14{0} + 48 to local table
+in proc f_clos adding addrExp r14{0} + 52 to local table
+in proc f_clos adding addrExp r14{0} + 56 to local table
+in proc f_clos adding addrExp r14{0} + 60 to local table
+in proc f_clos adding addrExp r14{0} to local table
+finding final parameters for f_clos
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure t_runc ###
+in proc t_runc adding addrExp r14{0} to local table
+in proc t_runc adding addrExp r14{0} + 4 to local table
+in proc t_runc adding addrExp r14{0} + 8 to local table
+in proc t_runc adding addrExp r14{0} + 12 to local table
+in proc t_runc adding addrExp r14{0} + 16 to local table
+in proc t_runc adding addrExp r14{0} + 20 to local table
+in proc t_runc adding addrExp r14{0} + 24 to local table
+in proc t_runc adding addrExp r14{0} + 28 to local table
+in proc t_runc adding addrExp r14{0} + 32 to local table
+in proc t_runc adding addrExp r14{0} + 36 to local table
+in proc t_runc adding addrExp r14{0} + 40 to local table
+in proc t_runc adding addrExp r14{0} + 44 to local table
+in proc t_runc adding addrExp r14{0} + 48 to local table
+in proc t_runc adding addrExp r14{0} + 52 to local table
+in proc t_runc adding addrExp r14{0} + 56 to local table
+in proc t_runc adding addrExp r14{0} + 60 to local table
+in proc t_runc adding addrExp r14{0} + 4 to local table
+in proc t_runc adding addrExp r14{0} + 8 to local table
+in proc t_runc adding addrExp r14{0} + 12 to local table
+in proc t_runc adding addrExp r14{0} + 16 to local table
+in proc t_runc adding addrExp r14{0} + 20 to local table
+in proc t_runc adding addrExp r14{0} + 24 to local table
+in proc t_runc adding addrExp r14{0} + 28 to local table
+in proc t_runc adding addrExp r14{0} + 32 to local table
+in proc t_runc adding addrExp r14{0} + 36 to local table
+in proc t_runc adding addrExp r14{0} + 40 to local table
+in proc t_runc adding addrExp r14{0} + 44 to local table
+in proc t_runc adding addrExp r14{0} + 48 to local table
+in proc t_runc adding addrExp r14{0} + 52 to local table
+in proc t_runc adding addrExp r14{0} + 56 to local table
+in proc t_runc adding addrExp r14{0} + 60 to local table
+in proc t_runc adding addrExp r14{0} to local table
+in proc t_runc adding addrExp r14{0} + 4 to local table
+in proc t_runc adding addrExp r14{0} + 8 to local table
+in proc t_runc adding addrExp r14{0} + 12 to local table
+in proc t_runc adding addrExp r14{0} + 16 to local table
+in proc t_runc adding addrExp r14{0} + 20 to local table
+in proc t_runc adding addrExp r14{0} + 24 to local table
+in proc t_runc adding addrExp r14{0} + 28 to local table
+in proc t_runc adding addrExp r14{0} + 32 to local table
+in proc t_runc adding addrExp r14{0} + 36 to local table
+in proc t_runc adding addrExp r14{0} + 40 to local table
+in proc t_runc adding addrExp r14{0} + 44 to local table
+in proc t_runc adding addrExp r14{0} + 48 to local table
+in proc t_runc adding addrExp r14{0} + 52 to local table
+in proc t_runc adding addrExp r14{0} + 56 to local table
+in proc t_runc adding addrExp r14{0} + 60 to local table
+in proc t_runc adding addrExp r14{0} to local table
+finding final parameters for t_runc
+potential param r14
+found new parameter r14
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+potential param r12
+found new parameter r12
+potential param r13
+found new parameter r13
+potential param r15
+found new parameter r15
+finding final parameters for f__fatal
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+finding final parameters for sig_die
+finding final parameters for f_exit
+potential param r14
+found new parameter r14
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+potential param r12
+found new parameter r12
+potential param r13
+found new parameter r13
+potential param r15
+found new parameter r15
+finding final parameters for f_clos
+finding final parameters for t_runc
+potential param r14
+found new parameter r14
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r11
+found new parameter r11
+potential param r12
+found new parameter r12
+potential param r13
+found new parameter r13
+potential param r15
+found new parameter r15
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure f_init ###
+in proc f_init adding addrExp r14{0} to local table
+in proc f_init adding addrExp r14{0} + 4 to local table
+in proc f_init adding addrExp r14{0} + 8 to local table
+in proc f_init adding addrExp r14{0} + 12 to local table
+in proc f_init adding addrExp r14{0} + 16 to local table
+in proc f_init adding addrExp r14{0} + 20 to local table
+in proc f_init adding addrExp r14{0} + 24 to local table
+in proc f_init adding addrExp r14{0} + 28 to local table
+in proc f_init adding addrExp r14{0} + 32 to local table
+in proc f_init adding addrExp r14{0} + 36 to local table
+in proc f_init adding addrExp r14{0} + 40 to local table
+in proc f_init adding addrExp r14{0} + 44 to local table
+in proc f_init adding addrExp r14{0} + 48 to local table
+in proc f_init adding addrExp r14{0} + 52 to local table
+in proc f_init adding addrExp r14{0} + 56 to local table
+in proc f_init adding addrExp r14{0} + 60 to local table
+finding final parameters for f_init
+potential param r14
+found new parameter r14
+potential param m[r14{0} - 240]
+found new parameter m[r14{0} - 240]
+potential param m[r14{0} - 244]
+found new parameter m[r14{0} - 244]
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure g_char ###
+finding final parameters for g_char
+potential param r10
+found new parameter r10
+potential param r9
+found new parameter r9
+potential param r8
+found new parameter r8
+potential param r3
+found new parameter r3
+potential param r2
+found new parameter r2

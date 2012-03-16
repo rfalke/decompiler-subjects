@@ -1,0 +1,8 @@
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    8 {*v* r4, *v* r5, *v* r6, *v* r7, *v* r8, *v* r9, *v* r10, *v* r11, *v* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 296
+              )
+              Reaching definitions: r2=machine("%LR"),   r3=machine("%LR") + 296,   r4=7
+              Live variables:  in proc main

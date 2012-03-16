@@ -1,0 +1,43 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x20 meet with size 0x40!
+size 0x40 meet with size 0x20!
+size 0x20 meet with size 0x40!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r1{0} - 28 to local table
+in proc main adding addrExp r1{0} + 112 to local table
+in proc main adding addrExp r1{0} + 116 to local table
+TYPE ERROR: attempt to insert item <noname> at 0x74 of type __size64 which weaves after <noname> at 0x70 of type __size64
+in proc main adding addrExp r1{0} + 8 to local table
+in proc main adding addrExp r1{0} - 112 to local table
+in proc main adding addrExp r1{0} - 48 to local table
+in proc main adding addrExp r1{0} - 32 to local table
+TYPE ERROR: at address 0xffffffe0, overlapping type double does not resolve to compound or array
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+local g3 has type char * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   88 {*32* r4, *32* r5, *32* r6, *32* r7, *32* r8, *32* r9, *32* r10, *32* r11, *32* r12} := CALL printf(
+                *c** g3 := machine("%LR") + 680
+              )
+              Reaching definitions: r[tmp + 30]=r[tmp + 30]{0},   r0=machine("%LR"),   r1=r1{0} - 112,
+                r3=machine("%LR") + 680,   r4=fsize(32,64,fsize(64,32,r32{74})),   r5=m[r1{0} - 28]{0},
+                r9=fsize(32,64,fsize(64,32,r32{74})),   r10=m[r1{0} - 28]{0},   r30=r1{0} - 112,   r31=machine("%LR"),
+                r32=fsize(32,64,fsize(64,32,r32{74})),   r33=fsize(32,64,fsize(64,32,r32{74})),
+                r45=fsize(32,64,fsize(64,32,r32{74})),   m[r1{0} + 8]=machine("%LR"),   m[r1{0} + 112]=r[tmp + 30]{0},
+                m[r1{0} + 116]=r[tmp + 30]{0},   m[r1{0} - 28]=m[r1{0} - 28]{0},
+                m[r1{0} - 32]=fsize(32,64,fsize(64,32,r32{74})),   m[r1{0} - 48]=fsize(64,32,r32{74}),
+                m[r1{0} - 112]=r1{0},   tmp=31
+              Live variables:  in proc main

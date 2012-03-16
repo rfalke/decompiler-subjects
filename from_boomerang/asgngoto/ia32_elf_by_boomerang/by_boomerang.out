@@ -1,0 +1,22 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 3 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering atexit
+  decompiling atexit
+  considering MAIN__
+  decompiling MAIN__
+r  reconsidering MAIN__
+  decompiling MAIN__
+prr decompiling main
+rglobal type analysis for main
+global type analysis for atexit
+global type analysis for MAIN__
+igenerating code...
+output written to _output/subject
+completed in 0 secs.

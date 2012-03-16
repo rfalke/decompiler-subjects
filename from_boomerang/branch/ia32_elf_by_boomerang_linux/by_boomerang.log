@@ -1,0 +1,555 @@
+got filename branch.c for main
+assgn   28 *32* r24 := m[0x8049854]
+assgn   41 *32* r24 := m[0x8049854]
+assgn   53 *32* r24 := m[0x8049854]
+assgn   65 *32* r24 := m[0x8049854]
+assgn   77 *32* r24 := m[0x8049854]
+assgn   89 *32* r24 := m[0x8049854]
+assgn  101 *32* r24 := m[0x8049854]
+assgn  113 *32* r24 := m[0x8049854]
+assgn  125 *32* r24 := m[0x8049854]
+assgn  138 *32* r24 := m[0x8049854]
+assgn  158 *32* r24 := m[0x8049854]
+assgn  168 *32* r24 := m[0x8049854]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+local eax has type FILE * that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local eax has type __size32 that doesn't agree with type of define int of a library, why?
+local eax has type int that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define int of a library, why?
+local eax has type int that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define int of a library, why?
+local eax has type int that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   16 {*32* eax, *v* r25, *v* r26} := CALL scanf(
+                *c** local2 := "%d"
+                *i32** local3 := a[local0]
+              )
+              Reaching definitions: r26=r28{0} - 12,   r27=5,   r28=r28{0} - 48,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},   m[r28{0} - 12]=m[r28{0} - 12]{0},
+                m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=m[r28{0} - 32]{0},
+                m[r28{0} - 36]=m[r28{0} - 36]{0},   m[r28{0} - 40]=r28{0} - 12,   m[r28{0} - 44]=0x80486b8,
+                m[r28{0} - 48]=%pc,   tmp1=r28{0} - 8,   %flags=SUBFLAGS32( r28{0} - 8, 36, r28{0} - 44 ),
+                %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 8) <u 36
+              Live variables:  in proc main
+dest is not lib
+call:   23 {*i32* eax, *32* r25, *32* r26} := CALL scanf(
+                *c** local2 := "%d"
+                *u32** local3 := a[local1]
+              )
+              Reaching definitions: r24=r24{16},   r25=r25{16},   r26=r28{0} - 16,   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},   m[r28{0} - 40]=r28{0} - 16,
+                m[r28{0} - 44]=0x80486b8,   m[r28{0} - 48]=%pc,   tmp1=r28{0} - 8,
+                %flags=SUBFLAGS32( r28{0} - 8, 36, r28{0} - 44 ),   %ZF=(r28{0} - 44) = 0,   %CF=(r28{0} - 8) <u 36
+              Live variables:  in proc main
+dest is not lib
+call:  175 {*32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Equal
+"
+                *i32* local4 := 1
+                *i32* local5 := 6
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{168},   r25=r25{23},   r26=r26{23},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{168},
+                m[r28{0} - 36]=6,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x8048745,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 12], 5 - m[r28{0} - 12]{0} ),
+                %ZF=(5 - m[r28{0} - 12]{0}) = 0,   %CF=5 <u m[r28{0} - 12]
+              Live variables:  in proc main
+dest is not lib
+call:   35 {*32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Not Equal
+"
+                *i32* local4 := 1
+                *i32* local5 := 10
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{28},   r25=r25{182},   r26=r26{183},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{28},
+                m[r28{0} - 36]=10,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486bb,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=%flags{186},   %ZF=%ZF{187},   %CF=%CF{188}
+              Live variables:  in proc main
+dest is not lib
+call:   60 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Less or Equal
+"
+                *i32* local4 := 1
+                *i32* local5 := 14
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{53},   r25=r25{198},   r26=r26{199},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{53},
+                m[r28{0} - 36]=14,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486cf,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=%flags{202},   %ZF=%ZF{203},   %CF=%CF{204}
+              Live variables:  in proc main
+dest is not lib
+call:   84 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Less
+"
+                *i32* local4 := 1
+                *i32* local5 := 5
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{77},   r25=r25{214},   r26=r26{215},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{77},
+                m[r28{0} - 36]=5,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486f0,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 12]{0}, 5 - m[r28{0} - 12]{0} ),
+                %ZF=%ZF{219},   %CF=%CF{220}
+              Live variables:  in proc main
+dest is not lib
+call:   72 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Greater or Equal
+"
+                *i32* local4 := 1
+                *i32* local5 := 17
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{65},   r25=r25{206},   r26=r26{207},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{65},
+                m[r28{0} - 36]=17,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486de,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=%flags{210},   %ZF=%ZF{211},   %CF=%CF{212}
+              Live variables:  in proc main
+dest is not lib
+call:   48 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Greater
+"
+                *i32* local4 := 1
+                *i32* local5 := 8
+                *FILE** local6 := eax
+              )
+              Reaching definitions: r24=r24{41},   r25=r25{190},   r26=r26{191},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{41},
+                m[r28{0} - 36]=8,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486c6,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 12]{0}, 5 - m[r28{0} - 12]{0} ),
+                %ZF=(5 - m[r28{0} - 12]{0}) = 0,   %CF=5 <u m[r28{0} - 12]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  108 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Less or Equal Unsigned
+"
+                *i32* local4 := 1
+                *i32* local5 := 23
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{101},   r25=r25{230},   r26=r26{231},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{101},
+                m[r28{0} - 36]=23,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x8048708,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 16]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 16]{0}, 5 - m[r28{0} - 16]{0} ),
+                %ZF=%ZF{235},   %CF=%CF{236}
+              Live variables:  in proc main
+dest is not lib
+call:  132 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Carry Set
+"
+                *i32* local4 := 1
+                *i32* local5 := 10
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{125},   r25=r25{246},   r26=r26{247},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{125},
+                m[r28{0} - 36]=10,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x804872d,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 16]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 16]{0}, 5 - m[r28{0} - 16]{0} ),
+                %ZF=%ZF{251},   %CF=%CF{252}
+              Live variables:  in proc main
+dest is not lib
+call:  120 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Carry Clear
+"
+                *i32* local4 := 1
+                *i32* local5 := 12
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{113},   r25=r25{238},   r26=r26{239},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{113},
+                m[r28{0} - 36]=12,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x8048720,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 16]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 16]{0}, 5 - m[r28{0} - 16]{0} ),
+                %ZF=%ZF{243},   %CF=%CF{244}
+              Live variables:  in proc main
+dest is not lib
+call:   96 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Greater Unsigned
+"
+                *i32* local4 := 1
+                *i32* local5 := 17
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{89},   r25=r25{222},   r26=r26{223},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{89},
+                m[r28{0} - 36]=17,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x80486f6,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 16]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 16], 5 - m[r28{0} - 16]{0} ),
+                %ZF=(5 - m[r28{0} - 16]{0}) = 0,   %CF=5 <u m[r28{0} - 16]
+              Live variables:  in proc main
+dest is not lib
+call:  145 {*32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Minus
+"
+                *i32* local4 := 1
+                *i32* local5 := 6
+                *FILE** local6 := r24
+              )
+              Reaching definitions: r24=r24{138},   r25=r25{254},   r26=r26{255},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{138},
+                m[r28{0} - 36]=6,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x8048738,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 12]{0}, 5 - m[r28{0} - 12]{0} ),
+                %ZF=(5 - m[r28{0} - 12]{0}) = 0,   %CF=5 <u m[r28{0} - 12]{0}
+              Live variables:  in proc main
+dest is not lib
+call:  165 {*i32* eax, *32* r25, *32* r26} := CALL fwrite(
+                *c** local2 := "Plus
+"
+                *i32* local4 := 1
+                *i32* local5 := 5
+                *FILE** local6 := eax
+              )
+              Reaching definitions: r24=r24{158},   r25=r25{262},   r26=r26{263},   r27=5,   r28=r28{0} - 48,
+                r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r27{0},
+                m[r28{0} - 12]=m[r28{0} - 12]{0},   m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 32]=r24{158},
+                m[r28{0} - 36]=5,   m[r28{0} - 40]=1,   m[r28{0} - 44]=0x804873f,   m[r28{0} - 48]=%pc,
+                tmp1=5 - m[r28{0} - 12]{0},   %flags=SUBFLAGS32( 5, m[r28{0} - 12]{0}, 5 - m[r28{0} - 12]{0} ),
+                %ZF=(5 - m[r28{0} - 12]{0}) = 0,   %CF=5 <u m[r28{0} - 12]{0}
+              Live variables: eax in proc main
+result:    0 *i32* eax := -

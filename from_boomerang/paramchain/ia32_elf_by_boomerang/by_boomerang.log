@@ -1,0 +1,132 @@
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc addem adding addrExp r28{0} - 4 to local table
+finding final parameters for addem
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+after removing matching assigns (%pc).
+in proc passem adding addrExp r28{0} - 4 to local table
+in proc passem adding addrExp r28{0} - 8 to local table
+in proc passem adding addrExp r28{0} - 12 to local table
+in proc passem adding addrExp r28{0} - 16 to local table
+in proc passem adding addrExp r28{0} - 20 to local table
+in proc passem adding addrExp r28{0} - 24 to local table
+finding final parameters for passem
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+finding final parameters for passem
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+finding final parameters for addem
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+finding final parameters for passem
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   19 *32* r25 := CALL passem(
+                *32* local1 := 5
+                *32* local2 := 10
+                *32* local3 := 40
+                *j32** local4 := a[local0]
+              )
+              Reaching definitions: r24=r28{0} - 8,   r28=r28{0} - 28,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r28{0} - 8,
+                m[r28{0} - 16]=40,   m[r28{0} - 20]=10,   m[r28{0} - 24]=5,   m[r28{0} - 28]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 4, r28{0} - 8 ),   %ZF=(r28{0} - 8) = 0,   %CF=(r28{0} - 4) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   27 {*32* r25, *32* r26} := CALL printf(
+                *c** local5 := "Fifty five is %d
+"
+                *j32* local6 := local0
+              )
+              Reaching definitions: r24=r24{19},   r25=r25{19},   r28=r28{0} - 36,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} - 8]{0},   m[r28{0} - 12]=r28{0} - 8,
+                m[r28{0} - 16]=40,   m[r28{0} - 20]=10,   m[r28{0} - 24]=5,   m[r28{0} - 28]=m[r28{0} - 8]{0},
+                m[r28{0} - 32]=0x8049b2c,   m[r28{0} - 36]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 4, r28{0} - 8 ),   %ZF=(r28{0} - 8) = 0,   %CF=(r28{0} - 4) <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   15 {*32* r24, *32* r25} := CALL addem(
+                *32* local0 := param1
+                *32* local1 := param2
+                *32* local2 := param3
+                *32** local3 := param4
+              )
+              Reaching definitions: r28=r28{0} - 24,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=m[r28{0} + 16]{0},   m[r28{0} - 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 16]=m[r28{0} + 8]{0},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc
+              Live variables:  in proc passem

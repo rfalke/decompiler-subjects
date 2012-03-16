@@ -1,0 +1,239 @@
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure mid ###
+in proc mid adding addrExp r14{0} to local table
+in proc mid adding addrExp r14{0} + 4 to local table
+in proc mid adding addrExp r14{0} + 8 to local table
+in proc mid adding addrExp r14{0} + 12 to local table
+in proc mid adding addrExp r14{0} + 16 to local table
+in proc mid adding addrExp r14{0} + 20 to local table
+in proc mid adding addrExp r14{0} + 24 to local table
+in proc mid adding addrExp r14{0} + 28 to local table
+in proc mid adding addrExp r14{0} + 32 to local table
+in proc mid adding addrExp r14{0} + 36 to local table
+in proc mid adding addrExp r14{0} + 40 to local table
+in proc mid adding addrExp r14{0} + 44 to local table
+in proc mid adding addrExp r14{0} + 48 to local table
+in proc mid adding addrExp r14{0} + 52 to local table
+in proc mid adding addrExp r14{0} + 56 to local table
+in proc mid adding addrExp r14{0} + 60 to local table
+in proc mid adding addrExp r14{0} + 68 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure mid ###
+in proc mid adding addrExp r14{0} to local table
+in proc mid adding addrExp r14{0} + 4 to local table
+in proc mid adding addrExp r14{0} + 8 to local table
+in proc mid adding addrExp r14{0} + 12 to local table
+in proc mid adding addrExp r14{0} + 16 to local table
+in proc mid adding addrExp r14{0} + 20 to local table
+in proc mid adding addrExp r14{0} + 24 to local table
+in proc mid adding addrExp r14{0} + 28 to local table
+in proc mid adding addrExp r14{0} + 32 to local table
+in proc mid adding addrExp r14{0} + 36 to local table
+in proc mid adding addrExp r14{0} + 40 to local table
+in proc mid adding addrExp r14{0} + 44 to local table
+in proc mid adding addrExp r14{0} + 48 to local table
+in proc mid adding addrExp r14{0} + 52 to local table
+in proc mid adding addrExp r14{0} + 56 to local table
+in proc mid adding addrExp r14{0} + 60 to local table
+in proc mid adding addrExp r14{0} + 68 to local table
+finding final parameters for mid
+potential param r8
+found new parameter r8
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fst ###
+in proc fst adding addrExp r14{0} to local table
+in proc fst adding addrExp r14{0} + 4 to local table
+in proc fst adding addrExp r14{0} + 8 to local table
+in proc fst adding addrExp r14{0} + 12 to local table
+in proc fst adding addrExp r14{0} + 16 to local table
+in proc fst adding addrExp r14{0} + 20 to local table
+in proc fst adding addrExp r14{0} + 24 to local table
+in proc fst adding addrExp r14{0} + 28 to local table
+in proc fst adding addrExp r14{0} + 32 to local table
+in proc fst adding addrExp r14{0} + 36 to local table
+in proc fst adding addrExp r14{0} + 40 to local table
+in proc fst adding addrExp r14{0} + 44 to local table
+in proc fst adding addrExp r14{0} + 48 to local table
+in proc fst adding addrExp r14{0} + 52 to local table
+in proc fst adding addrExp r14{0} + 56 to local table
+in proc fst adding addrExp r14{0} + 60 to local table
+in proc fst adding addrExp r14{0} + 68 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fst ###
+in proc fst adding addrExp r14{0} to local table
+in proc fst adding addrExp r14{0} + 4 to local table
+in proc fst adding addrExp r14{0} + 8 to local table
+in proc fst adding addrExp r14{0} + 12 to local table
+in proc fst adding addrExp r14{0} + 16 to local table
+in proc fst adding addrExp r14{0} + 20 to local table
+in proc fst adding addrExp r14{0} + 24 to local table
+in proc fst adding addrExp r14{0} + 28 to local table
+in proc fst adding addrExp r14{0} + 32 to local table
+in proc fst adding addrExp r14{0} + 36 to local table
+in proc fst adding addrExp r14{0} + 40 to local table
+in proc fst adding addrExp r14{0} + 44 to local table
+in proc fst adding addrExp r14{0} + 48 to local table
+in proc fst adding addrExp r14{0} + 52 to local table
+in proc fst adding addrExp r14{0} + 56 to local table
+in proc fst adding addrExp r14{0} + 60 to local table
+in proc fst adding addrExp r14{0} + 68 to local table
+finding final parameters for fst
+potential param r8
+found new parameter r8
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+WARNING: size 0x20 meet with unsigned char; allowing temporarily
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+integer size 0x8 meet with SizeType size 0x20!
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 24 to local table
+in proc main adding addrExp r14{0} - 28 to local table
+in proc main adding addrExp r14{0} - 20 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure mid ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fst ###
+finding final parameters for mid
+potential param r8
+found new parameter r8
+finding final parameters for fst
+potential param r8
+found new parameter r8
+local o0 has type __size32 that doesn't agree with type of define void of a library, why?
+local o1 has type int that doesn't agree with type of define void of a library, why?
+local o6 has type void * that doesn't agree with type of define void of a library, why?
+local o0 has type unsigned int that doesn't agree with type of define void of a library, why?
+local o1 has type int that doesn't agree with type of define void of a library, why?
+local o0 has type unsigned int that doesn't agree with type of define void of a library, why?
+local o1 has type int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   30 *32* r0 := CALL mid(
+                *32* o0 := 0x20a50
+              )
+              Reaching definitions: r8=0x20a50,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 128,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},
+                r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0} - 24]=0,   m[r14{0}]=r16{0},   tmp=r14{0} - 128,   %flags=%flags{0},
+                %ZF=%ZF{0},   %CF=%CF{0}
+              Live variables:  in proc main
+dest is not lib
+call:   35 *j32* r0 := CALL fst(
+                *32* o0 := 0x20a46
+              )
+              Reaching definitions: r0=r0{30},   r8=0x20a46,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},
+                r13=r13{0},   r14=r14{0} - 128,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},
+                r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},
+                r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},
+                m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},
+                m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},
+                m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},
+                m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} - 24]=0,   m[r14{0}]=r16{0},   tmp=0x20a50,
+                %flags=%flags{0},   %ZF=%ZF{0},   %CF=%CF{0}
+              Live variables:  in proc main
+dest is not lib
+call:   68 {*v* o0, *v* r10, *v* r11, *v* r12, *v* r13, *v* r15} := CALL printf(
+                *c** o0 := "Sum is %d
+"
+                *i32* o1 := local0
+              )
+              Reaching definitions: r0=m[r14{0} - 20]{108} - 4,   r8=0x108d0,   r9=m[r14{0} - 24]{109},   r10=r10{102},
+                r11=r11{103},   r12=r12{0},   r13=r13{0},   r14=r14{0} - 128,   r15=r15{0},   r16=r16{0},   r17=r17{0},
+                r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},
+                r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0} - 20]=m[r14{0} - 20]{108},   m[r14{0} - 24]=m[r14{0} - 24]{109},
+                m[r14{0} - 28]=m[r14{0} - 28]{110},   m[r14{0}]=r16{0},   tmp=m[r14{0} - 20]{108},
+                %flags=SUBFLAGS( m[r14{0} - 20]{108}, 4, m[r14{0} - 20]{108} - 4 ),   %ZF=(m[r14{0} - 20]{108} - 4) = 0
+                %CF=m[r14{0} - 20]{108} <u 4
+              Live variables:  in proc main
+dest is not lib
+call:   37 {*v* o0, *v* r10, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0_1 := "Middle elment is %d
+"
+                *i32* o1 :=  *i32*o0 * 0x1000000 >>A 24
+              )
+              Reaching definitions: r8=0x108a0,   r9=(r8{32} * 0x1000000) >>A 24,   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} + 68]=r8{0},
+                m[r14{0}]=r16{0},   tmp=2
+              Live variables:  in proc mid
+dest is not lib
+call:   37 {*v* o0, *v* r10, *v* r11, *v* r12, *v* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0_1 := "First element is %d
+"
+                *i32* o1 :=  *i32*o0 * 0x1000000 >>A 24
+              )
+              Reaching definitions: r8=0x108b8,   r9=(r8{32} * 0x1000000) >>A 24,   r10=r10{0},   r11=r11{0},
+                r12=r12{0},   r13=r13{0},   r14=r14{0} - 112,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},
+                r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},
+                r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},
+                m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},
+                m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},
+                m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},
+                m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},   m[r14{0} + 68]=r8{0},
+                m[r14{0}]=r16{0},   tmp=10
+              Live variables:  in proc fst

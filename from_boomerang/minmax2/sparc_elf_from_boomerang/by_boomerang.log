@@ -1,0 +1,112 @@
+after removing matching assigns (t[WILDSTR]).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure test ###
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure test ###
+finding final parameters for test
+potential param r8
+found new parameter r8
+potential param r15
+found new parameter r15
+after removing matching assigns (t[WILDSTR]).
+in proc main adding addrExp r14{0} to local table
+in proc main adding addrExp r14{0} + 4 to local table
+in proc main adding addrExp r14{0} + 8 to local table
+in proc main adding addrExp r14{0} + 12 to local table
+in proc main adding addrExp r14{0} + 16 to local table
+in proc main adding addrExp r14{0} + 20 to local table
+in proc main adding addrExp r14{0} + 24 to local table
+in proc main adding addrExp r14{0} + 28 to local table
+in proc main adding addrExp r14{0} + 32 to local table
+in proc main adding addrExp r14{0} + 36 to local table
+in proc main adding addrExp r14{0} + 40 to local table
+in proc main adding addrExp r14{0} + 44 to local table
+in proc main adding addrExp r14{0} + 48 to local table
+in proc main adding addrExp r14{0} + 52 to local table
+in proc main adding addrExp r14{0} + 56 to local table
+in proc main adding addrExp r14{0} + 60 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure test ###
+finding final parameters for test
+potential param r8
+found new parameter r8
+local o0 has type char * that doesn't agree with type of define __size32 of a library, why?
+local o1 has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+dest is not lib
+call:   28 {*32* r1, *32* r2, *32* r3, *32* r4} := CALL test(
+                *i32* o0 := -5
+              )
+              Reaching definitions: r8=-5,   r9=r9{0},   r10=r10{0},   r11=r11{0},   r12=r12{0},   r13=r13{0},
+                r14=r14{0} - 96,   r15=r15{0},   r16=r16{0},   r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},
+                r21=r21{0},   r22=r22{0},   r23=r23{0},   r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},
+                r28=r12{0},   r29=r13{0},   r30=r14{0},   r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},
+                m[r14{0} + 12]=r19{0},   m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},
+                m[r14{0} + 28]=r23{0},   m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},
+                m[r14{0} + 44]=r27{0},   m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},
+                m[r14{0} + 60]=r31{0},   m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables:  in proc main
+dest is not lib
+call:   30 {*32* r1, *32* r2, *32* r3, *32* r4} := CALL test(
+                *i32* o0 := -2
+              )
+              Reaching definitions: r1=r1{28},   r2=r2{28},   r3=r3{28},   r4=r4{28},   r8=-2,   r9=r9{28},
+                r10=r10{28},   r11=r11{28},   r12=r12{28},   r13=r13{28},   r14=r14{0} - 96,   r15=r15{0},   r16=r16{0}
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables:  in proc main
+dest is not lib
+call:   32 {*32* r1, *32* r2, *32* r3, *32* r4} := CALL test(
+                *i32* o0 := 0
+              )
+              Reaching definitions: r1=r1{30},   r2=r2{30},   r3=r3{30},   r4=r4{30},   r8=0,   r9=r9{30},
+                r10=r10{30},   r11=r11{30},   r12=r12{30},   r13=r13{30},   r14=r14{0} - 96,   r15=r15{0},   r16=r16{0}
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables:  in proc main
+dest is not lib
+call:   34 {*32* r1, *32* r2, *32* r3, *32* r4} := CALL test(
+                *i32* o0 := argc
+              )
+              Reaching definitions: r1=r1{32},   r2=r2{32},   r3=r3{32},   r4=r4{32},   r8=r8{0},   r9=r9{32},
+                r10=r10{32},   r11=r11{32},   r12=r12{32},   r13=r13{32},   r14=r14{0} - 96,   r15=r15{0},   r16=r16{0}
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables:  in proc main
+dest is not lib
+call:   36 {*32* r1, *32* r2, *32* r3, *32* r4} := CALL test(
+                *i32* o0 := 5
+              )
+              Reaching definitions: r1=r1{34},   r2=r2{34},   r3=r3{34},   r4=r4{34},   r8=5,   r9=r9{34},
+                r10=r10{34},   r11=r11{34},   r12=r12{34},   r13=r13{34},   r14=r14{0} - 96,   r15=r15{0},   r16=r16{0}
+                r17=r17{0},   r18=r18{0},   r19=r19{0},   r20=r20{0},   r21=r21{0},   r22=r22{0},   r23=r23{0},
+                r24=r8{0},   r25=r9{0},   r26=r10{0},   r27=r11{0},   r28=r12{0},   r29=r13{0},   r30=r14{0},
+                r31=r15{0},   m[r14{0} + 4]=r17{0},   m[r14{0} + 8]=r18{0},   m[r14{0} + 12]=r19{0},
+                m[r14{0} + 16]=r20{0},   m[r14{0} + 20]=r21{0},   m[r14{0} + 24]=r22{0},   m[r14{0} + 28]=r23{0},
+                m[r14{0} + 32]=r24{0},   m[r14{0} + 36]=r25{0},   m[r14{0} + 40]=r26{0},   m[r14{0} + 44]=r27{0},
+                m[r14{0} + 48]=r28{0},   m[r14{0} + 52]=r29{0},   m[r14{0} + 56]=r30{0},   m[r14{0} + 60]=r31{0},
+                m[r14{0}]=r16{0},   tmp=r14{0} - 96
+              Live variables:  in proc main
+dest is not lib
+call:   25 {*32* r10, *32* r11, *32* r12, *32* r13, *v* r14, *v* r15} := CALL printf(
+                *c** o0 := "MinMax result %d
+"
+                *j32* o1 := ((g1 - 3) & ((g1 >>A 31) - zfill(1,32, *u32*g1 <u 3))) + 3
+              )
+              Reaching definitions: r1=r15{0},   r2=(r1{12} >>A 31) - zfill(1,32,r1{12} <u 3),   r3=0x10400,
+                r4=-1 - ((r8{0} >>A 31) + zfill(1,32,-2 <u r8{0})),   r8=0x1074c,
+                r9=((r1{12} - 3) & ((r1{12} >>A 31) - zfill(1,32,r1{12} <u 3))) + 3,   r13=r8{0} >>A 31,   r15=r15{0},
+                tmp=(r1{12} - 3) & ((r1{12} >>A 31) - zfill(1,32,r1{12} <u 3)),
+                %flags=SUBFLAGS( r1{12}, 3, r1{12} - 3 ),   %ZF=(r1{12} - 3) = 0,   %CF=r1{12} <u 3
+              Live variables:  in proc test

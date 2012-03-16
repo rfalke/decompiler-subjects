@@ -1,0 +1,33 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 25 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering f_setarg
+  decompiling f_setarg
+  considering f_setsig
+  decompiling f_setsig
+r  considering f_init
+   considering f__canseek
+   decompiling f__canseek
+rpt   considering f__fatal
+    considering sig_die
+     considering f_exit
+      considering f_clos
+       considering t_runc
+prprrprpttttttttttptttrttt  decompiling f_init
+tr  considering MAIN__
+   considering s_wsle
+    considering c_le
+     considering fk_open
+      considering f_open
+       considering g_char
+       decompiling g_char
+pterminate called after throwing an instance of 'Signature::StackRegisterNotDefinedException'
+  what():  std::exception
+       considering f__inode
+       decompiling f__inode
