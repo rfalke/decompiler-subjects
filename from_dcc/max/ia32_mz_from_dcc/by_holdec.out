@@ -1,0 +1,18 @@
+INFO  07:05:11 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:05:11 ke - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+INFO  07:05:12 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+Caused by: java.lang.AssertionError
+	at holdec.bx.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.fA.l(Unknown Source)
+	at holdec.fA.<init>(Unknown Source)
+	at holdec.fA.<init>(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	... 5 more

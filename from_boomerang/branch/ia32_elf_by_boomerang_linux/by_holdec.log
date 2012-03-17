@@ -1,0 +1,24 @@
+INFO  07:02:37 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:02:37 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:02:38 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.fA - disassembleAndWrite: found 1 new addresses
+INFO  07:02:38 holdec.fA - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  07:02:38 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.ke - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe.info
+INFO  07:02:38 holdec.fA - reading all asm lines ...
+INFO  07:02:38 holdec.fA - ... read 294 asm lines
+WARN  07:02:38 holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:02:38 holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:02:38 holdec.w - Address 080486b0.0 is excluded by the address filter. Maybe outside text section?
+INFO  07:02:38 holdec.am - will decompile 14 functions
+INFO  07:02:38 holdec.fG - Skipping stack alignment: 08048305.0+3 l.and esp,0xfffffff0
+WARN  07:02:39 holdec.o -   load size differs from loaded size for g_0x08049858 vs. LOAD(ADDR(g_0x08049858))
+INFO  07:02:39 holdec.fG - Skipping stack alignment: 0804841a.0+3 l.and esp,0xfffffff0
+ERROR 07:02:40 holdec.o - Can't find a setter for reg_0_local for block 3

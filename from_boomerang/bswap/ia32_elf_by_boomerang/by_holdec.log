@@ -1,0 +1,11 @@
+INFO  07:02:41 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:02:41 holdec.ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:41 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:02:41 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:02:41 holdec.ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:41 holdec.ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:41 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:02:41 holdec.ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:41 holdec.ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:41 holdec.fA - reading all asm lines ...
+INFO  07:02:41 holdec.fA - ... read 237 asm lines

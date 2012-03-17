@@ -1,0 +1,183 @@
+INFO  07:04:38 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+read image                              : ............................................................ [  0.01s]
+INFO  07:04:38 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [  0.24s]
+INFO  07:04:39 fA - disassembleAndWrite: running multiline
+INFO  07:04:39 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.01s]
+Preprocess gc                           : ............................................................ [  0.01s]
+Preprocess fK                           : ............................................................ [  0.02s]
+Preprocess fS                           : ............................................................ [  0.01s]
+Preprocess fR                           : ............................................................ [  0.01s]
+Preprocess fQ                           : ............................................................ [  0.01s]
+Preprocess gj                           : ............................................................ [  0.01s]
+Preprocess fU                           : ............................................................ [  0.01s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.01s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.01s]
+Preprocess fL                           : ............................................................ [  0.01s]
+Preprocess gg                           : ............................................................ [  0.01s]
+Preprocess fJ                           : ............................................................ [  0.01s]
+Preprocess fZ                           : ............................................................ [  0.02s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.01s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.01s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:04:39 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:04:39 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.00s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.00s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:04:39 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 fA - reading all asm lines ...
+INFO  07:04:39 fA - ... read 1954 asm lines
+WARN  07:04:39 w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:04:39 w - Address 08049f00.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [  0.01s]
+init blocks                             : ............................................................ [  0.01s]
+Writing 59 methods to cache             : ..............................................ERROR 07:04:40 fD - The first line is 080487c0.0+6 l.jmp ds:[0x804b740] but the main address is 080498b0.0. WILL NO WRITE THIS METHOD.
+.....ERROR 07:04:40 fD - The first line is 08048930.0+6 l.jmp ds:[0x804b79c] but the main address is 08049df0.0. WILL NO WRITE THIS METHOD.
+......... [  0.01s]
+INFO  07:04:40 am - will decompile 57 functions
+decompile F_08048778                    : ............................................................ [  0.13s]
+decompile F_080487a0                    : ... failed: There is no target block for index 0
+decompile F_080487b0                    : ... failed: There is no target block for index 0
+decompile F_080487c0                    : ... failed: There is no target block for index 0
+decompile F_080487d0                    : ... failed: There is no target block for index 0
+decompile F_080487e0                    : ... failed: There is no target block for index 0
+decompile F_080487f0                    : ... failed: There is no target block for index 0
+decompile F_08048800                    : ... failed: There is no target block for index 0
+decompile F_08048810                    : ... failed: There is no target block for index 0
+decompile F_08048820                    : ... failed: There is no target block for index 0
+decompile F_08048830                    : ... failed: There is no target block for index 0
+decompile F_08048840                    : ... failed: There is no target block for index 0
+decompile F_08048850                    : ... failed: There is no target block for index 0
+decompile F_08048860                    : ... failed: There is no target block for index 0
+decompile F_08048870                    : ... failed: There is no target block for index 0
+decompile F_08048880                    : ... failed: There is no target block for index 0
+decompile F_08048890                    : ... failed: There is no target block for index 0
+decompile F_080488a0                    : ... failed: There is no target block for index 0
+decompile F_080488b0                    : ... failed: There is no target block for index 0
+decompile F_080488c0                    : ... failed: There is no target block for index 0
+decompile F_080488d0                    : ... failed: There is no target block for index 0
+decompile F_080488e0                    : ... failed: There is no target block for index 0
+decompile F_080488f0                    : ... failed: There is no target block for index 0
+decompile F_08048900                    : ... failed: There is no target block for index 0
+decompile F_08048910                    : ... failed: There is no target block for index 0
+decompile F_08048920                    : ... failed: There is no target block for index 0
+decompile F_08048940                    : ... failed: There is no target block for index 0
+decompile F_08048950                    : ... failed: There is no target block for index 0
+decompile F_08048960                    : ... failed: There is no target block for index 0
+decompile F_08048970                    : ... failed: There is no target block for index 0
+decompile F_08048980                    : ...INFO  07:04:40 fG - Skipping stack alignment: 08048985.0+3 l.and esp,0xfffffff0
+......................................................... [  0.17s]
+decompile F_080489a4                    : ............................................................ [  0.08s]
+decompile F_080489ad                    : ............................................................ [  0.06s]
+decompile F_080489c8                    : ...................................................WARN  07:04:40 o -   load size differs from loaded size for g_0x0804b7e4 vs. LOAD(ADDR(g_0x0804b7e4))
+......... [  0.11s]
+decompile F_08048a04                    : ............................................................ [  0.07s]
+decompile F_08048a30                    : ...INFO  07:04:40 fG - Skipping stack alignment: 08048b19.0+3 l.and esp,0xfffffff0
+..................... failed: F_08048a30 has no exit blocks
+decompile F_08048db0                    : ...................................................WARN  07:04:40 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [  0.07s]
+decompile F_08048e10                    : ............................................................ [  0.06s]
+decompile F_08048e50                    : ... failed: There is no target block for index 0
+decompile F_08049490                    : ............................................................ [  0.04s]
+decompile F_080494f0                    : ......... failed: Block 13 is already known to have a starting stack offset of -4 but when called from 12 it has an offset of -72
+decompile F_08049660                    : ............................................................ [  0.02s]
+decompile F_080496b0                    : ...INFO  07:04:41 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+......................................................... [  0.14s]
+decompile F_08049720                    : ............................................................ [  0.04s]
+decompile F_080497f0                    : ...................................................WARN  07:04:41 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [  0.05s]
+decompile F_08049890                    : ............................................................ [  0.02s]
+decompile F_08049ac0                    : ............................................................ [  0.02s]
+decompile F_08049b00                    : ........................ failed: F_08049b00 has no exit blocks
+decompile F_08049ba0                    : ......... failed: Block 24 is already known to have a starting stack offset of -12 but when called from 4 it has an offset of -40
+decompile F_08049c20                    : ......... failed: Block 0 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -36
+decompile F_08049e12                    : .................................................ERROR 07:04:41 hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError
+decompile F_08049e56                    : .................................................ERROR 07:04:41 hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bb.b(Unknown Source)
+	at holdec.bb.a(Unknown Source)
+	at holdec.hQ.e(Unknown Source)
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+decompile F_08049e90                    : ............................................................ [  0.03s]
+decompile F_08049e99                    : ............................................................ [  0.03s]
+decompile F_08049ec0                    : ............................................................ [  0.04s]
+decompile F_08049ee4                    : ............................................................ [  0.02s]
+decompile F_08049eed                    : ............................................................ [  0.02s]

@@ -1,0 +1,156 @@
+INFO  07:03:28 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+read image                              : ............................................................ [  0.02s]
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:28 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [  0.08s]
+INFO  07:03:28 fA - disassembleAndWrite: running multiline
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.01s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.01s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.01s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.01s]
+Preprocess fX                           : ............................................................ [  0.01s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:28 fA - disassembleAndWrite: found 1 new addresses
+INFO  07:03:28 fA - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [  0.03s]
+INFO  07:03:28 fA - disassembleAndWrite: running multiline
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.00s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.01s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:28 fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.00s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.00s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.01s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.00s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:03:28 ke - wrote ./from_boomerang/line1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:28 fA - reading all asm lines ...
+INFO  07:03:28 fA - ... read 307 asm lines
+WARN  07:03:28 w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:03:28 w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:03:28 w - Address 0804864c.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [  0.00s]
+init blocks                             : ............................................................ [  0.00s]
+Writing 20 methods to cache             : ............................................................ [  0.00s]
+INFO  07:03:28 am - will decompile 20 functions
+decompile _init                         : ............................................................ [  0.08s]
+decompile strchr                        : ... failed: There is no target block for index 0
+decompile fgets                         : ... failed: There is no target block for index 0
+decompile __libc_start_main             : ... failed: There is no target block for index 0
+decompile printf                        : ... failed: There is no target block for index 0
+decompile fclose                        : ... failed: There is no target block for index 0
+decompile fopen                         : ... failed: There is no target block for index 0
+decompile _start                        : ...INFO  07:03:29 fG - Skipping stack alignment: 08048395.0+3 l.and esp,0xfffffff0
+......................................................... [  0.17s]
+decompile call_gmon_start               : ............................................................ [  0.08s]
+decompile F_080483bd                    : ............................................................ [  0.05s]
+decompile __do_global_dtors_aux         : ...................................................WARN  07:03:29 o -   load size differs from loaded size for g_0x08049770 vs. LOAD(ADDR(g_0x08049770))
+......... [  0.22s]
+decompile frame_dummy                   : ............................................................ [  0.06s]
+decompile chomp                         : ............................................................ [  0.09s]
+decompile main                          : ...INFO  07:03:29 fG - Skipping stack alignment: 080484ac.0+3 l.and esp,0xfffffff0
+......................................................... [  0.22s]
+decompile __libc_csu_init               : ............................................................ [  0.14s]
+decompile __libc_csu_fini               : .................................................ERROR 07:03:30 hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bb.b(Unknown Source)
+	at holdec.bb.a(Unknown Source)
+	at holdec.hQ.e(Unknown Source)
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+decompile __i686.get_pc_thunk.bx        : ............................................................ [  0.02s]
+decompile __do_global_ctors_aux         : ..........................ERROR 07:03:30 o - Can't find a setter for reg_0_local for block 3
+.. failed: Don't know about reg_0_local have information about [reg_8_local0, reg_4_local0, reg_var20, reg_var10, reg_pp4, reg_pp3, reg_var21, reg_var11, reg_result0]
+decompile _fini                         : ............................................................ [  0.02s]
+decompile F_08048639                    : ............................................................ [  0.02s]

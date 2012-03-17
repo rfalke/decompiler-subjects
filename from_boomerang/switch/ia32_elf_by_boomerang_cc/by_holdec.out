@@ -1,0 +1,21 @@
+INFO  07:04:26 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+read image                              : ............................................................ [  0.01s]
+INFO  07:04:26 ke - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+INFO  07:04:26 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [  0.06s]
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+Caused by: java.lang.AssertionError: 08049bab.0+0 section
+	at holdec.fy.<init>(Unknown Source)
+	at holdec.fA.c(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.fA.l(Unknown Source)
+	at holdec.fA.<init>(Unknown Source)
+	at holdec.fA.<init>(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	... 5 more

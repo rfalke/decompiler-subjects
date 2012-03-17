@@ -1,0 +1,19 @@
+INFO  07:04:50 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:04:50 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:50 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:04:50 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:04:50 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:50 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:50 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:04:51 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:51 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:51 holdec.fA - reading all asm lines ...
+INFO  07:04:51 holdec.fA - ... read 298 asm lines
+WARN  07:04:51 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:04:51 holdec.w - Address 0804853c.0 is excluded by the address filter. Maybe outside text section?
+INFO  07:04:51 holdec.am - will decompile 18 functions
+INFO  07:04:51 holdec.fG - Skipping stack alignment: 080482f9.0+3 l.and esp,0xfffffff0
+WARN  07:04:51 holdec.o -   load size differs from loaded size for g_0x08049678 vs. LOAD(ADDR(g_0x08049678))
+INFO  07:04:51 holdec.ke - wrote ./from_boomerang/twofib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:51 holdec.fG - Skipping stack alignment: 080483fb.0+3 l.and esp,0xfffffff0
+ERROR 07:04:52 holdec.o - Can't find a setter for reg_0_local for block 0

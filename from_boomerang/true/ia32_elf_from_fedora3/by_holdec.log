@@ -1,0 +1,24 @@
+INFO  07:04:42 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:04:42 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  07:04:42 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:04:42 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:04:42 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  07:04:43 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  07:04:43 holdec.fA - reading all asm lines ...
+INFO  07:04:43 holdec.fA - ... read 2036 asm lines
+WARN  07:04:43 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:04:43 holdec.w - Address 0804a110.0 is excluded by the address filter. Maybe outside text section?
+ERROR 07:04:43 holdec.fD - The first line is 08049721.0+1 l.push ebp but the main address is 080498ae.0. WILL NO WRITE THIS METHOD.
+INFO  07:04:43 holdec.am - will decompile 61 functions
+INFO  07:04:43 holdec.fG - Skipping stack alignment: 08048ac5.0+3 l.and esp,0xfffffff0
+WARN  07:04:44 holdec.o -   load size differs from loaded size for g_0x0804ba00 vs. LOAD(ADDR(g_0x0804ba00))
+INFO  07:04:44 holdec.fG - Skipping stack alignment: 08048c67.0+3 l.and esp,0xfffffff0
+WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:45 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))

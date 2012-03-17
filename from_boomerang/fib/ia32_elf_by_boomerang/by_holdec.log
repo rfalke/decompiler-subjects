@@ -1,0 +1,24 @@
+INFO  07:02:51 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:02:51 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:51 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:02:51 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:02:51 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.fA - disassembleAndWrite: found 1 new addresses
+INFO  07:02:52 holdec.fA - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  07:02:52 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:02:52 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:02:52 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.ke - wrote ./from_boomerang/fib/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:02:52 holdec.fA - reading all asm lines ...
+INFO  07:02:52 holdec.fA - ... read 223 asm lines
+WARN  07:02:52 holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:02:52 holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:02:52 holdec.w - Address 08048460.0 is excluded by the address filter. Maybe outside text section?
+INFO  07:02:52 holdec.am - will decompile 14 functions
+INFO  07:02:52 holdec.fG - Skipping stack alignment: 08048285.0+3 l.and esp,0xfffffff0
+WARN  07:02:53 holdec.o -   load size differs from loaded size for g_0x08049570 vs. LOAD(ADDR(g_0x08049570))
+INFO  07:02:53 holdec.fG - Skipping stack alignment: 080483d5.0+3 l.and esp,0xfffffff0
+ERROR 07:02:53 holdec.o - Can't find a setter for reg_0_local for block 3

@@ -1,0 +1,60 @@
+INFO  07:03:04 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:03:04 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:04 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:03:04 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:03:04 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:04 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:04 holdec.fA - disassembleAndWrite: found 1 new addresses
+INFO  07:03:04 holdec.fA - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  07:03:04 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:03:04 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:05 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:05 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:03:05 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:05 holdec.ke - wrote ./from_boomerang/fromssa2/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:03:05 holdec.fA - reading all asm lines ...
+INFO  07:03:05 holdec.fA - ... read 218 asm lines
+WARN  07:03:05 holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:03:05 holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:03:05 holdec.w - Address 08048408.0 is excluded by the address filter. Maybe outside text section?
+INFO  07:03:05 holdec.am - will decompile 14 functions
+INFO  07:03:05 holdec.fG - Skipping stack alignment: 0804827d.0+3 l.and esp,0xfffffff0
+WARN  07:03:05 holdec.o -   load size differs from loaded size for g_0x0804952c vs. LOAD(ADDR(g_0x0804952c))
+INFO  07:03:05 holdec.fG - Skipping stack alignment: 0804832d.0+3 l.and esp,0xfffffff0
+ERROR 07:03:06 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ERROR 07:03:06 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bb.b(Unknown Source)
+	at holdec.bb.a(Unknown Source)
+	at holdec.hQ.e(Unknown Source)
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)

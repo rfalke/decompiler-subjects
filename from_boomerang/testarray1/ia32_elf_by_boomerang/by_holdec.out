@@ -1,0 +1,117 @@
+INFO  07:04:29 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+read image                              : ............................................................ [  0.01s]
+INFO  07:04:29 ke - wrote ./from_boomerang/testarray1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:29 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [  0.06s]
+INFO  07:04:30 fA - disassembleAndWrite: running multiline
+INFO  07:04:30 ke - wrote ./from_boomerang/testarray1/ia32_elf_by_boomerang/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.01s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.01s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.01s]
+Preprocess fX                           : ............................................................ [  0.01s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:04:30 ke - wrote ./from_boomerang/testarray1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:30 fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:04:30 ke - wrote ./from_boomerang/testarray1/ia32_elf_by_boomerang/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.00s]
+Preprocess gk                           : ............................................................ [  0.01s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.00s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.01s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.00s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:04:30 ke - wrote ./from_boomerang/testarray1/ia32_elf_by_boomerang/subject.exe.info
+INFO  07:04:30 fA - reading all asm lines ...
+INFO  07:04:30 fA - ... read 251 asm lines
+WARN  07:04:30 w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:04:30 w - Address 080484a4.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [  0.00s]
+init blocks                             : ............................................................ [  0.00s]
+Writing 16 methods to cache             : ............................................................ [  0.00s]
+INFO  07:04:30 am - will decompile 16 functions
+decompile _init                         : ............................................................ [  0.08s]
+decompile F_080482a0                    : ... failed: There is no target block for index 0
+decompile F_080482b0                    : ... failed: There is no target block for index 0
+decompile _start                        : ...INFO  07:04:30 fG - Skipping stack alignment: 080482c5.0+3 l.and esp,0xfffffff0
+......................................................... [  0.16s]
+decompile call_gmon_start               : ............................................................ [  0.09s]
+decompile F_080482ed                    : ............................................................ [  0.05s]
+decompile __do_global_dtors_aux         : ...................................................WARN  07:04:30 o -   load size differs from loaded size for g_0x080495c4 vs. LOAD(ADDR(g_0x080495c4))
+......... [  0.17s]
+decompile frame_dummy                   : ............................................................ [  0.08s]
+decompile main                          : ...INFO  07:04:30 fG - Skipping stack alignment: 0804836e.0+3 l.and esp,0xfffffff0
+..............................................ERROR 07:04:31 hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Failed to find StatementExpressionOccurrence{blockId=2, statementIndex=3, statement=reg_20_local1 = ADD(reg_pp2, 1), inLhs=true, inRhs=false} in [JumpExpressionOccurrence{blockId=1, jumpIndex=0, jump=if(CMP(reg_pp1, >, 4)) goto L10}]
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError: Failed to find StatementExpressionOccurrence{blockId=2, statementIndex=3, statement=reg_20_local1 = ADD(reg_pp2, 1), inLhs=true, inRhs=false} in [JumpExpressionOccurrence{blockId=1, jumpIndex=0, jump=if(CMP(reg_pp1, >, 4)) goto L10}]
+decompile __libc_csu_init               : ..........................ERROR 07:04:31 o - Can't find a setter for reg_0_local for block 0
+.. failed: Don't know about reg_0_local have information about [reg_24_local0, reg_20_local0, reg_16_local0, reg_12_local0, reg_ah0, reg_8_local0, reg_var10, reg_result0, reg_pp4, reg_result1, reg_ag0, reg_var11, reg_pp5]
+decompile F_080483da                    : ............................................................ [  0.17s]
+decompile __libc_csu_fini               : ............................................................ [  0.10s]
+decompile F_0804842b                    : ............................................................ [  0.08s]
+decompile __do_global_ctors_aux         : ............................................................ [  0.10s]
+decompile _fini                         : ............................................................ [  0.02s]
+decompile F_08048491                    : ............................................................ [  0.02s]

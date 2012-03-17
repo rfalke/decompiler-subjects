@@ -1,0 +1,102 @@
+INFO  07:05:14 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+read image                              : ............................................................ [  0.01s]
+INFO  07:05:14 ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  07:05:14 fA - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [  0.12s]
+INFO  07:05:14 fA - disassembleAndWrite: running multiline
+INFO  07:05:14 ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.01s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.02s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.01s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.01s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.01s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:05:15 ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  07:05:15 fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:05:15 ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+Preprocess gi                           : ............................................................ [  0.00s]
+Preprocess gk                           : ............................................................ [  0.00s]
+Preprocess gc                           : ............................................................ [  0.00s]
+Preprocess fK                           : ............................................................ [  0.00s]
+Preprocess fS                           : ............................................................ [  0.00s]
+Preprocess fR                           : ............................................................ [  0.00s]
+Preprocess fQ                           : ............................................................ [  0.00s]
+Preprocess gj                           : ............................................................ [  0.00s]
+Preprocess fU                           : ............................................................ [  0.00s]
+Preprocess gb                           : ............................................................ [  0.00s]
+Preprocess gh                           : ............................................................ [  0.00s]
+Preprocess gl                           : ............................................................ [  0.00s]
+Preprocess fW                           : ............................................................ [  0.00s]
+Preprocess fI                           : ............................................................ [  0.00s]
+Preprocess fT                           : ............................................................ [  0.00s]
+Preprocess ge                           : ............................................................ [  0.00s]
+Preprocess fL                           : ............................................................ [  0.00s]
+Preprocess gg                           : ............................................................ [  0.00s]
+Preprocess fJ                           : ............................................................ [  0.00s]
+Preprocess fZ                           : ............................................................ [  0.00s]
+Preprocess gd                           : ............................................................ [  0.00s]
+Preprocess ga                           : ............................................................ [  0.00s]
+Preprocess fO                           : ............................................................ [  0.00s]
+Preprocess gf                           : ............................................................ [  0.00s]
+Preprocess fY                           : ............................................................ [  0.00s]
+Preprocess fM                           : ............................................................ [  0.00s]
+Preprocess fN                           : ............................................................ [  0.00s]
+Preprocess fX                           : ............................................................ [  0.00s]
+Preprocess fV                           : ............................................................ [  0.00s]
+INFO  07:05:15 ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  07:05:15 fA - reading all asm lines ...
+INFO  07:05:15 fA - ... read 460 asm lines
+WARN  07:05:15 w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:05:15 w - Address 080489c8.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [  0.00s]
+init blocks                             : ............................................................ [  0.00s]
+Writing 25 methods to cache             : ............................................................ [  0.00s]
+INFO  07:05:15 am - will decompile 25 functions
+decompile _init                         : ............................................................ [  0.06s]
+decompile strcpy                        : ... failed: There is no target block for index 0
+decompile printf                        : ... failed: There is no target block for index 0
+decompile perror                        : ... failed: There is no target block for index 0
+decompile _xstat                        : ... failed: There is no target block for index 0
+decompile __libc_init                   : ... failed: There is no target block for index 0
+decompile strcat                        : ... failed: There is no target block for index 0
+decompile fread                         : ... failed: There is no target block for index 0
+decompile fopen                         : ... failed: There is no target block for index 0
+decompile fclose                        : ... failed: There is no target block for index 0
+decompile sprintf                       : ... failed: There is no target block for index 0
+decompile atexit                        : ... failed: There is no target block for index 0
+decompile exit                          : ... failed: There is no target block for index 0
+decompile __setfpucw                    : ... failed: There is no target block for index 0
+decompile strlen                        : ... failed: There is no target block for index 0
+decompile _start                        : ........................ failed: _start has no exit blocks
+decompile __do_global_dtors_aux         : ............................................................ [  0.15s]
+decompile fini_dummy                    : ............................................................ [  0.01s]
+decompile dumpline                      : ............................................................ [  1.72s]
+decompile hexdump                       : ...................................... failed: Index: 2, Size: 1
+decompile main                          : ............................................................ [  0.14s]
+decompile stat                          : ............................................................ [  0.02s]
+decompile __do_global_ctors_aux         : ............................................................ [  0.06s]
+decompile init_dummy                    : ............................................................ [  0.01s]
+decompile _fini                         : ............................................................ [  0.01s]

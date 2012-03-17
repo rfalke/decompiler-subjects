@@ -1,0 +1,63 @@
+INFO  07:04:38 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  07:04:38 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  07:04:39 holdec.fA - disassembleAndWrite: running multiline
+INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
+INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  07:04:39 holdec.fA - reading all asm lines ...
+INFO  07:04:39 holdec.fA - ... read 1954 asm lines
+WARN  07:04:39 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  07:04:39 holdec.w - Address 08049f00.0 is excluded by the address filter. Maybe outside text section?
+ERROR 07:04:40 holdec.fD - The first line is 080487c0.0+6 l.jmp ds:[0x804b740] but the main address is 080498b0.0. WILL NO WRITE THIS METHOD.
+ERROR 07:04:40 holdec.fD - The first line is 08048930.0+6 l.jmp ds:[0x804b79c] but the main address is 08049df0.0. WILL NO WRITE THIS METHOD.
+INFO  07:04:40 holdec.am - will decompile 57 functions
+INFO  07:04:40 holdec.fG - Skipping stack alignment: 08048985.0+3 l.and esp,0xfffffff0
+WARN  07:04:40 holdec.o -   load size differs from loaded size for g_0x0804b7e4 vs. LOAD(ADDR(g_0x0804b7e4))
+INFO  07:04:40 holdec.fG - Skipping stack alignment: 08048b19.0+3 l.and esp,0xfffffff0
+WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+INFO  07:04:41 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+WARN  07:04:41 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+ERROR 07:04:41 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ERROR 07:04:41 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bb.b(Unknown Source)
+	at holdec.bb.a(Unknown Source)
+	at holdec.hQ.e(Unknown Source)
+	at holdec.hQ.b(Unknown Source)
+	at holdec.hQ.a(Unknown Source)
+	at holdec.dL.e(Unknown Source)
+	at holdec.eK.a(Unknown Source)
+	at holdec.eC.a(Unknown Source)
+	at holdec.dL.a(Unknown Source)
+	at holdec.fA.a(Unknown Source)
+	at holdec.am.a(Unknown Source)
+	at holdec.am.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
