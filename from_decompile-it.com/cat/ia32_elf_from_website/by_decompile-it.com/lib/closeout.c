@@ -1,0 +1,30 @@
+#include "closeout.c.h"
+static char *file_name;
+void close_stdout_set_file_name( char *file )
+{
+  file_name = file;
+  return;
+}
+void close_stdout( void )
+{
+  if ( close_stream( stdout ) )
+  {
+    char *write_error = gettext( "write error" );
+    if ( file_name )
+    {
+      error( 0, *(int*)(__errno_location( )), "%s: %s", quotearg_colon( file_name ), write_error );
+    }
+    else
+    {
+      error( 0, *(int*)(__errno_location( )), "%s", write_error );
+    }
+    _exit( exit_failure );
+  }
+  if ( close_stream( stderr ) )
+  {
+    _exit( exit_failure );
+  }
+  return;
+}
+#if 0
+#endif
