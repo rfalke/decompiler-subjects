@@ -1,18 +1,98 @@
-INFO  07:05:06 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:06 ke - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
-INFO  07:05:06 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe as executable
+INFO  fG - Detected MZ (MS-DOS)
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 5862 asm lines            : ...WARN  fP - Unknown rep line: 00002894.0+3 w.repne inc ds:[bx+si]
+......................................................... [ done ]
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - disassembleAndWrite: found 76 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 77 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 6513 asm lines            : ...WARN  fP - Unknown rep line: 00002894.0+3 w.repne inc ds:[bx+si]
+......................................................... [ done ]
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+WARN  fE - Ignore overlapping address 00001194[0,0].3
+WARN  fE - Ignore overlapping address 00001f93[5,0].3
+WARN  fE - Ignore overlapping address 00001f9c[5,0].3
+WARN  fE - Ignore overlapping address 00001f9d[5,1].3
+WARN  fE - Ignore overlapping address 000022e2[7,0].3
+WARN  fE - Ignore overlapping address 000022e4[7,0].3
+WARN  fE - Ignore overlapping address 000022e6[7,0].3
+WARN  fE - Ignore overlapping address 000022e8[7,0].3
+WARN  fE - Ignore overlapping address 000022ea[7,0].3
+WARN  fE - Ignore overlapping address 000022e3[7,1].3
+WARN  fE - Ignore overlapping address 000022e5[7,1].3
+WARN  fE - Ignore overlapping address 000022e7[7,1].3
+WARN  fE - Ignore overlapping address 000022fc[8,0].3
+INFO  fG - disassembleAndWrite: found 29 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 106 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 6874 asm lines            : ...WARN  fP - Unknown rep line: 00002894.0+3 w.repne inc ds:[bx+si]
+......................................................... [ done ]
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+WARN  fE - Ignore overlapping address 00001194[0,0].3
+WARN  fE - Ignore overlapping address 00001f93[5,0].3
+WARN  fE - Ignore overlapping address 00001f9c[5,0].3
+WARN  fE - Ignore overlapping address 00001f9d[5,1].3
+WARN  fE - Ignore overlapping address 000022e2[7,0].3
+WARN  fE - Ignore overlapping address 000022e4[7,0].3
+WARN  fE - Ignore overlapping address 000022e6[7,0].3
+WARN  fE - Ignore overlapping address 000022e8[7,0].3
+WARN  fE - Ignore overlapping address 000022ea[7,0].3
+WARN  fE - Ignore overlapping address 000022e3[7,1].3
+WARN  fE - Ignore overlapping address 000022e5[7,1].3
+WARN  fE - Ignore overlapping address 000022e7[7,1].3
+WARN  fE - Ignore overlapping address 000022fc[8,0].3
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 107 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 6874 asm lines            : ...WARN  fP - Unknown rep line: 00002894.0+3 w.repne inc ds:[bx+si]
+......................................................... [ done ]
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+WARN  fE - Ignore overlapping address 00001194[0,0].3
+WARN  fE - Ignore overlapping address 00001f93[5,0].3
+WARN  fE - Ignore overlapping address 00001f9c[5,0].3
+WARN  fE - Ignore overlapping address 00001f9d[5,1].3
+WARN  fE - Ignore overlapping address 000022e2[7,0].3
+WARN  fE - Ignore overlapping address 000022e4[7,0].3
+WARN  fE - Ignore overlapping address 000022e6[7,0].3
+WARN  fE - Ignore overlapping address 000022e8[7,0].3
+WARN  fE - Ignore overlapping address 000022ea[7,0].3
+WARN  fE - Ignore overlapping address 000022e3[7,1].3
+WARN  fE - Ignore overlapping address 000022e5[7,1].3
+WARN  fE - Ignore overlapping address 000022e7[7,1].3
+WARN  fE - Ignore overlapping address 000022fc[8,0].3
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 8008 asm lines            : ...WARN  fP - Unknown rep line: 00002894.0+3 w.repne inc ds:[bx+si]
+......................................................... [ done ]
+INFO  ks - wrote ./from_dcc/benchsho/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 8008 asm lines
+Exception in thread "main" java.lang.reflect.InvocationTargetException
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+Caused by: java.lang.RuntimeException: Can not get base command for 00001fd4.0+3 w.lar di,di.
+	at holdec.hS.b(Unknown Source)
+	at holdec.fO.a(Unknown Source)
+	at holdec.hC.a(Unknown Source)
+	at holdec.fG.b(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	... 5 more
+Caused by: java.lang.IllegalArgumentException: Unknown command 'lar' orig='w.lar'
+	at holdec.fK.a(Unknown Source)
+	... 11 more

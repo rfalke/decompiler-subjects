@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+twice
+
+[0x08048396]
+signature: d4 twice(d4 n<ebx>)
+
+[0x080482b8]
+signature: d4 printf(d1 *fmt, d4 v1)

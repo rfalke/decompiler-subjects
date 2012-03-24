@@ -1,1 +1,56 @@
-INFO  07:04:27 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 2 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 3 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 08048ed9[1,0].3
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 1372 asm lines
+WARN  holdec.w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 08049454.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 24 functions
+WARN  holdec.ag - Referencing unknown line 080491fc.0
+WARN  holdec.ag - Referencing unknown line 08049170.0
+WARN  holdec.ag - Referencing unknown line 08048a24.0
+WARN  holdec.ag - Referencing unknown line 08048a7c.0
+WARN  holdec.ag - Referencing unknown line 08048a7c.0
+WARN  holdec.ag - Referencing unknown line 080487d0.0
+WARN  holdec.ag - Referencing unknown line 08048aac.0
+WARN  holdec.ag - Referencing unknown line 08048aac.0
+WARN  holdec.ac - Block 10 is already known to have a starting stack offset of 4 but when called from 9 it has an offset of -16
+WARN  holdec.ag - Referencing unknown line 08048b3c.0
+WARN  holdec.ag - Referencing unknown line 0804898c.0
+WARN  holdec.ag - Referencing unknown line 080489c8.0
+WARN  holdec.ag - Referencing unknown line 0804898c.0
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of 4 but when called from 8 it has an offset of -4
+WARN  holdec.ac - Block 10 is already known to have a starting stack offset of 4 but when called from 9 it has an offset of -4
+WARN  holdec.ag - Referencing unknown line 0804898c.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of 4 but when called from 3 it has an offset of -4
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of -4 but when called from 5 it has an offset of 4
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of -4 but when called from 8 it has an offset of 4
+WARN  holdec.ag - Referencing unknown line 080487e0.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ac - Block 7 is already known to have a starting stack offset of 4 but when called from 4 it has an offset of 0
+WARN  holdec.ac - Block 7 is already known to have a starting stack offset of 0 but when called from 6 it has an offset of 4
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp6 = PHI(reg_var13, reg_var10) in Block2
+WARN  holdec.d -   reg_var13 = ADD(LOAD(reg_pp6), 20) in Block5
+WARN  holdec.ag - Referencing unknown line 08048c28.0
+WARN  holdec.ag - Referencing unknown line 08048cc8.0
+WARN  holdec.ag - Referencing unknown line 08048800.0
+WARN  holdec.ag - Referencing unknown line 08048de0.0
+WARN  holdec.ag - Referencing unknown line 0804898c.0
+WARN  holdec.ag - Referencing unknown line 08048de0.0

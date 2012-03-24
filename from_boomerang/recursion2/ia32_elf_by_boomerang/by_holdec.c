@@ -1,48 +1,10 @@
-// addr = 08048280.0
-// signature= func(_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _init(???)
-{
-  (void) call_gmon_start();
-  (void) frame_dummy();
-  reg_result = __do_global_ctors_aux();
-  return reg_result;
-}
+// Decompiled by holdec 1.1 (2012-03-24)
 
-// addr = 080482d8.0
-// signature= func(_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _start(???)
-{
-  reg_aa = LOAD(InitStackPointer);
-  (void) STORE(InitStackPointer, InitValue(initial_value_of_eax));
-  (void) STORE(local + 12, 134513532);
-  (void) STORE(local + 16, reg_aa);
-  (void) STORE(local + 20, &ARG_0);
-  (void) STORE(local + 24, 134514240);
-  (void) STORE(local + 28, 134514320);
-  (void) STORE(local + 32, InitValue(initial_value_of_edx));
-  (void) STORE(local + 36, local + 36);
-  (void) F_080482a8();
-  asm("l.hlt");
-  (void) STORE(local + 4, InitValue(initial_value_of_ebx));
-  (void) STORE(local + 8, 0);
-  (void) STORE(local, &ARG_0);
-  (void) F_08048306();
-  if(LOAD(LOAD(local) + 5346)  !=  0) {
-    (void) F_080482c8();
-  }
-  return LOAD(local + 4);
-}
+/* The decompilation of 0x080482a8 / F_080482a8 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
-// addr = 080482fc.0
-// signature= func(call_gmon_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? call_gmon_start(???)
-{
-  (void) F_08048306();
-  if(LOAD(InitValue(initial_value_of_ecx) + 5346)  !=  0) {
-    (void) F_080482c8();
-  }
-  return InitValue(initial_value_of_ebx);
-}
+/* The decompilation of 0x080482b8 / F_080482b8 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080482c8 / F_080482c8 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
 // addr = 08048306.0
 // signature= func(F_08048306, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -52,40 +14,6 @@
     (void) F_080482c8();
   }
   return ARG_0;
-}
-
-// addr = 08048320.0
-// signature= func(__do_global_dtors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_dtors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  if(LOAD(&g_0x08049848)  ==  0) {
-    while(1) {
-      reg_result = g_0x0804980c;
-      reg_ad = LOAD(reg_result);
-      if(LOAD(reg_result)  ==  0) {
-        break;
-      }
-      (void) STORE(&g_0x0804980c, reg_result + 4);
-      (void) intern_redirectCall(reg_ad);
-    }
-    (void) STORE(&g_0x08049848, 1);
-  }
-  return reg_result;
-}
-
-// addr = 08048354.0
-// signature= func(frame_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? frame_dummy(???)
-{
-  reg_result = g_0x0804971c;
-  if(reg_result  !=  0) {
-    reg_result = 0;
-    if(reg_result  !=  0) {
-      reg_result = intern_redirectCall(reg_result);
-    }
-  }
-  return reg_result;
 }
 
 // addr = 0804837c.0
@@ -108,7 +36,7 @@
 ??? b(???)
 {
   (void) STORE(&g_0x08049810, g_0x08049810 + -1);
-  if(g_0x08049810  notSigned  0) {
+  if(g_0x08049810  >=  0) {
     (void) c();
   }
   reg_aa = g_0x0804984c;
@@ -121,23 +49,23 @@
 ??? c(???)
 {
   (void) STORE(&g_0x08049814, g_0x08049814 + -1);
-  if(g_0x08049814  notSigned  0) {
+  if(g_0x08049814  >=  0) {
     (void) d();
   }
   (void) STORE(&g_0x08049820, g_0x08049820 + -1);
-  if(g_0x08049820  notSigned  0) {
+  if(g_0x08049820  >=  0) {
     (void) f();
   }
   (void) STORE(&g_0x0804982c, g_0x0804982c + -1);
-  if(g_0x0804982c  notSigned  0) {
+  if(g_0x0804982c  >=  0) {
     (void) h();
   }
   (void) STORE(&g_0x08049834, g_0x08049834 + -1);
-  if(g_0x08049834  notSigned  0) {
+  if(g_0x08049834  >=  0) {
     (void) j();
   }
   (void) STORE(&g_0x08049840, g_0x08049840 + -1);
-  if(g_0x08049840  notSigned  0) {
+  if(g_0x08049840  >=  0) {
     (void) l();
   }
   reg_aa = g_0x0804984c;
@@ -150,7 +78,7 @@
 ??? d(???)
 {
   (void) STORE(&g_0x08049818, g_0x08049818 + -1);
-  if(g_0x08049818  notSigned  0) {
+  if(g_0x08049818  >=  0) {
     (void) e();
   }
   reg_aa = g_0x0804984c;
@@ -163,7 +91,7 @@
 ??? e(???)
 {
   (void) STORE(&g_0x0804981c, g_0x0804981c + -1);
-  if(g_0x0804981c  notSigned  0) {
+  if(g_0x0804981c  >=  0) {
     (void) c();
   }
   reg_aa = g_0x0804984c;
@@ -176,7 +104,7 @@
 ??? f(???)
 {
   (void) STORE(&g_0x08049824, g_0x08049824 + -1);
-  if(g_0x08049824  notSigned  0) {
+  if(g_0x08049824  >=  0) {
     (void) g();
   }
   reg_aa = g_0x0804984c;
@@ -189,7 +117,7 @@
 ??? g(???)
 {
   (void) STORE(&g_0x08049828, g_0x08049828 + -1);
-  if(g_0x08049828  notSigned  0) {
+  if(g_0x08049828  >=  0) {
     (void) f();
   }
   reg_aa = g_0x0804984c;
@@ -202,7 +130,7 @@
 ??? h(???)
 {
   (void) STORE(&g_0x08049830, g_0x08049830 + -1);
-  if(g_0x08049830  notSigned  0) {
+  if(g_0x08049830  >=  0) {
     (void) i();
   }
   reg_aa = g_0x0804984c;
@@ -224,7 +152,7 @@
 ??? j(???)
 {
   (void) STORE(&g_0x08049838, g_0x08049838 + -1);
-  if(g_0x08049838  notSigned  0) {
+  if(g_0x08049838  >=  0) {
     (void) k();
   }
   reg_aa = g_0x0804984c;
@@ -237,7 +165,7 @@
 ??? k(???)
 {
   (void) STORE(&g_0x0804983c, g_0x0804983c + -1);
-  if(g_0x0804983c  notSigned  0) {
+  if(g_0x0804983c  >=  0) {
     (void) e();
   }
   reg_aa = g_0x0804984c;
@@ -250,7 +178,7 @@
 ??? l(???)
 {
   (void) STORE(&g_0x08049844, g_0x08049844 + -1);
-  if(g_0x08049844  notSigned  0) {
+  if(g_0x08049844  >=  0) {
     (void) b();
   }
   reg_aa = g_0x0804984c;
@@ -262,13 +190,13 @@
 // signature= func(F_0804864e, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
 ??? F_0804864e(???)
 {
-  reg_ad = LOAD(InitStackPointer);
+  reg_af = LOAD(InitStackPointer);
   (void) _init();
   reg_result = 0;
   (void) STORE(InitValue(initial_value_of_ebp) + -16, reg_result);
   if(!UNDEF) {
     reg_var1 = 0;
-    reg_var2 = reg_ad + 4286;
+    reg_var2 = reg_af + 4286;
     do {
       reg_result = intern_redirectCall(LOAD(reg_var2));
       reg_var1++;
@@ -276,38 +204,6 @@
     } while(reg_var1  <  LOAD(InitValue(initial_value_of_ebp) + -16));
   }
   return reg_result;
-}
-
-// addr = 08048690.0
-// signature= func(__libc_csu_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __libc_csu_fini(???)
-{
-  return InitValue(initial_value_of_eax);
-}
-
-// addr = 08048698.0
-// signature= func(__do_global_ctors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_ctors_aux(???)
-{
-  reg_var2 = g_0x0804970c;
-  if(reg_var2  !=  -1) {
-    reg_var1 = 134518540;
-    do {
-      (void) intern_redirectCall(reg_var2);
-      reg_var2 = LOAD(reg_var1 + -4);
-      reg_var1 += -4;
-    } while(reg_var2  !=  -1);
-  }
-  return InitValue(initial_value_of_edx);
-}
-
-// addr = 080486c0.0
-// signature= func(_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _fini(???)
-{
-  (void) F_080486ca();
-  (void) __do_global_dtors_aux();
-  return InitValue(initial_value_of_ebx);
 }
 
 // addr = 080486ca.0

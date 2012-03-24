@@ -1,19 +1,46 @@
-INFO  07:03:01 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-INFO  07:03:01 ke - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
-Exception in thread "main" java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
-	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.kT.a(Unknown Source)
-	at holdec.kT.a(Unknown Source)
-	at holdec.kT.a(Unknown Source)
-	at holdec.kR.<init>(Unknown Source)
-	at holdec.hy.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+Preprocessing 212 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  fG - disassembleAndWrite: found 2 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 3 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+Preprocessing 221 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+Preprocessing 244 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 244 asm lines
+WARN  w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080488b4.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 20 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 11 functions
+decompile atexit                        : .... failed: Block L0 calls block L1 which isn't available
+decompile exit                          : .... failed: Block L0 calls block L1 which isn't available
+decompile printf                        : .... failed: Block L0 calls block L1 which isn't available
+decompile scanf                         : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048756                    : ............................................................ [ done ]
+decompile F_08048789                    : ............................................................ [ done ]
+decompile F_08048798                    :  failed: self=08048798[0,1].0 first=08048798[0,1].0
+decompile main                          : .WARN  ag - Referencing unknown line 080486bc.0
+WARN  ag - Referencing unknown line 080486cc.0
+WARN  ag - Referencing unknown line 08048798.0
+WARN  ag - Referencing unknown line 08048798.0
+WARN  ag - Referencing unknown line 080486bc.0
+........................................................... [ done ]
+decompile F_08048830                    :  failed: self=08048830[1,1].0 first=08048830[1,1].0
+decompile F_0804883a                    : ............................................................ [ done ]
+decompile F_0804886d                    : ............................................................ [ done ]

@@ -1,3 +1,262 @@
-INFO  07:04:28 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:28 holdec.ke - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
-INFO  07:04:29 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 1 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 5654 asm lines
+WARN  holdec.w - Address 00405000.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 71 functions
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 004010a0.0
+WARN  holdec.ag - Referencing unknown line 00401230.0
+WARN  holdec.ag - Referencing unknown line 00401330.0
+WARN  holdec.ag - Referencing unknown line 004012d0.0
+WARN  holdec.ag - Referencing unknown line 00402b80.0
+WARN  holdec.ag - Referencing unknown line 00401200.0
+WARN  holdec.ag - Referencing unknown line 00402980.0
+WARN  holdec.ag - Referencing unknown line 00402970.0
+WARN  holdec.ag - Referencing unknown line 00402540.0
+WARN  holdec.ag - Referencing unknown line 00401f00.0
+WARN  holdec.ag - Referencing unknown line 00402290.0
+WARN  holdec.ag - Referencing unknown line 004021a0.0
+WARN  holdec.ag - Referencing unknown line 00401ed0.0
+WARN  holdec.ag - Referencing unknown line 00401000.0
+WARN  holdec.ag - Referencing unknown line 00401f00.0
+WARN  holdec.ag - Referencing unknown line 00402d90.0
+WARN  holdec.ag - Referencing unknown line 00402dd0.0
+WARN  holdec.ag - Referencing unknown line 00403060.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 004030e0.0
+WARN  holdec.ag - Referencing unknown line 004030e0.0
+WARN  holdec.ag - Referencing unknown line 00403350.0
+WARN  holdec.ag - Referencing unknown line 00401cc0.0
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ag - Referencing unknown line 00401cc0.0
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ag - Referencing unknown line 00401ff0.0
+WARN  holdec.ag - Referencing unknown line 00401ff0.0
+WARN  holdec.ag - Referencing unknown line 00401f40.0
+WARN  holdec.ag - Referencing unknown line 00401f40.0
+WARN  holdec.ag - Referencing unknown line 00401ff0.0
+WARN  holdec.ag - Referencing unknown line 00401ff0.0
+WARN  holdec.ac - Block 2 is already known to have a starting stack offset of -12 but when called from 1 it has an offset of -20
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -20 but when called from 10 it has an offset of -24
+WARN  holdec.ag - Referencing unknown line 00402150.0
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -12 but when called from 27 it has an offset of -16
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -16 but when called from 25 it has an offset of -12
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -16 but when called from 26 it has an offset of -12
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 00401200.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 00401200.0
+WARN  holdec.ag - Referencing unknown line 00403590.0
+WARN  holdec.ag - Referencing unknown line 00402330.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 00401200.0
+WARN  holdec.ag - Referencing unknown line 00402330.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 00403590.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -8 but when called from 27 it has an offset of -4
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -8 but when called from 17 it has an offset of -40
+WARN  holdec.ac - Block 28 is already known to have a starting stack offset of -40 but when called from 16 it has an offset of -72
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Too many inner loops in RegionConstructor
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ag - Referencing unknown line 00402890.0
+WARN  holdec.ag - Referencing unknown line 00402940.0
+WARN  holdec.ag - Referencing unknown line 004028e0.0
+WARN  holdec.ag - Referencing unknown line 00402940.0
+WARN  holdec.ag - Referencing unknown line 004028e0.0
+WARN  holdec.ac - Block 32 is already known to have a starting stack offset of -24 but when called from 21 it has an offset of -32
+WARN  holdec.ac - Block 32 is already known to have a starting stack offset of -32 but when called from 31 it has an offset of -24
+WARN  holdec.ag - Referencing unknown line 004026a0.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 00401200.0
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ac - Block 35 is already known to have a starting stack offset of -92 but when called from 33 it has an offset of -96
+WARN  holdec.ac - Block 33 is already known to have a starting stack offset of -96 but when called from 28 it has an offset of -100
+WARN  holdec.ac - Block 36 is already known to have a starting stack offset of -92 but when called from 31 it has an offset of -100
+WARN  holdec.ac - Block 35 is already known to have a starting stack offset of -96 but when called from 32 it has an offset of -100
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -92 but when called from 19 it has an offset of -96
+WARN  holdec.ac - Block 21 is already known to have a starting stack offset of -92 but when called from 19 it has an offset of -96
+WARN  holdec.ac - Block 16 is already known to have a starting stack offset of -92 but when called from 21 it has an offset of -96
+WARN  holdec.ac - Block 22 is already known to have a starting stack offset of -92 but when called from 21 it has an offset of -96
+WARN  holdec.ag - Referencing unknown line 004035e0.0
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -16
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -16 but when called from 4 it has an offset of -12
+WARN  holdec.ag - Referencing unknown line 00404560.0
+WARN  holdec.ag - Referencing unknown line 00402c96.0
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -32
+WARN  holdec.ac - Block 1 is already known to have a starting stack offset of -28 but when called from 5 it has an offset of -32
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+WARN  holdec.ag - Referencing unknown line 00402dd0.0
+WARN  holdec.ag - Referencing unknown line 00402dd0.0
+WARN  holdec.ag - Referencing unknown line 00403d90.0
+WARN  holdec.ag - Referencing unknown line 00403d00.0
+WARN  holdec.ac - Block 18 is already known to have a starting stack offset of -440 but when called from 12 it has an offset of -452
+WARN  holdec.ac - Block 17 is already known to have a starting stack offset of -440 but when called from 16 it has an offset of -460
+WARN  holdec.ac - Block 16 is already known to have a starting stack offset of -440 but when called from 15 it has an offset of -444
+WARN  holdec.ag - Referencing unknown line 00402fd0.0
+WARN  holdec.ag - Referencing unknown line 00403020.0
+WARN  holdec.ag - Referencing unknown line 00403e90.0
+WARN  holdec.ag - Referencing unknown line 00403940.0
+WARN  holdec.ac - Block 3 is already known to have a starting stack offset of -4 but when called from 2 it has an offset of -16
+WARN  holdec.ag - Referencing unknown line 00403160.0
+WARN  holdec.ag - Referencing unknown line 004030e0.0
+WARN  holdec.ag - Referencing unknown line 00403eb0.0
+WARN  holdec.ag - Referencing unknown line 00403f10.0
+WARN  holdec.ag - Referencing unknown line 00403160.0
+WARN  holdec.ag - Referencing unknown line 00403090.0
+WARN  holdec.ag - Referencing unknown line 00403090.0
+WARN  holdec.ac - Block 7 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -32
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of 0 but when called from 8 it has an offset of -32
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+WARN  holdec.ag - Referencing unknown line 00403060.0
+WARN  holdec.ag - Referencing unknown line 00404200.0
+WARN  holdec.ag - Referencing unknown line 00403f10.0
+WARN  holdec.ag - Referencing unknown line 00404140.0
+WARN  holdec.ag - Referencing unknown line 00403f10.0
+WARN  holdec.o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  holdec.o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  holdec.ag - Referencing unknown line 00403940.0
+WARN  holdec.ag - Referencing unknown line 00403e90.0
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -16 but when called from 10 it has an offset of -28
+WARN  holdec.ac - Block 15 is already known to have a starting stack offset of -16 but when called from 11 it has an offset of -28
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -16 but when called from 13 it has an offset of -28
+WARN  holdec.ag - Referencing unknown line 00403880.0
+WARN  holdec.ag - Referencing unknown line 004038e0.0
+WARN  holdec.ac - Block 4 is already known to have a starting stack offset of -8 but when called from 3 it has an offset of -20
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -8 but when called from 4 it has an offset of -20
+WARN  holdec.ac - Block 3 is already known to have a starting stack offset of -12 but when called from 2 it has an offset of -24
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -24 but when called from 18 it has an offset of -40
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -40 but when called from 19 it has an offset of -52
+WARN  holdec.ac - Block 18 is already known to have a starting stack offset of -40 but when called from 17 it has an offset of -68
+WARN  holdec.ac - Block 21 is already known to have a starting stack offset of -44 but when called from 16 it has an offset of -48
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Too many inner loops in RegionConstructor
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ac - Block 5 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -16
+WARN  holdec.ag - Referencing unknown line 00403750.0
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of -16 but when called from 4 it has an offset of -28
+WARN  holdec.ac - Block 3 is already known to have a starting stack offset of -16 but when called from 9 it has an offset of -28
+WARN  holdec.ac - Block 17 is already known to have a starting stack offset of -16 but when called from 10 it has an offset of -28
+WARN  holdec.ag - Referencing unknown line 004037b0.0
+WARN  holdec.ag - Referencing unknown line 00403b80.0
+WARN  holdec.ag - Referencing unknown line 00403b80.0
+WARN  holdec.ag - Referencing unknown line 004035e0.0
+WARN  holdec.ac - Block 36 is already known to have a starting stack offset of -20 but when called from 24 it has an offset of -36
+WARN  holdec.ac - Block 37 is already known to have a starting stack offset of -8 but when called from 33 it has an offset of -24
+WARN  holdec.ac - Block 37 is already known to have a starting stack offset of -24 but when called from 15 it has an offset of -8
+WARN  holdec.ac - Block 10 is already known to have a starting stack offset of -16 but when called from 2 it has an offset of -24
+WARN  holdec.ac - Block 4 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -40
+WARN  holdec.ac - Block 9 is already known to have a starting stack offset of -40 but when called from 8 it has an offset of -44
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -52 but when called from 10 it has an offset of -16
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ac - Block 7 is already known to have a starting stack offset of 0 but when called from 6 it has an offset of -4
+WARN  holdec.ag - Referencing unknown line 00404140.0
+WARN  holdec.ag - Referencing unknown line 004043d0.0
+WARN  holdec.ac - Block 17 is already known to have a starting stack offset of -1068 but when called from 16 it has an offset of -1088
+WARN  holdec.ac - Block 8 is already known to have a starting stack offset of -1068 but when called from 15 it has an offset of -1088
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ag - Referencing unknown line 004043d0.0
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -4 but when called from 8 it has an offset of -20
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -20 but when called from 10 it has an offset of -4
+WARN  holdec.ag - Referencing unknown line 00402fb0.0
+WARN  holdec.ag - Referencing unknown line 004030e0.0
+WARN  holdec.ag - Referencing unknown line 00404520.0
+WARN  holdec.ag - Referencing unknown line 00404440.0
+WARN  holdec.ag - Referencing unknown line 00403590.0
+WARN  holdec.ac - Block 11 is already known to have a starting stack offset of -12 but when called from 10 it has an offset of -20
+WARN  holdec.ac - Block 13 is already known to have a starting stack offset of -12 but when called from 12 it has an offset of -4
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ag - Referencing unknown line 00404380.0
+WARN  holdec.ag - Referencing unknown line 004042e0.0
+WARN  holdec.ag - Referencing unknown line 004043d0.0
+WARN  holdec.ac - Block 8 is already known to have a starting stack offset of -16 but when called from 6 it has an offset of -20
+WARN  holdec.ac - Block 13 is already known to have a starting stack offset of -8 but when called from 12 it has an offset of -4
+WARN  holdec.ag - Referencing unknown line 00403590.0

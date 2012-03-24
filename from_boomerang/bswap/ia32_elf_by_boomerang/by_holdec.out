@@ -1,88 +1,74 @@
-INFO  07:02:41 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-INFO  07:02:41 ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:02:41 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : ............................................................ [  0.06s]
-INFO  07:02:41 fA - disassembleAndWrite: running multiline
-INFO  07:02:41 ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.00s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.01s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.01s]
-Preprocess fX                           : ............................................................ [  0.01s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:02:41 ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:02:41 fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:02:41 ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.00s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.00s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.01s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.00s]
-Preprocess fX                           : ............................................................ [  0.00s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:02:41 ke - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:02:41 fA - reading all asm lines ...
-INFO  07:02:41 fA - ... read 237 asm lines
-Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+Preprocessing 208 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+Preprocessing 237 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 237 asm lines
+WARN  w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08048484.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 17 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 8 functions
+decompile F_080482a0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482b0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482ed                    : ............................................................ [ done ]
+decompile bswap                         : ............................................................ [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 08048370.0
+WARN  ag - Referencing unknown line 080482b0.0
+..INFO  fO - Skipping stack alignment: 08048380.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]
+decompile F_080483c6                    : .WARN  ag - Referencing unknown line 08048278.0
+................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.RuntimeException: Can not get base command for 08048376.0+2 l.bswap eax.
-	at holdec.hE.b(Unknown Source)
+ failed: java.lang.AssertionError
+decompile F_0804840a                    : .WARN  ag - Referencing unknown line 08048468.0
+................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bc.b(Unknown Source)
+	at holdec.bc.a(Unknown Source)
+	at holdec.ie.e(Unknown Source)
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
 	at holdec.fG.a(Unknown Source)
-	at holdec.hr.a(Unknown Source)
-	at holdec.fA.b(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
-Caused by: java.lang.IllegalArgumentException: Unknown command bswap orig=l.bswap
-	at holdec.fE.a(Unknown Source)
-	... 11 more
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
+decompile F_08048471                    : .WARN  ag - Referencing unknown line 08048308.0
+........................................................... [ done ]

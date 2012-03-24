@@ -1,0 +1,82 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - reading info from ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+Preprocessing 1213 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+Preprocessing 1302 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 1302 asm lines
+WARN  w - Address 00402000.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 41 methods to cache             : .ERROR fJ - The first line is 00401020.0+1 l.push esi but the main address is 00401080.0. WILL NO WRITE THIS METHOD.
+........................................................... [ done ]
+INFO  an - will decompile 40 functions
+decompile F_00401060                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00401120                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00401150                    : .WARN  ag - Referencing unknown line 004018fc.0
+WARN  ag - Referencing unknown line 004018f6.0
+WARN  ag - Referencing unknown line 004018f0.0
+..INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+......................................................... [ done ]
+decompile F_004015c0                    : .WARN  ag - Referencing unknown line 00401920.0
+........................................................... [ done ]
+decompile F_004016d0                    : .WARN  ag - Referencing unknown line 00401920.0
+........................................................... [ done ]
+decompile F_00401818                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040181e                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040182a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401830                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401836                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004018f0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004018f6                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004018fc                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401902                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040191a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401920                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401926                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040192c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401932                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401938                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040193e                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401944                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040194a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401950                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401956                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040195c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401962                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401970                    : .WARN  ag - Referencing unknown line 00401b90.0
+........................................................... [ done ]
+decompile F_004019a0                    : .WARN  ag - Referencing unknown line 00401970.0
+........................................................... [ done ]
+decompile F_004019d0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004019e0                    : .WARN  ag - Referencing unknown line 00401be0.0
+WARN  ag - Referencing unknown line 00401bb0.0
+WARN  ag - Referencing unknown line 00401b9c.0
+WARN  ag - Referencing unknown line 00401b9c.0
+WARN  ag - Referencing unknown line 00401bfc.0
+........................................................... [ done ]
+decompile F_00401b90                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401b96                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401b9c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401bb0                    : .WARN  ag - Referencing unknown line 00401bf6.0
+........................................................... [ done ]
+decompile F_00401be0                    : ............................................................ [ done ]
+decompile F_00401bf6                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401bfc                    : .WARN  ag - Referencing unknown line 00401c60.0
+..INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+......................................................... [ done ]
+decompile F_00401c14                    : .WARN  ag - Referencing unknown line 004018f6.0
+..INFO  ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/input.info
+......................................................... [ done ]
+decompile F_00401c60                    : .... failed: Block L0 calls block L1 which isn't available

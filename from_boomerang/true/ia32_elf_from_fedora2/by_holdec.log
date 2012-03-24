@@ -1,63 +1,145 @@
-INFO  07:04:38 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:38 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-INFO  07:04:39 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:04:39 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-INFO  07:04:39 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-INFO  07:04:39 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-INFO  07:04:39 holdec.fA - reading all asm lines ...
-INFO  07:04:39 holdec.fA - ... read 1954 asm lines
-WARN  07:04:39 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:39 holdec.w - Address 08049f00.0 is excluded by the address filter. Maybe outside text section?
-ERROR 07:04:40 holdec.fD - The first line is 080487c0.0+6 l.jmp ds:[0x804b740] but the main address is 080498b0.0. WILL NO WRITE THIS METHOD.
-ERROR 07:04:40 holdec.fD - The first line is 08048930.0+6 l.jmp ds:[0x804b79c] but the main address is 08049df0.0. WILL NO WRITE THIS METHOD.
-INFO  07:04:40 holdec.am - will decompile 57 functions
-INFO  07:04:40 holdec.fG - Skipping stack alignment: 08048985.0+3 l.and esp,0xfffffff0
-WARN  07:04:40 holdec.o -   load size differs from loaded size for g_0x0804b7e4 vs. LOAD(ADDR(g_0x0804b7e4))
-INFO  07:04:40 holdec.fG - Skipping stack alignment: 08048b19.0+3 l.and esp,0xfffffff0
-WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:40 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-INFO  07:04:41 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
-WARN  07:04:41 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-ERROR 07:04:41 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 1954 asm lines
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 08049f00.0 is excluded by the address filter. Maybe outside text section?
+ERROR holdec.fJ - The first line is 080487c0.0+6 l.jmp ds:[0x804b740] but the main address is 080498b0.0. WILL NO WRITE THIS METHOD.
+ERROR holdec.fJ - The first line is 08048930.0+6 l.jmp ds:[0x804b79c] but the main address is 08049df0.0. WILL NO WRITE THIS METHOD.
+INFO  holdec.an - will decompile 57 functions
+WARN  holdec.ag - Referencing unknown line 080489a4.0
+WARN  holdec.ag - Referencing unknown line 08048a04.0
+WARN  holdec.ag - Referencing unknown line 08049ec0.0
+WARN  holdec.ag - Referencing unknown line 08048890.0
+INFO  holdec.fO - Skipping stack alignment: 08048985.0+3 l.and esp,0xfffffff0
+WARN  holdec.o -   load size differs from loaded size for g_0x0804b7e4 vs. LOAD(ADDR(g_0x0804b7e4))
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 080488c0.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 080487c0.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 080487c0.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 080488c0.0
+WARN  holdec.ag - Referencing unknown line 08048900.0
+WARN  holdec.ag - Referencing unknown line 08048800.0
+WARN  holdec.ag - Referencing unknown line 08048860.0
+WARN  holdec.ag - Referencing unknown line 080488b0.0
+WARN  holdec.ag - Referencing unknown line 08049e90.0
+WARN  holdec.ag - Referencing unknown line 08048900.0
+WARN  holdec.ag - Referencing unknown line 080487e0.0
+WARN  holdec.ag - Referencing unknown line 08049ac0.0
+INFO  holdec.fO - Skipping stack alignment: 08048b19.0+3 l.and esp,0xfffffff0
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 080488f0.0
+WARN  holdec.ag - Referencing unknown line 08048970.0
+WARN  holdec.ag - Referencing unknown line 08048880.0
+WARN  holdec.ag - Referencing unknown line 08048920.0
+WARN  holdec.ag - Referencing unknown line 08048950.0
+WARN  holdec.ag - Referencing unknown line 08048870.0
+WARN  holdec.ag - Referencing unknown line 08048820.0
+WARN  holdec.ag - Referencing unknown line 08048e50.0
+WARN  holdec.ag - Referencing unknown line 08048820.0
+WARN  holdec.ag - Referencing unknown line 08049c20.0
+WARN  holdec.ag - Referencing unknown line 08048940.0
+WARN  holdec.ag - Referencing unknown line 08049490.0
+WARN  holdec.ag - Referencing unknown line 08049df0.0
+WARN  holdec.ag - Referencing unknown line 08049ba0.0
+WARN  holdec.ag - Referencing unknown line 08049490.0
+WARN  holdec.ag - Referencing unknown line 08048820.0
+WARN  holdec.ag - Referencing unknown line 08049ba0.0
+WARN  holdec.ag - Referencing unknown line 08048840.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ac - Block 13 is already known to have a starting stack offset of -4 but when called from 12 it has an offset of -72
+WARN  holdec.ag - Referencing unknown line 080494f0.0
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora2/subject.exe.info
+WARN  holdec.ag - Referencing unknown line 080496b0.0
+WARN  holdec.ag - Referencing unknown line 080494f0.0
+WARN  holdec.ag - Referencing unknown line 08048db0.0
+WARN  holdec.ag - Referencing unknown line 080494f0.0
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.ag - Referencing unknown line 080497f0.0
+WARN  holdec.ag - Referencing unknown line 080498b0.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.ag - Referencing unknown line 08048960.0
+WARN  holdec.ag - Referencing unknown line 08048840.0
+WARN  holdec.ag - Referencing unknown line 08048830.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 080488a0.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 080488a0.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08048940.0
+WARN  holdec.ac - Block 24 is already known to have a starting stack offset of -12 but when called from 4 it has an offset of -40
+WARN  holdec.ac - Block 24 is already known to have a starting stack offset of -40 but when called from 7 it has an offset of -52
+WARN  holdec.ac - Block 6 is already known to have a starting stack offset of -40 but when called from 11 it has an offset of -76
+WARN  holdec.ac - Block 6 is already known to have a starting stack offset of -76 but when called from 18 it has an offset of -104
+WARN  holdec.ac - Block 24 is already known to have a starting stack offset of -52 but when called from 23 it has an offset of -136
+WARN  holdec.ag - Referencing unknown line 080488a0.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08049b00.0
+WARN  holdec.ag - Referencing unknown line 08049ba0.0
+WARN  holdec.ag - Referencing unknown line 08048940.0
+WARN  holdec.ac - Block 0 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -36
+WARN  holdec.ac - Block 18 is already known to have a starting stack offset of -12 but when called from 17 it has an offset of -96
+WARN  holdec.ac - Block 0 is already known to have a starting stack offset of -36 but when called from 12 it has an offset of -64
+WARN  holdec.ag - Referencing unknown line 08048778.0
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
 java.lang.AssertionError
-	at holdec.hQ.b(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.dL.e(Unknown Source)
-	at holdec.eK.a(Unknown Source)
-	at holdec.eC.a(Unknown Source)
-	at holdec.dL.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-ERROR 07:04:41 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+WARN  holdec.ag - Referencing unknown line 08049ee4.0
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
 java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
-	at holdec.bb.b(Unknown Source)
-	at holdec.bb.a(Unknown Source)
-	at holdec.hQ.e(Unknown Source)
-	at holdec.hQ.b(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.dL.e(Unknown Source)
-	at holdec.eK.a(Unknown Source)
-	at holdec.eC.a(Unknown Source)
-	at holdec.dL.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+	at holdec.bc.b(Unknown Source)
+	at holdec.bc.a(Unknown Source)
+	at holdec.ie.e(Unknown Source)
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ag - Referencing unknown line 08048810.0
+WARN  holdec.ag - Referencing unknown line 08048810.0
+WARN  holdec.ag - Referencing unknown line 080489c8.0
+WARN  holdec.ag - Referencing unknown line 080489c8.0

@@ -1,0 +1,30 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info
+INFO  ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info
+Preprocessing 257 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info
+Preprocessing 279 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 279 asm lines
+WARN  w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080485f0.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 19 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 2 functions
+decompile getDevice                     : ............................................................ [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 08048384.0
+WARN  ag - Referencing unknown line 08048474.0
+WARN  ag - Referencing unknown line 080483a4.0
+..INFO  fO - Skipping stack alignment: 08048485.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]

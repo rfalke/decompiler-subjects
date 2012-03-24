@@ -1,0 +1,8 @@
+[0x401150]
+signature: d4 main(void)
+
+[0x004038e4]
+signature: d4 printf(d1 *fmt)
+
+[activeFunctions]
+main

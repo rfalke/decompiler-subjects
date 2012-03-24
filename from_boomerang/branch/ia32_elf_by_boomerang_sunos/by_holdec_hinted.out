@@ -1,0 +1,47 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+Preprocessing 1246 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+Preprocessing 1250 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+Preprocessing 1461 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 1461 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08049524.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 49 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 1 functions
+decompile main                          : .WARN  ag - Referencing unknown line 080487e0.0
+WARN  ag - Referencing unknown line 080487e0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+WARN  ag - Referencing unknown line 080487f0.0
+........WARN  ac - Block 17 is already known to have a starting stack offset of -24 but when called from 15 it has an offset of -20
+................................................... [ done ]

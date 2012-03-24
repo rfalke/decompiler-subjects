@@ -1,0 +1,70 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe.info
+Preprocessing 467 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe.info
+Preprocessing 499 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_elf_from_rec_gcc4g/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 499 asm lines
+WARN  w - Address 08048134.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08048a18.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 28 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 20 functions
+decompile F_08048474                    : .WARN  ag - Referencing unknown line 080484c8.0
+WARN  ag - Referencing unknown line 08048610.0
+WARN  ag - Referencing unknown line 080489d0.0
+........................................................... [ done ]
+decompile F_080484a8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080484b8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080484c8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080484d8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080484e8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080484f8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048508                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048518                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048528                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048538                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048548                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048558                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048568                    : .... failed: Block L0 calls block L1 which isn't available
+decompile dumpline                      : .WARN  ag - Referencing unknown line 080484a8.0
+WARN  ag - Referencing unknown line 080484a8.0
+WARN  ag - Referencing unknown line 08048548.0
+WARN  ag - Referencing unknown line 08048518.0
+WARN  ag - Referencing unknown line 08048508.0
+WARN  ag - Referencing unknown line 08048508.0
+WARN  ag - Referencing unknown line 08048558.0
+WARN  ag - Referencing unknown line 08048538.0
+........................................................... [ done ]
+decompile hexdump                       : .WARN  ag - Referencing unknown line 08048990.0
+WARN  ag - Referencing unknown line 080484e8.0
+WARN  ag - Referencing unknown line 08048528.0
+WARN  ag - Referencing unknown line 080484e8.0
+WARN  ag - Referencing unknown line 08048568.0
+WARN  ag - Referencing unknown line 08048634.0
+WARN  ag - Referencing unknown line 080484f8.0
+WARN  ag - Referencing unknown line 08048538.0
+........................................................... [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 080487c6.0
+..INFO  fO - Skipping stack alignment: 080488cd.0+3 l.and esp,0xfffffff0
+...................................WARN  d - may result in wrong values
+WARN  d -   reg_pp6 = PHI(reg_28_local1, reg_28_local0) in Block2
+WARN  d -   reg_28_local1 = ADD(reg_pp6, 1) in Block1
+...................... [ done ]
+decompile __i686.get_pc_thunk.bx        : ............................................................ [ done ]
+decompile __stat                        : .WARN  ag - Referencing unknown line 0804898a.0
+WARN  ag - Referencing unknown line 080484b8.0
+........................................................... [ done ]
+decompile F_08048a08                    : .WARN  ag - Referencing unknown line 080485b0.0
+........................................................... [ done ]

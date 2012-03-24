@@ -1,0 +1,5 @@
+[activeFunctions]
+main
+
+[func:printf]
+signature: d4 printf(char *fmt,  d4 v1, d4 v2, d4 v3, d4 v4, d4 v5, d4 v6, d4 v7, d4 v8, d4 v9, d4 v10, d4 v11, d4 v12)

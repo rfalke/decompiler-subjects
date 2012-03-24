@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+getDevice
+
+[func:getDevice]
+signature: u4 proc1(d4 ptr)
+
+[0x080483a4]
+signature: d4 printf(d1 *fmt, d4 v1)

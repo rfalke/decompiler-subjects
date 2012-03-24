@@ -1,0 +1,8 @@
+[activeFunctions]
+main
+
+[func:printf]
+signature: d4 printf(d1 *fmt, d4 v)
+
+[func:__xstat]
+signature: int __xstat(int version, const char * path, char* stat_buf)

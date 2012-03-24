@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+fib
+
+[0x08048798]
+signature: u4 fib(u4 n)

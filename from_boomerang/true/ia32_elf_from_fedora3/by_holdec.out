@@ -1,148 +1,217 @@
-INFO  07:04:42 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-INFO  07:04:42 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:42 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : ............................................................ [  0.26s]
-INFO  07:04:42 fA - disassembleAndWrite: running multiline
-INFO  07:04:42 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.01s]
-Preprocess gc                           : ............................................................ [  0.01s]
-Preprocess fK                           : ............................................................ [  0.01s]
-Preprocess fS                           : ............................................................ [  0.01s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.01s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.01s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.01s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.01s]
-Preprocess fL                           : ............................................................ [  0.01s]
-Preprocess gg                           : ............................................................ [  0.01s]
-Preprocess fJ                           : ............................................................ [  0.01s]
-Preprocess fZ                           : ............................................................ [  0.01s]
-Preprocess gd                           : ............................................................ [  0.01s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.01s]
-Preprocess fM                           : ............................................................ [  0.01s]
-Preprocess fN                           : ............................................................ [  0.01s]
-Preprocess fX                           : ............................................................ [  0.02s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:43 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:43 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.00s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.00s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.00s]
-Preprocess fX                           : ............................................................ [  0.00s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:43 ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 fA - reading all asm lines ...
-INFO  07:04:43 fA - ... read 2036 asm lines
-WARN  07:04:43 w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:43 w - Address 0804a110.0 is excluded by the address filter. Maybe outside text section?
-create blocks                           : ............................................................ [  0.01s]
-init blocks                             : ............................................................ [  0.01s]
-Writing 62 methods to cache             : ..........................................ERROR 07:04:43 fD - The first line is 08049721.0+1 l.push ebp but the main address is 080498ae.0. WILL NO WRITE THIS METHOD.
-.................. [  0.01s]
-INFO  07:04:43 am - will decompile 61 functions
-decompile F_080488bc                    : ............................................................ [  0.09s]
-decompile F_080488e4                    : ... failed: There is no target block for index 0
-decompile F_080488f4                    : ... failed: There is no target block for index 0
-decompile F_08048904                    : ... failed: There is no target block for index 0
-decompile F_08048914                    : ... failed: There is no target block for index 0
-decompile F_08048924                    : ... failed: There is no target block for index 0
-decompile F_08048934                    : ... failed: There is no target block for index 0
-decompile F_08048944                    : ... failed: There is no target block for index 0
-decompile F_08048954                    : ... failed: There is no target block for index 0
-decompile F_08048964                    : ... failed: There is no target block for index 0
-decompile F_08048974                    : ... failed: There is no target block for index 0
-decompile F_08048984                    : ... failed: There is no target block for index 0
-decompile F_08048994                    : ... failed: There is no target block for index 0
-decompile F_080489a4                    : ... failed: There is no target block for index 0
-decompile F_080489b4                    : ... failed: There is no target block for index 0
-decompile F_080489c4                    : ... failed: There is no target block for index 0
-decompile F_080489d4                    : ... failed: There is no target block for index 0
-decompile F_080489e4                    : ... failed: There is no target block for index 0
-decompile F_080489f4                    : ... failed: There is no target block for index 0
-decompile F_08048a04                    : ... failed: There is no target block for index 0
-decompile F_08048a14                    : ... failed: There is no target block for index 0
-decompile F_08048a24                    : ... failed: There is no target block for index 0
-decompile F_08048a34                    : ... failed: There is no target block for index 0
-decompile F_08048a44                    : ... failed: There is no target block for index 0
-decompile F_08048a54                    : ... failed: There is no target block for index 0
-decompile F_08048a64                    : ... failed: There is no target block for index 0
-decompile F_08048a74                    : ... failed: There is no target block for index 0
-decompile F_08048a84                    : ... failed: There is no target block for index 0
-decompile F_08048a94                    : ... failed: There is no target block for index 0
-decompile F_08048aa4                    : ... failed: There is no target block for index 0
-decompile F_08048ac0                    : ...INFO  07:04:43 fG - Skipping stack alignment: 08048ac5.0+3 l.and esp,0xfffffff0
-......................................................... [  0.18s]
-decompile F_08048ae4                    : ............................................................ [  0.06s]
-decompile F_08048aed                    : ............................................................ [  0.05s]
-decompile F_08048b08                    : ...................................................WARN  07:04:44 o -   load size differs from loaded size for g_0x0804ba00 vs. LOAD(ADDR(g_0x0804ba00))
-......... [  0.12s]
-decompile F_08048b3c                    : ............................................................ [  0.08s]
-decompile F_08048b68                    : ...INFO  07:04:44 fG - Skipping stack alignment: 08048c67.0+3 l.and esp,0xfffffff0
-..................... failed: F_08048b68 has no exit blocks
-decompile F_08048d64                    : ............................................................ [  0.01s]
-decompile close_stdout                  : ............................................................ [  0.33s]
-decompile F_08048e5f                    : ............................................................ [  0.01s]
-decompile F_08048f36                    : ...................................................WARN  07:04:44 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-......... [  0.09s]
-decompile F_08048fa3                    : ............................................................ [  0.09s]
-decompile F_08048ff6                    : ... failed: There is no target block for index 0
-decompile F_080496c3                    : ............................................................ [  0.07s]
-decompile F_08049721                    : ......... failed: Block 0 is already known to have a starting stack offset of 0 but when called from 12 it has an offset of -60
-decompile F_08049905                    : ............................................................ [  0.09s]
-decompile F_0804995f                    : ............................................................ [  0.03s]
-decompile F_080499f0                    : ...................................................WARN  07:04:45 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-......... [  0.06s]
-decompile F_08049a8b                    : ............................................................ [  0.03s]
-decompile F_08049ac0                    : ... failed: There is no target block for index 0
-decompile F_08049ccd                    : ............................................................ [  0.06s]
-decompile F_08049d10                    : ........................ failed: F_08049d10 has no exit blocks
-decompile F_08049dc5                    : ......... failed: Block 20 is already known to have a starting stack offset of -8 but when called from 4 it has an offset of -20
-decompile F_08049e3f                    : ......... failed: Block 15 is already known to have a starting stack offset of -8 but when called from 5 it has an offset of -36
-decompile F_08049fe0                    : ............................................................ [  0.04s]
-decompile F_0804a016                    : ............................................................ [  0.11s]
-decompile F_0804a067                    : ............................................................ [  0.07s]
-decompile F_0804a0a0                    : ............................................................ [  0.04s]
-decompile F_0804a0a9                    : ............................................................ [  0.07s]
-decompile F_0804a0d0                    : ............................................................ [  0.03s]
-decompile F_0804a0f4                    : ............................................................ [  0.01s]
-decompile F_0804a0fd                    : ............................................................ [  0.01s]
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+Preprocessing 1916 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+Preprocessing 2036 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 2036 asm lines
+WARN  w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 0804a110.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 62 methods to cache             : ..........................................ERROR fJ - The first line is 08049721.0+1 l.push ebp but the main address is 080498ae.0. WILL NO WRITE THIS METHOD.
+.................. [ done ]
+INFO  an - will decompile 61 functions
+decompile F_080488bc                    : .WARN  ag - Referencing unknown line 08048ae4.0
+WARN  ag - Referencing unknown line 08048b3c.0
+WARN  ag - Referencing unknown line 0804a0d0.0
+........................................................... [ done ]
+decompile F_080488e4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488f4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048904                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048914                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048924                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048934                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048944                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048954                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048964                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048974                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048984                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048994                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489a4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489b4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489c4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489d4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489e4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489f4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a04                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a14                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a24                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a34                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a44                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a54                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a64                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a74                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a84                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048a94                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048aa4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048ac0                    : .WARN  ag - Referencing unknown line 080489c4.0
+..INFO  fO - Skipping stack alignment: 08048ac5.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]
+decompile F_08048ae4                    : ............................................................ [ done ]
+decompile F_08048aed                    : ............................................................ [ done ]
+decompile F_08048b08                    : ...................................................WARN  o -   load size differs from loaded size for g_0x0804ba00 vs. LOAD(ADDR(g_0x0804ba00))
+......... [ done ]
+decompile F_08048b3c                    : ............................................................ [ done ]
+decompile F_08048b68                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 080489f4.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08048904.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08048904.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 080489f4.0
+WARN  ag - Referencing unknown line 08048a34.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048944.0
+WARN  ag - Referencing unknown line 080489a4.0
+WARN  ag - Referencing unknown line 080489e4.0
+WARN  ag - Referencing unknown line 0804a0a0.0
+WARN  ag - Referencing unknown line 08048a34.0
+WARN  ag - Referencing unknown line 08048924.0
+WARN  ag - Referencing unknown line 08049ccd.0
+..INFO  fO - Skipping stack alignment: 08048c67.0+3 l.and esp,0xfffffff0
+.............. failed: A non-current expression of a variable is used in block L1 in (void) STORE(ADD(reg_pp1, SEGMENT2ADDR(reg_pp2)), 0): The current setter is reg_zi1 while [reg_pp2] was found. Related expressions are [reg_zi5, reg_zi4, reg_pp9, reg_zi2, reg_pp4, reg_pp2, reg_zi1, reg_zi0]
+decompile F_08048d64                    : ............................................................ [ done ]
+decompile close_stdout                  : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 080488e4.0
+WARN  ag - Referencing unknown line 08048a14.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08049a8b.0
+WARN  ag - Referencing unknown line 08048a94.0
+WARN  ag - Referencing unknown line 08048964.0
+WARN  ag - Referencing unknown line 08048a94.0
+........................................................... [ done ]
+decompile F_08048e5f                    : ............................................................ [ done ]
+decompile F_08048f36                    : .WARN  ag - Referencing unknown line 08048d64.0
+..................................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile F_08048fa3                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048934.0
+........................................................... [ done ]
+decompile F_08048ff6                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048a24.0
+WARN  ag - Referencing unknown line 08048aa4.0
+WARN  ag - Referencing unknown line 080489b4.0
+WARN  ag - Referencing unknown line 08048a54.0
+WARN  ag - Referencing unknown line 08048a84.0
+................ failed: A non-current expression of a variable is used in block L8 in (void) STORE(ADD(reg_c1, reg_d4, SEGMENT2ADDR(reg_zj1)), 92): The current setter is reg_zj2 while [reg_zj1] was found. Related expressions are [reg_zj21, reg_zj22, reg_zj20, reg_zj23, reg_zj24, reg_pp86, reg_pp68, reg_pp21, reg_pp81, reg_pp44, reg_pp60, reg_pp23, reg_zj8, reg_zj7, reg_zj9, reg_zj6, reg_pp49, reg_zj5, reg_zj0, reg_zj18, reg_zj2, reg_zj17, reg_zj1, reg_zj16, reg_zj10, reg_zj11, reg_pp78, reg_zj12, reg_zj13, reg_zj14, reg_pp56, reg_pp30, reg_pp33, reg_pp18, reg_pp36, reg_pp15, reg_pp10]
+decompile F_080496c3                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048964.0
+WARN  ag - Referencing unknown line 08048ff6.0
+........................................................... [ done ]
+decompile F_08049721                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048964.0
+WARN  ag - Referencing unknown line 08049e3f.0
+WARN  ag - Referencing unknown line 08048a74.0
+WARN  ag - Referencing unknown line 080496c3.0
+WARN  ag - Referencing unknown line 08049fe0.0
+WARN  ag - Referencing unknown line 08049dc5.0
+WARN  ag - Referencing unknown line 080496c3.0
+WARN  ag - Referencing unknown line 08048964.0
+WARN  ag - Referencing unknown line 08049dc5.0
+WARN  ag - Referencing unknown line 08048984.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+........WARN  ac - Block 0 is already known to have a starting stack offset of 0 but when called from 12 it has an offset of -60
+........ failed: A non-current expression of a variable is used in block L0 in (void) STORE(reg_h1, reg_pp6): The current setter is reg_f0 while [reg_pp6] was found. Related expressions are [reg_f0, reg_f2, reg_pp6, reg_f9]
+decompile F_08049905                    : ............................................................ [ done ]
+decompile F_0804995f                    : .WARN  ag - Referencing unknown line 08049905.0
+WARN  ag - Referencing unknown line 08049721.0
+........................................................... [ done ]
+decompile F_080499f0                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048f36.0
+WARN  ag - Referencing unknown line 08049721.0
+..................................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile F_08049a8b                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 080499f0.0
+........................................................... [ done ]
+decompile F_08049ac0                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048914.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08048994.0
+WARN  ag - Referencing unknown line 08048904.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08048904.0
+WARN  ag - Referencing unknown line 08048914.0
+WARN  ag - Referencing unknown line 080488f4.0
+WARN  ag - Referencing unknown line 080488f4.0
+........................................................... [ done ]
+decompile F_08049ccd                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049ac0.0
+........................................................... [ done ]
+decompile F_08049d10                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048934.0
+WARN  ag - Referencing unknown line 08048a94.0
+WARN  ag - Referencing unknown line 08048984.0
+....................... failed: F_08049d10 has no exit blocks
+decompile F_08049dc5                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048974.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 080489d4.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 080489d4.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048a74.0
+........WARN  ac - Block 20 is already known to have a starting stack offset of -8 but when called from 4 it has an offset of -20
+WARN  ac - Block 20 is already known to have a starting stack offset of -20 but when called from 6 it has an offset of -48
+WARN  ac - Block 20 is already known to have a starting stack offset of -48 but when called from 10 it has an offset of -76
+WARN  ac - Block 20 is already known to have a starting stack offset of -76 but when called from 16 it has an offset of -104
+WARN  ac - Block 20 is already known to have a starting stack offset of -104 but when called from 19 it has an offset of -132
+................................................... [ done ]
+decompile F_08049e3f                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 080489d4.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049d10.0
+WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08049dc5.0
+WARN  ag - Referencing unknown line 08048a74.0
+........WARN  ac - Block 15 is already known to have a starting stack offset of -8 but when called from 5 it has an offset of -36
+WARN  ac - Block 15 is already known to have a starting stack offset of -36 but when called from 11 it has an offset of -64
+WARN  ac - Block 15 is already known to have a starting stack offset of -64 but when called from 14 it has an offset of -92
+................................................... [ done ]
+decompile F_08049fe0                    : .WARN  ag - Referencing unknown line 08048d64.0
+WARN  ag - Referencing unknown line 08048a64.0
+........................................................... [ done ]
+decompile F_0804a016                    : .WARN  ag - Referencing unknown line 080488bc.0
+........................................................... [ done ]
+decompile F_0804a067                    : .WARN  ag - Referencing unknown line 0804a0f4.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp5 = PHI(reg_var11, reg_var10) in Block2
+WARN  d -   reg_var11 = ADD(reg_pp5, -1) in Block1
+...................... [ done ]
+decompile F_0804a0a0                    : .WARN  ag - Referencing unknown line 08048954.0
+........................................................... [ done ]
+decompile F_0804a0a9                    : .WARN  ag - Referencing unknown line 08048954.0
+........................................................... [ done ]
+decompile F_0804a0d0                    : ............................................................ [ done ]
+decompile F_0804a0f4                    : .WARN  ag - Referencing unknown line 08048b08.0
+........................................................... [ done ]
+decompile F_0804a0fd                    : .WARN  ag - Referencing unknown line 08048b08.0
+........................................................... [ done ]

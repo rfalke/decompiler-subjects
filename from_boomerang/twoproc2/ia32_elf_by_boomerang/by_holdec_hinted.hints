@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+proc1
+
+[func:proc1]
+signature: u4 proc1(d4 x, d4 y)
+
+[0x08048268]
+signature: d4 printf(d1 *fmt, d4 v1)

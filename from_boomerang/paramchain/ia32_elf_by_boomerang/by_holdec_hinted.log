@@ -1,0 +1,25 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/paramchain/ia32_elf_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - reading info from ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.fG - disassembleAndWrite: found 1 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/paramchain/ia32_elf_by_boomerang/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 198 asm lines
+WARN  holdec.w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080489d0.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 3 functions
+WARN  holdec.ag - Referencing unknown line 08048924.0
+WARN  holdec.ag - Referencing unknown line 08048938.0
+WARN  holdec.ag - Referencing unknown line 08048808.0

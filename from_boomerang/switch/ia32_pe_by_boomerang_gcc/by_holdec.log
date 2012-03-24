@@ -1,3 +1,32 @@
-INFO  07:04:28 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:28 holdec.ke - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
-INFO  07:04:28 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 5 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 6 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 3 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 9 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 774 asm lines
+WARN  holdec.ag - Referencing unknown line 004010c0.0
+WARN  holdec.ag - Referencing unknown line 004010c2.0
+WARN  holdec.ag - Referencing unknown line 004010de.0
+WARN  holdec.ag - Referencing unknown line 00401140.0
+WARN  holdec.ag - Referencing unknown line 004010c2.0
+WARN  holdec.ag - Referencing unknown line 004010c2.0
+WARN  holdec.ag - Referencing unknown line 004010c0.0
+WARN  holdec.ag - Referencing unknown line 004010c0.0

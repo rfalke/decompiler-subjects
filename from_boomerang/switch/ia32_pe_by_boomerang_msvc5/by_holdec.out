@@ -1,18 +1,352 @@
-INFO  07:04:28 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:28 ke - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
-INFO  07:04:29 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+Preprocessing 5135 asm lines            : ............INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+Preprocessing 5128 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+Preprocessing 5654 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 5654 asm lines
+WARN  w - Address 00405000.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 71 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 71 functions
+decompile F_00401000                    : .WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+WARN  ag - Referencing unknown line 004010a0.0
+........................................................... [ done ]
+decompile F_004010a0                    : .WARN  ag - Referencing unknown line 00401230.0
+WARN  ag - Referencing unknown line 00401330.0
+WARN  ag - Referencing unknown line 004012d0.0
+........................................................... [ done ]
+decompile F_004010e0                    : .WARN  ag - Referencing unknown line 00402b80.0
+WARN  ag - Referencing unknown line 00401200.0
+WARN  ag - Referencing unknown line 00402980.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402540.0
+WARN  ag - Referencing unknown line 00401f00.0
+WARN  ag - Referencing unknown line 00402290.0
+WARN  ag - Referencing unknown line 004021a0.0
+WARN  ag - Referencing unknown line 00401ed0.0
+WARN  ag - Referencing unknown line 00401000.0
+WARN  ag - Referencing unknown line 00401f00.0
+........................................................... [ done ]
+decompile F_00401200                    : .WARN  ag - Referencing unknown line 00402d90.0
+WARN  ag - Referencing unknown line 00402dd0.0
+........................................................... [ done ]
+decompile F_00401230                    : .WARN  ag - Referencing unknown line 00403060.0
+WARN  ag - Referencing unknown line 00402fb0.0
+........................................................... [ done ]
+decompile F_004012d0                    : .WARN  ag - Referencing unknown line 004030e0.0
+WARN  ag - Referencing unknown line 004030e0.0
+........................................................... [ done ]
+decompile F_00401330                    : ................. failed: A non-current expression of a variable is used in block L6 in reg_zb2 = LOAD(ADD(reg_a1, SEGMENT2ADDR(reg_pp5), 4214768)): The current setter is reg_zj1 while [reg_pp5] was found. Related expressions are [reg_pp6, reg_zj3, reg_pp5, reg_zj0, reg_zj1]
+decompile F_00401cc0                    : .WARN  ag - Referencing unknown line 00403350.0
+........................................................... [ done ]
+decompile F_00401d10                    : .WARN  ag - Referencing unknown line 00401cc0.0
+.......................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
+ failed: java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+decompile F_00401d50                    : .WARN  ag - Referencing unknown line 00401cc0.0
+.......................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.RuntimeException: Failed to remove reg_var1 from ADD(reg_result, -1)
+decompile F_00401d90                    : ............................................................ [ done ]
+decompile F_00401db0                    : ............................................................ [ done ]
+decompile F_00401dd0                    : ............................................................ [ done ]
+decompile F_00401ed0                    : .WARN  ag - Referencing unknown line 00401ff0.0
+WARN  ag - Referencing unknown line 00401ff0.0
+........................................................... [ done ]
+decompile F_00401f00                    : .WARN  ag - Referencing unknown line 00401f40.0
+........................................................... [ done ]
+decompile F_00401f20                    : .WARN  ag - Referencing unknown line 00401f40.0
+........................................................... [ done ]
+decompile F_00401f40                    : .WARN  ag - Referencing unknown line 00401ff0.0
+WARN  ag - Referencing unknown line 00401ff0.0
+........WARN  ac - Block 2 is already known to have a starting stack offset of -12 but when called from 1 it has an offset of -20
+WARN  ac - Block 11 is already known to have a starting stack offset of -20 but when called from 10 it has an offset of -24
+........ failed: A non-current expression of a variable is used in block L7 in if(CMP(MARKER_UNSIGNED(reg_pp5), <=, MARKER_UNSIGNED(reg_e4))) goto L5: The current setter is reg_c3 while [reg_pp5] was found. Related expressions are [reg_pp5, reg_c1, reg_c3, reg_c2]
+decompile F_00401ff0                    : ............................................................ [ done ]
+decompile F_00402010                    : .WARN  ag - Referencing unknown line 00402150.0
+........WARN  ac - Block 28 is already known to have a starting stack offset of -12 but when called from 27 it has an offset of -16
+WARN  ac - Block 28 is already known to have a starting stack offset of -16 but when called from 25 it has an offset of -12
+WARN  ac - Block 28 is already known to have a starting stack offset of -16 but when called from 26 it has an offset of -12
+................................................... [ done ]
+decompile F_00402150                    : ................. failed: A non-current expression of a variable is used in block L3 in if(CMP(reg_d0, !=, LOAD(ADD(reg_a1, SEGMENT2ADDR(reg_pp3))))) goto L2: The current setter is reg_a2 while [reg_a1] was found. Related expressions are [reg_a2, reg_pp7, reg_a0, reg_a1, reg_pp2]
+decompile F_004021a0                    : .WARN  ag - Referencing unknown line 00402fb0.0
+WARN  ag - Referencing unknown line 00401200.0
+WARN  ag - Referencing unknown line 00402fb0.0
+WARN  ag - Referencing unknown line 00401200.0
+WARN  ag - Referencing unknown line 00403590.0
+........................................................... [ done ]
+decompile F_00402290                    : .WARN  ag - Referencing unknown line 00402330.0
+WARN  ag - Referencing unknown line 00402fb0.0
+WARN  ag - Referencing unknown line 00401200.0
+WARN  ag - Referencing unknown line 00402330.0
+........................................................... [ done ]
+decompile F_00402330                    : ................. failed: A non-current expression of a variable is used in block L6 in if(CMP(reg_pp6, ==, 0)) goto L8: The current setter is reg_e2 while [reg_pp6] was found. Related expressions are [reg_pp6, reg_pp85, reg_e11, reg_e12, reg_e10, reg_e15, reg_e16, reg_e13, reg_pp23, reg_e14, reg_e1, reg_e0, reg_e7, reg_e6, reg_e9, reg_e8, reg_e3, reg_e2, reg_e5, reg_e4, reg_pp74, reg_pp98, reg_e20, reg_e21, reg_pp52, reg_pp18, reg_pp34, reg_pp91, reg_pp38, reg_e18, reg_e17, reg_e19, reg_pp10]
+decompile F_00402540                    : .WARN  ag - Referencing unknown line 00402fb0.0
+WARN  ag - Referencing unknown line 00403590.0
+WARN  ag - Referencing unknown line 00402fb0.0
+........WARN  ac - Block 28 is already known to have a starting stack offset of -8 but when called from 27 it has an offset of -4
+WARN  ac - Block 28 is already known to have a starting stack offset of -8 but when called from 17 it has an offset of -40
+WARN  ac - Block 28 is already known to have a starting stack offset of -40 but when called from 16 it has an offset of -72
+........................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Too many inner loops in RegionConstructor
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError: Too many inner loops in RegionConstructor
+decompile F_004026a0                    : .WARN  ag - Referencing unknown line 00402890.0
+WARN  ag - Referencing unknown line 00402940.0
+WARN  ag - Referencing unknown line 004028e0.0
+WARN  ag - Referencing unknown line 00402940.0
+WARN  ag - Referencing unknown line 004028e0.0
+........WARN  ac - Block 32 is already known to have a starting stack offset of -24 but when called from 21 it has an offset of -32
+WARN  ac - Block 32 is already known to have a starting stack offset of -32 but when called from 31 it has an offset of -24
+........ failed: A non-current expression of a variable is used in block L28 in reg_pp41 = AND(reg_c8, 0xff): The current setter is reg_c9 while [reg_c8] was found. Related expressions are [reg_c8, reg_c9, reg_pp33, reg_c10, reg_c7]
+decompile F_00402890                    : ............................................................ [ done ]
+decompile F_004028e0                    : ............................................................ [ done ]
+decompile F_00402940                    : ............................................................ [ done ]
+decompile F_00402970                    : .WARN  ag - Referencing unknown line 004026a0.0
+........................................................... [ done ]
+decompile F_00402980                    : .WARN  ag - Referencing unknown line 00402fb0.0
+WARN  ag - Referencing unknown line 00401200.0
+WARN  ag - Referencing unknown line 00402fb0.0
+........WARN  ac - Block 35 is already known to have a starting stack offset of -92 but when called from 33 it has an offset of -96
+WARN  ac - Block 33 is already known to have a starting stack offset of -96 but when called from 28 it has an offset of -100
+WARN  ac - Block 36 is already known to have a starting stack offset of -92 but when called from 31 it has an offset of -100
+WARN  ac - Block 35 is already known to have a starting stack offset of -96 but when called from 32 it has an offset of -100
+WARN  ac - Block 20 is already known to have a starting stack offset of -92 but when called from 19 it has an offset of -96
+WARN  ac - Block 21 is already known to have a starting stack offset of -92 but when called from 19 it has an offset of -96
+WARN  ac - Block 16 is already known to have a starting stack offset of -92 but when called from 21 it has an offset of -96
+WARN  ac - Block 22 is already known to have a starting stack offset of -92 but when called from 21 it has an offset of -96
+........ failed: A non-current expression of a variable is used in block L17 in reg_zb9 = LOAD(ADD(reg_pp27, SEGMENT2ADDR(reg_pp26))): The current setter is reg_f2 while [reg_pp27] was found. Related expressions are [reg_f2, reg_pp27, reg_f1, reg_f4, reg_pp35, reg_f3]
+decompile F_00402b80                    : .WARN  ag - Referencing unknown line 004035e0.0
+........WARN  ac - Block 5 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -16
+WARN  ac - Block 5 is already known to have a starting stack offset of -16 but when called from 4 it has an offset of -12
+................................................... [ done ]
+decompile F_00402bc0                    : .WARN  ag - Referencing unknown line 00404560.0
+........................................................... [ done ]
+decompile F_00402c02                    : .WARN  ag - Referencing unknown line 00402c96.0
+........WARN  ac - Block 5 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -32
+WARN  ac - Block 1 is already known to have a starting stack offset of -28 but when called from 5 it has an offset of -32
+...................... failed: A non-current expression of a variable is used in block L3 in (void) STORE(ADD(reg_pp5, 8), LOAD(ADD(MULT(reg_ai0, 12), reg_am0))): The current setter is reg_var12 while [reg_pp5] was found. Related expressions are [reg_var12, reg_var13, reg_pp6, reg_pp5, reg_var10]
+decompile F_00402c96                    : ...INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+......................................................... [ done ]
+decompile F_00402d90                    : .WARN  ag - Referencing unknown line 00402dd0.0
+WARN  ag - Referencing unknown line 00402dd0.0
+........................................................... [ done ]
+decompile F_00402dd0                    : .WARN  ag - Referencing unknown line 00403d90.0
+WARN  ag - Referencing unknown line 00403d00.0
+........WARN  ac - Block 18 is already known to have a starting stack offset of -440 but when called from 12 it has an offset of -452
+WARN  ac - Block 17 is already known to have a starting stack offset of -440 but when called from 16 it has an offset of -460
+WARN  ac - Block 16 is already known to have a starting stack offset of -440 but when called from 15 it has an offset of -444
+........ failed: A non-current expression of a variable is used in block L1 in if(CMP(reg_c0, ==, LOAD(ADD(reg_pp3, SEGMENT2ADDR(reg_zj11))))) goto L3: The current setter is reg_a1 while [reg_pp3] was found. Related expressions are [reg_a2, reg_a4, reg_a0, reg_a16, reg_a1, reg_pp3, reg_a11, reg_pp26]
+decompile F_00402fb0                    : .WARN  ag - Referencing unknown line 00402fd0.0
+........................................................... [ done ]
+decompile F_00402fd0                    : .WARN  ag - Referencing unknown line 00403020.0
+WARN  ag - Referencing unknown line 00403e90.0
+................ failed: A non-current expression of a variable is used in block L9 in (void) STORE(reg_h5, reg_pp7): The current setter is reg_e5 while [reg_pp7] was found. Related expressions are [reg_e1, reg_pp7, reg_pp1, reg_e2, reg_e5]
+decompile F_00403020                    : .WARN  ag - Referencing unknown line 00403940.0
+........WARN  ac - Block 3 is already known to have a starting stack offset of -4 but when called from 2 it has an offset of -16
+................................................... [ done ]
+decompile F_00403060                    : ............................................................ [ done ]
+decompile F_00403090                    : .WARN  ag - Referencing unknown line 00403160.0
+WARN  ag - Referencing unknown line 004030e0.0
+WARN  ag - Referencing unknown line 00403eb0.0
+........................................................... [ done ]
+decompile F_004030e0                    : .WARN  ag - Referencing unknown line 00403f10.0
+........................................................... [ done ]
+decompile F_00403150                    : .WARN  ag - Referencing unknown line 00403160.0
+........................................................... [ done ]
+decompile F_00403160                    : .WARN  ag - Referencing unknown line 00403090.0
+WARN  ag - Referencing unknown line 00403090.0
+........................................................... [ done ]
+decompile F_004031e0                    : .........WARN  ac - Block 7 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -32
+WARN  ac - Block 9 is already known to have a starting stack offset of 0 but when called from 8 it has an offset of -32
+..........................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile F_00403260                    : ...INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+...................................... failed: addEqualTrait; different primitive sizes: 
+
+exp1=UNDEF class holdec.dq
+  with size Bit
+exp2=DUMMY class holdec.cx
+  with size Int1
+decompile F_004032d0                    : ...INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe.info
+...................................... failed: addEqualTrait; different primitive sizes: 
+
+exp1=UNDEF class holdec.dq
+  with size Bit
+exp2=DUMMY class holdec.cx
+  with size Int1
+decompile F_00403350                    : .WARN  ag - Referencing unknown line 00403060.0
+WARN  ag - Referencing unknown line 00404200.0
+WARN  ag - Referencing unknown line 00403f10.0
+WARN  ag - Referencing unknown line 00404140.0
+WARN  ag - Referencing unknown line 00403f10.0
+..................................................WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+......... [ done ]
+decompile F_00403480                    : .WARN  ag - Referencing unknown line 00403940.0
+WARN  ag - Referencing unknown line 00403e90.0
+........WARN  ac - Block 11 is already known to have a starting stack offset of -16 but when called from 10 it has an offset of -28
+WARN  ac - Block 15 is already known to have a starting stack offset of -16 but when called from 11 it has an offset of -28
+WARN  ac - Block 5 is already known to have a starting stack offset of -16 but when called from 13 it has an offset of -28
+........ failed: A non-current expression of a variable is used in block L13 in (void) STORE(reg_h9, reg_pp13): The current setter is reg_e11 while [reg_pp13] was found. Related expressions are [reg_e1, reg_pp8, reg_pp13, reg_e11, reg_pp2, reg_e5, reg_e4]
+decompile F_00403590                    : .WARN  ag - Referencing unknown line 00403880.0
+WARN  ag - Referencing unknown line 004038e0.0
+........WARN  ac - Block 4 is already known to have a starting stack offset of -8 but when called from 3 it has an offset of -20
+WARN  ac - Block 5 is already known to have a starting stack offset of -8 but when called from 4 it has an offset of -20
+................................................... [ done ]
+decompile F_004035e0                    : .........WARN  ac - Block 3 is already known to have a starting stack offset of -12 but when called from 2 it has an offset of -24
+WARN  ac - Block 20 is already known to have a starting stack offset of -24 but when called from 18 it has an offset of -40
+WARN  ac - Block 20 is already known to have a starting stack offset of -40 but when called from 19 it has an offset of -52
+WARN  ac - Block 18 is already known to have a starting stack offset of -40 but when called from 17 it has an offset of -68
+WARN  ac - Block 21 is already known to have a starting stack offset of -44 but when called from 16 it has an offset of -48
+........................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Too many inner loops in RegionConstructor
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError: Too many inner loops in RegionConstructor
+decompile F_00403750                    : .........WARN  ac - Block 5 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -16
+................................................... [ done ]
+decompile F_004037b0                    : .WARN  ag - Referencing unknown line 00403750.0
+........WARN  ac - Block 9 is already known to have a starting stack offset of -16 but when called from 4 it has an offset of -28
+WARN  ac - Block 3 is already known to have a starting stack offset of -16 but when called from 9 it has an offset of -28
+WARN  ac - Block 17 is already known to have a starting stack offset of -16 but when called from 10 it has an offset of -28
+........ failed: A non-current expression of a variable is used in block L4 in reg_a1 = ADD(reg_a0, reg_pp8): The current setter is reg_b2 while [reg_pp8] was found. Related expressions are [reg_pp8, reg_pp13, reg_b2, reg_b1, reg_b3]
+decompile F_00403880                    : ............................................................ [ done ]
+decompile F_004038e0                    : .WARN  ag - Referencing unknown line 004037b0.0
+........................................................... [ done ]
+decompile F_00403940                    : .WARN  ag - Referencing unknown line 00403b80.0
+WARN  ag - Referencing unknown line 00403b80.0
+WARN  ag - Referencing unknown line 004035e0.0
+........WARN  ac - Block 36 is already known to have a starting stack offset of -20 but when called from 24 it has an offset of -36
+WARN  ac - Block 37 is already known to have a starting stack offset of -8 but when called from 33 it has an offset of -24
+WARN  ac - Block 37 is already known to have a starting stack offset of -24 but when called from 15 it has an offset of -8
+........ failed: A non-current expression of a variable is used in block L3 in if(CMP(MARKER_SIGNED(reg_a2), <, MARKER_SIGNED(reg_pp5))) goto L7: The current setter is reg_b1 while [reg_pp5] was found. Related expressions are [reg_b8, reg_pp5, reg_b2, reg_b1, reg_b0, reg_pp59, reg_b6, reg_pp61, reg_b5, reg_b4, reg_pp16]
+decompile F_00403b80                    : ................. failed: A non-current expression of a variable is used in block L22 in reg_c13 = ADD(reg_pp30, reg_pp32, SEGMENT2ADDR(reg_pp29)): The current setter is reg_d11 while [reg_pp30] was found. Related expressions are [reg_d13, reg_pp11, reg_d11, reg_d8, reg_d7, reg_pp21, reg_pp30, reg_d6, reg_d5]
+decompile F_00403d00                    : .........WARN  ac - Block 10 is already known to have a starting stack offset of -16 but when called from 2 it has an offset of -24
+WARN  ac - Block 4 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -40
+WARN  ac - Block 9 is already known to have a starting stack offset of -40 but when called from 8 it has an offset of -44
+WARN  ac - Block 11 is already known to have a starting stack offset of -52 but when called from 10 it has an offset of -16
+................................................... [ done ]
+decompile F_00403d90                    : ................. failed: A non-current expression of a variable is used in block L12 in reg_pp17 = LOAD(ADD(reg_pp5, SEGMENT2ADDR(reg_pp2))): The current setter is reg_e1 while [reg_pp5] was found. Related expressions are [reg_e1, reg_e0, reg_pp28, reg_pp5, reg_pp11, reg_e2, reg_e5]
+decompile F_00403e90                    : ............................................................ [ done ]
+decompile F_00403eb0                    : .WARN  ag - Referencing unknown line 00404380.0
+........WARN  ac - Block 7 is already known to have a starting stack offset of 0 but when called from 6 it has an offset of -4
+................................................... [ done ]
+decompile F_00403f10                    : .WARN  ag - Referencing unknown line 00404140.0
+WARN  ag - Referencing unknown line 004043d0.0
+........WARN  ac - Block 17 is already known to have a starting stack offset of -1068 but when called from 16 it has an offset of -1088
+WARN  ac - Block 8 is already known to have a starting stack offset of -1068 but when called from 15 it has an offset of -1088
+........ failed: A non-current expression of a variable is used in block L9 in reg_c4 = reg_pp5: The current setter is reg_f5 while [reg_pp5] was found. Related expressions are [reg_pp5, reg_f7, reg_f4, reg_pp19, reg_f6, reg_f5]
+decompile F_00404140                    : .WARN  ag - Referencing unknown line 00404380.0
+WARN  ag - Referencing unknown line 004043d0.0
+........WARN  ac - Block 11 is already known to have a starting stack offset of -4 but when called from 8 it has an offset of -20
+WARN  ac - Block 11 is already known to have a starting stack offset of -20 but when called from 10 it has an offset of -4
+................................................... [ done ]
+decompile F_00404200                    : .WARN  ag - Referencing unknown line 00402fb0.0
+........................................................... [ done ]
+decompile F_00404260                    : .WARN  ag - Referencing unknown line 004030e0.0
+WARN  ag - Referencing unknown line 00404520.0
+WARN  ag - Referencing unknown line 00404440.0
+WARN  ag - Referencing unknown line 00403590.0
+........................................................... [ done ]
+decompile F_004042e0                    : .........WARN  ac - Block 11 is already known to have a starting stack offset of -12 but when called from 10 it has an offset of -20
+WARN  ac - Block 13 is already known to have a starting stack offset of -12 but when called from 12 it has an offset of -4
+................................................... [ done ]
+decompile F_00404380                    : ............................................................ [ done ]
+decompile F_004043d0                    : ............................................................ [ done ]
+decompile F_00404440                    : .WARN  ag - Referencing unknown line 00404380.0
+WARN  ag - Referencing unknown line 00404380.0
+WARN  ag - Referencing unknown line 00404380.0
+WARN  ag - Referencing unknown line 00404380.0
+WARN  ag - Referencing unknown line 004042e0.0
+WARN  ag - Referencing unknown line 004043d0.0
+........WARN  ac - Block 8 is already known to have a starting stack offset of -16 but when called from 6 it has an offset of -20
+WARN  ac - Block 13 is already known to have a starting stack offset of -8 but when called from 12 it has an offset of -4
+................................................... [ done ]
+decompile F_00404520                    : .WARN  ag - Referencing unknown line 00403590.0
+........................................................... [ done ]
+decompile F_00404560                    : .... failed: Block L0 calls block L1 which isn't available

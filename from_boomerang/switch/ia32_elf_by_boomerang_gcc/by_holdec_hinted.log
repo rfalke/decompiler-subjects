@@ -1,0 +1,25 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - reading info from ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.fG - disassembleAndWrite: found 2 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 3 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+WARN  holdec.fE - Ignore overlapping address 08048ed9[1,0].3
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_gcc/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 1372 asm lines
+WARN  holdec.w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 08049454.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 1 functions
+WARN  holdec.ag - Referencing unknown line 080487c0.0

@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+test
+
+[func:test]
+signature: d4 test(d4 x, d4 y, d4 z)
+
+[0x080482b8]
+signature: d4 printf(d1 *fmt, d4 v1)

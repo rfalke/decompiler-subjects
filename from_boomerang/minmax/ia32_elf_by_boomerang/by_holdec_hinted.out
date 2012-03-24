@@ -1,0 +1,33 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/minmax/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+Preprocessing 150 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+Preprocessing 154 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+Preprocessing 166 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/minmax/ia32_elf_by_boomerang/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 166 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08048978.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 12 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 1 functions
+decompile main                          : .WARN  ag - Referencing unknown line 080487d4.0
+........................................................... [ done ]

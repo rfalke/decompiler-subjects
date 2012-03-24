@@ -1,12 +1,6 @@
-// addr = 08048230.0
-// signature= func(_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _init(???)
-{
-  (void) call_gmon_start();
-  (void) frame_dummy();
-  reg_result = __do_global_ctors_aux();
-  return reg_result;
-}
+// Decompiled by holdec 1.1 (2012-03-24)
+
+/* The decompilation of 0x08048268 / printf failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
 // addr = 08048280.0
 // signature= func(F_08048280, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -34,18 +28,6 @@
   return reg_result;
 }
 
-// addr = 080482a4.0
-// signature= func(call_gmon_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? call_gmon_start(???)
-{
-  (void) F_080482ae();
-  reg_result = LOAD(InitValue(initial_value_of_eax) + 4734);
-  if(reg_result  !=  0) {
-    reg_result = intern_redirectCall(reg_result);
-  }
-  return reg_result;
-}
-
 // addr = 080482ae.0
 // signature= func(F_080482ae, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
 ??? F_080482ae(???)
@@ -53,46 +35,6 @@
   reg_result = LOAD(LOAD(InitStackPointer) + 4734);
   if(reg_result  !=  0) {
     reg_result = intern_redirectCall(reg_result);
-  }
-  return reg_result;
-}
-
-// addr = 080482d0.0
-// signature= func(__do_global_dtors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_dtors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  if(LOAD(&g_0x08049530)  ==  0) {
-    if(LOAD(g_0x08049434)  !=  0) {
-      do {
-        reg_ae = LOAD(g_0x08049434);
-        (void) STORE(&g_0x08049434, g_0x08049434 + 4);
-        (void) intern_redirectCall(reg_ae);
-      } while(LOAD(g_0x08049434)  !=  0);
-    }
-    reg_result = 0;
-    if(reg_result  !=  0) {
-      reg_result = F_00000000();
-    }
-    (void) STORE(&g_0x08049530, 1);
-  }
-  return reg_result;
-}
-
-// addr = 08048330.0
-// signature= func(frame_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? frame_dummy(???)
-{
-  reg_ad = F_0804833d();
-  if(reg_ad  !=  0) {
-    (void) F_00000000();
-  }
-  reg_result = g_0x08049514;
-  if(reg_result  !=  0) {
-    reg_result = 0;
-    if(reg_result  !=  0) {
-      reg_result = F_00000000();
-    }
   }
   return reg_result;
 }
@@ -114,13 +56,15 @@
   return reg_result;
 }
 
-// addr = 08048400.0
-// signature= func(_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _fini(???)
+// addr = 08048390.0
+// signature= func(main, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
+??? main(???)
 {
-  (void) F_0804840a();
-  reg_result = __do_global_dtors_aux();
-  return reg_result;
+  for(reg_var1 = 0; reg_var1 < 10; reg_var1++) {
+    // nothing
+  }
+  (void) printf();
+  return 0;
 }
 
 // addr = 0804840a.0

@@ -1,0 +1,5 @@
+[0x00401000]
+signature: u4 fib(u4 n)
+
+[0x00401050]
+signature: void reverse_itoa(unsigned int i, char * buf, int size)

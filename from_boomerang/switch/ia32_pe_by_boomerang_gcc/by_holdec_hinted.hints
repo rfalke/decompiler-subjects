@@ -1,0 +1,11 @@
+[dataRanges]
+0x401050-0x401080;garbage+maybe
+
+[activeFunctions]
+_main
+
+[extraBlocks]
+0x401140
+
+[func:_puts]
+signature: char *_puts(char *s)

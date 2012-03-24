@@ -1,49 +1,28 @@
-// addr = 0804853c.0
-// signature= func(_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _init(???)
-{
-  (void) call_gmon_start();
-  (void) frame_dummy();
-  reg_result = __do_global_ctors_aux();
-  return reg_result;
-}
+// Decompiled by holdec 1.1 (2012-03-24)
 
-// addr = 08048624.0
-// signature= func(_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _start(???)
-{
-  reg_aa = LOAD(InitStackPointer);
-  (void) STORE(InitStackPointer, InitValue(initial_value_of_eax));
-  (void) STORE(local + 12, reg_aa);
-  (void) STORE(local + 16, &ARG_0);
-  (void) STORE(local + 20, 134514796);
-  (void) STORE(local + 24, 134514880);
-  (void) STORE(local + 28, InitValue(initial_value_of_edx));
-  (void) STORE(local + 32, local + 32);
-  (void) STORE(local + 8, 134514724);
-  (void) F_080485c4();
-  asm("l.hlt");
-  (void) STORE(local + 4, 0);
-  (void) STORE(local, InitValue(initial_value_of_ebx));
-  (void) F_08048651();
-  reg_ab = LOAD(local);
-  (void) STORE(local, InitValue(initial_value_of_edx));
-  if(LOAD(reg_ab + 5215)  !=  0) {
-    (void) intern_redirectCall(LOAD(reg_ab + 5215));
-  }
-  return LOAD(local);
-}
+/* The decompilation of 0x08048564 / F_08048564 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
-// addr = 08048648.0
-// signature= func(call_gmon_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? call_gmon_start(???)
-{
-  (void) F_08048651();
-  if(LOAD(InitValue(initial_value_of_ebx) + 5215)  !=  0) {
-    (void) intern_redirectCall(LOAD(InitValue(initial_value_of_ebx) + 5215));
-  }
-  return InitValue(initial_value_of_edx);
-}
+/* The decompilation of 0x08048574 / F_08048574 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048584 / f_exit failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048594 / F_08048594 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485a4 / F_080485a4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485b4 / F_080485b4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485c4 / F_080485c4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485d4 / F_080485d4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485e4 / F_080485e4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080485f4 / F_080485f4 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048604 / F_08048604 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048614 / F_08048614 failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
 // addr = 08048651.0
 // signature= func(F_08048651, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -57,39 +36,7 @@
   return LOAD(InitStackPointer);
 }
 
-// addr = 0804866c.0
-// signature= func(__do_global_dtors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_dtors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  if(LOAD(&g_0x08049b74)  ==  0) {
-    while(1) {
-      reg_result = g_0x08049af8;
-      reg_ad = LOAD(reg_result);
-      if(LOAD(reg_result)  ==  0) {
-        break;
-      }
-      (void) STORE(&g_0x08049af8, reg_result + 4);
-      (void) intern_redirectCall(reg_ad);
-    }
-    (void) STORE(&g_0x08049b74, 1);
-  }
-  return reg_result;
-}
-
-// addr = 080486a0.0
-// signature= func(frame_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? frame_dummy(???)
-{
-  reg_result = g_0x080499c8;
-  if(reg_result  !=  0) {
-    reg_result = 0;
-    if(reg_result  !=  0) {
-      reg_result = intern_redirectCall(reg_result);
-    }
-  }
-  return reg_result;
-}
+/* The decompilation of 0x080486cc / MAIN__ failed: java.lang.AssertionError: Block L6 calls block L7 which isn't available */
 
 // addr = 08048824.0
 // signature= func(main, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -118,9 +65,10 @@
   (void) STORE(local + 8, reg_ab + 4414);
   if(reg_var1  <  reg_result) {
     do {
-      reg_result = intern_redirectCall(LOAD(reg_var1 * 4 + reg_ab + 4414));
+      reg_ad = LOAD(local);
+      reg_result = intern_redirectCall(LOAD(LOAD(local) + reg_var1 * 4 + 4414));
       reg_var1++;
-    } while(reg_var1  <  (LOAD(local + 8) + reg_ab * -1 + -4414) / 4);
+    } while(reg_var1  <  (LOAD(local + 8) + reg_ad * -1 + -4414) / 4);
   }
   return reg_result;
 }
@@ -129,31 +77,18 @@
 // signature= func(F_0804887a, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
 ??? F_0804887a(???)
 {
-  reg_ae = LOAD(InitStackPointer);
+  reg_ag = LOAD(InitStackPointer);
   (void) _init();
   reg_var1 = 0;
   reg_result = 0;
-  (void) STORE(InitValue(initial_value_of_ebp) + -16, reg_ae + 4414);
+  (void) STORE(InitValue(initial_value_of_ebp) + -16, reg_ag + 4414);
   if(reg_var1  <  reg_result) {
     do {
-      reg_result = intern_redirectCall(LOAD(reg_var1 * 4 + reg_ae + 4414));
+      reg_ac = LOAD(InitStackPointer);
+      reg_result = intern_redirectCall(LOAD(LOAD(InitStackPointer) + reg_var1 * 4 + 4414));
       reg_var1++;
-    } while(reg_var1  <  (LOAD(InitValue(initial_value_of_ebp) + -16) + reg_ae * -1 + -4414) / 4);
+    } while(reg_var1  <  (LOAD(InitValue(initial_value_of_ebp) + -16) + reg_ac * -1 + -4414) / 4);
   }
-  return reg_result;
-}
-
-// addr = 080488c0.0
-// signature= func(__libc_csu_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __libc_csu_fini(???)
-{
-  (void) F_080488cb();
-  reg_var1 = -1;
-  while(reg_var1  !=  -1) {
-    (void) intern_redirectCall(LOAD(InitValue(initial_value_of_ebx) + reg_var1 * 4 + 4333));
-    reg_var1--;
-  }
-  reg_result = _fini();
   return reg_result;
 }
 
@@ -161,10 +96,9 @@
 // signature= func(F_080488cb, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
 ??? F_080488cb(???)
 {
-  reg_af = LOAD(InitStackPointer);
   reg_var1 = -1;
   while(reg_var1  !=  -1) {
-    (void) intern_redirectCall(LOAD(reg_var1 * 4 + reg_af + 4333));
+    (void) intern_redirectCall(LOAD(LOAD(InitStackPointer) + reg_var1 * 4 + 4333));
     reg_var1--;
   }
   reg_result = _fini();
@@ -190,29 +124,6 @@
   }
   (void) STORE(InitStackPointer, reg_var1);
   reg_result = F_080485a4();
-  return reg_result;
-}
-
-// addr = 08048934.0
-// signature= func(__do_global_ctors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_ctors_aux(???)
-{
-  reg_var1 = 134519224;
-  reg_var2 = g_0x080499b8;
-  while(reg_var2  !=  -1) {
-    reg_var1 += -4;
-    (void) intern_redirectCall(reg_var2);
-    reg_var2 = LOAD(reg_var1);
-  }
-  return InitValue(initial_value_of_edx);
-}
-
-// addr = 08048958.0
-// signature= func(_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _fini(???)
-{
-  (void) F_08048961();
-  reg_result = __do_global_dtors_aux();
   return reg_result;
 }
 

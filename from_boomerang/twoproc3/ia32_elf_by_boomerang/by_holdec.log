@@ -1,19 +1,24 @@
-INFO  07:04:55 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:55 holdec.ke - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:55 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:04:56 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:04:56 holdec.ke - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:56 holdec.ke - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:56 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:56 holdec.ke - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:56 holdec.ke - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:56 holdec.fA - reading all asm lines ...
-INFO  07:04:56 holdec.fA - ... read 279 asm lines
-WARN  07:04:56 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:56 holdec.w - Address 080485f0.0 is excluded by the address filter. Maybe outside text section?
-INFO  07:04:56 holdec.am - will decompile 19 functions
-INFO  07:04:56 holdec.fG - Skipping stack alignment: 080483d5.0+3 l.and esp,0xfffffff0
-WARN  07:04:56 holdec.o -   load size differs from loaded size for g_0x08049710 vs. LOAD(ADDR(g_0x08049710))
-INFO  07:04:56 holdec.fG - Skipping stack alignment: 08048485.0+3 l.and esp,0xfffffff0
-ERROR 07:04:57 holdec.o - Can't find a setter for reg_0_local for block 0
-ERROR 07:04:57 holdec.o - Can't find a setter for reg_0_local for block 3
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/twoproc3/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 279 asm lines
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080485f0.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 10 functions
+WARN  holdec.ag - Referencing unknown line 080483b4.0
+WARN  holdec.ag - Referencing unknown line 08048384.0
+WARN  holdec.ag - Referencing unknown line 08048474.0
+WARN  holdec.ag - Referencing unknown line 080483a4.0
+INFO  holdec.fO - Skipping stack alignment: 08048485.0+3 l.and esp,0xfffffff0
+WARN  holdec.ag - Referencing unknown line 0804835c.0
+WARN  holdec.ag - Referencing unknown line 080485d4.0
+WARN  holdec.ag - Referencing unknown line 08048420.0

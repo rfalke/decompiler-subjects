@@ -1,0 +1,32 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - reading info from ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+Preprocessing 96 asm lines              : ............................................................ [ done ]
+INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+Preprocessing 112 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 112 asm lines
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 3 methods to cache              : ............................................................ [ done ]
+INFO  an - will decompile 3 functions
+decompile fib                           : ............................................................ [ done ]
+decompile reverse_itoa                  : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp8 = PHI(reg_var12, reg_var10) in Block2
+WARN  d -   reg_var12 = DIV(MULT64_HI(-858993459, reg_pp8), 8) in Block5
+...................... [ done ]
+decompile F_004010a0                    : .WARN  ag - Referencing unknown line 00401000.0
+WARN  ag - Referencing unknown line 00401000.0
+WARN  ag - Referencing unknown line 00401050.0
+..INFO  ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+......................................................... [ done ]

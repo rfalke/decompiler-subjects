@@ -1,0 +1,45 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/recursion/ia32_elf_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - reading info from ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  holdec.ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 507 asm lines
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080486a4.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 12 functions
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080483c7.0
+INFO  holdec.fO - Skipping stack alignment: 08048382.0+3 l.and esp,0xfffffff0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080483f2.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 0804846a.0
+WARN  holdec.ag - Referencing unknown line 080484c7.0
+WARN  holdec.ag - Referencing unknown line 08048529.0
+WARN  holdec.ag - Referencing unknown line 08048575.0
+WARN  holdec.ag - Referencing unknown line 080485d5.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 0804849b.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080483f2.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080484f8.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080484c7.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 0804855a.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080485a4.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 0804849b.0
+WARN  holdec.ag - Referencing unknown line 080482b8.0
+WARN  holdec.ag - Referencing unknown line 080483c7.0

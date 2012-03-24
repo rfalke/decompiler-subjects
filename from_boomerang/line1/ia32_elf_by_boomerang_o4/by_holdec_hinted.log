@@ -1,0 +1,32 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/line1/ia32_elf_by_boomerang_o4/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - reading info from ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.fG - disassembleAndWrite: found 1 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.ks - wrote ./from_boomerang/line1/ia32_elf_by_boomerang_o4/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 332 asm lines
+WARN  holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 0804864c.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.ag - Referencing unknown line 00000000.0
+INFO  holdec.an - will decompile 2 functions
+WARN  holdec.ag - Referencing unknown line 08048370.0
+WARN  holdec.ag - Referencing unknown line 08048340.0
+WARN  holdec.ag - Referencing unknown line 08048320.0
+WARN  holdec.ag - Referencing unknown line 08048330.0
+WARN  holdec.ag - Referencing unknown line 08048360.0
+INFO  holdec.fO - Skipping stack alignment: 0804845c.0+3 l.and esp,0xfffffff0
+WARN  holdec.ag - Referencing unknown line 08048340.0
+WARN  holdec.ag - Referencing unknown line 08048320.0

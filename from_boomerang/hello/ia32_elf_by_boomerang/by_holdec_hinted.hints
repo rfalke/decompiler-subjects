@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+
+[0x08048268]
+signature: d4 printf(d1 *fmt);
+

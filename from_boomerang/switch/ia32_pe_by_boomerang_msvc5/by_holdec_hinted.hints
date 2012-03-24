@@ -1,0 +1,12 @@
+[activeFunctions]
+main
+
+[0x401000]
+signature: d4 main()
+
+[0x004010a0]
+signature: d4 printf(d1 *fmt)
+
+#[jumpTable]
+#0x08048978,0,5
+

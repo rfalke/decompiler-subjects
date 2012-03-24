@@ -1,0 +1,64 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/recursion/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+Preprocessing 403 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+Preprocessing 507 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/recursion/ia32_elf_by_boomerang/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 507 asm lines
+WARN  w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080486a4.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 27 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 12 functions
+decompile main                          : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080483c7.0
+..INFO  fO - Skipping stack alignment: 08048382.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]
+decompile b                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080483f2.0
+........................................................... [ done ]
+decompile c                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 0804846a.0
+WARN  ag - Referencing unknown line 080484c7.0
+WARN  ag - Referencing unknown line 08048529.0
+WARN  ag - Referencing unknown line 08048575.0
+WARN  ag - Referencing unknown line 080485d5.0
+........................................................... [ done ]
+decompile d                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 0804849b.0
+........................................................... [ done ]
+decompile e                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080483f2.0
+........................................................... [ done ]
+decompile f                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080484f8.0
+........................................................... [ done ]
+decompile g                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080484c7.0
+........................................................... [ done ]
+decompile h                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 0804855a.0
+........................................................... [ done ]
+decompile i                             : .WARN  ag - Referencing unknown line 080482b8.0
+........................................................... [ done ]
+decompile j                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080485a4.0
+........................................................... [ done ]
+decompile k                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 0804849b.0
+........................................................... [ done ]
+decompile l                             : .WARN  ag - Referencing unknown line 080482b8.0
+WARN  ag - Referencing unknown line 080483c7.0
+........................................................... [ done ]

@@ -1,18 +1,851 @@
-INFO  07:04:27 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:27 ke - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
-INFO  07:04:27 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+Preprocessing 13773 asm lines           : ............INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  fG - disassembleAndWrite: found 8 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 9 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+Preprocessing 13719 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  fG - disassembleAndWrite: found 4 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 13 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+Preprocessing 13723 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+Preprocessing 14800 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 14800 asm lines
+WARN  w - Address 0080b12e.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : WARN  ag - Referencing unknown line 0080b12e.0
+............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+WARN  M - The last line of the last block 3026 is not a return or jump. Probably a data area.
+Writing 210 methods to cache            : ............................................................ [ done ]
+INFO  an - will decompile 210 functions
+decompile F_00401000                    : .WARN  ag - Referencing unknown line 00409978.0
+WARN  ag - Referencing unknown line 00402134.0
+WARN  ag - Referencing unknown line 004014d0.0
+WARN  ag - Referencing unknown line 00402138.0
+WARN  ag - Referencing unknown line 00402d50.0
+WARN  ag - Referencing unknown line 00409978.0
+WARN  ag - Referencing unknown line 00405010.0
+WARN  ag - Referencing unknown line 00405348.0
+WARN  ag - Referencing unknown line 004033a0.0
+WARN  ag - Referencing unknown line 004033b0.0
+WARN  ag - Referencing unknown line 00402f38.0
+WARN  ag - Referencing unknown line 0040995a.0
+WARN  ag - Referencing unknown line 0040994e.0
+WARN  ag - Referencing unknown line 00406f78.0
+WARN  ag - Referencing unknown line 00406fbc.0
+WARN  ag - Referencing unknown line 00407a50.0
+WARN  ag - Referencing unknown line 00407a58.0
+WARN  ag - Referencing unknown line 00407a58.0
+WARN  ag - Referencing unknown line 00407d1c.0
+WARN  ag - Referencing unknown line 00409978.0
+WARN  ag - Referencing unknown line 00406f28.0
+WARN  ag - Referencing unknown line 00406f28.0
+........WARN  ac - Block 26 is already known to have a starting stack offset of -44 but when called from 24 it has an offset of -48
+........ failed: A non-current expression of a variable is used in block L16 in if(CMP(reg_pp21, ==, reg_zb28)) goto L18: The current setter is reg_ze10 while [reg_pp21] was found. Related expressions are [reg_ze10, reg_ze9, reg_ze8, reg_pp21]
+decompile F_0040106c                    : ............................................................ [ done ]
+decompile F_004010f3                    : .WARN  ag - Referencing unknown line 00407d54.0
+WARN  ag - Referencing unknown line 0040998a.0
+WARN  ag - Referencing unknown line 004099ba.0
+WARN  ag - Referencing unknown line 00407d80.0
+........WARN  ac - Block 3 is already known to have a starting stack offset of 0 but when called from 1 it has an offset of -4
+WARN  ac - Block 3 is already known to have a starting stack offset of -4 but when called from 2 it has an offset of -20
+................................................... [ done ]
+decompile F_00401140                    : ............................................................ [ done ]
+decompile F_004011e0                    : .WARN  ag - Referencing unknown line 004013e0.0
+WARN  ag - Referencing unknown line 004021ac.0
+........................................................... [ done ]
+decompile F_0040120c                    : .WARN  ag - Referencing unknown line 004013f0.0
+........................................................... [ done ]
+decompile F_0040121c                    : .WARN  ag - Referencing unknown line 0040120c.0
+........................................................... [ done ]
+decompile F_0040122c                    : .WARN  ag - Referencing unknown line 00409a08.0
+........................................................... [ done ]
+decompile F_00401298                    : .WARN  ag - Referencing unknown line 00409a08.0
+........................................................... [ done ]
+decompile F_004012c0                    : .WARN  ag - Referencing unknown line 00409a08.0
+WARN  ag - Referencing unknown line 0040130c.0
+........WARN  ac - Block 1 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -28
+WARN  ac - Block 4 is already known to have a starting stack offset of -12 but when called from 3 it has an offset of -28
+.............................WARN  d - may result in wrong values
+WARN  d -   reg_pp6 = PHI(reg_var12, reg_var10) in Block1
+WARN  d -   reg_var12 = ADD(reg_pp6, 0x1000) in Block3
+...................... [ done ]
+decompile F_0040130c                    : .WARN  ag - Referencing unknown line 00409a0e.0
+........................................................... [ done ]
+decompile F_00401324                    : .WARN  ag - Referencing unknown line 00409a0e.0
+........................................................... [ done ]
+decompile F_004013dc                    : ............................................................ [ done ]
+decompile F_004013e0                    : ............................................................ [ done ]
+decompile F_004013f0                    : ............................................................ [ done ]
+decompile F_00401400                    : ............................................................ [ done ]
+decompile F_00401418                    : .WARN  ag - Referencing unknown line 004013dc.0
+........................................................... [ done ]
+decompile F_004014d0                    : ............................................................ [ done ]
+decompile F_004014d4                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp3 = PHI(reg_var11, reg_var10) in Block2
+WARN  d -   reg_var11 = ADD(reg_pp3, 4) in Block1
+...................... [ done ]
+decompile F_00401514                    : .WARN  ag - Referencing unknown line 004014d4.0
+........................................................... [ done ]
+decompile F_00401614                    : .WARN  ag - Referencing unknown line 00401ae4.0
+........................................................... [ done ]
+decompile F_00401700                    : .WARN  ag - Referencing unknown line 00401e28.0
+WARN  ag - Referencing unknown line 004012c0.0
+WARN  ag - Referencing unknown line 00401614.0
+WARN  ag - Referencing unknown line 004012c0.0
+WARN  ag - Referencing unknown line 00401614.0
+WARN  ag - Referencing unknown line 0040122c.0
+WARN  ag - Referencing unknown line 004012c0.0
+WARN  ag - Referencing unknown line 00401614.0
+WARN  ag - Referencing unknown line 004012c0.0
+WARN  ag - Referencing unknown line 00401614.0
+WARN  ag - Referencing unknown line 004012c0.0
+WARN  ag - Referencing unknown line 00401324.0
+WARN  ag - Referencing unknown line 00401514.0
+................ failed: A non-current expression of a variable is used in block L5 in if(CMP(MARKER_UNSIGNED(reg_d1), <=, MARKER_UNSIGNED(reg_pp4))) goto L26: The current setter is reg_e4 while [reg_pp4] was found. Related expressions are [reg_pp4, reg_pp21, reg_e3, reg_pp26, reg_e2, reg_e4]
+decompile F_004019c4                    : .WARN  ag - Referencing unknown line 00401614.0
+WARN  ag - Referencing unknown line 0040130c.0
+WARN  ag - Referencing unknown line 00401324.0
+WARN  ag - Referencing unknown line 0040130c.0
+.............................. failed: A non-current expression of a variable is used in block L9 in reg_pp18 = LOAD(reg_pp15): The current setter is reg_pp19 while [reg_pp15] was found. Related expressions are [reg_pp15, reg_var20, reg_var26, reg_pp19]
+decompile F_00401ab8                    : .WARN  ag - Referencing unknown line 00401324.0
+WARN  ag - Referencing unknown line 00401ae4.0
+........................................................... [ done ]
+decompile F_00401ae4                    : .WARN  ag - Referencing unknown line 004019c4.0
+.............................. failed: A non-current expression of a variable is used in block L9 in reg_pp15 = LOAD(reg_pp14): The current setter is reg_pp16 while [reg_pp14] was found. Related expressions are [reg_pp14, reg_var11, reg_var10, reg_pp17, reg_pp16]
+decompile F_00401bec                    : .WARN  ag - Referencing unknown line 00401298.0
+........................................................... [ done ]
+decompile F_00401c28                    : .WARN  ag - Referencing unknown line 00401bec.0
+WARN  ag - Referencing unknown line 00401c50.0
+........................................................... [ done ]
+decompile F_00401c50                    : .WARN  ag - Referencing unknown line 00401700.0
+WARN  ag - Referencing unknown line 00401700.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp22 = PHI(reg_var21, reg_var20) in Block13
+WARN  d -   reg_var21 = ADD(reg_pp22, 8) in Block12
+WARN  d - may result in wrong values
+WARN  d -   reg_pp24 = PHI(reg_var30, reg_var31) in Block20
+WARN  d -   reg_var31 = LOAD(ADD(reg_pp24, 4)) in Block19
+...................... [ done ]
+decompile F_00401e28                    : .WARN  ag - Referencing unknown line 004099ae.0
+......................... failed: Can't find a setter for reg_12_local in block 0
+decompile F_00401ea0                    : .................................................. failed: Don't know about reg_var11 have information about [reg_bf0, reg_pp22, reg_var20, reg_result0, reg_var21, reg_pp23, reg_12_local1, reg_12_local2, reg_pp29, reg_pp28, reg_pp30, reg_pp31, reg_ba0, reg_var30, reg_pp32, reg_var31, reg_var32, reg_pp35, reg_pp34, reg_pp33, reg_result1, reg_result2, reg_pp36]
+decompile F_00401fc8                    : .WARN  ag - Referencing unknown line 00401c28.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00401ab8.0
+WARN  ag - Referencing unknown line 00401c28.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00401ab8.0
+WARN  ag - Referencing unknown line 0040130c.0
+........................................................... [ done ]
+decompile F_00402134                    : ............................................................ [ done ]
+decompile F_00402138                    : ............................................................ [ done ]
+decompile F_0040213c                    : ............................................................ [ done ]
+decompile F_00402160                    : ............................................................ [ done ]
+decompile F_004021ac                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp9 = PHI(reg_var20, reg_var26) in Block2
+WARN  d -   reg_var26 = ADD(reg_pp9, -6) in Block7
+WARN  d - may result in wrong values
+WARN  d -   reg_pp8 = PHI(reg_var10, reg_var16) in Block2
+WARN  d -   reg_var16 = ADD(reg_pp8, 48) in Block7
+.............WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+.. failed: A non-current expression of a variable is used in block L16 in if(CMP(reg_pp9, ==, 6)) goto L58: The current setter is reg_var26 while [reg_pp9] was found. Related expressions are [reg_pp9, reg_var20, reg_var26]
+decompile F_00402238                    : ... failed: Unknown macro _memfillW
+decompile F_00402250                    : .................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: Too many inner loops in RegionConstructor
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
+ failed: java.lang.AssertionError: Too many inner loops in RegionConstructor
+decompile F_004022ac                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp21 = PHI(reg_var22, reg_var20) in Block3
+WARN  d -   reg_var22 = ADD(reg_pp21, 1) in Block4
+WARN  d - may result in wrong values
+WARN  d -   reg_pp20 = PHI(reg_var12, reg_var10) in Block3
+WARN  d -   reg_var12 = ADD(reg_pp20, 1) in Block4
+...........ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.iB.a(Unknown Source)
+	at holdec.ie.l(Unknown Source)
+	at holdec.ie.f(Unknown Source)
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError
+decompile F_0040231c                    : ................. failed: A non-current expression of a variable is used in block L1 in if(CMP(MARKER_SIGNED(reg_pp1), <, MARKER_SIGNED(4))) goto L7: The current setter is reg_f1 while [reg_pp1] was found. Related expressions are [reg_f0, reg_pp9, reg_f2, reg_f1, reg_pp1]
+decompile F_00402388                    : .WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004013e0.0
+WARN  ag - Referencing unknown line 0040213c.0
+........................................................... [ done ]
+decompile F_004023bc                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp6 = PHI(reg_var11, reg_var10) in Block2
+WARN  d -   reg_var11 = ADD(reg_pp6, 2) in Block1
+...................... [ done ]
+decompile F_004023d4                    : .WARN  ag - Referencing unknown line 004023bc.0
+........................................................... [ done ]
+decompile F_00402414                    : ............................................................ [ done ]
+decompile F_00402484                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402970.0
+................ failed: A non-current expression of a variable is used in block L17 in if(CMP(AND(LOAD(ADD(reg_e2, SEGMENT2ADDR(reg_pp11), 12)), 4), ==, 0)) goto L20: The current setter is reg_zj7 while [reg_pp11] was found. Related expressions are [reg_zj7, reg_zj3, reg_pp11, reg_zj5, reg_pp3, reg_pp25, reg_pp17]
+decompile F_0040262e                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00406b6c.0
+................ failed: A non-current expression of a variable is used in block L28 in reg_pp32 = LOAD(ADD(reg_pp22, SEGMENT2ADDR(reg_pp21))): The current setter is reg_pp28 while [reg_pp22] was found. Related expressions are [reg_b7, reg_b9, reg_pp28, reg_b2, reg_pp22, reg_pp44]
+decompile F_00402895                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp14 = PHI(reg_var13, reg_var10) in Block2
+WARN  d -   reg_var13 = ADD(reg_pp14, 12) in Block12
+...................... [ done ]
+decompile F_00402938                    : .WARN  ag - Referencing unknown line 00406b6c.0
+........................................................... [ done ]
+decompile F_00402970                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........................................................... [ done ]
+decompile F_00402a4c                    : .WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402484.0
+................ failed: A non-current expression of a variable is used in block L17 in reg_b6 = LOAD(ADD(reg_pp12, SEGMENT2ADDR(reg_pp10), 8)): The current setter is reg_zj4 while [reg_pp10] was found. Related expressions are [reg_zj4, reg_pp10, reg_pp5, reg_zj6, reg_zj1]
+decompile F_00402b5c                    : .WARN  ag - Referencing unknown line 00402895.0
+WARN  ag - Referencing unknown line 00402895.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........................................................... [ done ]
+decompile F_00402bd8                    : ............................................................ [ done ]
+decompile F_00402ca4                    : .WARN  ag - Referencing unknown line 00402414.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 004031a8.0
+WARN  ag - Referencing unknown line 00406ec0.0
+......................... failed: Can't find a setter for reg_24_local in block 3
+decompile F_00402d18                    : .WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 00406ec0.0
+........................................................... [ done ]
+decompile F_00402d50                    : .WARN  ag - Referencing unknown line 00402d9c.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00402bd8.0
+........................................................... [ done ]
+decompile F_00402d9c                    : .WARN  ag - Referencing unknown line 00401140.0
+........................................................... [ done ]
+decompile F_00402ec0                    : .WARN  ag - Referencing unknown line 00402f4c.0
+........................................................... [ done ]
+decompile F_00402edc                    : .WARN  ag - Referencing unknown line 00402f61.0
+........................................................... [ done ]
+decompile F_00402f38                    : .WARN  ag - Referencing unknown line 00402ec0.0
+........................................................... [ done ]
+decompile F_00402f4c                    : ............................................................ [ done ]
+decompile F_00402f61                    : ............................................................ [ done ]
+decompile F_00402f9a                    : .WARN  ag - Referencing unknown line 004099d2.0
+........................................................... [ done ]
+decompile F_00402faf                    : ............................................................ [ done ]
+decompile F_00402fb8                    : .WARN  ag - Referencing unknown line 00409960.0
+........WARN  ac - Block 3 is already known to have a starting stack offset of -8 but when called from 2 it has an offset of -12
+................................................... [ done ]
+decompile F_00403000                    : .WARN  ag - Referencing unknown line 0040375c.0
+WARN  ag - Referencing unknown line 0040375c.0
+WARN  ag - Referencing unknown line 004099de.0
+WARN  ag - Referencing unknown line 004037c0.0
+........WARN  ac - Block 11 is already known to have a starting stack offset of -16 but when called from 10 it has an offset of -32
+................................................... [ done ]
+decompile F_00403078                    : .WARN  ag - Referencing unknown line 0040375c.0
+WARN  ag - Referencing unknown line 00403000.0
+WARN  ag - Referencing unknown line 004031e0.0
+WARN  ag - Referencing unknown line 004031e0.0
+................ failed: A non-current expression of a variable is used in block L21 in reg_a16 = reg_pp17: The current setter is reg_e4 while [reg_pp17] was found. Related expressions are [reg_pp9, reg_e1, reg_e3, reg_e2, reg_pp17, reg_e4]
+decompile F_004031a8                    : .WARN  ag - Referencing unknown line 004032c4.0
+........................................................... [ done ]
+decompile F_004031e0                    : .WARN  ag - Referencing unknown line 0040375c.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 004037c0.0
+........WARN  ac - Block 5 is already known to have a starting stack offset of -8 but when called from 3 it has an offset of -28
+................................................... [ done ]
+decompile F_00403244                    : .WARN  ag - Referencing unknown line 004013f0.0
+WARN  ag - Referencing unknown line 004013e0.0
+........................................................... [ done ]
+decompile F_004032c4                    : .WARN  ag - Referencing unknown line 00403344.0
+WARN  ag - Referencing unknown line 00403078.0
+........................................................... [ done ]
+decompile F_00403344                    : .WARN  ag - Referencing unknown line 00403078.0
+........................................................... [ done ]
+decompile F_004033a0                    : ............................................................ [ done ]
+decompile F_004033b0                    : ............................................................ [ done ]
+decompile F_0040375c                    : ............................................................ [ done ]
+decompile F_004037c0                    : .WARN  ag - Referencing unknown line 00409966.0
+WARN  ag - Referencing unknown line 0040375c.0
+........................................................... [ done ]
+decompile F_004037d4                    : .WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 004032c4.0
+WARN  ag - Referencing unknown line 004032c4.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 004032c4.0
+WARN  ag - Referencing unknown line 00403078.0
+..................................................WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+......... [ done ]
+decompile F_004038e4                    : .WARN  ag - Referencing unknown line 00403ad0.0
+........................................................... [ done ]
+decompile F_00403a20                    : ............................................................ [ done ]
+decompile F_00403a68                    : .WARN  ag - Referencing unknown line 00403a20.0
+..................................................WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+......... [ done ]
+decompile F_00403a9c                    : .................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError: >=
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError: >=
+decompile F_00403ad0                    : .WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00405090.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00403a9c.0
+WARN  ag - Referencing unknown line 00404fc8.0
+WARN  ag - Referencing unknown line 00404fce.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 0040487c.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a68.0
+WARN  ag - Referencing unknown line 00403a20.0
+................ failed: A non-current expression of a variable is used in block L9 in if(CMP(LOAD(ADD(reg_pp11, SEGMENT2ADDR(reg_zj2))), ==, 0)) goto L11: The current setter is reg_e4 while [reg_pp11] was found. Related expressions are [reg_pp6, reg_e10, reg_e16, reg_e13, reg_e18, reg_e17, reg_pp27, reg_e1, reg_e0, reg_pp11, reg_e7, reg_e6, reg_e3, reg_e5, reg_e4]
+decompile F_00404434                    : ............................................................ [ done ]
+decompile F_0040454c                    : .WARN  ag - Referencing unknown line 00404690.0
+........................................................... [ done ]
+decompile F_00404650                    : .WARN  ag - Referencing unknown line 004046d4.0
+........................................................... [ done ]
+decompile F_00404690                    : ............................................................ [ done ]
+decompile F_004046d4                    : .WARN  ag - Referencing unknown line 0040999c.0
+........WARN  ac - Block 6 is already known to have a starting stack offset of -12 but when called from 5 it has an offset of -28
+..........................................WARN  o -   load size differs from loaded size for ARG_0 vs. LOAD(ADDR(ARG_0))
+......... [ done ]
+decompile F_0040487c                    : .WARN  ag - Referencing unknown line 00409a14.0
+........WARN  ac - Block 10 is already known to have a starting stack offset of -8 but when called from 8 it has an offset of -40
+..........................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile F_00404c97                    : ...INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+.............. failed: A non-current expression of a variable is used in block L5 in if(CMP(MARKER_UNSIGNED(reg_e2), <, MARKER_UNSIGNED(reg_pp6))) goto L7: The current setter is reg_b2 while [reg_pp6] was found. Related expressions are [reg_pp8, reg_pp6, reg_b2, reg_b1, reg_b0, reg_b3]
+decompile F_00404d5a                    : ...INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe.info
+.............. failed: A non-current expression of a variable is used in block L5 in if(CMP(MARKER_UNSIGNED(reg_e2), <, MARKER_UNSIGNED(reg_pp6))) goto L7: The current setter is reg_b2 while [reg_pp6] was found. Related expressions are [reg_pp8, reg_pp6, reg_b2, reg_b1, reg_b0, reg_b3]
+decompile F_00404dfc                    : ............................................................ [ done ]
+decompile F_00404f84                    :  failed: self=00404f84[1,1].0 first=00404f84[1,1].0
+decompile F_00404f98                    : ............................................................ [ done ]
+decompile F_00404fc8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00404fce                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00405010                    : .WARN  ag - Referencing unknown line 00404f98.0
+........................................................... [ done ]
+decompile F_00405028                    : ............................................................ [ done ]
+decompile F_00405058                    : ............................................................ [ done ]
+decompile F_0040507c                    : ............................................................ [ done ]
+decompile F_00405090                    : .WARN  ag - Referencing unknown line 00404d5a.0
+WARN  ag - Referencing unknown line 00404c97.0
+........WARN  ac - Block 10 is already known to have a starting stack offset of -84 but when called from 10 it has an offset of -100
+WARN  ac - Block 16 is already known to have a starting stack offset of -84 but when called from 15 it has an offset of -100
+..........................................WARN  o -   load size differs from loaded size for ARG_4 vs. LOAD(ADDR(ARG_4))
+WARN  o -   load size differs from loaded size for ARG_4 vs. LOAD(ADDR(ARG_4))
+WARN  o -   load size differs from loaded size for ARG_5 vs. LOAD(ADDR(ARG_5))
+WARN  o -   load size differs from loaded size for ARG_5 vs. LOAD(ADDR(ARG_5))
+......... [ done ]
+decompile F_00405144                    : .WARN  ag - Referencing unknown line 00404f98.0
+WARN  ag - Referencing unknown line 00404f98.0
+WARN  ag - Referencing unknown line 00404f98.0
+........................................................... [ done ]
+decompile F_0040525c                    : ...................................................WARN  o -   load size differs from loaded size for ARG_3 vs. LOAD(ADDR(ARG_3))
+WARN  o -   load size differs from loaded size for ARG_4 vs. LOAD(ADDR(ARG_4))
+WARN  o -   load size differs from loaded size for ARG_4 vs. LOAD(ADDR(ARG_4))
+......... [ done ]
+decompile F_004052d0                    : .WARN  ag - Referencing unknown line 0040525c.0
+........................................................... [ done ]
+decompile F_00405348                    : ............................................................ [ done ]
+decompile F_00405360                    : ............................................................ [ done ]
+decompile F_00405388                    : ............................................................ [ done ]
+decompile F_004053b8                    : .WARN  ag - Referencing unknown line 00404434.0
+................ failed: A non-current expression of a variable is used in block L4 in if(CMP(LOAD(ADD(reg_pp3, SEGMENT2ADDR(reg_zj2), -1)), ==, 48)) goto L2: The current setter is reg_f2 while [reg_pp3] was found. Related expressions are [reg_f0, reg_f2, reg_f1, reg_pp5, reg_pp3]
+decompile F_004056b4                    : .WARN  ag - Referencing unknown line 00404434.0
+................ failed: A non-current expression of a variable is used in block L4 in if(CMP(LOAD(ADD(reg_pp3, SEGMENT2ADDR(reg_zj2), -2)), ==, 48)) goto L2: The current setter is reg_b2 while [reg_pp3] was found. Related expressions are [reg_pp5, reg_pp3, reg_b2, reg_b1, reg_b0]
+decompile F_004063ac                    : .WARN  ag - Referencing unknown line 0040507c.0
+WARN  ag - Referencing unknown line 004021ac.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00405058.0
+WARN  ag - Referencing unknown line 00405360.0
+WARN  ag - Referencing unknown line 004021ac.0
+........................................................... [ done ]
+INFO  eI -   pass construct regions took too long: 3.869sec.
+INFO  eI -   pass Flow transformations of regions took too long: 3.759sec.
+INFO  eI -   pass construct regions took too long: 3.25sec.
+decompile F_00406680                    : .WARN  ag - Referencing unknown line 0040507c.0
+WARN  ag - Referencing unknown line 00402238.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00404dfc.0
+WARN  ag - Referencing unknown line 00405058.0
+WARN  ag - Referencing unknown line 00405360.0
+WARN  ag - Referencing unknown line 00402238.0
+........................................................... [ done ]
+INFO  eI -   pass construct regions took too long: 4.189sec.
+INFO  eI -   pass Flow transformations of regions took too long: 4.059sec.
+INFO  eI -   pass construct regions took too long: 3.739sec.
+decompile F_00406974                    : .WARN  ag - Referencing unknown line 0040997e.0
+WARN  ag - Referencing unknown line 00409942.0
+WARN  ag - Referencing unknown line 00409948.0
+WARN  ag - Referencing unknown line 00406cdc.0
+........WARN  ac - Block 9 is already known to have a starting stack offset of -32 but when called from 7 it has an offset of -40
+.............................WARN  d - may result in wrong values
+WARN  d -   reg_pp40 = PHI(reg_var60, reg_var62) in Block16
+WARN  d -   reg_var62 = ADD(reg_pp40, 2) in Block17
+WARN  d - may result in wrong values
+WARN  d -   reg_pp39 = PHI(reg_var50, reg_var51) in Block16
+WARN  d -   reg_var51 = ADD(reg_pp39, 1) in Block15
+WARN  d - may result in wrong values
+WARN  d -   reg_pp45 = PHI(reg_var100, reg_var101) in Block25
+WARN  d -   reg_var101 = ADD(reg_pp45, 1) in Block24
+WARN  d - may result in wrong values
+WARN  d -   reg_pp47 = PHI(reg_var121, reg_var120) in Block28
+WARN  d -   reg_var121 = ADD(reg_pp47, 1) in Block27
+.............WARN  o -   load size differs from loaded size for g_0x0040b96c vs. LOAD(ADDR(g_0x0040b96c))
+WARN  o -   load size differs from loaded size for g_0x0040b96d vs. LOAD(ADDR(g_0x0040b96d))
+WARN  o -   load size differs from loaded size for g_0x0040b96e vs. LOAD(ADDR(g_0x0040b96e))
+WARN  o -   load size differs from loaded size for g_0x0040b96f vs. LOAD(ADDR(g_0x0040b96f))
+......... [ done ]
+INFO  eI -   pass construct regions took too long: 3.082sec.
+INFO  eI -   pass Flow transformations of regions took too long: 4.332sec.
+INFO  eI -   pass construct regions took too long: 2.721sec.
+decompile F_00406ab0                    : .WARN  ag - Referencing unknown line 0040454c.0
+........................................................... [ done ]
+decompile F_00406acc                    : ............................................................ [ done ]
+decompile F_00406b24                    : .WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004022ac.0
+........................................................... [ done ]
+decompile F_00406b6c                    : .WARN  ag - Referencing unknown line 00406b24.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004052d0.0
+WARN  ag - Referencing unknown line 00406cdc.0
+WARN  ag - Referencing unknown line 00406ec0.0
+........................................................... [ done ]
+decompile F_00406bcc                    : .WARN  ag - Referencing unknown line 0040996c.0
+WARN  ag - Referencing unknown line 00409a2c.0
+........................................................... [ done ]
+decompile F_00406c1c                    : .WARN  ag - Referencing unknown line 00409936.0
+WARN  ag - Referencing unknown line 00406bcc.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 00409930.0
+........WARN  ac - Block 2 is already known to have a starting stack offset of -48 but when called from 1 it has an offset of -92
+................................................... [ done ]
+decompile F_00406c98                    : .WARN  ag - Referencing unknown line 004099a2.0
+WARN  ag - Referencing unknown line 00409954.0
+WARN  ag - Referencing unknown line 00409a20.0
+........WARN  ac - Block 6 is already known to have a starting stack offset of -4 but when called from 5 it has an offset of -16
+................................................... [ done ]
+decompile F_00406cdc                    : .WARN  ag - Referencing unknown line 00409972.0
+WARN  ag - Referencing unknown line 00406acc.0
+WARN  ag - Referencing unknown line 00406acc.0
+WARN  ag - Referencing unknown line 00406c98.0
+WARN  ag - Referencing unknown line 00409a26.0
+WARN  ag - Referencing unknown line 00409996.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 00409a1a.0
+WARN  ag - Referencing unknown line 00406c1c.0
+........WARN  ac - Block 16 is already known to have a starting stack offset of -172 but when called from 8 it has an offset of -208
+WARN  ac - Block 16 is already known to have a starting stack offset of -208 but when called from 10 it has an offset of -144
+WARN  ac - Block 16 is already known to have a starting stack offset of -208 but when called from 12 it has an offset of -144
+WARN  ac - Block 16 is already known to have a starting stack offset of -208 but when called from 13 it has an offset of -144
+WARN  ac - Block 16 is already known to have a starting stack offset of -208 but when called from 14 it has an offset of -144
+WARN  ac - Block 16 is already known to have a starting stack offset of -208 but when called from 15 it has an offset of -144
+................................................... [ done ]
+decompile F_00406e08                    : .WARN  ag - Referencing unknown line 00406cdc.0
+WARN  ag - Referencing unknown line 00406f40.0
+........................................................... [ done ]
+decompile F_00406eac                    : .WARN  ag - Referencing unknown line 00406cdc.0
+WARN  ag - Referencing unknown line 00406f40.0
+........................................................... [ done ]
+decompile F_00406ec0                    : .WARN  ag - Referencing unknown line 004079d0.0
+WARN  ag - Referencing unknown line 00406eac.0
+........................................................... [ done ]
+decompile F_00406ed4                    : .WARN  ag - Referencing unknown line 00407b2c.0
+WARN  ag - Referencing unknown line 00407a40.0
+........................................................... [ done ]
+decompile F_00406f28                    : .WARN  ag - Referencing unknown line 00406ed4.0
+........................................................... [ done ]
+decompile F_00406f40                    : .WARN  ag - Referencing unknown line 00406ed4.0
+........................................................... [ done ]
+decompile F_00406f78                    : ............................................................ [ done ]
+decompile F_00406fbc                    : ............................................................ [ done ]
+decompile F_004070a0                    : .WARN  ag - Referencing unknown line 00401400.0
+WARN  ag - Referencing unknown line 00406e08.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004013e0.0
+WARN  ag - Referencing unknown line 00406e08.0
+........................................................... [ done ]
+decompile F_004072c4                    : ............................................................ [ done ]
+decompile F_004074e8                    : ............................................................ [ done ]
+decompile F_004075dc                    : .WARN  ag - Referencing unknown line 0040995a.0
+WARN  ag - Referencing unknown line 00406e08.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004013e0.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004011e0.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 00402250.0
+WARN  ag - Referencing unknown line 004013f0.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp44 = PHI(reg_var50, reg_var51) in Block14
+WARN  d -   reg_var51 = ADD(reg_pp44, 4) in Block13
+WARN  d - may result in wrong values
+WARN  d -   reg_pp47 = PHI(reg_var70, reg_var71) in Block20
+WARN  d -   reg_var71 = ADD(reg_cf1, reg_pp47, 1) in Block19
+...................... [ done ]
+INFO  eI -   pass Flow transformations of regions took too long: 2.345sec.
+INFO  eI -   pass construct regions took too long: 2.043sec.
+decompile F_00407748                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp7 = PHI(reg_var12, reg_var10) in Block1
+WARN  d -   reg_var12 = ADD(reg_pp7, 4) in Block2
+...................... [ done ]
+decompile F_004079d0                    : .WARN  ag - Referencing unknown line 00407748.0
+WARN  ag - Referencing unknown line 00406eac.0
+WARN  ag - Referencing unknown line 00406f40.0
+........................................................... [ done ]
+decompile F_00407a40                    : .WARN  ag - Referencing unknown line 0040993c.0
+........................................................... [ done ]
+decompile F_00407a50                    : ............................................................ [ done ]
+decompile F_00407a54                    : ............................................................ [ done ]
+decompile F_00407a58                    : ................. failed: A non-current expression of a variable is used in block L9 in reg_d1 = LOAD(ADD(reg_pp9, SEGMENT2ADDR(reg_pp8), 12)): The current setter is reg_zj4 while [reg_pp8] was found. Related expressions are [reg_zj8, reg_pp14, reg_pp29, reg_zj7, reg_pp8, reg_zj9, reg_zj4, reg_pp10, reg_zj6, reg_zj5, reg_zj0, reg_pp21]
+decompile F_00407b2c                    : .WARN  ag - Referencing unknown line 00407a58.0
+WARN  ag - Referencing unknown line 00407a58.0
+WARN  ag - Referencing unknown line 00407a54.0
+WARN  ag - Referencing unknown line 00407a58.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp10 = PHI(reg_var21, reg_var20) in Block4
+WARN  d -   reg_var21 = ADD(reg_pp10, 1) in Block3
+...................... [ done ]
+decompile F_00407d1c                    : .WARN  ag - Referencing unknown line 00409990.0
+......................... failed: Can't find a setter for reg_44_local in block 0
+decompile F_00407d3c                    : .WARN  ag - Referencing unknown line 004099ea.0
+........................................................... [ done ]
+decompile F_00407d44                    : .WARN  ag - Referencing unknown line 004099f0.0
+.. failed: null
+decompile F_00407d54                    : .WARN  ag - Referencing unknown line 004099f6.0
+.. failed: null
+decompile F_00407d64                    : .WARN  ag - Referencing unknown line 004099fc.0
+.. failed: null
+decompile F_00407d78                    : ... failed: null
+decompile F_00407d80                    : ... failed: null
+decompile F_00407db7                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00407dbe                    : .WARN  ag - Referencing unknown line 004013e0.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00406ec0.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+........................................................... [ done ]
+decompile F_00407e35                    : .WARN  ag - Referencing unknown line 00402a4c.0
+WARN  ag - Referencing unknown line 00402a4c.0
+WARN  ag - Referencing unknown line 00402a4c.0
+..................................................WARN  o -   load size differs from loaded size for ARG_3 vs. LOAD(ADDR(ARG_3))
+WARN  o -   load size differs from loaded size for ARG_3 vs. LOAD(ADDR(ARG_3))
+WARN  o -   load size differs from loaded size for ARG_3 vs. LOAD(ADDR(ARG_3))
+......... [ done ]
+decompile F_00407efb                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 20 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 22 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 24 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 25 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 10 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -24 but when called from 11 it has an offset of -28
+WARN  ac - Block 26 is already known to have a starting stack offset of -28 but when called from 12 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -28 but when called from 14 it has an offset of -16
+WARN  ac - Block 26 is already known to have a starting stack offset of -28 but when called from 15 it has an offset of -16
+................................................... [ done ]
+decompile F_00408009                    : ............................................................ [ done ]
+decompile F_00408021                    : .WARN  ag - Referencing unknown line 004099cc.0
+........................................................... [ done ]
+decompile F_0040803e                    : .WARN  ag - Referencing unknown line 00402938.0
+WARN  ag - Referencing unknown line 00408009.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........WARN  ac - Block 19 is already known to have a starting stack offset of -16 but when called from 16 it has an offset of -24
+WARN  ac - Block 19 is already known to have a starting stack offset of -24 but when called from 18 it has an offset of -16
+WARN  ac - Block 19 is already known to have a starting stack offset of -24 but when called from 13 it has an offset of -16
+WARN  ac - Block 19 is already known to have a starting stack offset of -24 but when called from 15 it has an offset of -16
+................................................... [ done ]
+decompile F_0040810e                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........WARN  ac - Block 13 is already known to have a starting stack offset of -8 but when called from 7 it has an offset of -12
+WARN  ac - Block 13 is already known to have a starting stack offset of -12 but when called from 8 it has an offset of -8
+WARN  ac - Block 13 is already known to have a starting stack offset of -12 but when called from 12 it has an offset of -8
+................................................... [ done ]
+decompile F_0040818c                    : .WARN  ag - Referencing unknown line 00402414.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00407dbe.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00402938.0
+WARN  ag - Referencing unknown line 00408009.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00407efb.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 004099cc.0
+........................................................... [ done ]
+decompile F_0040847c                    : .WARN  ag - Referencing unknown line 00402f9a.0
+........................................................... [ done ]
+decompile F_004084bb                    : .WARN  ag - Referencing unknown line 00402414.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 0040803e.0
+......................... failed: Can't find a setter for reg_36_local in block 3
+decompile F_00408530                    : .WARN  ag - Referencing unknown line 004084bb.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004084bb.0
+........................................................... [ done ]
+decompile F_004085b8                    : .WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408530.0
+WARN  ag - Referencing unknown line 00408021.0
+........................................................... [ done ]
+decompile F_004086a9                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004021ac.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402b5c.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00402970.0
+WARN  ag - Referencing unknown line 00402b5c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00407efb.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 0040213c.0
+WARN  ag - Referencing unknown line 004084bb.0
+................ failed: A non-current expression of a variable is used in block L33 in if(CMP(AND(LOAD(ADD(reg_pp33, SEGMENT2ADDR(reg_pp32), 12)), 1), ==, 0)) goto L37: The current setter is reg_e7 while [reg_pp33] was found. Related expressions are [reg_e1, reg_pp50, reg_e7, reg_pp31, reg_pp33, reg_e3, reg_e2, reg_pp18, reg_e4]
+decompile F_0040897d                    : .WARN  ag - Referencing unknown line 00402faf.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408530.0
+WARN  ag - Referencing unknown line 00409456.0
+WARN  ag - Referencing unknown line 00406b6c.0
+................ failed: A non-current expression of a variable is used in block L1 in reg_f1 = UNSIGNED_EXTEND(LOAD(ADD(reg_a2, reg_d3, SEGMENT2ADDR(reg_pp1)))): The current setter is reg_zj1 while [reg_pp1] was found. Related expressions are [reg_zj8, reg_zj7, reg_pp7, reg_pp11, reg_zj0, reg_pp1, reg_zj2, reg_zj1, reg_pp17]
+decompile F_00408b17                    : .WARN  ag - Referencing unknown line 00407e35.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp9 = PHI(reg_var14, reg_var10) in Block6
+WARN  d -   reg_var14 = ADD(reg_pp9, 20) in Block5
+...................... [ done ]
+decompile F_00408b5c                    : .WARN  ag - Referencing unknown line 00405010.0
+WARN  ag - Referencing unknown line 0040897d.0
+WARN  ag - Referencing unknown line 00407e35.0
+WARN  ag - Referencing unknown line 00402d18.0
+WARN  ag - Referencing unknown line 00408b17.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 0040847c.0
+WARN  ag - Referencing unknown line 0040897d.0
+WARN  ag - Referencing unknown line 004086a9.0
+WARN  ag - Referencing unknown line 00401140.0
+WARN  ag - Referencing unknown line 00402938.0
+WARN  ag - Referencing unknown line 00408009.0
+WARN  ag - Referencing unknown line 00408021.0
+WARN  ag - Referencing unknown line 00407db7.0
+WARN  ag - Referencing unknown line 00402faf.0
+WARN  ag - Referencing unknown line 00406b6c.0
+................ failed: A non-current expression of a variable is used in block L11 in reg_a12 = UNSIGNED_EXTEND(LOAD(ADD(reg_e1, reg_pp11, SEGMENT2ADDR(reg_pp10)))): The current setter is reg_f2 while [reg_pp11] was found. Related expressions are [reg_f0, reg_f2, reg_pp11, reg_f4, reg_pp44, reg_f3, reg_f6, reg_f5]
+decompile F_00408eb9                    : .WARN  ag - Referencing unknown line 00402414.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 0040803e.0
+......................... failed: Can't find a setter for reg_36_local in block 14
+decompile F_00408fb0                    : .WARN  ag - Referencing unknown line 00408ffb.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp15 = PHI(reg_var22, reg_var20) in Block5
+WARN  d -   reg_var22 = ADD(reg_pp15, -12) in Block3
+...................... [ done ]
+decompile F_00408ffb                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408eb9.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408fb0.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408fb0.0
+WARN  ag - Referencing unknown line 00408fb0.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004092ab.0
+WARN  ag - Referencing unknown line 00408fb0.0
+WARN  ag - Referencing unknown line 00408fb0.0
+.. failed: Unknown line 004091f3.0+3 signedMult448 eax,ds:[esi+0x20],etp,eup with code 'signedMult448 eax,ds:[esi+0x20],etp,eup' and baseCommand 'signedmult'
+decompile F_004092ab                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00408ffb.0
+WARN  ag - Referencing unknown line 00408ffb.0
+.. failed: Unknown line 00409326.0+3 signedMult448 eax,ss:[ebp-0x4],etp,eup with code 'signedMult448 eax,ss:[ebp-0x4],etp,eup' and baseCommand 'signedmult'
+decompile F_004093cf                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+........................................................... [ done ]
+decompile F_00409456                    : .WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004093cf.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004093cf.0
+WARN  ag - Referencing unknown line 00406b6c.0
+WARN  ag - Referencing unknown line 004092ab.0
+WARN  ag - Referencing unknown line 00408ffb.0
+WARN  ag - Referencing unknown line 0040810e.0
+WARN  ag - Referencing unknown line 0040121c.0
+WARN  ag - Referencing unknown line 0040810e.0
+WARN  ag - Referencing unknown line 0040120c.0
+................ failed: A non-current expression of a variable is used in block L84 in reg_pp77 = LOAD(ADD(reg_pp45, SEGMENT2ADDR(reg_pp44), 4)): The current setter is reg_zj33 while [reg_pp44] was found. Related expressions are [reg_zj47, reg_zj35, reg_pp63, reg_pp51, reg_zj10, reg_zj45, reg_zj46, reg_zj11, reg_zj30, reg_zj44, reg_zj32, reg_zj51, reg_zj50, reg_zj33, reg_zj40, reg_zj52, reg_pp56, reg_pp47, reg_pp81, reg_pp44, reg_pp70, reg_zj49, reg_zj39]
+decompile F_00409930                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409936                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040993c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409942                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409948                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040994e                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409954                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040995a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409960                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409966                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040996c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409972                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409978                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040997e                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409984                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040998a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409990                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409996                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0040999c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099a2                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099a8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099ae                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099b4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099ba                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099c0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099c6                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099cc                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099d2                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099d8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099de                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099e4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099ea                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099f0                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099f6                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004099fc                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a02                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a08                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a0e                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a14                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a1a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a20                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a26                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00409a2c                    : .... failed: Block L0 calls block L1 which isn't available

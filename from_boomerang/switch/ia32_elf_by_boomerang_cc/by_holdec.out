@@ -1,21 +1,37 @@
-INFO  07:04:26 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-INFO  07:04:26 ke - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
-INFO  07:04:26 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : ............................................................ [  0.06s]
-Exception in thread "main" java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
-	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError: 08049bab.0+0 section
-	at holdec.fy.<init>(Unknown Source)
-	at holdec.fA.c(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+Preprocessing 196 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+Preprocessing 200 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+Preprocessing 224 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 224 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080489e4.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 12 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 7 functions
+decompile atexit                        : .... failed: Block L0 calls block L1 which isn't available
+decompile exit                          : .... failed: Block L0 calls block L1 which isn't available
+decompile printf                        : .... failed: Block L0 calls block L1 which isn't available
+decompile F_0804884c                    : ... failed: Unknown line 08048895.0+4 l.bt edx,0xa with code 'l.bt edx,0xa' and baseCommand 'bt'
+decompile F_080488f0                    :  failed: self=080488f0[0,1].0 first=080488f0[0,1].0
+decompile F_08048996                    : ............................................................ [ done ]
+decompile F_080489be                    : ............................................................ [ done ]

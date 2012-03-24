@@ -1,0 +1,17 @@
+[jumpTable]
+0x8048420,0,5
+
+[0x080482a8]
+signature: d4 puts(d1 *s)
+
+[activeFunctions]
+main
+
+# Strings:
+# 134513924 = 8048504 = Other
+# 134513888 = 80484e0 = Two
+# 134513893 = 80484e5 = Three
+# 134513900 = 80484ec = Four
+# 134513906 = 80484f2 = Five
+# 134513912 = 80484f8 = Six
+# 134513917 = 80484fd = Seven

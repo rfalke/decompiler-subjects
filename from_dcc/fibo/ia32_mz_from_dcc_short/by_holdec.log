@@ -1,3 +1,70 @@
-INFO  07:05:09 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:09 holdec.ke - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
-INFO  07:05:09 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe as executable
+INFO  holdec.fG - Detected MZ (MS-DOS)
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 77 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 78 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 00001f5d[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f66[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,1].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,2].3
+WARN  holdec.fE - Ignore overlapping address 00001f69[5,3].3
+WARN  holdec.fE - Ignore overlapping address 000022ac[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ae[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b0[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b2[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b4[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ad[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022af[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022b1[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022c6[7,0].3
+INFO  holdec.fG - disassembleAndWrite: found 29 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 107 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 00001f5d[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f66[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,1].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,2].3
+WARN  holdec.fE - Ignore overlapping address 00001f69[5,3].3
+WARN  holdec.fE - Ignore overlapping address 000022ac[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ae[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b0[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b2[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b4[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ad[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022af[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022b1[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022c6[7,0].3
+INFO  holdec.fG - disassembleAndWrite: found 1 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 108 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 00001f5d[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f66[5,0].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,1].3
+WARN  holdec.fE - Ignore overlapping address 00001f67[5,2].3
+WARN  holdec.fE - Ignore overlapping address 00001f69[5,3].3
+WARN  holdec.fE - Ignore overlapping address 000022ac[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ae[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b0[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b2[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022b4[6,0].3
+WARN  holdec.fE - Ignore overlapping address 000022ad[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022af[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022b1[6,1].3
+WARN  holdec.fE - Ignore overlapping address 000022c6[7,0].3
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.ks - wrote ./from_dcc/fibo/ia32_mz_from_dcc_short/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 7981 asm lines

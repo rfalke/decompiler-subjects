@@ -1,0 +1,22 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - reading info from ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 112 asm lines
+INFO  holdec.an - will decompile 3 functions
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp8 = PHI(reg_var12, reg_var10) in Block2
+WARN  holdec.d -   reg_var12 = DIV(MULT64_HI(-858993459, reg_pp8), 8) in Block5
+WARN  holdec.ag - Referencing unknown line 00401000.0
+WARN  holdec.ag - Referencing unknown line 00401000.0
+WARN  holdec.ag - Referencing unknown line 00401050.0
+INFO  holdec.ks - wrote ./from_decompiler.sf.net/fib/ia32_pe_from_decompiler.sf.net/input.info

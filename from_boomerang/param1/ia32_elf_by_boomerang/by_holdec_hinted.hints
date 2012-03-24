@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+cparam
+
+[0x080482b8]
+signature: d4 printf(char *fmt, d4 value)
+
+[func:cparam]
+signature: d4 cparam(d4 x, d4 y)

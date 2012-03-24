@@ -1,14 +1,35 @@
-INFO  07:05:14 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:14 holdec.ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
-INFO  07:05:14 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:05:14 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:05:14 holdec.ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
-INFO  07:05:15 holdec.ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
-INFO  07:05:15 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:05:15 holdec.ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
-INFO  07:05:15 holdec.ke - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
-INFO  07:05:15 holdec.fA - reading all asm lines ...
-INFO  07:05:15 holdec.fA - ... read 460 asm lines
-WARN  07:05:15 holdec.w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:05:15 holdec.w - Address 080489c8.0 is excluded by the address filter. Maybe outside text section?
-INFO  07:05:15 holdec.am - will decompile 25 functions
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_rec/hd/ia32_elf_from_rec/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  holdec.ks - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  holdec.ks - wrote ./from_rec/hd/ia32_elf_from_rec/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 460 asm lines
+WARN  holdec.w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080489c8.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 16 functions
+WARN  holdec.ag - Referencing unknown line 08048548.0
+WARN  holdec.ag - Referencing unknown line 08048548.0
+WARN  holdec.ag - Referencing unknown line 08048508.0
+WARN  holdec.ag - Referencing unknown line 08048588.0
+WARN  holdec.ag - Referencing unknown line 080484b8.0
+WARN  holdec.ag - Referencing unknown line 080484b8.0
+WARN  holdec.ag - Referencing unknown line 080484c8.0
+WARN  holdec.ag - Referencing unknown line 08048950.0
+WARN  holdec.ag - Referencing unknown line 080484d8.0
+WARN  holdec.ag - Referencing unknown line 08048528.0
+WARN  holdec.ag - Referencing unknown line 080484d8.0
+WARN  holdec.ag - Referencing unknown line 08048518.0
+WARN  holdec.ag - Referencing unknown line 08048660.0
+WARN  holdec.ag - Referencing unknown line 08048538.0
+WARN  holdec.ag - Referencing unknown line 080487f0.0
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp5 = PHI(reg_8_local2, reg_8_local0) in Block1
+WARN  holdec.d -   reg_8_local2 = ADD(reg_pp5, 1) in Block2
+WARN  holdec.ag - Referencing unknown line 080484e8.0

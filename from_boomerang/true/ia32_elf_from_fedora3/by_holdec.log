@@ -1,24 +1,149 @@
-INFO  07:04:42 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:42 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:42 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:04:42 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:04:42 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 holdec.ke - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
-INFO  07:04:43 holdec.fA - reading all asm lines ...
-INFO  07:04:43 holdec.fA - ... read 2036 asm lines
-WARN  07:04:43 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:43 holdec.w - Address 0804a110.0 is excluded by the address filter. Maybe outside text section?
-ERROR 07:04:43 holdec.fD - The first line is 08049721.0+1 l.push ebp but the main address is 080498ae.0. WILL NO WRITE THIS METHOD.
-INFO  07:04:43 holdec.am - will decompile 61 functions
-INFO  07:04:43 holdec.fG - Skipping stack alignment: 08048ac5.0+3 l.and esp,0xfffffff0
-WARN  07:04:44 holdec.o -   load size differs from loaded size for g_0x0804ba00 vs. LOAD(ADDR(g_0x0804ba00))
-INFO  07:04:44 holdec.fG - Skipping stack alignment: 08048c67.0+3 l.and esp,0xfffffff0
-WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:44 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:45 holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/true/ia32_elf_from_fedora3/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 2036 asm lines
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 0804a110.0 is excluded by the address filter. Maybe outside text section?
+ERROR holdec.fJ - The first line is 08049721.0+1 l.push ebp but the main address is 080498ae.0. WILL NO WRITE THIS METHOD.
+INFO  holdec.an - will decompile 61 functions
+WARN  holdec.ag - Referencing unknown line 08048ae4.0
+WARN  holdec.ag - Referencing unknown line 08048b3c.0
+WARN  holdec.ag - Referencing unknown line 0804a0d0.0
+WARN  holdec.ag - Referencing unknown line 080489c4.0
+INFO  holdec.fO - Skipping stack alignment: 08048ac5.0+3 l.and esp,0xfffffff0
+WARN  holdec.o -   load size differs from loaded size for g_0x0804ba00 vs. LOAD(ADDR(g_0x0804ba00))
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 080489f4.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048904.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048904.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 080489f4.0
+WARN  holdec.ag - Referencing unknown line 08048a34.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048944.0
+WARN  holdec.ag - Referencing unknown line 080489a4.0
+WARN  holdec.ag - Referencing unknown line 080489e4.0
+WARN  holdec.ag - Referencing unknown line 0804a0a0.0
+WARN  holdec.ag - Referencing unknown line 08048a34.0
+WARN  holdec.ag - Referencing unknown line 08048924.0
+WARN  holdec.ag - Referencing unknown line 08049ccd.0
+INFO  holdec.fO - Skipping stack alignment: 08048c67.0+3 l.and esp,0xfffffff0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 080488e4.0
+WARN  holdec.ag - Referencing unknown line 08048a14.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08049a8b.0
+WARN  holdec.ag - Referencing unknown line 08048a94.0
+WARN  holdec.ag - Referencing unknown line 08048964.0
+WARN  holdec.ag - Referencing unknown line 08048a94.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048a24.0
+WARN  holdec.ag - Referencing unknown line 08048aa4.0
+WARN  holdec.ag - Referencing unknown line 080489b4.0
+WARN  holdec.ag - Referencing unknown line 08048a54.0
+WARN  holdec.ag - Referencing unknown line 08048a84.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048964.0
+WARN  holdec.ag - Referencing unknown line 08048ff6.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048964.0
+WARN  holdec.ag - Referencing unknown line 08049e3f.0
+WARN  holdec.ag - Referencing unknown line 08048a74.0
+WARN  holdec.ag - Referencing unknown line 080496c3.0
+WARN  holdec.ag - Referencing unknown line 08049fe0.0
+WARN  holdec.ag - Referencing unknown line 08049dc5.0
+WARN  holdec.ag - Referencing unknown line 080496c3.0
+WARN  holdec.ag - Referencing unknown line 08048964.0
+WARN  holdec.ag - Referencing unknown line 08049dc5.0
+WARN  holdec.ag - Referencing unknown line 08048984.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ac - Block 0 is already known to have a starting stack offset of 0 but when called from 12 it has an offset of -60
+WARN  holdec.ag - Referencing unknown line 08049905.0
+WARN  holdec.ag - Referencing unknown line 08049721.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048f36.0
+WARN  holdec.ag - Referencing unknown line 08049721.0
+WARN  holdec.o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 080499f0.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048914.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048994.0
+WARN  holdec.ag - Referencing unknown line 08048904.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048904.0
+WARN  holdec.ag - Referencing unknown line 08048914.0
+WARN  holdec.ag - Referencing unknown line 080488f4.0
+WARN  holdec.ag - Referencing unknown line 080488f4.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049ac0.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048934.0
+WARN  holdec.ag - Referencing unknown line 08048a94.0
+WARN  holdec.ag - Referencing unknown line 08048984.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048974.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 080489d4.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 080489d4.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048a74.0
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -8 but when called from 4 it has an offset of -20
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -20 but when called from 6 it has an offset of -48
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -48 but when called from 10 it has an offset of -76
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -76 but when called from 16 it has an offset of -104
+WARN  holdec.ac - Block 20 is already known to have a starting stack offset of -104 but when called from 19 it has an offset of -132
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 080489d4.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049d10.0
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08049dc5.0
+WARN  holdec.ag - Referencing unknown line 08048a74.0
+WARN  holdec.ac - Block 15 is already known to have a starting stack offset of -8 but when called from 5 it has an offset of -36
+WARN  holdec.ac - Block 15 is already known to have a starting stack offset of -36 but when called from 11 it has an offset of -64
+WARN  holdec.ac - Block 15 is already known to have a starting stack offset of -64 but when called from 14 it has an offset of -92
+WARN  holdec.ag - Referencing unknown line 08048d64.0
+WARN  holdec.ag - Referencing unknown line 08048a64.0
+WARN  holdec.ag - Referencing unknown line 080488bc.0
+WARN  holdec.ag - Referencing unknown line 0804a0f4.0
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp5 = PHI(reg_var11, reg_var10) in Block2
+WARN  holdec.d -   reg_var11 = ADD(reg_pp5, -1) in Block1
+WARN  holdec.ag - Referencing unknown line 08048954.0
+WARN  holdec.ag - Referencing unknown line 08048954.0
+WARN  holdec.ag - Referencing unknown line 08048b08.0
+WARN  holdec.ag - Referencing unknown line 08048b08.0

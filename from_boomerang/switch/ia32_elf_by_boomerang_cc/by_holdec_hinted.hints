@@ -1,0 +1,8 @@
+[activeFunctions]
+main
+
+[func:printf]
+signature: d4 printf(d1 *fmt)
+
+[jumpTable]
+0x08048978,0,5

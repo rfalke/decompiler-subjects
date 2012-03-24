@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+twofib
+
+[func:twofib]
+signature: int*fib(u4 n)
+
+[0x080482e4]
+signature: d4 printf(d1 *fmt, d4 v1)

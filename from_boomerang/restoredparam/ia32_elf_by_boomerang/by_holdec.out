@@ -1,97 +1,36 @@
-INFO  07:04:04 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-INFO  07:04:04 ke - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:04 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : ............................................................ [  0.06s]
-INFO  07:04:04 fA - disassembleAndWrite: running multiline
-INFO  07:04:04 ke - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.01s]
-Preprocess gc                           : ............................................................ [  0.01s]
-Preprocess fK                           : ............................................................ [  0.01s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.00s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.01s]
-Preprocess fN                           : ............................................................ [  0.00s]
-Preprocess fX                           : ............................................................ [  0.00s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:04 ke - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:04 fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:04 ke - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.00s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.00s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.01s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.01s]
-Preprocess fX                           : ............................................................ [  0.01s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:05 ke - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:05 fA - reading all asm lines ...
-INFO  07:04:05 fA - ... read 210 asm lines
-WARN  07:04:05 w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:05 w - Address 08048440.0 is excluded by the address filter. Maybe outside text section?
-create blocks                           : ............................................................ [  0.00s]
-init blocks                             : ............................................................ [  0.00s]
-Writing 17 methods to cache             : ............................................................ [  0.00s]
-INFO  07:04:05 am - will decompile 17 functions
-decompile _init                         : ............................................................ [  0.08s]
-decompile F_080482a8                    : ... failed: There is no target block for index 0
-decompile F_080482b8                    : ... failed: There is no target block for index 0
-decompile F_080482c8                    : ... failed: There is no target block for index 0
-decompile _start                        : ...INFO  07:04:05 fG - Skipping stack alignment: 080482dd.0+3 l.and esp,0xfffffff0
-......................................................... [  0.17s]
-decompile call_gmon_start               : ............................................................ [  0.08s]
-decompile F_08048306                    : ............................................................ [  0.06s]
-decompile __do_global_dtors_aux         : ...................................................WARN  07:04:05 o -   load size differs from loaded size for g_0x08049560 vs. LOAD(ADDR(g_0x08049560))
-......... [  0.18s]
-decompile frame_dummy                   : ............................................................ [  0.07s]
-decompile main                          : ............................................................ [  0.07s]
-decompile F_08048396                    : ............................................................ [  0.04s]
-decompile __libc_csu_init               : ..........................ERROR 07:04:06 o - Can't find a setter for reg_0_local for block 0
-.. failed: Don't know about reg_0_local have information about [reg_24_local0, reg_20_local0, reg_16_local0, reg_12_local0, reg_aj0, reg_result0, reg_8_local0, reg_var20, reg_var10, reg_pp5, reg_pp4, reg_result1, reg_var21, reg_var11, reg_pp6]
-decompile F_080483b2                    : ............................................................ [  0.23s]
-decompile __libc_csu_fini               : ............................................................ [  0.01s]
-decompile __do_global_ctors_aux         : ............................................................ [  0.08s]
-decompile _fini                         : ............................................................ [  0.03s]
-decompile F_0804842e                    : ............................................................ [  0.03s]
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
+Preprocessing 187 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
+Preprocessing 210 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/restoredparam/ia32_elf_by_boomerang/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 210 asm lines
+WARN  w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08048440.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 17 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 8 functions
+decompile F_080482a8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482b8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482c8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048306                    : .WARN  ag - Referencing unknown line 080482c8.0
+........................................................... [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 08048396.0
+WARN  ag - Referencing unknown line 080482b8.0
+........................................................... [ done ]
+decompile F_08048396                    : ............................................................ [ done ]
+decompile F_080483b2                    : .WARN  ag - Referencing unknown line 08048280.0
+........................................................... [ done ]
+decompile F_0804842e                    : .WARN  ag - Referencing unknown line 08048320.0
+........................................................... [ done ]

@@ -1,3 +1,34 @@
-INFO  07:05:00 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:00 holdec.ke - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
-INFO  07:05:01 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 1302 asm lines
+WARN  holdec.w - Address 00402000.0 is excluded by the address filter. Maybe outside text section?
+ERROR holdec.fJ - The first line is 00401020.0+1 l.push esi but the main address is 00401080.0. WILL NO WRITE THIS METHOD.
+INFO  holdec.an - will decompile 40 functions
+WARN  holdec.ag - Referencing unknown line 004018fc.0
+WARN  holdec.ag - Referencing unknown line 004018f6.0
+WARN  holdec.ag - Referencing unknown line 004018f0.0
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.ag - Referencing unknown line 00401920.0
+WARN  holdec.ag - Referencing unknown line 00401920.0
+WARN  holdec.ag - Referencing unknown line 00401b90.0
+WARN  holdec.ag - Referencing unknown line 00401970.0
+WARN  holdec.ag - Referencing unknown line 00401be0.0
+WARN  holdec.ag - Referencing unknown line 00401bb0.0
+WARN  holdec.ag - Referencing unknown line 00401b9c.0
+WARN  holdec.ag - Referencing unknown line 00401b9c.0
+WARN  holdec.ag - Referencing unknown line 00401bfc.0
+WARN  holdec.ag - Referencing unknown line 00401bf6.0
+WARN  holdec.ag - Referencing unknown line 00401c60.0
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.ag - Referencing unknown line 004018f6.0
+INFO  holdec.ks - wrote ./from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe.info

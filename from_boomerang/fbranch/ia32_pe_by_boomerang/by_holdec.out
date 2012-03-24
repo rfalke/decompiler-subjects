@@ -1,18 +1,37 @@
-INFO  07:02:50 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:02:50 ke - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
-INFO  07:02:51 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+Preprocessing 10915 asm lines           : ............INFO  ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  fG - disassembleAndWrite: found 9 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 10 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+Preprocessing 10914 asm lines           : ...................................................Exception in thread "main" java.lang.reflect.InvocationTargetException
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
 Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+	at holdec.fX.a(Unknown Source)
+	at holdec.hH.a(Unknown Source)
+	at holdec.hE.a(Unknown Source)
+	at holdec.hE.a(Unknown Source)
+	at holdec.fP.a(Unknown Source)
+	at holdec.hE.b(Unknown Source)
+	at holdec.hC.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.fG.l(Unknown Source)
+	at holdec.fG.<init>(Unknown Source)
+	at holdec.fG.<init>(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	... 5 more

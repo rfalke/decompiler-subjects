@@ -1,32 +1,28 @@
-// addr = 080484a0.0
-// signature= func(_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _init(???)
-{
-  reg_result = __do_global_ctors_aux();
-  return reg_result;
-}
+// Decompiled by holdec 1.1 (2012-03-24)
 
-// addr = 08048620.0
-// signature= func(__do_global_dtors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_dtors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  reg_var1 = 134519288;
-  if(g_0x080499f8  !=  0) {
-    do {
-      reg_result = intern_redirectCall(LOAD(reg_var1));
-      reg_var1 += 4;
-    } while(LOAD(reg_var1)  !=  0);
-  }
-  return reg_result;
-}
+/* The decompilation of 0x080484b8 / strcpy failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
-// addr = 08048650.0
-// signature= func(fini_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? fini_dummy(???)
-{
-  return InitValue(initial_value_of_eax);
-}
+/* The decompilation of 0x080484c8 / printf failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080484d8 / perror failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x080484e8 / _xstat failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048508 / strcat failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048518 / fread failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048528 / fopen failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048538 / fclose failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048548 / sprintf failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048558 / atexit failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048568 / exit failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
+
+/* The decompilation of 0x08048588 / strlen failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
 // addr = 08048660.0
 // signature= func(dumpline, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -50,9 +46,9 @@
     (void) STORE(local + 20, LOAD(local + 20) + 1);
   }
   while(1) {
-    reg_ad = LOAD(local + 20);
+    reg_ab = LOAD(local + 20);
     (void) STORE(local + 20, LOAD(local + 20) + 1);
-    if(reg_ad  >  15) {
+    if(reg_ab  >  15) {
       break;
     }
     (void) STORE(local + 4, local + 24);
@@ -68,8 +64,8 @@
   (void) STORE(local + 20, 0);
   while(LOAD(local + 20)  <  ARG_2) {
     reg_ae = LOAD(local + 16) + LOAD(local + 20);
-    reg_ab = LOAD(LOAD(local + 20) + ARG_0)  <=  31 || LOAD(LOAD(local + 20) + ARG_0)  >  126 ? 46 : LOAD(LOAD(local + 20) + ARG_0);
-    (void) STORE(reg_ae + local + 24, reg_ab);
+    reg_ad = LOAD(LOAD(local + 20) + ARG_0)  <=  31 || LOAD(LOAD(local + 20) + ARG_0)  >  126 ? 46 : LOAD(LOAD(local + 20) + ARG_0);
+    (void) STORE(reg_ae + local + 24, reg_ad);
     (void) STORE(local + 20, LOAD(local + 20) + 1);
   }
   for(...) {
@@ -88,6 +84,53 @@
   return reg_result;
 }
 
+// addr = 080487f0.0
+// signature= func(hexdump, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
+??? hexdump(???)
+{
+  (void) STORE(local + 108, InitValue(initial_value_of_ebp));
+  (void) STORE(local + 12, local + 20);
+  (void) STORE(local + 8, ARG_0);
+  reg_ag = stat();
+  if(reg_ag  ==  0) {
+    (void) STORE(local + 12, ARG_0);
+    (void) perror();
+    reg_result = 1;
+  } else {
+    (void) STORE(local + 12, 134515172);
+    (void) STORE(local + 8, ARG_0);
+    reg_ae = fopen();
+    (void) STORE(local + 84, reg_ae);
+    if(LOAD(local + 84)  ==  0) {
+      (void) STORE(local + 12, ARG_0);
+      (void) perror();
+      reg_result = 1;
+    } else {
+      (void) STORE(local + 88, 0);
+      while(LOAD(local + 88)  <  LOAD(local + 40)) {
+        (void) STORE(local + 12, LOAD(local + 84));
+        (void) STORE(local + 4, 1);
+        (void) STORE(local + 8, 16);
+        (void) STORE(local, local + 92);
+        reg_af = fread();
+        (void) STORE(local + 16, reg_af);
+        if(LOAD(local + 16)  ==  0) {
+          break;
+        }
+        (void) STORE(local + 12, LOAD(local + 16));
+        (void) STORE(local + 4, local + 92);
+        (void) STORE(local + 8, LOAD(local + 88));
+        (void) dumpline();
+        (void) STORE(local + 88, LOAD(local + 16) + LOAD(local + 88));
+      }
+      (void) STORE(local + 12, LOAD(local + 84));
+      (void) fclose();
+      reg_result = 0;
+    }
+  }
+  return reg_result;
+}
+
 // addr = 080488e0.0
 // signature= func(main, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
 ??? main(???)
@@ -95,8 +138,8 @@
   reg_result = 0;
   reg_var1 = 1;
   while(reg_var1  <  ARG_0) {
-    reg_ab = hexdump();
-    reg_result += reg_ab;
+    reg_ac = hexdump();
+    reg_result += reg_ac;
     reg_var1++;
   }
   return reg_result;
@@ -107,36 +150,6 @@
 ??? stat(???)
 {
   reg_result = _xstat();
-  return reg_result;
-}
-
-// addr = 08048980.0
-// signature= func(__do_global_ctors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_ctors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  reg_var1 = 134519276;
-  if(g_0x080499ec  !=  -1) {
-    do {
-      reg_result = intern_redirectCall(LOAD(reg_var1));
-      reg_var1 += -4;
-    } while(LOAD(reg_var1)  !=  -1);
-  }
-  return reg_result;
-}
-
-// addr = 080489b0.0
-// signature= func(init_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? init_dummy(???)
-{
-  return InitValue(initial_value_of_eax);
-}
-
-// addr = 080489c0.0
-// signature= func(_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _fini(???)
-{
-  reg_result = __do_global_dtors_aux();
   return reg_result;
 }
 

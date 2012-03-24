@@ -1,0 +1,12 @@
+[activeFunctions]
+main
+proc1
+
+[func:proc1]
+signature: int proc1 (int x, char* s)
+
+[func:printf]
+signature: d4 printf(d1 *fmt, d4 v1);
+
+[func:strlen]
+signature: u4 strlen(d1 *s)

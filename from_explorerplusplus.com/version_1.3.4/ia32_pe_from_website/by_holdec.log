@@ -1,0 +1,72 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 0041f3d1.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 004309d5.0+4 l.repne or ds:[ebx],al
+WARN  holdec.fP - Unknown rep line: 004394a8.0+2 l.repe ret
+WARN  holdec.fP - Unknown rep line: 00451b18.0+4 l.repe sbb ss:[ebp],al
+WARN  holdec.fP - Unknown rep line: 00458920.0+4 l.repe test ss:[ebp],eax
+WARN  holdec.fP - Unknown rep line: 0049f4e9.0+2 l.repne dec ecx
+WARN  holdec.fP - Unknown rep line: 0049f4ed.0+2 l.repne dec ecx
+WARN  holdec.fP - Unknown rep line: 004b4230.0+4 l.repne xor ecx,ds:[ebx]
+WARN  holdec.fP - Unknown rep line: 004b5563.0+4 l.repne mov al,ah
+WARN  holdec.fP - Unknown rep line: 004b55df.0+4 l.repne mov bh,bl
+WARN  holdec.fP - Unknown rep line: 004b562f.0+4 l.repne mov bl,dl
+WARN  holdec.fP - Unknown rep line: 004b5685.0+4 l.repne mov al,bl
+WARN  holdec.fP - Unknown rep line: 004b58a9.0+4 l.repne mov cl,dl
+WARN  holdec.fP - Unknown rep line: 004b5907.0+4 l.repe shl ds:[esi+0xf],0x1
+WARN  holdec.fP - Unknown rep line: 004b5965.0+4 l.repe shl ds:[esi+0xf],0x1
+WARN  holdec.fP - Unknown rep line: 004b5a1c.0+4 l.repne mov al,ah
+WARN  holdec.fP - Unknown rep line: 004b5b3e.0+4 l.repe shl ds:[esi+0xf],0x1
+WARN  holdec.fP - Unknown rep line: 004b5ecc.0+4 l.repe retf 0xff2
+WARN  holdec.fP - Unknown rep line: 004b5ee8.0+3 l.repe loop 0x4b5edd(loc)
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info
+INFO  holdec.ks - wrote ./from_explorerplusplus.com/version_1.3.4/ia32_pe_from_website/subject.exe.info

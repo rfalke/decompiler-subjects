@@ -1,0 +1,49 @@
+[activeFunctions]
+main
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+
+[func:b]
+signature: void b()
+
+[func:c]
+signature: void c()
+
+[func:d]
+signature: void d()
+
+[func:e]
+signature: void e()
+
+[func:f]
+signature: void f()
+
+[func:g]
+signature: void g()
+
+[func:h]
+signature: void h()
+
+[func:i]
+signature: void i()
+
+[func:j]
+signature: void j()
+
+[func:k]
+signature: void k()
+
+[func:l]
+signature: void l()
+
+[0x080482b8]
+signature: d4 printf(d1 *fmt, d4 v1)

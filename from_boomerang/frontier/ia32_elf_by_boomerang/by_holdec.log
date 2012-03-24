@@ -1,42 +1,25 @@
-INFO  07:03:06 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:03:06 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:03:07 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.fA - disassembleAndWrite: found 1 new addresses
-INFO  07:03:07 holdec.fA - disassembleAndWrite: start a new loop with 2 extra block starts
-INFO  07:03:07 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.ke - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:03:07 holdec.fA - reading all asm lines ...
-INFO  07:03:07 holdec.fA - ... read 243 asm lines
-WARN  07:03:07 holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:03:07 holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:03:07 holdec.w - Address 0804846c.0 is excluded by the address filter. Maybe outside text section?
-INFO  07:03:07 holdec.am - will decompile 13 functions
-INFO  07:03:07 holdec.fG - Skipping stack alignment: 08048249.0+3 l.and esp,0xfffffff0
-WARN  07:03:08 holdec.o -   load size differs from loaded size for g_0x08049574 vs. LOAD(ADDR(g_0x08049574))
-INFO  07:03:08 holdec.fG - Skipping stack alignment: 080482fa.0+3 l.and esp,0xfffffff0
-ERROR 07:03:08 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
-java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
-	at holdec.bb.b(Unknown Source)
-	at holdec.bb.a(Unknown Source)
-	at holdec.hQ.e(Unknown Source)
-	at holdec.hQ.b(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.dL.e(Unknown Source)
-	at holdec.eK.a(Unknown Source)
-	at holdec.eC.a(Unknown Source)
-	at holdec.dL.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
-	at holdec.Holdec.main(Unknown Source)
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 1 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/frontier/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 243 asm lines
+WARN  holdec.w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 0804846c.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.ag - Referencing unknown line 00000000.0
+INFO  holdec.an - will decompile 3 functions
+INFO  holdec.fO - Skipping stack alignment: 080482fa.0+3 l.and esp,0xfffffff0
+WARN  holdec.ag - Referencing unknown line 0804828c.0

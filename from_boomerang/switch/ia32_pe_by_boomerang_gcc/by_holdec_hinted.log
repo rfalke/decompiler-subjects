@@ -1,0 +1,27 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - reading info from ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info.canonFormat
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 2 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.fG - disassembleAndWrite: found 3 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 5 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 752 asm lines
+WARN  holdec.M - The last line of the last block 118 is not a return or jump. Probably a data area.
+ERROR holdec.fJ - The first line is 00401040.0+1 l.push ebp but the main address is 00401790.0. WILL NO WRITE THIS METHOD.
+INFO  holdec.an - will decompile 1 functions
+WARN  holdec.ag - Referencing unknown line 00401440.0
+WARN  holdec.ag - Referencing unknown line 004014d0.0
+WARN  holdec.ag - Referencing unknown line 004014e0.0
+INFO  holdec.fO - Skipping stack alignment: 00401088.0+3 l.and esp,0xfffffff0

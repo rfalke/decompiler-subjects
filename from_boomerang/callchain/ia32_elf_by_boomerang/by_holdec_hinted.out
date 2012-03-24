@@ -1,0 +1,45 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/callchain/ia32_elf_by_boomerang/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+Preprocessing 1244 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+INFO  fG - disassembleAndWrite: found 4 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 5 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+Preprocessing 1259 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+WARN  fE - Ignore overlapping address 08048f1d[1,0].3
+WARN  fE - Ignore overlapping address 08048f25[1,0].3
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+Preprocessing 1410 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/callchain/ia32_elf_by_boomerang/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 1410 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080494b4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address d0048f44.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ...................................WARN  ag - Referencing unknown line d0048f44.0
+......................... [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 52 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 5 functions
+decompile add5                          : ............................................................ [ done ]
+decompile add10                         : ............................................................ [ done ]
+decompile add15                         : ............................................................ [ done ]
+decompile printarg                      : .WARN  ag - Referencing unknown line 08048828.0
+........................................................... [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 080489a0.0
+WARN  ag - Referencing unknown line 08048990.0
+WARN  ag - Referencing unknown line 08048980.0
+WARN  ag - Referencing unknown line 080489b0.0
+........................................................... [ done ]

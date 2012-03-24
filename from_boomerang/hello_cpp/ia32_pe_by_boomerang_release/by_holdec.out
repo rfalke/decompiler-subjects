@@ -1,18 +1,41 @@
-INFO  07:03:18 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:03:18 ke - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
-INFO  07:03:18 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+Preprocessing 4005 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+INFO  fG - disassembleAndWrite: found 2 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 3 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+Preprocessing 4005 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+Preprocessing 4499 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 4499 asm lines
+Exception in thread "main" java.lang.reflect.InvocationTargetException
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+Caused by: java.lang.RuntimeException: Can not get base command for 00402799.0+1 l.daa.
+	at holdec.hS.b(Unknown Source)
+	at holdec.fO.a(Unknown Source)
+	at holdec.hC.a(Unknown Source)
+	at holdec.fG.b(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	... 5 more
+Caused by: java.lang.IllegalArgumentException: Unknown command 'daa' orig='l.daa'
+	at holdec.fK.a(Unknown Source)
+	... 11 more

@@ -1,0 +1,51 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - reading info from ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+Preprocessing 13773 asm lines           : ............INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  fG - disassembleAndWrite: found 8 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 9 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+Preprocessing 13719 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  fG - disassembleAndWrite: found 4 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 13 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+Preprocessing 13723 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+Preprocessing 14800 asm lines           : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_borland/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 14800 asm lines
+WARN  w - Address 0080b12e.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : WARN  ag - Referencing unknown line 0080b12e.0
+............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+WARN  M - The last line of the last block 3027 is not a return or jump. Probably a data area.
+Writing 211 methods to cache            : ............................................................ [ done ]
+INFO  an - will decompile 1 functions
+decompile main                          : .WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+WARN  ag - Referencing unknown line 004038e4.0
+........................................................... [ done ]

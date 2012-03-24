@@ -1,0 +1,5 @@
+[activeFunctions]
+main
+
+[func:printf]
+signature: d4 printf(char *fmt, d4 value)

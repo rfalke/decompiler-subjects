@@ -1,0 +1,56 @@
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 00401243.0+2 l.repe ret
+INFO  holdec.ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 00401243.0+2 l.repe ret
+INFO  holdec.ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 960 asm lines
+WARN  holdec.w - Address 00402000.0 is excluded by the address filter. Maybe outside text section?
+ERROR holdec.fJ - The first line is 00401295.0+2 ~l.mov etp,0x10 but the main address is 004014ec.0. WILL NO WRITE THIS METHOD.
+INFO  holdec.an - will decompile 29 functions
+WARN  holdec.ag - Referencing unknown line 00401a2e.0
+WARN  holdec.ag - Referencing unknown line 0040123b.0
+WARN  holdec.ag - Referencing unknown line 0040123b.0
+WARN  holdec.ag - Referencing unknown line 00401000.0
+WARN  holdec.ag - Referencing unknown line 0040123b.0
+WARN  holdec.ag - Referencing unknown line 00401140.0
+WARN  holdec.ag - Referencing unknown line 004019fe.0
+WARN  holdec.ag - Referencing unknown line 004019fe.0
+WARN  holdec.ag - Referencing unknown line 004018bc.0
+WARN  holdec.ag - Referencing unknown line 00401a16.0
+WARN  holdec.ag - Referencing unknown line 00401a10.0
+WARN  holdec.ag - Referencing unknown line 004016ee.0
+WARN  holdec.ag - Referencing unknown line 00401901.0
+WARN  holdec.ag - Referencing unknown line 00401a0a.0
+WARN  holdec.ag - Referencing unknown line 00401652.0
+ERROR holdec.ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.ClassCastException: holdec.db cannot be cast to holdec.bX
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+WARN  holdec.ag - Referencing unknown line 00401760.0
+WARN  holdec.ag - Referencing unknown line 004017a0.0
+WARN  holdec.ag - Referencing unknown line 00401a28.0
+WARN  holdec.ag - Referencing unknown line 00401a22.0
+WARN  holdec.ac - Block 8 is already known to have a starting stack offset of -28 but when called from 7 it has an offset of -36

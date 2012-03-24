@@ -1,3 +1,8 @@
-INFO  07:05:07 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:07 holdec.ke - wrote ./from_dcc/dhamp/ia32_mz_from_dcc/subject.exe.info
-INFO  07:05:08 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_dcc/dhamp/ia32_mz_from_dcc/subject.exe as executable
+INFO  holdec.fG - Detected MZ (MS-DOS)
+INFO  holdec.ks - wrote ./from_dcc/dhamp/ia32_mz_from_dcc/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_dcc/dhamp/ia32_mz_from_dcc/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 00003bdf.0+2 w.repne inc bx

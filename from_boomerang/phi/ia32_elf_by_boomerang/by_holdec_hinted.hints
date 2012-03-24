@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+fib
+
+[func:fib]
+signature: u4 fib(u4 n)
+
+[func:printf]
+signature: d4 printf(d1 *fmt, d4 v1);

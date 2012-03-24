@@ -1,0 +1,92 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+Preprocessing 887 asm lines             : ...WARN  fP - Unknown rep line: 00401243.0+2 l.repe ret
+......................................................... [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+Preprocessing 960 asm lines             : ...WARN  fP - Unknown rep line: 00401243.0+2 l.repe ret
+......................................................... [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 960 asm lines
+WARN  w - Address 00402000.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 30 methods to cache             : ........ERROR fJ - The first line is 00401295.0+2 ~l.mov etp,0x10 but the main address is 004014ec.0. WILL NO WRITE THIS METHOD.
+.................................................... [ done ]
+INFO  an - will decompile 29 functions
+decompile F_00401000                    : .WARN  ag - Referencing unknown line 00401a2e.0
+WARN  ag - Referencing unknown line 0040123b.0
+................ failed: A non-current expression of a variable is used in block L5 in if(CMP(MARKER_SIGNED(16), <=, MARKER_SIGNED(reg_e2))) goto L10: The current setter is reg_e3 while [reg_e2] was found. Related expressions are [reg_e1, reg_pp7, reg_pp10, reg_e3, reg_e2]
+decompile F_00401140                    : .WARN  ag - Referencing unknown line 0040123b.0
+WARN  ag - Referencing unknown line 00401000.0
+WARN  ag - Referencing unknown line 0040123b.0
+........................................................... [ done ]
+decompile F_00401200                    : .WARN  ag - Referencing unknown line 00401140.0
+........................................................... [ done ]
+decompile F_0040123b                    : .WARN  ag - Referencing unknown line 004019fe.0
+WARN  ag - Referencing unknown line 004019fe.0
+.. failed: Unknown line 00401243.0+2 l.repe ret with code 'l.repe ret' and baseCommand 'repe'
+decompile F_0040164c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401652                    : .WARN  ag - Referencing unknown line 004018bc.0
+WARN  ag - Referencing unknown line 00401a16.0
+WARN  ag - Referencing unknown line 00401a10.0
+WARN  ag - Referencing unknown line 004016ee.0
+WARN  ag - Referencing unknown line 00401901.0
+........................................................... [ done ]
+decompile F_004016ee                    : .WARN  ag - Referencing unknown line 00401a0a.0
+........................................................... [ done ]
+decompile F_004016f7                    : .WARN  ag - Referencing unknown line 00401652.0
+........................................................... [ done ]
+decompile F_0040170e                    : ........................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.ClassCastException: holdec.db cannot be cast to holdec.bX
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.ClassCastException: holdec.db cannot be cast to holdec.bX
+decompile F_0040175a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401760                    : ............................................................ [ done ]
+decompile F_004017a0                    : ............................................................ [ done ]
+decompile F_004017f0                    : .WARN  ag - Referencing unknown line 00401760.0
+WARN  ag - Referencing unknown line 004017a0.0
+........................................................... [ done ]
+decompile F_004018ae                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004018b4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_004018bc                    : ............................................................ [ done ]
+decompile F_00401901                    : ............................................................ [ done ]
+decompile F_0040193a                    : .WARN  ag - Referencing unknown line 00401a28.0
+WARN  ag - Referencing unknown line 00401a22.0
+........................................................... [ done ]
+decompile F_00401965                    : ............................................................ [ done ]
+decompile F_00401968                    : .........WARN  ac - Block 8 is already known to have a starting stack offset of -28 but when called from 7 it has an offset of -36
+................................................... [ done ]
+decompile F_004019fe                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a04                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a0a                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a10                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a16                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a1c                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a22                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a28                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_00401a2e                    : .... failed: Block L0 calls block L1 which isn't available

@@ -1,3 +1,75 @@
-INFO  07:03:19 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:03:19 holdec.ke - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
-INFO  07:03:19 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 0041f1dd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f259.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f261.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f269.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2bd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c1.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c5.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c9.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f361.0+2 l.repe inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f369.0+2 l.repe inc ecx
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 4 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 5 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 0041f1c8[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1d0[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1dd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f259.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f261.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f269.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2bd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c1.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c5.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c9.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f361.0+2 l.repe inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f369.0+2 l.repe inc ecx
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,0].7
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,0].7
+INFO  holdec.fG - disassembleAndWrite: found 2 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 7 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 0041f1c8[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1d0[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1dd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f259.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f261.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f269.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2bd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c1.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c5.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c9.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f361.0+2 l.repe inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f369.0+2 l.repe inc ecx
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,0].7
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,0].7
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,2].7
+WARN  holdec.fE - Ignore overlapping address 0041f1d4[0,2].7
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+WARN  holdec.fP - Unknown rep line: 0041f1c8[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1d0[0,1].0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f1dd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f259.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f261.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f269.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2bd.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c1.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c5.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f2c9.0+2 l.repne inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f361.0+2 l.repe inc ecx
+WARN  holdec.fP - Unknown rep line: 0041f369.0+2 l.repe inc ecx
+INFO  holdec.ks - wrote ./from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 73220 asm lines

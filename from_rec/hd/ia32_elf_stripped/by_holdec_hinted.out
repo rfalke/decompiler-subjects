@@ -1,0 +1,68 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_rec/hd/ia32_elf_stripped/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - reading info from ./from_rec/hd/ia32_elf_stripped/input.info
+INFO  ks - wrote ./from_rec/hd/ia32_elf_stripped/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_rec/hd/ia32_elf_stripped/input.info
+Preprocessing 431 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_rec/hd/ia32_elf_stripped/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_rec/hd/ia32_elf_stripped/input.info
+Preprocessing 460 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_rec/hd/ia32_elf_stripped/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 460 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 080489c8.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 23 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 3 functions
+decompile dumpline                      : .WARN  ag - Referencing unknown line 08048548.0
+WARN  ag - Referencing unknown line 08048548.0
+WARN  ag - Referencing unknown line 08048508.0
+WARN  ag - Referencing unknown line 08048588.0
+WARN  ag - Referencing unknown line 080484b8.0
+WARN  ag - Referencing unknown line 080484b8.0
+WARN  ag - Referencing unknown line 080484c8.0
+........................WARN  eA - No default variable provided but needed. Will not replace usages.
+...............................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.ClassCastException: holdec.db cannot be cast to holdec.bX
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.ClassCastException: holdec.db cannot be cast to holdec.bX
+decompile hexdump                       : .WARN  ag - Referencing unknown line 08048950.0
+WARN  ag - Referencing unknown line 080484d8.0
+WARN  ag - Referencing unknown line 08048528.0
+WARN  ag - Referencing unknown line 080484d8.0
+WARN  ag - Referencing unknown line 08048518.0
+WARN  ag - Referencing unknown line 08048660.0
+WARN  ag - Referencing unknown line 08048538.0
+........................WARN  eA - No default variable provided but needed. Will not replace usages.
+.............WARN  d - may result in wrong values
+WARN  d -   reg_pp9 = PHI(reg_88_local2, reg_88_local0) in Block5
+WARN  d -   reg_88_local2 = ADD(reg_ak0, reg_pp9) in Block7
+...................... [ done ]
+decompile main                          : .WARN  ag - Referencing unknown line 080487f0.0
+.....................................WARN  d - may result in wrong values
+WARN  d -   reg_pp5 = PHI(reg_8_local2, reg_8_local0) in Block1
+WARN  d -   reg_8_local2 = ADD(reg_pp5, 1) in Block2
+...................... [ done ]

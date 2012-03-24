@@ -1,0 +1,37 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - reading info from ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info.canonFormat
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+Preprocessing 723 asm lines             : ............INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  fG - disassembleAndWrite: found 3 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 5 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+Preprocessing 710 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+Preprocessing 752 asm lines             : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/switch/ia32_pe_by_boomerang_gcc/input.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 752 asm lines
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+WARN  M - The last line of the last block 118 is not a return or jump. Probably a data area.
+Writing 32 methods to cache             : ..........................................................ERROR fJ - The first line is 00401040.0+1 l.push ebp but the main address is 00401790.0. WILL NO WRITE THIS METHOD.
+.. [ done ]
+INFO  an - will decompile 1 functions
+decompile _main                         : .WARN  ag - Referencing unknown line 00401440.0
+WARN  ag - Referencing unknown line 004014d0.0
+WARN  ag - Referencing unknown line 004014e0.0
+..INFO  fO - Skipping stack alignment: 00401088.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]

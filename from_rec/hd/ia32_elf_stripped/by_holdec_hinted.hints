@@ -1,0 +1,49 @@
+[0x80484b8]
+signature: d1* strcpy(d1* dest, d1* src)
+
+[0x80484c8]
+signature: d4 printf(d1* fmt, d4 para1)
+
+[0x80484d8]
+signature: void perror(d1* msg)
+
+[0x8048508]
+signature: d1* strcat(d1* dest, d1* src)
+
+[0x8048518]
+signature: d4 fread(d1* ptr, u4 size, u4 nmemb, d1* stream)
+
+[0x8048528]
+signature: d4 fopen(d1* path, d1* mode)
+
+[0x8048538]
+signature: d4 fclose(d4 file)
+
+[0x8048548]
+signature: d4 sprintf(d1* buf, d1* fmt, d4 para1)
+
+[0x8048588]
+signature: u4 strlen(d1* str)
+
+[0x8048660]
+signature: void dumpline(u1* p, u4 offset, d4 cnt)
+local-variable: 4,4,,dummy1
+local-variable: 8,4,,dummy2
+local-variable: 20,4,,c
+local-variable: 24,80,default,buffer
+
+[0x80487f0]
+signature: d4 hexdump(d1* fname)
+local-variable: 20,40,default,stat_buffer
+local-variable: 92,16,,read_buffer
+
+[0x80488e0]
+signature: d4 main(d4 argc, d1** argv)
+
+[0x8048950]
+signature: d4 stat(d1* fname, d1* buf)
+
+[activeFunctions]
+dumpline
+hexdump
+main

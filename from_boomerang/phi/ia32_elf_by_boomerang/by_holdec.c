@@ -1,50 +1,8 @@
-// addr = 08048254.0
-// signature= func(_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _init(???)
-{
-  (void) call_gmon_start();
-  (void) frame_dummy();
-  reg_result = __do_global_ctors_aux();
-  return reg_result;
-}
+// Decompiled by holdec 1.1 (2012-03-24)
 
-// addr = 080482ac.0
-// signature= func(_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _start(???)
-{
-  reg_ab = LOAD(InitStackPointer);
-  (void) STORE(InitStackPointer, InitValue(initial_value_of_eax));
-  (void) STORE(local + 12, 134513500);
-  (void) STORE(local + 16, reg_ab);
-  (void) STORE(local + 20, &ARG_0);
-  (void) STORE(local + 24, 134513708);
-  (void) STORE(local + 28, 134513756);
-  (void) STORE(local + 32, InitValue(initial_value_of_edx));
-  (void) STORE(local + 36, local + 36);
-  reg_ad = __libc_start_main();
-  asm("l.hlt");
-  (void) STORE(local + 4, InitValue(initial_value_of_ebx));
-  (void) STORE(local + 8, 0);
-  (void) STORE(local, reg_ad);
-  (void) F_080482da();
-  reg_result = LOAD(LOAD(local) + 4906);
-  if(reg_result  !=  0) {
-    reg_result = intern_redirectCall(reg_result);
-  }
-  return reg_result;
-}
+/* The decompilation of 0x0804827c / scanf failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
-// addr = 080482d0.0
-// signature= func(call_gmon_start, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? call_gmon_start(???)
-{
-  (void) F_080482da();
-  reg_result = LOAD(InitValue(initial_value_of_eax) + 4906);
-  if(reg_result  !=  0) {
-    reg_result = intern_redirectCall(reg_result);
-  }
-  return reg_result;
-}
+/* The decompilation of 0x0804829c / printf failed: java.lang.AssertionError: Block L0 calls block L1 which isn't available */
 
 // addr = 080482da.0
 // signature= func(F_080482da, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
@@ -53,26 +11,6 @@
   reg_result = LOAD(LOAD(InitStackPointer) + 4906);
   if(reg_result  !=  0) {
     reg_result = intern_redirectCall(reg_result);
-  }
-  return reg_result;
-}
-
-// addr = 080482f4.0
-// signature= func(__do_global_dtors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_dtors_aux(???)
-{
-  reg_result = InitValue(initial_value_of_eax);
-  if(LOAD(&g_0x08049608)  ==  0) {
-// addr = 08048330.0
-// signature= func(frame_dummy, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? frame_dummy(???)
-{
-  reg_result = g_0x080495e8;
-  if(reg_result  !=  0) {
-    reg_result = 0;
-    if(reg_result  !=  0) {
-      reg_result = F_00000000();
-    }
   }
   return reg_result;
 }
@@ -90,9 +28,8 @@
   (void) STORE(local + 4, reg_var2);
   (void) STORE(local, 134513895);
   (void) scanf();
-  reg_var1 = LOAD(local + 16);
-  if(reg_var1  >  1) {
-    (void) STORE(local, reg_var1 + -1);
+  if(LOAD(local + 16)  >  1) {
+    (void) STORE(local, LOAD(local + 16) + -1);
     reg_ag = fib();
     reg_var1 = reg_ag;
     (void) STORE(local, reg_ag + -1);
@@ -103,6 +40,7 @@
     (void) printf();
     reg_var4 = 0;
   } else {
+    reg_var1 = LOAD(local + 16);
     reg_var3 = 1;
     if(reg_var1  ==  1) {
       reg_var4 = 1;
@@ -121,33 +59,28 @@
   return 0;
 }
 
-// addr = 0804842c.0
-// signature= func(__libc_csu_init, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __libc_csu_init(???)
+// addr = 080483e0.0
+// signature= func(fib, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
+??? fib(???)
 {
-  (void) _init();
-  reg_result = 0;
-  reg_resulta = reg_result;
-  reg_var1 = 0;
-  if(reg_var1  <  reg_result) {
-    do {
-      reg_result = intern_redirectCall(LOAD(reg_var1 * 4 + 134518020));
-      reg_var1++;
-    } while(reg_var1  <  reg_resulta);
+  if(ARG_0  >  1) {
+    reg_aj = fib();
+    reg_var1 = reg_aj;
+    (void) fib();
+    (void) printf();
+    reg_var2 = 0;
+  } else {
+    reg_var1 = ARG_0;
+    reg_result = 1;
+    if(reg_var1  ==  1) {
+      reg_var2 = 1;
+    } else {
+      reg_var2 = 0;
+    }
   }
-  return reg_result;
-}
-
-// addr = 08048490.0
-// signature= func(__do_global_ctors_aux, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? __do_global_ctors_aux(???)
-{
-// addr = 080484b4.0
-// signature= func(_fini, ret=[<0, int(undef, 4),null,reg[eax]>], para=[], varargs=false)
-??? _fini(???)
-{
-  (void) F_080484be();
-  reg_result = __do_global_dtors_aux();
+  if(reg_var2  ==  0) {
+    reg_result = reg_var1;
+  }
   return reg_result;
 }
 

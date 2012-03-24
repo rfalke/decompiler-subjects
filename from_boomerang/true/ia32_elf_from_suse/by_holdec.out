@@ -1,217 +1,247 @@
-INFO  07:04:46 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.02s]
-INFO  07:04:46 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-INFO  07:04:46 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : ............................................................ [  0.24s]
-INFO  07:04:46 fA - disassembleAndWrite: running multiline
-INFO  07:04:46 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.01s]
-Preprocess gc                           : ............................................................ [  0.01s]
-Preprocess fK                           : ............................................................ [  0.02s]
-Preprocess fS                           : ............................................................ [  0.01s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.01s]
-Preprocess gj                           : ............................................................ [  0.01s]
-Preprocess fU                           : ............................................................ [  0.01s]
-Preprocess gb                           : ............................................................ [  0.01s]
-Preprocess gh                           : ............................................................ [  0.01s]
-Preprocess gl                           : ............................................................ [  0.01s]
-Preprocess fW                           : ............................................................ [  0.01s]
-Preprocess fI                           : ............................................................ [  0.01s]
-Preprocess fT                           : ............................................................ [  0.01s]
-Preprocess ge                           : ............................................................ [  0.01s]
-Preprocess fL                           : ............................................................ [  0.01s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.02s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.01s]
-Preprocess fM                           : ............................................................ [  0.01s]
-Preprocess fN                           : ............................................................ [  0.01s]
-Preprocess fX                           : ............................................................ [  0.01s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:47 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-INFO  07:04:47 fA - disassembleAndWrite: found 1 new addresses
-INFO  07:04:47 fA - disassembleAndWrite: start a new loop with 2 extra block starts
-Disassemble                             : ............................................................ [  0.09s]
-INFO  07:04:47 fA - disassembleAndWrite: running multiline
-INFO  07:04:47 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.01s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.01s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.01s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.00s]
-Preprocess fX                           : ............................................................ [  0.01s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:47 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-INFO  07:04:47 fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:47 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-Preprocess gi                           : ............................................................ [  0.01s]
-Preprocess gk                           : ............................................................ [  0.00s]
-Preprocess gc                           : ............................................................ [  0.00s]
-Preprocess fK                           : ............................................................ [  0.00s]
-Preprocess fS                           : ............................................................ [  0.00s]
-Preprocess fR                           : ............................................................ [  0.00s]
-Preprocess fQ                           : ............................................................ [  0.00s]
-Preprocess gj                           : ............................................................ [  0.00s]
-Preprocess fU                           : ............................................................ [  0.00s]
-Preprocess gb                           : ............................................................ [  0.00s]
-Preprocess gh                           : ............................................................ [  0.00s]
-Preprocess gl                           : ............................................................ [  0.00s]
-Preprocess fW                           : ............................................................ [  0.00s]
-Preprocess fI                           : ............................................................ [  0.00s]
-Preprocess fT                           : ............................................................ [  0.00s]
-Preprocess ge                           : ............................................................ [  0.00s]
-Preprocess fL                           : ............................................................ [  0.00s]
-Preprocess gg                           : ............................................................ [  0.00s]
-Preprocess fJ                           : ............................................................ [  0.00s]
-Preprocess fZ                           : ............................................................ [  0.00s]
-Preprocess gd                           : ............................................................ [  0.00s]
-Preprocess ga                           : ............................................................ [  0.00s]
-Preprocess fO                           : ............................................................ [  0.00s]
-Preprocess gf                           : ............................................................ [  0.00s]
-Preprocess fY                           : ............................................................ [  0.00s]
-Preprocess fM                           : ............................................................ [  0.00s]
-Preprocess fN                           : ............................................................ [  0.00s]
-Preprocess fX                           : ............................................................ [  0.00s]
-Preprocess fV                           : ............................................................ [  0.00s]
-INFO  07:04:47 ke - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
-INFO  07:04:47 fA - reading all asm lines ...
-INFO  07:04:47 fA - ... read 1993 asm lines
-WARN  07:04:47 w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:47 w - Address 08048134.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:47 w - Address 08049f20.0 is excluded by the address filter. Maybe outside text section?
-create blocks                           : ............................................................ [  0.01s]
-init blocks                             : ............................................................ [  0.00s]
-Writing 75 methods to cache             : ...........................................ERROR 07:04:47 fD - The first line is 080495c0.0+1 l.push ebp but the main address is 08049890.0. WILL NO WRITE THIS METHOD.
-.ERROR 07:04:47 fD - The first line is 080487f8.0+6 l.jmp ds:[0x804b758] but the main address is 080498d0.0. WILL NO WRITE THIS METHOD.
-....ERROR 07:04:47 fD - The first line is 08049bc0.0+1 l.push ebp but the main address is 08049bf0.0. WILL NO WRITE THIS METHOD.
-.ERROR 07:04:47 fD - The first line is 08049bc0.0+1 l.push ebp but the main address is 08049c30.0. WILL NO WRITE THIS METHOD.
-........... [  0.01s]
-INFO  07:04:47 am - will decompile 71 functions
-decompile _init                         : ............................................................ [  0.08s]
-decompile F_080487d8                    : ... failed: There is no target block for index 0
-decompile F_080487e8                    : ... failed: There is no target block for index 0
-decompile F_080487f8                    : ... failed: There is no target block for index 0
-decompile F_08048808                    : ... failed: There is no target block for index 0
-decompile F_08048818                    : ... failed: There is no target block for index 0
-decompile F_08048828                    : ... failed: There is no target block for index 0
-decompile F_08048838                    : ... failed: There is no target block for index 0
-decompile F_08048848                    : ... failed: There is no target block for index 0
-decompile F_08048858                    : ... failed: There is no target block for index 0
-decompile F_08048868                    : ... failed: There is no target block for index 0
-decompile F_08048878                    : ... failed: There is no target block for index 0
-decompile F_08048888                    : ... failed: There is no target block for index 0
-decompile F_08048898                    : ... failed: There is no target block for index 0
-decompile F_080488a8                    : ... failed: There is no target block for index 0
-decompile F_080488b8                    : ... failed: There is no target block for index 0
-decompile F_080488c8                    : ... failed: There is no target block for index 0
-decompile F_080488d8                    : ... failed: There is no target block for index 0
-decompile F_080488e8                    : ... failed: There is no target block for index 0
-decompile F_080488f8                    : ... failed: There is no target block for index 0
-decompile F_08048908                    : ... failed: There is no target block for index 0
-decompile F_08048918                    : ... failed: There is no target block for index 0
-decompile F_08048928                    : ... failed: There is no target block for index 0
-decompile F_08048938                    : ... failed: There is no target block for index 0
-decompile F_08048948                    : ... failed: There is no target block for index 0
-decompile F_08048958                    : ... failed: There is no target block for index 0
-decompile F_08048968                    : ... failed: There is no target block for index 0
-decompile F_08048978                    : ... failed: There is no target block for index 0
-decompile F_08048988                    : ... failed: There is no target block for index 0
-decompile F_08048998                    : ... failed: There is no target block for index 0
-decompile F_080489a8                    : ... failed: There is no target block for index 0
-decompile _start                        : ...INFO  07:04:47 fG - Skipping stack alignment: 080489c5.0+3 l.and esp,0xfffffff0
-......................................................... [  0.19s]
-decompile call_gmon_start               : ............................................................ [  0.07s]
-decompile F_080489ed                    : ............................................................ [  0.05s]
-decompile __do_global_dtors_aux         : ...................................................WARN  07:04:48 o -   load size differs from loaded size for g_0x0804b804 vs. LOAD(ADDR(g_0x0804b804))
-......... [  0.14s]
-decompile frame_dummy                   : ............................................................ [  0.07s]
-decompile usage                         : ...INFO  07:04:48 fG - Skipping stack alignment: 08048b6c.0+3 l.and esp,0xfffffff0
-..................... failed: usage has no exit blocks
-decompile main                          : ...INFO  07:04:48 fG - Skipping stack alignment: 08048b6c.0+3 l.and esp,0xfffffff0
-..................... failed: main has no exit blocks
-decompile close_stdout_set_file_name    : ............................................................ [  0.01s]
-decompile close_stdout                  : ............................................................ [  0.24s]
-decompile get_quoting_style             : ............................................................ [  0.03s]
-decompile set_quoting_style             : ............................................................ [  0.03s]
-decompile set_char_quoting              : ...................................................WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-......... [  0.08s]
-decompile clone_quoting_options         : ............................................................ [  0.06s]
-decompile quoting_options_from_style    : ............................................................ [  0.10s]
-decompile gettext_quote                 : ............................................................ [  0.06s]
-decompile quotearg_buffer_restyled      : ... failed: There is no target block for index 0
-decompile quotearg_buffer               : ............................................................ [  0.03s]
-decompile quotearg_n_options            : ......... failed: Block 16 is already known to have a starting stack offset of -8 but when called from 15 it has an offset of -68
-decompile quotearg_char                 : ...................................................WARN  07:04:49 o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
-......... [  0.05s]
-decompile quotearg_colon                : ............................................................ [  0.01s]
-decompile quotearg_n_style_mem          : ............................................................ [  0.02s]
-decompile quotearg_n_style              : ............................................................ [  0.07s]
-decompile quotearg_style                : ............................................................ [  0.01s]
-decompile quotearg                      : ............................................................ [  0.01s]
-decompile version_etc                   : ............................................................ [  0.02s]
-decompile xalloc_die                    : ........................ failed: xalloc_die has no exit blocks
-decompile xcalloc                       : ......... failed: Block 24 is already known to have a starting stack offset of -4 but when called from 5 it has an offset of -40
-decompile xrealloc                      : ......... failed: Block 0 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -20
-decompile xnrealloc                     : ......... failed: Block 6 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -40
-decompile xmalloc                       : ......... failed: Block 3 is already known to have a starting stack offset of -12 but when called from 2 it has an offset of -16
-decompile xclone                        : ............................................................ [  0.02s]
-decompile xzalloc                       : ............................................................ [  0.02s]
-decompile xnmalloc                      : ......... failed: Block 7 is already known to have a starting stack offset of -4 but when called from 4 it has an offset of -40
-decompile __libc_csu_fini               : .................................................ERROR 07:04:49 hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
-java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
-	at holdec.bb.b(Unknown Source)
-	at holdec.bb.a(Unknown Source)
-	at holdec.hQ.e(Unknown Source)
-	at holdec.hQ.b(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.dL.e(Unknown Source)
-	at holdec.eK.a(Unknown Source)
-	at holdec.eC.a(Unknown Source)
-	at holdec.dL.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/true/ia32_elf_from_suse/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+Preprocessing 1878 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+Preprocessing 1878 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+Preprocessing 1993 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/true/ia32_elf_from_suse/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 1993 asm lines
+WARN  w - Address 00000000.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08048134.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08049f20.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ......WARN  ag - Referencing unknown line 00000000.0
+...................................................... [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 75 methods to cache             : ...........................................ERROR fJ - The first line is 080495c0.0+1 l.push ebp but the main address is 08049890.0. WILL NO WRITE THIS METHOD.
+.ERROR fJ - The first line is 080487f8.0+6 l.jmp ds:[0x804b758] but the main address is 080498d0.0. WILL NO WRITE THIS METHOD.
+....ERROR fJ - The first line is 08049bc0.0+1 l.push ebp but the main address is 08049bf0.0. WILL NO WRITE THIS METHOD.
+.ERROR fJ - The first line is 08049bc0.0+1 l.push ebp but the main address is 08049c30.0. WILL NO WRITE THIS METHOD.
+........... [ done ]
+INFO  an - will decompile 62 functions
+decompile F_080487d8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080487e8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080487f8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048808                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048818                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048828                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048838                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048848                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048858                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048868                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048878                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048888                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048898                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488a8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488b8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488c8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488d8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488e8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488f8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048908                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048918                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048928                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048938                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048948                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048958                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048968                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048978                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048988                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_08048998                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489a8                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080489ed                    : ............................................................ [ done ]
+decompile usage                         : .WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 080488f8.0
+WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 080487f8.0
+WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 080487f8.0
+WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 080488f8.0
+WARN  ag - Referencing unknown line 08048938.0
+WARN  ag - Referencing unknown line 08048838.0
+WARN  ag - Referencing unknown line 08048898.0
+WARN  ag - Referencing unknown line 080488e8.0
+WARN  ag - Referencing unknown line 08049e90.0
+WARN  ag - Referencing unknown line 08048938.0
+WARN  ag - Referencing unknown line 08048818.0
+WARN  ag - Referencing unknown line 08049af0.0
+..INFO  fO - Skipping stack alignment: 08048b6c.0+3 l.and esp,0xfffffff0
+.............. failed: A non-current expression of a variable is used in block L1 in (void) STORE(ADD(reg_pp1, SEGMENT2ADDR(reg_pp2)), 0): The current setter is reg_zi1 while [reg_pp2] was found. Related expressions are [reg_zi5, reg_zi4, reg_pp9, reg_zi2, reg_pp4, reg_pp2, reg_zi1, reg_zi0]
+decompile main                          : .WARN  ag - Referencing unknown line 08048838.0
+WARN  ag - Referencing unknown line 08048898.0
+WARN  ag - Referencing unknown line 080488e8.0
+WARN  ag - Referencing unknown line 08049e90.0
+WARN  ag - Referencing unknown line 08048938.0
+WARN  ag - Referencing unknown line 08048818.0
+WARN  ag - Referencing unknown line 08049af0.0
+WARN  ag - Referencing unknown line 08048a80.0
+..INFO  fO - Skipping stack alignment: 08048b6c.0+3 l.and esp,0xfffffff0
+.............. failed: A non-current expression of a variable is used in block L1 in (void) STORE(ADD(reg_pp1, SEGMENT2ADDR(reg_pp2)), 0): The current setter is reg_zi1 while [reg_pp2] was found. Related expressions are [reg_zi5, reg_zi4, reg_pp9, reg_zi2, reg_pp4, reg_pp2, reg_zi1, reg_zi0]
+decompile close_stdout_set_file_name    : ............................................................ [ done ]
+decompile close_stdout                  : .WARN  ag - Referencing unknown line 080487d8.0
+WARN  ag - Referencing unknown line 08048918.0
+WARN  ag - Referencing unknown line 08048858.0
+WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 080497e0.0
+WARN  ag - Referencing unknown line 08048998.0
+WARN  ag - Referencing unknown line 08048998.0
+........................................................... [ done ]
+decompile get_quoting_style             : ............................................................ [ done ]
+decompile set_quoting_style             : ............................................................ [ done ]
+decompile set_char_quoting              : ...................................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile clone_quoting_options         : .WARN  ag - Referencing unknown line 08048858.0
+WARN  ag - Referencing unknown line 08049cf0.0
+........................................................... [ done ]
+decompile quoting_options_from_style    : ............................................................ [ done ]
+decompile gettext_quote                 : .WARN  ag - Referencing unknown line 08048828.0
+........................................................... [ done ]
+decompile quotearg_buffer_restyled      : .WARN  ag - Referencing unknown line 08048928.0
+WARN  ag - Referencing unknown line 080489a8.0
+WARN  ag - Referencing unknown line 080488b8.0
+WARN  ag - Referencing unknown line 08048958.0
+WARN  ag - Referencing unknown line 08048988.0
+WARN  ag - Referencing unknown line 080488a8.0
+................ failed: A non-current expression of a variable is used in block L12 in reg_b2 = UNSIGNED_EXTEND(LOAD(ADD(reg_b1, reg_e4, SEGMENT2ADDR(reg_pp13)))): The current setter is reg_zj3 while [reg_pp13] was found. Related expressions are [reg_zj21, reg_zj22, reg_pp66, reg_zj20, reg_pp7, reg_pp64, reg_pp21, reg_pp46, reg_pp43, reg_pp23, reg_zj8, reg_zj7, reg_zj9, reg_zj4, reg_zj3, reg_zj6, reg_zj5, reg_zj19, reg_zj0, reg_zj18, reg_zj2, reg_zj16, reg_zj10, reg_zj11, reg_zj13, reg_pp79, reg_zj15, reg_pp31, reg_pp56, reg_pp71, reg_pp34, reg_pp37, reg_pp13, reg_pp10]
+decompile quotearg_buffer               : .WARN  ag - Referencing unknown line 08048858.0
+WARN  ag - Referencing unknown line 08048f20.0
+........................................................... [ done ]
+decompile quotearg_n_options            : .WARN  ag - Referencing unknown line 08048858.0
+WARN  ag - Referencing unknown line 08049bc0.0
+WARN  ag - Referencing unknown line 08049560.0
+WARN  ag - Referencing unknown line 08048968.0
+WARN  ag - Referencing unknown line 08049cf0.0
+WARN  ag - Referencing unknown line 08049560.0
+WARN  ag - Referencing unknown line 08048858.0
+WARN  ag - Referencing unknown line 08049cf0.0
+WARN  ag - Referencing unknown line 08048878.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048d90.0
+........WARN  ac - Block 16 is already known to have a starting stack offset of -8 but when called from 15 it has an offset of -68
+................................................... [ done ]
+decompile quotearg_char                 : .WARN  ag - Referencing unknown line 08048d90.0
+WARN  ag - Referencing unknown line 080495c0.0
+..................................................WARN  o -   load size differs from loaded size for ARG_1 vs. LOAD(ADDR(ARG_1))
+......... [ done ]
+decompile quotearg_colon                : .WARN  ag - Referencing unknown line 08049750.0
+........................................................... [ done ]
+decompile quotearg_n_style_mem          : .WARN  ag - Referencing unknown line 08048e70.0
+WARN  ag - Referencing unknown line 080495c0.0
+........................................................... [ done ]
+decompile quotearg_n_style              : .WARN  ag - Referencing unknown line 08048e70.0
+WARN  ag - Referencing unknown line 080495c0.0
+........................................................... [ done ]
+decompile quotearg_style                : .WARN  ag - Referencing unknown line 08049830.0
+........................................................... [ done ]
+decompile quotearg                      : .WARN  ag - Referencing unknown line 08049890.0
+........................................................... [ done ]
+decompile version_etc                   : .WARN  ag - Referencing unknown line 080498d0.0
+........................................................... [ done ]
+decompile xalloc_die                    : .WARN  ag - Referencing unknown line 08048828.0
+WARN  ag - Referencing unknown line 08048998.0
+WARN  ag - Referencing unknown line 08048878.0
+....................... failed: xalloc_die has no exit blocks
+decompile xcalloc                       : .WARN  ag - Referencing unknown line 08048948.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 080488d8.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 080488d8.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048868.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048908.0
+........WARN  ac - Block 24 is already known to have a starting stack offset of -4 but when called from 5 it has an offset of -40
+WARN  ac - Block 4 is already known to have a starting stack offset of -28 but when called from 9 it has an offset of -48
+WARN  ac - Block 24 is already known to have a starting stack offset of -40 but when called from 20 it has an offset of -108
+WARN  ac - Block 24 is already known to have a starting stack offset of -108 but when called from 23 it has an offset of -124
+WARN  ac - Block 24 is already known to have a starting stack offset of -124 but when called from 22 it has an offset of -120
+WARN  ac - Block 4 is already known to have a starting stack offset of -48 but when called from 15 it has an offset of -76
+................................................... [ done ]
+decompile xrealloc                      : .WARN  ag - Referencing unknown line 080488d8.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 080488d8.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048868.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048908.0
+........WARN  ac - Block 0 is already known to have a starting stack offset of 0 but when called from 5 it has an offset of -20
+WARN  ac - Block 0 is already known to have a starting stack offset of -20 but when called from 11 it has an offset of -48
+WARN  ac - Block 20 is already known to have a starting stack offset of -12 but when called from 19 it has an offset of -96
+WARN  ac - Block 20 is already known to have a starting stack offset of -96 but when called from 18 it has an offset of -92
+WARN  ac - Block 20 is already known to have a starting stack offset of -96 but when called from 16 it has an offset of -80
+................................................... [ done ]
+decompile xnrealloc                     : .WARN  ag - Referencing unknown line 080488d8.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048868.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048908.0
+........WARN  ac - Block 6 is already known to have a starting stack offset of -28 but when called from 4 it has an offset of -40
+WARN  ac - Block 6 is already known to have a starting stack offset of -40 but when called from 5 it has an offset of -44
+................................................... [ done ]
+decompile xmalloc                       : .WARN  ag - Referencing unknown line 08048868.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08048908.0
+........WARN  ac - Block 3 is already known to have a starting stack offset of -12 but when called from 2 it has an offset of -16
+................................................... [ done ]
+decompile xclone                        : .WARN  ag - Referencing unknown line 08049cf0.0
+WARN  ag - Referencing unknown line 08048908.0
+........................................................... [ done ]
+decompile xzalloc                       : .WARN  ag - Referencing unknown line 08049cf0.0
+WARN  ag - Referencing unknown line 08048978.0
+........................................................... [ done ]
+decompile xnmalloc                      : .WARN  ag - Referencing unknown line 08048868.0
+WARN  ag - Referencing unknown line 08049b20.0
+WARN  ag - Referencing unknown line 08049e88.0
+WARN  ag - Referencing unknown line 08049ef4.0
+WARN  ag - Referencing unknown line 08049ef4.0
+........WARN  ac - Block 7 is already known to have a starting stack offset of -4 but when called from 4 it has an offset of -40
+........................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.RuntimeException: Block L5 is unused: called=[] isEntry=false isIncluded=false
+	at holdec.bc.b(Unknown Source)
+	at holdec.bc.a(Unknown Source)
+	at holdec.ie.e(Unknown Source)
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
- failed: java.lang.RuntimeException: Block L2 is unused: called=[] isEntry=false isIncluded=false
-decompile __libc_csu_init               : ............................ failed: The jump goto L3 in block 0 got converted to a default jump after simplification and is not the last jump.
-decompile __i686.get_pc_thunk.bx        : ............................................................ [  0.01s]
-decompile atexit                        : ............................................................ [  0.03s]
-decompile __do_global_ctors_aux         : ............................................................ [  0.04s]
-decompile _fini                         : ............................................................ [  0.02s]
-decompile F_08049efd                    : ............................................................ [  0.02s]
+ failed: java.lang.RuntimeException: Block L5 is unused: called=[] isEntry=false isIncluded=false
+decompile __i686.get_pc_thunk.bx        : ............................................................ [ done ]
+decompile atexit                        : .WARN  ag - Referencing unknown line 08049e88.0
+WARN  ag - Referencing unknown line 08048848.0
+........................................................... [ done ]
+decompile F_08049efd                    : .WARN  ag - Referencing unknown line 08048a10.0
+........................................................... [ done ]

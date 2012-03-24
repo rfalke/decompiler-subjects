@@ -1,15 +1,88 @@
-INFO  07:02:40 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-read image                              : ............................................................ [  0.01s]
-Exception in thread "main" java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
-	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.IllegalArgumentException: Already know about 'init_dummy': 08048930.0 init_dummy new=080494c0.0 init_dummy
-	at holdec.hD.a(Unknown Source)
-	at holdec.fA.d(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	... 5 more
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected ELF (Executable and Linkable Format)
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+Preprocessing 1246 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+INFO  fG - disassembleAndWrite: found 1 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 2 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+Preprocessing 1250 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+Preprocessing 1461 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_boomerang/branch/ia32_elf_by_boomerang_sunos/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 1461 asm lines
+WARN  w - Address 080480d4.0 is excluded by the address filter. Maybe outside text section?
+WARN  w - Address 08049524.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 49 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 25 functions
+decompile atexit                        : .... failed: Block L0 calls block L1 which isn't available
+decompile exit                          : .... failed: Block L0 calls block L1 which isn't available
+decompile scanf                         : .... failed: Block L0 calls block L1 which isn't available
+decompile printf                        : .... failed: Block L0 calls block L1 which isn't available
+decompile malloc                        : .... failed: Block L0 calls block L1 which isn't available
+decompile free                          : .... failed: Block L0 calls block L1 which isn't available
+decompile abort                         : .... failed: Block L0 calls block L1 which isn't available
+decompile memset                        : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080488b9                    : .WARN  ag - Referencing unknown line 080492c8.0
+........................................................... [ done ]
+decompile F_080488f9                    : ............................................................ [ done ]
+decompile F_08048911                    : .WARN  ag - Referencing unknown line 0804923c.0
+........................................................... [ done ]
+decompile F_08048939                    : ............................................................ [ done ]
+decompile F_08048948                    :  failed: self=08048948[0,1].0 first=08048948[0,1].0
+decompile F_08048b86                    : .WARN  ag - Referencing unknown line 08048af0.0
+........................................................... [ done ]
+decompile F_08048c16                    : .WARN  ag - Referencing unknown line 08048b48.0
+WARN  ag - Referencing unknown line 08048b48.0
+WARN  ag - Referencing unknown line 08048800.0
+WARN  ag - Referencing unknown line 08048b78.0
+WARN  ag - Referencing unknown line 08048b78.0
+........WARN  ac - Block 10 is already known to have a starting stack offset of 4 but when called from 9 it has an offset of -16
+................................................... [ done ]
+decompile F_08048d02                    : .WARN  ag - Referencing unknown line 08048c08.0
+.............................. failed: A non-current expression of a variable is used in block L4 in if(CMP(LOAD(ADD(InitValue(initial_value_of_ebp), 8)), <, LOAD(reg_pp24))) goto L6: The current setter is reg_var13 while [reg_pp24] was found. Related expressions are [reg_var14, reg_var13, reg_var10, reg_pp25, reg_pp24, reg_pp23]
+decompile F_08048da2                    : .WARN  ag - Referencing unknown line 08048a58.0
+WARN  ag - Referencing unknown line 08048a94.0
+WARN  ag - Referencing unknown line 08048a58.0
+........WARN  ac - Block 9 is already known to have a starting stack offset of 4 but when called from 8 it has an offset of -4
+WARN  ac - Block 10 is already known to have a starting stack offset of 4 but when called from 9 it has an offset of -4
+................................................... [ done ]
+decompile F_08048eba                    : .WARN  ag - Referencing unknown line 08048a58.0
+WARN  ag - Referencing unknown line 08048820.0
+........WARN  ac - Block 9 is already known to have a starting stack offset of 4 but when called from 3 it has an offset of -4
+WARN  ac - Block 9 is already known to have a starting stack offset of -4 but when called from 5 it has an offset of 4
+WARN  ac - Block 9 is already known to have a starting stack offset of -4 but when called from 8 it has an offset of 4
+................................................... [ done ]
+decompile F_08049245                    : ............................................................ [ done ]
+decompile F_0804928d                    : ............................................................ [ done ]
+decompile F_080492d1                    : .WARN  ag - Referencing unknown line 08048810.0
+WARN  ag - Referencing unknown line 08048820.0
+........WARN  ac - Block 7 is already known to have a starting stack offset of 4 but when called from 4 it has an offset of 0
+WARN  ac - Block 7 is already known to have a starting stack offset of 0 but when called from 6 it has an offset of 4
+.............................WARN  d - may result in wrong values
+WARN  d -   reg_pp6 = PHI(reg_var13, reg_var10) in Block2
+WARN  d -   reg_var13 = ADD(LOAD(reg_pp6), 20) in Block5
+...................... [ done ]
+decompile F_08049331                    : .WARN  ag - Referencing unknown line 08048cf4.0
+WARN  ag - Referencing unknown line 08048d94.0
+WARN  ag - Referencing unknown line 08048830.0
+WARN  ag - Referencing unknown line 08048eac.0
+WARN  ag - Referencing unknown line 08048a58.0
+WARN  ag - Referencing unknown line 08048eac.0
+........................................................... [ done ]
+decompile F_08049496                    : ............................................................ [ done ]
+decompile init_dummy0                   : ............................................................ [ done ]
+decompile F_080494c9                    : ............................................................ [ done ]

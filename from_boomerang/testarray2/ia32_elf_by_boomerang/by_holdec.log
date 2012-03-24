@@ -1,38 +1,31 @@
-INFO  07:04:32 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:04:32 holdec.ke - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:32 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
-INFO  07:04:32 holdec.fA - disassembleAndWrite: running multiline
-INFO  07:04:32 holdec.ke - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:32 holdec.ke - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:32 holdec.fA - disassembleAndWrite: found no new addresses. will stop now.
-INFO  07:04:32 holdec.ke - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:33 holdec.ke - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
-INFO  07:04:33 holdec.fA - reading all asm lines ...
-INFO  07:04:33 holdec.fA - ... read 297 asm lines
-WARN  07:04:33 holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
-WARN  07:04:33 holdec.w - Address 08048510.0 is excluded by the address filter. Maybe outside text section?
-INFO  07:04:33 holdec.am - will decompile 18 functions
-INFO  07:04:33 holdec.fG - Skipping stack alignment: 080482c5.0+3 l.and esp,0xfffffff0
-WARN  07:04:33 holdec.o -   load size differs from loaded size for g_0x0804965c vs. LOAD(ADDR(g_0x0804965c))
-INFO  07:04:33 holdec.fG - Skipping stack alignment: 080483b2.0+3 l.and esp,0xfffffff0
-ERROR 07:04:34 holdec.hQ - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
-java.lang.AssertionError: Failed to find StatementExpressionOccurrence{blockId=2, statementIndex=5, statement=reg_36_local1 = ADD(reg_pp4, 1), inLhs=true, inRhs=false} in [JumpExpressionOccurrence{blockId=1, jumpIndex=0, jump=if(CMP(reg_pp1, >, 4)) goto L10}]
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.b(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.hQ.a(Unknown Source)
-	at holdec.dL.e(Unknown Source)
-	at holdec.eK.a(Unknown Source)
-	at holdec.eC.a(Unknown Source)
-	at holdec.dL.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.am.a(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
-	at holdec.Holdec.main(Unknown Source)
-ERROR 07:04:34 holdec.o - Can't find a setter for reg_0_local for block 0
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 297 asm lines
+WARN  holdec.w - Address 08048114.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 08048510.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 9 functions
+WARN  holdec.ag - Referencing unknown line 080482b0.0
+WARN  holdec.ag - Referencing unknown line 080482b0.0
+WARN  holdec.ag - Referencing unknown line 08048368.0
+WARN  holdec.ag - Referencing unknown line 0804838a.0
+WARN  holdec.ag - Referencing unknown line 080482b0.0
+INFO  holdec.fO - Skipping stack alignment: 080483b2.0+3 l.and esp,0xfffffff0
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp4 = PHI(reg_36_local2, reg_36_local0) in Block1
+WARN  holdec.d -   reg_36_local2 = ADD(reg_pp4, 1) in Block2
+WARN  holdec.ag - Referencing unknown line 08048278.0
+WARN  holdec.ag - Referencing unknown line 080484f4.0
+WARN  holdec.d - may result in wrong values
+WARN  holdec.d -   reg_pp5 = PHI(reg_var11, reg_var10) in Block2
+WARN  holdec.d -   reg_var11 = ADD(reg_pp5, -1) in Block1
+WARN  holdec.ag - Referencing unknown line 08048308.0

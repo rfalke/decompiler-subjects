@@ -1,0 +1,16 @@
+[activeFunctions]
+main
+fib1
+fib2
+
+[0x0804835c]
+signature: u4 fib1(u4 n)
+
+[0x08048368]
+signature: u4 fib2(u4 n)
+
+#[0x08048390]
+#signature: u4 fib(u4 n)
+
+#[0x08048268]
+#signature: d4 printf(d1 *fmt, d4 v1);

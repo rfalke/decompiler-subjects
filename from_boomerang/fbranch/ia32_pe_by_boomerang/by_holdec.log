@@ -1,3 +1,13 @@
-INFO  07:02:50 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:02:50 holdec.ke - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
-INFO  07:02:51 holdec.fA - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe as executable
+INFO  holdec.fG - Detected PE (Portable Executable)
+INFO  holdec.ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 9 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 10 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.info

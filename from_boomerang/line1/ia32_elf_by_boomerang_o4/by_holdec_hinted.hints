@@ -1,0 +1,21 @@
+[activeFunctions]
+main
+chomp
+
+[func:chomp]
+signature: char *chomp(char *s, int size, d1 *f)
+
+[func:strchr]
+signature: d1 *strchr(d1 *s, d4 c)
+
+[func:fgets]
+signature: char *fgets(char *s, int size, d1 *stream)
+
+[func:fopen]
+signature: d4 fopen(d1* path, d1* mode)
+
+[func:fclose]
+signature: d4 fclose(d4 file)
+
+[func:puts]
+signature: int puts(const char *s)

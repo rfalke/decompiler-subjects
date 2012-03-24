@@ -1,0 +1,204 @@
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  fG - Detected PE (Portable Executable)
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.info
+Preprocessing 41985 asm lines           : ...WARN  fP - Unknown rep line: 00411978.0+2 l.repe ret
+......................................................... [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.info
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.info
+Preprocessing 42241 asm lines           : ...WARN  fP - Unknown rep line: 00411978.0+2 l.repe ret
+......................................................... [ done ]
+INFO  ks - wrote ./from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 42241 asm lines
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+WARN  M - The last line of the last block 608 is not a return or jump. Probably a data area.
+Writing 50 methods to cache             : ............................................................ [ done ]
+INFO  an - will decompile 50 functions
+decompile F_00411005                    : .WARN  ag - Referencing unknown line 0041117c.0
+WARN  ag - Referencing unknown line 0041112c.0
+........................................................... [ done ]
+decompile F_0041100a                    : ............................................................ [ done ]
+decompile F_00411023                    : .WARN  ag - Referencing unknown line 004110ff.0
+WARN  ag - Referencing unknown line 004110ff.0
+.. failed: Unknown line 00411978.0+2 l.repe ret with code 'l.repe ret' and baseCommand 'repe'
+decompile F_0041103c                    : ............................................................ [ done ]
+decompile F_00411055                    : .........WARN  ac - Block 9 is already known to have a starting stack offset of -28 but when called from 8 it has an offset of -36
+................................................... [ done ]
+decompile F_00411073                    : .WARN  ag - Referencing unknown line 00411118.0
+........................................................... [ done ]
+decompile F_0041108c                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00411096                    : .WARN  ag - Referencing unknown line 004110f0.0
+........................................................... [ done ]
+decompile F_004110a5                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004110aa                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004110b9                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004110be                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004110c3                    : .WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 004110aa.0
+WARN  ag - Referencing unknown line 004110be.0
+WARN  ag - Referencing unknown line 004110c8.0
+WARN  ag - Referencing unknown line 004110c8.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411096.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411168.0
+........................................................... [ done ]
+decompile F_004110c8                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004110e1                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp10 = PHI(reg_4_local0, reg_4_local1) in Block3
+WARN  d -   reg_4_local1 = ADD(reg_pp10, 1) in Block2
+...................... [ done ]
+decompile F_004110f0                    : .WARN  ag - Referencing unknown line 004123f0.0
+WARN  ag - Referencing unknown line 00411023.0
+........................................................... [ done ]
+decompile F_004110ff                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00411104                    : ............................................................ [ done ]
+decompile F_00411113                    : ............................................................ [ done ]
+decompile F_00411118                    : .WARN  ag - Referencing unknown line 0041108c.0
+WARN  ag - Referencing unknown line 004111f4.0
+WARN  ag - Referencing unknown line 00412f55.0
+........................................................... [ done ]
+decompile F_0041111d                    : ............................................................ [ done ]
+decompile F_0041112c                    : .WARN  ag - Referencing unknown line 0041118b.0
+........................................................... [ done ]
+decompile F_00411136                    : .WARN  ag - Referencing unknown line 00411055.0
+WARN  ag - Referencing unknown line 00411d70.0
+........................................................... [ done ]
+decompile F_0041114f                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00411163                    : .WARN  ag - Referencing unknown line 00411860.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 004110c3.0
+WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411096.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411168.0
+........................................................... [ done ]
+decompile F_00411168                    : .WARN  ag - Referencing unknown line 004111e0.0
+........................................................... [ done ]
+decompile F_0041116d                    : .WARN  ag - Referencing unknown line 00411163.0
+WARN  ag - Referencing unknown line 00411168.0
+........................................................... [ done ]
+decompile F_00411172                    : .................................................ERROR ie - Caught an Exception while trying to construct regions. Will dump blocks and regions (if available).
+java.lang.AssertionError
+	at holdec.ie.b(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.ie.a(Unknown Source)
+	at holdec.dQ.e(Unknown Source)
+	at holdec.eQ.a(Unknown Source)
+	at holdec.eI.a(Unknown Source)
+	at holdec.dQ.a(Unknown Source)
+	at holdec.fG.a(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
+	at holdec.Holdec.main(Unknown Source)
+ failed: java.lang.AssertionError
+decompile F_0041117c                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_0041118b                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00411190                    : .WARN  ag - Referencing unknown line 00413770.0
+........WARN  ac - Block 2 is already known to have a starting stack offset of -88 but when called from 3 it has an offset of -100
+WARN  ac - Block 48 is already known to have a starting stack offset of -88 but when called from 20 it has an offset of -100
+WARN  ac - Block 20 is already known to have a starting stack offset of -108 but when called from 18 it has an offset of -116
+WARN  ac - Block 47 is already known to have a starting stack offset of -116 but when called from 22 it has an offset of -128
+WARN  ac - Block 44 is already known to have a starting stack offset of -168 but when called from 27 it has an offset of -180
+WARN  ac - Block 47 is already known to have a starting stack offset of -128 but when called from 46 it has an offset of -152
+WARN  ac - Block 48 is already known to have a starting stack offset of -100 but when called from 47 it has an offset of -144
+WARN  ac - Block 27 is already known to have a starting stack offset of -156 but when called from 31 it has an offset of -180
+WARN  ac - Block 43 is already known to have a starting stack offset of -156 but when called from 31 it has an offset of -180
+WARN  ac - Block 45 is already known to have a starting stack offset of -156 but when called from 44 it has an offset of -180
+WARN  ac - Block 20 is already known to have a starting stack offset of -116 but when called from 14 it has an offset of -108
+WARN  ac - Block 20 is already known to have a starting stack offset of -116 but when called from 15 it has an offset of -108
+WARN  ac - Block 44 is already known to have a starting stack offset of -180 but when called from 34 it has an offset of -192
+WARN  ac - Block 43 is already known to have a starting stack offset of -180 but when called from 35 it has an offset of -216
+WARN  ac - Block 43 is already known to have a starting stack offset of -216 but when called from 41 it has an offset of -240
+WARN  ac - Block 46 is already known to have a starting stack offset of -152 but when called from 45 it has an offset of -180
+........ failed: A non-current expression of a variable is used in block L39 in if(CMP(MARKER_UNSIGNED(reg_f8), <, MARKER_UNSIGNED(LOAD(ADD(MULT(reg_pp28, 8), reg_pp27, SEGMENT2ADDR(reg_pp25)))))) goto L41: The current setter is reg_a48 while [reg_pp28] was found. Related expressions are [reg_a48, reg_a49, reg_a47, reg_pp28, reg_pp32]
+decompile F_00411195                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_0041119f                    : .WARN  ag - Referencing unknown line 00411104.0
+WARN  ag - Referencing unknown line 004110e1.0
+........................................................... [ done ]
+decompile F_004111a9                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004111ae                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004111c7                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004111e0                    : .WARN  ag - Referencing unknown line 004123f0.0
+WARN  ag - Referencing unknown line 004123f0.0
+........................................................... [ done ]
+decompile F_004111e5                    : .WARN  ag - Referencing unknown line 00412a10.0
+WARN  ag - Referencing unknown line 004123f0.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 004123f0.0
+WARN  ag - Referencing unknown line 00411023.0
+........WARN  ac - Block 6 is already known to have a starting stack offset of -344 but when called from 3 it has an offset of -352
+WARN  ac - Block 7 is already known to have a starting stack offset of -340 but when called from 6 it has an offset of -352
+WARN  ac - Block 8 is already known to have a starting stack offset of -344 but when called from 7 it has an offset of -340
+................................................... [ done ]
+decompile F_004111f4                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_004111fe                    : .... failed: Block L1 calls block L2 which isn't available
+decompile F_00411203                    : ............................................................ [ done ]
+decompile F_00411860                    : .WARN  ag - Referencing unknown line 00411168.0
+WARN  ag - Referencing unknown line 00411168.0
+........................................................... [ done ]
+decompile F_00411d70                    : .WARN  ag - Referencing unknown line 0041111d.0
+WARN  ag - Referencing unknown line 004111a9.0
+WARN  ag - Referencing unknown line 004111fe.0
+WARN  ag - Referencing unknown line 004110b9.0
+WARN  ag - Referencing unknown line 0041119f.0
+WARN  ag - Referencing unknown line 0041116d.0
+........WARN  ac - Block 1 is already known to have a starting stack offset of -64 but when called from 4 it has an offset of -80
+WARN  ac - Block 19 is already known to have a starting stack offset of -76 but when called from 18 it has an offset of -84
+WARN  ac - Block 22 is already known to have a starting stack offset of -76 but when called from 21 it has an offset of -88
+WARN  ac - Block 24 is already known to have a starting stack offset of -88 but when called from 23 it has an offset of -92
+WARN  ac - Block 28 is already known to have a starting stack offset of -76 but when called from 27 it has an offset of -92
+...................... failed: A non-current expression of a variable is used in block L20 in (void) STORE(ADD(reg_pp34, -4), 4289940): The current setter is reg_var57 while [reg_pp34] was found. Related expressions are [reg_var50, reg_var55, reg_var56, reg_var57, reg_var58, reg_pp35, reg_var52, reg_pp34, reg_var53, reg_var54]
+decompile F_00412060                    : ...................................................WARN  o -   load size differs from loaded size for g_0x00400000 vs. LOAD(ADDR(g_0x00400000))
+......... [ done ]
+decompile F_004122d0                    : ............................................................ [ done ]
+decompile F_004123f0                    : .WARN  ag - Referencing unknown line 0041103c.0
+WARN  ag - Referencing unknown line 00411203.0
+WARN  ag - Referencing unknown line 004122d0.0
+WARN  ag - Referencing unknown line 00412680.0
+WARN  ag - Referencing unknown line 00411190.0
+WARN  ag - Referencing unknown line 00411023.0
+........WARN  ac - Block 5 is already known to have a starting stack offset of -3684 but when called from 3 it has an offset of -3708
+WARN  ac - Block 22 is already known to have a starting stack offset of -3708 but when called from 21 it has an offset of -3772
+WARN  ac - Block 23 is already known to have a starting stack offset of -3708 but when called from 21 it has an offset of -3772
+WARN  ac - Block 21 is already known to have a starting stack offset of -3800 but when called from 15 it has an offset of -3736
+................................................... [ done ]
+decompile F_00412680                    : ............................................................ [ done ]
+decompile F_00412a10                    : ......................................WARN  d - may result in wrong values
+WARN  d -   reg_pp13 = PHI(reg_var12, reg_var10) in Block3
+WARN  d -   reg_var12 = ADD(reg_pp13, 1) in Block4
+...................... [ done ]
+decompile F_00412f55                    : .WARN  ag - Referencing unknown line 0041114f.0
+........................................................... [ done ]
+decompile F_00413770                    : .WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411023.0
+WARN  ag - Referencing unknown line 00411023.0
+........WARN  ac - Block 23 is already known to have a starting stack offset of -284 but when called from 4 it has an offset of -292
+WARN  ac - Block 23 is already known to have a starting stack offset of -292 but when called from 6 it has an offset of -300
+WARN  ac - Block 22 is already known to have a starting stack offset of -292 but when called from 21 it has an offset of -312
+WARN  ac - Block 23 is already known to have a starting stack offset of -300 but when called from 22 it has an offset of -308
+WARN  ac - Block 21 is already known to have a starting stack offset of -320 but when called from 8 it has an offset of -328
+WARN  ac - Block 21 is already known to have a starting stack offset of -328 but when called from 20 it has an offset of -352
+WARN  ac - Block 20 is already known to have a starting stack offset of -348 but when called from 10 it has an offset of -372
+WARN  ac - Block 21 is already known to have a starting stack offset of -352 but when called from 13 it has an offset of -404
+WARN  ac - Block 23 is already known to have a starting stack offset of -308 but when called from 19 it has an offset of -396
+...................... failed: A non-current expression of a variable is used in block L18 in (void) STORE(ADD(reg_pp18, reg_pp19, local, 140), LOAD(ADD(LOAD(ADDR(g_0x00417034)), reg_pp19))): The current setter is reg_var12 while [reg_pp18] was found. Related expressions are [reg_var12, reg_var11, reg_var10, reg_pp18]

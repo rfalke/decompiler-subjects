@@ -1,0 +1,18 @@
+[activeFunctions]
+main
+chomp
+
+[0x08048454]
+signature: char *chomp(char *s, int size, d1 *f)
+
+[0x08048324]
+signature: d1 *strchr(d1 *s, d4 c)
+
+[0x08048334]
+signature: char *fgets(char *s, int size, d1 *stream)
+
+[0x08048374]
+signature: d4 fopen(d1* path, d1* mode)
+
+[0x08048364]
+signature: d4 fclose(d4 file)

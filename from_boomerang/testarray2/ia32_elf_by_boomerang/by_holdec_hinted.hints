@@ -1,0 +1,13 @@
+[activeFunctions]
+main
+mid
+fst
+
+[0x080482b0]
+signature: d4 printf(d1 *fmt, d4 v1)
+
+[func:mid]
+signature: void mid(int *p)
+
+[func:fst]
+signature: void fst(int *p)

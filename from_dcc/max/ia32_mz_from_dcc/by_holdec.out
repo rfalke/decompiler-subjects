@@ -1,18 +1,69 @@
-INFO  07:05:11 kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:05:11 ke - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
-INFO  07:05:12 fA - disassembleAndWrite: start a new loop with 1 extra block starts
-Disassemble                             : Exception in thread "main" java.lang.reflect.InvocationTargetException
+INFO  an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  an - Using ./from_dcc/max/ia32_mz_from_dcc/subject.exe as executable
+INFO  fG - Detected MZ (MS-DOS)
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 3998 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - disassembleAndWrite: found 14 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 15 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 4393 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+WARN  fE - Ignore overlapping address 00001101[0,0].3
+WARN  fE - Ignore overlapping address 00001f5f[8,1].3
+WARN  fE - Ignore overlapping address 0000224c[9,0].3
+WARN  fE - Ignore overlapping address 0000224e[9,0].3
+WARN  fE - Ignore overlapping address 00002250[9,0].3
+WARN  fE - Ignore overlapping address 00002252[9,0].3
+WARN  fE - Ignore overlapping address 00002254[9,0].3
+WARN  fE - Ignore overlapping address 0000224d[9,1].3
+WARN  fE - Ignore overlapping address 0000224f[9,1].3
+WARN  fE - Ignore overlapping address 00002251[9,1].3
+WARN  fE - Ignore overlapping address 00002266[10,0].3
+INFO  fG - disassembleAndWrite: found 6 new addresses
+INFO  fG - disassembleAndWrite: start a new loop with 21 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  fG - disassembleAndWrite: running multiline
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 4728 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+WARN  fE - Ignore overlapping address 00001101[0,0].3
+WARN  fE - Ignore overlapping address 00001f5f[8,1].3
+WARN  fE - Ignore overlapping address 0000224c[9,0].3
+WARN  fE - Ignore overlapping address 0000224e[9,0].3
+WARN  fE - Ignore overlapping address 00002250[9,0].3
+WARN  fE - Ignore overlapping address 00002252[9,0].3
+WARN  fE - Ignore overlapping address 00002254[9,0].3
+WARN  fE - Ignore overlapping address 0000224d[9,1].3
+WARN  fE - Ignore overlapping address 0000224f[9,1].3
+WARN  fE - Ignore overlapping address 00002251[9,1].3
+WARN  fE - Ignore overlapping address 00002266[10,0].3
+INFO  fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+Preprocessing 5450 asm lines            : ............................................................ [ done ]
+INFO  ks - wrote ./from_dcc/max/ia32_mz_from_dcc/subject.exe.info
+INFO  fG - reading all asm lines ...
+INFO  fG - ... read 5450 asm lines
+Exception in thread "main" java.lang.reflect.InvocationTargetException
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:532)
 	at holdec.Holdec.main(Unknown Source)
-Caused by: java.lang.AssertionError
-	at holdec.bx.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.a(Unknown Source)
-	at holdec.fA.l(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.fA.<init>(Unknown Source)
-	at holdec.am.<init>(Unknown Source)
+Caused by: java.lang.RuntimeException: Can not get base command for 00001756.0+1 w.into.
+	at holdec.hS.b(Unknown Source)
+	at holdec.fO.a(Unknown Source)
+	at holdec.hC.a(Unknown Source)
+	at holdec.fG.b(Unknown Source)
+	at holdec.an.a(Unknown Source)
+	at holdec.an.<init>(Unknown Source)
 	... 5 more
+Caused by: java.lang.IllegalArgumentException: Unknown command 'into' orig='w.into'
+	at holdec.fK.a(Unknown Source)
+	... 11 more

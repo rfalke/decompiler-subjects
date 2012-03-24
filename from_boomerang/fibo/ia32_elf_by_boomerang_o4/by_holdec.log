@@ -1,2 +1,26 @@
-INFO  07:03:01 holdec.kN - ### holdec 1.0 Copyright 2003-2012 Raimar Falke
-INFO  07:03:01 holdec.ke - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.an - ### holdec 1.1 Copyright 2003-2012 Raimar Falke
+INFO  holdec.an - Using ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe as executable
+INFO  holdec.fG - Detected ELF (Executable and Linkable Format)
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found 2 new addresses
+INFO  holdec.fG - disassembleAndWrite: start a new loop with 3 extra block starts
+INFO  holdec.fG - disassembleAndWrite: running multiline
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.fG - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.ks - wrote ./from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe.info
+INFO  holdec.fG - reading all asm lines ...
+INFO  holdec.fG - ... read 244 asm lines
+WARN  holdec.w - Address 080480f4.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.w - Address 080488b4.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.an - will decompile 11 functions
+WARN  holdec.ag - Referencing unknown line 080486bc.0
+WARN  holdec.ag - Referencing unknown line 080486cc.0
+WARN  holdec.ag - Referencing unknown line 08048798.0
+WARN  holdec.ag - Referencing unknown line 08048798.0
+WARN  holdec.ag - Referencing unknown line 080486bc.0
