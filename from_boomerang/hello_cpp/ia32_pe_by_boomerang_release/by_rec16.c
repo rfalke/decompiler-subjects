@@ -501,7 +501,7 @@ L004014DE(A8, Ac, A10)
     *L004055AC = edi;
     *L004055A8 = A10;
     if(Ac != 0) {
-        goto L08f9ef08;
+        goto L09357f08;
     }
     eax = *L00405A70;
     if(eax != 0) {
@@ -3602,7 +3602,7 @@ L0040343E()
         (save)256;
         (save)0;
         if(*__imp__LCMapStringW() == 0) {
-            goto L08fa6bc0;
+            goto L0935fbc0;
         }
         *L004056F4 = ebx;
         goto L004034b4;

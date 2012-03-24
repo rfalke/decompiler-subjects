@@ -1,0 +1,16 @@
+Unknown library function MFC42_DLL_1576
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+dest is not lib
+call:   12 {*32* eax, *32* r25, *32* r26, *v* r28} := CALL MFC42_DLL_1576(
+              )
+              Reaching definitions: r28=r28{0} - 20,   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0}
+                m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} + 16]=m[r28{0} + 16]{0},   m[r28{0} - 4]=m[r28{0} + 16]{0}
+                m[r28{0} - 8]=m[r28{0} + 12]{0},   m[r28{0} - 12]=m[r28{0} + 8]{0},   m[r28{0} - 16]=m[r28{0} + 4]{0},
+                m[r28{0} - 20]=%pc
+              Live variables: eax in proc main
+result:    0 *32* eax := -

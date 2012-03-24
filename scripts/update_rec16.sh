@@ -3,6 +3,7 @@
 set -e
 
 ulimit -c 0
+ulimit -t 120
 
 if test -z "$REC16DIR"; then
     echo "\$REC16DIR not set. The executable \$REC16DIR/REC will be used."
@@ -21,5 +22,5 @@ do
       echo "  failed"
       touch $dir/by_rec16.failed
   fi
-  mv out $dir/by_rec16.out
+  sed <out 's/in .* sec/in some sec/g' >$dir/by_rec16.out
 done

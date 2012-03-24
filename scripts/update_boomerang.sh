@@ -2,6 +2,9 @@
 
 set -e
 
+ulimit -c 0
+ulimit -t 600
+
 if test -z "$BOOMERANGDIR"; then
     echo "\$BOOMERANGDIR not set. The executable \$BOOMERANGDIR/boomerang will be used."
     exit 1
@@ -30,5 +33,5 @@ do
   if test -s _output/log; then
       mv _output/log $dir/by_boomerang.log
   fi
-  mv out $dir/by_boomerang.out
+  sed <out 's/completed in .*/completed in some time/g' >$dir/by_boomerang.out
 done

@@ -51,4 +51,4 @@ out edges:
 08049b2f   63 CASE [(m[(ebx + (esi * 4)) + 0xd1f] + ebx) + 0x1e7f]
 
 output written to _output/subject
-completed in 1 sec.
+completed in some time

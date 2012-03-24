@@ -1,0 +1,26 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 5 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering hexdump
+   considering stat
+    considering __i686.get_pc_thunk.bx
+    decompiling __i686.get_pc_thunk.bx
+   decompiling stat
+   considering dumpline
+   decompiling dumpline
+rprttt  decompiling hexdump
+rptr decompiling main
+tglobal type analysis for main
+global type analysis for hexdump
+global type analysis for stat
+global type analysis for dumpline
+tglobal type analysis for __i686.get_pc_thunk.bx
+riiiigenerating code...
+output written to _output/subject
+completed in some time

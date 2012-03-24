@@ -1,0 +1,20 @@
+assgn   16 *32* r24 := m[0x161b]
+is readonly
+in proc proc1 adding addrExp r28{0} - 4 to local table
+finding final parameters for proc1
+potential param r9
+found new parameter r9
+assgn   16 *32* r24 := m[48]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure _start ###
+in proc _start adding addrExp r28 - 4 to local table
+in proc _start adding addrExp r28{0} - 44 to local table
+finding final parameters for _start
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+dest is not lib
+call:   34 <all> := CALL proc1(<all>)
+              Reaching definitions: r24=r24{0} - 1,   r28=r28{0} - 44,   m[r28{0} - 44]=%pc,   tmp1=r28{0},
+                %flags=SUBFLAGS32( esp, 40, a[m[esp - 40]] ),   %ZF=(esp - 40) = 0,   %CF=esp <u 40
+              Live variables:  in proc _start

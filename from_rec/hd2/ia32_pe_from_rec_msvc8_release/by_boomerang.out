@@ -1,0 +1,144 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+decoding anything undecoded...
+finishing decode...
+found 12 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering proc1
+  decompiling proc1
+tr  considering proc2
+  decompiling proc2
+  considering proc8
+  decompiling proc8
+  considering proc6
+   considering proc10
+    considering proc13
+    decompiling proc13
+    considering proc14
+    decompiling proc14
+prrpttt   decompiling proc10
+rptt  decompiling proc6
+t  considering proc5
+   considering proc11
+   decompiling proc11
+r   considering proc12
+   decompiling proc12
+pt  decompiling proc5
+rt decompiling _start
+prrtttr considering __imp__XcptFilter
+ decompiling __imp__XcptFilter
+global type analysis for proc1
+global type analysis for proc2
+global type analysis for proc5
+global type analysis for proc6
+tglobal type analysis for __imp__XcptFilter
+global type analysis for proc8
+global type analysis for _start
+tglobal type analysis for proc10
+global type analysis for proc11
+global type analysis for proc12
+tglobal type analysis for proc13
+global type analysis for proc14
+trrriiiiiiigenerating code...
+gWARNING: no out edge for this BB in _start:
+Call BB:
+in edges: 4013b2 
+out edges: 
+004013b4  160 *32* local0 := eax
+004013b5  163 *u32* local4 := %pc
+          165 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL exit(
+                *i32* local0 := m[esp - 4]
+              )
+              Reaching definitions: r0=r0{217},   r1=r1{218},   r10=r10{219},   r24=r24{152},   r25=r25{152},
+                r26=r26{222},   r27=r27{152},   r28=r28{224} - 8,   r29=r29{225},   r30=r30{152},   r31=r31{152},
+                m[r28{0} - 4]=m[r28{0} - 4]{251},   m[r28{0} - 8]=m[r28{0} - 8]{252},
+                m[r28{0} - 12]=m[r28{0} - 12]{253},   m[r28{0} - 20]=m[r28{0} - 20]{257},
+                m[r28{0} - 24]=m[r28{0} - 24]{258},   tmp1=global80 - r27{152},
+                %flags=SUBFLAGS32( m[0x403024], r27{152}, global80 - r27{152} ),   %ZF=(global80 - r27{152}) = 0,
+                %CF=m[0x403024] <u r27{152}
+              Live variables: 
+
+WARNING: no out edge for this BB in proc10:
+Call BB:
+in edges: 401168 
+out edges: 
+0040116e
+00401171
+00401176
+00401177
+00401178
+00401179
+0040117a
+0040117e
+00401180   56 <all> := CALL proc13(<all>)
+              Reaching definitions: r24=1,   r25=(global0 ^ (esp - 76)) ^ (esp - 76),   r26=r26{37},   r27=r27{0},
+                r28=(r28{0} - 92) + 12,   r29=r29{0},   r30=r30{0},   r31=r31{0},
+                m[r28{0} - 8]=global0 ^ a[m[esp - 76]],   m[r28{0} - 56]=m[esp - 56]{0},   m[r28{0} - 80]=%pc,
+                m[r28{0} - 84]=r29{0},   m[r28{0} - 88]=r30{0},   m[r28{0} - 92]=r31{0},   m[r28{0} - 96]=r25{0},
+                m[r28{0} - 100]=%pc,   m[r28{0} - 104]=%pc,   tmp1=((r28{0} - 92) - 8) + 4,
+                %flags=LOGICALFLAGS32( (global0 ^ (esp - 76)) ^ (esp - 76) ),
+                %ZF=LOGICALFLAGS32( (global0 ^ (esp - 76)) ^ (esp - 76) ),
+                %CF=LOGICALFLAGS32( (global0 ^ (esp - 76)) ^ (esp - 76) )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc10:
+Call BB:
+in edges: 4011c3 
+out edges: 
+004011c5
+004011c9  106 *32* m[r28 - 4] := r30
+004011ca  108 *32* m[r28 - 4] := r26
+004011cb
+004011cd  112 *u32* m[r28] := %pc
+          114 {*32* eax, *16* r0, *8* r8, *8* r9, *32* edx, *v* esp} := CALL proc14(
+                *32* m[r28 + 4] := m[r28 + 4]
+                *32* m[r28 + 8] := m[r28 + 8]
+              )
+              Reaching definitions: 
+              Live variables: 
+
+WARNING: no out edge for this BB in proc10:
+Call BB:
+in edges: 4011de 
+out edges: 
+004011e4
+004011e8
+004011eb
+004011ec
+004011ed
+004011ee
+004011ef
+004011f1
+004011f3  147 *u32* m[r28] := %pc
+          149 <all> := CALL proc13(<all>)
+              Reaching definitions: 
+              Live variables: 
+
+WARNING: no out edge for this BB in proc13:
+Invalid BB:
+in edges: 401241 
+out edges: 
+00401243
+
+WARNING: no out edge for this BB in proc13:
+L2: Invalid BB:
+in edges: 401241 
+out edges: 
+004014f6
+004014f8
+004014f9
+004014fb
+00401501   12 *32* global9 := param1
+00401506   13 *32* global10 := param2
+0040150c   14 *32* global11 := param3
+00401512   15 *32* global12 := param4
+00401518   16 *32* global13 := param5
+0040151e   17 *32* global14 := param6
+00401524
+
+goutput written to _output/subject
+completed in some time

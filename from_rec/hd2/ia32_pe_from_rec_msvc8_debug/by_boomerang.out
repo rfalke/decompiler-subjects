@@ -1,0 +1,1302 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+decoding anything undecoded...
+finishing decode...
+found 56 procs
+decompiling...
+ considering proc1
+ decompiling proc1
+r considering proc2
+  considering proc5
+  decompiling proc5
+  considering __imp__amsg_exit
+  decompiling __imp__amsg_exit
+  considering __imp__initterm_e
+  decompiling __imp__initterm_e
+  considering __imp__initterm
+  decompiling __imp__initterm
+  considering proc9
+   considering proc11
+   decompiling proc11
+r   considering proc12
+   decompiling proc12
+ptr  decompiling proc9
+t  considering proc10
+   considering proc14
+    considering proc15
+     considering proc16
+      considering proc17
+      decompiling proc17
+      considering proc18
+      decompiling proc18
+      considering proc19
+      decompiling proc19
+pr      considering proc20
+      decompiling proc20
+      considering proc22
+      decompiling proc22
+t      considering proc21
+       considering proc23
+        considering proc24
+        decompiling proc24
+pr        considering proc26
+        decompiling proc26
+        considering proc25
+        decompiling proc25
+        considering proc27
+        decompiling proc27
+r        considering proc28
+        decompiling proc28
+       decompiling proc23
+rprprttt      decompiling proc21
+rprrrpprtttttttt     decompiling proc16
+rprrpttttt    decompiling proc15
+   decompiling proc14
+rp   considering proc13
+    considering proc30
+     considering proc57
+     decompiling proc57
+    decompiling proc30
+t    considering proc33
+     considering proc42
+      considering proc43
+      decompiling proc43
+r     decompiling proc42
+prrttt    decompiling proc33
+prt    considering proc31
+     considering proc58
+     decompiling proc58
+    decompiling proc31
+p    considering proc32
+     considering proc59
+     decompiling proc59
+r    decompiling proc32
+    considering proc34
+    decompiling proc34
+    considering proc35
+     considering proc60
+     decompiling proc60
+rp    decompiling proc35
+    considering proc36
+     considering proc61
+     decompiling proc61
+    decompiling proc36
+r    considering proc38
+     considering proc44
+      considering proc62
+      decompiling proc62
+p     decompiling proc44
+t     considering proc45
+      considering proc63
+      decompiling proc63
+r     decompiling proc45
+p     considering __imp_strlen
+     decompiling __imp_strlen
+     considering __imp_strcat
+     decompiling __imp_strcat
+     considering proc48
+     decompiling __imp_strcpy
+     considering __imp_strcpy
+     decompiling __imp_strcpy
+r     considering proc50
+      considering proc64
+      decompiling proc64
+     decompiling proc50
+     considering proc51
+      considering proc55
+       considering proc56
+       decompiling proc56
+r      decompiling proc55
+prrtttp     decompiling proc51
+tr     considering proc52
+     decompiling proc52
+     considering proc53
+      considering proc54
+      decompiling proc54
+p     decompiling proc53
+r    decompiling proc38
+prrttttttrp    considering proc37
+     considering proc65
+     decompiling proc65
+    decompiling proc37
+t    considering proc29
+     considering proc39
+      considering proc66
+      decompiling proc66
+rp     decompiling proc39
+     considering proc40
+      considering proc41
+      decompiling proc41
+     decompiling proc40
+rp    decompiling proc29
+   decompiling proc13
+rprttt  decompiling proc10
+rpt decompiling proc2
+rrprtttt considering proc3
+  considering proc4
+  decompiling proc4
+rp decompiling proc3
+rglobal type analysis for proc1
+global type analysis for proc2
+tglobal type analysis for proc3
+global type analysis for proc4
+tglobal type analysis for proc5
+global type analysis for __imp__amsg_exit
+global type analysis for __imp__initterm_e
+global type analysis for __imp__initterm
+global type analysis for proc9
+global type analysis for proc10
+global type analysis for proc11
+tglobal type analysis for proc12
+global type analysis for proc13
+tglobal type analysis for proc14
+global type analysis for proc15
+global type analysis for proc16
+tglobal type analysis for proc17
+global type analysis for proc18
+global type analysis for proc19
+global type analysis for proc20
+global type analysis for proc21
+ttttglobal type analysis for proc22
+global type analysis for proc23
+tglobal type analysis for proc24
+global type analysis for proc25
+global type analysis for proc26
+global type analysis for proc27
+global type analysis for proc28
+global type analysis for proc29
+global type analysis for proc30
+global type analysis for proc31
+global type analysis for proc32
+global type analysis for proc33
+global type analysis for proc34
+global type analysis for proc35
+global type analysis for proc36
+global type analysis for proc37
+global type analysis for proc38
+tglobal type analysis for proc39
+global type analysis for proc40
+global type analysis for proc41
+global type analysis for proc42
+tglobal type analysis for proc43
+global type analysis for proc44
+global type analysis for proc45
+global type analysis for __imp_strcat
+global type analysis for __imp_strlen
+global type analysis for __imp_strcpy
+global type analysis for __imp_strcpy
+global type analysis for proc50
+global type analysis for proc51
+tglobal type analysis for proc52
+global type analysis for proc53
+global type analysis for proc54
+global type analysis for proc55
+tglobal type analysis for proc56
+global type analysis for proc57
+global type analysis for proc58
+global type analysis for proc59
+global type analysis for proc60
+global type analysis for proc61
+global type analysis for proc62
+global type analysis for proc63
+global type analysis for proc64
+global type analysis for proc65
+global type analysis for proc66
+rrrrrrrrrrrriiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiigenerating code...
+WARNING: no out edge for this BB in proc2:
+Invalid BB:
+in edges: 411eaa 
+out edges: 
+00411eac
+
+WARNING: no out edge for this BB in proc2:
+Call BB:
+in edges: 411f27 
+out edges: 
+00411f29  213 *32* eax := m[a[global105] + 0x15f8]
+00411f2e  214 *32* local14 := eax
+00411f2f  217 *u32* local13 := %pc
+          219 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL exit(
+                *i32* local14 := m[esp - 4]
+              )
+              Reaching definitions: r1=r1{375},   r24=r24{213},   r25=r25{205},   r26=r26{205},   r27=r27{205},
+                r28=r28{292} - 8,   r29=r29{293},   r30=r30{205},   r31=r31{205},   m[r28{0} - 4]=m[r28{0} - 4]{330},
+                m[r28{0} - 8]=m[r28{0} - 8]{331},   m[r28{0} - 12]=m[r28{0} - 12]{332},
+                m[r28{0} - 16]=m[r28{0} - 16]{333},   m[r28{0} - 20]=m[r28{0} - 20]{334},
+                m[r28{0} - 28]=m[r28{0} - 28]{335},   m[r28{0} - 32]=m[r28{0} - 32]{336},
+                m[r28{0} - 36]=m[r28{0} - 36]{337},   m[r28{0} - 40]=m[r28{0} - 40]{338},
+                m[r28{0} - 48]=m[r28{0} - 48]{339},   m[r28{0} - 52]=m[r28{0} - 52]{340},
+                m[r28{0} - 56]=m[r28{0} - 56]{341},   m[r28{0} - 60]=m[r28{0} - 60]{342},
+                m[r28{0} - 64]=m[r28{0} - 64]{343},   m[r28{0} - 68]=m[r28{0} - 68]{344},   tmp1=tmp1{210},
+                %flags=SUBFLAGS32( m[0x417150], 0, tmp1{210} ),   %ZF=tmp1{210} = 0,   %CF=m[0x417150] <u 0
+              Live variables: 
+
+gWARNING: no out edge for this BB in proc13:
+Call BB:
+in edges: 4117b6 
+out edges: 
+004117bb  187 *32* eax := m[esp_4 - 8]
+004117bc  189 *32* edx := m[esp_4 - 4]
+004117bd  191 *32* edi_5 := m[esp_4]
+004117be  193 *32* esi := m[esp_4 + 4]
+004117bf  195 *32* ebx := m[esp_4 + 8]
+004117c0
+004117c3
+004117c5  201 *u32* m[esp_4 + 8] := %pc
+          203 <all> := CALL proc34(<all>)
+              Reaching definitions: r1=r1{0},   r24=r24{187},   r25=(global0 ^ (esp - 4)) ^ (esp - 4),   r26=r26{189},
+                r27=r27{195},   r28=r28{249} + 8,   r29=r28{0} - 4,   r30=r30{193},   r31=r31{191},
+                m[r28{0} + 4]=m[esp + 4]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=global0 ^ (esp - 4),
+                m[r28{0} - 40]=m[esp - 40]{260},   m[r28{0} - 52]=m[esp - 52]{261},   m[r28{0} - 88]=m[esp - 88]{0},
+                m[r28{0} - 120]=m[esp - 120]{262},   m[r28{0} - 320]=r27{0},   m[r28{0} - 324]=r30{0},
+                m[r28{0} - 328]=r31{0},   m[r28{0} - 332]=%pc,   m[r28{0} - 336]=m[esp - 336]{264},
+                m[r28{0} - 340]=%pc,   tmp1=0,   %flags=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %ZF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %CF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) )
+              Live variables: 
+
+gWARNING: no out edge for this BB in proc15:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc15:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+gggggWARNING: no out edge for this BB in proc22:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc22:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc23:
+Call BB:
+in edges: 41378c 
+out edges: 
+0041378e
+00413790
+00413793
+00413795   24 <all> := CALL proc24(<all>)
+              Reaching definitions: r8=0,   r24=0,   r25=(global0 ^ (esp - 4)) ^ (esp - 4),   r28=r28{0} - 288,
+                r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=global0 ^ (esp - 4)
+                m[r28{0} - 288]=%pc,   tmp1=global37,   tmpb=tmpb{0},
+                %flags=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %ZF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %CF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc23:
+Call BB:
+in edges: 4137ca 
+out edges: 
+004137cc   56 *u32* esi := m[esp_1]
+004137cd   58 *j32* ecx := m[ebp - 4]
+004137d0
+004137d2   62 *u32* m[esp_1] := %pc
+           64 <all> := CALL proc25(<all>)
+              Reaching definitions: r8=r8{51},   r10=r10{51},   r24=r24{51},   r25=ecx ^ ebp,   r26=r26{51},
+                r27=r27{51},   r28=r28{51},   r29=r29{51},   r30=r30{56},   r31=r31{51},   m[r28{0} - 4]=m[esp - 4]{51}
+                m[r28{0} - 8]=m[esp - 8]{51},   m[r28{0} - 288]=m[esp - 288]{51},   m[r28{0} - 292]=m[esp - 292]{51},
+                m[r28{0} - 296]=m[esp - 296]{51},   m[r28{0} - 4]=m[r28{0} - 4]{51},   m[r28{0} - 8]=m[r28{0} - 8]{51},
+                m[r28{0} - 288]=m[r28{0} - 288]{51},   m[r28{0} - 292]=m[r28{0} - 292]{51},
+                m[r28{0} - 296]=m[r28{0} - 296]{51},   <all>=<all>{51},   tmp1=r24{51},   tmpb=tmpb{51},
+                %flags=LOGICALFLAGS32( ecx ^ ebp ),   %ZF=LOGICALFLAGS32( ecx ^ ebp ),
+                %CF=LOGICALFLAGS32( ecx ^ ebp )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc23:
+Call BB:
+in edges: 4137f2 
+out edges: 
+004137f4   84 *32* ebx := m[esp_1]
+004137f5   86 *32* esi := m[esp_1 + 4]
+004137f6   88 *j32* ecx := m[ebp - 4]
+004137f9
+004137fb   92 *u32* m[esp_1 + 4] := %pc
+           94 <all> := CALL proc27(<all>)
+              Reaching definitions: r8=r8{79},   r10=r10{79},   r24=r24{79},   r25=ecx ^ ebp,   r26=r26{79},
+                r27=r27{84},   r28=r28{79} + 4,   r29=r29{79},   r30=r30{86},   r31=r31{79},
+                m[r28{0} - 4]=m[esp - 4]{79},   m[r28{0} - 8]=m[esp - 8]{79},   m[r28{0} - 288]=m[esp - 288]{79},
+                m[r28{0} - 292]=m[esp - 292]{79},   m[r28{0} - 296]=m[esp - 296]{79},   m[r28{0} - 4]=m[r28{0} - 4]{79}
+                m[r28{0} - 8]=m[r28{0} - 8]{79},   m[r28{0} - 288]=m[r28{0} - 288]{79},
+                m[r28{0} - 292]=m[r28{0} - 292]{79},   m[r28{0} - 296]=m[r28{0} - 296]{79},   <all>=<all>{79},
+                tmp1=r24{79},   tmpb=tmpb{79},   %flags=LOGICALFLAGS32( ecx ^ ebp ),   %ZF=LOGICALFLAGS32( ecx ^ ebp ),
+                %CF=LOGICALFLAGS32( ecx ^ ebp )
+              Live variables: 
+
+gWARNING: no out edge for this BB in proc23:
+Call BB:
+in edges: 413915 
+out edges: 
+0041391b  260 *32* edi := m[esp_2]
+0041391c  262 *32* ebx := m[esp_2 + 4]
+0041391d  264 *32* esi := m[esp_2 + 8]
+0041391e  266 *j32* ecx := m[ebp - 4]
+00413921
+00413923  270 *u32* m[esp_2 + 8] := %pc
+          272 <all> := CALL proc28(<all>)
+              Reaching definitions: r8=truncu(32,8,ebp - 264),   r10=r10{242},   r24=r24{259},   r25=ecx ^ ebp,
+                r26=r26{259},   r27=r27{262},   r28=r28{215} + 8,   r29=r29{215},   r30=r30{264},   r31=r31{260},
+                m[r28{0} - 4]=m[esp - 4]{215},   m[r28{0} - 8]=m[esp - 8]{215},   m[r28{0} - 288]=m[esp - 288]{215},
+                m[r28{0} - 292]=m[esp - 292]{215},   m[r28{0} - 296]=m[esp - 296]{215},
+                m[r28{0} - 4]=m[r28{0} - 4]{215},   m[r28{0} - 8]=m[r28{0} - 8]{215},
+                m[r28{0} - 288]=m[r28{0} - 288]{215},   m[r28{0} - 292]=m[r28{0} - 292]{215},
+                m[r28{0} - 296]=m[r28{0} - 296]{215},   <all>=<all>{215},   tmp1=r24{310} - 10,   tmpb=tmpb{228},
+                %flags=LOGICALFLAGS32( ecx ^ ebp ),   %ZF=LOGICALFLAGS32( ecx ^ ebp ),
+                %CF=LOGICALFLAGS32( ecx ^ ebp )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc23:
+L2: Call BB:
+in edges: 4137b9 413936 
+out edges: 
+00000000
+00413937  290 *j32* ecx := m[ebp - 4]
+0041393a
+0041393c  293 *u32* esi := m[esp]
+0041393d  296 *u32* m[esp] := %pc
+          298 <all> := CALL proc26(<all>)
+              Reaching definitions: r8=r8{346},   r10=r10{347},   r24=r24{348},   r25=ecx ^ ebp,   r26=r26{350},
+                r27=r27{351},   r28=r28{352},   r29=r29{353},   r30=r30{293},   r31=r31{355},
+                m[r28{0} - 4]=m[r28 - 4]{42},   m[r28{0} - 8]=m[r28 - 8]{42},   m[r28{0} - 288]=m[r28 - 288]{42},
+                m[r28{0} - 292]=m[r28 - 292]{42},   m[r28{0} - 296]=m[r28 - 296]{42},
+                m[r28{0} - 4]=m[r28{0} - 4]{371},   m[r28{0} - 8]=m[r28{0} - 8]{372},
+                m[r28{0} - 288]=m[r28{0} - 288]{373},   m[r28{0} - 292]=m[r28{0} - 292]{374},
+                m[r28{0} - 296]=m[r28{0} - 296]{375},   <all>=<all>{42},   tmp1=tmp1{356},   tmpb=tmpb{357},
+                %flags=LOGICALFLAGS32( ecx ^ ebp ),   %ZF=LOGICALFLAGS32( ecx ^ ebp ),
+                %CF=LOGICALFLAGS32( ecx ^ ebp )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc24:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc24:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc25:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc25:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc26:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc26:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc27:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc27:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc28:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+gWARNING: no out edge for this BB in proc28:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc33:
+L2: Call BB:
+in edges: 4119e6 4119f4 
+out edges: 
+00000000
+004119f6   36 *32* eax := m[param3 + 4]
+004119f9   37 *u8** ecx := m[eax + 8]
+004119fd
+00411a00
+00411a01
+00411a02   46 {*32* eax, *8* r8, *8* r9, *8* r10, *32* ecx, *32* edx} := CALL proc42(
+                *j32* local1 := local0
+                *u8** local2 := ecx
+                *16* cx := param1
+                *j32* edx := local0
+                *32* edi := 0
+              )
+              Reaching definitions: r1=r1{0},   r24=r24{36},   r25=r25{37},   r26=m[r28{0}]{0},   r27=r25{0},
+                r28=r28{0} - 32,   r29=r28{0} - 4,   r30=r26{0},   r31=0,   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0,
+                m[r28{0} - 12]=r27{0},   m[r28{0} - 16]=r30{0},   m[r28{0} - 20]=r31{0},   m[r28{0} - 24]=r25{37},
+                m[r28{0} - 28]=m[r28{0}]{0},   m[r28{0} - 32]=%pc,   m[r28{0}]=m[r28{0}]{0},   tmp1=tmp1{74},
+                %flags=%flags{75},   %ZF=%ZF{76},   %CF=%CF{77}
+              Live variables: 
+
+WARNING: no out edge for this BB in proc34:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc34:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+gWARNING: no out edge for this BB in proc38:
+Call BB:
+in edges: 4115d8 
+out edges: 
+004115dd
+004115de
+004115df
+004115e0
+004115e1
+004115e2
+004115e5
+004115e7  284 <all> := CALL proc52(<all>)
+              Reaching definitions: r1=r1{0},   r9=truncu(32,8,(global0 ^ (esp - 4)) ^ (esp - 4)),   r24=r24{254},
+                r25=(global0 ^ (esp - 4)) ^ (esp - 4),   r26=r26{254},   r27=r27{0},   r28=(r28{0} - 328) + 8,
+                r29=r28{0} - 4,   r30=r30{0},   r31=r31{0},   m[r28{0} + 4]=m[esp + 4]{0},
+                m[r28{0} + 8]=m[esp + 8]{0},   m[r28{0} + 12]=m[esp + 12]{357},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=global0 ^ (esp - 4),   m[r28{0} - 92]=m[esp - 92]{0},   m[r28{0} - 104]=m[esp - 104]{372}
+                m[r28{0} - 116]=r24{132} + 3,   m[r28{0} - 316]=m[esp - 316]{370},   m[r28{0} - 320]=%pc,
+                m[r28{0} - 324]=r30{0},   m[r28{0} - 328]=r31{0},   m[r28{0} - 332]=r26{254},
+                m[r28{0} - 336]=r24{254},   m[r28{0} - 340]=%pc,   m[r28{0} - 344]=%pc,   tmp1=0,
+                %flags=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %ZF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) ),
+                %CF=LOGICALFLAGS32( (global0 ^ (esp - 4)) ^ (esp - 4) )
+              Live variables: 
+
+WARNING: no out edge for this BB in proc41:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc41:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc42:
+L9: Call BB:
+in edges: 41281d 41281f 
+out edges: 
+00000000
+00412824
+00412829
+0041282f
+00412830
+00412832
+00412833
+00412834  187 {*32* eax, *32* esi, *8* r8, *32* ecx, *32* edx, *32* ebx, *v* esp, *32* ebp, *v* edi} := CALL proc16(
+                *32* local0 := param1
+                *j32* local1 := ebx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r9=truncu(32,8,m[r28{0} + 4]{0}),   r10=r10{304},   r24=r24{173},
+                r25=m[r28{0} + 4]{0},   r26=r26{307},   r27=r27{308},   r28=(r28{0} - 0x414) - 20,   r29=r28{0} - 4,
+                r30=r30{310},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=global0 ^ (r28{0} - 4),   m[r28{0} - 0x40c]=m[r28{0} + 4]{0},
+                m[r28{0} - 0x410]=r27{0},   m[r28{0} - 0x414]=r30{0},   m[r28{0} - 0x418]=r27{308},
+                m[r28{0} - 0x41c]=2,   m[r28{0} - 0x420]=r24{173},   m[r28{0} - 0x424]=m[r28{0} + 4]{0},
+                m[r28{0} - 0x428]=%pc,   tmp1=tmp1{312},   tmpb=tmpb{313},   %flags=%flags{314},   %ZF=%ZF{315},
+                %CF=%CF{316}
+              Live variables: 
+
+WARNING: no out edge for this BB in proc43:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc43:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+gWARNING: no out edge for this BB in proc51:
+L2: Call BB:
+in edges: 4119e6 4119f4 
+out edges: 
+00000000
+004119f6   36 *32* eax := m[param3 + 4]
+004119f9   37 *u8** ecx := m[eax + 8]
+004119fd
+00411a00
+00411a01
+00411a02   46 {*32* eax, *8* r8, *8* r9, *8* r10, *32* ecx, *32* edx} := CALL proc55(
+                *j32* local1 := local0
+                *u8** local2 := ecx
+                *16* cx := param1
+                *j32* edx := local0
+                *32* edi := 0
+              )
+              Reaching definitions: r1=r1{0},   r24=r24{36},   r25=r25{37},   r26=m[r28{0}]{0},   r27=r25{0},
+                r28=r28{0} - 32,   r29=r28{0} - 4,   r30=r26{0},   r31=0,   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0,
+                m[r28{0} - 12]=r27{0},   m[r28{0} - 16]=r30{0},   m[r28{0} - 20]=r31{0},   m[r28{0} - 24]=r25{37},
+                m[r28{0} - 28]=m[r28{0}]{0},   m[r28{0} - 32]=%pc,   m[r28{0}]=m[r28{0}]{0},   tmp1=tmp1{74},
+                %flags=%flags{75},   %ZF=%ZF{76},   %CF=%CF{77}
+              Live variables: 
+
+WARNING: no out edge for this BB in proc52:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc52:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc54:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc54:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc55:
+L9: Call BB:
+in edges: 41281d 41281f 
+out edges: 
+00000000
+00412824
+00412829
+0041282f
+00412830
+00412832
+00412833
+00412834  187 {*32* eax, *32* esi, *8* r8, *32* ecx, *32* edx, *32* ebx, *v* esp, *32* ebp, *v* edi} := CALL proc16(
+                *32* local0 := param1
+                *j32* local1 := ebx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r9=truncu(32,8,m[r28{0} + 4]{0}),   r10=r10{304},   r24=r24{173},
+                r25=m[r28{0} + 4]{0},   r26=r26{307},   r27=r27{308},   r28=(r28{0} - 0x414) - 20,   r29=r28{0} - 4,
+                r30=r30{310},   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=global0 ^ (r28{0} - 4),   m[r28{0} - 0x40c]=m[r28{0} + 4]{0},
+                m[r28{0} - 0x410]=r27{0},   m[r28{0} - 0x414]=r30{0},   m[r28{0} - 0x418]=r27{308},
+                m[r28{0} - 0x41c]=2,   m[r28{0} - 0x420]=r24{173},   m[r28{0} - 0x424]=m[r28{0} + 4]{0},
+                m[r28{0} - 0x428]=%pc,   tmp1=tmp1{312},   tmpb=tmpb{313},   %flags=%flags{314},   %ZF=%ZF{315},
+                %CF=%CF{316}
+              Live variables: 
+
+gWARNING: no out edge for this BB in proc56:
+Invalid BB:
+in edges: 411976 
+out edges: 
+00411978
+
+WARNING: no out edge for this BB in proc56:
+L3: Invalid BB:
+in edges: 4110a0 
+out edges: 
+00412140
+00412142
+00412143
+00412145
+0041214b   13 *32* global31 := eax
+00412150   14 *32* global32 := ecx
+00412156   15 *32* global33 := edx
+0041215c   16 *32* global34 := ebx
+00412162   17 *32* global35 := esi
+00412168   18 *32* global36 := edi
+0041216e
+
+WARNING: no out edge for this BB in proc57:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc57:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc58:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc58:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc59:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc59:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc60:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc60:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc61:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc61:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc62:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc62:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc63:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc63:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc64:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc64:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc65:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc65:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+WARNING: no out edge for this BB in proc66:
+L1: Call BB:
+in edges: 41238b 
+out edges: 
+004123b1
+004123b6
+004123b7
+004123bc
+004123bd
+004123c0
+004123c5
+004123c6
+004123c7   50 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := 0x415844
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=1,   r26=0x415844,   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=0x415844,   m[r28{0} - 12]=5,   m[r28{0} - 16]=1,
+                m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=m[r28{0} + 8]{0} - 4,
+                %flags=SUBFLAGS32( m[r28{0} + 8]{0}, 4, m[r28{0} + 8]{0} - 4 ),   %ZF=(m[r28{0} + 8]{0} - 4) = 0,
+                %CF=m[r28{0} + 8]{0} <u 4
+              Live variables: 
+
+WARNING: no out edge for this BB in proc66:
+Call BB:
+in edges: 41239e 
+out edges: 
+004123a0
+004123a1
+004123a2
+004123a5
+004123a6
+004123a7   26 {*32* r24, *32* r30, *8* r8, *32* ecx, *32* edx, *32* r27, *32* r29, *v* r31} := CALL proc16(
+                *32* local0 := param1
+                *32* local1 := edx
+                *16* cx := param3
+              )
+              Reaching definitions: r1=r1{0},   r24=m[r28{0} + 4]{0},   r25=r25{9},   r26=r26{10},   r28=r28{0} - 24,
+                r29=r28{0} - 4,   r31=r31{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r26{10},   m[r28{0} - 12]=m[r28{0} + 8]{0},
+                m[r28{0} - 16]=r25{9},   m[r28{0} - 20]=m[r28{0} + 4]{0},   m[r28{0} - 24]=%pc,   tmp1=r25{9} + 1,
+                %flags=SUBFLAGS32( r25{9}, -1, r25{9} + 1 ),   %ZF=(r25{9} + 1) = 0,   %CF=r25{9} <u -1
+              Live variables: 
+
+output written to _output/subject
+completed in some time

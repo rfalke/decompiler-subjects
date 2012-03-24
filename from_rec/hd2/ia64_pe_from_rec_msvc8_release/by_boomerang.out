@@ -1,0 +1,52 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+decoding anything undecoded...
+finishing decode...
+found 2 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering proc1
+  decompiling proc1
+ decompiling _start
+global type analysis for proc1
+global type analysis for _start
+generating code...
+WARNING: no out edge for this BB in proc1:
+Invalid BB:
+in edges: 
+out edges: 
+00000000    0 *8* param1 := -
+000019d5
+000019d6
+000019da
+000019db
+000019dc
+000019df
+000019e0
+000019e6
+000019e7
+000019ec
+000019ed
+000019f2
+000019f3   28 *32* eax := 0x4c000008 - m[0x4c000008]
+000019f5   31 *8* m[eax + 59] := param1 + 0x4c000008
+000019f8
+
+WARNING: no out edge for this BB in _start:
+Call BB:
+in edges: 
+out edges: 
+00000000    0 *32* eax := -
+            0 *u32* esp := -
+000015f1
+000015f2
+000015f5   34 <all> := CALL proc1(<all>)
+              Reaching definitions: r24=r24{0} - 1,   r28=r28{0} - 44,   m[r28{0} - 44]=%pc,   tmp1=r28{0},
+                %flags=SUBFLAGS32( esp, 40, a[m[esp - 40]] ),   %ZF=(esp - 40) = 0,   %CF=esp <u 40
+              Live variables: 
+
+output written to _output/subject
+completed in some time
