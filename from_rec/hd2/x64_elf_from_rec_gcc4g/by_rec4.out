@@ -1,0 +1,153 @@
+Analyzing './from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe: 38 sections starting at 0x00001CA8
+./from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe: section string table at 0x00002568, 0x159 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001CA8: [ 0] 00000000 00000000 00000000 
+00001CE8: [ 1] 00400200 0000001C 00000200 .interp
+00001D28: [ 2] 0040021C 00000020 0000021C .note.ABI-tag
+00001D68: [ 3] 0040023C 00000024 0000023C .note.gnu.build-id
+00001DA8: [ 4] 00400260 00000048 00000260 .hash
+00001DE8: [ 5] 004002A8 0000001C 000002A8 .gnu.hash
+00001E28: [ 6] 004002C8 00000138 000002C8 .dynsym
+00001E68: [ 7] 00400400 0000007C 00000400 .dynstr
+00001EA8: [ 8] 0040047C 0000001A 0000047C .gnu.version
+00001EE8: [ 9] 00400498 00000020 00000498 .gnu.version_r
+00001F28: [10] 004004B8 00000018 000004B8 .rela.dyn
+00001F68: [11] 004004D0 00000108 000004D0 .rela.plt
+00001FA8: [12] 004005D8 00000018 000005D8 .init
+00001FE8: [13] 004005F0 000000C0 000005F0 .plt
+00002028: [14] 004006B0 000004B8 000006B0 .text
+00002068: [15] 00400B68 0000000E 00000B68 .fini
+000020A8: [16] 00400B78 0000001F 00000B78 .rodata
+000020E8: [17] 00400B98 0000003C 00000B98 .eh_frame_hdr
+00002128: [18] 00400BD8 000000D4 00000BD8 .eh_frame
+00002168: [19] 00600CB0 00000010 00000CB0 .ctors
+000021A8: [20] 00600CC0 00000010 00000CC0 .dtors
+000021E8: [21] 00600CD0 00000008 00000CD0 .jcr
+00002228: [22] 00600CD8 000001A0 00000CD8 .dynamic
+00002268: [23] 00600E78 00000008 00000E78 .got
+000022A8: [24] 00600E80 00000070 00000E80 .got.plt
+000022E8: [25] 00600EF0 00000010 00000EF0 .data
+00002328: [26] 00600F00 00000010 00000F00 .bss
+00002368: [27] 00000000 0000001C 00000F00 .comment
+000023A8: [28] 00000000 00000030 00000F1C .debug_aranges
+000023E8: [29] 00000000 00000034 00000F4C .debug_pubnames
+00002428: [30] 00000000 000005D9 00000F80 .debug_info
+00002468: [31] 00000000 00000106 00001559 .debug_abbrev
+000024A8: [32] 00000000 00000103 0000165F .debug_line
+000024E8: [33] 00000000 00000302 00001762 .debug_str
+00002528: [34] 00000000 000000E4 00001A64 .debug_loc
+00002568: [35] 00000000 00000159 00001B48 .shstrtab
+000025A8: [36] 00000000 000007F8 00002628 .symtab
+000025E8: [37] 00000000 000002BF 00002E20 .strtab
+Internal error: Dwarf-2 current offset: 0xCAC
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+0 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+0 Procs, 36 Labels, 30 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+0 Procs, 60 Labels, 52 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+0 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Resolving indirect jumps...
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Resolving constants and strings...
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Discovering unreached functions...
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Computing call tree...
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Computing calling conventions...
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+Computing Calling Convention: 1/14  0x00400600
+Elapsed time: 1 sec.
+Computing Calling Convention: 2/14  0x00400610
+Elapsed time: 1 sec.
+Computing Calling Convention: 3/14  0x00400620
+Elapsed time: 1 sec.
+Computing Calling Convention: 4/14  0x00400630
+Elapsed time: 1 sec.
+Computing Calling Convention: 5/14  0x00400650
+Elapsed time: 1 sec.
+Computing Calling Convention: 6/14  0x00400660
+Elapsed time: 1 sec.
+Computing Calling Convention: 7/14  0x00400670
+Elapsed time: 1 sec.
+Computing Calling Convention: 8/14  0x00400680
+Elapsed time: 1 sec.
+Computing Calling Convention: 9/14  0x00400690
+Elapsed time: 1 sec.
+Computing Calling Convention: 10/14  0x004006A0
+Elapsed time: 1 sec.
+Computing Calling Convention: 11/14  0x00400794
+Elapsed time: 1 sec.
+Computing Calling Convention: 14/14  0x00400B20
+Elapsed time: 1 sec.
+Computing Calling Convention: 1/2  0x00400942
+Elapsed time: 1 sec.
+Computing Calling Convention: 2/2  0x00400A34
+Elapsed time: 1 sec.
+File analysis complete.
+14 Procs, 64 Labels, 56 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 1 sec.
+
+Decompiling 1/14: 0x00400600
+Elapsed time: 0 sec.
+Decompiling 2/14: 0x00400610
+Elapsed time: 0 sec.
+Decompiling 3/14: 0x00400620
+Elapsed time: 0 sec.
+Decompiling 4/14: 0x00400630
+Elapsed time: 0 sec.
+Decompiling 5/14: 0x00400650
+Elapsed time: 0 sec.
+Decompiling 6/14: 0x00400660
+Elapsed time: 0 sec.
+Decompiling 7/14: 0x00400670
+Elapsed time: 0 sec.
+Decompiling 8/14: 0x00400680
+Elapsed time: 0 sec.
+Decompiling 9/14: 0x00400690
+Elapsed time: 0 sec.
+Decompiling 10/14: 0x004006A0
+Elapsed time: 0 sec.
+Decompiling 11/14: 0x00400794
+Elapsed time: 0 sec.
+Decompiling 12/14: 0x00400942
+Elapsed time: 0 sec.
+Decompiling 13/14: 0x00400A34
+Elapsed time: 0 sec.
+Decompiling 14/14: 0x00400B20
+Elapsed time: 0 sec.
+Decompiling 14/14: 0x00400B20
+Elapsed time: 0 sec.

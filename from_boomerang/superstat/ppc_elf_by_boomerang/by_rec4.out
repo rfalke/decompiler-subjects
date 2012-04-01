@@ -1,0 +1,102 @@
+Analyzing './from_boomerang/superstat/ppc_elf_by_boomerang/subject.exe' as a PowerPC 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_boomerang/superstat/ppc_elf_by_boomerang/subject.exe: 35 sections starting at 0x000010D8
+./from_boomerang/superstat/ppc_elf_by_boomerang/subject.exe: section string table at 0x000015D8, 0x120 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000010D8: [ 0] 00000000 00000000 00000000 
+00001100: [ 1] 10000154 0000000D 00000154 .interp
+00001128: [ 2] 10000164 00000020 00000164 .note.ABI-tag
+00001150: [ 3] 10000184 0000002C 00000184 .hash
+00001178: [ 4] 100001B0 00000060 000001B0 .dynsym
+000011A0: [ 5] 10000210 00000054 00000210 .dynstr
+000011C8: [ 6] 10000264 0000000C 00000264 .gnu.version
+000011F0: [ 7] 10000270 00000020 00000270 .gnu.version_r
+00001218: [ 8] 10000290 0000000C 00000290 .rela.dyn
+00001240: [ 9] 1000029C 00000024 0000029C .rela.plt
+00001268: [10] 100002C0 00000028 000002C0 .init
+00001290: [11] 100002E8 0000066C 000002E8 .text
+000012B8: [12] 10000954 00000020 00000954 .fini
+000012E0: [13] 10000974 000000C0 00000974 .rodata
+00001308: [14] 10000A34 00000000 00000A34 .sdata2
+00001330: [15] 10000A34 00000004 00000A34 .eh_frame
+00001358: [16] 10010A38 00000008 00000A38 .ctors
+00001380: [17] 10010A40 00000008 00000A40 .dtors
+000013A8: [18] 10010A48 00000004 00000A48 .jcr
+000013D0: [19] 10010A4C 00000010 00000A4C .got2
+000013F8: [20] 10010A5C 000000C8 00000A5C .dynamic
+00001420: [21] 10010B24 00000008 00000B24 .data
+00001448: [22] 10010B2C 00000014 00000B2C .got
+00001470: [23] 10010B40 00000000 00000B40 .sdata
+00001498: [24] 10010B40 00000000 00000B40 .sbss
+000014C0: [25] 10010B40 0000006C 00000B40 .plt
+000014E8: [26] 10010BAC 00000004 00000B40 .bss
+00001510: [27] 00000000 000001B0 00000B40 .comment
+00001538: [28] 00000000 00000058 00000CF0 .debug_aranges
+00001560: [29] 00000000 00000138 00000D48 .debug_info
+00001588: [30] 00000000 00000020 00000E80 .debug_abbrev
+000015B0: [31] 00000000 00000117 00000EA0 .debug_line
+000015D8: [32] 00000000 00000120 00000FB7 .shstrtab
+00001600: [33] 00000000 00000E90 00001650 .symtab
+00001628: [34] 00000000 0000099C 000024E0 .strtab
+Internal error: Dwarf-2 current offset: 0xA38
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 7 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 8 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 9 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 9 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/1  0x10010B2C
+Elapsed time: 0 sec.
+File analysis complete.
+1 Procs, 10 Labels, 4 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/1: 0x10010B2C
+Elapsed time: 0 sec.
+Decompiling 1/1: 0x10010B2C
+Elapsed time: 0 sec.

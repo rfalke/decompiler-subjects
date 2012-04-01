@@ -1,0 +1,117 @@
+Analyzing './from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe: no .debug_info section
+./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe: 30 sections starting at 0x00002B58
+./from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe: section string table at 0x00002F90, 0xE3 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00002B58: [ 0] 00000000 00000000 00000000 
+00002B80: [ 1] 080480F4 00000013 000000F4 .interp
+00002BA8: [ 2] 08048108 00000020 00000108 .note.ABI-tag
+00002BD0: [ 3] 08048128 00000034 00000128 .hash
+00002BF8: [ 4] 0804815C 00000080 0000015C .dynsym
+00002C20: [ 5] 080481DC 00000066 000001DC .dynstr
+00002C48: [ 6] 08048242 00000010 00000242 .gnu.version
+00002C70: [ 7] 08048254 00000020 00000254 .gnu.version_r
+00002C98: [ 8] 08048274 00000010 00000274 .rel.dyn
+00002CC0: [ 9] 08048284 00000018 00000284 .rel.plt
+00002CE8: [10] 0804829C 00000018 0000029C .init
+00002D10: [11] 080482B4 00000040 000002B4 .plt
+00002D38: [12] 08048300 00000390 00000300 .text
+00002D60: [13] 08048690 0000001E 00000690 .fini
+00002D88: [14] 080486B0 0000009C 000006B0 .rodata
+00002DB0: [15] 0804974C 0000000C 0000074C .data
+00002DD8: [16] 08049758 00000004 00000758 .eh_frame
+00002E00: [17] 0804975C 000000C8 0000075C .dynamic
+00002E28: [18] 08049824 00000008 00000824 .ctors
+00002E50: [19] 0804982C 00000008 0000082C .dtors
+00002E78: [20] 08049834 00000004 00000834 .jcr
+00002EA0: [21] 08049838 0000001C 00000838 .got
+00002EC8: [22] 08049854 00000020 00000854 .bss
+00002EF0: [23] 00000000 000007A4 00000854 .stab
+00002F18: [24] 00000000 00001967 00000FF8 .stabstr
+00002F40: [25] 00000000 000000D8 0000295F .comment
+00002F68: [26] 00000000 0000003C 00002A37 .note
+00002F90: [27] 00000000 000000E3 00002A73 .shstrtab
+00002FB8: [28] 00000000 000004B0 00003008 .symtab
+00002FE0: [29] 00000000 00000240 000034B8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2 Labels, 1 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 4 Labels, 2 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 6 Labels, 3 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 11 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/4  0x080482C4
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/4  0x080482D4
+Elapsed time: 0 sec.
+Computing Calling Convention: 3/4  0x080482E4
+Elapsed time: 0 sec.
+Computing Calling Convention: 4/4  0x0804832E
+Elapsed time: 0 sec.
+File analysis complete.
+4 Procs, 40 Labels, 23 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/4: 0x080482C4
+Elapsed time: 0 sec.
+Decompiling 2/4: 0x080482D4
+Elapsed time: 0 sec.
+Decompiling 3/4: 0x080482E4
+Elapsed time: 0 sec.
+Decompiling 4/4: 0x0804832E
+Elapsed time: 0 sec.
+Decompiling 4/4: 0x0804832E
+Elapsed time: 0 sec.

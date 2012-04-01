@@ -1,0 +1,152 @@
+Analyzing './from_boomerang/global3/ia32_elf_by_boomerang/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_boomerang/global3/ia32_elf_by_boomerang/subject.exe: 34 sections starting at 0x00001D7C
+./from_boomerang/global3/ia32_elf_by_boomerang/subject.exe: section string table at 0x00002254, 0x12B bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001D7C: [ 0] 00000000 00000000 00000000 
+00001DA4: [ 1] 080480F4 00000013 000000F4 .interp
+00001DCC: [ 2] 08048108 00000020 00000108 .note.ABI-tag
+00001DF4: [ 3] 08048128 00000028 00000128 .hash
+00001E1C: [ 4] 08048150 00000050 00000150 .dynsym
+00001E44: [ 5] 080481A0 0000004C 000001A0 .dynstr
+00001E6C: [ 6] 080481EC 0000000A 000001EC .gnu.version
+00001E94: [ 7] 080481F8 00000020 000001F8 .gnu.version_r
+00001EBC: [ 8] 08048218 00000008 00000218 .rel.dyn
+00001EE4: [ 9] 08048220 00000010 00000220 .rel.plt
+00001F0C: [10] 08048230 00000017 00000230 .init
+00001F34: [11] 08048248 00000030 00000248 .plt
+00001F5C: [12] 08048278 000001A8 00000278 .text
+00001F84: [13] 08048420 0000001B 00000420 .fini
+00001FAC: [14] 0804843C 0000001A 0000043C .rodata
+00001FD4: [15] 08048458 00000004 00000458 .eh_frame
+00001FFC: [16] 08049460 0000001C 00000460 .data
+00002024: [17] 0804947C 000000C8 0000047C .dynamic
+0000204C: [18] 08049544 00000008 00000544 .ctors
+00002074: [19] 0804954C 00000008 0000054C .dtors
+0000209C: [20] 08049554 00000004 00000554 .jcr
+000020C4: [21] 08049558 00000018 00000558 .got
+000020EC: [22] 08049570 00000004 00000570 .bss
+00002114: [23] 00000000 00000132 00000570 .comment
+0000213C: [24] 00000000 00000078 000006A8 .debug_aranges
+00002164: [25] 00000000 00000025 00000720 .debug_pubnames
+0000218C: [26] 00000000 00000A84 00000745 .debug_info
+000021B4: [27] 00000000 00000138 000011C9 .debug_abbrev
+000021DC: [28] 00000000 0000027C 00001301 .debug_line
+00002204: [29] 00000000 00000014 00001580 .debug_frame
+0000222C: [30] 00000000 000006BA 00001594 .debug_str
+00002254: [31] 00000000 0000012B 00001C4E .shstrtab
+0000227C: [32] 00000000 00000700 000022CC .symtab
+000022A4: [33] 00000000 00000402 000029CC .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2 Labels, 1 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 4 Labels, 2 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 9 Labels, 7 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 13 Labels, 14 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 30 Labels, 30 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 43 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/12  0x08048258
+Elapsed time: 0 sec.
+Computing Calling Convention: 3/12  0x08048268
+Elapsed time: 0 sec.
+Computing Calling Convention: 5/12  0x080482A6
+Elapsed time: 0 sec.
+Computing Calling Convention: 6/12  0x080482C0
+Elapsed time: 0 sec.
+Computing Calling Convention: 7/12  0x080482FC
+Elapsed time: 0 sec.
+Computing Calling Convention: 8/12  0x08048328
+Elapsed time: 0 sec.
+Computing Calling Convention: 9/12  0x08048356
+Elapsed time: 0 sec.
+Computing Calling Convention: 10/12  0x08048363
+Elapsed time: 0 sec.
+Computing Calling Convention: 11/12  0x080483FC
+Elapsed time: 0 sec.
+Computing Calling Convention: 12/12  0x0804842A
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/2  0x0804829C
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/1  0x08048230
+Elapsed time: 0 sec.
+File analysis complete.
+12 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/12: 0x08048230
+Elapsed time: 0 sec.
+Decompiling 2/12: 0x08048258
+Elapsed time: 0 sec.
+Decompiling 3/12: 0x08048268
+Elapsed time: 0 sec.
+Decompiling 4/12: 0x0804829C
+Elapsed time: 0 sec.
+Decompiling 5/12: 0x080482A6
+Elapsed time: 0 sec.
+Decompiling 6/12: 0x080482C0
+Elapsed time: 0 sec.
+Decompiling 7/12: 0x080482FC
+Elapsed time: 0 sec.
+Decompiling 8/12: 0x08048328
+Elapsed time: 0 sec.
+Decompiling 9/12: 0x08048356
+Elapsed time: 0 sec.
+Decompiling 10/12: 0x08048363
+Elapsed time: 0 sec.
+Decompiling 11/12: 0x080483FC
+Elapsed time: 0 sec.
+Decompiling 12/12: 0x0804842A
+Elapsed time: 0 sec.
+Decompiling 12/12: 0x0804842A
+Elapsed time: 0 sec.

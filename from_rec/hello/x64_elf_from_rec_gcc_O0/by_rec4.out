@@ -1,0 +1,88 @@
+Analyzing './from_rec/hello/x64_elf_from_rec_gcc_O0/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_rec/hello/x64_elf_from_rec_gcc_O0/subject.exe: 37 sections starting at 0x00001800
+./from_rec/hello/x64_elf_from_rec_gcc_O0/subject.exe: section string table at 0x00002080, 0x149 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001800: [ 0] 00000000 00000000 00000000 
+00001840: [ 1] 00400238 0000001C 00000238 .interp
+00001880: [ 2] 00400254 00000020 00000254 .note.ABI-tag
+000018C0: [ 3] 00400278 00000024 00000278 .hash
+00001900: [ 4] 004002A0 0000001C 000002A0 .gnu.hash
+00001940: [ 5] 004002C0 00000060 000002C0 .dynsym
+00001980: [ 6] 00400320 0000003D 00000320 .dynstr
+000019C0: [ 7] 0040035E 00000008 0000035E .gnu.version
+00001A00: [ 8] 00400368 00000020 00000368 .gnu.version_r
+00001A40: [ 9] 00400388 00000018 00000388 .rela.dyn
+00001A80: [10] 004003A0 00000030 000003A0 .rela.plt
+00001AC0: [11] 004003D0 00000018 000003D0 .init
+00001B00: [12] 004003E8 00000030 000003E8 .plt
+00001B40: [13] 00400420 000001E8 00000420 .text
+00001B80: [14] 00400608 0000000E 00000608 .fini
+00001BC0: [15] 00400618 00000011 00000618 .rodata
+00001C00: [16] 0040062C 00000024 0000062C .eh_frame_hdr
+00001C40: [17] 00400650 00000094 00000650 .eh_frame
+00001C80: [18] 00600E18 00000010 00000E18 .ctors
+00001CC0: [19] 00600E28 00000010 00000E28 .dtors
+00001D00: [20] 00600E38 00000008 00000E38 .jcr
+00001D40: [21] 00600E40 000001A0 00000E40 .dynamic
+00001D80: [22] 00600FE0 00000008 00000FE0 .got
+00001DC0: [23] 00600FE8 00000028 00000FE8 .got.plt
+00001E00: [24] 00601010 00000010 00001010 .data
+00001E40: [25] 00601020 00000010 00001020 .bss
+00001E80: [26] 00000000 000000FF 00001020 .comment
+00001EC0: [27] 00000000 00000090 00001120 .debug_aranges
+00001F00: [28] 00000000 00000025 000011B0 .debug_pubnames
+00001F40: [29] 00000000 000001D7 000011D5 .debug_info
+00001F80: [30] 00000000 0000006F 000013AC .debug_abbrev
+00001FC0: [31] 00000000 00000151 0000141B .debug_line
+00002000: [32] 00000000 000000A7 0000156C .debug_str
+00002040: [33] 00000000 00000090 00001620 .debug_ranges
+00002080: [34] 00000000 00000149 000016B0 .shstrtab
+000020C0: [35] 00000000 000006F0 00002140 .symtab
+00002100: [36] 00000000 00000203 00002830 .strtab
+Internal error: Dwarf-2 current offset: 0x6E4
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+0 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/1  0x00400408
+Elapsed time: 0 sec.
+File analysis complete.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/1: 0x00400408
+Elapsed time: 0 sec.
+Decompiling 1/1: 0x00400408
+Elapsed time: 0 sec.

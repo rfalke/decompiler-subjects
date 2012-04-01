@@ -1,0 +1,105 @@
+Analyzing './from_rec/vars2/x64_elf_from_rec_gcc_g/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_rec/vars2/x64_elf_from_rec_gcc_g/subject.exe: 39 sections starting at 0x00001DA8
+./from_rec/vars2/x64_elf_from_rec_gcc_g/subject.exe: section string table at 0x000026A8, 0x161 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001DA8: [ 0] 00000000 00000000 00000000 
+00001DE8: [ 1] 00400238 0000001C 00000238 .interp
+00001E28: [ 2] 00400254 00000020 00000254 .note.ABI-tag
+00001E68: [ 3] 00400278 00000018 00000278 .hash
+00001EA8: [ 4] 00400290 0000001C 00000290 .gnu.hash
+00001EE8: [ 5] 004002B0 00000048 000002B0 .dynsym
+00001F28: [ 6] 004002F8 00000038 000002F8 .dynstr
+00001F68: [ 7] 00400330 00000006 00000330 .gnu.version
+00001FA8: [ 8] 00400338 00000020 00000338 .gnu.version_r
+00001FE8: [ 9] 00400358 00000018 00000358 .rela.dyn
+00002028: [10] 00400370 00000018 00000370 .rela.plt
+00002068: [11] 00400388 00000018 00000388 .init
+000020A8: [12] 004003A0 00000020 000003A0 .plt
+000020E8: [13] 004003C0 00000208 000003C0 .text
+00002128: [14] 004005C8 0000000E 000005C8 .fini
+00002168: [15] 004005D8 00000004 000005D8 .rodata
+000021A8: [16] 004005DC 0000002C 000005DC .eh_frame_hdr
+000021E8: [17] 00400608 000000B4 00000608 .eh_frame
+00002228: [18] 00600E18 00000010 00000E18 .ctors
+00002268: [19] 00600E28 00000010 00000E28 .dtors
+000022A8: [20] 00600E38 00000008 00000E38 .jcr
+000022E8: [21] 00600E40 000001A0 00000E40 .dynamic
+00002328: [22] 00600FE0 00000008 00000FE0 .got
+00002368: [23] 00600FE8 00000020 00000FE8 .got.plt
+000023A8: [24] 00601008 00000010 00001008 .data
+000023E8: [25] 00601020 000000D8 00001018 .bss
+00002428: [26] 00000000 000000FF 00001018 .comment
+00002468: [27] 00000000 000000C0 00001120 .debug_aranges
+000024A8: [28] 00000000 000000AB 000011E0 .debug_pubnames
+000024E8: [29] 00000000 0000045B 0000128B .debug_info
+00002528: [30] 00000000 00000148 000016E6 .debug_abbrev
+00002568: [31] 00000000 00000196 0000182E .debug_line
+000025A8: [32] 00000000 00000058 000019C8 .debug_frame
+000025E8: [33] 00000000 000000E9 00001A20 .debug_str
+00002628: [34] 00000000 00000098 00001B09 .debug_loc
+00002668: [35] 00000000 00000090 00001BB0 .debug_ranges
+000026A8: [36] 00000000 00000161 00001C40 .shstrtab
+000026E8: [37] 00000000 00000870 00002768 .symtab
+00002728: [38] 00000000 0000021F 00002FD8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+0 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+0 Procs, 8 Labels, 6 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+0 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Resolving indirect jumps...
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Resolving constants and strings...
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Discovering unreached functions...
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Computing call tree...
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Computing calling conventions...
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+Computing Calling Convention: 1/3  0x004003B0
+Elapsed time: 1 sec.
+Computing Calling Convention: 2/3  0x004004AC
+Elapsed time: 1 sec.
+Computing Calling Convention: 3/3  0x004004D4
+Elapsed time: 1 sec.
+File analysis complete.
+3 Procs, 9 Labels, 8 Branches, 0 MB used, 0 / 2 kB covered
+Elapsed time: 1 sec.
+
+Decompiling 1/3: 0x004003B0
+Elapsed time: 0 sec.
+Decompiling 2/3: 0x004004AC
+Elapsed time: 0 sec.
+Decompiling 3/3: 0x004004D4
+Elapsed time: 0 sec.
+Decompiling 3/3: 0x004004D4
+Elapsed time: 0 sec.

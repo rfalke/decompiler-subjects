@@ -1,0 +1,463 @@
+Analyzing './from_decompile-it.com/optic/ia32_elf_from_website/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_decompile-it.com/optic/ia32_elf_from_website/subject.exe: 38 sections starting at 0x0003D4DC
+./from_decompile-it.com/optic/ia32_elf_from_website/subject.exe: section string table at 0x0003DA54, 0x164 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+0003D4DC: [ 0] 00000000 00000000 00000000 
+0003D504: [ 1] 08048134 00000013 00000134 .interp
+0003D52C: [ 2] 08048148 00000020 00000148 .note.ABI-tag
+0003D554: [ 3] 08048168 00000024 00000168 .note.gnu.build-id
+0003D57C: [ 4] 0804818C 0000003C 0000018C .gnu.hash
+0003D5A4: [ 5] 080481C8 00000310 000001C8 .dynsym
+0003D5CC: [ 6] 080484D8 000003D3 000004D8 .dynstr
+0003D5F4: [ 7] 080488AC 00000062 000008AC .gnu.version
+0003D61C: [ 8] 08048910 00000070 00000910 .gnu.version_r
+0003D644: [ 9] 08048980 00000008 00000980 .rel.dyn
+0003D66C: [10] 08048988 00000148 00000988 .rel.plt
+0003D694: [11] 08048AD0 00000030 00000AD0 .init
+0003D6BC: [12] 08048B00 000002A0 00000B00 .plt
+0003D6E4: [13] 08048DA0 00027B1C 00000DA0 .text
+0003D70C: [14] 080708BC 0000001C 000288BC .fini
+0003D734: [15] 080708E0 00003B04 000288E0 .rodata
+0003D75C: [16] 080743E4 00000004 0002C3E4 .eh_frame
+0003D784: [17] 08075EEC 00000008 0002CEEC .ctors
+0003D7AC: [18] 08075EF4 00000008 0002CEF4 .dtors
+0003D7D4: [19] 08075EFC 00000004 0002CEFC .jcr
+0003D7FC: [20] 08075F00 000000F0 0002CF00 .dynamic
+0003D824: [21] 08075FF0 00000004 0002CFF0 .got
+0003D84C: [22] 08075FF4 000000B0 0002CFF4 .got.plt
+0003D874: [23] 080760C0 00000104 0002D0C0 .data
+0003D89C: [24] 080761E0 00005470 0002D1C4 .bss
+0003D8C4: [25] 00000000 0000002B 0002D1C4 .comment
+0003D8EC: [26] 00000000 000003A0 0002D1EF .debug_aranges
+0003D914: [27] 00000000 000003FC 0002D58F .debug_pubnames
+0003D93C: [28] 00000000 00009EDA 0002D98B .debug_info
+0003D964: [29] 00000000 000018FF 00037865 .debug_abbrev
+0003D98C: [30] 00000000 00002036 00039164 .debug_line
+0003D9B4: [31] 00000000 000005D0 0003B19C .debug_frame
+0003D9DC: [32] 00000000 00001054 0003B76C .debug_str
+0003DA04: [33] 00000000 00000580 0003C7C0 .debug_loc
+0003DA2C: [34] 00000000 00000638 0003CD40 .debug_ranges
+0003DA54: [35] 00000000 00000164 0003D378 .shstrtab
+0003DA7C: [36] 00000000 00000BB0 0003DACC .symtab
+0003DAA4: [37] 00000000 00000A95 0003E67C .strtab
+Internal error: Dwarf-2 current offset: 0xB65E0
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 177 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 17 Labels, 15 Branches, 0 MB used, 0 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 26 Labels, 22 Branches, 0 MB used, 0 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2541 Labels, 4322 Branches, 0 MB used, 158 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2542 Labels, 4322 Branches, 0 MB used, 158 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2544 Labels, 4323 Branches, 0 MB used, 158 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2550 Labels, 4330 Branches, 0 MB used, 158 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 2554 Labels, 4333 Branches, 0 MB used, 158 / 177 kB covered
+Elapsed time: 0 sec.
+0 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+0 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Resolving indirect jumps...
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Resolving constants and strings...
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Discovering unreached functions...
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Computing call tree...
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Computing calling conventions...
+80 Procs, 5144 Labels, 5763 Branches, 1 MB used, 178 / 177 kB covered
+Elapsed time: 2 sec.
+Computing Calling Convention: 3/80  0x08048B10
+Elapsed time: 2 sec.
+Computing Calling Convention: 4/80  0x08048B20
+Elapsed time: 2 sec.
+Computing Calling Convention: 5/80  0x08048B30
+Elapsed time: 2 sec.
+Computing Calling Convention: 6/80  0x08048B40
+Elapsed time: 2 sec.
+Computing Calling Convention: 7/80  0x08048B50
+Elapsed time: 2 sec.
+Computing Calling Convention: 8/80  0x08048B60
+Elapsed time: 2 sec.
+Computing Calling Convention: 9/80  0x08048B70
+Elapsed time: 2 sec.
+Computing Calling Convention: 10/80  0x08048B80
+Elapsed time: 2 sec.
+Computing Calling Convention: 11/80  0x08048B90
+Elapsed time: 2 sec.
+Computing Calling Convention: 12/80  0x08048BA0
+Elapsed time: 2 sec.
+Computing Calling Convention: 13/80  0x08048BB0
+Elapsed time: 2 sec.
+Computing Calling Convention: 14/80  0x08048BC0
+Elapsed time: 2 sec.
+Computing Calling Convention: 15/80  0x08048BD0
+Elapsed time: 2 sec.
+Computing Calling Convention: 16/80  0x08048BE0
+Elapsed time: 2 sec.
+Computing Calling Convention: 17/80  0x08048BF0
+Elapsed time: 2 sec.
+Computing Calling Convention: 18/80  0x08048C00
+Elapsed time: 2 sec.
+Computing Calling Convention: 19/80  0x08048C10
+Elapsed time: 2 sec.
+Computing Calling Convention: 20/80  0x08048C20
+Elapsed time: 2 sec.
+Computing Calling Convention: 21/80  0x08048C30
+Elapsed time: 2 sec.
+Computing Calling Convention: 22/80  0x08048C40
+Elapsed time: 2 sec.
+Computing Calling Convention: 23/80  0x08048C50
+Elapsed time: 2 sec.
+Computing Calling Convention: 24/80  0x08048C60
+Elapsed time: 2 sec.
+Computing Calling Convention: 25/80  0x08048C70
+Elapsed time: 2 sec.
+Computing Calling Convention: 26/80  0x08048C80
+Elapsed time: 2 sec.
+Computing Calling Convention: 27/80  0x08048C90
+Elapsed time: 2 sec.
+Computing Calling Convention: 28/80  0x08048CA0
+Elapsed time: 2 sec.
+Computing Calling Convention: 29/80  0x08048CB0
+Elapsed time: 2 sec.
+Computing Calling Convention: 30/80  0x08048CC0
+Elapsed time: 2 sec.
+Computing Calling Convention: 31/80  0x08048CD0
+Elapsed time: 2 sec.
+Computing Calling Convention: 32/80  0x08048CE0
+Elapsed time: 2 sec.
+Computing Calling Convention: 33/80  0x08048CF0
+Elapsed time: 2 sec.
+Computing Calling Convention: 34/80  0x08048D00
+Elapsed time: 2 sec.
+Computing Calling Convention: 35/80  0x08048D10
+Elapsed time: 2 sec.
+Computing Calling Convention: 36/80  0x08048D20
+Elapsed time: 2 sec.
+Computing Calling Convention: 37/80  0x08048D30
+Elapsed time: 2 sec.
+Computing Calling Convention: 38/80  0x08048D40
+Elapsed time: 2 sec.
+Computing Calling Convention: 39/80  0x08048D50
+Elapsed time: 2 sec.
+Computing Calling Convention: 40/80  0x08048D60
+Elapsed time: 2 sec.
+Computing Calling Convention: 41/80  0x08048D70
+Elapsed time: 2 sec.
+Computing Calling Convention: 42/80  0x08048D80
+Elapsed time: 2 sec.
+Computing Calling Convention: 43/80  0x08048D90
+Elapsed time: 2 sec.
+Computing Calling Convention: 44/80  0x08048DD0
+Elapsed time: 2 sec.
+Computing Calling Convention: 45/80  0x08048E30
+Elapsed time: 2 sec.
+Computing Calling Convention: 47/80  0x0804DDD8
+Elapsed time: 2 sec.
+Computing Calling Convention: 48/80  0x08050B5C
+Elapsed time: 2 sec.
+Computing Calling Convention: 49/80  0x0805ACD4
+Elapsed time: 4 sec.
+Computing Calling Convention: 52/80  0x0805C23C
+Elapsed time: 4 sec.
+Computing Calling Convention: 55/80  0x08067ADF
+Elapsed time: 4 sec.
+Computing Calling Convention: 58/80  0x0806AEAC
+Elapsed time: 4 sec.
+Computing Calling Convention: 60/80  0x0806B330
+Elapsed time: 4 sec.
+Computing Calling Convention: 62/80  0x0806B480
+Elapsed time: 4 sec.
+Computing Calling Convention: 64/80  0x0806C41C
+Elapsed time: 4 sec.
+Computing Calling Convention: 65/80  0x0806C6EC
+Elapsed time: 4 sec.
+Computing Calling Convention: 68/80  0x0806D008
+Elapsed time: 4 sec.
+Computing Calling Convention: 69/80  0x0806D1A4
+Elapsed time: 4 sec.
+Computing Calling Convention: 71/80  0x0806E304
+Elapsed time: 4 sec.
+Computing Calling Convention: 75/80  0x0806F9A4
+Elapsed time: 4 sec.
+Computing Calling Convention: 76/80  0x08070748
+Elapsed time: 4 sec.
+Computing Calling Convention: 78/80  0x0807088A
+Elapsed time: 4 sec.
+Computing Calling Convention: 79/80  0x08070890
+Elapsed time: 4 sec.
+Computing Calling Convention: 80/80  0x080708C8
+Elapsed time: 4 sec.
+Computing Calling Convention: 2/19  0x08048ADC
+Elapsed time: 4 sec.
+Computing Calling Convention: 5/19  0x0805B8D4
+Elapsed time: 4 sec.
+Computing Calling Convention: 11/19  0x0806B428
+Elapsed time: 4 sec.
+Computing Calling Convention: 15/19  0x0806D2A0
+Elapsed time: 4 sec.
+Computing Calling Convention: 16/19  0x0806EDD8
+Elapsed time: 4 sec.
+Computing Calling Convention: 18/19  0x0806F560
+Elapsed time: 4 sec.
+Computing Calling Convention: 1/13  0x08048AD0
+Elapsed time: 4 sec.
+Computing Calling Convention: 5/13  0x0805CB14
+Elapsed time: 4 sec.
+Computing Calling Convention: 7/13  0x0806A30D
+Elapsed time: 9 sec.
+Computing Calling Convention: 8/13  0x0806AF3C
+Elapsed time: 9 sec.
+Computing Calling Convention: 9/13  0x0806B578
+Elapsed time: 9 sec.
+Computing Calling Convention: 10/13  0x0806C7B0
+Elapsed time: 9 sec.
+Computing Calling Convention: 11/13  0x0806CBE4
+Elapsed time: 9 sec.
+Computing Calling Convention: 12/13  0x0806EECC
+Elapsed time: 9 sec.
+Computing Calling Convention: 3/5  0x0805CAA0
+Elapsed time: 9 sec.
+Computing Calling Convention: 4/5  0x08067F38
+Elapsed time: 9 sec.
+Computing Calling Convention: 2/3  0x0805B598
+Elapsed time: 9 sec.
+Computing Calling Convention: 1/2  0x08048E54
+Elapsed time: 9 sec.
+Computing Calling Convention: 2/2  0x080707E0
+Elapsed time: 9 sec.
+File analysis complete.
+80 Procs, 5144 Labels, 5763 Branches, 0 MB used, 178 / 177 kB covered
+Elapsed time: 9 sec.
+
+Decompiling 1/80: 0x08048AD0
+Elapsed time: 0 sec.
+Decompiling 2/80: 0x08048ADC
+Elapsed time: 0 sec.
+Decompiling 3/80: 0x08048B10
+Elapsed time: 0 sec.
+Decompiling 4/80: 0x08048B20
+Elapsed time: 0 sec.
+Decompiling 5/80: 0x08048B30
+Elapsed time: 0 sec.
+Decompiling 6/80: 0x08048B40
+Elapsed time: 0 sec.
+Decompiling 7/80: 0x08048B50
+Elapsed time: 0 sec.
+Decompiling 8/80: 0x08048B60
+Elapsed time: 0 sec.
+Decompiling 9/80: 0x08048B70
+Elapsed time: 0 sec.
+Decompiling 10/80: 0x08048B80
+Elapsed time: 0 sec.
+Decompiling 11/80: 0x08048B90
+Elapsed time: 0 sec.
+Decompiling 12/80: 0x08048BA0
+Elapsed time: 0 sec.
+Decompiling 13/80: 0x08048BB0
+Elapsed time: 0 sec.
+Decompiling 14/80: 0x08048BC0
+Elapsed time: 0 sec.
+Decompiling 15/80: 0x08048BD0
+Elapsed time: 0 sec.
+Decompiling 16/80: 0x08048BE0
+Elapsed time: 0 sec.
+Decompiling 17/80: 0x08048BF0
+Elapsed time: 0 sec.
+Decompiling 18/80: 0x08048C00
+Elapsed time: 0 sec.
+Decompiling 19/80: 0x08048C10
+Elapsed time: 0 sec.
+Decompiling 20/80: 0x08048C20
+Elapsed time: 0 sec.
+Decompiling 21/80: 0x08048C30
+Elapsed time: 0 sec.
+Decompiling 22/80: 0x08048C40
+Elapsed time: 0 sec.
+Decompiling 23/80: 0x08048C50
+Elapsed time: 0 sec.
+Decompiling 24/80: 0x08048C60
+Elapsed time: 0 sec.
+Decompiling 25/80: 0x08048C70
+Elapsed time: 0 sec.
+Decompiling 26/80: 0x08048C80
+Elapsed time: 0 sec.
+Decompiling 27/80: 0x08048C90
+Elapsed time: 0 sec.
+Decompiling 28/80: 0x08048CA0
+Elapsed time: 0 sec.
+Decompiling 29/80: 0x08048CB0
+Elapsed time: 0 sec.
+Decompiling 30/80: 0x08048CC0
+Elapsed time: 0 sec.
+Decompiling 31/80: 0x08048CD0
+Elapsed time: 0 sec.
+Decompiling 32/80: 0x08048CE0
+Elapsed time: 0 sec.
+Decompiling 33/80: 0x08048CF0
+Elapsed time: 0 sec.
+Decompiling 34/80: 0x08048D00
+Elapsed time: 0 sec.
+Decompiling 35/80: 0x08048D10
+Elapsed time: 0 sec.
+Decompiling 36/80: 0x08048D20
+Elapsed time: 0 sec.
+Decompiling 37/80: 0x08048D30
+Elapsed time: 0 sec.
+Decompiling 38/80: 0x08048D40
+Elapsed time: 0 sec.
+Decompiling 39/80: 0x08048D50
+Elapsed time: 0 sec.
+Decompiling 40/80: 0x08048D60
+Elapsed time: 0 sec.
+Decompiling 41/80: 0x08048D70
+Elapsed time: 0 sec.
+Decompiling 42/80: 0x08048D80
+Elapsed time: 0 sec.
+Decompiling 43/80: 0x08048D90
+Elapsed time: 0 sec.
+Decompiling 44/80: 0x08048DD0
+Elapsed time: 0 sec.
+Decompiling 45/80: 0x08048E30
+Elapsed time: 0 sec.
+Decompiling 46/80: 0x08048E54
+Elapsed time: 0 sec.
+Decompiling 47/80: 0x0804DDD8
+Elapsed time: 18 sec.
+Decompiling 48/80: 0x08050B5C
+Elapsed time: 22 sec.
+Decompiling 49/80: 0x0805ACD4
+Elapsed time: 59 sec.
+Decompiling 50/80: 0x0805B598
+Elapsed time: 59 sec.
+Decompiling 51/80: 0x0805B8D4
+Elapsed time: 59 sec.
+Decompiling 52/80: 0x0805C23C
+Elapsed time: 60 sec.
+Decompiling 53/80: 0x0805CAA0
+Elapsed time: 60 sec.
+Decompiling 54/80: 0x0805CB14
+Elapsed time: 60 sec.

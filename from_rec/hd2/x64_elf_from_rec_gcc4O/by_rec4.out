@@ -1,0 +1,82 @@
+Analyzing './from_rec/hd2/x64_elf_from_rec_gcc4O/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_rec/hd2/x64_elf_from_rec_gcc4O/subject.exe: no .debug_info section
+./from_rec/hd2/x64_elf_from_rec_gcc4O/subject.exe: 31 sections starting at 0x00000EE8
+./from_rec/hd2/x64_elf_from_rec_gcc4O/subject.exe: section string table at 0x000015E8, 0xFE bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000EE8: [ 0] 00000000 00000000 00000000 
+00000F28: [ 1] 00400200 0000001C 00000200 .interp
+00000F68: [ 2] 0040021C 00000020 0000021C .note.ABI-tag
+00000FA8: [ 3] 0040023C 00000024 0000023C .note.gnu.build-id
+00000FE8: [ 4] 00400260 0000003C 00000260 .hash
+00001028: [ 5] 004002A0 0000001C 000002A0 .gnu.hash
+00001068: [ 6] 004002C0 000000F0 000002C0 .dynsym
+000010A8: [ 7] 004003B0 00000067 000003B0 .dynstr
+000010E8: [ 8] 00400418 00000014 00000418 .gnu.version
+00001128: [ 9] 00400430 00000020 00000430 .gnu.version_r
+00001168: [10] 00400450 00000018 00000450 .rela.dyn
+000011A8: [11] 00400468 000000C0 00000468 .rela.plt
+000011E8: [12] 00400528 00000018 00000528 .init
+00001228: [13] 00400540 00000090 00000540 .plt
+00001268: [14] 004005D0 00000468 000005D0 .text
+000012A8: [15] 00400A38 0000000E 00000A38 .fini
+000012E8: [16] 00400A48 00000015 00000A48 .rodata
+00001328: [17] 00400A60 00000034 00000A60 .eh_frame_hdr
+00001368: [18] 00400A98 000000F4 00000A98 .eh_frame
+000013A8: [19] 00600B90 00000010 00000B90 .ctors
+000013E8: [20] 00600BA0 00000010 00000BA0 .dtors
+00001428: [21] 00600BB0 00000008 00000BB0 .jcr
+00001468: [22] 00600BB8 000001A0 00000BB8 .dynamic
+000014A8: [23] 00600D58 00000008 00000D58 .got
+000014E8: [24] 00600D60 00000058 00000D60 .got.plt
+00001528: [25] 00600DB8 00000010 00000DB8 .data
+00001568: [26] 00600DC8 00000010 00000DC8 .bss
+000015A8: [27] 00000000 0000001C 00000DC8 .comment
+000015E8: [28] 00000000 000000FE 00000DE4 .shstrtab
+00001628: [29] 00000000 000006D8 000016A8 .symtab
+00001668: [30] 00000000 00000277 00001D80 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+0 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/1  0x00400570
+Elapsed time: 0 sec.
+File analysis complete.
+1 Procs, 6 Labels, 5 Branches, 0 MB used, 0 / 3 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/1: 0x00400570
+Elapsed time: 0 sec.
+Decompiling 1/1: 0x00400570
+Elapsed time: 0 sec.

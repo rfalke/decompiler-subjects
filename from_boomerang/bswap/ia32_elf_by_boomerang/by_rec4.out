@@ -1,0 +1,151 @@
+Analyzing './from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe: no .debug_info section
+./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe: 28 sections starting at 0x000007AC
+./from_boomerang/bswap/ia32_elf_by_boomerang/subject.exe: section string table at 0x00000B94, 0xD7 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000007AC: [ 0] 00000000 00000000 00000000 
+000007D4: [ 1] 08048114 00000013 00000114 .interp
+000007FC: [ 2] 08048128 00000020 00000128 .note.ABI-tag
+00000824: [ 3] 08048148 0000002C 00000148 .hash
+0000084C: [ 4] 08048174 00000060 00000174 .dynsym
+00000874: [ 5] 080481D4 00000060 000001D4 .dynstr
+0000089C: [ 6] 08048234 0000000C 00000234 .gnu.version
+000008C4: [ 7] 08048240 00000020 00000240 .gnu.version_r
+000008EC: [ 8] 08048260 00000008 00000260 .rel.dyn
+00000914: [ 9] 08048268 00000010 00000268 .rel.plt
+0000093C: [10] 08048278 00000017 00000278 .init
+00000964: [11] 08048290 00000030 00000290 .plt
+0000098C: [12] 080482C0 000001A8 000002C0 .text
+000009B4: [13] 08048468 0000001B 00000468 .fini
+000009DC: [14] 08048484 00000016 00000484 .rodata
+00000A04: [15] 0804849C 00000004 0000049C .eh_frame
+00000A2C: [16] 080494A0 00000008 000004A0 .ctors
+00000A54: [17] 080494A8 00000008 000004A8 .dtors
+00000A7C: [18] 080494B0 00000004 000004B0 .jcr
+00000AA4: [19] 080494B4 000000C8 000004B4 .dynamic
+00000ACC: [20] 0804957C 00000004 0000057C .got
+00000AF4: [21] 08049580 00000014 00000580 .got.plt
+00000B1C: [22] 08049594 0000000C 00000594 .data
+00000B44: [23] 080495A0 00000004 000005A0 .bss
+00000B6C: [24] 00000000 00000132 000005A0 .comment
+00000B94: [25] 00000000 000000D7 000006D2 .shstrtab
+00000BBC: [26] 00000000 00000470 00000C0C .symtab
+00000BE4: [27] 00000000 0000023D 0000107C .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 7 Labels, 6 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 12 Labels, 11 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 30 Labels, 29 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 44 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+0 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/14  0x080482A0
+Elapsed time: 0 sec.
+Computing Calling Convention: 3/14  0x080482B0
+Elapsed time: 0 sec.
+Computing Calling Convention: 5/14  0x080482ED
+Elapsed time: 0 sec.
+Computing Calling Convention: 6/14  0x08048308
+Elapsed time: 0 sec.
+Computing Calling Convention: 7/14  0x08048344
+Elapsed time: 0 sec.
+Computing Calling Convention: 8/14  0x08048370
+Elapsed time: 0 sec.
+Computing Calling Convention: 9/14  0x0804837A
+Elapsed time: 0 sec.
+Computing Calling Convention: 12/14  0x08048444
+Elapsed time: 0 sec.
+Computing Calling Convention: 14/14  0x08048471
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/5  0x080482E4
+Elapsed time: 0 sec.
+Computing Calling Convention: 5/5  0x08048468
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/3  0x08048278
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/3  0x080483C6
+Elapsed time: 0 sec.
+Computing Calling Convention: 3/3  0x0804840A
+Elapsed time: 0 sec.
+File analysis complete.
+14 Procs, 45 Labels, 44 Branches, 0 MB used, 0 / 1 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/14: 0x08048278
+Elapsed time: 0 sec.
+Decompiling 2/14: 0x080482A0
+Elapsed time: 0 sec.
+Decompiling 3/14: 0x080482B0
+Elapsed time: 0 sec.
+Decompiling 4/14: 0x080482E4
+Elapsed time: 0 sec.
+Decompiling 5/14: 0x080482ED
+Elapsed time: 0 sec.
+Decompiling 6/14: 0x08048308
+Elapsed time: 0 sec.
+Decompiling 7/14: 0x08048344
+Elapsed time: 0 sec.
+Decompiling 8/14: 0x08048370
+Elapsed time: 0 sec.
+Decompiling 9/14: 0x0804837A
+Elapsed time: 0 sec.
+Decompiling 10/14: 0x080483C6
+Elapsed time: 0 sec.
+Decompiling 11/14: 0x0804840A
+Elapsed time: 0 sec.
+Decompiling 12/14: 0x08048444
+Elapsed time: 0 sec.
+Decompiling 13/14: 0x08048468
+Elapsed time: 0 sec.
+Decompiling 14/14: 0x08048471
+Elapsed time: 0 sec.
+Decompiling 14/14: 0x08048471
+Elapsed time: 0 sec.
