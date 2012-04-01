@@ -17,21 +17,25 @@ export LD_LIBRARY_PATH=$BOOMERANGDIR/lib
 
 find $root -name subject.exe | sort | while read line
 do
-  echo -n "decompiling $line"
   dir=$(dirname $line)
-  rm -f $dir/by_boomerang.c $dir/by_boomerang.failed
-  rm -rf _output
-  mkdir _output
-  if ./boomerang -o _output "$line" >out 2>&1 ; then
-      echo "  ok"
-      mv _output/subject/subject.c $dir/by_boomerang.c
-      cat _output/subject/*.c >>$dir/by_boomerang.c 2>/dev/null || true
+  if test -f $dir/by_rec16.c -o -f $dir/by_rec16.failed; then
+      echo "skipping $line" >/dev/null
   else
-      echo "  failed"
-      touch $dir/by_boomerang.failed
+      echo -n "decompiling $line"
+      rm -f $dir/by_boomerang.c $dir/by_boomerang.failed
+      rm -rf _output
+      mkdir _output
+      if ./boomerang -o _output "$line" >out 2>&1 ; then
+	  echo "  ok"
+	  mv _output/subject/subject.c $dir/by_boomerang.c
+	  cat _output/subject/*.c >>$dir/by_boomerang.c 2>/dev/null || true
+      else
+	  echo "  failed"
+	  touch $dir/by_boomerang.failed
+      fi
+      if test -s _output/log; then
+	  mv _output/log $dir/by_boomerang.log
+      fi
+      sed <out 's/completed in .*/completed in some time/g' >$dir/by_boomerang.out
   fi
-  if test -s _output/log; then
-      mv _output/log $dir/by_boomerang.log
-  fi
-  sed <out 's/completed in .*/completed in some time/g' >$dir/by_boomerang.out
 done
