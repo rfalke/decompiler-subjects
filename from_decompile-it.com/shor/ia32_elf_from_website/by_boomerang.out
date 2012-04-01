@@ -1,0 +1,115 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053c80, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053075, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8052c24, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8052c89, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80530f5, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8052d78, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8052d8b, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053195, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x805317b, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053161, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8052ffe, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053147, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x805312d, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053113, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053725, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80532dc, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053341, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80537a5, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053430, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053441, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053845, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x805382b, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x8053811, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80536ae, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80537f7, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80537dd, ignoring.
+Error: no entry for `FXAM' in RTL dictionary
+ERROR: unknown instruction FXAM at 0x80537c3, ignoring.
+finishing decode...
+found 84 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering quantum_getwidth
+  decompiling quantum_getwidth
+  considering quantum_gcd
+  decompiling quantum_gcd
+  considering quantum_new_qureg
+   considering quantum_memman
+   decompiling quantum_memman
+   considering quantum_error
+    considering quantum_error_handler
+    decompiling quantum_error_handler
+r    considering quantum_strerr
+    decompiling quantum_strerr
+r   decompiling quantum_error
+prt   considering quantum_objcode_put
+    considering quantum_int2char
+    decompiling quantum_int2char
+t    considering quantum_mu2char
+    decompiling quantum_mu2char
+prtt    considering quantum_double2char
+    decompiling quantum_double2char
+   decompiling quantum_objcode_put
+rpprrprtttttttp   considering quantum_objcode_start
+   decompiling quantum_objcode_start
+r   considering quantum_objcode_file
+   decompiling quantum_objcode_file
+   considering atexit
+    considering __i686.get_pc_thunk.bx
+    decompiling __i686.get_pc_thunk.bx
+   decompiling atexit
+  decompiling quantum_new_qureg
+rptt  considering quantum_hadamard
+   considering quantum_new_matrix
+   decompiling quantum_new_matrix
+r   considering quantum_gate1
+    considering quantum_reconstruct_hash
+     considering quantum_add_hash
+      considering quantum_hash64
+      decompiling quantum_hash64
+     decompiling quantum_add_hash
+prt    decompiling quantum_reconstruct_hash
+t    considering quantum_get_state
+    decompiling quantum_get_state
+prtt    considering quantum_decohere
+     considering quantum_gate_counter
+     decompiling quantum_gate_counter
+r     considering quantum_frand
+     decompiling quantum_frand
+     considering quantum_cexp
+      considering __muldc3
+      decompiling __muldc3
+rpBranchStatement::simplify: Mask is 0
+boomerang: db/statement.cpp:2084: bool condToRelational(Exp*&, BRANCH_TYPE): Assertion `0' failed.

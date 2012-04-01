@@ -1,0 +1,598 @@
+Unknown library function __libc_start_main
+got filename fifo.c for main
+got filename fifo.c for register_action_action_list
+got filename fifo.c for register_rotate_action_list
+got filename fifo.c for register_command_action_list
+got filename fifo.c for register_djopt_flag_list
+got filename fifo.c for register_djopt_action_list
+got filename fifo.c for register_flags_flag_list
+got filename fifo.c for register_fontmode_action_list
+got filename fifo.c for register_main_attribute_list
+got filename fifo.c for register_move_action_list
+got filename fifo.c for register_netlist_action_list
+got filename fifo.c for register_puller_action_list
+got filename fifo.c for register_report_action_list
+got filename fifo.c for register_vendor_action_list
+got filename fifo.c for register_vendor_flag_list
+got filename fifo.c for register_toporouter_action_list
+Unknown library function setbuf
+got filename fifo.c for lrealpath
+Unknown library function __sprintf_chk
+Unknown library function __fprintf_chk
+Unknown library function bind_textdomain_codeset
+got filename fifo.c for hid_init
+got filename fifo.c for hid_load_settings
+got filename main.c for usage
+got filename fifo.c for hid_find_gui
+got filename fifo.c for MyStrdup
+got filename fifo.c for Concat
+got filename main.c for print_version
+got filename fifo.c for hid_find_printer
+got filename fifo.c for hid_find_exporter
+got filename fifo.c for hid_enumerate
+got filename main.c for print_defaults_1
+got filename fifo.c for copyright
+got filename fifo.c for hid_register_actions
+got filename fifo.c for hid_register_flags
+Unknown library function __realpath_chk
+COMPUTED JUMP at 0x80a0a1f, pDest = m[(r25 * 4) + 0x814941c]
+got filename main.c for u
+Unknown library function __printf_chk
+got filename fifo.c for hid_register_attributes
+got filename hidinit.c for hid_load_settings_1
+got filename fifo.c for hid_gtk_init
+got filename fifo.c for hid_lpr_init
+got filename fifo.c for hid_bom_init
+got filename fifo.c for hid_gerber_init
+got filename fifo.c for hid_nelma_init
+got filename fifo.c for hid_png_init
+got filename fifo.c for hid_ps_init
+got filename hidinit.c for hid_load_dir
+got filename fifo.c for hid_register_hid
+got filename fifo.c for apply_default_hid
+got filename fifo.c for register_ghid_main_action_list
+got filename fifo.c for register_ghid_main_flag_list
+got filename fifo.c for register_ghid_netlist_action_list
+got filename fifo.c for register_ghid_attribute_list
+got filename fifo.c for register_gtk_topwindow_action_list
+got filename fifo.c for register_pcbmenu_attr
+got filename fifo.c for hid_eps_init
+got filename fifo.c for register_ps_attribute_list
+Unknown library function __vfprintf_chk
+Unknown library function fputc
+Unknown library function __stack_chk_fail
+COMPUTED JUMP at 0x80d68da, pDest = m[(r24 * 4) + 0x81506d8]
+Unknown library function opendir
+Unknown library function readdir
+Unknown library function dlopen
+Unknown library function dlsym
+Unknown library function dlerror
+assgn   20 *32* r24 := m[0x818d098]
+assgn   29 *32* tmp1 := m[0x818d0a4]
+assgn   34 *32* r24 := m[0x818d0a0]
+after removing matching assigns (%pc).
+in proc hid_register_actions adding addrExp r28{0} - 4 to local table
+in proc hid_register_actions adding addrExp r28{0} - 60 to local table
+in proc hid_register_actions adding addrExp r28{0} - 16 to local table
+in proc hid_register_actions adding addrExp r28{0} - 12 to local table
+in proc hid_register_actions adding addrExp r28{0} - 8 to local table
+in proc hid_register_actions adding addrExp r28{0} - 32 to local table
+in proc hid_register_actions adding addrExp r28{0} - 64 to local table
+in proc hid_register_actions adding addrExp r28{0} - 60 to local table
+in proc hid_register_actions adding addrExp r28{0} - 64 to local table
+in proc hid_register_actions adding addrExp r28{0} - 60 to local table
+in proc hid_register_actions adding addrExp r28{0} - 64 to local table
+in proc hid_register_actions adding addrExp r28{0} - 60 to local table
+in proc hid_register_actions adding addrExp r28{0} - 64 to local table
+in proc hid_register_actions adding addrExp r28{0} - 60 to local table
+in proc hid_register_actions adding addrExp r28{0} - 64 to local table
+in proc hid_register_actions adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+finding final parameters for hid_register_actions
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_action_action_list adding addrExp r28{0} - 4 to local table
+in proc register_action_action_list adding addrExp r28{0} - 24 to local table
+in proc register_action_action_list adding addrExp r28{0} - 28 to local table
+in proc register_action_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_action_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_rotate_action_list adding addrExp r28{0} - 4 to local table
+in proc register_rotate_action_list adding addrExp r28{0} - 24 to local table
+in proc register_rotate_action_list adding addrExp r28{0} - 28 to local table
+in proc register_rotate_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_rotate_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_command_action_list adding addrExp r28{0} - 4 to local table
+in proc register_command_action_list adding addrExp r28{0} - 24 to local table
+in proc register_command_action_list adding addrExp r28{0} - 28 to local table
+in proc register_command_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_command_action_list
+assgn   16 *32* r26 := m[0x818d0a8]
+assgn   21 *32* tmp1 := m[0x818d0cc]
+assgn   25 *32* r24 := m[0x818d0c8]
+after removing matching assigns (%pc).
+in proc hid_register_flags adding addrExp r28{0} - 4 to local table
+in proc hid_register_flags adding addrExp r28{0} - 8 to local table
+in proc hid_register_flags adding addrExp r28{0} - 24 to local table
+in proc hid_register_flags adding addrExp r28{0} - 28 to local table
+in proc hid_register_flags adding addrExp r28{0} - 32 to local table
+in proc hid_register_flags adding addrExp r28{0} - 28 to local table
+in proc hid_register_flags adding addrExp r28{0} - 32 to local table
+in proc hid_register_flags adding addrExp r28{0} - 28 to local table
+in proc hid_register_flags adding addrExp r28{0} - 32 to local table
+finding final parameters for hid_register_flags
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_djopt_flag_list adding addrExp r28{0} - 4 to local table
+in proc register_djopt_flag_list adding addrExp r28{0} - 24 to local table
+in proc register_djopt_flag_list adding addrExp r28{0} - 28 to local table
+in proc register_djopt_flag_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_djopt_flag_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_djopt_action_list adding addrExp r28{0} - 4 to local table
+in proc register_djopt_action_list adding addrExp r28{0} - 24 to local table
+in proc register_djopt_action_list adding addrExp r28{0} - 28 to local table
+in proc register_djopt_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_djopt_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_flags_flag_list adding addrExp r28{0} - 4 to local table
+in proc register_flags_flag_list adding addrExp r28{0} - 24 to local table
+in proc register_flags_flag_list adding addrExp r28{0} - 28 to local table
+in proc register_flags_flag_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_flags_flag_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_fontmode_action_list adding addrExp r28{0} - 4 to local table
+in proc register_fontmode_action_list adding addrExp r28{0} - 24 to local table
+in proc register_fontmode_action_list adding addrExp r28{0} - 28 to local table
+in proc register_fontmode_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_fontmode_action_list
+assgn   13 *32* r26 := m[0x818d0dc]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc hid_register_attributes adding addrExp r28{0} - 4 to local table
+in proc hid_register_attributes adding addrExp r28{0} - 24 to local table
+in proc hid_register_attributes adding addrExp r28{0} - 28 to local table
+in proc hid_register_attributes adding addrExp r28{0} - 32 to local table
+finding final parameters for hid_register_attributes
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_main_attribute_list adding addrExp r28{0} - 4 to local table
+in proc register_main_attribute_list adding addrExp r28{0} - 24 to local table
+in proc register_main_attribute_list adding addrExp r28{0} - 28 to local table
+in proc register_main_attribute_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_main_attribute_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_move_action_list adding addrExp r28{0} - 4 to local table
+in proc register_move_action_list adding addrExp r28{0} - 24 to local table
+in proc register_move_action_list adding addrExp r28{0} - 28 to local table
+in proc register_move_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_move_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_netlist_action_list adding addrExp r28{0} - 4 to local table
+in proc register_netlist_action_list adding addrExp r28{0} - 24 to local table
+in proc register_netlist_action_list adding addrExp r28{0} - 28 to local table
+in proc register_netlist_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_netlist_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_puller_action_list adding addrExp r28{0} - 4 to local table
+in proc register_puller_action_list adding addrExp r28{0} - 24 to local table
+in proc register_puller_action_list adding addrExp r28{0} - 28 to local table
+in proc register_puller_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_puller_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_report_action_list adding addrExp r28{0} - 4 to local table
+in proc register_report_action_list adding addrExp r28{0} - 24 to local table
+in proc register_report_action_list adding addrExp r28{0} - 28 to local table
+in proc register_report_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_report_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_vendor_action_list adding addrExp r28{0} - 4 to local table
+in proc register_vendor_action_list adding addrExp r28{0} - 24 to local table
+in proc register_vendor_action_list adding addrExp r28{0} - 28 to local table
+in proc register_vendor_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_vendor_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_vendor_flag_list adding addrExp r28{0} - 4 to local table
+in proc register_vendor_flag_list adding addrExp r28{0} - 24 to local table
+in proc register_vendor_flag_list adding addrExp r28{0} - 28 to local table
+in proc register_vendor_flag_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_vendor_flag_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_toporouter_action_list adding addrExp r28{0} - 4 to local table
+in proc register_toporouter_action_list adding addrExp r28{0} - 24 to local table
+in proc register_toporouter_action_list adding addrExp r28{0} - 28 to local table
+in proc register_toporouter_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_toporouter_action_list
+assgn   10 *32* r24 := m[20]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc lrealpath adding addrExp r28{0} - 4 to local table
+in proc lrealpath adding addrExp r28{0} - 8 to local table
+in proc lrealpath adding addrExp r28{0} - 16 to local table
+in proc lrealpath adding addrExp r28{0} - 0x1024 to local table
+in proc lrealpath adding addrExp r28{0} - 0x1028 to local table
+in proc lrealpath adding addrExp r28{0} - 0x102c to local table
+in proc lrealpath adding addrExp r28{0} - 0x1030 to local table
+finding final parameters for lrealpath
+assgn   10 *32* r26 := m[0x818d0d4]
+assgn   17 *32* r25 := m[0x818d0d0]
+assgn   48 *32* r26 := m[0x818d0d4]
+assgn   63 *32* r24 := m[0x816b4a0]
+assgn   87 *32* r25 := m[0x818d0d0]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_register_hid ###
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 16 to local table
+in proc hid_register_hid adding addrExp r28{0} - 20 to local table
+in proc hid_register_hid adding addrExp r28{0} - 4 to local table
+in proc hid_register_hid adding addrExp r28{0} - 8 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 20 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 16 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 16 to local table
+in proc hid_register_hid adding addrExp r28{0} - 20 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+in proc hid_register_hid adding addrExp r28{0} - 24 to local table
+in proc hid_register_hid adding addrExp r28{0} - 28 to local table
+in proc hid_register_hid adding addrExp r28{0} - 32 to local table
+finding final parameters for hid_register_hid
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+in proc apply_default_hid adding addrExp r28{0} - 4 to local table
+finding final parameters for apply_default_hid
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_ghid_main_action_list adding addrExp r28{0} - 4 to local table
+in proc register_ghid_main_action_list adding addrExp r28{0} - 24 to local table
+in proc register_ghid_main_action_list adding addrExp r28{0} - 28 to local table
+in proc register_ghid_main_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_ghid_main_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_ghid_main_flag_list adding addrExp r28{0} - 4 to local table
+in proc register_ghid_main_flag_list adding addrExp r28{0} - 24 to local table
+in proc register_ghid_main_flag_list adding addrExp r28{0} - 28 to local table
+in proc register_ghid_main_flag_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_ghid_main_flag_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_ghid_netlist_action_list adding addrExp r28{0} - 4 to local table
+in proc register_ghid_netlist_action_list adding addrExp r28{0} - 24 to local table
+in proc register_ghid_netlist_action_list adding addrExp r28{0} - 28 to local table
+in proc register_ghid_netlist_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_ghid_netlist_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_ghid_attribute_list adding addrExp r28{0} - 4 to local table
+in proc register_ghid_attribute_list adding addrExp r28{0} - 24 to local table
+in proc register_ghid_attribute_list adding addrExp r28{0} - 28 to local table
+in proc register_ghid_attribute_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_ghid_attribute_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_gtk_topwindow_action_list adding addrExp r28{0} - 4 to local table
+in proc register_gtk_topwindow_action_list adding addrExp r28{0} - 24 to local table
+in proc register_gtk_topwindow_action_list adding addrExp r28{0} - 28 to local table
+in proc register_gtk_topwindow_action_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_gtk_topwindow_action_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_pcbmenu_attr adding addrExp r28{0} - 4 to local table
+in proc register_pcbmenu_attr adding addrExp r28{0} - 24 to local table
+in proc register_pcbmenu_attr adding addrExp r28{0} - 28 to local table
+in proc register_pcbmenu_attr adding addrExp r28{0} - 32 to local table
+finding final parameters for register_pcbmenu_attr
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_gtk_init ###
+in proc hid_gtk_init adding addrExp r28{0} - 4 to local table
+in proc hid_gtk_init adding addrExp r28{0} - 28 to local table
+in proc hid_gtk_init adding addrExp r28{0} - 32 to local table
+in proc hid_gtk_init adding addrExp r28{0} - 24 to local table
+in proc hid_gtk_init adding addrExp r28{0} - 28 to local table
+in proc hid_gtk_init adding addrExp r28{0} - 32 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_gtk_init adding addrExp r28 to local table
+in proc hid_gtk_init adding addrExp r28 to local table
+finding final parameters for hid_gtk_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_lpr_init ###
+in proc hid_lpr_init adding addrExp r28{0} - 4 to local table
+in proc hid_lpr_init adding addrExp r28{0} - 24 to local table
+in proc hid_lpr_init adding addrExp r28{0} - 28 to local table
+in proc hid_lpr_init adding addrExp r28{0} - 32 to local table
+in proc hid_lpr_init adding addrExp r28 to local table
+in proc hid_lpr_init adding addrExp r28 to local table
+in proc hid_lpr_init adding addrExp r28 to local table
+in proc hid_lpr_init adding addrExp r28 to local table
+finding final parameters for hid_lpr_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_bom_init ###
+in proc hid_bom_init adding addrExp r28{0} - 4 to local table
+in proc hid_bom_init adding addrExp r28{0} - 24 to local table
+in proc hid_bom_init adding addrExp r28{0} - 28 to local table
+in proc hid_bom_init adding addrExp r28{0} - 32 to local table
+in proc hid_bom_init adding addrExp r28 to local table
+in proc hid_bom_init adding addrExp r28 to local table
+finding final parameters for hid_bom_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_gerber_init ###
+in proc hid_gerber_init adding addrExp r28{0} - 4 to local table
+in proc hid_gerber_init adding addrExp r28{0} - 24 to local table
+in proc hid_gerber_init adding addrExp r28{0} - 28 to local table
+in proc hid_gerber_init adding addrExp r28{0} - 32 to local table
+in proc hid_gerber_init adding addrExp r28 to local table
+in proc hid_gerber_init adding addrExp r28 to local table
+finding final parameters for hid_gerber_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_nelma_init ###
+in proc hid_nelma_init adding addrExp r28 - 4 to local table
+in proc hid_nelma_init adding addrExp r28 to local table
+in proc hid_nelma_init adding addrExp r28 to local table
+in proc hid_nelma_init adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_nelma_init adding addrExp r28{0} - 24 to local table
+in proc hid_nelma_init adding addrExp r28{0} - 28 to local table
+in proc hid_nelma_init adding addrExp r28{0} - 32 to local table
+in proc hid_nelma_init adding addrExp r28 to local table
+in proc hid_nelma_init adding addrExp r28 to local table
+finding final parameters for hid_nelma_init
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_png_init ###
+in proc hid_png_init adding addrExp r28 - 4 to local table
+in proc hid_png_init adding addrExp r28 to local table
+in proc hid_png_init adding addrExp r28 to local table
+in proc hid_png_init adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_png_init adding addrExp r28{0} - 24 to local table
+in proc hid_png_init adding addrExp r28{0} - 28 to local table
+in proc hid_png_init adding addrExp r28{0} - 32 to local table
+in proc hid_png_init adding addrExp r28 to local table
+in proc hid_png_init adding addrExp r28 to local table
+finding final parameters for hid_png_init
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_eps_init ###
+in proc hid_eps_init adding addrExp r28{0} - 4 to local table
+in proc hid_eps_init adding addrExp r28{0} - 24 to local table
+in proc hid_eps_init adding addrExp r28{0} - 28 to local table
+in proc hid_eps_init adding addrExp r28{0} - 32 to local table
+in proc hid_eps_init adding addrExp r28 to local table
+in proc hid_eps_init adding addrExp r28 to local table
+finding final parameters for hid_eps_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc register_ps_attribute_list adding addrExp r28{0} - 4 to local table
+in proc register_ps_attribute_list adding addrExp r28{0} - 24 to local table
+in proc register_ps_attribute_list adding addrExp r28{0} - 28 to local table
+in proc register_ps_attribute_list adding addrExp r28{0} - 32 to local table
+finding final parameters for register_ps_attribute_list
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_ps_init ###
+in proc hid_ps_init adding addrExp r28{0} - 4 to local table
+in proc hid_ps_init adding addrExp r28{0} - 24 to local table
+in proc hid_ps_init adding addrExp r28{0} - 28 to local table
+in proc hid_ps_init adding addrExp r28{0} - 32 to local table
+in proc hid_ps_init adding addrExp r28 to local table
+in proc hid_ps_init adding addrExp r28 to local table
+in proc hid_ps_init adding addrExp r28 to local table
+in proc hid_ps_init adding addrExp r28 to local table
+in proc hid_ps_init adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_ps_init adding addrExp r28 to local table
+in proc hid_ps_init adding addrExp r28 to local table
+finding final parameters for hid_ps_init
+potential param r28
+found new parameter r28
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure Concat ###
+in proc Concat adding addrExp r28{0} - 32 to local table
+in proc Concat adding addrExp r28{0} - 4 to local table
+in proc Concat adding addrExp r28{0} - 8 to local table
+in proc Concat adding addrExp r28{0} - 12 to local table
+in proc Concat adding addrExp r28{0} - 16 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 32 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 32 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+in proc Concat adding addrExp r28{0} - 32 to local table
+in proc Concat adding addrExp r28{0} - 56 to local table
+in proc Concat adding addrExp r28{0} - 60 to local table
+in proc Concat adding addrExp r28{0} - 64 to local table
+finding final parameters for Concat
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+assgn  190 *32* r24 := m[0x816b4a0]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_load_dir ###
+in proc hid_load_dir adding addrExp r28{0} - 4 to local table
+in proc hid_load_dir adding addrExp r28{0} - 8 to local table
+in proc hid_load_dir adding addrExp r28{0} - 12 to local table
+in proc hid_load_dir adding addrExp r28{0} - 16 to local table
+in proc hid_load_dir adding addrExp r28{0} - 156 to local table
+in proc hid_load_dir adding addrExp r28{0} - 128 to local table
+in proc hid_load_dir adding addrExp r28{0} - 160 to local table
+in proc hid_load_dir adding addrExp r28{0} - 132 to local table
+in proc hid_load_dir adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_load_dir adding addrExp r28{0} - 8 to local table
+in proc hid_load_dir adding addrExp r28{0} - 12 to local table
+in proc hid_load_dir adding addrExp r28{0} - 16 to local table
+in proc hid_load_dir adding addrExp r28{0} - 128 to local table
+in proc hid_load_dir adding addrExp r28{0} - 132 to local table
+in proc hid_load_dir adding addrExp r28{0} - 156 to local table
+in proc hid_load_dir adding addrExp r28{0} - 160 to local table
+in proc hid_load_dir adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_load_dir adding addrExp r28{0} - 8 to local table
+in proc hid_load_dir adding addrExp r28{0} - 12 to local table
+in proc hid_load_dir adding addrExp r28{0} - 16 to local table
+in proc hid_load_dir adding addrExp r28{0} - 128 to local table
+in proc hid_load_dir adding addrExp r28{0} - 132 to local table
+in proc hid_load_dir adding addrExp r28{0} - 156 to local table
+in proc hid_load_dir adding addrExp r28{0} - 160 to local table
+in proc hid_load_dir adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_load_dir adding addrExp r28{0} - 8 to local table
+in proc hid_load_dir adding addrExp r28{0} - 12 to local table
+in proc hid_load_dir adding addrExp r28{0} - 16 to local table
+in proc hid_load_dir adding addrExp r28{0} - 128 to local table
+in proc hid_load_dir adding addrExp r28{0} - 132 to local table
+in proc hid_load_dir adding addrExp r28{0} - 156 to local table
+in proc hid_load_dir adding addrExp r28{0} - 160 to local table
+in proc hid_load_dir adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc hid_load_dir adding addrExp r28{0} - 8 to local table
+in proc hid_load_dir adding addrExp r28{0} - 12 to local table
+in proc hid_load_dir adding addrExp r28{0} - 16 to local table
+in proc hid_load_dir adding addrExp r28{0} - 128 to local table
+in proc hid_load_dir adding addrExp r28{0} - 132 to local table
+in proc hid_load_dir adding addrExp r28{0} - 156 to local table
+in proc hid_load_dir adding addrExp r28{0} - 160 to local table
+finding final parameters for hid_load_dir
+potential param r28
+found new parameter r28
+potential param r29
+found new parameter r29
+potential param r31
+found new parameter r31
+potential param r30
+found new parameter r30
+potential param r27
+found new parameter r27
+potential param r24
+found new parameter r24
+assgn   45 *32* r24 := m[0x816c744]
+assgn   62 *32* r24 := m[0x816c744]
+assgn   72 *32* r24 := m[0x816c758]
+assgn   97 *32* r24 := m[0x816c758]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure hid_init ###
+in proc hid_init adding addrExp r28{0} - 4 to local table
+in proc hid_init adding addrExp r28{0} - 64 to local table
+in proc hid_init adding addrExp r28{0} - 68 to local table
+in proc hid_init adding addrExp r28{0} - 72 to local table
+in proc hid_init adding addrExp r28{0} - 76 to local table
+in proc hid_init adding addrExp r28{0} - 80 to local table
+in proc hid_init adding addrExp r28{0} - 84 to local table
+in proc hid_init adding addrExp r28{0} - 88 to local table
+in proc hid_init adding addrExp r28{0} - 52 to local table
+in proc hid_init adding addrExp r28{0} - 56 to local table
+in proc hid_init adding addrExp r28{0} - 60 to local table
+in proc hid_init adding addrExp r28{0} - 64 to local table
+in proc hid_init adding addrExp r28{0} - 68 to local table
+in proc hid_init adding addrExp r28{0} - 72 to local table
+in proc hid_init adding addrExp r28{0} - 76 to local table
+in proc hid_init adding addrExp r28{0} - 80 to local table
+in proc hid_init adding addrExp r28{0} - 84 to local table
+in proc hid_init adding addrExp r28{0} - 88 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffa8 existing type unsigned int but added type char[] *
+in proc hid_init adding addrExp r28{0} - 92 to local table
+in proc hid_init adding addrExp r28{0} - 92 to local table
+finding final parameters for hid_init
+potential param r28
+found new parameter r28
+potential param r27
+found new parameter r27
+potential param r30
+found new parameter r30
+potential param r31
+found new parameter r31
+assgn   15 *32* r24 := m[20]
+assgn  161 *32* r24 := m[0x818d0dc]
+assgn  283 *32* r31 := m[0x818d0dc]
+assgn  336 *32* r24 := m[0x816c748]
+assgn  350 *32* r24 := m[0x816c758]
+after removing matching assigns (%pc).
+=== about to restart decompilation of hid_load_settings_1 because indirect jumps or calls have been analysed
+
+Unknown library function strtol
+Unknown library function strtod

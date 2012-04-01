@@ -1,0 +1,881 @@
+Unknown library function __libc_start_main
+got filename priv.c for main
+got filename priv.c for newGeneralList
+Unknown library function GC_malloc
+got filename priv.c for currentdir
+Unknown library function getpid
+got filename priv.c for non_null
+got filename priv.c for wc_guess_locale_charset
+got filename priv.c for init_rc
+got filename priv.c for newHist
+got filename main.c for fusage
+got filename priv.c for rcFile
+Unknown library function isatty
+got filename priv.c for fmInit
+got filename priv.c for mySignal
+got filename priv.c for sync_with_option
+got filename priv.c for initCookie
+got filename priv.c for loadHistory
+got filename priv.c for wtf_init
+got filename priv.c for backend
+Unknown library function GC_set_warn_proc
+got filename priv.c for Strnew
+Unknown library function dup
+got filename priv.c for newFileStream
+got filename priv.c for openGeneralPagerBuffer
+Unknown library function dup2
+got filename main.c for fversion
+got filename priv.c for loadGeneralFile
+got filename priv.c for Strcat_charp
+got filename priv.c for fmTerm
+Unknown library function fputs
+got filename priv.c for w3m_exit
+got filename priv.c for save_cookies
+got filename priv.c for newTab
+got filename priv.c for Strnew_charp
+got filename priv.c for Strcat_m_charp
+got filename priv.c for loadHTMLString
+got filename priv.c for inputLineHistSearch
+got filename priv.c for disp_message_nsec
+got filename priv.c for displayBuffer
+got filename main.c for _goLine
+got filename priv.c for ldDL
+got filename priv.c for gotoLine
+got filename main.c for _followForm
+got filename priv.c for Sprintf
+got filename priv.c for Strcat
+got filename priv.c for wc_guess_charset_short
+got filename priv.c for parsedURL2Str
+got filename priv.c for pushHashHist
+got filename main.c for _newT
+got filename main.c for delBuffer
+got filename priv.c for rFrame
+got filename main.c for do_dump
+got filename priv.c for Strfgetall
+got filename priv.c for newFormList
+got filename priv.c for wc_Str_conv
+got filename priv.c for unshiftHist
+got filename priv.c for mouse_active
+Unknown library function alarm
+got filename main.c for resize_screen
+got filename priv.c for loadImage
+got filename priv.c for sleep_till_anykey
+got filename priv.c for do_getch
+got filename priv.c for mouse_inactive
+got filename priv.c for set_buffer_environ
+got filename main.c for save_buffer_position
+got filename main.c for keyPressEventProc
+got filename priv.c for Strgrow
+got filename priv.c for cleanupName
+got filename priv.c for allocStr
+got filename priv.c for pushValue
+Unknown library function atof
+got filename priv.c for set_param_option
+got filename priv.c for make_optional_header_string
+got filename priv.c for encodeB
+got filename priv.c for Strnew_m_charp
+got filename priv.c for show_params
+got filename priv.c for Strnew_size
+got filename priv.c for Strcopy_charp_n
+Unknown library function __sigsetjmp
+got filename main.c for dump_extra
+got filename main.c for dump_head
+got filename main.c for dump_source
+got filename priv.c for saveBuffer
+got filename priv.c for deleteBuffer
+got filename priv.c for setlinescols
+got filename priv.c for setupscreen
+got filename priv.c for gotoRealLine
+got filename priv.c for arrangeCursor
+got filename priv.c for lineSkip
+got filename priv.c for retrieveCurrentForm
+COMPUTED JUMP at 0x80526c4, pDest = r24
+got filename priv.c for message
+got filename priv.c for refresh
+got filename priv.c for renderFrame
+got filename main.c for pushBuffer
+got filename priv.c for set_environ
+got filename main.c for GetWord
+got filename priv.c for wc_ces_to_charset
+got filename priv.c for retrieveCurrentAnchor
+got filename priv.c for baseURL
+got filename priv.c for parseURL2
+got filename priv.c for retrieveCurrentImg
+got filename priv.c for form2str
+got filename priv.c for init_migemo
+got filename priv.c for stopDownload
+got filename priv.c for deleteFiles
+got filename priv.c for disconnectFTP
+got filename priv.c for disconnectNews
+got filename priv.c for newBuffer
+got filename priv.c for copyBuffer
+Unknown library function unlink
+got filename priv.c for deleteTab
+got filename priv.c for checkDownloadList
+got filename main.c for DownloadListBuffer
+got filename priv.c for restorePosition
+got filename priv.c for deletePrevBuf
+got filename priv.c for setAlarmEvent
+got filename file.c for checkRedirection
+got filename priv.c for term_raw
+got filename priv.c for openURL
+got filename priv.c for ISclose
+got filename priv.c for stat
+got filename priv.c for loadFTPDir
+got filename priv.c for discardBuffer
+got filename priv.c for copyParsedURL
+got filename priv.c for loadNewsgroup
+got filename priv.c for searchURIMethods
+got filename priv.c for term_cbreak
+got filename priv.c for check_no_proxy
+got filename priv.c for loadLocalDir
+got filename priv.c for disp_err_message
+got filename priv.c for readHeader
+got filename priv.c for checkHeader
+got filename priv.c for wc_Str_conv_strict
+got filename priv.c for url_quote
+got filename priv.c for strtoclen
+got filename priv.c for newEncodedStream
+got filename priv.c for guess_save_name
+got filename priv.c for tmpfname
+got filename priv.c for checkContentType
+got filename priv.c for guessContentType
+got filename file.c for qstr_unquote
+got filename priv.c for add_auth_user_passwd
+got filename file.c for findAuthentication
+got filename file.c for get_auth_param
+got filename file.c for getAuthCookie
+got filename file.c for uncompress_stream
+got filename priv.c for doFileSave
+got filename file.c for UFhalfclose
+got filename file.c for guess_filename
+got filename priv.c for doFileMove
+got filename file.c for check_compression
+got filename file.c for uncompressed_file_type
+got filename priv.c for loadGopherDir
+got filename priv.c for schemeToProxy
+got filename file.c for is_text_type
+got filename priv.c for searchExtViewer
+got filename priv.c for save2tmp
+got filename file.c for compress_application_type
+got filename priv.c for is_html_type
+got filename priv.c for mymktime
+got filename file.c for is_plain_text_type
+got filename priv.c for remove_space
+got filename file.c for is_dump_text_type
+got filename file.c for loadSomething
+got filename priv.c for _doFileCopy
+got filename priv.c for doExternal
+got filename priv.c for reAnchorNewsheader
+got filename priv.c for preFormUpdateBuffer
+got filename priv.c for searchURLLabel
+got filename priv.c for html_quote
+got filename priv.c for file_unquote
+got filename priv.c for convertLine
+got filename priv.c for StrISgets
+got filename priv.c for Strnew_charp_n
+got filename file.c for _saveBuffer
+got filename priv.c for init_stream
+got filename priv.c for loadHTMLBuffer
+got filename priv.c for openPagerBuffer
+got filename priv.c for parseURL
+got filename priv.c for loadImageBuffer
+got filename priv.c for ISgetc
+got filename priv.c for ISread
+got filename priv.c for showProgress
+got filename priv.c for unquote_mailcap
+got filename priv.c for shell_quote
+got filename priv.c for flush_tty
+Unknown library function fork
+got filename priv.c for ISfileno
+got filename priv.c for setup_child
+got filename priv.c for myExec
+got filename file.c for loadcmdout
+got filename priv.c for lastFileName
+got filename priv.c for mySystem
+got filename priv.c for searchKeyData
+Unknown library function fflush
+got filename priv.c for Strfgets
+got filename priv.c for unescape_spaces
+got filename priv.c for expandPath
+got filename priv.c for checkOverWrite
+got filename priv.c for checkCopyFile
+got filename file.c for _MoveFile
+Unknown library function symlink
+got filename file.c for setModtime
+got filename priv.c for addDownloadList
+got filename priv.c for checkSaveFile
+got filename priv.c for fstat
+got filename priv.c for inputAnswer
+got filename priv.c for open_pipe_rw
+got filename priv.c for auxbinFile
+Unknown library function execlp
+got filename priv.c for mybasename
+Unknown library function strcasestr
+got filename priv.c for matchattr
+got filename priv.c for deleteImage
+got filename priv.c for clearBuffer
+got filename priv.c for deleteFrameSet
+got filename priv.c for popFrameTree
+got filename priv.c for prevBuffer
+got filename priv.c for getNextPage
+got filename priv.c for set_delayed_message
+Unknown library function __stack_chk_fail
+got filename priv.c for readBufferCache
+Unknown library function feof
+Unknown library function GC_malloc_atomic
+got filename priv.c for move
+got filename priv.c for clrtoeolx
+got filename priv.c for mouse_end
+got filename priv.c for reset_tty
+got filename priv.c for initscr
+got filename priv.c for term_noecho
+got filename priv.c for initImage
+got filename priv.c for addnstr
+got filename priv.c for record_err_message
+got filename priv.c for disp_message
+got filename priv.c for cursorUp0
+got filename priv.c for cursorDown0
+got filename priv.c for calcPosition
+got filename priv.c for columnSkip
+got filename priv.c for currentLineSkip
+got filename etc.c for nextColumn
+got filename etc.c for add_auth_pass_entry
+got filename etc.c for reset_signals
+Unknown library function setpgrp
+got filename priv.c for close_tty
+got filename etc.c for close_all_fds_except
+Unknown library function pipe
+Unknown library function execl
+Unknown library function system
+got filename etc.c for get_day
+got filename etc.c for get_month
+got filename etc.c for get_year
+got filename etc.c for get_time
+got filename etc.c for get_zone
+Unknown library function sigemptyset
+Unknown library function sigaction
+got filename priv.c for wtf_strwidth
+got filename linein.c for setStrType
+got filename priv.c for wc_guess_8bit_charset
+got filename priv.c for wc_char_conv_init
+got filename priv.c for addstr
+got filename linein.c for addPasswd
+got filename linein.c for addStr
+got filename linein.c for _dcompl
+got filename linein.c for _compl
+got filename linein.c for _bs
+got filename priv.c for wc_char_conv
+got filename priv.c for lastHist
+got filename priv.c for pushHist
+got filename linein.c for ins_char
+got filename priv.c for addChar
+got filename priv.c for wtf_len
+got filename priv.c for addMChar
+got filename linein.c for insC
+got filename priv.c for Strinsert_char
+got filename linein.c for _mvL
+got filename linein.c for delC
+got filename linein.c for next_compl
+got filename linein.c for doComplete
+got filename priv.c for bell
+got filename priv.c for Strsubstr
+got filename linein.c for next_dcompl
+got filename priv.c for Strdup
+got filename priv.c for bold
+got filename priv.c for boldend
+got filename priv.c for Strdelete
+got filename priv.c for escape_spaces
+got filename priv.c for Strshrink
+Unknown library function opendir
+Unknown library function readdir
+Unknown library function closedir
+Unknown library function GC_realloc
+got filename priv.c for Strtruncate
+got filename priv.c for file_quote
+got filename priv.c for Strcopy
+got filename priv.c for lstat
+Unknown library function readlink
+Unknown library function setenv
+got filename priv.c for wc_guess_charset
+got filename priv.c for RegexMatch
+COMPUTED JUMP at 0x808dd14, pDest = r24
+got filename priv.c for deleteFrameSetElement
+got filename priv.c for deleteFrame
+got filename frame.c for createFrameFile
+got filename priv.c for flushFrameSet
+COMPUTED JUMP at 0x8092607, pDest = r24
+got filename priv.c for Strlower
+got filename rc.c for set_param
+got filename priv.c for parse_proxy
+got filename priv.c for parse_cookie
+got filename priv.c for initMailcap
+got filename priv.c for initMimeTypes
+got filename priv.c for initURIMethods
+got filename priv.c for loadPasswd
+got filename priv.c for loadPreForm
+got filename priv.c for acceptableEncoding
+got filename priv.c for acceptableMimeTypes
+got filename priv.c for initKeymap
+got filename priv.c for initMouseAction
+got filename priv.c for initMenu
+got filename priv.c for wc_get_ces_list
+Unknown library function mkdir
+got filename priv.c for etcFile
+got filename rc.c for interpret_rc
+got filename priv.c for confFile
+got filename rc.c for create_option_search_table
+got filename priv.c for w3m_auxbin_dir
+got filename priv.c for w3m_etc_dir
+got filename priv.c for w3m_conf_dir
+got filename menu.c for interpret_menu
+got filename priv.c for new_menu
+got filename priv.c for make_domain_list
+got filename mailcap.c for loadMailcap
+got filename priv.c for newHash_si
+got filename priv.c for putHash_si
+got filename priv.c for popValue
+got filename priv.c for getHash_si
+got filename priv.c for searchMailcap
+got filename mailcap.c for unquote_mailcap_loop
+got filename priv.c for getCharSize
+got filename priv.c for ttyname_tty
+Unknown library function popen
+Unknown library function fscanf
+Unknown library function pclose
+got filename priv.c for getImageSize
+got filename priv.c for drawImage
+got filename priv.c for showImageProgress
+got filename priv.c for putHash_sv
+Unknown library function ttyname
+got filename terms.c for writestr
+Unknown library function ioctl
+Unknown library function tgetnum
+got filename priv.c for clear
+got filename priv.c for set_tty
+got filename priv.c for set_int
+got filename priv.c for getTCstr
+got filename priv.c for wc_putc_init
+got filename priv.c for wc_putc_end
+Unknown library function tgoto
+got filename priv.c for wc_putc_clear_status
+got filename linein.c for need_redraw
+got filename terms.c for write1
+got filename terms.c for color_seq
+got filename terms.c for bcolor_seq
+got filename priv.c for wc_putc
+got filename priv.c for clrtoeol_with_bcolor
+got filename priv.c for addmch
+got filename priv.c for ttymode_reset
+got filename priv.c for set_cc
+got filename priv.c for term_cooked
+got filename priv.c for getch
+Unknown library function Gpm_Wgetch
+Unknown library function Gpm_Close
+got filename priv.c for mouse_init
+got filename url.c for loadMimeTypes
+got filename priv.c for getURLScheme
+COMPUTED JUMP at 0x809ef99, pDest = r24
+got filename url.c for DefaultFile
+got filename url.c for copyPath
+got filename priv.c for expandName
+got filename url.c for _parsedURL2Str
+got filename priv.c for file_to_url
+got filename priv.c for filename_extension
+COMPUTED JUMP at 0x80a0f2d, pDest = r24
+got filename url.c for guessContentTypeFromTable
+got filename priv.c for Strclear
+got filename url.c for domain_match
+Unknown library function inet_ntop
+got filename url.c for loadURIMethods
+got filename ftp.c for ftp_command
+got filename ftp.c for closeFTPdata
+got filename priv.c for Strchop
+got filename ftp.c for ex_ftpdir_name_size_date
+got filename ftp.c for ftp_quit
+got filename ftp.c for size_int2str
+got filename regex.c for regmatch
+got filename regex.c for regmatch_iter
+got filename news.c for news_close
+got filename news.c for news_command
+got filename priv.c for decodeMIME
+got filename news.c for add_news_message
+got filename news.c for news_quit
+got filename func.c for interpret_keymap
+got filename priv.c for get_symbol
+got filename func.c for interpret_mouse_action
+got filename cookie.c for check_expired_cookies
+Unknown library function chmod
+got filename cookie.c for portlist2str
+got filename priv.c for load_cookies
+got filename priv.c for Strremovefirstspaces
+got filename priv.c for Strremovetrailingspaces
+got filename priv.c for newListItem
+got filename priv.c for getHashHist
+got filename priv.c for newHash_sv
+got filename priv.c for getHash_sv
+got filename backend.c for readline
+got filename backend.c for quit
+got filename backend.c for call_command_function
+got filename priv.c for retrieveAnchor
+got filename priv.c for searchAnchor
+got filename anchor.c for reseq_anchor
+got filename priv.c for regexCompile
+got filename priv.c for regexMatch
+got filename priv.c for matchedPosition
+got filename anchor.c for reAnchorPos
+got filename istream.c for init_base_stream
+got filename istream.c for do_update
+Unknown library function memchr
+got filename priv.c for Strcat_charp_n
+got filename istream.c for buffer_read
+Unknown library function GC_free
+Unknown library function vsprintf
+COMPUTED JUMP at 0x80b22b5, pDest = r24
+Unknown library function fgetc
+Unknown library function ferror
+Unknown library function strtoll
+Unknown library function getcwd
+got filename indep.c for w3m_dir
+got filename hash.c for lookupHash_si
+got filename hash.c for lookupHash_sv
+got filename priv.c for wc_input_init
+got filename priv.c for wc_charset_to_ces
+got filename priv.c for wc_charset_short_to_ces
+got filename priv.c for wc_locale_to_ces
+Unknown library function tolower
+COMPUTED JUMP at 0x80b4b89, pDest = r24
+COMPUTED JUMP at 0x80b5745, pDest = r24
+Unknown library function nl_langinfo
+got filename conv.c for wc_conv_to_ces
+got filename priv.c for wc_output_init
+got filename priv.c for wc_push_end
+got filename priv.c for wtf_parse
+got filename priv.c for wc_push_to_iso2022_end
+got filename priv.c for wc_push_to_hz_end
+got filename priv.c for wc_push_to_utf8_end
+got filename priv.c for wc_push_to_utf7_end
+got filename priv.c for wc_push_iso2022_esc
+Unknown library function memcmp
+got filename priv.c for wc_create_gmap
+got filename priv.c for wc_get_ucs_table
+got filename utf7.c for wc_push_tag_to_utf7
+got filename utf8.c for wc_push_tag_to_utf8
+got filename priv.c for wc_check_ces
+got filename priv.c for wtf_parse1
+got filename priv.c for wc_cp1258_precompose
+got filename priv.c for wc_tcvn5712_precompose
+got filename priv.c for wc_ucs_precompose
+got filename priv.c for wc_ucs_to_ccs
+got filename priv.c for __i686.get_pc_thunk.bx
+Unknown library function putchar
+got filename priv.c for tmpClearBuffer
+got filename main.c for getCurWord
+got filename priv.c for getKeyData
+got filename main.c for convert_size3
+got filename priv.c for convert_size
+got filename priv.c for __divdi3
+got filename priv.c for closeFTP
+got filename priv.c for closeNews
+Unknown library function utime
+got filename priv.c for check_command
+got filename priv.c for wc_Str_conv_with_detect
+got filename priv.c for cleanup_line
+got filename priv.c for StrmyISgets
+got filename file.c for addnewline
+got filename priv.c for ISundogetc
+got filename priv.c for check_cookie_accept_domain
+got filename priv.c for Strfree
+got filename file.c for xface2xpm
+got filename priv.c for newStrStream
+got filename priv.c for loadHTMLstream
+got filename priv.c for checkType
+got filename priv.c for getFuncList
+got filename priv.c for pushEvent
+got filename priv.c for add_cookie
+Unknown library function atol
+got filename file.c for skip_auth_token
+got filename file.c for extract_auth_param
+got filename priv.c for find_auth_user_passwd
+Unknown library function sleep
+got filename priv.c for delValue
+got filename priv.c for invalidate_auth_user_passwd
+Unknown library function getpass
+got filename file.c for same_url_p
+got filename file.c for addnewline2
+got filename priv.c for columnLen
+got filename priv.c for formResetBuffer
+Unknown library function floor
+got filename priv.c for convert_size2
+got filename priv.c for standout
+got filename priv.c for addch
+got filename priv.c for standend
+got filename priv.c for graph_ok
+got filename priv.c for HTMLlineproc3
+got filename priv.c for init_henv
+got filename priv.c for HTMLlineproc0
+got filename priv.c for HTMLlineproc2
+got filename priv.c for completeHTMLstream
+got filename priv.c for flushline
+got filename file.c for print_internal_information
+got filename priv.c for getImage
+got filename file.c for conv_symbol
+got filename priv.c for newInputStream
+got filename display.c for do_effects
+got filename priv.c for wtf_get_code
+got filename priv.c for graphstart
+got filename priv.c for cursorUpDown
+got filename priv.c for arrangeLine
+got filename priv.c for columnPos
+got filename etc.c for parse_ansi_color
+got filename etc.c for find_auth_pass_entry
+got filename priv.c for openSecretFile
+got filename etc.c for parsePasswd
+got filename priv.c for formUpdateBuffer
+got filename priv.c for updateSelectOption
+got filename form.c for form_update_line
+got filename priv.c for shiftAnchorPosition
+got filename priv.c for getWord
+got filename priv.c for getQWord
+got filename form.c for add_pre_form
+got filename form.c for add_pre_form_item
+got filename frame.c for unloadFrame
+got filename priv.c for examineFile
+got filename frame.c for frame_download_source
+got filename priv.c for read_token
+got filename priv.c for parse_tag
+COMPUTED JUMP at 0x8091292, pDest = r24
+COMPUTED JUMP at 0x8091206, pDest = r24
+got filename priv.c for correct_irrtag
+got filename priv.c for html_unquote
+got filename priv.c for parsedtag_set_value
+got filename priv.c for parsedtag2str
+got filename priv.c for search_param
+COMPUTED JUMP at 0x8092a1b, pDest = r24
+got filename priv.c for setMenuItem
+got filename priv.c for getMenuN
+got filename priv.c for addMenuList
+got filename priv.c for mailcapMatch
+got filename mailcap.c for extractMailcapEntry
+got filename priv.c for quote_mailcap
+got filename image.c for syncImage
+got filename priv.c for touch_cursor
+got filename image.c for openImgdisplay
+got filename symbol.c for encode_symbol
+Unknown library function tputs
+got filename priv.c for reset_exit
+Unknown library function tgetent
+Unknown library function tgetstr
+Unknown library function tgetflag
+got filename terms.c for setgraphchar
+got filename priv.c for wrap
+got filename priv.c for touch_line
+got filename priv.c for touch_column
+got filename priv.c for clrtoeol
+got filename priv.c for ttymode_set
+got filename priv.c for quitfm
+Unknown library function Gpm_Open
+Unknown library function __isoc99_sscanf
+got filename ftp.c for ftp_close
+got filename priv.c for decodeWord
+got filename priv.c for newRegex
+got filename regex.c for newRegex0
+COMPUTED JUMP at 0x80a61c0, pDest = r24
+got filename regex.c for set_longchar
+got filename regex.c for regmatch1
+got filename regex.c for regmatch_sub_anytime
+got filename regex.c for match_longchar
+got filename regex.c for matchWhich
+got filename regex.c for match_range_longchar
+got filename news.c for name_from_address
+got filename news.c for html_quote_s
+got filename priv.c for setKeymap
+got filename priv.c for str_to_bool
+got filename priv.c for getHash_iv
+got filename func.c for setMouseAction0
+got filename func.c for setMouseAction1
+got filename func.c for setMouseAction2
+got filename priv.c for FQDN
+got filename cookie.c for total_dot_number
+got filename cookie.c for make_portlist
+got filename cookie.c for port_match
+got filename url.c for domain_match
+got filename priv.c for get_cookie_info
+got filename cookie.c for readcol
+got filename backend.c for split
+got filename priv.c for onAnchor
+got filename priv.c for closest_next_anchor
+got filename anchor.c for reseq_anchor0
+got filename priv.c for putHmarker
+got filename istream.c for init_buffer
+got filename istream.c for init_str_stream
+got filename priv.c for getescapecmd
+got filename hash.c for hashfunc
+got filename hash.c for lookupHash_iv
+got filename priv.c for wc_auto_detect
+got filename priv.c for wc_create_detect_map
+got filename priv.c for wc_parse_iso2022_esc
+COMPUTED JUMP at 0x80b6971, pDest = r24
+COMPUTED JUMP at 0x80b6ab8, pDest = r24
+COMPUTED JUMP at 0x80b6c41, pDest = r24
+COMPUTED JUMP at 0x80b83d5, pDest = r24
+got filename priv.c for wc_is_ucs_wide
+got filename priv.c for wc_is_ucs_combining
+got filename priv.c for wc_map_range_search
+got filename priv.c for wc_map3_search
+got filename priv.c for wc_ucs_get_tag
+got filename utf7.c for wc_push_ucs_to_utf7
+got filename priv.c for wc_ucs_to_utf8
+COMPUTED JUMP at 0x80c3421, pDest = r24
+got filename priv.c for writeBufferCache
+got filename main.c for _quitfm
+got filename main.c for is_wordchar
+got filename priv.c for __moddi3
+got filename file.c for lessopen_stream
+COMPUTED JUMP at 0x805cd85, pDest = r24
+got filename file.c for extract_auth_val
+got filename file.c for append_tags
+got filename file.c for has_hidden_link
+got filename priv.c for newTextLine
+got filename priv.c for align
+got filename priv.c for appendTextLine
+got filename file.c for sloppy_parse_line
+got filename file.c for set_breakpoint
+got filename priv.c for fillline
+got filename file.c for passthrough
+Unknown library function fputc
+got filename file.c for push_tag
+got filename file.c for HTMLlineproc2body
+got filename file.c for feed_title
+got filename priv.c for feed_table
+got filename priv.c for feed_select
+got filename priv.c for HTMLtagproc1
+got filename priv.c for end_table
+got filename priv.c for pushTable
+got filename file.c for table_width
+got filename priv.c for feed_textarea
+got filename file.c for process_idattr
+got filename file.c for clear_ignore_p_flag
+got filename priv.c for do_blankline
+got filename priv.c for save_fonteffect
+got filename priv.c for renderTable
+got filename priv.c for restore_fonteffect
+got filename priv.c for getescapechar
+got filename file.c for push_char
+got filename priv.c for wtf_is_hangul
+got filename file.c for need_flushline
+got filename file.c for back_to_breakpoint
+got filename file.c for push_nchars
+got filename file.c for proc_escape
+got filename file.c for proc_mchar
+got filename file.c for close_anchor
+got filename priv.c for appendGeneralList
+Unknown library function ungetc
+got filename priv.c for underlineend
+got filename display.c for effect_anchor_end
+got filename display.c for effect_image_end
+got filename display.c for effect_form_end
+got filename display.c for effect_visited_end
+got filename display.c for effect_active_end
+got filename display.c for effect_mark_end
+got filename priv.c for graphend
+got filename priv.c for underline
+got filename display.c for effect_anchor_start
+got filename display.c for effect_image_start
+got filename display.c for effect_form_start
+got filename display.c for effect_visited_start
+got filename display.c for effect_active_start
+got filename display.c for effect_mark_start
+got filename priv.c for next_status
+COMPUTED JUMP at 0x8079a09, pDest = r24
+COMPUTED JUMP at 0x8079e5d, pDest = r24
+got filename etc.c for next_token
+Unknown library function strdup
+got filename table.c for make_caption
+got filename table.c for table_rule_width
+got filename table.c for table_border_width
+got filename table.c for floor_at_intervals
+got filename priv.c for check_maximum_width
+got filename priv.c for set_table_matrix
+got filename priv.c for new_matrix
+got filename priv.c for new_vector
+got filename priv.c for LUfactor
+got filename priv.c for LUsolve
+got filename priv.c for LUinverse
+got filename priv.c for check_table_width
+got filename table.c for set_integered_width
+got filename priv.c for check_minimum_width
+got filename priv.c for renderCoTable
+got filename table.c for ceil_at_intervals
+got filename priv.c for check_table_height
+got filename priv.c for print_sep
+got filename priv.c for push_render_image
+got filename table.c for check_row
+got filename priv.c for do_refill
+got filename priv.c for push_symbol
+got filename priv.c for print_item
+got filename priv.c for get_table_width
+got filename table.c for feed_table_tag
+got filename priv.c for check_rowcol
+got filename table.c for maximum_visible_length
+got filename table.c for addcontentssize
+got filename table.c for setwidth
+got filename priv.c for pushdata
+got filename priv.c for skip_space
+got filename priv.c for visible_length
+got filename priv.c for conv_entity
+got filename table.c for maximum_visible_length_plain
+got filename table.c for clearcontentssize
+got filename priv.c for check_relative_width
+got filename table.c for set_table_matrix0
+got filename table.c for weight2
+got filename table.c for correct_table_matrix2
+got filename priv.c for correct_table_matrix
+COMPUTED JUMP at 0x8092841, pDest = r24
+got filename mailcap.c for matchMailcapAttr
+COMPUTED JUMP at 0x8099179, pDest = r24
+got filename image.c for closeImgdisplay
+got filename priv.c for decodeB
+got filename priv.c for decodeQ
+COMPUTED JUMP at 0x80a5786, pDest = r24
+got filename priv.c for getKey
+got filename priv.c for newHash_iv
+got filename priv.c for putHash_iv
+got filename func.c for getKey2
+Unknown library function bsearch
+got filename priv.c for wc_is_ucs_hangul
+got filename priv.c for term_title
+got filename priv.c for termImage
+got filename priv.c for saveHistory
+COMPUTED JUMP at 0x805cf08, pDest = r24
+got filename file.c for push_link
+got filename file.c for check_breakpoint
+got filename file.c for push_spaces
+got filename priv.c for gethtmlcmd
+got filename priv.c for process_option
+got filename priv.c for parsedtag_get_value
+got filename priv.c for addSelectOption
+COMPUTED JUMP at 0x8065559, pDest = r24
+got filename priv.c for addMultirowsForm
+got filename priv.c for addMultirowsImg
+got filename priv.c for ex_efct
+got filename priv.c for set_symbol
+COMPUTED JUMP at 0x806a4ec, pDest = r24
+got filename priv.c for currentLn
+got filename priv.c for registerName
+got filename priv.c for search_frame
+got filename priv.c for putAnchor
+got filename priv.c for setfcolor
+got filename priv.c for setbcolor
+COMPUTED JUMP at 0x8079668, pDest = r24
+got filename priv.c for Lsolve
+got filename priv.c for Usolve
+got filename priv.c for visible_length_plain
+got filename table.c for get_spec_cell_width
+got filename table.c for table_rowspan
+got filename priv.c for purgeline
+got filename table.c for table_colspan
+got filename table.c for bsearch_2short
+got filename table.c for check_cell_width
+Unknown library function ceil
+got filename table.c for bsearch_double
+got filename table.c for check_compressible_cell
+got filename table.c for setwidth0
+got filename table.c for check_minimum0
+got filename table.c for table_close_anchor0
+got filename table.c for begin_cell
+got filename priv.c for is_boundary
+got filename table.c for feed_table_block_tag
+COMPUTED JUMP at 0x8086a5d, pDest = r24
+COMPUTED JUMP at 0x8086b3d, pDest = r24
+COMPUTED JUMP at 0x8086b90, pDest = r24
+COMPUTED JUMP at 0x8086bf8, pDest = r24
+got filename table.c for weight
+got filename table.c for correct_table_matrix4
+got filename table.c for correct_table_matrix3
+got filename priv.c for clearImage
+got filename priv.c for wtf_push
+got filename mimehead.c for c2e
+got filename mimehead.c for ha2d
+COMPUTED JUMP at 0x80a9044, pDest = r24
+got filename priv.c for registerImg
+got filename priv.c for registerHref
+got filename priv.c for wc_johab_to_ksx1001
+got filename priv.c for wc_ksx1001_to_johab
+got filename priv.c for wc_is_combining
+got filename priv.c for wc_ces_has_ccs
+got filename priv.c for wc_any_to_any_ces
+got filename priv.c for wc_jisx0201k_to_jisx0208
+COMPUTED JUMP at 0x80c2dd8, pDest = r24
+got filename file.c for is_period_char
+got filename file.c for is_beginning_char
+got filename file.c for is_combining_char
+got filename file.c for is_word_char
+got filename priv.c for rpopValue
+Unknown library function log
+got filename table.c for recalc_width
+got filename table.c for feed_table_inline_tag
+got filename priv.c for wc_any_to_any
+got filename priv.c for wc_johab_to_cs128w
+got filename priv.c for wc_any_to_ucs
+got filename priv.c for wc_ucs_to_johab
+got filename priv.c for wc_N_to_johab1
+got filename priv.c for wc_ucs_to_any
+got filename priv.c for wc_johab1_to_N
+got filename priv.c for wc_map_search
+got filename priv.c for wc_gb18030_to_ucs
+COMPUTED JUMP at 0x80be3e4, pDest = r24
+got filename priv.c for wc_tcvn57123_to_tcvn5712
+got filename priv.c for wc_ucs_to_fullwidth
+got filename priv.c for wc_ucs_to_any_list
+got filename priv.c for wc_ucs_to_gb18030
+got filename priv.c for wc_map3_range_search
+got filename priv.c for wc_cs128w_to_gbk_ext
+COMPUTED JUMP at 0x805fb4a, pDest = r24
+COMPUTED JUMP at 0x805fc15, pDest = r24
+got filename table.c for correlation_coefficient
+got filename table.c for correlation_coefficient2
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc newGeneralList adding addrExp r28{0} - 4 to local table
+in proc newGeneralList adding addrExp r28{0} - 44 to local table
+in proc newGeneralList adding addrExp r28{0} - 48 to local table
+in proc newGeneralList adding addrExp r28{0} - 16 to local table
+finding final parameters for newGeneralList
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc currentdir adding addrExp r28{0} - 4 to local table
+in proc currentdir adding addrExp r28{0} - 44 to local table
+in proc currentdir adding addrExp r28{0} - 48 to local table
+in proc currentdir adding addrExp r28{0} - 16 to local table
+in proc currentdir adding addrExp r28{0} - 40 to local table
+in proc currentdir adding addrExp r28{0} - 44 to local table
+in proc currentdir adding addrExp r28{0} - 48 to local table
+finding final parameters for currentdir
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure non_null ###
+in proc non_null adding addrExp r28{0} - 4 to local table
+finding final parameters for non_null
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+assgn   12 *32* r24 := m[20]
+after removing matching assigns (%pc).
+=== about to restart decompilation of wc_charset_to_ces because indirect jumps or calls have been analysed
+
+COMPUTED JUMP at 0x80b4c11, pDest = r24
+COMPUTED JUMP at 0x80b5602, pDest = r24
+assgn   12 *32* r24 := m[20]
+assgn  172 *32* r24 := m[0x817fd9c]
+after removing matching assigns (%pc).
+=== about to restart decompilation of wc_charset_to_ces because indirect jumps or calls have been analysed
+
+assgn   12 *32* r24 := m[20]
+assgn  172 *32* r24 := m[0x817fd9c]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure wc_charset_to_ces ###
+in proc wc_charset_to_ces adding addrExp r28{0} - 32 to local table
+in proc wc_charset_to_ces adding addrExp r28{0} - 29 to local table
+in proc wc_charset_to_ces adding addrExp r28{0} - 25 to local table
+in proc wc_charset_to_ces adding addrExp r28{0} - 28 to local table

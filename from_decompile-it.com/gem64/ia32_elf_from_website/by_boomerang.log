@@ -1,0 +1,327 @@
+Unknown library function __libc_start_main
+got filename main.c for main
+Unknown library function error.c
+Unknown library function setvbuf
+got filename main.c for show_help
+Unknown library function reg_entries.c
+got filename main.c for atexit
+got filename main.c for print_error
+Unknown library function putenv
+got filename main.c for show_version
+Unknown library function mkstemp
+got filename main.c for restore
+got filename main.c for list_extensions
+got filename main.c for wget_extension
+got filename main.c for stat
+got filename main.c for unpack_extension
+Unknown library function opendir
+Unknown library function readdir
+COMPUTED JUMP at 0x8053852, pDest = r24
+got filename main.c for get_package_name
+got filename main.c for run_post
+got filename main.c for check_extension
+got filename main.c for query_extension
+got filename main.c for show_details
+got filename main.c for show_license
+got filename main.c for source_clean
+Unknown library function at_exit_funcs.c
+Unknown library function strdup
+Unknown library function strtol
+got filename main.c for source_install
+got filename main.c for uninstall
+got filename main.c for test_install
+got filename main.c for binaries_exist
+got filename main.c for bin_install
+Unknown library function __isoc99_fscanf
+Unknown library function reg_deps.c
+Unknown library function vsprintf
+Unknown library function __stack_chk_fail
+got filename main.c for nc_fgets_nb
+got filename main.c for chop
+got filename main.c for is_text
+Unknown library function system
+got filename main.c for print_done
+Unknown library function crtstuff.c
+Unknown library function __isoc99_sscanf
+Unknown library function crtstuff.c
+got filename main.c for mkdir_s
+got filename main.c for check_filetype
+got filename main.c for print_warning
+got filename main.c for basename
+got filename main.c for dump_ascii
+got filename main.c for list_binaries
+Unknown library function fputc
+Unknown library function fputs
+got filename main.c for dump_html
+got filename main.c for check_dependencies
+got filename main.c for print_cfg
+got filename main.c for register_extension
+got filename main.c for register_entries_gisman
+got filename main.c for register_entries_gisman2
+got filename main.c for register_html
+got filename main.c for su
+got filename main.c for dump_plain
+got filename main.c for deregister_extension
+got filename main.c for deregister_entries_gisman
+got filename main.c for deregister_entries_gisman2
+got filename main.c for deregister_html
+got filename main.c for restore_entries_gisman
+got filename main.c for restore_html
+COMPUTED JUMP at 0x805278d, pDest = r24
+got filename main.c for __i686.get_pc_thunk.bx
+Unknown library function __cxa_atexit
+got filename main.c for nc_fgets_html
+got filename main.c for nc_fgets
+Unknown library function srand
+Unknown library function tools.c
+got filename main.c for depstr
+got filename main.c for vercmp
+Unknown library function fflush
+Unknown library function rewind
+got filename main.c for check_ext_menu
+got filename main.c for new_submenu
+got filename main.c for new_item
+got filename main.c for find_pos
+got filename main.c for delete_str
+Unknown library function closedir
+got filename main.c for new_ext_html
+got filename main.c for delete_ext_html
+got filename main.c for insert_str
+got filename main.c for is_submenu
+after removing matching assigns (%pc).
+in proc __i686.get_pc_thunk.bx adding addrExp r28{0} to local table
+finding final parameters for __i686.get_pc_thunk.bx
+potential param r28
+found new parameter r28
+potential param m[r28{0}]
+found new parameter m[r28{0}]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure atexit ###
+in proc atexit adding addrExp r28{0} - 4 to local table
+in proc atexit adding addrExp r28{0} - 8 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+TYPE DIFFERENCE (could be OK): At address 0xfffffff4 existing type unsigned int but added type __size32 **
+in proc atexit adding addrExp r28{0} - 16 to local table
+in proc atexit adding addrExp r28{0} - 20 to local table
+in proc atexit adding addrExp r28{0} - 24 to local table
+finding final parameters for atexit
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure basename ###
+in proc basename adding addrExp r28{0} - 4 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 16 to local table
+in proc basename adding addrExp r28{0} - 24 to local table
+in proc basename adding addrExp r28{0} - 40 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 20 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 24 to local table
+in proc basename adding addrExp r28{0} - 40 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 20 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffd4 existing type char * but added type unsigned int
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 24 to local table
+in proc basename adding addrExp r28{0} - 20 to local table
+in proc basename adding addrExp r28{0} - 24 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+in proc basename adding addrExp r28{0} - 20 to local table
+in proc basename adding addrExp r28{0} - 24 to local table
+in proc basename adding addrExp r28{0} - 44 to local table
+in proc basename adding addrExp r28{0} - 48 to local table
+finding final parameters for basename
+potential param r28
+found new parameter r28
+potential param tmpb
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure nc_fgets_html ###
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 32 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 16 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 36 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 4 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 68 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 36 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 32 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 32 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 32 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 16 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 68 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffb8 existing type unsigned int but added type char[] *
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 68 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 68 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc nc_fgets_html adding addrExp r28{0} - 16 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 20 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 24 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 28 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 32 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 36 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 40 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 44 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 48 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 68 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 72 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 76 to local table
+in proc nc_fgets_html adding addrExp r28{0} - 80 to local table
+finding final parameters for nc_fgets_html
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r10
+found new parameter r10
+potential param m[r28{0} - 24]
+found new parameter m[r28{0} - 24]
+potential param m[r28{0} - 28]
+found new parameter m[r28{0} - 28]
+potential param m[r28{0} - 32]
+found new parameter m[r28{0} - 32]
+potential param m[r28{0} - 48]
+found new parameter m[r28{0} - 48]
+finding final parameters for nc_fgets_html
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r10
+found new parameter r10
+potential param m[r28{0} - 24]
+found new parameter m[r28{0} - 24]
+potential param m[r28{0} - 28]
+found new parameter m[r28{0} - 28]
+potential param m[r28{0} - 32]
+found new parameter m[r28{0} - 32]
+potential param m[r28{0} - 48]
+found new parameter m[r28{0} - 48]
+assgn   11 *32* r24 := m[20]
+assgn   16 *32* r24 := m[0x8059260]
+assgn   37 *32* r24 := m[0x8059260]
+assgn   50 *32* r24 := m[0x8059260]
+assgn   72 *32* r24 := m[0x8059260]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure dump_ascii ###
+in proc dump_ascii adding addrExp r28{0} - 0x870 to local table
+in proc dump_ascii adding addrExp r28{0} - 0x860 to local table
+in proc dump_ascii adding addrExp r28{0} - 0x85c to local table
+in proc dump_ascii adding addrExp r28{0} - 0x858 to local table
+in proc dump_ascii adding addrExp r28{0} - 0x810 to local table

@@ -1,0 +1,73 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 38 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering init_gvars
+  decompiling init_gvars
+  considering init_mem
+   considering alloc_next_espace
+    considering alloc_espace
+    decompiling alloc_espace
+tr    considering warning
+     considering set_color
+     decompiling set_color
+prt     considering default_color
+     decompiling default_color
+    decompiling warning
+   decompiling alloc_next_espace
+prrt   considering clear_all
+   decompiling clear_all
+prrt  decompiling init_mem
+rt  considering usage
+  decompiling usage
+pr  considering get_screen_size
+  decompiling get_screen_size
+r  considering load_rc
+   considering set_error_level
+    considering remove_trailing_spaces
+    decompiling remove_trailing_spaces
+prt   decompiling set_error_level
+t   considering set_options
+    considering skip_no
+     considering strcmp_tospace
+      considering isdelimiter
+      decompiling isdelimiter
+r     decompiling strcmp_tospace
+rpt     considering skip_param
+      considering skip_space
+      decompiling skip_space
+t     decompiling skip_param
+rtr    decompiling skip_no
+pt    considering output_current_directory
+    decompiling output_current_directory
+    considering error
+    decompiling error
+r    considering decstrtol
+    decompiling decstrtol
+pt    considering extra_characters
+    decompiling extra_characters
+r    considering my_strlcpy
+    decompiling my_strlcpy
+t    considering reset_attr
+    decompiling reset_attr
+r    considering save_set_options
+     considering output_options
+     decompiling output_options
+prrrp    decompiling save_set_options
+rr   decompiling set_options
+pprprrprttttttttp  decompiling load_rc
+rrttp  considering set_signals
+  decompiling set_signals
+t  considering clean_up
+  decompiling clean_up
+rtboomerang: db/exp.cpp:104: Unary::Unary(OPER, Exp*): Assertion `subExp1' failed.
+  considering main_io_loop
+  decompiling main_io_loop
+  considering f_to_fraction
+   considering my_round
+   decompiling my_round

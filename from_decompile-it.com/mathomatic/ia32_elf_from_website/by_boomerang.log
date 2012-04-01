@@ -1,0 +1,1216 @@
+Unknown library function __libc_start_main
+got filename factor_int.c for main
+got filename factor_int.c for init_gvars
+Unknown library function __fprintf_chk
+COMPUTED JUMP at 0x8049909, pDest = m[r27 + (r24 * 4)]
+got filename factor_int.c for init_mem
+got filename factor_int.c for usage
+Unknown library function rl_initialize
+Unknown library function using_history
+Unknown library function stifle_history
+Unknown library function tigetnum
+Unknown library function read_history
+got filename factor_int.c for get_screen_size
+Unknown library function __printf_chk
+got filename factor_int.c for load_rc
+Unknown library function _setjmp
+got filename factor_int.c for clean_up
+got filename factor_int.c for error
+got filename factor_int.c for set_signals
+got filename factor_int.c for f_to_fraction
+got filename factor_int.c for main_io_loop
+got filename factor_int.c for exit_program
+got filename factor_int.c for read_file
+got filename factor_int.c for reset_attr
+Unknown library function write_history
+Unknown library function __stack_chk_fail
+got filename factor_int.c for set_error_level
+got filename factor_int.c for set_options
+Unknown library function signal
+got filename factor_int.c for default_color
+Unknown library function ioctl
+got filename factor_int.c for set_color
+got filename factor_int.c for alloc_next_espace
+got filename factor_int.c for clear_all
+Unknown library function strpbrk
+got filename factor_int.c for remove_trailing_spaces
+got filename factor_int.c for skip_space
+got filename factor_int.c for skip_param
+Unknown library function chdir
+got filename factor_int.c for skip_no
+got filename factor_int.c for output_current_directory
+got filename factor_int.c for decstrtol
+got filename factor_int.c for extra_characters
+got filename factor_int.c for my_strlcpy
+got filename factor_int.c for strcmp_tospace
+Unknown library function unlink
+got filename factor_int.c for save_set_options
+got filename factor_int.c for read_sub
+Unknown library function fflush
+Unknown library function __finite
+Unknown library function fmod
+got filename factor_int.c for my_round
+got filename factor_int.c for gcd
+got filename factor_int.c for isdelimiter
+Unknown library function strtol
+got filename factor_int.c for alloc_espace
+got filename factor_int.c for warning
+got filename factor_int.c for output_options
+Unknown library function getcwd
+got filename factor_int.c for display_process
+Unknown library function __longjmp_chk
+Unknown library function modf
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+WARNING: size 0x50 meet with double; allowing temporarily
+in proc init_gvars adding addrExp r28{0} - 4 to local table
+finding final parameters for init_gvars
+assgn   19 *32* r24 := m[0x8079140]
+assgn   32 *32* r24 := m[0x8079140]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure alloc_espace ###
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 4 to local table
+in proc alloc_espace adding addrExp r28{0} - 12 to local table
+in proc alloc_espace adding addrExp r28{0} - 8 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+in proc alloc_espace adding addrExp r28{0} - 28 to local table
+in proc alloc_espace adding addrExp r28{0} - 32 to local table
+finding final parameters for alloc_espace
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn   10 *32* r24 := m[0x80817e4]
+assgn   14 *32* r24 := m[0x8079288]
+assgn   18 *32* tmp1 := m[0x8079284]
+assgn   21 *32* tmp1 := m[0x8082f10]
+assgn   33 *32* tmp1 := m[0x8079ad0]
+assgn  133 *32* r24 := m[0x8079ad0]
+after removing matching assigns (%pc).
+WARNING: size 0x40 meet with int; allowing temporarily
+WARNING: size 0x40 meet with int; allowing temporarily
+WARNING: size 0x40 meet with int; allowing temporarily
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure set_color ###
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 16 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 4 to local table
+in proc set_color adding addrExp r28{0} - 8 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 16 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 16 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+in proc set_color adding addrExp r28{0} - 16 to local table
+in proc set_color adding addrExp r28{0} - 20 to local table
+in proc set_color adding addrExp r28{0} - 24 to local table
+in proc set_color adding addrExp r28{0} - 28 to local table
+in proc set_color adding addrExp r28{0} - 32 to local table
+finding final parameters for set_color
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc default_color adding addrExp r28{0} - 4 to local table
+in proc default_color adding addrExp r28{0} - 28 to local table
+in proc default_color adding addrExp r28{0} - 32 to local table
+finding final parameters for default_color
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn   11 *32* tmp1 := m[0x8082bd8]
+after removing matching assigns (%pc).
+in proc warning adding addrExp r28{0} - 20 to local table
+in proc warning adding addrExp r28{0} - 24 to local table
+in proc warning adding addrExp r28{0} - 28 to local table
+in proc warning adding addrExp r28{0} - 32 to local table
+in proc warning adding addrExp r28{0} - 4 to local table
+in proc warning adding addrExp r28{0} - 8 to local table
+in proc warning adding addrExp r28{0} - 28 to local table
+in proc warning adding addrExp r28{0} - 32 to local table
+in proc warning adding addrExp r28{0} - 20 to local table
+in proc warning adding addrExp r28{0} - 24 to local table
+in proc warning adding addrExp r28{0} - 28 to local table
+in proc warning adding addrExp r28{0} - 32 to local table
+in proc warning adding addrExp r28{0} - 32 to local table
+in proc warning adding addrExp r28{0} - 20 to local table
+in proc warning adding addrExp r28{0} - 24 to local table
+in proc warning adding addrExp r28{0} - 28 to local table
+in proc warning adding addrExp r28{0} - 32 to local table
+finding final parameters for warning
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+potential param r24
+found new parameter r24
+assgn   13 *32* r26 := m[0x80796a0]
+assgn   14 *32* r31 := m[0x8081a00]
+assgn   60 *32* r24 := m[0x8081a00]
+assgn   66 *32* tmp1 := m[0x8082d80]
+assgn   82 *32* tmp1 := m[0x8081a00]
+after removing matching assigns (%pc).
+WARNING: size 0x40 meet with int; allowing temporarily
+WARNING: size 0x40 meet with int; allowing temporarily
+WARNING: size 0x40 meet with int; allowing temporarily
+WARNING: size 0x10 meet with int; allowing temporarily
+WARNING: size 0x10 meet with int; allowing temporarily
+WARNING: size 0x10 meet with int; allowing temporarily
+in proc alloc_next_espace adding addrExp r28{0} - 44 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 48 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 4 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 8 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 12 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 16 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 44 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 48 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 44 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 48 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 44 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 48 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 44 to local table
+in proc alloc_next_espace adding addrExp r28{0} - 48 to local table
+finding final parameters for alloc_next_espace
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+assgn   36 *32* r24 := m[0x8079ae0]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x8 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+size 0x20 meet with size 0x8!
+size 0x8 meet with size 0x20!
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x20 meet with size 0x10!
+size 0x10 meet with size 0x20!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure clear_all ###
+in proc clear_all adding addrExp r28{0} - 44 to local table
+in proc clear_all adding addrExp r28{0} - 48 to local table
+in proc clear_all adding addrExp r28{0} - 4 to local table
+in proc clear_all adding addrExp r28{0} - 8 to local table
+in proc clear_all adding addrExp r28{0} - 12 to local table
+in proc clear_all adding addrExp r28{0} - 16 to local table
+in proc clear_all adding addrExp r28{0} - 44 to local table
+in proc clear_all adding addrExp r28{0} - 48 to local table
+in proc clear_all adding addrExp r28{0} - 44 to local table
+in proc clear_all adding addrExp r28{0} - 48 to local table
+in proc clear_all adding addrExp r28{0} - 44 to local table
+in proc clear_all adding addrExp r28{0} - 48 to local table
+size 0x10 meet with size 0x8!
+in proc clear_all adding addrExp r28{0} - 48 to local table
+finding final parameters for clear_all
+potential param r28
+found new parameter r28
+assgn    7 *32* r24 := m[0x8079140]
+assgn   29 *32* r24 := m[0x8079140]
+assgn   42 *32* r24 := m[0x8079140]
+assgn   55 *32* r24 := m[0x8079140]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure init_mem ###
+in proc init_mem adding addrExp r28{0} - 4 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+in proc init_mem adding addrExp r28{0} - 28 to local table
+in proc init_mem adding addrExp r28{0} - 32 to local table
+finding final parameters for init_mem
+potential param r0
+found new parameter r0
+potential param r8
+found new parameter r8
+potential param r9
+found new parameter r9
+potential param r10
+found new parameter r10
+potential param r39
+found new parameter r39
+assgn   14 *32* r24 := m[0x80792a0]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc usage adding addrExp r28{0} - 4 to local table
+in proc usage adding addrExp r28{0} - 20 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 20 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+in proc usage adding addrExp r28{0} - 24 to local table
+in proc usage adding addrExp r28{0} - 28 to local table
+in proc usage adding addrExp r28{0} - 32 to local table
+finding final parameters for usage
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc get_screen_size adding addrExp r28{0} - 4 to local table
+in proc get_screen_size adding addrExp r28{0} - 18 to local table
+in proc get_screen_size adding addrExp r28{0} - 20 to local table
+in proc get_screen_size adding addrExp r28{0} - 36 to local table
+in proc get_screen_size adding addrExp r28{0} - 40 to local table
+in proc get_screen_size adding addrExp r28{0} - 44 to local table
+in proc get_screen_size adding addrExp r28{0} - 48 to local table
+finding final parameters for get_screen_size
+potential param r28
+found new parameter r28
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure remove_trailing_spaces ###
+in proc remove_trailing_spaces adding addrExp r28{0} - 32 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 4 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 8 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 12 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 16 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 32 to local table
+in proc remove_trailing_spaces adding addrExp r28{0} - 32 to local table
+finding final parameters for remove_trailing_spaces
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r26
+found new parameter r26
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure set_error_level ###
+in proc set_error_level adding addrExp r28{0} - 4 to local table
+in proc set_error_level adding addrExp r28{0} - 8 to local table
+in proc set_error_level adding addrExp r28{0} - 12 to local table
+in proc set_error_level adding addrExp r28{0} - 24 to local table
+in proc set_error_level adding addrExp r28{0} - 28 to local table
+in proc set_error_level adding addrExp r28{0} - 32 to local table
+in proc set_error_level adding addrExp r28{0} - 28 to local table
+in proc set_error_level adding addrExp r28{0} - 32 to local table
+in proc set_error_level adding addrExp r28{0} - 32 to local table
+in proc set_error_level adding addrExp r28{0} - 32 to local table
+finding final parameters for set_error_level
+potential param r28
+found new parameter r28
+potential param r27
+found new parameter r27
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure isdelimiter ###
+in proc isdelimiter adding addrExp r28{0} - 4 to local table
+in proc isdelimiter adding addrExp r28{0} - 8 to local table
+in proc isdelimiter adding addrExp r28{0} - 16 to local table
+finding final parameters for isdelimiter
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure strcmp_tospace ###
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 4 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 8 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 12 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 16 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 44 to local table
+in proc strcmp_tospace adding addrExp r28{0} - 48 to local table
+finding final parameters for strcmp_tospace
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r8
+found new parameter r8
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure skip_space ###
+in proc skip_space adding addrExp r28{0} - 16 to local table
+in proc skip_space adding addrExp r28{0} - 4 to local table
+in proc skip_space adding addrExp r28{0} - 8 to local table
+in proc skip_space adding addrExp r28{0} - 12 to local table
+in proc skip_space adding addrExp r28{0} - 16 to local table
+in proc skip_space adding addrExp r28{0} - 16 to local table
+finding final parameters for skip_space
+potential param r28
+found new parameter r28
+potential param r27
+found new parameter r27
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure skip_param ###
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 4 to local table
+in proc skip_param adding addrExp r28{0} - 8 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffe4 existing type int but added type unsigned char *
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffffe4 existing type int but added type void *
+in proc skip_param adding addrExp r28{0} - 32 to local table
+in proc skip_param adding addrExp r28{0} - 28 to local table
+in proc skip_param adding addrExp r28{0} - 32 to local table
+finding final parameters for skip_param
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+potential param m[r28{0} - 28]
+found new parameter m[r28{0} - 28]
+potential param m[r28{0} - 32]
+found new parameter m[r28{0} - 32]
+potential param r11
+found new parameter r11
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure skip_no ###
+in proc skip_no adding addrExp r28{0} - 4 to local table
+in proc skip_no adding addrExp r28{0} - 8 to local table
+in proc skip_no adding addrExp r28{0} - 24 to local table
+in proc skip_no adding addrExp r28{0} - 28 to local table
+in proc skip_no adding addrExp r28{0} - 32 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+in proc skip_no adding addrExp r28 to local table
+finding final parameters for skip_no
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+assgn   10 *32* r24 := m[20]
+after removing matching assigns (%pc).
+in proc output_current_directory adding addrExp r28{0} - 0x1028 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x102c to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1020 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1024 to local table
+in proc output_current_directory adding addrExp r28{0} - 4 to local table
+in proc output_current_directory adding addrExp r28{0} - 8 to local table
+in proc output_current_directory adding addrExp r28{0} - 16 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1028 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x102c to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1020 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1024 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1028 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x102c to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1028 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x102c to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1020 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1024 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1028 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x102c to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+in proc output_current_directory adding addrExp r28{0} - 0x1030 to local table
+finding final parameters for output_current_directory
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc error adding addrExp r28{0} - 4 to local table
+in proc error adding addrExp r28{0} - 8 to local table
+in proc error adding addrExp r28{0} - 28 to local table
+in proc error adding addrExp r28{0} - 32 to local table
+in proc error adding addrExp r28{0} - 20 to local table
+in proc error adding addrExp r28{0} - 24 to local table
+in proc error adding addrExp r28{0} - 28 to local table
+in proc error adding addrExp r28{0} - 32 to local table
+in proc error adding addrExp r28{0} - 32 to local table
+finding final parameters for error
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure decstrtol ###
+in proc decstrtol adding addrExp r28{0} - 4 to local table
+in proc decstrtol adding addrExp r28{0} - 16 to local table
+in proc decstrtol adding addrExp r28{0} - 12 to local table
+in proc decstrtol adding addrExp r28{0} - 8 to local table
+in proc decstrtol adding addrExp r28{0} - 36 to local table
+in proc decstrtol adding addrExp r28{0} - 40 to local table
+in proc decstrtol adding addrExp r28{0} - 44 to local table
+in proc decstrtol adding addrExp r28{0} - 48 to local table
+in proc decstrtol adding addrExp r28{0} - 44 to local table
+in proc decstrtol adding addrExp r28{0} - 48 to local table
+in proc decstrtol adding addrExp r28{0} - 44 to local table
+in proc decstrtol adding addrExp r28{0} - 48 to local table
+finding final parameters for decstrtol
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param r11
+found new parameter r11
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure extra_characters ###
+in proc extra_characters adding addrExp r28{0} - 28 to local table
+in proc extra_characters adding addrExp r28{0} - 32 to local table
+in proc extra_characters adding addrExp r28{0} - 4 to local table
+in proc extra_characters adding addrExp r28{0} - 28 to local table
+in proc extra_characters adding addrExp r28{0} - 32 to local table
+in proc extra_characters adding addrExp r28{0} - 28 to local table
+in proc extra_characters adding addrExp r28{0} - 32 to local table
+integer size 0x8 meet with SizeType size 0x20!
+in proc extra_characters adding addrExp r28{0} - 28 to local table
+in proc extra_characters adding addrExp r28{0} - 32 to local table
+in proc extra_characters adding addrExp r28{0} - 28 to local table
+in proc extra_characters adding addrExp r28{0} - 32 to local table
+finding final parameters for extra_characters
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+potential param r27
+found new parameter r27
+potential param r11
+found new parameter r11
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure my_strlcpy ###
+in proc my_strlcpy adding addrExp r28{0} - 4 to local table
+in proc my_strlcpy adding addrExp r28{0} - 16 to local table
+in proc my_strlcpy adding addrExp r28{0} - 12 to local table
+in proc my_strlcpy adding addrExp r28{0} - 8 to local table
+finding final parameters for my_strlcpy
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+assgn    7 *32* tmp1 := m[0x8079284]
+assgn   10 *32* tmp1 := m[0x8079288]
+assgn   13 *32* tmp1 := m[0x8082f10]
+after removing matching assigns (%pc).
+in proc reset_attr adding addrExp r28{0} - 24 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 4 to local table
+in proc reset_attr adding addrExp r28{0} - 24 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 24 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 24 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+in proc reset_attr adding addrExp r28{0} - 28 to local table
+in proc reset_attr adding addrExp r28{0} - 32 to local table
+finding final parameters for reset_attr
+potential param r28
+found new parameter r28
+assgn   13 *32* r24 := m[0x8079144]
+assgn   22 *32* tmp1 := m[0x8079164]
+assgn   39 *32* tmp1 := m[0x8079168]
+assgn   56 *32* tmp1 := m[0x807916c]
+assgn   73 *32* r24 := m[0x8082bd8]
+assgn   82 *32* tmp1 := m[0x8079148]
+assgn   99 *32* tmp1 := m[0x8079284]
+assgn  116 *32* tmp1 := m[0x8079ad0]
+assgn  133 *32* tmp1 := m[0x807914c]
+assgn  150 *32* tmp1 := m[0x8079150]
+assgn  167 *32* tmp1 := m[0x8079154]
+assgn  184 *32* r24 := m[0x8079158]
+assgn  193 *32* r24 := m[0x807990c]
+assgn  202 *32* tmp1 := m[0x8082bdc]
+assgn  219 *32* tmp1 := m[0x8079904]
+assgn  236 *32* tmp1 := m[0x8079280]
+after removing matching assigns (%pc).
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 4 to local table
+in proc output_options adding addrExp r28{0} - 8 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+TYPE ERROR: Existing type at address 0xffffffe8 is not structure or array type
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+in proc output_options adding addrExp r28{0} - 16 to local table
+in proc output_options adding addrExp r28{0} - 20 to local table
+in proc output_options adding addrExp r28{0} - 24 to local table
+in proc output_options adding addrExp r28{0} - 28 to local table
+in proc output_options adding addrExp r28{0} - 32 to local table
+finding final parameters for output_options
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r24
+found new parameter r24
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn    9 *8* tmpb := m[0x8082f40]
+after removing matching assigns (%pc).
+in proc save_set_options adding addrExp r28{0} - 20 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 4 to local table
+in proc save_set_options adding addrExp r28{0} - 8 to local table
+size 0x20 meet with size 0x8!
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 20 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 20 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 20 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+in proc save_set_options adding addrExp r28{0} - 20 to local table
+in proc save_set_options adding addrExp r28{0} - 24 to local table
+in proc save_set_options adding addrExp r28{0} - 28 to local table
+in proc save_set_options adding addrExp r28{0} - 32 to local table
+finding final parameters for save_set_options
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn   78 *32* r24 := m[0x8079380]
+assgn  488 *32* r24 := m[0x8079158]
+assgn  670 *8* tmpb := m[0x8082f40]
+after removing matching assigns (%pc).
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+size 0x10 meet with size 0x20!
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure set_options ###
+in proc set_options adding addrExp r28{0} - 32 to local table
+in proc set_options adding addrExp r28{0} - 4 to local table
+in proc set_options adding addrExp r28{0} - 8 to local table
+in proc set_options adding addrExp r28{0} - 12 to local table
+in proc set_options adding addrExp r28{0} - 16 to local table
+in proc set_options adding addrExp r28{0} - 32 to local table
+in proc set_options adding addrExp r28{0} - 32 to local table
+size 0x20 meet with size 0x8!
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+size 0x20 meet with size 0x8!
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc set_options adding addrExp r28{0} - 8 to local table
+in proc set_options adding addrExp r28{0} - 12 to local table
+in proc set_options adding addrExp r28{0} - 16 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28 to local table
+in proc set_options adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc set_options adding addrExp r28{0} - 8 to local table
+in proc set_options adding addrExp r28{0} - 12 to local table
+in proc set_options adding addrExp r28{0} - 16 to local table
+in proc set_options adding addrExp r28{0} - 32 to local table
+finding final parameters for set_options
+potential param r28
+found new parameter r28
+potential param r27
+found new parameter r27
+potential param r0
+found new parameter r0
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} - 32]
+found new parameter m[r28{0} - 32]
+assgn   13 *32* r24 := m[20]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure load_rc ###
+in proc load_rc adding addrExp r28{0} - 0x1070 to local table
+in proc load_rc adding addrExp r28{0} - 0x1020 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 4 to local table
+in proc load_rc adding addrExp r28{0} - 8 to local table
+in proc load_rc adding addrExp r28{0} - 12 to local table
+in proc load_rc adding addrExp r28{0} - 16 to local table
+in proc load_rc adding addrExp r28{0} - 32 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffefb4 existing type FILE * but added type union { unsigned int x647; unsigned char * x648; }
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffefb4 existing type FILE * but added type union { unsigned int x647; unsigned char * x648; }
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffefb4 existing type FILE * but added type /*signed?*/int
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure load_rc ###
+in proc load_rc adding addrExp r28{0} - 0x1070 to local table
+in proc load_rc adding addrExp r28{0} - 0x1020 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc load_rc adding addrExp r28{0} - 8 to local table
+in proc load_rc adding addrExp r28{0} - 12 to local table
+in proc load_rc adding addrExp r28{0} - 16 to local table
+in proc load_rc adding addrExp r28{0} - 32 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffefb4 existing type FILE * but added type union { unsigned int x647; unsigned char * x648; }
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+TYPE DIFFERENCE (could be OK): At address 0xffffefb4 existing type FILE * but added type union { unsigned int x647; unsigned char * x648; }
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1034 to local table
+in proc load_rc adding addrExp r28{0} - 0x1038 to local table
+in proc load_rc adding addrExp r28{0} - 0x103c to local table
+in proc load_rc adding addrExp r28{0} - 0x1040 to local table
+in proc load_rc adding addrExp r28{0} - 0x1044 to local table
+in proc load_rc adding addrExp r28{0} - 0x1048 to local table
+in proc load_rc adding addrExp r28{0} - 0x104c to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+in proc load_rc adding addrExp r28{0} - 0x1050 to local table
+finding final parameters for load_rc
+potential param r28
+found new parameter r28
+potential param m[r28{0} - 0x1070]
+found new parameter m[r28{0} - 0x1070]
+potential param r0
+found new parameter r0
+potential param m[r28{0} - 0x1020]
+found new parameter m[r28{0} - 0x1020]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure set_signals ###
+in proc set_signals adding addrExp r28{0} - 4 to local table
+in proc set_signals adding addrExp r28{0} - 8 to local table
+in proc set_signals adding addrExp r28{0} - 12 to local table
+in proc set_signals adding addrExp r28{0} - 24 to local table
+in proc set_signals adding addrExp r28{0} - 28 to local table
+in proc set_signals adding addrExp r28{0} - 32 to local table
+in proc set_signals adding addrExp r28{0} - 24 to local table
+in proc set_signals adding addrExp r28{0} - 28 to local table
+in proc set_signals adding addrExp r28{0} - 32 to local table
+in proc set_signals adding addrExp r28{0} - 24 to local table
+in proc set_signals adding addrExp r28{0} - 28 to local table
+in proc set_signals adding addrExp r28{0} - 32 to local table
+finding final parameters for set_signals
+assgn   17 *32* r24 := m[0x80817e4]
+assgn   32 *32* r24 := m[0x80796bc]
+assgn   34 *32* r27 := m[0x8081a00]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure clean_up ###
+in proc clean_up adding addrExp r28{0} - 44 to local table
+in proc clean_up adding addrExp r28{0} - 4 to local table
+in proc clean_up adding addrExp r28{0} - 8 to local table
+in proc clean_up adding addrExp r28{0} - 12 to local table
+in proc clean_up adding addrExp r28{0} - 16 to local table
+in proc clean_up adding addrExp r28{0} - 48 to local table
+in proc clean_up adding addrExp r28{0} - 44 to local table
+in proc clean_up adding addrExp r28{0} - 48 to local table
+in proc clean_up adding addrExp r28{0} - 44 to local table
+in proc clean_up adding addrExp r28{0} - 48 to local table
+in proc clean_up adding addrExp r28{0} - 44 to local table
+in proc clean_up adding addrExp r28{0} - 48 to local table
+finding final parameters for clean_up
+potential param r28
+found new parameter r28
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn   17 *32* tmp1 := m[0x8082f10]
+after removing matching assigns (%pc).
+in proc main_io_loop adding addrExp r28{0} - 4 to local table
+in proc main_io_loop adding addrExp r28{0} - 8 to local table
+in proc main_io_loop adding addrExp r28{0} - 12 to local table
+in proc main_io_loop adding addrExp r28{0} - 48 to local table
+finding final parameters for main_io_loop
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26

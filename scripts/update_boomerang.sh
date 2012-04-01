@@ -18,7 +18,7 @@ export LD_LIBRARY_PATH=$BOOMERANGDIR/lib
 find $root -name subject.exe | sort | while read line
 do
   dir=$(dirname $line)
-  if test -f $dir/by_rec16.c -o -f $dir/by_rec16.failed; then
+  if test -f $dir/by_boomerang.c -o -f $dir/by_boomerang.failed; then
       echo "skipping $line" >/dev/null
   else
       echo -n "decompiling $line"

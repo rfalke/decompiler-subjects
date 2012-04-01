@@ -1,0 +1,592 @@
+got filename printf-parse.c for main
+got filename ls.c for initialize_exit_failure
+got filename printf-parse.c for atexit
+got filename ls.c for decode_switches
+got filename ls.c for parse_ls_color
+got filename ls.c for is_colored
+Unknown library function tcgetpgrp
+Unknown library function sigemptyset
+got filename ls.c for prep_non_filename_text
+got filename printf-parse.c for hash_initialize
+got filename printf-parse.c for xalloc_die
+Unknown library function _obstack_begin
+Unknown library function sigaction
+Unknown library function sigaddset
+Unknown library function sigismember
+got filename printf-parse.c for xnmalloc
+got filename ls.c for clear_files
+got filename ls.c for gobble_file
+got filename ls.c for sort_files
+got filename ls.c for extract_dirs_from_files
+got filename ls.c for print_current_files
+got filename ls.c for queue_directory
+got filename ls.c for restore_default_color
+got filename ls.c for dev_ino_pop
+got filename printf-parse.c for hash_delete
+Unknown library function __assert_fail
+got filename ls.c for dev_ino_free
+got filename ls.c for free_pending_ent
+got filename ls.c for dired_dump_obstack
+got filename printf-parse.c for get_quoting_style
+got filename printf-parse.c for hash_get_n_entries
+got filename printf-parse.c for hash_free
+got filename ls.c for print_dir
+Unknown library function signal
+Unknown library function raise
+Unknown library function _obstack_newchunk
+got filename ls.c for put_indicator
+got filename printf-parse.c for set_quoting_style
+Unknown library function isatty
+got filename printf-parse.c for argmatch
+got filename printf-parse.c for human_options
+got filename printf-parse.c for xstrtoul
+got filename printf-parse.c for quotearg
+Unknown library function error
+Unknown library function ioctl
+COMPUTED JUMP at 0x804ac3c, pDest = r24
+got filename printf-parse.c for usage
+got filename printf-parse.c for clone_quoting_options
+got filename printf-parse.c for set_char_quoting
+got filename printf-parse.c for hard_locale
+got filename printf-parse.c for __xargmatch_internal
+got filename printf-parse.c for quote
+got filename printf-parse.c for xstrdup
+got filename ls.c for get_funky_string
+got filename printf-parse.c for xmalloc
+Unknown library function opendir
+got filename ls.c for file_failure
+Unknown library function dirfd
+got filename printf-parse.c for fstat64
+Unknown library function readdir64
+got filename ls.c for file_ignored
+COMPUTED JUMP at 0x804c200, pDest = r24
+got filename printf-parse.c for stat64
+Unknown library function closedir
+got filename ls.c for visit_dir
+got filename printf-parse.c for quotearg_colon
+got filename printf-parse.c for human_readable
+got filename ls.c for quote_name
+got filename ls.c for patterns_match
+got filename ls.c for freecon
+got filename printf-parse.c for xnrealloc
+got filename printf-parse.c for umaxtostr
+got filename ls.c for attach
+got filename printf-parse.c for lstat64
+got filename ls.c for getfilecon
+got filename ls.c for get_link_name
+got filename ls.c for make_link_name
+got filename ls.c for lgetfilecon
+got filename printf-parse.c for gnu_mbswidth
+got filename ls.c for format_user_width
+got filename ls.c for format_group_width
+Unknown library function gnu_dev_major
+Unknown library function gnu_dev_minor
+got filename printf-parse.c for file_has_acl
+got filename ls.c for unsigned_file_size
+got filename printf-parse.c for areadlink_with_size
+got filename ls.c for is_directory
+got filename ls.c for basename_is_dot_or_dotdot
+got filename printf-parse.c for file_name_concat
+got filename ls.c for initialize_ordering_vector
+Unknown library function _setjmp
+got filename printf-parse.c for mpsort
+COMPUTED JUMP at 0x804ec50, pDest = r24
+got filename printf-parse.c for getuser
+got filename ls.c for format_user_or_group_width
+got filename printf-parse.c for getgroup
+got filename printf-parse.c for quotearg_buffer
+Unknown library function __ctype_get_mb_cur_max
+got filename printf-parse.c for mbsnwidth
+got filename ls.c for to_uchar
+Unknown library function mbrtowc
+Unknown library function wcwidth
+Unknown library function mbsinit
+got filename ls.c for emit_bug_reporting_address
+Unknown library function readlink
+Unknown library function iswcntrl
+Unknown library function memcmp
+got filename printf-parse.c for argmatch_invalid
+got filename printf-parse.c for argmatch_valid
+got filename printf-parse.c for mfile_name_concat
+got filename hash.c for check_tuning
+got filename hash.c for next_prime
+got filename hash.c for hash_find_entry
+got filename printf-parse.c for hash_rehash
+Unknown library function localeconv
+got filename printf-parse.c for __umoddi3
+got filename printf-parse.c for __udivdi3
+got filename human.c for adjust_value
+got filename human.c for group_number
+got filename human.c for humblock
+got filename human.c for default_block_size
+Unknown library function getgrgid
+got filename mpsort.c for mpsort_with_tmp
+got filename printf-parse.c for quote_n
+got filename printf-parse.c for xmemdup
+got filename quotearg.c for quotearg_buffer_restyled
+got filename printf-parse.c for quotearg_n
+got filename printf-parse.c for quotearg_char
+got filename printf-parse.c for xrealloc
+Unknown library function strtoul
+COMPUTED JUMP at 0x8058ec6, pDest = r24
+got filename printf-parse.c for __i686.get_pc_thunk.bx
+Unknown library function __cxa_atexit
+Unknown library function __xstat64
+Unknown library function __fxstat64
+Unknown library function __lxstat64
+got filename printf-parse.c for hash_insert
+COMPUTED JUMP at 0x804b822, pDest = r24
+got filename ls.c for set_exit_status
+Unknown library function fnmatch
+got filename printf-parse.c for last_component
+got filename ls.c for dot_or_dotdot
+got filename printf-parse.c for quotearg_n_style
+got filename printf-parse.c for base_len
+got filename filenamecat.c for longest_relative_suffix
+got filename hash.c for is_prime
+got filename hash.c for free_entry
+got filename hash.c for allocate_entry
+Unknown library function __stack_chk_fail
+got filename printf-parse.c for xstrtoumax
+got filename mpsort.c for mpsort_into_tmp
+COMPUTED JUMP at 0x8054f5e, pDest = r24
+COMPUTED JUMP at 0x80550c1, pDest = r24
+Unknown library function iswprint
+COMPUTED JUMP at 0x805541d, pDest = r24
+got filename quotearg.c for quotearg_n_options
+got filename quotearg.c for quoting_options_from_style
+Unknown library function strtoumax
+COMPUTED JUMP at 0x80593e8, pDest = r24
+got filename printf-parse.c for xcharalloc
+after removing matching assigns (%pc).
+in proc initialize_exit_failure adding addrExp r28{0} - 4 to local table
+finding final parameters for initialize_exit_failure
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r24
+found new parameter r24
+after removing matching assigns (%pc).
+in proc __i686.get_pc_thunk.bx adding addrExp r28{0} to local table
+finding final parameters for __i686.get_pc_thunk.bx
+potential param r28
+found new parameter r28
+potential param m[r28{0}]
+found new parameter m[r28{0}]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure atexit ###
+in proc atexit adding addrExp r28{0} - 4 to local table
+in proc atexit adding addrExp r28{0} - 8 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+in proc atexit adding addrExp r28{0} - 12 to local table
+in proc atexit adding addrExp r28{0} - 16 to local table
+in proc atexit adding addrExp r28{0} - 20 to local table
+in proc atexit adding addrExp r28{0} - 24 to local table
+finding final parameters for atexit
+after removing matching assigns (%pc).
+in proc set_quoting_style adding addrExp r28{0} - 4 to local table
+in proc set_quoting_style adding addrExp r28{0} - 8 to local table
+in proc set_quoting_style adding addrExp r28{0} - 8 to local table
+in proc set_quoting_style adding addrExp r28{0} - 8 to local table
+finding final parameters for set_quoting_style
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure argmatch ###
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 4 to local table
+in proc argmatch adding addrExp r28{0} - 20 to local table
+in proc argmatch adding addrExp r28{0} - 5 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 16 to local table
+in proc argmatch adding addrExp r28{0} - 12 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 24 to local table
+in proc argmatch adding addrExp r28{0} - 20 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 5 to local table
+in proc argmatch adding addrExp r28{0} - 5 to local table
+in proc argmatch adding addrExp r28{0} - 20 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 12 to local table
+in proc argmatch adding addrExp r28{0} - 5 to local table
+in proc argmatch adding addrExp r28{0} - 12 to local table
+in proc argmatch adding addrExp r28{0} - 20 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+in proc argmatch adding addrExp r28{0} - 24 to local table
+in proc argmatch adding addrExp r28{0} - 24 to local table
+in proc argmatch adding addrExp r28{0} - 24 to local table
+in proc argmatch adding addrExp r28{0} - 36 to local table
+in proc argmatch adding addrExp r28{0} - 40 to local table
+in proc argmatch adding addrExp r28{0} - 44 to local table
+in proc argmatch adding addrExp r28{0} - 48 to local table
+finding final parameters for argmatch
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+after removing matching assigns (%pc).
+=== about to restart decompilation of quotearg_buffer_restyled because indirect jumps or calls have been analysed
+
+got filename quotearg.c for gettext_quote
+after removing matching assigns (%pc).
+in proc gettext_quote adding addrExp r28{0} - 4 to local table
+in proc gettext_quote adding addrExp r28{0} - 28 to local table
+in proc gettext_quote adding addrExp r28{0} - 32 to local table
+in proc gettext_quote adding addrExp r28{0} - 8 to local table
+in proc gettext_quote adding addrExp r28{0} - 8 to local table
+in proc gettext_quote adding addrExp r28{0} - 8 to local table
+finding final parameters for gettext_quote
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure quotearg_buffer_restyled ###
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 32 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 36 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 120 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 74 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 44 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 56 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 80 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 73 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 4 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 6 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 120 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 32 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 120 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 36 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 32 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 36 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 120 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 80 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 56 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 56 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 56 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 80 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 72 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 80 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 72 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 5 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 6 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 7 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 8 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 9 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 16 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 20 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 24 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 28 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 32 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 36 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 40 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 48 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 52 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 56 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 72 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 80 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 84 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 88 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 92 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 96 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 120 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 124 to local table
+in proc quotearg_buffer_restyled adding addrExp r28{0} - 128 to local table
+finding final parameters for quotearg_buffer_restyled
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} - 74]
+found new parameter m[r28{0} - 74]
+potential param m[r28{0} - 44]
+found new parameter m[r28{0} - 44]
+potential param m[r28{0} + 24]
+found new parameter m[r28{0} + 24]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} - 8]
+found new parameter m[r28{0} - 8]
+potential param m[r28{0} - 9]
+found new parameter m[r28{0} - 9]
+potential param m[r28{0} - 40]
+found new parameter m[r28{0} - 40]
+potential param m[r28{0} - 48]
+found new parameter m[r28{0} - 48]
+potential param m[r28{0} - 52]
+found new parameter m[r28{0} - 52]
+potential param m[r28{0} - 56]
+found new parameter m[r28{0} - 56]
+potential param m[r28{0} - 84]
+found new parameter m[r28{0} - 84]
+potential param m[r28{0} - 88]
+found new parameter m[r28{0} - 88]
+potential param m[r28{0} - 92]
+found new parameter m[r28{0} - 92]
+potential param m[r28{0} - 96]
+found new parameter m[r28{0} - 96]
+potential param m[r28{0} - 73]
+found new parameter m[r28{0} - 73]
+finding final parameters for quotearg_buffer_restyled
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} - 74]
+found new parameter m[r28{0} - 74]
+potential param m[r28{0} - 44]
+found new parameter m[r28{0} - 44]
+potential param m[r28{0} + 24]
+found new parameter m[r28{0} + 24]
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} - 8]
+found new parameter m[r28{0} - 8]
+potential param m[r28{0} - 9]
+found new parameter m[r28{0} - 9]
+potential param m[r28{0} - 40]
+found new parameter m[r28{0} - 40]
+potential param m[r28{0} - 48]
+found new parameter m[r28{0} - 48]
+potential param m[r28{0} - 52]
+found new parameter m[r28{0} - 52]
+potential param m[r28{0} - 56]
+found new parameter m[r28{0} - 56]
+potential param m[r28{0} - 84]
+found new parameter m[r28{0} - 84]
+potential param m[r28{0} - 88]
+found new parameter m[r28{0} - 88]
+potential param m[r28{0} - 92]
+found new parameter m[r28{0} - 92]
+potential param m[r28{0} - 96]
+found new parameter m[r28{0} - 96]
+potential param m[r28{0} - 73]
+found new parameter m[r28{0} - 73]

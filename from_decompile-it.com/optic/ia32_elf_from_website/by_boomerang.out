@@ -1,0 +1,33 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 10 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering MAIN__
+   considering herald_
+   decompiling herald_
+pprprrrpprprttttttttttttpr   considering wffopen_
+    considering wrtout_
+    decompiling wrtout_
+prprrrrprpttttttttttrp    considering leave_new_
+     considering leave_myproc_
+   considering hdr_io_wfftype_
+    considering hdr_io_int_
+     considering print_ij_
+     decompiling print_ij_
+rprrrpppppppppprprrprrprrrrrrrrrrpppppppppprrrrrrrrrrrrrpppppppppprrrrrrrpppppppppprrrrppppppppppptttttttpttrtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttrrrpppppppppprrrtrrrr decompiling main
+tglobal type analysis for main
+global type analysis for MAIN__
+tglobal type analysis for herald_
+tglobal type analysis for wffopen_
+global type analysis for hdr_io_wfftype_
+global type analysis for hdr_io_int_
+tttttttttttttglobal type analysis for wrtout_
+ttglobal type analysis for leave_new_
+global type analysis for print_ij_
+global type analysis for leave_myproc_
+rrrrrrrrrrrrrrrrrrrrrrrrriii

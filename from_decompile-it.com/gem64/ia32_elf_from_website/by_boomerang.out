@@ -1,0 +1,20 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 61 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering atexit
+   considering __i686.get_pc_thunk.bx
+   decompiling __i686.get_pc_thunk.bx
+  decompiling atexit
+  considering show_help
+   considering basename
+   decompiling basename
+rtr   considering dump_ascii
+    considering nc_fgets_html
+prrprrprtttttt   decompiling dump_ascii
+rpt

@@ -1,0 +1,24 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 729 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering newGeneralList
+  decompiling newGeneralList
+  considering currentdir
+  decompiling currentdir
+  considering non_null
+  decompiling non_null
+r  considering wc_guess_locale_charset
+   considering wc_locale_to_ces
+    considering wc_charset_to_ces
+    decompiling wc_charset_to_ces
+rp    reconsidering wc_charset_to_ces
+    decompiling wc_charset_to_ces
+rprprrrprrrrrrrrrprrrrrrrrrrprrpr    reconsidering wc_charset_to_ces
+    decompiling wc_charset_to_ces
+rrprprrrpprrrrrrrrrprrrrrrrrrrrprrprrttttttttttt

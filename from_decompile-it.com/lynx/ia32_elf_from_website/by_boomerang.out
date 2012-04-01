@@ -1,0 +1,292 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 834 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering LYLastPathSep
+  decompiling LYLastPathSep
+  considering LYGetEnv
+  decompiling LYGetEnv
+  considering LYAddPathToHome
+   considering Home_Dir
+    considering HomeEnv
+     considering CheckDir
+      considering LYisAbsPath
+      decompiling LYisAbsPath
+      considering HTStat
+       considering stat64
+        considering __i686.get_pc_thunk.bx
+        decompiling __i686.get_pc_thunk.bx
+r       decompiling stat64
+t       considering HTSprintf0
+        considering StrAllocVsprintf
+         considering HTAlloc
+          considering outofmem
+           considering LYexit
+            considering LYCloselog
+            decompiling LYCloselog
+            considering cleanup_sig
+             considering dump_traversal_history
+              considering LYAppendToTxtFile
+               considering OpenHiddenFile
+                considering IsOurFile
+                 considering lstat64
+                 decompiling lstat64
+p                 considering HTSACopy
+                 considering IsOurSymlink
+                  considering TraceFP
+                  decompiling TraceFP
+r                 considering LYPathLeaf
+                 decompiling LYPathLeaf
+              considering final_perror
+               considering stop_curses
+                considering FreeCachedStyles
+                decompiling FreeCachedStyles
+r                considering lynx_nl2crlf
+                 considering LYrefresh
+                  considering LYscreenWidth
+                  decompiling LYscreenWidth
+                 decompiling LYrefresh
+prrttt                decompiling lynx_nl2crlf
+prt                considering lynx_enable_mouse
+                decompiling lynx_enable_mouse
+rtp               decompiling stop_curses
+r               considering cleanup
+                considering LYmove
+                decompiling LYmove
+                considering LYclrtoeol
+                decompiling LYclrtoeol
+r                considering lynx_stop_all_colors
+                 considering lynx_stop_underline
+                 decompiling lynx_stop_underline
+                 considering lynx_stop_reverse
+                 decompiling lynx_stop_reverse
+p                 considering lynx_stop_bold
+                 decompiling lynx_stop_bold
+r                decompiling lynx_stop_all_colors
+                considering cleanup_files
+                 considering LYCleanupTemp
+                  considering LYRemoveTemp
+                   considering LY_close_temp
+                    considering LYCloseInput
+                    decompiling LYCloseInput
+                    considering LYCloseOutput
+                     considering HTAlert
+                      considering user_message
+                       considering statusline
+                        considering LYstrncpy
+                        decompiling LYstrncpy
+r                        considering remove_most_blanks
+                         considering LYReduceBlanks
+                          considering LYTrimLeading
+                           considering LYSkipBlanks
+                           decompiling LYSkipBlanks
+pr                          decompiling LYTrimLeading
+t                          considering LYTrimTrailing
+                          decompiling LYTrimTrailing
+t                          considering convert_to_spaces
+                           considering LYSkipNonBlanks
+                           decompiling LYSkipNonBlanks
+rpt                          decompiling convert_to_spaces
+rttr                         decompiling LYReduceBlanks
+p                        decompiling remove_most_blanks
+rt                        considering TO_EUC
+                         considering IS_SJIS_STR
+                         decompiling IS_SJIS_STR
+rptr                         considering repairJIStoEUC
+                         decompiling repairJIStoEUC
+rtt                         considering SJIS_TO_EUC1
+                          considering SJIS_TO_JIS1
+                          decompiling SJIS_TO_JIS1
+pt                         decompiling SJIS_TO_EUC1
+r                        decompiling TO_EUC
+prrrprtttttpr                        considering LYstrExtent
+                        decompiling LYstrExtent
+rprtttt                        considering curses_style
+                         considering curses_w_style
+                          considering LYAttrset
+                           considering attr_to_string
+                            considering lookup_color
+                            decompiling lookup_color
+r                           decompiling attr_to_string
+prrtttp                          decompiling LYAttrset
+rrtttp                          considering SetCachedStyle
+                           considering RefCachedStyle
+                           decompiling RefCachedStyle
+r                          decompiling SetCachedStyle
+t                          considering LYgetattrs
+                          decompiling LYgetattrs
+                         decompiling curses_w_style
+rpprrrprtttttttttttttpr                        decompiling curses_style
+                        considering LYwaddnstr
+rprrptttttttrpttttttttpr                      considering LYstore_message2
+                       considering to_stack
+                       decompiling to_stack
+                      considering LYSleepAlert
+                      decompiling LYSleepAlert
+r                  considering LYTrimPathSep
+                  decompiling LYTrimPathSep
+                considering LYStoreCookies
+                 considering NewCookieFile
+                  considering LYNewTxtFile
+                considering LYCloseTracelog
+                decompiling LYCloseTracelog
+rp             considering reset_signals
+             decompiling reset_signals
+             considering exit_immediately
+            considering LYCompleteExit
+            decompiling LYCompleteExit
+t            considering LYCloseCmdLogfile
+rprpprrprrrprrprrrrprrprprrrprrrprrrprrprrrpppptrttttttttrpttttttttttttttrptttrWarning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+tWarning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+tWarning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+tWarning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+Warning! Null reference in m[r28{0} - 24]{-}
+tttrpttttttttrtttWarning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+tWarning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+Warning! Null reference in m[r28{0} - 264]{-}
+tttprrrrt     decompiling CheckDir
+rp    decompiling HomeEnv
+   decompiling Home_Dir
+rtr  decompiling LYAddPathToHome
+prttr  considering parse_arg
+   considering LYEnsureAbsoluteURL
+    considering LYFillLocalFileURL
+     considering strncasecomp
+     decompiling strncasecomp
+prttt     considering HTSACat
+     decompiling HTSACat
+prtr     considering Current_Dir
+     decompiling Current_Dir
+p     considering wwwName
+     decompiling wwwName
+     considering LYAddHtmlSep
+     decompiling LYAddHtmlSep
+t     considering HTEscape
+     decompiling HTEscape
+rprttt     considering LYLocalFileToURL
+     decompiling LYLocalFileToURL
+prt    decompiling LYFillLocalFileURL
+rprrprtttttr    considering strcasecomp
+    decompiling strcasecomp
+prttp    considering is_url
+     considering LYCheckForProxyURL
+     decompiling LYCheckForProxyURL
+rrprtttt    decompiling is_url
+rpr    reconsidering is_url
+     considering compare_type
+     decompiling compare_type
+rpt     considering LYisLocalFile
+      considering HTParse
+       considering scan
+       decompiling scan
+rprrttttrp       considering LYRemoveBlanks
+       decompiling LYRemoveBlanks
+rptt       considering HTParsePort
+       decompiling HTParsePort
+rrpttttt       considering strchr_or_end
+       decompiling strchr_or_end
+r       considering HTSimplify
+       decompiling HTSimplify
+pprrrrprptttttttttr      considering HTHostName
+       considering get_host_details
+       decompiling get_host_details
+prt      decompiling HTHostName
+rpprrprrrrpprrrrrrpprrrppr    reconsidering HTParse
+rrpprprrrrpprrrrrrpprrrpprrrrrrprrrrprrrrprrprpppttttttttttttttttttttrrrppttttttttttttttttttttrpprrtttttttttttttrprrrrrrrrprrrrrrrrpttttttboomerang: db/dataflow.cpp:285: bool DataFlow::placePhiFunctions(UserProc*): Assertion `numBB == cfg->getNumBBs()' failed.
