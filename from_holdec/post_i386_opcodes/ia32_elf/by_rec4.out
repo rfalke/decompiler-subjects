@@ -1,0 +1,921 @@
+Analyzing './from_holdec/post_i386_opcodes/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+Elapsed time: 0 sec.
+./from_holdec/post_i386_opcodes/ia32_elf/subject.exe: no .debug_info section
+./from_holdec/post_i386_opcodes/ia32_elf/subject.exe: 30 sections starting at 0x00002764
+./from_holdec/post_i386_opcodes/ia32_elf/subject.exe: section string table at 0x00002B9C, 0xFC bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00002764: [ 0] 00000000 00000000 00000000 
+0000278C: [ 1] 08048134 00000013 00000134 .interp
+000027B4: [ 2] 08048148 00000020 00000148 .note.ABI-tag
+000027DC: [ 3] 08048168 00000024 00000168 .note.gnu.build-id
+00002804: [ 4] 0804818C 00000020 0000018C .gnu.hash
+0000282C: [ 5] 080481AC 00000040 000001AC .dynsym
+00002854: [ 6] 080481EC 00000045 000001EC .dynstr
+0000287C: [ 7] 08048232 00000008 00000232 .gnu.version
+000028A4: [ 8] 0804823C 00000020 0000023C .gnu.version_r
+000028CC: [ 9] 0804825C 00000008 0000025C .rel.dyn
+000028F4: [10] 08048264 00000010 00000264 .rel.plt
+0000291C: [11] 08048274 00000030 00000274 .init
+00002944: [12] 080482A4 00000030 000002A4 .plt
+0000296C: [13] 080482E0 0000219C 000002E0 .text
+00002994: [14] 0804A47C 0000001C 0000247C .fini
+000029BC: [15] 0804A498 0000000C 00002498 .rodata
+000029E4: [16] 0804A4A4 00000024 000024A4 .eh_frame_hdr
+00002A0C: [17] 0804A4C8 0000007C 000024C8 .eh_frame
+00002A34: [18] 0804B544 00000008 00002544 .ctors
+00002A5C: [19] 0804B54C 00000008 0000254C .dtors
+00002A84: [20] 0804B554 00000004 00002554 .jcr
+00002AAC: [21] 0804B558 000000C8 00002558 .dynamic
+00002AD4: [22] 0804B620 00000004 00002620 .got
+00002AFC: [23] 0804B624 00000014 00002624 .got.plt
+00002B24: [24] 0804B638 00000004 00002638 .data
+00002B4C: [25] 0804B63C 00000008 0000263C .bss
+00002B74: [26] 00000000 0000002C 0000263C .comment
+00002B9C: [27] 00000000 000000FC 00002668 .shstrtab
+00002BC4: [28] 00000000 00001060 00002C14 .symtab
+00002BEC: [29] 00000000 00001129 00003C74 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 9 kB covered
+Elapsed time: 0 sec.
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 9 Labels, 7 Branches, 0 MB used, 0 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 209 Labels, 404 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 210 Labels, 404 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 233 Labels, 426 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+0 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Resolving indirect jumps...
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Resolving constants and strings...
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Discovering unreached functions...
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Computing call tree...
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Computing calling conventions...
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+Computing Calling Convention: 3/206  0x080482B4
+Elapsed time: 0 sec.
+Computing Calling Convention: 4/206  0x080482C4
+Elapsed time: 0 sec.
+Computing Calling Convention: 5/206  0x08048370
+Elapsed time: 0 sec.
+Computing Calling Convention: 6/206  0x08048394
+Elapsed time: 0 sec.
+Computing Calling Convention: 7/206  0x08048397
+Elapsed time: 0 sec.
+Computing Calling Convention: 8/206  0x0804839A
+Elapsed time: 0 sec.
+Computing Calling Convention: 9/206  0x080483FB
+Elapsed time: 0 sec.
+Computing Calling Convention: 10/206  0x080483FF
+Elapsed time: 0 sec.
+Computing Calling Convention: 11/206  0x08048403
+Elapsed time: 0 sec.
+Computing Calling Convention: 12/206  0x08048465
+Elapsed time: 0 sec.
+Computing Calling Convention: 13/206  0x0804846A
+Elapsed time: 0 sec.
+Computing Calling Convention: 14/206  0x0804846F
+Elapsed time: 0 sec.
+Computing Calling Convention: 15/206  0x080484D2
+Elapsed time: 0 sec.
+Computing Calling Convention: 16/206  0x080484D6
+Elapsed time: 0 sec.
+Computing Calling Convention: 17/206  0x080484DA
+Elapsed time: 0 sec.
+Computing Calling Convention: 18/206  0x0804853C
+Elapsed time: 0 sec.
+Computing Calling Convention: 19/206  0x08048540
+Elapsed time: 0 sec.
+Computing Calling Convention: 20/206  0x08048544
+Elapsed time: 0 sec.
+Computing Calling Convention: 21/206  0x080485A6
+Elapsed time: 0 sec.
+Computing Calling Convention: 22/206  0x080485AA
+Elapsed time: 0 sec.
+Computing Calling Convention: 23/206  0x080485AE
+Elapsed time: 0 sec.
+Computing Calling Convention: 24/206  0x08048610
+Elapsed time: 0 sec.
+Computing Calling Convention: 25/206  0x08048615
+Elapsed time: 0 sec.
+Computing Calling Convention: 26/206  0x0804861A
+Elapsed time: 0 sec.
+Computing Calling Convention: 27/206  0x0804867D
+Elapsed time: 0 sec.
+Computing Calling Convention: 28/206  0x08048683
+Elapsed time: 0 sec.
+Computing Calling Convention: 29/206  0x08048689
+Elapsed time: 0 sec.
+Computing Calling Convention: 30/206  0x080486ED
+Elapsed time: 0 sec.
+Computing Calling Convention: 31/206  0x080486F2
+Elapsed time: 0 sec.
+Computing Calling Convention: 32/206  0x080486F7
+Elapsed time: 0 sec.
+Computing Calling Convention: 33/206  0x0804875A
+Elapsed time: 0 sec.
+Computing Calling Convention: 34/206  0x0804875F
+Elapsed time: 0 sec.
+Computing Calling Convention: 35/206  0x08048764
+Elapsed time: 0 sec.
+Computing Calling Convention: 36/206  0x080487C7
+Elapsed time: 0 sec.
+Computing Calling Convention: 37/206  0x080487CC
+Elapsed time: 0 sec.
+Computing Calling Convention: 38/206  0x080487D1
+Elapsed time: 0 sec.
+Computing Calling Convention: 39/206  0x08048834
+Elapsed time: 0 sec.
+Computing Calling Convention: 40/206  0x08048837
+Elapsed time: 0 sec.
+Computing Calling Convention: 41/206  0x0804883A
+Elapsed time: 0 sec.
+Computing Calling Convention: 42/206  0x0804889B
+Elapsed time: 0 sec.
+Computing Calling Convention: 43/206  0x0804889E
+Elapsed time: 0 sec.
+Computing Calling Convention: 44/206  0x080488A1
+Elapsed time: 0 sec.
+Computing Calling Convention: 45/206  0x08048902
+Elapsed time: 0 sec.
+Computing Calling Convention: 46/206  0x08048906
+Elapsed time: 0 sec.
+Computing Calling Convention: 47/206  0x0804890A
+Elapsed time: 0 sec.
+Computing Calling Convention: 48/206  0x0804896C
+Elapsed time: 0 sec.
+Computing Calling Convention: 49/206  0x0804896F
+Elapsed time: 0 sec.
+Computing Calling Convention: 50/206  0x08048972
+Elapsed time: 0 sec.
+Computing Calling Convention: 51/206  0x080489D3
+Elapsed time: 0 sec.
+Computing Calling Convention: 52/206  0x080489D7
+Elapsed time: 0 sec.
+Computing Calling Convention: 53/206  0x080489DB
+Elapsed time: 0 sec.
+Computing Calling Convention: 54/206  0x08048A3D
+Elapsed time: 0 sec.
+Computing Calling Convention: 55/206  0x08048A42
+Elapsed time: 0 sec.
+Computing Calling Convention: 56/206  0x08048A47
+Elapsed time: 0 sec.
+Computing Calling Convention: 57/206  0x08048AAA
+Elapsed time: 0 sec.
+Computing Calling Convention: 58/206  0x08048AAE
+Elapsed time: 0 sec.
+Computing Calling Convention: 59/206  0x08048AB2
+Elapsed time: 0 sec.
+Computing Calling Convention: 60/206  0x08048B14
+Elapsed time: 0 sec.
+Computing Calling Convention: 61/206  0x08048B18
+Elapsed time: 0 sec.
+Computing Calling Convention: 62/206  0x08048B1C
+Elapsed time: 0 sec.
+Computing Calling Convention: 63/206  0x08048B7E
+Elapsed time: 0 sec.
+Computing Calling Convention: 64/206  0x08048B82
+Elapsed time: 0 sec.
+Computing Calling Convention: 65/206  0x08048B86
+Elapsed time: 0 sec.
+Computing Calling Convention: 66/206  0x08048BE8
+Elapsed time: 0 sec.
+Computing Calling Convention: 67/206  0x08048BED
+Elapsed time: 0 sec.
+Computing Calling Convention: 68/206  0x08048BF2
+Elapsed time: 0 sec.
+Computing Calling Convention: 69/206  0x08048C55
+Elapsed time: 0 sec.
+Computing Calling Convention: 70/206  0x08048C5B
+Elapsed time: 0 sec.
+Computing Calling Convention: 71/206  0x08048C61
+Elapsed time: 0 sec.
+Computing Calling Convention: 72/206  0x08048CC5
+Elapsed time: 0 sec.
+Computing Calling Convention: 73/206  0x08048CCA
+Elapsed time: 0 sec.
+Computing Calling Convention: 74/206  0x08048CCF
+Elapsed time: 0 sec.
+Computing Calling Convention: 75/206  0x08048D32
+Elapsed time: 0 sec.
+Computing Calling Convention: 76/206  0x08048D37
+Elapsed time: 0 sec.
+Computing Calling Convention: 77/206  0x08048D3C
+Elapsed time: 0 sec.
+Computing Calling Convention: 78/206  0x08048D9F
+Elapsed time: 0 sec.
+Computing Calling Convention: 79/206  0x08048DA4
+Elapsed time: 0 sec.
+Computing Calling Convention: 80/206  0x08048DA9
+Elapsed time: 0 sec.
+Computing Calling Convention: 81/206  0x08048E0C
+Elapsed time: 0 sec.
+Computing Calling Convention: 82/206  0x08048E10
+Elapsed time: 0 sec.
+Computing Calling Convention: 83/206  0x08048E14
+Elapsed time: 0 sec.
+Computing Calling Convention: 84/206  0x08048E76
+Elapsed time: 0 sec.
+Computing Calling Convention: 85/206  0x08048E7B
+Elapsed time: 0 sec.
+Computing Calling Convention: 86/206  0x08048E80
+Elapsed time: 0 sec.
+Computing Calling Convention: 87/206  0x08048EE3
+Elapsed time: 0 sec.
+Computing Calling Convention: 88/206  0x08048EE6
+Elapsed time: 0 sec.
+Computing Calling Convention: 89/206  0x08048EE9
+Elapsed time: 0 sec.
+Computing Calling Convention: 90/206  0x08048F4A
+Elapsed time: 0 sec.
+Computing Calling Convention: 91/206  0x08048F4D
+Elapsed time: 0 sec.
+Computing Calling Convention: 92/206  0x08048F50
+Elapsed time: 0 sec.
+Computing Calling Convention: 93/206  0x08048FB1
+Elapsed time: 0 sec.
+Computing Calling Convention: 94/206  0x08048FB4
+Elapsed time: 0 sec.
+Computing Calling Convention: 95/206  0x08048FB7
+Elapsed time: 0 sec.
+Computing Calling Convention: 96/206  0x08049018
+Elapsed time: 0 sec.
+Computing Calling Convention: 97/206  0x0804901D
+Elapsed time: 0 sec.
+Computing Calling Convention: 98/206  0x08049022
+Elapsed time: 0 sec.
+Computing Calling Convention: 99/206  0x08049085
+Elapsed time: 0 sec.
+Computing Calling Convention: 100/206  0x0804908A
+Elapsed time: 0 sec.
+Computing Calling Convention: 101/206  0x0804908F
+Elapsed time: 0 sec.
+Computing Calling Convention: 102/206  0x080490F2
+Elapsed time: 0 sec.
+Computing Calling Convention: 103/206  0x080490F8
+Elapsed time: 0 sec.
+Computing Calling Convention: 104/206  0x080490FE
+Elapsed time: 0 sec.
+Computing Calling Convention: 105/206  0x08049162
+Elapsed time: 0 sec.
+Computing Calling Convention: 106/206  0x08049167
+Elapsed time: 0 sec.
+Computing Calling Convention: 107/206  0x0804916C
+Elapsed time: 0 sec.
+Computing Calling Convention: 108/206  0x080491CF
+Elapsed time: 0 sec.
+Computing Calling Convention: 109/206  0x080491D6
+Elapsed time: 0 sec.
+Computing Calling Convention: 110/206  0x080491DD
+Elapsed time: 0 sec.
+Computing Calling Convention: 111/206  0x08049242
+Elapsed time: 0 sec.
+Computing Calling Convention: 112/206  0x08049249
+Elapsed time: 0 sec.
+Computing Calling Convention: 113/206  0x08049250
+Elapsed time: 0 sec.
+Computing Calling Convention: 114/206  0x080492B5
+Elapsed time: 0 sec.
+Computing Calling Convention: 115/206  0x080492BC
+Elapsed time: 0 sec.
+Computing Calling Convention: 116/206  0x080492C3
+Elapsed time: 0 sec.
+Computing Calling Convention: 117/206  0x08049328
+Elapsed time: 0 sec.
+Computing Calling Convention: 118/206  0x0804932F
+Elapsed time: 0 sec.
+Computing Calling Convention: 119/206  0x08049336
+Elapsed time: 0 sec.
+Computing Calling Convention: 120/206  0x0804939B
+Elapsed time: 0 sec.
+Computing Calling Convention: 121/206  0x080493A2
+Elapsed time: 0 sec.
+Computing Calling Convention: 122/206  0x080493A9
+Elapsed time: 0 sec.
+Computing Calling Convention: 123/206  0x0804940E
+Elapsed time: 0 sec.
+Computing Calling Convention: 124/206  0x08049415
+Elapsed time: 0 sec.
+Computing Calling Convention: 125/206  0x0804941C
+Elapsed time: 0 sec.
+Computing Calling Convention: 126/206  0x08049481
+Elapsed time: 0 sec.
+Computing Calling Convention: 127/206  0x08049488
+Elapsed time: 0 sec.
+Computing Calling Convention: 128/206  0x0804948F
+Elapsed time: 0 sec.
+Computing Calling Convention: 129/206  0x080494F4
+Elapsed time: 0 sec.
+Computing Calling Convention: 130/206  0x080494FB
+Elapsed time: 0 sec.
+Computing Calling Convention: 131/206  0x08049502
+Elapsed time: 0 sec.
+Computing Calling Convention: 132/206  0x08049567
+Elapsed time: 0 sec.
+Computing Calling Convention: 133/206  0x0804956E
+Elapsed time: 0 sec.
+Computing Calling Convention: 134/206  0x08049575
+Elapsed time: 0 sec.
+Computing Calling Convention: 135/206  0x080495DA
+Elapsed time: 0 sec.
+Computing Calling Convention: 136/206  0x080495E1
+Elapsed time: 0 sec.
+Computing Calling Convention: 137/206  0x080495E8
+Elapsed time: 0 sec.
+Computing Calling Convention: 138/206  0x0804964D
+Elapsed time: 0 sec.
+Computing Calling Convention: 139/206  0x08049654
+Elapsed time: 0 sec.
+Computing Calling Convention: 140/206  0x0804965B
+Elapsed time: 0 sec.
+Computing Calling Convention: 141/206  0x080496C0
+Elapsed time: 0 sec.
+Computing Calling Convention: 142/206  0x080496C7
+Elapsed time: 0 sec.
+Computing Calling Convention: 143/206  0x080496CE
+Elapsed time: 0 sec.
+Computing Calling Convention: 144/206  0x08049733
+Elapsed time: 0 sec.
+Computing Calling Convention: 145/206  0x0804973A
+Elapsed time: 0 sec.
+Computing Calling Convention: 146/206  0x08049741
+Elapsed time: 0 sec.
+Computing Calling Convention: 147/206  0x080497A6
+Elapsed time: 0 sec.
+Computing Calling Convention: 148/206  0x080497AD
+Elapsed time: 0 sec.
+Computing Calling Convention: 149/206  0x080497B4
+Elapsed time: 0 sec.
+Computing Calling Convention: 150/206  0x08049819
+Elapsed time: 0 sec.
+Computing Calling Convention: 151/206  0x08049820
+Elapsed time: 0 sec.
+Computing Calling Convention: 152/206  0x08049827
+Elapsed time: 0 sec.
+Computing Calling Convention: 153/206  0x0804988C
+Elapsed time: 0 sec.
+Computing Calling Convention: 154/206  0x08049893
+Elapsed time: 0 sec.
+Computing Calling Convention: 155/206  0x0804989A
+Elapsed time: 0 sec.
+Computing Calling Convention: 156/206  0x080498FF
+Elapsed time: 0 sec.
+Computing Calling Convention: 157/206  0x08049905
+Elapsed time: 0 sec.
+Computing Calling Convention: 158/206  0x0804990B
+Elapsed time: 0 sec.
+Computing Calling Convention: 159/206  0x0804996F
+Elapsed time: 0 sec.
+Computing Calling Convention: 160/206  0x08049975
+Elapsed time: 0 sec.
+Computing Calling Convention: 161/206  0x0804997B
+Elapsed time: 0 sec.
+Computing Calling Convention: 162/206  0x080499DF
+Elapsed time: 0 sec.
+Computing Calling Convention: 163/206  0x080499E5
+Elapsed time: 0 sec.
+Computing Calling Convention: 164/206  0x080499EB
+Elapsed time: 0 sec.
+Computing Calling Convention: 165/206  0x08049A4F
+Elapsed time: 0 sec.
+Computing Calling Convention: 166/206  0x08049A55
+Elapsed time: 0 sec.
+Computing Calling Convention: 167/206  0x08049A5B
+Elapsed time: 0 sec.
+Computing Calling Convention: 168/206  0x08049ABF
+Elapsed time: 0 sec.
+Computing Calling Convention: 169/206  0x08049AC5
+Elapsed time: 0 sec.
+Computing Calling Convention: 170/206  0x08049ACB
+Elapsed time: 0 sec.
+Computing Calling Convention: 171/206  0x08049B2F
+Elapsed time: 0 sec.
+Computing Calling Convention: 172/206  0x08049B35
+Elapsed time: 0 sec.
+Computing Calling Convention: 173/206  0x08049B3B
+Elapsed time: 0 sec.
+Computing Calling Convention: 174/206  0x08049B9F
+Elapsed time: 0 sec.
+Computing Calling Convention: 175/206  0x08049BA5
+Elapsed time: 0 sec.
+Computing Calling Convention: 176/206  0x08049BAB
+Elapsed time: 0 sec.
+Computing Calling Convention: 177/206  0x08049C0F
+Elapsed time: 0 sec.
+Computing Calling Convention: 178/206  0x08049C15
+Elapsed time: 0 sec.
+Computing Calling Convention: 179/206  0x08049C1B
+Elapsed time: 0 sec.
+Computing Calling Convention: 180/206  0x08049C7F
+Elapsed time: 0 sec.
+Computing Calling Convention: 181/206  0x08049C85
+Elapsed time: 0 sec.
+Computing Calling Convention: 182/206  0x08049C8B
+Elapsed time: 0 sec.
+Computing Calling Convention: 183/206  0x08049CEF
+Elapsed time: 0 sec.
+Computing Calling Convention: 184/206  0x08049CF5
+Elapsed time: 0 sec.
+Computing Calling Convention: 185/206  0x08049CFB
+Elapsed time: 0 sec.
+Computing Calling Convention: 186/206  0x08049D5F
+Elapsed time: 0 sec.
+Computing Calling Convention: 187/206  0x08049D65
+Elapsed time: 0 sec.
+Computing Calling Convention: 188/206  0x08049D6B
+Elapsed time: 0 sec.
+Computing Calling Convention: 189/206  0x08049DCF
+Elapsed time: 0 sec.
+Computing Calling Convention: 190/206  0x08049DD5
+Elapsed time: 0 sec.
+Computing Calling Convention: 191/206  0x08049DDB
+Elapsed time: 0 sec.
+Computing Calling Convention: 192/206  0x08049E3F
+Elapsed time: 0 sec.
+Computing Calling Convention: 193/206  0x08049E45
+Elapsed time: 0 sec.
+Computing Calling Convention: 194/206  0x08049E4B
+Elapsed time: 0 sec.
+Computing Calling Convention: 195/206  0x08049EAF
+Elapsed time: 0 sec.
+Computing Calling Convention: 196/206  0x08049EB5
+Elapsed time: 0 sec.
+Computing Calling Convention: 197/206  0x08049EBB
+Elapsed time: 0 sec.
+Computing Calling Convention: 198/206  0x08049F1F
+Elapsed time: 0 sec.
+Computing Calling Convention: 199/206  0x08049F25
+Elapsed time: 0 sec.
+Computing Calling Convention: 200/206  0x08049F2B
+Elapsed time: 0 sec.
+Computing Calling Convention: 201/206  0x08049F8F
+Elapsed time: 0 sec.
+Computing Calling Convention: 202/206  0x08049F95
+Elapsed time: 0 sec.
+Computing Calling Convention: 203/206  0x08049F9B
+Elapsed time: 0 sec.
+Computing Calling Convention: 204/206  0x08049FFF
+Elapsed time: 0 sec.
+Computing Calling Convention: 205/206  0x0804A44A
+Elapsed time: 0 sec.
+Computing Calling Convention: 206/206  0x0804A450
+Elapsed time: 0 sec.
+Computing Calling Convention: 2/2  0x08048280
+Elapsed time: 0 sec.
+Computing Calling Convention: 1/1  0x08048274
+Elapsed time: 0 sec.
+File analysis complete.
+206 Procs, 237 Labels, 429 Branches, 0 MB used, 8 / 9 kB covered
+Elapsed time: 0 sec.
+
+Decompiling 1/206: 0x08048274
+Elapsed time: 0 sec.
+Decompiling 2/206: 0x08048280
+Elapsed time: 0 sec.
+Decompiling 3/206: 0x080482B4
+Elapsed time: 0 sec.
+Decompiling 4/206: 0x080482C4
+Elapsed time: 0 sec.
+Decompiling 5/206: 0x08048370
+Elapsed time: 0 sec.
+Decompiling 6/206: 0x08048394
+Elapsed time: 0 sec.
+Decompiling 7/206: 0x08048397
+Elapsed time: 0 sec.
+Decompiling 8/206: 0x0804839A
+Elapsed time: 0 sec.
+Decompiling 9/206: 0x080483FB
+Elapsed time: 0 sec.
+Decompiling 10/206: 0x080483FF
+Elapsed time: 0 sec.
+Decompiling 11/206: 0x08048403
+Elapsed time: 0 sec.
+Decompiling 12/206: 0x08048465
+Elapsed time: 0 sec.
+Decompiling 13/206: 0x0804846A
+Elapsed time: 0 sec.
+Decompiling 14/206: 0x0804846F
+Elapsed time: 0 sec.
+Decompiling 15/206: 0x080484D2
+Elapsed time: 0 sec.
+Decompiling 16/206: 0x080484D6
+Elapsed time: 0 sec.
+Decompiling 17/206: 0x080484DA
+Elapsed time: 0 sec.
+Decompiling 18/206: 0x0804853C
+Elapsed time: 0 sec.
+Decompiling 19/206: 0x08048540
+Elapsed time: 0 sec.
+Decompiling 20/206: 0x08048544
+Elapsed time: 0 sec.
+Decompiling 21/206: 0x080485A6
+Elapsed time: 0 sec.
+Decompiling 22/206: 0x080485AA
+Elapsed time: 0 sec.
+Decompiling 23/206: 0x080485AE
+Elapsed time: 0 sec.
+Decompiling 24/206: 0x08048610
+Elapsed time: 0 sec.
+Decompiling 25/206: 0x08048615
+Elapsed time: 0 sec.
+Decompiling 26/206: 0x0804861A
+Elapsed time: 0 sec.
+Decompiling 27/206: 0x0804867D
+Elapsed time: 0 sec.
+Decompiling 28/206: 0x08048683
+Elapsed time: 0 sec.
+Decompiling 29/206: 0x08048689
+Elapsed time: 0 sec.
+Decompiling 30/206: 0x080486ED
+Elapsed time: 0 sec.
+Decompiling 31/206: 0x080486F2
+Elapsed time: 0 sec.
+Decompiling 32/206: 0x080486F7
+Elapsed time: 0 sec.
+Decompiling 33/206: 0x0804875A
+Elapsed time: 0 sec.
+Decompiling 34/206: 0x0804875F
+Elapsed time: 0 sec.
+Decompiling 35/206: 0x08048764
+Elapsed time: 0 sec.
+Decompiling 36/206: 0x080487C7
+Elapsed time: 0 sec.
+Decompiling 37/206: 0x080487CC
+Elapsed time: 0 sec.
+Decompiling 38/206: 0x080487D1
+Elapsed time: 0 sec.
+Decompiling 39/206: 0x08048834
+Elapsed time: 0 sec.
+Decompiling 40/206: 0x08048837
+Elapsed time: 0 sec.
+Decompiling 41/206: 0x0804883A
+Elapsed time: 0 sec.
+Decompiling 42/206: 0x0804889B
+Elapsed time: 0 sec.
+Decompiling 43/206: 0x0804889E
+Elapsed time: 0 sec.
+Decompiling 44/206: 0x080488A1
+Elapsed time: 0 sec.
+Decompiling 45/206: 0x08048902
+Elapsed time: 0 sec.
+Decompiling 46/206: 0x08048906
+Elapsed time: 0 sec.
+Decompiling 47/206: 0x0804890A
+Elapsed time: 0 sec.
+Decompiling 48/206: 0x0804896C
+Elapsed time: 0 sec.
+Decompiling 49/206: 0x0804896F
+Elapsed time: 0 sec.
+Decompiling 50/206: 0x08048972
+Elapsed time: 0 sec.
+Decompiling 51/206: 0x080489D3
+Elapsed time: 0 sec.
+Decompiling 52/206: 0x080489D7
+Elapsed time: 0 sec.
+Decompiling 53/206: 0x080489DB
+Elapsed time: 0 sec.
+Decompiling 54/206: 0x08048A3D
+Elapsed time: 0 sec.
+Decompiling 55/206: 0x08048A42
+Elapsed time: 0 sec.
+Decompiling 56/206: 0x08048A47
+Elapsed time: 0 sec.
+Decompiling 57/206: 0x08048AAA
+Elapsed time: 0 sec.
+Decompiling 58/206: 0x08048AAE
+Elapsed time: 0 sec.
+Decompiling 59/206: 0x08048AB2
+Elapsed time: 0 sec.
+Decompiling 60/206: 0x08048B14
+Elapsed time: 0 sec.
+Decompiling 61/206: 0x08048B18
+Elapsed time: 0 sec.
+Decompiling 62/206: 0x08048B1C
+Elapsed time: 0 sec.
+Decompiling 63/206: 0x08048B7E
+Elapsed time: 0 sec.
+Decompiling 64/206: 0x08048B82
+Elapsed time: 0 sec.
+Decompiling 65/206: 0x08048B86
+Elapsed time: 0 sec.
+Decompiling 66/206: 0x08048BE8
+Elapsed time: 0 sec.
+Decompiling 67/206: 0x08048BED
+Elapsed time: 0 sec.
+Decompiling 68/206: 0x08048BF2
+Elapsed time: 0 sec.
+Decompiling 69/206: 0x08048C55
+Elapsed time: 0 sec.
+Decompiling 70/206: 0x08048C5B
+Elapsed time: 0 sec.
+Decompiling 71/206: 0x08048C61
+Elapsed time: 0 sec.
+Decompiling 72/206: 0x08048CC5
+Elapsed time: 0 sec.
+Decompiling 73/206: 0x08048CCA
+Elapsed time: 0 sec.
+Decompiling 74/206: 0x08048CCF
+Elapsed time: 0 sec.
+Decompiling 75/206: 0x08048D32
+Elapsed time: 0 sec.
+Decompiling 76/206: 0x08048D37
+Elapsed time: 0 sec.
+Decompiling 77/206: 0x08048D3C
+Elapsed time: 0 sec.
+Decompiling 78/206: 0x08048D9F
+Elapsed time: 0 sec.
+Decompiling 79/206: 0x08048DA4
+Elapsed time: 0 sec.
+Decompiling 80/206: 0x08048DA9
+Elapsed time: 0 sec.
+Decompiling 81/206: 0x08048E0C
+Elapsed time: 0 sec.
+Decompiling 82/206: 0x08048E10
+Elapsed time: 0 sec.
+Decompiling 83/206: 0x08048E14
+Elapsed time: 0 sec.
+Decompiling 84/206: 0x08048E76
+Elapsed time: 0 sec.
+Decompiling 85/206: 0x08048E7B
+Elapsed time: 0 sec.
+Decompiling 86/206: 0x08048E80
+Elapsed time: 0 sec.
+Decompiling 87/206: 0x08048EE3
+Elapsed time: 0 sec.
+Decompiling 88/206: 0x08048EE6
+Elapsed time: 0 sec.
+Decompiling 89/206: 0x08048EE9
+Elapsed time: 0 sec.
+Decompiling 90/206: 0x08048F4A
+Elapsed time: 0 sec.
+Decompiling 91/206: 0x08048F4D
+Elapsed time: 0 sec.
+Decompiling 92/206: 0x08048F50
+Elapsed time: 0 sec.
+Decompiling 93/206: 0x08048FB1
+Elapsed time: 0 sec.
+Decompiling 94/206: 0x08048FB4
+Elapsed time: 0 sec.
+Decompiling 95/206: 0x08048FB7
+Elapsed time: 0 sec.
+Decompiling 96/206: 0x08049018
+Elapsed time: 0 sec.
+Decompiling 97/206: 0x0804901D
+Elapsed time: 0 sec.
+Decompiling 98/206: 0x08049022
+Elapsed time: 0 sec.
+Decompiling 99/206: 0x08049085
+Elapsed time: 0 sec.
+Decompiling 100/206: 0x0804908A
+Elapsed time: 0 sec.
+Decompiling 101/206: 0x0804908F
+Elapsed time: 0 sec.
+Decompiling 102/206: 0x080490F2
+Elapsed time: 0 sec.
+Decompiling 103/206: 0x080490F8
+Elapsed time: 0 sec.
+Decompiling 104/206: 0x080490FE
+Elapsed time: 0 sec.
+Decompiling 105/206: 0x08049162
+Elapsed time: 0 sec.
+Decompiling 106/206: 0x08049167
+Elapsed time: 0 sec.
+Decompiling 107/206: 0x0804916C
+Elapsed time: 0 sec.
+Decompiling 108/206: 0x080491CF
+Elapsed time: 0 sec.
+Decompiling 109/206: 0x080491D6
+Elapsed time: 0 sec.
+Decompiling 110/206: 0x080491DD
+Elapsed time: 0 sec.
+Decompiling 111/206: 0x08049242
+Elapsed time: 0 sec.
+Decompiling 112/206: 0x08049249
+Elapsed time: 0 sec.
+Decompiling 113/206: 0x08049250
+Elapsed time: 0 sec.
+Decompiling 114/206: 0x080492B5
+Elapsed time: 0 sec.
+Decompiling 115/206: 0x080492BC
+Elapsed time: 0 sec.
+Decompiling 116/206: 0x080492C3
+Elapsed time: 0 sec.
+Decompiling 117/206: 0x08049328
+Elapsed time: 0 sec.
+Decompiling 118/206: 0x0804932F
+Elapsed time: 0 sec.
+Decompiling 119/206: 0x08049336
+Elapsed time: 0 sec.
+Decompiling 120/206: 0x0804939B
+Elapsed time: 0 sec.
+Decompiling 121/206: 0x080493A2
+Elapsed time: 0 sec.
+Decompiling 122/206: 0x080493A9
+Elapsed time: 0 sec.
+Decompiling 123/206: 0x0804940E
+Elapsed time: 0 sec.
+Decompiling 124/206: 0x08049415
+Elapsed time: 0 sec.
+Decompiling 125/206: 0x0804941C
+Elapsed time: 0 sec.
+Decompiling 126/206: 0x08049481
+Elapsed time: 0 sec.
+Decompiling 127/206: 0x08049488
+Elapsed time: 0 sec.
+Decompiling 128/206: 0x0804948F
+Elapsed time: 0 sec.
+Decompiling 129/206: 0x080494F4
+Elapsed time: 0 sec.
+Decompiling 130/206: 0x080494FB
+Elapsed time: 0 sec.
+Decompiling 131/206: 0x08049502
+Elapsed time: 0 sec.
+Decompiling 132/206: 0x08049567
+Elapsed time: 0 sec.
+Decompiling 133/206: 0x0804956E
+Elapsed time: 0 sec.
+Decompiling 134/206: 0x08049575
+Elapsed time: 0 sec.
+Decompiling 135/206: 0x080495DA
+Elapsed time: 0 sec.
+Decompiling 136/206: 0x080495E1
+Elapsed time: 0 sec.
+Decompiling 137/206: 0x080495E8
+Elapsed time: 0 sec.
+Decompiling 138/206: 0x0804964D
+Elapsed time: 0 sec.
+Decompiling 139/206: 0x08049654
+Elapsed time: 0 sec.
+Decompiling 140/206: 0x0804965B
+Elapsed time: 0 sec.
+Decompiling 141/206: 0x080496C0
+Elapsed time: 0 sec.
+Decompiling 142/206: 0x080496C7
+Elapsed time: 0 sec.
+Decompiling 143/206: 0x080496CE
+Elapsed time: 0 sec.
+Decompiling 144/206: 0x08049733
+Elapsed time: 0 sec.
+Decompiling 145/206: 0x0804973A
+Elapsed time: 0 sec.
+Decompiling 146/206: 0x08049741
+Elapsed time: 0 sec.
+Decompiling 147/206: 0x080497A6
+Elapsed time: 0 sec.
+Decompiling 148/206: 0x080497AD
+Elapsed time: 0 sec.
+Decompiling 149/206: 0x080497B4
+Elapsed time: 0 sec.
+Decompiling 150/206: 0x08049819
+Elapsed time: 0 sec.
+Decompiling 151/206: 0x08049820
+Elapsed time: 0 sec.
+Decompiling 152/206: 0x08049827
+Elapsed time: 0 sec.
+Decompiling 153/206: 0x0804988C
+Elapsed time: 0 sec.
+Decompiling 154/206: 0x08049893
+Elapsed time: 0 sec.
+Decompiling 155/206: 0x0804989A
+Elapsed time: 0 sec.
+Decompiling 156/206: 0x080498FF
+Elapsed time: 0 sec.
+Decompiling 157/206: 0x08049905
+Elapsed time: 0 sec.
+Decompiling 158/206: 0x0804990B
+Elapsed time: 0 sec.
+Decompiling 159/206: 0x0804996F
+Elapsed time: 0 sec.
+Decompiling 160/206: 0x08049975
+Elapsed time: 0 sec.
+Decompiling 161/206: 0x0804997B
+Elapsed time: 0 sec.
+Decompiling 162/206: 0x080499DF
+Elapsed time: 0 sec.
+Decompiling 163/206: 0x080499E5
+Elapsed time: 0 sec.
+Decompiling 164/206: 0x080499EB
+Elapsed time: 0 sec.
+Decompiling 165/206: 0x08049A4F
+Elapsed time: 0 sec.
+Decompiling 166/206: 0x08049A55
+Elapsed time: 0 sec.
+Decompiling 167/206: 0x08049A5B
+Elapsed time: 0 sec.
+Decompiling 168/206: 0x08049ABF
+Elapsed time: 0 sec.
+Decompiling 169/206: 0x08049AC5
+Elapsed time: 0 sec.
+Decompiling 170/206: 0x08049ACB
+Elapsed time: 0 sec.
+Decompiling 171/206: 0x08049B2F
+Elapsed time: 0 sec.
+Decompiling 172/206: 0x08049B35
+Elapsed time: 0 sec.
+Decompiling 173/206: 0x08049B3B
+Elapsed time: 0 sec.
+Decompiling 174/206: 0x08049B9F
+Elapsed time: 0 sec.
+Decompiling 175/206: 0x08049BA5
+Elapsed time: 0 sec.
+Decompiling 176/206: 0x08049BAB
+Elapsed time: 0 sec.
+Decompiling 177/206: 0x08049C0F
+Elapsed time: 0 sec.
+Decompiling 178/206: 0x08049C15
+Elapsed time: 0 sec.
+Decompiling 179/206: 0x08049C1B
+Elapsed time: 0 sec.
+Decompiling 180/206: 0x08049C7F
+Elapsed time: 0 sec.
+Decompiling 181/206: 0x08049C85
+Elapsed time: 0 sec.
+Decompiling 182/206: 0x08049C8B
+Elapsed time: 0 sec.
+Decompiling 183/206: 0x08049CEF
+Elapsed time: 0 sec.
+Decompiling 184/206: 0x08049CF5
+Elapsed time: 0 sec.
+Decompiling 185/206: 0x08049CFB
+Elapsed time: 0 sec.
+Decompiling 186/206: 0x08049D5F
+Elapsed time: 0 sec.
+Decompiling 187/206: 0x08049D65
+Elapsed time: 0 sec.
+Decompiling 188/206: 0x08049D6B
+Elapsed time: 0 sec.
+Decompiling 189/206: 0x08049DCF
+Elapsed time: 0 sec.
+Decompiling 190/206: 0x08049DD5
+Elapsed time: 0 sec.
+Decompiling 191/206: 0x08049DDB
+Elapsed time: 0 sec.
+Decompiling 192/206: 0x08049E3F
+Elapsed time: 0 sec.
+Decompiling 193/206: 0x08049E45
+Elapsed time: 0 sec.
+Decompiling 194/206: 0x08049E4B
+Elapsed time: 0 sec.
+Decompiling 195/206: 0x08049EAF
+Elapsed time: 0 sec.
+Decompiling 196/206: 0x08049EB5
+Elapsed time: 0 sec.
+Decompiling 197/206: 0x08049EBB
+Elapsed time: 0 sec.
+Decompiling 198/206: 0x08049F1F
+Elapsed time: 0 sec.
+Decompiling 199/206: 0x08049F25
+Elapsed time: 0 sec.
+Decompiling 200/206: 0x08049F2B
+Elapsed time: 0 sec.
+Decompiling 201/206: 0x08049F8F
+Elapsed time: 0 sec.
+Decompiling 202/206: 0x08049F95
+Elapsed time: 0 sec.
+Decompiling 203/206: 0x08049F9B
+Elapsed time: 0 sec.
+Decompiling 204/206: 0x08049FFF
+Elapsed time: 0 sec.
+Decompiling 205/206: 0x0804A44A
+Elapsed time: 0 sec.
+Decompiling 206/206: 0x0804A450
+Elapsed time: 0 sec.
+Decompiling 206/206: 0x0804A450
+Elapsed time: 0 sec.

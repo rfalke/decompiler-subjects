@@ -1,0 +1,87 @@
+### 486
+
+bswap: bswap %eax
+
+cmpxchg1: cmpxchg %al,%bl
+cmpxchg2: cmpxchg %ax,%bx
+cmpxchg3: cmpxchg %eax,%ebx
+cmpxchg4: cmpxchg %eax,(%ebx)
+cmpxchg5: cmpxchg %al,%al
+
+cmpxchg1_locked: lock cmpxchg %al,%bl
+cmpxchg2_locked: lock cmpxchg %ax,%bx
+cmpxchg3_locked: lock cmpxchg %eax,%ebx
+cmpxchg4_locked: lock cmpxchg %eax,(%ebx)
+cmpxchg5_locked: lock cmpxchg %al,%al
+
+cpuid: cpuid
+
+invd: invd
+
+invlpg: invlpg (%eax)
+
+wbinvd: wbinvd
+
+xadd1: xadd %al,%bl
+xadd2: xadd %ax,%bx
+xadd3: xadd %eax,%ebx
+xadd4: xadd %eax,(%ebx)
+xadd5: xadd %al,%al
+
+xadd1_locked: lock xadd %al,%bl
+xadd2_locked: lock xadd %ax,%bx
+xadd3_locked: lock xadd %eax,%ebx
+xadd4_locked: lock xadd %eax,(%ebx)
+xadd5_locked: lock xadd %al,%al
+
+### pentium
+
+cmpxchg8b: cmpxchg8b (%eax)
+cmpxchg8b_locked: lock cmpxchg8b (%eax)
+
+rdtsc: rdtsc
+
+rdmsr: rdmsr
+
+wrmsr: wrmsr
+
+### P6
+
+cmov1: cmova %bx,%ax
+cmov2: cmova %ebx,%ax
+cmov3: cmova 12(%ebx),%ax
+cmov4: cmova 34(%ebx),%eax
+
+cmov_w_with_code_0: hex 3c 02 66 0f 40 d8
+cmov_w_with_code_1: hex 3c 02 66 0f 41 d8
+cmov_w_with_code_2: hex 3c 02 66 0f 42 d8
+cmov_w_with_code_3: hex 3c 02 66 0f 43 d8
+cmov_w_with_code_4: hex 3c 02 66 0f 44 d8
+cmov_w_with_code_5: hex 3c 02 66 0f 45 d8
+cmov_w_with_code_6: hex 3c 02 66 0f 46 d8
+cmov_w_with_code_7: hex 3c 02 66 0f 47 d8
+cmov_w_with_code_8: hex 3c 02 66 0f 48 d8
+cmov_w_with_code_9: hex 3c 02 66 0f 49 d8
+cmov_w_with_code_a: hex 3c 02 66 0f 4a d8
+cmov_w_with_code_b: hex 3c 02 66 0f 4b d8
+cmov_w_with_code_c: hex 3c 02 66 0f 4c d8
+cmov_w_with_code_d: hex 3c 02 66 0f 4d d8
+cmov_w_with_code_e: hex 3c 02 66 0f 4e d8
+cmov_w_with_code_f: hex 3c 02 66 0f 4f d8
+
+cmov_l_with_code_0: hex 3c 02 0f 40 d8
+cmov_l_with_code_1: hex 3c 02 0f 41 d8
+cmov_l_with_code_2: hex 3c 02 0f 42 d8
+cmov_l_with_code_3: hex 3c 02 0f 43 d8
+cmov_l_with_code_4: hex 3c 02 0f 44 d8
+cmov_l_with_code_5: hex 3c 02 0f 45 d8
+cmov_l_with_code_6: hex 3c 02 0f 46 d8
+cmov_l_with_code_7: hex 3c 02 0f 47 d8
+cmov_l_with_code_8: hex 3c 02 0f 48 d8
+cmov_l_with_code_9: hex 3c 02 0f 49 d8
+cmov_l_with_code_a: hex 3c 02 0f 4a d8
+cmov_l_with_code_b: hex 3c 02 0f 4b d8
+cmov_l_with_code_c: hex 3c 02 0f 4c d8
+cmov_l_with_code_d: hex 3c 02 0f 4d d8
+cmov_l_with_code_e: hex 3c 02 0f 4e d8
+cmov_l_with_code_f: hex 3c 02 0f 4f d8

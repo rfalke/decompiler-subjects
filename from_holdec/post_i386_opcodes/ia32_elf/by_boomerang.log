@@ -1,0 +1,6 @@
+Unknown library function __libc_start_main
+got filename a.c for main
+got filename a.c for bswap
+got filename a.c for bswap_constant
+got filename a.c for bswap_allregs
+got filename a.c for cmpxchg1

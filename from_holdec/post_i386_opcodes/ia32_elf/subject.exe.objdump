@@ -1,0 +1,2352 @@
+
+post_i386_opcodes/ia32_elf/subject.exe:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+08048274 <_init>:
+ 8048274:	55                   	push   %ebp
+ 8048275:	89 e5                	mov    %esp,%ebp
+ 8048277:	53                   	push   %ebx
+ 8048278:	83 ec 04             	sub    $0x4,%esp
+ 804827b:	e8 00 00 00 00       	call   8048280 <_init+0xc>
+ 8048280:	5b                   	pop    %ebx
+ 8048281:	81 c3 a4 33 00 00    	add    $0x33a4,%ebx
+ 8048287:	8b 93 fc ff ff ff    	mov    -0x4(%ebx),%edx
+ 804828d:	85 d2                	test   %edx,%edx
+ 804828f:	74 05                	je     8048296 <_init+0x22>
+ 8048291:	e8 1e 00 00 00       	call   80482b4 <__gmon_start__@plt>
+ 8048296:	e8 d5 00 00 00       	call   8048370 <frame_dummy>
+ 804829b:	e8 b0 21 00 00       	call   804a450 <__do_global_ctors_aux>
+ 80482a0:	58                   	pop    %eax
+ 80482a1:	5b                   	pop    %ebx
+ 80482a2:	c9                   	leave  
+ 80482a3:	c3                   	ret    
+
+Disassembly of section .plt:
+
+080482a4 <__gmon_start__@plt-0x10>:
+ 80482a4:	ff 35 28 b6 04 08    	pushl  0x804b628
+ 80482aa:	ff 25 2c b6 04 08    	jmp    *0x804b62c
+ 80482b0:	00 00                	add    %al,(%eax)
+	...
+
+080482b4 <__gmon_start__@plt>:
+ 80482b4:	ff 25 30 b6 04 08    	jmp    *0x804b630
+ 80482ba:	68 00 00 00 00       	push   $0x0
+ 80482bf:	e9 e0 ff ff ff       	jmp    80482a4 <_init+0x30>
+
+080482c4 <__libc_start_main@plt>:
+ 80482c4:	ff 25 34 b6 04 08    	jmp    *0x804b634
+ 80482ca:	68 08 00 00 00       	push   $0x8
+ 80482cf:	e9 d0 ff ff ff       	jmp    80482a4 <_init+0x30>
+
+Disassembly of section .text:
+
+080482e0 <_start>:
+ 80482e0:	31 ed                	xor    %ebp,%ebp
+ 80482e2:	5e                   	pop    %esi
+ 80482e3:	89 e1                	mov    %esp,%ecx
+ 80482e5:	83 e4 f0             	and    $0xfffffff0,%esp
+ 80482e8:	50                   	push   %eax
+ 80482e9:	54                   	push   %esp
+ 80482ea:	52                   	push   %edx
+ 80482eb:	68 e0 a3 04 08       	push   $0x804a3e0
+ 80482f0:	68 f0 a3 04 08       	push   $0x804a3f0
+ 80482f5:	51                   	push   %ecx
+ 80482f6:	56                   	push   %esi
+ 80482f7:	68 ff 9f 04 08       	push   $0x8049fff
+ 80482fc:	e8 c3 ff ff ff       	call   80482c4 <__libc_start_main@plt>
+ 8048301:	f4                   	hlt    
+ 8048302:	90                   	nop
+ 8048303:	90                   	nop
+ 8048304:	90                   	nop
+ 8048305:	90                   	nop
+ 8048306:	90                   	nop
+ 8048307:	90                   	nop
+ 8048308:	90                   	nop
+ 8048309:	90                   	nop
+ 804830a:	90                   	nop
+ 804830b:	90                   	nop
+ 804830c:	90                   	nop
+ 804830d:	90                   	nop
+ 804830e:	90                   	nop
+ 804830f:	90                   	nop
+
+08048310 <__do_global_dtors_aux>:
+ 8048310:	55                   	push   %ebp
+ 8048311:	89 e5                	mov    %esp,%ebp
+ 8048313:	53                   	push   %ebx
+ 8048314:	83 ec 04             	sub    $0x4,%esp
+ 8048317:	80 3d 3c b6 04 08 00 	cmpb   $0x0,0x804b63c
+ 804831e:	75 3f                	jne    804835f <__do_global_dtors_aux+0x4f>
+ 8048320:	a1 40 b6 04 08       	mov    0x804b640,%eax
+ 8048325:	bb 50 b5 04 08       	mov    $0x804b550,%ebx
+ 804832a:	81 eb 4c b5 04 08    	sub    $0x804b54c,%ebx
+ 8048330:	c1 fb 02             	sar    $0x2,%ebx
+ 8048333:	83 eb 01             	sub    $0x1,%ebx
+ 8048336:	39 d8                	cmp    %ebx,%eax
+ 8048338:	73 1e                	jae    8048358 <__do_global_dtors_aux+0x48>
+ 804833a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+ 8048340:	83 c0 01             	add    $0x1,%eax
+ 8048343:	a3 40 b6 04 08       	mov    %eax,0x804b640
+ 8048348:	ff 14 85 4c b5 04 08 	call   *0x804b54c(,%eax,4)
+ 804834f:	a1 40 b6 04 08       	mov    0x804b640,%eax
+ 8048354:	39 d8                	cmp    %ebx,%eax
+ 8048356:	72 e8                	jb     8048340 <__do_global_dtors_aux+0x30>
+ 8048358:	c6 05 3c b6 04 08 01 	movb   $0x1,0x804b63c
+ 804835f:	83 c4 04             	add    $0x4,%esp
+ 8048362:	5b                   	pop    %ebx
+ 8048363:	5d                   	pop    %ebp
+ 8048364:	c3                   	ret    
+ 8048365:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+ 8048369:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
+
+08048370 <frame_dummy>:
+ 8048370:	55                   	push   %ebp
+ 8048371:	89 e5                	mov    %esp,%ebp
+ 8048373:	83 ec 18             	sub    $0x18,%esp
+ 8048376:	a1 54 b5 04 08       	mov    0x804b554,%eax
+ 804837b:	85 c0                	test   %eax,%eax
+ 804837d:	74 12                	je     8048391 <frame_dummy+0x21>
+ 804837f:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048384:	85 c0                	test   %eax,%eax
+ 8048386:	74 09                	je     8048391 <frame_dummy+0x21>
+ 8048388:	c7 04 24 54 b5 04 08 	movl   $0x804b554,(%esp)
+ 804838f:	ff d0                	call   *%eax
+ 8048391:	c9                   	leave  
+ 8048392:	c3                   	ret    
+ 8048393:	90                   	nop
+
+08048394 <bswap>:
+ 8048394:	0f c8                	bswap  %eax
+ 8048396:	c3                   	ret    
+
+08048397 <bswap_constant>:
+ 8048397:	0f c8                	bswap  %eax
+ 8048399:	c3                   	ret    
+
+0804839a <bswap_allregs>:
+ 804839a:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804839f:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80483a5:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80483ab:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80483b1:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80483b7:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80483bd:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80483c3:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80483c9:	0f c8                	bswap  %eax
+ 80483cb:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80483d0:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80483d6:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80483dc:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80483e2:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80483e8:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80483ee:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80483f4:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80483fa:	c3                   	ret    
+
+080483fb <cmpxchg1>:
+ 80483fb:	0f b0 c3             	cmpxchg %al,%bl
+ 80483fe:	c3                   	ret    
+
+080483ff <cmpxchg1_constant>:
+ 80483ff:	0f b0 c3             	cmpxchg %al,%bl
+ 8048402:	c3                   	ret    
+
+08048403 <cmpxchg1_allregs>:
+ 8048403:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048408:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804840e:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048414:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804841a:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048420:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048426:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804842c:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048432:	0f b0 c3             	cmpxchg %al,%bl
+ 8048435:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804843a:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048440:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048446:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804844c:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048452:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048458:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804845e:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048464:	c3                   	ret    
+
+08048465 <cmpxchg2>:
+ 8048465:	66 0f b1 c3          	cmpxchg %ax,%bx
+ 8048469:	c3                   	ret    
+
+0804846a <cmpxchg2_constant>:
+ 804846a:	66 0f b1 c3          	cmpxchg %ax,%bx
+ 804846e:	c3                   	ret    
+
+0804846f <cmpxchg2_allregs>:
+ 804846f:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048474:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804847a:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048480:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048486:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804848c:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048492:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048498:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804849e:	66 0f b1 c3          	cmpxchg %ax,%bx
+ 80484a2:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80484a7:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80484ad:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80484b3:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80484b9:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80484bf:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80484c5:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80484cb:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80484d1:	c3                   	ret    
+
+080484d2 <cmpxchg3>:
+ 80484d2:	0f b1 c3             	cmpxchg %eax,%ebx
+ 80484d5:	c3                   	ret    
+
+080484d6 <cmpxchg3_constant>:
+ 80484d6:	0f b1 c3             	cmpxchg %eax,%ebx
+ 80484d9:	c3                   	ret    
+
+080484da <cmpxchg3_allregs>:
+ 80484da:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80484df:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80484e5:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80484eb:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80484f1:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80484f7:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80484fd:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048503:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048509:	0f b1 c3             	cmpxchg %eax,%ebx
+ 804850c:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048511:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048517:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804851d:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048523:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048529:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804852f:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048535:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804853b:	c3                   	ret    
+
+0804853c <cmpxchg4>:
+ 804853c:	0f b1 03             	cmpxchg %eax,(%ebx)
+ 804853f:	c3                   	ret    
+
+08048540 <cmpxchg4_constant>:
+ 8048540:	0f b1 03             	cmpxchg %eax,(%ebx)
+ 8048543:	c3                   	ret    
+
+08048544 <cmpxchg4_allregs>:
+ 8048544:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048549:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804854f:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048555:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804855b:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048561:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048567:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804856d:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048573:	0f b1 03             	cmpxchg %eax,(%ebx)
+ 8048576:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804857b:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048581:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048587:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804858d:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048593:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048599:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804859f:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80485a5:	c3                   	ret    
+
+080485a6 <cmpxchg5>:
+ 80485a6:	0f b0 c0             	cmpxchg %al,%al
+ 80485a9:	c3                   	ret    
+
+080485aa <cmpxchg5_constant>:
+ 80485aa:	0f b0 c0             	cmpxchg %al,%al
+ 80485ad:	c3                   	ret    
+
+080485ae <cmpxchg5_allregs>:
+ 80485ae:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80485b3:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80485b9:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80485bf:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80485c5:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80485cb:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80485d1:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80485d7:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80485dd:	0f b0 c0             	cmpxchg %al,%al
+ 80485e0:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80485e5:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80485eb:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80485f1:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80485f7:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80485fd:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048603:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048609:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804860f:	c3                   	ret    
+
+08048610 <cmpxchg1_locked>:
+ 8048610:	f0 0f b0 c3          	lock cmpxchg %al,%bl
+ 8048614:	c3                   	ret    
+
+08048615 <cmpxchg1_locked_constant>:
+ 8048615:	f0 0f b0 c3          	lock cmpxchg %al,%bl
+ 8048619:	c3                   	ret    
+
+0804861a <cmpxchg1_locked_allregs>:
+ 804861a:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804861f:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048625:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804862b:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048631:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048637:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804863d:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048643:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048649:	f0 0f b0 c3          	lock cmpxchg %al,%bl
+ 804864d:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048652:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048658:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804865e:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048664:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804866a:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048670:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048676:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804867c:	c3                   	ret    
+
+0804867d <cmpxchg2_locked>:
+ 804867d:	66 f0 0f b1 c3       	lock cmpxchg %ax,%bx
+ 8048682:	c3                   	ret    
+
+08048683 <cmpxchg2_locked_constant>:
+ 8048683:	66 f0 0f b1 c3       	lock cmpxchg %ax,%bx
+ 8048688:	c3                   	ret    
+
+08048689 <cmpxchg2_locked_allregs>:
+ 8048689:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804868e:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048694:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804869a:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80486a0:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80486a6:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80486ac:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80486b2:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80486b8:	66 f0 0f b1 c3       	lock cmpxchg %ax,%bx
+ 80486bd:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80486c2:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80486c8:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80486ce:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80486d4:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80486da:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80486e0:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80486e6:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80486ec:	c3                   	ret    
+
+080486ed <cmpxchg3_locked>:
+ 80486ed:	f0 0f b1 c3          	lock cmpxchg %eax,%ebx
+ 80486f1:	c3                   	ret    
+
+080486f2 <cmpxchg3_locked_constant>:
+ 80486f2:	f0 0f b1 c3          	lock cmpxchg %eax,%ebx
+ 80486f6:	c3                   	ret    
+
+080486f7 <cmpxchg3_locked_allregs>:
+ 80486f7:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80486fc:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048702:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048708:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804870e:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048714:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804871a:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048720:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048726:	f0 0f b1 c3          	lock cmpxchg %eax,%ebx
+ 804872a:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804872f:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048735:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804873b:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048741:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048747:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804874d:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048753:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048759:	c3                   	ret    
+
+0804875a <cmpxchg4_locked>:
+ 804875a:	f0 0f b1 03          	lock cmpxchg %eax,(%ebx)
+ 804875e:	c3                   	ret    
+
+0804875f <cmpxchg4_locked_constant>:
+ 804875f:	f0 0f b1 03          	lock cmpxchg %eax,(%ebx)
+ 8048763:	c3                   	ret    
+
+08048764 <cmpxchg4_locked_allregs>:
+ 8048764:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048769:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804876f:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048775:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804877b:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048781:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048787:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804878d:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048793:	f0 0f b1 03          	lock cmpxchg %eax,(%ebx)
+ 8048797:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804879c:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80487a2:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80487a8:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80487ae:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80487b4:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80487ba:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80487c0:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80487c6:	c3                   	ret    
+
+080487c7 <cmpxchg5_locked>:
+ 80487c7:	f0 0f b0 c0          	lock cmpxchg %al,%al
+ 80487cb:	c3                   	ret    
+
+080487cc <cmpxchg5_locked_constant>:
+ 80487cc:	f0 0f b0 c0          	lock cmpxchg %al,%al
+ 80487d0:	c3                   	ret    
+
+080487d1 <cmpxchg5_locked_allregs>:
+ 80487d1:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80487d6:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80487dc:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80487e2:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80487e8:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80487ee:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80487f4:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80487fa:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048800:	f0 0f b0 c0          	lock cmpxchg %al,%al
+ 8048804:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048809:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804880f:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048815:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804881b:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048821:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048827:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804882d:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048833:	c3                   	ret    
+
+08048834 <cpuid>:
+ 8048834:	0f a2                	cpuid  
+ 8048836:	c3                   	ret    
+
+08048837 <cpuid_constant>:
+ 8048837:	0f a2                	cpuid  
+ 8048839:	c3                   	ret    
+
+0804883a <cpuid_allregs>:
+ 804883a:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804883f:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048845:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804884b:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048851:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048857:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804885d:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048863:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048869:	0f a2                	cpuid  
+ 804886b:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048870:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048876:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804887c:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048882:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048888:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804888e:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048894:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804889a:	c3                   	ret    
+
+0804889b <invd>:
+ 804889b:	0f 08                	invd   
+ 804889d:	c3                   	ret    
+
+0804889e <invd_constant>:
+ 804889e:	0f 08                	invd   
+ 80488a0:	c3                   	ret    
+
+080488a1 <invd_allregs>:
+ 80488a1:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80488a6:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80488ac:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80488b2:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80488b8:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80488be:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80488c4:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80488ca:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80488d0:	0f 08                	invd   
+ 80488d2:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80488d7:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80488dd:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80488e3:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80488e9:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80488ef:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80488f5:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80488fb:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048901:	c3                   	ret    
+
+08048902 <invlpg>:
+ 8048902:	0f 01 38             	invlpg (%eax)
+ 8048905:	c3                   	ret    
+
+08048906 <invlpg_constant>:
+ 8048906:	0f 01 38             	invlpg (%eax)
+ 8048909:	c3                   	ret    
+
+0804890a <invlpg_allregs>:
+ 804890a:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804890f:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048915:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804891b:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048921:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048927:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804892d:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048933:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048939:	0f 01 38             	invlpg (%eax)
+ 804893c:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048941:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048947:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804894d:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048953:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048959:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804895f:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048965:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804896b:	c3                   	ret    
+
+0804896c <wbinvd>:
+ 804896c:	0f 09                	wbinvd 
+ 804896e:	c3                   	ret    
+
+0804896f <wbinvd_constant>:
+ 804896f:	0f 09                	wbinvd 
+ 8048971:	c3                   	ret    
+
+08048972 <wbinvd_allregs>:
+ 8048972:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048977:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804897d:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048983:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048989:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804898f:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048995:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804899b:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80489a1:	0f 09                	wbinvd 
+ 80489a3:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80489a8:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80489ae:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80489b4:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80489ba:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80489c0:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80489c6:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80489cc:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80489d2:	c3                   	ret    
+
+080489d3 <xadd1>:
+ 80489d3:	0f c0 c3             	xadd   %al,%bl
+ 80489d6:	c3                   	ret    
+
+080489d7 <xadd1_constant>:
+ 80489d7:	0f c0 c3             	xadd   %al,%bl
+ 80489da:	c3                   	ret    
+
+080489db <xadd1_allregs>:
+ 80489db:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80489e0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80489e6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80489ec:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80489f2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80489f8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80489fe:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048a04:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048a0a:	0f c0 c3             	xadd   %al,%bl
+ 8048a0d:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048a12:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048a18:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048a1e:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048a24:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048a2a:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048a30:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048a36:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048a3c:	c3                   	ret    
+
+08048a3d <xadd2>:
+ 8048a3d:	66 0f c1 c3          	xadd   %ax,%bx
+ 8048a41:	c3                   	ret    
+
+08048a42 <xadd2_constant>:
+ 8048a42:	66 0f c1 c3          	xadd   %ax,%bx
+ 8048a46:	c3                   	ret    
+
+08048a47 <xadd2_allregs>:
+ 8048a47:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048a4c:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048a52:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048a58:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048a5e:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048a64:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048a6a:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048a70:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048a76:	66 0f c1 c3          	xadd   %ax,%bx
+ 8048a7a:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048a7f:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048a85:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048a8b:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048a91:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048a97:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048a9d:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048aa3:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048aa9:	c3                   	ret    
+
+08048aaa <xadd3>:
+ 8048aaa:	0f c1 c3             	xadd   %eax,%ebx
+ 8048aad:	c3                   	ret    
+
+08048aae <xadd3_constant>:
+ 8048aae:	0f c1 c3             	xadd   %eax,%ebx
+ 8048ab1:	c3                   	ret    
+
+08048ab2 <xadd3_allregs>:
+ 8048ab2:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048ab7:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048abd:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048ac3:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048ac9:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048acf:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048ad5:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048adb:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048ae1:	0f c1 c3             	xadd   %eax,%ebx
+ 8048ae4:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048ae9:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048aef:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048af5:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048afb:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048b01:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048b07:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048b0d:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048b13:	c3                   	ret    
+
+08048b14 <xadd4>:
+ 8048b14:	0f c1 03             	xadd   %eax,(%ebx)
+ 8048b17:	c3                   	ret    
+
+08048b18 <xadd4_constant>:
+ 8048b18:	0f c1 03             	xadd   %eax,(%ebx)
+ 8048b1b:	c3                   	ret    
+
+08048b1c <xadd4_allregs>:
+ 8048b1c:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048b21:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048b27:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048b2d:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048b33:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048b39:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048b3f:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048b45:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048b4b:	0f c1 03             	xadd   %eax,(%ebx)
+ 8048b4e:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048b53:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048b59:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048b5f:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048b65:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048b6b:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048b71:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048b77:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048b7d:	c3                   	ret    
+
+08048b7e <xadd5>:
+ 8048b7e:	0f c0 c0             	xadd   %al,%al
+ 8048b81:	c3                   	ret    
+
+08048b82 <xadd5_constant>:
+ 8048b82:	0f c0 c0             	xadd   %al,%al
+ 8048b85:	c3                   	ret    
+
+08048b86 <xadd5_allregs>:
+ 8048b86:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048b8b:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048b91:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048b97:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048b9d:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048ba3:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048ba9:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048baf:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048bb5:	0f c0 c0             	xadd   %al,%al
+ 8048bb8:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048bbd:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048bc3:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048bc9:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048bcf:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048bd5:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048bdb:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048be1:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048be7:	c3                   	ret    
+
+08048be8 <xadd1_locked>:
+ 8048be8:	f0 0f c0 c3          	lock xadd %al,%bl
+ 8048bec:	c3                   	ret    
+
+08048bed <xadd1_locked_constant>:
+ 8048bed:	f0 0f c0 c3          	lock xadd %al,%bl
+ 8048bf1:	c3                   	ret    
+
+08048bf2 <xadd1_locked_allregs>:
+ 8048bf2:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048bf7:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048bfd:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048c03:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048c09:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048c0f:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048c15:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048c1b:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048c21:	f0 0f c0 c3          	lock xadd %al,%bl
+ 8048c25:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048c2a:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048c30:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048c36:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048c3c:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048c42:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048c48:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048c4e:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048c54:	c3                   	ret    
+
+08048c55 <xadd2_locked>:
+ 8048c55:	66 f0 0f c1 c3       	lock xadd %ax,%bx
+ 8048c5a:	c3                   	ret    
+
+08048c5b <xadd2_locked_constant>:
+ 8048c5b:	66 f0 0f c1 c3       	lock xadd %ax,%bx
+ 8048c60:	c3                   	ret    
+
+08048c61 <xadd2_locked_allregs>:
+ 8048c61:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048c66:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048c6c:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048c72:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048c78:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048c7e:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048c84:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048c8a:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048c90:	66 f0 0f c1 c3       	lock xadd %ax,%bx
+ 8048c95:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048c9a:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048ca0:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048ca6:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048cac:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048cb2:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048cb8:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048cbe:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048cc4:	c3                   	ret    
+
+08048cc5 <xadd3_locked>:
+ 8048cc5:	f0 0f c1 c3          	lock xadd %eax,%ebx
+ 8048cc9:	c3                   	ret    
+
+08048cca <xadd3_locked_constant>:
+ 8048cca:	f0 0f c1 c3          	lock xadd %eax,%ebx
+ 8048cce:	c3                   	ret    
+
+08048ccf <xadd3_locked_allregs>:
+ 8048ccf:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048cd4:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048cda:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048ce0:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048ce6:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048cec:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048cf2:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048cf8:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048cfe:	f0 0f c1 c3          	lock xadd %eax,%ebx
+ 8048d02:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048d07:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048d0d:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048d13:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048d19:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048d1f:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048d25:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048d2b:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048d31:	c3                   	ret    
+
+08048d32 <xadd4_locked>:
+ 8048d32:	f0 0f c1 03          	lock xadd %eax,(%ebx)
+ 8048d36:	c3                   	ret    
+
+08048d37 <xadd4_locked_constant>:
+ 8048d37:	f0 0f c1 03          	lock xadd %eax,(%ebx)
+ 8048d3b:	c3                   	ret    
+
+08048d3c <xadd4_locked_allregs>:
+ 8048d3c:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048d41:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048d47:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048d4d:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048d53:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048d59:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048d5f:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048d65:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048d6b:	f0 0f c1 03          	lock xadd %eax,(%ebx)
+ 8048d6f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048d74:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048d7a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048d80:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048d86:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048d8c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048d92:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048d98:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048d9e:	c3                   	ret    
+
+08048d9f <xadd5_locked>:
+ 8048d9f:	f0 0f c0 c0          	lock xadd %al,%al
+ 8048da3:	c3                   	ret    
+
+08048da4 <xadd5_locked_constant>:
+ 8048da4:	f0 0f c0 c0          	lock xadd %al,%al
+ 8048da8:	c3                   	ret    
+
+08048da9 <xadd5_locked_allregs>:
+ 8048da9:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048dae:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048db4:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048dba:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048dc0:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048dc6:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048dcc:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048dd2:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048dd8:	f0 0f c0 c0          	lock xadd %al,%al
+ 8048ddc:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048de1:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048de7:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048ded:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048df3:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048df9:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048dff:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048e05:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048e0b:	c3                   	ret    
+
+08048e0c <cmpxchg8b>:
+ 8048e0c:	0f c7 08             	cmpxchg8b (%eax)
+ 8048e0f:	c3                   	ret    
+
+08048e10 <cmpxchg8b_constant>:
+ 8048e10:	0f c7 08             	cmpxchg8b (%eax)
+ 8048e13:	c3                   	ret    
+
+08048e14 <cmpxchg8b_allregs>:
+ 8048e14:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048e19:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048e1f:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048e25:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048e2b:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048e31:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048e37:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048e3d:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048e43:	0f c7 08             	cmpxchg8b (%eax)
+ 8048e46:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048e4b:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048e51:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048e57:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048e5d:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048e63:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048e69:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048e6f:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048e75:	c3                   	ret    
+
+08048e76 <cmpxchg8b_locked>:
+ 8048e76:	f0 0f c7 08          	lock cmpxchg8b (%eax)
+ 8048e7a:	c3                   	ret    
+
+08048e7b <cmpxchg8b_locked_constant>:
+ 8048e7b:	f0 0f c7 08          	lock cmpxchg8b (%eax)
+ 8048e7f:	c3                   	ret    
+
+08048e80 <cmpxchg8b_locked_allregs>:
+ 8048e80:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048e85:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048e8b:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048e91:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048e97:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048e9d:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048ea3:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048ea9:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048eaf:	f0 0f c7 08          	lock cmpxchg8b (%eax)
+ 8048eb3:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048eb8:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048ebe:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048ec4:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048eca:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048ed0:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048ed6:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048edc:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048ee2:	c3                   	ret    
+
+08048ee3 <rdtsc>:
+ 8048ee3:	0f 31                	rdtsc  
+ 8048ee5:	c3                   	ret    
+
+08048ee6 <rdtsc_constant>:
+ 8048ee6:	0f 31                	rdtsc  
+ 8048ee8:	c3                   	ret    
+
+08048ee9 <rdtsc_allregs>:
+ 8048ee9:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048eee:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048ef4:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048efa:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048f00:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048f06:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048f0c:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048f12:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048f18:	0f 31                	rdtsc  
+ 8048f1a:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048f1f:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048f25:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048f2b:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048f31:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048f37:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048f3d:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048f43:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048f49:	c3                   	ret    
+
+08048f4a <rdmsr>:
+ 8048f4a:	0f 32                	rdmsr  
+ 8048f4c:	c3                   	ret    
+
+08048f4d <rdmsr_constant>:
+ 8048f4d:	0f 32                	rdmsr  
+ 8048f4f:	c3                   	ret    
+
+08048f50 <rdmsr_allregs>:
+ 8048f50:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048f55:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048f5b:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048f61:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048f67:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048f6d:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048f73:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048f79:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048f7f:	0f 32                	rdmsr  
+ 8048f81:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048f86:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048f8c:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048f92:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048f98:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8048f9e:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8048fa4:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8048faa:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8048fb0:	c3                   	ret    
+
+08048fb1 <wrmsr>:
+ 8048fb1:	0f 30                	wrmsr  
+ 8048fb3:	c3                   	ret    
+
+08048fb4 <wrmsr_constant>:
+ 8048fb4:	0f 30                	wrmsr  
+ 8048fb6:	c3                   	ret    
+
+08048fb7 <wrmsr_allregs>:
+ 8048fb7:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8048fbc:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8048fc2:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8048fc8:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8048fce:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8048fd4:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8048fda:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8048fe0:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8048fe6:	0f 30                	wrmsr  
+ 8048fe8:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8048fed:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8048ff3:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8048ff9:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8048fff:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049005:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804900b:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049011:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049017:	c3                   	ret    
+
+08049018 <cmov1>:
+ 8049018:	66 0f 47 c3          	cmova  %bx,%ax
+ 804901c:	c3                   	ret    
+
+0804901d <cmov1_constant>:
+ 804901d:	66 0f 47 c3          	cmova  %bx,%ax
+ 8049021:	c3                   	ret    
+
+08049022 <cmov1_allregs>:
+ 8049022:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049027:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804902d:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049033:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049039:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804903f:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049045:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804904b:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049051:	66 0f 47 c3          	cmova  %bx,%ax
+ 8049055:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804905a:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049060:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049066:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804906c:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049072:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049078:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804907e:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049084:	c3                   	ret    
+
+08049085 <cmov2>:
+ 8049085:	66 0f 47 c3          	cmova  %bx,%ax
+ 8049089:	c3                   	ret    
+
+0804908a <cmov2_constant>:
+ 804908a:	66 0f 47 c3          	cmova  %bx,%ax
+ 804908e:	c3                   	ret    
+
+0804908f <cmov2_allregs>:
+ 804908f:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049094:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804909a:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80490a0:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80490a6:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80490ac:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80490b2:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80490b8:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80490be:	66 0f 47 c3          	cmova  %bx,%ax
+ 80490c2:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80490c7:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80490cd:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80490d3:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80490d9:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80490df:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80490e5:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80490eb:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80490f1:	c3                   	ret    
+
+080490f2 <cmov3>:
+ 80490f2:	66 0f 47 43 0c       	cmova  0xc(%ebx),%ax
+ 80490f7:	c3                   	ret    
+
+080490f8 <cmov3_constant>:
+ 80490f8:	66 0f 47 43 0c       	cmova  0xc(%ebx),%ax
+ 80490fd:	c3                   	ret    
+
+080490fe <cmov3_allregs>:
+ 80490fe:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049103:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049109:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804910f:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049115:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804911b:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049121:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049127:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804912d:	66 0f 47 43 0c       	cmova  0xc(%ebx),%ax
+ 8049132:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049137:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804913d:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049143:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049149:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804914f:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049155:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804915b:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049161:	c3                   	ret    
+
+08049162 <cmov4>:
+ 8049162:	0f 47 43 22          	cmova  0x22(%ebx),%eax
+ 8049166:	c3                   	ret    
+
+08049167 <cmov4_constant>:
+ 8049167:	0f 47 43 22          	cmova  0x22(%ebx),%eax
+ 804916b:	c3                   	ret    
+
+0804916c <cmov4_allregs>:
+ 804916c:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049171:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049177:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804917d:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049183:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049189:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804918f:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049195:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804919b:	0f 47 43 22          	cmova  0x22(%ebx),%eax
+ 804919f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80491a4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80491aa:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80491b0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80491b6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80491bc:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80491c2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80491c8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80491ce:	c3                   	ret    
+
+080491cf <cmov_w_with_code_0>:
+ 80491cf:	3c 02                	cmp    $0x2,%al
+ 80491d1:	66 0f 40 d8          	cmovo  %ax,%bx
+ 80491d5:	c3                   	ret    
+
+080491d6 <cmov_w_with_code_0_constant>:
+ 80491d6:	3c 02                	cmp    $0x2,%al
+ 80491d8:	66 0f 40 d8          	cmovo  %ax,%bx
+ 80491dc:	c3                   	ret    
+
+080491dd <cmov_w_with_code_0_allregs>:
+ 80491dd:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80491e2:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80491e8:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80491ee:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80491f4:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80491fa:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049200:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049206:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804920c:	3c 02                	cmp    $0x2,%al
+ 804920e:	66 0f 40 d8          	cmovo  %ax,%bx
+ 8049212:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049217:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804921d:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049223:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049229:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804922f:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049235:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804923b:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049241:	c3                   	ret    
+
+08049242 <cmov_w_with_code_1>:
+ 8049242:	3c 02                	cmp    $0x2,%al
+ 8049244:	66 0f 41 d8          	cmovno %ax,%bx
+ 8049248:	c3                   	ret    
+
+08049249 <cmov_w_with_code_1_constant>:
+ 8049249:	3c 02                	cmp    $0x2,%al
+ 804924b:	66 0f 41 d8          	cmovno %ax,%bx
+ 804924f:	c3                   	ret    
+
+08049250 <cmov_w_with_code_1_allregs>:
+ 8049250:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049255:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804925b:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049261:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049267:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804926d:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049273:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049279:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804927f:	3c 02                	cmp    $0x2,%al
+ 8049281:	66 0f 41 d8          	cmovno %ax,%bx
+ 8049285:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804928a:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049290:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049296:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804929c:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80492a2:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80492a8:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80492ae:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80492b4:	c3                   	ret    
+
+080492b5 <cmov_w_with_code_2>:
+ 80492b5:	3c 02                	cmp    $0x2,%al
+ 80492b7:	66 0f 42 d8          	cmovb  %ax,%bx
+ 80492bb:	c3                   	ret    
+
+080492bc <cmov_w_with_code_2_constant>:
+ 80492bc:	3c 02                	cmp    $0x2,%al
+ 80492be:	66 0f 42 d8          	cmovb  %ax,%bx
+ 80492c2:	c3                   	ret    
+
+080492c3 <cmov_w_with_code_2_allregs>:
+ 80492c3:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80492c8:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80492ce:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80492d4:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80492da:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80492e0:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80492e6:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80492ec:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80492f2:	3c 02                	cmp    $0x2,%al
+ 80492f4:	66 0f 42 d8          	cmovb  %ax,%bx
+ 80492f8:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80492fd:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049303:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049309:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804930f:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049315:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804931b:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049321:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049327:	c3                   	ret    
+
+08049328 <cmov_w_with_code_3>:
+ 8049328:	3c 02                	cmp    $0x2,%al
+ 804932a:	66 0f 43 d8          	cmovae %ax,%bx
+ 804932e:	c3                   	ret    
+
+0804932f <cmov_w_with_code_3_constant>:
+ 804932f:	3c 02                	cmp    $0x2,%al
+ 8049331:	66 0f 43 d8          	cmovae %ax,%bx
+ 8049335:	c3                   	ret    
+
+08049336 <cmov_w_with_code_3_allregs>:
+ 8049336:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804933b:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049341:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049347:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804934d:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049353:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049359:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804935f:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049365:	3c 02                	cmp    $0x2,%al
+ 8049367:	66 0f 43 d8          	cmovae %ax,%bx
+ 804936b:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049370:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049376:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804937c:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049382:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049388:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804938e:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049394:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804939a:	c3                   	ret    
+
+0804939b <cmov_w_with_code_4>:
+ 804939b:	3c 02                	cmp    $0x2,%al
+ 804939d:	66 0f 44 d8          	cmove  %ax,%bx
+ 80493a1:	c3                   	ret    
+
+080493a2 <cmov_w_with_code_4_constant>:
+ 80493a2:	3c 02                	cmp    $0x2,%al
+ 80493a4:	66 0f 44 d8          	cmove  %ax,%bx
+ 80493a8:	c3                   	ret    
+
+080493a9 <cmov_w_with_code_4_allregs>:
+ 80493a9:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80493ae:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80493b4:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80493ba:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80493c0:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80493c6:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80493cc:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80493d2:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80493d8:	3c 02                	cmp    $0x2,%al
+ 80493da:	66 0f 44 d8          	cmove  %ax,%bx
+ 80493de:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80493e3:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80493e9:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80493ef:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80493f5:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80493fb:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049401:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049407:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804940d:	c3                   	ret    
+
+0804940e <cmov_w_with_code_5>:
+ 804940e:	3c 02                	cmp    $0x2,%al
+ 8049410:	66 0f 45 d8          	cmovne %ax,%bx
+ 8049414:	c3                   	ret    
+
+08049415 <cmov_w_with_code_5_constant>:
+ 8049415:	3c 02                	cmp    $0x2,%al
+ 8049417:	66 0f 45 d8          	cmovne %ax,%bx
+ 804941b:	c3                   	ret    
+
+0804941c <cmov_w_with_code_5_allregs>:
+ 804941c:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049421:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049427:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804942d:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049433:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049439:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804943f:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049445:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804944b:	3c 02                	cmp    $0x2,%al
+ 804944d:	66 0f 45 d8          	cmovne %ax,%bx
+ 8049451:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049456:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804945c:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049462:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049468:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804946e:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049474:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804947a:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049480:	c3                   	ret    
+
+08049481 <cmov_w_with_code_6>:
+ 8049481:	3c 02                	cmp    $0x2,%al
+ 8049483:	66 0f 46 d8          	cmovbe %ax,%bx
+ 8049487:	c3                   	ret    
+
+08049488 <cmov_w_with_code_6_constant>:
+ 8049488:	3c 02                	cmp    $0x2,%al
+ 804948a:	66 0f 46 d8          	cmovbe %ax,%bx
+ 804948e:	c3                   	ret    
+
+0804948f <cmov_w_with_code_6_allregs>:
+ 804948f:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049494:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804949a:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80494a0:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80494a6:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80494ac:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80494b2:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80494b8:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80494be:	3c 02                	cmp    $0x2,%al
+ 80494c0:	66 0f 46 d8          	cmovbe %ax,%bx
+ 80494c4:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80494c9:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80494cf:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80494d5:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80494db:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80494e1:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80494e7:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80494ed:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80494f3:	c3                   	ret    
+
+080494f4 <cmov_w_with_code_7>:
+ 80494f4:	3c 02                	cmp    $0x2,%al
+ 80494f6:	66 0f 47 d8          	cmova  %ax,%bx
+ 80494fa:	c3                   	ret    
+
+080494fb <cmov_w_with_code_7_constant>:
+ 80494fb:	3c 02                	cmp    $0x2,%al
+ 80494fd:	66 0f 47 d8          	cmova  %ax,%bx
+ 8049501:	c3                   	ret    
+
+08049502 <cmov_w_with_code_7_allregs>:
+ 8049502:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049507:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804950d:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049513:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049519:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804951f:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049525:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804952b:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049531:	3c 02                	cmp    $0x2,%al
+ 8049533:	66 0f 47 d8          	cmova  %ax,%bx
+ 8049537:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804953c:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049542:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049548:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804954e:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049554:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804955a:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049560:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049566:	c3                   	ret    
+
+08049567 <cmov_w_with_code_8>:
+ 8049567:	3c 02                	cmp    $0x2,%al
+ 8049569:	66 0f 48 d8          	cmovs  %ax,%bx
+ 804956d:	c3                   	ret    
+
+0804956e <cmov_w_with_code_8_constant>:
+ 804956e:	3c 02                	cmp    $0x2,%al
+ 8049570:	66 0f 48 d8          	cmovs  %ax,%bx
+ 8049574:	c3                   	ret    
+
+08049575 <cmov_w_with_code_8_allregs>:
+ 8049575:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804957a:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049580:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049586:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804958c:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049592:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049598:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804959e:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80495a4:	3c 02                	cmp    $0x2,%al
+ 80495a6:	66 0f 48 d8          	cmovs  %ax,%bx
+ 80495aa:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80495af:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80495b5:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80495bb:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80495c1:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80495c7:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80495cd:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80495d3:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80495d9:	c3                   	ret    
+
+080495da <cmov_w_with_code_9>:
+ 80495da:	3c 02                	cmp    $0x2,%al
+ 80495dc:	66 0f 49 d8          	cmovns %ax,%bx
+ 80495e0:	c3                   	ret    
+
+080495e1 <cmov_w_with_code_9_constant>:
+ 80495e1:	3c 02                	cmp    $0x2,%al
+ 80495e3:	66 0f 49 d8          	cmovns %ax,%bx
+ 80495e7:	c3                   	ret    
+
+080495e8 <cmov_w_with_code_9_allregs>:
+ 80495e8:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80495ed:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80495f3:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80495f9:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80495ff:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049605:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804960b:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049611:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049617:	3c 02                	cmp    $0x2,%al
+ 8049619:	66 0f 49 d8          	cmovns %ax,%bx
+ 804961d:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049622:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049628:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804962e:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049634:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804963a:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049640:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049646:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804964c:	c3                   	ret    
+
+0804964d <cmov_w_with_code_a>:
+ 804964d:	3c 02                	cmp    $0x2,%al
+ 804964f:	66 0f 4a d8          	cmovp  %ax,%bx
+ 8049653:	c3                   	ret    
+
+08049654 <cmov_w_with_code_a_constant>:
+ 8049654:	3c 02                	cmp    $0x2,%al
+ 8049656:	66 0f 4a d8          	cmovp  %ax,%bx
+ 804965a:	c3                   	ret    
+
+0804965b <cmov_w_with_code_a_allregs>:
+ 804965b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049660:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049666:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804966c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049672:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049678:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804967e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049684:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804968a:	3c 02                	cmp    $0x2,%al
+ 804968c:	66 0f 4a d8          	cmovp  %ax,%bx
+ 8049690:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049695:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804969b:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80496a1:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80496a7:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80496ad:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80496b3:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80496b9:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80496bf:	c3                   	ret    
+
+080496c0 <cmov_w_with_code_b>:
+ 80496c0:	3c 02                	cmp    $0x2,%al
+ 80496c2:	66 0f 4b d8          	cmovnp %ax,%bx
+ 80496c6:	c3                   	ret    
+
+080496c7 <cmov_w_with_code_b_constant>:
+ 80496c7:	3c 02                	cmp    $0x2,%al
+ 80496c9:	66 0f 4b d8          	cmovnp %ax,%bx
+ 80496cd:	c3                   	ret    
+
+080496ce <cmov_w_with_code_b_allregs>:
+ 80496ce:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80496d3:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80496d9:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80496df:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80496e5:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80496eb:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80496f1:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80496f7:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80496fd:	3c 02                	cmp    $0x2,%al
+ 80496ff:	66 0f 4b d8          	cmovnp %ax,%bx
+ 8049703:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049708:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804970e:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049714:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804971a:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049720:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049726:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804972c:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049732:	c3                   	ret    
+
+08049733 <cmov_w_with_code_c>:
+ 8049733:	3c 02                	cmp    $0x2,%al
+ 8049735:	66 0f 4c d8          	cmovl  %ax,%bx
+ 8049739:	c3                   	ret    
+
+0804973a <cmov_w_with_code_c_constant>:
+ 804973a:	3c 02                	cmp    $0x2,%al
+ 804973c:	66 0f 4c d8          	cmovl  %ax,%bx
+ 8049740:	c3                   	ret    
+
+08049741 <cmov_w_with_code_c_allregs>:
+ 8049741:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049746:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 804974c:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049752:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049758:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 804975e:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049764:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 804976a:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049770:	3c 02                	cmp    $0x2,%al
+ 8049772:	66 0f 4c d8          	cmovl  %ax,%bx
+ 8049776:	a3 00 20 00 00       	mov    %eax,0x2000
+ 804977b:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049781:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049787:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 804978d:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049793:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049799:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 804979f:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80497a5:	c3                   	ret    
+
+080497a6 <cmov_w_with_code_d>:
+ 80497a6:	3c 02                	cmp    $0x2,%al
+ 80497a8:	66 0f 4d d8          	cmovge %ax,%bx
+ 80497ac:	c3                   	ret    
+
+080497ad <cmov_w_with_code_d_constant>:
+ 80497ad:	3c 02                	cmp    $0x2,%al
+ 80497af:	66 0f 4d d8          	cmovge %ax,%bx
+ 80497b3:	c3                   	ret    
+
+080497b4 <cmov_w_with_code_d_allregs>:
+ 80497b4:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80497b9:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80497bf:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80497c5:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80497cb:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80497d1:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80497d7:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80497dd:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80497e3:	3c 02                	cmp    $0x2,%al
+ 80497e5:	66 0f 4d d8          	cmovge %ax,%bx
+ 80497e9:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80497ee:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80497f4:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80497fa:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049800:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049806:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804980c:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049812:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049818:	c3                   	ret    
+
+08049819 <cmov_w_with_code_e>:
+ 8049819:	3c 02                	cmp    $0x2,%al
+ 804981b:	66 0f 4e d8          	cmovle %ax,%bx
+ 804981f:	c3                   	ret    
+
+08049820 <cmov_w_with_code_e_constant>:
+ 8049820:	3c 02                	cmp    $0x2,%al
+ 8049822:	66 0f 4e d8          	cmovle %ax,%bx
+ 8049826:	c3                   	ret    
+
+08049827 <cmov_w_with_code_e_allregs>:
+ 8049827:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804982c:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049832:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049838:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 804983e:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049844:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804984a:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049850:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049856:	3c 02                	cmp    $0x2,%al
+ 8049858:	66 0f 4e d8          	cmovle %ax,%bx
+ 804985c:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049861:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049867:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 804986d:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049873:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049879:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 804987f:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049885:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804988b:	c3                   	ret    
+
+0804988c <cmov_w_with_code_f>:
+ 804988c:	3c 02                	cmp    $0x2,%al
+ 804988e:	66 0f 4f d8          	cmovg  %ax,%bx
+ 8049892:	c3                   	ret    
+
+08049893 <cmov_w_with_code_f_constant>:
+ 8049893:	3c 02                	cmp    $0x2,%al
+ 8049895:	66 0f 4f d8          	cmovg  %ax,%bx
+ 8049899:	c3                   	ret    
+
+0804989a <cmov_w_with_code_f_allregs>:
+ 804989a:	a1 00 10 00 00       	mov    0x1000,%eax
+ 804989f:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80498a5:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80498ab:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 80498b1:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 80498b7:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 80498bd:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80498c3:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80498c9:	3c 02                	cmp    $0x2,%al
+ 80498cb:	66 0f 4f d8          	cmovg  %ax,%bx
+ 80498cf:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80498d4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80498da:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80498e0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80498e6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80498ec:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80498f2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80498f8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80498fe:	c3                   	ret    
+
+080498ff <cmov_l_with_code_0>:
+ 80498ff:	3c 02                	cmp    $0x2,%al
+ 8049901:	0f 40 d8             	cmovo  %eax,%ebx
+ 8049904:	c3                   	ret    
+
+08049905 <cmov_l_with_code_0_constant>:
+ 8049905:	3c 02                	cmp    $0x2,%al
+ 8049907:	0f 40 d8             	cmovo  %eax,%ebx
+ 804990a:	c3                   	ret    
+
+0804990b <cmov_l_with_code_0_allregs>:
+ 804990b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049910:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049916:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804991c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049922:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049928:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804992e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049934:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 804993a:	3c 02                	cmp    $0x2,%al
+ 804993c:	0f 40 d8             	cmovo  %eax,%ebx
+ 804993f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049944:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 804994a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049950:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049956:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 804995c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049962:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049968:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 804996e:	c3                   	ret    
+
+0804996f <cmov_l_with_code_1>:
+ 804996f:	3c 02                	cmp    $0x2,%al
+ 8049971:	0f 41 d8             	cmovno %eax,%ebx
+ 8049974:	c3                   	ret    
+
+08049975 <cmov_l_with_code_1_constant>:
+ 8049975:	3c 02                	cmp    $0x2,%al
+ 8049977:	0f 41 d8             	cmovno %eax,%ebx
+ 804997a:	c3                   	ret    
+
+0804997b <cmov_l_with_code_1_allregs>:
+ 804997b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049980:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049986:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 804998c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049992:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049998:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 804999e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 80499a4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 80499aa:	3c 02                	cmp    $0x2,%al
+ 80499ac:	0f 41 d8             	cmovno %eax,%ebx
+ 80499af:	a3 00 20 00 00       	mov    %eax,0x2000
+ 80499b4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 80499ba:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 80499c0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 80499c6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 80499cc:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 80499d2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 80499d8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 80499de:	c3                   	ret    
+
+080499df <cmov_l_with_code_2>:
+ 80499df:	3c 02                	cmp    $0x2,%al
+ 80499e1:	0f 42 d8             	cmovb  %eax,%ebx
+ 80499e4:	c3                   	ret    
+
+080499e5 <cmov_l_with_code_2_constant>:
+ 80499e5:	3c 02                	cmp    $0x2,%al
+ 80499e7:	0f 42 d8             	cmovb  %eax,%ebx
+ 80499ea:	c3                   	ret    
+
+080499eb <cmov_l_with_code_2_allregs>:
+ 80499eb:	a1 00 10 00 00       	mov    0x1000,%eax
+ 80499f0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 80499f6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 80499fc:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049a02:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049a08:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049a0e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049a14:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049a1a:	3c 02                	cmp    $0x2,%al
+ 8049a1c:	0f 42 d8             	cmovb  %eax,%ebx
+ 8049a1f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049a24:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049a2a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049a30:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049a36:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049a3c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049a42:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049a48:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049a4e:	c3                   	ret    
+
+08049a4f <cmov_l_with_code_3>:
+ 8049a4f:	3c 02                	cmp    $0x2,%al
+ 8049a51:	0f 43 d8             	cmovae %eax,%ebx
+ 8049a54:	c3                   	ret    
+
+08049a55 <cmov_l_with_code_3_constant>:
+ 8049a55:	3c 02                	cmp    $0x2,%al
+ 8049a57:	0f 43 d8             	cmovae %eax,%ebx
+ 8049a5a:	c3                   	ret    
+
+08049a5b <cmov_l_with_code_3_allregs>:
+ 8049a5b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049a60:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049a66:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049a6c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049a72:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049a78:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049a7e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049a84:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049a8a:	3c 02                	cmp    $0x2,%al
+ 8049a8c:	0f 43 d8             	cmovae %eax,%ebx
+ 8049a8f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049a94:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049a9a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049aa0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049aa6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049aac:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049ab2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049ab8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049abe:	c3                   	ret    
+
+08049abf <cmov_l_with_code_4>:
+ 8049abf:	3c 02                	cmp    $0x2,%al
+ 8049ac1:	0f 44 d8             	cmove  %eax,%ebx
+ 8049ac4:	c3                   	ret    
+
+08049ac5 <cmov_l_with_code_4_constant>:
+ 8049ac5:	3c 02                	cmp    $0x2,%al
+ 8049ac7:	0f 44 d8             	cmove  %eax,%ebx
+ 8049aca:	c3                   	ret    
+
+08049acb <cmov_l_with_code_4_allregs>:
+ 8049acb:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049ad0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049ad6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049adc:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049ae2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049ae8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049aee:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049af4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049afa:	3c 02                	cmp    $0x2,%al
+ 8049afc:	0f 44 d8             	cmove  %eax,%ebx
+ 8049aff:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049b04:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049b0a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049b10:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049b16:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049b1c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049b22:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049b28:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049b2e:	c3                   	ret    
+
+08049b2f <cmov_l_with_code_5>:
+ 8049b2f:	3c 02                	cmp    $0x2,%al
+ 8049b31:	0f 45 d8             	cmovne %eax,%ebx
+ 8049b34:	c3                   	ret    
+
+08049b35 <cmov_l_with_code_5_constant>:
+ 8049b35:	3c 02                	cmp    $0x2,%al
+ 8049b37:	0f 45 d8             	cmovne %eax,%ebx
+ 8049b3a:	c3                   	ret    
+
+08049b3b <cmov_l_with_code_5_allregs>:
+ 8049b3b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049b40:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049b46:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049b4c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049b52:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049b58:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049b5e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049b64:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049b6a:	3c 02                	cmp    $0x2,%al
+ 8049b6c:	0f 45 d8             	cmovne %eax,%ebx
+ 8049b6f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049b74:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049b7a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049b80:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049b86:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049b8c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049b92:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049b98:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049b9e:	c3                   	ret    
+
+08049b9f <cmov_l_with_code_6>:
+ 8049b9f:	3c 02                	cmp    $0x2,%al
+ 8049ba1:	0f 46 d8             	cmovbe %eax,%ebx
+ 8049ba4:	c3                   	ret    
+
+08049ba5 <cmov_l_with_code_6_constant>:
+ 8049ba5:	3c 02                	cmp    $0x2,%al
+ 8049ba7:	0f 46 d8             	cmovbe %eax,%ebx
+ 8049baa:	c3                   	ret    
+
+08049bab <cmov_l_with_code_6_allregs>:
+ 8049bab:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049bb0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049bb6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049bbc:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049bc2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049bc8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049bce:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049bd4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049bda:	3c 02                	cmp    $0x2,%al
+ 8049bdc:	0f 46 d8             	cmovbe %eax,%ebx
+ 8049bdf:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049be4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049bea:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049bf0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049bf6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049bfc:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049c02:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049c08:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049c0e:	c3                   	ret    
+
+08049c0f <cmov_l_with_code_7>:
+ 8049c0f:	3c 02                	cmp    $0x2,%al
+ 8049c11:	0f 47 d8             	cmova  %eax,%ebx
+ 8049c14:	c3                   	ret    
+
+08049c15 <cmov_l_with_code_7_constant>:
+ 8049c15:	3c 02                	cmp    $0x2,%al
+ 8049c17:	0f 47 d8             	cmova  %eax,%ebx
+ 8049c1a:	c3                   	ret    
+
+08049c1b <cmov_l_with_code_7_allregs>:
+ 8049c1b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049c20:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049c26:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049c2c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049c32:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049c38:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049c3e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049c44:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049c4a:	3c 02                	cmp    $0x2,%al
+ 8049c4c:	0f 47 d8             	cmova  %eax,%ebx
+ 8049c4f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049c54:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049c5a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049c60:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049c66:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049c6c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049c72:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049c78:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049c7e:	c3                   	ret    
+
+08049c7f <cmov_l_with_code_8>:
+ 8049c7f:	3c 02                	cmp    $0x2,%al
+ 8049c81:	0f 48 d8             	cmovs  %eax,%ebx
+ 8049c84:	c3                   	ret    
+
+08049c85 <cmov_l_with_code_8_constant>:
+ 8049c85:	3c 02                	cmp    $0x2,%al
+ 8049c87:	0f 48 d8             	cmovs  %eax,%ebx
+ 8049c8a:	c3                   	ret    
+
+08049c8b <cmov_l_with_code_8_allregs>:
+ 8049c8b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049c90:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049c96:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049c9c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049ca2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049ca8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049cae:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049cb4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049cba:	3c 02                	cmp    $0x2,%al
+ 8049cbc:	0f 48 d8             	cmovs  %eax,%ebx
+ 8049cbf:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049cc4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049cca:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049cd0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049cd6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049cdc:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049ce2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049ce8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049cee:	c3                   	ret    
+
+08049cef <cmov_l_with_code_9>:
+ 8049cef:	3c 02                	cmp    $0x2,%al
+ 8049cf1:	0f 49 d8             	cmovns %eax,%ebx
+ 8049cf4:	c3                   	ret    
+
+08049cf5 <cmov_l_with_code_9_constant>:
+ 8049cf5:	3c 02                	cmp    $0x2,%al
+ 8049cf7:	0f 49 d8             	cmovns %eax,%ebx
+ 8049cfa:	c3                   	ret    
+
+08049cfb <cmov_l_with_code_9_allregs>:
+ 8049cfb:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049d00:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049d06:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049d0c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049d12:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049d18:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049d1e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049d24:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049d2a:	3c 02                	cmp    $0x2,%al
+ 8049d2c:	0f 49 d8             	cmovns %eax,%ebx
+ 8049d2f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049d34:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049d3a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049d40:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049d46:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049d4c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049d52:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049d58:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049d5e:	c3                   	ret    
+
+08049d5f <cmov_l_with_code_a>:
+ 8049d5f:	3c 02                	cmp    $0x2,%al
+ 8049d61:	0f 4a d8             	cmovp  %eax,%ebx
+ 8049d64:	c3                   	ret    
+
+08049d65 <cmov_l_with_code_a_constant>:
+ 8049d65:	3c 02                	cmp    $0x2,%al
+ 8049d67:	0f 4a d8             	cmovp  %eax,%ebx
+ 8049d6a:	c3                   	ret    
+
+08049d6b <cmov_l_with_code_a_allregs>:
+ 8049d6b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049d70:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049d76:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049d7c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049d82:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049d88:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049d8e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049d94:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049d9a:	3c 02                	cmp    $0x2,%al
+ 8049d9c:	0f 4a d8             	cmovp  %eax,%ebx
+ 8049d9f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049da4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049daa:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049db0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049db6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049dbc:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049dc2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049dc8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049dce:	c3                   	ret    
+
+08049dcf <cmov_l_with_code_b>:
+ 8049dcf:	3c 02                	cmp    $0x2,%al
+ 8049dd1:	0f 4b d8             	cmovnp %eax,%ebx
+ 8049dd4:	c3                   	ret    
+
+08049dd5 <cmov_l_with_code_b_constant>:
+ 8049dd5:	3c 02                	cmp    $0x2,%al
+ 8049dd7:	0f 4b d8             	cmovnp %eax,%ebx
+ 8049dda:	c3                   	ret    
+
+08049ddb <cmov_l_with_code_b_allregs>:
+ 8049ddb:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049de0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049de6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049dec:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049df2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049df8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049dfe:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049e04:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049e0a:	3c 02                	cmp    $0x2,%al
+ 8049e0c:	0f 4b d8             	cmovnp %eax,%ebx
+ 8049e0f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049e14:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049e1a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049e20:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049e26:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049e2c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049e32:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049e38:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049e3e:	c3                   	ret    
+
+08049e3f <cmov_l_with_code_c>:
+ 8049e3f:	3c 02                	cmp    $0x2,%al
+ 8049e41:	0f 4c d8             	cmovl  %eax,%ebx
+ 8049e44:	c3                   	ret    
+
+08049e45 <cmov_l_with_code_c_constant>:
+ 8049e45:	3c 02                	cmp    $0x2,%al
+ 8049e47:	0f 4c d8             	cmovl  %eax,%ebx
+ 8049e4a:	c3                   	ret    
+
+08049e4b <cmov_l_with_code_c_allregs>:
+ 8049e4b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049e50:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049e56:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049e5c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049e62:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049e68:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049e6e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049e74:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049e7a:	3c 02                	cmp    $0x2,%al
+ 8049e7c:	0f 4c d8             	cmovl  %eax,%ebx
+ 8049e7f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049e84:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049e8a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049e90:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049e96:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049e9c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049ea2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049ea8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049eae:	c3                   	ret    
+
+08049eaf <cmov_l_with_code_d>:
+ 8049eaf:	3c 02                	cmp    $0x2,%al
+ 8049eb1:	0f 4d d8             	cmovge %eax,%ebx
+ 8049eb4:	c3                   	ret    
+
+08049eb5 <cmov_l_with_code_d_constant>:
+ 8049eb5:	3c 02                	cmp    $0x2,%al
+ 8049eb7:	0f 4d d8             	cmovge %eax,%ebx
+ 8049eba:	c3                   	ret    
+
+08049ebb <cmov_l_with_code_d_allregs>:
+ 8049ebb:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049ec0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049ec6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049ecc:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049ed2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049ed8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049ede:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049ee4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049eea:	3c 02                	cmp    $0x2,%al
+ 8049eec:	0f 4d d8             	cmovge %eax,%ebx
+ 8049eef:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049ef4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049efa:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049f00:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049f06:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049f0c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049f12:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049f18:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049f1e:	c3                   	ret    
+
+08049f1f <cmov_l_with_code_e>:
+ 8049f1f:	3c 02                	cmp    $0x2,%al
+ 8049f21:	0f 4e d8             	cmovle %eax,%ebx
+ 8049f24:	c3                   	ret    
+
+08049f25 <cmov_l_with_code_e_constant>:
+ 8049f25:	3c 02                	cmp    $0x2,%al
+ 8049f27:	0f 4e d8             	cmovle %eax,%ebx
+ 8049f2a:	c3                   	ret    
+
+08049f2b <cmov_l_with_code_e_allregs>:
+ 8049f2b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049f30:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049f36:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049f3c:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049f42:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049f48:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049f4e:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049f54:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049f5a:	3c 02                	cmp    $0x2,%al
+ 8049f5c:	0f 4e d8             	cmovle %eax,%ebx
+ 8049f5f:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049f64:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049f6a:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049f70:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049f76:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049f7c:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049f82:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049f88:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049f8e:	c3                   	ret    
+
+08049f8f <cmov_l_with_code_f>:
+ 8049f8f:	3c 02                	cmp    $0x2,%al
+ 8049f91:	0f 4f d8             	cmovg  %eax,%ebx
+ 8049f94:	c3                   	ret    
+
+08049f95 <cmov_l_with_code_f_constant>:
+ 8049f95:	3c 02                	cmp    $0x2,%al
+ 8049f97:	0f 4f d8             	cmovg  %eax,%ebx
+ 8049f9a:	c3                   	ret    
+
+08049f9b <cmov_l_with_code_f_allregs>:
+ 8049f9b:	a1 00 10 00 00       	mov    0x1000,%eax
+ 8049fa0:	8b 1d 04 10 00 00    	mov    0x1004,%ebx
+ 8049fa6:	8b 0d 08 10 00 00    	mov    0x1008,%ecx
+ 8049fac:	8b 15 0c 10 00 00    	mov    0x100c,%edx
+ 8049fb2:	8b 2d 10 10 00 00    	mov    0x1010,%ebp
+ 8049fb8:	8b 35 14 10 00 00    	mov    0x1014,%esi
+ 8049fbe:	8b 3d 18 10 00 00    	mov    0x1018,%edi
+ 8049fc4:	8b 25 1c 10 00 00    	mov    0x101c,%esp
+ 8049fca:	3c 02                	cmp    $0x2,%al
+ 8049fcc:	0f 4f d8             	cmovg  %eax,%ebx
+ 8049fcf:	a3 00 20 00 00       	mov    %eax,0x2000
+ 8049fd4:	89 1d 04 20 00 00    	mov    %ebx,0x2004
+ 8049fda:	89 0d 08 20 00 00    	mov    %ecx,0x2008
+ 8049fe0:	89 15 0c 20 00 00    	mov    %edx,0x200c
+ 8049fe6:	89 2d 10 20 00 00    	mov    %ebp,0x2010
+ 8049fec:	89 35 14 20 00 00    	mov    %esi,0x2014
+ 8049ff2:	89 3d 18 20 00 00    	mov    %edi,0x2018
+ 8049ff8:	89 25 1c 20 00 00    	mov    %esp,0x201c
+ 8049ffe:	c3                   	ret    
+
+08049fff <main>:
+ 8049fff:	e8 90 e3 ff ff       	call   8048394 <bswap>
+ 804a004:	e8 8e e3 ff ff       	call   8048397 <bswap_constant>
+ 804a009:	e8 8c e3 ff ff       	call   804839a <bswap_allregs>
+ 804a00e:	e8 e8 e3 ff ff       	call   80483fb <cmpxchg1>
+ 804a013:	e8 e7 e3 ff ff       	call   80483ff <cmpxchg1_constant>
+ 804a018:	e8 e6 e3 ff ff       	call   8048403 <cmpxchg1_allregs>
+ 804a01d:	e8 43 e4 ff ff       	call   8048465 <cmpxchg2>
+ 804a022:	e8 43 e4 ff ff       	call   804846a <cmpxchg2_constant>
+ 804a027:	e8 43 e4 ff ff       	call   804846f <cmpxchg2_allregs>
+ 804a02c:	e8 a1 e4 ff ff       	call   80484d2 <cmpxchg3>
+ 804a031:	e8 a0 e4 ff ff       	call   80484d6 <cmpxchg3_constant>
+ 804a036:	e8 9f e4 ff ff       	call   80484da <cmpxchg3_allregs>
+ 804a03b:	e8 fc e4 ff ff       	call   804853c <cmpxchg4>
+ 804a040:	e8 fb e4 ff ff       	call   8048540 <cmpxchg4_constant>
+ 804a045:	e8 fa e4 ff ff       	call   8048544 <cmpxchg4_allregs>
+ 804a04a:	e8 57 e5 ff ff       	call   80485a6 <cmpxchg5>
+ 804a04f:	e8 56 e5 ff ff       	call   80485aa <cmpxchg5_constant>
+ 804a054:	e8 55 e5 ff ff       	call   80485ae <cmpxchg5_allregs>
+ 804a059:	e8 b2 e5 ff ff       	call   8048610 <cmpxchg1_locked>
+ 804a05e:	e8 b2 e5 ff ff       	call   8048615 <cmpxchg1_locked_constant>
+ 804a063:	e8 b2 e5 ff ff       	call   804861a <cmpxchg1_locked_allregs>
+ 804a068:	e8 10 e6 ff ff       	call   804867d <cmpxchg2_locked>
+ 804a06d:	e8 11 e6 ff ff       	call   8048683 <cmpxchg2_locked_constant>
+ 804a072:	e8 12 e6 ff ff       	call   8048689 <cmpxchg2_locked_allregs>
+ 804a077:	e8 71 e6 ff ff       	call   80486ed <cmpxchg3_locked>
+ 804a07c:	e8 71 e6 ff ff       	call   80486f2 <cmpxchg3_locked_constant>
+ 804a081:	e8 71 e6 ff ff       	call   80486f7 <cmpxchg3_locked_allregs>
+ 804a086:	e8 cf e6 ff ff       	call   804875a <cmpxchg4_locked>
+ 804a08b:	e8 cf e6 ff ff       	call   804875f <cmpxchg4_locked_constant>
+ 804a090:	e8 cf e6 ff ff       	call   8048764 <cmpxchg4_locked_allregs>
+ 804a095:	e8 2d e7 ff ff       	call   80487c7 <cmpxchg5_locked>
+ 804a09a:	e8 2d e7 ff ff       	call   80487cc <cmpxchg5_locked_constant>
+ 804a09f:	e8 2d e7 ff ff       	call   80487d1 <cmpxchg5_locked_allregs>
+ 804a0a4:	e8 8b e7 ff ff       	call   8048834 <cpuid>
+ 804a0a9:	e8 89 e7 ff ff       	call   8048837 <cpuid_constant>
+ 804a0ae:	e8 87 e7 ff ff       	call   804883a <cpuid_allregs>
+ 804a0b3:	e8 e3 e7 ff ff       	call   804889b <invd>
+ 804a0b8:	e8 e1 e7 ff ff       	call   804889e <invd_constant>
+ 804a0bd:	e8 df e7 ff ff       	call   80488a1 <invd_allregs>
+ 804a0c2:	e8 3b e8 ff ff       	call   8048902 <invlpg>
+ 804a0c7:	e8 3a e8 ff ff       	call   8048906 <invlpg_constant>
+ 804a0cc:	e8 39 e8 ff ff       	call   804890a <invlpg_allregs>
+ 804a0d1:	e8 96 e8 ff ff       	call   804896c <wbinvd>
+ 804a0d6:	e8 94 e8 ff ff       	call   804896f <wbinvd_constant>
+ 804a0db:	e8 92 e8 ff ff       	call   8048972 <wbinvd_allregs>
+ 804a0e0:	e8 ee e8 ff ff       	call   80489d3 <xadd1>
+ 804a0e5:	e8 ed e8 ff ff       	call   80489d7 <xadd1_constant>
+ 804a0ea:	e8 ec e8 ff ff       	call   80489db <xadd1_allregs>
+ 804a0ef:	e8 49 e9 ff ff       	call   8048a3d <xadd2>
+ 804a0f4:	e8 49 e9 ff ff       	call   8048a42 <xadd2_constant>
+ 804a0f9:	e8 49 e9 ff ff       	call   8048a47 <xadd2_allregs>
+ 804a0fe:	e8 a7 e9 ff ff       	call   8048aaa <xadd3>
+ 804a103:	e8 a6 e9 ff ff       	call   8048aae <xadd3_constant>
+ 804a108:	e8 a5 e9 ff ff       	call   8048ab2 <xadd3_allregs>
+ 804a10d:	e8 02 ea ff ff       	call   8048b14 <xadd4>
+ 804a112:	e8 01 ea ff ff       	call   8048b18 <xadd4_constant>
+ 804a117:	e8 00 ea ff ff       	call   8048b1c <xadd4_allregs>
+ 804a11c:	e8 5d ea ff ff       	call   8048b7e <xadd5>
+ 804a121:	e8 5c ea ff ff       	call   8048b82 <xadd5_constant>
+ 804a126:	e8 5b ea ff ff       	call   8048b86 <xadd5_allregs>
+ 804a12b:	e8 b8 ea ff ff       	call   8048be8 <xadd1_locked>
+ 804a130:	e8 b8 ea ff ff       	call   8048bed <xadd1_locked_constant>
+ 804a135:	e8 b8 ea ff ff       	call   8048bf2 <xadd1_locked_allregs>
+ 804a13a:	e8 16 eb ff ff       	call   8048c55 <xadd2_locked>
+ 804a13f:	e8 17 eb ff ff       	call   8048c5b <xadd2_locked_constant>
+ 804a144:	e8 18 eb ff ff       	call   8048c61 <xadd2_locked_allregs>
+ 804a149:	e8 77 eb ff ff       	call   8048cc5 <xadd3_locked>
+ 804a14e:	e8 77 eb ff ff       	call   8048cca <xadd3_locked_constant>
+ 804a153:	e8 77 eb ff ff       	call   8048ccf <xadd3_locked_allregs>
+ 804a158:	e8 d5 eb ff ff       	call   8048d32 <xadd4_locked>
+ 804a15d:	e8 d5 eb ff ff       	call   8048d37 <xadd4_locked_constant>
+ 804a162:	e8 d5 eb ff ff       	call   8048d3c <xadd4_locked_allregs>
+ 804a167:	e8 33 ec ff ff       	call   8048d9f <xadd5_locked>
+ 804a16c:	e8 33 ec ff ff       	call   8048da4 <xadd5_locked_constant>
+ 804a171:	e8 33 ec ff ff       	call   8048da9 <xadd5_locked_allregs>
+ 804a176:	e8 91 ec ff ff       	call   8048e0c <cmpxchg8b>
+ 804a17b:	e8 90 ec ff ff       	call   8048e10 <cmpxchg8b_constant>
+ 804a180:	e8 8f ec ff ff       	call   8048e14 <cmpxchg8b_allregs>
+ 804a185:	e8 ec ec ff ff       	call   8048e76 <cmpxchg8b_locked>
+ 804a18a:	e8 ec ec ff ff       	call   8048e7b <cmpxchg8b_locked_constant>
+ 804a18f:	e8 ec ec ff ff       	call   8048e80 <cmpxchg8b_locked_allregs>
+ 804a194:	e8 4a ed ff ff       	call   8048ee3 <rdtsc>
+ 804a199:	e8 48 ed ff ff       	call   8048ee6 <rdtsc_constant>
+ 804a19e:	e8 46 ed ff ff       	call   8048ee9 <rdtsc_allregs>
+ 804a1a3:	e8 a2 ed ff ff       	call   8048f4a <rdmsr>
+ 804a1a8:	e8 a0 ed ff ff       	call   8048f4d <rdmsr_constant>
+ 804a1ad:	e8 9e ed ff ff       	call   8048f50 <rdmsr_allregs>
+ 804a1b2:	e8 fa ed ff ff       	call   8048fb1 <wrmsr>
+ 804a1b7:	e8 f8 ed ff ff       	call   8048fb4 <wrmsr_constant>
+ 804a1bc:	e8 f6 ed ff ff       	call   8048fb7 <wrmsr_allregs>
+ 804a1c1:	e8 52 ee ff ff       	call   8049018 <cmov1>
+ 804a1c6:	e8 52 ee ff ff       	call   804901d <cmov1_constant>
+ 804a1cb:	e8 52 ee ff ff       	call   8049022 <cmov1_allregs>
+ 804a1d0:	e8 b0 ee ff ff       	call   8049085 <cmov2>
+ 804a1d5:	e8 b0 ee ff ff       	call   804908a <cmov2_constant>
+ 804a1da:	e8 b0 ee ff ff       	call   804908f <cmov2_allregs>
+ 804a1df:	e8 0e ef ff ff       	call   80490f2 <cmov3>
+ 804a1e4:	e8 0f ef ff ff       	call   80490f8 <cmov3_constant>
+ 804a1e9:	e8 10 ef ff ff       	call   80490fe <cmov3_allregs>
+ 804a1ee:	e8 6f ef ff ff       	call   8049162 <cmov4>
+ 804a1f3:	e8 6f ef ff ff       	call   8049167 <cmov4_constant>
+ 804a1f8:	e8 6f ef ff ff       	call   804916c <cmov4_allregs>
+ 804a1fd:	e8 cd ef ff ff       	call   80491cf <cmov_w_with_code_0>
+ 804a202:	e8 cf ef ff ff       	call   80491d6 <cmov_w_with_code_0_constant>
+ 804a207:	e8 d1 ef ff ff       	call   80491dd <cmov_w_with_code_0_allregs>
+ 804a20c:	e8 31 f0 ff ff       	call   8049242 <cmov_w_with_code_1>
+ 804a211:	e8 33 f0 ff ff       	call   8049249 <cmov_w_with_code_1_constant>
+ 804a216:	e8 35 f0 ff ff       	call   8049250 <cmov_w_with_code_1_allregs>
+ 804a21b:	e8 95 f0 ff ff       	call   80492b5 <cmov_w_with_code_2>
+ 804a220:	e8 97 f0 ff ff       	call   80492bc <cmov_w_with_code_2_constant>
+ 804a225:	e8 99 f0 ff ff       	call   80492c3 <cmov_w_with_code_2_allregs>
+ 804a22a:	e8 f9 f0 ff ff       	call   8049328 <cmov_w_with_code_3>
+ 804a22f:	e8 fb f0 ff ff       	call   804932f <cmov_w_with_code_3_constant>
+ 804a234:	e8 fd f0 ff ff       	call   8049336 <cmov_w_with_code_3_allregs>
+ 804a239:	e8 5d f1 ff ff       	call   804939b <cmov_w_with_code_4>
+ 804a23e:	e8 5f f1 ff ff       	call   80493a2 <cmov_w_with_code_4_constant>
+ 804a243:	e8 61 f1 ff ff       	call   80493a9 <cmov_w_with_code_4_allregs>
+ 804a248:	e8 c1 f1 ff ff       	call   804940e <cmov_w_with_code_5>
+ 804a24d:	e8 c3 f1 ff ff       	call   8049415 <cmov_w_with_code_5_constant>
+ 804a252:	e8 c5 f1 ff ff       	call   804941c <cmov_w_with_code_5_allregs>
+ 804a257:	e8 25 f2 ff ff       	call   8049481 <cmov_w_with_code_6>
+ 804a25c:	e8 27 f2 ff ff       	call   8049488 <cmov_w_with_code_6_constant>
+ 804a261:	e8 29 f2 ff ff       	call   804948f <cmov_w_with_code_6_allregs>
+ 804a266:	e8 89 f2 ff ff       	call   80494f4 <cmov_w_with_code_7>
+ 804a26b:	e8 8b f2 ff ff       	call   80494fb <cmov_w_with_code_7_constant>
+ 804a270:	e8 8d f2 ff ff       	call   8049502 <cmov_w_with_code_7_allregs>
+ 804a275:	e8 ed f2 ff ff       	call   8049567 <cmov_w_with_code_8>
+ 804a27a:	e8 ef f2 ff ff       	call   804956e <cmov_w_with_code_8_constant>
+ 804a27f:	e8 f1 f2 ff ff       	call   8049575 <cmov_w_with_code_8_allregs>
+ 804a284:	e8 51 f3 ff ff       	call   80495da <cmov_w_with_code_9>
+ 804a289:	e8 53 f3 ff ff       	call   80495e1 <cmov_w_with_code_9_constant>
+ 804a28e:	e8 55 f3 ff ff       	call   80495e8 <cmov_w_with_code_9_allregs>
+ 804a293:	e8 b5 f3 ff ff       	call   804964d <cmov_w_with_code_a>
+ 804a298:	e8 b7 f3 ff ff       	call   8049654 <cmov_w_with_code_a_constant>
+ 804a29d:	e8 b9 f3 ff ff       	call   804965b <cmov_w_with_code_a_allregs>
+ 804a2a2:	e8 19 f4 ff ff       	call   80496c0 <cmov_w_with_code_b>
+ 804a2a7:	e8 1b f4 ff ff       	call   80496c7 <cmov_w_with_code_b_constant>
+ 804a2ac:	e8 1d f4 ff ff       	call   80496ce <cmov_w_with_code_b_allregs>
+ 804a2b1:	e8 7d f4 ff ff       	call   8049733 <cmov_w_with_code_c>
+ 804a2b6:	e8 7f f4 ff ff       	call   804973a <cmov_w_with_code_c_constant>
+ 804a2bb:	e8 81 f4 ff ff       	call   8049741 <cmov_w_with_code_c_allregs>
+ 804a2c0:	e8 e1 f4 ff ff       	call   80497a6 <cmov_w_with_code_d>
+ 804a2c5:	e8 e3 f4 ff ff       	call   80497ad <cmov_w_with_code_d_constant>
+ 804a2ca:	e8 e5 f4 ff ff       	call   80497b4 <cmov_w_with_code_d_allregs>
+ 804a2cf:	e8 45 f5 ff ff       	call   8049819 <cmov_w_with_code_e>
+ 804a2d4:	e8 47 f5 ff ff       	call   8049820 <cmov_w_with_code_e_constant>
+ 804a2d9:	e8 49 f5 ff ff       	call   8049827 <cmov_w_with_code_e_allregs>
+ 804a2de:	e8 a9 f5 ff ff       	call   804988c <cmov_w_with_code_f>
+ 804a2e3:	e8 ab f5 ff ff       	call   8049893 <cmov_w_with_code_f_constant>
+ 804a2e8:	e8 ad f5 ff ff       	call   804989a <cmov_w_with_code_f_allregs>
+ 804a2ed:	e8 0d f6 ff ff       	call   80498ff <cmov_l_with_code_0>
+ 804a2f2:	e8 0e f6 ff ff       	call   8049905 <cmov_l_with_code_0_constant>
+ 804a2f7:	e8 0f f6 ff ff       	call   804990b <cmov_l_with_code_0_allregs>
+ 804a2fc:	e8 6e f6 ff ff       	call   804996f <cmov_l_with_code_1>
+ 804a301:	e8 6f f6 ff ff       	call   8049975 <cmov_l_with_code_1_constant>
+ 804a306:	e8 70 f6 ff ff       	call   804997b <cmov_l_with_code_1_allregs>
+ 804a30b:	e8 cf f6 ff ff       	call   80499df <cmov_l_with_code_2>
+ 804a310:	e8 d0 f6 ff ff       	call   80499e5 <cmov_l_with_code_2_constant>
+ 804a315:	e8 d1 f6 ff ff       	call   80499eb <cmov_l_with_code_2_allregs>
+ 804a31a:	e8 30 f7 ff ff       	call   8049a4f <cmov_l_with_code_3>
+ 804a31f:	e8 31 f7 ff ff       	call   8049a55 <cmov_l_with_code_3_constant>
+ 804a324:	e8 32 f7 ff ff       	call   8049a5b <cmov_l_with_code_3_allregs>
+ 804a329:	e8 91 f7 ff ff       	call   8049abf <cmov_l_with_code_4>
+ 804a32e:	e8 92 f7 ff ff       	call   8049ac5 <cmov_l_with_code_4_constant>
+ 804a333:	e8 93 f7 ff ff       	call   8049acb <cmov_l_with_code_4_allregs>
+ 804a338:	e8 f2 f7 ff ff       	call   8049b2f <cmov_l_with_code_5>
+ 804a33d:	e8 f3 f7 ff ff       	call   8049b35 <cmov_l_with_code_5_constant>
+ 804a342:	e8 f4 f7 ff ff       	call   8049b3b <cmov_l_with_code_5_allregs>
+ 804a347:	e8 53 f8 ff ff       	call   8049b9f <cmov_l_with_code_6>
+ 804a34c:	e8 54 f8 ff ff       	call   8049ba5 <cmov_l_with_code_6_constant>
+ 804a351:	e8 55 f8 ff ff       	call   8049bab <cmov_l_with_code_6_allregs>
+ 804a356:	e8 b4 f8 ff ff       	call   8049c0f <cmov_l_with_code_7>
+ 804a35b:	e8 b5 f8 ff ff       	call   8049c15 <cmov_l_with_code_7_constant>
+ 804a360:	e8 b6 f8 ff ff       	call   8049c1b <cmov_l_with_code_7_allregs>
+ 804a365:	e8 15 f9 ff ff       	call   8049c7f <cmov_l_with_code_8>
+ 804a36a:	e8 16 f9 ff ff       	call   8049c85 <cmov_l_with_code_8_constant>
+ 804a36f:	e8 17 f9 ff ff       	call   8049c8b <cmov_l_with_code_8_allregs>
+ 804a374:	e8 76 f9 ff ff       	call   8049cef <cmov_l_with_code_9>
+ 804a379:	e8 77 f9 ff ff       	call   8049cf5 <cmov_l_with_code_9_constant>
+ 804a37e:	e8 78 f9 ff ff       	call   8049cfb <cmov_l_with_code_9_allregs>
+ 804a383:	e8 d7 f9 ff ff       	call   8049d5f <cmov_l_with_code_a>
+ 804a388:	e8 d8 f9 ff ff       	call   8049d65 <cmov_l_with_code_a_constant>
+ 804a38d:	e8 d9 f9 ff ff       	call   8049d6b <cmov_l_with_code_a_allregs>
+ 804a392:	e8 38 fa ff ff       	call   8049dcf <cmov_l_with_code_b>
+ 804a397:	e8 39 fa ff ff       	call   8049dd5 <cmov_l_with_code_b_constant>
+ 804a39c:	e8 3a fa ff ff       	call   8049ddb <cmov_l_with_code_b_allregs>
+ 804a3a1:	e8 99 fa ff ff       	call   8049e3f <cmov_l_with_code_c>
+ 804a3a6:	e8 9a fa ff ff       	call   8049e45 <cmov_l_with_code_c_constant>
+ 804a3ab:	e8 9b fa ff ff       	call   8049e4b <cmov_l_with_code_c_allregs>
+ 804a3b0:	e8 fa fa ff ff       	call   8049eaf <cmov_l_with_code_d>
+ 804a3b5:	e8 fb fa ff ff       	call   8049eb5 <cmov_l_with_code_d_constant>
+ 804a3ba:	e8 fc fa ff ff       	call   8049ebb <cmov_l_with_code_d_allregs>
+ 804a3bf:	e8 5b fb ff ff       	call   8049f1f <cmov_l_with_code_e>
+ 804a3c4:	e8 5c fb ff ff       	call   8049f25 <cmov_l_with_code_e_constant>
+ 804a3c9:	e8 5d fb ff ff       	call   8049f2b <cmov_l_with_code_e_allregs>
+ 804a3ce:	e8 bc fb ff ff       	call   8049f8f <cmov_l_with_code_f>
+ 804a3d3:	e8 bd fb ff ff       	call   8049f95 <cmov_l_with_code_f_constant>
+ 804a3d8:	e8 be fb ff ff       	call   8049f9b <cmov_l_with_code_f_allregs>
+ 804a3dd:	90                   	nop
+ 804a3de:	90                   	nop
+ 804a3df:	90                   	nop
+
+0804a3e0 <__libc_csu_fini>:
+ 804a3e0:	55                   	push   %ebp
+ 804a3e1:	89 e5                	mov    %esp,%ebp
+ 804a3e3:	5d                   	pop    %ebp
+ 804a3e4:	c3                   	ret    
+ 804a3e5:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+ 804a3e9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
+
+0804a3f0 <__libc_csu_init>:
+ 804a3f0:	55                   	push   %ebp
+ 804a3f1:	89 e5                	mov    %esp,%ebp
+ 804a3f3:	57                   	push   %edi
+ 804a3f4:	56                   	push   %esi
+ 804a3f5:	53                   	push   %ebx
+ 804a3f6:	e8 4f 00 00 00       	call   804a44a <__i686.get_pc_thunk.bx>
+ 804a3fb:	81 c3 29 12 00 00    	add    $0x1229,%ebx
+ 804a401:	83 ec 1c             	sub    $0x1c,%esp
+ 804a404:	e8 6b de ff ff       	call   8048274 <_init>
+ 804a409:	8d bb 20 ff ff ff    	lea    -0xe0(%ebx),%edi
+ 804a40f:	8d 83 20 ff ff ff    	lea    -0xe0(%ebx),%eax
+ 804a415:	29 c7                	sub    %eax,%edi
+ 804a417:	c1 ff 02             	sar    $0x2,%edi
+ 804a41a:	85 ff                	test   %edi,%edi
+ 804a41c:	74 24                	je     804a442 <__libc_csu_init+0x52>
+ 804a41e:	31 f6                	xor    %esi,%esi
+ 804a420:	8b 45 10             	mov    0x10(%ebp),%eax
+ 804a423:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 804a427:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804a42a:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804a42e:	8b 45 08             	mov    0x8(%ebp),%eax
+ 804a431:	89 04 24             	mov    %eax,(%esp)
+ 804a434:	ff 94 b3 20 ff ff ff 	call   *-0xe0(%ebx,%esi,4)
+ 804a43b:	83 c6 01             	add    $0x1,%esi
+ 804a43e:	39 fe                	cmp    %edi,%esi
+ 804a440:	72 de                	jb     804a420 <__libc_csu_init+0x30>
+ 804a442:	83 c4 1c             	add    $0x1c,%esp
+ 804a445:	5b                   	pop    %ebx
+ 804a446:	5e                   	pop    %esi
+ 804a447:	5f                   	pop    %edi
+ 804a448:	5d                   	pop    %ebp
+ 804a449:	c3                   	ret    
+
+0804a44a <__i686.get_pc_thunk.bx>:
+ 804a44a:	8b 1c 24             	mov    (%esp),%ebx
+ 804a44d:	c3                   	ret    
+ 804a44e:	90                   	nop
+ 804a44f:	90                   	nop
+
+0804a450 <__do_global_ctors_aux>:
+ 804a450:	55                   	push   %ebp
+ 804a451:	89 e5                	mov    %esp,%ebp
+ 804a453:	53                   	push   %ebx
+ 804a454:	83 ec 04             	sub    $0x4,%esp
+ 804a457:	a1 44 b5 04 08       	mov    0x804b544,%eax
+ 804a45c:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 804a45f:	74 13                	je     804a474 <__do_global_ctors_aux+0x24>
+ 804a461:	bb 44 b5 04 08       	mov    $0x804b544,%ebx
+ 804a466:	66 90                	xchg   %ax,%ax
+ 804a468:	83 eb 04             	sub    $0x4,%ebx
+ 804a46b:	ff d0                	call   *%eax
+ 804a46d:	8b 03                	mov    (%ebx),%eax
+ 804a46f:	83 f8 ff             	cmp    $0xffffffff,%eax
+ 804a472:	75 f4                	jne    804a468 <__do_global_ctors_aux+0x18>
+ 804a474:	83 c4 04             	add    $0x4,%esp
+ 804a477:	5b                   	pop    %ebx
+ 804a478:	5d                   	pop    %ebp
+ 804a479:	c3                   	ret    
+ 804a47a:	90                   	nop
+ 804a47b:	90                   	nop
+
+Disassembly of section .fini:
+
+0804a47c <_fini>:
+ 804a47c:	55                   	push   %ebp
+ 804a47d:	89 e5                	mov    %esp,%ebp
+ 804a47f:	53                   	push   %ebx
+ 804a480:	83 ec 04             	sub    $0x4,%esp
+ 804a483:	e8 00 00 00 00       	call   804a488 <_fini+0xc>
+ 804a488:	5b                   	pop    %ebx
+ 804a489:	81 c3 9c 11 00 00    	add    $0x119c,%ebx
+ 804a48f:	e8 7c de ff ff       	call   8048310 <__do_global_dtors_aux>
+ 804a494:	59                   	pop    %ecx
+ 804a495:	5b                   	pop    %ebx
+ 804a496:	c9                   	leave  
+ 804a497:	c3                   	ret    
