@@ -1,0 +1,7 @@
+Source: http://web.archive.org/web/*/http://www.bagley.org/~doug/shootout/
+Person: Doug Bagley
+Arch:   source code
+Format: ELF ia32 and x64 compiled by Raimar Falke
+Size:   tiny, small
+Note:   The ia32 programs were compiled using version 3.12.1 while version
+        3.11.2 was used for the x64 variants.
