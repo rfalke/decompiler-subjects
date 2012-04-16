@@ -1,0 +1,5 @@
+Source: http://www.pouet.net/
+Person: Multiple
+Arch:   ia32, m68k
+Format: COM (DOS), MZ (DOS), PE, Amiga Hunk
+Size:   tiny and small
