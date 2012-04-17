@@ -1,0 +1,41 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+decoding anything undecoded...
+finishing decode...
+found 3 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering proc1
+  decompiling proc1
+  considering proc2
+  decompiling proc2
+ decompiling _start
+rpttglobal type analysis for proc1
+global type analysis for proc2
+global type analysis for _start
+igenerating code...
+WARNING: no out edge for this BB in proc2:
+Invalid BB:
+in edges: 
+out edges: 
+0040101b
+
+WARNING: no out edge for this BB in _start:
+Call BB:
+in edges: 40122b 
+out edges: 
+00401230   98 <all> := CALL proc2(<all>)
+              Reaching definitions: r8=r8{94},   r11=r11{94},   r24=r24{89},   r25=r25{89},   r26=r26{94},
+                r28=r28{0} - 20,   m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,
+                m[r28{0} - 16]=r24{79},   m[r28{0} - 20]=%pc,   m[r28{0} - 24]=0,   m[r28{0} - 28]=0,
+                m[r28{0} - 32]=500,   m[r28{0} - 36]=640,   m[r28{0} - 40]=0x8000,   m[r28{0} - 44]=0x8000,
+                m[r28{0} - 48]=0x10cf0000,   m[r28{0} - 52]=0x402012,   m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,
+                m[r28{0} - 64]=%pc,   tmp1=r24{79},   %flags=LOGICALFLAGS32( eax_1 ),   %ZF=LOGICALFLAGS32( eax_1 ),
+                %CF=LOGICALFLAGS32( eax_1 )
+              Live variables: 
+
+output written to _output/subject
+completed in some time

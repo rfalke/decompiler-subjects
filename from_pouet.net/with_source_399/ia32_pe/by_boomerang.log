@@ -1,0 +1,11 @@
+Unknown library function _amsg_exit
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+dest is not lib
+call:    1 {*32* eax, *32* r25, *32* r26, *v* r28} := CALL _amsg_exit(
+              )
+              Reaching definitions: r28=r28{0},   m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},
+                m[r28{0} + 12]=m[r28{0} + 12]{0}
+              Live variables: eax in proc main
+result:    0 *32* eax := -

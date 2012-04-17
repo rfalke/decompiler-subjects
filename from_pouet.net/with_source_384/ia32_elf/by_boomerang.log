@@ -1,0 +1,889 @@
+Unknown library function __libc_start_main
+Unknown library function SDL_Init
+Unknown library function SDL_SetVideoMode
+Unknown library function SDL_ShowCursor
+Unknown library function glEnableClientState
+Unknown library function glLightfv
+Unknown library function SDL_PollEvent
+Unknown library function glColor4f
+Unknown library function SDL_GL_SwapBuffers
+Unknown library function SDL_Quit
+Unknown library function glNormalPointer
+Unknown library function glVertexPointer
+Unknown library function glDrawElements
+Unknown library function sinf
+Unknown library function cosf
+assgn  328 *32* r24 := m[0x804a194]
+assgn  330 *32* r24 := m[0x804a18c]
+assgn 1059 *32* r24 := m[0x804a194]
+assgn 1061 *32* r25 := m[0x804a18c]
+assgn 1802 *32* r25 := m[0x804a190]
+assgn 1835 *32* r24 := m[0x804a190]
+assgn 1841 *32* r26 := m[0x804a190]
+after removing matching assigns (%pc).
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with unsigned long long; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure proc3 ###
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 84 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 52 to local table
+in proc proc3 adding addrExp r28{0} - 60 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 76 to local table
+in proc proc3 adding addrExp r28{0} - 80 to local table
+in proc proc3 adding addrExp r28{0} - 88 to local table
+in proc proc3 adding addrExp r28{0} - 132 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 156 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 172 to local table
+in proc proc3 adding addrExp r28{0} - 176 to local table
+in proc proc3 adding addrExp r28{0} - 180 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 188 to local table
+in proc proc3 adding addrExp r28{0} - 36 to local table
+in proc proc3 adding addrExp r28{0} - 40 to local table
+in proc proc3 adding addrExp r28{0} - 44 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: at address 0xffffffa4, overlapping type double does not resolve to compound or array
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 100 to local table
+in proc proc3 adding addrExp r28{0} - 108 to local table
+TYPE ERROR: Existing type at address 0xffffff90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 116 to local table
+in proc proc3 adding addrExp r28{0} - 120 to local table
+in proc proc3 adding addrExp r28{0} - 124 to local table
+in proc proc3 adding addrExp r28{0} - 128 to local table
+in proc proc3 adding addrExp r28{0} - 272 to local table
+in proc proc3 adding addrExp r28{0} - 304 to local table
+in proc proc3 adding addrExp r28{0} - 320 to local table
+in proc proc3 adding addrExp r28{0} - 324 to local table
+in proc proc3 adding addrExp r28{0} - 328 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 356 to local table
+in proc proc3 adding addrExp r28{0} - 360 to local table
+in proc proc3 adding addrExp r28{0} - 364 to local table
+in proc proc3 adding addrExp r28{0} - 368 to local table
+in proc proc3 adding addrExp r28{0} - 372 to local table
+in proc proc3 adding addrExp r28{0} - 376 to local table
+in proc proc3 adding addrExp r28{0} - 380 to local table
+in proc proc3 adding addrExp r28{0} - 384 to local table
+in proc proc3 adding addrExp r28{0} - 4 to local table
+in proc proc3 adding addrExp r28{0} - 8 to local table
+in proc proc3 adding addrExp r28{0} - 12 to local table
+in proc proc3 adding addrExp r28{0} - 16 to local table
+in proc proc3 adding addrExp r28{0} - 36 to local table
+in proc proc3 adding addrExp r28{0} - 40 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 272 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 128 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 124 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 120 to local table
+in proc proc3 adding addrExp r28{0} - 44 to local table
+in proc proc3 adding addrExp r28{0} - 116 to local table
+in proc proc3 adding addrExp r28{0} - 84 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 84 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 108 to local table
+TYPE ERROR: Existing type at address 0xffffff90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 60 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 188 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 76 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 180 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 176 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 172 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 156 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 80 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 132 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 52 to local table
+in proc proc3 adding addrExp r28{0} - 60 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 76 to local table
+in proc proc3 adding addrExp r28{0} - 80 to local table
+in proc proc3 adding addrExp r28{0} - 88 to local table
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 132 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 156 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 172 to local table
+in proc proc3 adding addrExp r28{0} - 176 to local table
+in proc proc3 adding addrExp r28{0} - 180 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 188 to local table
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 52 to local table
+in proc proc3 adding addrExp r28{0} - 88 to local table
+in proc proc3 adding addrExp r28{0} - 304 to local table
+TYPE ERROR: at address 0xfffffed0, overlapping type unsigned long long does not resolve to compound or array
+in proc proc3 adding addrExp r28{0} - 328 to local table
+in proc proc3 adding addrExp r28{0} - 324 to local table
+in proc proc3 adding addrExp r28{0} - 320 to local table
+in proc proc3 adding addrExp r28{0} - 100 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 356 to local table
+in proc proc3 adding addrExp r28{0} - 360 to local table
+in proc proc3 adding addrExp r28{0} - 364 to local table
+in proc proc3 adding addrExp r28{0} - 368 to local table
+in proc proc3 adding addrExp r28{0} - 372 to local table
+in proc proc3 adding addrExp r28{0} - 376 to local table
+in proc proc3 adding addrExp r28{0} - 380 to local table
+in proc proc3 adding addrExp r28{0} - 384 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc proc3 adding addrExp r28{0} - 8 to local table
+in proc proc3 adding addrExp r28{0} - 12 to local table
+in proc proc3 adding addrExp r28{0} - 16 to local table
+in proc proc3 adding addrExp r28{0} - 36 to local table
+TYPE ERROR: Existing type at address 0xffffffdc is not structure or array type
+in proc proc3 adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 44 to local table
+TYPE ERROR: Existing type at address 0xffffffd4 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 52 to local table
+in proc proc3 adding addrExp r28{0} - 60 to local table
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 76 to local table
+in proc proc3 adding addrExp r28{0} - 80 to local table
+in proc proc3 adding addrExp r28{0} - 84 to local table
+in proc proc3 adding addrExp r28{0} - 88 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 100 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 108 to local table
+TYPE ERROR: Existing type at address 0xffffff90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 116 to local table
+TYPE ERROR: Existing type at address 0xffffff8c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 120 to local table
+in proc proc3 adding addrExp r28{0} - 124 to local table
+in proc proc3 adding addrExp r28{0} - 128 to local table
+in proc proc3 adding addrExp r28{0} - 132 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 156 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 172 to local table
+in proc proc3 adding addrExp r28{0} - 176 to local table
+in proc proc3 adding addrExp r28{0} - 180 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 188 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 272 to local table
+TYPE ERROR: Existing type at address 0xfffffef0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 304 to local table
+in proc proc3 adding addrExp r28{0} - 320 to local table
+TYPE ERROR: Existing type at address 0xfffffec0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 324 to local table
+TYPE ERROR: Existing type at address 0xfffffebc is not structure or array type
+in proc proc3 adding addrExp r28{0} - 328 to local table
+TYPE ERROR: Existing type at address 0xfffffeb8 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 348 to local table
+TYPE ERROR: Existing type at address 0xfffffea4 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 352 to local table
+TYPE ERROR: Existing type at address 0xfffffea0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 356 to local table
+TYPE ERROR: Existing type at address 0xfffffe9c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 360 to local table
+TYPE ERROR: Existing type at address 0xfffffe98 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 364 to local table
+TYPE ERROR: Existing type at address 0xfffffe94 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 368 to local table
+TYPE ERROR: Existing type at address 0xfffffe90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 372 to local table
+TYPE ERROR: Existing type at address 0xfffffe8c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 376 to local table
+TYPE ERROR: Existing type at address 0xfffffe88 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 380 to local table
+TYPE ERROR: Existing type at address 0xfffffe84 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 384 to local table
+TYPE ERROR: Existing type at address 0xfffffe80 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 356 to local table
+in proc proc3 adding addrExp r28{0} - 360 to local table
+in proc proc3 adding addrExp r28{0} - 364 to local table
+in proc proc3 adding addrExp r28{0} - 368 to local table
+in proc proc3 adding addrExp r28{0} - 372 to local table
+in proc proc3 adding addrExp r28{0} - 376 to local table
+in proc proc3 adding addrExp r28{0} - 380 to local table
+in proc proc3 adding addrExp r28{0} - 384 to local table
+in proc proc3 adding addrExp r28{0} - 348 to local table
+in proc proc3 adding addrExp r28{0} - 352 to local table
+in proc proc3 adding addrExp r28{0} - 356 to local table
+in proc proc3 adding addrExp r28{0} - 360 to local table
+in proc proc3 adding addrExp r28{0} - 364 to local table
+in proc proc3 adding addrExp r28{0} - 368 to local table
+in proc proc3 adding addrExp r28{0} - 372 to local table
+in proc proc3 adding addrExp r28{0} - 376 to local table
+in proc proc3 adding addrExp r28{0} - 380 to local table
+in proc proc3 adding addrExp r28{0} - 384 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc proc3 adding addrExp r28{0} - 8 to local table
+in proc proc3 adding addrExp r28{0} - 12 to local table
+in proc proc3 adding addrExp r28{0} - 16 to local table
+in proc proc3 adding addrExp r28{0} - 36 to local table
+TYPE ERROR: Existing type at address 0xffffffdc is not structure or array type
+in proc proc3 adding addrExp r28{0} - 40 to local table
+TYPE ERROR: Existing type at address 0xffffffd8 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 44 to local table
+TYPE ERROR: Existing type at address 0xffffffd4 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 52 to local table
+in proc proc3 adding addrExp r28{0} - 60 to local table
+in proc proc3 adding addrExp r28{0} - 68 to local table
+in proc proc3 adding addrExp r28{0} - 72 to local table
+in proc proc3 adding addrExp r28{0} - 76 to local table
+in proc proc3 adding addrExp r28{0} - 80 to local table
+in proc proc3 adding addrExp r28{0} - 84 to local table
+in proc proc3 adding addrExp r28{0} - 88 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 100 to local table
+in proc proc3 adding addrExp r28{0} - 104 to local table
+in proc proc3 adding addrExp r28{0} - 108 to local table
+TYPE ERROR: Existing type at address 0xffffff90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 116 to local table
+TYPE ERROR: Existing type at address 0xffffff8c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 120 to local table
+in proc proc3 adding addrExp r28{0} - 124 to local table
+in proc proc3 adding addrExp r28{0} - 128 to local table
+in proc proc3 adding addrExp r28{0} - 132 to local table
+in proc proc3 adding addrExp r28{0} - 140 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 156 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 172 to local table
+in proc proc3 adding addrExp r28{0} - 176 to local table
+in proc proc3 adding addrExp r28{0} - 180 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 188 to local table
+in proc proc3 adding addrExp r28{0} - 196 to local table
+in proc proc3 adding addrExp r28{0} - 200 to local table
+in proc proc3 adding addrExp r28{0} - 204 to local table
+in proc proc3 adding addrExp r28{0} - 212 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 228 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 244 to local table
+in proc proc3 adding addrExp r28{0} - 248 to local table
+in proc proc3 adding addrExp r28{0} - 252 to local table
+in proc proc3 adding addrExp r28{0} - 256 to local table
+in proc proc3 adding addrExp r28{0} - 260 to local table
+in proc proc3 adding addrExp r28{0} - 264 to local table
+in proc proc3 adding addrExp r28{0} - 268 to local table
+in proc proc3 adding addrExp r28{0} - 272 to local table
+TYPE ERROR: Existing type at address 0xfffffef0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 300 to local table
+in proc proc3 adding addrExp r28{0} - 304 to local table
+in proc proc3 adding addrExp r28{0} - 320 to local table
+TYPE ERROR: Existing type at address 0xfffffec0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 324 to local table
+TYPE ERROR: Existing type at address 0xfffffebc is not structure or array type
+in proc proc3 adding addrExp r28{0} - 328 to local table
+TYPE ERROR: Existing type at address 0xfffffeb8 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 348 to local table
+TYPE ERROR: Existing type at address 0xfffffea4 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 352 to local table
+TYPE ERROR: Existing type at address 0xfffffea0 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 356 to local table
+TYPE ERROR: Existing type at address 0xfffffe9c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 360 to local table
+TYPE ERROR: Existing type at address 0xfffffe98 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 364 to local table
+TYPE ERROR: Existing type at address 0xfffffe94 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 368 to local table
+TYPE ERROR: Existing type at address 0xfffffe90 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 372 to local table
+TYPE ERROR: Existing type at address 0xfffffe8c is not structure or array type
+in proc proc3 adding addrExp r28{0} - 376 to local table
+TYPE ERROR: Existing type at address 0xfffffe88 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 380 to local table
+TYPE ERROR: Existing type at address 0xfffffe84 is not structure or array type
+in proc proc3 adding addrExp r28{0} - 384 to local table
+TYPE ERROR: Existing type at address 0xfffffe80 is not structure or array type
+finding final parameters for proc3
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 28]
+found new parameter m[r28{0} + 28]
+potential param r39
+found new parameter r39
+potential param r38
+found new parameter r38
+potential param r37
+found new parameter r37
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 24]
+found new parameter m[r28{0} + 24]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 36]
+found new parameter m[r28{0} + 36]
+potential param m[r28{0} + 32]
+found new parameter m[r28{0} + 32]
+potential param r24
+found new parameter r24
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for proc3
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 28]
+found new parameter m[r28{0} + 28]
+potential param r39
+found new parameter r39
+potential param r38
+found new parameter r38
+potential param r37
+found new parameter r37
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 24]
+found new parameter m[r28{0} + 24]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 36]
+found new parameter m[r28{0} + 36]
+potential param m[r28{0} + 32]
+found new parameter m[r28{0} + 32]
+potential param r24
+found new parameter r24
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+assgn  263 *32* m[r28 - 4] := m[0x804a190]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+WARNING: size 0x20 meet with double; allowing temporarily
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+TYPE ERROR: at address 0xffffffb4, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 84 to local table
+in proc proc2 adding addrExp r28{0} - 88 to local table
+in proc proc2 adding addrExp r28{0} - 92 to local table
+in proc proc2 adding addrExp r28{0} - 96 to local table
+in proc proc2 adding addrExp r28{0} - 4 to local table
+in proc proc2 adding addrExp r28{0} - 8 to local table
+in proc proc2 adding addrExp r28{0} - 12 to local table
+in proc proc2 adding addrExp r28{0} - 16 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+TYPE ERROR: at address 0xffffffb4, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 84 to local table
+in proc proc2 adding addrExp r28{0} - 88 to local table
+in proc proc2 adding addrExp r28{0} - 92 to local table
+in proc proc2 adding addrExp r28{0} - 96 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+TYPE ERROR: at address 0xffffffb4, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 84 to local table
+in proc proc2 adding addrExp r28{0} - 88 to local table
+in proc proc2 adding addrExp r28{0} - 92 to local table
+in proc proc2 adding addrExp r28{0} - 96 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+TYPE ERROR: at address 0xffffffb4, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 80 to local table
+TYPE ERROR: at address 0xffffffb0, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 84 to local table
+in proc proc2 adding addrExp r28{0} - 88 to local table
+in proc proc2 adding addrExp r28{0} - 92 to local table
+in proc proc2 adding addrExp r28{0} - 44 to local table
+in proc proc2 adding addrExp r28{0} - 96 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+TYPE ERROR: at address 0xffffffb4, overlapping type double does not resolve to compound or array
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 84 to local table
+in proc proc2 adding addrExp r28{0} - 88 to local table
+in proc proc2 adding addrExp r28{0} - 92 to local table
+in proc proc2 adding addrExp r28{0} - 96 to local table
+in proc proc2 adding addrExp r28{0} - 52 to local table
+in proc proc2 adding addrExp r28{0} - 56 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 48 to local table
+in proc proc2 adding addrExp r28{0} - 52 to local table
+in proc proc2 adding addrExp r28{0} - 56 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+in proc proc2 adding addrExp r28{0} - 80 to local table
+in proc proc2 adding addrExp r28{0} - 48 to local table
+in proc proc2 adding addrExp r28{0} - 52 to local table
+in proc proc2 adding addrExp r28{0} - 56 to local table
+in proc proc2 adding addrExp r28{0} - 60 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 64 to local table
+in proc proc2 adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 72 to local table
+in proc proc2 adding addrExp r28{0} - 76 to local table
+in proc proc2 adding addrExp r28{0} - 80 to local table
+finding final parameters for proc2
+potential param r28
+found new parameter r28
+potential param r38
+found new parameter r38
+potential param r37
+found new parameter r37
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+potential param r24
+found new parameter r24
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 124 to local table
+in proc main adding addrExp r28{0} - 116 to local table
+in proc main adding addrExp r28{0} - 108 to local table
+in proc main adding addrExp r28{0} - 52 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 20 to local table
+in proc main adding addrExp r28{0} - 72 to local table
+in proc main adding addrExp r28{0} - 76 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 104 to local table
+TYPE ERROR: at address 0xffffff98, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 112 to local table
+TYPE ERROR: at address 0xffffff90, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 120 to local table
+TYPE ERROR: at address 0xffffff88, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 128 to local table
+TYPE ERROR: at address 0xffffff80, overlapping type double does not resolve to compound or array
+in proc main adding addrExp r28{0} - 132 to local table
+in proc main adding addrExp r28{0} - 72 to local table
+in proc main adding addrExp r28{0} - 76 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+in proc main adding addrExp r28{0} - 80 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+in proc main adding addrExp r28{0} - 84 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 124 to local table
+in proc main adding addrExp r28{0} - 116 to local table
+in proc main adding addrExp r28{0} - 108 to local table
+in proc main adding addrExp r28{0} - 52 to local table
+in proc main adding addrExp r28{0} - 44 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28{0} - 68 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 88 to local table
+in proc main adding addrExp r28{0} - 92 to local table
+in proc main adding addrExp r28{0} - 96 to local table
+in proc main adding addrExp r28{0} - 100 to local table
+in proc main adding addrExp r28{0} - 68 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+in proc proc2 adding addrExp r28{0} - 32 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure proc3 ###
+in proc proc3 adding addrExp r28{0} - 128 to local table
+in proc proc3 adding addrExp r28{0} - 124 to local table
+in proc proc3 adding addrExp r28{0} - 120 to local table
+in proc proc3 adding addrExp r28{0} - 44 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 236 to local table
+in proc proc3 adding addrExp r28{0} - 220 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 112 to local table
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 184 to local table
+in proc proc3 adding addrExp r28{0} - 164 to local table
+in proc proc3 adding addrExp r28{0} - 148 to local table
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 96 to local table
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+in proc proc3 adding addrExp r28{0} - 92 to local table
+TYPE ERROR: attempt to insert item local66 at 0xffffffa4 of type double which weaves after local36 at 0xffffffa0 of type double
+finding final parameters for proc2
+potential param r28
+found new parameter r28
+potential param r38
+found new parameter r38
+potential param r37
+found new parameter r37
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+potential param r24
+found new parameter r24
+potential param r25
+found new parameter r25
+potential param r26
+found new parameter r26
+finding final parameters for proc3
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 28]
+found new parameter m[r28{0} + 28]
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+potential param m[r28{0} + 16]
+found new parameter m[r28{0} + 16]
+potential param m[r28{0} + 20]
+found new parameter m[r28{0} + 20]
+potential param m[r28{0} + 24]
+found new parameter m[r28{0} + 24]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 36]
+found new parameter m[r28{0} + 36]
+potential param m[r28{0} + 32]
+found new parameter m[r28{0} + 32]
+finding final parameters for proc2
+potential param r28
+found new parameter r28
+potential param r36
+found new parameter r36
+potential param r35
+found new parameter r35
+potential param r34
+found new parameter r34
+potential param r33
+found new parameter r33
+potential param r32
+found new parameter r32
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local esp has type __size32 * that doesn't agree with type of define void of a library, why?
+local eax has type __size32 that doesn't agree with type of define /*signed?*/int of a library, why?
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local eax has type __size32 that doesn't agree with type of define /*signed?*/int of a library, why?
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?

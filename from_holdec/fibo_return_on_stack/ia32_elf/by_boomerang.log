@@ -1,0 +1,100 @@
+Unknown library function __libc_start_main
+got filename source.c for main
+Unknown library function __isoc99_scanf
+got filename source.c for fibo_normal
+got filename source.c for fibo_return_on_stack
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fibo_normal ###
+in proc fibo_normal adding addrExp r28{0} - 28 to local table
+in proc fibo_normal adding addrExp r28{0} - 32 to local table
+in proc fibo_normal adding addrExp r28{0} - 4 to local table
+in proc fibo_normal adding addrExp r28{0} - 28 to local table
+in proc fibo_normal adding addrExp r28{0} - 32 to local table
+in proc fibo_normal adding addrExp r28{0} - 28 to local table
+in proc fibo_normal adding addrExp r28{0} - 32 to local table
+in proc fibo_normal adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc fibo_normal adding addrExp r28{0} - 28 to local table
+TYPE ERROR: Existing type at address 0xffffffe4 is not structure or array type
+in proc fibo_normal adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+finding final parameters for fibo_normal
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+finding final parameters for fibo_normal
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure fibo_return_on_stack ###
+in proc fibo_return_on_stack adding addrExp r28{0} - 28 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 32 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 4 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 28 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 32 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 28 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 32 to local table
+in proc fibo_return_on_stack adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc fibo_return_on_stack adding addrExp r28{0} - 28 to local table
+TYPE ERROR: Existing type at address 0xffffffe4 is not structure or array type
+in proc fibo_return_on_stack adding addrExp r28{0} - 32 to local table
+TYPE ERROR: Existing type at address 0xffffffe0 is not structure or array type
+finding final parameters for fibo_return_on_stack
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r24
+found new parameter r24
+finding final parameters for fibo_return_on_stack
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param r24
+found new parameter r24
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 24 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+finding final parameters for fibo_return_on_stack
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+local eax has type /*signed?*/int that doesn't agree with type of define __size32 of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?

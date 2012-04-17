@@ -1,0 +1,3 @@
+ERROR: attempted to decode outside any known segment 0x8049b18
+ERROR: attempted to decode outside any known segment 0x8049b18
+finding final parameters for _start

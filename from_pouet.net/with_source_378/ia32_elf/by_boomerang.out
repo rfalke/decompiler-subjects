@@ -1,0 +1,55 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x80489c3, ignoring.
+main function not found
+Error: no entry for `INT.Ib' in RTL dictionary
+ERROR: unknown instruction INTIB at 0x80489c3, ignoring.
+decoding anything undecoded...
+finishing decode...
+found 6 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering proc1
+  decompiling proc1
+  considering proc2
+  decompiling proc2
+  considering proc3
+   considering proc4
+    considering proc5
+    decompiling proc5
+pp   decompiling proc4
+ppprrprpttttttttttp  decompiling proc3
+rpprrptttttttttpr decompiling _start
+pttglobal type analysis for proc1
+global type analysis for proc2
+global type analysis for proc3
+tttglobal type analysis for _start
+global type analysis for proc4
+ttglobal type analysis for proc5
+riiiiiigenerating code...
+WARNING: no out edge for this BB in proc1:
+Invalid BB:
+in edges: 
+out edges: 
+08048714
+
+WARNING: no out edge for this BB in proc2:
+Invalid BB:
+in edges: 
+out edges: 
+080491c0
+
+gggWARNING: no out edge for this BB in _start:
+Call BB:
+in edges: 
+out edges: 
+00000000
+08048930    4 <all> := CALL proc1(<all>)
+              Reaching definitions: r28=r28{0} - 4,   m[r28{0} - 4]=%pc
+              Live variables: 
+
+gggoutput written to _output/subject
+completed in some time

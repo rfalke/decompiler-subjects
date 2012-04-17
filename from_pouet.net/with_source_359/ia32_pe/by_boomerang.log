@@ -1,0 +1,345 @@
+Unknown library function GlobalAlloc
+Unknown library function RegisterClassW
+Unknown library function GetDC
+Unknown library function PeekMessageW
+Unknown library function ReleaseDC
+Unknown library function GlobalFree
+assgn    1 *32* r26 := m[0x4020da]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+finding final parameters for proc1
+finding final parameters for proc2
+assgn    7 *32* %pc := m[0x403090]
+assgn   22 *32* %pc := m[0x40308c]
+assgn   31 *32* %pc := m[0x40312a]
+assgn   40 *32* %pc := m[0x403126]
+assgn   47 *32* %pc := m[0x40313a]
+assgn   54 *32* m[r28 - 4] := m[0x40208a]
+assgn   78 *32* %pc := m[0x403112]
+assgn   88 *32* %pc := m[0x403122]
+assgn  111 *32* %pc := m[0x403132]
+assgn  120 *32* %pc := m[0x403142]
+assgn  126 *32* %pc := m[0x40311a]
+assgn  132 *32* tmp1 := m[0x4020de]
+assgn  146 *32* %pc := m[0x40312e]
+assgn  148 *32* m[r28 - 4] := m[0x4020a6]
+assgn  150 *32* m[r28 - 4] := m[0x4020a2]
+assgn  154 *32* %pc := m[0x40313e]
+assgn  156 *32* m[r28 - 4] := m[0x4020e2]
+assgn  160 *32* %pc := m[0x403094]
+assgn  162 *32* m[r28 - 4] := m[0x4020b2]
+assgn  166 *32* %pc := m[0x403088]
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure _start ###
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 24 to local table
+in proc _start adding addrExp r28{0} - 28 to local table
+in proc _start adding addrExp r28{0} - 32 to local table
+in proc _start adding addrExp r28{0} - 36 to local table
+in proc _start adding addrExp r28{0} - 40 to local table
+in proc _start adding addrExp r28{0} - 44 to local table
+in proc _start adding addrExp r28{0} - 48 to local table
+in proc _start adding addrExp r28{0} - 52 to local table
+in proc _start adding addrExp r28{0} - 56 to local table
+in proc _start adding addrExp r28{0} - 60 to local table
+in proc _start adding addrExp r28{0} - 64 to local table
+in proc _start adding addrExp r28{0} - 4 to local table
+in proc _start adding addrExp r28{0} - 8 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 24 to local table
+in proc _start adding addrExp r28{0} - 28 to local table
+in proc _start adding addrExp r28{0} - 32 to local table
+in proc _start adding addrExp r28{0} - 36 to local table
+in proc _start adding addrExp r28{0} - 40 to local table
+in proc _start adding addrExp r28{0} - 44 to local table
+in proc _start adding addrExp r28{0} - 48 to local table
+in proc _start adding addrExp r28{0} - 52 to local table
+in proc _start adding addrExp r28{0} - 56 to local table
+in proc _start adding addrExp r28{0} - 60 to local table
+in proc _start adding addrExp r28{0} - 64 to local table
+WARNING: size 0x20 meet with short; allowing temporarily
+WARNING: size 0x20 meet with short; allowing temporarily
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 24 to local table
+in proc _start adding addrExp r28{0} - 28 to local table
+in proc _start adding addrExp r28{0} - 32 to local table
+in proc _start adding addrExp r28{0} - 36 to local table
+in proc _start adding addrExp r28{0} - 40 to local table
+in proc _start adding addrExp r28{0} - 44 to local table
+in proc _start adding addrExp r28{0} - 48 to local table
+in proc _start adding addrExp r28{0} - 52 to local table
+in proc _start adding addrExp r28{0} - 56 to local table
+in proc _start adding addrExp r28{0} - 60 to local table
+in proc _start adding addrExp r28{0} - 64 to local table
+in proc _start adding addrExp r28{0} - 4 to local table
+in proc _start adding addrExp r28{0} - 8 to local table
+TYPE ERROR: Existing type at address 0xfffffff8 is not structure or array type
+in proc _start adding addrExp r28{0} - 12 to local table
+in proc _start adding addrExp r28{0} - 16 to local table
+in proc _start adding addrExp r28{0} - 20 to local table
+in proc _start adding addrExp r28{0} - 24 to local table
+in proc _start adding addrExp r28{0} - 28 to local table
+in proc _start adding addrExp r28{0} - 32 to local table
+in proc _start adding addrExp r28{0} - 36 to local table
+in proc _start adding addrExp r28{0} - 40 to local table
+in proc _start adding addrExp r28{0} - 44 to local table
+in proc _start adding addrExp r28{0} - 48 to local table
+in proc _start adding addrExp r28{0} - 52 to local table
+in proc _start adding addrExp r28{0} - 56 to local table
+in proc _start adding addrExp r28{0} - 60 to local table
+in proc _start adding addrExp r28{0} - 64 to local table
+in proc _start adding addrExp r28 - 4 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+finding final parameters for _start
+potential param r28
+found new parameter r28
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure _start ###
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+in proc _start adding addrExp r28 - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc _start adding addrExp r28 to local table
+local edx has type __size32 that doesn't agree with type of define void of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+local esp has type void that doesn't agree with type of define void * of a library, why?
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    8 {*32* eax, *v* ecx, *v* edx, *v** esp} := CALL GlobalAlloc(
+              )
+              Reaching definitions: r28=r28{0} - 12,   m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=%pc,
+                m[r28{0} - 16]=m[r28{0} - 16]{0},   m[r28{0} - 20]=m[r28{0} - 20]{0},
+                m[r28{0} - 24]=m[r28{0} - 24]{0},   m[r28{0} - 28]=m[r28{0} - 28]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 44]=m[r28{0} - 44]{0},
+                m[r28{0} - 48]=m[r28{0} - 48]{0},   m[r28{0} - 52]=m[r28{0} - 52]{0},
+                m[r28{0} - 56]=m[r28{0} - 56]{0},   m[r28{0} - 60]=m[r28{0} - 60]{0},
+                m[r28{0} - 64]=m[r28{0} - 64]{0}
+              Live variables: eax,  esp in proc _start
+result:    0 *32* eax := -
+result:    0 *v** esp := -
+dest is not lib
+call:   23 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL GetModuleHandleW(
+                *LPCWSTR* local0 := 0
+              )
+              Reaching definitions: r24=r24{8} + 0x7d0,   r25=r25{8},   r26=r26{8},   r28=r28{0} - 16,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0,   m[r28{0} - 16]=%pc,
+                m[r28{0} - 20]=m[r28{0} - 20]{0},   m[r28{0} - 24]=m[r28{0} - 24]{0},
+                m[r28{0} - 28]=m[r28{0} - 28]{0},   m[r28{0} - 32]=m[r28{0} - 32]{0},
+                m[r28{0} - 36]=m[r28{0} - 36]{0},   m[r28{0} - 40]=m[r28{0} - 40]{0},
+                m[r28{0} - 44]=m[r28{0} - 44]{0},   m[r28{0} - 48]=m[r28{0} - 48]{0},
+                m[r28{0} - 52]=m[r28{0} - 52]{0},   m[r28{0} - 56]=m[r28{0} - 56]{0},
+                m[r28{0} - 60]=m[r28{0} - 60]{0},   m[r28{0} - 64]=m[r28{0} - 64]{0},   tmp1=r24{8},
+                %flags=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),   %ZF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),
+                %CF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 )
+              Live variables: eax in proc _start
+result:    0 *32* eax := -
+dest is not lib
+call:   32 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL LoadIconW(
+                *HINSTANCE* local1 := 0
+                *LPCWSTR* local0 := 0x7f00
+              )
+              Reaching definitions: r24=r24{23},   r25=r25{23},   r26=r26{23},   r28=r28{0} - 20,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x7f00,   m[r28{0} - 16]=0,
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=m[r28{0} - 24]{0},   m[r28{0} - 28]=m[r28{0} - 28]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 44]=m[r28{0} - 44]{0},
+                m[r28{0} - 48]=m[r28{0} - 48]{0},   m[r28{0} - 52]=m[r28{0} - 52]{0},
+                m[r28{0} - 56]=m[r28{0} - 56]{0},   m[r28{0} - 60]=m[r28{0} - 60]{0},
+                m[r28{0} - 64]=m[r28{0} - 64]{0},   tmp1=r24{8},   %flags=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),
+                %ZF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),   %CF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 )
+              Live variables: eax in proc _start
+result:    0 *32* eax := -
+dest is not lib
+call:   41 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL LoadCursorW(
+                *HINSTANCE* local1 := 0
+                *LPCWSTR* local0 := 0x7f00
+              )
+              Reaching definitions: r24=r24{32},   r25=r25{32},   r26=r26{32},   r28=r28{0} - 20,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x7f00,   m[r28{0} - 16]=0,
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=m[r28{0} - 24]{0},   m[r28{0} - 28]=m[r28{0} - 28]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 44]=m[r28{0} - 44]{0},
+                m[r28{0} - 48]=m[r28{0} - 48]{0},   m[r28{0} - 52]=m[r28{0} - 52]{0},
+                m[r28{0} - 56]=m[r28{0} - 56]{0},   m[r28{0} - 60]=m[r28{0} - 60]{0},
+                m[r28{0} - 64]=m[r28{0} - 64]{0},   tmp1=r24{8},   %flags=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),
+                %ZF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),   %CF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 )
+              Live variables: eax in proc _start
+result:    0 *32* eax := -
+dest is not lib
+call:   48 {*32* eax, *v* ecx, *v* edx, *v** esp} := CALL RegisterClassW(
+              )
+              Reaching definitions: r24=r24{41},   r25=r25{41},   r26=r26{41},   r28=r28{0} - 16,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,   m[r28{0} - 16]=%pc,
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=m[r28{0} - 24]{0},   m[r28{0} - 28]=m[r28{0} - 28]{0},
+                m[r28{0} - 32]=m[r28{0} - 32]{0},   m[r28{0} - 36]=m[r28{0} - 36]{0},
+                m[r28{0} - 40]=m[r28{0} - 40]{0},   m[r28{0} - 44]=m[r28{0} - 44]{0},
+                m[r28{0} - 48]=m[r28{0} - 48]{0},   m[r28{0} - 52]=m[r28{0} - 52]{0},
+                m[r28{0} - 56]=m[r28{0} - 56]{0},   m[r28{0} - 60]=m[r28{0} - 60]{0},
+                m[r28{0} - 64]=m[r28{0} - 64]{0},   tmp1=r24{8},   %flags=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),
+                %ZF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 ),   %CF=ADDFLAGS32( r24{8}, 0x7d0, r24{8} + 0x7d0 )
+              Live variables: eax,  esp in proc _start
+result:    0 *32* eax := -
+result:    0 *v** esp := -
+dest is not lib
+call:   79 {*32* eax_1, *v* ecx, *v* edx, *v** esp} := CALL CreateWindowExW(
+                *DWORD* local2 := 0
+                *LPCWSTR* local3 := 0x402000
+                *LPCWSTR* local4 := 0x402012
+                *DWORD* local5 := 0x10cf0000
+                *i32* local6 := 0x8000
+                *i32* local7 := 0x8000
+                *i32* local8 := 640
+                *i32* local9 := 500
+                *HWND* local10 := 0
+                *HMENU* local11 := 0
+                *HINSTANCE* local12 := global5
+                *LPVOID* local13 := 0
+              )
+              Reaching definitions: r24=r24{48},   r25=r25{48},   r26=r26{48},   r28=r28{0} - 64,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,   m[r28{0} - 16]=0,
+                m[r28{0} - 20]=global5,   m[r28{0} - 24]=0,   m[r28{0} - 28]=0,   m[r28{0} - 32]=500,
+                m[r28{0} - 36]=640,   m[r28{0} - 40]=0x8000,   m[r28{0} - 44]=0x8000,   m[r28{0} - 48]=0x10cf0000,
+                m[r28{0} - 52]=0x402012,   m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,   m[r28{0} - 64]=%pc,
+                tmp1=r24{48},   %flags=LOGICALFLAGS32( r24{48} ),   %ZF=LOGICALFLAGS32( r24{48} ),
+                %CF=LOGICALFLAGS32( r24{48} )
+              Live variables: eax_1,  esp in proc _start
+result:    0 *32* eax_1 := -
+result:    0 *v** esp := -
+dest is not lib
+call:   89 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL GetDC(
+              )
+              Reaching definitions: r24=r24{79},   r25=r25{79},   r26=r26{79},   r28=r28{0} - 20,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,   m[r28{0} - 16]=r24{79},
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=0,   m[r28{0} - 28]=0,   m[r28{0} - 32]=500,   m[r28{0} - 36]=640,
+                m[r28{0} - 40]=0x8000,   m[r28{0} - 44]=0x8000,   m[r28{0} - 48]=0x10cf0000,   m[r28{0} - 52]=0x402012,
+                m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,   m[r28{0} - 64]=%pc,   tmp1=r24{79},
+                %flags=LOGICALFLAGS32( r24{79} ),   %ZF=LOGICALFLAGS32( r24{79} ),   %CF=LOGICALFLAGS32( r24{79} )
+              Live variables: eax,  ecx in proc _start
+result:    0 *32* eax := -
+result:    0 *v* ecx := -
+dest is not lib
+call:   94 {*8* al, *8* bl, *32* edx, *v* esp} := CALL proc1(
+              )
+              Reaching definitions: r24=r24{89},   r25=r25{89},   r26=r26{89},   r28=r28{0} - 20,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,   m[r28{0} - 16]=r24{79},
+                m[r28{0} - 20]=%pc,   m[r28{0} - 24]=0,   m[r28{0} - 28]=0,   m[r28{0} - 32]=500,   m[r28{0} - 36]=640,
+                m[r28{0} - 40]=0x8000,   m[r28{0} - 44]=0x8000,   m[r28{0} - 48]=0x10cf0000,   m[r28{0} - 52]=0x402012,
+                m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,   m[r28{0} - 64]=%pc,   tmp1=r24{79},
+                %flags=LOGICALFLAGS32( r24{79} ),   %ZF=LOGICALFLAGS32( r24{79} ),   %CF=LOGICALFLAGS32( r24{79} )
+              Live variables: al,  bl,  edx in proc _start
+result:    0 *8* al := -
+result:    0 *8* bl := -
+result:    0 *32* edx := -
+dest is not lib
+call:   98 <all> := CALL proc2(<all>)
+              Reaching definitions: r8=r8{94},   r11=r11{94},   r24=r24{89},   r25=r25{89},   r26=r26{94},
+                r28=r28{0} - 20,   m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=0x40207a,
+                m[r28{0} - 16]=r24{79},   m[r28{0} - 20]=%pc,   m[r28{0} - 24]=0,   m[r28{0} - 28]=0,
+                m[r28{0} - 32]=500,   m[r28{0} - 36]=640,   m[r28{0} - 40]=0x8000,   m[r28{0} - 44]=0x8000,
+                m[r28{0} - 48]=0x10cf0000,   m[r28{0} - 52]=0x402012,   m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,
+                m[r28{0} - 64]=%pc,   tmp1=r24{79},   %flags=LOGICALFLAGS32( eax_1 ),   %ZF=LOGICALFLAGS32( eax_1 ),
+                %CF=LOGICALFLAGS32( eax_1 )
+              Live variables:  in proc _start
+dest is not lib
+call:  147 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL MessageBoxW(
+                *HWND* local1 := m[esp - 16]
+                *LPCWSTR* local0 := m[esp - 12]
+                *LPCWSTR* local15 := m[esp - 8]
+                *UINT* local16 := m[esp - 4]
+              )
+              Reaching definitions: r24=r24{169},   r25=r25{170},   r26=r26{171},   r28=r28{172} - 20,
+                m[r28{0} - 4]=0x7a120,   m[r28{0} - 8]=0,   m[r28{0} - 12]=m[r28{0} - 12]{185},
+                m[r28{0} - 16]=m[r28{0} - 16]{186},   m[r28{0} - 20]=m[r28{0} - 20]{187},
+                m[r28{0} - 24]=m[r28{0} - 24]{188},   m[r28{0} - 28]=m[r28{0} - 28]{189},
+                m[r28{0} - 32]=m[r28{0} - 32]{190},   m[r28{0} - 36]=m[r28{0} - 36]{191},
+                m[r28{0} - 40]=m[r28{0} - 40]{192},   m[r28{0} - 44]=m[r28{0} - 44]{193},
+                m[r28{0} - 48]=m[r28{0} - 48]{194},   m[r28{0} - 52]=m[r28{0} - 52]{195},
+                m[r28{0} - 56]=m[r28{0} - 56]{196},   m[r28{0} - 60]=m[r28{0} - 60]{197},
+                m[r28{0} - 64]=m[r28{0} - 64]{198},   tmp1=tmp1{173},   %flags=%flags{174},   %ZF=%ZF{175},
+                %CF=%CF{176}
+              Live variables:  in proc _start
+dest is not lib
+call:  155 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL ReleaseDC(
+              )
+              Reaching definitions: 
+              Live variables:  in proc _start
+dest is not lib
+call:  161 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL GlobalFree(
+              )
+              Reaching definitions: 
+              Live variables:  in proc _start
+dest is not lib
+call:  167 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL ExitProcess(
+                *UINT* m[r28 + 4] := m[r28 + 4]
+              )
+              Reaching definitions: 
+              Live variables:  in proc _start

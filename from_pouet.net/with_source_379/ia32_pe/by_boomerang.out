@@ -1,0 +1,50 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+main function not found
+decoding anything undecoded...
+finishing decode...
+found 4 procs
+decompiling...
+decompiling entry point _start
+ considering _start
+  considering proc1
+  decompiling proc1
+  considering proc2
+  decompiling proc2
+  considering proc3
+  decompiling proc3
+ decompiling _start
+rpttglobal type analysis for proc1
+global type analysis for proc2
+global type analysis for proc3
+global type analysis for _start
+tigenerating code...
+WARNING: no out edge for this BB in proc2:
+Invalid BB:
+in edges: 
+out edges: 
+00401020
+
+WARNING: no out edge for this BB in proc3:
+Invalid BB:
+in edges: 
+out edges: 
+00401052
+
+WARNING: no out edge for this BB in _start:
+Call BB:
+in edges: 40131f 
+out edges: 
+00401324  126 <all> := CALL proc2(<all>)
+              Reaching definitions: r0=0,   r8=r8{122},   r11=r11{122},   r24=r24{117},   r25=r25{117},   r26=r26{122},
+                r27=r27{209} - 1,   r28=r28{0} - 20,   r31=r31{37} + 2,   m[r28{0} - 4]=0xf4240,   m[r28{0} - 8]=0,
+                m[r28{0} - 12]=0x4020a4,   m[r28{0} - 16]=r24{107},   m[r28{0} - 20]=%pc,   m[r28{0} - 24]=0,
+                m[r28{0} - 28]=0,   m[r28{0} - 32]=400,   m[r28{0} - 36]=540,   m[r28{0} - 40]=0x8000,
+                m[r28{0} - 44]=0x8000,   m[r28{0} - 48]=0x10cf0000,   m[r28{0} - 52]=0x402012,
+                m[r28{0} - 56]=0x402000,   m[r28{0} - 60]=0,   m[r28{0} - 64]=%pc,   tmp1=r24{107},
+                %flags=LOGICALFLAGS32( eax_1 ),   %ZF=LOGICALFLAGS32( eax_1 ),   %CF=LOGICALFLAGS32( eax_1 )
+              Live variables: 
+
+output written to _output/subject
+completed in some time

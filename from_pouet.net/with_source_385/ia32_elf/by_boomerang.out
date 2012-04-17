@@ -1,0 +1,58 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 5 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering init
+  decompiling init
+  considering FontInit
+  decompiling FontInit
+  considering MikmodInit
+  decompiling MikmodInit
+prtr  considering XPrint
+  decompiling XPrint
+pt decompiling main
+prptttglobal type analysis for main
+tglobal type analysis for init
+global type analysis for FontInit
+global type analysis for MikmodInit
+global type analysis for XPrint
+iigenerating code...
+WARNING: no out edge for this BB in MikmodInit:
+Call BB:
+in edges: 8048c50 
+out edges: 
+08048c55
+08048c58
+08048c5b
+08048c5d   66 {*32* eax, *v* r25, *v* r26} := CALL exit(
+                *i32* local3 := 1
+              )
+              Reaching definitions: r24=r24{54},   r25=r25{54},   r26=r26{54},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=%pc,   m[r28{0} - 20]=r24{41},   m[r28{0} - 24]=0x8048e11,
+                m[r28{0} - 28]=1,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 12, r28{0} - 24 ),   %ZF=(r28{0} - 24) = 0,   %CF=(r28{0} - 12) <u 12
+              Live variables: 
+
+WARNING: no out edge for this BB in MikmodInit:
+Call BB:
+in edges: 8048c9c 
+out edges: 
+08048ca1
+08048ca4
+08048ca7
+08048ca9  122 {*32* eax, *v* r25, *v* r26} := CALL exit(
+                *i32* local3 := 1
+              )
+              Reaching definitions: r24=r24{110},   r25=r25{110},   r26=r26{110},   r28=r28{0} - 32,   r29=r28{0} - 4,
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r24{80},   m[r28{0} - 16]=%pc,   m[r28{0} - 20]=0,
+                m[r28{0} - 24]=r24{99},   m[r28{0} - 28]=1,   m[r28{0} - 32]=%pc,   tmp1=r28{0} - 12,
+                %flags=SUBFLAGS32( r28{0} - 12, 12, r28{0} - 24 ),   %ZF=(r28{0} - 24) = 0,   %CF=(r28{0} - 12) <u 12
+              Live variables: 
+
+output written to _output/subject
+completed in some time

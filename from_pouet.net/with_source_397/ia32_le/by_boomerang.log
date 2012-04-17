@@ -1,0 +1,7 @@
+ERROR: attempted to decode outside any known segment 0x222a0
+finding final parameters for _start
+potential param r24
+found new parameter r24
+potential param tmp1
+potential param r8
+found new parameter r8

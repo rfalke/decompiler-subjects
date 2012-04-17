@@ -1,0 +1,47 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 4 procs
+decompiling...
+decompiling entry point proc4
+ considering proc4
+ decompiling proc4
+ considering proc1
+ decompiling proc1
+ considering proc2
+ decompiling proc2
+ considering proc3
+ decompiling proc3
+global type analysis for proc1
+global type analysis for proc2
+global type analysis for proc3
+global type analysis for proc4
+generating code...
+WARNING: no out edge for this BB in proc1:
+Invalid BB:
+in edges: 
+out edges: 
+64bae7ca
+
+WARNING: no out edge for this BB in proc2:
+Invalid BB:
+in edges: 
+out edges: 
+521fe7ca
+
+WARNING: no out edge for this BB in proc3:
+Invalid BB:
+in edges: 
+out edges: 
+5a20eaa2
+
+WARNING: no out edge for this BB in proc4:
+Invalid BB:
+in edges: 
+out edges: 
+00000000
+
+output written to _output/subject
+completed in some time

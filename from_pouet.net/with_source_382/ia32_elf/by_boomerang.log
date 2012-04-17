@@ -1,0 +1,3 @@
+ERROR: attempted to decode outside any known segment 0x80494a7
+ERROR: attempted to decode outside any known segment 0x80494a7
+finding final parameters for _start

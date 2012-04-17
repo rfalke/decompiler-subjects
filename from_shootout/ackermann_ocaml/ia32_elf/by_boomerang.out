@@ -1,0 +1,238 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 79 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering caml_main
+   considering caml_init_ieee_floats
+   decompiling caml_init_ieee_floats
+   considering caml_init_custom_operations
+    considering caml_register_custom_operations
+     considering caml_stat_alloc
+      considering caml_raise_out_of_memory
+       considering caml_raise
+        considering caml_fatal_uncaught_exception
+         considering caml_format_exception
+          considering add_string
+          decompiling add_string
+          considering add_char
+          decompiling add_char
+         decompiling caml_format_exception
+ptt         considering caml_named_value
+          considering hash_value_name
+          decompiling hash_value_name
+         decompiling caml_named_value
+r         considering caml_callback_exn
+         decompiling caml_callback_exn
+pr         considering caml_print_exception_backtrace
+          considering extract_location_info
+          decompiling extract_location_info
+t         decompiling caml_print_exception_backtrace
+rptt        decompiling caml_fatal_uncaught_exception
+tr        considering caml_raise_exception
+         considering caml_stash_backtrace
+          considering caml_init_frame_descriptors
+           considering caml_register_frametable
+            considering cons
+            considering caml_stat_free
+            decompiling caml_stat_free
+        considering caml_page_table_add
+         considering caml_page_table_modify
+         decompiling caml_page_table_modify
+        decompiling caml_page_table_add
+prt        considering caml_alloc_small
+         considering caml_minor_collection
+          considering caml_empty_minor_heap
+           considering caml_final_empty_young
+           decompiling caml_final_empty_young
+           considering caml_gc_message
+           decompiling caml_gc_message
+           considering caml_oldify_local_roots
+            considering caml_oldify_one
+             considering caml_alloc_shr
+              considering caml_fl_allocate
+               considering allocate_block
+               decompiling allocate_block
+rt              decompiling caml_fl_allocate
+prprrrrpttttttr              considering caml_round_heap_chunk_size
+              decompiling caml_round_heap_chunk_size
+              considering caml_alloc_for_heap
+               considering caml_aligned_malloc
+               decompiling caml_aligned_malloc
+t              decompiling caml_alloc_for_heap
+pr              considering caml_add_to_heap
+              decompiling caml_add_to_heap
+t              considering caml_urge_major_slice
+              decompiling caml_urge_major_slice
+r              considering caml_fatal_error
+              decompiling caml_fatal_error
+              considering caml_fl_add_blocks
+               considering truncate_flp
+               decompiling truncate_flp
+pr              decompiling caml_fl_add_blocks
+rtt              considering caml_free_for_heap
+              decompiling caml_free_for_heap
+r            considering caml_scan_global_young_roots
+             considering caml_iterate_global_roots
+             decompiling caml_iterate_global_roots
+             considering caml_insert_global_root
+            considering caml_final_do_young_roots
+            decompiling caml_final_do_young_roots
+pt           considering caml_oldify_mopup
+          considering caml_major_collection_slice
+           considering start_cycle
+            considering caml_darken_all_roots
+             considering caml_do_roots
+              considering caml_do_local_roots
+              decompiling caml_do_local_roots
+rrptttttr              considering caml_scan_global_roots
+              decompiling caml_scan_global_roots
+              considering caml_final_do_strong_roots
+              decompiling caml_final_do_strong_roots
+rptt          considering caml_final_do_calls
+        considering caml_raise_with_arg
+         considering caml_copy_string
+          considering caml_alloc_string
+           considering caml_check_urgent_gc
+         considering caml_raise_with_string
+          considering caml_raise_constant
+rpprpprprrprrprrprprrrprrprprrprrrprrprrprrprpppptttttttrptttttttttttttttrptttttttttttrtttttpttttttttttttrtttpttttttrttttttttttprrr    decompiling caml_register_custom_operations
+   decompiling caml_init_custom_operations
+   considering caml_init_gc
+    considering norm_heapincr
+    decompiling norm_heapincr
+    considering caml_page_table_initialize
+    decompiling caml_page_table_initialize
+r    considering norm_minsize
+    decompiling norm_minsize
+    considering caml_set_minor_heap_size
+     considering reset_table
+     decompiling reset_table
+     considering caml_page_table_remove
+     decompiling caml_page_table_remove
+ptr    decompiling caml_set_minor_heap_size
+rt    considering norm_pfree
+    decompiling norm_pfree
+    considering norm_pmax
+    decompiling norm_pmax
+    considering caml_init_major_heap
+     considering clip_heap_chunk_size
+     decompiling clip_heap_chunk_size
+     considering caml_fl_init_merge
+     decompiling caml_fl_init_merge
+     considering caml_make_free_blocks
+     decompiling caml_make_free_blocks
+p    decompiling caml_init_major_heap
+t   decompiling caml_init_gc
+pt   considering caml_init_signals
+   decompiling caml_init_signals
+r   considering caml_debugger_init
+   decompiling caml_debugger_init
+  decompiling caml_main
+prr  reconsidering caml_main
+   considering scanmult
+   decompiling scanmult
+rp   considering caml_record_backtrace
+    considering caml_remove_global_root
+     considering caml_delete_global_root
+     decompiling caml_delete_global_root
+rtt    decompiling caml_remove_global_root
+r    considering caml_register_global_root
+    decompiling caml_register_global_root
+   decompiling caml_record_backtrace
+p   considering caml_set_allocation_policy
+   decompiling caml_set_allocation_policy
+r  decompiling caml_main
+rrprtttr  considering caml_sys_exit
+  decompiling caml_sys_exit
+ decompiling main
+global type analysis for main
+global type analysis for caml_main
+ttglobal type analysis for caml_sys_exit
+global type analysis for caml_init_ieee_floats
+global type analysis for caml_init_custom_operations
+global type analysis for caml_init_gc
+global type analysis for caml_page_table_add
+global type analysis for caml_fatal_error
+global type analysis for caml_init_signals
+global type analysis for caml_debugger_init
+global type analysis for caml_page_table_modify
+tglobal type analysis for norm_heapincr
+global type analysis for caml_page_table_initialize
+global type analysis for norm_minsize
+global type analysis for caml_set_minor_heap_size
+global type analysis for norm_pfree
+global type analysis for norm_pmax
+global type analysis for caml_init_major_heap
+tglobal type analysis for caml_gc_message
+global type analysis for caml_register_custom_operations
+global type analysis for clip_heap_chunk_size
+global type analysis for caml_alloc_for_heap
+global type analysis for caml_fl_init_merge
+global type analysis for caml_make_free_blocks
+global type analysis for caml_minor_collection
+global type analysis for caml_aligned_malloc
+global type analysis for caml_raise_out_of_memory
+ttttglobal type analysis for caml_page_table_remove
+global type analysis for reset_table
+global type analysis for caml_stat_alloc
+global type analysis for caml_raise
+ttttglobal type analysis for caml_alloc_small
+global type analysis for caml_raise_with_arg
+ttttglobal type analysis for caml_copy_string
+global type analysis for caml_raise_with_string
+tttglobal type analysis for caml_raise_constant
+ttttglobal type analysis for caml_empty_minor_heap
+global type analysis for caml_major_collection_slice
+global type analysis for caml_final_do_calls
+tglobal type analysis for caml_stat_free
+global type analysis for caml_alloc_string
+global type analysis for caml_callback_exn
+global type analysis for caml_fatal_uncaught_exception
+global type analysis for caml_raise_exception
+tglobal type analysis for start_cycle
+global type analysis for caml_oldify_local_roots
+ttttglobal type analysis for caml_oldify_one
+ttglobal type analysis for caml_oldify_mopup
+global type analysis for caml_final_empty_young
+global type analysis for caml_alloc_shr
+tglobal type analysis for caml_check_urgent_gc
+global type analysis for caml_format_exception
+tglobal type analysis for caml_named_value
+global type analysis for caml_print_exception_backtrace
+global type analysis for hash_value_name
+tglobal type analysis for extract_location_info
+global type analysis for caml_stash_backtrace
+tglobal type analysis for caml_init_frame_descriptors
+tglobal type analysis for caml_scan_global_young_roots
+global type analysis for caml_final_do_young_roots
+global type analysis for caml_iterate_global_roots
+tglobal type analysis for caml_insert_global_root
+global type analysis for caml_darken_all_roots
+global type analysis for caml_fl_allocate
+ttglobal type analysis for caml_round_heap_chunk_size
+global type analysis for caml_urge_major_slice
+global type analysis for caml_fl_add_blocks
+tglobal type analysis for caml_add_to_heap
+global type analysis for caml_free_for_heap
+global type analysis for add_string
+global type analysis for add_char
+global type analysis for caml_register_frametable
+tglobal type analysis for caml_do_roots
+ttglobal type analysis for truncate_flp
+global type analysis for allocate_block
+global type analysis for cons
+global type analysis for caml_do_local_roots
+tttglobal type analysis for caml_scan_global_roots
+global type analysis for caml_final_do_strong_roots
+tglobal type analysis for scanmult
+global type analysis for caml_set_allocation_policy
+global type analysis for caml_record_backtrace
+global type analysis for caml_register_global_root
+global type analysis for caml_remove_global_root
+global type analysis for caml_delete_global_root
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrriiiiboomerang: db/exp.cpp:104: Unary::Unary(OPER, Exp*): Assertion `subExp1' failed.
