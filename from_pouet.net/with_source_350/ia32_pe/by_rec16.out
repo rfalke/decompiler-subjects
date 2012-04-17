@@ -1,0 +1,5 @@
+[?1049h[1;24r(B[m[4l[?7h[?1h=[H[2J./from_pouet.net/with_source_350/ia32_pe/subject.exe is an NT executable of 0x40[2;1H0 (1024) bytes[3dImage base : 0x00400000,  Entry point : 0x00000002[4d0x00010000 - 0x00010200  (    512)  lz32.dll[5d0x00010078 - 0x485441c0  (1213415752)  Import table at offset 0x00000079[6dfbread(121, 1213415752) returned 903
+error: : Success
+0x0001009c - 0x000200f0  (  65620)  Export table at offset 0x0000009d[7dfbread(157, 65620) returned 867
+error: : Success
+Validating strings...[8dFinding references...[9dFinding procedures...[10dDone.[11d[23dTranslation complete - 0 translated statements in some sec.[?1l>[24;1H[?1049l[?1l>
