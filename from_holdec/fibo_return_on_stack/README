@@ -1,0 +1,2 @@
+A normal fibo test program but it returns the value in the parameter instead
+of eax.
