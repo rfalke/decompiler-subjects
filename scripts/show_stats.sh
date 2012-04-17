@@ -2,16 +2,19 @@
 
 set -e
 
-boomerangOk=$(find . -name 'by_boomerang.c' | wc -l)
-boomerangFailed=$(find . -name 'by_boomerang.failed' | wc -l)
+echo "=== Architecture"
+find . -name 'subject.exe' | cut -d'/' -f4 | cut -d_ -f1 | sort | uniq -c 
+echo
 
-rec16Ok=$(find . -name 'by_rec16.c' | wc -l)
-rec16Failed=$(find . -name 'by_rec16.failed' | wc -l)
+echo "=== File formats"
+find . -name 'subject.exe' | cut -d'/' -f4 | cut -d_ -f2 | sort | uniq -c 
+echo
 
-holdecOk=$(find . -name 'by_holdec.c' | wc -l)
-holdecFailed=$(find . -name 'by_holdec.failed' | wc -l)
+printf "=== decompiler | failed | success\n"
 
-printf " decompiler | failed | success\n"
-printf " %10s | %6d | %7d\n" "boomerang" $boomerangFailed $boomerangOk
-printf " %10s | %6d | %7d\n" "rec16" $rec16Failed $rec16Ok
-printf " %10s | %6d | %7d\n" "holdec" $holdecFailed $holdecOk
+for decomp in boomerang rec16 rec4 holdec
+do
+  ok=$(find . -name "by_$decomp.c" | wc -l)
+  failed=$(find . -name "by_$decomp.failed" | wc -l)
+  printf "    %10s | %6d | %7d\n" "$decomp" $failed $ok
+done
