@@ -1,0 +1,74 @@
+Analyzing './from_pouet.net/with_source_382/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+./from_pouet.net/with_source_382/ia32_elf/subject.exe: 0 sections starting at 0x00000000
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
+0 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Resolving indirect jumps...
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Resolving constants and strings...
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Discovering unreached functions...
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Computing call tree...
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Computing calling conventions...
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+Computing Calling Convention: 1/23  0x08048398
+Computing Calling Convention: 2/23  0x080483A8
+Computing Calling Convention: 3/23  0x080483B8
+Computing Calling Convention: 4/23  0x080483C8
+Computing Calling Convention: 5/23  0x080483D8
+Computing Calling Convention: 6/23  0x080483E8
+Computing Calling Convention: 7/23  0x080483F8
+Computing Calling Convention: 8/23  0x08048408
+Computing Calling Convention: 9/23  0x08048418
+Computing Calling Convention: 10/23  0x08048428
+Computing Calling Convention: 11/23  0x08048438
+Computing Calling Convention: 12/23  0x0804844D
+Computing Calling Convention: 13/23  0x0804847F
+Computing Calling Convention: 14/23  0x08048498
+Computing Calling Convention: 15/23  0x080484A2
+Computing Calling Convention: 16/23  0x080484CA
+Computing Calling Convention: 17/23  0x08048613
+Computing Calling Convention: 18/23  0x080486BA
+Computing Calling Convention: 19/23  0x08048775
+Computing Calling Convention: 21/23  0x08048C66
+Computing Calling Convention: xx/3  0x0804938F
+Computing Calling Convention: xx/2  0x0804938F
+Computing Calling Convention: 1/1  0x0804938F
+File analysis complete.
+23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+
+Decompiling 1/23: 0x08048398
+Decompiling 2/23: 0x080483A8
+Decompiling 3/23: 0x080483B8
+Decompiling 4/23: 0x080483C8
+Decompiling 5/23: 0x080483D8
+Decompiling 6/23: 0x080483E8
+Decompiling 7/23: 0x080483F8
+Decompiling 8/23: 0x08048408
+Decompiling 9/23: 0x08048418
+Decompiling 10/23: 0x08048428
+Decompiling 11/23: 0x08048438
+Decompiling 12/23: 0x0804844D
+Decompiling 13/23: 0x0804847F
+Decompiling 14/23: 0x08048498
+Decompiling 15/23: 0x080484A2
+Decompiling 16/23: 0x080484CA
+Decompiling 17/23: 0x08048613
+Decompiling 18/23: 0x080486BA
+Decompiling 19/23: 0x08048775
+Decompiling 20/23: 0x0804881D
+Decompiling 21/23: 0x08048C66
+Decompiling 22/23: 0x08048EBE
+Decompiling 23/23: 0x0804938F
+Decompiling 23/23: 0x0804938F

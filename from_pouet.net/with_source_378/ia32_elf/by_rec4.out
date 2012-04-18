@@ -1,0 +1,96 @@
+Analyzing './from_pouet.net/with_source_378/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+./from_pouet.net/with_source_378/ia32_elf/subject.exe: no .debug_info section
+./from_pouet.net/with_source_378/ia32_elf/subject.exe: 14 sections starting at 0x00001BA0
+./from_pouet.net/with_source_378/ia32_elf/subject.exe: section string table at 0x00001DA8, 0x60 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001BA0: [ 0] 00000000 00000000 00000000 
+00001BC8: [ 1] 080480D4 00000013 000000D4 .interp
+00001BF0: [ 2] 080480E8 00000090 000000E8 .hash
+00001C18: [ 3] 08048178 00000110 00000178 .dynsym
+00001C40: [ 4] 08048288 0000010B 00000288 .dynstr
+00001C68: [ 5] 080483B8 00000030 000003B8 .gnu.version_r
+00001C90: [ 6] 080483E8 00000058 000003E8 .rel.plt
+00001CB8: [ 7] 08048440 000000C0 00000440 .plt
+00001CE0: [ 8] 08048500 00000CF3 00000500 .text
+00001D08: [ 9] 0804A200 00000833 00001200 .data
+00001D30: [10] 0804AA34 000000B8 00001A34 .dynamic
+00001D58: [11] 0804AAEC 00000038 00001AEC .got
+00001D80: [12] 0804AB40 0078BAA0 00001B40 .bss
+00001DA8: [13] 00000000 00000060 00001B40 .shstrtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 4 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 4 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 4 kB covered
+0 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Resolving indirect jumps...
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Resolving constants and strings...
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Discovering unreached functions...
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Computing call tree...
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Computing calling conventions...
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+Computing Calling Convention: 1/20  0x08048450
+Computing Calling Convention: 2/20  0x08048460
+Computing Calling Convention: 3/20  0x08048470
+Computing Calling Convention: 4/20  0x08048480
+Computing Calling Convention: 5/20  0x08048490
+Computing Calling Convention: 6/20  0x080484A0
+Computing Calling Convention: 7/20  0x080484B0
+Computing Calling Convention: 8/20  0x080484C0
+Computing Calling Convention: 9/20  0x080484D0
+Computing Calling Convention: 10/20  0x080484E0
+Computing Calling Convention: 11/20  0x080484F0
+Computing Calling Convention: 14/20  0x0804888C
+Computing Calling Convention: 15/20  0x08048891
+Computing Calling Convention: 16/20  0x0804890C
+Computing Calling Convention: 17/20  0x08048A31
+Computing Calling Convention: 18/20  0x08048B1E
+Computing Calling Convention: 19/20  0x08048E99
+Computing Calling Convention: 20/20  0x080491C0
+Computing Calling Convention: 2/2  0x080487CB
+Computing Calling Convention: 1/1  0x08048714
+File analysis complete.
+20 Procs, 82 Labels, 114 Branches, 0 MB used, 2 / 4 kB covered
+
+Decompiling 1/20: 0x08048450
+Decompiling 2/20: 0x08048460
+Decompiling 3/20: 0x08048470
+Decompiling 4/20: 0x08048480
+Decompiling 5/20: 0x08048490
+Decompiling 6/20: 0x080484A0
+Decompiling 7/20: 0x080484B0
+Decompiling 8/20: 0x080484C0
+Decompiling 9/20: 0x080484D0
+Decompiling 10/20: 0x080484E0
+Decompiling 11/20: 0x080484F0
+Decompiling 12/20: 0x08048714
+Decompiling 13/20: 0x080487CB
+Decompiling 14/20: 0x0804888C
+Decompiling 15/20: 0x08048891
+Decompiling 16/20: 0x0804890C
+Decompiling 17/20: 0x08048A31
+Decompiling 18/20: 0x08048B1E
+Decompiling 19/20: 0x08048E99
+Decompiling 20/20: 0x080491C0
+Decompiling 20/20: 0x080491C0

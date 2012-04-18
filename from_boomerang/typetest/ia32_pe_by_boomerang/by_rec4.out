@@ -1,75 +1,43 @@
 Analyzing './from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe' as a x86 32 PECOFF binary file.
 
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-Elapsed time: 0 sec.
 Matching signatures...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Separating code and data...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 0 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 0 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 0 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Resolving indirect jumps...
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Resolving constants and strings...
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Discovering unreached functions...
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Computing call tree...
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Computing calling conventions...
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/6  0x00401B9C
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/6  0x00401BE0
-Elapsed time: 1 sec.
 Computing Calling Convention: 4/6  0x00401BF6
-Elapsed time: 1 sec.
 Computing Calling Convention: 6/6  0x00401C60
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/2  0x00401BB0
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/2  0x00401BFC
-Elapsed time: 1 sec.
 File analysis complete.
 6 Procs, 30 Labels, 36 Branches, 0 MB used, 0 / 3 kB covered
-Elapsed time: 1 sec.
 
 Decompiling 1/6: 0x00401B9C
-Elapsed time: 0 sec.
 Decompiling 2/6: 0x00401BB0
-Elapsed time: 0 sec.
 Decompiling 3/6: 0x00401BE0
-Elapsed time: 0 sec.
 Decompiling 4/6: 0x00401BF6
-Elapsed time: 0 sec.
 Decompiling 5/6: 0x00401BFC
-Elapsed time: 0 sec.
 Decompiling 6/6: 0x00401C60
-Elapsed time: 0 sec.
 Decompiling 6/6: 0x00401C60
-Elapsed time: 0 sec.

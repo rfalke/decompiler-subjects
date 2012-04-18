@@ -1,0 +1,127 @@
+Analyzing './from_pouet.net/with_source_383/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+./from_pouet.net/with_source_383/ia32_elf/subject.exe: 0 sections starting at 0x00000000
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 8 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 8 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 8 kB covered
+0 Procs, 265 Labels, 330 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 265 Labels, 330 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 265 Labels, 330 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 265 Labels, 330 Branches, 0 MB used, 5 / 8 kB covered
+Resolving indirect jumps...
+45 Procs, 265 Labels, 330 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 0 Labels, 0 Branches, 0 MB used, 5 / 8 kB covered
+Separating code and data...
+45 Procs, 0 Labels, 0 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Resolving indirect jumps...
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Resolving constants and strings...
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Discovering unreached functions...
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Computing call tree...
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Computing calling conventions...
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+Computing Calling Convention: 1/45  0x080486FC
+Computing Calling Convention: 2/45  0x0804870C
+Computing Calling Convention: 3/45  0x0804871C
+Computing Calling Convention: 4/45  0x0804872C
+Computing Calling Convention: 5/45  0x0804873C
+Computing Calling Convention: 6/45  0x0804874C
+Computing Calling Convention: 7/45  0x0804875C
+Computing Calling Convention: 8/45  0x0804876C
+Computing Calling Convention: 9/45  0x0804877C
+Computing Calling Convention: 10/45  0x0804878C
+Computing Calling Convention: 11/45  0x0804879C
+Computing Calling Convention: 12/45  0x080487AC
+Computing Calling Convention: 13/45  0x080487BC
+Computing Calling Convention: 14/45  0x080487CC
+Computing Calling Convention: 15/45  0x080487DC
+Computing Calling Convention: 16/45  0x080487EC
+Computing Calling Convention: 17/45  0x080487FC
+Computing Calling Convention: 18/45  0x0804880C
+Computing Calling Convention: 19/45  0x0804881C
+Computing Calling Convention: 20/45  0x0804882C
+Computing Calling Convention: 21/45  0x0804883C
+Computing Calling Convention: 22/45  0x0804884C
+Computing Calling Convention: 23/45  0x0804885C
+Computing Calling Convention: 24/45  0x0804886C
+Computing Calling Convention: 25/45  0x0804887C
+Computing Calling Convention: 26/45  0x0804888C
+Computing Calling Convention: 27/45  0x0804889C
+Computing Calling Convention: 28/45  0x080488AC
+Computing Calling Convention: 29/45  0x080488CC
+Computing Calling Convention: 30/45  0x08048903
+Computing Calling Convention: 31/45  0x080489C3
+Computing Calling Convention: 32/45  0x08048AA8
+Computing Calling Convention: 33/45  0x08048B68
+Computing Calling Convention: 34/45  0x08048BE1
+Computing Calling Convention: 35/45  0x08048C24
+Computing Calling Convention: 36/45  0x08048C67
+Computing Calling Convention: 37/45  0x08048EB5
+Computing Calling Convention: 38/45  0x080490D5
+Computing Calling Convention: 39/45  0x080492D1
+Computing Calling Convention: 40/45  0x08049330
+Computing Calling Convention: 41/45  0x08049363
+Computing Calling Convention: 42/45  0x0804937F
+Computing Calling Convention: 43/45  0x08049394
+Computing Calling Convention: 44/45  0x08049444
+Computing Calling Convention: 45/45  0x0804993D
+File analysis complete.
+45 Procs, 279 Labels, 343 Branches, 0 MB used, 5 / 8 kB covered
+
+Decompiling 1/45: 0x080486FC
+Decompiling 2/45: 0x0804870C
+Decompiling 3/45: 0x0804871C
+Decompiling 4/45: 0x0804872C
+Decompiling 5/45: 0x0804873C
+Decompiling 6/45: 0x0804874C
+Decompiling 7/45: 0x0804875C
+Decompiling 8/45: 0x0804876C
+Decompiling 9/45: 0x0804877C
+Decompiling 10/45: 0x0804878C
+Decompiling 11/45: 0x0804879C
+Decompiling 12/45: 0x080487AC
+Decompiling 13/45: 0x080487BC
+Decompiling 14/45: 0x080487CC
+Decompiling 15/45: 0x080487DC
+Decompiling 16/45: 0x080487EC
+Decompiling 17/45: 0x080487FC
+Decompiling 18/45: 0x0804880C
+Decompiling 19/45: 0x0804881C
+Decompiling 20/45: 0x0804882C
+Decompiling 21/45: 0x0804883C
+Decompiling 22/45: 0x0804884C
+Decompiling 23/45: 0x0804885C
+Decompiling 24/45: 0x0804886C
+Decompiling 25/45: 0x0804887C
+Decompiling 26/45: 0x0804888C
+Decompiling 27/45: 0x0804889C
+Decompiling 28/45: 0x080488AC
+Decompiling 29/45: 0x080488CC
+Decompiling 30/45: 0x08048903
+Decompiling 31/45: 0x080489C3
+Decompiling 32/45: 0x08048AA8
+Decompiling 33/45: 0x08048B68
+Decompiling 34/45: 0x08048BE1
+Decompiling 35/45: 0x08048C24
+Decompiling 36/45: 0x08048C67
+Decompiling 37/45: 0x08048EB5
+Decompiling 38/45: 0x080490D5
+Decompiling 39/45: 0x080492D1
+Decompiling 40/45: 0x08049330
+Decompiling 41/45: 0x08049363
+Decompiling 42/45: 0x0804937F
+Decompiling 43/45: 0x08049394
+Decompiling 44/45: 0x08049444
+Decompiling 45/45: 0x0804993D
+Decompiling 45/45: 0x0804993D

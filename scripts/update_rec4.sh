@@ -14,9 +14,9 @@ find . -name subject.exe | sort | grep -v ppc_macho | grep -v hppa | while read 
 do
   dir=$(dirname $line)
   dir=`pwd`/$dir
-  echo -n "decompiling $line"
+  /bin/echo -n "decompiling $line"
   rm -f $dir/by_rec4.c $dir/by_rec4.failed $dir/by_rec4.out
-  if $RECBINDIR/RecStudio4CLI "$line" "$dir/by_rec4.c" > "$dir/by_rec4.out" 2>&1 ; then
+  if $RECBINDIR/RecStudio4CLI "$line" "$dir/by_rec4.c" > "$dir/by_rec4.outRaw" 2>&1 ; then
       if test -f "$dir/by_rec4.c"; then
 	  echo "  ok"
       else
@@ -27,6 +27,8 @@ do
       echo "  failed"
       touch $dir/by_rec4.failed
   fi
+  grep -v "Elapsed time" <"$dir/by_rec4.outRaw" >"$dir/by_rec4.out"
+  rm "$dir/by_rec4.outRaw"
 done
 
 find . -name by_rec4.failed -print

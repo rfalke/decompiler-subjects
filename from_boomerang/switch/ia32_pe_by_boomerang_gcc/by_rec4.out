@@ -1,411 +1,212 @@
 Analyzing './from_boomerang/switch/ia32_pe_by_boomerang_gcc/subject.exe' as a x86 32 PECOFF binary file.
 
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-Elapsed time: 0 sec.
 Matching signatures...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 Separating code and data...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 29 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 29 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 30 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 31 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 32 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 33 Labels, 24 Branches, 0 MB used, 0 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 89 Labels, 75 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 113 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 114 Labels, 90 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 116 Labels, 91 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 116 Labels, 91 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 116 Labels, 91 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 118 Labels, 92 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 120 Labels, 93 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 122 Labels, 94 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 124 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 126 Labels, 96 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 128 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 129 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 0 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Resolving indirect jumps...
 20 Procs, 130 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 0 Labels, 0 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Separating code and data...
 20 Procs, 0 Labels, 0 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 29 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 29 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 30 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 31 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 32 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 33 Labels, 24 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 89 Labels, 75 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 119 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 120 Labels, 95 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 122 Labels, 96 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 122 Labels, 96 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 122 Labels, 96 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 124 Labels, 97 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 126 Labels, 98 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 128 Labels, 99 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 130 Labels, 100 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 132 Labels, 101 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 134 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 135 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Resolving indirect jumps...
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Resolving constants and strings...
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Discovering unreached functions...
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Computing call tree...
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Computing calling conventions...
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/20  0x00401160
-Elapsed time: 1 sec.
 Computing Calling Convention: 5/20  0x00401440
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/20  0x004014D0
-Elapsed time: 1 sec.
 Computing Calling Convention: 8/20  0x004014E0
-Elapsed time: 1 sec.
 Computing Calling Convention: 9/20  0x004014F0
-Elapsed time: 1 sec.
 Computing Calling Convention: 10/20  0x00401500
-Elapsed time: 1 sec.
 Computing Calling Convention: 11/20  0x00401510
-Elapsed time: 1 sec.
 Computing Calling Convention: 12/20  0x00401520
-Elapsed time: 1 sec.
 Computing Calling Convention: 14/20  0x00401670
-Elapsed time: 1 sec.
 Computing Calling Convention: 15/20  0x004016B0
-Elapsed time: 1 sec.
 Computing Calling Convention: 16/20  0x00401740
-Elapsed time: 1 sec.
 Computing Calling Convention: 17/20  0x00401750
-Elapsed time: 1 sec.
 Computing Calling Convention: 18/20  0x00401760
-Elapsed time: 1 sec.
 Computing Calling Convention: 19/20  0x00401770
-Elapsed time: 1 sec.
 Computing Calling Convention: 20/20  0x00401780
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/5  0x00401080
-Elapsed time: 1 sec.
 Computing Calling Convention: 5/5  0x00401530
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/3  0x00401470
-Elapsed time: 1 sec.
 Computing Calling Convention: xx/2  0x004013A0
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/1  0x004013A0
-Elapsed time: 1 sec.
 File analysis complete.
 20 Procs, 136 Labels, 102 Branches, 0 MB used, 1 / 2 kB covered
-Elapsed time: 1 sec.
 
 Decompiling 1/20: 0x00401080
-Elapsed time: 0 sec.
 Decompiling 2/20: 0x00401160
-Elapsed time: 0 sec.
 Decompiling 3/20: 0x00401310
-Elapsed time: 0 sec.
 Decompiling 4/20: 0x004013A0
-Elapsed time: 0 sec.
 Decompiling 5/20: 0x00401440
-Elapsed time: 0 sec.
 Decompiling 6/20: 0x00401470
-Elapsed time: 0 sec.
 Decompiling 7/20: 0x004014D0
-Elapsed time: 0 sec.
 Decompiling 8/20: 0x004014E0
-Elapsed time: 0 sec.
 Decompiling 9/20: 0x004014F0
-Elapsed time: 0 sec.
 Decompiling 10/20: 0x00401500
-Elapsed time: 0 sec.
 Decompiling 11/20: 0x00401510
-Elapsed time: 0 sec.
 Decompiling 12/20: 0x00401520
-Elapsed time: 0 sec.
 Decompiling 13/20: 0x00401530
-Elapsed time: 0 sec.
 Decompiling 14/20: 0x00401670
-Elapsed time: 0 sec.
 Decompiling 15/20: 0x004016B0
-Elapsed time: 0 sec.
 Decompiling 16/20: 0x00401740
-Elapsed time: 0 sec.
 Decompiling 17/20: 0x00401750
-Elapsed time: 0 sec.
 Decompiling 18/20: 0x00401760
-Elapsed time: 0 sec.
 Decompiling 19/20: 0x00401770
-Elapsed time: 0 sec.
 Decompiling 20/20: 0x00401780
-Elapsed time: 0 sec.
 Decompiling 20/20: 0x00401780
-Elapsed time: 0 sec.

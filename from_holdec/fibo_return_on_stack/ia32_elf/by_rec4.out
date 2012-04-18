@@ -1,0 +1,160 @@
+Analyzing './from_holdec/fibo_return_on_stack/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+./from_holdec/fibo_return_on_stack/ia32_elf/subject.exe: 34 sections starting at 0x00000A3C
+./from_holdec/fibo_return_on_stack/ia32_elf/subject.exe: section string table at 0x00000F14, 0x131 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000A3C: [ 0] 00000000 00000000 00000000 
+00000A64: [ 1] 08048134 00000013 00000134 .interp
+00000A8C: [ 2] 08048148 00000020 00000148 .note.ABI-tag
+00000AB4: [ 3] 08048168 00000024 00000168 .note.gnu.build-id
+00000ADC: [ 4] 0804818C 00000020 0000018C .gnu.hash
+00000B04: [ 5] 080481AC 00000060 000001AC .dynsym
+00000B2C: [ 6] 0804820C 00000065 0000020C .dynstr
+00000B54: [ 7] 08048272 0000000C 00000272 .gnu.version
+00000B7C: [ 8] 08048280 00000030 00000280 .gnu.version_r
+00000BA4: [ 9] 080482B0 00000008 000002B0 .rel.dyn
+00000BCC: [10] 080482B8 00000020 000002B8 .rel.plt
+00000BF4: [11] 080482D8 00000030 000002D8 .init
+00000C1C: [12] 08048308 00000050 00000308 .plt
+00000C44: [13] 08048360 0000025C 00000360 .text
+00000C6C: [14] 080485BC 0000001C 000005BC .fini
+00000C94: [15] 080485D8 00000035 000005D8 .rodata
+00000CBC: [16] 08048610 00000024 00000610 .eh_frame_hdr
+00000CE4: [17] 08048634 0000007C 00000634 .eh_frame
+00000D0C: [18] 080496B0 00000008 000006B0 .ctors
+00000D34: [19] 080496B8 00000008 000006B8 .dtors
+00000D5C: [20] 080496C0 00000004 000006C0 .jcr
+00000D84: [21] 080496C4 000000C8 000006C4 .dynamic
+00000DAC: [22] 0804978C 00000004 0000078C .got
+00000DD4: [23] 08049790 0000001C 00000790 .got.plt
+00000DFC: [24] 080497AC 00000004 000007AC .data
+00000E24: [25] 080497B0 00000008 000007B0 .bss
+00000E4C: [26] 00000000 0000002C 000007B0 .comment
+00000E74: [27] 00000000 00000020 000007E0 .debug_aranges
+00000E9C: [28] 00000000 00000072 00000800 .debug_info
+00000EC4: [29] 00000000 00000014 00000872 .debug_abbrev
+00000EEC: [30] 00000000 00000084 00000886 .debug_line
+00000F14: [31] 00000000 00000131 0000090A .shstrtab
+00000F3C: [32] 00000000 00000490 00000F8C .symtab
+00000F64: [33] 00000000 00000256 0000141C .strtab
+Internal error: Dwarf-2 current offset: 0x6B0
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 17 Labels, 15 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 17 Labels, 15 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 26 Labels, 22 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 27 Labels, 22 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 27 Labels, 22 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 32 Labels, 27 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 35 Labels, 31 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 36 Labels, 33 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 41 Labels, 41 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 43 Labels, 42 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 49 Labels, 49 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 49 Labels, 49 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 49 Labels, 49 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 52 Labels, 52 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 61 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 62 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 63 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Resolving indirect jumps...
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Resolving constants and strings...
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Discovering unreached functions...
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Computing call tree...
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Computing calling conventions...
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+Computing Calling Convention: 3/19  0x08048318
+Computing Calling Convention: 4/19  0x08048328
+Computing Calling Convention: 5/19  0x08048338
+Computing Calling Convention: 6/19  0x08048348
+Computing Calling Convention: 7/19  0x08048360
+Computing Calling Convention: 8/19  0x08048390
+Computing Calling Convention: 9/19  0x080483F0
+Computing Calling Convention: 14/19  0x08048520
+Computing Calling Convention: 16/19  0x0804858A
+Computing Calling Convention: 17/19  0x08048590
+Computing Calling Convention: 19/19  0x080485C8
+Computing Calling Convention: 2/8  0x080482E4
+Computing Calling Convention: 8/8  0x080485BC
+Computing Calling Convention: 1/6  0x080482D8
+Computing Calling Convention: 6/6  0x08048530
+Computing Calling Convention: xx/4  0x0804849E
+Computing Calling Convention: xx/3  0x0804849E
+Computing Calling Convention: 1/2  0x08048488
+Computing Calling Convention: 2/2  0x0804849E
+File analysis complete.
+19 Procs, 64 Labels, 58 Branches, 0 MB used, 0 / 1 kB covered
+
+Decompiling 1/19: 0x080482D8
+Decompiling 2/19: 0x080482E4
+Decompiling 3/19: 0x08048318
+Decompiling 4/19: 0x08048328
+Decompiling 5/19: 0x08048338
+Decompiling 6/19: 0x08048348
+Decompiling 7/19: 0x08048360
+Decompiling 8/19: 0x08048390
+Decompiling 9/19: 0x080483F0
+Decompiling 10/19: 0x08048414
+Decompiling 11/19: 0x0804844D
+Decompiling 12/19: 0x08048488
+Decompiling 13/19: 0x0804849E
+Decompiling 14/19: 0x08048520
+Decompiling 15/19: 0x08048530
+Decompiling 16/19: 0x0804858A
+Decompiling 17/19: 0x08048590
+Decompiling 18/19: 0x080485BC
+Decompiling 19/19: 0x080485C8
+Decompiling 19/19: 0x080485C8

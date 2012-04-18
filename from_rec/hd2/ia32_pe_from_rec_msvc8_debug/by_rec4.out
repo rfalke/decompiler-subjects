@@ -1,341 +1,179 @@
 Analyzing './from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe' as a x86 32 PECOFF binary file.
 
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-Elapsed time: 0 sec.
 Matching signatures...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 14 kB covered
-Elapsed time: 1 sec.
 Separating code and data...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 0 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Resolving indirect jumps...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Resolving constants and strings...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Discovering unreached functions...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Computing call tree...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Computing calling conventions...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/29  0x0041103C
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/29  0x00411055
-Elapsed time: 1 sec.
 Computing Calling Convention: 5/29  0x004110AA
-Elapsed time: 1 sec.
 Computing Calling Convention: 6/29  0x004110B9
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/29  0x004110BE
-Elapsed time: 1 sec.
 Computing Calling Convention: 9/29  0x004110C8
-Elapsed time: 1 sec.
 Computing Calling Convention: 10/29  0x004110E1
-Elapsed time: 1 sec.
 Computing Calling Convention: 12/29  0x004110FF
-Elapsed time: 1 sec.
 Computing Calling Convention: 13/29  0x00411104
-Elapsed time: 1 sec.
 Computing Calling Convention: 14/29  0x0041111D
-Elapsed time: 1 sec.
 Computing Calling Convention: 19/29  0x0041119F
-Elapsed time: 1 sec.
 Computing Calling Convention: 20/29  0x004111A9
-Elapsed time: 1 sec.
 Computing Calling Convention: 22/29  0x004111FE
-Elapsed time: 1 sec.
 Computing Calling Convention: 23/29  0x00411203
-Elapsed time: 1 sec.
 Computing Calling Convention: 26/29  0x004122D0
-Elapsed time: 1 sec.
 Computing Calling Convention: 28/29  0x00412680
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/13  0x00411023
-Elapsed time: 1 sec.
 Computing Calling Convention: 13/13  0x00413770
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/11  0x00411190
-Elapsed time: 1 sec.
 Computing Calling Convention: 11/11  0x004123F0
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/9  0x004110F0
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/9  0x004111E0
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/7  0x00411096
-Elapsed time: 1 sec.
 Computing Calling Convention: 4/7  0x00411168
-Elapsed time: 1 sec.
 Computing Calling Convention: 6/7  0x00411860
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/4  0x004110C3
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/4  0x00411163
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/4  0x0041116D
-Elapsed time: 1 sec.
 Computing Calling Convention: 4/4  0x00411D70
-Elapsed time: 1 sec.
 Separating code and data...
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 324 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 325 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 326 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 327 Labels, 345 Branches, 0 MB used, 4 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 342 Labels, 366 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 362 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 362 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 362 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 362 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 362 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 29 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Resolving indirect jumps...
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Resolving constants and strings...
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Discovering unreached functions...
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Computing call tree...
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Computing calling conventions...
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/30  0x0041103C
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/30  0x00411055
-Elapsed time: 1 sec.
 Computing Calling Convention: 5/30  0x004110AA
-Elapsed time: 1 sec.
 Computing Calling Convention: 6/30  0x004110B9
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/30  0x004110BE
-Elapsed time: 1 sec.
 Computing Calling Convention: 9/30  0x004110C8
-Elapsed time: 1 sec.
 Computing Calling Convention: 10/30  0x004110E1
-Elapsed time: 1 sec.
 Computing Calling Convention: 12/30  0x004110FF
-Elapsed time: 1 sec.
 Computing Calling Convention: 13/30  0x00411104
-Elapsed time: 1 sec.
 Computing Calling Convention: 14/30  0x0041111D
-Elapsed time: 1 sec.
 Computing Calling Convention: 19/30  0x0041119F
-Elapsed time: 1 sec.
 Computing Calling Convention: 20/30  0x004111A9
-Elapsed time: 1 sec.
 Computing Calling Convention: 22/30  0x004111FE
-Elapsed time: 1 sec.
 Computing Calling Convention: 23/30  0x00411203
-Elapsed time: 1 sec.
 Computing Calling Convention: 26/30  0x004122D0
-Elapsed time: 1 sec.
 Computing Calling Convention: 28/30  0x00412680
-Elapsed time: 1 sec.
 Computing Calling Convention: 29/30  0x00412A10
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/13  0x00411023
-Elapsed time: 1 sec.
 Computing Calling Convention: 13/13  0x00413770
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/11  0x00411190
-Elapsed time: 1 sec.
 Computing Calling Convention: 11/11  0x004123F0
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/9  0x004110F0
-Elapsed time: 1 sec.
 Computing Calling Convention: 7/9  0x004111E0
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/7  0x00411096
-Elapsed time: 1 sec.
 Computing Calling Convention: 4/7  0x00411168
-Elapsed time: 1 sec.
 Computing Calling Convention: 6/7  0x00411860
-Elapsed time: 1 sec.
 Computing Calling Convention: 1/4  0x004110C3
-Elapsed time: 1 sec.
 Computing Calling Convention: 2/4  0x00411163
-Elapsed time: 1 sec.
 Computing Calling Convention: 3/4  0x0041116D
-Elapsed time: 1 sec.
 Computing Calling Convention: 4/4  0x00411D70
-Elapsed time: 1 sec.
 File analysis complete.
 30 Procs, 363 Labels, 379 Branches, 0 MB used, 5 / 14 kB covered
-Elapsed time: 1 sec.
 
 Decompiling 1/30: 0x00411023
-Elapsed time: 0 sec.
 Decompiling 2/30: 0x0041103C
-Elapsed time: 0 sec.
 Decompiling 3/30: 0x00411055
-Elapsed time: 0 sec.
 Decompiling 4/30: 0x00411096
-Elapsed time: 0 sec.
 Decompiling 5/30: 0x004110AA
-Elapsed time: 0 sec.
 Decompiling 6/30: 0x004110B9
-Elapsed time: 0 sec.
 Decompiling 7/30: 0x004110BE
-Elapsed time: 0 sec.
 Decompiling 8/30: 0x004110C3
-Elapsed time: 0 sec.
 Decompiling 9/30: 0x004110C8
-Elapsed time: 0 sec.
 Decompiling 10/30: 0x004110E1
-Elapsed time: 0 sec.
 Decompiling 11/30: 0x004110F0
-Elapsed time: 0 sec.
 Decompiling 12/30: 0x004110FF
-Elapsed time: 0 sec.
 Decompiling 13/30: 0x00411104
-Elapsed time: 0 sec.
 Decompiling 14/30: 0x0041111D
-Elapsed time: 0 sec.
 Decompiling 15/30: 0x00411163
-Elapsed time: 0 sec.
 Decompiling 16/30: 0x00411168
-Elapsed time: 0 sec.
 Decompiling 17/30: 0x0041116D
-Elapsed time: 0 sec.
 Decompiling 18/30: 0x00411190
-Elapsed time: 0 sec.
 Decompiling 19/30: 0x0041119F
-Elapsed time: 0 sec.
 Decompiling 20/30: 0x004111A9
-Elapsed time: 0 sec.
 Decompiling 21/30: 0x004111E0
-Elapsed time: 0 sec.
 Decompiling 22/30: 0x004111FE
-Elapsed time: 0 sec.
 Decompiling 23/30: 0x00411203
-Elapsed time: 0 sec.
 Decompiling 24/30: 0x00411860
-Elapsed time: 0 sec.
 Decompiling 25/30: 0x00411D70
-Elapsed time: 0 sec.
 Decompiling 26/30: 0x004122D0
-Elapsed time: 0 sec.
 Decompiling 27/30: 0x004123F0
-Elapsed time: 0 sec.
 Decompiling 28/30: 0x00412680
-Elapsed time: 0 sec.
 Decompiling 29/30: 0x00412A10
-Elapsed time: 0 sec.
 Decompiling 30/30: 0x00413770
-Elapsed time: 0 sec.
 Decompiling 30/30: 0x00413770
-Elapsed time: 0 sec.

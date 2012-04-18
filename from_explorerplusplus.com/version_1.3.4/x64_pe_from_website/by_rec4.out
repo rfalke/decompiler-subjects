@@ -1,37 +1,24 @@
 Analyzing './from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe' as a x86_64 32 PECOFF binary file.
 
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-Elapsed time: 0 sec.
 Matching signatures...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Separating code and data...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Resolving indirect jumps...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Resolving constants and strings...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Discovering unreached functions...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Computing call tree...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 Computing calling conventions...
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 File analysis complete.
 0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-Elapsed time: 0 sec.
 
-»u¦ÿ
-Elapsed time: 0 sec.
+
