@@ -1,0 +1,75 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 5 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering copy1_four_times
+  decompiling copy1_four_times
+  considering copy1_eight_times
+  decompiling copy1_eight_times
+  considering copy2_four_times
+  decompiling copy2_four_times
+r  considering copy2_eight_times
+  decompiling copy2_eight_times
+rp  reconsidering copy2_eight_times
+  decompiling copy2_eight_times
+rttr decompiling main
+pglobal type analysis for main
+global type analysis for copy1_four_times
+global type analysis for copy1_eight_times
+global type analysis for copy2_four_times
+global type analysis for copy2_eight_times
+iiigenerating code...
+WARNING: no out edge for this BB in main:
+Call BB:
+in edges: 804872c 
+out edges: 
+08048731
+08048735
+0804873d
+08048741
+08048745
+08048749
+0804874c   30 <all> := CALL copy1_four_times(<all>)
+              Reaching definitions: r24=r24{20},   r25=r25{20},   r26=r26{20},   r28=r28{0} - 40,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[esp + 4]{0},   m[r28{0} + 8]=m[esp + 8]{0},   m[r28{0} + 12]=m[esp + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r24{20},   m[r28{0} - 12]=r24{13},   m[r28{0} - 16]=200,
+                m[r28{0} - 28]=100,   m[r28{0} - 32]=r24{13},   m[r28{0} - 36]=r24{20},   m[r28{0} - 40]=%pc,
+                tmp1=r28{0} - 4,   %flags=SUBFLAGS32( esp - 4, 32, esp - 36 ),   %ZF=(esp - 36) = 0,
+                %CF= *u32*esp - 4 <u 32
+              Live variables: 
+
+WARNING: no out edge for this BB in copy1_four_times:
+Invalid BB:
+in edges: 
+out edges: 
+00000000
+080483f4
+080483f5
+080483f7
+080483fa
+080483fd
+08048400
+08048403
+08048405
+
+WARNING: no out edge for this BB in copy1_eight_times:
+Invalid BB:
+in edges: 
+out edges: 
+00000000
+08048498
+08048499
+0804849b
+0804849e
+080484a1
+080484a4
+080484a7
+080484a9
+
+output written to _output/subject
+completed in some time

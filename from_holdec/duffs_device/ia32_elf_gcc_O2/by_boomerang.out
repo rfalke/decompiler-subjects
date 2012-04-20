@@ -1,0 +1,79 @@
+Boomerang alpha 0.3.1 09/Sep/2006
+loading...
+decoding entry point...
+decoding anything undecoded...
+finishing decode...
+found 5 procs
+decompiling...
+decompiling entry point main
+ considering main
+  considering copy1_four_times
+  decompiling copy1_four_times
+  considering copy1_eight_times
+  decompiling copy1_eight_times
+  considering copy2_four_times
+  decompiling copy2_four_times
+r  considering copy2_eight_times
+  decompiling copy2_eight_times
+p  reconsidering copy2_eight_times
+  decompiling copy2_eight_times
+r decompiling main
+ptglobal type analysis for main
+global type analysis for copy1_four_times
+global type analysis for copy1_eight_times
+global type analysis for copy2_four_times
+global type analysis for copy2_eight_times
+riigenerating code...
+WARNING: no out edge for this BB in main:
+Call BB:
+in edges: 8048670 
+out edges: 
+08048675
+08048679
+08048681
+08048683
+08048686   29 <all> := CALL copy1_four_times(<all>)
+              Reaching definitions: r24=r24{21},   r25=r25{21},   r26=r26{21},   r28=r28{0} - 40,   r29=r28{0} - 4,
+                r30=r24{15},   r31=r24{21},   m[r28{0} + 4]=m[esp + 4]{0},   m[r28{0} + 8]=m[esp + 8]{0},
+                m[r28{0} + 12]=m[esp + 12]{0},   m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r31{0},   m[r28{0} - 12]=r30{0},
+                m[r28{0} - 28]=100,   m[r28{0} - 32]=r24{15},   m[r28{0} - 36]=r24{21},   m[r28{0} - 40]=%pc,
+                tmp1=r28{0} - 12,   %flags=SUBFLAGS32( esp - 12, 24, esp - 36 ),   %ZF=(esp - 36) = 0,
+                %CF= *u32*esp - 12 <u 24
+              Live variables: 
+
+WARNING: no out edge for this BB in copy1_four_times:
+Invalid BB:
+in edges: 
+out edges: 
+00000000
+080483d0
+080483d1
+080483d3
+080483d6
+080483d7
+080483da
+080483db
+080483de
+080483e0
+080483e3
+080483e6
+
+WARNING: no out edge for this BB in copy1_eight_times:
+Invalid BB:
+in edges: 
+out edges: 
+00000000
+08048470
+08048471
+08048473
+08048476
+08048477
+0804847a
+0804847b
+0804847e
+08048480
+08048483
+08048486
+
+output written to _output/subject
+completed in some time

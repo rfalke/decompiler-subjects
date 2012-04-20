@@ -1,0 +1,132 @@
+Unknown library function __libc_start_main
+got filename source.c for main
+got filename source.c for copy1_four_times
+got filename source.c for copy1_eight_times
+got filename source.c for copy2_four_times
+got filename source.c for copy2_eight_times
+Unknown library function memcmp
+COMPUTED JUMP at 0x804863d, pDest = r24
+after removing matching assigns (t[WILDSTR]).
+in proc copy1_four_times adding addrExp r28{0} - 4 to local table
+finding final parameters for copy1_four_times
+after removing matching assigns (t[WILDSTR]).
+in proc copy1_eight_times adding addrExp r28{0} - 4 to local table
+finding final parameters for copy1_eight_times
+after removing matching assigns (%pc).
+in proc copy2_four_times adding addrExp r28{0} - 4 to local table
+finding final parameters for copy2_four_times
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param r2
+found new parameter r2
+potential param r24
+found new parameter r24
+potential param r26
+found new parameter r26
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+after removing matching assigns (%pc).
+=== about to restart decompilation of copy2_eight_times because indirect jumps or calls have been analysed
+
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure copy2_eight_times ###
+in proc copy2_eight_times adding addrExp r28{0} - 4 to local table
+finding final parameters for copy2_eight_times
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+finding final parameters for copy2_eight_times
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+after removing matching assigns (t[WILDSTR]).
+after removing matching assigns (%pc).
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 16 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 12 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+in proc main adding addrExp r28{0} - 28 to local table
+in proc main adding addrExp r28{0} - 32 to local table
+in proc main adding addrExp r28{0} - 36 to local table
+in proc main adding addrExp r28{0} - 40 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure main ###
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+in proc main adding addrExp r28 to local table
+finding final parameters for copy2_four_times
+potential param r28
+found new parameter r28
+potential param m[r28{0} + 12]
+found new parameter m[r28{0} + 12]
+potential param m[r28{0} + 4]
+found new parameter m[r28{0} + 4]
+potential param m[r28{0} + 8]
+found new parameter m[r28{0} + 8]
+local esp has type unsigned int that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:   13 {*32* eax_1, *v* ecx, *v* edx, *v* esp} := CALL malloc(
+                *size_t* local0 := 200
+              )
+              Reaching definitions: r24=200,   r28=r28{0} - 40,   r29=r28{0} - 4,   m[r28{0} + 4]=m[r28{0} + 4]{0},
+                m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 16]=200,   m[r28{0} - 36]=200,   m[r28{0} - 40]=%pc,   tmp1=r28{0} - 4,
+                %flags=SUBFLAGS32( r28{0} - 4, 32, r28{0} - 36 ),   %ZF=(r28{0} - 36) = 0,   %CF=(r28{0} - 4) <u 32
+              Live variables: eax_1 in proc main
+result:    0 *32* eax_1 := -
+dest is not lib
+call:   20 {*32* eax, *v* ecx, *v* edx, *v* esp} := CALL malloc(
+                *size_t* local0 := 200
+              )
+              Reaching definitions: r24=200,   r25=r25{13},   r26=r26{13},   r28=r28{0} - 40,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[r28{0} + 4]{0},   m[r28{0} + 8]=m[r28{0} + 8]{0},   m[r28{0} + 12]=m[r28{0} + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 12]=r24{13},   m[r28{0} - 16]=200,   m[r28{0} - 36]=200,
+                m[r28{0} - 40]=%pc,   tmp1=r28{0} - 4,   %flags=SUBFLAGS32( r28{0} - 4, 32, r28{0} - 36 ),
+                %ZF=(r28{0} - 36) = 0,   %CF=(r28{0} - 4) <u 32
+              Live variables: eax,  ecx,  edx in proc main
+result:    0 *32* eax := -
+result:    0 *v* ecx := -
+result:    0 *v* edx := -
+dest is not lib
+call:   30 <all> := CALL copy1_four_times(<all>)
+              Reaching definitions: r24=r24{20},   r25=r25{20},   r26=r26{20},   r28=r28{0} - 40,   r29=r28{0} - 4,
+                m[r28{0} + 4]=m[esp + 4]{0},   m[r28{0} + 8]=m[esp + 8]{0},   m[r28{0} + 12]=m[esp + 12]{0},
+                m[r28{0} - 4]=r29{0},   m[r28{0} - 8]=r24{20},   m[r28{0} - 12]=r24{13},   m[r28{0} - 16]=200,
+                m[r28{0} - 28]=100,   m[r28{0} - 32]=r24{13},   m[r28{0} - 36]=r24{20},   m[r28{0} - 40]=%pc,
+                tmp1=r28{0} - 4,   %flags=SUBFLAGS32( esp - 4, 32, esp - 36 ),   %ZF=(esp - 36) = 0,
+                %CF= *u32*esp - 4 <u 32
+              Live variables:  in proc main

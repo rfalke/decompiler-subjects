@@ -18,7 +18,7 @@ _init()
     esp = esp - 4;
     L08048280();
     (restore)ebx;
-    if(*(ebx + 13220 + -4) != 0) {
+    if(*(ebx + 61652 + -4) != 0) {
         L080482B4();
     }
     frame_dummy();
@@ -37,8 +37,8 @@ L080482A4()
 
 
 
-    (save) *L0804B628;
-    goto ( *L0804b62c);
+    (save) *L08057358;
+    goto ( *L0805735c);
     *eax = *eax + al;
     *eax = *eax + al;
 }
@@ -55,7 +55,7 @@ L080482B4()
 
 
 
-    goto ( *L0804b630);
+    goto ( *L08057360);
     (save)0;
     goto L080482A4;
 }
@@ -72,7 +72,7 @@ L080482C4()
 
 
 
-    goto ( *L0804b634);
+    goto ( *L08057364);
     (save)8;
     goto L080482A4;
 }
@@ -176,35 +176,22 @@ L08048393()
 
 }
 
-/*	Procedure: 0x08048394 - 0x08048396
+/*	Procedure: 0x08048394 - 0x0804839B
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-bswap()
+bswap_plain()
 {
 
 
 
     asm("bswap eax");
+    return(0);
 }
 
-/*	Procedure: 0x08048397 - 0x08048399
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-bswap_constant()
-{
-
-
-
-    asm("bswap eax");
-}
-
-/*	Procedure: 0x0804839A - 0x080483FA
+/*	Procedure: 0x0804839C - 0x0804848C
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -215,6 +202,8 @@ bswap_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -222,7 +211,7 @@ bswap_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("bswap eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -231,38 +220,203 @@ bswap_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080483FB - 0x080483FE
+stack space not deallocated on return
+/*	Procedure: 0x0804848D - 0x08048572
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg1()
+bswap_constant_simple()
 {
 
 
 
-    asm("cmpxchg bl,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("bswap eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080483FF - 0x08048402
+stack space not deallocated on return
+/*	Procedure: 0x08048573 - 0x08048658
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg1_constant()
+bswap_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("bswap eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048659 - 0x0804873F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+bswap_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("bswap eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048740 - 0x08048748
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg1_plain()
 {
 
 
 
     asm("cmpxchg bl,al");
+    return(0);
 }
 
-/*	Procedure: 0x08048403 - 0x08048464
+/*	Procedure: 0x08048749 - 0x0804883A
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -273,6 +427,8 @@ cmpxchg1_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -280,7 +436,7 @@ cmpxchg1_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg bl,al");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -289,38 +445,203 @@ cmpxchg1_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048465 - 0x08048469
+stack space not deallocated on return
+/*	Procedure: 0x0804883B - 0x08048921
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg2()
+cmpxchg1_constant_simple()
 {
 
 
 
-    asm("cmpxchg bx,ax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804846A - 0x0804846E
+stack space not deallocated on return
+/*	Procedure: 0x08048922 - 0x08048A08
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg2_constant()
+cmpxchg1_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048A09 - 0x08048AF0
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg1_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048AF1 - 0x08048AFA
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg2_plain()
 {
 
 
 
     asm("cmpxchg bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x0804846F - 0x080484D1
+/*	Procedure: 0x08048AFB - 0x08048BED
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -331,6 +652,8 @@ cmpxchg2_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -338,7 +661,7 @@ cmpxchg2_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg bx,ax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -347,38 +670,203 @@ cmpxchg2_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080484D2 - 0x080484D5
+stack space not deallocated on return
+/*	Procedure: 0x08048BEE - 0x08048CD5
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg3()
+cmpxchg2_constant_simple()
 {
 
 
 
-    asm("cmpxchg ebx,eax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080484D6 - 0x080484D9
+stack space not deallocated on return
+/*	Procedure: 0x08048CD6 - 0x08048DBD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg3_constant()
+cmpxchg2_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048DBE - 0x08048EA6
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg2_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08048EA7 - 0x08048EAF
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg3_plain()
 {
 
 
 
     asm("cmpxchg ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x080484DA - 0x0804853B
+/*	Procedure: 0x08048EB0 - 0x08048FA1
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -389,6 +877,8 @@ cmpxchg3_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -396,7 +886,7 @@ cmpxchg3_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg ebx,eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -405,38 +895,203 @@ cmpxchg3_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804853C - 0x0804853F
+stack space not deallocated on return
+/*	Procedure: 0x08048FA2 - 0x08049088
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg4()
+cmpxchg3_constant_simple()
 {
 
 
 
-    asm("cmpxchg [ebx],eax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048540 - 0x08048543
+stack space not deallocated on return
+/*	Procedure: 0x08049089 - 0x0804916F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg4_constant()
+cmpxchg3_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049170 - 0x08049257
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg3_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049258 - 0x08049260
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg4_plain()
 {
 
 
 
     asm("cmpxchg [ebx],eax");
+    return(0);
 }
 
-/*	Procedure: 0x08048544 - 0x080485A5
+/*	Procedure: 0x08049261 - 0x08049352
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -447,6 +1102,8 @@ cmpxchg4_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -454,7 +1111,7 @@ cmpxchg4_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -463,38 +1120,203 @@ cmpxchg4_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080485A6 - 0x080485A9
+stack space not deallocated on return
+/*	Procedure: 0x08049353 - 0x08049439
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg5()
+cmpxchg4_constant_simple()
 {
 
 
 
-    asm("cmpxchg al,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080485AA - 0x080485AD
+stack space not deallocated on return
+/*	Procedure: 0x0804943A - 0x08049520
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg5_constant()
+cmpxchg4_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049521 - 0x08049608
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg4_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049609 - 0x08049611
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg5_plain()
 {
 
 
 
     asm("cmpxchg al,al");
+    return(0);
 }
 
-/*	Procedure: 0x080485AE - 0x0804860F
+/*	Procedure: 0x08049612 - 0x08049703
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -505,6 +1327,8 @@ cmpxchg5_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -512,7 +1336,7 @@ cmpxchg5_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -521,57 +1345,52 @@ cmpxchg5_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048610 - 0x08048614
+stack space not deallocated on return
+/*	Procedure: 0x08049704 - 0x080497EA
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg1_locked()
+cmpxchg5_constant_simple()
 {
 
 
 
-    asm("lock cmpxchg bl,al");
-}
-
-/*	Procedure: 0x08048615 - 0x08048619
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg1_locked_constant()
-{
-
-
-
-    asm("lock cmpxchg bl,al");
-}
-
-/*	Procedure: 0x0804861A - 0x0804867C
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg1_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock cmpxchg bl,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -579,57 +1398,52 @@ cmpxchg1_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804867D - 0x08048682
+stack space not deallocated on return
+/*	Procedure: 0x080497EB - 0x080498D1
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg2_locked()
+cmpxchg5_constant_complex1()
 {
 
 
 
-    asm("lock cmpxchg bx,ax");
-}
-
-/*	Procedure: 0x08048683 - 0x08048688
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg2_locked_constant()
-{
-
-
-
-    asm("lock cmpxchg bx,ax");
-}
-
-/*	Procedure: 0x08048689 - 0x080486EC
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg2_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock cmpxchg bx,ax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -637,57 +1451,51 @@ cmpxchg2_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080486ED - 0x080486F1
+/*	Procedure: 0x080498D2 - 0x080499B9
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg3_locked()
+cmpxchg5_constant_complex2()
 {
 
 
 
-    asm("lock cmpxchg ebx,eax");
-}
-
-/*	Procedure: 0x080486F2 - 0x080486F6
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg3_locked_constant()
-{
-
-
-
-    asm("lock cmpxchg ebx,eax");
-}
-
-/*	Procedure: 0x080486F7 - 0x08048759
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg3_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock cmpxchg ebx,eax");
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -695,48 +1503,57 @@ cmpxchg3_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804875A - 0x0804875E
+/*	Procedure: 0x080499BA - 0x080499C3
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg4_locked()
+cmpxchg_locked_plain()
 {
 
 
 
     asm("lock cmpxchg [ebx],eax");
+    return(0);
 }
 
-/*	Procedure: 0x0804875F - 0x08048763
+/*	Procedure: 0x080499C4 - 0x08049AB6
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg4_locked_constant()
+cmpxchg_locked_allregs()
 {
 
 
 
-    asm("lock cmpxchg [ebx],eax");
-}
-
-/*	Procedure: 0x08048764 - 0x080487C6
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg4_locked_allregs()
-{
-
-
-
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -744,7 +1561,7 @@ cmpxchg4_locked_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("lock cmpxchg [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -753,57 +1570,52 @@ cmpxchg4_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080487C7 - 0x080487CB
+stack space not deallocated on return
+/*	Procedure: 0x08049AB7 - 0x08049B9E
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg5_locked()
+cmpxchg_locked_constant_simple()
 {
 
 
 
-    asm("lock cmpxchg al,al");
-}
-
-/*	Procedure: 0x080487CC - 0x080487D0
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg5_locked_constant()
-{
-
-
-
-    asm("lock cmpxchg al,al");
-}
-
-/*	Procedure: 0x080487D1 - 0x08048833
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg5_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock cmpxchg al,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("lock cmpxchg [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -811,38 +1623,150 @@ cmpxchg5_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048834 - 0x08048836
+stack space not deallocated on return
+/*	Procedure: 0x08049B9F - 0x08049C86
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cpuid()
+cmpxchg_locked_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("lock cmpxchg [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049C87 - 0x08049D6F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg_locked_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("lock cmpxchg [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x08049D70 - 0x08049D77
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cpuid_plain()
 {
 
 
 
     asm("cpuid");
+    return(0);
 }
 
-/*	Procedure: 0x08048837 - 0x08048839
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cpuid_constant()
-{
-
-
-
-    asm("cpuid");
-}
-
-/*	Procedure: 0x0804883A - 0x0804889A
+/*	Procedure: 0x08049D78 - 0x08049E68
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -853,6 +1777,8 @@ cpuid_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -860,7 +1786,7 @@ cpuid_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cpuid");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -869,38 +1795,203 @@ cpuid_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804889B - 0x0804889D
+stack space not deallocated on return
+/*	Procedure: 0x08049E69 - 0x08049F4E
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-invd()
+cpuid_constant_simple()
 {
 
 
 
-    asm("invd");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cpuid");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804889E - 0x080488A0
+stack space not deallocated on return
+/*	Procedure: 0x08049F4F - 0x0804A034
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-invd_constant()
+cpuid_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cpuid");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A035 - 0x0804A11B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cpuid_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cpuid");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A11C - 0x0804A123
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+invd_plain()
 {
 
 
 
     asm("invd");
+    return(0);
 }
 
-/*	Procedure: 0x080488A1 - 0x08048901
+/*	Procedure: 0x0804A124 - 0x0804A214
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -911,6 +2002,8 @@ invd_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -918,7 +2011,7 @@ invd_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("invd");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -927,38 +2020,203 @@ invd_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048902 - 0x08048905
+stack space not deallocated on return
+/*	Procedure: 0x0804A215 - 0x0804A2FA
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-invlpg()
+invd_constant_simple()
 {
 
 
 
-    asm("invlpg [eax]");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("invd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048906 - 0x08048909
+stack space not deallocated on return
+/*	Procedure: 0x0804A2FB - 0x0804A3E0
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-invlpg_constant()
+invd_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("invd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A3E1 - 0x0804A4C7
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+invd_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("invd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A4C8 - 0x0804A4D0
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+invlpg_plain()
 {
 
 
 
     asm("invlpg [eax]");
+    return(0);
 }
 
-/*	Procedure: 0x0804890A - 0x0804896B
+/*	Procedure: 0x0804A4D1 - 0x0804A5C2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -969,6 +2227,8 @@ invlpg_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -976,7 +2236,7 @@ invlpg_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("invlpg [eax]");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -985,38 +2245,203 @@ invlpg_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804896C - 0x0804896E
+stack space not deallocated on return
+/*	Procedure: 0x0804A5C3 - 0x0804A6A9
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-wbinvd()
+invlpg_constant_simple()
 {
 
 
 
-    asm("wbinvd");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("invlpg [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804896F - 0x08048971
+stack space not deallocated on return
+/*	Procedure: 0x0804A6AA - 0x0804A790
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-wbinvd_constant()
+invlpg_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("invlpg [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A791 - 0x0804A878
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+invlpg_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("invlpg [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804A879 - 0x0804A880
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+wbinvd_plain()
 {
 
 
 
     asm("wbinvd");
+    return(0);
 }
 
-/*	Procedure: 0x08048972 - 0x080489D2
+/*	Procedure: 0x0804A881 - 0x0804A971
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1027,6 +2452,8 @@ wbinvd_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1034,7 +2461,7 @@ wbinvd_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("wbinvd");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1043,38 +2470,203 @@ wbinvd_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080489D3 - 0x080489D6
+stack space not deallocated on return
+/*	Procedure: 0x0804A972 - 0x0804AA57
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd1()
+wbinvd_constant_simple()
 {
 
 
 
-    asm("xadd bl,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("wbinvd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080489D7 - 0x080489DA
+stack space not deallocated on return
+/*	Procedure: 0x0804AA58 - 0x0804AB3D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd1_constant()
+wbinvd_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("wbinvd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804AB3E - 0x0804AC24
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+wbinvd_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("wbinvd");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804AC25 - 0x0804AC2D
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd1_plain()
 {
 
 
 
     asm("xadd bl,al");
+    return(0);
 }
 
-/*	Procedure: 0x080489DB - 0x08048A3C
+/*	Procedure: 0x0804AC2E - 0x0804AD1F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1085,6 +2677,8 @@ xadd1_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1092,7 +2686,7 @@ xadd1_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("xadd bl,al");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1101,38 +2695,203 @@ xadd1_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048A3D - 0x08048A41
+stack space not deallocated on return
+/*	Procedure: 0x0804AD20 - 0x0804AE06
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd2()
+xadd1_constant_simple()
 {
 
 
 
-    asm("xadd bx,ax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("xadd bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048A42 - 0x08048A46
+stack space not deallocated on return
+/*	Procedure: 0x0804AE07 - 0x0804AEED
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd2_constant()
+xadd1_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("xadd bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804AEEE - 0x0804AFD5
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd1_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("xadd bl,al");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804AFD6 - 0x0804AFDF
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd2_plain()
 {
 
 
 
     asm("xadd bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08048A47 - 0x08048AA9
+/*	Procedure: 0x0804AFE0 - 0x0804B0D2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1143,6 +2902,8 @@ xadd2_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1150,7 +2911,7 @@ xadd2_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("xadd bx,ax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1159,38 +2920,203 @@ xadd2_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048AAA - 0x08048AAD
+stack space not deallocated on return
+/*	Procedure: 0x0804B0D3 - 0x0804B1BA
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd3()
+xadd2_constant_simple()
 {
 
 
 
-    asm("xadd ebx,eax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("xadd bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048AAE - 0x08048AB1
+stack space not deallocated on return
+/*	Procedure: 0x0804B1BB - 0x0804B2A2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd3_constant()
+xadd2_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("xadd bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804B2A3 - 0x0804B38B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd2_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("xadd bx,ax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804B38C - 0x0804B394
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd3_plain()
 {
 
 
 
     asm("xadd ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08048AB2 - 0x08048B13
+/*	Procedure: 0x0804B395 - 0x0804B486
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1201,6 +3127,8 @@ xadd3_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1208,7 +3136,7 @@ xadd3_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("xadd ebx,eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1217,38 +3145,203 @@ xadd3_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048B14 - 0x08048B17
+stack space not deallocated on return
+/*	Procedure: 0x0804B487 - 0x0804B56D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd4()
+xadd3_constant_simple()
 {
 
 
 
-    asm("xadd [ebx],eax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("xadd ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048B18 - 0x08048B1B
+stack space not deallocated on return
+/*	Procedure: 0x0804B56E - 0x0804B654
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd4_constant()
+xadd3_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("xadd ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804B655 - 0x0804B73C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd3_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("xadd ebx,eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804B73D - 0x0804B745
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd4_plain()
 {
 
 
 
     asm("xadd [ebx],eax");
+    return(0);
 }
 
-/*	Procedure: 0x08048B1C - 0x08048B7D
+/*	Procedure: 0x0804B746 - 0x0804B837
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1259,6 +3352,8 @@ xadd4_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1266,7 +3361,7 @@ xadd4_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("xadd [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1275,38 +3370,203 @@ xadd4_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048B7E - 0x08048B81
+stack space not deallocated on return
+/*	Procedure: 0x0804B838 - 0x0804B91E
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd5()
+xadd4_constant_simple()
 {
 
 
 
-    asm("xadd al,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("xadd [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048B82 - 0x08048B85
+stack space not deallocated on return
+/*	Procedure: 0x0804B91F - 0x0804BA05
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd5_constant()
+xadd4_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("xadd [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804BA06 - 0x0804BAED
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd4_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("xadd [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804BAEE - 0x0804BAF6
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd5_plain()
 {
 
 
 
     asm("xadd al,al");
+    return(0);
 }
 
-/*	Procedure: 0x08048B86 - 0x08048BE7
+/*	Procedure: 0x0804BAF7 - 0x0804BBE8
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1317,6 +3577,8 @@ xadd5_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1324,7 +3586,7 @@ xadd5_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("xadd al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1333,57 +3595,52 @@ xadd5_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048BE8 - 0x08048BEC
+stack space not deallocated on return
+/*	Procedure: 0x0804BBE9 - 0x0804BCCF
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd1_locked()
+xadd5_constant_simple()
 {
 
 
 
-    asm("lock xadd bl,al");
-}
-
-/*	Procedure: 0x08048BED - 0x08048BF1
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd1_locked_constant()
-{
-
-
-
-    asm("lock xadd bl,al");
-}
-
-/*	Procedure: 0x08048BF2 - 0x08048C54
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd1_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock xadd bl,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("xadd al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -1391,57 +3648,52 @@ xadd1_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048C55 - 0x08048C5A
+stack space not deallocated on return
+/*	Procedure: 0x0804BCD0 - 0x0804BDB6
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd2_locked()
+xadd5_constant_complex1()
 {
 
 
 
-    asm("lock xadd bx,ax");
-}
-
-/*	Procedure: 0x08048C5B - 0x08048C60
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd2_locked_constant()
-{
-
-
-
-    asm("lock xadd bx,ax");
-}
-
-/*	Procedure: 0x08048C61 - 0x08048CC4
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd2_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock xadd bx,ax");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("xadd al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -1449,57 +3701,51 @@ xadd2_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048CC5 - 0x08048CC9
+/*	Procedure: 0x0804BDB7 - 0x0804BE9E
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd3_locked()
+xadd5_constant_complex2()
 {
 
 
 
-    asm("lock xadd ebx,eax");
-}
-
-/*	Procedure: 0x08048CCA - 0x08048CCE
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd3_locked_constant()
-{
-
-
-
-    asm("lock xadd ebx,eax");
-}
-
-/*	Procedure: 0x08048CCF - 0x08048D31
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd3_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock xadd ebx,eax");
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("xadd al,al");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -1507,48 +3753,57 @@ xadd3_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048D32 - 0x08048D36
+/*	Procedure: 0x0804BE9F - 0x0804BEA8
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd4_locked()
+xadd_locked_plain()
 {
 
 
 
     asm("lock xadd [ebx],eax");
+    return(0);
 }
 
-/*	Procedure: 0x08048D37 - 0x08048D3B
+/*	Procedure: 0x0804BEA9 - 0x0804BF9B
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd4_locked_constant()
+xadd_locked_allregs()
 {
 
 
 
-    asm("lock xadd [ebx],eax");
-}
-
-/*	Procedure: 0x08048D3C - 0x08048D9E
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd4_locked_allregs()
-{
-
-
-
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1556,7 +3811,7 @@ xadd4_locked_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("lock xadd [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1565,57 +3820,52 @@ xadd4_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048D9F - 0x08048DA3
+stack space not deallocated on return
+/*	Procedure: 0x0804BF9C - 0x0804C083
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-xadd5_locked()
+xadd_locked_constant_simple()
 {
 
 
 
-    asm("lock xadd al,al");
-}
-
-/*	Procedure: 0x08048DA4 - 0x08048DA8
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd5_locked_constant()
-{
-
-
-
-    asm("lock xadd al,al");
-}
-
-/*	Procedure: 0x08048DA9 - 0x08048E0B
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-xadd5_locked_allregs()
-{
-
-
-
-    eax = *L00001000;
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    asm("lock xadd al,al");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("lock xadd [ebx],eax");
     *L00002000 = eax;
     *L00002004 = ebx;
     *L00002008 = ecx;
@@ -1623,38 +3873,150 @@ xadd5_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048E0C - 0x08048E0F
+stack space not deallocated on return
+/*	Procedure: 0x0804C084 - 0x0804C16B
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg8b()
+xadd_locked_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("lock xadd [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C16C - 0x0804C254
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+xadd_locked_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("lock xadd [ebx],eax");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C255 - 0x0804C25D
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg8b_plain()
 {
 
 
 
     asm("cmpxchg8b [eax]");
+    return(0);
 }
 
-/*	Procedure: 0x08048E10 - 0x08048E13
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmpxchg8b_constant()
-{
-
-
-
-    asm("cmpxchg8b [eax]");
-}
-
-/*	Procedure: 0x08048E14 - 0x08048E75
+/*	Procedure: 0x0804C25E - 0x0804C34F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1665,6 +4027,8 @@ cmpxchg8b_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1672,7 +4036,7 @@ cmpxchg8b_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmpxchg8b [eax]");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1681,38 +4045,203 @@ cmpxchg8b_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048E76 - 0x08048E7A
+stack space not deallocated on return
+/*	Procedure: 0x0804C350 - 0x0804C436
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg8b_locked()
+cmpxchg8b_constant_simple()
 {
 
 
 
-    asm("lock cmpxchg8b [eax]");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048E7B - 0x08048E7F
+stack space not deallocated on return
+/*	Procedure: 0x0804C437 - 0x0804C51D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmpxchg8b_locked_constant()
+cmpxchg8b_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C51E - 0x0804C605
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg8b_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C606 - 0x0804C60F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg8b_locked_plain()
 {
 
 
 
     asm("lock cmpxchg8b [eax]");
+    return(0);
 }
 
-/*	Procedure: 0x08048E80 - 0x08048EE2
+/*	Procedure: 0x0804C610 - 0x0804C702
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1723,6 +4252,8 @@ cmpxchg8b_locked_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1730,7 +4261,7 @@ cmpxchg8b_locked_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("lock cmpxchg8b [eax]");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1739,38 +4270,203 @@ cmpxchg8b_locked_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048EE3 - 0x08048EE5
+stack space not deallocated on return
+/*	Procedure: 0x0804C703 - 0x0804C7EA
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-rdtsc()
+cmpxchg8b_locked_constant_simple()
 {
 
 
 
-    asm("rdtsc");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("lock cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048EE6 - 0x08048EE8
+stack space not deallocated on return
+/*	Procedure: 0x0804C7EB - 0x0804C8D2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-rdtsc_constant()
+cmpxchg8b_locked_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("lock cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C8D3 - 0x0804C9BB
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmpxchg8b_locked_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("lock cmpxchg8b [eax]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804C9BC - 0x0804C9C3
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+rdtsc_plain()
 {
 
 
 
     asm("rdtsc");
+    return(0);
 }
 
-/*	Procedure: 0x08048EE9 - 0x08048F49
+/*	Procedure: 0x0804C9C4 - 0x0804CAB4
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1781,6 +4477,8 @@ rdtsc_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1788,7 +4486,7 @@ rdtsc_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("rdtsc");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1797,38 +4495,203 @@ rdtsc_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048F4A - 0x08048F4C
+stack space not deallocated on return
+/*	Procedure: 0x0804CAB5 - 0x0804CB9A
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-rdmsr()
+rdtsc_constant_simple()
 {
 
 
 
-    asm("rdmsr");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("rdtsc");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048F4D - 0x08048F4F
+stack space not deallocated on return
+/*	Procedure: 0x0804CB9B - 0x0804CC80
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-rdmsr_constant()
+rdtsc_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("rdtsc");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804CC81 - 0x0804CD67
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+rdtsc_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("rdtsc");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804CD68 - 0x0804CD6F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+rdmsr_plain()
 {
 
 
 
     asm("rdmsr");
+    return(0);
 }
 
-/*	Procedure: 0x08048F50 - 0x08048FB0
+/*	Procedure: 0x0804CD70 - 0x0804CE60
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1839,6 +4702,8 @@ rdmsr_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1846,7 +4711,7 @@ rdmsr_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("rdmsr");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1855,38 +4720,203 @@ rdmsr_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048FB1 - 0x08048FB3
+stack space not deallocated on return
+/*	Procedure: 0x0804CE61 - 0x0804CF46
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-wrmsr()
+rdmsr_constant_simple()
 {
 
 
 
-    asm("wrmsr");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("rdmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08048FB4 - 0x08048FB6
+stack space not deallocated on return
+/*	Procedure: 0x0804CF47 - 0x0804D02C
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-wrmsr_constant()
+rdmsr_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("rdmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D02D - 0x0804D113
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+rdmsr_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("rdmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D114 - 0x0804D11B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+wrmsr_plain()
 {
 
 
 
     asm("wrmsr");
+    return(0);
 }
 
-/*	Procedure: 0x08048FB7 - 0x08049017
+/*	Procedure: 0x0804D11C - 0x0804D20C
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1897,6 +4927,8 @@ wrmsr_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1904,7 +4936,7 @@ wrmsr_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("wrmsr");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1913,38 +4945,203 @@ wrmsr_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08049018 - 0x0804901C
+stack space not deallocated on return
+/*	Procedure: 0x0804D20D - 0x0804D2F2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov1()
+wrmsr_constant_simple()
 {
 
 
 
-    asm("cmova ax,bx");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("wrmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804901D - 0x08049021
+stack space not deallocated on return
+/*	Procedure: 0x0804D2F3 - 0x0804D3D8
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov1_constant()
+wrmsr_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("wrmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D3D9 - 0x0804D4BF
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+wrmsr_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("wrmsr");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D4C0 - 0x0804D4C9
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov1_plain()
 {
 
 
 
     asm("cmova ax,bx");
+    return(0);
 }
 
-/*	Procedure: 0x08049022 - 0x08049084
+/*	Procedure: 0x0804D4CA - 0x0804D5BC
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -1955,6 +5152,8 @@ cmov1_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -1962,7 +5161,7 @@ cmov1_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmova ax,bx");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -1971,38 +5170,203 @@ cmov1_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08049085 - 0x08049089
+stack space not deallocated on return
+/*	Procedure: 0x0804D5BD - 0x0804D6A4
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov2()
+cmov1_constant_simple()
 {
 
 
 
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
     asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x0804908A - 0x0804908E
+stack space not deallocated on return
+/*	Procedure: 0x0804D6A5 - 0x0804D78C
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov2_constant()
+cmov1_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D78D - 0x0804D875
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov1_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804D876 - 0x0804D87F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov2_plain()
 {
 
 
 
     asm("cmova ax,bx");
+    return(0);
 }
 
-/*	Procedure: 0x0804908F - 0x080490F1
+/*	Procedure: 0x0804D880 - 0x0804D972
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2013,6 +5377,8 @@ cmov2_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -2020,7 +5386,7 @@ cmov2_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmova ax,bx");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -2029,38 +5395,203 @@ cmov2_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080490F2 - 0x080490F7
+stack space not deallocated on return
+/*	Procedure: 0x0804D973 - 0x0804DA5A
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov3()
+cmov2_constant_simple()
 {
 
 
 
-    asm("cmova ax,[ebx+0xc]");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080490F8 - 0x080490FD
+stack space not deallocated on return
+/*	Procedure: 0x0804DA5B - 0x0804DB42
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov3_constant()
+cmov2_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804DB43 - 0x0804DC2B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov2_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmova ax,bx");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804DC2C - 0x0804DC36
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov3_plain()
 {
 
 
 
     asm("cmova ax,[ebx+0xc]");
+    return(0);
 }
 
-/*	Procedure: 0x080490FE - 0x08049161
+/*	Procedure: 0x0804DC37 - 0x0804DD2A
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2071,6 +5602,8 @@ cmov3_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -2078,7 +5611,7 @@ cmov3_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmova ax,[ebx+0xc]");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -2087,38 +5620,203 @@ cmov3_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08049162 - 0x08049166
+stack space not deallocated on return
+/*	Procedure: 0x0804DD2B - 0x0804DE13
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov4()
+cmov3_constant_simple()
 {
 
 
 
-    asm("cmova eax,[ebx+0x22]");
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmova ax,[ebx+0xc]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x08049167 - 0x0804916B
+stack space not deallocated on return
+/*	Procedure: 0x0804DE14 - 0x0804DEFC
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov4_constant()
+cmov3_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmova ax,[ebx+0xc]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804DEFD - 0x0804DFE6
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov3_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmova ax,[ebx+0xc]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804DFE7 - 0x0804DFF0
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov4_plain()
 {
 
 
 
     asm("cmova eax,[ebx+0x22]");
+    return(0);
 }
 
-/*	Procedure: 0x0804916C - 0x080491CE
+/*	Procedure: 0x0804DFF1 - 0x0804E0E3
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2129,6 +5827,8 @@ cmov4_allregs()
 
 
 
+    (save) *L00001100;
+    asm("popfw");
     eax = *L00001000;
     ebx = *L00001004;
     ecx = *L00001008;
@@ -2136,7 +5836,7 @@ cmov4_allregs()
     ebp = *L00001010;
     esi = *L00001014;
     edi = *L00001018;
-    esp = *L0000101C;
+    *L00002050 = esp;
     asm("cmova eax,[ebx+0x22]");
     *L00002000 = eax;
     *L00002004 = ebx;
@@ -2145,40 +5845,204 @@ cmov4_allregs()
     *L00002010 = ebp;
     *L00002014 = esi;
     *L00002018 = edi;
-    *L0000201C = esp;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
 }
 
-/*	Procedure: 0x080491CF - 0x080491D5
+stack space not deallocated on return
+/*	Procedure: 0x0804E0E4 - 0x0804E1CB
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_0()
+cmov4_constant_simple()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = 2;
+    ebx = 3;
+    ecx = 4;
+    edx = 4;
+    ebp = 5;
+    esi = 6;
+    edi = 7;
+    *L00002050 = esp;
+    asm("cmova eax,[ebx+0x22]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804E1CC - 0x0804E2B3
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov4_constant_complex1()
+{
+
+
+
+    asm("o16 push +0x0");
+    asm("popfw");
+    eax = -1548650108;
+    ebx = 107420375;
+    ecx = 1181241928;
+    edx = 958682820;
+    ebp = -1131847516;
+    esi = -1388565128;
+    edi = -463085230;
+    *L00002050 = esp;
+    asm("cmova eax,[ebx+0x22]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804E2B4 - 0x0804E39C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov4_constant_complex2()
+{
+
+
+
+    (save)65279;
+    asm("popfw");
+    eax = 826196200;
+    ebx = 1231978947;
+    ecx = 507473074;
+    edx = 1315513779;
+    ebp = 1328621072;
+    esi = 792175781;
+    edi = -1851189324;
+    *L00002050 = esp;
+    asm("cmova eax,[ebx+0x22]");
+    *L00002000 = eax;
+    *L00002004 = ebx;
+    *L00002008 = ecx;
+    *L0000200C = edx;
+    *L00002010 = ebp;
+    *L00002014 = esi;
+    *L00002018 = edi;
+    *L00002200 ? : ;
+    *L00002201 ? : ;
+    asm("setc [0x2202]");
+    asm("setnc [0x2203]");
+    *L00002204 ? : ;
+    *L00002205 ? : ;
+    asm("setna [0x2206]");
+    *L00002207 ? : ;
+    *L00002208 ? : ;
+    *L00002209 ? : ;
+    asm("setpe [0x220a]");
+    asm("setpo [0x220b]");
+    *L0000220C ? : ;
+    asm("setnl [0x220d]");
+    asm("setng [0x220e]");
+    *L0000220F ? : ;
+    asm("pushfw");
+    (restore)ax;
+    *L00002100 = ax;
+    *L00002020 = *L00002050 - esp;
+    return(0);
+}
+
+/*	Procedure: 0x0804E39D - 0x0804E3A8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_0_plain()
 {
 
 
 
     al :: 2;
     asm("cmovo bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080491D6 - 0x080491DC
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_0_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovo bx,ax");
-}
-
-/*	Procedure: 0x080491DD - 0x08049241
+/*	Procedure: 0x0804E3A9 - 0x0804E49D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2189,56 +6053,66 @@ cmov_w_with_code_0_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovo bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049242 - 0x08049248
+stack space not deallocated on return
+/*	Procedure: 0x0804E49E - 0x0804E587
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_1()
+cmov_w_with_code_0_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804E588 - 0x0804E671
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_0_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804E672 - 0x0804E75C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_0_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804E75D - 0x0804E768
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_1_plain()
 {
 
 
 
     al :: 2;
     asm("cmovno bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049249 - 0x0804924F
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_1_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovno bx,ax");
-}
-
-/*	Procedure: 0x08049250 - 0x080492B4
+/*	Procedure: 0x0804E769 - 0x0804E85D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2249,56 +6123,66 @@ cmov_w_with_code_1_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovno bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080492B5 - 0x080492BB
+stack space not deallocated on return
+/*	Procedure: 0x0804E85E - 0x0804E947
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_2()
+cmov_w_with_code_1_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804E948 - 0x0804EA31
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_1_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804EA32 - 0x0804EB1C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_1_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804EB1D - 0x0804EB28
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_2_plain()
 {
 
 
 
     al :: 2;
     asm("cmovc bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080492BC - 0x080492C2
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_2_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovc bx,ax");
-}
-
-/*	Procedure: 0x080492C3 - 0x08049327
+/*	Procedure: 0x0804EB29 - 0x0804EC1D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2309,56 +6193,66 @@ cmov_w_with_code_2_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovc bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049328 - 0x0804932E
+stack space not deallocated on return
+/*	Procedure: 0x0804EC1E - 0x0804ED07
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_3()
+cmov_w_with_code_2_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804ED08 - 0x0804EDF1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_2_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804EDF2 - 0x0804EEDC
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_2_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804EEDD - 0x0804EEE8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_3_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnc bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x0804932F - 0x08049335
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_3_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnc bx,ax");
-}
-
-/*	Procedure: 0x08049336 - 0x0804939A
+/*	Procedure: 0x0804EEE9 - 0x0804EFDD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2369,56 +6263,66 @@ cmov_w_with_code_3_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnc bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x0804939B - 0x080493A1
+stack space not deallocated on return
+/*	Procedure: 0x0804EFDE - 0x0804F0C7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_4()
+cmov_w_with_code_3_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804F0C8 - 0x0804F1B1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_3_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804F1B2 - 0x0804F29C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_3_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804F29D - 0x0804F2A8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_4_plain()
 {
 
 
 
     al :: 2;
     asm("cmovz bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080493A2 - 0x080493A8
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_4_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovz bx,ax");
-}
-
-/*	Procedure: 0x080493A9 - 0x0804940D
+/*	Procedure: 0x0804F2A9 - 0x0804F39D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2429,56 +6333,66 @@ cmov_w_with_code_4_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovz bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x0804940E - 0x08049414
+stack space not deallocated on return
+/*	Procedure: 0x0804F39E - 0x0804F487
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_5()
+cmov_w_with_code_4_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804F488 - 0x0804F571
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_4_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804F572 - 0x0804F65C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_4_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804F65D - 0x0804F668
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_5_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnz bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049415 - 0x0804941B
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_5_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnz bx,ax");
-}
-
-/*	Procedure: 0x0804941C - 0x08049480
+/*	Procedure: 0x0804F669 - 0x0804F75D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2489,56 +6403,66 @@ cmov_w_with_code_5_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnz bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049481 - 0x08049487
+stack space not deallocated on return
+/*	Procedure: 0x0804F75E - 0x0804F847
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_6()
+cmov_w_with_code_5_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804F848 - 0x0804F931
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_5_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804F932 - 0x0804FA1C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_5_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804FA1D - 0x0804FA28
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_6_plain()
 {
 
 
 
     al :: 2;
     asm("cmovna bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049488 - 0x0804948E
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_6_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovna bx,ax");
-}
-
-/*	Procedure: 0x0804948F - 0x080494F3
+/*	Procedure: 0x0804FA29 - 0x0804FB1D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2549,56 +6473,66 @@ cmov_w_with_code_6_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovna bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080494F4 - 0x080494FA
+stack space not deallocated on return
+/*	Procedure: 0x0804FB1E - 0x0804FC07
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_7()
+cmov_w_with_code_6_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804FC08 - 0x0804FCF1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_6_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804FCF2 - 0x0804FDDC
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_6_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0804FDDD - 0x0804FDE8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_7_plain()
 {
 
 
 
     al :: 2;
     asm("cmova bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080494FB - 0x08049501
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_7_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmova bx,ax");
-}
-
-/*	Procedure: 0x08049502 - 0x08049566
+/*	Procedure: 0x0804FDE9 - 0x0804FEDD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2609,56 +6543,66 @@ cmov_w_with_code_7_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmova bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049567 - 0x0804956D
+stack space not deallocated on return
+/*	Procedure: 0x0804FEDE - 0x0804FFC7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_8()
+cmov_w_with_code_7_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0804FFC8 - 0x080500B1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_7_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080500B2 - 0x0805019C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_7_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805019D - 0x080501A8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_8_plain()
 {
 
 
 
     al :: 2;
     asm("cmovs bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x0804956E - 0x08049574
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_8_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovs bx,ax");
-}
-
-/*	Procedure: 0x08049575 - 0x080495D9
+/*	Procedure: 0x080501A9 - 0x0805029D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2669,56 +6613,66 @@ cmov_w_with_code_8_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovs bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080495DA - 0x080495E0
+stack space not deallocated on return
+/*	Procedure: 0x0805029E - 0x08050387
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_9()
+cmov_w_with_code_8_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08050388 - 0x08050471
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_8_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08050472 - 0x0805055C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_8_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805055D - 0x08050568
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_9_plain()
 {
 
 
 
     al :: 2;
     asm("cmovns bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080495E1 - 0x080495E7
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_9_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovns bx,ax");
-}
-
-/*	Procedure: 0x080495E8 - 0x0804964C
+/*	Procedure: 0x08050569 - 0x0805065D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2729,56 +6683,66 @@ cmov_w_with_code_9_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovns bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x0804964D - 0x08049653
+stack space not deallocated on return
+/*	Procedure: 0x0805065E - 0x08050747
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_a()
+cmov_w_with_code_9_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08050748 - 0x08050831
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_9_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08050832 - 0x0805091C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_9_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805091D - 0x08050928
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_a_plain()
 {
 
 
 
     al :: 2;
     asm("cmovpe bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049654 - 0x0804965A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_a_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovpe bx,ax");
-}
-
-/*	Procedure: 0x0804965B - 0x080496BF
+/*	Procedure: 0x08050929 - 0x08050A1D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2789,56 +6753,66 @@ cmov_w_with_code_a_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovpe bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080496C0 - 0x080496C6
+stack space not deallocated on return
+/*	Procedure: 0x08050A1E - 0x08050B07
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_b()
+cmov_w_with_code_a_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08050B08 - 0x08050BF1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_a_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08050BF2 - 0x08050CDC
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_a_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08050CDD - 0x08050CE8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_b_plain()
 {
 
 
 
     al :: 2;
     asm("cmovpo bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080496C7 - 0x080496CD
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_b_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovpo bx,ax");
-}
-
-/*	Procedure: 0x080496CE - 0x08049732
+/*	Procedure: 0x08050CE9 - 0x08050DDD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2849,56 +6823,66 @@ cmov_w_with_code_b_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovpo bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049733 - 0x08049739
+stack space not deallocated on return
+/*	Procedure: 0x08050DDE - 0x08050EC7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_c()
+cmov_w_with_code_b_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08050EC8 - 0x08050FB1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_b_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08050FB2 - 0x0805109C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_b_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805109D - 0x080510A8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_c_plain()
 {
 
 
 
     al :: 2;
     asm("cmovl bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x0804973A - 0x08049740
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_c_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovl bx,ax");
-}
-
-/*	Procedure: 0x08049741 - 0x080497A5
+/*	Procedure: 0x080510A9 - 0x0805119D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2909,56 +6893,66 @@ cmov_w_with_code_c_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovl bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080497A6 - 0x080497AC
+stack space not deallocated on return
+/*	Procedure: 0x0805119E - 0x08051287
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_d()
+cmov_w_with_code_c_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08051288 - 0x08051371
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_c_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051372 - 0x0805145C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_c_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805145D - 0x08051468
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_d_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnl bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x080497AD - 0x080497B3
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_d_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnl bx,ax");
-}
-
-/*	Procedure: 0x080497B4 - 0x08049818
+/*	Procedure: 0x08051469 - 0x0805155D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -2969,56 +6963,66 @@ cmov_w_with_code_d_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnl bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049819 - 0x0804981F
+stack space not deallocated on return
+/*	Procedure: 0x0805155E - 0x08051647
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_e()
+cmov_w_with_code_d_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08051648 - 0x08051731
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_d_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051732 - 0x0805181C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_d_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805181D - 0x08051828
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_e_plain()
 {
 
 
 
     al :: 2;
     asm("cmovng bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049820 - 0x08049826
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_e_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovng bx,ax");
-}
-
-/*	Procedure: 0x08049827 - 0x0804988B
+/*	Procedure: 0x08051829 - 0x0805191D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3029,56 +7033,66 @@ cmov_w_with_code_e_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovng bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x0804988C - 0x08049892
+stack space not deallocated on return
+/*	Procedure: 0x0805191E - 0x08051A07
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_w_with_code_f()
+cmov_w_with_code_e_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08051A08 - 0x08051AF1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_e_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051AF2 - 0x08051BDC
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_e_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051BDD - 0x08051BE8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_f_plain()
 {
 
 
 
     al :: 2;
     asm("cmovg bx,ax");
+    return(0);
 }
 
-/*	Procedure: 0x08049893 - 0x08049899
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_w_with_code_f_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovg bx,ax");
-}
-
-/*	Procedure: 0x0804989A - 0x080498FE
+/*	Procedure: 0x08051BE9 - 0x08051CDD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3089,56 +7103,66 @@ cmov_w_with_code_f_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovg bx,ax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080498FF - 0x08049904
+stack space not deallocated on return
+/*	Procedure: 0x08051CDE - 0x08051DC7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_0()
+cmov_w_with_code_f_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08051DC8 - 0x08051EB1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_f_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051EB2 - 0x08051F9C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_w_with_code_f_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08051F9D - 0x08051FA7
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_0_plain()
 {
 
 
 
     al :: 2;
     asm("cmovo ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049905 - 0x0804990A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_0_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovo ebx,eax");
-}
-
-/*	Procedure: 0x0804990B - 0x0804996E
+/*	Procedure: 0x08051FA8 - 0x0805209B
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3149,56 +7173,66 @@ cmov_l_with_code_0_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovo ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x0804996F - 0x08049974
+stack space not deallocated on return
+/*	Procedure: 0x0805209C - 0x08052184
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_1()
+cmov_l_with_code_0_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08052185 - 0x0805226D
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_0_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805226E - 0x08052357
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_0_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052358 - 0x08052362
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_1_plain()
 {
 
 
 
     al :: 2;
     asm("cmovno ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049975 - 0x0804997A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_1_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovno ebx,eax");
-}
-
-/*	Procedure: 0x0804997B - 0x080499DE
+/*	Procedure: 0x08052363 - 0x08052456
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3209,56 +7243,66 @@ cmov_l_with_code_1_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovno ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x080499DF - 0x080499E4
+stack space not deallocated on return
+/*	Procedure: 0x08052457 - 0x0805253F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_2()
+cmov_l_with_code_1_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08052540 - 0x08052628
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_1_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052629 - 0x08052712
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_1_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052713 - 0x0805271D
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_2_plain()
 {
 
 
 
     al :: 2;
     asm("cmovc ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x080499E5 - 0x080499EA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_2_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovc ebx,eax");
-}
-
-/*	Procedure: 0x080499EB - 0x08049A4E
+/*	Procedure: 0x0805271E - 0x08052811
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3269,56 +7313,66 @@ cmov_l_with_code_2_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovc ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049A4F - 0x08049A54
+stack space not deallocated on return
+/*	Procedure: 0x08052812 - 0x080528FA
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_3()
+cmov_l_with_code_2_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x080528FB - 0x080529E3
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_2_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080529E4 - 0x08052ACD
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_2_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052ACE - 0x08052AD8
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_3_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnc ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049A55 - 0x08049A5A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_3_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnc ebx,eax");
-}
-
-/*	Procedure: 0x08049A5B - 0x08049ABE
+/*	Procedure: 0x08052AD9 - 0x08052BCC
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3329,56 +7383,66 @@ cmov_l_with_code_3_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnc ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049ABF - 0x08049AC4
+stack space not deallocated on return
+/*	Procedure: 0x08052BCD - 0x08052CB5
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_4()
+cmov_l_with_code_3_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08052CB6 - 0x08052D9E
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_3_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052D9F - 0x08052E88
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_3_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08052E89 - 0x08052E93
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_4_plain()
 {
 
 
 
     al :: 2;
     asm("cmovz ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049AC5 - 0x08049ACA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_4_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovz ebx,eax");
-}
-
-/*	Procedure: 0x08049ACB - 0x08049B2E
+/*	Procedure: 0x08052E94 - 0x08052F87
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3389,56 +7453,66 @@ cmov_l_with_code_4_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovz ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049B2F - 0x08049B34
+stack space not deallocated on return
+/*	Procedure: 0x08052F88 - 0x08053070
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_5()
+cmov_l_with_code_4_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08053071 - 0x08053159
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_4_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805315A - 0x08053243
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_4_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08053244 - 0x0805324E
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_5_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnz ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049B35 - 0x08049B3A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_5_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnz ebx,eax");
-}
-
-/*	Procedure: 0x08049B3B - 0x08049B9E
+/*	Procedure: 0x0805324F - 0x08053342
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3449,56 +7523,66 @@ cmov_l_with_code_5_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnz ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049B9F - 0x08049BA4
+stack space not deallocated on return
+/*	Procedure: 0x08053343 - 0x0805342B
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_6()
+cmov_l_with_code_5_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0805342C - 0x08053514
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_5_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08053515 - 0x080535FE
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_5_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x080535FF - 0x08053609
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_6_plain()
 {
 
 
 
     al :: 2;
     asm("cmovna ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049BA5 - 0x08049BAA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_6_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovna ebx,eax");
-}
-
-/*	Procedure: 0x08049BAB - 0x08049C0E
+/*	Procedure: 0x0805360A - 0x080536FD
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3509,56 +7593,66 @@ cmov_l_with_code_6_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovna ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049C0F - 0x08049C14
+stack space not deallocated on return
+/*	Procedure: 0x080536FE - 0x080537E6
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_7()
+cmov_l_with_code_6_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x080537E7 - 0x080538CF
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_6_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080538D0 - 0x080539B9
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_6_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x080539BA - 0x080539C4
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_7_plain()
 {
 
 
 
     al :: 2;
     asm("cmova ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049C15 - 0x08049C1A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_7_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmova ebx,eax");
-}
-
-/*	Procedure: 0x08049C1B - 0x08049C7E
+/*	Procedure: 0x080539C5 - 0x08053AB8
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3569,56 +7663,66 @@ cmov_l_with_code_7_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmova ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049C7F - 0x08049C84
+stack space not deallocated on return
+/*	Procedure: 0x08053AB9 - 0x08053BA1
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_8()
+cmov_l_with_code_7_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08053BA2 - 0x08053C8A
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_7_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08053C8B - 0x08053D74
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_7_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08053D75 - 0x08053D7F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_8_plain()
 {
 
 
 
     al :: 2;
     asm("cmovs ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049C85 - 0x08049C8A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_8_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovs ebx,eax");
-}
-
-/*	Procedure: 0x08049C8B - 0x08049CEE
+/*	Procedure: 0x08053D80 - 0x08053E73
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3629,56 +7733,66 @@ cmov_l_with_code_8_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovs ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049CEF - 0x08049CF4
+stack space not deallocated on return
+/*	Procedure: 0x08053E74 - 0x08053F5C
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_9()
+cmov_l_with_code_8_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08053F5D - 0x08054045
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_8_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054046 - 0x0805412F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_8_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054130 - 0x0805413A
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_9_plain()
 {
 
 
 
     al :: 2;
     asm("cmovns ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049CF5 - 0x08049CFA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_9_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovns ebx,eax");
-}
-
-/*	Procedure: 0x08049CFB - 0x08049D5E
+/*	Procedure: 0x0805413B - 0x0805422E
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3689,56 +7803,66 @@ cmov_l_with_code_9_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovns ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049D5F - 0x08049D64
+stack space not deallocated on return
+/*	Procedure: 0x0805422F - 0x08054317
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_a()
+cmov_l_with_code_9_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08054318 - 0x08054400
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_9_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054401 - 0x080544EA
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_9_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x080544EB - 0x080544F5
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_a_plain()
 {
 
 
 
     al :: 2;
     asm("cmovpe ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049D65 - 0x08049D6A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_a_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovpe ebx,eax");
-}
-
-/*	Procedure: 0x08049D6B - 0x08049DCE
+/*	Procedure: 0x080544F6 - 0x080545E9
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3749,56 +7873,66 @@ cmov_l_with_code_a_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovpe ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049DCF - 0x08049DD4
+stack space not deallocated on return
+/*	Procedure: 0x080545EA - 0x080546D2
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_b()
+cmov_l_with_code_a_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x080546D3 - 0x080547BB
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_a_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080547BC - 0x080548A5
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_a_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x080548A6 - 0x080548B0
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_b_plain()
 {
 
 
 
     al :: 2;
     asm("cmovpo ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049DD5 - 0x08049DDA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_b_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovpo ebx,eax");
-}
-
-/*	Procedure: 0x08049DDB - 0x08049E3E
+/*	Procedure: 0x080548B1 - 0x080549A4
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3809,56 +7943,66 @@ cmov_l_with_code_b_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovpo ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049E3F - 0x08049E44
+stack space not deallocated on return
+/*	Procedure: 0x080549A5 - 0x08054A8D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_c()
+cmov_l_with_code_b_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08054A8E - 0x08054B76
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_b_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054B77 - 0x08054C60
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_b_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054C61 - 0x08054C6B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_c_plain()
 {
 
 
 
     al :: 2;
     asm("cmovl ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049E45 - 0x08049E4A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_c_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovl ebx,eax");
-}
-
-/*	Procedure: 0x08049E4B - 0x08049EAE
+/*	Procedure: 0x08054C6C - 0x08054D5F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3869,56 +8013,66 @@ cmov_l_with_code_c_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovl ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049EAF - 0x08049EB4
+stack space not deallocated on return
+/*	Procedure: 0x08054D60 - 0x08054E48
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_d()
+cmov_l_with_code_c_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08054E49 - 0x08054F31
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_c_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08054F32 - 0x0805501B
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_c_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x0805501C - 0x08055026
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_d_plain()
 {
 
 
 
     al :: 2;
     asm("cmovnl ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049EB5 - 0x08049EBA
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_d_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovnl ebx,eax");
-}
-
-/*	Procedure: 0x08049EBB - 0x08049F1E
+/*	Procedure: 0x08055027 - 0x0805511A
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3929,56 +8083,66 @@ cmov_l_with_code_d_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovnl ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049F1F - 0x08049F24
+stack space not deallocated on return
+/*	Procedure: 0x0805511B - 0x08055203
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_e()
+cmov_l_with_code_d_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x08055204 - 0x080552EC
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_d_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080552ED - 0x080553D6
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_d_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x080553D7 - 0x080553E1
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_e_plain()
 {
 
 
 
     al :: 2;
     asm("cmovng ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049F25 - 0x08049F2A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_e_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovng ebx,eax");
-}
-
-/*	Procedure: 0x08049F2B - 0x08049F8E
+/*	Procedure: 0x080553E2 - 0x080554D5
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -3989,56 +8153,66 @@ cmov_l_with_code_e_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovng ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049F8F - 0x08049F94
+stack space not deallocated on return
+/*	Procedure: 0x080554D6 - 0x080555BE
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-cmov_l_with_code_f()
+cmov_l_with_code_e_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x080555BF - 0x080556A7
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_e_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x080556A8 - 0x08055791
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_e_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08055792 - 0x0805579C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_f_plain()
 {
 
 
 
     al :: 2;
     asm("cmovg ebx,eax");
+    return(0);
 }
 
-/*	Procedure: 0x08049F95 - 0x08049F9A
- *	Argument size: 0
- *	Local size: 0
- *	Save regs size: 0
- */
-
-cmov_l_with_code_f_constant()
-{
-
-
-
-    al :: 2;
-    asm("cmovg ebx,eax");
-}
-
-/*	Procedure: 0x08049F9B - 0x08049FFE
+/*	Procedure: 0x0805579D - 0x08055890
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -4049,26 +8223,353 @@ cmov_l_with_code_f_allregs()
 
 
 
-    ebx = *L00001004;
-    ecx = *L00001008;
-    edx = *L0000100C;
-    ebp = *L00001010;
-    esi = *L00001014;
-    edi = *L00001018;
-    esp = *L0000101C;
-    *L00001000 :: 2;
-    asm("cmovg ebx,eax");
-    *L00002000 = eax;
-    *L00002004 = ebx;
-    *L00002008 = ecx;
-    *L0000200C = edx;
-    *L00002010 = ebp;
-    *L00002014 = esi;
-    *L00002018 = edi;
-    *L0000201C = esp;
 }
 
-/*	Procedure: 0x08049FFF - 0x0804A3DF
+stack space not deallocated on return
+/*	Procedure: 0x08055891 - 0x08055979
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_f_constant_simple()
+{
+
+
+
+}
+
+stack space not deallocated on return
+/*	Procedure: 0x0805597A - 0x08055A62
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_f_constant_complex1()
+{
+
+
+
+}
+
+/*	Procedure: 0x08055A63 - 0x08055B4C
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+cmov_l_with_code_f_constant_complex2()
+{
+
+
+
+}
+
+/*	Procedure: 0x08055B4D - 0x080560F7
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+callAll()
+{
+
+
+
+    bswap_plain();
+    bswap_allregs();
+    bswap_constant_simple();
+    bswap_constant_complex1();
+    bswap_constant_complex2();
+    cmpxchg1_plain();
+    cmpxchg1_allregs();
+    cmpxchg1_constant_simple();
+    cmpxchg1_constant_complex1();
+    cmpxchg1_constant_complex2();
+    cmpxchg2_plain();
+    cmpxchg2_allregs();
+    cmpxchg2_constant_simple();
+    cmpxchg2_constant_complex1();
+    cmpxchg2_constant_complex2();
+    cmpxchg3_plain();
+    cmpxchg3_allregs();
+    cmpxchg3_constant_simple();
+    cmpxchg3_constant_complex1();
+    cmpxchg3_constant_complex2();
+    cmpxchg4_plain();
+    cmpxchg4_allregs();
+    cmpxchg4_constant_simple();
+    cmpxchg4_constant_complex1();
+    cmpxchg4_constant_complex2();
+    cmpxchg5_plain();
+    cmpxchg5_allregs();
+    cmpxchg5_constant_simple();
+    cmpxchg5_constant_complex1();
+    cmpxchg5_constant_complex2();
+    cmpxchg_locked_plain();
+    cmpxchg_locked_allregs();
+    cmpxchg_locked_constant_simple();
+    cmpxchg_locked_constant_complex1();
+    cmpxchg_locked_constant_complex2();
+    cpuid_plain();
+    cpuid_allregs();
+    cpuid_constant_simple();
+    cpuid_constant_complex1();
+    cpuid_constant_complex2();
+    invd_plain();
+    invd_allregs();
+    invd_constant_simple();
+    invd_constant_complex1();
+    invd_constant_complex2();
+    invlpg_plain();
+    invlpg_allregs();
+    invlpg_constant_simple();
+    invlpg_constant_complex1();
+    invlpg_constant_complex2();
+    wbinvd_plain();
+    wbinvd_allregs();
+    wbinvd_constant_simple();
+    wbinvd_constant_complex1();
+    wbinvd_constant_complex2();
+    xadd1_plain();
+    xadd1_allregs();
+    xadd1_constant_simple();
+    xadd1_constant_complex1();
+    xadd1_constant_complex2();
+    xadd2_plain();
+    xadd2_allregs();
+    xadd2_constant_simple();
+    xadd2_constant_complex1();
+    xadd2_constant_complex2();
+    xadd3_plain();
+    xadd3_allregs();
+    xadd3_constant_simple();
+    xadd3_constant_complex1();
+    xadd3_constant_complex2();
+    xadd4_plain();
+    xadd4_allregs();
+    xadd4_constant_simple();
+    xadd4_constant_complex1();
+    xadd4_constant_complex2();
+    xadd5_plain();
+    xadd5_allregs();
+    xadd5_constant_simple();
+    xadd5_constant_complex1();
+    xadd5_constant_complex2();
+    xadd_locked_plain();
+    xadd_locked_allregs();
+    xadd_locked_constant_simple();
+    xadd_locked_constant_complex1();
+    xadd_locked_constant_complex2();
+    cmpxchg8b_plain();
+    cmpxchg8b_allregs();
+    cmpxchg8b_constant_simple();
+    cmpxchg8b_constant_complex1();
+    cmpxchg8b_constant_complex2();
+    cmpxchg8b_locked_plain();
+    cmpxchg8b_locked_allregs();
+    cmpxchg8b_locked_constant_simple();
+    cmpxchg8b_locked_constant_complex1();
+    cmpxchg8b_locked_constant_complex2();
+    rdtsc_plain();
+    rdtsc_allregs();
+    rdtsc_constant_simple();
+    rdtsc_constant_complex1();
+    rdtsc_constant_complex2();
+    rdmsr_plain();
+    rdmsr_allregs();
+    rdmsr_constant_simple();
+    rdmsr_constant_complex1();
+    rdmsr_constant_complex2();
+    wrmsr_plain();
+    wrmsr_allregs();
+    wrmsr_constant_simple();
+    wrmsr_constant_complex1();
+    wrmsr_constant_complex2();
+    cmov1_plain();
+    cmov1_allregs();
+    cmov1_constant_simple();
+    cmov1_constant_complex1();
+    cmov1_constant_complex2();
+    cmov2_plain();
+    cmov2_allregs();
+    cmov2_constant_simple();
+    cmov2_constant_complex1();
+    cmov2_constant_complex2();
+    cmov3_plain();
+    cmov3_allregs();
+    cmov3_constant_simple();
+    cmov3_constant_complex1();
+    cmov3_constant_complex2();
+    cmov4_plain();
+    cmov4_allregs();
+    cmov4_constant_simple();
+    cmov4_constant_complex1();
+    cmov4_constant_complex2();
+    cmov_w_with_code_0_plain();
+    cmov_w_with_code_0_allregs();
+    cmov_w_with_code_0_constant_simple();
+    cmov_w_with_code_0_constant_complex1();
+    cmov_w_with_code_0_constant_complex2();
+    cmov_w_with_code_1_plain();
+    cmov_w_with_code_1_allregs();
+    cmov_w_with_code_1_constant_simple();
+    cmov_w_with_code_1_constant_complex1();
+    cmov_w_with_code_1_constant_complex2();
+    cmov_w_with_code_2_plain();
+    cmov_w_with_code_2_allregs();
+    cmov_w_with_code_2_constant_simple();
+    cmov_w_with_code_2_constant_complex1();
+    cmov_w_with_code_2_constant_complex2();
+    cmov_w_with_code_3_plain();
+    cmov_w_with_code_3_allregs();
+    cmov_w_with_code_3_constant_simple();
+    cmov_w_with_code_3_constant_complex1();
+    cmov_w_with_code_3_constant_complex2();
+    cmov_w_with_code_4_plain();
+    cmov_w_with_code_4_allregs();
+    cmov_w_with_code_4_constant_simple();
+    cmov_w_with_code_4_constant_complex1();
+    cmov_w_with_code_4_constant_complex2();
+    cmov_w_with_code_5_plain();
+    cmov_w_with_code_5_allregs();
+    cmov_w_with_code_5_constant_simple();
+    cmov_w_with_code_5_constant_complex1();
+    cmov_w_with_code_5_constant_complex2();
+    cmov_w_with_code_6_plain();
+    cmov_w_with_code_6_allregs();
+    cmov_w_with_code_6_constant_simple();
+    cmov_w_with_code_6_constant_complex1();
+    cmov_w_with_code_6_constant_complex2();
+    cmov_w_with_code_7_plain();
+    cmov_w_with_code_7_allregs();
+    cmov_w_with_code_7_constant_simple();
+    cmov_w_with_code_7_constant_complex1();
+    cmov_w_with_code_7_constant_complex2();
+    cmov_w_with_code_8_plain();
+    cmov_w_with_code_8_allregs();
+    cmov_w_with_code_8_constant_simple();
+    cmov_w_with_code_8_constant_complex1();
+    cmov_w_with_code_8_constant_complex2();
+    cmov_w_with_code_9_plain();
+    cmov_w_with_code_9_allregs();
+    cmov_w_with_code_9_constant_simple();
+    cmov_w_with_code_9_constant_complex1();
+    cmov_w_with_code_9_constant_complex2();
+    cmov_w_with_code_a_plain();
+    cmov_w_with_code_a_allregs();
+    cmov_w_with_code_a_constant_simple();
+    cmov_w_with_code_a_constant_complex1();
+    cmov_w_with_code_a_constant_complex2();
+    cmov_w_with_code_b_plain();
+    cmov_w_with_code_b_allregs();
+    cmov_w_with_code_b_constant_simple();
+    cmov_w_with_code_b_constant_complex1();
+    cmov_w_with_code_b_constant_complex2();
+    cmov_w_with_code_c_plain();
+    cmov_w_with_code_c_allregs();
+    cmov_w_with_code_c_constant_simple();
+    cmov_w_with_code_c_constant_complex1();
+    cmov_w_with_code_c_constant_complex2();
+    cmov_w_with_code_d_plain();
+    cmov_w_with_code_d_allregs();
+    cmov_w_with_code_d_constant_simple();
+    cmov_w_with_code_d_constant_complex1();
+    cmov_w_with_code_d_constant_complex2();
+    cmov_w_with_code_e_plain();
+    cmov_w_with_code_e_allregs();
+    cmov_w_with_code_e_constant_simple();
+    cmov_w_with_code_e_constant_complex1();
+    cmov_w_with_code_e_constant_complex2();
+    cmov_w_with_code_f_plain();
+    cmov_w_with_code_f_allregs();
+    cmov_w_with_code_f_constant_simple();
+    cmov_w_with_code_f_constant_complex1();
+    cmov_w_with_code_f_constant_complex2();
+    cmov_l_with_code_0_plain();
+    cmov_l_with_code_0_allregs();
+    cmov_l_with_code_0_constant_simple();
+    cmov_l_with_code_0_constant_complex1();
+    cmov_l_with_code_0_constant_complex2();
+    cmov_l_with_code_1_plain();
+    cmov_l_with_code_1_allregs();
+    cmov_l_with_code_1_constant_simple();
+    cmov_l_with_code_1_constant_complex1();
+    cmov_l_with_code_1_constant_complex2();
+    cmov_l_with_code_2_plain();
+    cmov_l_with_code_2_allregs();
+    cmov_l_with_code_2_constant_simple();
+    cmov_l_with_code_2_constant_complex1();
+    cmov_l_with_code_2_constant_complex2();
+    cmov_l_with_code_3_plain();
+    cmov_l_with_code_3_allregs();
+    cmov_l_with_code_3_constant_simple();
+    cmov_l_with_code_3_constant_complex1();
+    cmov_l_with_code_3_constant_complex2();
+    cmov_l_with_code_4_plain();
+    cmov_l_with_code_4_allregs();
+    cmov_l_with_code_4_constant_simple();
+    cmov_l_with_code_4_constant_complex1();
+    cmov_l_with_code_4_constant_complex2();
+    cmov_l_with_code_5_plain();
+    cmov_l_with_code_5_allregs();
+    cmov_l_with_code_5_constant_simple();
+    cmov_l_with_code_5_constant_complex1();
+    cmov_l_with_code_5_constant_complex2();
+    cmov_l_with_code_6_plain();
+    cmov_l_with_code_6_allregs();
+    cmov_l_with_code_6_constant_simple();
+    cmov_l_with_code_6_constant_complex1();
+    cmov_l_with_code_6_constant_complex2();
+    cmov_l_with_code_7_plain();
+    cmov_l_with_code_7_allregs();
+    cmov_l_with_code_7_constant_simple();
+    cmov_l_with_code_7_constant_complex1();
+    cmov_l_with_code_7_constant_complex2();
+    cmov_l_with_code_8_plain();
+    cmov_l_with_code_8_allregs();
+    cmov_l_with_code_8_constant_simple();
+    cmov_l_with_code_8_constant_complex1();
+    cmov_l_with_code_8_constant_complex2();
+    cmov_l_with_code_9_plain();
+    cmov_l_with_code_9_allregs();
+    cmov_l_with_code_9_constant_simple();
+    cmov_l_with_code_9_constant_complex1();
+    cmov_l_with_code_9_constant_complex2();
+    cmov_l_with_code_a_plain();
+    cmov_l_with_code_a_allregs();
+    cmov_l_with_code_a_constant_simple();
+    cmov_l_with_code_a_constant_complex1();
+    cmov_l_with_code_a_constant_complex2();
+    cmov_l_with_code_b_plain();
+    cmov_l_with_code_b_allregs();
+    cmov_l_with_code_b_constant_simple();
+    cmov_l_with_code_b_constant_complex1();
+    cmov_l_with_code_b_constant_complex2();
+    cmov_l_with_code_c_plain();
+    cmov_l_with_code_c_allregs();
+    cmov_l_with_code_c_constant_simple();
+    cmov_l_with_code_c_constant_complex1();
+    cmov_l_with_code_c_constant_complex2();
+    cmov_l_with_code_d_plain();
+    cmov_l_with_code_d_allregs();
+    cmov_l_with_code_d_constant_simple();
+    cmov_l_with_code_d_constant_complex1();
+    cmov_l_with_code_d_constant_complex2();
+    cmov_l_with_code_e_plain();
+    cmov_l_with_code_e_allregs();
+    cmov_l_with_code_e_constant_simple();
+    cmov_l_with_code_e_constant_complex1();
+    cmov_l_with_code_e_constant_complex2();
+    cmov_l_with_code_f_plain();
+    cmov_l_with_code_f_allregs();
+    cmov_l_with_code_f_constant_simple();
+    cmov_l_with_code_f_constant_complex1();
+    cmov_l_with_code_f_constant_complex2();
+}
+
+/*	Procedure: 0x080560F8 - 0x08056101
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -4079,207 +8580,23 @@ main()
 
 
 
-    bswap();
-    bswap_constant();
-    bswap_allregs();
-    cmpxchg1();
-    cmpxchg1_constant();
-    cmpxchg1_allregs();
-    cmpxchg2();
-    cmpxchg2_constant();
-    cmpxchg2_allregs();
-    cmpxchg3();
-    cmpxchg3_constant();
-    cmpxchg3_allregs();
-    cmpxchg4();
-    cmpxchg4_constant();
-    cmpxchg4_allregs();
-    cmpxchg5();
-    cmpxchg5_constant();
-    cmpxchg5_allregs();
-    cmpxchg1_locked();
-    cmpxchg1_locked_constant();
-    cmpxchg1_locked_allregs();
-    cmpxchg2_locked();
-    cmpxchg2_locked_constant();
-    cmpxchg2_locked_allregs();
-    cmpxchg3_locked();
-    cmpxchg3_locked_constant();
-    cmpxchg3_locked_allregs();
-    cmpxchg4_locked();
-    cmpxchg4_locked_constant();
-    cmpxchg4_locked_allregs();
-    cmpxchg5_locked();
-    cmpxchg5_locked_constant();
-    cmpxchg5_locked_allregs();
-    cpuid();
-    cpuid_constant();
-    cpuid_allregs();
-    invd();
-    invd_constant();
-    invd_allregs();
-    invlpg();
-    invlpg_constant();
-    invlpg_allregs();
-    wbinvd();
-    wbinvd_constant();
-    wbinvd_allregs();
-    xadd1();
-    xadd1_constant();
-    xadd1_allregs();
-    xadd2();
-    xadd2_constant();
-    xadd2_allregs();
-    xadd3();
-    xadd3_constant();
-    xadd3_allregs();
-    xadd4();
-    xadd4_constant();
-    xadd4_allregs();
-    xadd5();
-    xadd5_constant();
-    xadd5_allregs();
-    xadd1_locked();
-    xadd1_locked_constant();
-    xadd1_locked_allregs();
-    xadd2_locked();
-    xadd2_locked_constant();
-    xadd2_locked_allregs();
-    xadd3_locked();
-    xadd3_locked_constant();
-    xadd3_locked_allregs();
-    xadd4_locked();
-    xadd4_locked_constant();
-    xadd4_locked_allregs();
-    xadd5_locked();
-    xadd5_locked_constant();
-    xadd5_locked_allregs();
-    cmpxchg8b();
-    cmpxchg8b_constant();
-    cmpxchg8b_allregs();
-    cmpxchg8b_locked();
-    cmpxchg8b_locked_constant();
-    cmpxchg8b_locked_allregs();
-    rdtsc();
-    rdtsc_constant();
-    rdtsc_allregs();
-    rdmsr();
-    rdmsr_constant();
-    rdmsr_allregs();
-    wrmsr();
-    wrmsr_constant();
-    wrmsr_allregs();
-    cmov1();
-    cmov1_constant();
-    cmov1_allregs();
-    cmov2();
-    cmov2_constant();
-    cmov2_allregs();
-    cmov3();
-    cmov3_constant();
-    cmov3_allregs();
-    cmov4();
-    cmov4_constant();
-    cmov4_allregs();
-    cmov_w_with_code_0();
-    cmov_w_with_code_0_constant();
-    cmov_w_with_code_0_allregs();
-    cmov_w_with_code_1();
-    cmov_w_with_code_1_constant();
-    cmov_w_with_code_1_allregs();
-    cmov_w_with_code_2();
-    cmov_w_with_code_2_constant();
-    cmov_w_with_code_2_allregs();
-    cmov_w_with_code_3();
-    cmov_w_with_code_3_constant();
-    cmov_w_with_code_3_allregs();
-    cmov_w_with_code_4();
-    cmov_w_with_code_4_constant();
-    cmov_w_with_code_4_allregs();
-    cmov_w_with_code_5();
-    cmov_w_with_code_5_constant();
-    cmov_w_with_code_5_allregs();
-    cmov_w_with_code_6();
-    cmov_w_with_code_6_constant();
-    cmov_w_with_code_6_allregs();
-    cmov_w_with_code_7();
-    cmov_w_with_code_7_constant();
-    cmov_w_with_code_7_allregs();
-    cmov_w_with_code_8();
-    cmov_w_with_code_8_constant();
-    cmov_w_with_code_8_allregs();
-    cmov_w_with_code_9();
-    cmov_w_with_code_9_constant();
-    cmov_w_with_code_9_allregs();
-    cmov_w_with_code_a();
-    cmov_w_with_code_a_constant();
-    cmov_w_with_code_a_allregs();
-    cmov_w_with_code_b();
-    cmov_w_with_code_b_constant();
-    cmov_w_with_code_b_allregs();
-    cmov_w_with_code_c();
-    cmov_w_with_code_c_constant();
-    cmov_w_with_code_c_allregs();
-    cmov_w_with_code_d();
-    cmov_w_with_code_d_constant();
-    cmov_w_with_code_d_allregs();
-    cmov_w_with_code_e();
-    cmov_w_with_code_e_constant();
-    cmov_w_with_code_e_allregs();
-    cmov_w_with_code_f();
-    cmov_w_with_code_f_constant();
-    cmov_w_with_code_f_allregs();
-    cmov_l_with_code_0();
-    cmov_l_with_code_0_constant();
-    cmov_l_with_code_0_allregs();
-    cmov_l_with_code_1();
-    cmov_l_with_code_1_constant();
-    cmov_l_with_code_1_allregs();
-    cmov_l_with_code_2();
-    cmov_l_with_code_2_constant();
-    cmov_l_with_code_2_allregs();
-    cmov_l_with_code_3();
-    cmov_l_with_code_3_constant();
-    cmov_l_with_code_3_allregs();
-    cmov_l_with_code_4();
-    cmov_l_with_code_4_constant();
-    cmov_l_with_code_4_allregs();
-    cmov_l_with_code_5();
-    cmov_l_with_code_5_constant();
-    cmov_l_with_code_5_allregs();
-    cmov_l_with_code_6();
-    cmov_l_with_code_6_constant();
-    cmov_l_with_code_6_allregs();
-    cmov_l_with_code_7();
-    cmov_l_with_code_7_constant();
-    cmov_l_with_code_7_allregs();
-    cmov_l_with_code_8();
-    cmov_l_with_code_8_constant();
-    cmov_l_with_code_8_allregs();
-    cmov_l_with_code_9();
-    cmov_l_with_code_9_constant();
-    cmov_l_with_code_9_allregs();
-    cmov_l_with_code_a();
-    cmov_l_with_code_a_constant();
-    cmov_l_with_code_a_allregs();
-    cmov_l_with_code_b();
-    cmov_l_with_code_b_constant();
-    cmov_l_with_code_b_allregs();
-    cmov_l_with_code_c();
-    cmov_l_with_code_c_constant();
-    cmov_l_with_code_c_allregs();
-    cmov_l_with_code_d();
-    cmov_l_with_code_d_constant();
-    cmov_l_with_code_d_allregs();
-    cmov_l_with_code_e();
-    cmov_l_with_code_e_constant();
-    cmov_l_with_code_e_allregs();
-    cmov_l_with_code_f();
-    cmov_l_with_code_f_constant();
-    cmov_l_with_code_f_allregs();
+    return(0);
 }
 
-/*	Procedure: 0x0804A3E0 - 0x0804A3E4
+/*	Procedure: 0x08056102 - 0x0805610F
+ *	Argument size: 0
+ *	Local size: 0
+ *	Save regs size: 0
+ */
+
+L08056102()
+{
+
+
+
+}
+
+/*	Procedure: 0x08056110 - 0x08056114
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -4292,20 +8609,20 @@ __libc_csu_fini()
 
 }
 
-/*	Procedure: 0x0804A3E5 - 0x0804A3EF
+/*	Procedure: 0x08056115 - 0x0805611F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-L0804A3E5()
+L08056115()
 {
 
 
 
 }
 
-/*	Procedure: 0x0804A3F0 - 0x0804A449
+/*	Procedure: 0x08056120 - 0x08056179
  *	Argument size: 12
  *	Local size: 0
  *	Save regs size: 12
@@ -4344,7 +8661,7 @@ __libc_csu_init(A8, Ac, A10)
     esp = esp + 28;
 }
 
-/*	Procedure: 0x0804A44A - 0x0804A44D
+/*	Procedure: 0x0805617A - 0x0805617D
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -4358,20 +8675,20 @@ __i686.get_pc_thunk.bx()
     ebx = *esp;
 }
 
-/*	Procedure: 0x0804A44E - 0x0804A44F
+/*	Procedure: 0x0805617E - 0x0805617F
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-L0804A44E()
+L0805617E()
 {
 
 
 
 }
 
-/*	Procedure: 0x0804A450 - 0x0804A479
+/*	Procedure: 0x08056180 - 0x080561A9
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 4
@@ -4395,20 +8712,20 @@ __do_global_ctors_aux()
     }
 }
 
-/*	Procedure: 0x0804A47A - 0x0804A47B
+/*	Procedure: 0x080561AA - 0x080561AB
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
  */
 
-L0804A47A()
+L080561AA()
 {
 
 
 
 }
 
-/*	Procedure: 0x0804A47C - 0x0804A497
+/*	Procedure: 0x080561AC - 0x080561C7
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 4
@@ -4421,14 +8738,14 @@ _fini()
 
 
     esp = esp - 4;
-    L0804a488();
+    L080561b8();
     (restore)ebx;
     ebx = ebx + 4508;
     (restore)ecx;
     return(__do_global_dtors_aux());
 }
 
-/*	Procedure: 0x0804A498 - 0x00000000
+/*	Procedure: 0x080561C8 - 0x00000000
  *	Argument size: 0
  *	Local size: 0
  *	Save regs size: 0
@@ -4447,228 +8764,321 @@ _fp_hw()
 /* 0x080482e0      48 */ /* unknown */ void 	_start;
 /* 0x08048310      96 */ /* unknown */ void 	__do_global_dtors_aux;
 /* 0x08048370      36 */ /* unknown */ void 	frame_dummy;
-/* 0x08048394       3 */ /* unknown */ void 	bswap;
-/* 0x08048397       3 */ /* unknown */ void 	bswap_constant;
-/* 0x0804839a      97 */ /* unknown */ void 	bswap_allregs;
-/* 0x080483fb       4 */ /* unknown */ void 	cmpxchg1;
-/* 0x080483ff       4 */ /* unknown */ void 	cmpxchg1_constant;
-/* 0x08048403      98 */ /* unknown */ void 	cmpxchg1_allregs;
-/* 0x08048465       5 */ /* unknown */ void 	cmpxchg2;
-/* 0x0804846a       5 */ /* unknown */ void 	cmpxchg2_constant;
-/* 0x0804846f      99 */ /* unknown */ void 	cmpxchg2_allregs;
-/* 0x080484d2       4 */ /* unknown */ void 	cmpxchg3;
-/* 0x080484d6       4 */ /* unknown */ void 	cmpxchg3_constant;
-/* 0x080484da      98 */ /* unknown */ void 	cmpxchg3_allregs;
-/* 0x0804853c       4 */ /* unknown */ void 	cmpxchg4;
-/* 0x08048540       4 */ /* unknown */ void 	cmpxchg4_constant;
-/* 0x08048544      98 */ /* unknown */ void 	cmpxchg4_allregs;
-/* 0x080485a6       4 */ /* unknown */ void 	cmpxchg5;
-/* 0x080485aa       4 */ /* unknown */ void 	cmpxchg5_constant;
-/* 0x080485ae      98 */ /* unknown */ void 	cmpxchg5_allregs;
-/* 0x08048610       5 */ /* unknown */ void 	cmpxchg1_locked;
-/* 0x08048615       5 */ /* unknown */ void 	cmpxchg1_locked_constant;
-/* 0x0804861a      99 */ /* unknown */ void 	cmpxchg1_locked_allregs;
-/* 0x0804867d       6 */ /* unknown */ void 	cmpxchg2_locked;
-/* 0x08048683       6 */ /* unknown */ void 	cmpxchg2_locked_constant;
-/* 0x08048689     100 */ /* unknown */ void 	cmpxchg2_locked_allregs;
-/* 0x080486ed       5 */ /* unknown */ void 	cmpxchg3_locked;
-/* 0x080486f2       5 */ /* unknown */ void 	cmpxchg3_locked_constant;
-/* 0x080486f7      99 */ /* unknown */ void 	cmpxchg3_locked_allregs;
-/* 0x0804875a       5 */ /* unknown */ void 	cmpxchg4_locked;
-/* 0x0804875f       5 */ /* unknown */ void 	cmpxchg4_locked_constant;
-/* 0x08048764      99 */ /* unknown */ void 	cmpxchg4_locked_allregs;
-/* 0x080487c7       5 */ /* unknown */ void 	cmpxchg5_locked;
-/* 0x080487cc       5 */ /* unknown */ void 	cmpxchg5_locked_constant;
-/* 0x080487d1      99 */ /* unknown */ void 	cmpxchg5_locked_allregs;
-/* 0x08048834       3 */ /* unknown */ void 	cpuid;
-/* 0x08048837       3 */ /* unknown */ void 	cpuid_constant;
-/* 0x0804883a      97 */ /* unknown */ void 	cpuid_allregs;
-/* 0x0804889b       3 */ /* unknown */ void 	invd;
-/* 0x0804889e       3 */ /* unknown */ void 	invd_constant;
-/* 0x080488a1      97 */ /* unknown */ void 	invd_allregs;
-/* 0x08048902       4 */ /* unknown */ void 	invlpg;
-/* 0x08048906       4 */ /* unknown */ void 	invlpg_constant;
-/* 0x0804890a      98 */ /* unknown */ void 	invlpg_allregs;
-/* 0x0804896c       3 */ /* unknown */ void 	wbinvd;
-/* 0x0804896f       3 */ /* unknown */ void 	wbinvd_constant;
-/* 0x08048972      97 */ /* unknown */ void 	wbinvd_allregs;
-/* 0x080489d3       4 */ /* unknown */ void 	xadd1;
-/* 0x080489d7       4 */ /* unknown */ void 	xadd1_constant;
-/* 0x080489db      98 */ /* unknown */ void 	xadd1_allregs;
-/* 0x08048a3d       5 */ /* unknown */ void 	xadd2;
-/* 0x08048a42       5 */ /* unknown */ void 	xadd2_constant;
-/* 0x08048a47      99 */ /* unknown */ void 	xadd2_allregs;
-/* 0x08048aaa       4 */ /* unknown */ void 	xadd3;
-/* 0x08048aae       4 */ /* unknown */ void 	xadd3_constant;
-/* 0x08048ab2      98 */ /* unknown */ void 	xadd3_allregs;
-/* 0x08048b14       4 */ /* unknown */ void 	xadd4;
-/* 0x08048b18       4 */ /* unknown */ void 	xadd4_constant;
-/* 0x08048b1c      98 */ /* unknown */ void 	xadd4_allregs;
-/* 0x08048b7e       4 */ /* unknown */ void 	xadd5;
-/* 0x08048b82       4 */ /* unknown */ void 	xadd5_constant;
-/* 0x08048b86      98 */ /* unknown */ void 	xadd5_allregs;
-/* 0x08048be8       5 */ /* unknown */ void 	xadd1_locked;
-/* 0x08048bed       5 */ /* unknown */ void 	xadd1_locked_constant;
-/* 0x08048bf2      99 */ /* unknown */ void 	xadd1_locked_allregs;
-/* 0x08048c55       6 */ /* unknown */ void 	xadd2_locked;
-/* 0x08048c5b       6 */ /* unknown */ void 	xadd2_locked_constant;
-/* 0x08048c61     100 */ /* unknown */ void 	xadd2_locked_allregs;
-/* 0x08048cc5       5 */ /* unknown */ void 	xadd3_locked;
-/* 0x08048cca       5 */ /* unknown */ void 	xadd3_locked_constant;
-/* 0x08048ccf      99 */ /* unknown */ void 	xadd3_locked_allregs;
-/* 0x08048d32       5 */ /* unknown */ void 	xadd4_locked;
-/* 0x08048d37       5 */ /* unknown */ void 	xadd4_locked_constant;
-/* 0x08048d3c      99 */ /* unknown */ void 	xadd4_locked_allregs;
-/* 0x08048d9f       5 */ /* unknown */ void 	xadd5_locked;
-/* 0x08048da4       5 */ /* unknown */ void 	xadd5_locked_constant;
-/* 0x08048da9      99 */ /* unknown */ void 	xadd5_locked_allregs;
-/* 0x08048e0c       4 */ /* unknown */ void 	cmpxchg8b;
-/* 0x08048e10       4 */ /* unknown */ void 	cmpxchg8b_constant;
-/* 0x08048e14      98 */ /* unknown */ void 	cmpxchg8b_allregs;
-/* 0x08048e76       5 */ /* unknown */ void 	cmpxchg8b_locked;
-/* 0x08048e7b       5 */ /* unknown */ void 	cmpxchg8b_locked_constant;
-/* 0x08048e80      99 */ /* unknown */ void 	cmpxchg8b_locked_allregs;
-/* 0x08048ee3       3 */ /* unknown */ void 	rdtsc;
-/* 0x08048ee6       3 */ /* unknown */ void 	rdtsc_constant;
-/* 0x08048ee9      97 */ /* unknown */ void 	rdtsc_allregs;
-/* 0x08048f4a       3 */ /* unknown */ void 	rdmsr;
-/* 0x08048f4d       3 */ /* unknown */ void 	rdmsr_constant;
-/* 0x08048f50      97 */ /* unknown */ void 	rdmsr_allregs;
-/* 0x08048fb1       3 */ /* unknown */ void 	wrmsr;
-/* 0x08048fb4       3 */ /* unknown */ void 	wrmsr_constant;
-/* 0x08048fb7      97 */ /* unknown */ void 	wrmsr_allregs;
-/* 0x08049018       5 */ /* unknown */ void 	cmov1;
-/* 0x0804901d       5 */ /* unknown */ void 	cmov1_constant;
-/* 0x08049022      99 */ /* unknown */ void 	cmov1_allregs;
-/* 0x08049085       5 */ /* unknown */ void 	cmov2;
-/* 0x0804908a       5 */ /* unknown */ void 	cmov2_constant;
-/* 0x0804908f      99 */ /* unknown */ void 	cmov2_allregs;
-/* 0x080490f2       6 */ /* unknown */ void 	cmov3;
-/* 0x080490f8       6 */ /* unknown */ void 	cmov3_constant;
-/* 0x080490fe     100 */ /* unknown */ void 	cmov3_allregs;
-/* 0x08049162       5 */ /* unknown */ void 	cmov4;
-/* 0x08049167       5 */ /* unknown */ void 	cmov4_constant;
-/* 0x0804916c      99 */ /* unknown */ void 	cmov4_allregs;
-/* 0x080491cf       7 */ /* unknown */ void 	cmov_w_with_code_0;
-/* 0x080491d6       7 */ /* unknown */ void 	cmov_w_with_code_0_constant;
-/* 0x080491dd     101 */ /* unknown */ void 	cmov_w_with_code_0_allregs;
-/* 0x08049242       7 */ /* unknown */ void 	cmov_w_with_code_1;
-/* 0x08049249       7 */ /* unknown */ void 	cmov_w_with_code_1_constant;
-/* 0x08049250     101 */ /* unknown */ void 	cmov_w_with_code_1_allregs;
-/* 0x080492b5       7 */ /* unknown */ void 	cmov_w_with_code_2;
-/* 0x080492bc       7 */ /* unknown */ void 	cmov_w_with_code_2_constant;
-/* 0x080492c3     101 */ /* unknown */ void 	cmov_w_with_code_2_allregs;
-/* 0x08049328       7 */ /* unknown */ void 	cmov_w_with_code_3;
-/* 0x0804932f       7 */ /* unknown */ void 	cmov_w_with_code_3_constant;
-/* 0x08049336     101 */ /* unknown */ void 	cmov_w_with_code_3_allregs;
-/* 0x0804939b       7 */ /* unknown */ void 	cmov_w_with_code_4;
-/* 0x080493a2       7 */ /* unknown */ void 	cmov_w_with_code_4_constant;
-/* 0x080493a9     101 */ /* unknown */ void 	cmov_w_with_code_4_allregs;
-/* 0x0804940e       7 */ /* unknown */ void 	cmov_w_with_code_5;
-/* 0x08049415       7 */ /* unknown */ void 	cmov_w_with_code_5_constant;
-/* 0x0804941c     101 */ /* unknown */ void 	cmov_w_with_code_5_allregs;
-/* 0x08049481       7 */ /* unknown */ void 	cmov_w_with_code_6;
-/* 0x08049488       7 */ /* unknown */ void 	cmov_w_with_code_6_constant;
-/* 0x0804948f     101 */ /* unknown */ void 	cmov_w_with_code_6_allregs;
-/* 0x080494f4       7 */ /* unknown */ void 	cmov_w_with_code_7;
-/* 0x080494fb       7 */ /* unknown */ void 	cmov_w_with_code_7_constant;
-/* 0x08049502     101 */ /* unknown */ void 	cmov_w_with_code_7_allregs;
-/* 0x08049567       7 */ /* unknown */ void 	cmov_w_with_code_8;
-/* 0x0804956e       7 */ /* unknown */ void 	cmov_w_with_code_8_constant;
-/* 0x08049575     101 */ /* unknown */ void 	cmov_w_with_code_8_allregs;
-/* 0x080495da       7 */ /* unknown */ void 	cmov_w_with_code_9;
-/* 0x080495e1       7 */ /* unknown */ void 	cmov_w_with_code_9_constant;
-/* 0x080495e8     101 */ /* unknown */ void 	cmov_w_with_code_9_allregs;
-/* 0x0804964d       7 */ /* unknown */ void 	cmov_w_with_code_a;
-/* 0x08049654       7 */ /* unknown */ void 	cmov_w_with_code_a_constant;
-/* 0x0804965b     101 */ /* unknown */ void 	cmov_w_with_code_a_allregs;
-/* 0x080496c0       7 */ /* unknown */ void 	cmov_w_with_code_b;
-/* 0x080496c7       7 */ /* unknown */ void 	cmov_w_with_code_b_constant;
-/* 0x080496ce     101 */ /* unknown */ void 	cmov_w_with_code_b_allregs;
-/* 0x08049733       7 */ /* unknown */ void 	cmov_w_with_code_c;
-/* 0x0804973a       7 */ /* unknown */ void 	cmov_w_with_code_c_constant;
-/* 0x08049741     101 */ /* unknown */ void 	cmov_w_with_code_c_allregs;
-/* 0x080497a6       7 */ /* unknown */ void 	cmov_w_with_code_d;
-/* 0x080497ad       7 */ /* unknown */ void 	cmov_w_with_code_d_constant;
-/* 0x080497b4     101 */ /* unknown */ void 	cmov_w_with_code_d_allregs;
-/* 0x08049819       7 */ /* unknown */ void 	cmov_w_with_code_e;
-/* 0x08049820       7 */ /* unknown */ void 	cmov_w_with_code_e_constant;
-/* 0x08049827     101 */ /* unknown */ void 	cmov_w_with_code_e_allregs;
-/* 0x0804988c       7 */ /* unknown */ void 	cmov_w_with_code_f;
-/* 0x08049893       7 */ /* unknown */ void 	cmov_w_with_code_f_constant;
-/* 0x0804989a     101 */ /* unknown */ void 	cmov_w_with_code_f_allregs;
-/* 0x080498ff       6 */ /* unknown */ void 	cmov_l_with_code_0;
-/* 0x08049905       6 */ /* unknown */ void 	cmov_l_with_code_0_constant;
-/* 0x0804990b     100 */ /* unknown */ void 	cmov_l_with_code_0_allregs;
-/* 0x0804996f       6 */ /* unknown */ void 	cmov_l_with_code_1;
-/* 0x08049975       6 */ /* unknown */ void 	cmov_l_with_code_1_constant;
-/* 0x0804997b     100 */ /* unknown */ void 	cmov_l_with_code_1_allregs;
-/* 0x080499df       6 */ /* unknown */ void 	cmov_l_with_code_2;
-/* 0x080499e5       6 */ /* unknown */ void 	cmov_l_with_code_2_constant;
-/* 0x080499eb     100 */ /* unknown */ void 	cmov_l_with_code_2_allregs;
-/* 0x08049a4f       6 */ /* unknown */ void 	cmov_l_with_code_3;
-/* 0x08049a55       6 */ /* unknown */ void 	cmov_l_with_code_3_constant;
-/* 0x08049a5b     100 */ /* unknown */ void 	cmov_l_with_code_3_allregs;
-/* 0x08049abf       6 */ /* unknown */ void 	cmov_l_with_code_4;
-/* 0x08049ac5       6 */ /* unknown */ void 	cmov_l_with_code_4_constant;
-/* 0x08049acb     100 */ /* unknown */ void 	cmov_l_with_code_4_allregs;
-/* 0x08049b2f       6 */ /* unknown */ void 	cmov_l_with_code_5;
-/* 0x08049b35       6 */ /* unknown */ void 	cmov_l_with_code_5_constant;
-/* 0x08049b3b     100 */ /* unknown */ void 	cmov_l_with_code_5_allregs;
-/* 0x08049b9f       6 */ /* unknown */ void 	cmov_l_with_code_6;
-/* 0x08049ba5       6 */ /* unknown */ void 	cmov_l_with_code_6_constant;
-/* 0x08049bab     100 */ /* unknown */ void 	cmov_l_with_code_6_allregs;
-/* 0x08049c0f       6 */ /* unknown */ void 	cmov_l_with_code_7;
-/* 0x08049c15       6 */ /* unknown */ void 	cmov_l_with_code_7_constant;
-/* 0x08049c1b     100 */ /* unknown */ void 	cmov_l_with_code_7_allregs;
-/* 0x08049c7f       6 */ /* unknown */ void 	cmov_l_with_code_8;
-/* 0x08049c85       6 */ /* unknown */ void 	cmov_l_with_code_8_constant;
-/* 0x08049c8b     100 */ /* unknown */ void 	cmov_l_with_code_8_allregs;
-/* 0x08049cef       6 */ /* unknown */ void 	cmov_l_with_code_9;
-/* 0x08049cf5       6 */ /* unknown */ void 	cmov_l_with_code_9_constant;
-/* 0x08049cfb     100 */ /* unknown */ void 	cmov_l_with_code_9_allregs;
-/* 0x08049d5f       6 */ /* unknown */ void 	cmov_l_with_code_a;
-/* 0x08049d65       6 */ /* unknown */ void 	cmov_l_with_code_a_constant;
-/* 0x08049d6b     100 */ /* unknown */ void 	cmov_l_with_code_a_allregs;
-/* 0x08049dcf       6 */ /* unknown */ void 	cmov_l_with_code_b;
-/* 0x08049dd5       6 */ /* unknown */ void 	cmov_l_with_code_b_constant;
-/* 0x08049ddb     100 */ /* unknown */ void 	cmov_l_with_code_b_allregs;
-/* 0x08049e3f       6 */ /* unknown */ void 	cmov_l_with_code_c;
-/* 0x08049e45       6 */ /* unknown */ void 	cmov_l_with_code_c_constant;
-/* 0x08049e4b     100 */ /* unknown */ void 	cmov_l_with_code_c_allregs;
-/* 0x08049eaf       6 */ /* unknown */ void 	cmov_l_with_code_d;
-/* 0x08049eb5       6 */ /* unknown */ void 	cmov_l_with_code_d_constant;
-/* 0x08049ebb     100 */ /* unknown */ void 	cmov_l_with_code_d_allregs;
-/* 0x08049f1f       6 */ /* unknown */ void 	cmov_l_with_code_e;
-/* 0x08049f25       6 */ /* unknown */ void 	cmov_l_with_code_e_constant;
-/* 0x08049f2b     100 */ /* unknown */ void 	cmov_l_with_code_e_allregs;
-/* 0x08049f8f       6 */ /* unknown */ void 	cmov_l_with_code_f;
-/* 0x08049f95       6 */ /* unknown */ void 	cmov_l_with_code_f_constant;
-/* 0x08049f9b     100 */ /* unknown */ void 	cmov_l_with_code_f_allregs;
-/* 0x08049fff     993 */ /* unknown */ void 	main;
-/* 0x0804a3e0      16 */ /* unknown */ void 	__libc_csu_fini;
-/* 0x0804a3f0      90 */ /* unknown */ void 	__libc_csu_init;
-/* 0x0804a44a       6 */ /* unknown */ void 	__i686.get_pc_thunk.bx;
-/* 0x0804a450      44 */ /* unknown */ void 	__do_global_ctors_aux;
-/* 0x0804a47c       0 */ /* unknown */ void 	_fini;
-/* 0x0804a498       4 */ /* unknown */ void 	_fp_hw;
-/* 0x0804a49c       4 */ /* unknown */ void 	_IO_stdin_used;
-/* 0x0804a4a0       0 */ /* unknown */ void 	__dso_handle;
-/* 0x0804a540       0 */ /* unknown */ void 	__FRAME_END__;
-/* 0x0804b544       0 */ /* unknown */ void 	__CTOR_LIST__;
-/* 0x0804b544       0 */ /* unknown */ void 	__init_array_end;
-/* 0x0804b544       0 */ /* unknown */ void 	__init_array_start;
-/* 0x0804b548       0 */ /* unknown */ void 	__CTOR_END__;
-/* 0x0804b54c       0 */ /* unknown */ void 	__DTOR_LIST__;
-/* 0x0804b550       0 */ /* unknown */ void 	__DTOR_END__;
-/* 0x0804b554       0 */ /* unknown */ void 	__JCR_LIST__;
-/* 0x0804b554       0 */ /* unknown */ void 	__JCR_END__;
-/* 0x0804b558       0 */ /* unknown */ void 	_DYNAMIC;
-/* 0x0804b624       0 */ /* unknown */ void 	_GLOBAL_OFFSET_TABLE_;
-/* 0x0804b638       0 */ /* unknown */ void 	data_start;
-/* 0x0804b638       0 */ /* unknown */ void 	__data_start;
-/* 0x0804b63c       1 */ /* unknown */ void 	completed.5978;
-/* 0x0804b640       4 */ /* unknown */ void 	dtor_idx.5980;
+/* 0x08048394       8 */ /* unknown */ void 	bswap_plain;
+/* 0x0804839c     241 */ /* unknown */ void 	bswap_allregs;
+/* 0x0804848d     230 */ /* unknown */ void 	bswap_constant_simple;
+/* 0x08048573     230 */ /* unknown */ void 	bswap_constant_complex1;
+/* 0x08048659     231 */ /* unknown */ void 	bswap_constant_complex2;
+/* 0x08048740       9 */ /* unknown */ void 	cmpxchg1_plain;
+/* 0x08048749     242 */ /* unknown */ void 	cmpxchg1_allregs;
+/* 0x0804883b     231 */ /* unknown */ void 	cmpxchg1_constant_simple;
+/* 0x08048922     231 */ /* unknown */ void 	cmpxchg1_constant_complex1;
+/* 0x08048a09     232 */ /* unknown */ void 	cmpxchg1_constant_complex2;
+/* 0x08048af1      10 */ /* unknown */ void 	cmpxchg2_plain;
+/* 0x08048afb     243 */ /* unknown */ void 	cmpxchg2_allregs;
+/* 0x08048bee     232 */ /* unknown */ void 	cmpxchg2_constant_simple;
+/* 0x08048cd6     232 */ /* unknown */ void 	cmpxchg2_constant_complex1;
+/* 0x08048dbe     233 */ /* unknown */ void 	cmpxchg2_constant_complex2;
+/* 0x08048ea7       9 */ /* unknown */ void 	cmpxchg3_plain;
+/* 0x08048eb0     242 */ /* unknown */ void 	cmpxchg3_allregs;
+/* 0x08048fa2     231 */ /* unknown */ void 	cmpxchg3_constant_simple;
+/* 0x08049089     231 */ /* unknown */ void 	cmpxchg3_constant_complex1;
+/* 0x08049170     232 */ /* unknown */ void 	cmpxchg3_constant_complex2;
+/* 0x08049258       9 */ /* unknown */ void 	cmpxchg4_plain;
+/* 0x08049261     242 */ /* unknown */ void 	cmpxchg4_allregs;
+/* 0x08049353     231 */ /* unknown */ void 	cmpxchg4_constant_simple;
+/* 0x0804943a     231 */ /* unknown */ void 	cmpxchg4_constant_complex1;
+/* 0x08049521     232 */ /* unknown */ void 	cmpxchg4_constant_complex2;
+/* 0x08049609       9 */ /* unknown */ void 	cmpxchg5_plain;
+/* 0x08049612     242 */ /* unknown */ void 	cmpxchg5_allregs;
+/* 0x08049704     231 */ /* unknown */ void 	cmpxchg5_constant_simple;
+/* 0x080497eb     231 */ /* unknown */ void 	cmpxchg5_constant_complex1;
+/* 0x080498d2     232 */ /* unknown */ void 	cmpxchg5_constant_complex2;
+/* 0x080499ba      10 */ /* unknown */ void 	cmpxchg_locked_plain;
+/* 0x080499c4     243 */ /* unknown */ void 	cmpxchg_locked_allregs;
+/* 0x08049ab7     232 */ /* unknown */ void 	cmpxchg_locked_constant_simple;
+/* 0x08049b9f     232 */ /* unknown */ void 	cmpxchg_locked_constant_complex1;
+/* 0x08049c87     233 */ /* unknown */ void 	cmpxchg_locked_constant_complex2;
+/* 0x08049d70       8 */ /* unknown */ void 	cpuid_plain;
+/* 0x08049d78     241 */ /* unknown */ void 	cpuid_allregs;
+/* 0x08049e69     230 */ /* unknown */ void 	cpuid_constant_simple;
+/* 0x08049f4f     230 */ /* unknown */ void 	cpuid_constant_complex1;
+/* 0x0804a035     231 */ /* unknown */ void 	cpuid_constant_complex2;
+/* 0x0804a11c       8 */ /* unknown */ void 	invd_plain;
+/* 0x0804a124     241 */ /* unknown */ void 	invd_allregs;
+/* 0x0804a215     230 */ /* unknown */ void 	invd_constant_simple;
+/* 0x0804a2fb     230 */ /* unknown */ void 	invd_constant_complex1;
+/* 0x0804a3e1     231 */ /* unknown */ void 	invd_constant_complex2;
+/* 0x0804a4c8       9 */ /* unknown */ void 	invlpg_plain;
+/* 0x0804a4d1     242 */ /* unknown */ void 	invlpg_allregs;
+/* 0x0804a5c3     231 */ /* unknown */ void 	invlpg_constant_simple;
+/* 0x0804a6aa     231 */ /* unknown */ void 	invlpg_constant_complex1;
+/* 0x0804a791     232 */ /* unknown */ void 	invlpg_constant_complex2;
+/* 0x0804a879       8 */ /* unknown */ void 	wbinvd_plain;
+/* 0x0804a881     241 */ /* unknown */ void 	wbinvd_allregs;
+/* 0x0804a972     230 */ /* unknown */ void 	wbinvd_constant_simple;
+/* 0x0804aa58     230 */ /* unknown */ void 	wbinvd_constant_complex1;
+/* 0x0804ab3e     231 */ /* unknown */ void 	wbinvd_constant_complex2;
+/* 0x0804ac25       9 */ /* unknown */ void 	xadd1_plain;
+/* 0x0804ac2e     242 */ /* unknown */ void 	xadd1_allregs;
+/* 0x0804ad20     231 */ /* unknown */ void 	xadd1_constant_simple;
+/* 0x0804ae07     231 */ /* unknown */ void 	xadd1_constant_complex1;
+/* 0x0804aeee     232 */ /* unknown */ void 	xadd1_constant_complex2;
+/* 0x0804afd6      10 */ /* unknown */ void 	xadd2_plain;
+/* 0x0804afe0     243 */ /* unknown */ void 	xadd2_allregs;
+/* 0x0804b0d3     232 */ /* unknown */ void 	xadd2_constant_simple;
+/* 0x0804b1bb     232 */ /* unknown */ void 	xadd2_constant_complex1;
+/* 0x0804b2a3     233 */ /* unknown */ void 	xadd2_constant_complex2;
+/* 0x0804b38c       9 */ /* unknown */ void 	xadd3_plain;
+/* 0x0804b395     242 */ /* unknown */ void 	xadd3_allregs;
+/* 0x0804b487     231 */ /* unknown */ void 	xadd3_constant_simple;
+/* 0x0804b56e     231 */ /* unknown */ void 	xadd3_constant_complex1;
+/* 0x0804b655     232 */ /* unknown */ void 	xadd3_constant_complex2;
+/* 0x0804b73d       9 */ /* unknown */ void 	xadd4_plain;
+/* 0x0804b746     242 */ /* unknown */ void 	xadd4_allregs;
+/* 0x0804b838     231 */ /* unknown */ void 	xadd4_constant_simple;
+/* 0x0804b91f     231 */ /* unknown */ void 	xadd4_constant_complex1;
+/* 0x0804ba06     232 */ /* unknown */ void 	xadd4_constant_complex2;
+/* 0x0804baee       9 */ /* unknown */ void 	xadd5_plain;
+/* 0x0804baf7     242 */ /* unknown */ void 	xadd5_allregs;
+/* 0x0804bbe9     231 */ /* unknown */ void 	xadd5_constant_simple;
+/* 0x0804bcd0     231 */ /* unknown */ void 	xadd5_constant_complex1;
+/* 0x0804bdb7     232 */ /* unknown */ void 	xadd5_constant_complex2;
+/* 0x0804be9f      10 */ /* unknown */ void 	xadd_locked_plain;
+/* 0x0804bea9     243 */ /* unknown */ void 	xadd_locked_allregs;
+/* 0x0804bf9c     232 */ /* unknown */ void 	xadd_locked_constant_simple;
+/* 0x0804c084     232 */ /* unknown */ void 	xadd_locked_constant_complex1;
+/* 0x0804c16c     233 */ /* unknown */ void 	xadd_locked_constant_complex2;
+/* 0x0804c255       9 */ /* unknown */ void 	cmpxchg8b_plain;
+/* 0x0804c25e     242 */ /* unknown */ void 	cmpxchg8b_allregs;
+/* 0x0804c350     231 */ /* unknown */ void 	cmpxchg8b_constant_simple;
+/* 0x0804c437     231 */ /* unknown */ void 	cmpxchg8b_constant_complex1;
+/* 0x0804c51e     232 */ /* unknown */ void 	cmpxchg8b_constant_complex2;
+/* 0x0804c606      10 */ /* unknown */ void 	cmpxchg8b_locked_plain;
+/* 0x0804c610     243 */ /* unknown */ void 	cmpxchg8b_locked_allregs;
+/* 0x0804c703     232 */ /* unknown */ void 	cmpxchg8b_locked_constant_simple;
+/* 0x0804c7eb     232 */ /* unknown */ void 	cmpxchg8b_locked_constant_complex1;
+/* 0x0804c8d3     233 */ /* unknown */ void 	cmpxchg8b_locked_constant_complex2;
+/* 0x0804c9bc       8 */ /* unknown */ void 	rdtsc_plain;
+/* 0x0804c9c4     241 */ /* unknown */ void 	rdtsc_allregs;
+/* 0x0804cab5     230 */ /* unknown */ void 	rdtsc_constant_simple;
+/* 0x0804cb9b     230 */ /* unknown */ void 	rdtsc_constant_complex1;
+/* 0x0804cc81     231 */ /* unknown */ void 	rdtsc_constant_complex2;
+/* 0x0804cd68       8 */ /* unknown */ void 	rdmsr_plain;
+/* 0x0804cd70     241 */ /* unknown */ void 	rdmsr_allregs;
+/* 0x0804ce61     230 */ /* unknown */ void 	rdmsr_constant_simple;
+/* 0x0804cf47     230 */ /* unknown */ void 	rdmsr_constant_complex1;
+/* 0x0804d02d     231 */ /* unknown */ void 	rdmsr_constant_complex2;
+/* 0x0804d114       8 */ /* unknown */ void 	wrmsr_plain;
+/* 0x0804d11c     241 */ /* unknown */ void 	wrmsr_allregs;
+/* 0x0804d20d     230 */ /* unknown */ void 	wrmsr_constant_simple;
+/* 0x0804d2f3     230 */ /* unknown */ void 	wrmsr_constant_complex1;
+/* 0x0804d3d9     231 */ /* unknown */ void 	wrmsr_constant_complex2;
+/* 0x0804d4c0      10 */ /* unknown */ void 	cmov1_plain;
+/* 0x0804d4ca     243 */ /* unknown */ void 	cmov1_allregs;
+/* 0x0804d5bd     232 */ /* unknown */ void 	cmov1_constant_simple;
+/* 0x0804d6a5     232 */ /* unknown */ void 	cmov1_constant_complex1;
+/* 0x0804d78d     233 */ /* unknown */ void 	cmov1_constant_complex2;
+/* 0x0804d876      10 */ /* unknown */ void 	cmov2_plain;
+/* 0x0804d880     243 */ /* unknown */ void 	cmov2_allregs;
+/* 0x0804d973     232 */ /* unknown */ void 	cmov2_constant_simple;
+/* 0x0804da5b     232 */ /* unknown */ void 	cmov2_constant_complex1;
+/* 0x0804db43     233 */ /* unknown */ void 	cmov2_constant_complex2;
+/* 0x0804dc2c      11 */ /* unknown */ void 	cmov3_plain;
+/* 0x0804dc37     244 */ /* unknown */ void 	cmov3_allregs;
+/* 0x0804dd2b     233 */ /* unknown */ void 	cmov3_constant_simple;
+/* 0x0804de14     233 */ /* unknown */ void 	cmov3_constant_complex1;
+/* 0x0804defd     234 */ /* unknown */ void 	cmov3_constant_complex2;
+/* 0x0804dfe7      10 */ /* unknown */ void 	cmov4_plain;
+/* 0x0804dff1     243 */ /* unknown */ void 	cmov4_allregs;
+/* 0x0804e0e4     232 */ /* unknown */ void 	cmov4_constant_simple;
+/* 0x0804e1cc     232 */ /* unknown */ void 	cmov4_constant_complex1;
+/* 0x0804e2b4     233 */ /* unknown */ void 	cmov4_constant_complex2;
+/* 0x0804e39d      12 */ /* unknown */ void 	cmov_w_with_code_0_plain;
+/* 0x0804e3a9     245 */ /* unknown */ void 	cmov_w_with_code_0_allregs;
+/* 0x0804e49e     234 */ /* unknown */ void 	cmov_w_with_code_0_constant_simple;
+/* 0x0804e588     234 */ /* unknown */ void 	cmov_w_with_code_0_constant_complex1;
+/* 0x0804e672     235 */ /* unknown */ void 	cmov_w_with_code_0_constant_complex2;
+/* 0x0804e75d      12 */ /* unknown */ void 	cmov_w_with_code_1_plain;
+/* 0x0804e769     245 */ /* unknown */ void 	cmov_w_with_code_1_allregs;
+/* 0x0804e85e     234 */ /* unknown */ void 	cmov_w_with_code_1_constant_simple;
+/* 0x0804e948     234 */ /* unknown */ void 	cmov_w_with_code_1_constant_complex1;
+/* 0x0804ea32     235 */ /* unknown */ void 	cmov_w_with_code_1_constant_complex2;
+/* 0x0804eb1d      12 */ /* unknown */ void 	cmov_w_with_code_2_plain;
+/* 0x0804eb29     245 */ /* unknown */ void 	cmov_w_with_code_2_allregs;
+/* 0x0804ec1e     234 */ /* unknown */ void 	cmov_w_with_code_2_constant_simple;
+/* 0x0804ed08     234 */ /* unknown */ void 	cmov_w_with_code_2_constant_complex1;
+/* 0x0804edf2     235 */ /* unknown */ void 	cmov_w_with_code_2_constant_complex2;
+/* 0x0804eedd      12 */ /* unknown */ void 	cmov_w_with_code_3_plain;
+/* 0x0804eee9     245 */ /* unknown */ void 	cmov_w_with_code_3_allregs;
+/* 0x0804efde     234 */ /* unknown */ void 	cmov_w_with_code_3_constant_simple;
+/* 0x0804f0c8     234 */ /* unknown */ void 	cmov_w_with_code_3_constant_complex1;
+/* 0x0804f1b2     235 */ /* unknown */ void 	cmov_w_with_code_3_constant_complex2;
+/* 0x0804f29d      12 */ /* unknown */ void 	cmov_w_with_code_4_plain;
+/* 0x0804f2a9     245 */ /* unknown */ void 	cmov_w_with_code_4_allregs;
+/* 0x0804f39e     234 */ /* unknown */ void 	cmov_w_with_code_4_constant_simple;
+/* 0x0804f488     234 */ /* unknown */ void 	cmov_w_with_code_4_constant_complex1;
+/* 0x0804f572     235 */ /* unknown */ void 	cmov_w_with_code_4_constant_complex2;
+/* 0x0804f65d      12 */ /* unknown */ void 	cmov_w_with_code_5_plain;
+/* 0x0804f669     245 */ /* unknown */ void 	cmov_w_with_code_5_allregs;
+/* 0x0804f75e     234 */ /* unknown */ void 	cmov_w_with_code_5_constant_simple;
+/* 0x0804f848     234 */ /* unknown */ void 	cmov_w_with_code_5_constant_complex1;
+/* 0x0804f932     235 */ /* unknown */ void 	cmov_w_with_code_5_constant_complex2;
+/* 0x0804fa1d      12 */ /* unknown */ void 	cmov_w_with_code_6_plain;
+/* 0x0804fa29     245 */ /* unknown */ void 	cmov_w_with_code_6_allregs;
+/* 0x0804fb1e     234 */ /* unknown */ void 	cmov_w_with_code_6_constant_simple;
+/* 0x0804fc08     234 */ /* unknown */ void 	cmov_w_with_code_6_constant_complex1;
+/* 0x0804fcf2     235 */ /* unknown */ void 	cmov_w_with_code_6_constant_complex2;
+/* 0x0804fddd      12 */ /* unknown */ void 	cmov_w_with_code_7_plain;
+/* 0x0804fde9     245 */ /* unknown */ void 	cmov_w_with_code_7_allregs;
+/* 0x0804fede     234 */ /* unknown */ void 	cmov_w_with_code_7_constant_simple;
+/* 0x0804ffc8     234 */ /* unknown */ void 	cmov_w_with_code_7_constant_complex1;
+/* 0x080500b2     235 */ /* unknown */ void 	cmov_w_with_code_7_constant_complex2;
+/* 0x0805019d      12 */ /* unknown */ void 	cmov_w_with_code_8_plain;
+/* 0x080501a9     245 */ /* unknown */ void 	cmov_w_with_code_8_allregs;
+/* 0x0805029e     234 */ /* unknown */ void 	cmov_w_with_code_8_constant_simple;
+/* 0x08050388     234 */ /* unknown */ void 	cmov_w_with_code_8_constant_complex1;
+/* 0x08050472     235 */ /* unknown */ void 	cmov_w_with_code_8_constant_complex2;
+/* 0x0805055d      12 */ /* unknown */ void 	cmov_w_with_code_9_plain;
+/* 0x08050569     245 */ /* unknown */ void 	cmov_w_with_code_9_allregs;
+/* 0x0805065e     234 */ /* unknown */ void 	cmov_w_with_code_9_constant_simple;
+/* 0x08050748     234 */ /* unknown */ void 	cmov_w_with_code_9_constant_complex1;
+/* 0x08050832     235 */ /* unknown */ void 	cmov_w_with_code_9_constant_complex2;
+/* 0x0805091d      12 */ /* unknown */ void 	cmov_w_with_code_a_plain;
+/* 0x08050929     245 */ /* unknown */ void 	cmov_w_with_code_a_allregs;
+/* 0x08050a1e     234 */ /* unknown */ void 	cmov_w_with_code_a_constant_simple;
+/* 0x08050b08     234 */ /* unknown */ void 	cmov_w_with_code_a_constant_complex1;
+/* 0x08050bf2     235 */ /* unknown */ void 	cmov_w_with_code_a_constant_complex2;
+/* 0x08050cdd      12 */ /* unknown */ void 	cmov_w_with_code_b_plain;
+/* 0x08050ce9     245 */ /* unknown */ void 	cmov_w_with_code_b_allregs;
+/* 0x08050dde     234 */ /* unknown */ void 	cmov_w_with_code_b_constant_simple;
+/* 0x08050ec8     234 */ /* unknown */ void 	cmov_w_with_code_b_constant_complex1;
+/* 0x08050fb2     235 */ /* unknown */ void 	cmov_w_with_code_b_constant_complex2;
+/* 0x0805109d      12 */ /* unknown */ void 	cmov_w_with_code_c_plain;
+/* 0x080510a9     245 */ /* unknown */ void 	cmov_w_with_code_c_allregs;
+/* 0x0805119e     234 */ /* unknown */ void 	cmov_w_with_code_c_constant_simple;
+/* 0x08051288     234 */ /* unknown */ void 	cmov_w_with_code_c_constant_complex1;
+/* 0x08051372     235 */ /* unknown */ void 	cmov_w_with_code_c_constant_complex2;
+/* 0x0805145d      12 */ /* unknown */ void 	cmov_w_with_code_d_plain;
+/* 0x08051469     245 */ /* unknown */ void 	cmov_w_with_code_d_allregs;
+/* 0x0805155e     234 */ /* unknown */ void 	cmov_w_with_code_d_constant_simple;
+/* 0x08051648     234 */ /* unknown */ void 	cmov_w_with_code_d_constant_complex1;
+/* 0x08051732     235 */ /* unknown */ void 	cmov_w_with_code_d_constant_complex2;
+/* 0x0805181d      12 */ /* unknown */ void 	cmov_w_with_code_e_plain;
+/* 0x08051829     245 */ /* unknown */ void 	cmov_w_with_code_e_allregs;
+/* 0x0805191e     234 */ /* unknown */ void 	cmov_w_with_code_e_constant_simple;
+/* 0x08051a08     234 */ /* unknown */ void 	cmov_w_with_code_e_constant_complex1;
+/* 0x08051af2     235 */ /* unknown */ void 	cmov_w_with_code_e_constant_complex2;
+/* 0x08051bdd      12 */ /* unknown */ void 	cmov_w_with_code_f_plain;
+/* 0x08051be9     245 */ /* unknown */ void 	cmov_w_with_code_f_allregs;
+/* 0x08051cde     234 */ /* unknown */ void 	cmov_w_with_code_f_constant_simple;
+/* 0x08051dc8     234 */ /* unknown */ void 	cmov_w_with_code_f_constant_complex1;
+/* 0x08051eb2     235 */ /* unknown */ void 	cmov_w_with_code_f_constant_complex2;
+/* 0x08051f9d      11 */ /* unknown */ void 	cmov_l_with_code_0_plain;
+/* 0x08051fa8     244 */ /* unknown */ void 	cmov_l_with_code_0_allregs;
+/* 0x0805209c     233 */ /* unknown */ void 	cmov_l_with_code_0_constant_simple;
+/* 0x08052185     233 */ /* unknown */ void 	cmov_l_with_code_0_constant_complex1;
+/* 0x0805226e     234 */ /* unknown */ void 	cmov_l_with_code_0_constant_complex2;
+/* 0x08052358      11 */ /* unknown */ void 	cmov_l_with_code_1_plain;
+/* 0x08052363     244 */ /* unknown */ void 	cmov_l_with_code_1_allregs;
+/* 0x08052457     233 */ /* unknown */ void 	cmov_l_with_code_1_constant_simple;
+/* 0x08052540     233 */ /* unknown */ void 	cmov_l_with_code_1_constant_complex1;
+/* 0x08052629     234 */ /* unknown */ void 	cmov_l_with_code_1_constant_complex2;
+/* 0x08052713      11 */ /* unknown */ void 	cmov_l_with_code_2_plain;
+/* 0x0805271e     244 */ /* unknown */ void 	cmov_l_with_code_2_allregs;
+/* 0x08052812     233 */ /* unknown */ void 	cmov_l_with_code_2_constant_simple;
+/* 0x080528fb     233 */ /* unknown */ void 	cmov_l_with_code_2_constant_complex1;
+/* 0x080529e4     234 */ /* unknown */ void 	cmov_l_with_code_2_constant_complex2;
+/* 0x08052ace      11 */ /* unknown */ void 	cmov_l_with_code_3_plain;
+/* 0x08052ad9     244 */ /* unknown */ void 	cmov_l_with_code_3_allregs;
+/* 0x08052bcd     233 */ /* unknown */ void 	cmov_l_with_code_3_constant_simple;
+/* 0x08052cb6     233 */ /* unknown */ void 	cmov_l_with_code_3_constant_complex1;
+/* 0x08052d9f     234 */ /* unknown */ void 	cmov_l_with_code_3_constant_complex2;
+/* 0x08052e89      11 */ /* unknown */ void 	cmov_l_with_code_4_plain;
+/* 0x08052e94     244 */ /* unknown */ void 	cmov_l_with_code_4_allregs;
+/* 0x08052f88     233 */ /* unknown */ void 	cmov_l_with_code_4_constant_simple;
+/* 0x08053071     233 */ /* unknown */ void 	cmov_l_with_code_4_constant_complex1;
+/* 0x0805315a     234 */ /* unknown */ void 	cmov_l_with_code_4_constant_complex2;
+/* 0x08053244      11 */ /* unknown */ void 	cmov_l_with_code_5_plain;
+/* 0x0805324f     244 */ /* unknown */ void 	cmov_l_with_code_5_allregs;
+/* 0x08053343     233 */ /* unknown */ void 	cmov_l_with_code_5_constant_simple;
+/* 0x0805342c     233 */ /* unknown */ void 	cmov_l_with_code_5_constant_complex1;
+/* 0x08053515     234 */ /* unknown */ void 	cmov_l_with_code_5_constant_complex2;
+/* 0x080535ff      11 */ /* unknown */ void 	cmov_l_with_code_6_plain;
+/* 0x0805360a     244 */ /* unknown */ void 	cmov_l_with_code_6_allregs;
+/* 0x080536fe     233 */ /* unknown */ void 	cmov_l_with_code_6_constant_simple;
+/* 0x080537e7     233 */ /* unknown */ void 	cmov_l_with_code_6_constant_complex1;
+/* 0x080538d0     234 */ /* unknown */ void 	cmov_l_with_code_6_constant_complex2;
+/* 0x080539ba      11 */ /* unknown */ void 	cmov_l_with_code_7_plain;
+/* 0x080539c5     244 */ /* unknown */ void 	cmov_l_with_code_7_allregs;
+/* 0x08053ab9     233 */ /* unknown */ void 	cmov_l_with_code_7_constant_simple;
+/* 0x08053ba2     233 */ /* unknown */ void 	cmov_l_with_code_7_constant_complex1;
+/* 0x08053c8b     234 */ /* unknown */ void 	cmov_l_with_code_7_constant_complex2;
+/* 0x08053d75      11 */ /* unknown */ void 	cmov_l_with_code_8_plain;
+/* 0x08053d80     244 */ /* unknown */ void 	cmov_l_with_code_8_allregs;
+/* 0x08053e74     233 */ /* unknown */ void 	cmov_l_with_code_8_constant_simple;
+/* 0x08053f5d     233 */ /* unknown */ void 	cmov_l_with_code_8_constant_complex1;
+/* 0x08054046     234 */ /* unknown */ void 	cmov_l_with_code_8_constant_complex2;
+/* 0x08054130      11 */ /* unknown */ void 	cmov_l_with_code_9_plain;
+/* 0x0805413b     244 */ /* unknown */ void 	cmov_l_with_code_9_allregs;
+/* 0x0805422f     233 */ /* unknown */ void 	cmov_l_with_code_9_constant_simple;
+/* 0x08054318     233 */ /* unknown */ void 	cmov_l_with_code_9_constant_complex1;
+/* 0x08054401     234 */ /* unknown */ void 	cmov_l_with_code_9_constant_complex2;
+/* 0x080544eb      11 */ /* unknown */ void 	cmov_l_with_code_a_plain;
+/* 0x080544f6     244 */ /* unknown */ void 	cmov_l_with_code_a_allregs;
+/* 0x080545ea     233 */ /* unknown */ void 	cmov_l_with_code_a_constant_simple;
+/* 0x080546d3     233 */ /* unknown */ void 	cmov_l_with_code_a_constant_complex1;
+/* 0x080547bc     234 */ /* unknown */ void 	cmov_l_with_code_a_constant_complex2;
+/* 0x080548a6      11 */ /* unknown */ void 	cmov_l_with_code_b_plain;
+/* 0x080548b1     244 */ /* unknown */ void 	cmov_l_with_code_b_allregs;
+/* 0x080549a5     233 */ /* unknown */ void 	cmov_l_with_code_b_constant_simple;
+/* 0x08054a8e     233 */ /* unknown */ void 	cmov_l_with_code_b_constant_complex1;
+/* 0x08054b77     234 */ /* unknown */ void 	cmov_l_with_code_b_constant_complex2;
+/* 0x08054c61      11 */ /* unknown */ void 	cmov_l_with_code_c_plain;
+/* 0x08054c6c     244 */ /* unknown */ void 	cmov_l_with_code_c_allregs;
+/* 0x08054d60     233 */ /* unknown */ void 	cmov_l_with_code_c_constant_simple;
+/* 0x08054e49     233 */ /* unknown */ void 	cmov_l_with_code_c_constant_complex1;
+/* 0x08054f32     234 */ /* unknown */ void 	cmov_l_with_code_c_constant_complex2;
+/* 0x0805501c      11 */ /* unknown */ void 	cmov_l_with_code_d_plain;
+/* 0x08055027     244 */ /* unknown */ void 	cmov_l_with_code_d_allregs;
+/* 0x0805511b     233 */ /* unknown */ void 	cmov_l_with_code_d_constant_simple;
+/* 0x08055204     233 */ /* unknown */ void 	cmov_l_with_code_d_constant_complex1;
+/* 0x080552ed     234 */ /* unknown */ void 	cmov_l_with_code_d_constant_complex2;
+/* 0x080553d7      11 */ /* unknown */ void 	cmov_l_with_code_e_plain;
+/* 0x080553e2     244 */ /* unknown */ void 	cmov_l_with_code_e_allregs;
+/* 0x080554d6     233 */ /* unknown */ void 	cmov_l_with_code_e_constant_simple;
+/* 0x080555bf     233 */ /* unknown */ void 	cmov_l_with_code_e_constant_complex1;
+/* 0x080556a8     234 */ /* unknown */ void 	cmov_l_with_code_e_constant_complex2;
+/* 0x08055792      11 */ /* unknown */ void 	cmov_l_with_code_f_plain;
+/* 0x0805579d     244 */ /* unknown */ void 	cmov_l_with_code_f_allregs;
+/* 0x08055891     233 */ /* unknown */ void 	cmov_l_with_code_f_constant_simple;
+/* 0x0805597a     233 */ /* unknown */ void 	cmov_l_with_code_f_constant_complex1;
+/* 0x08055a63     234 */ /* unknown */ void 	cmov_l_with_code_f_constant_complex2;
+/* 0x08055b4d    1451 */ /* unknown */ void 	callAll;
+/* 0x080560f8      24 */ /* unknown */ void 	main;
+/* 0x08056110      16 */ /* unknown */ void 	__libc_csu_fini;
+/* 0x08056120      90 */ /* unknown */ void 	__libc_csu_init;
+/* 0x0805617a       6 */ /* unknown */ void 	__i686.get_pc_thunk.bx;
+/* 0x08056180      44 */ /* unknown */ void 	__do_global_ctors_aux;
+/* 0x080561ac       0 */ /* unknown */ void 	_fini;
+/* 0x080561c8       4 */ /* unknown */ void 	_fp_hw;
+/* 0x080561cc       4 */ /* unknown */ void 	_IO_stdin_used;
+/* 0x080561d0       0 */ /* unknown */ void 	__dso_handle;
+/* 0x08056270       0 */ /* unknown */ void 	__FRAME_END__;
+/* 0x08057274       0 */ /* unknown */ void 	__CTOR_LIST__;
+/* 0x08057274       0 */ /* unknown */ void 	__init_array_end;
+/* 0x08057274       0 */ /* unknown */ void 	__init_array_start;
+/* 0x08057278       0 */ /* unknown */ void 	__CTOR_END__;
+/* 0x0805727c       0 */ /* unknown */ void 	__DTOR_LIST__;
+/* 0x08057280       0 */ /* unknown */ void 	__DTOR_END__;
+/* 0x08057284       0 */ /* unknown */ void 	__JCR_LIST__;
+/* 0x08057284       0 */ /* unknown */ void 	__JCR_END__;
+/* 0x08057288       0 */ /* unknown */ void 	_DYNAMIC;
+/* 0x08057354       0 */ /* unknown */ void 	_GLOBAL_OFFSET_TABLE_;
+/* 0x08057368       0 */ /* unknown */ void 	data_start;
+/* 0x08057368       0 */ /* unknown */ void 	__data_start;
+/* 0x0805736c       1 */ /* unknown */ void 	completed.5978;
+/* 0x08057370       4 */ /* unknown */ void 	dtor_idx.5980;
 #if 0 /* auxiliary information */
 # Current option values:
 option: +asmflush

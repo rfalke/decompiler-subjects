@@ -9,7 +9,7 @@ _init()
     __esp = __esp - 4;
     L1();
     _pop(__ebx);
-    if( *((intOrPtr*)(_t2 + 0x33a0)) != 0) {
+    if( *((intOrPtr*)(_t2 + 0xf0d0)) != 0) {
         __gmon_start__();
     }
     frame_dummy();
@@ -23,7 +23,7 @@ L08048280()
     _unknown_ _t2;                         // _t2
 
     _pop(__ebx);
-    if( *((intOrPtr*)(_t2 + 0x33a0)) != 0) {
+    if( *((intOrPtr*)(_t2 + 0xf0d0)) != 0) {
         __gmon_start__();
     }
     frame_dummy();
@@ -152,2475 +152,10750 @@ frame_dummy()
     return;
 }
 
-bswap()
+bswap_plain()
 {// addr = 0x08048394
     asm("bswap eax");
-    return;
+    return 0;
 }
 
-bswap_constant()
-{// addr = 0x08048397
+bswap_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804839C
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("bswap eax");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-bswap_allregs()
-{// addr = 0x0804839A
+bswap_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804848D
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("bswap eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg1()
-{// addr = 0x080483FB
+bswap_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048573
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("bswap eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+bswap_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048659
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("bswap eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg1_plain()
+{// addr = 0x08048740
     asm("cmpxchg bl, al");
-    return;
+    return 0;
 }
 
-cmpxchg1_constant()
-{// addr = 0x080483FF
+cmpxchg1_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048749
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("cmpxchg bl, al");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg1_allregs()
-{// addr = 0x08048403
+cmpxchg1_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804883B
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("cmpxchg bl, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg2()
-{// addr = 0x08048465
+cmpxchg1_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048922
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg bl, al");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg1_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048A09
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg bl, al");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg2_plain()
+{// addr = 0x08048AF1
     asm("cmpxchg bx, ax");
-    return;
+    return 0;
 }
 
-cmpxchg2_constant()
-{// addr = 0x0804846A
+cmpxchg2_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048AFB
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("cmpxchg bx, ax");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg2_allregs()
-{// addr = 0x0804846F
+cmpxchg2_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048BEE
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("cmpxchg bx, ax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg3()
-{// addr = 0x080484D2
+cmpxchg2_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048CD6
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg bx, ax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg2_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048DBE
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg bx, ax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg3_plain()
+{// addr = 0x08048EA7
     asm("cmpxchg ebx, eax");
-    return;
+    return 0;
 }
 
-cmpxchg3_constant()
-{// addr = 0x080484D6
+cmpxchg3_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048EB0
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("cmpxchg ebx, eax");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg3_allregs()
-{// addr = 0x080484DA
+cmpxchg3_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08048FA2
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("cmpxchg ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg4()
-{// addr = 0x0804853C
+cmpxchg3_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049089
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg ebx, eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg3_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049170
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg ebx, eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg4_plain()
+{// addr = 0x08049258
     asm("cmpxchg [ebx], eax");
-    return;
+    return 0;
 }
 
-cmpxchg4_constant()
-{// addr = 0x08048540
+cmpxchg4_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049261
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("cmpxchg [ebx], eax");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg4_allregs()
-{// addr = 0x08048544
+cmpxchg4_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049353
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("cmpxchg [ebx], eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg5()
-{// addr = 0x080485A6
+cmpxchg4_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804943A
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg [ebx], eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg4_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049521
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg [ebx], eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg5_plain()
+{// addr = 0x08049609
     asm("cmpxchg al, al");
-    return;
+    return 0;
 }
 
-cmpxchg5_constant()
-{// addr = 0x080485AA
+cmpxchg5_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049612
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("cmpxchg al, al");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg5_allregs()
-{// addr = 0x080485AE
+cmpxchg5_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049704
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("cmpxchg al, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg1_locked()
-{// addr = 0x08048610
-    asm("lock cmpxchg bl, al");
-    return;
+cmpxchg5_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x080497EB
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg al, al");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg1_locked_constant()
-{// addr = 0x08048615
-    asm("lock cmpxchg bl, al");
-    return;
+cmpxchg5_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x080498D2
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg al, al");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg1_locked_allregs()
-{// addr = 0x0804861A
-    asm("lock cmpxchg bl, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg2_locked()
-{// addr = 0x0804867D
-    asm("lock cmpxchg bx, ax");
-    return;
-}
-
-cmpxchg2_locked_constant()
-{// addr = 0x08048683
-    asm("lock cmpxchg bx, ax");
-    return;
-}
-
-cmpxchg2_locked_allregs()
-{// addr = 0x08048689
-    asm("lock cmpxchg bx, ax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg3_locked()
-{// addr = 0x080486ED
-    asm("lock cmpxchg ebx, eax");
-    return;
-}
-
-cmpxchg3_locked_constant()
-{// addr = 0x080486F2
-    asm("lock cmpxchg ebx, eax");
-    return;
-}
-
-cmpxchg3_locked_allregs()
-{// addr = 0x080486F7
-    asm("lock cmpxchg ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg4_locked()
-{// addr = 0x0804875A
+cmpxchg_locked_plain()
+{// addr = 0x080499BA
     asm("lock cmpxchg [ebx], eax");
-    return;
+    return 0;
 }
 
-cmpxchg4_locked_constant()
-{// addr = 0x0804875F
+cmpxchg_locked_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x080499C4
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
     asm("lock cmpxchg [ebx], eax");
-    return;
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmpxchg4_locked_allregs()
-{// addr = 0x08048764
+cmpxchg_locked_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049AB7
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
     asm("lock cmpxchg [ebx], eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg5_locked()
-{// addr = 0x080487C7
-    asm("lock cmpxchg al, al");
-    return;
-}
-
-cmpxchg5_locked_constant()
-{// addr = 0x080487CC
-    asm("lock cmpxchg al, al");
-    return;
-}
-
-cmpxchg5_locked_allregs()
-{// addr = 0x080487D1
-    asm("lock cmpxchg al, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cpuid()
-{// addr = 0x08048834
-    asm("cpuid ");
-    return;
-}
-
-cpuid_constant()
-{// addr = 0x08048837
-    asm("cpuid ");
-    return;
-}
-
-cpuid_allregs()
-{// addr = 0x0804883A
-    asm("cpuid ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-invd()
-{// addr = 0x0804889B
-    asm("invd ");
-    return;
-}
-
-invd_constant()
-{// addr = 0x0804889E
-    asm("invd ");
-    return;
-}
-
-invd_allregs()
-{// addr = 0x080488A1
-    asm("invd ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-invlpg()
-{// addr = 0x08048902
-    asm("invlpg [eax]");
-    return;
-}
-
-invlpg_constant()
-{// addr = 0x08048906
-    asm("invlpg [eax]");
-    return;
-}
-
-invlpg_allregs()
-{// addr = 0x0804890A
-    asm("invlpg [eax]");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-wbinvd()
-{// addr = 0x0804896C
-    asm("wbinvd ");
-    return;
-}
-
-wbinvd_constant()
-{// addr = 0x0804896F
-    asm("wbinvd ");
-    return;
-}
-
-wbinvd_allregs()
-{// addr = 0x08048972
-    asm("wbinvd ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd1()
-{// addr = 0x080489D3
-    asm("xadd bl, al");
-    return;
-}
-
-xadd1_constant()
-{// addr = 0x080489D7
-    asm("xadd bl, al");
-    return;
-}
-
-xadd1_allregs()
-{// addr = 0x080489DB
-    asm("xadd bl, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd2()
-{// addr = 0x08048A3D
-    asm("xadd ebx, eax");
-    return;
-}
-
-xadd2_constant()
-{// addr = 0x08048A42
-    asm("xadd ebx, eax");
-    return;
-}
-
-xadd2_allregs()
-{// addr = 0x08048A47
-    asm("xadd ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd3()
-{// addr = 0x08048AAA
-    asm("xadd ebx, eax");
-    return;
-}
-
-xadd3_constant()
-{// addr = 0x08048AAE
-    asm("xadd ebx, eax");
-    return;
-}
-
-xadd3_allregs()
-{// addr = 0x08048AB2
-    asm("xadd ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd4()
-{// addr = 0x08048B14
-    asm("xadd [ebx], eax");
-    return;
-}
-
-xadd4_constant()
-{// addr = 0x08048B18
-    asm("xadd [ebx], eax");
-    return;
-}
-
-xadd4_allregs()
-{// addr = 0x08048B1C
-    asm("xadd [ebx], eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd5()
-{// addr = 0x08048B7E
-    asm("xadd al, al");
-    return;
-}
-
-xadd5_constant()
-{// addr = 0x08048B82
-    asm("xadd al, al");
-    return;
-}
-
-xadd5_allregs()
-{// addr = 0x08048B86
-    asm("xadd al, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd1_locked()
-{// addr = 0x08048BE8
-    asm("lock xadd bl, al");
-    return;
-}
-
-xadd1_locked_constant()
-{// addr = 0x08048BED
-    asm("lock xadd bl, al");
-    return;
-}
-
-xadd1_locked_allregs()
-{// addr = 0x08048BF2
-    asm("lock xadd bl, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd2_locked()
-{// addr = 0x08048C55
-    asm("lock xadd ebx, eax");
-    return;
-}
-
-xadd2_locked_constant()
-{// addr = 0x08048C5B
-    asm("lock xadd ebx, eax");
-    return;
-}
-
-xadd2_locked_allregs()
-{// addr = 0x08048C61
-    asm("lock xadd ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd3_locked()
-{// addr = 0x08048CC5
-    asm("lock xadd ebx, eax");
-    return;
-}
-
-xadd3_locked_constant()
-{// addr = 0x08048CCA
-    asm("lock xadd ebx, eax");
-    return;
-}
-
-xadd3_locked_allregs()
-{// addr = 0x08048CCF
-    asm("lock xadd ebx, eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd4_locked()
-{// addr = 0x08048D32
-    asm("lock xadd [ebx], eax");
-    return;
-}
-
-xadd4_locked_constant()
-{// addr = 0x08048D37
-    asm("lock xadd [ebx], eax");
-    return;
-}
-
-xadd4_locked_allregs()
-{// addr = 0x08048D3C
-    asm("lock xadd [ebx], eax");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-xadd5_locked()
-{// addr = 0x08048D9F
-    asm("lock xadd al, al");
-    return;
-}
-
-xadd5_locked_constant()
-{// addr = 0x08048DA4
-    asm("lock xadd al, al");
-    return;
-}
-
-xadd5_locked_allregs()
-{// addr = 0x08048DA9
-    asm("lock xadd al, al");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg8b()
-{// addr = 0x08048E0C
-    asm("cmpxchg8b [eax]");
-    return;
-}
-
-cmpxchg8b_constant()
-{// addr = 0x08048E10
-    asm("cmpxchg8b [eax]");
-    return;
-}
-
-cmpxchg8b_allregs()
-{// addr = 0x08048E14
-    asm("cmpxchg8b [eax]");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmpxchg8b_locked()
-{// addr = 0x08048E76
-    asm("lock cmpxchg8b [eax]");
-    return;
-}
-
-cmpxchg8b_locked_constant()
-{// addr = 0x08048E7B
-    asm("lock cmpxchg8b [eax]");
-    return;
-}
-
-cmpxchg8b_locked_allregs()
-{// addr = 0x08048E80
-    asm("lock cmpxchg8b [eax]");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-rdtsc()
-{// addr = 0x08048EE3
-    asm("rdtsc ");
-    return;
-}
-
-rdtsc_constant()
-{// addr = 0x08048EE6
-    asm("rdtsc ");
-    return;
-}
-
-rdtsc_allregs()
-{// addr = 0x08048EE9
-    asm("rdtsc ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-rdmsr()
-{// addr = 0x08048F4A
-    asm("rdmsr ");
-    return;
-}
-
-rdmsr_constant()
-{// addr = 0x08048F4D
-    asm("rdmsr ");
-    return;
-}
-
-rdmsr_allregs()
-{// addr = 0x08048F50
-    asm("rdmsr ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-wrmsr()
-{// addr = 0x08048FB1
-    asm("wrmsr ");
-    return;
-}
-
-wrmsr_constant()
-{// addr = 0x08048FB4
-    asm("wrmsr ");
-    return;
-}
-
-wrmsr_allregs()
-{// addr = 0x08048FB7
-    asm("wrmsr ");
-     *8192 =  *4096;
-     *8196 =  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov1(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049018
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-    return;
-}
-
-cmov1_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804901D
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-    return;
-}
-
-cmov1_allregs()
-{// addr = 0x08049022
-    __eax =  *4096;
-    __ebx =  *4100;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov2(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049085
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-    return;
-}
-
-cmov2_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804908A
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-    return;
-}
-
-cmov2_allregs()
-{// addr = 0x0804908F
-    __eax =  *4096;
-    __ebx =  *4100;
-    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov3(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x080490F2
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ?  *((void*)(__ebx + 12)) : __eax & 65535;
-    return;
-}
-
-cmov3_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x080490F8
-    __ebx = __ebx;
-    __eax = __eax;
-    _t1 =  >  ?  *((void*)(__ebx + 12)) : __eax & 65535;
-    return;
-}
-
-cmov3_allregs()
-{// addr = 0x080490FE
-    __eax =  *4096;
-    __ebx =  *4100;
-    _t1 =  >  ?  *((void*)(__ebx + 12)) : __eax & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov4(
-    _unknown_ __eax,                       // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049162
-    __ebx = __ebx;
-    _t3 =  >  ?  *((void*)(__ebx + 34)) : __eax;
-    return  >  ?  *((void*)(__ebx + 34)) : __eax;
-}
-
-cmov4_constant(
-    _unknown_ __eax,                       // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049167
-    __ebx = __ebx;
-    _t3 =  >  ?  *((void*)(__ebx + 34)) : __eax;
-    return  >  ?  *((void*)(__ebx + 34)) : __eax;
-}
-
-cmov4_allregs()
-{// addr = 0x0804916C
-    __ebx =  *4100;
-    _t3 =  >  ?  *((void*)(__ebx + 34)) :  *4096;
-     *8192 =  >  ?  *((void*)(__ebx + 34)) :  *4096;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_0(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080491CF
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_0_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080491D6
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_0_allregs()
-{// addr = 0x080491DD
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_1(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049242
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_1_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049249
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_1_allregs()
-{// addr = 0x08049250
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_2(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080492B5
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_2_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080492BC
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_2_allregs()
-{// addr = 0x080492C3
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_3(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049328
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_3_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804932F
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_3_allregs()
-{// addr = 0x08049336
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_4(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804939B
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags == 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_4_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080493A2
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags == 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_4_allregs()
-{// addr = 0x080493A9
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags == 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_5(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804940E
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_5_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049415
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_5_allregs()
-{// addr = 0x0804941C
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_6(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049481
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_6_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049488
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_6_allregs()
-{// addr = 0x0804948F
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_7(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080494F4
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_7_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080494FB
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_7_allregs()
-{// addr = 0x08049502
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_8(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049567
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_8_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804956E
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_8_allregs()
-{// addr = 0x08049575
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_9(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080495DA
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_9_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080495E1
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_9_allregs()
-{// addr = 0x080495E8
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_a(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804964D
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_a_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049654
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_a_allregs()
-{// addr = 0x0804965B
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_b(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080496C0
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_b_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080496C7
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_b_allregs()
-{// addr = 0x080496CE
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags != 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_c(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049733
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_c_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804973A
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_c_allregs()
-{// addr = 0x08049741
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags < 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_d(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080497A6
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_d_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x080497AD
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_d_allregs()
-{// addr = 0x080497B4
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags >= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_e(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049819
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_e_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049820
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_e_allregs()
-{// addr = 0x08049827
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags <= 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_w_with_code_f(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x0804988C
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_f_constant(
-    signed int __eax,                      // r0
-    signed int __ebx                       // r1
-)
-{// addr = 0x08049893
-    __ebx = __ebx;
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-    return;
-}
-
-cmov_w_with_code_f_allregs()
-{// addr = 0x0804989A
-    __eax =  *4096;
-    __ebx =  *4100;
-    __eflags = (__eax & 255) - 2;
-    _t3 = __eflags > 0 ? __eax & 65535 : __ebx & 65535;
-     *8192 = __eax;
-     *8196 = __ebx;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_0(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x080498FF
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_0_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049905
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_0_allregs()
-{// addr = 0x0804990B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_1(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x0804996F
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_1_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049975
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_1_allregs()
-{// addr = 0x0804997B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_2(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x080499DF
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_2_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x080499E5
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_2_allregs()
-{// addr = 0x080499EB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags < 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_3(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049A4F
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_3_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049A55
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_3_allregs()
-{// addr = 0x08049A5B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_4(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049ABF
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags == 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_4_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049AC5
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags == 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_4_allregs()
-{// addr = 0x08049ACB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags == 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags == 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_5(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049B2F
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_5_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
-)
-{// addr = 0x08049B35
-    _unknown_ _t4;                         // _t4
-
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
-}
-
-cmov_l_with_code_5_allregs()
-{// addr = 0x08049B3B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags != 0 ? __eax :  *4100;
-     *8200 =  *4104;
-     *8204 =  *4108;
-     *8208 =  *4112;
-     *8212 =  *4116;
-     *8216 =  *4120;
-     *8220 =  *4124;
-    return;
-}
-
-cmov_l_with_code_6(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg_locked_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
 {// addr = 0x08049B9F
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock cmpxchg [ebx], eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_6_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+cmpxchg_locked_constant_complex2(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049BA5
+{// addr = 0x08049C87
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock cmpxchg [ebx], eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_6_allregs()
-{// addr = 0x08049BAB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags <= 0 ? __eax :  *4100;
+cpuid_plain()
+{// addr = 0x08049D70
+    asm("cpuid ");
+    return 0;
+}
+
+cpuid_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x08049D78
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("cpuid ");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_7(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+cpuid_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049C0F
+{// addr = 0x08049E69
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cpuid ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_7_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+cpuid_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049C15
+{// addr = 0x08049F4F
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cpuid ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_7_allregs()
-{// addr = 0x08049C1B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags > 0 ? __eax :  *4100;
+cpuid_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A035
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cpuid ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+invd_plain()
+{// addr = 0x0804A11C
+    asm("invd ");
+    return 0;
+}
+
+invd_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A124
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("invd ");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_8(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+invd_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049C7F
+{// addr = 0x0804A215
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invd ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_8_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+invd_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049C85
+{// addr = 0x0804A2FB
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invd ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_8_allregs()
-{// addr = 0x08049C8B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
+invd_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A3E1
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invd ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+invlpg_plain()
+{// addr = 0x0804A4C8
+    asm("invlpg [eax]");
+    return 0;
+}
+
+invlpg_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A4D1
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("invlpg [eax]");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_9(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+invlpg_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049CEF
+{// addr = 0x0804A5C3
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invlpg [eax]");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_9_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+invlpg_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049CF5
+{// addr = 0x0804A6AA
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invlpg [eax]");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_9_allregs()
-{// addr = 0x08049CFB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
+invlpg_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A791
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("invlpg [eax]");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+wbinvd_plain()
+{// addr = 0x0804A879
+    asm("wbinvd ");
+    return 0;
+}
+
+wbinvd_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804A881
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("wbinvd ");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_a(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+wbinvd_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049D5F
+{// addr = 0x0804A972
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wbinvd ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_a_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+wbinvd_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049D65
+{// addr = 0x0804AA58
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wbinvd ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_a_allregs()
-{// addr = 0x08049D6B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags != 0 ? __eax :  *4100;
+wbinvd_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804AB3E
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wbinvd ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd1_plain()
+{// addr = 0x0804AC25
+    asm("xadd bl, al");
+    return 0;
+}
+
+xadd1_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804AC2E
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("xadd bl, al");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_b(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd1_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049DCF
+{// addr = 0x0804AD20
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd bl, al");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_b_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd1_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049DD5
+{// addr = 0x0804AE07
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd bl, al");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_b_allregs()
-{// addr = 0x08049DDB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags != 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags != 0 ? __eax :  *4100;
+xadd1_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804AEEE
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd bl, al");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd2_plain()
+{// addr = 0x0804AFD6
+    asm("xadd ebx, eax");
+    return 0;
+}
+
+xadd2_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804AFE0
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_c(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd2_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049E3F
+{// addr = 0x0804B0D3
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_c_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd2_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049E45
+{// addr = 0x0804B1BB
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_c_allregs()
-{// addr = 0x08049E4B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags < 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags < 0 ? __eax :  *4100;
+xadd2_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804B2A3
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd3_plain()
+{// addr = 0x0804B38C
+    asm("xadd ebx, eax");
+    return 0;
+}
+
+xadd3_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804B395
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_d(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd3_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049EAF
+{// addr = 0x0804B487
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_d_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd3_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049EB5
+{// addr = 0x0804B56E
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_d_allregs()
-{// addr = 0x08049EBB
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags >= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags >= 0 ? __eax :  *4100;
+xadd3_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804B655
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd ebx, eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd4_plain()
+{// addr = 0x0804B73D
+    asm("xadd [ebx], eax");
+    return 0;
+}
+
+xadd4_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804B746
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("xadd [ebx], eax");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_e(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd4_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049F1F
+{// addr = 0x0804B838
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd [ebx], eax");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_e_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd4_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049F25
+{// addr = 0x0804B91F
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd [ebx], eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_e_allregs()
-{// addr = 0x08049F2B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags <= 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags <= 0 ? __eax :  *4100;
+xadd4_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804BA06
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd [ebx], eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd5_plain()
+{// addr = 0x0804BAEE
+    asm("xadd al, al");
+    return 0;
+}
+
+xadd5_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804BAF7
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("xadd al, al");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_f(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd5_constant_simple(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049F8F
+{// addr = 0x0804BBE9
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd al, al");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_f_constant(
-    signed int __eax,                      // r0
-    _unknown_ __ebx                        // r1
+xadd5_constant_complex1(
+    _unknown_ __eflags                     // r9
 )
-{// addr = 0x08049F95
+{// addr = 0x0804BCD0
     _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
 
-    __eax = __eax;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax : __ebx;
-    return;
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd al, al");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
 }
 
-cmov_l_with_code_f_allregs()
-{// addr = 0x08049F9B
-    __eax =  *4096;
-    __eflags = (__eax & 255) - 2;
-    _t4 = __eflags > 0 ? __eax :  *4100;
-     *8192 = __eax;
-     *8196 = __eflags > 0 ? __eax :  *4100;
+xadd5_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804BDB7
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("xadd al, al");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd_locked_plain()
+{// addr = 0x0804BE9F
+    asm("lock xadd [ebx], eax");
+    return 0;
+}
+
+xadd_locked_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804BEA9
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("lock xadd [ebx], eax");
+     *8192 = _t9;
+     *8196 =  *4100;
      *8200 =  *4104;
      *8204 =  *4108;
      *8208 =  *4112;
      *8212 =  *4116;
      *8216 =  *4120;
-     *8220 =  *4124;
-    return;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd_locked_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804BF9C
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock xadd [ebx], eax");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd_locked_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C084
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock xadd [ebx], eax");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+xadd_locked_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C16C
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock xadd [ebx], eax");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_plain()
+{// addr = 0x0804C255
+    asm("cmpxchg8b [eax]");
+    return 0;
+}
+
+cmpxchg8b_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C25E
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("cmpxchg8b [eax]");
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C350
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg8b [eax]");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C437
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg8b [eax]");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C51E
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("cmpxchg8b [eax]");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_locked_plain()
+{// addr = 0x0804C606
+    asm("lock cmpxchg8b [eax]");
+    return 0;
+}
+
+cmpxchg8b_locked_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C610
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("lock cmpxchg8b [eax]");
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_locked_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C703
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock cmpxchg8b [eax]");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_locked_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C7EB
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock cmpxchg8b [eax]");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmpxchg8b_locked_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C8D3
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("lock cmpxchg8b [eax]");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdtsc_plain()
+{// addr = 0x0804C9BC
+    asm("rdtsc ");
+    return 0;
+}
+
+rdtsc_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804C9C4
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("rdtsc ");
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdtsc_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CAB5
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdtsc ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdtsc_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CB9B
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdtsc ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdtsc_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CC81
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdtsc ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdmsr_plain()
+{// addr = 0x0804CD68
+    asm("rdmsr ");
+    return 0;
+}
+
+rdmsr_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CD70
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("rdmsr ");
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdmsr_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CE61
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdmsr ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdmsr_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804CF47
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdmsr ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+rdmsr_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D02D
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("rdmsr ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+wrmsr_plain()
+{// addr = 0x0804D114
+    asm("wrmsr ");
+    return 0;
+}
+
+wrmsr_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D11C
+    signed int _t9;                        // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t9 =  *4096;
+     *8272 = __esp;
+    asm("wrmsr ");
+     *8192 = _t9;
+     *8196 =  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t9 & 65535);
+     *8448 = _t9 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+wrmsr_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D20D
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wrmsr ");
+     *8192 = 2;
+     *8196 = 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+wrmsr_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D2F3
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wrmsr ");
+     *8192 = -1548650108;
+     *8196 = 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+wrmsr_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D3D9
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t7;                         // _t7
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    asm("wrmsr ");
+     *8192 = 826196200;
+     *8196 = 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov1_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804D4C0
+    _unknown_ _t7;                         // _t7
+
+    __ebx = __ebx;
+    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
+    return 0;
+}
+
+cmov1_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D4CA
+    signed int _t15;                       // _t15
+    _unknown_ _t18;                        // _t18
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t15 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    _t5 =  >  ? __ebx & 65535 : _t15 & 65535;
+     *8192 = _t15;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t15 & 65535);
+     *8448 = _t15 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov1_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D5BD
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 2;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov1_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D6A5
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 0x7984;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov1_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D78D
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 0xc0e8;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov2_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804D876
+    _unknown_ _t7;                         // _t7
+
+    __ebx = __ebx;
+    _t1 =  >  ? __ebx & 65535 : __eax & 65535;
+    return 0;
+}
+
+cmov2_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D880
+    signed int _t15;                       // _t15
+    _unknown_ _t18;                        // _t18
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t15 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    _t5 =  >  ? __ebx & 65535 : _t15 & 65535;
+     *8192 = _t15;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t15 & 65535);
+     *8448 = _t15 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov2_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804D973
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 2;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov2_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DA5B
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 0x7984;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov2_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DB43
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t13;                        // _t13
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    _t1 =  >  ? __ebx & 65535 : 0xc0e8;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov3_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x0804DC2C
+    _unknown_ _t6;                         // _t6
+
+    __ebx = __ebx;
+    _t1 =  >  ?  *((void*)(__ebx + 12)) : __eax & 65535;
+    return 0;
+}
+
+cmov3_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DC37
+    signed int _t14;                       // _t14
+    _unknown_ _t17;                        // _t17
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t14 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    _t5 =  >  ?  *((void*)(__ebx + 12)) : _t14 & 65535;
+     *8192 = _t14;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t14 & 65535);
+     *8448 = _t14 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov3_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DD2B
+    _unknown_ _t9;                         // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    _t1 =  >  ?  *((void*)(__ebx + 12)) : 2;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov3_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DE14
+    _unknown_ _t9;                         // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    _t1 =  >  ?  *((void*)(__ebx + 12)) : 0x7984;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov3_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DEFD
+    _unknown_ _t9;                         // _t9
+    _unknown_ _t12;                        // _t12
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    _t1 =  >  ?  *((void*)(__ebx + 12)) : 0xc0e8;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov4_plain(
+    _unknown_ __eax,                       // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x0804DFE7
+    _unknown_ _t3;                         // _t3
+    _unknown_ _t4;                         // _t4
+
+    __ebx = __ebx;
+    _t3 =  >  ?  *((void*)(__ebx + 34)) : __eax;
+    return 0;
+}
+
+cmov4_allregs(
+    signed int __eax,                      // r0
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804DFF1
+    signed int _t11;                       // _t11
+    _unknown_ _t14;                        // _t14
+
+    __eflags = __eflags;
+    _push(__eax & 65535);
+    asm("popfw ");
+    __ebx =  *4100;
+     *8272 = __esp;
+    _t11 =  >  ?  *((void*)(__ebx + 34)) :  *4096;
+     *8192 = _t11;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t11 & 65535);
+     *8448 = _t11 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov4_constant_simple(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804E0E4
+    _unknown_ _t5;                         // _t5
+    signed int _t6;                        // _t6
+    _unknown_ _t9;                         // _t9
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    _t6 =  >  ?  *((void*)(__ebx + 34)) : 2;
+     *8192 = _t6;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t6 & 65535);
+     *8448 = _t6 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov4_constant_complex1(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804E1CC
+    _unknown_ _t5;                         // _t5
+    signed int _t6;                        // _t6
+    _unknown_ _t9;                         // _t9
+
+    __eflags = __eflags;
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    _t6 =  >  ?  *((void*)(__ebx + 34)) : -1548650108;
+     *8192 = _t6;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t6 & 65535);
+     *8448 = _t6 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov4_constant_complex2(
+    _unknown_ __eflags                     // r9
+)
+{// addr = 0x0804E2B4
+    _unknown_ _t5;                         // _t5
+    signed int _t6;                        // _t6
+    _unknown_ _t9;                         // _t9
+
+    __eflags = __eflags;
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    _t6 =  >  ?  *((void*)(__ebx + 34)) : 826196200;
+     *8192 = _t6;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t6 & 65535);
+     *8448 = _t6 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_0_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804E39D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_0_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804E3A9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_0_constant_simple()
+{// addr = 0x0804E49E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_0_constant_complex1()
+{// addr = 0x0804E588
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_0_constant_complex2()
+{// addr = 0x0804E672
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_1_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804E75D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_1_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804E769
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_1_constant_simple()
+{// addr = 0x0804E85E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_1_constant_complex1()
+{// addr = 0x0804E948
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_1_constant_complex2()
+{// addr = 0x0804EA32
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_2_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804EB1D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 < 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_2_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804EB29
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags < 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_2_constant_simple()
+{// addr = 0x0804EC1E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags < 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_2_constant_complex1()
+{// addr = 0x0804ED08
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags < 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_2_constant_complex2()
+{// addr = 0x0804EDF2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags < 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_3_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804EEDD
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_3_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804EEE9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_3_constant_simple()
+{// addr = 0x0804EFDE
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_3_constant_complex1()
+{// addr = 0x0804F0C8
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_3_constant_complex2()
+{// addr = 0x0804F1B2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_4_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804F29D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) == 2 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_4_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804F2A9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags == 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_4_constant_simple()
+{// addr = 0x0804F39E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags == 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_4_constant_complex1()
+{// addr = 0x0804F488
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags == 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_4_constant_complex2()
+{// addr = 0x0804F572
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags == 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_5_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804F65D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) != 2 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_5_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804F669
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags != 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_5_constant_simple()
+{// addr = 0x0804F75E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags != 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_5_constant_complex1()
+{// addr = 0x0804F848
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags != 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_5_constant_complex2()
+{// addr = 0x0804F932
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags != 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_6_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804FA1D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 <= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_6_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804FA29
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags <= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_6_constant_simple()
+{// addr = 0x0804FB1E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags <= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_6_constant_complex1()
+{// addr = 0x0804FC08
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags <= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_6_constant_complex2()
+{// addr = 0x0804FCF2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags <= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_7_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0804FDDD
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 > 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_7_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0804FDE9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags > 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_7_constant_simple()
+{// addr = 0x0804FEDE
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags > 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_7_constant_complex1()
+{// addr = 0x0804FFC8
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags > 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_7_constant_complex2()
+{// addr = 0x080500B2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags > 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_8_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805019D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_8_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080501A9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_8_constant_simple()
+{// addr = 0x0805029E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_8_constant_complex1()
+{// addr = 0x08050388
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_8_constant_complex2()
+{// addr = 0x08050472
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_9_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805055D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_9_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08050569
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_9_constant_simple()
+{// addr = 0x0805065E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_9_constant_complex1()
+{// addr = 0x08050748
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_9_constant_complex2()
+{// addr = 0x08050832
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_a_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805091D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) != 2 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_a_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08050929
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags != 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_a_constant_simple()
+{// addr = 0x08050A1E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags != 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_a_constant_complex1()
+{// addr = 0x08050B08
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags != 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_a_constant_complex2()
+{// addr = 0x08050BF2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags != 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_b_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x08050CDD
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) != 2 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_b_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08050CE9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags != 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_b_constant_simple()
+{// addr = 0x08050DDE
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags != 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_b_constant_complex1()
+{// addr = 0x08050EC8
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags != 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_b_constant_complex2()
+{// addr = 0x08050FB2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags != 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_c_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805109D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 < 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_c_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080510A9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags < 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_c_constant_simple()
+{// addr = 0x0805119E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags < 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_c_constant_complex1()
+{// addr = 0x08051288
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags < 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_c_constant_complex2()
+{// addr = 0x08051372
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags < 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_d_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805145D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 >= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_d_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08051469
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags >= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_d_constant_simple()
+{// addr = 0x0805155E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags >= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_d_constant_complex1()
+{// addr = 0x08051648
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags >= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_d_constant_complex2()
+{// addr = 0x08051732
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags >= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_e_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x0805181D
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 <= 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_e_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08051829
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags <= 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_e_constant_simple()
+{// addr = 0x0805191E
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags <= 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_e_constant_complex1()
+{// addr = 0x08051A08
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags <= 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_e_constant_complex2()
+{// addr = 0x08051AF2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags <= 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_f_plain(
+    signed int __eax,                      // r0
+    signed int __ebx                       // r1
+)
+{// addr = 0x08051BDD
+    _unknown_ _t10;                        // _t10
+
+    __ebx = __ebx;
+    _t3 = (__eax & 255) - 2 > 0 ? __eax & 65535 : __ebx & 65535;
+    return 0;
+}
+
+cmov_w_with_code_f_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08051BE9
+    signed int _t18;                       // _t18
+    _unknown_ _t21;                        // _t21
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t18 =  *4096;
+    __ebx =  *4100;
+     *8272 = __esp;
+    __eflags = (_t18 & 255) - 2;
+    _t7 = __eflags > 0 ? _t18 & 65535 : __ebx & 65535;
+     *8192 = _t18;
+     *8196 = __ebx;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t18 & 65535);
+     *8448 = _t18 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_f_constant_simple()
+{// addr = 0x08051CDE
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 3;
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t3 = __eflags > 0 ? 2 : __ebx & 65535;
+     *8192 = 2;
+     *8196 = __ebx;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_f_constant_complex1()
+{// addr = 0x08051DC8
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+    __ebx = 107420375;
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t3 = __eflags > 0 ? 0x7984 : __ebx & 65535;
+     *8192 = -1548650108;
+     *8196 = __ebx;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_w_with_code_f_constant_complex2()
+{// addr = 0x08051EB2
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t16;                        // _t16
+
+    _push(65279);
+    asm("popfw ");
+    __ebx = 1231978947;
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t3 = __eflags > 0 ? 0xc0e8 : __ebx & 65535;
+     *8192 = 826196200;
+     *8196 = __ebx;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_0_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08051F9D
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_0_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08051FA8
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_0_constant_simple()
+{// addr = 0x0805209C
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_0_constant_complex1()
+{// addr = 0x08052185
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_0_constant_complex2()
+{// addr = 0x0805226E
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_1_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08052358
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_1_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08052363
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_1_constant_simple()
+{// addr = 0x08052457
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_1_constant_complex1()
+{// addr = 0x08052540
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_1_constant_complex2()
+{// addr = 0x08052629
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_2_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08052713
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 < 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_2_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0805271E
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags < 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags < 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_2_constant_simple()
+{// addr = 0x08052812
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags < 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags < 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_2_constant_complex1()
+{// addr = 0x080528FB
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags < 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags < 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_2_constant_complex2()
+{// addr = 0x080529E4
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags < 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags < 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_3_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08052ACE
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_3_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08052AD9
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_3_constant_simple()
+{// addr = 0x08052BCD
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_3_constant_complex1()
+{// addr = 0x08052CB6
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_3_constant_complex2()
+{// addr = 0x08052D9F
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_4_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08052E89
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) == 2 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_4_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08052E94
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags == 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags == 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_4_constant_simple()
+{// addr = 0x08052F88
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags == 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags == 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_4_constant_complex1()
+{// addr = 0x08053071
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags == 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags == 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_4_constant_complex2()
+{// addr = 0x0805315A
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags == 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags == 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_5_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08053244
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) != 2 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_5_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0805324F
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags != 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags != 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_5_constant_simple()
+{// addr = 0x08053343
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags != 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags != 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_5_constant_complex1()
+{// addr = 0x0805342C
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags != 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags != 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_5_constant_complex2()
+{// addr = 0x08053515
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags != 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags != 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_6_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x080535FF
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 <= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_6_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0805360A
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags <= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags <= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_6_constant_simple()
+{// addr = 0x080536FE
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags <= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags <= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_6_constant_complex1()
+{// addr = 0x080537E7
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags <= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags <= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_6_constant_complex2()
+{// addr = 0x080538D0
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags <= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags <= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_7_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x080539BA
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 > 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_7_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080539C5
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags > 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags > 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_7_constant_simple()
+{// addr = 0x08053AB9
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags > 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags > 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_7_constant_complex1()
+{// addr = 0x08053BA2
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags > 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags > 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_7_constant_complex2()
+{// addr = 0x08053C8B
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags > 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags > 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_8_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08053D75
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_8_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08053D80
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_8_constant_simple()
+{// addr = 0x08053E74
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_8_constant_complex1()
+{// addr = 0x08053F5D
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_8_constant_complex2()
+{// addr = 0x08054046
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_9_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08054130
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_9_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0805413B
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_9_constant_simple()
+{// addr = 0x0805422F
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_9_constant_complex1()
+{// addr = 0x08054318
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_9_constant_complex2()
+{// addr = 0x08054401
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_a_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x080544EB
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) != 2 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_a_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080544F6
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags != 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags != 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_a_constant_simple()
+{// addr = 0x080545EA
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags != 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags != 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_a_constant_complex1()
+{// addr = 0x080546D3
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags != 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags != 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_a_constant_complex2()
+{// addr = 0x080547BC
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags != 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags != 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_b_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x080548A6
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) != 2 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_b_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080548B1
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags != 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags != 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_b_constant_simple()
+{// addr = 0x080549A5
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags != 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags != 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_b_constant_complex1()
+{// addr = 0x08054A8E
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags != 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags != 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_b_constant_complex2()
+{// addr = 0x08054B77
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags != 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags != 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_c_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08054C61
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 < 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_c_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08054C6C
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags < 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags < 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_c_constant_simple()
+{// addr = 0x08054D60
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags < 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags < 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_c_constant_complex1()
+{// addr = 0x08054E49
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags < 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags < 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_c_constant_complex2()
+{// addr = 0x08054F32
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags < 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags < 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_d_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x0805501C
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 >= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_d_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x08055027
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags >= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags >= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_d_constant_simple()
+{// addr = 0x0805511B
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags >= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags >= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_d_constant_complex1()
+{// addr = 0x08055204
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags >= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_d_constant_complex2()
+{// addr = 0x080552ED
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags >= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_e_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x080553D7
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 <= 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_e_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x080553E2
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags <= 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags <= 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_e_constant_simple()
+{// addr = 0x080554D6
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags <= 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags <= 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_e_constant_complex1()
+{// addr = 0x080555BF
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags <= 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags <= 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_e_constant_complex2()
+{// addr = 0x080556A8
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags <= 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags <= 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_f_plain(
+    signed int __eax,                      // r0
+    _unknown_ __ebx                        // r1
+)
+{// addr = 0x08055792
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t6;                         // _t6
+
+    _t6 = (__eax & 255) - 2 > 0 ? __eax : __ebx;
+    return 0;
+}
+
+cmov_l_with_code_f_allregs(
+    signed int __eax                       // r0
+)
+{// addr = 0x0805579D
+    signed int _t12;                       // _t12
+    _unknown_ _t15;                        // _t15
+
+    _push(__eax & 65535);
+    asm("popfw ");
+    _t12 =  *4096;
+     *8272 = __esp;
+    __eflags = (_t12 & 255) - 2;
+    _t17 = __eflags > 0 ? _t12 :  *4100;
+     *8192 = _t12;
+     *8196 = __eflags > 0 ? _t12 :  *4100;
+     *8200 =  *4104;
+     *8204 =  *4108;
+     *8208 =  *4112;
+     *8212 =  *4116;
+     *8216 =  *4120;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(_t12 & 65535);
+     *8448 = _t12 & 65535;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_f_constant_simple()
+{// addr = 0x08055891
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 2 - 2;
+    _t12 = __eflags > 0 ? 2 : 3;
+     *8192 = 2;
+     *8196 = __eflags > 0 ? 2 : 3;
+     *8200 = 4;
+     *8204 = 4;
+     *8208 = 5;
+     *8212 = 6;
+     *8216 = 7;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(2);
+     *8448 = 2;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_f_constant_complex1()
+{// addr = 0x0805597A
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    asm("o16 push 0x0");
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0x84 - 2;
+    _t12 = __eflags > 0 ? -1548650108 : 107420375;
+     *8192 = -1548650108;
+     *8196 = __eflags > 0 ? -1548650108 : 107420375;
+     *8200 = 1181241928;
+     *8204 = 958682820;
+     *8208 = -1131847516;
+     *8212 = -1388565128;
+     *8216 = -463085230;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0x7984);
+     *8448 = 0x7984;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+cmov_l_with_code_f_constant_complex2()
+{// addr = 0x08055A63
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t11;                        // _t11
+
+    _push(65279);
+    asm("popfw ");
+     *8272 = __esp;
+    __eflags = 0xe8 - 2;
+    _t12 = __eflags > 0 ? 826196200 : 1231978947;
+     *8192 = 826196200;
+     *8196 = __eflags > 0 ? 826196200 : 1231978947;
+     *8200 = 507473074;
+     *8204 = 1315513779;
+     *8208 = 1328621072;
+     *8212 = 792175781;
+     *8216 = -1851189324;
+     *8704 = __eflags > 0;
+     *8705 = __eflags < 0;
+     *8706 = __eflags > 0;
+    asm("setnb [0x2203]");
+     *8708 = __eflags == 0;
+     *8709 = __eflags != 0;
+     *8710 = __eflags < 0;
+     *8711 = __eflags > 0;
+     *8712 = __eflags < 0;
+     *8713 = __eflags > 0;
+     *8714 = __eflags ?_? 0;
+     *8715 = __eflags ?_? 0;
+     *8716 = __eflags < 0;
+     *8717 = __eflags >= 0;
+     *8718 = __eflags <= 0;
+     *8719 = __eflags > 0;
+    asm("pushfw ");
+    _pop(0xc0e8);
+     *8448 = 0xc0e8;
+     *8224 =  *8272 - __esp;
+    return 0;
+}
+
+callAll()
+{// addr = 0x08055B4D
+    _unknown_ __ebp;                       // r6
+    _unknown_ _t2;                         // _t2
+    _unknown_ _t3;                         // _t3
+    _unknown_ _t4;                         // _t4
+    _unknown_ _t5;                         // _t5
+    _unknown_ _t7;                         // _t7
+    _unknown_ _t8;                         // _t8
+    _unknown_ _t9;                         // _t9
+    _unknown_ _t10;                        // _t10
+    _unknown_ _t12;                        // _t12
+    _unknown_ _t13;                        // _t13
+    _unknown_ _t14;                        // _t14
+    _unknown_ _t15;                        // _t15
+    _unknown_ _t17;                        // _t17
+    _unknown_ _t18;                        // _t18
+    _unknown_ _t19;                        // _t19
+    _unknown_ _t20;                        // _t20
+    _unknown_ _t22;                        // _t22
+    _unknown_ _t23;                        // _t23
+    _unknown_ _t24;                        // _t24
+    _unknown_ _t25;                        // _t25
+    _unknown_ _t27;                        // _t27
+    _unknown_ _t28;                        // _t28
+    _unknown_ _t29;                        // _t29
+    _unknown_ _t30;                        // _t30
+    _unknown_ _t32;                        // _t32
+    _unknown_ _t33;                        // _t33
+    _unknown_ _t34;                        // _t34
+    _unknown_ _t35;                        // _t35
+    _unknown_ _t37;                        // _t37
+    _unknown_ _t38;                        // _t38
+    _unknown_ _t39;                        // _t39
+    _unknown_ _t40;                        // _t40
+    _unknown_ _t42;                        // _t42
+    _unknown_ _t43;                        // _t43
+    _unknown_ _t44;                        // _t44
+    _unknown_ _t45;                        // _t45
+    _unknown_ _t47;                        // _t47
+    _unknown_ _t48;                        // _t48
+    _unknown_ _t49;                        // _t49
+    _unknown_ _t50;                        // _t50
+    _unknown_ _t52;                        // _t52
+    _unknown_ _t53;                        // _t53
+    _unknown_ _t54;                        // _t54
+    _unknown_ _t55;                        // _t55
+    _unknown_ _t57;                        // _t57
+    _unknown_ _t58;                        // _t58
+    _unknown_ _t59;                        // _t59
+    _unknown_ _t60;                        // _t60
+    _unknown_ _t62;                        // _t62
+    _unknown_ _t63;                        // _t63
+    _unknown_ _t64;                        // _t64
+    _unknown_ _t65;                        // _t65
+    _unknown_ _t67;                        // _t67
+    _unknown_ _t68;                        // _t68
+    _unknown_ _t69;                        // _t69
+    _unknown_ _t70;                        // _t70
+    _unknown_ _t72;                        // _t72
+    _unknown_ _t73;                        // _t73
+    _unknown_ _t74;                        // _t74
+    _unknown_ _t75;                        // _t75
+    _unknown_ _t77;                        // _t77
+    _unknown_ _t78;                        // _t78
+    _unknown_ _t79;                        // _t79
+    _unknown_ _t80;                        // _t80
+    _unknown_ _t82;                        // _t82
+    _unknown_ _t83;                        // _t83
+    _unknown_ _t84;                        // _t84
+    _unknown_ _t85;                        // _t85
+    _unknown_ _t87;                        // _t87
+    _unknown_ _t88;                        // _t88
+    _unknown_ _t89;                        // _t89
+    _unknown_ _t90;                        // _t90
+    _unknown_ _t92;                        // _t92
+    _unknown_ _t93;                        // _t93
+    _unknown_ _t94;                        // _t94
+    _unknown_ _t95;                        // _t95
+    _unknown_ _t97;                        // _t97
+    _unknown_ _t98;                        // _t98
+    _unknown_ _t99;                        // _t99
+    _unknown_ _t100;                       // _t100
+    _unknown_ _t102;                       // _t102
+    _unknown_ _t103;                       // _t103
+    _unknown_ _t104;                       // _t104
+    _unknown_ _t105;                       // _t105
+    _unknown_ _t107;                       // _t107
+    _unknown_ _t108;                       // _t108
+    _unknown_ _t109;                       // _t109
+    _unknown_ _t112;                       // _t112
+    _unknown_ _t113;                       // _t113
+    _unknown_ _t114;                       // _t114
+    _unknown_ _t117;                       // _t117
+    _unknown_ _t118;                       // _t118
+    _unknown_ _t119;                       // _t119
+    _unknown_ _t122;                       // _t122
+    _unknown_ _t123;                       // _t123
+    _unknown_ _t124;                       // _t124
+    _unknown_ _t127;                       // _t127
+    _unknown_ _t128;                       // _t128
+    _unknown_ _t129;                       // _t129
+    _unknown_ _t132;                       // _t132
+    _unknown_ _t133;                       // _t133
+    _unknown_ _t134;                       // _t134
+    _unknown_ _t137;                       // _t137
+    _unknown_ _t138;                       // _t138
+    _unknown_ _t139;                       // _t139
+    _unknown_ _t142;                       // _t142
+    _unknown_ _t143;                       // _t143
+    _unknown_ _t144;                       // _t144
+    _unknown_ _t147;                       // _t147
+    _unknown_ _t148;                       // _t148
+    _unknown_ _t149;                       // _t149
+    _unknown_ _t152;                       // _t152
+    _unknown_ _t153;                       // _t153
+    _unknown_ _t154;                       // _t154
+    _unknown_ _t157;                       // _t157
+    _unknown_ _t158;                       // _t158
+    _unknown_ _t159;                       // _t159
+    _unknown_ _t162;                       // _t162
+    _unknown_ _t163;                       // _t163
+    _unknown_ _t164;                       // _t164
+    _unknown_ _t167;                       // _t167
+    _unknown_ _t168;                       // _t168
+    _unknown_ _t169;                       // _t169
+    _unknown_ _t172;                       // _t172
+    _unknown_ _t173;                       // _t173
+    _unknown_ _t174;                       // _t174
+    _unknown_ _t177;                       // _t177
+    _unknown_ _t178;                       // _t178
+    _unknown_ _t179;                       // _t179
+    _unknown_ _t182;                       // _t182
+    _unknown_ _t183;                       // _t183
+    _unknown_ _t184;                       // _t184
+    _unknown_ _t187;                       // _t187
+    _unknown_ _t188;                       // _t188
+    _unknown_ _t189;                       // _t189
+    _unknown_ _t192;                       // _t192
+    _unknown_ _t193;                       // _t193
+    _unknown_ _t194;                       // _t194
+    _unknown_ _t197;                       // _t197
+    _unknown_ _t198;                       // _t198
+    _unknown_ _t199;                       // _t199
+    _unknown_ _t202;                       // _t202
+    _unknown_ _t203;                       // _t203
+    _unknown_ _t204;                       // _t204
+    _unknown_ _t207;                       // _t207
+    _unknown_ _t208;                       // _t208
+    _unknown_ _t209;                       // _t209
+    _unknown_ _t212;                       // _t212
+    _unknown_ _t213;                       // _t213
+    _unknown_ _t214;                       // _t214
+    _unknown_ _t217;                       // _t217
+    _unknown_ _t218;                       // _t218
+    _unknown_ _t219;                       // _t219
+    _unknown_ _t222;                       // _t222
+    _unknown_ _t223;                       // _t223
+    _unknown_ _t224;                       // _t224
+    _unknown_ _t227;                       // _t227
+    _unknown_ _t228;                       // _t228
+    _unknown_ _t229;                       // _t229
+    _unknown_ _t232;                       // _t232
+    _unknown_ _t233;                       // _t233
+    _unknown_ _t234;                       // _t234
+    _unknown_ _t237;                       // _t237
+    _unknown_ _t238;                       // _t238
+    _unknown_ _t239;                       // _t239
+    _unknown_ _t242;                       // _t242
+    _unknown_ _t243;                       // _t243
+    _unknown_ _t244;                       // _t244
+    _unknown_ _t247;                       // _t247
+    _unknown_ _t248;                       // _t248
+    _unknown_ _t249;                       // _t249
+    _unknown_ _t252;                       // _t252
+    _unknown_ _t253;                       // _t253
+    _unknown_ _t254;                       // _t254
+    _unknown_ _t257;                       // _t257
+    _unknown_ _t258;                       // _t258
+    _unknown_ _t259;                       // _t259
+    _unknown_ _t262;                       // _t262
+    _unknown_ _t263;                       // _t263
+    _unknown_ _t264;                       // _t264
+    _unknown_ _t267;                       // _t267
+    _unknown_ _t268;                       // _t268
+    _unknown_ _t269;                       // _t269
+    _unknown_ _t272;                       // _t272
+    _unknown_ _t273;                       // _t273
+    _unknown_ _t274;                       // _t274
+    _unknown_ _t277;                       // _t277
+    _unknown_ _t278;                       // _t278
+    _unknown_ _t279;                       // _t279
+    _unknown_ _t282;                       // _t282
+    _unknown_ _t283;                       // _t283
+    _unknown_ _t284;                       // _t284
+    _unknown_ _t287;                       // _t287
+    _unknown_ _t288;                       // _t288
+    _unknown_ _t289;                       // _t289
+    _unknown_ _t290;                       // _t290
+    _unknown_ _t291;                       // _t291
+    _unknown_ _t292;                       // _t292
+    _unknown_ _t293;                       // _t293
+
+    bswap_allregs(bswap_plain(), __eflags);
+    bswap_constant_simple(__eflags);
+    bswap_constant_complex1(__eflags);
+    bswap_constant_complex2(__eflags);
+    cmpxchg1_allregs(cmpxchg1_plain(), __eflags);
+    cmpxchg1_constant_simple(__eflags);
+    cmpxchg1_constant_complex1(__eflags);
+    cmpxchg1_constant_complex2(__eflags);
+    cmpxchg2_allregs(cmpxchg2_plain(), __eflags);
+    cmpxchg2_constant_simple(__eflags);
+    cmpxchg2_constant_complex1(__eflags);
+    cmpxchg2_constant_complex2(__eflags);
+    cmpxchg3_allregs(cmpxchg3_plain(), __eflags);
+    cmpxchg3_constant_simple(__eflags);
+    cmpxchg3_constant_complex1(__eflags);
+    cmpxchg3_constant_complex2(__eflags);
+    cmpxchg4_allregs(cmpxchg4_plain(), __eflags);
+    cmpxchg4_constant_simple(__eflags);
+    cmpxchg4_constant_complex1(__eflags);
+    cmpxchg4_constant_complex2(__eflags);
+    cmpxchg5_allregs(cmpxchg5_plain(), __eflags);
+    cmpxchg5_constant_simple(__eflags);
+    cmpxchg5_constant_complex1(__eflags);
+    cmpxchg5_constant_complex2(__eflags);
+    cmpxchg_locked_allregs(cmpxchg_locked_plain(), __eflags);
+    cmpxchg_locked_constant_simple(__eflags);
+    cmpxchg_locked_constant_complex1(__eflags);
+    cmpxchg_locked_constant_complex2(__eflags);
+    cpuid_allregs(cpuid_plain(), __eflags);
+    cpuid_constant_simple(__eflags);
+    cpuid_constant_complex1(__eflags);
+    cpuid_constant_complex2(__eflags);
+    invd_allregs(invd_plain(), __eflags);
+    invd_constant_simple(__eflags);
+    invd_constant_complex1(__eflags);
+    invd_constant_complex2(__eflags);
+    invlpg_allregs(invlpg_plain(), __eflags);
+    invlpg_constant_simple(__eflags);
+    invlpg_constant_complex1(__eflags);
+    invlpg_constant_complex2(__eflags);
+    wbinvd_allregs(wbinvd_plain(), __eflags);
+    wbinvd_constant_simple(__eflags);
+    wbinvd_constant_complex1(__eflags);
+    wbinvd_constant_complex2(__eflags);
+    xadd1_allregs(xadd1_plain(), __eflags);
+    xadd1_constant_simple(__eflags);
+    xadd1_constant_complex1(__eflags);
+    xadd1_constant_complex2(__eflags);
+    xadd2_allregs(xadd2_plain(), __eflags);
+    xadd2_constant_simple(__eflags);
+    xadd2_constant_complex1(__eflags);
+    xadd2_constant_complex2(__eflags);
+    xadd3_allregs(xadd3_plain(), __eflags);
+    xadd3_constant_simple(__eflags);
+    xadd3_constant_complex1(__eflags);
+    xadd3_constant_complex2(__eflags);
+    xadd4_allregs(xadd4_plain(), __eflags);
+    xadd4_constant_simple(__eflags);
+    xadd4_constant_complex1(__eflags);
+    xadd4_constant_complex2(__eflags);
+    xadd5_allregs(xadd5_plain(), __eflags);
+    xadd5_constant_simple(__eflags);
+    xadd5_constant_complex1(__eflags);
+    xadd5_constant_complex2(__eflags);
+    xadd_locked_allregs(xadd_locked_plain(), __eflags);
+    xadd_locked_constant_simple(__eflags);
+    xadd_locked_constant_complex1(__eflags);
+    xadd_locked_constant_complex2(__eflags);
+    cmpxchg8b_allregs(cmpxchg8b_plain(), __eflags);
+    cmpxchg8b_constant_simple(__eflags);
+    cmpxchg8b_constant_complex1(__eflags);
+    cmpxchg8b_constant_complex2(__eflags);
+    cmpxchg8b_locked_allregs(cmpxchg8b_locked_plain(), __eflags);
+    cmpxchg8b_locked_constant_simple(__eflags);
+    cmpxchg8b_locked_constant_complex1(__eflags);
+    cmpxchg8b_locked_constant_complex2(__eflags);
+    rdtsc_allregs(rdtsc_plain(), __eflags);
+    rdtsc_constant_simple(__eflags);
+    rdtsc_constant_complex1(__eflags);
+    rdtsc_constant_complex2(__eflags);
+    rdmsr_allregs(rdmsr_plain(), __eflags);
+    rdmsr_constant_simple(__eflags);
+    rdmsr_constant_complex1(__eflags);
+    rdmsr_constant_complex2(__eflags);
+    wrmsr_allregs(wrmsr_plain(), __eflags);
+    wrmsr_constant_simple(__eflags);
+    wrmsr_constant_complex1(__eflags);
+    cmov1_allregs(cmov1_plain(wrmsr_constant_complex2(__eflags), __ebx), __eflags);
+    cmov1_constant_simple(__eflags);
+    cmov1_constant_complex1(__eflags);
+    cmov2_allregs(cmov2_plain(cmov1_constant_complex2(__eflags), __ebx), __eflags);
+    cmov2_constant_simple(__eflags);
+    cmov2_constant_complex1(__eflags);
+    cmov3_allregs(cmov3_plain(cmov2_constant_complex2(__eflags), __ebx), __eflags);
+    cmov3_constant_simple(__eflags);
+    cmov3_constant_complex1(__eflags);
+    cmov4_allregs(cmov4_plain(cmov3_constant_complex2(__eflags), __ebx), __eflags);
+    cmov4_constant_simple(__eflags);
+    cmov4_constant_complex1(__eflags);
+    cmov_w_with_code_0_allregs(cmov_w_with_code_0_plain(cmov4_constant_complex2(__eflags), __ebx));
+    cmov_w_with_code_0_constant_simple();
+    cmov_w_with_code_0_constant_complex1();
+    cmov_w_with_code_1_allregs(cmov_w_with_code_1_plain(cmov_w_with_code_0_constant_complex2(), __ebx));
+    cmov_w_with_code_1_constant_simple();
+    cmov_w_with_code_1_constant_complex1();
+    cmov_w_with_code_2_allregs(cmov_w_with_code_2_plain(cmov_w_with_code_1_constant_complex2(), __ebx));
+    cmov_w_with_code_2_constant_simple();
+    cmov_w_with_code_2_constant_complex1();
+    cmov_w_with_code_3_allregs(cmov_w_with_code_3_plain(cmov_w_with_code_2_constant_complex2(), __ebx));
+    cmov_w_with_code_3_constant_simple();
+    cmov_w_with_code_3_constant_complex1();
+    cmov_w_with_code_4_allregs(cmov_w_with_code_4_plain(cmov_w_with_code_3_constant_complex2(), __ebx));
+    cmov_w_with_code_4_constant_simple();
+    cmov_w_with_code_4_constant_complex1();
+    cmov_w_with_code_5_allregs(cmov_w_with_code_5_plain(cmov_w_with_code_4_constant_complex2(), __ebx));
+    cmov_w_with_code_5_constant_simple();
+    cmov_w_with_code_5_constant_complex1();
+    cmov_w_with_code_6_allregs(cmov_w_with_code_6_plain(cmov_w_with_code_5_constant_complex2(), __ebx));
+    cmov_w_with_code_6_constant_simple();
+    cmov_w_with_code_6_constant_complex1();
+    cmov_w_with_code_7_allregs(cmov_w_with_code_7_plain(cmov_w_with_code_6_constant_complex2(), __ebx));
+    cmov_w_with_code_7_constant_simple();
+    cmov_w_with_code_7_constant_complex1();
+    cmov_w_with_code_8_allregs(cmov_w_with_code_8_plain(cmov_w_with_code_7_constant_complex2(), __ebx));
+    cmov_w_with_code_8_constant_simple();
+    cmov_w_with_code_8_constant_complex1();
+    cmov_w_with_code_9_allregs(cmov_w_with_code_9_plain(cmov_w_with_code_8_constant_complex2(), __ebx));
+    cmov_w_with_code_9_constant_simple();
+    cmov_w_with_code_9_constant_complex1();
+    cmov_w_with_code_a_allregs(cmov_w_with_code_a_plain(cmov_w_with_code_9_constant_complex2(), __ebx));
+    cmov_w_with_code_a_constant_simple();
+    cmov_w_with_code_a_constant_complex1();
+    cmov_w_with_code_b_allregs(cmov_w_with_code_b_plain(cmov_w_with_code_a_constant_complex2(), __ebx));
+    cmov_w_with_code_b_constant_simple();
+    cmov_w_with_code_b_constant_complex1();
+    cmov_w_with_code_c_allregs(cmov_w_with_code_c_plain(cmov_w_with_code_b_constant_complex2(), __ebx));
+    cmov_w_with_code_c_constant_simple();
+    cmov_w_with_code_c_constant_complex1();
+    cmov_w_with_code_d_allregs(cmov_w_with_code_d_plain(cmov_w_with_code_c_constant_complex2(), __ebx));
+    cmov_w_with_code_d_constant_simple();
+    cmov_w_with_code_d_constant_complex1();
+    cmov_w_with_code_e_allregs(cmov_w_with_code_e_plain(cmov_w_with_code_d_constant_complex2(), __ebx));
+    cmov_w_with_code_e_constant_simple();
+    cmov_w_with_code_e_constant_complex1();
+    cmov_w_with_code_f_allregs(cmov_w_with_code_f_plain(cmov_w_with_code_e_constant_complex2(), __ebx));
+    cmov_w_with_code_f_constant_simple();
+    cmov_w_with_code_f_constant_complex1();
+    cmov_l_with_code_0_allregs(cmov_l_with_code_0_plain(cmov_w_with_code_f_constant_complex2(), __ebx));
+    cmov_l_with_code_0_constant_simple();
+    cmov_l_with_code_0_constant_complex1();
+    cmov_l_with_code_1_allregs(cmov_l_with_code_1_plain(cmov_l_with_code_0_constant_complex2(), __ebx));
+    cmov_l_with_code_1_constant_simple();
+    cmov_l_with_code_1_constant_complex1();
+    cmov_l_with_code_2_allregs(cmov_l_with_code_2_plain(cmov_l_with_code_1_constant_complex2(), __ebx));
+    cmov_l_with_code_2_constant_simple();
+    cmov_l_with_code_2_constant_complex1();
+    cmov_l_with_code_3_allregs(cmov_l_with_code_3_plain(cmov_l_with_code_2_constant_complex2(), __ebx));
+    cmov_l_with_code_3_constant_simple();
+    cmov_l_with_code_3_constant_complex1();
+    cmov_l_with_code_4_allregs(cmov_l_with_code_4_plain(cmov_l_with_code_3_constant_complex2(), __ebx));
+    cmov_l_with_code_4_constant_simple();
+    cmov_l_with_code_4_constant_complex1();
+    cmov_l_with_code_5_allregs(cmov_l_with_code_5_plain(cmov_l_with_code_4_constant_complex2(), __ebx));
+    cmov_l_with_code_5_constant_simple();
+    cmov_l_with_code_5_constant_complex1();
+    cmov_l_with_code_6_allregs(cmov_l_with_code_6_plain(cmov_l_with_code_5_constant_complex2(), __ebx));
+    cmov_l_with_code_6_constant_simple();
+    cmov_l_with_code_6_constant_complex1();
+    cmov_l_with_code_7_allregs(cmov_l_with_code_7_plain(cmov_l_with_code_6_constant_complex2(), __ebx));
+    cmov_l_with_code_7_constant_simple();
+    cmov_l_with_code_7_constant_complex1();
+    cmov_l_with_code_8_allregs(cmov_l_with_code_8_plain(cmov_l_with_code_7_constant_complex2(), __ebx));
+    cmov_l_with_code_8_constant_simple();
+    cmov_l_with_code_8_constant_complex1();
+    cmov_l_with_code_9_allregs(cmov_l_with_code_9_plain(cmov_l_with_code_8_constant_complex2(), __ebx));
+    cmov_l_with_code_9_constant_simple();
+    cmov_l_with_code_9_constant_complex1();
+    cmov_l_with_code_a_allregs(cmov_l_with_code_a_plain(cmov_l_with_code_9_constant_complex2(), __ebx));
+    cmov_l_with_code_a_constant_simple();
+    cmov_l_with_code_a_constant_complex1();
+    cmov_l_with_code_b_allregs(cmov_l_with_code_b_plain(cmov_l_with_code_a_constant_complex2(), __ebx));
+    cmov_l_with_code_b_constant_simple();
+    cmov_l_with_code_b_constant_complex1();
+    cmov_l_with_code_c_allregs(cmov_l_with_code_c_plain(cmov_l_with_code_b_constant_complex2(), __ebx));
+    cmov_l_with_code_c_constant_simple();
+    cmov_l_with_code_c_constant_complex1();
+    cmov_l_with_code_d_allregs(cmov_l_with_code_d_plain(cmov_l_with_code_c_constant_complex2(), __ebx));
+    cmov_l_with_code_d_constant_simple();
+    cmov_l_with_code_d_constant_complex1();
+    cmov_l_with_code_e_allregs(cmov_l_with_code_e_plain(cmov_l_with_code_d_constant_complex2(), __ebx));
+    cmov_l_with_code_e_constant_simple();
+    cmov_l_with_code_e_constant_complex1();
+    cmov_l_with_code_f_allregs(cmov_l_with_code_f_plain(cmov_l_with_code_e_constant_complex2(), __ebx));
+    cmov_l_with_code_f_constant_simple();
+    cmov_l_with_code_f_constant_complex1();
+    cmov_l_with_code_f_constant_complex2();
+    _push(_t292);
+    _pop(__ebp);
+    return 0;
 }
 
 main()
-{// addr = 0x08049FFF
+{// addr = 0x080560F8
     _unknown_ __ebp;                       // r6
-    signed int _t1;                        // _t1
-    signed int _t3;                        // _t3
-    _unknown_ _t4;                         // _t4
-    _unknown_ _t5;                         // _t5
 
-    bswap();
-    bswap_constant();
-    bswap_allregs();
-    cmpxchg1();
-    cmpxchg1_constant();
-    cmpxchg1_allregs();
-    cmpxchg2();
-    cmpxchg2_constant();
-    cmpxchg2_allregs();
-    cmpxchg3();
-    cmpxchg3_constant();
-    cmpxchg3_allregs();
-    cmpxchg4();
-    cmpxchg4_constant();
-    cmpxchg4_allregs();
-    cmpxchg5();
-    cmpxchg5_constant();
-    cmpxchg5_allregs();
-    cmpxchg1_locked();
-    cmpxchg1_locked_constant();
-    cmpxchg1_locked_allregs();
-    cmpxchg2_locked();
-    cmpxchg2_locked_constant();
-    cmpxchg2_locked_allregs();
-    cmpxchg3_locked();
-    cmpxchg3_locked_constant();
-    cmpxchg3_locked_allregs();
-    cmpxchg4_locked();
-    cmpxchg4_locked_constant();
-    cmpxchg4_locked_allregs();
-    cmpxchg5_locked();
-    cmpxchg5_locked_constant();
-    cmpxchg5_locked_allregs();
-    cpuid();
-    cpuid_constant();
-    cpuid_allregs();
-    invd();
-    invd_constant();
-    invd_allregs();
-    invlpg();
-    invlpg_constant();
-    invlpg_allregs();
-    wbinvd();
-    wbinvd_constant();
-    wbinvd_allregs();
-    xadd1();
-    xadd1_constant();
-    xadd1_allregs();
-    xadd2();
-    xadd2_constant();
-    xadd2_allregs();
-    xadd3();
-    xadd3_constant();
-    xadd3_allregs();
-    xadd4();
-    xadd4_constant();
-    xadd4_allregs();
-    xadd5();
-    xadd5_constant();
-    xadd5_allregs();
-    xadd1_locked();
-    xadd1_locked_constant();
-    xadd1_locked_allregs();
-    xadd2_locked();
-    xadd2_locked_constant();
-    xadd2_locked_allregs();
-    xadd3_locked();
-    xadd3_locked_constant();
-    xadd3_locked_allregs();
-    xadd4_locked();
-    xadd4_locked_constant();
-    xadd4_locked_allregs();
-    xadd5_locked();
-    xadd5_locked_constant();
-    xadd5_locked_allregs();
-    cmpxchg8b();
-    cmpxchg8b_constant();
-    cmpxchg8b_allregs();
-    cmpxchg8b_locked();
-    cmpxchg8b_locked_constant();
-    cmpxchg8b_locked_allregs();
-    rdtsc();
-    rdtsc_constant();
-    rdtsc_allregs();
-    rdmsr();
-    rdmsr_constant();
-    rdmsr_allregs();
-    wrmsr();
-    wrmsr_constant();
-    wrmsr_allregs();
-    cmov1(_t1, __ebx);
-    cmov1_constant(_t1, __ebx);
-    cmov1_allregs();
-    cmov2(_t1, __ebx);
-    cmov2_constant(_t1, __ebx);
-    cmov2_allregs();
-    cmov3(_t1, __ebx);
-    cmov3_constant(_t1, __ebx);
-    cmov3_allregs();
-    _t3 = cmov4_constant(cmov4(_t1, __ebx), __ebx);
-    cmov4_allregs();
-    cmov_w_with_code_0(_t3, __ebx);
-    cmov_w_with_code_0_constant(_t3, __ebx);
-    cmov_w_with_code_0_allregs();
-    cmov_w_with_code_1(_t3, __ebx);
-    cmov_w_with_code_1_constant(_t3, __ebx);
-    cmov_w_with_code_1_allregs();
-    cmov_w_with_code_2(_t3, __ebx);
-    cmov_w_with_code_2_constant(_t3, __ebx);
-    cmov_w_with_code_2_allregs();
-    cmov_w_with_code_3(_t3, __ebx);
-    cmov_w_with_code_3_constant(_t3, __ebx);
-    cmov_w_with_code_3_allregs();
-    cmov_w_with_code_4(_t3, __ebx);
-    cmov_w_with_code_4_constant(_t3, __ebx);
-    cmov_w_with_code_4_allregs();
-    cmov_w_with_code_5(_t3, __ebx);
-    cmov_w_with_code_5_constant(_t3, __ebx);
-    cmov_w_with_code_5_allregs();
-    cmov_w_with_code_6(_t3, __ebx);
-    cmov_w_with_code_6_constant(_t3, __ebx);
-    cmov_w_with_code_6_allregs();
-    cmov_w_with_code_7(_t3, __ebx);
-    cmov_w_with_code_7_constant(_t3, __ebx);
-    cmov_w_with_code_7_allregs();
-    cmov_w_with_code_8(_t3, __ebx);
-    cmov_w_with_code_8_constant(_t3, __ebx);
-    cmov_w_with_code_8_allregs();
-    cmov_w_with_code_9(_t3, __ebx);
-    cmov_w_with_code_9_constant(_t3, __ebx);
-    cmov_w_with_code_9_allregs();
-    cmov_w_with_code_a(_t3, __ebx);
-    cmov_w_with_code_a_constant(_t3, __ebx);
-    cmov_w_with_code_a_allregs();
-    cmov_w_with_code_b(_t3, __ebx);
-    cmov_w_with_code_b_constant(_t3, __ebx);
-    cmov_w_with_code_b_allregs();
-    cmov_w_with_code_c(_t3, __ebx);
-    cmov_w_with_code_c_constant(_t3, __ebx);
-    cmov_w_with_code_c_allregs();
-    cmov_w_with_code_d(_t3, __ebx);
-    cmov_w_with_code_d_constant(_t3, __ebx);
-    cmov_w_with_code_d_allregs();
-    cmov_w_with_code_e(_t3, __ebx);
-    cmov_w_with_code_e_constant(_t3, __ebx);
-    cmov_w_with_code_e_allregs();
-    cmov_w_with_code_f(_t3, __ebx);
-    cmov_w_with_code_f_constant(_t3, __ebx);
-    cmov_w_with_code_f_allregs();
-    cmov_l_with_code_0(_t3, __ebx);
-    cmov_l_with_code_0_constant(_t3, __ebx);
-    cmov_l_with_code_0_allregs();
-    cmov_l_with_code_1(_t3, __ebx);
-    cmov_l_with_code_1_constant(_t3, __ebx);
-    cmov_l_with_code_1_allregs();
-    cmov_l_with_code_2(_t3, __ebx);
-    cmov_l_with_code_2_constant(_t3, __ebx);
-    cmov_l_with_code_2_allregs();
-    cmov_l_with_code_3(_t3, __ebx);
-    cmov_l_with_code_3_constant(_t3, __ebx);
-    cmov_l_with_code_3_allregs();
-    cmov_l_with_code_4(_t3, __ebx);
-    cmov_l_with_code_4_constant(_t3, __ebx);
-    cmov_l_with_code_4_allregs();
-    cmov_l_with_code_5(_t3, __ebx);
-    cmov_l_with_code_5_constant(_t3, __ebx);
-    cmov_l_with_code_5_allregs();
-    cmov_l_with_code_6(_t3, __ebx);
-    cmov_l_with_code_6_constant(_t3, __ebx);
-    cmov_l_with_code_6_allregs();
-    cmov_l_with_code_7(_t3, __ebx);
-    cmov_l_with_code_7_constant(_t3, __ebx);
-    cmov_l_with_code_7_allregs();
-    cmov_l_with_code_8(_t3, __ebx);
-    cmov_l_with_code_8_constant(_t3, __ebx);
-    cmov_l_with_code_8_allregs();
-    cmov_l_with_code_9(_t3, __ebx);
-    cmov_l_with_code_9_constant(_t3, __ebx);
-    cmov_l_with_code_9_allregs();
-    cmov_l_with_code_a(_t3, __ebx);
-    cmov_l_with_code_a_constant(_t3, __ebx);
-    cmov_l_with_code_a_allregs();
-    cmov_l_with_code_b(_t3, __ebx);
-    cmov_l_with_code_b_constant(_t3, __ebx);
-    cmov_l_with_code_b_allregs();
-    cmov_l_with_code_c(_t3, __ebx);
-    cmov_l_with_code_c_constant(_t3, __ebx);
-    cmov_l_with_code_c_allregs();
-    cmov_l_with_code_d(_t3, __ebx);
-    cmov_l_with_code_d_constant(_t3, __ebx);
-    cmov_l_with_code_d_allregs();
-    cmov_l_with_code_e(_t3, __ebx);
-    cmov_l_with_code_e_constant(_t3, __ebx);
-    cmov_l_with_code_e_allregs();
-    cmov_l_with_code_f(_t3, __ebx);
-    cmov_l_with_code_f_constant(_t3, __ebx);
-    cmov_l_with_code_f_allregs();
-    _push(_t4);
-    _pop(__ebp);
-    return;
+    return 0;
 }
 
 __libc_csu_fini()
-{// addr = 0x0804A3E0
+{// addr = 0x08056110
     _unknown_ __ebp;                       // r6
 
     return;
@@ -2631,7 +10906,7 @@ __libc_csu_init(
     intOrPtr _a8,                          // _cfa_8
     intOrPtr _a12                          // _cfa_c
 )
-{// addr = 0x0804A3F0
+{// addr = 0x08056120
     intOrPtr _v36;                         // _cfa_ffffffdc
     intOrPtr _v40;                         // _cfa_ffffffd8
     _unknown_ __ebx;                       // r1
@@ -2665,12 +10940,12 @@ __libc_csu_init(
 }
 
 __i686.get_pc_thunk.bx()
-{// addr = 0x0804A44A
+{// addr = 0x0805617A
     return;
 }
 
 __do_global_ctors_aux()
-{// addr = 0x0804A450
+{// addr = 0x08056180
     intOrPtr* __ebx;                       // r1
     _unknown_ __ebp;                       // r6
 
@@ -2691,7 +10966,7 @@ __do_global_ctors_aux()
 }
 
 _fini()
-{// addr = 0x0804A47C
+{// addr = 0x080561AC
     _unknown_ __ebx;                       // r1
     _unknown_ __ebp;                       // r6
     _unknown_ _t1;                         // _t1
@@ -2705,7 +10980,7 @@ _fini()
     return;
 }
 
-L0804A488()
+L080561B8()
 {
     _unknown_ _t1;                         // _t1
     _unknown_ _t2;                         // _t2
@@ -2719,7 +10994,7 @@ L0804A488()
     return;
 }
 
-L0804A488()
+L080561B8()
 {
     _unknown_ _t1;                         // _t1
     _unknown_ _t2;                         // _t2
@@ -2734,16 +11009,16 @@ L0804A488()
 }
 
 // Statistics:
-//     991 Register nodes
-//     216 Temporaries nodes
-//      14 Casts
-//    3016 Statements
+//    5119 Register nodes
+//     539 Temporaries nodes
+//      15 Casts
+//   12892 Statements
 //       2 Labels
 //       1 Gotos
-//     212 Blocks
-//    6476 Nodes
-//      92 Assembly nodes
-//     105 Unknown Types
+//     305 Blocks
+//   39015 Nodes
+//     924 Assembly nodes
+//     863 Unknown Types
 
 
-Total time: 0 seconds.
+Total time: 1 seconds.
