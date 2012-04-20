@@ -1,11 +1,26 @@
+
 import sys,re
 
-if len(sys.argv)!=3:
-    print "Usage: generator.py input output"
+def usage():
+    print "Usage: generator.py input output.s"
+    print "                    -evaluator input output.s output.c"
     sys.exit(1)
 
-INPUT=sys.argv[1]
-OUTPUT=sys.argv[2]
+if len(sys.argv) not in [3,5]:
+    usage()
+
+forEvaluator=0
+if sys.argv[1]=="-evaluator":
+    if len(sys.argv) != 5: usage()
+    forEvaluator=1
+    del sys.argv[1]
+    INPUT=sys.argv[1]
+    OUTPUT=sys.argv[2]
+    OUTPUT_C=sys.argv[3]
+else:
+    if len(sys.argv) != 3: usage()
+    INPUT=sys.argv[1]
+    OUTPUT=sys.argv[2]
 
 out=open(OUTPUT, "w")
 out.write("""
@@ -14,7 +29,51 @@ out.write("""
 """)
 
 names=[]
+doNotEvalNames=[]
 counter=0
+
+allRegs=["eax", "ebx", "ecx", "edx", "ebp", "esi", "edi","esp"]
+
+ccs="o no c nc z nz be a s ns p np l nl le g".split(" ")
+assert len(ccs)==16
+
+constantSets=[]
+constantSets.append({})
+constantSets[0]["flags"]="0"
+constantSets[0]["eax"]="2"
+constantSets[0]["ebx"]="3"
+constantSets[0]["ecx"]="4"
+constantSets[0]["edx"]="4"
+constantSets[0]["ebp"]="5"
+constantSets[0]["esi"]="6"
+constantSets[0]["edi"]="7"
+constantSets[0]["esp"]="8"
+
+# Generated using
+#   random.seed(42);["0x%08x"%random.randint(0,2**32) for x in range(8)]
+constantSets.append({})
+constantSets[1]["flags"]="0"
+constantSets[1]["eax"]='0xa3b17984'
+constantSets[1]["ebx"]='0x06671ad7'
+constantSets[1]["ecx"]='0x46685248'
+constantSets[1]["edx"]='0x392456c4'
+constantSets[1]["ebp"]='0xbc8960a4'
+constantSets[1]["esi"]='0xad3c2d78'
+constantSets[1]["edi"]='0xe465e152'
+constantSets[1]["esp"]='0x16419f92'
+
+# Generated using
+#   random.seed(314159);["0x%08x"%random.randint(0,2**32) for x in range(8)]
+constantSets.append({})
+constantSets[2]["flags"]="0xfeff"
+constantSets[2]["eax"]='0x313ec0e8'
+constantSets[2]["ebx"]='0x496e81c3'
+constantSets[2]["ecx"]='0x1e3f6cb2'
+constantSets[2]["edx"]='0x4e6925b3'
+constantSets[2]["ebp"]='0x4f312610'
+constantSets[2]["esi"]='0x2f37a4a5'
+constantSets[2]["edi"]='0x91a917b4'
+constantSets[2]["esp"]='0xbc56d261'
 
 def generateFunction(funcname, content):
     names.append(funcname)
@@ -31,78 +90,104 @@ def generateFunction(funcname, content):
 
 def generateInputMoves(regs):
     r=[]
-    filtered=[x for x in regs if x!="flags"]
-    for i in range(len(filtered)):
-        reg=filtered[i]
+    r.append("  nop")
+    if forEvaluator:
+        r.append("  push %ebp")
+        r.append("  pushfw")
+
+    r.append("  mov %d,%%ax"%(0x1100))
+    r.append("  push %ax")
+    r.append("  popfw")
+    for i in range(len(regs)):
+        reg=regs[i]
+        if reg=="esp": continue
         r.append("  mov %d,%%%s"%(0x1000+4*i,reg))
+    r.append("  mov %%esp,%s"%(getRegDest(0x2050, "esp_start")))
     return "\n".join(r)+"\n"
 
-def generateConstantInputMoves(regs):
-    r=[]
-    filtered=[x for x in regs if x!="flags"]
-    for i in range(len(filtered)):
-        reg=filtered[i]
-        r.append("  mov $%d,%%%s"%(i+1,reg))
-    return "\n".join(r)+"\n"
-
-def generateOutputMoves(regs):
-    global counter
-    r=[]
-    filtered=[x for x in regs if x!="flags"]
-    for i in range(len(filtered)):
-        reg=filtered[i]
-        r.append("  mov %%%s,%d"%(reg, 0x2000+4*i))
-    if "flags" in regs:
-        flags="czspo"
-        for i in range(len(flags)):
-            f=flags[i]
-            labelname=".L%d_%s$"%(counter,f)
-            r.append("  jn%s %s"%(f,labelname))
-            r.append("  movb $0x%d,%d"%(1+i, 0x2100+i))
-            r.append("%s: nop"%(labelname))
-        counter+=1
-    return "\n".join(r)+"\n"
-
-def generateFlags(type):
-    if type=="flags_set1":
-        r=["  movl $0x0,%eax",
-           "  negl %eax"]
-    elif type=="flags_set2":
-        r=["  movl $0x2,%eax",
-           "  negl %eax"]
-    elif type=="flags_clear":
-        r=["  movl $0x2,%eax",
-           "  decl %eax"]
-    elif type=="flags_cmp":
-        r=["  mov 0x1100,%eax",
-           "  mov 0x1104,%ebx",
-           "  cmp %eax,%ebx"]
-    elif type=="":
-        r=[]
+def generateConstantInputMoves(setNo, constantOverwrites, flagOverwrite=None):
+    matched=[]
+    set=constantSets[setNo]
+    if flagOverwrite==None:
+        f=set["flags"]
     else:
-        assert 0, repr(type)
+        f=flagOverwrite
+    r=[]
+    r.append("  nop")
+    if forEvaluator:
+        r.append("  push %ebp")
+        r.append("  pushfw")
+    r.append("  pushw $%s"%f)
+    r.append("  popfw")
+    for reg in allRegs:
+        if reg=="esp": continue
+        if constantOverwrites.has_key((setNo, reg)):
+            matched.append(reg)
+        value=constantOverwrites.get((setNo, reg), set[reg])
+        r.append("  mov $%s,%%%s"%(value,reg))
+    r.append("  mov %%esp,%s"%(getRegDest(0x2050, "esp_start")))
+    available=[]
+    for s,reg in constantOverwrites.keys():
+        if s==setNo: available.append(reg)
+    assert matched==available
+    return "\n".join(r)+"\n"
+
+def getRegDest(addr, regName):
+    if forEvaluator:
+        s="dest_"+regName
+        return s
+    else:
+        return "%d"%addr
+    
+def generateOutputMoves(regs):
+    r=[]
+    for i in range(len(regs)):
+        reg=regs[i]
+        if reg=="esp": continue
+        r.append("  mov %%%s,%s"%(reg, getRegDest(0x2000+4*i,reg)))
+    
+    for c in range(16):
+        r.append("  set%s %s"%(ccs[c], getRegDest(0x2200+c, "cc_"+ccs[c])))
+         
+    #r.append("  movw -2(%esp),%bx")
+    r.append("  pushfw")
+    r.append("  pop %ax")
+    #r.append("  movw %bx,-2(%esp)")
+    r.append("  mov %%ax,%s"%(getRegDest(0x2100, "flags")))
+
+    r.append("  mov %s,%%eax"%(getRegDest(0x2050, "esp_start")))
+    r.append("  sub %esp,%eax")
+    r.append("  mov %%eax,%s"%(getRegDest(0x2020, "esp_diff")))
+    r.append("  mov $0x0,%eax")
+    if forEvaluator:
+        r.append("  popfw")
+        r.append("  pop %ebp")
     return "\n".join(r)+"\n"
 
 for line in [x.strip() for x in open(INPUT).readlines()]:
     if not line or line[0]=="#": continue
     mo=re.match(r"^([a-zA-Z][a-zA-Z0-9_]+)(?:\[(.*)\])?:(.*)$",line)
-    assert mo
+    assert mo,line
     funcname,options,body=mo.groups()
+    inputRegs=[]
+    outputRegs=[]
+    constantOverwrites={}
     if options:
-        parts=[x.split("=") for x in options.split(",")]
-        assert parts[0][0]=="in"
-        assert parts[1][0]=="out"
-        inputRegs=[x.strip() for x in parts[0][1].split(" ") if x.strip()]
-        outputRegs=[x.strip() for x in parts[1][1].split(" ") if x.strip()]
-        if "noflags" in outputRegs:
-            outputRegs.remove("noflags")
-        else:
-            outputRegs.append("flags")
-    else:
-        inputRegs=[]
-        outputRegs=[]
-
-    
+        parts=[x for x in options.split(",")]        
+        for part in parts:
+            if part=="doNotEval":
+                doNotEvalNames.append(funcname)
+            elif part.startswith("in="):
+                remain=part.split("=",1)[1]
+                inputRegs=[x.strip() for x in remain.split(" ") if x.strip()]
+            elif part.startswith("out="):
+                remain=part.split("=",1)[1]
+                outputRegs=[x.strip() for x in remain.split(" ") if x.strip()]
+            elif part.startswith("overwrite:"):
+                tmp,setNo,reg,value=part.split(":")
+                constantOverwrites[(int(setNo),reg)]=value
+            else:
+                assert 0, ["Unknown option",part]
     rest=body.strip()
     if rest.startswith("hex "):
         rest=rest.replace("hex ", "")
@@ -112,54 +197,76 @@ for line in [x.strip() for x in open(INPUT).readlines()]:
         content=rest
     content="  "+content+"\n"
 
-    dirvalues=[""]
-    if "df" in inputRegs:
-        dirvalues=["cld", "std", ""]
-        inputRegs.remove("df")
+    ### 1) just the plain opcode
+    tmp=content+"  mov $0x0,%eax\n"
+    parts = [funcname,"plain"]
+    name = "_".join([x for x in parts if x])
+    generateFunction(name, tmp)
 
-    flagvalues=[""]
+    ### 2) with full regs
+    tmp=(generateInputMoves(allRegs) +
+         content +
+         generateOutputMoves(allRegs))
+    parts = [funcname,"allregs"]
+    name = "_".join([x for x in parts if x])
+    generateFunction(name, tmp)
+
     if "flags" in inputRegs:
-        flagvalues=["flags_clear", "flags_set1", "flags_set2", "flags_cmp"]
-        inputRegs.remove("flags")
+        # 3a) constant with cleared flags
+        tmp=(generateConstantInputMoves(0, constantOverwrites, "0x0") + content + generateOutputMoves(allRegs))
+        parts = [funcname,"constant_simple_clear"]
+        name = "_".join([x for x in parts if x])
+        generateFunction(name, tmp)
 
-    allRegs=["eax", "ebx", "ecx", "edx", "ebp", "esi", "edi","esp"]
-    for flag in flagvalues:
-        for df in dirvalues:
-            dfLine="  "+df+"\n"
-            tmp=(dfLine+
-                 generateFlags(flag) +
-                 generateInputMoves(inputRegs) +
-                 content +
-                 generateOutputMoves(outputRegs))
-            parts = [funcname,flag,df]
-            name = "_".join([x for x in parts if x])
-            generateFunction(name, tmp)
+        # 3b) constant with set flags
+        tmp=(generateConstantInputMoves(0, constantOverwrites, "0xfeff") + content + generateOutputMoves(allRegs))
+        parts = [funcname,"constant_simple_set"]
+        name = "_".join([x for x in parts if x])
+        generateFunction(name, tmp)
+    else:
+        # 3c) constant with unset flags
+        tmp=(generateConstantInputMoves(0, constantOverwrites) +  content + generateOutputMoves(allRegs))
+        parts = [funcname,"constant_simple"]
+        name = "_".join([x for x in parts if x])
+        generateFunction(name, tmp)
 
-            tmp=(dfLine+
-                 generateFlags(flag) +
-                 generateConstantInputMoves(inputRegs) +
-                 content +
-                 generateOutputMoves(outputRegs))
-            parts = [funcname,flag,df,"constant"]
-            name = "_".join([x for x in parts if x])
-            generateFunction(name, tmp)
+    # 4) complex constant cases
+    for i in [1,2]:
+        tmp=(generateConstantInputMoves(i, constantOverwrites) +  content + generateOutputMoves(allRegs))
+        parts = [funcname,"constant_complex%d"%i]
+        name = "_".join([x for x in parts if x])
+        generateFunction(name, tmp)
 
-            tmp=(dfLine+
-                 generateFlags(flag) +
-                 generateInputMoves(allRegs) +
-                 content +
-                 generateOutputMoves(allRegs))
-            parts = [funcname,flag,df,"allregs"]
-            name = "_".join([x for x in parts if x])
-            generateFunction(name, tmp)
+if forEvaluator:
+    for i in allRegs+["esp_start", "esp_diff"]:
+        out.write("  .comm   dest_%s,4,4\n"%i)
+    for i in ["flags"]:
+        out.write("  .comm   dest_%s,2,4\n"%i)
+    for i in ["cc_"+x for x in ccs]:
+        out.write("  .comm   dest_%s,1,4\n"%i)
 
+    outc=open(OUTPUT_C, "w")
+    for x in names:
+        if "constant" not in x: continue
+        stem=x.split("_constant_")[0]
+        if stem in doNotEvalNames: continue
+        outc.write('''
+    {
+	extern void %s();
+        printf("=== %%s\\n", "%s");
+        fflush(stdout);
+        %s();
+	printInfo();
+    }
+        '''%(x,x,x))
+    outc.close()
 
 out.write("""
-.globl main
-         .type   main, @function
-main:
+.globl callAll
+         .type   callAll, @function
+callAll:
           %s
-         .size   main, .-main
+         .size   callAll, .-callAll
 """%("\n          ".join(["call "+x for x in names])))
 
 out.close()

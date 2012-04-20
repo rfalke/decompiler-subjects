@@ -5,52 +5,42 @@ bswap: bswap %eax
 cmpxchg1: cmpxchg %al,%bl
 cmpxchg2: cmpxchg %ax,%bx
 cmpxchg3: cmpxchg %eax,%ebx
-cmpxchg4: cmpxchg %eax,(%ebx)
+cmpxchg4[doNotEval]: cmpxchg %eax,(%ebx)
 cmpxchg5: cmpxchg %al,%al
-
-cmpxchg1_locked: lock cmpxchg %al,%bl
-cmpxchg2_locked: lock cmpxchg %ax,%bx
-cmpxchg3_locked: lock cmpxchg %eax,%ebx
-cmpxchg4_locked: lock cmpxchg %eax,(%ebx)
-cmpxchg5_locked: lock cmpxchg %al,%al
+cmpxchg_locked[doNotEval]: lock cmpxchg %eax,(%ebx)
 
 cpuid: cpuid
 
-invd: invd
+invd[doNotEval]: invd
 
-invlpg: invlpg (%eax)
+invlpg[doNotEval]: invlpg (%eax)
 
-wbinvd: wbinvd
+wbinvd[doNotEval]: wbinvd
 
 xadd1: xadd %al,%bl
 xadd2: xadd %ax,%bx
 xadd3: xadd %eax,%ebx
-xadd4: xadd %eax,(%ebx)
+xadd4[doNotEval]: xadd %eax,(%ebx)
 xadd5: xadd %al,%al
-
-xadd1_locked: lock xadd %al,%bl
-xadd2_locked: lock xadd %ax,%bx
-xadd3_locked: lock xadd %eax,%ebx
-xadd4_locked: lock xadd %eax,(%ebx)
-xadd5_locked: lock xadd %al,%al
+xadd_locked[doNotEval]: lock xadd %eax,(%ebx)
 
 ### pentium
 
-cmpxchg8b: cmpxchg8b (%eax)
-cmpxchg8b_locked: lock cmpxchg8b (%eax)
+cmpxchg8b[doNotEval]: cmpxchg8b (%eax)
+cmpxchg8b_locked[doNotEval]: lock cmpxchg8b (%eax)
 
 rdtsc: rdtsc
 
-rdmsr: rdmsr
+rdmsr[doNotEval]: rdmsr
 
-wrmsr: wrmsr
+wrmsr[doNotEval]: wrmsr
 
 ### P6
 
 cmov1: cmova %bx,%ax
 cmov2: cmova %ebx,%ax
-cmov3: cmova 12(%ebx),%ax
-cmov4: cmova 34(%ebx),%eax
+cmov3[doNotEval]: cmova 12(%ebx),%ax
+cmov4[doNotEval]: cmova 34(%ebx),%eax
 
 cmov_w_with_code_0: hex 3c 02 66 0f 40 d8
 cmov_w_with_code_1: hex 3c 02 66 0f 41 d8

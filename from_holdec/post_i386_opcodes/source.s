@@ -3,37 +3,23 @@
         .text
 
     
-.globl bswap
-         .type   bswap, @function
-bswap:
-      
-
-
-  bswap %eax
-
+.globl bswap_plain
+         .type   bswap_plain, @function
+bswap_plain:
+      bswap %eax
+  mov $0x0,%eax
 
     ret
-         .size   bswap, .-bswap
-
-    
-.globl bswap_constant
-         .type   bswap_constant, @function
-bswap_constant:
-      
-
-
-  bswap %eax
-
-
-    ret
-         .size   bswap_constant, .-bswap_constant
+         .size   bswap_plain, .-bswap_plain
 
     
 .globl bswap_allregs
          .type   bswap_allregs, @function
 bswap_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -41,7 +27,7 @@ bswap_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   bswap %eax
   mov %eax,8192
   mov %ebx,8196
@@ -50,43 +36,201 @@ bswap_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   bswap_allregs, .-bswap_allregs
 
     
-.globl cmpxchg1
-         .type   cmpxchg1, @function
-cmpxchg1:
-      
-
-
-  cmpxchg %al,%bl
-
+.globl bswap_constant_simple
+         .type   bswap_constant_simple, @function
+bswap_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  bswap %eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg1, .-cmpxchg1
+         .size   bswap_constant_simple, .-bswap_constant_simple
 
     
-.globl cmpxchg1_constant
-         .type   cmpxchg1_constant, @function
-cmpxchg1_constant:
-      
-
-
-  cmpxchg %al,%bl
-
+.globl bswap_constant_complex1
+         .type   bswap_constant_complex1, @function
+bswap_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  bswap %eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg1_constant, .-cmpxchg1_constant
+         .size   bswap_constant_complex1, .-bswap_constant_complex1
+
+    
+.globl bswap_constant_complex2
+         .type   bswap_constant_complex2, @function
+bswap_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  bswap %eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   bswap_constant_complex2, .-bswap_constant_complex2
+
+    
+.globl cmpxchg1_plain
+         .type   cmpxchg1_plain, @function
+cmpxchg1_plain:
+      cmpxchg %al,%bl
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg1_plain, .-cmpxchg1_plain
 
     
 .globl cmpxchg1_allregs
          .type   cmpxchg1_allregs, @function
 cmpxchg1_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -94,7 +238,7 @@ cmpxchg1_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg %al,%bl
   mov %eax,8192
   mov %ebx,8196
@@ -103,43 +247,201 @@ cmpxchg1_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg1_allregs, .-cmpxchg1_allregs
 
     
-.globl cmpxchg2
-         .type   cmpxchg2, @function
-cmpxchg2:
-      
-
-
-  cmpxchg %ax,%bx
-
+.globl cmpxchg1_constant_simple
+         .type   cmpxchg1_constant_simple, @function
+cmpxchg1_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg2, .-cmpxchg2
+         .size   cmpxchg1_constant_simple, .-cmpxchg1_constant_simple
 
     
-.globl cmpxchg2_constant
-         .type   cmpxchg2_constant, @function
-cmpxchg2_constant:
-      
-
-
-  cmpxchg %ax,%bx
-
+.globl cmpxchg1_constant_complex1
+         .type   cmpxchg1_constant_complex1, @function
+cmpxchg1_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg2_constant, .-cmpxchg2_constant
+         .size   cmpxchg1_constant_complex1, .-cmpxchg1_constant_complex1
+
+    
+.globl cmpxchg1_constant_complex2
+         .type   cmpxchg1_constant_complex2, @function
+cmpxchg1_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg1_constant_complex2, .-cmpxchg1_constant_complex2
+
+    
+.globl cmpxchg2_plain
+         .type   cmpxchg2_plain, @function
+cmpxchg2_plain:
+      cmpxchg %ax,%bx
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg2_plain, .-cmpxchg2_plain
 
     
 .globl cmpxchg2_allregs
          .type   cmpxchg2_allregs, @function
 cmpxchg2_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -147,7 +449,7 @@ cmpxchg2_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg %ax,%bx
   mov %eax,8192
   mov %ebx,8196
@@ -156,43 +458,201 @@ cmpxchg2_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg2_allregs, .-cmpxchg2_allregs
 
     
-.globl cmpxchg3
-         .type   cmpxchg3, @function
-cmpxchg3:
-      
-
-
-  cmpxchg %eax,%ebx
-
+.globl cmpxchg2_constant_simple
+         .type   cmpxchg2_constant_simple, @function
+cmpxchg2_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg3, .-cmpxchg3
+         .size   cmpxchg2_constant_simple, .-cmpxchg2_constant_simple
 
     
-.globl cmpxchg3_constant
-         .type   cmpxchg3_constant, @function
-cmpxchg3_constant:
-      
-
-
-  cmpxchg %eax,%ebx
-
+.globl cmpxchg2_constant_complex1
+         .type   cmpxchg2_constant_complex1, @function
+cmpxchg2_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg3_constant, .-cmpxchg3_constant
+         .size   cmpxchg2_constant_complex1, .-cmpxchg2_constant_complex1
+
+    
+.globl cmpxchg2_constant_complex2
+         .type   cmpxchg2_constant_complex2, @function
+cmpxchg2_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg2_constant_complex2, .-cmpxchg2_constant_complex2
+
+    
+.globl cmpxchg3_plain
+         .type   cmpxchg3_plain, @function
+cmpxchg3_plain:
+      cmpxchg %eax,%ebx
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg3_plain, .-cmpxchg3_plain
 
     
 .globl cmpxchg3_allregs
          .type   cmpxchg3_allregs, @function
 cmpxchg3_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -200,7 +660,7 @@ cmpxchg3_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg %eax,%ebx
   mov %eax,8192
   mov %ebx,8196
@@ -209,43 +669,201 @@ cmpxchg3_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg3_allregs, .-cmpxchg3_allregs
 
     
-.globl cmpxchg4
-         .type   cmpxchg4, @function
-cmpxchg4:
-      
-
-
-  cmpxchg %eax,(%ebx)
-
+.globl cmpxchg3_constant_simple
+         .type   cmpxchg3_constant_simple, @function
+cmpxchg3_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg4, .-cmpxchg4
+         .size   cmpxchg3_constant_simple, .-cmpxchg3_constant_simple
 
     
-.globl cmpxchg4_constant
-         .type   cmpxchg4_constant, @function
-cmpxchg4_constant:
-      
-
-
-  cmpxchg %eax,(%ebx)
-
+.globl cmpxchg3_constant_complex1
+         .type   cmpxchg3_constant_complex1, @function
+cmpxchg3_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg4_constant, .-cmpxchg4_constant
+         .size   cmpxchg3_constant_complex1, .-cmpxchg3_constant_complex1
+
+    
+.globl cmpxchg3_constant_complex2
+         .type   cmpxchg3_constant_complex2, @function
+cmpxchg3_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg3_constant_complex2, .-cmpxchg3_constant_complex2
+
+    
+.globl cmpxchg4_plain
+         .type   cmpxchg4_plain, @function
+cmpxchg4_plain:
+      cmpxchg %eax,(%ebx)
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg4_plain, .-cmpxchg4_plain
 
     
 .globl cmpxchg4_allregs
          .type   cmpxchg4_allregs, @function
 cmpxchg4_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -253,7 +871,7 @@ cmpxchg4_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
@@ -262,43 +880,201 @@ cmpxchg4_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg4_allregs, .-cmpxchg4_allregs
 
     
-.globl cmpxchg5
-         .type   cmpxchg5, @function
-cmpxchg5:
-      
-
-
-  cmpxchg %al,%al
-
+.globl cmpxchg4_constant_simple
+         .type   cmpxchg4_constant_simple, @function
+cmpxchg4_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg5, .-cmpxchg5
+         .size   cmpxchg4_constant_simple, .-cmpxchg4_constant_simple
 
     
-.globl cmpxchg5_constant
-         .type   cmpxchg5_constant, @function
-cmpxchg5_constant:
-      
-
-
-  cmpxchg %al,%al
-
+.globl cmpxchg4_constant_complex1
+         .type   cmpxchg4_constant_complex1, @function
+cmpxchg4_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg5_constant, .-cmpxchg5_constant
+         .size   cmpxchg4_constant_complex1, .-cmpxchg4_constant_complex1
+
+    
+.globl cmpxchg4_constant_complex2
+         .type   cmpxchg4_constant_complex2, @function
+cmpxchg4_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg4_constant_complex2, .-cmpxchg4_constant_complex2
+
+    
+.globl cmpxchg5_plain
+         .type   cmpxchg5_plain, @function
+cmpxchg5_plain:
+      cmpxchg %al,%al
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg5_plain, .-cmpxchg5_plain
 
     
 .globl cmpxchg5_allregs
          .type   cmpxchg5_allregs, @function
 cmpxchg5_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -306,7 +1082,7 @@ cmpxchg5_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg %al,%al
   mov %eax,8192
   mov %ebx,8196
@@ -315,52 +1091,49 @@ cmpxchg5_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg5_allregs, .-cmpxchg5_allregs
 
     
-.globl cmpxchg1_locked
-         .type   cmpxchg1_locked, @function
-cmpxchg1_locked:
-      
-
-
-  lock cmpxchg %al,%bl
-
-
-    ret
-         .size   cmpxchg1_locked, .-cmpxchg1_locked
-
-    
-.globl cmpxchg1_locked_constant
-         .type   cmpxchg1_locked_constant, @function
-cmpxchg1_locked_constant:
-      
-
-
-  lock cmpxchg %al,%bl
-
-
-    ret
-         .size   cmpxchg1_locked_constant, .-cmpxchg1_locked_constant
-
-    
-.globl cmpxchg1_locked_allregs
-         .type   cmpxchg1_locked_allregs, @function
-cmpxchg1_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock cmpxchg %al,%bl
+.globl cmpxchg5_constant_simple
+         .type   cmpxchg5_constant_simple, @function
+cmpxchg5_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -368,52 +1141,49 @@ cmpxchg1_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg1_locked_allregs, .-cmpxchg1_locked_allregs
+         .size   cmpxchg5_constant_simple, .-cmpxchg5_constant_simple
 
     
-.globl cmpxchg2_locked
-         .type   cmpxchg2_locked, @function
-cmpxchg2_locked:
-      
-
-
-  lock cmpxchg %ax,%bx
-
-
-    ret
-         .size   cmpxchg2_locked, .-cmpxchg2_locked
-
-    
-.globl cmpxchg2_locked_constant
-         .type   cmpxchg2_locked_constant, @function
-cmpxchg2_locked_constant:
-      
-
-
-  lock cmpxchg %ax,%bx
-
-
-    ret
-         .size   cmpxchg2_locked_constant, .-cmpxchg2_locked_constant
-
-    
-.globl cmpxchg2_locked_allregs
-         .type   cmpxchg2_locked_allregs, @function
-cmpxchg2_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock cmpxchg %ax,%bx
+.globl cmpxchg5_constant_complex1
+         .type   cmpxchg5_constant_complex1, @function
+cmpxchg5_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -421,52 +1191,49 @@ cmpxchg2_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg2_locked_allregs, .-cmpxchg2_locked_allregs
+         .size   cmpxchg5_constant_complex1, .-cmpxchg5_constant_complex1
 
     
-.globl cmpxchg3_locked
-         .type   cmpxchg3_locked, @function
-cmpxchg3_locked:
-      
-
-
-  lock cmpxchg %eax,%ebx
-
-
-    ret
-         .size   cmpxchg3_locked, .-cmpxchg3_locked
-
-    
-.globl cmpxchg3_locked_constant
-         .type   cmpxchg3_locked_constant, @function
-cmpxchg3_locked_constant:
-      
-
-
-  lock cmpxchg %eax,%ebx
-
-
-    ret
-         .size   cmpxchg3_locked_constant, .-cmpxchg3_locked_constant
-
-    
-.globl cmpxchg3_locked_allregs
-         .type   cmpxchg3_locked_allregs, @function
-cmpxchg3_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock cmpxchg %eax,%ebx
+.globl cmpxchg5_constant_complex2
+         .type   cmpxchg5_constant_complex2, @function
+cmpxchg5_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -474,43 +1241,51 @@ cmpxchg3_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg3_locked_allregs, .-cmpxchg3_locked_allregs
+         .size   cmpxchg5_constant_complex2, .-cmpxchg5_constant_complex2
 
     
-.globl cmpxchg4_locked
-         .type   cmpxchg4_locked, @function
-cmpxchg4_locked:
-      
-
-
-  lock cmpxchg %eax,(%ebx)
-
+.globl cmpxchg_locked_plain
+         .type   cmpxchg_locked_plain, @function
+cmpxchg_locked_plain:
+      lock cmpxchg %eax,(%ebx)
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg4_locked, .-cmpxchg4_locked
+         .size   cmpxchg_locked_plain, .-cmpxchg_locked_plain
 
     
-.globl cmpxchg4_locked_constant
-         .type   cmpxchg4_locked_constant, @function
-cmpxchg4_locked_constant:
-      
-
-
-  lock cmpxchg %eax,(%ebx)
-
-
-    ret
-         .size   cmpxchg4_locked_constant, .-cmpxchg4_locked_constant
-
-    
-.globl cmpxchg4_locked_allregs
-         .type   cmpxchg4_locked_allregs, @function
-cmpxchg4_locked_allregs:
-      
-
+.globl cmpxchg_locked_allregs
+         .type   cmpxchg_locked_allregs, @function
+cmpxchg_locked_allregs:
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -518,7 +1293,7 @@ cmpxchg4_locked_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   lock cmpxchg %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
@@ -527,52 +1302,49 @@ cmpxchg4_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg4_locked_allregs, .-cmpxchg4_locked_allregs
+         .size   cmpxchg_locked_allregs, .-cmpxchg_locked_allregs
 
     
-.globl cmpxchg5_locked
-         .type   cmpxchg5_locked, @function
-cmpxchg5_locked:
-      
-
-
-  lock cmpxchg %al,%al
-
-
-    ret
-         .size   cmpxchg5_locked, .-cmpxchg5_locked
-
-    
-.globl cmpxchg5_locked_constant
-         .type   cmpxchg5_locked_constant, @function
-cmpxchg5_locked_constant:
-      
-
-
-  lock cmpxchg %al,%al
-
-
-    ret
-         .size   cmpxchg5_locked_constant, .-cmpxchg5_locked_constant
-
-    
-.globl cmpxchg5_locked_allregs
-         .type   cmpxchg5_locked_allregs, @function
-cmpxchg5_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock cmpxchg %al,%al
+.globl cmpxchg_locked_constant_simple
+         .type   cmpxchg_locked_constant_simple, @function
+cmpxchg_locked_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  lock cmpxchg %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -580,43 +1352,151 @@ cmpxchg5_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg5_locked_allregs, .-cmpxchg5_locked_allregs
+         .size   cmpxchg_locked_constant_simple, .-cmpxchg_locked_constant_simple
 
     
-.globl cpuid
-         .type   cpuid, @function
-cpuid:
-      
-
-
-  cpuid
-
+.globl cmpxchg_locked_constant_complex1
+         .type   cmpxchg_locked_constant_complex1, @function
+cmpxchg_locked_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  lock cmpxchg %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cpuid, .-cpuid
+         .size   cmpxchg_locked_constant_complex1, .-cmpxchg_locked_constant_complex1
 
     
-.globl cpuid_constant
-         .type   cpuid_constant, @function
-cpuid_constant:
-      
-
-
-  cpuid
-
+.globl cmpxchg_locked_constant_complex2
+         .type   cmpxchg_locked_constant_complex2, @function
+cmpxchg_locked_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  lock cmpxchg %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cpuid_constant, .-cpuid_constant
+         .size   cmpxchg_locked_constant_complex2, .-cmpxchg_locked_constant_complex2
+
+    
+.globl cpuid_plain
+         .type   cpuid_plain, @function
+cpuid_plain:
+      cpuid
+  mov $0x0,%eax
+
+    ret
+         .size   cpuid_plain, .-cpuid_plain
 
     
 .globl cpuid_allregs
          .type   cpuid_allregs, @function
 cpuid_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -624,7 +1504,7 @@ cpuid_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cpuid
   mov %eax,8192
   mov %ebx,8196
@@ -633,43 +1513,201 @@ cpuid_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cpuid_allregs, .-cpuid_allregs
 
     
-.globl invd
-         .type   invd, @function
-invd:
-      
-
-
-  invd
-
+.globl cpuid_constant_simple
+         .type   cpuid_constant_simple, @function
+cpuid_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cpuid
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   invd, .-invd
+         .size   cpuid_constant_simple, .-cpuid_constant_simple
 
     
-.globl invd_constant
-         .type   invd_constant, @function
-invd_constant:
-      
-
-
-  invd
-
+.globl cpuid_constant_complex1
+         .type   cpuid_constant_complex1, @function
+cpuid_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cpuid
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   invd_constant, .-invd_constant
+         .size   cpuid_constant_complex1, .-cpuid_constant_complex1
+
+    
+.globl cpuid_constant_complex2
+         .type   cpuid_constant_complex2, @function
+cpuid_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cpuid
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cpuid_constant_complex2, .-cpuid_constant_complex2
+
+    
+.globl invd_plain
+         .type   invd_plain, @function
+invd_plain:
+      invd
+  mov $0x0,%eax
+
+    ret
+         .size   invd_plain, .-invd_plain
 
     
 .globl invd_allregs
          .type   invd_allregs, @function
 invd_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -677,7 +1715,7 @@ invd_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   invd
   mov %eax,8192
   mov %ebx,8196
@@ -686,43 +1724,201 @@ invd_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   invd_allregs, .-invd_allregs
 
     
-.globl invlpg
-         .type   invlpg, @function
-invlpg:
-      
-
-
-  invlpg (%eax)
-
+.globl invd_constant_simple
+         .type   invd_constant_simple, @function
+invd_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  invd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   invlpg, .-invlpg
+         .size   invd_constant_simple, .-invd_constant_simple
 
     
-.globl invlpg_constant
-         .type   invlpg_constant, @function
-invlpg_constant:
-      
-
-
-  invlpg (%eax)
-
+.globl invd_constant_complex1
+         .type   invd_constant_complex1, @function
+invd_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  invd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   invlpg_constant, .-invlpg_constant
+         .size   invd_constant_complex1, .-invd_constant_complex1
+
+    
+.globl invd_constant_complex2
+         .type   invd_constant_complex2, @function
+invd_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  invd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   invd_constant_complex2, .-invd_constant_complex2
+
+    
+.globl invlpg_plain
+         .type   invlpg_plain, @function
+invlpg_plain:
+      invlpg (%eax)
+  mov $0x0,%eax
+
+    ret
+         .size   invlpg_plain, .-invlpg_plain
 
     
 .globl invlpg_allregs
          .type   invlpg_allregs, @function
 invlpg_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -730,7 +1926,7 @@ invlpg_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   invlpg (%eax)
   mov %eax,8192
   mov %ebx,8196
@@ -739,43 +1935,201 @@ invlpg_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   invlpg_allregs, .-invlpg_allregs
 
     
-.globl wbinvd
-         .type   wbinvd, @function
-wbinvd:
-      
-
-
-  wbinvd
-
+.globl invlpg_constant_simple
+         .type   invlpg_constant_simple, @function
+invlpg_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  invlpg (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   wbinvd, .-wbinvd
+         .size   invlpg_constant_simple, .-invlpg_constant_simple
 
     
-.globl wbinvd_constant
-         .type   wbinvd_constant, @function
-wbinvd_constant:
-      
-
-
-  wbinvd
-
+.globl invlpg_constant_complex1
+         .type   invlpg_constant_complex1, @function
+invlpg_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  invlpg (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   wbinvd_constant, .-wbinvd_constant
+         .size   invlpg_constant_complex1, .-invlpg_constant_complex1
+
+    
+.globl invlpg_constant_complex2
+         .type   invlpg_constant_complex2, @function
+invlpg_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  invlpg (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   invlpg_constant_complex2, .-invlpg_constant_complex2
+
+    
+.globl wbinvd_plain
+         .type   wbinvd_plain, @function
+wbinvd_plain:
+      wbinvd
+  mov $0x0,%eax
+
+    ret
+         .size   wbinvd_plain, .-wbinvd_plain
 
     
 .globl wbinvd_allregs
          .type   wbinvd_allregs, @function
 wbinvd_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -783,7 +2137,7 @@ wbinvd_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   wbinvd
   mov %eax,8192
   mov %ebx,8196
@@ -792,43 +2146,201 @@ wbinvd_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   wbinvd_allregs, .-wbinvd_allregs
 
     
-.globl xadd1
-         .type   xadd1, @function
-xadd1:
-      
-
-
-  xadd %al,%bl
-
+.globl wbinvd_constant_simple
+         .type   wbinvd_constant_simple, @function
+wbinvd_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  wbinvd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd1, .-xadd1
+         .size   wbinvd_constant_simple, .-wbinvd_constant_simple
 
     
-.globl xadd1_constant
-         .type   xadd1_constant, @function
-xadd1_constant:
-      
-
-
-  xadd %al,%bl
-
+.globl wbinvd_constant_complex1
+         .type   wbinvd_constant_complex1, @function
+wbinvd_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  wbinvd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd1_constant, .-xadd1_constant
+         .size   wbinvd_constant_complex1, .-wbinvd_constant_complex1
+
+    
+.globl wbinvd_constant_complex2
+         .type   wbinvd_constant_complex2, @function
+wbinvd_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  wbinvd
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   wbinvd_constant_complex2, .-wbinvd_constant_complex2
+
+    
+.globl xadd1_plain
+         .type   xadd1_plain, @function
+xadd1_plain:
+      xadd %al,%bl
+  mov $0x0,%eax
+
+    ret
+         .size   xadd1_plain, .-xadd1_plain
 
     
 .globl xadd1_allregs
          .type   xadd1_allregs, @function
 xadd1_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -836,7 +2348,7 @@ xadd1_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   xadd %al,%bl
   mov %eax,8192
   mov %ebx,8196
@@ -845,43 +2357,201 @@ xadd1_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   xadd1_allregs, .-xadd1_allregs
 
     
-.globl xadd2
-         .type   xadd2, @function
-xadd2:
-      
-
-
-  xadd %ax,%bx
-
+.globl xadd1_constant_simple
+         .type   xadd1_constant_simple, @function
+xadd1_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  xadd %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd2, .-xadd2
+         .size   xadd1_constant_simple, .-xadd1_constant_simple
 
     
-.globl xadd2_constant
-         .type   xadd2_constant, @function
-xadd2_constant:
-      
-
-
-  xadd %ax,%bx
-
+.globl xadd1_constant_complex1
+         .type   xadd1_constant_complex1, @function
+xadd1_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  xadd %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd2_constant, .-xadd2_constant
+         .size   xadd1_constant_complex1, .-xadd1_constant_complex1
+
+    
+.globl xadd1_constant_complex2
+         .type   xadd1_constant_complex2, @function
+xadd1_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  xadd %al,%bl
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   xadd1_constant_complex2, .-xadd1_constant_complex2
+
+    
+.globl xadd2_plain
+         .type   xadd2_plain, @function
+xadd2_plain:
+      xadd %ax,%bx
+  mov $0x0,%eax
+
+    ret
+         .size   xadd2_plain, .-xadd2_plain
 
     
 .globl xadd2_allregs
          .type   xadd2_allregs, @function
 xadd2_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -889,7 +2559,7 @@ xadd2_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   xadd %ax,%bx
   mov %eax,8192
   mov %ebx,8196
@@ -898,43 +2568,201 @@ xadd2_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   xadd2_allregs, .-xadd2_allregs
 
     
-.globl xadd3
-         .type   xadd3, @function
-xadd3:
-      
-
-
-  xadd %eax,%ebx
-
+.globl xadd2_constant_simple
+         .type   xadd2_constant_simple, @function
+xadd2_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  xadd %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd3, .-xadd3
+         .size   xadd2_constant_simple, .-xadd2_constant_simple
 
     
-.globl xadd3_constant
-         .type   xadd3_constant, @function
-xadd3_constant:
-      
-
-
-  xadd %eax,%ebx
-
+.globl xadd2_constant_complex1
+         .type   xadd2_constant_complex1, @function
+xadd2_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  xadd %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd3_constant, .-xadd3_constant
+         .size   xadd2_constant_complex1, .-xadd2_constant_complex1
+
+    
+.globl xadd2_constant_complex2
+         .type   xadd2_constant_complex2, @function
+xadd2_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  xadd %ax,%bx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   xadd2_constant_complex2, .-xadd2_constant_complex2
+
+    
+.globl xadd3_plain
+         .type   xadd3_plain, @function
+xadd3_plain:
+      xadd %eax,%ebx
+  mov $0x0,%eax
+
+    ret
+         .size   xadd3_plain, .-xadd3_plain
 
     
 .globl xadd3_allregs
          .type   xadd3_allregs, @function
 xadd3_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -942,7 +2770,7 @@ xadd3_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   xadd %eax,%ebx
   mov %eax,8192
   mov %ebx,8196
@@ -951,43 +2779,201 @@ xadd3_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   xadd3_allregs, .-xadd3_allregs
 
     
-.globl xadd4
-         .type   xadd4, @function
-xadd4:
-      
-
-
-  xadd %eax,(%ebx)
-
+.globl xadd3_constant_simple
+         .type   xadd3_constant_simple, @function
+xadd3_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  xadd %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd4, .-xadd4
+         .size   xadd3_constant_simple, .-xadd3_constant_simple
 
     
-.globl xadd4_constant
-         .type   xadd4_constant, @function
-xadd4_constant:
-      
-
-
-  xadd %eax,(%ebx)
-
+.globl xadd3_constant_complex1
+         .type   xadd3_constant_complex1, @function
+xadd3_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  xadd %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd4_constant, .-xadd4_constant
+         .size   xadd3_constant_complex1, .-xadd3_constant_complex1
+
+    
+.globl xadd3_constant_complex2
+         .type   xadd3_constant_complex2, @function
+xadd3_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  xadd %eax,%ebx
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   xadd3_constant_complex2, .-xadd3_constant_complex2
+
+    
+.globl xadd4_plain
+         .type   xadd4_plain, @function
+xadd4_plain:
+      xadd %eax,(%ebx)
+  mov $0x0,%eax
+
+    ret
+         .size   xadd4_plain, .-xadd4_plain
 
     
 .globl xadd4_allregs
          .type   xadd4_allregs, @function
 xadd4_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -995,7 +2981,7 @@ xadd4_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   xadd %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
@@ -1004,43 +2990,201 @@ xadd4_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   xadd4_allregs, .-xadd4_allregs
 
     
-.globl xadd5
-         .type   xadd5, @function
-xadd5:
-      
-
-
-  xadd %al,%al
-
+.globl xadd4_constant_simple
+         .type   xadd4_constant_simple, @function
+xadd4_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  xadd %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd5, .-xadd5
+         .size   xadd4_constant_simple, .-xadd4_constant_simple
 
     
-.globl xadd5_constant
-         .type   xadd5_constant, @function
-xadd5_constant:
-      
-
-
-  xadd %al,%al
-
+.globl xadd4_constant_complex1
+         .type   xadd4_constant_complex1, @function
+xadd4_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  xadd %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd5_constant, .-xadd5_constant
+         .size   xadd4_constant_complex1, .-xadd4_constant_complex1
+
+    
+.globl xadd4_constant_complex2
+         .type   xadd4_constant_complex2, @function
+xadd4_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  xadd %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   xadd4_constant_complex2, .-xadd4_constant_complex2
+
+    
+.globl xadd5_plain
+         .type   xadd5_plain, @function
+xadd5_plain:
+      xadd %al,%al
+  mov $0x0,%eax
+
+    ret
+         .size   xadd5_plain, .-xadd5_plain
 
     
 .globl xadd5_allregs
          .type   xadd5_allregs, @function
 xadd5_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1048,7 +3192,7 @@ xadd5_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   xadd %al,%al
   mov %eax,8192
   mov %ebx,8196
@@ -1057,52 +3201,49 @@ xadd5_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   xadd5_allregs, .-xadd5_allregs
 
     
-.globl xadd1_locked
-         .type   xadd1_locked, @function
-xadd1_locked:
-      
-
-
-  lock xadd %al,%bl
-
-
-    ret
-         .size   xadd1_locked, .-xadd1_locked
-
-    
-.globl xadd1_locked_constant
-         .type   xadd1_locked_constant, @function
-xadd1_locked_constant:
-      
-
-
-  lock xadd %al,%bl
-
-
-    ret
-         .size   xadd1_locked_constant, .-xadd1_locked_constant
-
-    
-.globl xadd1_locked_allregs
-         .type   xadd1_locked_allregs, @function
-xadd1_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock xadd %al,%bl
+.globl xadd5_constant_simple
+         .type   xadd5_constant_simple, @function
+xadd5_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  xadd %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -1110,52 +3251,49 @@ xadd1_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd1_locked_allregs, .-xadd1_locked_allregs
+         .size   xadd5_constant_simple, .-xadd5_constant_simple
 
     
-.globl xadd2_locked
-         .type   xadd2_locked, @function
-xadd2_locked:
-      
-
-
-  lock xadd %ax,%bx
-
-
-    ret
-         .size   xadd2_locked, .-xadd2_locked
-
-    
-.globl xadd2_locked_constant
-         .type   xadd2_locked_constant, @function
-xadd2_locked_constant:
-      
-
-
-  lock xadd %ax,%bx
-
-
-    ret
-         .size   xadd2_locked_constant, .-xadd2_locked_constant
-
-    
-.globl xadd2_locked_allregs
-         .type   xadd2_locked_allregs, @function
-xadd2_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock xadd %ax,%bx
+.globl xadd5_constant_complex1
+         .type   xadd5_constant_complex1, @function
+xadd5_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  xadd %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -1163,52 +3301,49 @@ xadd2_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd2_locked_allregs, .-xadd2_locked_allregs
+         .size   xadd5_constant_complex1, .-xadd5_constant_complex1
 
     
-.globl xadd3_locked
-         .type   xadd3_locked, @function
-xadd3_locked:
-      
-
-
-  lock xadd %eax,%ebx
-
-
-    ret
-         .size   xadd3_locked, .-xadd3_locked
-
-    
-.globl xadd3_locked_constant
-         .type   xadd3_locked_constant, @function
-xadd3_locked_constant:
-      
-
-
-  lock xadd %eax,%ebx
-
-
-    ret
-         .size   xadd3_locked_constant, .-xadd3_locked_constant
-
-    
-.globl xadd3_locked_allregs
-         .type   xadd3_locked_allregs, @function
-xadd3_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock xadd %eax,%ebx
+.globl xadd5_constant_complex2
+         .type   xadd5_constant_complex2, @function
+xadd5_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  xadd %al,%al
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -1216,43 +3351,51 @@ xadd3_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd3_locked_allregs, .-xadd3_locked_allregs
+         .size   xadd5_constant_complex2, .-xadd5_constant_complex2
 
     
-.globl xadd4_locked
-         .type   xadd4_locked, @function
-xadd4_locked:
-      
-
-
-  lock xadd %eax,(%ebx)
-
+.globl xadd_locked_plain
+         .type   xadd_locked_plain, @function
+xadd_locked_plain:
+      lock xadd %eax,(%ebx)
+  mov $0x0,%eax
 
     ret
-         .size   xadd4_locked, .-xadd4_locked
+         .size   xadd_locked_plain, .-xadd_locked_plain
 
     
-.globl xadd4_locked_constant
-         .type   xadd4_locked_constant, @function
-xadd4_locked_constant:
-      
-
-
-  lock xadd %eax,(%ebx)
-
-
-    ret
-         .size   xadd4_locked_constant, .-xadd4_locked_constant
-
-    
-.globl xadd4_locked_allregs
-         .type   xadd4_locked_allregs, @function
-xadd4_locked_allregs:
-      
-
+.globl xadd_locked_allregs
+         .type   xadd_locked_allregs, @function
+xadd_locked_allregs:
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1260,7 +3403,7 @@ xadd4_locked_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   lock xadd %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
@@ -1269,52 +3412,49 @@ xadd4_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd4_locked_allregs, .-xadd4_locked_allregs
+         .size   xadd_locked_allregs, .-xadd_locked_allregs
 
     
-.globl xadd5_locked
-         .type   xadd5_locked, @function
-xadd5_locked:
-      
-
-
-  lock xadd %al,%al
-
-
-    ret
-         .size   xadd5_locked, .-xadd5_locked
-
-    
-.globl xadd5_locked_constant
-         .type   xadd5_locked_constant, @function
-xadd5_locked_constant:
-      
-
-
-  lock xadd %al,%al
-
-
-    ret
-         .size   xadd5_locked_constant, .-xadd5_locked_constant
-
-    
-.globl xadd5_locked_allregs
-         .type   xadd5_locked_allregs, @function
-xadd5_locked_allregs:
-      
-
-  mov 4096,%eax
-  mov 4100,%ebx
-  mov 4104,%ecx
-  mov 4108,%edx
-  mov 4112,%ebp
-  mov 4116,%esi
-  mov 4120,%edi
-  mov 4124,%esp
-  lock xadd %al,%al
+.globl xadd_locked_constant_simple
+         .type   xadd_locked_constant_simple, @function
+xadd_locked_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  lock xadd %eax,(%ebx)
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -1322,43 +3462,151 @@ xadd5_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   xadd5_locked_allregs, .-xadd5_locked_allregs
+         .size   xadd_locked_constant_simple, .-xadd_locked_constant_simple
 
     
-.globl cmpxchg8b
-         .type   cmpxchg8b, @function
-cmpxchg8b:
-      
-
-
-  cmpxchg8b (%eax)
-
+.globl xadd_locked_constant_complex1
+         .type   xadd_locked_constant_complex1, @function
+xadd_locked_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  lock xadd %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg8b, .-cmpxchg8b
+         .size   xadd_locked_constant_complex1, .-xadd_locked_constant_complex1
 
     
-.globl cmpxchg8b_constant
-         .type   cmpxchg8b_constant, @function
-cmpxchg8b_constant:
-      
-
-
-  cmpxchg8b (%eax)
-
+.globl xadd_locked_constant_complex2
+         .type   xadd_locked_constant_complex2, @function
+xadd_locked_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  lock xadd %eax,(%ebx)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg8b_constant, .-cmpxchg8b_constant
+         .size   xadd_locked_constant_complex2, .-xadd_locked_constant_complex2
+
+    
+.globl cmpxchg8b_plain
+         .type   cmpxchg8b_plain, @function
+cmpxchg8b_plain:
+      cmpxchg8b (%eax)
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg8b_plain, .-cmpxchg8b_plain
 
     
 .globl cmpxchg8b_allregs
          .type   cmpxchg8b_allregs, @function
 cmpxchg8b_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1366,7 +3614,7 @@ cmpxchg8b_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmpxchg8b (%eax)
   mov %eax,8192
   mov %ebx,8196
@@ -1375,43 +3623,201 @@ cmpxchg8b_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg8b_allregs, .-cmpxchg8b_allregs
 
     
-.globl cmpxchg8b_locked
-         .type   cmpxchg8b_locked, @function
-cmpxchg8b_locked:
-      
-
-
-  lock cmpxchg8b (%eax)
-
+.globl cmpxchg8b_constant_simple
+         .type   cmpxchg8b_constant_simple, @function
+cmpxchg8b_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg8b_locked, .-cmpxchg8b_locked
+         .size   cmpxchg8b_constant_simple, .-cmpxchg8b_constant_simple
 
     
-.globl cmpxchg8b_locked_constant
-         .type   cmpxchg8b_locked_constant, @function
-cmpxchg8b_locked_constant:
-      
-
-
-  lock cmpxchg8b (%eax)
-
+.globl cmpxchg8b_constant_complex1
+         .type   cmpxchg8b_constant_complex1, @function
+cmpxchg8b_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmpxchg8b_locked_constant, .-cmpxchg8b_locked_constant
+         .size   cmpxchg8b_constant_complex1, .-cmpxchg8b_constant_complex1
+
+    
+.globl cmpxchg8b_constant_complex2
+         .type   cmpxchg8b_constant_complex2, @function
+cmpxchg8b_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg8b_constant_complex2, .-cmpxchg8b_constant_complex2
+
+    
+.globl cmpxchg8b_locked_plain
+         .type   cmpxchg8b_locked_plain, @function
+cmpxchg8b_locked_plain:
+      lock cmpxchg8b (%eax)
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg8b_locked_plain, .-cmpxchg8b_locked_plain
 
     
 .globl cmpxchg8b_locked_allregs
          .type   cmpxchg8b_locked_allregs, @function
 cmpxchg8b_locked_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1419,7 +3825,7 @@ cmpxchg8b_locked_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   lock cmpxchg8b (%eax)
   mov %eax,8192
   mov %ebx,8196
@@ -1428,43 +3834,201 @@ cmpxchg8b_locked_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmpxchg8b_locked_allregs, .-cmpxchg8b_locked_allregs
 
     
-.globl rdtsc
-         .type   rdtsc, @function
-rdtsc:
-      
-
-
-  rdtsc
-
+.globl cmpxchg8b_locked_constant_simple
+         .type   cmpxchg8b_locked_constant_simple, @function
+cmpxchg8b_locked_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  lock cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   rdtsc, .-rdtsc
+         .size   cmpxchg8b_locked_constant_simple, .-cmpxchg8b_locked_constant_simple
 
     
-.globl rdtsc_constant
-         .type   rdtsc_constant, @function
-rdtsc_constant:
-      
-
-
-  rdtsc
-
+.globl cmpxchg8b_locked_constant_complex1
+         .type   cmpxchg8b_locked_constant_complex1, @function
+cmpxchg8b_locked_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  lock cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   rdtsc_constant, .-rdtsc_constant
+         .size   cmpxchg8b_locked_constant_complex1, .-cmpxchg8b_locked_constant_complex1
+
+    
+.globl cmpxchg8b_locked_constant_complex2
+         .type   cmpxchg8b_locked_constant_complex2, @function
+cmpxchg8b_locked_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  lock cmpxchg8b (%eax)
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmpxchg8b_locked_constant_complex2, .-cmpxchg8b_locked_constant_complex2
+
+    
+.globl rdtsc_plain
+         .type   rdtsc_plain, @function
+rdtsc_plain:
+      rdtsc
+  mov $0x0,%eax
+
+    ret
+         .size   rdtsc_plain, .-rdtsc_plain
 
     
 .globl rdtsc_allregs
          .type   rdtsc_allregs, @function
 rdtsc_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1472,7 +4036,7 @@ rdtsc_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   rdtsc
   mov %eax,8192
   mov %ebx,8196
@@ -1481,43 +4045,201 @@ rdtsc_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   rdtsc_allregs, .-rdtsc_allregs
 
     
-.globl rdmsr
-         .type   rdmsr, @function
-rdmsr:
-      
-
-
-  rdmsr
-
+.globl rdtsc_constant_simple
+         .type   rdtsc_constant_simple, @function
+rdtsc_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  rdtsc
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   rdmsr, .-rdmsr
+         .size   rdtsc_constant_simple, .-rdtsc_constant_simple
 
     
-.globl rdmsr_constant
-         .type   rdmsr_constant, @function
-rdmsr_constant:
-      
-
-
-  rdmsr
-
+.globl rdtsc_constant_complex1
+         .type   rdtsc_constant_complex1, @function
+rdtsc_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  rdtsc
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   rdmsr_constant, .-rdmsr_constant
+         .size   rdtsc_constant_complex1, .-rdtsc_constant_complex1
+
+    
+.globl rdtsc_constant_complex2
+         .type   rdtsc_constant_complex2, @function
+rdtsc_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  rdtsc
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   rdtsc_constant_complex2, .-rdtsc_constant_complex2
+
+    
+.globl rdmsr_plain
+         .type   rdmsr_plain, @function
+rdmsr_plain:
+      rdmsr
+  mov $0x0,%eax
+
+    ret
+         .size   rdmsr_plain, .-rdmsr_plain
 
     
 .globl rdmsr_allregs
          .type   rdmsr_allregs, @function
 rdmsr_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1525,7 +4247,7 @@ rdmsr_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   rdmsr
   mov %eax,8192
   mov %ebx,8196
@@ -1534,43 +4256,201 @@ rdmsr_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   rdmsr_allregs, .-rdmsr_allregs
 
     
-.globl wrmsr
-         .type   wrmsr, @function
-wrmsr:
-      
-
-
-  wrmsr
-
+.globl rdmsr_constant_simple
+         .type   rdmsr_constant_simple, @function
+rdmsr_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  rdmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   wrmsr, .-wrmsr
+         .size   rdmsr_constant_simple, .-rdmsr_constant_simple
 
     
-.globl wrmsr_constant
-         .type   wrmsr_constant, @function
-wrmsr_constant:
-      
-
-
-  wrmsr
-
+.globl rdmsr_constant_complex1
+         .type   rdmsr_constant_complex1, @function
+rdmsr_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  rdmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   wrmsr_constant, .-wrmsr_constant
+         .size   rdmsr_constant_complex1, .-rdmsr_constant_complex1
+
+    
+.globl rdmsr_constant_complex2
+         .type   rdmsr_constant_complex2, @function
+rdmsr_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  rdmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   rdmsr_constant_complex2, .-rdmsr_constant_complex2
+
+    
+.globl wrmsr_plain
+         .type   wrmsr_plain, @function
+wrmsr_plain:
+      wrmsr
+  mov $0x0,%eax
+
+    ret
+         .size   wrmsr_plain, .-wrmsr_plain
 
     
 .globl wrmsr_allregs
          .type   wrmsr_allregs, @function
 wrmsr_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1578,7 +4458,7 @@ wrmsr_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   wrmsr
   mov %eax,8192
   mov %ebx,8196
@@ -1587,43 +4467,201 @@ wrmsr_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   wrmsr_allregs, .-wrmsr_allregs
 
     
-.globl cmov1
-         .type   cmov1, @function
-cmov1:
-      
-
-
-  cmova %bx,%ax
-
+.globl wrmsr_constant_simple
+         .type   wrmsr_constant_simple, @function
+wrmsr_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  wrmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov1, .-cmov1
+         .size   wrmsr_constant_simple, .-wrmsr_constant_simple
 
     
-.globl cmov1_constant
-         .type   cmov1_constant, @function
-cmov1_constant:
-      
-
-
-  cmova %bx,%ax
-
+.globl wrmsr_constant_complex1
+         .type   wrmsr_constant_complex1, @function
+wrmsr_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  wrmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov1_constant, .-cmov1_constant
+         .size   wrmsr_constant_complex1, .-wrmsr_constant_complex1
+
+    
+.globl wrmsr_constant_complex2
+         .type   wrmsr_constant_complex2, @function
+wrmsr_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  wrmsr
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   wrmsr_constant_complex2, .-wrmsr_constant_complex2
+
+    
+.globl cmov1_plain
+         .type   cmov1_plain, @function
+cmov1_plain:
+      cmova %bx,%ax
+  mov $0x0,%eax
+
+    ret
+         .size   cmov1_plain, .-cmov1_plain
 
     
 .globl cmov1_allregs
          .type   cmov1_allregs, @function
 cmov1_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1631,7 +4669,7 @@ cmov1_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmova %bx,%ax
   mov %eax,8192
   mov %ebx,8196
@@ -1640,43 +4678,201 @@ cmov1_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov1_allregs, .-cmov1_allregs
 
     
-.globl cmov2
-         .type   cmov2, @function
-cmov2:
-      
-
-
-  cmova %ebx,%ax
-
+.globl cmov1_constant_simple
+         .type   cmov1_constant_simple, @function
+cmov1_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmova %bx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov2, .-cmov2
+         .size   cmov1_constant_simple, .-cmov1_constant_simple
 
     
-.globl cmov2_constant
-         .type   cmov2_constant, @function
-cmov2_constant:
-      
-
-
-  cmova %ebx,%ax
-
+.globl cmov1_constant_complex1
+         .type   cmov1_constant_complex1, @function
+cmov1_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmova %bx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov2_constant, .-cmov2_constant
+         .size   cmov1_constant_complex1, .-cmov1_constant_complex1
+
+    
+.globl cmov1_constant_complex2
+         .type   cmov1_constant_complex2, @function
+cmov1_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmova %bx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov1_constant_complex2, .-cmov1_constant_complex2
+
+    
+.globl cmov2_plain
+         .type   cmov2_plain, @function
+cmov2_plain:
+      cmova %ebx,%ax
+  mov $0x0,%eax
+
+    ret
+         .size   cmov2_plain, .-cmov2_plain
 
     
 .globl cmov2_allregs
          .type   cmov2_allregs, @function
 cmov2_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1684,7 +4880,7 @@ cmov2_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmova %ebx,%ax
   mov %eax,8192
   mov %ebx,8196
@@ -1693,43 +4889,201 @@ cmov2_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov2_allregs, .-cmov2_allregs
 
     
-.globl cmov3
-         .type   cmov3, @function
-cmov3:
-      
-
-
-  cmova 12(%ebx),%ax
-
+.globl cmov2_constant_simple
+         .type   cmov2_constant_simple, @function
+cmov2_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmova %ebx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov3, .-cmov3
+         .size   cmov2_constant_simple, .-cmov2_constant_simple
 
     
-.globl cmov3_constant
-         .type   cmov3_constant, @function
-cmov3_constant:
-      
-
-
-  cmova 12(%ebx),%ax
-
+.globl cmov2_constant_complex1
+         .type   cmov2_constant_complex1, @function
+cmov2_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmova %ebx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov3_constant, .-cmov3_constant
+         .size   cmov2_constant_complex1, .-cmov2_constant_complex1
+
+    
+.globl cmov2_constant_complex2
+         .type   cmov2_constant_complex2, @function
+cmov2_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmova %ebx,%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov2_constant_complex2, .-cmov2_constant_complex2
+
+    
+.globl cmov3_plain
+         .type   cmov3_plain, @function
+cmov3_plain:
+      cmova 12(%ebx),%ax
+  mov $0x0,%eax
+
+    ret
+         .size   cmov3_plain, .-cmov3_plain
 
     
 .globl cmov3_allregs
          .type   cmov3_allregs, @function
 cmov3_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1737,7 +5091,7 @@ cmov3_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmova 12(%ebx),%ax
   mov %eax,8192
   mov %ebx,8196
@@ -1746,43 +5100,201 @@ cmov3_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov3_allregs, .-cmov3_allregs
 
     
-.globl cmov4
-         .type   cmov4, @function
-cmov4:
-      
-
-
-  cmova 34(%ebx),%eax
-
+.globl cmov3_constant_simple
+         .type   cmov3_constant_simple, @function
+cmov3_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmova 12(%ebx),%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov4, .-cmov4
+         .size   cmov3_constant_simple, .-cmov3_constant_simple
 
     
-.globl cmov4_constant
-         .type   cmov4_constant, @function
-cmov4_constant:
-      
-
-
-  cmova 34(%ebx),%eax
-
+.globl cmov3_constant_complex1
+         .type   cmov3_constant_complex1, @function
+cmov3_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmova 12(%ebx),%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov4_constant, .-cmov4_constant
+         .size   cmov3_constant_complex1, .-cmov3_constant_complex1
+
+    
+.globl cmov3_constant_complex2
+         .type   cmov3_constant_complex2, @function
+cmov3_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmova 12(%ebx),%ax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov3_constant_complex2, .-cmov3_constant_complex2
+
+    
+.globl cmov4_plain
+         .type   cmov4_plain, @function
+cmov4_plain:
+      cmova 34(%ebx),%eax
+  mov $0x0,%eax
+
+    ret
+         .size   cmov4_plain, .-cmov4_plain
 
     
 .globl cmov4_allregs
          .type   cmov4_allregs, @function
 cmov4_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1790,7 +5302,7 @@ cmov4_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   cmova 34(%ebx),%eax
   mov %eax,8192
   mov %ebx,8196
@@ -1799,43 +5311,201 @@ cmov4_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov4_allregs, .-cmov4_allregs
 
     
-.globl cmov_w_with_code_0
-         .type   cmov_w_with_code_0, @function
-cmov_w_with_code_0:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
-
+.globl cmov4_constant_simple
+         .type   cmov4_constant_simple, @function
+cmov4_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  cmova 34(%ebx),%eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_0, .-cmov_w_with_code_0
+         .size   cmov4_constant_simple, .-cmov4_constant_simple
 
     
-.globl cmov_w_with_code_0_constant
-         .type   cmov_w_with_code_0_constant, @function
-cmov_w_with_code_0_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
-
+.globl cmov4_constant_complex1
+         .type   cmov4_constant_complex1, @function
+cmov4_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  cmova 34(%ebx),%eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_0_constant, .-cmov_w_with_code_0_constant
+         .size   cmov4_constant_complex1, .-cmov4_constant_complex1
+
+    
+.globl cmov4_constant_complex2
+         .type   cmov4_constant_complex2, @function
+cmov4_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  cmova 34(%ebx),%eax
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov4_constant_complex2, .-cmov4_constant_complex2
+
+    
+.globl cmov_w_with_code_0_plain
+         .type   cmov_w_with_code_0_plain, @function
+cmov_w_with_code_0_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_0_plain, .-cmov_w_with_code_0_plain
 
     
 .globl cmov_w_with_code_0_allregs
          .type   cmov_w_with_code_0_allregs, @function
 cmov_w_with_code_0_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1843,7 +5513,7 @@ cmov_w_with_code_0_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -1852,43 +5522,201 @@ cmov_w_with_code_0_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_0_allregs, .-cmov_w_with_code_0_allregs
 
     
-.globl cmov_w_with_code_1
-         .type   cmov_w_with_code_1, @function
-cmov_w_with_code_1:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
-
+.globl cmov_w_with_code_0_constant_simple
+         .type   cmov_w_with_code_0_constant_simple, @function
+cmov_w_with_code_0_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_1, .-cmov_w_with_code_1
+         .size   cmov_w_with_code_0_constant_simple, .-cmov_w_with_code_0_constant_simple
 
     
-.globl cmov_w_with_code_1_constant
-         .type   cmov_w_with_code_1_constant, @function
-cmov_w_with_code_1_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
-
+.globl cmov_w_with_code_0_constant_complex1
+         .type   cmov_w_with_code_0_constant_complex1, @function
+cmov_w_with_code_0_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_1_constant, .-cmov_w_with_code_1_constant
+         .size   cmov_w_with_code_0_constant_complex1, .-cmov_w_with_code_0_constant_complex1
+
+    
+.globl cmov_w_with_code_0_constant_complex2
+         .type   cmov_w_with_code_0_constant_complex2, @function
+cmov_w_with_code_0_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_0_constant_complex2, .-cmov_w_with_code_0_constant_complex2
+
+    
+.globl cmov_w_with_code_1_plain
+         .type   cmov_w_with_code_1_plain, @function
+cmov_w_with_code_1_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_1_plain, .-cmov_w_with_code_1_plain
 
     
 .globl cmov_w_with_code_1_allregs
          .type   cmov_w_with_code_1_allregs, @function
 cmov_w_with_code_1_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1896,7 +5724,7 @@ cmov_w_with_code_1_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -1905,43 +5733,201 @@ cmov_w_with_code_1_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_1_allregs, .-cmov_w_with_code_1_allregs
 
     
-.globl cmov_w_with_code_2
-         .type   cmov_w_with_code_2, @function
-cmov_w_with_code_2:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
-
+.globl cmov_w_with_code_1_constant_simple
+         .type   cmov_w_with_code_1_constant_simple, @function
+cmov_w_with_code_1_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_2, .-cmov_w_with_code_2
+         .size   cmov_w_with_code_1_constant_simple, .-cmov_w_with_code_1_constant_simple
 
     
-.globl cmov_w_with_code_2_constant
-         .type   cmov_w_with_code_2_constant, @function
-cmov_w_with_code_2_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
-
+.globl cmov_w_with_code_1_constant_complex1
+         .type   cmov_w_with_code_1_constant_complex1, @function
+cmov_w_with_code_1_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_2_constant, .-cmov_w_with_code_2_constant
+         .size   cmov_w_with_code_1_constant_complex1, .-cmov_w_with_code_1_constant_complex1
+
+    
+.globl cmov_w_with_code_1_constant_complex2
+         .type   cmov_w_with_code_1_constant_complex2, @function
+cmov_w_with_code_1_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_1_constant_complex2, .-cmov_w_with_code_1_constant_complex2
+
+    
+.globl cmov_w_with_code_2_plain
+         .type   cmov_w_with_code_2_plain, @function
+cmov_w_with_code_2_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_2_plain, .-cmov_w_with_code_2_plain
 
     
 .globl cmov_w_with_code_2_allregs
          .type   cmov_w_with_code_2_allregs, @function
 cmov_w_with_code_2_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -1949,7 +5935,7 @@ cmov_w_with_code_2_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -1958,43 +5944,201 @@ cmov_w_with_code_2_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_2_allregs, .-cmov_w_with_code_2_allregs
 
     
-.globl cmov_w_with_code_3
-         .type   cmov_w_with_code_3, @function
-cmov_w_with_code_3:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
-
+.globl cmov_w_with_code_2_constant_simple
+         .type   cmov_w_with_code_2_constant_simple, @function
+cmov_w_with_code_2_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_3, .-cmov_w_with_code_3
+         .size   cmov_w_with_code_2_constant_simple, .-cmov_w_with_code_2_constant_simple
 
     
-.globl cmov_w_with_code_3_constant
-         .type   cmov_w_with_code_3_constant, @function
-cmov_w_with_code_3_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
-
+.globl cmov_w_with_code_2_constant_complex1
+         .type   cmov_w_with_code_2_constant_complex1, @function
+cmov_w_with_code_2_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_3_constant, .-cmov_w_with_code_3_constant
+         .size   cmov_w_with_code_2_constant_complex1, .-cmov_w_with_code_2_constant_complex1
+
+    
+.globl cmov_w_with_code_2_constant_complex2
+         .type   cmov_w_with_code_2_constant_complex2, @function
+cmov_w_with_code_2_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_2_constant_complex2, .-cmov_w_with_code_2_constant_complex2
+
+    
+.globl cmov_w_with_code_3_plain
+         .type   cmov_w_with_code_3_plain, @function
+cmov_w_with_code_3_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_3_plain, .-cmov_w_with_code_3_plain
 
     
 .globl cmov_w_with_code_3_allregs
          .type   cmov_w_with_code_3_allregs, @function
 cmov_w_with_code_3_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2002,7 +6146,7 @@ cmov_w_with_code_3_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2011,43 +6155,201 @@ cmov_w_with_code_3_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_3_allregs, .-cmov_w_with_code_3_allregs
 
     
-.globl cmov_w_with_code_4
-         .type   cmov_w_with_code_4, @function
-cmov_w_with_code_4:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
-
+.globl cmov_w_with_code_3_constant_simple
+         .type   cmov_w_with_code_3_constant_simple, @function
+cmov_w_with_code_3_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_4, .-cmov_w_with_code_4
+         .size   cmov_w_with_code_3_constant_simple, .-cmov_w_with_code_3_constant_simple
 
     
-.globl cmov_w_with_code_4_constant
-         .type   cmov_w_with_code_4_constant, @function
-cmov_w_with_code_4_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
-
+.globl cmov_w_with_code_3_constant_complex1
+         .type   cmov_w_with_code_3_constant_complex1, @function
+cmov_w_with_code_3_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_4_constant, .-cmov_w_with_code_4_constant
+         .size   cmov_w_with_code_3_constant_complex1, .-cmov_w_with_code_3_constant_complex1
+
+    
+.globl cmov_w_with_code_3_constant_complex2
+         .type   cmov_w_with_code_3_constant_complex2, @function
+cmov_w_with_code_3_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_3_constant_complex2, .-cmov_w_with_code_3_constant_complex2
+
+    
+.globl cmov_w_with_code_4_plain
+         .type   cmov_w_with_code_4_plain, @function
+cmov_w_with_code_4_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_4_plain, .-cmov_w_with_code_4_plain
 
     
 .globl cmov_w_with_code_4_allregs
          .type   cmov_w_with_code_4_allregs, @function
 cmov_w_with_code_4_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2055,7 +6357,7 @@ cmov_w_with_code_4_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2064,43 +6366,201 @@ cmov_w_with_code_4_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_4_allregs, .-cmov_w_with_code_4_allregs
 
     
-.globl cmov_w_with_code_5
-         .type   cmov_w_with_code_5, @function
-cmov_w_with_code_5:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
-
+.globl cmov_w_with_code_4_constant_simple
+         .type   cmov_w_with_code_4_constant_simple, @function
+cmov_w_with_code_4_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_5, .-cmov_w_with_code_5
+         .size   cmov_w_with_code_4_constant_simple, .-cmov_w_with_code_4_constant_simple
 
     
-.globl cmov_w_with_code_5_constant
-         .type   cmov_w_with_code_5_constant, @function
-cmov_w_with_code_5_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
-
+.globl cmov_w_with_code_4_constant_complex1
+         .type   cmov_w_with_code_4_constant_complex1, @function
+cmov_w_with_code_4_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_5_constant, .-cmov_w_with_code_5_constant
+         .size   cmov_w_with_code_4_constant_complex1, .-cmov_w_with_code_4_constant_complex1
+
+    
+.globl cmov_w_with_code_4_constant_complex2
+         .type   cmov_w_with_code_4_constant_complex2, @function
+cmov_w_with_code_4_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_4_constant_complex2, .-cmov_w_with_code_4_constant_complex2
+
+    
+.globl cmov_w_with_code_5_plain
+         .type   cmov_w_with_code_5_plain, @function
+cmov_w_with_code_5_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_5_plain, .-cmov_w_with_code_5_plain
 
     
 .globl cmov_w_with_code_5_allregs
          .type   cmov_w_with_code_5_allregs, @function
 cmov_w_with_code_5_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2108,7 +6568,7 @@ cmov_w_with_code_5_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2117,43 +6577,201 @@ cmov_w_with_code_5_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_5_allregs, .-cmov_w_with_code_5_allregs
 
     
-.globl cmov_w_with_code_6
-         .type   cmov_w_with_code_6, @function
-cmov_w_with_code_6:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
-
+.globl cmov_w_with_code_5_constant_simple
+         .type   cmov_w_with_code_5_constant_simple, @function
+cmov_w_with_code_5_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_6, .-cmov_w_with_code_6
+         .size   cmov_w_with_code_5_constant_simple, .-cmov_w_with_code_5_constant_simple
 
     
-.globl cmov_w_with_code_6_constant
-         .type   cmov_w_with_code_6_constant, @function
-cmov_w_with_code_6_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
-
+.globl cmov_w_with_code_5_constant_complex1
+         .type   cmov_w_with_code_5_constant_complex1, @function
+cmov_w_with_code_5_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_6_constant, .-cmov_w_with_code_6_constant
+         .size   cmov_w_with_code_5_constant_complex1, .-cmov_w_with_code_5_constant_complex1
+
+    
+.globl cmov_w_with_code_5_constant_complex2
+         .type   cmov_w_with_code_5_constant_complex2, @function
+cmov_w_with_code_5_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_5_constant_complex2, .-cmov_w_with_code_5_constant_complex2
+
+    
+.globl cmov_w_with_code_6_plain
+         .type   cmov_w_with_code_6_plain, @function
+cmov_w_with_code_6_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_6_plain, .-cmov_w_with_code_6_plain
 
     
 .globl cmov_w_with_code_6_allregs
          .type   cmov_w_with_code_6_allregs, @function
 cmov_w_with_code_6_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2161,7 +6779,7 @@ cmov_w_with_code_6_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2170,43 +6788,201 @@ cmov_w_with_code_6_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_6_allregs, .-cmov_w_with_code_6_allregs
 
     
-.globl cmov_w_with_code_7
-         .type   cmov_w_with_code_7, @function
-cmov_w_with_code_7:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
-
+.globl cmov_w_with_code_6_constant_simple
+         .type   cmov_w_with_code_6_constant_simple, @function
+cmov_w_with_code_6_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_7, .-cmov_w_with_code_7
+         .size   cmov_w_with_code_6_constant_simple, .-cmov_w_with_code_6_constant_simple
 
     
-.globl cmov_w_with_code_7_constant
-         .type   cmov_w_with_code_7_constant, @function
-cmov_w_with_code_7_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
-
+.globl cmov_w_with_code_6_constant_complex1
+         .type   cmov_w_with_code_6_constant_complex1, @function
+cmov_w_with_code_6_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_7_constant, .-cmov_w_with_code_7_constant
+         .size   cmov_w_with_code_6_constant_complex1, .-cmov_w_with_code_6_constant_complex1
+
+    
+.globl cmov_w_with_code_6_constant_complex2
+         .type   cmov_w_with_code_6_constant_complex2, @function
+cmov_w_with_code_6_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_6_constant_complex2, .-cmov_w_with_code_6_constant_complex2
+
+    
+.globl cmov_w_with_code_7_plain
+         .type   cmov_w_with_code_7_plain, @function
+cmov_w_with_code_7_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_7_plain, .-cmov_w_with_code_7_plain
 
     
 .globl cmov_w_with_code_7_allregs
          .type   cmov_w_with_code_7_allregs, @function
 cmov_w_with_code_7_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2214,7 +6990,7 @@ cmov_w_with_code_7_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2223,43 +6999,201 @@ cmov_w_with_code_7_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_7_allregs, .-cmov_w_with_code_7_allregs
 
     
-.globl cmov_w_with_code_8
-         .type   cmov_w_with_code_8, @function
-cmov_w_with_code_8:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
-
+.globl cmov_w_with_code_7_constant_simple
+         .type   cmov_w_with_code_7_constant_simple, @function
+cmov_w_with_code_7_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_8, .-cmov_w_with_code_8
+         .size   cmov_w_with_code_7_constant_simple, .-cmov_w_with_code_7_constant_simple
 
     
-.globl cmov_w_with_code_8_constant
-         .type   cmov_w_with_code_8_constant, @function
-cmov_w_with_code_8_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
-
+.globl cmov_w_with_code_7_constant_complex1
+         .type   cmov_w_with_code_7_constant_complex1, @function
+cmov_w_with_code_7_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_8_constant, .-cmov_w_with_code_8_constant
+         .size   cmov_w_with_code_7_constant_complex1, .-cmov_w_with_code_7_constant_complex1
+
+    
+.globl cmov_w_with_code_7_constant_complex2
+         .type   cmov_w_with_code_7_constant_complex2, @function
+cmov_w_with_code_7_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_7_constant_complex2, .-cmov_w_with_code_7_constant_complex2
+
+    
+.globl cmov_w_with_code_8_plain
+         .type   cmov_w_with_code_8_plain, @function
+cmov_w_with_code_8_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_8_plain, .-cmov_w_with_code_8_plain
 
     
 .globl cmov_w_with_code_8_allregs
          .type   cmov_w_with_code_8_allregs, @function
 cmov_w_with_code_8_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2267,7 +7201,7 @@ cmov_w_with_code_8_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2276,43 +7210,201 @@ cmov_w_with_code_8_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_8_allregs, .-cmov_w_with_code_8_allregs
 
     
-.globl cmov_w_with_code_9
-         .type   cmov_w_with_code_9, @function
-cmov_w_with_code_9:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
-
+.globl cmov_w_with_code_8_constant_simple
+         .type   cmov_w_with_code_8_constant_simple, @function
+cmov_w_with_code_8_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_9, .-cmov_w_with_code_9
+         .size   cmov_w_with_code_8_constant_simple, .-cmov_w_with_code_8_constant_simple
 
     
-.globl cmov_w_with_code_9_constant
-         .type   cmov_w_with_code_9_constant, @function
-cmov_w_with_code_9_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
-
+.globl cmov_w_with_code_8_constant_complex1
+         .type   cmov_w_with_code_8_constant_complex1, @function
+cmov_w_with_code_8_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_9_constant, .-cmov_w_with_code_9_constant
+         .size   cmov_w_with_code_8_constant_complex1, .-cmov_w_with_code_8_constant_complex1
+
+    
+.globl cmov_w_with_code_8_constant_complex2
+         .type   cmov_w_with_code_8_constant_complex2, @function
+cmov_w_with_code_8_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_8_constant_complex2, .-cmov_w_with_code_8_constant_complex2
+
+    
+.globl cmov_w_with_code_9_plain
+         .type   cmov_w_with_code_9_plain, @function
+cmov_w_with_code_9_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_9_plain, .-cmov_w_with_code_9_plain
 
     
 .globl cmov_w_with_code_9_allregs
          .type   cmov_w_with_code_9_allregs, @function
 cmov_w_with_code_9_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2320,7 +7412,7 @@ cmov_w_with_code_9_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2329,43 +7421,201 @@ cmov_w_with_code_9_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_9_allregs, .-cmov_w_with_code_9_allregs
 
     
-.globl cmov_w_with_code_a
-         .type   cmov_w_with_code_a, @function
-cmov_w_with_code_a:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
-
+.globl cmov_w_with_code_9_constant_simple
+         .type   cmov_w_with_code_9_constant_simple, @function
+cmov_w_with_code_9_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_a, .-cmov_w_with_code_a
+         .size   cmov_w_with_code_9_constant_simple, .-cmov_w_with_code_9_constant_simple
 
     
-.globl cmov_w_with_code_a_constant
-         .type   cmov_w_with_code_a_constant, @function
-cmov_w_with_code_a_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
-
+.globl cmov_w_with_code_9_constant_complex1
+         .type   cmov_w_with_code_9_constant_complex1, @function
+cmov_w_with_code_9_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_a_constant, .-cmov_w_with_code_a_constant
+         .size   cmov_w_with_code_9_constant_complex1, .-cmov_w_with_code_9_constant_complex1
+
+    
+.globl cmov_w_with_code_9_constant_complex2
+         .type   cmov_w_with_code_9_constant_complex2, @function
+cmov_w_with_code_9_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_9_constant_complex2, .-cmov_w_with_code_9_constant_complex2
+
+    
+.globl cmov_w_with_code_a_plain
+         .type   cmov_w_with_code_a_plain, @function
+cmov_w_with_code_a_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_a_plain, .-cmov_w_with_code_a_plain
 
     
 .globl cmov_w_with_code_a_allregs
          .type   cmov_w_with_code_a_allregs, @function
 cmov_w_with_code_a_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2373,7 +7623,7 @@ cmov_w_with_code_a_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2382,43 +7632,201 @@ cmov_w_with_code_a_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_a_allregs, .-cmov_w_with_code_a_allregs
 
     
-.globl cmov_w_with_code_b
-         .type   cmov_w_with_code_b, @function
-cmov_w_with_code_b:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
-
+.globl cmov_w_with_code_a_constant_simple
+         .type   cmov_w_with_code_a_constant_simple, @function
+cmov_w_with_code_a_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_b, .-cmov_w_with_code_b
+         .size   cmov_w_with_code_a_constant_simple, .-cmov_w_with_code_a_constant_simple
 
     
-.globl cmov_w_with_code_b_constant
-         .type   cmov_w_with_code_b_constant, @function
-cmov_w_with_code_b_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
-
+.globl cmov_w_with_code_a_constant_complex1
+         .type   cmov_w_with_code_a_constant_complex1, @function
+cmov_w_with_code_a_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_b_constant, .-cmov_w_with_code_b_constant
+         .size   cmov_w_with_code_a_constant_complex1, .-cmov_w_with_code_a_constant_complex1
+
+    
+.globl cmov_w_with_code_a_constant_complex2
+         .type   cmov_w_with_code_a_constant_complex2, @function
+cmov_w_with_code_a_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_a_constant_complex2, .-cmov_w_with_code_a_constant_complex2
+
+    
+.globl cmov_w_with_code_b_plain
+         .type   cmov_w_with_code_b_plain, @function
+cmov_w_with_code_b_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_b_plain, .-cmov_w_with_code_b_plain
 
     
 .globl cmov_w_with_code_b_allregs
          .type   cmov_w_with_code_b_allregs, @function
 cmov_w_with_code_b_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2426,7 +7834,7 @@ cmov_w_with_code_b_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2435,43 +7843,201 @@ cmov_w_with_code_b_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_b_allregs, .-cmov_w_with_code_b_allregs
 
     
-.globl cmov_w_with_code_c
-         .type   cmov_w_with_code_c, @function
-cmov_w_with_code_c:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
-
+.globl cmov_w_with_code_b_constant_simple
+         .type   cmov_w_with_code_b_constant_simple, @function
+cmov_w_with_code_b_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_c, .-cmov_w_with_code_c
+         .size   cmov_w_with_code_b_constant_simple, .-cmov_w_with_code_b_constant_simple
 
     
-.globl cmov_w_with_code_c_constant
-         .type   cmov_w_with_code_c_constant, @function
-cmov_w_with_code_c_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
-
+.globl cmov_w_with_code_b_constant_complex1
+         .type   cmov_w_with_code_b_constant_complex1, @function
+cmov_w_with_code_b_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_c_constant, .-cmov_w_with_code_c_constant
+         .size   cmov_w_with_code_b_constant_complex1, .-cmov_w_with_code_b_constant_complex1
+
+    
+.globl cmov_w_with_code_b_constant_complex2
+         .type   cmov_w_with_code_b_constant_complex2, @function
+cmov_w_with_code_b_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_b_constant_complex2, .-cmov_w_with_code_b_constant_complex2
+
+    
+.globl cmov_w_with_code_c_plain
+         .type   cmov_w_with_code_c_plain, @function
+cmov_w_with_code_c_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_c_plain, .-cmov_w_with_code_c_plain
 
     
 .globl cmov_w_with_code_c_allregs
          .type   cmov_w_with_code_c_allregs, @function
 cmov_w_with_code_c_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2479,7 +8045,7 @@ cmov_w_with_code_c_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2488,43 +8054,201 @@ cmov_w_with_code_c_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_c_allregs, .-cmov_w_with_code_c_allregs
 
     
-.globl cmov_w_with_code_d
-         .type   cmov_w_with_code_d, @function
-cmov_w_with_code_d:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
-
+.globl cmov_w_with_code_c_constant_simple
+         .type   cmov_w_with_code_c_constant_simple, @function
+cmov_w_with_code_c_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_d, .-cmov_w_with_code_d
+         .size   cmov_w_with_code_c_constant_simple, .-cmov_w_with_code_c_constant_simple
 
     
-.globl cmov_w_with_code_d_constant
-         .type   cmov_w_with_code_d_constant, @function
-cmov_w_with_code_d_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
-
+.globl cmov_w_with_code_c_constant_complex1
+         .type   cmov_w_with_code_c_constant_complex1, @function
+cmov_w_with_code_c_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_d_constant, .-cmov_w_with_code_d_constant
+         .size   cmov_w_with_code_c_constant_complex1, .-cmov_w_with_code_c_constant_complex1
+
+    
+.globl cmov_w_with_code_c_constant_complex2
+         .type   cmov_w_with_code_c_constant_complex2, @function
+cmov_w_with_code_c_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_c_constant_complex2, .-cmov_w_with_code_c_constant_complex2
+
+    
+.globl cmov_w_with_code_d_plain
+         .type   cmov_w_with_code_d_plain, @function
+cmov_w_with_code_d_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_d_plain, .-cmov_w_with_code_d_plain
 
     
 .globl cmov_w_with_code_d_allregs
          .type   cmov_w_with_code_d_allregs, @function
 cmov_w_with_code_d_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2532,7 +8256,7 @@ cmov_w_with_code_d_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2541,43 +8265,201 @@ cmov_w_with_code_d_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_d_allregs, .-cmov_w_with_code_d_allregs
 
     
-.globl cmov_w_with_code_e
-         .type   cmov_w_with_code_e, @function
-cmov_w_with_code_e:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
-
+.globl cmov_w_with_code_d_constant_simple
+         .type   cmov_w_with_code_d_constant_simple, @function
+cmov_w_with_code_d_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_e, .-cmov_w_with_code_e
+         .size   cmov_w_with_code_d_constant_simple, .-cmov_w_with_code_d_constant_simple
 
     
-.globl cmov_w_with_code_e_constant
-         .type   cmov_w_with_code_e_constant, @function
-cmov_w_with_code_e_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
-
+.globl cmov_w_with_code_d_constant_complex1
+         .type   cmov_w_with_code_d_constant_complex1, @function
+cmov_w_with_code_d_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_e_constant, .-cmov_w_with_code_e_constant
+         .size   cmov_w_with_code_d_constant_complex1, .-cmov_w_with_code_d_constant_complex1
+
+    
+.globl cmov_w_with_code_d_constant_complex2
+         .type   cmov_w_with_code_d_constant_complex2, @function
+cmov_w_with_code_d_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_d_constant_complex2, .-cmov_w_with_code_d_constant_complex2
+
+    
+.globl cmov_w_with_code_e_plain
+         .type   cmov_w_with_code_e_plain, @function
+cmov_w_with_code_e_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_e_plain, .-cmov_w_with_code_e_plain
 
     
 .globl cmov_w_with_code_e_allregs
          .type   cmov_w_with_code_e_allregs, @function
 cmov_w_with_code_e_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2585,7 +8467,7 @@ cmov_w_with_code_e_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2594,43 +8476,201 @@ cmov_w_with_code_e_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_e_allregs, .-cmov_w_with_code_e_allregs
 
     
-.globl cmov_w_with_code_f
-         .type   cmov_w_with_code_f, @function
-cmov_w_with_code_f:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
-
+.globl cmov_w_with_code_e_constant_simple
+         .type   cmov_w_with_code_e_constant_simple, @function
+cmov_w_with_code_e_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_f, .-cmov_w_with_code_f
+         .size   cmov_w_with_code_e_constant_simple, .-cmov_w_with_code_e_constant_simple
 
     
-.globl cmov_w_with_code_f_constant
-         .type   cmov_w_with_code_f_constant, @function
-cmov_w_with_code_f_constant:
-      
-
-
-  .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
-
+.globl cmov_w_with_code_e_constant_complex1
+         .type   cmov_w_with_code_e_constant_complex1, @function
+cmov_w_with_code_e_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_w_with_code_f_constant, .-cmov_w_with_code_f_constant
+         .size   cmov_w_with_code_e_constant_complex1, .-cmov_w_with_code_e_constant_complex1
+
+    
+.globl cmov_w_with_code_e_constant_complex2
+         .type   cmov_w_with_code_e_constant_complex2, @function
+cmov_w_with_code_e_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_e_constant_complex2, .-cmov_w_with_code_e_constant_complex2
+
+    
+.globl cmov_w_with_code_f_plain
+         .type   cmov_w_with_code_f_plain, @function
+cmov_w_with_code_f_plain:
+      .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_f_plain, .-cmov_w_with_code_f_plain
 
     
 .globl cmov_w_with_code_f_allregs
          .type   cmov_w_with_code_f_allregs, @function
 cmov_w_with_code_f_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2638,7 +8678,7 @@ cmov_w_with_code_f_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2647,43 +8687,201 @@ cmov_w_with_code_f_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_w_with_code_f_allregs, .-cmov_w_with_code_f_allregs
 
     
-.globl cmov_l_with_code_0
-         .type   cmov_l_with_code_0, @function
-cmov_l_with_code_0:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x40,0xd8
-
+.globl cmov_w_with_code_f_constant_simple
+         .type   cmov_w_with_code_f_constant_simple, @function
+cmov_w_with_code_f_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_0, .-cmov_l_with_code_0
+         .size   cmov_w_with_code_f_constant_simple, .-cmov_w_with_code_f_constant_simple
 
     
-.globl cmov_l_with_code_0_constant
-         .type   cmov_l_with_code_0_constant, @function
-cmov_l_with_code_0_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x40,0xd8
-
+.globl cmov_w_with_code_f_constant_complex1
+         .type   cmov_w_with_code_f_constant_complex1, @function
+cmov_w_with_code_f_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_0_constant, .-cmov_l_with_code_0_constant
+         .size   cmov_w_with_code_f_constant_complex1, .-cmov_w_with_code_f_constant_complex1
+
+    
+.globl cmov_w_with_code_f_constant_complex2
+         .type   cmov_w_with_code_f_constant_complex2, @function
+cmov_w_with_code_f_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x66,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_w_with_code_f_constant_complex2, .-cmov_w_with_code_f_constant_complex2
+
+    
+.globl cmov_l_with_code_0_plain
+         .type   cmov_l_with_code_0_plain, @function
+cmov_l_with_code_0_plain:
+      .byte 0x3c,0x02,0x0f,0x40,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_0_plain, .-cmov_l_with_code_0_plain
 
     
 .globl cmov_l_with_code_0_allregs
          .type   cmov_l_with_code_0_allregs, @function
 cmov_l_with_code_0_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2691,7 +8889,7 @@ cmov_l_with_code_0_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x40,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2700,43 +8898,201 @@ cmov_l_with_code_0_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_0_allregs, .-cmov_l_with_code_0_allregs
 
     
-.globl cmov_l_with_code_1
-         .type   cmov_l_with_code_1, @function
-cmov_l_with_code_1:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x41,0xd8
-
+.globl cmov_l_with_code_0_constant_simple
+         .type   cmov_l_with_code_0_constant_simple, @function
+cmov_l_with_code_0_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_1, .-cmov_l_with_code_1
+         .size   cmov_l_with_code_0_constant_simple, .-cmov_l_with_code_0_constant_simple
 
     
-.globl cmov_l_with_code_1_constant
-         .type   cmov_l_with_code_1_constant, @function
-cmov_l_with_code_1_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x41,0xd8
-
+.globl cmov_l_with_code_0_constant_complex1
+         .type   cmov_l_with_code_0_constant_complex1, @function
+cmov_l_with_code_0_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_1_constant, .-cmov_l_with_code_1_constant
+         .size   cmov_l_with_code_0_constant_complex1, .-cmov_l_with_code_0_constant_complex1
+
+    
+.globl cmov_l_with_code_0_constant_complex2
+         .type   cmov_l_with_code_0_constant_complex2, @function
+cmov_l_with_code_0_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x40,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_0_constant_complex2, .-cmov_l_with_code_0_constant_complex2
+
+    
+.globl cmov_l_with_code_1_plain
+         .type   cmov_l_with_code_1_plain, @function
+cmov_l_with_code_1_plain:
+      .byte 0x3c,0x02,0x0f,0x41,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_1_plain, .-cmov_l_with_code_1_plain
 
     
 .globl cmov_l_with_code_1_allregs
          .type   cmov_l_with_code_1_allregs, @function
 cmov_l_with_code_1_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2744,7 +9100,7 @@ cmov_l_with_code_1_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x41,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2753,43 +9109,201 @@ cmov_l_with_code_1_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_1_allregs, .-cmov_l_with_code_1_allregs
 
     
-.globl cmov_l_with_code_2
-         .type   cmov_l_with_code_2, @function
-cmov_l_with_code_2:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x42,0xd8
-
+.globl cmov_l_with_code_1_constant_simple
+         .type   cmov_l_with_code_1_constant_simple, @function
+cmov_l_with_code_1_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_2, .-cmov_l_with_code_2
+         .size   cmov_l_with_code_1_constant_simple, .-cmov_l_with_code_1_constant_simple
 
     
-.globl cmov_l_with_code_2_constant
-         .type   cmov_l_with_code_2_constant, @function
-cmov_l_with_code_2_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x42,0xd8
-
+.globl cmov_l_with_code_1_constant_complex1
+         .type   cmov_l_with_code_1_constant_complex1, @function
+cmov_l_with_code_1_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_2_constant, .-cmov_l_with_code_2_constant
+         .size   cmov_l_with_code_1_constant_complex1, .-cmov_l_with_code_1_constant_complex1
+
+    
+.globl cmov_l_with_code_1_constant_complex2
+         .type   cmov_l_with_code_1_constant_complex2, @function
+cmov_l_with_code_1_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x41,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_1_constant_complex2, .-cmov_l_with_code_1_constant_complex2
+
+    
+.globl cmov_l_with_code_2_plain
+         .type   cmov_l_with_code_2_plain, @function
+cmov_l_with_code_2_plain:
+      .byte 0x3c,0x02,0x0f,0x42,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_2_plain, .-cmov_l_with_code_2_plain
 
     
 .globl cmov_l_with_code_2_allregs
          .type   cmov_l_with_code_2_allregs, @function
 cmov_l_with_code_2_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2797,7 +9311,7 @@ cmov_l_with_code_2_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x42,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2806,43 +9320,201 @@ cmov_l_with_code_2_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_2_allregs, .-cmov_l_with_code_2_allregs
 
     
-.globl cmov_l_with_code_3
-         .type   cmov_l_with_code_3, @function
-cmov_l_with_code_3:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x43,0xd8
-
+.globl cmov_l_with_code_2_constant_simple
+         .type   cmov_l_with_code_2_constant_simple, @function
+cmov_l_with_code_2_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_3, .-cmov_l_with_code_3
+         .size   cmov_l_with_code_2_constant_simple, .-cmov_l_with_code_2_constant_simple
 
     
-.globl cmov_l_with_code_3_constant
-         .type   cmov_l_with_code_3_constant, @function
-cmov_l_with_code_3_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x43,0xd8
-
+.globl cmov_l_with_code_2_constant_complex1
+         .type   cmov_l_with_code_2_constant_complex1, @function
+cmov_l_with_code_2_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_3_constant, .-cmov_l_with_code_3_constant
+         .size   cmov_l_with_code_2_constant_complex1, .-cmov_l_with_code_2_constant_complex1
+
+    
+.globl cmov_l_with_code_2_constant_complex2
+         .type   cmov_l_with_code_2_constant_complex2, @function
+cmov_l_with_code_2_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x42,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_2_constant_complex2, .-cmov_l_with_code_2_constant_complex2
+
+    
+.globl cmov_l_with_code_3_plain
+         .type   cmov_l_with_code_3_plain, @function
+cmov_l_with_code_3_plain:
+      .byte 0x3c,0x02,0x0f,0x43,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_3_plain, .-cmov_l_with_code_3_plain
 
     
 .globl cmov_l_with_code_3_allregs
          .type   cmov_l_with_code_3_allregs, @function
 cmov_l_with_code_3_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2850,7 +9522,7 @@ cmov_l_with_code_3_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x43,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2859,43 +9531,201 @@ cmov_l_with_code_3_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_3_allregs, .-cmov_l_with_code_3_allregs
 
     
-.globl cmov_l_with_code_4
-         .type   cmov_l_with_code_4, @function
-cmov_l_with_code_4:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x44,0xd8
-
+.globl cmov_l_with_code_3_constant_simple
+         .type   cmov_l_with_code_3_constant_simple, @function
+cmov_l_with_code_3_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_4, .-cmov_l_with_code_4
+         .size   cmov_l_with_code_3_constant_simple, .-cmov_l_with_code_3_constant_simple
 
     
-.globl cmov_l_with_code_4_constant
-         .type   cmov_l_with_code_4_constant, @function
-cmov_l_with_code_4_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x44,0xd8
-
+.globl cmov_l_with_code_3_constant_complex1
+         .type   cmov_l_with_code_3_constant_complex1, @function
+cmov_l_with_code_3_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_4_constant, .-cmov_l_with_code_4_constant
+         .size   cmov_l_with_code_3_constant_complex1, .-cmov_l_with_code_3_constant_complex1
+
+    
+.globl cmov_l_with_code_3_constant_complex2
+         .type   cmov_l_with_code_3_constant_complex2, @function
+cmov_l_with_code_3_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x43,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_3_constant_complex2, .-cmov_l_with_code_3_constant_complex2
+
+    
+.globl cmov_l_with_code_4_plain
+         .type   cmov_l_with_code_4_plain, @function
+cmov_l_with_code_4_plain:
+      .byte 0x3c,0x02,0x0f,0x44,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_4_plain, .-cmov_l_with_code_4_plain
 
     
 .globl cmov_l_with_code_4_allregs
          .type   cmov_l_with_code_4_allregs, @function
 cmov_l_with_code_4_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2903,7 +9733,7 @@ cmov_l_with_code_4_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x44,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2912,43 +9742,201 @@ cmov_l_with_code_4_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_4_allregs, .-cmov_l_with_code_4_allregs
 
     
-.globl cmov_l_with_code_5
-         .type   cmov_l_with_code_5, @function
-cmov_l_with_code_5:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x45,0xd8
-
+.globl cmov_l_with_code_4_constant_simple
+         .type   cmov_l_with_code_4_constant_simple, @function
+cmov_l_with_code_4_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_5, .-cmov_l_with_code_5
+         .size   cmov_l_with_code_4_constant_simple, .-cmov_l_with_code_4_constant_simple
 
     
-.globl cmov_l_with_code_5_constant
-         .type   cmov_l_with_code_5_constant, @function
-cmov_l_with_code_5_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x45,0xd8
-
+.globl cmov_l_with_code_4_constant_complex1
+         .type   cmov_l_with_code_4_constant_complex1, @function
+cmov_l_with_code_4_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_5_constant, .-cmov_l_with_code_5_constant
+         .size   cmov_l_with_code_4_constant_complex1, .-cmov_l_with_code_4_constant_complex1
+
+    
+.globl cmov_l_with_code_4_constant_complex2
+         .type   cmov_l_with_code_4_constant_complex2, @function
+cmov_l_with_code_4_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x44,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_4_constant_complex2, .-cmov_l_with_code_4_constant_complex2
+
+    
+.globl cmov_l_with_code_5_plain
+         .type   cmov_l_with_code_5_plain, @function
+cmov_l_with_code_5_plain:
+      .byte 0x3c,0x02,0x0f,0x45,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_5_plain, .-cmov_l_with_code_5_plain
 
     
 .globl cmov_l_with_code_5_allregs
          .type   cmov_l_with_code_5_allregs, @function
 cmov_l_with_code_5_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -2956,7 +9944,7 @@ cmov_l_with_code_5_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x45,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -2965,43 +9953,201 @@ cmov_l_with_code_5_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_5_allregs, .-cmov_l_with_code_5_allregs
 
     
-.globl cmov_l_with_code_6
-         .type   cmov_l_with_code_6, @function
-cmov_l_with_code_6:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x46,0xd8
-
+.globl cmov_l_with_code_5_constant_simple
+         .type   cmov_l_with_code_5_constant_simple, @function
+cmov_l_with_code_5_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_6, .-cmov_l_with_code_6
+         .size   cmov_l_with_code_5_constant_simple, .-cmov_l_with_code_5_constant_simple
 
     
-.globl cmov_l_with_code_6_constant
-         .type   cmov_l_with_code_6_constant, @function
-cmov_l_with_code_6_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x46,0xd8
-
+.globl cmov_l_with_code_5_constant_complex1
+         .type   cmov_l_with_code_5_constant_complex1, @function
+cmov_l_with_code_5_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_6_constant, .-cmov_l_with_code_6_constant
+         .size   cmov_l_with_code_5_constant_complex1, .-cmov_l_with_code_5_constant_complex1
+
+    
+.globl cmov_l_with_code_5_constant_complex2
+         .type   cmov_l_with_code_5_constant_complex2, @function
+cmov_l_with_code_5_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x45,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_5_constant_complex2, .-cmov_l_with_code_5_constant_complex2
+
+    
+.globl cmov_l_with_code_6_plain
+         .type   cmov_l_with_code_6_plain, @function
+cmov_l_with_code_6_plain:
+      .byte 0x3c,0x02,0x0f,0x46,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_6_plain, .-cmov_l_with_code_6_plain
 
     
 .globl cmov_l_with_code_6_allregs
          .type   cmov_l_with_code_6_allregs, @function
 cmov_l_with_code_6_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3009,7 +10155,7 @@ cmov_l_with_code_6_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x46,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3018,43 +10164,201 @@ cmov_l_with_code_6_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_6_allregs, .-cmov_l_with_code_6_allregs
 
     
-.globl cmov_l_with_code_7
-         .type   cmov_l_with_code_7, @function
-cmov_l_with_code_7:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x47,0xd8
-
+.globl cmov_l_with_code_6_constant_simple
+         .type   cmov_l_with_code_6_constant_simple, @function
+cmov_l_with_code_6_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_7, .-cmov_l_with_code_7
+         .size   cmov_l_with_code_6_constant_simple, .-cmov_l_with_code_6_constant_simple
 
     
-.globl cmov_l_with_code_7_constant
-         .type   cmov_l_with_code_7_constant, @function
-cmov_l_with_code_7_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x47,0xd8
-
+.globl cmov_l_with_code_6_constant_complex1
+         .type   cmov_l_with_code_6_constant_complex1, @function
+cmov_l_with_code_6_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_7_constant, .-cmov_l_with_code_7_constant
+         .size   cmov_l_with_code_6_constant_complex1, .-cmov_l_with_code_6_constant_complex1
+
+    
+.globl cmov_l_with_code_6_constant_complex2
+         .type   cmov_l_with_code_6_constant_complex2, @function
+cmov_l_with_code_6_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x46,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_6_constant_complex2, .-cmov_l_with_code_6_constant_complex2
+
+    
+.globl cmov_l_with_code_7_plain
+         .type   cmov_l_with_code_7_plain, @function
+cmov_l_with_code_7_plain:
+      .byte 0x3c,0x02,0x0f,0x47,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_7_plain, .-cmov_l_with_code_7_plain
 
     
 .globl cmov_l_with_code_7_allregs
          .type   cmov_l_with_code_7_allregs, @function
 cmov_l_with_code_7_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3062,7 +10366,7 @@ cmov_l_with_code_7_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x47,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3071,43 +10375,201 @@ cmov_l_with_code_7_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_7_allregs, .-cmov_l_with_code_7_allregs
 
     
-.globl cmov_l_with_code_8
-         .type   cmov_l_with_code_8, @function
-cmov_l_with_code_8:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x48,0xd8
-
+.globl cmov_l_with_code_7_constant_simple
+         .type   cmov_l_with_code_7_constant_simple, @function
+cmov_l_with_code_7_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_8, .-cmov_l_with_code_8
+         .size   cmov_l_with_code_7_constant_simple, .-cmov_l_with_code_7_constant_simple
 
     
-.globl cmov_l_with_code_8_constant
-         .type   cmov_l_with_code_8_constant, @function
-cmov_l_with_code_8_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x48,0xd8
-
+.globl cmov_l_with_code_7_constant_complex1
+         .type   cmov_l_with_code_7_constant_complex1, @function
+cmov_l_with_code_7_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_8_constant, .-cmov_l_with_code_8_constant
+         .size   cmov_l_with_code_7_constant_complex1, .-cmov_l_with_code_7_constant_complex1
+
+    
+.globl cmov_l_with_code_7_constant_complex2
+         .type   cmov_l_with_code_7_constant_complex2, @function
+cmov_l_with_code_7_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x47,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_7_constant_complex2, .-cmov_l_with_code_7_constant_complex2
+
+    
+.globl cmov_l_with_code_8_plain
+         .type   cmov_l_with_code_8_plain, @function
+cmov_l_with_code_8_plain:
+      .byte 0x3c,0x02,0x0f,0x48,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_8_plain, .-cmov_l_with_code_8_plain
 
     
 .globl cmov_l_with_code_8_allregs
          .type   cmov_l_with_code_8_allregs, @function
 cmov_l_with_code_8_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3115,7 +10577,7 @@ cmov_l_with_code_8_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x48,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3124,43 +10586,201 @@ cmov_l_with_code_8_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_8_allregs, .-cmov_l_with_code_8_allregs
 
     
-.globl cmov_l_with_code_9
-         .type   cmov_l_with_code_9, @function
-cmov_l_with_code_9:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x49,0xd8
-
+.globl cmov_l_with_code_8_constant_simple
+         .type   cmov_l_with_code_8_constant_simple, @function
+cmov_l_with_code_8_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_9, .-cmov_l_with_code_9
+         .size   cmov_l_with_code_8_constant_simple, .-cmov_l_with_code_8_constant_simple
 
     
-.globl cmov_l_with_code_9_constant
-         .type   cmov_l_with_code_9_constant, @function
-cmov_l_with_code_9_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x49,0xd8
-
+.globl cmov_l_with_code_8_constant_complex1
+         .type   cmov_l_with_code_8_constant_complex1, @function
+cmov_l_with_code_8_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_9_constant, .-cmov_l_with_code_9_constant
+         .size   cmov_l_with_code_8_constant_complex1, .-cmov_l_with_code_8_constant_complex1
+
+    
+.globl cmov_l_with_code_8_constant_complex2
+         .type   cmov_l_with_code_8_constant_complex2, @function
+cmov_l_with_code_8_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x48,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_8_constant_complex2, .-cmov_l_with_code_8_constant_complex2
+
+    
+.globl cmov_l_with_code_9_plain
+         .type   cmov_l_with_code_9_plain, @function
+cmov_l_with_code_9_plain:
+      .byte 0x3c,0x02,0x0f,0x49,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_9_plain, .-cmov_l_with_code_9_plain
 
     
 .globl cmov_l_with_code_9_allregs
          .type   cmov_l_with_code_9_allregs, @function
 cmov_l_with_code_9_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3168,7 +10788,7 @@ cmov_l_with_code_9_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x49,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3177,43 +10797,201 @@ cmov_l_with_code_9_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_9_allregs, .-cmov_l_with_code_9_allregs
 
     
-.globl cmov_l_with_code_a
-         .type   cmov_l_with_code_a, @function
-cmov_l_with_code_a:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4a,0xd8
-
+.globl cmov_l_with_code_9_constant_simple
+         .type   cmov_l_with_code_9_constant_simple, @function
+cmov_l_with_code_9_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_a, .-cmov_l_with_code_a
+         .size   cmov_l_with_code_9_constant_simple, .-cmov_l_with_code_9_constant_simple
 
     
-.globl cmov_l_with_code_a_constant
-         .type   cmov_l_with_code_a_constant, @function
-cmov_l_with_code_a_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4a,0xd8
-
+.globl cmov_l_with_code_9_constant_complex1
+         .type   cmov_l_with_code_9_constant_complex1, @function
+cmov_l_with_code_9_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_a_constant, .-cmov_l_with_code_a_constant
+         .size   cmov_l_with_code_9_constant_complex1, .-cmov_l_with_code_9_constant_complex1
+
+    
+.globl cmov_l_with_code_9_constant_complex2
+         .type   cmov_l_with_code_9_constant_complex2, @function
+cmov_l_with_code_9_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x49,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_9_constant_complex2, .-cmov_l_with_code_9_constant_complex2
+
+    
+.globl cmov_l_with_code_a_plain
+         .type   cmov_l_with_code_a_plain, @function
+cmov_l_with_code_a_plain:
+      .byte 0x3c,0x02,0x0f,0x4a,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_a_plain, .-cmov_l_with_code_a_plain
 
     
 .globl cmov_l_with_code_a_allregs
          .type   cmov_l_with_code_a_allregs, @function
 cmov_l_with_code_a_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3221,7 +10999,7 @@ cmov_l_with_code_a_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4a,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3230,43 +11008,201 @@ cmov_l_with_code_a_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_a_allregs, .-cmov_l_with_code_a_allregs
 
     
-.globl cmov_l_with_code_b
-         .type   cmov_l_with_code_b, @function
-cmov_l_with_code_b:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4b,0xd8
-
+.globl cmov_l_with_code_a_constant_simple
+         .type   cmov_l_with_code_a_constant_simple, @function
+cmov_l_with_code_a_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_b, .-cmov_l_with_code_b
+         .size   cmov_l_with_code_a_constant_simple, .-cmov_l_with_code_a_constant_simple
 
     
-.globl cmov_l_with_code_b_constant
-         .type   cmov_l_with_code_b_constant, @function
-cmov_l_with_code_b_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4b,0xd8
-
+.globl cmov_l_with_code_a_constant_complex1
+         .type   cmov_l_with_code_a_constant_complex1, @function
+cmov_l_with_code_a_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_b_constant, .-cmov_l_with_code_b_constant
+         .size   cmov_l_with_code_a_constant_complex1, .-cmov_l_with_code_a_constant_complex1
+
+    
+.globl cmov_l_with_code_a_constant_complex2
+         .type   cmov_l_with_code_a_constant_complex2, @function
+cmov_l_with_code_a_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4a,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_a_constant_complex2, .-cmov_l_with_code_a_constant_complex2
+
+    
+.globl cmov_l_with_code_b_plain
+         .type   cmov_l_with_code_b_plain, @function
+cmov_l_with_code_b_plain:
+      .byte 0x3c,0x02,0x0f,0x4b,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_b_plain, .-cmov_l_with_code_b_plain
 
     
 .globl cmov_l_with_code_b_allregs
          .type   cmov_l_with_code_b_allregs, @function
 cmov_l_with_code_b_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3274,7 +11210,7 @@ cmov_l_with_code_b_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4b,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3283,43 +11219,201 @@ cmov_l_with_code_b_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_b_allregs, .-cmov_l_with_code_b_allregs
 
     
-.globl cmov_l_with_code_c
-         .type   cmov_l_with_code_c, @function
-cmov_l_with_code_c:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4c,0xd8
-
+.globl cmov_l_with_code_b_constant_simple
+         .type   cmov_l_with_code_b_constant_simple, @function
+cmov_l_with_code_b_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_c, .-cmov_l_with_code_c
+         .size   cmov_l_with_code_b_constant_simple, .-cmov_l_with_code_b_constant_simple
 
     
-.globl cmov_l_with_code_c_constant
-         .type   cmov_l_with_code_c_constant, @function
-cmov_l_with_code_c_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4c,0xd8
-
+.globl cmov_l_with_code_b_constant_complex1
+         .type   cmov_l_with_code_b_constant_complex1, @function
+cmov_l_with_code_b_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_c_constant, .-cmov_l_with_code_c_constant
+         .size   cmov_l_with_code_b_constant_complex1, .-cmov_l_with_code_b_constant_complex1
+
+    
+.globl cmov_l_with_code_b_constant_complex2
+         .type   cmov_l_with_code_b_constant_complex2, @function
+cmov_l_with_code_b_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4b,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_b_constant_complex2, .-cmov_l_with_code_b_constant_complex2
+
+    
+.globl cmov_l_with_code_c_plain
+         .type   cmov_l_with_code_c_plain, @function
+cmov_l_with_code_c_plain:
+      .byte 0x3c,0x02,0x0f,0x4c,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_c_plain, .-cmov_l_with_code_c_plain
 
     
 .globl cmov_l_with_code_c_allregs
          .type   cmov_l_with_code_c_allregs, @function
 cmov_l_with_code_c_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3327,7 +11421,7 @@ cmov_l_with_code_c_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4c,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3336,43 +11430,201 @@ cmov_l_with_code_c_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_c_allregs, .-cmov_l_with_code_c_allregs
 
     
-.globl cmov_l_with_code_d
-         .type   cmov_l_with_code_d, @function
-cmov_l_with_code_d:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4d,0xd8
-
+.globl cmov_l_with_code_c_constant_simple
+         .type   cmov_l_with_code_c_constant_simple, @function
+cmov_l_with_code_c_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_d, .-cmov_l_with_code_d
+         .size   cmov_l_with_code_c_constant_simple, .-cmov_l_with_code_c_constant_simple
 
     
-.globl cmov_l_with_code_d_constant
-         .type   cmov_l_with_code_d_constant, @function
-cmov_l_with_code_d_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4d,0xd8
-
+.globl cmov_l_with_code_c_constant_complex1
+         .type   cmov_l_with_code_c_constant_complex1, @function
+cmov_l_with_code_c_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_d_constant, .-cmov_l_with_code_d_constant
+         .size   cmov_l_with_code_c_constant_complex1, .-cmov_l_with_code_c_constant_complex1
+
+    
+.globl cmov_l_with_code_c_constant_complex2
+         .type   cmov_l_with_code_c_constant_complex2, @function
+cmov_l_with_code_c_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4c,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_c_constant_complex2, .-cmov_l_with_code_c_constant_complex2
+
+    
+.globl cmov_l_with_code_d_plain
+         .type   cmov_l_with_code_d_plain, @function
+cmov_l_with_code_d_plain:
+      .byte 0x3c,0x02,0x0f,0x4d,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_d_plain, .-cmov_l_with_code_d_plain
 
     
 .globl cmov_l_with_code_d_allregs
          .type   cmov_l_with_code_d_allregs, @function
 cmov_l_with_code_d_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3380,7 +11632,7 @@ cmov_l_with_code_d_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4d,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3389,43 +11641,201 @@ cmov_l_with_code_d_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_d_allregs, .-cmov_l_with_code_d_allregs
 
     
-.globl cmov_l_with_code_e
-         .type   cmov_l_with_code_e, @function
-cmov_l_with_code_e:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4e,0xd8
-
+.globl cmov_l_with_code_d_constant_simple
+         .type   cmov_l_with_code_d_constant_simple, @function
+cmov_l_with_code_d_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_e, .-cmov_l_with_code_e
+         .size   cmov_l_with_code_d_constant_simple, .-cmov_l_with_code_d_constant_simple
 
     
-.globl cmov_l_with_code_e_constant
-         .type   cmov_l_with_code_e_constant, @function
-cmov_l_with_code_e_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4e,0xd8
-
+.globl cmov_l_with_code_d_constant_complex1
+         .type   cmov_l_with_code_d_constant_complex1, @function
+cmov_l_with_code_d_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_e_constant, .-cmov_l_with_code_e_constant
+         .size   cmov_l_with_code_d_constant_complex1, .-cmov_l_with_code_d_constant_complex1
+
+    
+.globl cmov_l_with_code_d_constant_complex2
+         .type   cmov_l_with_code_d_constant_complex2, @function
+cmov_l_with_code_d_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4d,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_d_constant_complex2, .-cmov_l_with_code_d_constant_complex2
+
+    
+.globl cmov_l_with_code_e_plain
+         .type   cmov_l_with_code_e_plain, @function
+cmov_l_with_code_e_plain:
+      .byte 0x3c,0x02,0x0f,0x4e,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_e_plain, .-cmov_l_with_code_e_plain
 
     
 .globl cmov_l_with_code_e_allregs
          .type   cmov_l_with_code_e_allregs, @function
 cmov_l_with_code_e_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3433,7 +11843,7 @@ cmov_l_with_code_e_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4e,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3442,43 +11852,201 @@ cmov_l_with_code_e_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_e_allregs, .-cmov_l_with_code_e_allregs
 
     
-.globl cmov_l_with_code_f
-         .type   cmov_l_with_code_f, @function
-cmov_l_with_code_f:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4f,0xd8
-
+.globl cmov_l_with_code_e_constant_simple
+         .type   cmov_l_with_code_e_constant_simple, @function
+cmov_l_with_code_e_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_f, .-cmov_l_with_code_f
+         .size   cmov_l_with_code_e_constant_simple, .-cmov_l_with_code_e_constant_simple
 
     
-.globl cmov_l_with_code_f_constant
-         .type   cmov_l_with_code_f_constant, @function
-cmov_l_with_code_f_constant:
-      
-
-
-  .byte 0x3c,0x02,0x0f,0x4f,0xd8
-
+.globl cmov_l_with_code_e_constant_complex1
+         .type   cmov_l_with_code_e_constant_complex1, @function
+cmov_l_with_code_e_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
-         .size   cmov_l_with_code_f_constant, .-cmov_l_with_code_f_constant
+         .size   cmov_l_with_code_e_constant_complex1, .-cmov_l_with_code_e_constant_complex1
+
+    
+.globl cmov_l_with_code_e_constant_complex2
+         .type   cmov_l_with_code_e_constant_complex2, @function
+cmov_l_with_code_e_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4e,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_e_constant_complex2, .-cmov_l_with_code_e_constant_complex2
+
+    
+.globl cmov_l_with_code_f_plain
+         .type   cmov_l_with_code_f_plain, @function
+cmov_l_with_code_f_plain:
+      .byte 0x3c,0x02,0x0f,0x4f,0xd8
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_f_plain, .-cmov_l_with_code_f_plain
 
     
 .globl cmov_l_with_code_f_allregs
          .type   cmov_l_with_code_f_allregs, @function
 cmov_l_with_code_f_allregs:
-      
-
+      nop
+  mov 4352,%ax
+  push %ax
+  popfw
   mov 4096,%eax
   mov 4100,%ebx
   mov 4104,%ecx
@@ -3486,7 +12054,7 @@ cmov_l_with_code_f_allregs:
   mov 4112,%ebp
   mov 4116,%esi
   mov 4120,%edi
-  mov 4124,%esp
+  mov %esp,8272
   .byte 0x3c,0x02,0x0f,0x4f,0xd8
   mov %eax,8192
   mov %ebx,8196
@@ -3495,210 +12063,474 @@ cmov_l_with_code_f_allregs:
   mov %ebp,8208
   mov %esi,8212
   mov %edi,8216
-  mov %esp,8220
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
 
     ret
          .size   cmov_l_with_code_f_allregs, .-cmov_l_with_code_f_allregs
 
-.globl main
-         .type   main, @function
-main:
-          call bswap
-          call bswap_constant
+    
+.globl cmov_l_with_code_f_constant_simple
+         .type   cmov_l_with_code_f_constant_simple, @function
+cmov_l_with_code_f_constant_simple:
+      nop
+  pushw $0
+  popfw
+  mov $2,%eax
+  mov $3,%ebx
+  mov $4,%ecx
+  mov $4,%edx
+  mov $5,%ebp
+  mov $6,%esi
+  mov $7,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_f_constant_simple, .-cmov_l_with_code_f_constant_simple
+
+    
+.globl cmov_l_with_code_f_constant_complex1
+         .type   cmov_l_with_code_f_constant_complex1, @function
+cmov_l_with_code_f_constant_complex1:
+      nop
+  pushw $0
+  popfw
+  mov $0xa3b17984,%eax
+  mov $0x06671ad7,%ebx
+  mov $0x46685248,%ecx
+  mov $0x392456c4,%edx
+  mov $0xbc8960a4,%ebp
+  mov $0xad3c2d78,%esi
+  mov $0xe465e152,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_f_constant_complex1, .-cmov_l_with_code_f_constant_complex1
+
+    
+.globl cmov_l_with_code_f_constant_complex2
+         .type   cmov_l_with_code_f_constant_complex2, @function
+cmov_l_with_code_f_constant_complex2:
+      nop
+  pushw $0xfeff
+  popfw
+  mov $0x313ec0e8,%eax
+  mov $0x496e81c3,%ebx
+  mov $0x1e3f6cb2,%ecx
+  mov $0x4e6925b3,%edx
+  mov $0x4f312610,%ebp
+  mov $0x2f37a4a5,%esi
+  mov $0x91a917b4,%edi
+  mov %esp,8272
+  .byte 0x3c,0x02,0x0f,0x4f,0xd8
+  mov %eax,8192
+  mov %ebx,8196
+  mov %ecx,8200
+  mov %edx,8204
+  mov %ebp,8208
+  mov %esi,8212
+  mov %edi,8216
+  seto 8704
+  setno 8705
+  setc 8706
+  setnc 8707
+  setz 8708
+  setnz 8709
+  setbe 8710
+  seta 8711
+  sets 8712
+  setns 8713
+  setp 8714
+  setnp 8715
+  setl 8716
+  setnl 8717
+  setle 8718
+  setg 8719
+  pushfw
+  pop %ax
+  mov %ax,8448
+  mov 8272,%eax
+  sub %esp,%eax
+  mov %eax,8224
+  mov $0x0,%eax
+
+    ret
+         .size   cmov_l_with_code_f_constant_complex2, .-cmov_l_with_code_f_constant_complex2
+
+.globl callAll
+         .type   callAll, @function
+callAll:
+          call bswap_plain
           call bswap_allregs
-          call cmpxchg1
-          call cmpxchg1_constant
+          call bswap_constant_simple
+          call bswap_constant_complex1
+          call bswap_constant_complex2
+          call cmpxchg1_plain
           call cmpxchg1_allregs
-          call cmpxchg2
-          call cmpxchg2_constant
+          call cmpxchg1_constant_simple
+          call cmpxchg1_constant_complex1
+          call cmpxchg1_constant_complex2
+          call cmpxchg2_plain
           call cmpxchg2_allregs
-          call cmpxchg3
-          call cmpxchg3_constant
+          call cmpxchg2_constant_simple
+          call cmpxchg2_constant_complex1
+          call cmpxchg2_constant_complex2
+          call cmpxchg3_plain
           call cmpxchg3_allregs
-          call cmpxchg4
-          call cmpxchg4_constant
+          call cmpxchg3_constant_simple
+          call cmpxchg3_constant_complex1
+          call cmpxchg3_constant_complex2
+          call cmpxchg4_plain
           call cmpxchg4_allregs
-          call cmpxchg5
-          call cmpxchg5_constant
+          call cmpxchg4_constant_simple
+          call cmpxchg4_constant_complex1
+          call cmpxchg4_constant_complex2
+          call cmpxchg5_plain
           call cmpxchg5_allregs
-          call cmpxchg1_locked
-          call cmpxchg1_locked_constant
-          call cmpxchg1_locked_allregs
-          call cmpxchg2_locked
-          call cmpxchg2_locked_constant
-          call cmpxchg2_locked_allregs
-          call cmpxchg3_locked
-          call cmpxchg3_locked_constant
-          call cmpxchg3_locked_allregs
-          call cmpxchg4_locked
-          call cmpxchg4_locked_constant
-          call cmpxchg4_locked_allregs
-          call cmpxchg5_locked
-          call cmpxchg5_locked_constant
-          call cmpxchg5_locked_allregs
-          call cpuid
-          call cpuid_constant
+          call cmpxchg5_constant_simple
+          call cmpxchg5_constant_complex1
+          call cmpxchg5_constant_complex2
+          call cmpxchg_locked_plain
+          call cmpxchg_locked_allregs
+          call cmpxchg_locked_constant_simple
+          call cmpxchg_locked_constant_complex1
+          call cmpxchg_locked_constant_complex2
+          call cpuid_plain
           call cpuid_allregs
-          call invd
-          call invd_constant
+          call cpuid_constant_simple
+          call cpuid_constant_complex1
+          call cpuid_constant_complex2
+          call invd_plain
           call invd_allregs
-          call invlpg
-          call invlpg_constant
+          call invd_constant_simple
+          call invd_constant_complex1
+          call invd_constant_complex2
+          call invlpg_plain
           call invlpg_allregs
-          call wbinvd
-          call wbinvd_constant
+          call invlpg_constant_simple
+          call invlpg_constant_complex1
+          call invlpg_constant_complex2
+          call wbinvd_plain
           call wbinvd_allregs
-          call xadd1
-          call xadd1_constant
+          call wbinvd_constant_simple
+          call wbinvd_constant_complex1
+          call wbinvd_constant_complex2
+          call xadd1_plain
           call xadd1_allregs
-          call xadd2
-          call xadd2_constant
+          call xadd1_constant_simple
+          call xadd1_constant_complex1
+          call xadd1_constant_complex2
+          call xadd2_plain
           call xadd2_allregs
-          call xadd3
-          call xadd3_constant
+          call xadd2_constant_simple
+          call xadd2_constant_complex1
+          call xadd2_constant_complex2
+          call xadd3_plain
           call xadd3_allregs
-          call xadd4
-          call xadd4_constant
+          call xadd3_constant_simple
+          call xadd3_constant_complex1
+          call xadd3_constant_complex2
+          call xadd4_plain
           call xadd4_allregs
-          call xadd5
-          call xadd5_constant
+          call xadd4_constant_simple
+          call xadd4_constant_complex1
+          call xadd4_constant_complex2
+          call xadd5_plain
           call xadd5_allregs
-          call xadd1_locked
-          call xadd1_locked_constant
-          call xadd1_locked_allregs
-          call xadd2_locked
-          call xadd2_locked_constant
-          call xadd2_locked_allregs
-          call xadd3_locked
-          call xadd3_locked_constant
-          call xadd3_locked_allregs
-          call xadd4_locked
-          call xadd4_locked_constant
-          call xadd4_locked_allregs
-          call xadd5_locked
-          call xadd5_locked_constant
-          call xadd5_locked_allregs
-          call cmpxchg8b
-          call cmpxchg8b_constant
+          call xadd5_constant_simple
+          call xadd5_constant_complex1
+          call xadd5_constant_complex2
+          call xadd_locked_plain
+          call xadd_locked_allregs
+          call xadd_locked_constant_simple
+          call xadd_locked_constant_complex1
+          call xadd_locked_constant_complex2
+          call cmpxchg8b_plain
           call cmpxchg8b_allregs
-          call cmpxchg8b_locked
-          call cmpxchg8b_locked_constant
+          call cmpxchg8b_constant_simple
+          call cmpxchg8b_constant_complex1
+          call cmpxchg8b_constant_complex2
+          call cmpxchg8b_locked_plain
           call cmpxchg8b_locked_allregs
-          call rdtsc
-          call rdtsc_constant
+          call cmpxchg8b_locked_constant_simple
+          call cmpxchg8b_locked_constant_complex1
+          call cmpxchg8b_locked_constant_complex2
+          call rdtsc_plain
           call rdtsc_allregs
-          call rdmsr
-          call rdmsr_constant
+          call rdtsc_constant_simple
+          call rdtsc_constant_complex1
+          call rdtsc_constant_complex2
+          call rdmsr_plain
           call rdmsr_allregs
-          call wrmsr
-          call wrmsr_constant
+          call rdmsr_constant_simple
+          call rdmsr_constant_complex1
+          call rdmsr_constant_complex2
+          call wrmsr_plain
           call wrmsr_allregs
-          call cmov1
-          call cmov1_constant
+          call wrmsr_constant_simple
+          call wrmsr_constant_complex1
+          call wrmsr_constant_complex2
+          call cmov1_plain
           call cmov1_allregs
-          call cmov2
-          call cmov2_constant
+          call cmov1_constant_simple
+          call cmov1_constant_complex1
+          call cmov1_constant_complex2
+          call cmov2_plain
           call cmov2_allregs
-          call cmov3
-          call cmov3_constant
+          call cmov2_constant_simple
+          call cmov2_constant_complex1
+          call cmov2_constant_complex2
+          call cmov3_plain
           call cmov3_allregs
-          call cmov4
-          call cmov4_constant
+          call cmov3_constant_simple
+          call cmov3_constant_complex1
+          call cmov3_constant_complex2
+          call cmov4_plain
           call cmov4_allregs
-          call cmov_w_with_code_0
-          call cmov_w_with_code_0_constant
+          call cmov4_constant_simple
+          call cmov4_constant_complex1
+          call cmov4_constant_complex2
+          call cmov_w_with_code_0_plain
           call cmov_w_with_code_0_allregs
-          call cmov_w_with_code_1
-          call cmov_w_with_code_1_constant
+          call cmov_w_with_code_0_constant_simple
+          call cmov_w_with_code_0_constant_complex1
+          call cmov_w_with_code_0_constant_complex2
+          call cmov_w_with_code_1_plain
           call cmov_w_with_code_1_allregs
-          call cmov_w_with_code_2
-          call cmov_w_with_code_2_constant
+          call cmov_w_with_code_1_constant_simple
+          call cmov_w_with_code_1_constant_complex1
+          call cmov_w_with_code_1_constant_complex2
+          call cmov_w_with_code_2_plain
           call cmov_w_with_code_2_allregs
-          call cmov_w_with_code_3
-          call cmov_w_with_code_3_constant
+          call cmov_w_with_code_2_constant_simple
+          call cmov_w_with_code_2_constant_complex1
+          call cmov_w_with_code_2_constant_complex2
+          call cmov_w_with_code_3_plain
           call cmov_w_with_code_3_allregs
-          call cmov_w_with_code_4
-          call cmov_w_with_code_4_constant
+          call cmov_w_with_code_3_constant_simple
+          call cmov_w_with_code_3_constant_complex1
+          call cmov_w_with_code_3_constant_complex2
+          call cmov_w_with_code_4_plain
           call cmov_w_with_code_4_allregs
-          call cmov_w_with_code_5
-          call cmov_w_with_code_5_constant
+          call cmov_w_with_code_4_constant_simple
+          call cmov_w_with_code_4_constant_complex1
+          call cmov_w_with_code_4_constant_complex2
+          call cmov_w_with_code_5_plain
           call cmov_w_with_code_5_allregs
-          call cmov_w_with_code_6
-          call cmov_w_with_code_6_constant
+          call cmov_w_with_code_5_constant_simple
+          call cmov_w_with_code_5_constant_complex1
+          call cmov_w_with_code_5_constant_complex2
+          call cmov_w_with_code_6_plain
           call cmov_w_with_code_6_allregs
-          call cmov_w_with_code_7
-          call cmov_w_with_code_7_constant
+          call cmov_w_with_code_6_constant_simple
+          call cmov_w_with_code_6_constant_complex1
+          call cmov_w_with_code_6_constant_complex2
+          call cmov_w_with_code_7_plain
           call cmov_w_with_code_7_allregs
-          call cmov_w_with_code_8
-          call cmov_w_with_code_8_constant
+          call cmov_w_with_code_7_constant_simple
+          call cmov_w_with_code_7_constant_complex1
+          call cmov_w_with_code_7_constant_complex2
+          call cmov_w_with_code_8_plain
           call cmov_w_with_code_8_allregs
-          call cmov_w_with_code_9
-          call cmov_w_with_code_9_constant
+          call cmov_w_with_code_8_constant_simple
+          call cmov_w_with_code_8_constant_complex1
+          call cmov_w_with_code_8_constant_complex2
+          call cmov_w_with_code_9_plain
           call cmov_w_with_code_9_allregs
-          call cmov_w_with_code_a
-          call cmov_w_with_code_a_constant
+          call cmov_w_with_code_9_constant_simple
+          call cmov_w_with_code_9_constant_complex1
+          call cmov_w_with_code_9_constant_complex2
+          call cmov_w_with_code_a_plain
           call cmov_w_with_code_a_allregs
-          call cmov_w_with_code_b
-          call cmov_w_with_code_b_constant
+          call cmov_w_with_code_a_constant_simple
+          call cmov_w_with_code_a_constant_complex1
+          call cmov_w_with_code_a_constant_complex2
+          call cmov_w_with_code_b_plain
           call cmov_w_with_code_b_allregs
-          call cmov_w_with_code_c
-          call cmov_w_with_code_c_constant
+          call cmov_w_with_code_b_constant_simple
+          call cmov_w_with_code_b_constant_complex1
+          call cmov_w_with_code_b_constant_complex2
+          call cmov_w_with_code_c_plain
           call cmov_w_with_code_c_allregs
-          call cmov_w_with_code_d
-          call cmov_w_with_code_d_constant
+          call cmov_w_with_code_c_constant_simple
+          call cmov_w_with_code_c_constant_complex1
+          call cmov_w_with_code_c_constant_complex2
+          call cmov_w_with_code_d_plain
           call cmov_w_with_code_d_allregs
-          call cmov_w_with_code_e
-          call cmov_w_with_code_e_constant
+          call cmov_w_with_code_d_constant_simple
+          call cmov_w_with_code_d_constant_complex1
+          call cmov_w_with_code_d_constant_complex2
+          call cmov_w_with_code_e_plain
           call cmov_w_with_code_e_allregs
-          call cmov_w_with_code_f
-          call cmov_w_with_code_f_constant
+          call cmov_w_with_code_e_constant_simple
+          call cmov_w_with_code_e_constant_complex1
+          call cmov_w_with_code_e_constant_complex2
+          call cmov_w_with_code_f_plain
           call cmov_w_with_code_f_allregs
-          call cmov_l_with_code_0
-          call cmov_l_with_code_0_constant
+          call cmov_w_with_code_f_constant_simple
+          call cmov_w_with_code_f_constant_complex1
+          call cmov_w_with_code_f_constant_complex2
+          call cmov_l_with_code_0_plain
           call cmov_l_with_code_0_allregs
-          call cmov_l_with_code_1
-          call cmov_l_with_code_1_constant
+          call cmov_l_with_code_0_constant_simple
+          call cmov_l_with_code_0_constant_complex1
+          call cmov_l_with_code_0_constant_complex2
+          call cmov_l_with_code_1_plain
           call cmov_l_with_code_1_allregs
-          call cmov_l_with_code_2
-          call cmov_l_with_code_2_constant
+          call cmov_l_with_code_1_constant_simple
+          call cmov_l_with_code_1_constant_complex1
+          call cmov_l_with_code_1_constant_complex2
+          call cmov_l_with_code_2_plain
           call cmov_l_with_code_2_allregs
-          call cmov_l_with_code_3
-          call cmov_l_with_code_3_constant
+          call cmov_l_with_code_2_constant_simple
+          call cmov_l_with_code_2_constant_complex1
+          call cmov_l_with_code_2_constant_complex2
+          call cmov_l_with_code_3_plain
           call cmov_l_with_code_3_allregs
-          call cmov_l_with_code_4
-          call cmov_l_with_code_4_constant
+          call cmov_l_with_code_3_constant_simple
+          call cmov_l_with_code_3_constant_complex1
+          call cmov_l_with_code_3_constant_complex2
+          call cmov_l_with_code_4_plain
           call cmov_l_with_code_4_allregs
-          call cmov_l_with_code_5
-          call cmov_l_with_code_5_constant
+          call cmov_l_with_code_4_constant_simple
+          call cmov_l_with_code_4_constant_complex1
+          call cmov_l_with_code_4_constant_complex2
+          call cmov_l_with_code_5_plain
           call cmov_l_with_code_5_allregs
-          call cmov_l_with_code_6
-          call cmov_l_with_code_6_constant
+          call cmov_l_with_code_5_constant_simple
+          call cmov_l_with_code_5_constant_complex1
+          call cmov_l_with_code_5_constant_complex2
+          call cmov_l_with_code_6_plain
           call cmov_l_with_code_6_allregs
-          call cmov_l_with_code_7
-          call cmov_l_with_code_7_constant
+          call cmov_l_with_code_6_constant_simple
+          call cmov_l_with_code_6_constant_complex1
+          call cmov_l_with_code_6_constant_complex2
+          call cmov_l_with_code_7_plain
           call cmov_l_with_code_7_allregs
-          call cmov_l_with_code_8
-          call cmov_l_with_code_8_constant
+          call cmov_l_with_code_7_constant_simple
+          call cmov_l_with_code_7_constant_complex1
+          call cmov_l_with_code_7_constant_complex2
+          call cmov_l_with_code_8_plain
           call cmov_l_with_code_8_allregs
-          call cmov_l_with_code_9
-          call cmov_l_with_code_9_constant
+          call cmov_l_with_code_8_constant_simple
+          call cmov_l_with_code_8_constant_complex1
+          call cmov_l_with_code_8_constant_complex2
+          call cmov_l_with_code_9_plain
           call cmov_l_with_code_9_allregs
-          call cmov_l_with_code_a
-          call cmov_l_with_code_a_constant
+          call cmov_l_with_code_9_constant_simple
+          call cmov_l_with_code_9_constant_complex1
+          call cmov_l_with_code_9_constant_complex2
+          call cmov_l_with_code_a_plain
           call cmov_l_with_code_a_allregs
-          call cmov_l_with_code_b
-          call cmov_l_with_code_b_constant
+          call cmov_l_with_code_a_constant_simple
+          call cmov_l_with_code_a_constant_complex1
+          call cmov_l_with_code_a_constant_complex2
+          call cmov_l_with_code_b_plain
           call cmov_l_with_code_b_allregs
-          call cmov_l_with_code_c
-          call cmov_l_with_code_c_constant
+          call cmov_l_with_code_b_constant_simple
+          call cmov_l_with_code_b_constant_complex1
+          call cmov_l_with_code_b_constant_complex2
+          call cmov_l_with_code_c_plain
           call cmov_l_with_code_c_allregs
-          call cmov_l_with_code_d
-          call cmov_l_with_code_d_constant
+          call cmov_l_with_code_c_constant_simple
+          call cmov_l_with_code_c_constant_complex1
+          call cmov_l_with_code_c_constant_complex2
+          call cmov_l_with_code_d_plain
           call cmov_l_with_code_d_allregs
-          call cmov_l_with_code_e
-          call cmov_l_with_code_e_constant
+          call cmov_l_with_code_d_constant_simple
+          call cmov_l_with_code_d_constant_complex1
+          call cmov_l_with_code_d_constant_complex2
+          call cmov_l_with_code_e_plain
           call cmov_l_with_code_e_allregs
-          call cmov_l_with_code_f
-          call cmov_l_with_code_f_constant
+          call cmov_l_with_code_e_constant_simple
+          call cmov_l_with_code_e_constant_complex1
+          call cmov_l_with_code_e_constant_complex2
+          call cmov_l_with_code_f_plain
           call cmov_l_with_code_f_allregs
-         .size   main, .-main
+          call cmov_l_with_code_f_constant_simple
+          call cmov_l_with_code_f_constant_complex1
+          call cmov_l_with_code_f_constant_complex2
+         .size   callAll, .-callAll

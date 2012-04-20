@@ -13,8 +13,8 @@ adc2[in=flags ax,out=ax]: adc $0x10,%ax
 adc2a[in=flags ax,out=ax]: hex 66 15 10 00
 adc3[in=flags eax,out=eax]: adc $0x10,%eax
 adc3a[in=flags eax,out=eax]: hex 15 10 00 00 00
-adc4[in=flags eax ebp,out=eax]: adc 8(%ebp), %eax
-adc_locked: lock adc 8(%ebp), %eax
+adc4[doNotEval,in=flags eax ebp,out=eax]: adc 8(%ebp), %eax
+adc_locked[doNotEval]: lock adc 8(%ebp), %eax
 
 add1[in=al,out=al]: hex 04 02
 add2[in=al,out=al]: hex 04 fe
@@ -22,8 +22,13 @@ add3[in=ax,out=ax]: hex 66 05 02 00
 add4[in=ax,out=ax]: hex 66 05 fe ff
 add5[in=eax,out=eax]: hex 05 02 00 00 00
 add6[in=eax,out=eax]: hex 05 fe ff ff ff
-add7[in=eax ebp,out=eax]: addl 8(%ebp), %eax
-add_locked: lock addl 8(%ebp), %eax
+add7[doNotEval,in=eax ebp,out=eax]: addl 8(%ebp), %eax
+add8[in=al,out=eax]: add $0x2, %ah
+add9[in=ax,out=eax]: add $0x2, %ax
+add10[in=al,out=ax]: add $0x2, %al
+add11[in=ah,out=ax]: add $0x2, %ah
+add12[in=ax,out=eax]: add $0x2, %ax
+add_locked[doNotEval]: lock addl 8(%ebp), %eax
 
 and1[in=al,out=al]: hex 24 02
 and2[in=al,out=al]: hex 24 fe
@@ -31,57 +36,65 @@ and3[in=ax,out=ax]: hex 66 25 02 00
 and4[in=ax,out=ax]: hex 66 25 fe ff
 and5[in=eax,out=eax]: hex 25 02 00 00 00
 and6[in=eax,out=eax]: hex 25 fe ff ff ff
-and7[in=eax ebp,out=eax]: andl 8(%ebp), %eax
-and_locked: lock andl 8(%ebp), %eax
+and7[doNotEval,in=eax ebp,out=eax]: andl 8(%ebp), %eax
+and_locked[doNotEval]: lock andl 8(%ebp), %eax
 
 arpl[in=ax bx,out=]: arpl %ax, %bx
 
-bound1[in=ax bx,out=]: bound %ax,(%bx)
-bound2[in=eax ebx,out=]: bound %eax,(%ebx)
+bound1[doNotEval,in=ax bx,out=]: bound %ax,(%bx)
+bound2[doNotEval,in=eax ebx,out=]: bound %eax,(%ebx)
 
-bsf1[in=bx,out=ax]: bsf (%bx),%ax
-bsf2[in=ebx,out=eax]: bsf (%ebx),%eax
-bsf3[in=bx,out=eax]: bsf (%bx),%eax
-bsf4[in=ebx,out=eax]: bsf (%ebx),%ax
+bsf1[in=bx,out=ax]: bsf %bx,%ax
+bsf2[in=ebx,out=eax]: bsf %ebx,%eax
+bsf3[in=bx,out=eax]: bsf %bx,%eax
+bsf4[in=ebx,out=eax]: bsf %ebx,%ax
+bsf5[doNotEval,in=bx,out=ax]: bsf (%bx),%ax
+bsf6[doNotEval,in=ebx,out=eax]: bsf (%ebx),%eax
+bsf7[doNotEval,in=bx,out=eax]: bsf (%bx),%eax
+bsf8[doNotEval,in=ebx,out=eax]: bsf (%ebx),%ax
 
-bsr1[in=bx,out=ax]: bsr (%bx),%ax
-bsr2[in=ebx,out=eax]: bsr (%ebx),%eax
-bsr3[in=bx,out=ax]: bsr (%bx),%eax
-bsr4[in=ebx,out=ax]: bsr (%ebx),%ax
+bsr1[in=bx,out=ax]: bsr %bx,%ax
+bsr2[in=ebx,out=eax]: bsr %ebx,%eax
+bsr3[in=bx,out=ax]: bsr %bx,%eax
+bsr4[in=ebx,out=ax]: bsr %ebx,%ax
+bsr5[doNotEval,in=bx,out=ax]: bsr (%bx),%ax
+bsr6[doNotEval,in=ebx,out=eax]: bsr (%ebx),%eax
+bsr7[doNotEval,in=bx,out=ax]: bsr (%bx),%eax
+bsr8[doNotEval,in=ebx,out=ax]: bsr (%ebx),%ax
 
 bt1[in=ax,out=]: bt $4,%ax
 bt2[in=ax bx,out=]: bt %bx,%ax
 bt3[in=eax,out=]: bt $31,%eax
 bt4[in=eax bx,out=]: bt %bx,%eax
-bt5[in=eax ebx,out=]: bt %ebx,(%eax)
+bt5[doNotEval,in=eax ebx,out=]: bt %ebx,(%eax)
 
 btc1[in=ax,out=ax]: btc $4,%ax
 btc2[in=ax bx,out=ax]: btc %bx,%ax
 btc3[in=eax,out=eax]: btc $31,%eax
 btc4[in=eax bx,out=eax]: btc %bx,%eax
-btc5[in=eax ebx,out=]: btc %ebx,(%eax)
-btc_locked: lock btc %ebx,(%eax)
+btc5[doNotEval,in=eax ebx,out=]: btc %ebx,(%eax)
+btc_locked[doNotEval]: lock btc %ebx,(%eax)
 
 btr1[in=ax,out=ax]: btr $4,%ax
 btr2[in=ax bx,out=ax]: btr %bx,%ax
 btr3[in=eax,out=eax]: btr $31,%eax
 btr4[in=eax bx,out=eax]: btr %bx,%eax
-btr5[in=eax ebx,out=]: btr %ebx,(%eax)
-btr_locked: lock btr %ebx,(%eax)
+btr5[doNotEval,in=eax ebx,out=]: btr %ebx,(%eax)
+btr_locked[doNotEval]: lock btr %ebx,(%eax)
 
 bts1[in=ax,out=ax]: bts $4,%ax
 bts2[in=ax bx,out=ax]: bts %bx,%ax
 bts3[in=eax,out=eax]: bts $31,%eax
 bts4[in=eax bx,out=eax]: bts %bx,%eax
-bts5[in=eax ebx,out=]: bts %ebx,(%eax)
-bts_locked: lock bts %ebx,(%eax)
+bts5[doNotEval,in=eax ebx,out=]: bts %ebx,(%eax)
+bts_locked[doNotEval]: lock bts %ebx,(%eax)
 
-call1: hex e8 fb ff ff ff
-call2: call call2
-call3: call malloc
+call1[doNotEval]: hex e8 fb ff ff ff
+call2[doNotEval]: call call2_plain
+call3[doNotEval]: call malloc
 #call4: call 0x1234
-call5[in=eax,out=]: call *%eax
-call6[in=eax,out=]: call *(%eax)
+call5[doNotEval,in=eax,out=]: call *%eax
+call6[doNotEval,in=eax,out=]: call *(%eax)
 
 cbw1[in=ax,out=eax]: hex 98
 cbw2[in=al,out=ax]: hex 66 98
@@ -90,9 +103,9 @@ clc[in=flags,out=]: clc
 
 cld: cld
 
-cli: cli
+cli[doNotEval]: cli
 
-clts: clts
+clts[doNotEval]: clts
 
 cmc[in=flags,out=]: cmc
 
@@ -102,17 +115,17 @@ cmp3[in=ax,out=]: hex 66 3d 02 00
 cmp4[in=ax,out=]: hex 66 3d fe ff
 cmp5[in=eax,out=]: hex 3d 02 00 00 00
 cmp6[in=eax,out=]: hex 3d fe ff ff ff
-cmp7[in=eax ebp,out=]: cmpl 8(%ebp), %eax
-cmp8[in=eax ebp,out=]: cmpl $100, 7(%eax,%ebp)
+cmp7[doNotEval,in=eax ebp,out=]: cmpl 8(%ebp), %eax
+cmp8[doNotEval,in=eax ebp,out=]: cmpl $100, 7(%eax,%ebp)
 
-cmps1[in=edi esi,out=]: hex a6
-cmps2[in=di si,out=]: hex 67 a6
-cmps3[in=edi esi,out=]: hex a7
-cmps4[in=edi esi,out=]: hex 66 a7
-cmps5[in=di si,out=]: hex 66 67 a7
-cmps6[in=di si,out=]: hex 67 a7
+cmps1[doNotEval,in=edi esi,out=]: hex a6
+cmps2[doNotEval,in=di si,out=]: hex 67 a6
+cmps3[doNotEval,in=edi esi,out=]: hex a7
+cmps4[doNotEval,in=edi esi,out=]: hex 66 a7
+cmps5[doNotEval,in=di si,out=]: hex 66 67 a7
+cmps6[doNotEval,in=di si,out=]: hex 67 a7
 
-cmps_seg: hex 36 67 a7
+cmps_seg[doNotEval]: hex 36 67 a7
 
 cwd1[in=eax,out=eax edx]: hex 99
 cwd2[in=ax,out=ax dx]: hex 66 99
@@ -125,66 +138,65 @@ dec1[in=al,out=al]: dec %al
 dec2[in=ax,out=ax]: dec %ax
 dec3[in=ah,out=ah]: dec %ah
 dec4[in=eax,out=eax]: dec %eax
-dec5b[in=eax,out=]: decb (%eax)
-dec5w[in=eax,out=]: decw (%eax)
-dec5l[in=eax,out=]: decl (%eax)
-dec_locked: lock decl (%eax)
+dec5b[doNotEval,in=eax,out=]: decb (%eax)
+dec5w[doNotEval,in=eax,out=]: decw (%eax)
+dec5l[doNotEval,in=eax,out=]: decl (%eax)
+dec_locked[doNotEval]: lock decl (%eax)
 
 div1[in=ax bl,out=al ah]: div %bl,%al
-div2[in=ax bh,out=al ah]: div %bh,%al
-div3[in=ax ax bx,out=ax dx]: div %bx,%ax
-div4[in=eax edx ebx,out=eax edx]: div %ebx,%eax
-div5[in=ax ebx,out=al ah]: divb 0x1234(%ebx),%al
+div2[in=ax ax bx,out=ax dx]: div %bp,%ax
+div3[in=eax edx ebx,out=eax edx]: div %edi,%eax
+div4[doNotEval,in=ax ebx,out=al ah]: divb 0x1234(%ebx),%al
 
-enter1: hex c8 34 12 00
-enter2: hex c8 34 12 01
-enter3: hex c8 34 12 55
+enter1[doNotEval]: hex c8 34 12 00
+enter2[doNotEval]: hex c8 34 12 01
+enter3[doNotEval]: hex c8 34 12 55
 
-hlt: hlt
+hlt[doNotEval]: hlt
 
-idiv1[in=ax bl,out=al ah]: idiv %bl,%al
-idiv2[in=ax dx bx,out=ax dx]: idiv %bx,%ax
-idiv3[in=eax edx ebx,out=eax edx]: idiv %ebx,%eax
+idiv1[in=ax bl,out=al ah,overwrite:1:eax:0xa3b11984,overwrite:2:eax:0xa3b1f978]: idiv %cl,%al
+idiv2[in=ax dx bx,out=ax dx,overwrite:0:ecx:0xf3,overwrite:1:edx:0xf9b2]: idiv %cx,%ax
+idiv3[in=eax edx ebx,out=eax edx,overwrite:0:ecx:0xfe3f6cb2,overwrite:1:ecx:0x7e3f6cb2,overwrite:2:edx:0x1e6925b3,overwrite:2:ecx:0x73af6cb2]: idiv %ecx,%eax
 
 imul_one_op1[in=al bl,out=ax]: imul %bl
 imul_one_op2[in=ax bx,out=ax dx]: imul %bx
 imul_one_op3[in=eax ebx,out=eax edx]: imul %ebx
-imul_one_op4[in=ax ebx,out=]: imulw (%ebx)
+imul_one_op4[doNotEval,in=ax ebx,out=]: imulw (%ebx)
 
 imul_two_op1[in=bx cx,out=cx]: imul %bx,%cx
 imul_two_op2[in=ebx ecx,out=ecx]: imul %ebx,%ecx
-imul_two_op3[in=ebx ecx,out=ecx]: imul (%ebx),%ecx
+imul_two_op3[doNotEval,in=ebx ecx,out=ecx]: imul (%ebx),%ecx
 
 imul_three_op1[in=bx cx,out=cx]: imul $10,%bx,%cx
 imul_three_op2[in=ebx ecx,out=ecx]: imul $10,%ebx,%ecx
-imul_three_op3[in=ebx ecx,out=ecx]: imul $10,(%ebx),%ecx
+imul_three_op3[doNotEval,in=ebx ecx,out=ecx]: imul $10,(%ebx),%ecx
 
-in1[in=,out=al]: hex e4 12
-in2[in=,out=ax]: hex 66 e5 12
-in3[in=,out=eax]: hex e5 12
-in4[in=dx,out=al]: hex ec
-in5[in=dx,out=ax]: hex 66 ed
-in6[in=dx,out=eax]: hex ed
+in1[doNotEval,in=,out=al]: hex e4 12
+in2[doNotEval,in=,out=ax]: hex 66 e5 12
+in3[doNotEval,in=,out=eax]: hex e5 12
+in4[doNotEval,in=dx,out=al]: hex ec
+in5[doNotEval,in=dx,out=ax]: hex 66 ed
+in6[doNotEval,in=dx,out=eax]: hex ed
 
 inc1[in=al,out=al]: inc %al
 inc2[in=ax,out=ax]: inc %ax
 inc3[in=ah,out=ah]: inc %ah
-inc4[in=eax,out=eax]: inc %eax
-inc5b[in=eax,out=]: incb (%eax)
-inc5w[in=eax,out=]: incw (%eax)
-inc5l[in=eax,out=]: incl (%eax)
-inc_locked: lock incl (%eax)
+inc4[doNotEval,in=eax,out=eax]: inc %eax
+inc5b[doNotEval,in=eax,out=]: incb (%eax)
+inc5w[doNotEval,in=eax,out=]: incw (%eax)
+inc5l[doNotEval,in=eax,out=]: incl (%eax)
+inc_locked[doNotEval]: lock incl (%eax)
 
-ins1[in=edi df dx,out=edi]: hex 6c
-ins2[in=edi df dx,out=edi]: hex 66 6d
-ins3[in=edi df dx,out=edi]: hex 6d
+ins1[doNotEval,in=edi df dx,out=edi]: hex 6c
+ins2[doNotEval,in=edi df dx,out=edi]: hex 66 6d
+ins3[doNotEval,in=edi df dx,out=edi]: hex 6d
 
-int1: hex cc
-int2: hex cd 12
-int3: hex ce
+int1[doNotEval]: hex cc
+int2[doNotEval]: hex cd 12
+int3[doNotEval]: hex ce
 
-iret1: hex cf
-iret2: hex 66 cf
+iret1[doNotEval]: hex cf
+iret2[doNotEval]: hex 66 cf
 
 # Prefix each line with "3c 02" which is "cmp $0x2,%al" the jump jumps between two nops (0x90)
 jcc_short_with_code_0[in=flags,out=al noflags]: hex b0 01 70 02 b0 00 90
@@ -226,7 +238,7 @@ jecxz[in=ecx,out=al noflags]: hex b0 01 e3 02 b0 00 90
 
 jmp1: hex eb 01 90 90
 jmp2: hex e9 01 00 00 00 90 90
-jmp3: hex ff 23
+jmp3[doNotEval]: hex ff 23
 
 lahf[in=flags,out=ah]: lahf
 
@@ -235,32 +247,32 @@ lar: lar %ax,%ebx
 lea1[in=ebx,out=eax]: lea 0x42(%ebx),%eax
 lea2[in=ebx,out=ax]: hex 66 8d 43 42
 
-leave1: hex c9
-leave2: hex 66 c9
+leave1[doNotEval]: hex c9
+leave2[doNotEval]: hex 66 c9
 
-lgdtl: lgdtl (%eax)
-lidtl: lidtl (%eax)
+lgdtl[doNotEval]: lgdtl (%eax)
+lidtl[doNotEval]: lidtl (%eax)
 
-lds1: lds (%ecx),%edx
-lds2: lds (%ecx),%dx
-les1: les (%ecx),%edx
-les2: les (%ecx),%dx
-lfs1: lfs (%ecx),%edx
-lfs2: lfs (%ecx),%dx
-lgs1: lgs (%ecx),%edx
-lgs2: lgs (%ecx),%dx
-lss1: lss (%ecx),%edx
-lss2: lss (%ecx),%dx
+lds1[doNotEval]: lds (%ecx),%edx
+lds2[doNotEval]: lds (%ecx),%dx
+les1[doNotEval]: les (%ecx),%edx
+les2[doNotEval]: les (%ecx),%dx
+lfs1[doNotEval]: lfs (%ecx),%edx
+lfs2[doNotEval]: lfs (%ecx),%dx
+lgs1[doNotEval]: lgs (%ecx),%edx
+lgs2[doNotEval]: lgs (%ecx),%dx
+lss1[doNotEval]: lss (%ecx),%edx
+lss2[doNotEval]: lss (%ecx),%dx
 
-lldt: lldt (%eax)
+lldt[doNotEval]: lldt (%eax)
 
-lmsw: lmsw (%eax)
+lmsw[doNotEval]: lmsw (%eax)
 
-lods1[in=esi df,out=esi al]: hex ac
-lods2[in=esi df,out=esi ax]: hex 66 ad
-lods3[in=esi df,out=esi eax]: hex ad
+lods1[doNotEval,in=esi df,out=esi al]: hex ac
+lods2[doNotEval,in=esi df,out=esi ax]: hex 66 ad
+lods3[doNotEval,in=esi df,out=esi eax]: hex ad
 
-lods_seg: hex 36 ad
+lods_seg[doNotEval]: hex 36 ad
 
 loop_type_0[in=eax ecx,out=eax ecx]: hex 40 e0 fd
 loop_type_0w[in=eax cx,out=eax cx]: hex 40 67 e0 fc
@@ -269,40 +281,40 @@ loop_type_1w[in=eax cx,out=eax cx]: hex 40 67 e1 fc
 loop_type_2[in=eax ecx,out=eax ecx]: hex 40 e2 fd
 loop_type_2w[in=eax cx,out=eax cx]: hex 40 67 e2 fc
 
-lsl: lsl (%eax),%ebx
+lsl[doNotEval]: lsl (%eax),%ebx
 
-ltr: ltr %bx
+ltr[doNotEval]: ltr %bx
 
 mov_b1[in=bh,out=cl]: mov %bh,%cl
 mov_b2[in=al,out=cl]: mov %al,%cl
 mov_b3[in=cl,out=al]: mov %cl,%al
 mov_b4[in=,out=cl]: mov $0x10,%cl
 mov_b5[in=,out=al]: mov $0x10,%al
-mov_b6[in=ah ebx,out=]: mov %ah,(%ebx)
-mov_b7[in=ebx,out=ah]: mov (%ebx),%ah
+mov_b6[doNotEval,in=ah ebx,out=]: mov %ah,(%ebx)
+mov_b7[doNotEval,in=ebx,out=ah]: mov (%ebx),%ah
 
 mov_w1[in=ax,out=cx]: mov %ax,%cx
 mov_w2[in=,out=ax]: mov $0x10,%ax
-mov_w3[in=ax ebx,out=]: mov %ax,(%ebx)
-mov_w4[in=ebx,out=ax]: mov (%ebx),%ax
+mov_w3[doNotEval,in=ax ebx,out=]: mov %ax,(%ebx)
+mov_w4[doNotEval,in=ebx,out=ax]: mov (%ebx),%ax
 
 mov_l1[in=eax,out=ecx]: mov %eax,%ecx
 mov_l2[in=,out=eax]: mov $0x10,%eax
-mov_l3[in=eax ebx,out=]: mov %eax,(%ebx)
-mov_l4[in=ebx,out=eax]: mov (%ebx),%eax
+mov_l3[doNotEval,in=eax ebx,out=]: mov %eax,(%ebx)
+mov_l4[doNotEval,in=ebx,out=eax]: mov (%ebx),%eax
 
-mov_from_cr: mov %cr4,%eax
-mov_to_cr: mov %eax,%cr4
-mov_from_dr: mov %dr4,%eax
-mov_to_dr: mov %eax,%dr4
-mov_from_tr: mov %tr6,%eax
-mov_to_tr: mov %eax,%tr6
+mov_from_cr[doNotEval]: mov %cr4,%eax
+mov_to_cr[doNotEval]: mov %eax,%cr4
+mov_from_dr[doNotEval]: mov %dr4,%eax
+mov_to_dr[doNotEval]: mov %eax,%dr4
+mov_from_tr[doNotEval]: mov %tr6,%eax
+mov_to_tr[doNotEval]: mov %eax,%tr6
 
-movs1[in=esi edi df,out=esi edi]: hex a4
-movs2[in=esi edi df,out=esi edi]: hex 66 a5
-movs3[in=esi edi df,out=esi edi]: hex a5
+movs1[doNotEval,in=esi edi df,out=esi edi]: hex a4
+movs2[doNotEval,in=esi edi df,out=esi edi]: hex 66 a5
+movs3[doNotEval,in=esi edi df,out=esi edi]: hex a5
 
-movs_seg: hex 36 a5
+movs_seg[doNotEval]: hex 36 a5
 
 movsx1[in=al,out=cx]: movsx %al,%cx
 movsx2[in=ax,out=ecx]: movsx %ax,%ecx
@@ -319,7 +331,7 @@ mul3[in=eax ebx,out=eax edx]: mul %ebx
 neg1[in=al,out=al]: neg %bl
 neg2[in=bx,out=bx]: neg %bx
 neg3[in=ebx,out=ebx]: neg %ebx
-neg_locked: lock negl (%ebx)
+neg_locked[doNotEval]: lock negl (%ebx)
 
 nop1: hex 90
 nop2: hex 66 90
@@ -332,7 +344,7 @@ nop7: hex 0f 1f 80 00 00 00 00
 not1[in=bl,out=bl]: not %bl
 not2[in=bx,out=bx]: not %bx
 not3[in=ebx,out=ebx]: not %ebx
-not_locked: lock notl (%ebx)
+not_locked[doNotEval]: lock notl (%ebx)
 
 or1[in=al,out=al]: hex 0c 02
 or2[in=al,out=al]: hex 0c fe
@@ -340,228 +352,228 @@ or3[in=ax,out=ax]: hex 66 0d 02 00
 or4[in=ax,out=ax]: hex 66 0d fe ff
 or5[in=eax,out=eax]: hex 0d 02 00 00 00
 or6[in=eax,out=eax]: hex 0d fe ff ff ff
-or7[in=eax ebp,out=eax]: orl 8(%ebp), %eax
+or7[doNotEval,in=eax ebp,out=eax]: orl 8(%ebp), %eax
 or8[in=eax,out=eax]: orl $0x02,%eax
 or9[in=eax,out=eax]: orl $0xf2,%eax
-or_locked: lock or 8(%ebp), %eax
+or_locked[doNotEval]: lock or 8(%ebp), %eax
 
-out1[in=al,out=]: hex e6 12
-out2[in=ax,out=]: hex 66 e7 12
-out3[in=eax,out=]: hex e7 12
-out4[in=al dx,out=]: hex ee
-out5[in=ax dx,out=]: hex 66 ef
-out6[in=eax dx,out=]: hex ef
+out1[doNotEval,in=al,out=]: hex e6 12
+out2[doNotEval,in=ax,out=]: hex 66 e7 12
+out3[doNotEval,in=eax,out=]: hex e7 12
+out4[doNotEval,in=al dx,out=]: hex ee
+out5[doNotEval,in=ax dx,out=]: hex 66 ef
+out6[doNotEval,in=eax dx,out=]: hex ef
 
-outs1[in=dx al esi,out=esi]: hex 6e
-outs2[in=dx ax esi,out=esi]: hex 66 6f
-outs3[in=dx eax esi,out=esi]: hex 6f
+outs1[doNotEval,in=dx al esi,out=esi]: hex 6e
+outs2[doNotEval,in=dx ax esi,out=esi]: hex 66 6f
+outs3[doNotEval,in=dx eax esi,out=esi]: hex 6f
 
-pop1: popw (%eax)
-pop2: pop (%eax)
-pop3: pop %ax
-pop4: pop %eax
-pop_seg1: pop %ds
-pop_seg2: pop %es
-pop_seg3: pop %fs
-pop_seg4: pop %gs
-pop_seg5: pop %ss
+pop1[doNotEval]: popw (%eax)
+pop2[doNotEval]: pop (%eax)
+pop3[doNotEval]: pop %ax
+pop4[doNotEval]: pop %eax
+pop_seg1[doNotEval]: pop %ds
+pop_seg2[doNotEval]: pop %es
+pop_seg3[doNotEval]: pop %fs
+pop_seg4[doNotEval]: pop %gs
+pop_seg5[doNotEval]: pop %ss
 
-popa1: hex 61
-popa2: hex 66 61
+popa1[doNotEval]: hex 61
+popa2[doNotEval]: hex 66 61
 
-popf1: hex 9d
-popf2: hex 66 9d
+popf1[doNotEval]: hex 9d
+popf2[doNotEval]: hex 66 9d
 
-push1: pushw (%eax)
-push2: push (%eax)
-push3: push %ax
-push4: push %eax
-push5: push $0x11
-push6: push $0x1122
-push7: push $0x11223344
-push_seg1: push %ds
-push_seg2: push %es
-push_seg3: push %fs
-push_seg4: push %gs
-push_seg5: push %ss
+push1[doNotEval]: pushw (%eax)
+push2[doNotEval]: push (%eax)
+push3[doNotEval]: push %ax
+push4[doNotEval]: push %eax
+push5[doNotEval]: push $0x11
+push6[doNotEval]: push $0x1122
+push7[doNotEval]: push $0x11223344
+push_seg1[doNotEval]: push %ds
+push_seg2[doNotEval]: push %es
+push_seg3[doNotEval]: push %fs
+push_seg4[doNotEval]: push %gs
+push_seg5[doNotEval]: push %ss
 
-pusha1: hex 60
-pusha2: hex 66 60
+pusha1[doNotEval]: hex 60
+pusha2[doNotEval]: hex 66 60
 
-pushf1: hex 9c
-pushf2: hex 66 9c
+pushf1[doNotEval]: hex 9c
+pushf2[doNotEval]: hex 66 9c
 
-rotate_once_rol_b[in=eax,out=]: hex d0 00
-rotate_once_rol_w[in=eax,out=]: hex 66 d1 00
-rotate_once_rol_l[in=eax,out=]: hex d1 00
-rotate_once_ror_b[in=eax,out=]: hex d0 08
-rotate_once_ror_w[in=eax,out=]: hex 66 d1 08
-rotate_once_ror_l[in=eax,out=]: hex d1 08
-rotate_once_rcl_b[in=eax,out=]: hex d0 10
-rotate_once_rcl_w[in=eax,out=]: hex 66 d1 10
-rotate_once_rcl_l[in=eax,out=]: hex d1 10
-rotate_once_rcr_b[in=eax,out=]: hex d0 18
-rotate_once_rcr_w[in=eax,out=]: hex 66 d1 18
-rotate_once_rcr_l[in=eax,out=]: hex d1 18
-rotate_once_shl_b[in=eax,out=]: hex d0 20
-rotate_once_shl_w[in=eax,out=]: hex 66 d1 20
-rotate_once_shl_l[in=eax,out=]: hex d1 20
-rotate_once_shr_b[in=eax,out=]: hex d0 28
-rotate_once_shr_w[in=eax,out=]: hex 66 d1 28
-rotate_once_shr_l[in=eax,out=]: hex d1 28
-rotate_once_sar_b[in=eax,out=]: hex d0 38
-rotate_once_sar_w[in=eax,out=]: hex 66 d1 38
-rotate_once_sar_l[in=eax,out=]: hex d1 38
+rotate_once_rol_b[in=eax,out=]: hex d0 c0
+rotate_once_rol_w[in=eax,out=]: hex 66 d1 c0
+rotate_once_rol_l[in=eax,out=]: hex d1 c0
+rotate_once_ror_b[in=eax,out=]: hex d0 c8
+rotate_once_ror_w[in=eax,out=]: hex 66 d1 c8
+rotate_once_ror_l[in=eax,out=]: hex d1 c8
+rotate_once_rcl_b[in=eax,out=]: hex d0 d0
+rotate_once_rcl_w[in=eax,out=]: hex 66 d1 d0
+rotate_once_rcl_l[in=eax,out=]: hex d1 d0
+rotate_once_rcr_b[in=eax,out=]: hex d0 d8
+rotate_once_rcr_w[in=eax,out=]: hex 66 d1 d8
+rotate_once_rcr_l[in=eax,out=]: hex d1 d8
+rotate_once_shl_b[in=eax,out=]: hex d0 e0
+rotate_once_shl_w[in=eax,out=]: hex 66 d1 e0
+rotate_once_shl_l[in=eax,out=]: hex d1 e0
+rotate_once_shr_b[in=eax,out=]: hex d0 e8
+rotate_once_shr_w[in=eax,out=]: hex 66 d1 e8
+rotate_once_shr_l[in=eax,out=]: hex d1 e8
+rotate_once_sar_b[in=eax,out=]: hex d0 f8
+rotate_once_sar_w[in=eax,out=]: hex 66 d1 f8
+rotate_once_sar_l[in=eax,out=]: hex d1 f8
 
-rotate_cl_controlled_rol_b[in=eax cl,out=]: hex d2 00
-rotate_cl_controlled_rol_w[in=eax cl,out=]: hex 66 d3 00
-rotate_cl_controlled_rol_l[in=eax cl,out=]: hex d3 00
-rotate_cl_controlled_ror_b[in=eax cl,out=]: hex d2 08
-rotate_cl_controlled_ror_w[in=eax cl,out=]: hex 66 d3 08
-rotate_cl_controlled_ror_l[in=eax cl,out=]: hex d3 08
-rotate_cl_controlled_rcl_b[in=eax cl,out=]: hex d2 10
-rotate_cl_controlled_rcl_w[in=eax cl,out=]: hex 66 d3 10
-rotate_cl_controlled_rcl_l[in=eax cl,out=]: hex d3 10
-rotate_cl_controlled_rcr_b[in=eax cl,out=]: hex d2 18
-rotate_cl_controlled_rcr_w[in=eax cl,out=]: hex 66 d3 18
-rotate_cl_controlled_rcr_l[in=eax cl,out=]: hex d3 18
-rotate_cl_controlled_shl_b[in=eax cl,out=]: hex d2 20
-rotate_cl_controlled_shl_w[in=eax cl,out=]: hex 66 d3 20
-rotate_cl_controlled_shl_l[in=eax cl,out=]: hex d3 20
-rotate_cl_controlled_shr_b[in=eax cl,out=]: hex d2 28
-rotate_cl_controlled_shr_w[in=eax cl,out=]: hex 66 d3 28
-rotate_cl_controlled_shr_l[in=eax cl,out=]: hex d3 28
-rotate_cl_controlled_sar_b[in=eax cl,out=]: hex d2 38
-rotate_cl_controlled_sar_w[in=eax cl,out=]: hex 66 d3 38
-rotate_cl_controlled_sar_l[in=eax cl,out=]: hex d3 38
+rotate_cl_controlled_rol_b[in=eax cl,out=]: hex d2 c0
+rotate_cl_controlled_rol_w[in=eax cl,out=]: hex 66 d3 c0
+rotate_cl_controlled_rol_l[in=eax cl,out=]: hex d3 c0
+rotate_cl_controlled_ror_b[in=eax cl,out=]: hex d2 c8
+rotate_cl_controlled_ror_w[in=eax cl,out=]: hex 66 d3 c8
+rotate_cl_controlled_ror_l[in=eax cl,out=]: hex d3 c8
+rotate_cl_controlled_rcl_b[in=eax cl,out=]: hex d2 d0
+rotate_cl_controlled_rcl_w[in=eax cl,out=]: hex 66 d3 d0
+rotate_cl_controlled_rcl_l[in=eax cl,out=]: hex d3 d0
+rotate_cl_controlled_rcr_b[in=eax cl,out=]: hex d2 d8
+rotate_cl_controlled_rcr_w[in=eax cl,out=]: hex 66 d3 d8
+rotate_cl_controlled_rcr_l[in=eax cl,out=]: hex d3 d8
+rotate_cl_controlled_shl_b[in=eax cl,out=]: hex d2 e0
+rotate_cl_controlled_shl_w[in=eax cl,out=]: hex 66 d3 e0
+rotate_cl_controlled_shl_l[in=eax cl,out=]: hex d3 e0
+rotate_cl_controlled_shr_b[in=eax cl,out=]: hex d2 e8
+rotate_cl_controlled_shr_w[in=eax cl,out=]: hex 66 d3 e8
+rotate_cl_controlled_shr_l[in=eax cl,out=]: hex d3 e8
+rotate_cl_controlled_sar_b[in=eax cl,out=]: hex d2 f8
+rotate_cl_controlled_sar_w[in=eax cl,out=]: hex 66 d3 f8
+rotate_cl_controlled_sar_l[in=eax cl,out=]: hex d3 f8
 
-rotate_imm8_rol_b[in=eax,out=]: hex c0 00 04
-rotate_imm8_rol_w[in=eax,out=]: hex 66 c1 00 04
-rotate_imm8_rol_l[in=eax,out=]: hex c1 00 04
-rotate_imm8_ror_b[in=eax,out=]: hex c0 08 04
-rotate_imm8_ror_w[in=eax,out=]: hex 66 c1 08 04
-rotate_imm8_ror_l[in=eax,out=]: hex c1 08 04
-rotate_imm8_rcl_b[in=eax,out=]: hex c0 10 04
-rotate_imm8_rcl_w[in=eax,out=]: hex 66 c1 10 04
-rotate_imm8_rcl_l[in=eax,out=]: hex c1 10 04
-rotate_imm8_rcr_b[in=eax,out=]: hex c0 18 04
-rotate_imm8_rcr_w[in=eax,out=]: hex 66 c1 18 04
-rotate_imm8_rcr_l[in=eax,out=]: hex c1 18 04
-rotate_imm8_shl_b[in=eax,out=]: hex c0 20 04
-rotate_imm8_shl_w[in=eax,out=]: hex 66 c1 20 04
-rotate_imm8_shl_l[in=eax,out=]: hex c1 20 04
-rotate_imm8_shr_b[in=eax,out=]: hex c0 28 04
-rotate_imm8_shr_w[in=eax,out=]: hex 66 c1 28 04
-rotate_imm8_shr_l[in=eax,out=]: hex c1 28 04
-rotate_imm8_sar_b[in=eax,out=]: hex c0 38 04
-rotate_imm8_sar_w[in=eax,out=]: hex 66 c1 38 04
-rotate_imm8_sar_l[in=eax,out=]: hex c1 38 04
+rotate_imm8_rol_b[in=eax,out=]: hex c0 c0 04
+rotate_imm8_rol_w[in=eax,out=]: hex 66 c1 c0 04
+rotate_imm8_rol_l[in=eax,out=]: hex c1 c0 04
+rotate_imm8_ror_b[in=eax,out=]: hex c0 c8 04
+rotate_imm8_ror_w[in=eax,out=]: hex 66 c1 c8 04
+rotate_imm8_ror_l[in=eax,out=]: hex c1 c8 04
+rotate_imm8_rcl_b[in=eax,out=]: hex c0 d0 04
+rotate_imm8_rcl_w[in=eax,out=]: hex 66 c1 d0 04
+rotate_imm8_rcl_l[in=eax,out=]: hex c1 d0 04
+rotate_imm8_rcr_b[in=eax,out=]: hex c0 d8 04
+rotate_imm8_rcr_w[in=eax,out=]: hex 66 c1 d8 04
+rotate_imm8_rcr_l[in=eax,out=]: hex c1 d8 04
+rotate_imm8_shl_b[in=eax,out=]: hex c0 e0 04
+rotate_imm8_shl_w[in=eax,out=]: hex 66 c1 e0 04
+rotate_imm8_shl_l[in=eax,out=]: hex c1 e0 04
+rotate_imm8_shr_b[in=eax,out=]: hex c0 e8 04
+rotate_imm8_shr_w[in=eax,out=]: hex 66 c1 e8 04
+rotate_imm8_shr_l[in=eax,out=]: hex c1 e8 04
+rotate_imm8_sar_b[in=eax,out=]: hex c0 f8 04
+rotate_imm8_sar_w[in=eax,out=]: hex 66 c1 f8 04
+rotate_imm8_sar_l[in=eax,out=]: hex c1 f8 04
 
-rep_ins1b[in=edi df dx ecx,out=edi ecx]: hex f2 6c
-rep_ins1w[in=edi df dx ecx,out=edi ecx]: hex f2 66 6d
-rep_ins1l[in=edi df dx ecx,out=edi ecx]: hex f2 6d
-rep_ins2b[in=edi df dx ecx,out=edi ecx]: hex f3 6c
-rep_ins2w[in=edi df dx ecx,out=edi ecx]: hex f3 66 6d
-rep_ins2l[in=edi df dx ecx,out=edi ecx]: hex f3 6d
+rep_ins1b[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f2 6c
+rep_ins1w[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f2 66 6d
+rep_ins1l[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f2 6d
+rep_ins2b[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f3 6c
+rep_ins2w[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f3 66 6d
+rep_ins2l[doNotEval,in=edi df dx ecx,out=edi ecx]: hex f3 6d
 
-rep_lods1b[in=esi df ecx,out=esi al ecx]: hex f2 ac
-rep_lods1w[in=esi df ecx,out=esi ax ecx]: hex f2 66 ad
-rep_lods1l[in=esi df ecx,out=esi eax ecx]: hex f2 ad
-rep_lods2b[in=esi df ecx,out=esi al ecx]: hex f3 ac
-rep_lods2w[in=esi df ecx,out=esi ax ecx]: hex f3 66 ad
-rep_lods2l[in=esi df ecx,out=esi eax ecx]: hex f3 ad
+rep_lods1b[doNotEval,in=esi df ecx,out=esi al ecx]: hex f2 ac
+rep_lods1w[doNotEval,in=esi df ecx,out=esi ax ecx]: hex f2 66 ad
+rep_lods1l[doNotEval,in=esi df ecx,out=esi eax ecx]: hex f2 ad
+rep_lods2b[doNotEval,in=esi df ecx,out=esi al ecx]: hex f3 ac
+rep_lods2w[doNotEval,in=esi df ecx,out=esi ax ecx]: hex f3 66 ad
+rep_lods2l[doNotEval,in=esi df ecx,out=esi eax ecx]: hex f3 ad
 
-rep_movs1b[in=esi edi df ecx,out=esi edi ecx]: hex f2 a4
-rep_movs1w[in=esi edi df ecx,out=esi edi ecx]: hex f2 66 a5
-rep_movs1l[in=esi edi df ecx,out=esi edi ecx]: hex f2 a5
-rep_movs2b[in=esi edi df ecx,out=esi edi ecx]: hex f3 a4
-rep_movs2w[in=esi edi df ecx,out=esi edi ecx]: hex f3 66 a5
-rep_movs2l[in=esi edi df ecx,out=esi edi ecx]: hex f3 a5
+rep_movs1b[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 a4
+rep_movs1w[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 66 a5
+rep_movs1l[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 a5
+rep_movs2b[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 a4
+rep_movs2w[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 66 a5
+rep_movs2l[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 a5
 
-rep_outs1b[in=esi df dx ecx,out=esi ecx]: hex f2 6e
-rep_outs1w[in=esi df dx ecx,out=esi ecx]: hex f2 66 6f
-rep_outs1l[in=esi df dx ecx,out=esi ecx]: hex f2 6f
-rep_outs2b[in=esi df dx ecx,out=esi ecx]: hex f3 6e
-rep_outs2w[in=esi df dx ecx,out=esi ecx]: hex f3 66 6f
-rep_outs2l[in=esi df dx ecx,out=esi ecx]: hex f3 6f
+rep_outs1b[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f2 6e
+rep_outs1w[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f2 66 6f
+rep_outs1l[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f2 6f
+rep_outs2b[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f3 6e
+rep_outs2w[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f3 66 6f
+rep_outs2l[doNotEval,in=esi df dx ecx,out=esi ecx]: hex f3 6f
 
-rep_stos1b[in=edi df al ecx,out=edi ecx]: hex f2 aa
-rep_stos1w[in=edi df ax ecx,out=edi ecx]: hex f2 66 ab
-rep_stos1l[in=edi df eax ecx,out=edi ecx]: hex f2 ab
-rep_stos2b[in=edi df al ecx,out=edi ecx]: hex f3 aa
-rep_stos2w[in=edi df ax ecx,out=edi ecx]: hex f3 66 ab
-rep_stos2l[in=edi df eax ecx,out=edi ecx]: hex f3 ab
+rep_stos1b[doNotEval,in=edi df al ecx,out=edi ecx]: hex f2 aa
+rep_stos1w[doNotEval,in=edi df ax ecx,out=edi ecx]: hex f2 66 ab
+rep_stos1l[doNotEval,in=edi df eax ecx,out=edi ecx]: hex f2 ab
+rep_stos2b[doNotEval,in=edi df al ecx,out=edi ecx]: hex f3 aa
+rep_stos2w[doNotEval,in=edi df ax ecx,out=edi ecx]: hex f3 66 ab
+rep_stos2l[doNotEval,in=edi df eax ecx,out=edi ecx]: hex f3 ab
 
-rep_cmps1b[in=esi edi df ecx,out=esi edi ecx]: hex f2 a6
-rep_cmps1w[in=esi edi df ecx,out=esi edi ecx]: hex f2 66 a7
-rep_cmps1l[in=esi edi df ecx,out=esi edi ecx]: hex f2 a7
-rep_cmps2b[in=esi edi df ecx,out=esi edi ecx]: hex f3 a6
-rep_cmps2w[in=esi edi df ecx,out=esi edi ecx]: hex f3 66 a7
-rep_cmps2l[in=esi edi df ecx,out=esi edi ecx]: hex f3 a7
+rep_cmps1b[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 a6
+rep_cmps1w[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 66 a7
+rep_cmps1l[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f2 a7
+rep_cmps2b[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 a6
+rep_cmps2w[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 66 a7
+rep_cmps2l[doNotEval,in=esi edi df ecx,out=esi edi ecx]: hex f3 a7
 
-rep_cmps_seg1: hex 36 f2 a6
+rep_cmps_seg1[doNotEval]: hex 36 f2 a6
 
 #rep_cmpsw_w: hex f2 66 67 a7
 
-rep_cmps_clear: hex fc 36 f2 a6
-rep_cmps_set: hex fd 36 f2 a6
+rep_cmps_clear[doNotEval]: hex fc 36 f2 a6
+rep_cmps_set[doNotEval]: hex fd 36 f2 a6
 
-rep_cmpsb_memcmp: hex 55 b9 08 00 00 00 89 e5 fc 83 ec 08 89 34 24 8b 75 08 89 7c 24 04 8b 7d 0c f3 a6 0f 92 c0 8b 34 24 8b 7c 24 04 0f 97 c2 89 ec 5d 28 c2 0f be c2 c3
+rep_cmpsb_memcmp[doNotEval]: hex 55 b9 08 00 00 00 89 e5 fc 83 ec 08 89 34 24 8b 75 08 89 7c 24 04 8b 7d 0c f3 a6 0f 92 c0 8b 34 24 8b 7c 24 04 0f 97 c2 89 ec 5d 28 c2 0f be c2 c3
 
-rep_scas1b[in=edi df al ecx,out=edi ecx]: hex f2 ae
-rep_scas1w[in=edi df ax ecx,out=edi ecx]: hex f2 66 af
-rep_scas1l[in=edi df eax ecx,out=edi ecx]: hex f2 af
-rep_scas2b[in=edi df al ecx,out=edi ecx]: hex f3 ae
-rep_scas2w[in=edi df ax ecx,out=edi ecx]: hex f3 66 af
-rep_scas2l[in=edi df eax ecx,out=edi ecx]: hex f3 af
+rep_scas1b[doNotEval,in=edi df al ecx,out=edi ecx]: hex f2 ae
+rep_scas1w[doNotEval,in=edi df ax ecx,out=edi ecx]: hex f2 66 af
+rep_scas1l[doNotEval,in=edi df eax ecx,out=edi ecx]: hex f2 af
+rep_scas2b[doNotEval,in=edi df al ecx,out=edi ecx]: hex f3 ae
+rep_scas2w[doNotEval,in=edi df ax ecx,out=edi ecx]: hex f3 66 af
+rep_scas2l[doNotEval,in=edi df eax ecx,out=edi ecx]: hex f3 af
 
-rep_scas_seg: hex f2 ae
+rep_scas_seg[doNotEval]: hex f2 ae
 
-rep_scas_memchr: hex 57 8b 7c 24 08 8b 44 24 0c 8b 4c 24 10 85 c9 74 0a fc f2 ae 75 05 8d 47 ff 5f c3 31 c0 5f c3
+rep_scas_memchr[doNotEval]: hex 57 8b 7c 24 08 8b 44 24 0c 8b 4c 24 10 85 c9 74 0a fc f2 ae 75 05 8d 47 ff 5f c3 31 c0 5f c3
 
-ret1: hex c3
-ret2: hex 66 c3
-ret3: hex cb
-ret4: hex 66 cb
-ret_pop1: hex c2 34 12
-ret_pop2: hex 66 c2 34 12
-ret_pop3: hex ca 34 12
-ret_pop4: hex 66 ca 34 12
+ret1[doNotEval]: hex c3
+ret2[doNotEval]: hex 66 c3
+ret3[doNotEval]: hex cb
+ret4[doNotEval]: hex 66 cb
+ret_pop1[doNotEval]: hex c2 34 12
+ret_pop2[doNotEval]: hex 66 c2 34 12
+ret_pop3[doNotEval]: hex ca 34 12
+ret_pop4[doNotEval]: hex 66 ca 34 12
 
 sahf[in=ah,out=]: sahf
 
 sbb1[in=flags al,out=al]: sbb $0xe8,%al
 sbb2[in=flags ax,out=ax]: sbb $0xe8,%ax
 sbb3[in=flags eax,out=eax]: sbb $0xe8,%eax
-sbb4[in=flags eax,out=]: sbbb $0xe8,(%eax)
-sbb5[in=flags eax,out=]: sbbw $0xe8,(%eax)
-sbb6[in=flags eax,out=]: sbbl $0xe8,(%eax)
-sbb7[in=flags ax bx,out=bx]: sbb %ax,%bx
-sbb_locked: lock sbb %eax,(%ebx)
+sbb4[doNotEval,in=flags eax,out=]: sbbb $0xe8,(%eax)
+sbb5[doNotEval,in=flags eax,out=]: sbbw $0xe8,(%eax)
+sbb6[doNotEval,in=flags eax,out=]: sbbl $0xe8,(%eax)
+sbb7[doNotEval,in=flags ax bx,out=bx]: sbb %ax,%bx
+sbb_locked[doNotEval]: lock sbb %eax,(%ebx)
 
-scas1[in=edi df al,out=edi]: hex ae
-scas2[in=edi df al,out=edi]: hex 66 af
-scas3[in=edi df al,out=edi]: hex af
+scas1[doNotEval,in=edi df al,out=edi]: hex ae
+scas2[doNotEval,in=edi df al,out=edi]: hex 66 af
+scas3[doNotEval,in=edi df al,out=edi]: hex af
 
-setcc_with_code_0[in=flags ecx,out=]: hex 0f 90 01
-setcc_with_code_1[in=flags ecx,out=]: hex 0f 91 01
-setcc_with_code_2[in=flags ecx,out=]: hex 0f 92 01
-setcc_with_code_3[in=flags ecx,out=]: hex 0f 93 01
-setcc_with_code_4[in=flags ecx,out=]: hex 0f 94 01
-setcc_with_code_5[in=flags ecx,out=]: hex 0f 95 01
-setcc_with_code_6[in=flags ecx,out=]: hex 0f 96 01
-setcc_with_code_7[in=flags ecx,out=]: hex 0f 97 01
-setcc_with_code_8[in=flags ecx,out=]: hex 0f 98 01
-setcc_with_code_9[in=flags ecx,out=]: hex 0f 99 01
-setcc_with_code_a[in=flags ecx,out=]: hex 0f 9a 01
-setcc_with_code_b[in=flags ecx,out=]: hex 0f 9b 01
-setcc_with_code_c[in=flags ecx,out=]: hex 0f 9c 01
-setcc_with_code_d[in=flags ecx,out=]: hex 0f 9d 01
-setcc_with_code_e[in=flags ecx,out=]: hex 0f 9e 01
-setcc_with_code_f[in=flags ecx,out=]: hex 0f 9f 01
+setcc_with_code_0[in=flags ecx,out=]: hex 0f 90 c3
+setcc_with_code_1[in=flags ecx,out=]: hex 0f 91 c3
+setcc_with_code_2[in=flags ecx,out=]: hex 0f 92 c3
+setcc_with_code_3[in=flags ecx,out=]: hex 0f 93 c3
+setcc_with_code_4[in=flags ecx,out=]: hex 0f 94 c3
+setcc_with_code_5[in=flags ecx,out=]: hex 0f 95 c3
+setcc_with_code_6[in=flags ecx,out=]: hex 0f 96 c3
+setcc_with_code_7[in=flags ecx,out=]: hex 0f 97 c3
+setcc_with_code_8[in=flags ecx,out=]: hex 0f 98 c3
+setcc_with_code_9[in=flags ecx,out=]: hex 0f 99 c3
+setcc_with_code_a[in=flags ecx,out=]: hex 0f 9a c3
+setcc_with_code_b[in=flags ecx,out=]: hex 0f 9b c3
+setcc_with_code_c[in=flags ecx,out=]: hex 0f 9c c3
+setcc_with_code_d[in=flags ecx,out=]: hex 0f 9d c3
+setcc_with_code_e[in=flags ecx,out=]: hex 0f 9e c3
+setcc_with_code_f[in=flags ecx,out=]: hex 0f 9f c3
 
-sgdt: sgdt (%eax)
-sidt: sidt (%eax)
+sgdt[doNotEval]: sgdt (%eax)
+sidt[doNotEval]: sidt (%eax)
 
 shld1[in=ax bx,out=ax bx]: shld $4,%ax,%bx
 shld2[in=eax ebx,out=eax ebx]: shld $4,%eax,%ebx
@@ -573,21 +585,21 @@ shrd2[in=eax ebx,out=eax ebx]: shrd $4,%eax,%ebx
 shrd3[in=ax bx cl,out=ax bx]: shrd %cl,%ax,%bx
 shrd4[in=eax ebx cl,out=eax ebx]: shrd %cl,%eax,%ebx
 
-sldt: sldt (%eax)
+sldt[doNotEval]: sldt (%eax)
 
-smsw: smsw (%eax)
+smsw[doNotEval]: smsw (%eax)
 
 stc[in=flags,out=]: stc
 
 std: std
 
-sti: sti
+sti[doNotEval]: sti
 
-stos1[in=edi df al,out=edi]: hex aa
-stos2[in=edi df ax,out=edi]: hex 66 ab
-stos3[in=edi df eax,out=edi]: hex ab
+stos1[doNotEval,in=edi df al,out=edi]: hex aa
+stos2[doNotEval,in=edi df ax,out=edi]: hex 66 ab
+stos3[doNotEval,in=edi df eax,out=edi]: hex ab
 
-str: str (%eax)
+str[doNotEval]: str (%eax)
 
 sub1[in=al,out=al]: hex 2c 02
 sub2[in=al,out=al]: hex 2c fe
@@ -595,33 +607,33 @@ sub3[in=ax,out=ax]: hex 66 2d 02 00
 sub4[in=ax,out=ax]: hex 66 2d fe ff
 sub5[in=eax,out=eax]: hex 2d 02 00 00 00
 sub6[in=eax,out=eax]: hex 2d fe ff ff ff
-sub7[in=eax ebp,out=eax]: subl 8(%ebp), %eax
-sub_locked: lock subl 8(%ebp), %eax
+sub7[doNotEval,in=eax ebp,out=eax]: subl 8(%ebp), %eax
+sub_locked[doNotEval]: lock subl 8(%ebp), %eax
 
 test1[in=al,out=]: test $0x42,%al
 test2[in=ax,out=]: test $0x42,%ax
 test3[in=eax,out=]: test $0x42,%eax
-test4[in=ecx,out=]: testb $0x42,(%ecx)
-test5[in=ecx,out=]: testw $0x42,(%ecx)
-test6[in=ecx,out=]: testl $0x42,(%ecx)
-test7[in=bl ecx,out=]: test %bl,(%ecx)
-test8[in=bx ecx,out=]: test %bx,(%ecx)
-test9[in=ebx ecx,out=]: test %ebx,(%ecx)
+test4[doNotEval,in=ecx,out=]: testb $0x42,(%ecx)
+test5[doNotEval,in=ecx,out=]: testw $0x42,(%ecx)
+test6[doNotEval,in=ecx,out=]: testl $0x42,(%ecx)
+test7[doNotEval,in=bl ecx,out=]: test %bl,(%ecx)
+test8[doNotEval,in=bx ecx,out=]: test %bx,(%ecx)
+test9[doNotEval,in=ebx ecx,out=]: test %ebx,(%ecx)
 
-verr: verr (%eax)
-verw: verw (%eax)
+verr[doNotEval]: verr (%eax)
+verw[doNotEval]: verw (%eax)
 
-wait: hex 9b
+wait[doNotEval]: hex 9b
 
 xchg1[in=ax bx,out=ax bx]: xchg %ax,%bx
 xchg2[in=eax ebx,out=eax ebx]: xchg %eax,%ebx
-xchg3[in=bl ecx,out=bl]: xchg %bl,(%ecx)
-xchg4[in=bx ecx,out=bx]: xchg %bx,(%ecx)
-xchg5[in=ebx ecx,out=ebx]: xchg %ebx,(%ecx)
-xchg_locked: lock xchg %ebx,(%ecx)
+xchg3[doNotEval,in=bl ecx,out=bl]: xchg %bl,(%ecx)
+xchg4[doNotEval,in=bx ecx,out=bx]: xchg %bx,(%ecx)
+xchg5[doNotEval,in=ebx ecx,out=ebx]: xchg %ebx,(%ecx)
+xchg_locked[doNotEval]: lock xchg %ebx,(%ecx)
 
-xlat1: hex d7
-xlat2: hex 67 d7
+xlat1[doNotEval]: hex d7
+xlat2[doNotEval]: hex 67 d7
 
 xor1[in=al,out=al]: hex 34 02
 xor2[in=al,out=al]: hex 34 fe
@@ -629,7 +641,7 @@ xor3[in=ax,out=ax]: hex 66 35 02 00
 xor4[in=ax,out=ax]: hex 66 35 fe ff
 xor5[in=eax,out=eax]: hex 35 02 00 00 00
 xor6[in=eax,out=eax]: hex 35 fe ff ff ff
-xor7[in=eax ebp,out=eax]: xorl 8(%ebp), %eax
+xor7[doNotEval,in=eax ebp,out=eax]: xorl 8(%ebp), %eax
 xor8[in=eax,out=eax]: xorl $0x02,%eax
 xor9[in=eax,out=eax]: xorl $0xf2,%eax
-xor_locked: lock xorl $0xf2,(%eax)
+xor_locked[doNotEval]: lock xorl $0xf2,(%eax)
