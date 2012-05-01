@@ -176,10 +176,10 @@ Disassembly of section .text:
  8048493:	b8 02 00 00 00       	mov    $0x2,%eax
  8048498:	bb 03 00 00 00       	mov    $0x3,%ebx
  804849d:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80484a2:	ba 04 00 00 00       	mov    $0x4,%edx
- 80484a7:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80484ac:	be 06 00 00 00       	mov    $0x6,%esi
- 80484b1:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80484a2:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80484a7:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80484ac:	be 07 00 00 00       	mov    $0x7,%esi
+ 80484b1:	bf 08 00 00 00       	mov    $0x8,%edi
  80484b6:	89 25 50 20 00 00    	mov    %esp,0x2050
  80484bc:	0f c8                	bswap  %eax
  80484be:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -304,12 +304,12 @@ Disassembly of section .text:
  804873a:	b8 00 00 00 00       	mov    $0x0,%eax
  804873f:	c3                   	ret    
 
-08048740 <cmpxchg1_plain>:
+08048740 <cmpxchg1_mv_plain>:
  8048740:	0f b0 c3             	cmpxchg %al,%bl
  8048743:	b8 00 00 00 00       	mov    $0x0,%eax
  8048748:	c3                   	ret    
 
-08048749 <cmpxchg1_allregs>:
+08048749 <cmpxchg1_mv_allregs>:
  8048749:	90                   	nop
  804874a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8048750:	66 50                	push   %ax
@@ -355,17 +355,17 @@ Disassembly of section .text:
  8048835:	b8 00 00 00 00       	mov    $0x0,%eax
  804883a:	c3                   	ret    
 
-0804883b <cmpxchg1_constant_simple>:
+0804883b <cmpxchg1_mv_constant_simple>:
  804883b:	90                   	nop
  804883c:	66 6a 00             	pushw  $0x0
  804883f:	66 9d                	popfw  
  8048841:	b8 02 00 00 00       	mov    $0x2,%eax
  8048846:	bb 03 00 00 00       	mov    $0x3,%ebx
  804884b:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8048850:	ba 04 00 00 00       	mov    $0x4,%edx
- 8048855:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804885a:	be 06 00 00 00       	mov    $0x6,%esi
- 804885f:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8048850:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8048855:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804885a:	be 07 00 00 00       	mov    $0x7,%esi
+ 804885f:	bf 08 00 00 00       	mov    $0x8,%edi
  8048864:	89 25 50 20 00 00    	mov    %esp,0x2050
  804886a:	0f b0 c3             	cmpxchg %al,%bl
  804886d:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -400,7 +400,7 @@ Disassembly of section .text:
  804891c:	b8 00 00 00 00       	mov    $0x0,%eax
  8048921:	c3                   	ret    
 
-08048922 <cmpxchg1_constant_complex1>:
+08048922 <cmpxchg1_mv_constant_complex1>:
  8048922:	90                   	nop
  8048923:	66 6a 00             	pushw  $0x0
  8048926:	66 9d                	popfw  
@@ -445,7 +445,7 @@ Disassembly of section .text:
  8048a03:	b8 00 00 00 00       	mov    $0x0,%eax
  8048a08:	c3                   	ret    
 
-08048a09 <cmpxchg1_constant_complex2>:
+08048a09 <cmpxchg1_mv_constant_complex2>:
  8048a09:	90                   	nop
  8048a0a:	66 68 ff fe          	pushw  $0xfeff
  8048a0e:	66 9d                	popfw  
@@ -490,12 +490,12 @@ Disassembly of section .text:
  8048aeb:	b8 00 00 00 00       	mov    $0x0,%eax
  8048af0:	c3                   	ret    
 
-08048af1 <cmpxchg2_plain>:
+08048af1 <cmpxchg2_mv_plain>:
  8048af1:	66 0f b1 c3          	cmpxchg %ax,%bx
  8048af5:	b8 00 00 00 00       	mov    $0x0,%eax
  8048afa:	c3                   	ret    
 
-08048afb <cmpxchg2_allregs>:
+08048afb <cmpxchg2_mv_allregs>:
  8048afb:	90                   	nop
  8048afc:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8048b02:	66 50                	push   %ax
@@ -541,17 +541,17 @@ Disassembly of section .text:
  8048be8:	b8 00 00 00 00       	mov    $0x0,%eax
  8048bed:	c3                   	ret    
 
-08048bee <cmpxchg2_constant_simple>:
+08048bee <cmpxchg2_mv_constant_simple>:
  8048bee:	90                   	nop
  8048bef:	66 6a 00             	pushw  $0x0
  8048bf2:	66 9d                	popfw  
  8048bf4:	b8 02 00 00 00       	mov    $0x2,%eax
  8048bf9:	bb 03 00 00 00       	mov    $0x3,%ebx
  8048bfe:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8048c03:	ba 04 00 00 00       	mov    $0x4,%edx
- 8048c08:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8048c0d:	be 06 00 00 00       	mov    $0x6,%esi
- 8048c12:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8048c03:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8048c08:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8048c0d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8048c12:	bf 08 00 00 00       	mov    $0x8,%edi
  8048c17:	89 25 50 20 00 00    	mov    %esp,0x2050
  8048c1d:	66 0f b1 c3          	cmpxchg %ax,%bx
  8048c21:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -586,7 +586,7 @@ Disassembly of section .text:
  8048cd0:	b8 00 00 00 00       	mov    $0x0,%eax
  8048cd5:	c3                   	ret    
 
-08048cd6 <cmpxchg2_constant_complex1>:
+08048cd6 <cmpxchg2_mv_constant_complex1>:
  8048cd6:	90                   	nop
  8048cd7:	66 6a 00             	pushw  $0x0
  8048cda:	66 9d                	popfw  
@@ -631,7 +631,7 @@ Disassembly of section .text:
  8048db8:	b8 00 00 00 00       	mov    $0x0,%eax
  8048dbd:	c3                   	ret    
 
-08048dbe <cmpxchg2_constant_complex2>:
+08048dbe <cmpxchg2_mv_constant_complex2>:
  8048dbe:	90                   	nop
  8048dbf:	66 68 ff fe          	pushw  $0xfeff
  8048dc3:	66 9d                	popfw  
@@ -734,10 +734,10 @@ Disassembly of section .text:
  8048fa8:	b8 02 00 00 00       	mov    $0x2,%eax
  8048fad:	bb 03 00 00 00       	mov    $0x3,%ebx
  8048fb2:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8048fb7:	ba 04 00 00 00       	mov    $0x4,%edx
- 8048fbc:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8048fc1:	be 06 00 00 00       	mov    $0x6,%esi
- 8048fc6:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8048fb7:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8048fbc:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8048fc1:	be 07 00 00 00       	mov    $0x7,%esi
+ 8048fc6:	bf 08 00 00 00       	mov    $0x8,%edi
  8048fcb:	89 25 50 20 00 00    	mov    %esp,0x2050
  8048fd1:	0f b1 c3             	cmpxchg %eax,%ebx
  8048fd4:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -862,12 +862,12 @@ Disassembly of section .text:
  8049252:	b8 00 00 00 00       	mov    $0x0,%eax
  8049257:	c3                   	ret    
 
-08049258 <cmpxchg4_plain>:
+08049258 <cmpxchg4_mv_plain>:
  8049258:	0f b1 03             	cmpxchg %eax,(%ebx)
  804925b:	b8 00 00 00 00       	mov    $0x0,%eax
  8049260:	c3                   	ret    
 
-08049261 <cmpxchg4_allregs>:
+08049261 <cmpxchg4_mv_allregs>:
  8049261:	90                   	nop
  8049262:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8049268:	66 50                	push   %ax
@@ -913,17 +913,17 @@ Disassembly of section .text:
  804934d:	b8 00 00 00 00       	mov    $0x0,%eax
  8049352:	c3                   	ret    
 
-08049353 <cmpxchg4_constant_simple>:
+08049353 <cmpxchg4_mv_constant_simple>:
  8049353:	90                   	nop
  8049354:	66 6a 00             	pushw  $0x0
  8049357:	66 9d                	popfw  
  8049359:	b8 02 00 00 00       	mov    $0x2,%eax
  804935e:	bb 03 00 00 00       	mov    $0x3,%ebx
  8049363:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8049368:	ba 04 00 00 00       	mov    $0x4,%edx
- 804936d:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8049372:	be 06 00 00 00       	mov    $0x6,%esi
- 8049377:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8049368:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804936d:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8049372:	be 07 00 00 00       	mov    $0x7,%esi
+ 8049377:	bf 08 00 00 00       	mov    $0x8,%edi
  804937c:	89 25 50 20 00 00    	mov    %esp,0x2050
  8049382:	0f b1 03             	cmpxchg %eax,(%ebx)
  8049385:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -958,7 +958,7 @@ Disassembly of section .text:
  8049434:	b8 00 00 00 00       	mov    $0x0,%eax
  8049439:	c3                   	ret    
 
-0804943a <cmpxchg4_constant_complex1>:
+0804943a <cmpxchg4_mv_constant_complex1>:
  804943a:	90                   	nop
  804943b:	66 6a 00             	pushw  $0x0
  804943e:	66 9d                	popfw  
@@ -1003,7 +1003,7 @@ Disassembly of section .text:
  804951b:	b8 00 00 00 00       	mov    $0x0,%eax
  8049520:	c3                   	ret    
 
-08049521 <cmpxchg4_constant_complex2>:
+08049521 <cmpxchg4_mv_constant_complex2>:
  8049521:	90                   	nop
  8049522:	66 68 ff fe          	pushw  $0xfeff
  8049526:	66 9d                	popfw  
@@ -1048,12 +1048,12 @@ Disassembly of section .text:
  8049603:	b8 00 00 00 00       	mov    $0x0,%eax
  8049608:	c3                   	ret    
 
-08049609 <cmpxchg5_plain>:
+08049609 <cmpxchg5_mv_plain>:
  8049609:	0f b0 c0             	cmpxchg %al,%al
  804960c:	b8 00 00 00 00       	mov    $0x0,%eax
  8049611:	c3                   	ret    
 
-08049612 <cmpxchg5_allregs>:
+08049612 <cmpxchg5_mv_allregs>:
  8049612:	90                   	nop
  8049613:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8049619:	66 50                	push   %ax
@@ -1099,17 +1099,17 @@ Disassembly of section .text:
  80496fe:	b8 00 00 00 00       	mov    $0x0,%eax
  8049703:	c3                   	ret    
 
-08049704 <cmpxchg5_constant_simple>:
+08049704 <cmpxchg5_mv_constant_simple>:
  8049704:	90                   	nop
  8049705:	66 6a 00             	pushw  $0x0
  8049708:	66 9d                	popfw  
  804970a:	b8 02 00 00 00       	mov    $0x2,%eax
  804970f:	bb 03 00 00 00       	mov    $0x3,%ebx
  8049714:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8049719:	ba 04 00 00 00       	mov    $0x4,%edx
- 804971e:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8049723:	be 06 00 00 00       	mov    $0x6,%esi
- 8049728:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8049719:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804971e:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8049723:	be 07 00 00 00       	mov    $0x7,%esi
+ 8049728:	bf 08 00 00 00       	mov    $0x8,%edi
  804972d:	89 25 50 20 00 00    	mov    %esp,0x2050
  8049733:	0f b0 c0             	cmpxchg %al,%al
  8049736:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -1144,7 +1144,7 @@ Disassembly of section .text:
  80497e5:	b8 00 00 00 00       	mov    $0x0,%eax
  80497ea:	c3                   	ret    
 
-080497eb <cmpxchg5_constant_complex1>:
+080497eb <cmpxchg5_mv_constant_complex1>:
  80497eb:	90                   	nop
  80497ec:	66 6a 00             	pushw  $0x0
  80497ef:	66 9d                	popfw  
@@ -1189,7 +1189,7 @@ Disassembly of section .text:
  80498cc:	b8 00 00 00 00       	mov    $0x0,%eax
  80498d1:	c3                   	ret    
 
-080498d2 <cmpxchg5_constant_complex2>:
+080498d2 <cmpxchg5_mv_constant_complex2>:
  80498d2:	90                   	nop
  80498d3:	66 68 ff fe          	pushw  $0xfeff
  80498d7:	66 9d                	popfw  
@@ -1234,12 +1234,12 @@ Disassembly of section .text:
  80499b4:	b8 00 00 00 00       	mov    $0x0,%eax
  80499b9:	c3                   	ret    
 
-080499ba <cmpxchg_locked_plain>:
+080499ba <cmpxchg_locked_mv_plain>:
  80499ba:	f0 0f b1 03          	lock cmpxchg %eax,(%ebx)
  80499be:	b8 00 00 00 00       	mov    $0x0,%eax
  80499c3:	c3                   	ret    
 
-080499c4 <cmpxchg_locked_allregs>:
+080499c4 <cmpxchg_locked_mv_allregs>:
  80499c4:	90                   	nop
  80499c5:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80499cb:	66 50                	push   %ax
@@ -1285,17 +1285,17 @@ Disassembly of section .text:
  8049ab1:	b8 00 00 00 00       	mov    $0x0,%eax
  8049ab6:	c3                   	ret    
 
-08049ab7 <cmpxchg_locked_constant_simple>:
+08049ab7 <cmpxchg_locked_mv_constant_simple>:
  8049ab7:	90                   	nop
  8049ab8:	66 6a 00             	pushw  $0x0
  8049abb:	66 9d                	popfw  
  8049abd:	b8 02 00 00 00       	mov    $0x2,%eax
  8049ac2:	bb 03 00 00 00       	mov    $0x3,%ebx
  8049ac7:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8049acc:	ba 04 00 00 00       	mov    $0x4,%edx
- 8049ad1:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8049ad6:	be 06 00 00 00       	mov    $0x6,%esi
- 8049adb:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8049acc:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8049ad1:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8049ad6:	be 07 00 00 00       	mov    $0x7,%esi
+ 8049adb:	bf 08 00 00 00       	mov    $0x8,%edi
  8049ae0:	89 25 50 20 00 00    	mov    %esp,0x2050
  8049ae6:	f0 0f b1 03          	lock cmpxchg %eax,(%ebx)
  8049aea:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -1330,7 +1330,7 @@ Disassembly of section .text:
  8049b99:	b8 00 00 00 00       	mov    $0x0,%eax
  8049b9e:	c3                   	ret    
 
-08049b9f <cmpxchg_locked_constant_complex1>:
+08049b9f <cmpxchg_locked_mv_constant_complex1>:
  8049b9f:	90                   	nop
  8049ba0:	66 6a 00             	pushw  $0x0
  8049ba3:	66 9d                	popfw  
@@ -1375,7 +1375,7 @@ Disassembly of section .text:
  8049c81:	b8 00 00 00 00       	mov    $0x0,%eax
  8049c86:	c3                   	ret    
 
-08049c87 <cmpxchg_locked_constant_complex2>:
+08049c87 <cmpxchg_locked_mv_constant_complex2>:
  8049c87:	90                   	nop
  8049c88:	66 68 ff fe          	pushw  $0xfeff
  8049c8c:	66 9d                	popfw  
@@ -1478,10 +1478,10 @@ Disassembly of section .text:
  8049e6f:	b8 02 00 00 00       	mov    $0x2,%eax
  8049e74:	bb 03 00 00 00       	mov    $0x3,%ebx
  8049e79:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8049e7e:	ba 04 00 00 00       	mov    $0x4,%edx
- 8049e83:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8049e88:	be 06 00 00 00       	mov    $0x6,%esi
- 8049e8d:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8049e7e:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8049e83:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8049e88:	be 07 00 00 00       	mov    $0x7,%esi
+ 8049e8d:	bf 08 00 00 00       	mov    $0x8,%edi
  8049e92:	89 25 50 20 00 00    	mov    %esp,0x2050
  8049e98:	0f a2                	cpuid  
  8049e9a:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -1664,10 +1664,10 @@ Disassembly of section .text:
  804a21b:	b8 02 00 00 00       	mov    $0x2,%eax
  804a220:	bb 03 00 00 00       	mov    $0x3,%ebx
  804a225:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804a22a:	ba 04 00 00 00       	mov    $0x4,%edx
- 804a22f:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804a234:	be 06 00 00 00       	mov    $0x6,%esi
- 804a239:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804a22a:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804a22f:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804a234:	be 07 00 00 00       	mov    $0x7,%esi
+ 804a239:	bf 08 00 00 00       	mov    $0x8,%edi
  804a23e:	89 25 50 20 00 00    	mov    %esp,0x2050
  804a244:	0f 08                	invd   
  804a246:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -1850,10 +1850,10 @@ Disassembly of section .text:
  804a5c9:	b8 02 00 00 00       	mov    $0x2,%eax
  804a5ce:	bb 03 00 00 00       	mov    $0x3,%ebx
  804a5d3:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804a5d8:	ba 04 00 00 00       	mov    $0x4,%edx
- 804a5dd:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804a5e2:	be 06 00 00 00       	mov    $0x6,%esi
- 804a5e7:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804a5d8:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804a5dd:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804a5e2:	be 07 00 00 00       	mov    $0x7,%esi
+ 804a5e7:	bf 08 00 00 00       	mov    $0x8,%edi
  804a5ec:	89 25 50 20 00 00    	mov    %esp,0x2050
  804a5f2:	0f 01 38             	invlpg (%eax)
  804a5f5:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2036,10 +2036,10 @@ Disassembly of section .text:
  804a978:	b8 02 00 00 00       	mov    $0x2,%eax
  804a97d:	bb 03 00 00 00       	mov    $0x3,%ebx
  804a982:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804a987:	ba 04 00 00 00       	mov    $0x4,%edx
- 804a98c:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804a991:	be 06 00 00 00       	mov    $0x6,%esi
- 804a996:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804a987:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804a98c:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804a991:	be 07 00 00 00       	mov    $0x7,%esi
+ 804a996:	bf 08 00 00 00       	mov    $0x8,%edi
  804a99b:	89 25 50 20 00 00    	mov    %esp,0x2050
  804a9a1:	0f 09                	wbinvd 
  804a9a3:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2164,12 +2164,12 @@ Disassembly of section .text:
  804ac1f:	b8 00 00 00 00       	mov    $0x0,%eax
  804ac24:	c3                   	ret    
 
-0804ac25 <xadd1_plain>:
+0804ac25 <xadd1_mv_plain>:
  804ac25:	0f c0 c3             	xadd   %al,%bl
  804ac28:	b8 00 00 00 00       	mov    $0x0,%eax
  804ac2d:	c3                   	ret    
 
-0804ac2e <xadd1_allregs>:
+0804ac2e <xadd1_mv_allregs>:
  804ac2e:	90                   	nop
  804ac2f:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804ac35:	66 50                	push   %ax
@@ -2215,17 +2215,17 @@ Disassembly of section .text:
  804ad1a:	b8 00 00 00 00       	mov    $0x0,%eax
  804ad1f:	c3                   	ret    
 
-0804ad20 <xadd1_constant_simple>:
+0804ad20 <xadd1_mv_constant_simple>:
  804ad20:	90                   	nop
  804ad21:	66 6a 00             	pushw  $0x0
  804ad24:	66 9d                	popfw  
  804ad26:	b8 02 00 00 00       	mov    $0x2,%eax
  804ad2b:	bb 03 00 00 00       	mov    $0x3,%ebx
  804ad30:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804ad35:	ba 04 00 00 00       	mov    $0x4,%edx
- 804ad3a:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804ad3f:	be 06 00 00 00       	mov    $0x6,%esi
- 804ad44:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804ad35:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804ad3a:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804ad3f:	be 07 00 00 00       	mov    $0x7,%esi
+ 804ad44:	bf 08 00 00 00       	mov    $0x8,%edi
  804ad49:	89 25 50 20 00 00    	mov    %esp,0x2050
  804ad4f:	0f c0 c3             	xadd   %al,%bl
  804ad52:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2260,7 +2260,7 @@ Disassembly of section .text:
  804ae01:	b8 00 00 00 00       	mov    $0x0,%eax
  804ae06:	c3                   	ret    
 
-0804ae07 <xadd1_constant_complex1>:
+0804ae07 <xadd1_mv_constant_complex1>:
  804ae07:	90                   	nop
  804ae08:	66 6a 00             	pushw  $0x0
  804ae0b:	66 9d                	popfw  
@@ -2305,7 +2305,7 @@ Disassembly of section .text:
  804aee8:	b8 00 00 00 00       	mov    $0x0,%eax
  804aeed:	c3                   	ret    
 
-0804aeee <xadd1_constant_complex2>:
+0804aeee <xadd1_mv_constant_complex2>:
  804aeee:	90                   	nop
  804aeef:	66 68 ff fe          	pushw  $0xfeff
  804aef3:	66 9d                	popfw  
@@ -2350,12 +2350,12 @@ Disassembly of section .text:
  804afd0:	b8 00 00 00 00       	mov    $0x0,%eax
  804afd5:	c3                   	ret    
 
-0804afd6 <xadd2_plain>:
+0804afd6 <xadd2_mv_plain>:
  804afd6:	66 0f c1 c3          	xadd   %ax,%bx
  804afda:	b8 00 00 00 00       	mov    $0x0,%eax
  804afdf:	c3                   	ret    
 
-0804afe0 <xadd2_allregs>:
+0804afe0 <xadd2_mv_allregs>:
  804afe0:	90                   	nop
  804afe1:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804afe7:	66 50                	push   %ax
@@ -2401,17 +2401,17 @@ Disassembly of section .text:
  804b0cd:	b8 00 00 00 00       	mov    $0x0,%eax
  804b0d2:	c3                   	ret    
 
-0804b0d3 <xadd2_constant_simple>:
+0804b0d3 <xadd2_mv_constant_simple>:
  804b0d3:	90                   	nop
  804b0d4:	66 6a 00             	pushw  $0x0
  804b0d7:	66 9d                	popfw  
  804b0d9:	b8 02 00 00 00       	mov    $0x2,%eax
  804b0de:	bb 03 00 00 00       	mov    $0x3,%ebx
  804b0e3:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804b0e8:	ba 04 00 00 00       	mov    $0x4,%edx
- 804b0ed:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804b0f2:	be 06 00 00 00       	mov    $0x6,%esi
- 804b0f7:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804b0e8:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804b0ed:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804b0f2:	be 07 00 00 00       	mov    $0x7,%esi
+ 804b0f7:	bf 08 00 00 00       	mov    $0x8,%edi
  804b0fc:	89 25 50 20 00 00    	mov    %esp,0x2050
  804b102:	66 0f c1 c3          	xadd   %ax,%bx
  804b106:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2446,7 +2446,7 @@ Disassembly of section .text:
  804b1b5:	b8 00 00 00 00       	mov    $0x0,%eax
  804b1ba:	c3                   	ret    
 
-0804b1bb <xadd2_constant_complex1>:
+0804b1bb <xadd2_mv_constant_complex1>:
  804b1bb:	90                   	nop
  804b1bc:	66 6a 00             	pushw  $0x0
  804b1bf:	66 9d                	popfw  
@@ -2491,7 +2491,7 @@ Disassembly of section .text:
  804b29d:	b8 00 00 00 00       	mov    $0x0,%eax
  804b2a2:	c3                   	ret    
 
-0804b2a3 <xadd2_constant_complex2>:
+0804b2a3 <xadd2_mv_constant_complex2>:
  804b2a3:	90                   	nop
  804b2a4:	66 68 ff fe          	pushw  $0xfeff
  804b2a8:	66 9d                	popfw  
@@ -2594,10 +2594,10 @@ Disassembly of section .text:
  804b48d:	b8 02 00 00 00       	mov    $0x2,%eax
  804b492:	bb 03 00 00 00       	mov    $0x3,%ebx
  804b497:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804b49c:	ba 04 00 00 00       	mov    $0x4,%edx
- 804b4a1:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804b4a6:	be 06 00 00 00       	mov    $0x6,%esi
- 804b4ab:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804b49c:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804b4a1:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804b4a6:	be 07 00 00 00       	mov    $0x7,%esi
+ 804b4ab:	bf 08 00 00 00       	mov    $0x8,%edi
  804b4b0:	89 25 50 20 00 00    	mov    %esp,0x2050
  804b4b6:	0f c1 c3             	xadd   %eax,%ebx
  804b4b9:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2722,12 +2722,12 @@ Disassembly of section .text:
  804b737:	b8 00 00 00 00       	mov    $0x0,%eax
  804b73c:	c3                   	ret    
 
-0804b73d <xadd4_plain>:
+0804b73d <xadd4_mv_plain>:
  804b73d:	0f c1 03             	xadd   %eax,(%ebx)
  804b740:	b8 00 00 00 00       	mov    $0x0,%eax
  804b745:	c3                   	ret    
 
-0804b746 <xadd4_allregs>:
+0804b746 <xadd4_mv_allregs>:
  804b746:	90                   	nop
  804b747:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804b74d:	66 50                	push   %ax
@@ -2773,17 +2773,17 @@ Disassembly of section .text:
  804b832:	b8 00 00 00 00       	mov    $0x0,%eax
  804b837:	c3                   	ret    
 
-0804b838 <xadd4_constant_simple>:
+0804b838 <xadd4_mv_constant_simple>:
  804b838:	90                   	nop
  804b839:	66 6a 00             	pushw  $0x0
  804b83c:	66 9d                	popfw  
  804b83e:	b8 02 00 00 00       	mov    $0x2,%eax
  804b843:	bb 03 00 00 00       	mov    $0x3,%ebx
  804b848:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804b84d:	ba 04 00 00 00       	mov    $0x4,%edx
- 804b852:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804b857:	be 06 00 00 00       	mov    $0x6,%esi
- 804b85c:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804b84d:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804b852:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804b857:	be 07 00 00 00       	mov    $0x7,%esi
+ 804b85c:	bf 08 00 00 00       	mov    $0x8,%edi
  804b861:	89 25 50 20 00 00    	mov    %esp,0x2050
  804b867:	0f c1 03             	xadd   %eax,(%ebx)
  804b86a:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -2818,7 +2818,7 @@ Disassembly of section .text:
  804b919:	b8 00 00 00 00       	mov    $0x0,%eax
  804b91e:	c3                   	ret    
 
-0804b91f <xadd4_constant_complex1>:
+0804b91f <xadd4_mv_constant_complex1>:
  804b91f:	90                   	nop
  804b920:	66 6a 00             	pushw  $0x0
  804b923:	66 9d                	popfw  
@@ -2863,7 +2863,7 @@ Disassembly of section .text:
  804ba00:	b8 00 00 00 00       	mov    $0x0,%eax
  804ba05:	c3                   	ret    
 
-0804ba06 <xadd4_constant_complex2>:
+0804ba06 <xadd4_mv_constant_complex2>:
  804ba06:	90                   	nop
  804ba07:	66 68 ff fe          	pushw  $0xfeff
  804ba0b:	66 9d                	popfw  
@@ -2908,12 +2908,12 @@ Disassembly of section .text:
  804bae8:	b8 00 00 00 00       	mov    $0x0,%eax
  804baed:	c3                   	ret    
 
-0804baee <xadd5_plain>:
+0804baee <xadd5_mv_plain>:
  804baee:	0f c0 c0             	xadd   %al,%al
  804baf1:	b8 00 00 00 00       	mov    $0x0,%eax
  804baf6:	c3                   	ret    
 
-0804baf7 <xadd5_allregs>:
+0804baf7 <xadd5_mv_allregs>:
  804baf7:	90                   	nop
  804baf8:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804bafe:	66 50                	push   %ax
@@ -2959,17 +2959,17 @@ Disassembly of section .text:
  804bbe3:	b8 00 00 00 00       	mov    $0x0,%eax
  804bbe8:	c3                   	ret    
 
-0804bbe9 <xadd5_constant_simple>:
+0804bbe9 <xadd5_mv_constant_simple>:
  804bbe9:	90                   	nop
  804bbea:	66 6a 00             	pushw  $0x0
  804bbed:	66 9d                	popfw  
  804bbef:	b8 02 00 00 00       	mov    $0x2,%eax
  804bbf4:	bb 03 00 00 00       	mov    $0x3,%ebx
  804bbf9:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804bbfe:	ba 04 00 00 00       	mov    $0x4,%edx
- 804bc03:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804bc08:	be 06 00 00 00       	mov    $0x6,%esi
- 804bc0d:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804bbfe:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804bc03:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804bc08:	be 07 00 00 00       	mov    $0x7,%esi
+ 804bc0d:	bf 08 00 00 00       	mov    $0x8,%edi
  804bc12:	89 25 50 20 00 00    	mov    %esp,0x2050
  804bc18:	0f c0 c0             	xadd   %al,%al
  804bc1b:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -3004,7 +3004,7 @@ Disassembly of section .text:
  804bcca:	b8 00 00 00 00       	mov    $0x0,%eax
  804bccf:	c3                   	ret    
 
-0804bcd0 <xadd5_constant_complex1>:
+0804bcd0 <xadd5_mv_constant_complex1>:
  804bcd0:	90                   	nop
  804bcd1:	66 6a 00             	pushw  $0x0
  804bcd4:	66 9d                	popfw  
@@ -3049,7 +3049,7 @@ Disassembly of section .text:
  804bdb1:	b8 00 00 00 00       	mov    $0x0,%eax
  804bdb6:	c3                   	ret    
 
-0804bdb7 <xadd5_constant_complex2>:
+0804bdb7 <xadd5_mv_constant_complex2>:
  804bdb7:	90                   	nop
  804bdb8:	66 68 ff fe          	pushw  $0xfeff
  804bdbc:	66 9d                	popfw  
@@ -3094,12 +3094,12 @@ Disassembly of section .text:
  804be99:	b8 00 00 00 00       	mov    $0x0,%eax
  804be9e:	c3                   	ret    
 
-0804be9f <xadd_locked_plain>:
+0804be9f <xadd_locked_mv_plain>:
  804be9f:	f0 0f c1 03          	lock xadd %eax,(%ebx)
  804bea3:	b8 00 00 00 00       	mov    $0x0,%eax
  804bea8:	c3                   	ret    
 
-0804bea9 <xadd_locked_allregs>:
+0804bea9 <xadd_locked_mv_allregs>:
  804bea9:	90                   	nop
  804beaa:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804beb0:	66 50                	push   %ax
@@ -3145,17 +3145,17 @@ Disassembly of section .text:
  804bf96:	b8 00 00 00 00       	mov    $0x0,%eax
  804bf9b:	c3                   	ret    
 
-0804bf9c <xadd_locked_constant_simple>:
+0804bf9c <xadd_locked_mv_constant_simple>:
  804bf9c:	90                   	nop
  804bf9d:	66 6a 00             	pushw  $0x0
  804bfa0:	66 9d                	popfw  
  804bfa2:	b8 02 00 00 00       	mov    $0x2,%eax
  804bfa7:	bb 03 00 00 00       	mov    $0x3,%ebx
  804bfac:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804bfb1:	ba 04 00 00 00       	mov    $0x4,%edx
- 804bfb6:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804bfbb:	be 06 00 00 00       	mov    $0x6,%esi
- 804bfc0:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804bfb1:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804bfb6:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804bfbb:	be 07 00 00 00       	mov    $0x7,%esi
+ 804bfc0:	bf 08 00 00 00       	mov    $0x8,%edi
  804bfc5:	89 25 50 20 00 00    	mov    %esp,0x2050
  804bfcb:	f0 0f c1 03          	lock xadd %eax,(%ebx)
  804bfcf:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -3190,7 +3190,7 @@ Disassembly of section .text:
  804c07e:	b8 00 00 00 00       	mov    $0x0,%eax
  804c083:	c3                   	ret    
 
-0804c084 <xadd_locked_constant_complex1>:
+0804c084 <xadd_locked_mv_constant_complex1>:
  804c084:	90                   	nop
  804c085:	66 6a 00             	pushw  $0x0
  804c088:	66 9d                	popfw  
@@ -3235,7 +3235,7 @@ Disassembly of section .text:
  804c166:	b8 00 00 00 00       	mov    $0x0,%eax
  804c16b:	c3                   	ret    
 
-0804c16c <xadd_locked_constant_complex2>:
+0804c16c <xadd_locked_mv_constant_complex2>:
  804c16c:	90                   	nop
  804c16d:	66 68 ff fe          	pushw  $0xfeff
  804c171:	66 9d                	popfw  
@@ -3338,10 +3338,10 @@ Disassembly of section .text:
  804c356:	b8 02 00 00 00       	mov    $0x2,%eax
  804c35b:	bb 03 00 00 00       	mov    $0x3,%ebx
  804c360:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804c365:	ba 04 00 00 00       	mov    $0x4,%edx
- 804c36a:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804c36f:	be 06 00 00 00       	mov    $0x6,%esi
- 804c374:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804c365:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804c36a:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804c36f:	be 07 00 00 00       	mov    $0x7,%esi
+ 804c374:	bf 08 00 00 00       	mov    $0x8,%edi
  804c379:	89 25 50 20 00 00    	mov    %esp,0x2050
  804c37f:	0f c7 08             	cmpxchg8b (%eax)
  804c382:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -3466,12 +3466,12 @@ Disassembly of section .text:
  804c600:	b8 00 00 00 00       	mov    $0x0,%eax
  804c605:	c3                   	ret    
 
-0804c606 <cmpxchg8b_locked_plain>:
+0804c606 <cmpxchg8b_locked_mv_plain>:
  804c606:	f0 0f c7 08          	lock cmpxchg8b (%eax)
  804c60a:	b8 00 00 00 00       	mov    $0x0,%eax
  804c60f:	c3                   	ret    
 
-0804c610 <cmpxchg8b_locked_allregs>:
+0804c610 <cmpxchg8b_locked_mv_allregs>:
  804c610:	90                   	nop
  804c611:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804c617:	66 50                	push   %ax
@@ -3517,17 +3517,17 @@ Disassembly of section .text:
  804c6fd:	b8 00 00 00 00       	mov    $0x0,%eax
  804c702:	c3                   	ret    
 
-0804c703 <cmpxchg8b_locked_constant_simple>:
+0804c703 <cmpxchg8b_locked_mv_constant_simple>:
  804c703:	90                   	nop
  804c704:	66 6a 00             	pushw  $0x0
  804c707:	66 9d                	popfw  
  804c709:	b8 02 00 00 00       	mov    $0x2,%eax
  804c70e:	bb 03 00 00 00       	mov    $0x3,%ebx
  804c713:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804c718:	ba 04 00 00 00       	mov    $0x4,%edx
- 804c71d:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804c722:	be 06 00 00 00       	mov    $0x6,%esi
- 804c727:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804c718:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804c71d:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804c722:	be 07 00 00 00       	mov    $0x7,%esi
+ 804c727:	bf 08 00 00 00       	mov    $0x8,%edi
  804c72c:	89 25 50 20 00 00    	mov    %esp,0x2050
  804c732:	f0 0f c7 08          	lock cmpxchg8b (%eax)
  804c736:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -3562,7 +3562,7 @@ Disassembly of section .text:
  804c7e5:	b8 00 00 00 00       	mov    $0x0,%eax
  804c7ea:	c3                   	ret    
 
-0804c7eb <cmpxchg8b_locked_constant_complex1>:
+0804c7eb <cmpxchg8b_locked_mv_constant_complex1>:
  804c7eb:	90                   	nop
  804c7ec:	66 6a 00             	pushw  $0x0
  804c7ef:	66 9d                	popfw  
@@ -3607,7 +3607,7 @@ Disassembly of section .text:
  804c8cd:	b8 00 00 00 00       	mov    $0x0,%eax
  804c8d2:	c3                   	ret    
 
-0804c8d3 <cmpxchg8b_locked_constant_complex2>:
+0804c8d3 <cmpxchg8b_locked_mv_constant_complex2>:
  804c8d3:	90                   	nop
  804c8d4:	66 68 ff fe          	pushw  $0xfeff
  804c8d8:	66 9d                	popfw  
@@ -3710,10 +3710,10 @@ Disassembly of section .text:
  804cabb:	b8 02 00 00 00       	mov    $0x2,%eax
  804cac0:	bb 03 00 00 00       	mov    $0x3,%ebx
  804cac5:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804caca:	ba 04 00 00 00       	mov    $0x4,%edx
- 804cacf:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804cad4:	be 06 00 00 00       	mov    $0x6,%esi
- 804cad9:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804caca:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804cacf:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804cad4:	be 07 00 00 00       	mov    $0x7,%esi
+ 804cad9:	bf 08 00 00 00       	mov    $0x8,%edi
  804cade:	89 25 50 20 00 00    	mov    %esp,0x2050
  804cae4:	0f 31                	rdtsc  
  804cae6:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -3896,10 +3896,10 @@ Disassembly of section .text:
  804ce67:	b8 02 00 00 00       	mov    $0x2,%eax
  804ce6c:	bb 03 00 00 00       	mov    $0x3,%ebx
  804ce71:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804ce76:	ba 04 00 00 00       	mov    $0x4,%edx
- 804ce7b:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804ce80:	be 06 00 00 00       	mov    $0x6,%esi
- 804ce85:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804ce76:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804ce7b:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804ce80:	be 07 00 00 00       	mov    $0x7,%esi
+ 804ce85:	bf 08 00 00 00       	mov    $0x8,%edi
  804ce8a:	89 25 50 20 00 00    	mov    %esp,0x2050
  804ce90:	0f 32                	rdmsr  
  804ce92:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4082,10 +4082,10 @@ Disassembly of section .text:
  804d213:	b8 02 00 00 00       	mov    $0x2,%eax
  804d218:	bb 03 00 00 00       	mov    $0x3,%ebx
  804d21d:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804d222:	ba 04 00 00 00       	mov    $0x4,%edx
- 804d227:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804d22c:	be 06 00 00 00       	mov    $0x6,%esi
- 804d231:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804d222:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804d227:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804d22c:	be 07 00 00 00       	mov    $0x7,%esi
+ 804d231:	bf 08 00 00 00       	mov    $0x8,%edi
  804d236:	89 25 50 20 00 00    	mov    %esp,0x2050
  804d23c:	0f 30                	wrmsr  
  804d23e:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4268,10 +4268,10 @@ Disassembly of section .text:
  804d5c3:	b8 02 00 00 00       	mov    $0x2,%eax
  804d5c8:	bb 03 00 00 00       	mov    $0x3,%ebx
  804d5cd:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804d5d2:	ba 04 00 00 00       	mov    $0x4,%edx
- 804d5d7:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804d5dc:	be 06 00 00 00       	mov    $0x6,%esi
- 804d5e1:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804d5d2:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804d5d7:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804d5dc:	be 07 00 00 00       	mov    $0x7,%esi
+ 804d5e1:	bf 08 00 00 00       	mov    $0x8,%edi
  804d5e6:	89 25 50 20 00 00    	mov    %esp,0x2050
  804d5ec:	66 0f 47 c3          	cmova  %bx,%ax
  804d5f0:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4396,12 +4396,12 @@ Disassembly of section .text:
  804d870:	b8 00 00 00 00       	mov    $0x0,%eax
  804d875:	c3                   	ret    
 
-0804d876 <cmov2_plain>:
+0804d876 <cmov2_mv_plain>:
  804d876:	66 0f 47 c3          	cmova  %bx,%ax
  804d87a:	b8 00 00 00 00       	mov    $0x0,%eax
  804d87f:	c3                   	ret    
 
-0804d880 <cmov2_allregs>:
+0804d880 <cmov2_mv_allregs>:
  804d880:	90                   	nop
  804d881:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804d887:	66 50                	push   %ax
@@ -4447,17 +4447,17 @@ Disassembly of section .text:
  804d96d:	b8 00 00 00 00       	mov    $0x0,%eax
  804d972:	c3                   	ret    
 
-0804d973 <cmov2_constant_simple>:
+0804d973 <cmov2_mv_constant_simple>:
  804d973:	90                   	nop
  804d974:	66 6a 00             	pushw  $0x0
  804d977:	66 9d                	popfw  
  804d979:	b8 02 00 00 00       	mov    $0x2,%eax
  804d97e:	bb 03 00 00 00       	mov    $0x3,%ebx
  804d983:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804d988:	ba 04 00 00 00       	mov    $0x4,%edx
- 804d98d:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804d992:	be 06 00 00 00       	mov    $0x6,%esi
- 804d997:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804d988:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804d98d:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804d992:	be 07 00 00 00       	mov    $0x7,%esi
+ 804d997:	bf 08 00 00 00       	mov    $0x8,%edi
  804d99c:	89 25 50 20 00 00    	mov    %esp,0x2050
  804d9a2:	66 0f 47 c3          	cmova  %bx,%ax
  804d9a6:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4492,7 +4492,7 @@ Disassembly of section .text:
  804da55:	b8 00 00 00 00       	mov    $0x0,%eax
  804da5a:	c3                   	ret    
 
-0804da5b <cmov2_constant_complex1>:
+0804da5b <cmov2_mv_constant_complex1>:
  804da5b:	90                   	nop
  804da5c:	66 6a 00             	pushw  $0x0
  804da5f:	66 9d                	popfw  
@@ -4537,7 +4537,7 @@ Disassembly of section .text:
  804db3d:	b8 00 00 00 00       	mov    $0x0,%eax
  804db42:	c3                   	ret    
 
-0804db43 <cmov2_constant_complex2>:
+0804db43 <cmov2_mv_constant_complex2>:
  804db43:	90                   	nop
  804db44:	66 68 ff fe          	pushw  $0xfeff
  804db48:	66 9d                	popfw  
@@ -4582,12 +4582,12 @@ Disassembly of section .text:
  804dc26:	b8 00 00 00 00       	mov    $0x0,%eax
  804dc2b:	c3                   	ret    
 
-0804dc2c <cmov3_plain>:
+0804dc2c <cmov3_mv_plain>:
  804dc2c:	66 0f 47 43 0c       	cmova  0xc(%ebx),%ax
  804dc31:	b8 00 00 00 00       	mov    $0x0,%eax
  804dc36:	c3                   	ret    
 
-0804dc37 <cmov3_allregs>:
+0804dc37 <cmov3_mv_allregs>:
  804dc37:	90                   	nop
  804dc38:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804dc3e:	66 50                	push   %ax
@@ -4633,17 +4633,17 @@ Disassembly of section .text:
  804dd25:	b8 00 00 00 00       	mov    $0x0,%eax
  804dd2a:	c3                   	ret    
 
-0804dd2b <cmov3_constant_simple>:
+0804dd2b <cmov3_mv_constant_simple>:
  804dd2b:	90                   	nop
  804dd2c:	66 6a 00             	pushw  $0x0
  804dd2f:	66 9d                	popfw  
  804dd31:	b8 02 00 00 00       	mov    $0x2,%eax
  804dd36:	bb 03 00 00 00       	mov    $0x3,%ebx
  804dd3b:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804dd40:	ba 04 00 00 00       	mov    $0x4,%edx
- 804dd45:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804dd4a:	be 06 00 00 00       	mov    $0x6,%esi
- 804dd4f:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804dd40:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804dd45:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804dd4a:	be 07 00 00 00       	mov    $0x7,%esi
+ 804dd4f:	bf 08 00 00 00       	mov    $0x8,%edi
  804dd54:	89 25 50 20 00 00    	mov    %esp,0x2050
  804dd5a:	66 0f 47 43 0c       	cmova  0xc(%ebx),%ax
  804dd5f:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4678,7 +4678,7 @@ Disassembly of section .text:
  804de0e:	b8 00 00 00 00       	mov    $0x0,%eax
  804de13:	c3                   	ret    
 
-0804de14 <cmov3_constant_complex1>:
+0804de14 <cmov3_mv_constant_complex1>:
  804de14:	90                   	nop
  804de15:	66 6a 00             	pushw  $0x0
  804de18:	66 9d                	popfw  
@@ -4723,7 +4723,7 @@ Disassembly of section .text:
  804def7:	b8 00 00 00 00       	mov    $0x0,%eax
  804defc:	c3                   	ret    
 
-0804defd <cmov3_constant_complex2>:
+0804defd <cmov3_mv_constant_complex2>:
  804defd:	90                   	nop
  804defe:	66 68 ff fe          	pushw  $0xfeff
  804df02:	66 9d                	popfw  
@@ -4768,12 +4768,12 @@ Disassembly of section .text:
  804dfe1:	b8 00 00 00 00       	mov    $0x0,%eax
  804dfe6:	c3                   	ret    
 
-0804dfe7 <cmov4_plain>:
+0804dfe7 <cmov4_mv_plain>:
  804dfe7:	0f 47 43 22          	cmova  0x22(%ebx),%eax
  804dfeb:	b8 00 00 00 00       	mov    $0x0,%eax
  804dff0:	c3                   	ret    
 
-0804dff1 <cmov4_allregs>:
+0804dff1 <cmov4_mv_allregs>:
  804dff1:	90                   	nop
  804dff2:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804dff8:	66 50                	push   %ax
@@ -4819,17 +4819,17 @@ Disassembly of section .text:
  804e0de:	b8 00 00 00 00       	mov    $0x0,%eax
  804e0e3:	c3                   	ret    
 
-0804e0e4 <cmov4_constant_simple>:
+0804e0e4 <cmov4_mv_constant_simple>:
  804e0e4:	90                   	nop
  804e0e5:	66 6a 00             	pushw  $0x0
  804e0e8:	66 9d                	popfw  
  804e0ea:	b8 02 00 00 00       	mov    $0x2,%eax
  804e0ef:	bb 03 00 00 00       	mov    $0x3,%ebx
  804e0f4:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804e0f9:	ba 04 00 00 00       	mov    $0x4,%edx
- 804e0fe:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804e103:	be 06 00 00 00       	mov    $0x6,%esi
- 804e108:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804e0f9:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804e0fe:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804e103:	be 07 00 00 00       	mov    $0x7,%esi
+ 804e108:	bf 08 00 00 00       	mov    $0x8,%edi
  804e10d:	89 25 50 20 00 00    	mov    %esp,0x2050
  804e113:	0f 47 43 22          	cmova  0x22(%ebx),%eax
  804e117:	a3 00 20 00 00       	mov    %eax,0x2000
@@ -4864,7 +4864,7 @@ Disassembly of section .text:
  804e1c6:	b8 00 00 00 00       	mov    $0x0,%eax
  804e1cb:	c3                   	ret    
 
-0804e1cc <cmov4_constant_complex1>:
+0804e1cc <cmov4_mv_constant_complex1>:
  804e1cc:	90                   	nop
  804e1cd:	66 6a 00             	pushw  $0x0
  804e1d0:	66 9d                	popfw  
@@ -4909,7 +4909,7 @@ Disassembly of section .text:
  804e2ae:	b8 00 00 00 00       	mov    $0x0,%eax
  804e2b3:	c3                   	ret    
 
-0804e2b4 <cmov4_constant_complex2>:
+0804e2b4 <cmov4_mv_constant_complex2>:
  804e2b4:	90                   	nop
  804e2b5:	66 68 ff fe          	pushw  $0xfeff
  804e2b9:	66 9d                	popfw  
@@ -5014,10 +5014,10 @@ Disassembly of section .text:
  804e4a4:	b8 02 00 00 00       	mov    $0x2,%eax
  804e4a9:	bb 03 00 00 00       	mov    $0x3,%ebx
  804e4ae:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804e4b3:	ba 04 00 00 00       	mov    $0x4,%edx
- 804e4b8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804e4bd:	be 06 00 00 00       	mov    $0x6,%esi
- 804e4c2:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804e4b3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804e4b8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804e4bd:	be 07 00 00 00       	mov    $0x7,%esi
+ 804e4c2:	bf 08 00 00 00       	mov    $0x8,%edi
  804e4c7:	89 25 50 20 00 00    	mov    %esp,0x2050
  804e4cd:	3c 02                	cmp    $0x2,%al
  804e4cf:	66 0f 40 d8          	cmovo  %ax,%bx
@@ -5145,13 +5145,13 @@ Disassembly of section .text:
  804e757:	b8 00 00 00 00       	mov    $0x0,%eax
  804e75c:	c3                   	ret    
 
-0804e75d <cmov_w_with_code_1_plain>:
+0804e75d <cmov_w_with_code_1_mv_plain>:
  804e75d:	3c 02                	cmp    $0x2,%al
  804e75f:	66 0f 41 d8          	cmovno %ax,%bx
  804e763:	b8 00 00 00 00       	mov    $0x0,%eax
  804e768:	c3                   	ret    
 
-0804e769 <cmov_w_with_code_1_allregs>:
+0804e769 <cmov_w_with_code_1_mv_allregs>:
  804e769:	90                   	nop
  804e76a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804e770:	66 50                	push   %ax
@@ -5198,17 +5198,17 @@ Disassembly of section .text:
  804e858:	b8 00 00 00 00       	mov    $0x0,%eax
  804e85d:	c3                   	ret    
 
-0804e85e <cmov_w_with_code_1_constant_simple>:
+0804e85e <cmov_w_with_code_1_mv_constant_simple>:
  804e85e:	90                   	nop
  804e85f:	66 6a 00             	pushw  $0x0
  804e862:	66 9d                	popfw  
  804e864:	b8 02 00 00 00       	mov    $0x2,%eax
  804e869:	bb 03 00 00 00       	mov    $0x3,%ebx
  804e86e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804e873:	ba 04 00 00 00       	mov    $0x4,%edx
- 804e878:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804e87d:	be 06 00 00 00       	mov    $0x6,%esi
- 804e882:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804e873:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804e878:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804e87d:	be 07 00 00 00       	mov    $0x7,%esi
+ 804e882:	bf 08 00 00 00       	mov    $0x8,%edi
  804e887:	89 25 50 20 00 00    	mov    %esp,0x2050
  804e88d:	3c 02                	cmp    $0x2,%al
  804e88f:	66 0f 41 d8          	cmovno %ax,%bx
@@ -5244,7 +5244,7 @@ Disassembly of section .text:
  804e942:	b8 00 00 00 00       	mov    $0x0,%eax
  804e947:	c3                   	ret    
 
-0804e948 <cmov_w_with_code_1_constant_complex1>:
+0804e948 <cmov_w_with_code_1_mv_constant_complex1>:
  804e948:	90                   	nop
  804e949:	66 6a 00             	pushw  $0x0
  804e94c:	66 9d                	popfw  
@@ -5290,7 +5290,7 @@ Disassembly of section .text:
  804ea2c:	b8 00 00 00 00       	mov    $0x0,%eax
  804ea31:	c3                   	ret    
 
-0804ea32 <cmov_w_with_code_1_constant_complex2>:
+0804ea32 <cmov_w_with_code_1_mv_constant_complex2>:
  804ea32:	90                   	nop
  804ea33:	66 68 ff fe          	pushw  $0xfeff
  804ea37:	66 9d                	popfw  
@@ -5336,13 +5336,13 @@ Disassembly of section .text:
  804eb17:	b8 00 00 00 00       	mov    $0x0,%eax
  804eb1c:	c3                   	ret    
 
-0804eb1d <cmov_w_with_code_2_plain>:
+0804eb1d <cmov_w_with_code_2_mv_plain>:
  804eb1d:	3c 02                	cmp    $0x2,%al
  804eb1f:	66 0f 42 d8          	cmovb  %ax,%bx
  804eb23:	b8 00 00 00 00       	mov    $0x0,%eax
  804eb28:	c3                   	ret    
 
-0804eb29 <cmov_w_with_code_2_allregs>:
+0804eb29 <cmov_w_with_code_2_mv_allregs>:
  804eb29:	90                   	nop
  804eb2a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804eb30:	66 50                	push   %ax
@@ -5389,17 +5389,17 @@ Disassembly of section .text:
  804ec18:	b8 00 00 00 00       	mov    $0x0,%eax
  804ec1d:	c3                   	ret    
 
-0804ec1e <cmov_w_with_code_2_constant_simple>:
+0804ec1e <cmov_w_with_code_2_mv_constant_simple>:
  804ec1e:	90                   	nop
  804ec1f:	66 6a 00             	pushw  $0x0
  804ec22:	66 9d                	popfw  
  804ec24:	b8 02 00 00 00       	mov    $0x2,%eax
  804ec29:	bb 03 00 00 00       	mov    $0x3,%ebx
  804ec2e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804ec33:	ba 04 00 00 00       	mov    $0x4,%edx
- 804ec38:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804ec3d:	be 06 00 00 00       	mov    $0x6,%esi
- 804ec42:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804ec33:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804ec38:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804ec3d:	be 07 00 00 00       	mov    $0x7,%esi
+ 804ec42:	bf 08 00 00 00       	mov    $0x8,%edi
  804ec47:	89 25 50 20 00 00    	mov    %esp,0x2050
  804ec4d:	3c 02                	cmp    $0x2,%al
  804ec4f:	66 0f 42 d8          	cmovb  %ax,%bx
@@ -5435,7 +5435,7 @@ Disassembly of section .text:
  804ed02:	b8 00 00 00 00       	mov    $0x0,%eax
  804ed07:	c3                   	ret    
 
-0804ed08 <cmov_w_with_code_2_constant_complex1>:
+0804ed08 <cmov_w_with_code_2_mv_constant_complex1>:
  804ed08:	90                   	nop
  804ed09:	66 6a 00             	pushw  $0x0
  804ed0c:	66 9d                	popfw  
@@ -5481,7 +5481,7 @@ Disassembly of section .text:
  804edec:	b8 00 00 00 00       	mov    $0x0,%eax
  804edf1:	c3                   	ret    
 
-0804edf2 <cmov_w_with_code_2_constant_complex2>:
+0804edf2 <cmov_w_with_code_2_mv_constant_complex2>:
  804edf2:	90                   	nop
  804edf3:	66 68 ff fe          	pushw  $0xfeff
  804edf7:	66 9d                	popfw  
@@ -5527,13 +5527,13 @@ Disassembly of section .text:
  804eed7:	b8 00 00 00 00       	mov    $0x0,%eax
  804eedc:	c3                   	ret    
 
-0804eedd <cmov_w_with_code_3_plain>:
+0804eedd <cmov_w_with_code_3_mv_plain>:
  804eedd:	3c 02                	cmp    $0x2,%al
  804eedf:	66 0f 43 d8          	cmovae %ax,%bx
  804eee3:	b8 00 00 00 00       	mov    $0x0,%eax
  804eee8:	c3                   	ret    
 
-0804eee9 <cmov_w_with_code_3_allregs>:
+0804eee9 <cmov_w_with_code_3_mv_allregs>:
  804eee9:	90                   	nop
  804eeea:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804eef0:	66 50                	push   %ax
@@ -5580,17 +5580,17 @@ Disassembly of section .text:
  804efd8:	b8 00 00 00 00       	mov    $0x0,%eax
  804efdd:	c3                   	ret    
 
-0804efde <cmov_w_with_code_3_constant_simple>:
+0804efde <cmov_w_with_code_3_mv_constant_simple>:
  804efde:	90                   	nop
  804efdf:	66 6a 00             	pushw  $0x0
  804efe2:	66 9d                	popfw  
  804efe4:	b8 02 00 00 00       	mov    $0x2,%eax
  804efe9:	bb 03 00 00 00       	mov    $0x3,%ebx
  804efee:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804eff3:	ba 04 00 00 00       	mov    $0x4,%edx
- 804eff8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804effd:	be 06 00 00 00       	mov    $0x6,%esi
- 804f002:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804eff3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804eff8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804effd:	be 07 00 00 00       	mov    $0x7,%esi
+ 804f002:	bf 08 00 00 00       	mov    $0x8,%edi
  804f007:	89 25 50 20 00 00    	mov    %esp,0x2050
  804f00d:	3c 02                	cmp    $0x2,%al
  804f00f:	66 0f 43 d8          	cmovae %ax,%bx
@@ -5626,7 +5626,7 @@ Disassembly of section .text:
  804f0c2:	b8 00 00 00 00       	mov    $0x0,%eax
  804f0c7:	c3                   	ret    
 
-0804f0c8 <cmov_w_with_code_3_constant_complex1>:
+0804f0c8 <cmov_w_with_code_3_mv_constant_complex1>:
  804f0c8:	90                   	nop
  804f0c9:	66 6a 00             	pushw  $0x0
  804f0cc:	66 9d                	popfw  
@@ -5672,7 +5672,7 @@ Disassembly of section .text:
  804f1ac:	b8 00 00 00 00       	mov    $0x0,%eax
  804f1b1:	c3                   	ret    
 
-0804f1b2 <cmov_w_with_code_3_constant_complex2>:
+0804f1b2 <cmov_w_with_code_3_mv_constant_complex2>:
  804f1b2:	90                   	nop
  804f1b3:	66 68 ff fe          	pushw  $0xfeff
  804f1b7:	66 9d                	popfw  
@@ -5718,13 +5718,13 @@ Disassembly of section .text:
  804f297:	b8 00 00 00 00       	mov    $0x0,%eax
  804f29c:	c3                   	ret    
 
-0804f29d <cmov_w_with_code_4_plain>:
+0804f29d <cmov_w_with_code_4_mv_plain>:
  804f29d:	3c 02                	cmp    $0x2,%al
  804f29f:	66 0f 44 d8          	cmove  %ax,%bx
  804f2a3:	b8 00 00 00 00       	mov    $0x0,%eax
  804f2a8:	c3                   	ret    
 
-0804f2a9 <cmov_w_with_code_4_allregs>:
+0804f2a9 <cmov_w_with_code_4_mv_allregs>:
  804f2a9:	90                   	nop
  804f2aa:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804f2b0:	66 50                	push   %ax
@@ -5771,17 +5771,17 @@ Disassembly of section .text:
  804f398:	b8 00 00 00 00       	mov    $0x0,%eax
  804f39d:	c3                   	ret    
 
-0804f39e <cmov_w_with_code_4_constant_simple>:
+0804f39e <cmov_w_with_code_4_mv_constant_simple>:
  804f39e:	90                   	nop
  804f39f:	66 6a 00             	pushw  $0x0
  804f3a2:	66 9d                	popfw  
  804f3a4:	b8 02 00 00 00       	mov    $0x2,%eax
  804f3a9:	bb 03 00 00 00       	mov    $0x3,%ebx
  804f3ae:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804f3b3:	ba 04 00 00 00       	mov    $0x4,%edx
- 804f3b8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804f3bd:	be 06 00 00 00       	mov    $0x6,%esi
- 804f3c2:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804f3b3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804f3b8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804f3bd:	be 07 00 00 00       	mov    $0x7,%esi
+ 804f3c2:	bf 08 00 00 00       	mov    $0x8,%edi
  804f3c7:	89 25 50 20 00 00    	mov    %esp,0x2050
  804f3cd:	3c 02                	cmp    $0x2,%al
  804f3cf:	66 0f 44 d8          	cmove  %ax,%bx
@@ -5817,7 +5817,7 @@ Disassembly of section .text:
  804f482:	b8 00 00 00 00       	mov    $0x0,%eax
  804f487:	c3                   	ret    
 
-0804f488 <cmov_w_with_code_4_constant_complex1>:
+0804f488 <cmov_w_with_code_4_mv_constant_complex1>:
  804f488:	90                   	nop
  804f489:	66 6a 00             	pushw  $0x0
  804f48c:	66 9d                	popfw  
@@ -5863,7 +5863,7 @@ Disassembly of section .text:
  804f56c:	b8 00 00 00 00       	mov    $0x0,%eax
  804f571:	c3                   	ret    
 
-0804f572 <cmov_w_with_code_4_constant_complex2>:
+0804f572 <cmov_w_with_code_4_mv_constant_complex2>:
  804f572:	90                   	nop
  804f573:	66 68 ff fe          	pushw  $0xfeff
  804f577:	66 9d                	popfw  
@@ -5909,13 +5909,13 @@ Disassembly of section .text:
  804f657:	b8 00 00 00 00       	mov    $0x0,%eax
  804f65c:	c3                   	ret    
 
-0804f65d <cmov_w_with_code_5_plain>:
+0804f65d <cmov_w_with_code_5_mv_plain>:
  804f65d:	3c 02                	cmp    $0x2,%al
  804f65f:	66 0f 45 d8          	cmovne %ax,%bx
  804f663:	b8 00 00 00 00       	mov    $0x0,%eax
  804f668:	c3                   	ret    
 
-0804f669 <cmov_w_with_code_5_allregs>:
+0804f669 <cmov_w_with_code_5_mv_allregs>:
  804f669:	90                   	nop
  804f66a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804f670:	66 50                	push   %ax
@@ -5962,17 +5962,17 @@ Disassembly of section .text:
  804f758:	b8 00 00 00 00       	mov    $0x0,%eax
  804f75d:	c3                   	ret    
 
-0804f75e <cmov_w_with_code_5_constant_simple>:
+0804f75e <cmov_w_with_code_5_mv_constant_simple>:
  804f75e:	90                   	nop
  804f75f:	66 6a 00             	pushw  $0x0
  804f762:	66 9d                	popfw  
  804f764:	b8 02 00 00 00       	mov    $0x2,%eax
  804f769:	bb 03 00 00 00       	mov    $0x3,%ebx
  804f76e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804f773:	ba 04 00 00 00       	mov    $0x4,%edx
- 804f778:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804f77d:	be 06 00 00 00       	mov    $0x6,%esi
- 804f782:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804f773:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804f778:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804f77d:	be 07 00 00 00       	mov    $0x7,%esi
+ 804f782:	bf 08 00 00 00       	mov    $0x8,%edi
  804f787:	89 25 50 20 00 00    	mov    %esp,0x2050
  804f78d:	3c 02                	cmp    $0x2,%al
  804f78f:	66 0f 45 d8          	cmovne %ax,%bx
@@ -6008,7 +6008,7 @@ Disassembly of section .text:
  804f842:	b8 00 00 00 00       	mov    $0x0,%eax
  804f847:	c3                   	ret    
 
-0804f848 <cmov_w_with_code_5_constant_complex1>:
+0804f848 <cmov_w_with_code_5_mv_constant_complex1>:
  804f848:	90                   	nop
  804f849:	66 6a 00             	pushw  $0x0
  804f84c:	66 9d                	popfw  
@@ -6054,7 +6054,7 @@ Disassembly of section .text:
  804f92c:	b8 00 00 00 00       	mov    $0x0,%eax
  804f931:	c3                   	ret    
 
-0804f932 <cmov_w_with_code_5_constant_complex2>:
+0804f932 <cmov_w_with_code_5_mv_constant_complex2>:
  804f932:	90                   	nop
  804f933:	66 68 ff fe          	pushw  $0xfeff
  804f937:	66 9d                	popfw  
@@ -6100,13 +6100,13 @@ Disassembly of section .text:
  804fa17:	b8 00 00 00 00       	mov    $0x0,%eax
  804fa1c:	c3                   	ret    
 
-0804fa1d <cmov_w_with_code_6_plain>:
+0804fa1d <cmov_w_with_code_6_mv_plain>:
  804fa1d:	3c 02                	cmp    $0x2,%al
  804fa1f:	66 0f 46 d8          	cmovbe %ax,%bx
  804fa23:	b8 00 00 00 00       	mov    $0x0,%eax
  804fa28:	c3                   	ret    
 
-0804fa29 <cmov_w_with_code_6_allregs>:
+0804fa29 <cmov_w_with_code_6_mv_allregs>:
  804fa29:	90                   	nop
  804fa2a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804fa30:	66 50                	push   %ax
@@ -6153,17 +6153,17 @@ Disassembly of section .text:
  804fb18:	b8 00 00 00 00       	mov    $0x0,%eax
  804fb1d:	c3                   	ret    
 
-0804fb1e <cmov_w_with_code_6_constant_simple>:
+0804fb1e <cmov_w_with_code_6_mv_constant_simple>:
  804fb1e:	90                   	nop
  804fb1f:	66 6a 00             	pushw  $0x0
  804fb22:	66 9d                	popfw  
  804fb24:	b8 02 00 00 00       	mov    $0x2,%eax
  804fb29:	bb 03 00 00 00       	mov    $0x3,%ebx
  804fb2e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804fb33:	ba 04 00 00 00       	mov    $0x4,%edx
- 804fb38:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804fb3d:	be 06 00 00 00       	mov    $0x6,%esi
- 804fb42:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804fb33:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804fb38:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804fb3d:	be 07 00 00 00       	mov    $0x7,%esi
+ 804fb42:	bf 08 00 00 00       	mov    $0x8,%edi
  804fb47:	89 25 50 20 00 00    	mov    %esp,0x2050
  804fb4d:	3c 02                	cmp    $0x2,%al
  804fb4f:	66 0f 46 d8          	cmovbe %ax,%bx
@@ -6199,7 +6199,7 @@ Disassembly of section .text:
  804fc02:	b8 00 00 00 00       	mov    $0x0,%eax
  804fc07:	c3                   	ret    
 
-0804fc08 <cmov_w_with_code_6_constant_complex1>:
+0804fc08 <cmov_w_with_code_6_mv_constant_complex1>:
  804fc08:	90                   	nop
  804fc09:	66 6a 00             	pushw  $0x0
  804fc0c:	66 9d                	popfw  
@@ -6245,7 +6245,7 @@ Disassembly of section .text:
  804fcec:	b8 00 00 00 00       	mov    $0x0,%eax
  804fcf1:	c3                   	ret    
 
-0804fcf2 <cmov_w_with_code_6_constant_complex2>:
+0804fcf2 <cmov_w_with_code_6_mv_constant_complex2>:
  804fcf2:	90                   	nop
  804fcf3:	66 68 ff fe          	pushw  $0xfeff
  804fcf7:	66 9d                	popfw  
@@ -6291,13 +6291,13 @@ Disassembly of section .text:
  804fdd7:	b8 00 00 00 00       	mov    $0x0,%eax
  804fddc:	c3                   	ret    
 
-0804fddd <cmov_w_with_code_7_plain>:
+0804fddd <cmov_w_with_code_7_mv_plain>:
  804fddd:	3c 02                	cmp    $0x2,%al
  804fddf:	66 0f 47 d8          	cmova  %ax,%bx
  804fde3:	b8 00 00 00 00       	mov    $0x0,%eax
  804fde8:	c3                   	ret    
 
-0804fde9 <cmov_w_with_code_7_allregs>:
+0804fde9 <cmov_w_with_code_7_mv_allregs>:
  804fde9:	90                   	nop
  804fdea:	66 a1 00 11 00 00    	mov    0x1100,%ax
  804fdf0:	66 50                	push   %ax
@@ -6344,17 +6344,17 @@ Disassembly of section .text:
  804fed8:	b8 00 00 00 00       	mov    $0x0,%eax
  804fedd:	c3                   	ret    
 
-0804fede <cmov_w_with_code_7_constant_simple>:
+0804fede <cmov_w_with_code_7_mv_constant_simple>:
  804fede:	90                   	nop
  804fedf:	66 6a 00             	pushw  $0x0
  804fee2:	66 9d                	popfw  
  804fee4:	b8 02 00 00 00       	mov    $0x2,%eax
  804fee9:	bb 03 00 00 00       	mov    $0x3,%ebx
  804feee:	b9 04 00 00 00       	mov    $0x4,%ecx
- 804fef3:	ba 04 00 00 00       	mov    $0x4,%edx
- 804fef8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 804fefd:	be 06 00 00 00       	mov    $0x6,%esi
- 804ff02:	bf 07 00 00 00       	mov    $0x7,%edi
+ 804fef3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 804fef8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 804fefd:	be 07 00 00 00       	mov    $0x7,%esi
+ 804ff02:	bf 08 00 00 00       	mov    $0x8,%edi
  804ff07:	89 25 50 20 00 00    	mov    %esp,0x2050
  804ff0d:	3c 02                	cmp    $0x2,%al
  804ff0f:	66 0f 47 d8          	cmova  %ax,%bx
@@ -6390,7 +6390,7 @@ Disassembly of section .text:
  804ffc2:	b8 00 00 00 00       	mov    $0x0,%eax
  804ffc7:	c3                   	ret    
 
-0804ffc8 <cmov_w_with_code_7_constant_complex1>:
+0804ffc8 <cmov_w_with_code_7_mv_constant_complex1>:
  804ffc8:	90                   	nop
  804ffc9:	66 6a 00             	pushw  $0x0
  804ffcc:	66 9d                	popfw  
@@ -6436,7 +6436,7 @@ Disassembly of section .text:
  80500ac:	b8 00 00 00 00       	mov    $0x0,%eax
  80500b1:	c3                   	ret    
 
-080500b2 <cmov_w_with_code_7_constant_complex2>:
+080500b2 <cmov_w_with_code_7_mv_constant_complex2>:
  80500b2:	90                   	nop
  80500b3:	66 68 ff fe          	pushw  $0xfeff
  80500b7:	66 9d                	popfw  
@@ -6482,13 +6482,13 @@ Disassembly of section .text:
  8050197:	b8 00 00 00 00       	mov    $0x0,%eax
  805019c:	c3                   	ret    
 
-0805019d <cmov_w_with_code_8_plain>:
+0805019d <cmov_w_with_code_8_mv_plain>:
  805019d:	3c 02                	cmp    $0x2,%al
  805019f:	66 0f 48 d8          	cmovs  %ax,%bx
  80501a3:	b8 00 00 00 00       	mov    $0x0,%eax
  80501a8:	c3                   	ret    
 
-080501a9 <cmov_w_with_code_8_allregs>:
+080501a9 <cmov_w_with_code_8_mv_allregs>:
  80501a9:	90                   	nop
  80501aa:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80501b0:	66 50                	push   %ax
@@ -6535,17 +6535,17 @@ Disassembly of section .text:
  8050298:	b8 00 00 00 00       	mov    $0x0,%eax
  805029d:	c3                   	ret    
 
-0805029e <cmov_w_with_code_8_constant_simple>:
+0805029e <cmov_w_with_code_8_mv_constant_simple>:
  805029e:	90                   	nop
  805029f:	66 6a 00             	pushw  $0x0
  80502a2:	66 9d                	popfw  
  80502a4:	b8 02 00 00 00       	mov    $0x2,%eax
  80502a9:	bb 03 00 00 00       	mov    $0x3,%ebx
  80502ae:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80502b3:	ba 04 00 00 00       	mov    $0x4,%edx
- 80502b8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80502bd:	be 06 00 00 00       	mov    $0x6,%esi
- 80502c2:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80502b3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80502b8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80502bd:	be 07 00 00 00       	mov    $0x7,%esi
+ 80502c2:	bf 08 00 00 00       	mov    $0x8,%edi
  80502c7:	89 25 50 20 00 00    	mov    %esp,0x2050
  80502cd:	3c 02                	cmp    $0x2,%al
  80502cf:	66 0f 48 d8          	cmovs  %ax,%bx
@@ -6581,7 +6581,7 @@ Disassembly of section .text:
  8050382:	b8 00 00 00 00       	mov    $0x0,%eax
  8050387:	c3                   	ret    
 
-08050388 <cmov_w_with_code_8_constant_complex1>:
+08050388 <cmov_w_with_code_8_mv_constant_complex1>:
  8050388:	90                   	nop
  8050389:	66 6a 00             	pushw  $0x0
  805038c:	66 9d                	popfw  
@@ -6627,7 +6627,7 @@ Disassembly of section .text:
  805046c:	b8 00 00 00 00       	mov    $0x0,%eax
  8050471:	c3                   	ret    
 
-08050472 <cmov_w_with_code_8_constant_complex2>:
+08050472 <cmov_w_with_code_8_mv_constant_complex2>:
  8050472:	90                   	nop
  8050473:	66 68 ff fe          	pushw  $0xfeff
  8050477:	66 9d                	popfw  
@@ -6673,13 +6673,13 @@ Disassembly of section .text:
  8050557:	b8 00 00 00 00       	mov    $0x0,%eax
  805055c:	c3                   	ret    
 
-0805055d <cmov_w_with_code_9_plain>:
+0805055d <cmov_w_with_code_9_mv_plain>:
  805055d:	3c 02                	cmp    $0x2,%al
  805055f:	66 0f 49 d8          	cmovns %ax,%bx
  8050563:	b8 00 00 00 00       	mov    $0x0,%eax
  8050568:	c3                   	ret    
 
-08050569 <cmov_w_with_code_9_allregs>:
+08050569 <cmov_w_with_code_9_mv_allregs>:
  8050569:	90                   	nop
  805056a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8050570:	66 50                	push   %ax
@@ -6726,17 +6726,17 @@ Disassembly of section .text:
  8050658:	b8 00 00 00 00       	mov    $0x0,%eax
  805065d:	c3                   	ret    
 
-0805065e <cmov_w_with_code_9_constant_simple>:
+0805065e <cmov_w_with_code_9_mv_constant_simple>:
  805065e:	90                   	nop
  805065f:	66 6a 00             	pushw  $0x0
  8050662:	66 9d                	popfw  
  8050664:	b8 02 00 00 00       	mov    $0x2,%eax
  8050669:	bb 03 00 00 00       	mov    $0x3,%ebx
  805066e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8050673:	ba 04 00 00 00       	mov    $0x4,%edx
- 8050678:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805067d:	be 06 00 00 00       	mov    $0x6,%esi
- 8050682:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8050673:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8050678:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805067d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8050682:	bf 08 00 00 00       	mov    $0x8,%edi
  8050687:	89 25 50 20 00 00    	mov    %esp,0x2050
  805068d:	3c 02                	cmp    $0x2,%al
  805068f:	66 0f 49 d8          	cmovns %ax,%bx
@@ -6772,7 +6772,7 @@ Disassembly of section .text:
  8050742:	b8 00 00 00 00       	mov    $0x0,%eax
  8050747:	c3                   	ret    
 
-08050748 <cmov_w_with_code_9_constant_complex1>:
+08050748 <cmov_w_with_code_9_mv_constant_complex1>:
  8050748:	90                   	nop
  8050749:	66 6a 00             	pushw  $0x0
  805074c:	66 9d                	popfw  
@@ -6818,7 +6818,7 @@ Disassembly of section .text:
  805082c:	b8 00 00 00 00       	mov    $0x0,%eax
  8050831:	c3                   	ret    
 
-08050832 <cmov_w_with_code_9_constant_complex2>:
+08050832 <cmov_w_with_code_9_mv_constant_complex2>:
  8050832:	90                   	nop
  8050833:	66 68 ff fe          	pushw  $0xfeff
  8050837:	66 9d                	popfw  
@@ -6864,13 +6864,13 @@ Disassembly of section .text:
  8050917:	b8 00 00 00 00       	mov    $0x0,%eax
  805091c:	c3                   	ret    
 
-0805091d <cmov_w_with_code_a_plain>:
+0805091d <cmov_w_with_code_a_mv_plain>:
  805091d:	3c 02                	cmp    $0x2,%al
  805091f:	66 0f 4a d8          	cmovp  %ax,%bx
  8050923:	b8 00 00 00 00       	mov    $0x0,%eax
  8050928:	c3                   	ret    
 
-08050929 <cmov_w_with_code_a_allregs>:
+08050929 <cmov_w_with_code_a_mv_allregs>:
  8050929:	90                   	nop
  805092a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8050930:	66 50                	push   %ax
@@ -6917,17 +6917,17 @@ Disassembly of section .text:
  8050a18:	b8 00 00 00 00       	mov    $0x0,%eax
  8050a1d:	c3                   	ret    
 
-08050a1e <cmov_w_with_code_a_constant_simple>:
+08050a1e <cmov_w_with_code_a_mv_constant_simple>:
  8050a1e:	90                   	nop
  8050a1f:	66 6a 00             	pushw  $0x0
  8050a22:	66 9d                	popfw  
  8050a24:	b8 02 00 00 00       	mov    $0x2,%eax
  8050a29:	bb 03 00 00 00       	mov    $0x3,%ebx
  8050a2e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8050a33:	ba 04 00 00 00       	mov    $0x4,%edx
- 8050a38:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8050a3d:	be 06 00 00 00       	mov    $0x6,%esi
- 8050a42:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8050a33:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8050a38:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8050a3d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8050a42:	bf 08 00 00 00       	mov    $0x8,%edi
  8050a47:	89 25 50 20 00 00    	mov    %esp,0x2050
  8050a4d:	3c 02                	cmp    $0x2,%al
  8050a4f:	66 0f 4a d8          	cmovp  %ax,%bx
@@ -6963,7 +6963,7 @@ Disassembly of section .text:
  8050b02:	b8 00 00 00 00       	mov    $0x0,%eax
  8050b07:	c3                   	ret    
 
-08050b08 <cmov_w_with_code_a_constant_complex1>:
+08050b08 <cmov_w_with_code_a_mv_constant_complex1>:
  8050b08:	90                   	nop
  8050b09:	66 6a 00             	pushw  $0x0
  8050b0c:	66 9d                	popfw  
@@ -7009,7 +7009,7 @@ Disassembly of section .text:
  8050bec:	b8 00 00 00 00       	mov    $0x0,%eax
  8050bf1:	c3                   	ret    
 
-08050bf2 <cmov_w_with_code_a_constant_complex2>:
+08050bf2 <cmov_w_with_code_a_mv_constant_complex2>:
  8050bf2:	90                   	nop
  8050bf3:	66 68 ff fe          	pushw  $0xfeff
  8050bf7:	66 9d                	popfw  
@@ -7055,13 +7055,13 @@ Disassembly of section .text:
  8050cd7:	b8 00 00 00 00       	mov    $0x0,%eax
  8050cdc:	c3                   	ret    
 
-08050cdd <cmov_w_with_code_b_plain>:
+08050cdd <cmov_w_with_code_b_mv_plain>:
  8050cdd:	3c 02                	cmp    $0x2,%al
  8050cdf:	66 0f 4b d8          	cmovnp %ax,%bx
  8050ce3:	b8 00 00 00 00       	mov    $0x0,%eax
  8050ce8:	c3                   	ret    
 
-08050ce9 <cmov_w_with_code_b_allregs>:
+08050ce9 <cmov_w_with_code_b_mv_allregs>:
  8050ce9:	90                   	nop
  8050cea:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8050cf0:	66 50                	push   %ax
@@ -7108,17 +7108,17 @@ Disassembly of section .text:
  8050dd8:	b8 00 00 00 00       	mov    $0x0,%eax
  8050ddd:	c3                   	ret    
 
-08050dde <cmov_w_with_code_b_constant_simple>:
+08050dde <cmov_w_with_code_b_mv_constant_simple>:
  8050dde:	90                   	nop
  8050ddf:	66 6a 00             	pushw  $0x0
  8050de2:	66 9d                	popfw  
  8050de4:	b8 02 00 00 00       	mov    $0x2,%eax
  8050de9:	bb 03 00 00 00       	mov    $0x3,%ebx
  8050dee:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8050df3:	ba 04 00 00 00       	mov    $0x4,%edx
- 8050df8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8050dfd:	be 06 00 00 00       	mov    $0x6,%esi
- 8050e02:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8050df3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8050df8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8050dfd:	be 07 00 00 00       	mov    $0x7,%esi
+ 8050e02:	bf 08 00 00 00       	mov    $0x8,%edi
  8050e07:	89 25 50 20 00 00    	mov    %esp,0x2050
  8050e0d:	3c 02                	cmp    $0x2,%al
  8050e0f:	66 0f 4b d8          	cmovnp %ax,%bx
@@ -7154,7 +7154,7 @@ Disassembly of section .text:
  8050ec2:	b8 00 00 00 00       	mov    $0x0,%eax
  8050ec7:	c3                   	ret    
 
-08050ec8 <cmov_w_with_code_b_constant_complex1>:
+08050ec8 <cmov_w_with_code_b_mv_constant_complex1>:
  8050ec8:	90                   	nop
  8050ec9:	66 6a 00             	pushw  $0x0
  8050ecc:	66 9d                	popfw  
@@ -7200,7 +7200,7 @@ Disassembly of section .text:
  8050fac:	b8 00 00 00 00       	mov    $0x0,%eax
  8050fb1:	c3                   	ret    
 
-08050fb2 <cmov_w_with_code_b_constant_complex2>:
+08050fb2 <cmov_w_with_code_b_mv_constant_complex2>:
  8050fb2:	90                   	nop
  8050fb3:	66 68 ff fe          	pushw  $0xfeff
  8050fb7:	66 9d                	popfw  
@@ -7246,13 +7246,13 @@ Disassembly of section .text:
  8051097:	b8 00 00 00 00       	mov    $0x0,%eax
  805109c:	c3                   	ret    
 
-0805109d <cmov_w_with_code_c_plain>:
+0805109d <cmov_w_with_code_c_mv_plain>:
  805109d:	3c 02                	cmp    $0x2,%al
  805109f:	66 0f 4c d8          	cmovl  %ax,%bx
  80510a3:	b8 00 00 00 00       	mov    $0x0,%eax
  80510a8:	c3                   	ret    
 
-080510a9 <cmov_w_with_code_c_allregs>:
+080510a9 <cmov_w_with_code_c_mv_allregs>:
  80510a9:	90                   	nop
  80510aa:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80510b0:	66 50                	push   %ax
@@ -7299,17 +7299,17 @@ Disassembly of section .text:
  8051198:	b8 00 00 00 00       	mov    $0x0,%eax
  805119d:	c3                   	ret    
 
-0805119e <cmov_w_with_code_c_constant_simple>:
+0805119e <cmov_w_with_code_c_mv_constant_simple>:
  805119e:	90                   	nop
  805119f:	66 6a 00             	pushw  $0x0
  80511a2:	66 9d                	popfw  
  80511a4:	b8 02 00 00 00       	mov    $0x2,%eax
  80511a9:	bb 03 00 00 00       	mov    $0x3,%ebx
  80511ae:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80511b3:	ba 04 00 00 00       	mov    $0x4,%edx
- 80511b8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80511bd:	be 06 00 00 00       	mov    $0x6,%esi
- 80511c2:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80511b3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80511b8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80511bd:	be 07 00 00 00       	mov    $0x7,%esi
+ 80511c2:	bf 08 00 00 00       	mov    $0x8,%edi
  80511c7:	89 25 50 20 00 00    	mov    %esp,0x2050
  80511cd:	3c 02                	cmp    $0x2,%al
  80511cf:	66 0f 4c d8          	cmovl  %ax,%bx
@@ -7345,7 +7345,7 @@ Disassembly of section .text:
  8051282:	b8 00 00 00 00       	mov    $0x0,%eax
  8051287:	c3                   	ret    
 
-08051288 <cmov_w_with_code_c_constant_complex1>:
+08051288 <cmov_w_with_code_c_mv_constant_complex1>:
  8051288:	90                   	nop
  8051289:	66 6a 00             	pushw  $0x0
  805128c:	66 9d                	popfw  
@@ -7391,7 +7391,7 @@ Disassembly of section .text:
  805136c:	b8 00 00 00 00       	mov    $0x0,%eax
  8051371:	c3                   	ret    
 
-08051372 <cmov_w_with_code_c_constant_complex2>:
+08051372 <cmov_w_with_code_c_mv_constant_complex2>:
  8051372:	90                   	nop
  8051373:	66 68 ff fe          	pushw  $0xfeff
  8051377:	66 9d                	popfw  
@@ -7437,13 +7437,13 @@ Disassembly of section .text:
  8051457:	b8 00 00 00 00       	mov    $0x0,%eax
  805145c:	c3                   	ret    
 
-0805145d <cmov_w_with_code_d_plain>:
+0805145d <cmov_w_with_code_d_mv_plain>:
  805145d:	3c 02                	cmp    $0x2,%al
  805145f:	66 0f 4d d8          	cmovge %ax,%bx
  8051463:	b8 00 00 00 00       	mov    $0x0,%eax
  8051468:	c3                   	ret    
 
-08051469 <cmov_w_with_code_d_allregs>:
+08051469 <cmov_w_with_code_d_mv_allregs>:
  8051469:	90                   	nop
  805146a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8051470:	66 50                	push   %ax
@@ -7490,17 +7490,17 @@ Disassembly of section .text:
  8051558:	b8 00 00 00 00       	mov    $0x0,%eax
  805155d:	c3                   	ret    
 
-0805155e <cmov_w_with_code_d_constant_simple>:
+0805155e <cmov_w_with_code_d_mv_constant_simple>:
  805155e:	90                   	nop
  805155f:	66 6a 00             	pushw  $0x0
  8051562:	66 9d                	popfw  
  8051564:	b8 02 00 00 00       	mov    $0x2,%eax
  8051569:	bb 03 00 00 00       	mov    $0x3,%ebx
  805156e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8051573:	ba 04 00 00 00       	mov    $0x4,%edx
- 8051578:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805157d:	be 06 00 00 00       	mov    $0x6,%esi
- 8051582:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8051573:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8051578:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805157d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8051582:	bf 08 00 00 00       	mov    $0x8,%edi
  8051587:	89 25 50 20 00 00    	mov    %esp,0x2050
  805158d:	3c 02                	cmp    $0x2,%al
  805158f:	66 0f 4d d8          	cmovge %ax,%bx
@@ -7536,7 +7536,7 @@ Disassembly of section .text:
  8051642:	b8 00 00 00 00       	mov    $0x0,%eax
  8051647:	c3                   	ret    
 
-08051648 <cmov_w_with_code_d_constant_complex1>:
+08051648 <cmov_w_with_code_d_mv_constant_complex1>:
  8051648:	90                   	nop
  8051649:	66 6a 00             	pushw  $0x0
  805164c:	66 9d                	popfw  
@@ -7582,7 +7582,7 @@ Disassembly of section .text:
  805172c:	b8 00 00 00 00       	mov    $0x0,%eax
  8051731:	c3                   	ret    
 
-08051732 <cmov_w_with_code_d_constant_complex2>:
+08051732 <cmov_w_with_code_d_mv_constant_complex2>:
  8051732:	90                   	nop
  8051733:	66 68 ff fe          	pushw  $0xfeff
  8051737:	66 9d                	popfw  
@@ -7628,13 +7628,13 @@ Disassembly of section .text:
  8051817:	b8 00 00 00 00       	mov    $0x0,%eax
  805181c:	c3                   	ret    
 
-0805181d <cmov_w_with_code_e_plain>:
+0805181d <cmov_w_with_code_e_mv_plain>:
  805181d:	3c 02                	cmp    $0x2,%al
  805181f:	66 0f 4e d8          	cmovle %ax,%bx
  8051823:	b8 00 00 00 00       	mov    $0x0,%eax
  8051828:	c3                   	ret    
 
-08051829 <cmov_w_with_code_e_allregs>:
+08051829 <cmov_w_with_code_e_mv_allregs>:
  8051829:	90                   	nop
  805182a:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8051830:	66 50                	push   %ax
@@ -7681,17 +7681,17 @@ Disassembly of section .text:
  8051918:	b8 00 00 00 00       	mov    $0x0,%eax
  805191d:	c3                   	ret    
 
-0805191e <cmov_w_with_code_e_constant_simple>:
+0805191e <cmov_w_with_code_e_mv_constant_simple>:
  805191e:	90                   	nop
  805191f:	66 6a 00             	pushw  $0x0
  8051922:	66 9d                	popfw  
  8051924:	b8 02 00 00 00       	mov    $0x2,%eax
  8051929:	bb 03 00 00 00       	mov    $0x3,%ebx
  805192e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8051933:	ba 04 00 00 00       	mov    $0x4,%edx
- 8051938:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805193d:	be 06 00 00 00       	mov    $0x6,%esi
- 8051942:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8051933:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8051938:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805193d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8051942:	bf 08 00 00 00       	mov    $0x8,%edi
  8051947:	89 25 50 20 00 00    	mov    %esp,0x2050
  805194d:	3c 02                	cmp    $0x2,%al
  805194f:	66 0f 4e d8          	cmovle %ax,%bx
@@ -7727,7 +7727,7 @@ Disassembly of section .text:
  8051a02:	b8 00 00 00 00       	mov    $0x0,%eax
  8051a07:	c3                   	ret    
 
-08051a08 <cmov_w_with_code_e_constant_complex1>:
+08051a08 <cmov_w_with_code_e_mv_constant_complex1>:
  8051a08:	90                   	nop
  8051a09:	66 6a 00             	pushw  $0x0
  8051a0c:	66 9d                	popfw  
@@ -7773,7 +7773,7 @@ Disassembly of section .text:
  8051aec:	b8 00 00 00 00       	mov    $0x0,%eax
  8051af1:	c3                   	ret    
 
-08051af2 <cmov_w_with_code_e_constant_complex2>:
+08051af2 <cmov_w_with_code_e_mv_constant_complex2>:
  8051af2:	90                   	nop
  8051af3:	66 68 ff fe          	pushw  $0xfeff
  8051af7:	66 9d                	popfw  
@@ -7819,13 +7819,13 @@ Disassembly of section .text:
  8051bd7:	b8 00 00 00 00       	mov    $0x0,%eax
  8051bdc:	c3                   	ret    
 
-08051bdd <cmov_w_with_code_f_plain>:
+08051bdd <cmov_w_with_code_f_mv_plain>:
  8051bdd:	3c 02                	cmp    $0x2,%al
  8051bdf:	66 0f 4f d8          	cmovg  %ax,%bx
  8051be3:	b8 00 00 00 00       	mov    $0x0,%eax
  8051be8:	c3                   	ret    
 
-08051be9 <cmov_w_with_code_f_allregs>:
+08051be9 <cmov_w_with_code_f_mv_allregs>:
  8051be9:	90                   	nop
  8051bea:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8051bf0:	66 50                	push   %ax
@@ -7872,17 +7872,17 @@ Disassembly of section .text:
  8051cd8:	b8 00 00 00 00       	mov    $0x0,%eax
  8051cdd:	c3                   	ret    
 
-08051cde <cmov_w_with_code_f_constant_simple>:
+08051cde <cmov_w_with_code_f_mv_constant_simple>:
  8051cde:	90                   	nop
  8051cdf:	66 6a 00             	pushw  $0x0
  8051ce2:	66 9d                	popfw  
  8051ce4:	b8 02 00 00 00       	mov    $0x2,%eax
  8051ce9:	bb 03 00 00 00       	mov    $0x3,%ebx
  8051cee:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8051cf3:	ba 04 00 00 00       	mov    $0x4,%edx
- 8051cf8:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8051cfd:	be 06 00 00 00       	mov    $0x6,%esi
- 8051d02:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8051cf3:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8051cf8:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8051cfd:	be 07 00 00 00       	mov    $0x7,%esi
+ 8051d02:	bf 08 00 00 00       	mov    $0x8,%edi
  8051d07:	89 25 50 20 00 00    	mov    %esp,0x2050
  8051d0d:	3c 02                	cmp    $0x2,%al
  8051d0f:	66 0f 4f d8          	cmovg  %ax,%bx
@@ -7918,7 +7918,7 @@ Disassembly of section .text:
  8051dc2:	b8 00 00 00 00       	mov    $0x0,%eax
  8051dc7:	c3                   	ret    
 
-08051dc8 <cmov_w_with_code_f_constant_complex1>:
+08051dc8 <cmov_w_with_code_f_mv_constant_complex1>:
  8051dc8:	90                   	nop
  8051dc9:	66 6a 00             	pushw  $0x0
  8051dcc:	66 9d                	popfw  
@@ -7964,7 +7964,7 @@ Disassembly of section .text:
  8051eac:	b8 00 00 00 00       	mov    $0x0,%eax
  8051eb1:	c3                   	ret    
 
-08051eb2 <cmov_w_with_code_f_constant_complex2>:
+08051eb2 <cmov_w_with_code_f_mv_constant_complex2>:
  8051eb2:	90                   	nop
  8051eb3:	66 68 ff fe          	pushw  $0xfeff
  8051eb7:	66 9d                	popfw  
@@ -8070,10 +8070,10 @@ Disassembly of section .text:
  80520a2:	b8 02 00 00 00       	mov    $0x2,%eax
  80520a7:	bb 03 00 00 00       	mov    $0x3,%ebx
  80520ac:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80520b1:	ba 04 00 00 00       	mov    $0x4,%edx
- 80520b6:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80520bb:	be 06 00 00 00       	mov    $0x6,%esi
- 80520c0:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80520b1:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80520b6:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80520bb:	be 07 00 00 00       	mov    $0x7,%esi
+ 80520c0:	bf 08 00 00 00       	mov    $0x8,%edi
  80520c5:	89 25 50 20 00 00    	mov    %esp,0x2050
  80520cb:	3c 02                	cmp    $0x2,%al
  80520cd:	0f 40 d8             	cmovo  %eax,%ebx
@@ -8201,13 +8201,13 @@ Disassembly of section .text:
  8052352:	b8 00 00 00 00       	mov    $0x0,%eax
  8052357:	c3                   	ret    
 
-08052358 <cmov_l_with_code_1_plain>:
+08052358 <cmov_l_with_code_1_mv_plain>:
  8052358:	3c 02                	cmp    $0x2,%al
  805235a:	0f 41 d8             	cmovno %eax,%ebx
  805235d:	b8 00 00 00 00       	mov    $0x0,%eax
  8052362:	c3                   	ret    
 
-08052363 <cmov_l_with_code_1_allregs>:
+08052363 <cmov_l_with_code_1_mv_allregs>:
  8052363:	90                   	nop
  8052364:	66 a1 00 11 00 00    	mov    0x1100,%ax
  805236a:	66 50                	push   %ax
@@ -8254,17 +8254,17 @@ Disassembly of section .text:
  8052451:	b8 00 00 00 00       	mov    $0x0,%eax
  8052456:	c3                   	ret    
 
-08052457 <cmov_l_with_code_1_constant_simple>:
+08052457 <cmov_l_with_code_1_mv_constant_simple>:
  8052457:	90                   	nop
  8052458:	66 6a 00             	pushw  $0x0
  805245b:	66 9d                	popfw  
  805245d:	b8 02 00 00 00       	mov    $0x2,%eax
  8052462:	bb 03 00 00 00       	mov    $0x3,%ebx
  8052467:	b9 04 00 00 00       	mov    $0x4,%ecx
- 805246c:	ba 04 00 00 00       	mov    $0x4,%edx
- 8052471:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8052476:	be 06 00 00 00       	mov    $0x6,%esi
- 805247b:	bf 07 00 00 00       	mov    $0x7,%edi
+ 805246c:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8052471:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8052476:	be 07 00 00 00       	mov    $0x7,%esi
+ 805247b:	bf 08 00 00 00       	mov    $0x8,%edi
  8052480:	89 25 50 20 00 00    	mov    %esp,0x2050
  8052486:	3c 02                	cmp    $0x2,%al
  8052488:	0f 41 d8             	cmovno %eax,%ebx
@@ -8300,7 +8300,7 @@ Disassembly of section .text:
  805253a:	b8 00 00 00 00       	mov    $0x0,%eax
  805253f:	c3                   	ret    
 
-08052540 <cmov_l_with_code_1_constant_complex1>:
+08052540 <cmov_l_with_code_1_mv_constant_complex1>:
  8052540:	90                   	nop
  8052541:	66 6a 00             	pushw  $0x0
  8052544:	66 9d                	popfw  
@@ -8346,7 +8346,7 @@ Disassembly of section .text:
  8052623:	b8 00 00 00 00       	mov    $0x0,%eax
  8052628:	c3                   	ret    
 
-08052629 <cmov_l_with_code_1_constant_complex2>:
+08052629 <cmov_l_with_code_1_mv_constant_complex2>:
  8052629:	90                   	nop
  805262a:	66 68 ff fe          	pushw  $0xfeff
  805262e:	66 9d                	popfw  
@@ -8392,13 +8392,13 @@ Disassembly of section .text:
  805270d:	b8 00 00 00 00       	mov    $0x0,%eax
  8052712:	c3                   	ret    
 
-08052713 <cmov_l_with_code_2_plain>:
+08052713 <cmov_l_with_code_2_mv_plain>:
  8052713:	3c 02                	cmp    $0x2,%al
  8052715:	0f 42 d8             	cmovb  %eax,%ebx
  8052718:	b8 00 00 00 00       	mov    $0x0,%eax
  805271d:	c3                   	ret    
 
-0805271e <cmov_l_with_code_2_allregs>:
+0805271e <cmov_l_with_code_2_mv_allregs>:
  805271e:	90                   	nop
  805271f:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8052725:	66 50                	push   %ax
@@ -8445,17 +8445,17 @@ Disassembly of section .text:
  805280c:	b8 00 00 00 00       	mov    $0x0,%eax
  8052811:	c3                   	ret    
 
-08052812 <cmov_l_with_code_2_constant_simple>:
+08052812 <cmov_l_with_code_2_mv_constant_simple>:
  8052812:	90                   	nop
  8052813:	66 6a 00             	pushw  $0x0
  8052816:	66 9d                	popfw  
  8052818:	b8 02 00 00 00       	mov    $0x2,%eax
  805281d:	bb 03 00 00 00       	mov    $0x3,%ebx
  8052822:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8052827:	ba 04 00 00 00       	mov    $0x4,%edx
- 805282c:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8052831:	be 06 00 00 00       	mov    $0x6,%esi
- 8052836:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8052827:	ba 05 00 00 00       	mov    $0x5,%edx
+ 805282c:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8052831:	be 07 00 00 00       	mov    $0x7,%esi
+ 8052836:	bf 08 00 00 00       	mov    $0x8,%edi
  805283b:	89 25 50 20 00 00    	mov    %esp,0x2050
  8052841:	3c 02                	cmp    $0x2,%al
  8052843:	0f 42 d8             	cmovb  %eax,%ebx
@@ -8491,7 +8491,7 @@ Disassembly of section .text:
  80528f5:	b8 00 00 00 00       	mov    $0x0,%eax
  80528fa:	c3                   	ret    
 
-080528fb <cmov_l_with_code_2_constant_complex1>:
+080528fb <cmov_l_with_code_2_mv_constant_complex1>:
  80528fb:	90                   	nop
  80528fc:	66 6a 00             	pushw  $0x0
  80528ff:	66 9d                	popfw  
@@ -8537,7 +8537,7 @@ Disassembly of section .text:
  80529de:	b8 00 00 00 00       	mov    $0x0,%eax
  80529e3:	c3                   	ret    
 
-080529e4 <cmov_l_with_code_2_constant_complex2>:
+080529e4 <cmov_l_with_code_2_mv_constant_complex2>:
  80529e4:	90                   	nop
  80529e5:	66 68 ff fe          	pushw  $0xfeff
  80529e9:	66 9d                	popfw  
@@ -8583,13 +8583,13 @@ Disassembly of section .text:
  8052ac8:	b8 00 00 00 00       	mov    $0x0,%eax
  8052acd:	c3                   	ret    
 
-08052ace <cmov_l_with_code_3_plain>:
+08052ace <cmov_l_with_code_3_mv_plain>:
  8052ace:	3c 02                	cmp    $0x2,%al
  8052ad0:	0f 43 d8             	cmovae %eax,%ebx
  8052ad3:	b8 00 00 00 00       	mov    $0x0,%eax
  8052ad8:	c3                   	ret    
 
-08052ad9 <cmov_l_with_code_3_allregs>:
+08052ad9 <cmov_l_with_code_3_mv_allregs>:
  8052ad9:	90                   	nop
  8052ada:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8052ae0:	66 50                	push   %ax
@@ -8636,17 +8636,17 @@ Disassembly of section .text:
  8052bc7:	b8 00 00 00 00       	mov    $0x0,%eax
  8052bcc:	c3                   	ret    
 
-08052bcd <cmov_l_with_code_3_constant_simple>:
+08052bcd <cmov_l_with_code_3_mv_constant_simple>:
  8052bcd:	90                   	nop
  8052bce:	66 6a 00             	pushw  $0x0
  8052bd1:	66 9d                	popfw  
  8052bd3:	b8 02 00 00 00       	mov    $0x2,%eax
  8052bd8:	bb 03 00 00 00       	mov    $0x3,%ebx
  8052bdd:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8052be2:	ba 04 00 00 00       	mov    $0x4,%edx
- 8052be7:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8052bec:	be 06 00 00 00       	mov    $0x6,%esi
- 8052bf1:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8052be2:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8052be7:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8052bec:	be 07 00 00 00       	mov    $0x7,%esi
+ 8052bf1:	bf 08 00 00 00       	mov    $0x8,%edi
  8052bf6:	89 25 50 20 00 00    	mov    %esp,0x2050
  8052bfc:	3c 02                	cmp    $0x2,%al
  8052bfe:	0f 43 d8             	cmovae %eax,%ebx
@@ -8682,7 +8682,7 @@ Disassembly of section .text:
  8052cb0:	b8 00 00 00 00       	mov    $0x0,%eax
  8052cb5:	c3                   	ret    
 
-08052cb6 <cmov_l_with_code_3_constant_complex1>:
+08052cb6 <cmov_l_with_code_3_mv_constant_complex1>:
  8052cb6:	90                   	nop
  8052cb7:	66 6a 00             	pushw  $0x0
  8052cba:	66 9d                	popfw  
@@ -8728,7 +8728,7 @@ Disassembly of section .text:
  8052d99:	b8 00 00 00 00       	mov    $0x0,%eax
  8052d9e:	c3                   	ret    
 
-08052d9f <cmov_l_with_code_3_constant_complex2>:
+08052d9f <cmov_l_with_code_3_mv_constant_complex2>:
  8052d9f:	90                   	nop
  8052da0:	66 68 ff fe          	pushw  $0xfeff
  8052da4:	66 9d                	popfw  
@@ -8774,13 +8774,13 @@ Disassembly of section .text:
  8052e83:	b8 00 00 00 00       	mov    $0x0,%eax
  8052e88:	c3                   	ret    
 
-08052e89 <cmov_l_with_code_4_plain>:
+08052e89 <cmov_l_with_code_4_mv_plain>:
  8052e89:	3c 02                	cmp    $0x2,%al
  8052e8b:	0f 44 d8             	cmove  %eax,%ebx
  8052e8e:	b8 00 00 00 00       	mov    $0x0,%eax
  8052e93:	c3                   	ret    
 
-08052e94 <cmov_l_with_code_4_allregs>:
+08052e94 <cmov_l_with_code_4_mv_allregs>:
  8052e94:	90                   	nop
  8052e95:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8052e9b:	66 50                	push   %ax
@@ -8827,17 +8827,17 @@ Disassembly of section .text:
  8052f82:	b8 00 00 00 00       	mov    $0x0,%eax
  8052f87:	c3                   	ret    
 
-08052f88 <cmov_l_with_code_4_constant_simple>:
+08052f88 <cmov_l_with_code_4_mv_constant_simple>:
  8052f88:	90                   	nop
  8052f89:	66 6a 00             	pushw  $0x0
  8052f8c:	66 9d                	popfw  
  8052f8e:	b8 02 00 00 00       	mov    $0x2,%eax
  8052f93:	bb 03 00 00 00       	mov    $0x3,%ebx
  8052f98:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8052f9d:	ba 04 00 00 00       	mov    $0x4,%edx
- 8052fa2:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8052fa7:	be 06 00 00 00       	mov    $0x6,%esi
- 8052fac:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8052f9d:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8052fa2:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8052fa7:	be 07 00 00 00       	mov    $0x7,%esi
+ 8052fac:	bf 08 00 00 00       	mov    $0x8,%edi
  8052fb1:	89 25 50 20 00 00    	mov    %esp,0x2050
  8052fb7:	3c 02                	cmp    $0x2,%al
  8052fb9:	0f 44 d8             	cmove  %eax,%ebx
@@ -8873,7 +8873,7 @@ Disassembly of section .text:
  805306b:	b8 00 00 00 00       	mov    $0x0,%eax
  8053070:	c3                   	ret    
 
-08053071 <cmov_l_with_code_4_constant_complex1>:
+08053071 <cmov_l_with_code_4_mv_constant_complex1>:
  8053071:	90                   	nop
  8053072:	66 6a 00             	pushw  $0x0
  8053075:	66 9d                	popfw  
@@ -8919,7 +8919,7 @@ Disassembly of section .text:
  8053154:	b8 00 00 00 00       	mov    $0x0,%eax
  8053159:	c3                   	ret    
 
-0805315a <cmov_l_with_code_4_constant_complex2>:
+0805315a <cmov_l_with_code_4_mv_constant_complex2>:
  805315a:	90                   	nop
  805315b:	66 68 ff fe          	pushw  $0xfeff
  805315f:	66 9d                	popfw  
@@ -8965,13 +8965,13 @@ Disassembly of section .text:
  805323e:	b8 00 00 00 00       	mov    $0x0,%eax
  8053243:	c3                   	ret    
 
-08053244 <cmov_l_with_code_5_plain>:
+08053244 <cmov_l_with_code_5_mv_plain>:
  8053244:	3c 02                	cmp    $0x2,%al
  8053246:	0f 45 d8             	cmovne %eax,%ebx
  8053249:	b8 00 00 00 00       	mov    $0x0,%eax
  805324e:	c3                   	ret    
 
-0805324f <cmov_l_with_code_5_allregs>:
+0805324f <cmov_l_with_code_5_mv_allregs>:
  805324f:	90                   	nop
  8053250:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8053256:	66 50                	push   %ax
@@ -9018,17 +9018,17 @@ Disassembly of section .text:
  805333d:	b8 00 00 00 00       	mov    $0x0,%eax
  8053342:	c3                   	ret    
 
-08053343 <cmov_l_with_code_5_constant_simple>:
+08053343 <cmov_l_with_code_5_mv_constant_simple>:
  8053343:	90                   	nop
  8053344:	66 6a 00             	pushw  $0x0
  8053347:	66 9d                	popfw  
  8053349:	b8 02 00 00 00       	mov    $0x2,%eax
  805334e:	bb 03 00 00 00       	mov    $0x3,%ebx
  8053353:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8053358:	ba 04 00 00 00       	mov    $0x4,%edx
- 805335d:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8053362:	be 06 00 00 00       	mov    $0x6,%esi
- 8053367:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8053358:	ba 05 00 00 00       	mov    $0x5,%edx
+ 805335d:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8053362:	be 07 00 00 00       	mov    $0x7,%esi
+ 8053367:	bf 08 00 00 00       	mov    $0x8,%edi
  805336c:	89 25 50 20 00 00    	mov    %esp,0x2050
  8053372:	3c 02                	cmp    $0x2,%al
  8053374:	0f 45 d8             	cmovne %eax,%ebx
@@ -9064,7 +9064,7 @@ Disassembly of section .text:
  8053426:	b8 00 00 00 00       	mov    $0x0,%eax
  805342b:	c3                   	ret    
 
-0805342c <cmov_l_with_code_5_constant_complex1>:
+0805342c <cmov_l_with_code_5_mv_constant_complex1>:
  805342c:	90                   	nop
  805342d:	66 6a 00             	pushw  $0x0
  8053430:	66 9d                	popfw  
@@ -9110,7 +9110,7 @@ Disassembly of section .text:
  805350f:	b8 00 00 00 00       	mov    $0x0,%eax
  8053514:	c3                   	ret    
 
-08053515 <cmov_l_with_code_5_constant_complex2>:
+08053515 <cmov_l_with_code_5_mv_constant_complex2>:
  8053515:	90                   	nop
  8053516:	66 68 ff fe          	pushw  $0xfeff
  805351a:	66 9d                	popfw  
@@ -9156,13 +9156,13 @@ Disassembly of section .text:
  80535f9:	b8 00 00 00 00       	mov    $0x0,%eax
  80535fe:	c3                   	ret    
 
-080535ff <cmov_l_with_code_6_plain>:
+080535ff <cmov_l_with_code_6_mv_plain>:
  80535ff:	3c 02                	cmp    $0x2,%al
  8053601:	0f 46 d8             	cmovbe %eax,%ebx
  8053604:	b8 00 00 00 00       	mov    $0x0,%eax
  8053609:	c3                   	ret    
 
-0805360a <cmov_l_with_code_6_allregs>:
+0805360a <cmov_l_with_code_6_mv_allregs>:
  805360a:	90                   	nop
  805360b:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8053611:	66 50                	push   %ax
@@ -9209,17 +9209,17 @@ Disassembly of section .text:
  80536f8:	b8 00 00 00 00       	mov    $0x0,%eax
  80536fd:	c3                   	ret    
 
-080536fe <cmov_l_with_code_6_constant_simple>:
+080536fe <cmov_l_with_code_6_mv_constant_simple>:
  80536fe:	90                   	nop
  80536ff:	66 6a 00             	pushw  $0x0
  8053702:	66 9d                	popfw  
  8053704:	b8 02 00 00 00       	mov    $0x2,%eax
  8053709:	bb 03 00 00 00       	mov    $0x3,%ebx
  805370e:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8053713:	ba 04 00 00 00       	mov    $0x4,%edx
- 8053718:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805371d:	be 06 00 00 00       	mov    $0x6,%esi
- 8053722:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8053713:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8053718:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805371d:	be 07 00 00 00       	mov    $0x7,%esi
+ 8053722:	bf 08 00 00 00       	mov    $0x8,%edi
  8053727:	89 25 50 20 00 00    	mov    %esp,0x2050
  805372d:	3c 02                	cmp    $0x2,%al
  805372f:	0f 46 d8             	cmovbe %eax,%ebx
@@ -9255,7 +9255,7 @@ Disassembly of section .text:
  80537e1:	b8 00 00 00 00       	mov    $0x0,%eax
  80537e6:	c3                   	ret    
 
-080537e7 <cmov_l_with_code_6_constant_complex1>:
+080537e7 <cmov_l_with_code_6_mv_constant_complex1>:
  80537e7:	90                   	nop
  80537e8:	66 6a 00             	pushw  $0x0
  80537eb:	66 9d                	popfw  
@@ -9301,7 +9301,7 @@ Disassembly of section .text:
  80538ca:	b8 00 00 00 00       	mov    $0x0,%eax
  80538cf:	c3                   	ret    
 
-080538d0 <cmov_l_with_code_6_constant_complex2>:
+080538d0 <cmov_l_with_code_6_mv_constant_complex2>:
  80538d0:	90                   	nop
  80538d1:	66 68 ff fe          	pushw  $0xfeff
  80538d5:	66 9d                	popfw  
@@ -9347,13 +9347,13 @@ Disassembly of section .text:
  80539b4:	b8 00 00 00 00       	mov    $0x0,%eax
  80539b9:	c3                   	ret    
 
-080539ba <cmov_l_with_code_7_plain>:
+080539ba <cmov_l_with_code_7_mv_plain>:
  80539ba:	3c 02                	cmp    $0x2,%al
  80539bc:	0f 47 d8             	cmova  %eax,%ebx
  80539bf:	b8 00 00 00 00       	mov    $0x0,%eax
  80539c4:	c3                   	ret    
 
-080539c5 <cmov_l_with_code_7_allregs>:
+080539c5 <cmov_l_with_code_7_mv_allregs>:
  80539c5:	90                   	nop
  80539c6:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80539cc:	66 50                	push   %ax
@@ -9400,17 +9400,17 @@ Disassembly of section .text:
  8053ab3:	b8 00 00 00 00       	mov    $0x0,%eax
  8053ab8:	c3                   	ret    
 
-08053ab9 <cmov_l_with_code_7_constant_simple>:
+08053ab9 <cmov_l_with_code_7_mv_constant_simple>:
  8053ab9:	90                   	nop
  8053aba:	66 6a 00             	pushw  $0x0
  8053abd:	66 9d                	popfw  
  8053abf:	b8 02 00 00 00       	mov    $0x2,%eax
  8053ac4:	bb 03 00 00 00       	mov    $0x3,%ebx
  8053ac9:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8053ace:	ba 04 00 00 00       	mov    $0x4,%edx
- 8053ad3:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8053ad8:	be 06 00 00 00       	mov    $0x6,%esi
- 8053add:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8053ace:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8053ad3:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8053ad8:	be 07 00 00 00       	mov    $0x7,%esi
+ 8053add:	bf 08 00 00 00       	mov    $0x8,%edi
  8053ae2:	89 25 50 20 00 00    	mov    %esp,0x2050
  8053ae8:	3c 02                	cmp    $0x2,%al
  8053aea:	0f 47 d8             	cmova  %eax,%ebx
@@ -9446,7 +9446,7 @@ Disassembly of section .text:
  8053b9c:	b8 00 00 00 00       	mov    $0x0,%eax
  8053ba1:	c3                   	ret    
 
-08053ba2 <cmov_l_with_code_7_constant_complex1>:
+08053ba2 <cmov_l_with_code_7_mv_constant_complex1>:
  8053ba2:	90                   	nop
  8053ba3:	66 6a 00             	pushw  $0x0
  8053ba6:	66 9d                	popfw  
@@ -9492,7 +9492,7 @@ Disassembly of section .text:
  8053c85:	b8 00 00 00 00       	mov    $0x0,%eax
  8053c8a:	c3                   	ret    
 
-08053c8b <cmov_l_with_code_7_constant_complex2>:
+08053c8b <cmov_l_with_code_7_mv_constant_complex2>:
  8053c8b:	90                   	nop
  8053c8c:	66 68 ff fe          	pushw  $0xfeff
  8053c90:	66 9d                	popfw  
@@ -9538,13 +9538,13 @@ Disassembly of section .text:
  8053d6f:	b8 00 00 00 00       	mov    $0x0,%eax
  8053d74:	c3                   	ret    
 
-08053d75 <cmov_l_with_code_8_plain>:
+08053d75 <cmov_l_with_code_8_mv_plain>:
  8053d75:	3c 02                	cmp    $0x2,%al
  8053d77:	0f 48 d8             	cmovs  %eax,%ebx
  8053d7a:	b8 00 00 00 00       	mov    $0x0,%eax
  8053d7f:	c3                   	ret    
 
-08053d80 <cmov_l_with_code_8_allregs>:
+08053d80 <cmov_l_with_code_8_mv_allregs>:
  8053d80:	90                   	nop
  8053d81:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8053d87:	66 50                	push   %ax
@@ -9591,17 +9591,17 @@ Disassembly of section .text:
  8053e6e:	b8 00 00 00 00       	mov    $0x0,%eax
  8053e73:	c3                   	ret    
 
-08053e74 <cmov_l_with_code_8_constant_simple>:
+08053e74 <cmov_l_with_code_8_mv_constant_simple>:
  8053e74:	90                   	nop
  8053e75:	66 6a 00             	pushw  $0x0
  8053e78:	66 9d                	popfw  
  8053e7a:	b8 02 00 00 00       	mov    $0x2,%eax
  8053e7f:	bb 03 00 00 00       	mov    $0x3,%ebx
  8053e84:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8053e89:	ba 04 00 00 00       	mov    $0x4,%edx
- 8053e8e:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8053e93:	be 06 00 00 00       	mov    $0x6,%esi
- 8053e98:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8053e89:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8053e8e:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8053e93:	be 07 00 00 00       	mov    $0x7,%esi
+ 8053e98:	bf 08 00 00 00       	mov    $0x8,%edi
  8053e9d:	89 25 50 20 00 00    	mov    %esp,0x2050
  8053ea3:	3c 02                	cmp    $0x2,%al
  8053ea5:	0f 48 d8             	cmovs  %eax,%ebx
@@ -9637,7 +9637,7 @@ Disassembly of section .text:
  8053f57:	b8 00 00 00 00       	mov    $0x0,%eax
  8053f5c:	c3                   	ret    
 
-08053f5d <cmov_l_with_code_8_constant_complex1>:
+08053f5d <cmov_l_with_code_8_mv_constant_complex1>:
  8053f5d:	90                   	nop
  8053f5e:	66 6a 00             	pushw  $0x0
  8053f61:	66 9d                	popfw  
@@ -9683,7 +9683,7 @@ Disassembly of section .text:
  8054040:	b8 00 00 00 00       	mov    $0x0,%eax
  8054045:	c3                   	ret    
 
-08054046 <cmov_l_with_code_8_constant_complex2>:
+08054046 <cmov_l_with_code_8_mv_constant_complex2>:
  8054046:	90                   	nop
  8054047:	66 68 ff fe          	pushw  $0xfeff
  805404b:	66 9d                	popfw  
@@ -9729,13 +9729,13 @@ Disassembly of section .text:
  805412a:	b8 00 00 00 00       	mov    $0x0,%eax
  805412f:	c3                   	ret    
 
-08054130 <cmov_l_with_code_9_plain>:
+08054130 <cmov_l_with_code_9_mv_plain>:
  8054130:	3c 02                	cmp    $0x2,%al
  8054132:	0f 49 d8             	cmovns %eax,%ebx
  8054135:	b8 00 00 00 00       	mov    $0x0,%eax
  805413a:	c3                   	ret    
 
-0805413b <cmov_l_with_code_9_allregs>:
+0805413b <cmov_l_with_code_9_mv_allregs>:
  805413b:	90                   	nop
  805413c:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8054142:	66 50                	push   %ax
@@ -9782,17 +9782,17 @@ Disassembly of section .text:
  8054229:	b8 00 00 00 00       	mov    $0x0,%eax
  805422e:	c3                   	ret    
 
-0805422f <cmov_l_with_code_9_constant_simple>:
+0805422f <cmov_l_with_code_9_mv_constant_simple>:
  805422f:	90                   	nop
  8054230:	66 6a 00             	pushw  $0x0
  8054233:	66 9d                	popfw  
  8054235:	b8 02 00 00 00       	mov    $0x2,%eax
  805423a:	bb 03 00 00 00       	mov    $0x3,%ebx
  805423f:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8054244:	ba 04 00 00 00       	mov    $0x4,%edx
- 8054249:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805424e:	be 06 00 00 00       	mov    $0x6,%esi
- 8054253:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8054244:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8054249:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805424e:	be 07 00 00 00       	mov    $0x7,%esi
+ 8054253:	bf 08 00 00 00       	mov    $0x8,%edi
  8054258:	89 25 50 20 00 00    	mov    %esp,0x2050
  805425e:	3c 02                	cmp    $0x2,%al
  8054260:	0f 49 d8             	cmovns %eax,%ebx
@@ -9828,7 +9828,7 @@ Disassembly of section .text:
  8054312:	b8 00 00 00 00       	mov    $0x0,%eax
  8054317:	c3                   	ret    
 
-08054318 <cmov_l_with_code_9_constant_complex1>:
+08054318 <cmov_l_with_code_9_mv_constant_complex1>:
  8054318:	90                   	nop
  8054319:	66 6a 00             	pushw  $0x0
  805431c:	66 9d                	popfw  
@@ -9874,7 +9874,7 @@ Disassembly of section .text:
  80543fb:	b8 00 00 00 00       	mov    $0x0,%eax
  8054400:	c3                   	ret    
 
-08054401 <cmov_l_with_code_9_constant_complex2>:
+08054401 <cmov_l_with_code_9_mv_constant_complex2>:
  8054401:	90                   	nop
  8054402:	66 68 ff fe          	pushw  $0xfeff
  8054406:	66 9d                	popfw  
@@ -9920,13 +9920,13 @@ Disassembly of section .text:
  80544e5:	b8 00 00 00 00       	mov    $0x0,%eax
  80544ea:	c3                   	ret    
 
-080544eb <cmov_l_with_code_a_plain>:
+080544eb <cmov_l_with_code_a_mv_plain>:
  80544eb:	3c 02                	cmp    $0x2,%al
  80544ed:	0f 4a d8             	cmovp  %eax,%ebx
  80544f0:	b8 00 00 00 00       	mov    $0x0,%eax
  80544f5:	c3                   	ret    
 
-080544f6 <cmov_l_with_code_a_allregs>:
+080544f6 <cmov_l_with_code_a_mv_allregs>:
  80544f6:	90                   	nop
  80544f7:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80544fd:	66 50                	push   %ax
@@ -9973,17 +9973,17 @@ Disassembly of section .text:
  80545e4:	b8 00 00 00 00       	mov    $0x0,%eax
  80545e9:	c3                   	ret    
 
-080545ea <cmov_l_with_code_a_constant_simple>:
+080545ea <cmov_l_with_code_a_mv_constant_simple>:
  80545ea:	90                   	nop
  80545eb:	66 6a 00             	pushw  $0x0
  80545ee:	66 9d                	popfw  
  80545f0:	b8 02 00 00 00       	mov    $0x2,%eax
  80545f5:	bb 03 00 00 00       	mov    $0x3,%ebx
  80545fa:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80545ff:	ba 04 00 00 00       	mov    $0x4,%edx
- 8054604:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8054609:	be 06 00 00 00       	mov    $0x6,%esi
- 805460e:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80545ff:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8054604:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8054609:	be 07 00 00 00       	mov    $0x7,%esi
+ 805460e:	bf 08 00 00 00       	mov    $0x8,%edi
  8054613:	89 25 50 20 00 00    	mov    %esp,0x2050
  8054619:	3c 02                	cmp    $0x2,%al
  805461b:	0f 4a d8             	cmovp  %eax,%ebx
@@ -10019,7 +10019,7 @@ Disassembly of section .text:
  80546cd:	b8 00 00 00 00       	mov    $0x0,%eax
  80546d2:	c3                   	ret    
 
-080546d3 <cmov_l_with_code_a_constant_complex1>:
+080546d3 <cmov_l_with_code_a_mv_constant_complex1>:
  80546d3:	90                   	nop
  80546d4:	66 6a 00             	pushw  $0x0
  80546d7:	66 9d                	popfw  
@@ -10065,7 +10065,7 @@ Disassembly of section .text:
  80547b6:	b8 00 00 00 00       	mov    $0x0,%eax
  80547bb:	c3                   	ret    
 
-080547bc <cmov_l_with_code_a_constant_complex2>:
+080547bc <cmov_l_with_code_a_mv_constant_complex2>:
  80547bc:	90                   	nop
  80547bd:	66 68 ff fe          	pushw  $0xfeff
  80547c1:	66 9d                	popfw  
@@ -10111,13 +10111,13 @@ Disassembly of section .text:
  80548a0:	b8 00 00 00 00       	mov    $0x0,%eax
  80548a5:	c3                   	ret    
 
-080548a6 <cmov_l_with_code_b_plain>:
+080548a6 <cmov_l_with_code_b_mv_plain>:
  80548a6:	3c 02                	cmp    $0x2,%al
  80548a8:	0f 4b d8             	cmovnp %eax,%ebx
  80548ab:	b8 00 00 00 00       	mov    $0x0,%eax
  80548b0:	c3                   	ret    
 
-080548b1 <cmov_l_with_code_b_allregs>:
+080548b1 <cmov_l_with_code_b_mv_allregs>:
  80548b1:	90                   	nop
  80548b2:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80548b8:	66 50                	push   %ax
@@ -10164,17 +10164,17 @@ Disassembly of section .text:
  805499f:	b8 00 00 00 00       	mov    $0x0,%eax
  80549a4:	c3                   	ret    
 
-080549a5 <cmov_l_with_code_b_constant_simple>:
+080549a5 <cmov_l_with_code_b_mv_constant_simple>:
  80549a5:	90                   	nop
  80549a6:	66 6a 00             	pushw  $0x0
  80549a9:	66 9d                	popfw  
  80549ab:	b8 02 00 00 00       	mov    $0x2,%eax
  80549b0:	bb 03 00 00 00       	mov    $0x3,%ebx
  80549b5:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80549ba:	ba 04 00 00 00       	mov    $0x4,%edx
- 80549bf:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80549c4:	be 06 00 00 00       	mov    $0x6,%esi
- 80549c9:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80549ba:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80549bf:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80549c4:	be 07 00 00 00       	mov    $0x7,%esi
+ 80549c9:	bf 08 00 00 00       	mov    $0x8,%edi
  80549ce:	89 25 50 20 00 00    	mov    %esp,0x2050
  80549d4:	3c 02                	cmp    $0x2,%al
  80549d6:	0f 4b d8             	cmovnp %eax,%ebx
@@ -10210,7 +10210,7 @@ Disassembly of section .text:
  8054a88:	b8 00 00 00 00       	mov    $0x0,%eax
  8054a8d:	c3                   	ret    
 
-08054a8e <cmov_l_with_code_b_constant_complex1>:
+08054a8e <cmov_l_with_code_b_mv_constant_complex1>:
  8054a8e:	90                   	nop
  8054a8f:	66 6a 00             	pushw  $0x0
  8054a92:	66 9d                	popfw  
@@ -10256,7 +10256,7 @@ Disassembly of section .text:
  8054b71:	b8 00 00 00 00       	mov    $0x0,%eax
  8054b76:	c3                   	ret    
 
-08054b77 <cmov_l_with_code_b_constant_complex2>:
+08054b77 <cmov_l_with_code_b_mv_constant_complex2>:
  8054b77:	90                   	nop
  8054b78:	66 68 ff fe          	pushw  $0xfeff
  8054b7c:	66 9d                	popfw  
@@ -10302,13 +10302,13 @@ Disassembly of section .text:
  8054c5b:	b8 00 00 00 00       	mov    $0x0,%eax
  8054c60:	c3                   	ret    
 
-08054c61 <cmov_l_with_code_c_plain>:
+08054c61 <cmov_l_with_code_c_mv_plain>:
  8054c61:	3c 02                	cmp    $0x2,%al
  8054c63:	0f 4c d8             	cmovl  %eax,%ebx
  8054c66:	b8 00 00 00 00       	mov    $0x0,%eax
  8054c6b:	c3                   	ret    
 
-08054c6c <cmov_l_with_code_c_allregs>:
+08054c6c <cmov_l_with_code_c_mv_allregs>:
  8054c6c:	90                   	nop
  8054c6d:	66 a1 00 11 00 00    	mov    0x1100,%ax
  8054c73:	66 50                	push   %ax
@@ -10355,17 +10355,17 @@ Disassembly of section .text:
  8054d5a:	b8 00 00 00 00       	mov    $0x0,%eax
  8054d5f:	c3                   	ret    
 
-08054d60 <cmov_l_with_code_c_constant_simple>:
+08054d60 <cmov_l_with_code_c_mv_constant_simple>:
  8054d60:	90                   	nop
  8054d61:	66 6a 00             	pushw  $0x0
  8054d64:	66 9d                	popfw  
  8054d66:	b8 02 00 00 00       	mov    $0x2,%eax
  8054d6b:	bb 03 00 00 00       	mov    $0x3,%ebx
  8054d70:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8054d75:	ba 04 00 00 00       	mov    $0x4,%edx
- 8054d7a:	bd 05 00 00 00       	mov    $0x5,%ebp
- 8054d7f:	be 06 00 00 00       	mov    $0x6,%esi
- 8054d84:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8054d75:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8054d7a:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 8054d7f:	be 07 00 00 00       	mov    $0x7,%esi
+ 8054d84:	bf 08 00 00 00       	mov    $0x8,%edi
  8054d89:	89 25 50 20 00 00    	mov    %esp,0x2050
  8054d8f:	3c 02                	cmp    $0x2,%al
  8054d91:	0f 4c d8             	cmovl  %eax,%ebx
@@ -10401,7 +10401,7 @@ Disassembly of section .text:
  8054e43:	b8 00 00 00 00       	mov    $0x0,%eax
  8054e48:	c3                   	ret    
 
-08054e49 <cmov_l_with_code_c_constant_complex1>:
+08054e49 <cmov_l_with_code_c_mv_constant_complex1>:
  8054e49:	90                   	nop
  8054e4a:	66 6a 00             	pushw  $0x0
  8054e4d:	66 9d                	popfw  
@@ -10447,7 +10447,7 @@ Disassembly of section .text:
  8054f2c:	b8 00 00 00 00       	mov    $0x0,%eax
  8054f31:	c3                   	ret    
 
-08054f32 <cmov_l_with_code_c_constant_complex2>:
+08054f32 <cmov_l_with_code_c_mv_constant_complex2>:
  8054f32:	90                   	nop
  8054f33:	66 68 ff fe          	pushw  $0xfeff
  8054f37:	66 9d                	popfw  
@@ -10493,13 +10493,13 @@ Disassembly of section .text:
  8055016:	b8 00 00 00 00       	mov    $0x0,%eax
  805501b:	c3                   	ret    
 
-0805501c <cmov_l_with_code_d_plain>:
+0805501c <cmov_l_with_code_d_mv_plain>:
  805501c:	3c 02                	cmp    $0x2,%al
  805501e:	0f 4d d8             	cmovge %eax,%ebx
  8055021:	b8 00 00 00 00       	mov    $0x0,%eax
  8055026:	c3                   	ret    
 
-08055027 <cmov_l_with_code_d_allregs>:
+08055027 <cmov_l_with_code_d_mv_allregs>:
  8055027:	90                   	nop
  8055028:	66 a1 00 11 00 00    	mov    0x1100,%ax
  805502e:	66 50                	push   %ax
@@ -10546,17 +10546,17 @@ Disassembly of section .text:
  8055115:	b8 00 00 00 00       	mov    $0x0,%eax
  805511a:	c3                   	ret    
 
-0805511b <cmov_l_with_code_d_constant_simple>:
+0805511b <cmov_l_with_code_d_mv_constant_simple>:
  805511b:	90                   	nop
  805511c:	66 6a 00             	pushw  $0x0
  805511f:	66 9d                	popfw  
  8055121:	b8 02 00 00 00       	mov    $0x2,%eax
  8055126:	bb 03 00 00 00       	mov    $0x3,%ebx
  805512b:	b9 04 00 00 00       	mov    $0x4,%ecx
- 8055130:	ba 04 00 00 00       	mov    $0x4,%edx
- 8055135:	bd 05 00 00 00       	mov    $0x5,%ebp
- 805513a:	be 06 00 00 00       	mov    $0x6,%esi
- 805513f:	bf 07 00 00 00       	mov    $0x7,%edi
+ 8055130:	ba 05 00 00 00       	mov    $0x5,%edx
+ 8055135:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 805513a:	be 07 00 00 00       	mov    $0x7,%esi
+ 805513f:	bf 08 00 00 00       	mov    $0x8,%edi
  8055144:	89 25 50 20 00 00    	mov    %esp,0x2050
  805514a:	3c 02                	cmp    $0x2,%al
  805514c:	0f 4d d8             	cmovge %eax,%ebx
@@ -10592,7 +10592,7 @@ Disassembly of section .text:
  80551fe:	b8 00 00 00 00       	mov    $0x0,%eax
  8055203:	c3                   	ret    
 
-08055204 <cmov_l_with_code_d_constant_complex1>:
+08055204 <cmov_l_with_code_d_mv_constant_complex1>:
  8055204:	90                   	nop
  8055205:	66 6a 00             	pushw  $0x0
  8055208:	66 9d                	popfw  
@@ -10638,7 +10638,7 @@ Disassembly of section .text:
  80552e7:	b8 00 00 00 00       	mov    $0x0,%eax
  80552ec:	c3                   	ret    
 
-080552ed <cmov_l_with_code_d_constant_complex2>:
+080552ed <cmov_l_with_code_d_mv_constant_complex2>:
  80552ed:	90                   	nop
  80552ee:	66 68 ff fe          	pushw  $0xfeff
  80552f2:	66 9d                	popfw  
@@ -10684,13 +10684,13 @@ Disassembly of section .text:
  80553d1:	b8 00 00 00 00       	mov    $0x0,%eax
  80553d6:	c3                   	ret    
 
-080553d7 <cmov_l_with_code_e_plain>:
+080553d7 <cmov_l_with_code_e_mv_plain>:
  80553d7:	3c 02                	cmp    $0x2,%al
  80553d9:	0f 4e d8             	cmovle %eax,%ebx
  80553dc:	b8 00 00 00 00       	mov    $0x0,%eax
  80553e1:	c3                   	ret    
 
-080553e2 <cmov_l_with_code_e_allregs>:
+080553e2 <cmov_l_with_code_e_mv_allregs>:
  80553e2:	90                   	nop
  80553e3:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80553e9:	66 50                	push   %ax
@@ -10737,17 +10737,17 @@ Disassembly of section .text:
  80554d0:	b8 00 00 00 00       	mov    $0x0,%eax
  80554d5:	c3                   	ret    
 
-080554d6 <cmov_l_with_code_e_constant_simple>:
+080554d6 <cmov_l_with_code_e_mv_constant_simple>:
  80554d6:	90                   	nop
  80554d7:	66 6a 00             	pushw  $0x0
  80554da:	66 9d                	popfw  
  80554dc:	b8 02 00 00 00       	mov    $0x2,%eax
  80554e1:	bb 03 00 00 00       	mov    $0x3,%ebx
  80554e6:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80554eb:	ba 04 00 00 00       	mov    $0x4,%edx
- 80554f0:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80554f5:	be 06 00 00 00       	mov    $0x6,%esi
- 80554fa:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80554eb:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80554f0:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80554f5:	be 07 00 00 00       	mov    $0x7,%esi
+ 80554fa:	bf 08 00 00 00       	mov    $0x8,%edi
  80554ff:	89 25 50 20 00 00    	mov    %esp,0x2050
  8055505:	3c 02                	cmp    $0x2,%al
  8055507:	0f 4e d8             	cmovle %eax,%ebx
@@ -10783,7 +10783,7 @@ Disassembly of section .text:
  80555b9:	b8 00 00 00 00       	mov    $0x0,%eax
  80555be:	c3                   	ret    
 
-080555bf <cmov_l_with_code_e_constant_complex1>:
+080555bf <cmov_l_with_code_e_mv_constant_complex1>:
  80555bf:	90                   	nop
  80555c0:	66 6a 00             	pushw  $0x0
  80555c3:	66 9d                	popfw  
@@ -10829,7 +10829,7 @@ Disassembly of section .text:
  80556a2:	b8 00 00 00 00       	mov    $0x0,%eax
  80556a7:	c3                   	ret    
 
-080556a8 <cmov_l_with_code_e_constant_complex2>:
+080556a8 <cmov_l_with_code_e_mv_constant_complex2>:
  80556a8:	90                   	nop
  80556a9:	66 68 ff fe          	pushw  $0xfeff
  80556ad:	66 9d                	popfw  
@@ -10875,13 +10875,13 @@ Disassembly of section .text:
  805578c:	b8 00 00 00 00       	mov    $0x0,%eax
  8055791:	c3                   	ret    
 
-08055792 <cmov_l_with_code_f_plain>:
+08055792 <cmov_l_with_code_f_mv_plain>:
  8055792:	3c 02                	cmp    $0x2,%al
  8055794:	0f 4f d8             	cmovg  %eax,%ebx
  8055797:	b8 00 00 00 00       	mov    $0x0,%eax
  805579c:	c3                   	ret    
 
-0805579d <cmov_l_with_code_f_allregs>:
+0805579d <cmov_l_with_code_f_mv_allregs>:
  805579d:	90                   	nop
  805579e:	66 a1 00 11 00 00    	mov    0x1100,%ax
  80557a4:	66 50                	push   %ax
@@ -10928,17 +10928,17 @@ Disassembly of section .text:
  805588b:	b8 00 00 00 00       	mov    $0x0,%eax
  8055890:	c3                   	ret    
 
-08055891 <cmov_l_with_code_f_constant_simple>:
+08055891 <cmov_l_with_code_f_mv_constant_simple>:
  8055891:	90                   	nop
  8055892:	66 6a 00             	pushw  $0x0
  8055895:	66 9d                	popfw  
  8055897:	b8 02 00 00 00       	mov    $0x2,%eax
  805589c:	bb 03 00 00 00       	mov    $0x3,%ebx
  80558a1:	b9 04 00 00 00       	mov    $0x4,%ecx
- 80558a6:	ba 04 00 00 00       	mov    $0x4,%edx
- 80558ab:	bd 05 00 00 00       	mov    $0x5,%ebp
- 80558b0:	be 06 00 00 00       	mov    $0x6,%esi
- 80558b5:	bf 07 00 00 00       	mov    $0x7,%edi
+ 80558a6:	ba 05 00 00 00       	mov    $0x5,%edx
+ 80558ab:	bd 06 00 00 00       	mov    $0x6,%ebp
+ 80558b0:	be 07 00 00 00       	mov    $0x7,%esi
+ 80558b5:	bf 08 00 00 00       	mov    $0x8,%edi
  80558ba:	89 25 50 20 00 00    	mov    %esp,0x2050
  80558c0:	3c 02                	cmp    $0x2,%al
  80558c2:	0f 4f d8             	cmovg  %eax,%ebx
@@ -10974,7 +10974,7 @@ Disassembly of section .text:
  8055974:	b8 00 00 00 00       	mov    $0x0,%eax
  8055979:	c3                   	ret    
 
-0805597a <cmov_l_with_code_f_constant_complex1>:
+0805597a <cmov_l_with_code_f_mv_constant_complex1>:
  805597a:	90                   	nop
  805597b:	66 6a 00             	pushw  $0x0
  805597e:	66 9d                	popfw  
@@ -11020,7 +11020,7 @@ Disassembly of section .text:
  8055a5d:	b8 00 00 00 00       	mov    $0x0,%eax
  8055a62:	c3                   	ret    
 
-08055a63 <cmov_l_with_code_f_constant_complex2>:
+08055a63 <cmov_l_with_code_f_mv_constant_complex2>:
  8055a63:	90                   	nop
  8055a64:	66 68 ff fe          	pushw  $0xfeff
  8055a68:	66 9d                	popfw  
@@ -11072,36 +11072,36 @@ Disassembly of section .text:
  8055b57:	e8 31 29 ff ff       	call   804848d <bswap_constant_simple>
  8055b5c:	e8 12 2a ff ff       	call   8048573 <bswap_constant_complex1>
  8055b61:	e8 f3 2a ff ff       	call   8048659 <bswap_constant_complex2>
- 8055b66:	e8 d5 2b ff ff       	call   8048740 <cmpxchg1_plain>
- 8055b6b:	e8 d9 2b ff ff       	call   8048749 <cmpxchg1_allregs>
- 8055b70:	e8 c6 2c ff ff       	call   804883b <cmpxchg1_constant_simple>
- 8055b75:	e8 a8 2d ff ff       	call   8048922 <cmpxchg1_constant_complex1>
- 8055b7a:	e8 8a 2e ff ff       	call   8048a09 <cmpxchg1_constant_complex2>
- 8055b7f:	e8 6d 2f ff ff       	call   8048af1 <cmpxchg2_plain>
- 8055b84:	e8 72 2f ff ff       	call   8048afb <cmpxchg2_allregs>
- 8055b89:	e8 60 30 ff ff       	call   8048bee <cmpxchg2_constant_simple>
- 8055b8e:	e8 43 31 ff ff       	call   8048cd6 <cmpxchg2_constant_complex1>
- 8055b93:	e8 26 32 ff ff       	call   8048dbe <cmpxchg2_constant_complex2>
+ 8055b66:	e8 d5 2b ff ff       	call   8048740 <cmpxchg1_mv_plain>
+ 8055b6b:	e8 d9 2b ff ff       	call   8048749 <cmpxchg1_mv_allregs>
+ 8055b70:	e8 c6 2c ff ff       	call   804883b <cmpxchg1_mv_constant_simple>
+ 8055b75:	e8 a8 2d ff ff       	call   8048922 <cmpxchg1_mv_constant_complex1>
+ 8055b7a:	e8 8a 2e ff ff       	call   8048a09 <cmpxchg1_mv_constant_complex2>
+ 8055b7f:	e8 6d 2f ff ff       	call   8048af1 <cmpxchg2_mv_plain>
+ 8055b84:	e8 72 2f ff ff       	call   8048afb <cmpxchg2_mv_allregs>
+ 8055b89:	e8 60 30 ff ff       	call   8048bee <cmpxchg2_mv_constant_simple>
+ 8055b8e:	e8 43 31 ff ff       	call   8048cd6 <cmpxchg2_mv_constant_complex1>
+ 8055b93:	e8 26 32 ff ff       	call   8048dbe <cmpxchg2_mv_constant_complex2>
  8055b98:	e8 0a 33 ff ff       	call   8048ea7 <cmpxchg3_plain>
  8055b9d:	e8 0e 33 ff ff       	call   8048eb0 <cmpxchg3_allregs>
  8055ba2:	e8 fb 33 ff ff       	call   8048fa2 <cmpxchg3_constant_simple>
  8055ba7:	e8 dd 34 ff ff       	call   8049089 <cmpxchg3_constant_complex1>
  8055bac:	e8 bf 35 ff ff       	call   8049170 <cmpxchg3_constant_complex2>
- 8055bb1:	e8 a2 36 ff ff       	call   8049258 <cmpxchg4_plain>
- 8055bb6:	e8 a6 36 ff ff       	call   8049261 <cmpxchg4_allregs>
- 8055bbb:	e8 93 37 ff ff       	call   8049353 <cmpxchg4_constant_simple>
- 8055bc0:	e8 75 38 ff ff       	call   804943a <cmpxchg4_constant_complex1>
- 8055bc5:	e8 57 39 ff ff       	call   8049521 <cmpxchg4_constant_complex2>
- 8055bca:	e8 3a 3a ff ff       	call   8049609 <cmpxchg5_plain>
- 8055bcf:	e8 3e 3a ff ff       	call   8049612 <cmpxchg5_allregs>
- 8055bd4:	e8 2b 3b ff ff       	call   8049704 <cmpxchg5_constant_simple>
- 8055bd9:	e8 0d 3c ff ff       	call   80497eb <cmpxchg5_constant_complex1>
- 8055bde:	e8 ef 3c ff ff       	call   80498d2 <cmpxchg5_constant_complex2>
- 8055be3:	e8 d2 3d ff ff       	call   80499ba <cmpxchg_locked_plain>
- 8055be8:	e8 d7 3d ff ff       	call   80499c4 <cmpxchg_locked_allregs>
- 8055bed:	e8 c5 3e ff ff       	call   8049ab7 <cmpxchg_locked_constant_simple>
- 8055bf2:	e8 a8 3f ff ff       	call   8049b9f <cmpxchg_locked_constant_complex1>
- 8055bf7:	e8 8b 40 ff ff       	call   8049c87 <cmpxchg_locked_constant_complex2>
+ 8055bb1:	e8 a2 36 ff ff       	call   8049258 <cmpxchg4_mv_plain>
+ 8055bb6:	e8 a6 36 ff ff       	call   8049261 <cmpxchg4_mv_allregs>
+ 8055bbb:	e8 93 37 ff ff       	call   8049353 <cmpxchg4_mv_constant_simple>
+ 8055bc0:	e8 75 38 ff ff       	call   804943a <cmpxchg4_mv_constant_complex1>
+ 8055bc5:	e8 57 39 ff ff       	call   8049521 <cmpxchg4_mv_constant_complex2>
+ 8055bca:	e8 3a 3a ff ff       	call   8049609 <cmpxchg5_mv_plain>
+ 8055bcf:	e8 3e 3a ff ff       	call   8049612 <cmpxchg5_mv_allregs>
+ 8055bd4:	e8 2b 3b ff ff       	call   8049704 <cmpxchg5_mv_constant_simple>
+ 8055bd9:	e8 0d 3c ff ff       	call   80497eb <cmpxchg5_mv_constant_complex1>
+ 8055bde:	e8 ef 3c ff ff       	call   80498d2 <cmpxchg5_mv_constant_complex2>
+ 8055be3:	e8 d2 3d ff ff       	call   80499ba <cmpxchg_locked_mv_plain>
+ 8055be8:	e8 d7 3d ff ff       	call   80499c4 <cmpxchg_locked_mv_allregs>
+ 8055bed:	e8 c5 3e ff ff       	call   8049ab7 <cmpxchg_locked_mv_constant_simple>
+ 8055bf2:	e8 a8 3f ff ff       	call   8049b9f <cmpxchg_locked_mv_constant_complex1>
+ 8055bf7:	e8 8b 40 ff ff       	call   8049c87 <cmpxchg_locked_mv_constant_complex2>
  8055bfc:	e8 6f 41 ff ff       	call   8049d70 <cpuid_plain>
  8055c01:	e8 72 41 ff ff       	call   8049d78 <cpuid_allregs>
  8055c06:	e8 5e 42 ff ff       	call   8049e69 <cpuid_constant_simple>
@@ -11122,46 +11122,46 @@ Disassembly of section .text:
  8055c51:	e8 1c 4d ff ff       	call   804a972 <wbinvd_constant_simple>
  8055c56:	e8 fd 4d ff ff       	call   804aa58 <wbinvd_constant_complex1>
  8055c5b:	e8 de 4e ff ff       	call   804ab3e <wbinvd_constant_complex2>
- 8055c60:	e8 c0 4f ff ff       	call   804ac25 <xadd1_plain>
- 8055c65:	e8 c4 4f ff ff       	call   804ac2e <xadd1_allregs>
- 8055c6a:	e8 b1 50 ff ff       	call   804ad20 <xadd1_constant_simple>
- 8055c6f:	e8 93 51 ff ff       	call   804ae07 <xadd1_constant_complex1>
- 8055c74:	e8 75 52 ff ff       	call   804aeee <xadd1_constant_complex2>
- 8055c79:	e8 58 53 ff ff       	call   804afd6 <xadd2_plain>
- 8055c7e:	e8 5d 53 ff ff       	call   804afe0 <xadd2_allregs>
- 8055c83:	e8 4b 54 ff ff       	call   804b0d3 <xadd2_constant_simple>
- 8055c88:	e8 2e 55 ff ff       	call   804b1bb <xadd2_constant_complex1>
- 8055c8d:	e8 11 56 ff ff       	call   804b2a3 <xadd2_constant_complex2>
+ 8055c60:	e8 c0 4f ff ff       	call   804ac25 <xadd1_mv_plain>
+ 8055c65:	e8 c4 4f ff ff       	call   804ac2e <xadd1_mv_allregs>
+ 8055c6a:	e8 b1 50 ff ff       	call   804ad20 <xadd1_mv_constant_simple>
+ 8055c6f:	e8 93 51 ff ff       	call   804ae07 <xadd1_mv_constant_complex1>
+ 8055c74:	e8 75 52 ff ff       	call   804aeee <xadd1_mv_constant_complex2>
+ 8055c79:	e8 58 53 ff ff       	call   804afd6 <xadd2_mv_plain>
+ 8055c7e:	e8 5d 53 ff ff       	call   804afe0 <xadd2_mv_allregs>
+ 8055c83:	e8 4b 54 ff ff       	call   804b0d3 <xadd2_mv_constant_simple>
+ 8055c88:	e8 2e 55 ff ff       	call   804b1bb <xadd2_mv_constant_complex1>
+ 8055c8d:	e8 11 56 ff ff       	call   804b2a3 <xadd2_mv_constant_complex2>
  8055c92:	e8 f5 56 ff ff       	call   804b38c <xadd3_plain>
  8055c97:	e8 f9 56 ff ff       	call   804b395 <xadd3_allregs>
  8055c9c:	e8 e6 57 ff ff       	call   804b487 <xadd3_constant_simple>
  8055ca1:	e8 c8 58 ff ff       	call   804b56e <xadd3_constant_complex1>
  8055ca6:	e8 aa 59 ff ff       	call   804b655 <xadd3_constant_complex2>
- 8055cab:	e8 8d 5a ff ff       	call   804b73d <xadd4_plain>
- 8055cb0:	e8 91 5a ff ff       	call   804b746 <xadd4_allregs>
- 8055cb5:	e8 7e 5b ff ff       	call   804b838 <xadd4_constant_simple>
- 8055cba:	e8 60 5c ff ff       	call   804b91f <xadd4_constant_complex1>
- 8055cbf:	e8 42 5d ff ff       	call   804ba06 <xadd4_constant_complex2>
- 8055cc4:	e8 25 5e ff ff       	call   804baee <xadd5_plain>
- 8055cc9:	e8 29 5e ff ff       	call   804baf7 <xadd5_allregs>
- 8055cce:	e8 16 5f ff ff       	call   804bbe9 <xadd5_constant_simple>
- 8055cd3:	e8 f8 5f ff ff       	call   804bcd0 <xadd5_constant_complex1>
- 8055cd8:	e8 da 60 ff ff       	call   804bdb7 <xadd5_constant_complex2>
- 8055cdd:	e8 bd 61 ff ff       	call   804be9f <xadd_locked_plain>
- 8055ce2:	e8 c2 61 ff ff       	call   804bea9 <xadd_locked_allregs>
- 8055ce7:	e8 b0 62 ff ff       	call   804bf9c <xadd_locked_constant_simple>
- 8055cec:	e8 93 63 ff ff       	call   804c084 <xadd_locked_constant_complex1>
- 8055cf1:	e8 76 64 ff ff       	call   804c16c <xadd_locked_constant_complex2>
+ 8055cab:	e8 8d 5a ff ff       	call   804b73d <xadd4_mv_plain>
+ 8055cb0:	e8 91 5a ff ff       	call   804b746 <xadd4_mv_allregs>
+ 8055cb5:	e8 7e 5b ff ff       	call   804b838 <xadd4_mv_constant_simple>
+ 8055cba:	e8 60 5c ff ff       	call   804b91f <xadd4_mv_constant_complex1>
+ 8055cbf:	e8 42 5d ff ff       	call   804ba06 <xadd4_mv_constant_complex2>
+ 8055cc4:	e8 25 5e ff ff       	call   804baee <xadd5_mv_plain>
+ 8055cc9:	e8 29 5e ff ff       	call   804baf7 <xadd5_mv_allregs>
+ 8055cce:	e8 16 5f ff ff       	call   804bbe9 <xadd5_mv_constant_simple>
+ 8055cd3:	e8 f8 5f ff ff       	call   804bcd0 <xadd5_mv_constant_complex1>
+ 8055cd8:	e8 da 60 ff ff       	call   804bdb7 <xadd5_mv_constant_complex2>
+ 8055cdd:	e8 bd 61 ff ff       	call   804be9f <xadd_locked_mv_plain>
+ 8055ce2:	e8 c2 61 ff ff       	call   804bea9 <xadd_locked_mv_allregs>
+ 8055ce7:	e8 b0 62 ff ff       	call   804bf9c <xadd_locked_mv_constant_simple>
+ 8055cec:	e8 93 63 ff ff       	call   804c084 <xadd_locked_mv_constant_complex1>
+ 8055cf1:	e8 76 64 ff ff       	call   804c16c <xadd_locked_mv_constant_complex2>
  8055cf6:	e8 5a 65 ff ff       	call   804c255 <cmpxchg8b_plain>
  8055cfb:	e8 5e 65 ff ff       	call   804c25e <cmpxchg8b_allregs>
  8055d00:	e8 4b 66 ff ff       	call   804c350 <cmpxchg8b_constant_simple>
  8055d05:	e8 2d 67 ff ff       	call   804c437 <cmpxchg8b_constant_complex1>
  8055d0a:	e8 0f 68 ff ff       	call   804c51e <cmpxchg8b_constant_complex2>
- 8055d0f:	e8 f2 68 ff ff       	call   804c606 <cmpxchg8b_locked_plain>
- 8055d14:	e8 f7 68 ff ff       	call   804c610 <cmpxchg8b_locked_allregs>
- 8055d19:	e8 e5 69 ff ff       	call   804c703 <cmpxchg8b_locked_constant_simple>
- 8055d1e:	e8 c8 6a ff ff       	call   804c7eb <cmpxchg8b_locked_constant_complex1>
- 8055d23:	e8 ab 6b ff ff       	call   804c8d3 <cmpxchg8b_locked_constant_complex2>
+ 8055d0f:	e8 f2 68 ff ff       	call   804c606 <cmpxchg8b_locked_mv_plain>
+ 8055d14:	e8 f7 68 ff ff       	call   804c610 <cmpxchg8b_locked_mv_allregs>
+ 8055d19:	e8 e5 69 ff ff       	call   804c703 <cmpxchg8b_locked_mv_constant_simple>
+ 8055d1e:	e8 c8 6a ff ff       	call   804c7eb <cmpxchg8b_locked_mv_constant_complex1>
+ 8055d23:	e8 ab 6b ff ff       	call   804c8d3 <cmpxchg8b_locked_mv_constant_complex2>
  8055d28:	e8 8f 6c ff ff       	call   804c9bc <rdtsc_plain>
  8055d2d:	e8 92 6c ff ff       	call   804c9c4 <rdtsc_allregs>
  8055d32:	e8 7e 6d ff ff       	call   804cab5 <rdtsc_constant_simple>
@@ -11182,181 +11182,181 @@ Disassembly of section .text:
  8055d7d:	e8 3b 78 ff ff       	call   804d5bd <cmov1_constant_simple>
  8055d82:	e8 1e 79 ff ff       	call   804d6a5 <cmov1_constant_complex1>
  8055d87:	e8 01 7a ff ff       	call   804d78d <cmov1_constant_complex2>
- 8055d8c:	e8 e5 7a ff ff       	call   804d876 <cmov2_plain>
- 8055d91:	e8 ea 7a ff ff       	call   804d880 <cmov2_allregs>
- 8055d96:	e8 d8 7b ff ff       	call   804d973 <cmov2_constant_simple>
- 8055d9b:	e8 bb 7c ff ff       	call   804da5b <cmov2_constant_complex1>
- 8055da0:	e8 9e 7d ff ff       	call   804db43 <cmov2_constant_complex2>
- 8055da5:	e8 82 7e ff ff       	call   804dc2c <cmov3_plain>
- 8055daa:	e8 88 7e ff ff       	call   804dc37 <cmov3_allregs>
- 8055daf:	e8 77 7f ff ff       	call   804dd2b <cmov3_constant_simple>
- 8055db4:	e8 5b 80 ff ff       	call   804de14 <cmov3_constant_complex1>
- 8055db9:	e8 3f 81 ff ff       	call   804defd <cmov3_constant_complex2>
- 8055dbe:	e8 24 82 ff ff       	call   804dfe7 <cmov4_plain>
- 8055dc3:	e8 29 82 ff ff       	call   804dff1 <cmov4_allregs>
- 8055dc8:	e8 17 83 ff ff       	call   804e0e4 <cmov4_constant_simple>
- 8055dcd:	e8 fa 83 ff ff       	call   804e1cc <cmov4_constant_complex1>
- 8055dd2:	e8 dd 84 ff ff       	call   804e2b4 <cmov4_constant_complex2>
+ 8055d8c:	e8 e5 7a ff ff       	call   804d876 <cmov2_mv_plain>
+ 8055d91:	e8 ea 7a ff ff       	call   804d880 <cmov2_mv_allregs>
+ 8055d96:	e8 d8 7b ff ff       	call   804d973 <cmov2_mv_constant_simple>
+ 8055d9b:	e8 bb 7c ff ff       	call   804da5b <cmov2_mv_constant_complex1>
+ 8055da0:	e8 9e 7d ff ff       	call   804db43 <cmov2_mv_constant_complex2>
+ 8055da5:	e8 82 7e ff ff       	call   804dc2c <cmov3_mv_plain>
+ 8055daa:	e8 88 7e ff ff       	call   804dc37 <cmov3_mv_allregs>
+ 8055daf:	e8 77 7f ff ff       	call   804dd2b <cmov3_mv_constant_simple>
+ 8055db4:	e8 5b 80 ff ff       	call   804de14 <cmov3_mv_constant_complex1>
+ 8055db9:	e8 3f 81 ff ff       	call   804defd <cmov3_mv_constant_complex2>
+ 8055dbe:	e8 24 82 ff ff       	call   804dfe7 <cmov4_mv_plain>
+ 8055dc3:	e8 29 82 ff ff       	call   804dff1 <cmov4_mv_allregs>
+ 8055dc8:	e8 17 83 ff ff       	call   804e0e4 <cmov4_mv_constant_simple>
+ 8055dcd:	e8 fa 83 ff ff       	call   804e1cc <cmov4_mv_constant_complex1>
+ 8055dd2:	e8 dd 84 ff ff       	call   804e2b4 <cmov4_mv_constant_complex2>
  8055dd7:	e8 c1 85 ff ff       	call   804e39d <cmov_w_with_code_0_plain>
  8055ddc:	e8 c8 85 ff ff       	call   804e3a9 <cmov_w_with_code_0_allregs>
  8055de1:	e8 b8 86 ff ff       	call   804e49e <cmov_w_with_code_0_constant_simple>
  8055de6:	e8 9d 87 ff ff       	call   804e588 <cmov_w_with_code_0_constant_complex1>
  8055deb:	e8 82 88 ff ff       	call   804e672 <cmov_w_with_code_0_constant_complex2>
- 8055df0:	e8 68 89 ff ff       	call   804e75d <cmov_w_with_code_1_plain>
- 8055df5:	e8 6f 89 ff ff       	call   804e769 <cmov_w_with_code_1_allregs>
- 8055dfa:	e8 5f 8a ff ff       	call   804e85e <cmov_w_with_code_1_constant_simple>
- 8055dff:	e8 44 8b ff ff       	call   804e948 <cmov_w_with_code_1_constant_complex1>
- 8055e04:	e8 29 8c ff ff       	call   804ea32 <cmov_w_with_code_1_constant_complex2>
- 8055e09:	e8 0f 8d ff ff       	call   804eb1d <cmov_w_with_code_2_plain>
- 8055e0e:	e8 16 8d ff ff       	call   804eb29 <cmov_w_with_code_2_allregs>
- 8055e13:	e8 06 8e ff ff       	call   804ec1e <cmov_w_with_code_2_constant_simple>
- 8055e18:	e8 eb 8e ff ff       	call   804ed08 <cmov_w_with_code_2_constant_complex1>
- 8055e1d:	e8 d0 8f ff ff       	call   804edf2 <cmov_w_with_code_2_constant_complex2>
- 8055e22:	e8 b6 90 ff ff       	call   804eedd <cmov_w_with_code_3_plain>
- 8055e27:	e8 bd 90 ff ff       	call   804eee9 <cmov_w_with_code_3_allregs>
- 8055e2c:	e8 ad 91 ff ff       	call   804efde <cmov_w_with_code_3_constant_simple>
- 8055e31:	e8 92 92 ff ff       	call   804f0c8 <cmov_w_with_code_3_constant_complex1>
- 8055e36:	e8 77 93 ff ff       	call   804f1b2 <cmov_w_with_code_3_constant_complex2>
- 8055e3b:	e8 5d 94 ff ff       	call   804f29d <cmov_w_with_code_4_plain>
- 8055e40:	e8 64 94 ff ff       	call   804f2a9 <cmov_w_with_code_4_allregs>
- 8055e45:	e8 54 95 ff ff       	call   804f39e <cmov_w_with_code_4_constant_simple>
- 8055e4a:	e8 39 96 ff ff       	call   804f488 <cmov_w_with_code_4_constant_complex1>
- 8055e4f:	e8 1e 97 ff ff       	call   804f572 <cmov_w_with_code_4_constant_complex2>
- 8055e54:	e8 04 98 ff ff       	call   804f65d <cmov_w_with_code_5_plain>
- 8055e59:	e8 0b 98 ff ff       	call   804f669 <cmov_w_with_code_5_allregs>
- 8055e5e:	e8 fb 98 ff ff       	call   804f75e <cmov_w_with_code_5_constant_simple>
- 8055e63:	e8 e0 99 ff ff       	call   804f848 <cmov_w_with_code_5_constant_complex1>
- 8055e68:	e8 c5 9a ff ff       	call   804f932 <cmov_w_with_code_5_constant_complex2>
- 8055e6d:	e8 ab 9b ff ff       	call   804fa1d <cmov_w_with_code_6_plain>
- 8055e72:	e8 b2 9b ff ff       	call   804fa29 <cmov_w_with_code_6_allregs>
- 8055e77:	e8 a2 9c ff ff       	call   804fb1e <cmov_w_with_code_6_constant_simple>
- 8055e7c:	e8 87 9d ff ff       	call   804fc08 <cmov_w_with_code_6_constant_complex1>
- 8055e81:	e8 6c 9e ff ff       	call   804fcf2 <cmov_w_with_code_6_constant_complex2>
- 8055e86:	e8 52 9f ff ff       	call   804fddd <cmov_w_with_code_7_plain>
- 8055e8b:	e8 59 9f ff ff       	call   804fde9 <cmov_w_with_code_7_allregs>
- 8055e90:	e8 49 a0 ff ff       	call   804fede <cmov_w_with_code_7_constant_simple>
- 8055e95:	e8 2e a1 ff ff       	call   804ffc8 <cmov_w_with_code_7_constant_complex1>
- 8055e9a:	e8 13 a2 ff ff       	call   80500b2 <cmov_w_with_code_7_constant_complex2>
- 8055e9f:	e8 f9 a2 ff ff       	call   805019d <cmov_w_with_code_8_plain>
- 8055ea4:	e8 00 a3 ff ff       	call   80501a9 <cmov_w_with_code_8_allregs>
- 8055ea9:	e8 f0 a3 ff ff       	call   805029e <cmov_w_with_code_8_constant_simple>
- 8055eae:	e8 d5 a4 ff ff       	call   8050388 <cmov_w_with_code_8_constant_complex1>
- 8055eb3:	e8 ba a5 ff ff       	call   8050472 <cmov_w_with_code_8_constant_complex2>
- 8055eb8:	e8 a0 a6 ff ff       	call   805055d <cmov_w_with_code_9_plain>
- 8055ebd:	e8 a7 a6 ff ff       	call   8050569 <cmov_w_with_code_9_allregs>
- 8055ec2:	e8 97 a7 ff ff       	call   805065e <cmov_w_with_code_9_constant_simple>
- 8055ec7:	e8 7c a8 ff ff       	call   8050748 <cmov_w_with_code_9_constant_complex1>
- 8055ecc:	e8 61 a9 ff ff       	call   8050832 <cmov_w_with_code_9_constant_complex2>
- 8055ed1:	e8 47 aa ff ff       	call   805091d <cmov_w_with_code_a_plain>
- 8055ed6:	e8 4e aa ff ff       	call   8050929 <cmov_w_with_code_a_allregs>
- 8055edb:	e8 3e ab ff ff       	call   8050a1e <cmov_w_with_code_a_constant_simple>
- 8055ee0:	e8 23 ac ff ff       	call   8050b08 <cmov_w_with_code_a_constant_complex1>
- 8055ee5:	e8 08 ad ff ff       	call   8050bf2 <cmov_w_with_code_a_constant_complex2>
- 8055eea:	e8 ee ad ff ff       	call   8050cdd <cmov_w_with_code_b_plain>
- 8055eef:	e8 f5 ad ff ff       	call   8050ce9 <cmov_w_with_code_b_allregs>
- 8055ef4:	e8 e5 ae ff ff       	call   8050dde <cmov_w_with_code_b_constant_simple>
- 8055ef9:	e8 ca af ff ff       	call   8050ec8 <cmov_w_with_code_b_constant_complex1>
- 8055efe:	e8 af b0 ff ff       	call   8050fb2 <cmov_w_with_code_b_constant_complex2>
- 8055f03:	e8 95 b1 ff ff       	call   805109d <cmov_w_with_code_c_plain>
- 8055f08:	e8 9c b1 ff ff       	call   80510a9 <cmov_w_with_code_c_allregs>
- 8055f0d:	e8 8c b2 ff ff       	call   805119e <cmov_w_with_code_c_constant_simple>
- 8055f12:	e8 71 b3 ff ff       	call   8051288 <cmov_w_with_code_c_constant_complex1>
- 8055f17:	e8 56 b4 ff ff       	call   8051372 <cmov_w_with_code_c_constant_complex2>
- 8055f1c:	e8 3c b5 ff ff       	call   805145d <cmov_w_with_code_d_plain>
- 8055f21:	e8 43 b5 ff ff       	call   8051469 <cmov_w_with_code_d_allregs>
- 8055f26:	e8 33 b6 ff ff       	call   805155e <cmov_w_with_code_d_constant_simple>
- 8055f2b:	e8 18 b7 ff ff       	call   8051648 <cmov_w_with_code_d_constant_complex1>
- 8055f30:	e8 fd b7 ff ff       	call   8051732 <cmov_w_with_code_d_constant_complex2>
- 8055f35:	e8 e3 b8 ff ff       	call   805181d <cmov_w_with_code_e_plain>
- 8055f3a:	e8 ea b8 ff ff       	call   8051829 <cmov_w_with_code_e_allregs>
- 8055f3f:	e8 da b9 ff ff       	call   805191e <cmov_w_with_code_e_constant_simple>
- 8055f44:	e8 bf ba ff ff       	call   8051a08 <cmov_w_with_code_e_constant_complex1>
- 8055f49:	e8 a4 bb ff ff       	call   8051af2 <cmov_w_with_code_e_constant_complex2>
- 8055f4e:	e8 8a bc ff ff       	call   8051bdd <cmov_w_with_code_f_plain>
- 8055f53:	e8 91 bc ff ff       	call   8051be9 <cmov_w_with_code_f_allregs>
- 8055f58:	e8 81 bd ff ff       	call   8051cde <cmov_w_with_code_f_constant_simple>
- 8055f5d:	e8 66 be ff ff       	call   8051dc8 <cmov_w_with_code_f_constant_complex1>
- 8055f62:	e8 4b bf ff ff       	call   8051eb2 <cmov_w_with_code_f_constant_complex2>
+ 8055df0:	e8 68 89 ff ff       	call   804e75d <cmov_w_with_code_1_mv_plain>
+ 8055df5:	e8 6f 89 ff ff       	call   804e769 <cmov_w_with_code_1_mv_allregs>
+ 8055dfa:	e8 5f 8a ff ff       	call   804e85e <cmov_w_with_code_1_mv_constant_simple>
+ 8055dff:	e8 44 8b ff ff       	call   804e948 <cmov_w_with_code_1_mv_constant_complex1>
+ 8055e04:	e8 29 8c ff ff       	call   804ea32 <cmov_w_with_code_1_mv_constant_complex2>
+ 8055e09:	e8 0f 8d ff ff       	call   804eb1d <cmov_w_with_code_2_mv_plain>
+ 8055e0e:	e8 16 8d ff ff       	call   804eb29 <cmov_w_with_code_2_mv_allregs>
+ 8055e13:	e8 06 8e ff ff       	call   804ec1e <cmov_w_with_code_2_mv_constant_simple>
+ 8055e18:	e8 eb 8e ff ff       	call   804ed08 <cmov_w_with_code_2_mv_constant_complex1>
+ 8055e1d:	e8 d0 8f ff ff       	call   804edf2 <cmov_w_with_code_2_mv_constant_complex2>
+ 8055e22:	e8 b6 90 ff ff       	call   804eedd <cmov_w_with_code_3_mv_plain>
+ 8055e27:	e8 bd 90 ff ff       	call   804eee9 <cmov_w_with_code_3_mv_allregs>
+ 8055e2c:	e8 ad 91 ff ff       	call   804efde <cmov_w_with_code_3_mv_constant_simple>
+ 8055e31:	e8 92 92 ff ff       	call   804f0c8 <cmov_w_with_code_3_mv_constant_complex1>
+ 8055e36:	e8 77 93 ff ff       	call   804f1b2 <cmov_w_with_code_3_mv_constant_complex2>
+ 8055e3b:	e8 5d 94 ff ff       	call   804f29d <cmov_w_with_code_4_mv_plain>
+ 8055e40:	e8 64 94 ff ff       	call   804f2a9 <cmov_w_with_code_4_mv_allregs>
+ 8055e45:	e8 54 95 ff ff       	call   804f39e <cmov_w_with_code_4_mv_constant_simple>
+ 8055e4a:	e8 39 96 ff ff       	call   804f488 <cmov_w_with_code_4_mv_constant_complex1>
+ 8055e4f:	e8 1e 97 ff ff       	call   804f572 <cmov_w_with_code_4_mv_constant_complex2>
+ 8055e54:	e8 04 98 ff ff       	call   804f65d <cmov_w_with_code_5_mv_plain>
+ 8055e59:	e8 0b 98 ff ff       	call   804f669 <cmov_w_with_code_5_mv_allregs>
+ 8055e5e:	e8 fb 98 ff ff       	call   804f75e <cmov_w_with_code_5_mv_constant_simple>
+ 8055e63:	e8 e0 99 ff ff       	call   804f848 <cmov_w_with_code_5_mv_constant_complex1>
+ 8055e68:	e8 c5 9a ff ff       	call   804f932 <cmov_w_with_code_5_mv_constant_complex2>
+ 8055e6d:	e8 ab 9b ff ff       	call   804fa1d <cmov_w_with_code_6_mv_plain>
+ 8055e72:	e8 b2 9b ff ff       	call   804fa29 <cmov_w_with_code_6_mv_allregs>
+ 8055e77:	e8 a2 9c ff ff       	call   804fb1e <cmov_w_with_code_6_mv_constant_simple>
+ 8055e7c:	e8 87 9d ff ff       	call   804fc08 <cmov_w_with_code_6_mv_constant_complex1>
+ 8055e81:	e8 6c 9e ff ff       	call   804fcf2 <cmov_w_with_code_6_mv_constant_complex2>
+ 8055e86:	e8 52 9f ff ff       	call   804fddd <cmov_w_with_code_7_mv_plain>
+ 8055e8b:	e8 59 9f ff ff       	call   804fde9 <cmov_w_with_code_7_mv_allregs>
+ 8055e90:	e8 49 a0 ff ff       	call   804fede <cmov_w_with_code_7_mv_constant_simple>
+ 8055e95:	e8 2e a1 ff ff       	call   804ffc8 <cmov_w_with_code_7_mv_constant_complex1>
+ 8055e9a:	e8 13 a2 ff ff       	call   80500b2 <cmov_w_with_code_7_mv_constant_complex2>
+ 8055e9f:	e8 f9 a2 ff ff       	call   805019d <cmov_w_with_code_8_mv_plain>
+ 8055ea4:	e8 00 a3 ff ff       	call   80501a9 <cmov_w_with_code_8_mv_allregs>
+ 8055ea9:	e8 f0 a3 ff ff       	call   805029e <cmov_w_with_code_8_mv_constant_simple>
+ 8055eae:	e8 d5 a4 ff ff       	call   8050388 <cmov_w_with_code_8_mv_constant_complex1>
+ 8055eb3:	e8 ba a5 ff ff       	call   8050472 <cmov_w_with_code_8_mv_constant_complex2>
+ 8055eb8:	e8 a0 a6 ff ff       	call   805055d <cmov_w_with_code_9_mv_plain>
+ 8055ebd:	e8 a7 a6 ff ff       	call   8050569 <cmov_w_with_code_9_mv_allregs>
+ 8055ec2:	e8 97 a7 ff ff       	call   805065e <cmov_w_with_code_9_mv_constant_simple>
+ 8055ec7:	e8 7c a8 ff ff       	call   8050748 <cmov_w_with_code_9_mv_constant_complex1>
+ 8055ecc:	e8 61 a9 ff ff       	call   8050832 <cmov_w_with_code_9_mv_constant_complex2>
+ 8055ed1:	e8 47 aa ff ff       	call   805091d <cmov_w_with_code_a_mv_plain>
+ 8055ed6:	e8 4e aa ff ff       	call   8050929 <cmov_w_with_code_a_mv_allregs>
+ 8055edb:	e8 3e ab ff ff       	call   8050a1e <cmov_w_with_code_a_mv_constant_simple>
+ 8055ee0:	e8 23 ac ff ff       	call   8050b08 <cmov_w_with_code_a_mv_constant_complex1>
+ 8055ee5:	e8 08 ad ff ff       	call   8050bf2 <cmov_w_with_code_a_mv_constant_complex2>
+ 8055eea:	e8 ee ad ff ff       	call   8050cdd <cmov_w_with_code_b_mv_plain>
+ 8055eef:	e8 f5 ad ff ff       	call   8050ce9 <cmov_w_with_code_b_mv_allregs>
+ 8055ef4:	e8 e5 ae ff ff       	call   8050dde <cmov_w_with_code_b_mv_constant_simple>
+ 8055ef9:	e8 ca af ff ff       	call   8050ec8 <cmov_w_with_code_b_mv_constant_complex1>
+ 8055efe:	e8 af b0 ff ff       	call   8050fb2 <cmov_w_with_code_b_mv_constant_complex2>
+ 8055f03:	e8 95 b1 ff ff       	call   805109d <cmov_w_with_code_c_mv_plain>
+ 8055f08:	e8 9c b1 ff ff       	call   80510a9 <cmov_w_with_code_c_mv_allregs>
+ 8055f0d:	e8 8c b2 ff ff       	call   805119e <cmov_w_with_code_c_mv_constant_simple>
+ 8055f12:	e8 71 b3 ff ff       	call   8051288 <cmov_w_with_code_c_mv_constant_complex1>
+ 8055f17:	e8 56 b4 ff ff       	call   8051372 <cmov_w_with_code_c_mv_constant_complex2>
+ 8055f1c:	e8 3c b5 ff ff       	call   805145d <cmov_w_with_code_d_mv_plain>
+ 8055f21:	e8 43 b5 ff ff       	call   8051469 <cmov_w_with_code_d_mv_allregs>
+ 8055f26:	e8 33 b6 ff ff       	call   805155e <cmov_w_with_code_d_mv_constant_simple>
+ 8055f2b:	e8 18 b7 ff ff       	call   8051648 <cmov_w_with_code_d_mv_constant_complex1>
+ 8055f30:	e8 fd b7 ff ff       	call   8051732 <cmov_w_with_code_d_mv_constant_complex2>
+ 8055f35:	e8 e3 b8 ff ff       	call   805181d <cmov_w_with_code_e_mv_plain>
+ 8055f3a:	e8 ea b8 ff ff       	call   8051829 <cmov_w_with_code_e_mv_allregs>
+ 8055f3f:	e8 da b9 ff ff       	call   805191e <cmov_w_with_code_e_mv_constant_simple>
+ 8055f44:	e8 bf ba ff ff       	call   8051a08 <cmov_w_with_code_e_mv_constant_complex1>
+ 8055f49:	e8 a4 bb ff ff       	call   8051af2 <cmov_w_with_code_e_mv_constant_complex2>
+ 8055f4e:	e8 8a bc ff ff       	call   8051bdd <cmov_w_with_code_f_mv_plain>
+ 8055f53:	e8 91 bc ff ff       	call   8051be9 <cmov_w_with_code_f_mv_allregs>
+ 8055f58:	e8 81 bd ff ff       	call   8051cde <cmov_w_with_code_f_mv_constant_simple>
+ 8055f5d:	e8 66 be ff ff       	call   8051dc8 <cmov_w_with_code_f_mv_constant_complex1>
+ 8055f62:	e8 4b bf ff ff       	call   8051eb2 <cmov_w_with_code_f_mv_constant_complex2>
  8055f67:	e8 31 c0 ff ff       	call   8051f9d <cmov_l_with_code_0_plain>
  8055f6c:	e8 37 c0 ff ff       	call   8051fa8 <cmov_l_with_code_0_allregs>
  8055f71:	e8 26 c1 ff ff       	call   805209c <cmov_l_with_code_0_constant_simple>
  8055f76:	e8 0a c2 ff ff       	call   8052185 <cmov_l_with_code_0_constant_complex1>
  8055f7b:	e8 ee c2 ff ff       	call   805226e <cmov_l_with_code_0_constant_complex2>
- 8055f80:	e8 d3 c3 ff ff       	call   8052358 <cmov_l_with_code_1_plain>
- 8055f85:	e8 d9 c3 ff ff       	call   8052363 <cmov_l_with_code_1_allregs>
- 8055f8a:	e8 c8 c4 ff ff       	call   8052457 <cmov_l_with_code_1_constant_simple>
- 8055f8f:	e8 ac c5 ff ff       	call   8052540 <cmov_l_with_code_1_constant_complex1>
- 8055f94:	e8 90 c6 ff ff       	call   8052629 <cmov_l_with_code_1_constant_complex2>
- 8055f99:	e8 75 c7 ff ff       	call   8052713 <cmov_l_with_code_2_plain>
- 8055f9e:	e8 7b c7 ff ff       	call   805271e <cmov_l_with_code_2_allregs>
- 8055fa3:	e8 6a c8 ff ff       	call   8052812 <cmov_l_with_code_2_constant_simple>
- 8055fa8:	e8 4e c9 ff ff       	call   80528fb <cmov_l_with_code_2_constant_complex1>
- 8055fad:	e8 32 ca ff ff       	call   80529e4 <cmov_l_with_code_2_constant_complex2>
- 8055fb2:	e8 17 cb ff ff       	call   8052ace <cmov_l_with_code_3_plain>
- 8055fb7:	e8 1d cb ff ff       	call   8052ad9 <cmov_l_with_code_3_allregs>
- 8055fbc:	e8 0c cc ff ff       	call   8052bcd <cmov_l_with_code_3_constant_simple>
- 8055fc1:	e8 f0 cc ff ff       	call   8052cb6 <cmov_l_with_code_3_constant_complex1>
- 8055fc6:	e8 d4 cd ff ff       	call   8052d9f <cmov_l_with_code_3_constant_complex2>
- 8055fcb:	e8 b9 ce ff ff       	call   8052e89 <cmov_l_with_code_4_plain>
- 8055fd0:	e8 bf ce ff ff       	call   8052e94 <cmov_l_with_code_4_allregs>
- 8055fd5:	e8 ae cf ff ff       	call   8052f88 <cmov_l_with_code_4_constant_simple>
- 8055fda:	e8 92 d0 ff ff       	call   8053071 <cmov_l_with_code_4_constant_complex1>
- 8055fdf:	e8 76 d1 ff ff       	call   805315a <cmov_l_with_code_4_constant_complex2>
- 8055fe4:	e8 5b d2 ff ff       	call   8053244 <cmov_l_with_code_5_plain>
- 8055fe9:	e8 61 d2 ff ff       	call   805324f <cmov_l_with_code_5_allregs>
- 8055fee:	e8 50 d3 ff ff       	call   8053343 <cmov_l_with_code_5_constant_simple>
- 8055ff3:	e8 34 d4 ff ff       	call   805342c <cmov_l_with_code_5_constant_complex1>
- 8055ff8:	e8 18 d5 ff ff       	call   8053515 <cmov_l_with_code_5_constant_complex2>
- 8055ffd:	e8 fd d5 ff ff       	call   80535ff <cmov_l_with_code_6_plain>
- 8056002:	e8 03 d6 ff ff       	call   805360a <cmov_l_with_code_6_allregs>
- 8056007:	e8 f2 d6 ff ff       	call   80536fe <cmov_l_with_code_6_constant_simple>
- 805600c:	e8 d6 d7 ff ff       	call   80537e7 <cmov_l_with_code_6_constant_complex1>
- 8056011:	e8 ba d8 ff ff       	call   80538d0 <cmov_l_with_code_6_constant_complex2>
- 8056016:	e8 9f d9 ff ff       	call   80539ba <cmov_l_with_code_7_plain>
- 805601b:	e8 a5 d9 ff ff       	call   80539c5 <cmov_l_with_code_7_allregs>
- 8056020:	e8 94 da ff ff       	call   8053ab9 <cmov_l_with_code_7_constant_simple>
- 8056025:	e8 78 db ff ff       	call   8053ba2 <cmov_l_with_code_7_constant_complex1>
- 805602a:	e8 5c dc ff ff       	call   8053c8b <cmov_l_with_code_7_constant_complex2>
- 805602f:	e8 41 dd ff ff       	call   8053d75 <cmov_l_with_code_8_plain>
- 8056034:	e8 47 dd ff ff       	call   8053d80 <cmov_l_with_code_8_allregs>
- 8056039:	e8 36 de ff ff       	call   8053e74 <cmov_l_with_code_8_constant_simple>
- 805603e:	e8 1a df ff ff       	call   8053f5d <cmov_l_with_code_8_constant_complex1>
- 8056043:	e8 fe df ff ff       	call   8054046 <cmov_l_with_code_8_constant_complex2>
- 8056048:	e8 e3 e0 ff ff       	call   8054130 <cmov_l_with_code_9_plain>
- 805604d:	e8 e9 e0 ff ff       	call   805413b <cmov_l_with_code_9_allregs>
- 8056052:	e8 d8 e1 ff ff       	call   805422f <cmov_l_with_code_9_constant_simple>
- 8056057:	e8 bc e2 ff ff       	call   8054318 <cmov_l_with_code_9_constant_complex1>
- 805605c:	e8 a0 e3 ff ff       	call   8054401 <cmov_l_with_code_9_constant_complex2>
- 8056061:	e8 85 e4 ff ff       	call   80544eb <cmov_l_with_code_a_plain>
- 8056066:	e8 8b e4 ff ff       	call   80544f6 <cmov_l_with_code_a_allregs>
- 805606b:	e8 7a e5 ff ff       	call   80545ea <cmov_l_with_code_a_constant_simple>
- 8056070:	e8 5e e6 ff ff       	call   80546d3 <cmov_l_with_code_a_constant_complex1>
- 8056075:	e8 42 e7 ff ff       	call   80547bc <cmov_l_with_code_a_constant_complex2>
- 805607a:	e8 27 e8 ff ff       	call   80548a6 <cmov_l_with_code_b_plain>
- 805607f:	e8 2d e8 ff ff       	call   80548b1 <cmov_l_with_code_b_allregs>
- 8056084:	e8 1c e9 ff ff       	call   80549a5 <cmov_l_with_code_b_constant_simple>
- 8056089:	e8 00 ea ff ff       	call   8054a8e <cmov_l_with_code_b_constant_complex1>
- 805608e:	e8 e4 ea ff ff       	call   8054b77 <cmov_l_with_code_b_constant_complex2>
- 8056093:	e8 c9 eb ff ff       	call   8054c61 <cmov_l_with_code_c_plain>
- 8056098:	e8 cf eb ff ff       	call   8054c6c <cmov_l_with_code_c_allregs>
- 805609d:	e8 be ec ff ff       	call   8054d60 <cmov_l_with_code_c_constant_simple>
- 80560a2:	e8 a2 ed ff ff       	call   8054e49 <cmov_l_with_code_c_constant_complex1>
- 80560a7:	e8 86 ee ff ff       	call   8054f32 <cmov_l_with_code_c_constant_complex2>
- 80560ac:	e8 6b ef ff ff       	call   805501c <cmov_l_with_code_d_plain>
- 80560b1:	e8 71 ef ff ff       	call   8055027 <cmov_l_with_code_d_allregs>
- 80560b6:	e8 60 f0 ff ff       	call   805511b <cmov_l_with_code_d_constant_simple>
- 80560bb:	e8 44 f1 ff ff       	call   8055204 <cmov_l_with_code_d_constant_complex1>
- 80560c0:	e8 28 f2 ff ff       	call   80552ed <cmov_l_with_code_d_constant_complex2>
- 80560c5:	e8 0d f3 ff ff       	call   80553d7 <cmov_l_with_code_e_plain>
- 80560ca:	e8 13 f3 ff ff       	call   80553e2 <cmov_l_with_code_e_allregs>
- 80560cf:	e8 02 f4 ff ff       	call   80554d6 <cmov_l_with_code_e_constant_simple>
- 80560d4:	e8 e6 f4 ff ff       	call   80555bf <cmov_l_with_code_e_constant_complex1>
- 80560d9:	e8 ca f5 ff ff       	call   80556a8 <cmov_l_with_code_e_constant_complex2>
- 80560de:	e8 af f6 ff ff       	call   8055792 <cmov_l_with_code_f_plain>
- 80560e3:	e8 b5 f6 ff ff       	call   805579d <cmov_l_with_code_f_allregs>
- 80560e8:	e8 a4 f7 ff ff       	call   8055891 <cmov_l_with_code_f_constant_simple>
- 80560ed:	e8 88 f8 ff ff       	call   805597a <cmov_l_with_code_f_constant_complex1>
- 80560f2:	e8 6c f9 ff ff       	call   8055a63 <cmov_l_with_code_f_constant_complex2>
+ 8055f80:	e8 d3 c3 ff ff       	call   8052358 <cmov_l_with_code_1_mv_plain>
+ 8055f85:	e8 d9 c3 ff ff       	call   8052363 <cmov_l_with_code_1_mv_allregs>
+ 8055f8a:	e8 c8 c4 ff ff       	call   8052457 <cmov_l_with_code_1_mv_constant_simple>
+ 8055f8f:	e8 ac c5 ff ff       	call   8052540 <cmov_l_with_code_1_mv_constant_complex1>
+ 8055f94:	e8 90 c6 ff ff       	call   8052629 <cmov_l_with_code_1_mv_constant_complex2>
+ 8055f99:	e8 75 c7 ff ff       	call   8052713 <cmov_l_with_code_2_mv_plain>
+ 8055f9e:	e8 7b c7 ff ff       	call   805271e <cmov_l_with_code_2_mv_allregs>
+ 8055fa3:	e8 6a c8 ff ff       	call   8052812 <cmov_l_with_code_2_mv_constant_simple>
+ 8055fa8:	e8 4e c9 ff ff       	call   80528fb <cmov_l_with_code_2_mv_constant_complex1>
+ 8055fad:	e8 32 ca ff ff       	call   80529e4 <cmov_l_with_code_2_mv_constant_complex2>
+ 8055fb2:	e8 17 cb ff ff       	call   8052ace <cmov_l_with_code_3_mv_plain>
+ 8055fb7:	e8 1d cb ff ff       	call   8052ad9 <cmov_l_with_code_3_mv_allregs>
+ 8055fbc:	e8 0c cc ff ff       	call   8052bcd <cmov_l_with_code_3_mv_constant_simple>
+ 8055fc1:	e8 f0 cc ff ff       	call   8052cb6 <cmov_l_with_code_3_mv_constant_complex1>
+ 8055fc6:	e8 d4 cd ff ff       	call   8052d9f <cmov_l_with_code_3_mv_constant_complex2>
+ 8055fcb:	e8 b9 ce ff ff       	call   8052e89 <cmov_l_with_code_4_mv_plain>
+ 8055fd0:	e8 bf ce ff ff       	call   8052e94 <cmov_l_with_code_4_mv_allregs>
+ 8055fd5:	e8 ae cf ff ff       	call   8052f88 <cmov_l_with_code_4_mv_constant_simple>
+ 8055fda:	e8 92 d0 ff ff       	call   8053071 <cmov_l_with_code_4_mv_constant_complex1>
+ 8055fdf:	e8 76 d1 ff ff       	call   805315a <cmov_l_with_code_4_mv_constant_complex2>
+ 8055fe4:	e8 5b d2 ff ff       	call   8053244 <cmov_l_with_code_5_mv_plain>
+ 8055fe9:	e8 61 d2 ff ff       	call   805324f <cmov_l_with_code_5_mv_allregs>
+ 8055fee:	e8 50 d3 ff ff       	call   8053343 <cmov_l_with_code_5_mv_constant_simple>
+ 8055ff3:	e8 34 d4 ff ff       	call   805342c <cmov_l_with_code_5_mv_constant_complex1>
+ 8055ff8:	e8 18 d5 ff ff       	call   8053515 <cmov_l_with_code_5_mv_constant_complex2>
+ 8055ffd:	e8 fd d5 ff ff       	call   80535ff <cmov_l_with_code_6_mv_plain>
+ 8056002:	e8 03 d6 ff ff       	call   805360a <cmov_l_with_code_6_mv_allregs>
+ 8056007:	e8 f2 d6 ff ff       	call   80536fe <cmov_l_with_code_6_mv_constant_simple>
+ 805600c:	e8 d6 d7 ff ff       	call   80537e7 <cmov_l_with_code_6_mv_constant_complex1>
+ 8056011:	e8 ba d8 ff ff       	call   80538d0 <cmov_l_with_code_6_mv_constant_complex2>
+ 8056016:	e8 9f d9 ff ff       	call   80539ba <cmov_l_with_code_7_mv_plain>
+ 805601b:	e8 a5 d9 ff ff       	call   80539c5 <cmov_l_with_code_7_mv_allregs>
+ 8056020:	e8 94 da ff ff       	call   8053ab9 <cmov_l_with_code_7_mv_constant_simple>
+ 8056025:	e8 78 db ff ff       	call   8053ba2 <cmov_l_with_code_7_mv_constant_complex1>
+ 805602a:	e8 5c dc ff ff       	call   8053c8b <cmov_l_with_code_7_mv_constant_complex2>
+ 805602f:	e8 41 dd ff ff       	call   8053d75 <cmov_l_with_code_8_mv_plain>
+ 8056034:	e8 47 dd ff ff       	call   8053d80 <cmov_l_with_code_8_mv_allregs>
+ 8056039:	e8 36 de ff ff       	call   8053e74 <cmov_l_with_code_8_mv_constant_simple>
+ 805603e:	e8 1a df ff ff       	call   8053f5d <cmov_l_with_code_8_mv_constant_complex1>
+ 8056043:	e8 fe df ff ff       	call   8054046 <cmov_l_with_code_8_mv_constant_complex2>
+ 8056048:	e8 e3 e0 ff ff       	call   8054130 <cmov_l_with_code_9_mv_plain>
+ 805604d:	e8 e9 e0 ff ff       	call   805413b <cmov_l_with_code_9_mv_allregs>
+ 8056052:	e8 d8 e1 ff ff       	call   805422f <cmov_l_with_code_9_mv_constant_simple>
+ 8056057:	e8 bc e2 ff ff       	call   8054318 <cmov_l_with_code_9_mv_constant_complex1>
+ 805605c:	e8 a0 e3 ff ff       	call   8054401 <cmov_l_with_code_9_mv_constant_complex2>
+ 8056061:	e8 85 e4 ff ff       	call   80544eb <cmov_l_with_code_a_mv_plain>
+ 8056066:	e8 8b e4 ff ff       	call   80544f6 <cmov_l_with_code_a_mv_allregs>
+ 805606b:	e8 7a e5 ff ff       	call   80545ea <cmov_l_with_code_a_mv_constant_simple>
+ 8056070:	e8 5e e6 ff ff       	call   80546d3 <cmov_l_with_code_a_mv_constant_complex1>
+ 8056075:	e8 42 e7 ff ff       	call   80547bc <cmov_l_with_code_a_mv_constant_complex2>
+ 805607a:	e8 27 e8 ff ff       	call   80548a6 <cmov_l_with_code_b_mv_plain>
+ 805607f:	e8 2d e8 ff ff       	call   80548b1 <cmov_l_with_code_b_mv_allregs>
+ 8056084:	e8 1c e9 ff ff       	call   80549a5 <cmov_l_with_code_b_mv_constant_simple>
+ 8056089:	e8 00 ea ff ff       	call   8054a8e <cmov_l_with_code_b_mv_constant_complex1>
+ 805608e:	e8 e4 ea ff ff       	call   8054b77 <cmov_l_with_code_b_mv_constant_complex2>
+ 8056093:	e8 c9 eb ff ff       	call   8054c61 <cmov_l_with_code_c_mv_plain>
+ 8056098:	e8 cf eb ff ff       	call   8054c6c <cmov_l_with_code_c_mv_allregs>
+ 805609d:	e8 be ec ff ff       	call   8054d60 <cmov_l_with_code_c_mv_constant_simple>
+ 80560a2:	e8 a2 ed ff ff       	call   8054e49 <cmov_l_with_code_c_mv_constant_complex1>
+ 80560a7:	e8 86 ee ff ff       	call   8054f32 <cmov_l_with_code_c_mv_constant_complex2>
+ 80560ac:	e8 6b ef ff ff       	call   805501c <cmov_l_with_code_d_mv_plain>
+ 80560b1:	e8 71 ef ff ff       	call   8055027 <cmov_l_with_code_d_mv_allregs>
+ 80560b6:	e8 60 f0 ff ff       	call   805511b <cmov_l_with_code_d_mv_constant_simple>
+ 80560bb:	e8 44 f1 ff ff       	call   8055204 <cmov_l_with_code_d_mv_constant_complex1>
+ 80560c0:	e8 28 f2 ff ff       	call   80552ed <cmov_l_with_code_d_mv_constant_complex2>
+ 80560c5:	e8 0d f3 ff ff       	call   80553d7 <cmov_l_with_code_e_mv_plain>
+ 80560ca:	e8 13 f3 ff ff       	call   80553e2 <cmov_l_with_code_e_mv_allregs>
+ 80560cf:	e8 02 f4 ff ff       	call   80554d6 <cmov_l_with_code_e_mv_constant_simple>
+ 80560d4:	e8 e6 f4 ff ff       	call   80555bf <cmov_l_with_code_e_mv_constant_complex1>
+ 80560d9:	e8 ca f5 ff ff       	call   80556a8 <cmov_l_with_code_e_mv_constant_complex2>
+ 80560de:	e8 af f6 ff ff       	call   8055792 <cmov_l_with_code_f_mv_plain>
+ 80560e3:	e8 b5 f6 ff ff       	call   805579d <cmov_l_with_code_f_mv_allregs>
+ 80560e8:	e8 a4 f7 ff ff       	call   8055891 <cmov_l_with_code_f_mv_constant_simple>
+ 80560ed:	e8 88 f8 ff ff       	call   805597a <cmov_l_with_code_f_mv_constant_complex1>
+ 80560f2:	e8 6c f9 ff ff       	call   8055a63 <cmov_l_with_code_f_mv_constant_complex2>
  80560f7:	90                   	nop
 
 080560f8 <main>:

@@ -43,11 +43,11 @@ constantSets[0]["flags"]="0"
 constantSets[0]["eax"]="2"
 constantSets[0]["ebx"]="3"
 constantSets[0]["ecx"]="4"
-constantSets[0]["edx"]="4"
-constantSets[0]["ebp"]="5"
-constantSets[0]["esi"]="6"
-constantSets[0]["edi"]="7"
-constantSets[0]["esp"]="8"
+constantSets[0]["edx"]="5"
+constantSets[0]["ebp"]="6"
+constantSets[0]["esi"]="7"
+constantSets[0]["edi"]="8"
+constantSets[0]["esp"]="9"
 
 # Generated using
 #   random.seed(42);["0x%08x"%random.randint(0,2**32) for x in range(8)]
@@ -94,6 +94,9 @@ def generateInputMoves(regs):
     if forEvaluator:
         r.append("  push %ebp")
         r.append("  pushfw")
+        r.append("  push %es")
+        r.append("  push %fs")
+        r.append("  push %gs")
 
     r.append("  mov %d,%%ax"%(0x1100))
     r.append("  push %ax")
@@ -117,6 +120,9 @@ def generateConstantInputMoves(setNo, constantOverwrites, flagOverwrite=None):
     if forEvaluator:
         r.append("  push %ebp")
         r.append("  pushfw")
+        r.append("  push %es")
+        r.append("  push %fs")
+        r.append("  push %gs")
     r.append("  pushw $%s"%f)
     r.append("  popfw")
     for reg in allRegs:
@@ -160,12 +166,19 @@ def generateOutputMoves(regs):
     r.append("  mov %%eax,%s"%(getRegDest(0x2020, "esp_diff")))
     r.append("  mov $0x0,%eax")
     if forEvaluator:
+        r.append("  pop %gs")
+        r.append("  pop %fs")
+        r.append("  pop %es")
         r.append("  popfw")
         r.append("  pop %ebp")
     return "\n".join(r)+"\n"
 
+vars=[]
 for line in [x.strip() for x in open(INPUT).readlines()]:
     if not line or line[0]=="#": continue
+    if line.startswith("array:"):
+        vars.append(line.strip().split(":")[1:3])
+        continue
     mo=re.match(r"^([a-zA-Z][a-zA-Z0-9_]+)(?:\[(.*)\])?:(.*)$",line)
     assert mo,line
     funcname,options,body=mo.groups()
@@ -236,6 +249,12 @@ for line in [x.strip() for x in open(INPUT).readlines()]:
         parts = [funcname,"constant_complex%d"%i]
         name = "_".join([x for x in parts if x])
         generateFunction(name, tmp)
+
+out.write("  .data\n")
+for name,data in vars:
+    out.write(".globl %s\n"%name)
+    out.write("%s: %s\n"%(name,data))
+out.write("  .text\n")
 
 if forEvaluator:
     for i in allRegs+["esp_start", "esp_diff"]:

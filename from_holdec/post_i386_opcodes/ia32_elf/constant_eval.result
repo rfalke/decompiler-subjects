@@ -3,12 +3,12 @@ register        hex        signed      unsigned
 eax       : 0x02000000     33554432     33554432
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === bswap_constant_complex1
 register        hex        signed      unsigned
@@ -20,7 +20,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === bswap_constant_complex2
 register        hex        signed      unsigned
@@ -32,21 +32,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4ed7    D-OSZ-APC:1-111-111
+flags     :     0x4ed7   ID-OSZ-APC:11-111-111
 cc        : parity:1 overflow:1 ==:1  <0:1  unsigned (<:1, <=:1) signed (<:0, <=:1)
-=== cmpxchg1_constant_simple
+=== cmpxchg1_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0297    D-OSZ-APC:0-010-111
+flags     :     0x0297   ID-OSZ-APC:10-010-111
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== cmpxchg1_constant_complex1
+=== cmpxchg1_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b179d7  -1548650025   2746317271
 ebx       : 0x06671ad7    107420375    107420375
@@ -56,9 +56,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0293    D-OSZ-APC:0-010-101
+flags     :     0x0293   ID-OSZ-APC:10-010-101
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== cmpxchg1_constant_complex2
+=== cmpxchg1_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0c3    826196163    826196163
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -68,21 +68,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4602    D-OSZ-APC:1-000-000
+flags     :     0x4602   ID-OSZ-APC:11-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== cmpxchg2_constant_simple
+=== cmpxchg2_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0297    D-OSZ-APC:0-010-111
+flags     :     0x0297   ID-OSZ-APC:10-010-111
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== cmpxchg2_constant_complex1
+=== cmpxchg2_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b11ad7  -1548674345   2746292951
 ebx       : 0x06671ad7    107420375    107420375
@@ -92,9 +92,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0212    D-OSZ-APC:0-000-100
+flags     :     0x0212   ID-OSZ-APC:10-000-100
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== cmpxchg2_constant_complex2
+=== cmpxchg2_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313e81c3    826180035    826180035
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -104,19 +104,19 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4602    D-OSZ-APC:1-000-000
+flags     :     0x4602   ID-OSZ-APC:11-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === cmpxchg3_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0297    D-OSZ-APC:0-010-111
+flags     :     0x0297   ID-OSZ-APC:10-010-111
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
 === cmpxchg3_constant_complex1
 register        hex        signed      unsigned
@@ -128,7 +128,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0292    D-OSZ-APC:0-010-100
+flags     :     0x0292   ID-OSZ-APC:10-010-100
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
 === cmpxchg3_constant_complex2
 register        hex        signed      unsigned
@@ -140,21 +140,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4683    D-OSZ-APC:1-010-001
+flags     :     0x4683   ID-OSZ-APC:11-010-001
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== cmpxchg5_constant_simple
+=== cmpxchg5_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmpxchg5_constant_complex1
+=== cmpxchg5_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -164,9 +164,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmpxchg5_constant_complex2
+=== cmpxchg5_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -176,7 +176,7 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4646    D-OSZ-APC:1-001-010
+flags     :     0x4646   ID-OSZ-APC:11-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
 === cpuid_constant_simple
 register        hex        signed      unsigned
@@ -184,11 +184,11 @@ eax       : 0x00000000            0            0
 ebx       : 0x00000000            0            0
 ecx       : 0x00000000            0            0
 edx       : 0x00000000            0            0
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === cpuid_constant_complex1
 register        hex        signed      unsigned
@@ -200,7 +200,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === cpuid_constant_complex2
 register        hex        signed      unsigned
@@ -212,21 +212,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4ed7    D-OSZ-APC:1-111-111
+flags     :     0x4ed7   ID-OSZ-APC:11-111-111
 cc        : parity:1 overflow:1 ==:1  <0:1  unsigned (<:1, <=:1) signed (<:0, <=:1)
-=== xadd1_constant_simple
+=== xadd1_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000005            5            5
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0206    D-OSZ-APC:0-000-010
+flags     :     0x0206   ID-OSZ-APC:10-000-010
 cc        : parity:1 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== xadd1_constant_complex1
+=== xadd1_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b179d7  -1548650025   2746317271
 ebx       : 0x06671a5b    107420251    107420251
@@ -236,9 +236,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0a03    D-OSZ-APC:0-100-001
+flags     :     0x0a03   ID-OSZ-APC:10-100-001
 cc        : parity:0 overflow:1 ==:0  <0:0  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== xadd1_constant_complex2
+=== xadd1_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0c3    826196163    826196163
 ebx       : 0x496e81ab   1231978923   1231978923
@@ -248,21 +248,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4683    D-OSZ-APC:1-010-001
+flags     :     0x4683   ID-OSZ-APC:11-010-001
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== xadd2_constant_simple
+=== xadd2_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000005            5            5
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0206    D-OSZ-APC:0-000-010
+flags     :     0x0206   ID-OSZ-APC:10-000-010
 cc        : parity:1 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== xadd2_constant_complex1
+=== xadd2_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b11ad7  -1548674345   2746292951
 ebx       : 0x0667945b    107451483    107451483
@@ -272,9 +272,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0a82    D-OSZ-APC:0-110-000
+flags     :     0x0a82   ID-OSZ-APC:10-110-000
 cc        : parity:0 overflow:1 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== xadd2_constant_complex2
+=== xadd2_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313e81c3    826180035    826180035
 ebx       : 0x496e42ab   1231962795   1231962795
@@ -284,19 +284,19 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4e03    D-OSZ-APC:1-100-001
+flags     :     0x4e03   ID-OSZ-APC:11-100-001
 cc        : parity:0 overflow:1 ==:0  <0:0  unsigned (<:1, <=:1) signed (<:1, <=:1)
 === xadd3_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000005            5            5
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0206    D-OSZ-APC:0-000-010
+flags     :     0x0206   ID-OSZ-APC:10-000-010
 cc        : parity:1 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === xadd3_constant_complex1
 register        hex        signed      unsigned
@@ -308,7 +308,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0282    D-OSZ-APC:0-010-000
+flags     :     0x0282   ID-OSZ-APC:10-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
 === xadd3_constant_complex2
 register        hex        signed      unsigned
@@ -320,21 +320,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4602    D-OSZ-APC:1-000-000
+flags     :     0x4602   ID-OSZ-APC:11-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== xadd5_constant_simple
+=== xadd5_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000004            4            4
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== xadd5_constant_complex1
+=== xadd5_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17908  -1548650232   2746317064
 ebx       : 0x06671ad7    107420375    107420375
@@ -344,9 +344,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0a03    D-OSZ-APC:0-100-001
+flags     :     0x0a03   ID-OSZ-APC:10-100-001
 cc        : parity:0 overflow:1 ==:0  <0:0  unsigned (<:1, <=:1) signed (<:1, <=:1)
-=== xadd5_constant_complex2
+=== xadd5_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0d0    826196176    826196176
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -356,55 +356,55 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4693    D-OSZ-APC:1-010-101
+flags     :     0x4693   ID-OSZ-APC:11-010-101
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:1, <=:1) signed (<:1, <=:1)
 === rdtsc_constant_simple
 register        hex        signed      unsigned
-eax       : 0xd78f8036   -678461386   3616505910
+eax       : 0xfd621506    -43903738   4251063558
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00491e30      4791856      4791856
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x005156eb      5330667      5330667
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === rdtsc_constant_complex1
 register        hex        signed      unsigned
-eax       : 0xd78fe5b0   -678435408   3616531888
+eax       : 0xfd643337    -43764937   4251202359
 ebx       : 0x06671ad7    107420375    107420375
 ecx       : 0x46685248   1181241928   1181241928
-edx       : 0x00491e30      4791856      4791856
+edx       : 0x005156eb      5330667      5330667
 ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === rdtsc_constant_complex2
 register        hex        signed      unsigned
-eax       : 0xd7904e9c   -678408548   3616558748
+eax       : 0xfd670fd5    -43577387   4251389909
 ebx       : 0x496e81c3   1231978947   1231978947
 ecx       : 0x1e3f6cb2    507473074    507473074
-edx       : 0x00491e30      4791856      4791856
+edx       : 0x005156eb      5330667      5330667
 ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4ed7    D-OSZ-APC:1-111-111
+flags     :     0x4ed7   ID-OSZ-APC:11-111-111
 cc        : parity:1 overflow:1 ==:1  <0:1  unsigned (<:1, <=:1) signed (<:0, <=:1)
 === cmov1_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === cmov1_constant_complex1
 register        hex        signed      unsigned
@@ -416,7 +416,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
 === cmov1_constant_complex2
 register        hex        signed      unsigned
@@ -428,21 +428,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4ed7    D-OSZ-APC:1-111-111
+flags     :     0x4ed7   ID-OSZ-APC:11-111-111
 cc        : parity:1 overflow:1 ==:1  <0:1  unsigned (<:1, <=:1) signed (<:0, <=:1)
-=== cmov2_constant_simple
+=== cmov2_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000003            3            3
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== cmov2_constant_complex1
+=== cmov2_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b11ad7  -1548674345   2746292951
 ebx       : 0x06671ad7    107420375    107420375
@@ -452,9 +452,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0202    D-OSZ-APC:0-000-000
+flags     :     0x0202   ID-OSZ-APC:10-000-000
 cc        : parity:0 overflow:0 ==:0  <0:0  unsigned (<:0, <=:0) signed (<:0, <=:0)
-=== cmov2_constant_complex2
+=== cmov2_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -464,19 +464,19 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4ed7    D-OSZ-APC:1-111-111
+flags     :     0x4ed7   ID-OSZ-APC:11-111-111
 cc        : parity:1 overflow:1 ==:1  <0:1  unsigned (<:1, <=:1) signed (<:0, <=:1)
 === cmov_w_with_code_0_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
 === cmov_w_with_code_0_constant_complex1
 register        hex        signed      unsigned
@@ -488,7 +488,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
 === cmov_w_with_code_0_constant_complex2
 register        hex        signed      unsigned
@@ -500,21 +500,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_1_constant_simple
+=== cmov_w_with_code_1_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_1_constant_complex1
+=== cmov_w_with_code_1_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -524,9 +524,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_1_constant_complex2
+=== cmov_w_with_code_1_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -536,21 +536,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_2_constant_simple
+=== cmov_w_with_code_2_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_2_constant_complex1
+=== cmov_w_with_code_2_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -560,9 +560,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_2_constant_complex2
+=== cmov_w_with_code_2_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -572,21 +572,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_3_constant_simple
+=== cmov_w_with_code_3_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_3_constant_complex1
+=== cmov_w_with_code_3_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -596,9 +596,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_3_constant_complex2
+=== cmov_w_with_code_3_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -608,21 +608,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_4_constant_simple
+=== cmov_w_with_code_4_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_4_constant_complex1
+=== cmov_w_with_code_4_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -632,9 +632,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_4_constant_complex2
+=== cmov_w_with_code_4_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -644,21 +644,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_5_constant_simple
+=== cmov_w_with_code_5_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_5_constant_complex1
+=== cmov_w_with_code_5_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -668,9 +668,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_5_constant_complex2
+=== cmov_w_with_code_5_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -680,21 +680,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_6_constant_simple
+=== cmov_w_with_code_6_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_6_constant_complex1
+=== cmov_w_with_code_6_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -704,9 +704,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_6_constant_complex2
+=== cmov_w_with_code_6_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -716,21 +716,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_7_constant_simple
+=== cmov_w_with_code_7_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_7_constant_complex1
+=== cmov_w_with_code_7_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -740,9 +740,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_7_constant_complex2
+=== cmov_w_with_code_7_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -752,21 +752,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_8_constant_simple
+=== cmov_w_with_code_8_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_8_constant_complex1
+=== cmov_w_with_code_8_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -776,9 +776,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_8_constant_complex2
+=== cmov_w_with_code_8_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -788,21 +788,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_9_constant_simple
+=== cmov_w_with_code_9_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_9_constant_complex1
+=== cmov_w_with_code_9_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -812,9 +812,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_9_constant_complex2
+=== cmov_w_with_code_9_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -824,21 +824,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_a_constant_simple
+=== cmov_w_with_code_a_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_a_constant_complex1
+=== cmov_w_with_code_a_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -848,9 +848,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_a_constant_complex2
+=== cmov_w_with_code_a_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -860,21 +860,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_b_constant_simple
+=== cmov_w_with_code_b_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_b_constant_complex1
+=== cmov_w_with_code_b_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -884,9 +884,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_b_constant_complex2
+=== cmov_w_with_code_b_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -896,21 +896,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_c_constant_simple
+=== cmov_w_with_code_c_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_c_constant_complex1
+=== cmov_w_with_code_c_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -920,9 +920,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_c_constant_complex2
+=== cmov_w_with_code_c_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -932,21 +932,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_d_constant_simple
+=== cmov_w_with_code_d_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_d_constant_complex1
+=== cmov_w_with_code_d_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -956,9 +956,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_d_constant_complex2
+=== cmov_w_with_code_d_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -968,21 +968,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_e_constant_simple
+=== cmov_w_with_code_e_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_e_constant_complex1
+=== cmov_w_with_code_e_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06677984    107444612    107444612
@@ -992,9 +992,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_e_constant_complex2
+=== cmov_w_with_code_e_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496ec0e8   1231995112   1231995112
@@ -1004,21 +1004,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_f_constant_simple
+=== cmov_w_with_code_f_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_w_with_code_f_constant_complex1
+=== cmov_w_with_code_f_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1028,9 +1028,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_w_with_code_f_constant_complex2
+=== cmov_w_with_code_f_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1040,19 +1040,19 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
 === cmov_l_with_code_0_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
 === cmov_l_with_code_0_constant_complex1
 register        hex        signed      unsigned
@@ -1064,7 +1064,7 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
 === cmov_l_with_code_0_constant_complex2
 register        hex        signed      unsigned
@@ -1076,21 +1076,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_1_constant_simple
+=== cmov_l_with_code_1_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_1_constant_complex1
+=== cmov_l_with_code_1_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1100,9 +1100,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_1_constant_complex2
+=== cmov_l_with_code_1_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1112,21 +1112,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_2_constant_simple
+=== cmov_l_with_code_2_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_2_constant_complex1
+=== cmov_l_with_code_2_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1136,9 +1136,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_2_constant_complex2
+=== cmov_l_with_code_2_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1148,21 +1148,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_3_constant_simple
+=== cmov_l_with_code_3_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_3_constant_complex1
+=== cmov_l_with_code_3_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1172,9 +1172,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_3_constant_complex2
+=== cmov_l_with_code_3_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1184,21 +1184,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_4_constant_simple
+=== cmov_l_with_code_4_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_4_constant_complex1
+=== cmov_l_with_code_4_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1208,9 +1208,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_4_constant_complex2
+=== cmov_l_with_code_4_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1220,21 +1220,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_5_constant_simple
+=== cmov_l_with_code_5_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_5_constant_complex1
+=== cmov_l_with_code_5_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1244,9 +1244,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_5_constant_complex2
+=== cmov_l_with_code_5_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1256,21 +1256,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_6_constant_simple
+=== cmov_l_with_code_6_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_6_constant_complex1
+=== cmov_l_with_code_6_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1280,9 +1280,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_6_constant_complex2
+=== cmov_l_with_code_6_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1292,21 +1292,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_7_constant_simple
+=== cmov_l_with_code_7_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_7_constant_complex1
+=== cmov_l_with_code_7_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1316,9 +1316,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_7_constant_complex2
+=== cmov_l_with_code_7_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1328,21 +1328,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_8_constant_simple
+=== cmov_l_with_code_8_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_8_constant_complex1
+=== cmov_l_with_code_8_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1352,9 +1352,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_8_constant_complex2
+=== cmov_l_with_code_8_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1364,21 +1364,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_9_constant_simple
+=== cmov_l_with_code_9_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_9_constant_complex1
+=== cmov_l_with_code_9_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1388,9 +1388,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_9_constant_complex2
+=== cmov_l_with_code_9_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1400,21 +1400,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_a_constant_simple
+=== cmov_l_with_code_a_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_a_constant_complex1
+=== cmov_l_with_code_a_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1424,9 +1424,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_a_constant_complex2
+=== cmov_l_with_code_a_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1436,21 +1436,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_b_constant_simple
+=== cmov_l_with_code_b_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_b_constant_complex1
+=== cmov_l_with_code_b_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1460,9 +1460,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_b_constant_complex2
+=== cmov_l_with_code_b_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1472,21 +1472,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_c_constant_simple
+=== cmov_l_with_code_c_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_c_constant_complex1
+=== cmov_l_with_code_c_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1496,9 +1496,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_c_constant_complex2
+=== cmov_l_with_code_c_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1508,21 +1508,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_d_constant_simple
+=== cmov_l_with_code_d_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_d_constant_complex1
+=== cmov_l_with_code_d_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1532,9 +1532,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_d_constant_complex2
+=== cmov_l_with_code_d_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1544,21 +1544,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_e_constant_simple
+=== cmov_l_with_code_e_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000002            2            2
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_e_constant_complex1
+=== cmov_l_with_code_e_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0xa3b17984  -1548650108   2746317188
@@ -1568,9 +1568,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_e_constant_complex2
+=== cmov_l_with_code_e_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x313ec0e8    826196200    826196200
@@ -1580,21 +1580,21 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_f_constant_simple
+=== cmov_l_with_code_f_mv_constant_simple
 register        hex        signed      unsigned
 eax       : 0x00000002            2            2
 ebx       : 0x00000003            3            3
 ecx       : 0x00000004            4            4
-edx       : 0x00000004            4            4
-ebp       : 0x00000005            5            5
-esi       : 0x00000006            6            6
-edi       : 0x00000007            7            7
+edx       : 0x00000005            5            5
+ebp       : 0x00000006            6            6
+esi       : 0x00000007            7            7
+edi       : 0x00000008            8            8
 esp diff  : 0x00000000            0            0
-flags     :     0x0246    D-OSZ-APC:0-001-010
+flags     :     0x0246   ID-OSZ-APC:10-001-010
 cc        : parity:1 overflow:0 ==:1  <0:0  unsigned (<:0, <=:1) signed (<:0, <=:1)
-=== cmov_l_with_code_f_constant_complex1
+=== cmov_l_with_code_f_mv_constant_complex1
 register        hex        signed      unsigned
 eax       : 0xa3b17984  -1548650108   2746317188
 ebx       : 0x06671ad7    107420375    107420375
@@ -1604,9 +1604,9 @@ ebp       : 0xbc8960a4  -1131847516   3163119780
 esi       : 0xad3c2d78  -1388565128   2906402168
 edi       : 0xe465e152   -463085230   3831882066
 esp diff  : 0x00000000            0            0
-flags     :     0x0286    D-OSZ-APC:0-010-010
+flags     :     0x0286   ID-OSZ-APC:10-010-010
 cc        : parity:1 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)
-=== cmov_l_with_code_f_constant_complex2
+=== cmov_l_with_code_f_mv_constant_complex2
 register        hex        signed      unsigned
 eax       : 0x313ec0e8    826196200    826196200
 ebx       : 0x496e81c3   1231978947   1231978947
@@ -1616,5 +1616,5 @@ ebp       : 0x4f312610   1328621072   1328621072
 esi       : 0x2f37a4a5    792175781    792175781
 edi       : 0x91a917b4  -1851189324   2443777972
 esp diff  : 0x00000000            0            0
-flags     :     0x4682    D-OSZ-APC:1-010-000
+flags     :     0x4682   ID-OSZ-APC:11-010-000
 cc        : parity:0 overflow:0 ==:0  <0:1  unsigned (<:0, <=:0) signed (<:1, <=:1)

@@ -2,12 +2,12 @@
 
 bswap: bswap %eax
 
-cmpxchg1: cmpxchg %al,%bl
-cmpxchg2: cmpxchg %ax,%bx
+cmpxchg1_mv: cmpxchg %al,%bl
+cmpxchg2_mv: cmpxchg %ax,%bx
 cmpxchg3: cmpxchg %eax,%ebx
-cmpxchg4[doNotEval]: cmpxchg %eax,(%ebx)
-cmpxchg5: cmpxchg %al,%al
-cmpxchg_locked[doNotEval]: lock cmpxchg %eax,(%ebx)
+cmpxchg4_mv[doNotEval]: cmpxchg %eax,(%ebx)
+cmpxchg5_mv: cmpxchg %al,%al
+cmpxchg_locked_mv[doNotEval]: lock cmpxchg %eax,(%ebx)
 
 cpuid: cpuid
 
@@ -17,17 +17,17 @@ invlpg[doNotEval]: invlpg (%eax)
 
 wbinvd[doNotEval]: wbinvd
 
-xadd1: xadd %al,%bl
-xadd2: xadd %ax,%bx
+xadd1_mv: xadd %al,%bl
+xadd2_mv: xadd %ax,%bx
 xadd3: xadd %eax,%ebx
-xadd4[doNotEval]: xadd %eax,(%ebx)
-xadd5: xadd %al,%al
-xadd_locked[doNotEval]: lock xadd %eax,(%ebx)
+xadd4_mv[doNotEval]: xadd %eax,(%ebx)
+xadd5_mv: xadd %al,%al
+xadd_locked_mv[doNotEval]: lock xadd %eax,(%ebx)
 
 ### pentium
 
 cmpxchg8b[doNotEval]: cmpxchg8b (%eax)
-cmpxchg8b_locked[doNotEval]: lock cmpxchg8b (%eax)
+cmpxchg8b_locked_mv[doNotEval]: lock cmpxchg8b (%eax)
 
 rdtsc: rdtsc
 
@@ -38,40 +38,40 @@ wrmsr[doNotEval]: wrmsr
 ### P6
 
 cmov1: cmova %bx,%ax
-cmov2: cmova %ebx,%ax
-cmov3[doNotEval]: cmova 12(%ebx),%ax
-cmov4[doNotEval]: cmova 34(%ebx),%eax
+cmov2_mv: cmova %ebx,%ax
+cmov3_mv[doNotEval]: cmova 12(%ebx),%ax
+cmov4_mv[doNotEval]: cmova 34(%ebx),%eax
 
 cmov_w_with_code_0: hex 3c 02 66 0f 40 d8
-cmov_w_with_code_1: hex 3c 02 66 0f 41 d8
-cmov_w_with_code_2: hex 3c 02 66 0f 42 d8
-cmov_w_with_code_3: hex 3c 02 66 0f 43 d8
-cmov_w_with_code_4: hex 3c 02 66 0f 44 d8
-cmov_w_with_code_5: hex 3c 02 66 0f 45 d8
-cmov_w_with_code_6: hex 3c 02 66 0f 46 d8
-cmov_w_with_code_7: hex 3c 02 66 0f 47 d8
-cmov_w_with_code_8: hex 3c 02 66 0f 48 d8
-cmov_w_with_code_9: hex 3c 02 66 0f 49 d8
-cmov_w_with_code_a: hex 3c 02 66 0f 4a d8
-cmov_w_with_code_b: hex 3c 02 66 0f 4b d8
-cmov_w_with_code_c: hex 3c 02 66 0f 4c d8
-cmov_w_with_code_d: hex 3c 02 66 0f 4d d8
-cmov_w_with_code_e: hex 3c 02 66 0f 4e d8
-cmov_w_with_code_f: hex 3c 02 66 0f 4f d8
+cmov_w_with_code_1_mv: hex 3c 02 66 0f 41 d8
+cmov_w_with_code_2_mv: hex 3c 02 66 0f 42 d8
+cmov_w_with_code_3_mv: hex 3c 02 66 0f 43 d8
+cmov_w_with_code_4_mv: hex 3c 02 66 0f 44 d8
+cmov_w_with_code_5_mv: hex 3c 02 66 0f 45 d8
+cmov_w_with_code_6_mv: hex 3c 02 66 0f 46 d8
+cmov_w_with_code_7_mv: hex 3c 02 66 0f 47 d8
+cmov_w_with_code_8_mv: hex 3c 02 66 0f 48 d8
+cmov_w_with_code_9_mv: hex 3c 02 66 0f 49 d8
+cmov_w_with_code_a_mv: hex 3c 02 66 0f 4a d8
+cmov_w_with_code_b_mv: hex 3c 02 66 0f 4b d8
+cmov_w_with_code_c_mv: hex 3c 02 66 0f 4c d8
+cmov_w_with_code_d_mv: hex 3c 02 66 0f 4d d8
+cmov_w_with_code_e_mv: hex 3c 02 66 0f 4e d8
+cmov_w_with_code_f_mv: hex 3c 02 66 0f 4f d8
 
 cmov_l_with_code_0: hex 3c 02 0f 40 d8
-cmov_l_with_code_1: hex 3c 02 0f 41 d8
-cmov_l_with_code_2: hex 3c 02 0f 42 d8
-cmov_l_with_code_3: hex 3c 02 0f 43 d8
-cmov_l_with_code_4: hex 3c 02 0f 44 d8
-cmov_l_with_code_5: hex 3c 02 0f 45 d8
-cmov_l_with_code_6: hex 3c 02 0f 46 d8
-cmov_l_with_code_7: hex 3c 02 0f 47 d8
-cmov_l_with_code_8: hex 3c 02 0f 48 d8
-cmov_l_with_code_9: hex 3c 02 0f 49 d8
-cmov_l_with_code_a: hex 3c 02 0f 4a d8
-cmov_l_with_code_b: hex 3c 02 0f 4b d8
-cmov_l_with_code_c: hex 3c 02 0f 4c d8
-cmov_l_with_code_d: hex 3c 02 0f 4d d8
-cmov_l_with_code_e: hex 3c 02 0f 4e d8
-cmov_l_with_code_f: hex 3c 02 0f 4f d8
+cmov_l_with_code_1_mv: hex 3c 02 0f 41 d8
+cmov_l_with_code_2_mv: hex 3c 02 0f 42 d8
+cmov_l_with_code_3_mv: hex 3c 02 0f 43 d8
+cmov_l_with_code_4_mv: hex 3c 02 0f 44 d8
+cmov_l_with_code_5_mv: hex 3c 02 0f 45 d8
+cmov_l_with_code_6_mv: hex 3c 02 0f 46 d8
+cmov_l_with_code_7_mv: hex 3c 02 0f 47 d8
+cmov_l_with_code_8_mv: hex 3c 02 0f 48 d8
+cmov_l_with_code_9_mv: hex 3c 02 0f 49 d8
+cmov_l_with_code_a_mv: hex 3c 02 0f 4a d8
+cmov_l_with_code_b_mv: hex 3c 02 0f 4b d8
+cmov_l_with_code_c_mv: hex 3c 02 0f 4c d8
+cmov_l_with_code_d_mv: hex 3c 02 0f 4d d8
+cmov_l_with_code_e_mv: hex 3c 02 0f 4e d8
+cmov_l_with_code_f_mv: hex 3c 02 0f 4f d8
