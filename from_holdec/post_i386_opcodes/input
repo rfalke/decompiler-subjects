@@ -4,7 +4,7 @@ bswap: bswap %eax
 
 cmpxchg1_mv: cmpxchg %al,%bl
 cmpxchg2_mv: cmpxchg %ax,%bx
-cmpxchg3: cmpxchg %eax,%ebx
+cmpxchg3: cmpxchg %ebx,%ecx
 cmpxchg4_mv[doNotEval]: cmpxchg %eax,(%ebx)
 cmpxchg5_mv: cmpxchg %al,%al
 cmpxchg_locked_mv[doNotEval]: lock cmpxchg %eax,(%ebx)
@@ -37,10 +37,11 @@ wrmsr[doNotEval]: wrmsr
 
 ### P6
 
-cmov1: cmova %bx,%ax
-cmov2_mv: cmova %ebx,%ax
-cmov3_mv[doNotEval]: cmova 12(%ebx),%ax
-cmov4_mv[doNotEval]: cmova 34(%ebx),%eax
+cmov1_mv: cmovz %bx,%ax
+cmov2_mv: cmovz %ebx,%ax
+cmov3: cmovz %ebx,%eax
+cmov4_mv[doNotEval]: cmovz 12(%ebx),%ax
+cmov5_mv[doNotEval]: cmovz 34(%ebx),%eax
 
 cmov_w_with_code_0: hex 3c 02 66 0f 40 d8
 cmov_w_with_code_1_mv: hex 3c 02 66 0f 41 d8
