@@ -1,0 +1,31 @@
+INFO  holdec.as - ### holdec 1.2 Copyright 2003-2012 Raimar Falke
+INFO  holdec.as - Using ./from_holdec/loops/ia32_elf/subject.exe as executable
+INFO  holdec.go - Detected ELF (Executable and Linkable Format)
+INFO  holdec.mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  holdec.go - disassembleAndWrite: start a new loop with 1 extra block starts
+INFO  holdec.go - disassembleAndWrite: running multiline
+INFO  holdec.mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  holdec.mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  holdec.go - disassembleAndWrite: found no new addresses. will stop now.
+INFO  holdec.mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  holdec.mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  holdec.go - reading all asm lines ...
+INFO  holdec.go - ... read 221 asm lines
+WARN  holdec.B - Address 08048134.0 is excluded by the address filter. Maybe outside text section?
+WARN  holdec.B - Address 080484b8.0 is excluded by the address filter. Maybe outside text section?
+INFO  holdec.as - will decompile 8 functions:
+INFO  holdec.as -   [   1/   8] g_0x080482a0 
+INFO  holdec.as -   [   2/   8] g_0x080482d4 
+INFO  holdec.as -   [   3/   8] g_0x080482e4 
+INFO  holdec.as -   [   4/   8] g_0x080482f4 
+INFO  holdec.as -   [   5/   8] g_0x080483c4 forever
+INFO  holdec.as -   [   6/   8] g_0x080483eb main
+INFO  holdec.as -   [   7/   8] g_0x0804846a __i686.get_pc_thunk.bx
+INFO  holdec.as -   [   8/   8] g_0x080484a8 
+WARN  holdec.al - Referencing unknown line 080482d4.0
+WARN  holdec.al - Referencing unknown line 080483a0.0
+WARN  holdec.al - Referencing unknown line 08048470.0
+WARN  holdec.al - Referencing unknown line 080482f4.0
+WARN  holdec.al - Referencing unknown line 080483c4.0
+INFO  holdec.gz - Skipping stack alignment: 080483ee.0+3 l.and esp,0xfffffff0
+WARN  holdec.al - Referencing unknown line 08048340.0

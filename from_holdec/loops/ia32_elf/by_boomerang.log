@@ -1,0 +1,64 @@
+Unknown library function __libc_start_main
+got filename source.c for main
+got filename source.c for forever
+after removing matching assigns (%pc).
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+in proc forever adding addrExp r28{0} - 4 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+### WARNING: iteration limit exceeded for dfaTypeAnalysis of procedure forever ###
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+in proc forever adding addrExp r28{0} - 4 to local table
+TYPE ERROR: at address 0xfffffffc, overlapping type __size32 does not resolve to compound or array
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 40 to local table
+in proc forever adding addrExp r28{0} - 44 to local table
+in proc forever adding addrExp r28{0} - 48 to local table
+finding final parameters for forever
+potential param r28
+found new parameter r28
+after removing matching assigns (%pc).
+in proc main adding addrExp r28{0} - 4 to local table
+in proc main adding addrExp r28{0} - 8 to local table
+could not set type for unknown parameter expression m[r28{0} + 4]
+could not set type for unknown parameter expression m[r28{0} + 8]
+could not set type for unknown parameter expression m[r28{0} + 12]
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+in proc forever adding addrExp r28{0} - 16 to local table
+local esp has type void * that doesn't agree with type of define void of a library, why?
+dest is not lib
+call:    7 <all> := CALL forever(<all>)
+              Reaching definitions: r28=r28{0} - 8,   r29=r28{0} - 4,   m[r28{0} + 4]=m[esp + 4]{0},
+                m[r28{0} + 8]=m[esp + 8]{0},   m[r28{0} + 12]=m[esp + 12]{0},   m[r28{0} - 4]=r29{0},
+                m[r28{0} - 8]=%pc
+              Live variables:  in proc main
+dest is not lib
+call:   18 {*32* r24, *32* r25, *32* r26} := CALL printf(
+                *c** local1 := "i=%d
+"
+                *j32* local2 := local3
+              )
+              Reaching definitions: r24=0x80484c4,   r25=r25{21},   r26=m[r28{0} - 16]{28},   r28=(r28{0} - 44) - 4,
+                r29=r28{0} - 4,   m[r28{0} - 4]=r29{0},   m[r28{0} - 16]=m[r28{0} - 16]{10},
+                m[r28{0} - 40]=m[r28{0} - 16]{28},   m[r28{0} - 44]=0x80484c4,   m[r28{0} - 48]=%pc,
+                tmp1=m[r28{0} - 16]{28},   %flags=ADDFLAGS32( m[r28{0} - 16]{28}, 1, m[(r28{0} - 4) - 12] ),
+                %ZF=ADDFLAGS32( m[r28{0} - 16]{28}, 1, m[(r28{0} - 4) - 12] ),
+                %CF=ADDFLAGS32( m[r28{0} - 16]{28}, 1, m[(r28{0} - 4) - 12] )
+              Live variables:  in proc forever

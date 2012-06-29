@@ -1,0 +1,100 @@
+Analyzing './from_holdec/loops/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+./from_holdec/loops/ia32_elf/subject.exe: 38 sections starting at 0x00000AB4
+./from_holdec/loops/ia32_elf/subject.exe: section string table at 0x0000102C, 0x169 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000AB4: [ 0] 00000000 00000000 00000000 
+00000ADC: [ 1] 08048134 00000013 00000134 .interp
+00000B04: [ 2] 08048148 00000020 00000148 .note.ABI-tag
+00000B2C: [ 3] 08048168 00000024 00000168 .note.gnu.build-id
+00000B54: [ 4] 0804818C 00000020 0000018C .gnu.hash
+00000B7C: [ 5] 080481AC 00000050 000001AC .dynsym
+00000BA4: [ 6] 080481FC 0000004C 000001FC .dynstr
+00000BCC: [ 7] 08048248 0000000A 00000248 .gnu.version
+00000BF4: [ 8] 08048254 00000020 00000254 .gnu.version_r
+00000C1C: [ 9] 08048274 00000008 00000274 .rel.dyn
+00000C44: [10] 0804827C 00000018 0000027C .rel.plt
+00000C6C: [11] 08048294 00000030 00000294 .init
+00000C94: [12] 080482C4 00000040 000002C4 .plt
+00000CBC: [13] 08048310 0000018C 00000310 .text
+00000CE4: [14] 0804849C 0000001C 0000049C .fini
+00000D0C: [15] 080484B8 00000012 000004B8 .rodata
+00000D34: [16] 080484CC 00000024 000004CC .eh_frame_hdr
+00000D5C: [17] 080484F0 0000007C 000004F0 .eh_frame
+00000D84: [18] 0804956C 00000008 0000056C .ctors
+00000DAC: [19] 08049574 00000008 00000574 .dtors
+00000DD4: [20] 0804957C 00000004 0000057C .jcr
+00000DFC: [21] 08049580 000000C8 00000580 .dynamic
+00000E24: [22] 08049648 00000004 00000648 .got
+00000E4C: [23] 0804964C 00000018 0000064C .got.plt
+00000E74: [24] 08049664 00000004 00000664 .data
+00000E9C: [25] 08049668 00000008 00000668 .bss
+00000EC4: [26] 00000000 0000002C 00000668 .comment
+00000EEC: [27] 00000000 00000020 00000694 .debug_aranges
+00000F14: [28] 00000000 00000027 000006B4 .debug_pubnames
+00000F3C: [29] 00000000 000000AC 000006DB .debug_info
+00000F64: [30] 00000000 00000063 00000787 .debug_abbrev
+00000F8C: [31] 00000000 0000003E 000007EA .debug_line
+00000FB4: [32] 00000000 0000004C 00000828 .debug_frame
+00000FDC: [33] 00000000 000000C2 00000874 .debug_str
+00001004: [34] 00000000 00000012 00000936 .debug_pubtypes
+0000102C: [35] 00000000 00000169 00000948 .shstrtab
+00001054: [36] 00000000 000004A0 000010A4 .symtab
+0000107C: [37] 00000000 00000206 00001544 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 9 Labels, 7 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 14 Labels, 10 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 15 Labels, 12 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 17 Labels, 13 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 40 Labels, 35 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Resolving indirect jumps...
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Resolving constants and strings...
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Discovering unreached functions...
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Computing call tree...
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Computing calling conventions...
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+Computing Calling Convention: 3/10  0x080482D4
+Computing Calling Convention: 4/10  0x080482E4
+Computing Calling Convention: 5/10  0x080482F4
+Computing Calling Convention: 6/10  0x080483A0
+Computing Calling Convention: 7/10  0x080483C4
+Computing Calling Convention: 8/10  0x080483EB
+Computing Calling Convention: 9/10  0x0804846A
+Computing Calling Convention: 10/10  0x08048470
+Computing Calling Convention: 2/2  0x080482A0
+Computing Calling Convention: 1/1  0x08048294
+File analysis complete.
+10 Procs, 44 Labels, 38 Branches, 0 MB used, 0 / 1 kB covered
+
+Decompiling 1/10: 0x08048294
+Decompiling 2/10: 0x080482A0
+Decompiling 3/10: 0x080482D4
+Decompiling 4/10: 0x080482E4
+Decompiling 5/10: 0x080482F4
+Decompiling 6/10: 0x080483A0
+Decompiling 7/10: 0x080483C4
+Decompiling 8/10: 0x080483EB
+Decompiling 9/10: 0x0804846A
+Decompiling 10/10: 0x08048470
+Decompiling 10/10: 0x08048470

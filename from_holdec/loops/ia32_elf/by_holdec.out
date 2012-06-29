@@ -1,0 +1,46 @@
+INFO  as - ### holdec 1.2 Copyright 2003-2012 Raimar Falke
+INFO  as - Using ./from_holdec/loops/ia32_elf/subject.exe as executable
+read image                              : ............................................................ [ done ]
+INFO  go - Detected ELF (Executable and Linkable Format)
+INFO  mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  go - disassembleAndWrite: start a new loop with 1 extra block starts
+Disassemble                             : ............................................................ [ done ]
+INFO  go - disassembleAndWrite: running multiline
+INFO  mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+Preprocessing 204 asm lines             : ............................................................ [ done ]
+INFO  mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  go - disassembleAndWrite: found no new addresses. will stop now.
+INFO  mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+Preprocessing 221 asm lines             : ............................................................ [ done ]
+INFO  mt - wrote ./from_holdec/loops/ia32_elf/subject.exe.info
+INFO  go - reading all asm lines ...
+INFO  go - ... read 221 asm lines
+WARN  B - Address 08048134.0 is excluded by the address filter. Maybe outside text section?
+WARN  B - Address 080484b8.0 is excluded by the address filter. Maybe outside text section?
+create blocks                           : ............................................................ [ done ]
+init blocks                             : ............................................................ [ done ]
+Writing 16 methods to cache             : ............................................................ [ done ]
+INFO  as - will decompile 8 functions:
+INFO  as -   [   1/   8] g_0x080482a0 
+INFO  as -   [   2/   8] g_0x080482d4 
+INFO  as -   [   3/   8] g_0x080482e4 
+INFO  as -   [   4/   8] g_0x080482f4 
+INFO  as -   [   5/   8] g_0x080483c4 forever
+INFO  as -   [   6/   8] g_0x080483eb main
+INFO  as -   [   7/   8] g_0x0804846a __i686.get_pc_thunk.bx
+INFO  as -   [   8/   8] g_0x080484a8 
+decompile F_080482a0                    : .WARN  al - Referencing unknown line 080482d4.0
+WARN  al - Referencing unknown line 080483a0.0
+WARN  al - Referencing unknown line 08048470.0
+........................................................... [ done ]
+decompile F_080482d4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482e4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile F_080482f4                    : .... failed: Block L0 calls block L1 which isn't available
+decompile forever                       : .WARN  al - Referencing unknown line 080482f4.0
+....................... failed: forever has no exit blocks
+decompile main                          : .WARN  al - Referencing unknown line 080483c4.0
+..INFO  gz - Skipping stack alignment: 080483ee.0+3 l.and esp,0xfffffff0
+......................................................... [ done ]
+decompile __i686.get_pc_thunk.bx        : ............................................................ [ done ]
+decompile F_080484a8                    : .WARN  al - Referencing unknown line 08048340.0
+........................................................... [ done ]
