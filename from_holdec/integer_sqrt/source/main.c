@@ -8,7 +8,7 @@
 #define sub(src,dest) do{cf=dest<src;dest=dest-src;}while(0)
 #define sbb(src,dest) do{tmp=src+cf;cf=dest<tmp;dest=dest-tmp;}while(0)
 
-static unsigned int integer_sqrt_in_c(unsigned int n)
+unsigned int integer_sqrt_in_c(unsigned int n)
 {
   unsigned short tmp;
   unsigned short ax = n & 0xffff;
@@ -43,7 +43,7 @@ static unsigned int integer_sqrt_in_c(unsigned int n)
   return si;
 }
 
-static unsigned int integer_sqrt_in_c_cleaned_up(unsigned int n)
+unsigned int integer_sqrt_in_c_cleaned_up(unsigned int n)
 {
   unsigned long long current = n;
   unsigned short result = 0;
