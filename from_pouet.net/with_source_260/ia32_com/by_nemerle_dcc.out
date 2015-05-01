@@ -1,0 +1,40 @@
+dcc: JX use, definition not supported at opcode #100
+dcc: JX use, definition not supported at opcode #86
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+31bdcc: Writing C beta file from_pouet.net/with_source_260/ia32_com//subject.b
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :    7
+  High-level:    1
+  Percentage reduction: 85.71%
+
+Statistics - Subroutine proc_3
+Number of Icode instructions:
+  Low-level :    5
+  High-level:    1
+  Percentage reduction: 80.00%
+
+Statistics - Subroutine proc_2
+Number of Icode instructions:
+  Low-level :   18
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   63
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+    proc_2
+        proc_3
+
+Final Program Statistics
+  Total number of low-level Icodes : 12
+  Total number of high-level Icodes: 2
+  Total reduction of instructions  : 83.33%

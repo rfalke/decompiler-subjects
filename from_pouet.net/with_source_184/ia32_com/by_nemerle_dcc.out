@@ -1,0 +1,28 @@
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+dcc: Writing C beta file from_pouet.net/with_source_184/ia32_com//subject.b
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :   21
+  High-level:    7
+  Percentage reduction: 66.67%
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   32
+  High-level:    7
+  Percentage reduction: 78.12%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+
+Final Program Statistics
+  Total number of low-level Icodes : 53
+  Total number of high-level Icodes: 14
+  Total reduction of instructions  : 73.58%

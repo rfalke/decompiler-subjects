@@ -1,0 +1,12 @@
+dcc: Definition not found for condition code usage at opcode 66
+LivenessSet probably screwed up, ES register as an liveOut in preprocessReturnDU
+unhandled BB::findBBExps HLI_CALL target opcode 2
+dcc_original: /root/dcc/src/dataflow.cpp:572: void LOCAL_ID::forwardSubs(Expr*, Expr*, iICODE, iICODE, int&) const: Assertion `lhs_reg' failed.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+Discarding SP def&use info for now
+Discarding SP def&use info for now
+Aborted (core dumped)

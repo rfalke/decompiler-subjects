@@ -1,0 +1,6 @@
+dcc: Don't understand 80386 instruction 0F at location 00017C
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig

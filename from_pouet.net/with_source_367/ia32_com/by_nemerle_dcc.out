@@ -1,0 +1,40 @@
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Def - use not supported.  Def op = 96, use op = 66.
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 59
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+Discarding SP def&use info for now
+Discarding SP def&use info for now
+dcc: Writing C beta file from_pouet.net/with_source_367/ia32_com//subject.b
+
+Statistics - Subroutine proc_2
+Number of Icode instructions:
+  Low-level :    5
+  High-level:    4
+  Percentage reduction: 20.00%
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :    7
+  High-level:    5
+  Percentage reduction: 28.57%
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   38
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+        proc_2
+
+Final Program Statistics
+  Total number of low-level Icodes : 12
+  Total number of high-level Icodes: 9
+  Total reduction of instructions  : 25.00%

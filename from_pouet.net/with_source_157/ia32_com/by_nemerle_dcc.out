@@ -1,0 +1,5 @@
+dcc: Definition not found for condition code usage at opcode 38
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct while() condition.
+Segmentation fault (core dumped)

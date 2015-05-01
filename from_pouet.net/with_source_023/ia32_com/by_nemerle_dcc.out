@@ -1,0 +1,23 @@
+dcc: Definition not found for condition code usage at opcode 90
+dcc: Failed to construct repeat..until() condition.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+dcc: Writing C beta file from_pouet.net/with_source_023/ia32_com//subject.b
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   15
+  High-level:    4
+  Percentage reduction: 73.33%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+
+Final Program Statistics
+  Total number of low-level Icodes : 15
+  Total number of high-level Icodes: 4
+  Total reduction of instructions  : 73.33%

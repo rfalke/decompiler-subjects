@@ -1,0 +1,4 @@
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+Segmentation fault (core dumped)

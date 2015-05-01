@@ -1,0 +1,141 @@
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Definition not found for condition code usage at opcode 65
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Definition not found for condition code usage at opcode 65
+dcc: Def - use not supported.  Def op = 12, use op = 66.
+unhandled BB::findBBExps HLI_CALL target opcode 2
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+esdcc: Writing C beta file from_pouet.net/with_source_394/ia32_mz//subject.b
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :    4
+  High-level:    0
+  Percentage reduction: 100.00%
+
+Statistics - Subroutine proc_2
+Number of Icode instructions:
+  Low-level :    5
+  High-level:    1
+  Percentage reduction: 80.00%
+
+Statistics - Subroutine proc_4
+Number of Icode instructions:
+  Low-level :    4
+  High-level:    0
+  Percentage reduction: 100.00%
+
+Statistics - Subroutine proc_5
+Number of Icode instructions:
+  Low-level :    9
+  High-level:    1
+  Percentage reduction: 88.89%
+
+Statistics - Subroutine proc_6
+Number of Icode instructions:
+  Low-level :   10
+
+Statistics - Subroutine proc_8
+Number of Icode instructions:
+  Low-level :    7
+  High-level:    6
+  Percentage reduction: 14.29%
+
+Statistics - Subroutine proc_7
+Number of Icode instructions:
+  Low-level :  112
+  High-level:   58
+  Percentage reduction: 48.21%
+
+Statistics - Subroutine proc_3
+Number of Icode instructions:
+  Low-level :   15
+  High-level:    7
+  Percentage reduction: 53.33%
+
+Statistics - Subroutine proc_9
+Number of Icode instructions:
+  Low-level :   27
+  High-level:   12
+  Percentage reduction: 55.56%
+
+Statistics - Subroutine proc_10
+Number of Icode instructions:
+  Low-level :   34
+  High-level:   19
+  Percentage reduction: 44.12%
+
+Statistics - Subroutine proc_11
+Number of Icode instructions:
+  Low-level :  125
+  High-level:   67
+  Percentage reduction: 46.40%
+
+Statistics - Subroutine proc_13
+Number of Icode instructions:
+  Low-level :    9
+  High-level:    1
+  Percentage reduction: 88.89%
+
+Statistics - Subroutine proc_14
+Number of Icode instructions:
+  Low-level :   49
+  High-level:   26
+  Percentage reduction: 46.94%
+
+Statistics - Subroutine proc_12
+Number of Icode instructions:
+  Low-level :   24
+  High-level:   12
+  Percentage reduction: 50.00%
+
+Statistics - Subroutine proc_15
+Number of Icode instructions:
+  Low-level :   32
+  High-level:    9
+  Percentage reduction: 71.88%
+
+Statistics - Subroutine proc_16
+Number of Icode instructions:
+  Low-level :   35
+  High-level:   12
+  Percentage reduction: 65.71%
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   36
+  High-level:   14
+  Percentage reduction: 61.11%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+    proc_2
+    proc_3
+        proc_4
+        proc_5
+        proc_6
+        proc_7
+            proc_8
+    proc_9
+    proc_10
+    proc_11
+        proc_8
+    proc_12
+        proc_13
+        proc_14
+    proc_15
+    proc_16
+
+Final Program Statistics
+  Total number of low-level Icodes : 527
+  Total number of high-level Icodes: 245
+  Total reduction of instructions  : 53.51%

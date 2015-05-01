@@ -1,0 +1,96 @@
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Definition not found for condition code usage at opcode 98
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 98
+dcc: Definition not found for condition code usage at opcode 59
+dcc: JX use, definition not supported at opcode #100
+dcc: Definition not found for condition code usage at opcode 98
+dcc: Definition not found for condition code usage at opcode 51
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 99
+LivenessSet probably screwed up, ES register as an liveOut in preprocessReturnDU
+dcc: Definition not found for condition code usage at opcode 98
+dcc: Definition not found for condition code usage at opcode 59
+LivenessSet probably screwed up, ES register as an liveOut in preprocessReturnDU
+LivenessSet probably screwed up, DS register as an liveOut in preprocessReturnDU
+dcc: Definition not found for condition code usage at opcode 98
+dcc: Def - use not supported.  Def op = 21, use op = 63.
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 59
+dcc: Definition not found for condition code usage at opcode 59
+LivenessSet probably screwed up, ES register as an liveOut in preprocessReturnDU
+LivenessSet probably screwed up, DS register as an liveOut in preprocessReturnDU
+dcc: Definition not found for condition code usage at opcode 99
+LivenessSet probably screwed up, DS register as an liveOut in preprocessReturnDU
+insertSubTreeReg attempt on unhandled type 9
+insertSubTreeReg attempt on unhandled type 9
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+eseseseseses8edcc: Writing C beta file from_pouet.net/with_source_364/ia32_com//subject.b
+
+Statistics - Subroutine proc_2
+Number of Icode instructions:
+  Low-level :   19
+  High-level:    5
+  Percentage reduction: 73.68%
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :   18
+  High-level:   10
+  Percentage reduction: 44.44%
+
+Statistics - Subroutine proc_4
+Number of Icode instructions:
+  Low-level :   44
+
+Statistics - Subroutine proc_3
+Number of Icode instructions:
+  Low-level :   16
+  High-level:    6
+  Percentage reduction: 62.50%
+
+Statistics - Subroutine proc_6
+Number of Icode instructions:
+  Low-level :   10
+  High-level:    6
+  Percentage reduction: 40.00%
+
+Statistics - Subroutine proc_5
+Number of Icode instructions:
+  Low-level :  148
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :  236
+  High-level:  120
+  Percentage reduction: 49.15%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+        proc_2
+    proc_3
+        proc_4
+    proc_4
+    proc_2
+    proc_5
+        proc_6
+
+Final Program Statistics
+  Total number of low-level Icodes : 299
+  Total number of high-level Icodes: 147
+  Total reduction of instructions  : 50.84%

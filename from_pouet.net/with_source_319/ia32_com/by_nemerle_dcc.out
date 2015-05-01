@@ -1,0 +1,17 @@
+dcc: JX use, definition not supported at opcode #105
+dcc: Definition not found for condition code usage at opcode 99
+dcc: Definition not found for condition code usage at opcode 66
+dcc: Def - use not supported.  Def op = 5, use op = 5.
+dcc: Def - use not supported.  Def op = 5, use op = 5.
+dcc: Def - use not supported.  Def op = 5, use op = 5.
+dcc: Definition not found for condition code usage at opcode 5
+LivenessSet probably screwed up, ES register as an liveOut in preprocessReturnDU
+LivenessSet probably screwed up, DS register as an liveOut in preprocessReturnDU
+AstIdent::idID unhandled type 0
+dcc_original: /root/dcc/include/icode.h:209: void HLTYPE::expr(Expr*): Assertion `e' failed.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+eseses58Aborted (core dumped)

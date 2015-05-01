@@ -1,0 +1,7 @@
+dcc_original: /root/dcc/src/graph.cpp:166: void Function::markImpure(): Assertion `Project::get()->validSymIdx(icod.ll()->caseEntry)' failed.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+esAborted (core dumped)

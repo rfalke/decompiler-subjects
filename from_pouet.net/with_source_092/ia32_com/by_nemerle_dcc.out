@@ -1,0 +1,8 @@
+dcc: Definition not found for condition code usage at opcode 59
+dcc_original: /root/dcc/src/dataflow.cpp:572: void LOCAL_ID::forwardSubs(Expr*, Expr*, iICODE, iICODE, int&) const: Assertion `lhs_reg' failed.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+Aborted (core dumped)

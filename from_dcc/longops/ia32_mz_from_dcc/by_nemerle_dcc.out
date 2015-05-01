@@ -1,0 +1,60 @@
+dcc: Def - use not supported.  Def op = 80, use op = 80.
+dcc: Def - use not supported.  Def op = 80, use op = 80.
+dcc: Def - use not supported.  Def op = 80, use op = 80.
+dcc: Def - use not supported.  Def op = 80, use op = 80.
+Model: s
+Borland v2 detected
+Signature file: dccb2s.sig
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+dcc: Writing C beta file from_dcc/longops/ia32_mz_from_dcc//subject.b
+
+Statistics - Subroutine LXMUL@
+Number of Icode instructions:
+  Low-level :   24
+  High-level:   16
+  Percentage reduction: 33.33%
+
+Statistics - Subroutine LDIV@
+Number of Icode instructions:
+  Low-level :   72
+
+Statistics - Subroutine LMOD@
+Number of Icode instructions:
+  Low-level :   72
+
+Statistics - Subroutine LXLSH@
+Number of Icode instructions:
+  Low-level :   15
+  High-level:   10
+  Percentage reduction: 33.33%
+
+Statistics - Subroutine LXRSH@
+Number of Icode instructions:
+  Low-level :   15
+  High-level:    9
+  Percentage reduction: 40.00%
+
+Statistics - Subroutine main
+Number of Icode instructions:
+  Low-level :   63
+  High-level:   10
+  Percentage reduction: 84.13%
+dcc: Finished writing C beta file
+
+Call Graph:
+main
+    LXMUL@
+    LDIV@
+    LMOD@
+    LXLSH@
+    LXRSH@
+    printf
+
+Final Program Statistics
+  Total number of low-level Icodes : 117
+  Total number of high-level Icodes: 45
+  Total reduction of instructions  : 61.54%

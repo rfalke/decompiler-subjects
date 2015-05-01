@@ -1,0 +1,21 @@
+Model: s
+Borland v2 detected
+Signature file: dccb2s.sig
+dcc: Writing C beta file from_dcc/benchmul/ia32_mz_from_dcc_short//subject.b
+
+Statistics - Subroutine main
+Number of Icode instructions:
+  Low-level :   82
+  High-level:   13
+  Percentage reduction: 84.15%
+dcc: Finished writing C beta file
+
+Call Graph:
+main
+    printf
+    scanf
+
+Final Program Statistics
+  Total number of low-level Icodes : 82
+  Total number of high-level Icodes: 13
+  Total reduction of instructions  : 84.15%

@@ -1,0 +1,70 @@
+dcc: Definition not found for condition code usage at opcode 38
+unhandled BB::findBBExps HLI_CALL target opcode 2
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+dcc: Writing C beta file from_pouet.net/with_source_332/ia32_com//subject.b
+
+Statistics - Subroutine proc_3
+Number of Icode instructions:
+  Low-level :    5
+  High-level:    3
+  Percentage reduction: 40.00%
+
+Statistics - Subroutine proc_2
+Number of Icode instructions:
+  Low-level :   20
+  High-level:   15
+  Percentage reduction: 25.00%
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :   11
+  High-level:    1
+  Percentage reduction: 90.91%
+
+Statistics - Subroutine proc_4
+Number of Icode instructions:
+  Low-level :   10
+  High-level:    5
+  Percentage reduction: 50.00%
+
+Statistics - Subroutine proc_5
+Number of Icode instructions:
+  Low-level :   78
+  High-level:   45
+  Percentage reduction: 42.31%
+
+Statistics - Subroutine proc_6
+Number of Icode instructions:
+  Low-level :   42
+  High-level:   21
+  Percentage reduction: 50.00%
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   17
+  High-level:    6
+  Percentage reduction: 64.71%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+        proc_2
+            proc_3
+    proc_4
+    proc_5
+        proc_3
+        proc_2
+    proc_6
+
+Final Program Statistics
+  Total number of low-level Icodes : 183
+  Total number of high-level Icodes: 96
+  Total reduction of instructions  : 47.54%

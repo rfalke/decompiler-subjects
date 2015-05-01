@@ -1,0 +1,34 @@
+dcc: Definition not found for condition code usage at opcode 66
+unhandled BB::findBBExps HLI_CALL target opcode 2
+unhandled BB::findBBExps HLI_CALL target opcode 2
+insertSubTreeReg attempt on unhandled type 9
+dcc: Failed to construct repeat..until() condition.
+dcc: Failed to construct repeat..until() condition.
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig
+dcc: Writing C beta file from_pouet.net/with_source_228/ia32_com//subject.b
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :   17
+  High-level:   12
+  Percentage reduction: 29.41%
+
+Statistics - Subroutine start
+Number of Icode instructions:
+  Low-level :   60
+  High-level:   19
+  Percentage reduction: 68.33%
+dcc: Finished writing C beta file
+
+Call Graph:
+start
+    proc_1
+
+Final Program Statistics
+  Total number of low-level Icodes : 77
+  Total number of high-level Icodes: 31
+  Total reduction of instructions  : 59.74%

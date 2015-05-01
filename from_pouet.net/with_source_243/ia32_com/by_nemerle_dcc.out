@@ -1,0 +1,6 @@
+dcc: Invalid instruction 8E at location 00012F
+Main could not be located!
+Model: x
+Warning - compiler not recognised
+Signature file: dccxxx.sig
+Warning: cannot open signature file /root/dcc/sigs/dccxxx.sig

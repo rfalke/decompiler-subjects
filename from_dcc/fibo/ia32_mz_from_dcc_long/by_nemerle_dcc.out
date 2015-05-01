@@ -1,0 +1,38 @@
+LivenessSet probably screwed up, DS register as an liveOut in preprocessReturnDU
+Model: l
+Borland v2 detected
+Signature file: dccb2l.sig
+esesesesesError, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+Error, glob var not found in symtab
+dcc: Writing C beta file from_dcc/fibo/ia32_mz_from_dcc_long//subject.b
+
+Statistics - Subroutine proc_1
+Number of Icode instructions:
+  Low-level :   28
+  High-level:    5
+  Percentage reduction: 82.14%
+
+Statistics - Subroutine main
+Number of Icode instructions:
+  Low-level :   59
+  High-level:    9
+  Percentage reduction: 84.75%
+dcc: Finished writing C beta file
+
+Call Graph:
+main
+    printf
+    scanf
+    exit
+    proc_1
+        proc_1
+
+Final Program Statistics
+  Total number of low-level Icodes : 87
+  Total number of high-level Icodes: 14
+  Total reduction of instructions  : 83.91%
