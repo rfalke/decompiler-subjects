@@ -1,0 +1,7 @@
+from_rec/hd/ia32_elf_from_rec/subject.exe: error: An internal error occurred while decompiling.
+    Relocation type 5 not handled yet
+       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

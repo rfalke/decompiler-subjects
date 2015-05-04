@@ -1,0 +1,6 @@
+from_boomerang/fibo_iter/ppc_macho_by_boomerang_o4/subject.exe: error: An internal error occurred while decompiling.
+    The method or operation is not implemented.
+       at Decompiler.ImageLoaders.MachO.MachOLoader.get_PreferredBaseAddress()
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

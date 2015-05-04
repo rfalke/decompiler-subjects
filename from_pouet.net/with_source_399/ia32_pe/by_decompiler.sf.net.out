@@ -1,0 +1,71 @@
+004035BB: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004050E4: warning: Unable to resolve imported reference SDL.dll!SDL_Init.
+004050F6: warning: Unable to resolve imported reference SDL.dll!SDL_ShowCursor.
+004050EA: warning: Unable to resolve imported reference SDL.dll!SDL_SetVideoMode.
+004027C3: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+00405114: warning: Unable to resolve imported reference SDL.dll!SDL_Quit.
+004027FD: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004023D7: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004023F7: warning: Unable to resolve imported reference MSVCR80.dll!fopen.
+004085A7: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004085B7: warning: Unable to resolve imported reference MSVCR80.dll!longjmp.
+0040858C: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004086A1: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004086CD: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004086F9: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004085D5: Warning: Procedure fn00408490 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408802: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408807: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408813: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408825: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408802: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+004053E1: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+00402449: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00402477: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+004024C9: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+0040A6E1: error: Rewriting x86 opcode 'fidivr' is not supported yet.
+0040A295: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+0040AA55: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+00409097: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+00408FF7: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+0040FA8A: error: Rewriting x86 opcode 'fabs' is not supported yet.
+0040F1DC: error: Rewriting x86 opcode 'fidivr' is not supported yet.
+0040FBC0: error: Rewriting x86 opcode 'fabs' is not supported yet.
+00410565: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+004025A2: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004025BC: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+0040276E: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00401DC1: warning: Unable to resolve imported reference MSVCR80.dll!fopen.
+00401DE2: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00401E3A: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004022CA: warning: Unable to resolve imported reference libmikmod.dll!MikMod_RegisterAllDrivers.
+004022D0: warning: Unable to resolve imported reference libmikmod.dll!MikMod_RegisterAllLoaders.
+004022D6: warning: Unable to resolve imported reference libmikmod.dll!md_mode.
+004022DB: warning: Unable to resolve imported reference libmikmod.dll!md_reverb.
+004022EE: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Init.
+004022F4: warning: Unable to resolve imported reference libmikmod.dll!md_mode.
+004022FE: warning: Unable to resolve imported reference libmikmod.dll!md_reverb.
+00402310: warning: Unable to resolve imported reference libmikmod.dll!Player_Load.
+0040373A: warning: Unable to resolve imported reference libmikmod.dll!Player_Start.
+0040394C: warning: Unable to resolve imported reference libmikmod.dll!Player_SetVolume.
+0040397D: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Update.
+0040510E: warning: Unable to resolve imported reference SDL.dll!SDL_Flip.
+00405108: warning: Unable to resolve imported reference SDL.dll!SDL_SetColors.
+004050FC: warning: Unable to resolve imported reference SDL.dll!SDL_LockSurface.
+00402981: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+00405102: warning: Unable to resolve imported reference SDL.dll!SDL_UnlockSurface.
+004050DE: warning: Unable to resolve imported reference SDL.dll!SDL_UpdateRect.
+004050F0: warning: Unable to resolve imported reference SDL.dll!SDL_PollEvent.
+004050F0: warning: Unable to resolve imported reference SDL.dll!SDL_PollEvent.
+004039B8: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Exit.
+from_pouet.net/with_source_399/ia32_pe/subject.exe: error: An internal error occurred while decompiling.
+    Unknown node call fn00412237 (retsize: 4; depth: 44).
+       at Decompiler.Core.Lib.DirectedGraphImpl`1.CreateEdgeCollectionCore(T o, Boolean fSuccessors)
+   at Decompiler.Analysis.RegisterLiveness.PropagateToCalleeExitBlocks(Statement stm)
+   at Decompiler.Analysis.RegisterLiveness.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.RegisterLiveness.ProcessBlock(BlockFlow item)
+   at Decompiler.Analysis.RegisterLiveness.ProcessWorklist()
+   at Decompiler.Analysis.RegisterLiveness.Compute(Program p, ProgramDataFlow procFlow, DecompilerEventListener eventListener)
+   at Decompiler.Analysis.DataFlowAnalysis.UntangleProcedures()
+   at Decompiler.DecompilerDriver.AnalyzeDataFlow()
+   at Decompiler.DecompilerDriver.Decompile(String filename)

@@ -1,0 +1,401 @@
+08048E97: error: Rewriting x86 opcode 'fabs' is not supported yet.
+080490A2: error: Only word sizes 1, 2, 4, 8, and 16 bytes are supported.
+08049125: error: Rewriting x86 opcode 'fprem' is not supported yet.
+08049997: error: The method or operation is not implemented.
+: error: Error when reconstructing types.
+    Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.UnionType'.
+       at Decompiler.Typing.StructureFieldMerger.AddFieldToCluster(StructureField field, List`1 overlappingFields)
+   at Decompiler.Typing.StructureFieldMerger.<GetOverlappingClusters>d__0.MoveNext()
+   at Decompiler.Typing.StructureFieldMerger.Merge(StructureType str)
+   at Decompiler.Typing.TypeTransformer.MergeStructureFields(StructureType str)
+   at Decompiler.Typing.TypeTransformer.VisitStructure(StructureType str)
+   at Decompiler.Typing.TypeTransformer.Transform()
+   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
+   at Decompiler.DecompilerDriver.ReconstructTypes()
+fn08048398_entry (1): idom l08048398 (2)
+fn08048398_exit (3): idom 
+l08048398 (2): idom fn08048398_exit (3)
+fn080483A8_entry (1): idom l080483A8 (2)
+fn080483A8_exit (3): idom 
+l080483A8 (2): idom fn080483A8_exit (3)
+fn080483B8_entry (1): idom l080483B8 (2)
+fn080483B8_exit (3): idom 
+l080483B8 (2): idom fn080483B8_exit (3)
+fn080483C8_entry (1): idom l080483C8 (2)
+fn080483C8_exit (3): idom 
+l080483C8 (2): idom fn080483C8_exit (3)
+fn080483D8_entry (1): idom l080483D8 (2)
+fn080483D8_exit (3): idom 
+l080483D8 (2): idom fn080483D8_exit (3)
+fn080483E8_entry (1): idom l080483E8 (2)
+fn080483E8_exit (3): idom 
+l080483E8 (2): idom fn080483E8_exit (3)
+fn080483F8_entry (1): idom l080483F8 (2)
+fn080483F8_exit (3): idom 
+l080483F8 (2): idom fn080483F8_exit (3)
+fn08048408_entry (1): idom l08048408 (2)
+fn08048408_exit (3): idom 
+l08048408 (2): idom fn08048408_exit (3)
+fn08048418_entry (1): idom l08048418 (2)
+fn08048418_exit (3): idom 
+l08048418 (2): idom fn08048418_exit (3)
+fn08048428_entry (1): idom l08048428 (2)
+fn08048428_exit (3): idom 
+l08048428 (2): idom fn08048428_exit (3)
+fn08048438_entry (1): idom l08048438 (2)
+fn08048438_exit (3): idom 
+l08048438 (2): idom fn08048438_exit (3)
+fn0804844D_entry (1): idom l0804844D (2)
+fn0804844D_exit (3): idom 
+l0804844D (2): idom fn0804844D_exit (3)
+fn0804847F_entry (1): idom l0804847F (2)
+fn0804847F_exit (3): idom 
+l0804847F (2): idom fn0804847F_exit (3)
+fn08048498_entry (1): idom l08048498 (2)
+fn08048498_exit (3): idom 
+l08048498 (2): idom fn08048498_exit (3)
+fn080484A2_entry (1): idom l080484A2 (2)
+fn080484A2_exit (3): idom 
+l080484A2 (2): idom fn080484A2_exit (3)
+fn080484CA_entry (1): idom l080484CA (2)
+fn080484CA_exit (22): idom 
+l080484CA (2): idom l080485DE (3)
+l080484EB (4): idom l08048566 (8)
+l08048505 (5): idom l0804855E (6)
+l0804850C (23): idom l08048566 (8)
+l08048512 (24): idom l08048564 (7)
+l08048523 (25): idom l08048564 (7)
+l0804852F (26): idom l08048564 (7)
+l08048536 (27): idom l08048566 (8)
+l0804853D (28): idom l08048564 (7)
+l08048559 (29): idom l08048564 (7)
+l0804855E (6): idom l08048564 (7)
+l08048564 (7): idom l08048566 (8)
+l08048566 (8): idom l08048573 (9)
+l08048573 (9): idom l0804857C (10)
+l0804857C (10): idom l0804860B (21)
+l08048587 (11): idom l08048605 (12)
+l08048589 (16): idom l080485BF (17)
+l080485BF (17): idom l080485C6 (18)
+l080485C6 (18): idom l080485D1 (19)
+l080485D1 (19): idom l0804860B (21)
+l080485DC (20): idom l08048607 (13)
+l080485DE (3): idom l080484EB (4)
+l080485F3 (15): idom l08048589 (16)
+l080485FF (14): idom l080485F3 (15)
+l08048605 (12): idom l08048607 (13)
+l08048607 (13): idom l080485FF (14)
+l0804860B (21): idom fn080484CA_exit (22)
+fn08048613_entry (1): idom l08048613 (2)
+fn08048613_exit (3): idom 
+l08048613 (2): idom fn08048613_exit (3)
+fn080486BA_entry (1): idom l080486BA (2)
+fn080486BA_exit (3): idom 
+l080486BA (2): idom fn080486BA_exit (3)
+fn08048775_entry (1): idom l08048775 (2)
+fn08048775_exit (3): idom 
+l08048775 (2): idom fn08048775_exit (3)
+fn0804881D_entry (1): idom l0804881D (2)
+fn0804881D_exit (11): idom 
+l0804881D (2): idom l08048A84 (10)
+l0804888D (3): idom l08048A84 (10)
+l080488A6 (4): idom l08048A84 (10)
+l08048905 (5): idom l08048A84 (10)
+l08048946 (6): idom l08048A84 (10)
+l08048986 (7): idom l08048A84 (10)
+l080489DC (8): idom l08048A84 (10)
+l08048A30 (9): idom l08048A84 (10)
+l08048A84 (10): idom fn0804881D_exit (11)
+l08048ACC (15): idom l08048986 (7)
+l08048B4D (14): idom l080489DC (8)
+l08048BB8 (13): idom l08048A30 (9)
+l08048C27 (12): idom l08048A30 (9)
+fn08048C66: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn08048EBE: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0804938F_entry (1): idom l0804938F (2)
+fn0804938F_exit (7): idom 
+l0804938F (2): idom l08049400 (3)
+l080493A8 (8): idom l080493D8 (10)
+l080493BF (9): idom l080493D8 (10)
+l080493D8 (10): idom l080493F9 (12)
+l080493DE (11): idom l080493F9 (12)
+l080493F9 (12): idom l08049400 (3)
+l08049400 (3): idom l08049406 (4)
+l08049406 (4): idom l0804940D (5)
+l0804940D (5): idom l0804949F (6)
+l0804949F (6): idom fn0804938F_exit (7)
+fn080494A7: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+08049A08: error: Failed to write global variable g_t8049A08.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A0C: error: Failed to write global variable g_t8049A0C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A10: error: Failed to write global variable g_t8049A10.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A2C: error: Failed to write global variable g_t8049A2C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A30: error: Failed to write global variable g_t8049A30.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A38: error: Failed to write global variable g_t8049A38.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0BC: error: Failed to write global variable g_ptr804A0BC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C0: error: Failed to write global variable g_ptr804A0C0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C4: error: Failed to write global variable g_ptr804A0C4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C8: error: Failed to write global variable g_ptr804A0C8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0CC: error: Failed to write global variable g_ptr804A0CC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D0: error: Failed to write global variable g_ptr804A0D0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D4: error: Failed to write global variable g_ptr804A0D4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D8: error: Failed to write global variable g_ptr804A0D8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0DC: error: Failed to write global variable g_ptr804A0DC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0E0: error: Failed to write global variable g_ptr804A0E0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A100: error: Failed to write global variable g_t804A100.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A500: error: Failed to write global variable g_t824A500.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A504: error: Failed to write global variable g_t824A504.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A508: error: Failed to write global variable g_t824A508.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A50C: error: Failed to write global variable g_t824A50C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A520: error: Failed to write global variable g_t824A520.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0940C8A0: error: Failed to write global variable g_t940C8A0.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0940C8A4: error: Failed to write global variable g_a940C8A4.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitArray(ArrayType at)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0964CD20: error: Failed to write global variable g_t964CD20.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A08: error: Failed to write global variable g_t8049A08.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A0C: error: Failed to write global variable g_t8049A0C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A10: error: Failed to write global variable g_t8049A10.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A2C: error: Failed to write global variable g_t8049A2C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A30: error: Failed to write global variable g_t8049A30.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08049A38: error: Failed to write global variable g_t8049A38.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0BC: error: Failed to write global variable g_ptr804A0BC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C0: error: Failed to write global variable g_ptr804A0C0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C4: error: Failed to write global variable g_ptr804A0C4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0C8: error: Failed to write global variable g_ptr804A0C8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0CC: error: Failed to write global variable g_ptr804A0CC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D0: error: Failed to write global variable g_ptr804A0D0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D4: error: Failed to write global variable g_ptr804A0D4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0D8: error: Failed to write global variable g_ptr804A0D8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0DC: error: Failed to write global variable g_ptr804A0DC.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A0E0: error: Failed to write global variable g_ptr804A0E0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804A100: error: Failed to write global variable g_t804A100.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A500: error: Failed to write global variable g_t824A500.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A504: error: Failed to write global variable g_t824A504.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A508: error: Failed to write global variable g_t824A508.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A50C: error: Failed to write global variable g_t824A50C.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0824A520: error: Failed to write global variable g_t824A520.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0940C8A0: error: Failed to write global variable g_t940C8A0.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0940C8A4: error: Failed to write global variable g_a940C8A4.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitArray(ArrayType at)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0964CD20: error: Failed to write global variable g_t964CD20.
+    The method or operation is not implemented.
+       at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitStructure(StructureType str)
+   at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

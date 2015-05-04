@@ -1,0 +1,20 @@
+0800:0BEF: error: Address is outside of image.
+Parameter name: addr
+0800:011E: Warning: Procedure fn0800_0000 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+l0800_011E_thunk_fn0800_0121: error: An error occurred while rewriting at linear address 0.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+from_dcc/intops/ia32_mz_from_dcc/subject.exe: error: An internal error occurred while decompiling.
+    Unknown node call fn0800_08FA (retsize: 2; depth: 2).
+       at Decompiler.Core.Lib.DirectedGraphImpl`1.CreateEdgeCollectionCore(T o, Boolean fSuccessors)
+   at Decompiler.Analysis.RegisterLiveness.PropagateToCalleeExitBlocks(Statement stm)
+   at Decompiler.Analysis.RegisterLiveness.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.RegisterLiveness.ProcessBlock(BlockFlow item)
+   at Decompiler.Analysis.RegisterLiveness.ProcessWorklist()
+   at Decompiler.Analysis.RegisterLiveness.Compute(Program p, ProgramDataFlow procFlow, DecompilerEventListener eventListener)
+   at Decompiler.Analysis.DataFlowAnalysis.UntangleProcedures()
+   at Decompiler.DecompilerDriver.AnalyzeDataFlow()
+   at Decompiler.DecompilerDriver.Decompile(String filename)

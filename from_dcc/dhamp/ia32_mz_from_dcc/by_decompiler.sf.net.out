@@ -1,0 +1,267 @@
+0800:01D5: error: Object reference not set to an instance of an object.
+0800:01D5: error: Object reference not set to an instance of an object.
+0800:0641: warning: Possible stack underflow detected.
+0800:0648: warning: Possible stack underflow detected.
+0800:0710: Warning: Procedure fn0800_06CD previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0D28:006F: error: Imports of segmented adddreses not supported yet.
+0D28:0058: Warning: Procedure fn0D28_0051 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0D28:0058: Warning: Procedure fn0D28_0051 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0D28:0103: error: Address is outside of image.
+Parameter name: addr
+0BCA:001E: error: Imports of segmented adddreses not supported yet.
+0BCA:000F: error: Imports of segmented adddreses not supported yet.
+0BCA:001E: error: Imports of segmented adddreses not supported yet.
+0800:020C: error: Rewriting x86 opcode 'illegal' is not supported yet.
+l0800_0108_thunk_fn0800_010D: error: An error occurred while rewriting at linear address 0.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0D28_0058_thunk_fn0D28_005A: error: An error occurred while rewriting at linear address 0.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+fn0800_0000: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+       at Decompiler.Analysis.SsaTransform.LocateDefinedVariables.VisitIdentifier(Identifier id)
+   at Decompiler.Analysis.SsaTransform.LocateDefinedVariables.LocateDefs(Block b)
+   at Decompiler.Analysis.SsaTransform.LocateAllDefinedVariables(Dictionary`2[] defOrig)
+   at Decompiler.Analysis.SsaTransform.PlacePhiFunctions()
+   at Decompiler.Analysis.SsaTransform.Transform()
+   at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+: error: Error when reconstructing types.
+    Invalid pointer size.
+Parameter name: byteSize
+       at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
+   at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
+   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
+   at Decompiler.DecompilerDriver.ReconstructTypes()
+fn0800_0000: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0800_010D_entry (1): idom l0800_010D (2)
+fn0800_010D_exit (3): idom 
+l0800_010D (2): idom fn0800_010D_exit (3)
+fn0800_012F_entry (1): idom l0800_012F (2)
+fn0800_012F_exit (3): idom 
+l0800_012F (2): idom fn0800_012F_exit (3)
+fn0800_0172_entry (1): idom l0800_0172 (2)
+fn0800_0172_exit (3): idom 
+l0800_0172 (2): idom fn0800_0172_exit (3)
+fn0800_01A7_entry (1): idom l0800_01A7 (2)
+fn0800_01A7_exit (3): idom 
+l0800_01A7 (2): idom fn0800_01A7_exit (3)
+fn0800_01AF: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0800_05CF_entry (1): idom l0800_05CF (2)
+fn0800_05CF_exit (25): idom 
+l0800_05CF (2): idom fn0800_05CF_exit (25)
+l0800_0601 (3): idom l0800_060B (4)
+l0800_060B (4): idom l0800_060D (6)
+l0800_060B_1 (5): idom l0800_060D (6)
+l0800_060D (6): idom fn0800_05CF_exit (25)
+l0800_060F (7): idom l0800_0612 (8)
+l0800_0612 (8): idom fn0800_05CF_exit (25)
+l0800_0625 (9): idom l0800_0631 (10)
+l0800_0631 (10): idom l0800_0633 (12)
+l0800_0631_1 (11): idom l0800_0631 (10)
+l0800_0633 (12): idom l0800_0641 (13)
+l0800_0641 (13): idom l0800_068A (18)
+l0800_0646 (14): idom l0800_068A (18)
+l0800_0648 (15): idom l0800_068A (18)
+l0800_064D (16): idom l0800_0641 (13)
+l0800_0659 (17): idom l0800_0641 (13)
+l0800_0685 (26): idom l0800_0685_thunk_fn0800_01AF (27)
+l0800_0685_thunk_fn0800_01AF (27): idom fn0800_05CF_exit (25)
+l0800_068A (18): idom fn0800_05CF_exit (25)
+l0800_06A3 (19): idom l0800_06AD (20)
+l0800_06AD (20): idom l0800_06C0 (24)
+l0800_06AF (21): idom l0800_06B8 (22)
+l0800_06B8 (22): idom l0800_06BE (23)
+l0800_06BE (23): idom l0800_06C0 (24)
+l0800_06C0 (24): idom fn0800_05CF_exit (25)
+fn0800_065D_entry (1): idom l0800_065D (2)
+fn0800_065D_exit (11): idom 
+l0800_065D (2): idom l0800_0668 (5)
+l0800_0661 (3): idom l0800_0668 (5)
+l0800_0667 (4): idom l0800_0668 (5)
+l0800_0668 (5): idom l0800_0684 (10)
+l0800_066F (6): idom l0800_0684 (10)
+l0800_0675 (7): idom l0800_0682 (9)
+l0800_0680 (8): idom l0800_0682 (9)
+l0800_0682 (9): idom l0800_0684 (10)
+l0800_0684 (10): idom fn0800_065D_exit (11)
+fn0800_06CD_entry (1): idom l0800_06CD (2)
+fn0800_06CD_exit (5): idom 
+l0800_06CD (2): idom fn0800_06CD_exit (5)
+l0800_06F1 (3): idom l0800_06F1_thunk_fn0800_01AF (4)
+l0800_06F1_thunk_fn0800_01AF (4): idom fn0800_06CD_exit (5)
+l0800_06F6 (6): idom l0800_06FB (7)
+l0800_06FB (7): idom l0800_0703 (8)
+l0800_0703 (8): idom l0800_0705 (10)
+l0800_0703_1 (9): idom l0800_0705 (10)
+l0800_0705 (10): idom l0800_070A (11)
+l0800_070A (11): idom fn0800_06CD_exit (5)
+fn0800_0711_entry (1): idom l0800_0711 (2)
+fn0800_0711_exit (7): idom 
+l0800_0711 (2): idom fn0800_0711_exit (7)
+l0800_0715 (3): idom l0800_074E (4)
+l0800_0722 (8): idom l0800_072A (10)
+l0800_0726 (9): idom l0800_072A (10)
+l0800_072A (10): idom fn0800_0711_exit (7)
+l0800_074E (4): idom l0800_0756 (6)
+l0800_0752 (5): idom l0800_0756 (6)
+l0800_0756 (6): idom fn0800_0711_exit (7)
+fn0800_076C_entry (1): idom l0800_076C (2)
+fn0800_076C_exit (5): idom 
+l0800_076C (2): idom l0800_078C (4)
+l0800_078A (3): idom l0800_078C (4)
+l0800_078C (4): idom fn0800_076C_exit (5)
+fn087B_0004: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0BC6_0006_entry (1): idom l0BC6_0006 (2)
+fn0BC6_0006_exit (8): idom 
+l0BC6_0006 (2): idom l0BC6_0032 (6)
+l0BC6_0011 (3): idom l0BC6_0019 (5)
+l0BC6_0016 (4): idom l0BC6_0019 (5)
+l0BC6_0019 (5): idom l0BC6_0032 (6)
+l0BC6_0025 (9): idom l0BC6_0032 (6)
+l0BC6_002C (10): idom l0BC6_0032 (6)
+l0BC6_0032 (6): idom l0BC6_003C (7)
+l0BC6_003C (7): idom fn0BC6_0006_exit (8)
+fn0BCA_0002: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0BD0_0004_entry (1): idom l0BD0_0004 (2)
+fn0BD0_0004_exit (4): idom 
+l0BD0_0004 (2): idom l0BD0_0017 (3)
+l0BD0_0017 (3): idom fn0BD0_0004_exit (4)
+fn0BD0_0019_entry (1): idom l0BD0_0019 (2)
+fn0BD0_0019_exit (5): idom 
+l0BD0_0019 (2): idom l0BD0_007D (4)
+l0BD0_003E (3): idom l0BD0_007D (4)
+l0BD0_004C (6): idom l0BD0_007D (4)
+l0BD0_007D (4): idom fn0BD0_0019_exit (5)
+fn0BD0_0081_entry (1): idom l0BD0_0081 (2)
+fn0BD0_0081_exit (6): idom 
+l0BD0_0081 (2): idom l0BD0_0122 (4)
+l0BD0_00ED (3): idom l0BD0_0122 (4)
+l0BD0_00FA (7): idom l0BD0_0122 (4)
+l0BD0_0122 (4): idom l0BD0_012D (5)
+l0BD0_012D (5): idom fn0BD0_0081_exit (6)
+fn0BD0_0131_entry (1): idom l0BD0_0131 (2)
+fn0BD0_0131_exit (5): idom 
+l0BD0_0131 (2): idom l0BD0_019B (4)
+l0BD0_0156 (3): idom l0BD0_019B (4)
+l0BD0_015C (6): idom l0BD0_019B (4)
+l0BD0_019B (4): idom fn0BD0_0131_exit (5)
+fn0BD0_019F_entry (1): idom l0BD0_019F (2)
+fn0BD0_019F_exit (5): idom 
+l0BD0_019F (2): idom l0BD0_0201 (4)
+l0BD0_01C4 (3): idom l0BD0_0201 (4)
+l0BD0_01CA (6): idom l0BD0_0201 (4)
+l0BD0_0201 (4): idom fn0BD0_019F_exit (5)
+fn0BD0_0205_entry (1): idom l0BD0_0205 (2)
+fn0BD0_0205_exit (5): idom 
+l0BD0_0205 (2): idom l0BD0_0310 (4)
+l0BD0_0213 (3): idom l0BD0_0310 (4)
+l0BD0_021A (6): idom l0BD0_0310 (4)
+l0BD0_0245 (7): idom l0BD0_0310 (4)
+l0BD0_0254 (8): idom l0BD0_0310 (4)
+l0BD0_026C (9): idom l0BD0_0302 (10)
+l0BD0_026F (11): idom l0BD0_0310 (4)
+l0BD0_028F (12): idom l0BD0_0310 (4)
+l0BD0_02A4 (13): idom l0BD0_0310 (4)
+l0BD0_02BA (14): idom l0BD0_0310 (4)
+l0BD0_02DD (15): idom l0BD0_0310 (4)
+l0BD0_02FF (16): idom l0BD0_026F (11)
+l0BD0_0302 (10): idom l0BD0_0310 (4)
+l0BD0_0310 (4): idom fn0BD0_0205_exit (5)
+fn0C01_0004_entry (1): idom l0C01_0004 (2)
+fn0C01_0004_exit (5): idom 
+l0C01_0004 (2): idom l0C01_008E (4)
+l0C01_0022 (3): idom l0C01_008E (4)
+l0C01_0032 (6): idom l0C01_004A (8)
+l0C01_0044 (7): idom l0C01_004A (8)
+l0C01_004A (8): idom l0C01_008E (4)
+l0C01_005D (9): idom l0C01_008E (4)
+l0C01_0078 (10): idom l0C01_008E (4)
+l0C01_008E (4): idom fn0C01_0004_exit (5)
+fn0C01_00DB_entry (1): idom l0C01_00DB (2)
+fn0C01_00DB_exit (5): idom 
+l0C01_00DB (2): idom l0C01_0168 (4)
+l0C01_00EF (3): idom l0C01_0168 (4)
+l0C01_00F7 (6): idom l0C01_0168 (4)
+l0C01_0139 (10): idom l0C01_0168 (4)
+l0C01_0141 (7): idom l0C01_0168 (4)
+l0C01_0158 (8): idom l0C01_0168 (4)
+l0C01_0160 (9): idom l0C01_0168 (4)
+l0C01_0168 (4): idom fn0C01_00DB_exit (5)
+fn0C17_000C_entry (1): idom l0C17_000C (2)
+fn0C17_000C_exit (5): idom 
+l0C17_000C (2): idom l0C17_002A (4)
+l0C17_001B (3): idom l0C17_002A (4)
+l0C17_0020 (6): idom l0C17_002A (4)
+l0C17_002A (4): idom fn0C17_000C_exit (5)
+fn0CFE_0002_entry (1): idom l0CFE_0002 (2)
+fn0CFE_0002_exit (4): idom 
+l0CFE_0002 (2): idom l0CFE_0024 (3)
+l0CFE_0024 (3): idom fn0CFE_0002_exit (4)
+fn0D28_002B: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0D28_0051_entry (1): idom l0D28_0051 (2)
+fn0D28_0051_exit (4): idom 
+l0D28_0051 (2): idom fn0D28_0051_exit (4)
+l0D28_0058_thunk_fn0D28_005A (3): idom fn0D28_0051_exit (4)
+l0D28_0058_thunk_fn0D28_005A (5): idom fn0D28_0051_exit (4)
+l0D28_0058_thunk_fn0D28_0089 (6): idom fn0D28_0051_exit (4)
+fn0D28_0051: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0D28_005A_exit (3): idom 
+fn0D28_0089_entry (1): idom l0D28_0089 (2)
+fn0D28_0089_exit (3): idom 
+l0D28_0089 (2): idom fn0D28_0089_exit (3)
+from_dcc/dhamp/ia32_mz_from_dcc/subject.exe: error: An internal error occurred while decompiling.
+    Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
+       at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
+   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
+   at Decompiler.DecompilerDriver.StructureProgram()
+   at Decompiler.DecompilerDriver.Decompile(String filename)

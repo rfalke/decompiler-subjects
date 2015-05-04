@@ -1,0 +1,8 @@
+from_shootout/matrix_ocaml/x64_elf/subject.exe: error: An internal error occurred while decompiling.
+    Processor format 62 is not supported.
+       at Decompiler.ImageLoaders.Elf.ElfImageLoader.CreateArchitecture(UInt16 machineType)
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.LoadHeader()
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad)
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

@@ -1,0 +1,47 @@
+fn00001000_entry (1): idom l00001000 (2)
+fn00001000_exit (7): idom 
+l00001000 (2): idom fn00001000_exit (7)
+l00001026_thunk_fn00001092 (10): idom fn00001000_exit (7)
+l0000102A (3): idom fn00001000_exit (7)
+l00001056_thunk_fn00001092 (9): idom fn00001000_exit (7)
+l00001058 (4): idom l0000107A (5)
+l0000107A (5): idom l00001090_thunk_fn00001092 (6)
+l00001090_thunk_fn00001092 (6): idom fn00001000_exit (7)
+l00001090_thunk_fn00001092 (8): idom fn00001000_exit (7)
+fn00001000: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn00001092_entry (1): idom l00001092 (2)
+fn00001092_exit (7): idom 
+l00001092 (2): idom l000010A4 (4)
+l0000109A (3): idom l000010A4 (4)
+l000010A4 (4): idom l000010B6 (6)
+l000010AC (5): idom l000010B6 (6)
+l000010B6 (6): idom fn00001092_exit (7)
+fn000010BE_entry (1): idom l000010BE (2)
+fn000010BE_exit (4): idom 
+l000010BE (2): idom fn000010BE_exit (4)
+l000010D4_thunk_fn00001092 (5): idom fn000010BE_exit (4)
+l000010D8 (3): idom fn000010BE_exit (4)
+fn000010DA_entry (1): idom l000010DA (2)
+fn000010DA_exit (4): idom 
+l000010DA (2): idom fn000010DA_exit (4)
+l000010F0_thunk_fn00001092 (5): idom fn000010DA_exit (4)
+l000010F4 (3): idom fn000010DA_exit (4)
+fn000012F4_entry (1): idom l000012F4 (2)
+fn000012F4_exit (5): idom 
+l000012F4 (2): idom l0000130A (3)
+l0000130A (3): idom l00001314 (4)
+l00001314 (4): idom fn000012F4_exit (5)
+fn00001316_entry (1): idom l00001316 (2)
+fn00001316_exit (3): idom 
+l00001316 (2): idom fn00001316_exit (3)

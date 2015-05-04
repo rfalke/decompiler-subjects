@@ -1,0 +1,7 @@
+from_pouet.net/with_source_376/ia32_elf/subject.exe: error: An internal error occurred while decompiling.
+    Endianness is incorrectly specified.
+       at Decompiler.ImageLoaders.Elf.ElfImageLoader.LoadHeader()
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad)
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

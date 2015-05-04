@@ -1,0 +1,234 @@
+// fn0800_0000
+// Return size: 0
+void fn0800_0000()
+fn0800_0000_entry:
+	// succ:  l0800_0000
+l0800_0000:
+	sp = sp - 0x0002
+	Mem0[ss:sp:word16] = ds
+	sp = sp - 0x0002
+	Mem0[ss:sp:word16] = es
+	ax = cs
+	ds = ax
+	ax = ax + 0x00D1
+	SCZO = cond(ax)
+	es = ax
+	sp = sp - 0x0002
+	Mem0[ss:sp:word16] = ax
+	si = 0x00AF
+	di = di ^ di
+	SZO = cond(di)
+	C = false
+	D = false
+	dl = 0x80
+	bp = 0x006D
+	cx = cx ^ cx
+	SZO = cond(cx)
+	C = false
+	sp = sp - 0x0002
+	Mem0[ss:sp:word16] = ax
+	// succ:  l0800_001A
+l0800_001A:
+	v17 = Mem0[ds:si:byte]
+	Mem0[es:di:byte] = v17
+	si = si + 0x0001
+	di = di + 0x0001
+	// succ:  l0800_001B
+l0800_001B:
+	bx = 0x0010
+	call SEQ(cs, bp) (retsize: 2;)
+	branch Test(UGE,C) l0800_001A
+	// succ:  l0800_0022 l0800_001A
+l0800_0022:
+	call SEQ(cs, bp) (retsize: 2;)
+	cx = cx + 0x0001
+	SZO = cond(cx)
+	branch Test(UGE,C) l0800_0036
+	// succ:  l0800_0027 l0800_0036
+l0800_0027:
+	call SEQ(cs, bp) (retsize: 2;)
+	branch Test(ULT,C) l0800_004F
+	// succ:  l0800_002B l0800_004F
+l0800_002B:
+	call SEQ(cs, bp) (retsize: 2;)
+	bl = bl + bl + C
+	SCZO = cond(bl)
+	branch Test(UGE,C) l0800_002B
+	// succ:  l0800_0031 l0800_002B
+l0800_0031:
+	branch Test(NE,Z) l0800_0063
+	// succ:  l0800_0033 l0800_0063
+l0800_0033:
+	v21 = ax
+	ax = bx
+	bx = v21
+	goto l0800_0068
+	// succ:  l0800_0068
+l0800_0036:
+	bh = 0x01
+	// succ:  l0800_0038
+l0800_0038:
+	call SEQ(cs, bp) (retsize: 2;)
+	bh = bh + bh + C
+	SCZO = cond(bh)
+	branch Test(ULT,C) l0800_0076
+	// succ:  l0800_003E l0800_0076
+l0800_003E:
+	call SEQ(cs, bp) (retsize: 2;)
+	branch Test(ULT,C) l0800_0038
+	// succ:  l0800_0042 l0800_0038
+l0800_0042:
+	call SEQ(cs, bp) (retsize: 2;)
+	cx = cx + cx + C
+	SCZO = cond(cx)
+	call SEQ(cs, bp) (retsize: 2;)
+	branch Test(ULT,C) l0800_0042
+	// succ:  l0800_004A l0800_0042
+l0800_004A:
+	bh = bh - 0x03
+	SCZO = cond(bh)
+	branch Test(ULT,C) l0800_0061
+	// succ:  l0800_004F l0800_0061
+l0800_004F:
+	bl = Mem0[ds:si:byte]
+	si = si + 0x0001
+	SZO = cond(si)
+	branch Test(UGE,C) l0800_0058
+	bl = Mem0[ds:si:byte]
+	si = si + 0x0001
+	SZO = cond(si)
+	branch Test(UGE,C) l0800_0058
+	// succ:  l0800_0054 l0800_0058
+l0800_0054:
+	bl = bl >>u 0x01
+	SCZO = cond(bl)
+	cl = cl - bh - C
+	SCZO = cond(cl)
+	bl = bl >>u 0x01
+	SCZO = cond(bl)
+	cl = cl - bh - C
+	SCZO = cond(cl)
+	// succ:  l0800_0058
+l0800_0058:
+	SCZO = cond(bx - 0x007F)
+	branch Test(UGT,CZ) l0800_005F
+	// succ:  l0800_005D l0800_005F
+l0800_005D:
+	cx = cx + 0x0001
+	SZO = cond(cx)
+	cx = cx + 0x0001
+	SZO = cond(cx)
+	// succ:  l0800_005F
+l0800_005F:
+	ax = Mem0[ss:sp:word16]
+	sp = sp + 0x0002
+	SZO = cond(al & 0x5B)
+	C = false
+	goto l0800_0062
+	// succ:  l0800_0062
+l0800_0061:
+	bx = Mem0[ss:sp:word16]
+	sp = sp + 0x0002
+	// succ:  l0800_0062
+l0800_0062:
+	sp = sp - 0x0002
+	Mem0[ss:sp:word16] = bx
+	// succ:  l0800_0063
+l0800_0063:
+	bx = -bx
+	SCZO = cond(bx)
+	C = bx == 0x0000
+	// succ:  l0800_0065
+l0800_0065:
+	al = Mem0[es:bx + di:byte]
+	// succ:  l0800_0068
+l0800_0068:
+	Mem0[es:di:byte] = al
+	di = di + 0x0001
+	cx = cx - 0x0001
+	branch cx != 0x0000 l0800_0065
+	// succ:  l0800_006B l0800_0065
+l0800_006B:
+	goto l0800_001B
+	// succ:  l0800_001B
+l0800_0076:
+	ax = Mem0[ss:sp:word16]
+	sp = sp + 0x0002
+	bx = Mem0[ss:sp:word16]
+	sp = sp + 0x0002
+	al = 0xE8
+	es = bx
+	di = di ^ di
+	SZO = cond(di)
+	C = false
+	cx = 0x10B3
+	// succ:  l0800_0081
+l0800_0081:
+	branch cx == 0x0000 l0800_0083
+	// succ:  l0800_0081_1 l0800_0083
+l0800_0081_1:
+	SCZO = cond(al - Mem0[es:di:byte])
+	di = di + 0x0001
+	cx = cx - 0x0001
+	branch Test(NE,Z) l0800_0081
+	// succ:  l0800_0083 l0800_0081
+l0800_0083:
+	branch cx == 0x0000 l0800_008C
+	// succ:  l0800_0085 l0800_008C
+l0800_0085:
+	v26 = Mem0[es:di:word16] - di
+	Mem0[es:di:word16] = v26
+	SCZO = cond(v26)
+	SCZO = cond(ax - Mem0[es:di:word16])
+	di = di + 0x0002
+	cx = cx - 0x0001
+	SZO = cond(cx)
+	cx = cx - 0x0001
+	branch Test(NE,Z) && cx != 0x0000 l0800_0081
+	// succ:  l0800_008C l0800_0081
+l0800_008C:
+	dx = bx
+	di = di ^ di
+	SZO = cond(di)
+	C = false
+	cx = 0x0016
+	// succ:  l0800_0093
+l0800_0093:
+	al = Mem0[ds:si:byte]
+	si = si + 0x0001
+	ax = ax & 0x00FF
+	SZO = cond(ax)
+	C = false
+	branch Test(NE,Z) l0800_009A
+	// succ:  l0800_0099 l0800_009A
+l0800_0099:
+	ax = Mem0[ds:si:word16]
+	si = si + 0x0002
+	// succ:  l0800_009A
+l0800_009A:
+	di = di + ax
+	SCZO = cond(di)
+	branch Test(UGE,C) l0800_00A1
+	// succ:  l0800_009E l0800_00A1
+l0800_009E:
+	dh = dh + 0x10
+	SCZO = cond(dh)
+	// succ:  l0800_00A1
+l0800_00A1:
+	es = dx
+	v29 = Mem0[es:di:word16] + bx
+	Mem0[es:di:word16] = v29
+	SCZO = cond(v29)
+	cx = cx - 0x0001
+	branch cx != 0x0000 l0800_0093
+	// succ:  l0800_00A8 l0800_0093
+l0800_00A8:
+	es = Mem0[ss:sp:selector]
+	sp = sp + 0x0002
+	ds = Mem0[ss:sp:selector]
+	sp = sp + 0x0002
+	// succ:  l08D1_067D
+l08D1_067D:
+fn0800_0000_exit:
+
+

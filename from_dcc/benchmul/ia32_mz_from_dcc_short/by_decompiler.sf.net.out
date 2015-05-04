@@ -1,0 +1,223 @@
+0800:1122: error: Address is outside of image.
+Parameter name: addr
+0800:1794: error: Address is outside of image.
+Parameter name: addr
+0800:044C: Warning: Procedure fn0800_0403 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 2 bytes on the stack.
+l0800_011E_thunk_fn0800_0121: error: An error occurred while rewriting at linear address 0.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+fn0800_0000: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+       at Decompiler.Analysis.SsaTransform.LocateDefinedVariables.VisitIdentifier(Identifier id)
+   at Decompiler.Analysis.SsaTransform.LocateDefinedVariables.LocateDefs(Block b)
+   at Decompiler.Analysis.SsaTransform.LocateAllDefinedVariables(Dictionary`2[] defOrig)
+   at Decompiler.Analysis.SsaTransform.PlacePhiFunctions()
+   at Decompiler.Analysis.SsaTransform.Transform()
+   at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+: error: Error when reconstructing types.
+    Invalid pointer size.
+Parameter name: byteSize
+       at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
+   at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
+   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
+   at Decompiler.DecompilerDriver.ReconstructTypes()
+fn0800_0000: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0800_0121_entry (1): idom l0800_0121 (2)
+fn0800_0121_exit (7): idom 
+l0800_0121 (2): idom l0800_0137 (3)
+l0800_0137 (3): idom l0800_013F (4)
+l0800_013F (4): idom l0800_014F (6)
+l0800_0145 (5): idom l0800_014F (6)
+l0800_014F (6): idom fn0800_0121_exit (7)
+fn0800_0162_entry (1): idom l0800_0162 (2)
+fn0800_0162_exit (3): idom 
+l0800_0162 (2): idom fn0800_0162_exit (3)
+fn0800_01A5_entry (1): idom l0800_01A5 (2)
+fn0800_01A5_exit (3): idom 
+l0800_01A5 (2): idom fn0800_01A5_exit (3)
+fn0800_01DA_entry (1): idom l0800_01DA (2)
+fn0800_01DA_exit (3): idom 
+l0800_01DA (2): idom fn0800_01DA_exit (3)
+fn0800_01E2_entry (1): idom l0800_01E2 (2)
+fn0800_01E2_exit (4): idom 
+l0800_01E2 (2): idom l0800_0232_thunk_fn0800_0285 (3)
+l0800_0232_thunk_fn0800_0285 (3): idom fn0800_01E2_exit (4)
+fn0800_01FA_entry (1): idom l0800_01FA (2)
+fn0800_01FA_exit (4): idom 
+l0800_01FA (2): idom l0800_0237_thunk_fn0800_0285 (3)
+l0800_0237_thunk_fn0800_0285 (3): idom fn0800_01FA_exit (4)
+fn0800_0285_entry (1): idom l0800_0285 (2)
+fn0800_0285_exit (4): idom 
+l0800_0239 (5): idom l0800_0278 (6)
+l0800_023E (8): idom l0800_0278 (6)
+l0800_0278 (6): idom l0800_027D (7)
+l0800_027D (7): idom l0800_0285 (2)
+l0800_0285 (2): idom l0800_0297 (3)
+l0800_0297 (3): idom fn0800_0285_exit (4)
+fn0800_02E3_entry (1): idom l0800_02E3 (2)
+fn0800_02E3_exit (5): idom 
+l0800_02E3 (2): idom l0800_02F2 (3)
+l0800_02E8 (6): idom l0800_02F2 (3)
+l0800_02F2 (3): idom l0800_02FD (4)
+l0800_02FD (4): idom fn0800_02E3_exit (5)
+fn0800_0318_entry (1): idom l0800_0318 (2)
+fn0800_0318_exit (25): idom 
+l0800_0318 (2): idom fn0800_0318_exit (25)
+l0800_0345 (3): idom l0800_034F (4)
+l0800_034F (4): idom l0800_0351 (6)
+l0800_034F_1 (5): idom l0800_0351 (6)
+l0800_0351 (6): idom fn0800_0318_exit (25)
+l0800_0353 (7): idom l0800_0356 (8)
+l0800_0356 (8): idom fn0800_0318_exit (25)
+l0800_0369 (9): idom l0800_0375 (10)
+l0800_0375 (10): idom l0800_0377 (12)
+l0800_0375_1 (11): idom l0800_0375 (10)
+l0800_0377 (12): idom l0800_0385 (13)
+l0800_0385 (13): idom l0800_03CC (18)
+l0800_038A (14): idom l0800_03CC (18)
+l0800_038C (15): idom l0800_03CC (18)
+l0800_0391 (16): idom l0800_0385 (13)
+l0800_039D (17): idom l0800_0385 (13)
+l0800_03C9 (26): idom l0800_03C9_thunk_fn0800_01E2 (27)
+l0800_03C9_thunk_fn0800_01E2 (27): idom fn0800_0318_exit (25)
+l0800_03CC (18): idom fn0800_0318_exit (25)
+l0800_03E3 (19): idom l0800_03E9 (20)
+l0800_03E9 (20): idom l0800_03F9 (24)
+l0800_03EB (21): idom l0800_03F1 (22)
+l0800_03F1 (22): idom l0800_03F7 (23)
+l0800_03F7 (23): idom l0800_03F9 (24)
+l0800_03F9 (24): idom fn0800_0318_exit (25)
+fn0800_03A1_entry (1): idom l0800_03A1 (2)
+fn0800_03A1_exit (11): idom 
+l0800_03A1 (2): idom l0800_03AC (5)
+l0800_03A5 (3): idom l0800_03AC (5)
+l0800_03AB (4): idom l0800_03AC (5)
+l0800_03AC (5): idom l0800_03C8 (10)
+l0800_03B3 (6): idom l0800_03C8 (10)
+l0800_03B9 (7): idom l0800_03C6 (9)
+l0800_03C4 (8): idom l0800_03C6 (9)
+l0800_03C6 (9): idom l0800_03C8 (10)
+l0800_03C8 (10): idom fn0800_03A1_exit (11)
+fn0800_0403_entry (1): idom l0800_0403 (2)
+fn0800_0403_exit (9): idom 
+l0800_0403 (2): idom fn0800_0403_exit (9)
+l0800_0412 (3): idom l0800_041C (4)
+l0800_041C (4): idom l0800_041E (6)
+l0800_041C_1 (5): idom l0800_041C (4)
+l0800_041E (6): idom fn0800_0403_exit (9)
+l0800_0436 (7): idom l0800_0436_thunk_fn0800_01E2 (8)
+l0800_0436_thunk_fn0800_01E2 (8): idom fn0800_0403_exit (9)
+l0800_0439 (10): idom l0800_043E (11)
+l0800_043E (11): idom l0800_0443 (12)
+l0800_0443 (12): idom l0800_0445 (14)
+l0800_0443_1 (13): idom l0800_0445 (14)
+l0800_0445 (14): idom l0800_044A (15)
+l0800_044A (15): idom fn0800_0403_exit (9)
+fn0800_0473_entry (1): idom l0800_0473 (2)
+fn0800_0473_exit (5): idom 
+l0800_0473 (2): idom l0800_049D (4)
+l0800_0485 (3): idom l0800_049D (4)
+l0800_048D (6): idom l0800_049D (4)
+l0800_049D (4): idom fn0800_0473_exit (5)
+fn0800_04A1_entry (1): idom l0800_04A1 (2)
+fn0800_04A1_exit (6): idom 
+l0800_04A1 (2): idom l0800_04D0 (4)
+l0800_04C2 (3): idom l0800_04D0 (4)
+l0800_04C8 (7): idom l0800_04D0 (4)
+l0800_04D0 (4): idom l0800_04D7 (5)
+l0800_04D7 (5): idom fn0800_04A1_exit (6)
+fn0800_04DB_entry (1): idom l0800_04DB (2)
+fn0800_04DB_exit (5): idom 
+l0800_04DB (2): idom l0800_0515 (4)
+l0800_04F9 (3): idom l0800_0515 (4)
+l0800_04FD (6): idom l0800_0515 (4)
+l0800_0515 (4): idom fn0800_04DB_exit (5)
+fn0800_0518_entry (1): idom l0800_0518 (2)
+fn0800_0518_exit (5): idom 
+l0800_0518 (2): idom l0800_054F (4)
+l0800_0536 (3): idom l0800_054F (4)
+l0800_053A (6): idom l0800_054F (4)
+l0800_054F (4): idom fn0800_0518_exit (5)
+fn0800_0552_entry (1): idom l0800_0552 (2)
+fn0800_0552_exit (6): idom 
+l0800_0552 (2): idom l0800_05C1 (5)
+l0800_0563 (14): idom l0800_05C1 (5)
+l0800_0567 (3): idom l0800_05C1 (5)
+l0800_0578 (4): idom l0800_05C1 (5)
+l0800_057F (7): idom l0800_05C1 (5)
+l0800_0589 (8): idom l0800_05C1 (5)
+l0800_0594 (9): idom l0800_05C1 (5)
+l0800_059D (10): idom l0800_05C1 (5)
+l0800_05A3 (11): idom l0800_05C1 (5)
+l0800_05B1 (12): idom l0800_05C1 (5)
+l0800_05BA (13): idom l0800_05C1 (5)
+l0800_05C1 (5): idom fn0800_0552_exit (6)
+fn0800_05E9_entry (1): idom l0800_05E9 (2)
+fn0800_05E9_exit (5): idom 
+l0800_05E9 (2): idom l0800_061B (4)
+l0800_060A (3): idom l0800_061B (4)
+l0800_0610 (6): idom l0800_061B (4)
+l0800_061B (4): idom fn0800_05E9_exit (5)
+fn0800_0E2D_entry (1): idom l0800_0E2D (2)
+fn0800_0E2D_exit (4): idom 
+l0800_0E2D (2): idom l0800_0E44 (3)
+l0800_0E44 (3): idom fn0800_0E2D_exit (4)
+fn0800_1055: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0800_107B_entry (1): idom l0800_107B (2)
+fn0800_107B_exit (4): idom 
+l0800_107B (2): idom fn0800_107B_exit (4)
+l0800_1081_thunk_fn0800_1083 (3): idom fn0800_107B_exit (4)
+l0800_1081_thunk_fn0800_1083 (5): idom fn0800_107B_exit (4)
+l0800_10AE_in_fn0800_107B (6): idom fn0800_107B_exit (4)
+fn0800_107B: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.DecompilerDriver.StructureProgram()
+fn0800_1083_entry (1): idom l0800_1083 (2)
+fn0800_1083_exit (6): idom 
+l0800_1083 (2): idom l0800_10A0 (4)
+l0800_109B (3): idom l0800_10A0 (4)
+l0800_10A0 (4): idom l0800_10AE (5)
+l0800_10AE (5): idom fn0800_1083_exit (6)
+fn0800_16B6_entry (1): idom l0800_16B6 (2)
+fn0800_16B6_exit (4): idom 
+l0800_16B6 (2): idom l0800_16D3 (3)
+l0800_16D3 (3): idom fn0800_16B6_exit (4)
+fn0800_16D5: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.DecompilerDriver.StructureProgram()
+from_dcc/benchmul/ia32_mz_from_dcc_short/subject.exe: error: An internal error occurred while decompiling.
+    Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
+       at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
+   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
+   at Decompiler.DecompilerDriver.StructureProgram()
+   at Decompiler.DecompilerDriver.Decompile(String filename)

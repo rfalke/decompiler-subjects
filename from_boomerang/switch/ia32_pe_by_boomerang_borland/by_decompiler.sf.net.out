@@ -1,0 +1,42 @@
+00405010: error: Rewriting x86 opcode 'illegal' is not supported yet.
+fn00401000_exit (5): idom 
+__GetExceptDLLinfo_entry (1): idom l00401059 (2)
+__GetExceptDLLinfo_exit (4): idom 
+l00401059 (2): idom l00401059_thunk_fn00402D9C (3)
+l00401059_thunk_fn00402D9C (3): idom __GetExceptDLLinfo_exit (4)
+fn00401140_entry (1): idom l00401140 (2)
+fn00401140_exit (3): idom 
+l00401140 (2): idom fn00401140_exit (3)
+fn004014D0_entry (1): idom l004014D0 (2)
+fn004014D0_exit (3): idom 
+l004014D0 (2): idom fn004014D0_exit (3)
+fn00402134_entry (1): idom l00402134 (2)
+fn00402134_exit (3): idom 
+l00402134 (2): idom fn00402134_exit (3)
+fn00402138_entry (1): idom l00402138 (2)
+fn00402138_exit (3): idom 
+l00402138 (2): idom fn00402138_exit (3)
+fn0040213C_entry (1): idom l0040213C (2)
+fn0040213C_exit (9): idom 
+l0040213C (2): idom l00402153 (3)
+l00402153 (3): idom l00402155 (5)
+l00402153_1 (4): idom l00402153 (3)
+l00402155 (5): idom l0040215A (6)
+l0040215A (6): idom l0040215C (8)
+l0040215A_1 (7): idom l0040215A (6)
+l0040215C (8): idom fn0040213C_exit (9)
+fn00402BD8_entry (1): idom l00402BD8 (2)
+fn00402BD8_exit (7): idom 
+l00402BD8 (2): idom l00402BEB (4)
+l00402BE1 (3): idom l00402BEB (4)
+l00402BEB (4): idom l00402BFE (6)
+l00402BF4 (5): idom l00402BFE (6)
+l00402BFE (6): idom fn00402BD8_exit (7)
+fn00402D50_entry (1): idom l00402D50 (2)
+fn00402D50_exit (5): idom 
+l00402D50 (2): idom l00402D77 (4)
+l00402D6A (3): idom l00402D77 (4)
+l00402D77 (4): idom fn00402D50_exit (5)
+fn00402D9C_entry (1): idom l00402D9C (2)
+fn00402D9C_exit (3): idom 
+l00402D9C (2): idom fn00402D9C_exit (3)

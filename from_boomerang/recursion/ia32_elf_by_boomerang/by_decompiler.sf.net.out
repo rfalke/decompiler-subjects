@@ -1,0 +1,8 @@
+from_boomerang/recursion/ia32_elf_by_boomerang/subject.exe: error: An internal error occurred while decompiling.
+    An item with the same key has already been added.
+       at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

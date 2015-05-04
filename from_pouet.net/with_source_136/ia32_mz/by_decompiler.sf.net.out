@@ -1,0 +1,9 @@
+from_pouet.net/with_source_136/ia32_mz/subject.exe: error: An internal error occurred while decompiling.
+    Index was outside the bounds of the array.
+       at Decompiler.Core.ImageReader.ReadLeUInt16()
+   at Decompiler.ImageLoaders.MzExe.PeImageLoader.ReadOptionalHeader(ImageReader rdr, Int16 expectedMagic)
+   at Decompiler.ImageLoaders.MzExe.ExeImageLoader.CreateDeferredLoader()
+   at Decompiler.ImageLoaders.MzExe.ExeImageLoader.get_PreferredBaseAddress()
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)

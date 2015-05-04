@@ -1,0 +1,10 @@
+from_pouet.net/with_source_361/ia32_mz/subject.exe: error: An internal error occurred while decompiling.
+    Object reference not set to an instance of an object.
+       at Decompiler.Scanning.BlockWorkitem.ProcessInternal()
+   at Decompiler.Scanning.BlockWorkitem.Process()
+   at Decompiler.Scanning.Scanner.ProcessQueue()
+   at Decompiler.Scanning.Scanner.ScanProcedure(Address addr, String procedureName, ProcessorState state)
+   at Decompiler.Scanning.EntryPointWorkitem.Process()
+   at Decompiler.Scanning.Scanner.ProcessQueue()
+   at Decompiler.DecompilerDriver.ScanPrograms()
+   at Decompiler.DecompilerDriver.Decompile(String filename)

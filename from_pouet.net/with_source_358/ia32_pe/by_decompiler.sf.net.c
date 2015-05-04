@@ -1,0 +1,118 @@
+// subject.c
+// Generated on 5/4/2015 12:10:49 AM by decompiling from_pouet.net/with_source_358/ia32_pe/subject.exe
+// using Decompiler version 0.4.2.0.
+
+#include "subject.h"
+
+void fn00401000()
+{
+fn00401000_entry:
+l00401000:
+	Eq_2 eax_4 = LoadLibraryA(0x00403000)
+	globals->t403016 = eax_4;
+	branch eax_4 == 0x00000000 l004011A4
+l00401017:
+	fp->tFFFFFFFC.u0 = 0x00403009;
+	Eq_2 eax_60 = LoadLibraryA(0x00403000)
+	globals->t40301A = eax_60;
+	branch eax_60 == 0x00000000 l004011A4
+l0040102E:
+	fp->tFFFFFFFC.u0 = 0x00403010;
+	Eq_2 eax_68 = LoadLibraryA(0x00403009)
+	globals->t40301E = eax_68;
+	branch eax_68 == 0x00000000 l004011A4
+l00401045:
+	fp->tFFFFFFFC.u0 = 0x00403022;
+	word32 eax_78 = GetProcAddress(globals->t403016, 0x00403010)
+	globals->dw403048 = eax_78;
+	branch eax_78 == 0x00000000 l004011A4
+l00401062:
+	fp->tFFFFFFFC.u0 = 0x0040302F;
+	word32 eax_88 = GetProcAddress(globals->t40301A, 0x00403022)
+	globals->dw40304C = eax_88;
+	branch eax_88 == 0x00000000 l004011A4
+l0040107F:
+	fp->tFFFFFFFC.u0 = 0x00403035;
+	word32 eax_98 = GetProcAddress(globals->t40301E, 0x0040302F)
+	globals->dw403050 = eax_98;
+	branch eax_98 == 0x00000000 l004011A4
+l0040109C:
+	fp->tFFFFFFFC.u0 = 0x0040303E;
+	word32 eax_108 = GetProcAddress(globals->t40301A, 0x00403035)
+	globals->dw403054 = eax_108;
+	branch eax_108 == 0x00000000 l004011A4
+l004010B9:
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	Eq_2 eax_128 = CreateFileA(0x00403080, 0x40000000, 0x00000000, 0x00000000, 0x00000003, 0x00000080, 0x0040303E)
+	globals->t40308D = eax_128;
+	branch eax_128 == 0x00000001 l004011A4
+l004010E3:
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x000000BA;
+	fp->tFFFFFFFC = globals->t40308D;
+	SetFilePointer(0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00403091;
+	fp->tFFFFFFFC.u0 = 0x00000004;
+	fp->tFFFFFFFC.u0 = 0x00403048;
+	fp->tFFFFFFFC = globals->t40308D;
+	WriteFile(0x00000000, 0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x000000C4;
+	fp->tFFFFFFFC = globals->t40308D;
+	SetFilePointer(0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00403091;
+	fp->tFFFFFFFC.u0 = 0x00000004;
+	fp->tFFFFFFFC.u0 = 0x0040304C;
+	fp->tFFFFFFFC = globals->t40308D;
+	WriteFile(0x00000000, 0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x000000DD;
+	fp->tFFFFFFFC = globals->t40308D;
+	SetFilePointer(0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00403091;
+	fp->tFFFFFFFC.u0 = 0x00000004;
+	fp->tFFFFFFFC.u0 = 0x00403050;
+	fp->tFFFFFFFC = globals->t40308D;
+	WriteFile(0x00000000, 0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x000000F7;
+	fp->tFFFFFFFC = globals->t40308D;
+	SetFilePointer(0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	fp->tFFFFFFFC.u0 = 0x00403091;
+	fp->tFFFFFFFC.u0 = 0x00000004;
+	fp->tFFFFFFFC.u0 = 0x00403054;
+	fp->tFFFFFFFC = globals->t40308D;
+	WriteFile(0x00000000, 0x00000000, 0x00000003, 0x00000080, 0x00000000)
+	fp->tFFFFFFFC = globals->t40308D;
+	CloseHandle(0x00000000)
+	goto l004011B9
+l004011A4:
+	fp->tFFFFFFFC.u0 = 0x00403073;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	MessageBoxA(0x00000000, 0x00000003, 0x00403058, 0x00000000)
+	goto l004011CC
+l004011B9:
+	fp->tFFFFFFFC.u0 = 0x00403058;
+	fp->tFFFFFFFC.u0 = 0x00403067;
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	MessageBoxA(0x00403054, 0x00000004, 0x00403091, 0x00000000)
+l004011CC:
+	fp->tFFFFFFFC = globals->t403016;
+	FreeLibrary(0x00000000)
+	fp->tFFFFFFFC = globals->t40301A;
+	FreeLibrary(0x00000000)
+	fp->tFFFFFFFC = globals->t40301E;
+	FreeLibrary(0x00000000)
+	fp->tFFFFFFFC.u0 = 0x00000000;
+	ExitProcess(0x00000000)
+fn00401000_exit:
+}
+

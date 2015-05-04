@@ -1,0 +1,9 @@
+from_boomerang/banner/sparc_elf_by_bommerang/subject.exe: error: An internal error occurred while decompiling.
+    Object reference not set to an instance of an object.
+       at Decompiler.Core.Configuration.DecompilerConfiguration.GetArchitecture(String archLabel)
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.CreateArchitecture(UInt16 machineType)
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.LoadHeader()
+   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad)
+   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
+   at Decompiler.DecompilerDriver.Load(String fileName)
+   at Decompiler.DecompilerDriver.Decompile(String filename)
