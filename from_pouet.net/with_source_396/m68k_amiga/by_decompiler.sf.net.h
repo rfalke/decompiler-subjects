@@ -1,24 +1,24 @@
 // subject.h
-// Generated on 5/4/2015 12:12:22 AM by decompiling from_pouet.net/with_source_396/m68k_amiga/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_396/m68k_amiga/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
 Eq_1: (struct "Globals" (4 word32 dw0004))
 	globals_t (in globals : (ptr (struct "Globals")))
 Eq_7: (struct "Eq_7" (FFFFFF6F byte bFFFFFF6F) (0 word16 w0000) (4 word16 w0004) (6 word16 w0006) (AA int32 dw00AA) (EA int32 dw00EA) (146 word16 w0146))
-	T_7 (in a5_33 : word32)
+	T_7 (in a5_33 : (ptr Eq_7))
 	T_8 (in 00DFF096 : ptr32)
 Eq_9: (fn bool (byte, word16))
 	T_9 (in __btst : ptr32)
 Eq_15: (fn bool (byte, word16))
 	T_15 (in __btst : ptr32)
 Eq_49: (struct "Eq_49" 0001 (0 byte b0000) (1 Eq_49 t0001))
-	T_49 (in a0_52 : word32)
+	T_49 (in a0_52 : (ptr Eq_49))
 	T_50 (in 0000106E : ptr32)
 	T_62 (in a0_52 + 0x00000001 : word32)
 Eq_53: (struct "Eq_53" 0001 (0 byte b0000) (1 Eq_53 t0001))
-	T_53 (in a1_54 : word32)
+	T_53 (in a1_54 : (ptr Eq_53))
 	T_54 (in 000004B2 : ptr32)
 	T_64 (in a1_54 + 0x00000001 : word32)
 // Type Variables ////////////
@@ -46,7 +46,7 @@ T_6: (in a6_3 + -150 : word32)
   Class: Eq_6
   DataType: (ptr code)
   OrigDataType: (ptr code)
-T_7: (in a5_33 : word32)
+T_7: (in a5_33 : (ptr Eq_7))
   Class: Eq_7
   DataType: (ptr Eq_7)
   OrigDataType: (ptr (struct (FFFFFF6F T_12 tFFFFFF6F) (0 T_28 t0000) (4 T_32 t0004) (6 T_36 t0006) (AA T_40 t00AA) (EA T_44 t00EA) (146 T_48 t0146)))
@@ -74,7 +74,7 @@ T_13: (in 0x0000 : word16)
   Class: Eq_13
   DataType: word16
   OrigDataType: word16
-T_14: (in __btst(Mem0[a5_33 + -145:byte], 0x0000) : bool)
+T_14: (in __btst(a5_33->bFFFFFF6F, 0x0000) : bool)
   Class: Eq_14
   DataType: bool
   OrigDataType: bool
@@ -98,7 +98,7 @@ T_19: (in 0x0000 : word16)
   Class: Eq_19
   DataType: word16
   OrigDataType: word16
-T_20: (in __btst(Mem0[a5_33 + -145:byte], 0x0000) : bool)
+T_20: (in __btst(a5_33->bFFFFFF6F, 0x0000) : bool)
   Class: Eq_20
   DataType: bool
   OrigDataType: bool
@@ -214,7 +214,7 @@ T_48: (in Mem49[a5_33 + 326:word16] : word16)
   Class: Eq_45
   DataType: word16
   OrigDataType: word16
-T_49: (in a0_52 : word32)
+T_49: (in a0_52 : (ptr Eq_49))
   Class: Eq_49
   DataType: (ptr Eq_49)
   OrigDataType: (ptr (struct 0001 (0 T_57 t0000)))
@@ -222,7 +222,7 @@ T_50: (in 0000106E : ptr32)
   Class: Eq_49
   DataType: (ptr Eq_49)
   OrigDataType: ptr32
-T_51: (in a2_53 : word32)
+T_51: (in a2_53 : ptr32)
   Class: Eq_51
   DataType: ptr32
   OrigDataType: word32
@@ -230,7 +230,7 @@ T_52: (in 000106A4 : ptr32)
   Class: Eq_51
   DataType: ptr32
   OrigDataType: ptr32
-T_53: (in a1_54 : word32)
+T_53: (in a1_54 : (ptr Eq_53))
   Class: Eq_53
   DataType: (ptr Eq_53)
   OrigDataType: (ptr (struct 0001 (0 T_60 t0000)))

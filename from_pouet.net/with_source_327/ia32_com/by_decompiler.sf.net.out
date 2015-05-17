@@ -1,15 +1,141 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+0C00:0270: warning: Procedure fn0C00_0251 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 2 bytes on the stack.
+0C00:0297: warning: Procedure fn0C00_0271 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 2 bytes on the stack.
+l0C00_0174: error: An error occurred while rewriting at linear address C178.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_017F: error: An error occurred while rewriting at linear address C17F.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_017F: error: An error occurred while rewriting at linear address C182.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_018B: error: An error occurred while rewriting at linear address C18B.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_018B: error: An error occurred while rewriting at linear address C194.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C19E.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C1A5.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C1AC.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C1B3.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C1BA.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0199: error: An error occurred while rewriting at linear address C1C1.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0224_thunk_fn0C00_0226: error: An error occurred while rewriting at linear address 0.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_0126_thunk_fn0C00_0226: error: An error occurred while rewriting at linear address 0.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Invalid pointer size.
+Parameter name: byteSize
+       at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
+   at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.DataTypeBuilder.MemAccessTrait(Expression tBase, Expression tStruct, Int32 structPtrSize, Expression tField, Int32 offset)
+   at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Core.Expressions.Dereference.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Core.Code.Store.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_327/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
+rewriting: void fn0C00_0100(Register selector es, Register selector ds, Stack word16 wArg1596, Stack word16 wArg1598, Stack word16 wArg159A, Stack word16 wArg159C, Stack word16 wArg159E)
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.Structure.StructureAnalysis.GenerateStructuredCode()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: void fn0C00_0226(Register selector ds)
+rewriting: Register byte fn0C00_0251(Register word16 cx, Register byte bl, Register selector es, Register selector ds, Register selector gs)
+rewriting: void fn0C00_0271(Register byte bl, Register selector es, Register selector ds, Register selector fs, Register selector gs)
+rewriting: FlagGroup byte fn0C00_0298(Register byte bl, Register byte ah, Register byte ch, Register out ptr16 ahOut)
+rewriting: Register byte fn0C00_02AB(Register byte ah, Register out ptr16 blOut, Register out ptr16 ahOut, Register out ptr16 chOut)
+rewriting: FlagGroup bool fn0C00_02B8(Register word16 ax, Register word16 bp, Register out ptr16 chOut)
+rewriting: Register byte fn0C00_02CA(Register word16 di, Register byte bl, Register selector gs)
+rewriting: Register word16 fn0C00_02EE(Register word16 cx, Register word16 di, Register selector es, Register selector fs)
+
+Unhandled Exception: System.InvalidCastException: Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
    at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.DecompilerDriver.<>c__DisplayClass1b.<WriteDecompilerProducts>b__17(TextWriter w)
    at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
    at Decompiler.DecompilerDriver.WriteDecompilerProducts()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+   at Decompiler.CmdLine.CmdLineDriver.DecompileRawImage(DecompilerDriver dec, Dictionary`2 pArgs)
+   at Decompiler.CmdLine.CmdLineDriver.Execute(String[] args)
+   at Decompiler.CmdLine.CmdLineDriver.Main(String[] args)

@@ -1,6 +1,29 @@
 // subject.c
-// Generated on 5/4/2015 12:07:33 AM by decompiling from_pouet.net/with_source_254/ia32_com/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_254/ia32_com/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
+
+void fn0C00_0100(byte ch)
+{
+fn0C00_0100_entry:
+l0C00_0100:
+	bios_video_set_mode(0x13)
+	__outb(0x03C8, 0x00)
+	word16 ax_14 = 0x0000
+	ui8 cl_18 = 0xFF
+	word16 cx_20 = DPB(cx, 0xFF, 0, 8)
+l0C00_0118:
+	uint8 al_25 = cl_18 * 0x02
+	__outb(0x03C9, al_25 >>u 0x02)
+	word16 ax_26 = DPB(ax_14, al_25, 0, 8)
+	__outb(0x03C9, ((byte) ax_26 >>u 0x03) + 0x1F)
+	__outb(0x03C9, 0x3F)
+	cx_20 = cx_20 - 0x0001;
+	ax_14 = ax_26;
+	cl_18 = (byte) cx_20;
+	branch cx_20 != 0x0000 l0C00_0118
+l0C00_012D:
+fn0C00_0100_exit:
+}
 

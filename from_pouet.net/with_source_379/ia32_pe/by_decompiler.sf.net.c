@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:11:20 AM by decompiling from_pouet.net/with_source_379/ia32_pe/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_379/ia32_pe/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -59,7 +59,8 @@ word32 fn00401052(real64 rArg0, ptr32 ebpOut, ptr32 esiOut, ptr32 ediOut)
 			byte dh_97 = SLICE(dx_78, byte, 8);
 			real64 rLoc1_99 = (real64) Mem92[0x00402144:int16];
 			al_100 = bh_165;
-			eax_101 = DPB(eax_101, bh_165, 0, 8);
+			eax_101 = DPB(eax_535, bh_165, 0, 8);
+			word32 eax_535 = eax_101;
 		} while (P);
 		rArg0 = atan(rArg0, rLoc1_99) * (real64) Mem92[0x0040213E:word16];
 		Mem110[0x00402144:int16] = (int16) rArg0;
@@ -70,7 +71,7 @@ word32 fn00401052(real64 rArg0, ptr32 ebpOut, ptr32 esiOut, ptr32 ediOut)
 		byte ah_114 = SLICE(ax_113, byte, 8);
 		byte cl_116 = 0x00;
 		cx = DPB(cx, 0x00, 0, 8);
-		eax_127 = DPB(eax_101, dh_97, 0, 8);
+		eax_127 = DPB(eax_535, dh_97, 0, 8);
 		byte dh_130 = (byte) (ax_120 & 0x0707) + SLICE(ax_120 & 0x0707, byte, 8) + dh_97;
 		if (dh_97 <=u 0xEC && dh_97 >=u 0xEB)
 		{

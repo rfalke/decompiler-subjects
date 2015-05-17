@@ -1,7 +1,8 @@
+Using options:
 from_boomerang/paramchain/ia32_elf_by_boomerang/subject.exe: error: An internal error occurred while decompiling.
-    Index was outside the bounds of the array.
+    Arithmetic operation resulted in an overflow.
        at Decompiler.Core.LoadedImage.ReadLeInt32(Byte[] abImage, UInt64 off)
-   at Decompiler.Core.ImageReader.PeekLeUInt32(UInt32 offset)
+   at Decompiler.Core.LeImageReader.ReadUInt32(UInt32 offset)
    at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
    at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
    at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)

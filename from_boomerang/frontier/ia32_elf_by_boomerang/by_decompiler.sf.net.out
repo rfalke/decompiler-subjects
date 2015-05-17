@@ -1,8 +1,32 @@
-08048260: warning: Unable to resolve imported reference !__libc_start_main.
-08048234: warning: Unable to resolve imported reference !__libc_start_main.
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Typing.TypedExpressionRewriter.RewriteFormals(ProcedureSignature sig)
-   at Decompiler.Typing.TypedExpressionRewriter.RewriteProgram(Program prog)
-   at Decompiler.DecompilerDriver.ReconstructTypes()
-fn08048244_exit (3): idom 
+Using options:
+rewriting: void fn08048244(Register (ptr (ptr code)) edx, Stack word32 dwArg00)
+080482F4: error: Failed to write global variable g_ptr80482F4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080483C8: error: Failed to write global variable g_ptr80483C8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080483F8: error: Failed to write global variable g_ptr80483F8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080482F4: error: Failed to write global variable g_ptr80482F4.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080483C8: error: Failed to write global variable g_ptr80483C8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080483F8: error: Failed to write global variable g_ptr80483F8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

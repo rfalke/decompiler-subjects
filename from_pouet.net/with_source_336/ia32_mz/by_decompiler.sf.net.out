@@ -1,2 +1,23 @@
-0800:0007: error: Object reference not set to an instance of an object.
-fn0800_0000_exit (3): idom 
+Using options:
+0800:00B1: error: Address is outside of image.
+Parameter name: addr
+rewriting: void fn0800_0000(Register (ptr Eq_6) es)
+fn0800_0000: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+00008100: error: Failed to write global variable g_ptr8100.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+00008100: error: Failed to write global variable g_ptr8100.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

@@ -1,15 +1,15 @@
-: error: The format of the file is unknown.
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
-   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
-   at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_342/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
-   at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+: warning: Type transformer has looped 51 times, quitting prematurely.
+rewriting: void fn0C00_0100(Register (ptr Eq_5) es, Register (ptr Eq_11) ds)
+rewriting: Register (ptr Eq_63) fn0C00_012B(Register (ptr Eq_5) es)
+rewriting: Register (ptr Eq_79) fn0C00_0138(Register (ptr Eq_11) ds)
+rewriting: void fn0C00_017F(Register Eq_123 ax, Register (ptr Eq_11) ds)
+rewriting: void fn0C00_01A4(Register (ptr Eq_11) ds)
+rewriting: void fn0C00_01AF(Register (ptr Eq_14) es, Register (ptr Eq_11) ds)
+rewriting: void fn0C00_01CE()
+rewriting: void fn0C00_01F4(Register word16 dx, Register byte bl, Register byte ah, Register byte bh)
+rewriting: void fn0C00_01FE(Register (ptr Eq_11) ds)
+rewriting: void fn0C00_0251(Register (ptr Eq_14) es, Register (ptr Eq_11) ds)
+rewriting: void fn0C00_02A6(Register (ptr Eq_14) es, Register (ptr Eq_11) ds)
+rewriting: Register (ptr Eq_497) fn0C00_02D9(Register (ptr Eq_11) ds, Register (ptr Eq_2) fs)
+rewriting: void fn0C00_0344(Register (ptr Eq_5) es, Register (ptr Eq_11) ds)

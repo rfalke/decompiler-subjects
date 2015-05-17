@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:11:40 AM by decompiling from_pouet.net/with_source_382/ia32_elf/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_382/ia32_elf/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -40,7 +40,7 @@ byte g_b824A59D = 0x00;
 Eq_23 g_t940C8A0 = 
 				{
 					;
-Eq_1598 g_a940C8A4[8] = 
+Eq_1601 g_a940C8A4[8] = 
 					{
 						
 						{

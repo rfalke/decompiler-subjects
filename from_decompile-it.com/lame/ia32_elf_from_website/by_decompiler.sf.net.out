@@ -1,7 +1,13 @@
-from_decompile-it.com/lame/ia32_elf_from_website/subject.exe: error: An internal error occurred while decompiling.
-    Relocation type 5 not handled yet
-       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+rewriting: void fn0804A2BC()
+rewriting: void fn0804AAD0(Stack word32 dwArg00)
+0805B09C: error: Failed to write global variable g_ptr805B09C.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0805B09C: error: Failed to write global variable g_ptr805B09C.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

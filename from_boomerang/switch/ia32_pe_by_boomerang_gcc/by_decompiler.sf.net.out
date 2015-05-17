@@ -1,32 +1,8 @@
+Using options:
 00401740: warning: Unable to resolve imported reference cygwin1.dll!cygwin_internal.
 0040149D: warning: Unable to resolve imported reference cygwin1.dll!dll_crt0__FP11per_process.
-fn00401000_entry (1): idom l00401000 (2)
-fn00401000_exit (5): idom 
-l00401000 (2): idom l00401010 (4)
-l0040100F (3): idom l00401010 (4)
-l00401010 (4): idom fn00401000_exit (5)
-fn00401470_entry (1): idom l00401470 (2)
-fn00401470_exit (6): idom 
-l00401470 (2): idom fn00401470_exit (6)
-l00401496 (3): idom l0040149D (4)
-l0040149D (4): idom l004014A3 (5)
-l004014A3 (5): idom fn00401470_exit (6)
-fn00401530_entry (1): idom l00401530 (2)
-fn00401530_exit (7): idom 
-l00401530 (2): idom l0040161D (6)
-l00401544 (3): idom l00401594 (5)
-l00401589 (4): idom l00401594 (5)
-l00401594 (5): idom l0040161D (6)
-l0040161D (6): idom fn00401530_exit (7)
-l00401624 (8): idom l00401594 (5)
-l00401630 (9): idom l0040161D (6)
-l00401645 (10): idom l00401544 (3)
-fn00401670_entry (1): idom l00401670 (2)
-fn00401670_exit (6): idom 
-l00401670 (2): idom l004016A2 (5)
-l00401682 (3): idom l00401690 (4)
-l00401690 (4): idom l004016A2 (5)
-l004016A2 (5): idom fn00401670_exit (6)
-fn004016B0_entry (1): idom l004016B0 (2)
-fn004016B0_exit (3): idom 
-l004016B0 (2): idom fn004016B0_exit (3)
+rewriting: void fn00401000(Register word32 edi)
+rewriting: void fn00401470(Register word32 ebp, Register word32 edi, Stack word32 dwArg04)
+rewriting: Register word32 fn00401530(Register word32 ebp, Register word32 edi, Stack word32 dwArg04, Stack word32 dwArg08)
+rewriting: void fn00401670(Register word32 edi, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
+rewriting: void fn004016B0(Register word32 edi)

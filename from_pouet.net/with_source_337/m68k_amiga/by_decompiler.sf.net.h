@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:08:24 AM by decompiling from_pouet.net/with_source_337/m68k_amiga/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_337/m68k_amiga/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
@@ -597,19 +597,19 @@ T_142: (in (word16) d0_7 << 0x0005 : word16)
   Class: Eq_142
   DataType: ui16
   OrigDataType: ui16
-T_143: (in DPB(d0_7, (word16) d0_7 << 0x0005, 0, 16) : word32)
+T_143: (in DPB(d0_5, (word16) d0_7 << 0x0005, 0, 16) : word32)
   Class: Eq_143
   DataType: word32
   OrigDataType: word32
-T_144: (in (word16) DPB(d0_7, (word16) d0_7 << 0x0005, 0, 16) : word16)
+T_144: (in (word16) DPB(d0_5, (word16) d0_7 << 0x0005, 0, 16) : word16)
   Class: Eq_144
   DataType: word16
   OrigDataType: word16
-T_145: (in (word16) a0_2 + (word16) DPB(d0_7, (word16) d0_7 << 0x0005, 0, 16) : word16)
+T_145: (in (word16) a0_2 + (word16) DPB(d0_5, (word16) d0_7 << 0x0005, 0, 16) : word16)
   Class: Eq_145
   DataType: word16
   OrigDataType: word16
-T_146: (in DPB(a0_2, (word16) a0_2 + (word16) DPB(d0_7, (word16) d0_7 << 0x0005, 0, 16), 0, 16) : word32)
+T_146: (in DPB(a0_2, (word16) a0_2 + (word16) DPB(d0_5, (word16) d0_7 << 0x0005, 0, 16), 0, 16) : word32)
   Class: Eq_138
   DataType: (ptr byte)
   OrigDataType: word32

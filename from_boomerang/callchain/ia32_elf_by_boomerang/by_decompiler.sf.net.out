@@ -1,7 +1,54 @@
-from_boomerang/callchain/ia32_elf_by_boomerang/subject.exe: error: An internal error occurred while decompiling.
-    Relocation type 5 not handled yet
-       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+080488C5: warning: Unable to resolve imported reference __fpstart.
+08048808: warning: Unable to resolve imported reference __fpstart.
+080488DF: error: Address is outside of image.
+Parameter name: addr
+l08049438: error: An error occurred while rewriting at linear address 804943A.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+fn080489B0: error: An error occurred during data flow analysis.
+    Unable to cast object of type 'Decompiler.Core.Types.UnknownType' to type 'Decompiler.Core.Types.PrimitiveType'.
+       at Decompiler.Core.Expressions.Constant.Create(DataType dt, Int64 value)
+   at Decompiler.Evaluation.SliceConstant_Rule.Transform()
+   at Decompiler.Evaluation.ExpressionSimplifier.VisitSlice(Slice slice)
+   at Decompiler.Core.Expressions.Slice.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Analysis.ValuePropagator.VisitAssignment(Assignment a)
+   at Decompiler.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.ValuePropagator.Transform(Statement stm)
+   at Decompiler.Analysis.ValuePropagator.Transform()
+   at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+rewriting: void fn08048878(Register (ptr (ptr code)) edx, Stack word32 dwArg00)
+fn08048878: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word32 fn08048940(Register word32 ebp)
+rewriting: Register word32 fn08048949(Register word32 ebp, Stack word32 dwArg00)
+rewriting: Register word32 fn08048980(Stack word32 dwArg04)
+rewriting: Register word32 fn08048990(Stack word32 dwArg04)
+rewriting: Register word32 fn080489A0(Stack word32 dwArg04)
+rewriting: void fn080489B0(Stack word32 dwArg04)
+rewriting: Register word32 fn080489C4()
+rewriting: Register word32 fn080491C8(Register word32 ebp)
+rewriting: Register (ptr Eq_114) fn080491D1(Register (ptr Eq_114) ebp, Stack word32 dwArg00)
+rewriting: void fn08049418(Register word32 ebp)
+rewriting: Register (ptr word32) fn08049422(Register (ptr word32) ebp, Stack word32 dwArg00)
+rewriting: void fn08049470(Register word32 ebp)
+080487E8: error: Failed to write global variable g_ptr80487E8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080487E8: error: Failed to write global variable g_ptr80487E8.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

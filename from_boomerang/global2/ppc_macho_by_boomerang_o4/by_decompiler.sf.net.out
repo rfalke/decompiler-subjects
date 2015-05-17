@@ -1,3 +1,4 @@
+Using options:
 from_boomerang/global2/ppc_macho_by_boomerang_o4/subject.exe: error: An internal error occurred while decompiling.
     The method or operation is not implemented.
        at Decompiler.ImageLoaders.MachO.MachOLoader.get_PreferredBaseAddress()

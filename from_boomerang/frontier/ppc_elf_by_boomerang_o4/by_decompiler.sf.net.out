@@ -1,2 +1,3 @@
+Using options:
 10010948: error: PowerPC instruction 'illegal' is not supported yet.
-fn10000298_exit (4): idom 
+rewriting: void fn10000298()

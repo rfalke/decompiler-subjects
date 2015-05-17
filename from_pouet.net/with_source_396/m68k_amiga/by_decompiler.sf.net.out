@@ -1,12 +1,11 @@
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Typing.TypedExpressionRewriter.RewriteFormals(ProcedureSignature sig)
-   at Decompiler.Typing.TypedExpressionRewriter.RewriteProgram(Program prog)
-   at Decompiler.DecompilerDriver.ReconstructTypes()
+Using options:
+rewriting: void fn00001000(Register word32 d3, Register word32 d4)
 fn00001000: error: An error occurred while rewriting procedure to high-level language.
     The given key was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
    at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
    at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
    at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()

@@ -1,8 +1,2 @@
-fn0800_0000_entry (1): idom l0800_0000 (2)
-fn0800_0000_exit (8): idom 
-l0800_0000 (2): idom l0800_000A (3)
-l0800_000A (3): idom l0800_001A (4)
-l0800_001A (4): idom l0800_001C (6)
-l0800_001A_1 (5): idom l0800_001A (4)
-l0800_001C (6): idom l0800_001F (7)
-l0800_001F (7): idom fn0800_0000_exit (8)
+Using options:
+rewriting: void fn0800_0000()

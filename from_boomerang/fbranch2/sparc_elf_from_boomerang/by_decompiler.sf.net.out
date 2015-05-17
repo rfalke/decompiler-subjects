@@ -1,3 +1,4 @@
+Using options:
 from_boomerang/fbranch2/sparc_elf_from_boomerang/subject.exe: error: An internal error occurred while decompiling.
     Object reference not set to an instance of an object.
        at Decompiler.Core.Configuration.DecompilerConfiguration.GetArchitecture(String archLabel)

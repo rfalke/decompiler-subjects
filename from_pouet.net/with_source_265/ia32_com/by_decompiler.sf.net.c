@@ -1,6 +1,11 @@
 // subject.c
-// Generated on 5/4/2015 12:07:40 AM by decompiling from_pouet.net/with_source_265/ia32_com/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_265/ia32_com/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
+
+void fn0C00_0100(byte Eq_2::*bx, word16 di, Eq_2 * ds)
+{
+	bx[di + 0x0001] = bx[di + 0x0001] + bh;
+}
 

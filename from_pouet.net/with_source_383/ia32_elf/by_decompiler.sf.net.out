@@ -1,12 +1,17 @@
+Using options:
 08049228: error: Rewriting x86 opcode 'illegal' is not supported yet.
 0804902C: error: Rewriting x86 opcode 'illegal' is not supported yet.
 08048E0B: error: Rewriting x86 opcode 'illegal' is not supported yet.
-08049EAA: error: The method or operation is not implemented.
+08049EB6: warning: Procedure fn08049B18 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 fn08049B18: error: An error occurred during data flow analysis.
     Resulting type is (union (int64 u0) (word32 u1)), which isn't supported yet.
        at Decompiler.Evaluation.IdConstant.Transform()
+   at Decompiler.Evaluation.ExpressionSimplifier.VisitIdentifier(Identifier id)
+   at Decompiler.Core.Expressions.Identifier.Accept[T](ExpressionVisitor`1 v)
    at Decompiler.Evaluation.ExpressionSimplifier.VisitMkSequence(MkSequence seq)
+   at Decompiler.Core.Expressions.MkSequence.Accept[T](ExpressionVisitor`1 v)
    at Decompiler.Analysis.ValuePropagator.VisitAssignment(Assignment a)
+   at Decompiler.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor)
    at Decompiler.Analysis.ValuePropagator.Transform(Statement stm)
    at Decompiler.Analysis.ValuePropagator.Transform()
    at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
@@ -15,246 +20,110 @@ fn08049B18: error: An error occurred during data flow analysis.
 Parameter name: byteSize
        at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
    at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.DataTypeBuilder.MemAccessTrait(Expression tBase, Expression tStruct, Int32 structPtrSize, Expression tField, Int32 offset)
    at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Core.Expressions.Dereference.Accept[T](ExpressionVisitor`1 v)
    at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Core.Code.Store.Accept[T](InstructionVisitor`1 visitor)
    at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-fn080486FC_entry (1): idom l080486FC (2)
-fn080486FC_exit (3): idom 
-l080486FC (2): idom fn080486FC_exit (3)
-fn0804870C_entry (1): idom l0804870C (2)
-fn0804870C_exit (3): idom 
-l0804870C (2): idom fn0804870C_exit (3)
-fn0804871C_entry (1): idom l0804871C (2)
-fn0804871C_exit (3): idom 
-l0804871C (2): idom fn0804871C_exit (3)
-fn0804872C_entry (1): idom l0804872C (2)
-fn0804872C_exit (3): idom 
-l0804872C (2): idom fn0804872C_exit (3)
-fn0804873C_entry (1): idom l0804873C (2)
-fn0804873C_exit (3): idom 
-l0804873C (2): idom fn0804873C_exit (3)
-fn0804874C_entry (1): idom l0804874C (2)
-fn0804874C_exit (3): idom 
-l0804874C (2): idom fn0804874C_exit (3)
-fn0804875C_entry (1): idom l0804875C (2)
-fn0804875C_exit (3): idom 
-l0804875C (2): idom fn0804875C_exit (3)
-fn0804876C_entry (1): idom l0804876C (2)
-fn0804876C_exit (3): idom 
-l0804876C (2): idom fn0804876C_exit (3)
-fn0804877C_entry (1): idom l0804877C (2)
-fn0804877C_exit (3): idom 
-l0804877C (2): idom fn0804877C_exit (3)
-fn0804878C_entry (1): idom l0804878C (2)
-fn0804878C_exit (3): idom 
-l0804878C (2): idom fn0804878C_exit (3)
-fn0804879C_entry (1): idom l0804879C (2)
-fn0804879C_exit (3): idom 
-l0804879C (2): idom fn0804879C_exit (3)
-fn080487AC_entry (1): idom l080487AC (2)
-fn080487AC_exit (3): idom 
-l080487AC (2): idom fn080487AC_exit (3)
-fn080487BC_entry (1): idom l080487BC (2)
-fn080487BC_exit (3): idom 
-l080487BC (2): idom fn080487BC_exit (3)
-fn080487CC_entry (1): idom l080487CC (2)
-fn080487CC_exit (3): idom 
-l080487CC (2): idom fn080487CC_exit (3)
-fn080487DC_entry (1): idom l080487DC (2)
-fn080487DC_exit (3): idom 
-l080487DC (2): idom fn080487DC_exit (3)
-fn080487EC_entry (1): idom l080487EC (2)
-fn080487EC_exit (3): idom 
-l080487EC (2): idom fn080487EC_exit (3)
-fn080487FC_entry (1): idom l080487FC (2)
-fn080487FC_exit (3): idom 
-l080487FC (2): idom fn080487FC_exit (3)
-fn0804880C_entry (1): idom l0804880C (2)
-fn0804880C_exit (3): idom 
-l0804880C (2): idom fn0804880C_exit (3)
-fn0804881C_entry (1): idom l0804881C (2)
-fn0804881C_exit (3): idom 
-l0804881C (2): idom fn0804881C_exit (3)
-fn0804882C_entry (1): idom l0804882C (2)
-fn0804882C_exit (3): idom 
-l0804882C (2): idom fn0804882C_exit (3)
-fn0804883C_entry (1): idom l0804883C (2)
-fn0804883C_exit (3): idom 
-l0804883C (2): idom fn0804883C_exit (3)
-fn0804884C_entry (1): idom l0804884C (2)
-fn0804884C_exit (3): idom 
-l0804884C (2): idom fn0804884C_exit (3)
-fn0804885C_entry (1): idom l0804885C (2)
-fn0804885C_exit (3): idom 
-l0804885C (2): idom fn0804885C_exit (3)
-fn0804886C_entry (1): idom l0804886C (2)
-fn0804886C_exit (3): idom 
-l0804886C (2): idom fn0804886C_exit (3)
-fn0804887C_entry (1): idom l0804887C (2)
-fn0804887C_exit (3): idom 
-l0804887C (2): idom fn0804887C_exit (3)
-fn0804888C_entry (1): idom l0804888C (2)
-fn0804888C_exit (3): idom 
-l0804888C (2): idom fn0804888C_exit (3)
-fn0804889C_entry (1): idom l0804889C (2)
-fn0804889C_exit (3): idom 
-l0804889C (2): idom fn0804889C_exit (3)
-fn080488AC_entry (1): idom l080488AC (2)
-fn080488AC_exit (3): idom 
-l080488AC (2): idom fn080488AC_exit (3)
-fn080488CC_entry (1): idom l080488CC (2)
-fn080488CC_exit (3): idom 
-l080488CC (2): idom fn080488CC_exit (3)
-fn08048903_entry (1): idom l08048903 (2)
-fn08048903_exit (7): idom 
-l08048903 (2): idom fn08048903_exit (7)
-l08048919 (3): idom fn08048903_exit (7)
-l08048920 (4): idom l08048990 (5)
-l0804892F (8): idom fn08048903_exit (7)
-l0804894F (9): idom l0804899B (6)
-l08048969 (10): idom l0804899B (6)
-l08048983 (11): idom l08048990 (5)
-l08048990 (5): idom l0804899B (6)
-l0804899B (6): idom fn08048903_exit (7)
-l080489A3 (12): idom l080489C2 (13)
-l080489C2 (13): idom fn08048903_exit (7)
+rewriting: void fn080486FC()
+rewriting: void fn0804870C()
+rewriting: void fn0804871C()
+rewriting: void fn0804872C()
+rewriting: void fn0804873C()
+rewriting: void fn0804874C()
+rewriting: void fn0804875C()
+rewriting: void fn0804876C()
+rewriting: void fn0804877C()
+rewriting: void fn0804878C()
+rewriting: void fn0804879C()
+rewriting: void fn080487AC()
+rewriting: void fn080487BC()
+rewriting: void fn080487CC()
+rewriting: void fn080487DC()
+rewriting: void fn080487EC()
+rewriting: void fn080487FC()
+rewriting: void fn0804880C()
+rewriting: void fn0804881C()
+rewriting: void fn0804882C()
+rewriting: void fn0804883C()
+rewriting: void fn0804884C()
+rewriting: void fn0804885C()
+rewriting: void fn0804886C()
+rewriting: void fn0804887C()
+rewriting: void fn0804888C()
+rewriting: void fn0804889C()
+rewriting: void fn080488AC()
+rewriting: void fn080488CC()
+rewriting: Register word32 fn08048903(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 fn08048903: error: An error occurred while rewriting procedure to high-level language.
     Null condfollow
        at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
    at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
    at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.Structure.StructureAnalysis.GenerateStructuredCode()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word32 fn080489C3(Stack word32 dwArg04, Stack byte bArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
 fn080489C3: error: An error occurred while rewriting procedure to high-level language.
     The given key was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
    at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
    at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
    at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
-fn08048AA8_entry (1): idom l08048AA8 (2)
-fn08048AA8_exit (17): idom 
-l08048AA8 (2): idom l08048B0B (3)
-l08048AB7 (5): idom l08048ABB (6)
-l08048ABB (6): idom l08048ADB (7)
-l08048ADB (7): idom l08048AE4 (8)
-l08048AE4 (8): idom l08048AFC (9)
-l08048AEA (4): idom l08048AB7 (5)
-l08048AFC (9): idom l08048B02 (10)
-l08048B02 (10): idom l08048B38 (11)
-l08048B0B (3): idom l08048AEA (4)
-l08048B15 (18): idom l08048B38 (11)
-l08048B1F (19): idom l08048B38 (11)
-l08048B26 (20): idom l08048B38 (11)
-l08048B2A (21): idom l08048B38 (11)
-l08048B2E (22): idom l08048B38 (11)
-l08048B32 (23): idom l08048B38 (11)
-l08048B36 (24): idom l08048B38 (11)
-l08048B38 (11): idom l08048B58 (12)
-l08048B3F (13): idom l08048B52 (14)
-l08048B52 (14): idom l08048B5C (15)
-l08048B58 (12): idom l08048B3F (13)
-l08048B5C (15): idom l08048B62 (16)
-l08048B62 (16): idom fn08048AA8_exit (17)
-fn08048B68_entry (1): idom l08048B68 (2)
-fn08048B68_exit (3): idom 
-l08048B68 (2): idom fn08048B68_exit (3)
-fn08048BE1_entry (1): idom l08048BE1 (2)
-fn08048BE1_exit (7): idom 
-l08048BE1 (2): idom fn08048BE1_exit (7)
-l08048BEE (3): idom fn08048BE1_exit (7)
-l08048BF3 (4): idom fn08048BE1_exit (7)
-l08048BF6 (5): idom l08048C08 (6)
-l08048C00 (10): idom l08048C08 (6)
-l08048C08 (6): idom fn08048BE1_exit (7)
-l08048C12 (9): idom l08048C23 (8)
-l08048C23 (8): idom fn08048BE1_exit (7)
-fn08048C24_entry (1): idom l08048C24 (2)
-fn08048C24_exit (7): idom 
-l08048C24 (2): idom fn08048C24_exit (7)
-l08048C31 (3): idom fn08048C24_exit (7)
-l08048C36 (4): idom fn08048C24_exit (7)
-l08048C39 (5): idom l08048C4B (6)
-l08048C43 (10): idom l08048C4B (6)
-l08048C4B (6): idom fn08048C24_exit (7)
-l08048C55 (9): idom l08048C66 (8)
-l08048C66 (8): idom fn08048C24_exit (7)
+rewriting: Register word32 fn08048AA8(Stack word32 dwArg04)
+rewriting: Register word32 fn08048B68(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14)
+rewriting: Register word32 fn08048BE1(Stack word32 dwArg04, Stack word32 dwArg08)
+rewriting: Register word32 fn08048C24(Stack word32 dwArg04, Stack word32 dwArg08)
+rewriting: void fn08048C67(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 fn08048C67: error: An error occurred while rewriting procedure to high-level language.
     The given key was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
    at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
    at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
    at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: void fn08048EB5(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 fn08048EB5: error: An error occurred while rewriting procedure to high-level language.
     The given key was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
    at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
    at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
    at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: void fn080490D5(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 fn080490D5: error: An error occurred while rewriting procedure to high-level language.
     The given key was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
    at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
    at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
    at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
-fn080492D1_entry (1): idom l080492D1 (2)
-fn080492D1_exit (8): idom 
-l080492D1 (2): idom l08049313 (7)
-l080492E6 (3): idom l08049313 (7)
-l080492EB (4): idom l08049313 (7)
-l080492EE (5): idom l08049310 (6)
-l080492FA (10): idom l08049310 (6)
-l08049306 (9): idom l08049310 (6)
-l08049310 (6): idom l08049313 (7)
-l08049313 (7): idom fn080492D1_exit (8)
-fn08049330_entry (1): idom l08049330 (2)
-fn08049330_exit (5): idom 
-l08049330 (2): idom l0804934F (3)
-l0804933A (6): idom l0804935F (4)
-l08049348 (7): idom l0804935F (4)
-l0804934F (3): idom l0804935F (4)
-l0804935F (4): idom fn08049330_exit (5)
-fn08049363_entry (1): idom l08049363 (2)
-fn08049363_exit (3): idom 
-l08049363 (2): idom fn08049363_exit (3)
-fn0804937F_entry (1): idom l0804937F (2)
-fn0804937F_exit (3): idom 
-l0804937F (2): idom fn0804937F_exit (3)
-fn08049394_entry (1): idom l08049394 (2)
-fn08049394_exit (7): idom 
-l08049394 (2): idom l08049428 (3)
-l08049402 (4): idom l08049422 (5)
-l08049422 (5): idom l08049433 (6)
-l08049428 (3): idom l08049402 (4)
-l08049433 (6): idom fn08049394_exit (7)
-fn08049444_entry (1): idom l08049444 (2)
-fn08049444_exit (4): idom 
-l080488BC (3): idom fn08049444_exit (4)
-l08049444 (2): idom l080488BC (3)
-fn0804993D_entry (1): idom l0804993D (2)
-fn0804993D_exit (9): idom 
-l0804993D (2): idom l08049987 (3)
-l08049987 (3): idom l080499A6 (4)
-l080499A6 (4): idom l080499BD (5)
-l080499BD (5): idom l08049A6A (6)
-l08049A6A (6): idom l08049A96 (7)
-l08049A96 (7): idom l08049AC2 (8)
-l08049AC2 (8): idom fn0804993D_exit (9)
-fn08049B18: error: An error occurred while rewriting procedure to high-level language.
-    The given key was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
-   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
-   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
-   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word32 fn080492D1(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Register out ptr32 ebxOut)
+rewriting: void fn08049330(Register word32 eax, Stack byte bArg04, Stack word32 dwArg0C)
+rewriting: void fn08049363(Register word32 eax, Stack word32 dwArg04, Stack word32 dwArg08)
+rewriting: void fn0804937F(Register word32 eax)
+rewriting: Register word32 fn08049394(Register word32 eax)
+rewriting: Register word32 fn08049444(Stack word32 dwArg04)
+rewriting: Register word32 fn0804993D(Stack word32 dwArg04)
+rewriting: void fn08049B18(Register word32 eax, Register word32 ebp)
 from_pouet.net/with_source_383/ia32_elf/subject.exe: error: An internal error occurred while decompiling.
     Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
        at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
    at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.DecompilerDriver.<>c__DisplayClass1b.<WriteDecompilerProducts>b__17(TextWriter w)
    at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
    at Decompiler.DecompilerDriver.WriteDecompilerProducts()
    at Decompiler.DecompilerDriver.StructureProgram()

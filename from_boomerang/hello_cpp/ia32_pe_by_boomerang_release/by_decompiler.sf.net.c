@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:02:13 AM by decompiling from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/hello_cpp/ia32_pe_by_boomerang_release/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -1061,7 +1061,7 @@ word32 fn0040212A(selector fs, word32 dwArg04)
 							}
 							word32 ecx_346 = ecx_285 + 0x00000001;
 							ecx_285 = ecx_346 + 0x00000001;
-						} while (Mem270[ecx_346 + 0x00000001:byte] != 0xFFFFFFFF);
+						} while (Mem270[ecx_346 + 0x00000001:byte] != 0x00);
 					word32 v21_295 = dwLoc08_267 + 0x00000001;
 					dwLoc08_267 = v21_295;
 					ebx_272 = ebx_272 + 0x00000008;
@@ -1636,11 +1636,11 @@ word32 fn00402A65()
 
 word32 fn00402AA3(word32 dwArg04)
 {
-	word32 eax_15 = Mem0[0x00405718:word32];
+	word32 eax_15 = Mem0[0x00405718:word32] + 0x0000000C;
 	word32 ecx_6 = eax_15 + (Mem0[0x00405714:word32] * 0x00000005) * 0x00000004;
 	while (eax_15 <u ecx_6)
 	{
-		if (dwArg04 - Mem0[eax_15 + 0x0000000C:word32] <u 0x00100000)
+		if (dwArg04 - Mem0[eax_15 + 0x00000000:word32] <u 0x00100000)
 			goto l00402ACD;
 		eax_15 = eax_15 + 0x00000014;
 	}
@@ -1948,7 +1948,7 @@ l00402EEE:
 							if (edx_358 == 0xFFFFFFFF || ((eax_86 + 0x000000C4)[edx_358 * 0x00000004] & dwLoc0C_33 | (eax_86 + 0x00000044)[edx_358 * 0x00000004] & esi_350) == 0x00000000)
 							{
 								dwLoc08_342 = edx_358 & 0x00000000;
-								word32 ecx_344 = eax_86 + 0x00000044;
+								word32 ecx_344 = eax_86 + 0x00000044 + 0x00000084;
 								esi_350 = dwLoc10_32;
 								if ((Mem85[eax_86 + 0x000000C4:word32] & dwLoc0C_33 | Mem85[eax_86 + 0x00000044:word32] & dwLoc10_32) == 0x00000000)
 									do
@@ -1956,7 +1956,7 @@ l00402EEE:
 										ecx_344 = ecx_521 + 0x00000004;
 										dwLoc08_342 = dwLoc08_342 + 0x00000001;
 										word32 ecx_521 = ecx_344;
-									} while ((Mem85[ecx_521 + 0x00000084:word32] & dwLoc0C_33 | dwLoc10_32 & Mem85[ecx_344 + 0x00000000:word32]) == 0x00000000);
+									} while ((Mem85[ecx_521 + 0x00000000:word32] & dwLoc0C_33 | dwLoc10_32 & Mem85[ecx_344 + 0x00000000:word32]) == 0x00000000);
 								edx_358 = dwLoc08_342;
 							}
 							word32 edi_108 = 0x00000000;

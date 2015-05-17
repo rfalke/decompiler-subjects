@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:00:36 AM by decompiling from_boomerang/condcodexform/ppc_elf_by_boomerang/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/condcodexform/ppc_elf_by_boomerang/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////

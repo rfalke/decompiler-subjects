@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:10:52 AM by decompiling from_pouet.net/with_source_359/ia32_pe/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_359/ia32_pe/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -40,12 +40,12 @@ void fn00401172(Eq_66 ebx, Eq_2 ebp, word32 esi, word32 edi)
 		globals->t40208A = GetModuleHandleW(0x0007A120);
 		fp->tFFFFFFFC.u0 = 0x00007F00;
 		fp->tFFFFFFFC.u0 = 0x00000000;
-		globals->dw40208E = LoadIconW(0x00000000, &globals->t7A120);
+		globals->dw40208E = LoadIconW(0x00000000, (WNDCLASSW) 0x0007A120);
 		fp->tFFFFFFFC.u0 = 0x00007F00;
 		fp->tFFFFFFFC.u0 = 0x00000000;
-		globals->dw402092 = LoadCursorW(0x00000000, &globals->t7A120);
+		globals->dw402092 = LoadCursorW(0x00000000, (WNDCLASSW) 0x0007A120);
 		fp->tFFFFFFFC.u0 = 0x0040207A;
-		if (RegisterClassW(&globals->t7A120) != 0x00000000)
+		if (RegisterClassW((WNDCLASSW) 0x0007A120) != 0x00000000)
 		{
 			fp->tFFFFFFFC.u0 = 0x00000000;
 			Mem162[fp - 0x00000008:word32] = Mem160[0x0040208A:word32];

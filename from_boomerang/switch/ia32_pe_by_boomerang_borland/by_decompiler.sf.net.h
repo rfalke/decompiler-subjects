@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:03:53 AM by decompiling from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////

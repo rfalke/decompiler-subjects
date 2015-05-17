@@ -1,3 +1,4 @@
+Using options:
 from_rec/vars/ppc_macho_from_rec_O/subject.exe: error: An internal error occurred while decompiling.
     The method or operation is not implemented.
        at Decompiler.ImageLoaders.MachO.MachOLoader.get_PreferredBaseAddress()

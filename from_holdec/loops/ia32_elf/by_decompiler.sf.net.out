@@ -1,8 +1,13 @@
-from_holdec/loops/ia32_elf/subject.exe: error: An internal error occurred while decompiling.
-    An item with the same key has already been added.
-       at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+rewriting: void fn080482E4()
+rewriting: void fn08048310(Stack word32 dwArg00)
+0804965C: error: Failed to write global variable g_ptr804965C.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+0804965C: error: Failed to write global variable g_ptr804965C.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

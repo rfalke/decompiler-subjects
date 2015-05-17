@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:00:52 AM by decompiling from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -754,12 +754,12 @@ l00402534:
 											if (dl_2034 <u cl_2090)
 											{
 												al_2101 = cl_2090;
-												eax_2012 = DPB(eax_1217, cl_2090, 0, 8);
+												eax_2012 = DPB(eax_2012, cl_2090, 0, 8);
 											}
 											else
 											{
 												al_2101 = dl_2034;
-												eax_2012 = DPB(eax_1217, dl_2034, 0, 8);
+												eax_2012 = DPB(eax_2012, dl_2034, 0, 8);
 												dl_2034 = cl_2090;
 											}
 											if (dl_2034 <=u al_2101)
@@ -3820,7 +3820,7 @@ l00405856:
 							word32 ecx_251 = ecx_227 + 0x00000000;
 							ecx_227 = ecx_251 + 0x00000001;
 							cx_113 = (word16) (ecx_251 + 0x00000001);
-						} while (Mem182[ecx_251 + 0x00000000:byte] != 0xFFFFFFFF);
+						} while (Mem182[ecx_251 + 0x00000000:byte] != 0x00);
 					}
 					word32 eax_213 = 0x00000001;
 					do
@@ -4547,14 +4547,14 @@ l004065FE:
 			if (edx_100 == 0xFFFFFFFF || ((eax_94 + 0x000000C4)[edx_100 * 0x00000004] & dwLoc0C_32 | (eax_94 + 0x00000044)[edx_100 * 0x00000004] & esi_101) == 0x00000000)
 			{
 				dwLoc08_344 = edx_100 & 0x00000000;
-				word32 ecx_346 = eax_94 + 0x00000044;
+				word32 ecx_346 = eax_94 + 0x00000044 + 0x00000084;
 				if ((Mem93[eax_94 + 0x000000C4:word32] & dwLoc0C_32 | Mem93[eax_94 + 0x00000044:word32] & esi_101) == 0x00000000)
 					do
 					{
 						ecx_346 = ecx_506 + 0x00000004;
 						dwLoc08_344 = dwLoc08_344 + 0x00000001;
 						word32 ecx_506 = ecx_346;
-					} while ((Mem93[ecx_506 + 0x00000084:word32] & dwLoc0C_32 | Mem93[ecx_346 + 0x00000000:word32] & esi_101) == 0x00000000);
+					} while ((Mem93[ecx_506 + 0x00000000:word32] & dwLoc0C_32 | Mem93[ecx_346 + 0x00000000:word32] & esi_101) == 0x00000000);
 				edx_100 = dwLoc08_344;
 			}
 			word32 ecx_104 = edx_100 *s 0x00000204 + 0x00000144 + eax_94;

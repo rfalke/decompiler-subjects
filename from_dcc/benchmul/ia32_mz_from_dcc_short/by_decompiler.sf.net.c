@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:04:35 AM by decompiling from_dcc/benchmul/ia32_mz_from_dcc_short/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_dcc/benchmul/ia32_mz_from_dcc_short/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -474,8 +474,8 @@ byte fn0800_03A1(word16 ax, word16 cx, word16 dx, word16 bx, word16 si, word16 d
 			*bxOut = bx + 0x0001;
 		}
 	}
-	word16 ax_21 = DPB(ax_15, 0x00, 0, 8);
-	*axOut = ax_21;
+	word16 ax_21;
+	*axOut = DPB(ax_15, 0x00, 0, 8);
 	byte CZ_26 = true;
 	if (cx != 0x0000)
 	{
@@ -484,17 +484,17 @@ byte fn0800_03A1(word16 ax, word16 cx, word16 dx, word16 bx, word16 si, word16 d
 		*siOut = si_47;
 		word16 cx_48 = cx - 0x0001;
 		*cxOut = cx_48;
-		word16 ax_50 = DPB(ax_21, al_46 - 0x22, 0, 8);
-		*axOut = ax_50;
+		word16 ax_50;
+		*axOut = DPB(ax_15, al_46 - 0x22, 0, 8);
 		CZ_26 = cond(al_46 - 0x22);
 		if (al_46 != 0x22)
 		{
-			word16 ax_57 = DPB(ax_50, al_46, 0, 8);
-			*axOut = ax_57;
+			word16 ax_57;
+			*axOut = DPB(ax_15, al_46, 0, 8);
 			if (al_46 == 0x5C && Mem0[ds:si + 0x0001:byte] == 0x22)
 			{
 				word16 ax_73;
-				*axOut = DPB(ax_57, Mem0[ds:si + 0x0001:byte], 0, 8);
+				*axOut = DPB(ax_15, Mem0[ds:si + 0x0001:byte], 0, 8);
 				si_47 = si + 0x0002;
 				word16 cx_75;
 				*cxOut = cx - 0x0002;
@@ -735,7 +735,7 @@ l0800_1102:
 	word16 bx_141 = DPB(ax_136, bl_139 - 0x20, 0, 8)
 	branch bl_139 >=u 0x80 l0800_1157
 l0800_1110:
-	branch DPB(bx_141, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) <=u 0x0017 l0800_111E
+	branch DPB(ax_136, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) <=u 0x0017 l0800_111E
 l0800_111B:
 	goto l0800_1542
 l0800_111E:

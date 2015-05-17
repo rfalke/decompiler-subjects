@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:01:43 AM by decompiling from_boomerang/global1/ppc_elf_by_boomerang/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/global1/ppc_elf_by_boomerang/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 

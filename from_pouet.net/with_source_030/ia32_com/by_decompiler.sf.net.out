@@ -1,15 +1,2 @@
-: error: The format of the file is unknown.
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
-   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
-   at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_030/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
-   at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+rewriting: void fn0C00_0100(Register Eq_9 bx, Register (memptr (ptr Eq_8) Eq_41) si, Register (ptr Eq_8) ds)

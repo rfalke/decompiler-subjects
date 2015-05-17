@@ -1,82 +1,89 @@
+Using options:
 0040101D: error: Rewriting x86 opcode 'illegal' is not supported yet.
-fn00401000_entry (1): idom l00401000 (2)
-fn00401000_exit (5): idom 
-l00401000 (2): idom l00401008 (3)
-l00401008 (3): idom l0040101A (4)
-l0040101A (4): idom fn00401000_exit (5)
-fn0040101B_exit (3): idom 
-fn00401172_entry (1): idom l00401172 (2)
-fn00401172_exit (12): idom 
-l00401172 (2): idom l00401285 (8)
-l00401187 (3): idom l00401285 (8)
-l004011DF (4): idom l00401285 (8)
-l0040121A (5): idom l00401235 (6)
-l00401235 (6): idom l00401285 (8)
-l00401251 (7): idom l00401235 (6)
-l00401274 (15): idom l00401285 (8)
-l00401285 (8): idom l004012F3 (11)
-l004012BB (9): idom l004012C1 (10)
-l004012C1 (10): idom l004012F3 (11)
-l004012E0 (13): idom l004012C1 (10)
-l004012E9 (14): idom l004012F3 (11)
-l004012F3 (11): idom fn00401172_exit (12)
+rewriting: void fn00401000()
+rewriting: void fn0040101B()
+rewriting: void fn00401172(Register Eq_66 ebx, Register Eq_2 ebp, Register word32 esi, Register word32 edi)
 0040208A: error: Failed to write global variable g_t40208A.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020A2: error: Failed to write global variable g_t4020A2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020A6: error: Failed to write global variable g_t4020A6.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020B2: error: Failed to write global variable g_t4020B2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020DA: error: Failed to write global variable g_t4020DA.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020E2: error: Failed to write global variable g_t4020E2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 0040208A: error: Failed to write global variable g_t40208A.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020A2: error: Failed to write global variable g_t4020A2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020A6: error: Failed to write global variable g_t4020A6.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020B2: error: Failed to write global variable g_t4020B2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020DA: error: Failed to write global variable g_t4020DA.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
 004020E2: error: Failed to write global variable g_t4020E2.
     The method or operation is not implemented.
        at Decompiler.Core.Output.GlobalDataWriter.VisitUnion(UnionType ut)
+   at Decompiler.Core.Types.UnionType.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.VisitEquivalenceClass(EquivalenceClass eq)
+   at Decompiler.Core.Types.EquivalenceClass.Accept[T](IDataTypeVisitor`1 v)
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

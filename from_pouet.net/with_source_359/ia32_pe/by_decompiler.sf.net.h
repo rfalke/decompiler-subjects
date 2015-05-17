@@ -1,10 +1,10 @@
 // subject.h
-// Generated on 5/4/2015 12:10:52 AM by decompiling from_pouet.net/with_source_359/ia32_pe/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_359/ia32_pe/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
-Eq_1: (struct "Globals" (7A120 WNDCLASSW t7A120) (40208A Eq_74 t40208A) (40208E word32 dw40208E) (402092 word32 dw402092) (4020A2 Eq_66 t4020A2) (4020A6 Eq_2 t4020A6) (4020AE word32 dw4020AE) (4020B2 Eq_2 t4020B2) (4020D6 word32 dw4020D6) (4020DA Eq_2 t4020DA) (4020DE up32 dw4020DE) (4020E2 Eq_2 t4020E2))
+Eq_1: (struct "Globals" (40208A Eq_74 t40208A) (40208E word32 dw40208E) (402092 word32 dw402092) (4020A2 Eq_66 t4020A2) (4020A6 Eq_2 t4020A6) (4020AE word32 dw4020AE) (4020B2 Eq_2 t4020B2) (4020D6 word32 dw4020D6) (4020DA Eq_2 t4020DA) (4020DE up32 dw4020DE) (4020E2 Eq_2 t4020E2))
 	globals_t (in globals : (ptr (struct "Globals")))
 Eq_2: (union "Eq_2" ((ptr Eq_386) u0) (HDC u1) (HGLOBAL u2) (UINT u3))
 	T_2 (in edx_16 : Eq_2)
@@ -615,7 +615,7 @@ T_89: (in 0x00000000 : word32)
   Class: Eq_87
   DataType: word32
   OrigDataType: word32
-T_90: (in LoadIconW(0x00000000, &globals->t7A120) : word32)
+T_90: (in LoadIconW(0x00000000, (WNDCLASSW) 0x0007A120) : word32)
   Class: Eq_90
   DataType: word32
   OrigDataType: word32
@@ -675,7 +675,7 @@ T_104: (in lpCursorName : LPCWSTR)
   Class: Eq_72
   DataType: Eq_72
   OrigDataType: LPCWSTR
-T_105: (in LoadCursorW(0x00000000, &globals->t7A120) : word32)
+T_105: (in LoadCursorW(0x00000000, (WNDCLASSW) 0x0007A120) : word32)
   Class: Eq_105
   DataType: word32
   OrigDataType: word32
@@ -715,7 +715,7 @@ T_114: (in lpWndClass : (ptr WNDCLASSW))
   Class: Eq_72
   DataType: Eq_72
   OrigDataType: (ptr WNDCLASSW)
-T_115: (in RegisterClassW(&globals->t7A120) : word32)
+T_115: (in RegisterClassW((WNDCLASSW) 0x0007A120) : word32)
   Class: Eq_115
   DataType: word32
   OrigDataType: word32
@@ -723,7 +723,7 @@ T_116: (in 0x00000000 : word32)
   Class: Eq_115
   DataType: word32
   OrigDataType: word32
-T_117: (in RegisterClassW(&globals->t7A120) == 0x00000000 : bool)
+T_117: (in RegisterClassW((WNDCLASSW) 0x0007A120) == 0x00000000 : bool)
   Class: Eq_117
   DataType: bool
   OrigDataType: bool
@@ -1868,8 +1868,7 @@ T_402:
   DataType: Eq_402
   OrigDataType: 
 */
-typedef WNDCLASSWEq_74 Eq_1Eq_66 Eq_1Eq_2 Eq_1Eq_2 Eq_1Eq_2 Eq_1Eq_2 Eq_1struct Globals {
-	WNDCLASSW;	// 7A120
+typedef Eq_74 Eq_1Eq_66 Eq_1Eq_2 Eq_1Eq_2 Eq_1Eq_2 Eq_1Eq_2 Eq_1struct Globals {
 	Eq_74 t40208A;	// 40208A
 	word32 dw40208E;	// 40208E
 	word32 dw402092;	// 402092

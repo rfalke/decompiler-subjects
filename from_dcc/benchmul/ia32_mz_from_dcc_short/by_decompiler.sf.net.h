@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:04:35 AM by decompiling from_dcc/benchmul/ia32_mz_from_dcc_short/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_dcc/benchmul/ia32_mz_from_dcc_short/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
@@ -3430,11 +3430,11 @@ T_856: (in 0x00 : byte)
   DataType: 
   OrigDataType: 
 T_857: (in DPB(ax_15, 0x00, 0, 8) : word16)
-  Class: Eq_855
+  Class: Eq_857
   DataType: 
   OrigDataType: 
 T_858: (in *axOut : word16)
-  Class: Eq_855
+  Class: Eq_857
   DataType: 
   OrigDataType: 
 T_859: (in CZ_26 : byte)
@@ -3585,12 +3585,12 @@ T_895: (in al_46 - 0x22 : byte)
   Class: Eq_895
   DataType: 
   OrigDataType: 
-T_896: (in DPB(ax_21, al_46 - 0x22, 0, 8) : word16)
-  Class: Eq_893
+T_896: (in DPB(ax_15, al_46 - 0x22, 0, 8) : word16)
+  Class: Eq_896
   DataType: 
   OrigDataType: 
 T_897: (in *axOut : word16)
-  Class: Eq_893
+  Class: Eq_896
   DataType: 
   OrigDataType: 
 T_898: (in al_46 - 0x22 : byte)
@@ -3613,12 +3613,12 @@ T_902: (in ax_57 : word16)
   Class: Eq_902
   DataType: 
   OrigDataType: 
-T_903: (in DPB(ax_50, al_46, 0, 8) : word16)
-  Class: Eq_902
+T_903: (in DPB(ax_15, al_46, 0, 8) : word16)
+  Class: Eq_903
   DataType: 
   OrigDataType: 
 T_904: (in *axOut : word16)
-  Class: Eq_902
+  Class: Eq_903
   DataType: 
   OrigDataType: 
 T_905: (in 0x5C : byte)
@@ -3669,7 +3669,7 @@ T_916: (in Mem0[ds:si + 0x0001:byte] : byte)
   Class: Eq_916
   DataType: 
   OrigDataType: 
-T_917: (in DPB(ax_57, Mem0[ds:si + 0x0001:byte], 0, 8) : word16)
+T_917: (in DPB(ax_15, Mem0[ds:si + 0x0001:byte], 0, 8) : word16)
   Class: Eq_917
   DataType: 
   OrigDataType: 
@@ -5341,7 +5341,7 @@ T_1334: (in Mem0[ds:bx_141 + 0x0509:byte] : byte)
   Class: Eq_1334
   DataType: 
   OrigDataType: 
-T_1335: (in DPB(bx_141, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) : word16)
+T_1335: (in DPB(ax_136, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) : word16)
   Class: Eq_1335
   DataType: 
   OrigDataType: 
@@ -5349,7 +5349,7 @@ T_1336: (in 0x0017 : word16)
   Class: Eq_1335
   DataType: 
   OrigDataType: 
-T_1337: (in DPB(bx_141, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) <=u 0x0017 : bool)
+T_1337: (in DPB(ax_136, Mem0[ds:bx_141 + 0x0509:byte], 0, 8) <=u 0x0017 : bool)
   Class: Eq_1337
   DataType: 
   OrigDataType: 

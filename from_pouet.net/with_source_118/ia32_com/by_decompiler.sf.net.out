@@ -1,15 +1,22 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    NYI:  &&  in (SLICE(bp_57 *s bp_57, byte, 24) & bl_139) == 0x00 && cx_114 != 0x0001
+       at Decompiler.Typing.TraitCollector.VisitBinaryExpression(BinaryExpression binExp)
+   at Decompiler.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Typing.TraitCollector.VisitBranch(Branch b)
+   at Decompiler.Core.Code.Branch.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_118/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
+rewriting: void fn0C00_0100(Register word16 bx, Register word16 si, Register byte ah, Register selector ds)
+
+Unhandled Exception: System.InvalidCastException: Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
    at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.DecompilerDriver.<>c__DisplayClass1b.<WriteDecompilerProducts>b__17(TextWriter w)
    at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
    at Decompiler.DecompilerDriver.WriteDecompilerProducts()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+   at Decompiler.CmdLine.CmdLineDriver.DecompileRawImage(DecompilerDriver dec, Dictionary`2 pArgs)
+   at Decompiler.CmdLine.CmdLineDriver.Execute(String[] args)
+   at Decompiler.CmdLine.CmdLineDriver.Main(String[] args)

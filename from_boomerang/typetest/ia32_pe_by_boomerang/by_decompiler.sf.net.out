@@ -1,28 +1,7 @@
+Using options:
 00401C60: warning: Unable to resolve imported reference MFC42.DLL!Ordinal_1576.
 : warning: Type transformer has looped 51 times, quitting prematurely.
-fn004019E0_entry (1): idom l004019E0 (2)
-fn004019E0_exit (14): idom 
-l004019E0 (2): idom l00401A71 (4)
-l00401A63 (3): idom l00401A71 (4)
-l00401A71 (4): idom l00401AEE (8)
-l00401AD7 (5): idom l00401AE5 (6)
-l00401AE5 (6): idom l00401AEE (8)
-l00401AEA (7): idom l00401AEE (8)
-l00401AEE (8): idom l00401AFE (10)
-l00401AF8 (9): idom l00401AEE (8)
-l00401AFE (10): idom l00401B24 (12)
-l00401B15 (11): idom l00401B24 (12)
-l00401B1F (15): idom l00401B24 (12)
-l00401B24 (12): idom l00401B64 (13)
-l00401B64 (13): idom fn004019E0_exit (14)
-l00401B7F (16): idom l00401AEE (8)
-l00401B88 (17): idom l00401B7F (16)
-fn00401BB0_entry (1): idom l00401BB0 (2)
-fn00401BB0_exit (3): idom 
-l00401BB0 (2): idom fn00401BB0_exit (3)
-fn00401BE0_entry (1): idom l00401BE0 (2)
-fn00401BE0_exit (3): idom 
-l00401BE0 (2): idom fn00401BE0_exit (3)
-fn00401BFC_entry (1): idom l00401BFC (2)
-fn00401BFC_exit (3): idom 
-l00401BFC (2): idom fn00401BFC_exit (3)
+rewriting: void fn004019E0(Register word32 ebp, Register (ptr Eq_3) fs)
+rewriting: void fn00401BB0()
+rewriting: void fn00401BE0()
+rewriting: void fn00401BFC(Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

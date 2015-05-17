@@ -1,15 +1,22 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+0C00:0189: error: Rewriting x86 opcode 'illegal' is not supported yet.
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Unable to cast object of type 'Decompiler.Core.Types.PrimitiveType' to type 'Decompiler.Core.Types.Pointer'.
+       at Decompiler.Typing.DerivedPointerAnalysis.VisitConstant(Constant c)
+   at Decompiler.Core.Expressions.Constant.Accept(IExpressionVisitor v)
+   at Decompiler.Core.Code.InstructionVisitorBase.VisitDeclaration(Declaration decl)
+   at Decompiler.Core.Code.Declaration.Accept(InstructionVisitor v)
+   at Decompiler.Typing.DerivedPointerAnalysis.FollowDerivedPointers()
+   at Decompiler.Typing.TypeTransformer.Transform()
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_227/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
+rewriting: FpuStack real64 fn0C00_0100(Register word16 di, Register selector ds, FpuStack real64 rArg0)
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)

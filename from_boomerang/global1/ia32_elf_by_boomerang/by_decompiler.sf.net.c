@@ -1,13 +1,13 @@
 // subject.c
-// Generated on 5/4/2015 12:01:41 AM by decompiling from_boomerang/global1/ia32_elf_by_boomerang/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_boomerang/global1/ia32_elf_by_boomerang/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
-void fn08048278(word32 dwArg00)
+void fn08048278(code * * edx, word32 dwArg00)
 {
 	__align(fp + 0x00000004);
-	!__libc_start_main();
+	__libc_start_main(&globals->ptr804835D, dwArg00, fp + 0x00000004, &globals->ptr8048390, &globals->ptr80483C0, edx, fp - 0x00000004);
 	__hlt();
 }
 

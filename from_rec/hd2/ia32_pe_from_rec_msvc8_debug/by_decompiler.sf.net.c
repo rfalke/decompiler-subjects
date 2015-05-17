@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:12:36 AM by decompiling from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -219,12 +219,12 @@ void fn004110F0(word32 edx, word32 ebx, word32 esi, word32 edi, selector es, sel
 					word32 eax_239 = eax_138;
 				} while (Mem130[eax_239 + 0x00000000:byte] != 0x00);
 				word32 eax_147 = eax_138 - dwArg08;
-				word32 edi_149 = fp + 0xFFFFFBF7;
+				word32 edi_149 = fp + 0xFFFFFBF7 + 0x00000001;
 				do
 				{
 					edi_149 = edi_240 + 0x00000001;
 					word32 edi_240 = edi_149;
-				} while (Mem130[edi_240 + 0x00000001:byte] != 0x00);
+				} while (Mem130[edi_240 + 0x00000000:byte] != 0x00);
 				word32 ecx_158 = eax_147 >>u 0x00000002;
 				word32 esi_161 = dwArg08;
 				while (ecx_158 != 0x00000000)
@@ -249,12 +249,12 @@ void fn004110F0(word32 edx, word32 ebx, word32 esi, word32 edi, selector es, sel
 					word32 eax_241 = eax_177;
 				} while (Mem130[eax_241 + 0x00000000:byte] != 0x00);
 				word32 esi_198 = 0x00415BB0;
-				word32 edi_199 = fp + 0xFFFFFBF7;
+				word32 edi_199 = fp + 0xFFFFFBF7 + 0x00000001;
 				do
 				{
 					edi_199 = edi_242 + 0x00000001;
 					word32 edi_242 = edi_199;
-				} while (Mem130[edi_242 + 0x00000001:byte] != 0x00);
+				} while (Mem130[edi_242 + 0x00000000:byte] != 0x00);
 				word32 ecx_208 = eax_177 - 0x00415BB0 >>u 0x00000002;
 				while (ecx_208 != 0x00000000)
 				{

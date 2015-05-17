@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:12:39 AM by decompiling from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -27,12 +27,12 @@ l00401071:
 			word32 ecx_203 = 0x00000010 - esi_188;
 			do
 			{
-				word32 edi_214 = fp - 0x00000055;
+				word32 edi_214 = fp - 0x00000055 + 0x00000001;
 				do
 				{
 					edi_214 = edi_248 + 0x00000001;
 					word32 edi_248 = edi_214;
-				} while (Mem0[edi_248 + 0x00000001:byte] != 0x00);
+				} while (Mem0[edi_248 + 0x00000000:byte] != 0x00);
 				Mem226[edi_214 + 0x00000000:word32] = edx_201;
 				ecx_203 = ecx_203 - 0x00000001;
 			} while (ecx_203 != 0x00000000);

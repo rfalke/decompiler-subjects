@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:11:11 AM by decompiling from_pouet.net/with_source_377/ia32_pe/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_377/ia32_pe/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -102,7 +102,7 @@ l004010C6:
 			Mem152[ebx_140 + 0x00402136:word16] = (int16) (al_136 - 0x80);
 			word16 bx_156 = bx_141 + 0x0001;
 			al_136 = dh_120;
-			eax_137 = DPB(eax_137, dh_120, 0, 8);
+			eax_137 = DPB(eax_331, dh_120, 0, 8);
 			bx_141 = bx_156 + 0x0001;
 			ebx_140 = DPB(ebx_140, bx_156 + 0x0001, 0, 16);
 			if (!P)
@@ -112,6 +112,7 @@ l004010C6:
 			}
 			di_134 = di_134 + 0x0001;
 			edi_135 = DPB(edi_135, di_134, 0, 16);
+			word32 eax_331 = eax_137;
 		} while (P);
 		Mem168[ebx_140 + 0x00402136:word16] = bp_109;
 		ebx_105 = DPB(ebx_140, 0x00, 0, 8);
@@ -125,15 +126,15 @@ l004010C6:
 		} while (P);
 		do
 		{
-			real64 rLoc2_190 = rLoc1_331 * Mem168[edi_135 + 0x00402136:real32] + rArg0 * Mem168[edi_135 + 0x0040213A:real32];
+			real64 rLoc2_190 = rLoc1_332 * Mem168[edi_135 + 0x00402136:real32] + rArg0 * Mem168[edi_135 + 0x0040213A:real32];
 			di_134 = di_134 + 0x0008;
 			rArg1 = rArg0 * Mem168[edi_135 + 0x0040213A:real32] - rArg1 * Mem168[edi_135 + 0x00402136:real32];
 			rLoc1_174 = rLoc2_190;
-			rArg0 = rLoc1_331;
+			rArg0 = rLoc1_332;
 			edi_135 = DPB(edi_135, di_134, 0, 16);
-			real64 rLoc1_331 = rLoc1_174;
+			real64 rLoc1_332 = rLoc1_174;
 		} while (P);
-		rArg0 = rLoc1_331 / (rArg1 / ((rLoc2_190 + (real64) Mem168[0x00402132:word16]) / (real64) Mem168[0x00402134:word16]));
+		rArg0 = rLoc1_332 / (rArg1 / ((rLoc2_190 + (real64) Mem168[0x00402132:word16]) / (real64) Mem168[0x00402134:word16]));
 		Mem210[ebx_105 + 0x00402136:int32] = (int32) rArg0;
 		word32 edi_211 = Mem210[ebx_105 + 0x00402136:word32] *s 0x00000140;
 		Mem212[ebx_105 + 0x00402136:int32] = (int32) rArg1;
@@ -141,7 +142,7 @@ l004010C6:
 		word32 edi_213 = edi_211 + Mem212[ebx_105 + 0x00402136:word32];
 		word32 esi_217 = Mem212[0x00402118:word32];
 		Mem222[esi_217 + 0x00007DA0 + edi_213:byte] = Mem212[esi_217 + 0x00007DA0 + edi_213:byte] + (al_216 >>u 0x05);
-		eax_108 = DPB(eax_137, al_216 >>u 0x05, 0, 8);
+		eax_108 = DPB(eax_331, al_216 >>u 0x05, 0, 8);
 		do
 		{
 			dx_118 = dx_118 + 0x0001;

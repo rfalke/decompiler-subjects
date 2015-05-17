@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:00:23 AM by decompiling from_aminet/albion_demo/loader/m68k_amiga/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_aminet/albion_demo/loader/m68k_amiga/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 

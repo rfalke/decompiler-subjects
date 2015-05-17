@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:04:48 AM by decompiling from_dcc/matrixmu/ia32_mz_from_dcc/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_dcc/matrixmu/ia32_mz_from_dcc/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
@@ -3462,11 +3462,11 @@ T_864: (in 0x00 : byte)
   DataType: 
   OrigDataType: 
 T_865: (in DPB(ax_15, 0x00, 0, 8) : word16)
-  Class: Eq_863
+  Class: Eq_865
   DataType: 
   OrigDataType: 
 T_866: (in *axOut : word16)
-  Class: Eq_863
+  Class: Eq_865
   DataType: 
   OrigDataType: 
 T_867: (in CZ_26 : byte)
@@ -3617,12 +3617,12 @@ T_903: (in al_46 - 0x22 : byte)
   Class: Eq_903
   DataType: 
   OrigDataType: 
-T_904: (in DPB(ax_21, al_46 - 0x22, 0, 8) : word16)
-  Class: Eq_901
+T_904: (in DPB(ax_15, al_46 - 0x22, 0, 8) : word16)
+  Class: Eq_904
   DataType: 
   OrigDataType: 
 T_905: (in *axOut : word16)
-  Class: Eq_901
+  Class: Eq_904
   DataType: 
   OrigDataType: 
 T_906: (in al_46 - 0x22 : byte)
@@ -3645,12 +3645,12 @@ T_910: (in ax_57 : word16)
   Class: Eq_910
   DataType: 
   OrigDataType: 
-T_911: (in DPB(ax_50, al_46, 0, 8) : word16)
-  Class: Eq_910
+T_911: (in DPB(ax_15, al_46, 0, 8) : word16)
+  Class: Eq_911
   DataType: 
   OrigDataType: 
 T_912: (in *axOut : word16)
-  Class: Eq_910
+  Class: Eq_911
   DataType: 
   OrigDataType: 
 T_913: (in 0x5C : byte)
@@ -3701,7 +3701,7 @@ T_924: (in Mem0[ds:si + 0x0001:byte] : byte)
   Class: Eq_924
   DataType: 
   OrigDataType: 
-T_925: (in DPB(ax_57, Mem0[ds:si + 0x0001:byte], 0, 8) : word16)
+T_925: (in DPB(ax_15, Mem0[ds:si + 0x0001:byte], 0, 8) : word16)
   Class: Eq_925
   DataType: 
   OrigDataType: 

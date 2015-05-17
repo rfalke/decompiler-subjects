@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:08:24 AM by decompiling from_pouet.net/with_source_337/m68k_amiga/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_337/m68k_amiga/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -53,7 +53,7 @@ word32 fn00001092()
 
 void fn000010BE()
 {
-	word32 a6_6 = globals->dw0004;
+	word32 a6_6 = (word32 *) 0x00000004;
 	(a6_6 + -552)();
 	globals->dw114A = 0;
 	if (0 != 0)
@@ -67,7 +67,7 @@ void fn000010BE()
 
 word32 fn000010DA()
 {
-	word32 a6_6 = globals->dw0004;
+	word32 a6_6 = (word32 *) 0x00000004;
 	(a6_6 + -552)();
 	globals->dw1146 = 39;
 	if (39 != 0)
@@ -82,7 +82,7 @@ void fn000012F4()
 	word32 d0_7 = DPB(d0_5, (word16) d0_5 + 0x0001, 0, 16);
 	ptr32 a0_2 = 0x00001340;
 	word32 d1_9 = DPB(0x00000001, (word16) d0_7, 0, 16);
-	byte * a0_14 = DPB(a0_2, (word16) a0_2 + (word16) DPB(d0_7, (word16) d0_7 << 0x0005, 0, 16), 0, 16);
+	byte * a0_14 = DPB(a0_2, (word16) a0_2 + (word16) DPB(d0_5, (word16) d0_7 << 0x0005, 0, 16), 0, 16);
 	word32 d2_15 = 0x000001DF;
 	do
 	{

@@ -1,6 +1,6 @@
 // subject.h
-// Generated on 5/4/2015 12:00:23 AM by decompiling from_aminet/albion_demo/loader/m68k_amiga/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_aminet/albion_demo/loader/m68k_amiga/subject.exe
+// using Decompiler version VERSION
 
 /*
 // Equivalence classes ////////////
@@ -33,7 +33,7 @@ Eq_35: (struct (0 int32 dw0000))
 Eq_41: (union (int32 u0) (byte u1))
 	T_41 (in v18_117 : word32)
 	T_50 (in Mem0[a0_229 + 0x00000000:byte] : byte)
-	T_51 (in 0xFFFFFFFF : ui32)
+	T_51 (in 0x00 : byte)
 	T_59 (in Mem0[a0_111 + 0x00000000:word32] : word32)
 	T_64 (in 0x00000000 : word32)
 	T_134 (in Mem0[a0_22 + 0x00000000:byte] : byte)
@@ -266,11 +266,11 @@ T_50: (in Mem0[a0_229 + 0x00000000:byte] : byte)
   Class: Eq_41
   DataType: Eq_41
   OrigDataType: byte
-T_51: (in 0xFFFFFFFF : ui32)
+T_51: (in 0x00 : byte)
   Class: Eq_41
   DataType: Eq_41
-  OrigDataType: ui32
-T_52: (in Mem0[a0_229 + 0x00000000:byte] != 0xFFFFFFFF : bool)
+  OrigDataType: byte
+T_52: (in Mem0[a0_229 + 0x00000000:byte] != 0x00 : bool)
   Class: Eq_52
   DataType: bool
   OrigDataType: bool

@@ -1,7 +1,33 @@
-from_rec/hd/ia32_elf_from_rec/subject.exe: error: An internal error occurred while decompiling.
-    Relocation type 5 not handled yet
-       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+080485DA: warning: Unable to resolve imported reference __setfpucw.
+08048578: warning: Unable to resolve imported reference __setfpucw.
+080485E2: warning: Unable to resolve imported reference __libc_init.
+080484F8: warning: Unable to resolve imported reference __libc_init.
+fn08048660: error: An error occurred during data flow analysis.
+    Unable to cast object of type 'Decompiler.Core.Types.UnknownType' to type 'Decompiler.Core.Types.PrimitiveType'.
+       at Decompiler.Core.Expressions.Constant.Create(DataType dt, Int64 value)
+   at Decompiler.Evaluation.SliceConstant_Rule.Transform()
+   at Decompiler.Evaluation.ExpressionSimplifier.VisitSlice(Slice slice)
+   at Decompiler.Core.Expressions.Slice.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Analysis.ValuePropagator.VisitAssignment(Assignment a)
+   at Decompiler.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.ValuePropagator.Transform(Statement stm)
+   at Decompiler.Analysis.ValuePropagator.Transform()
+   at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+rewriting: void fn080484A0()
+rewriting: void fn080485A0(Register word32 esi, Register word32 edi, Stack word32 dwArg00)
+rewriting: void fn08048660(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
+rewriting: Register byte fn080487F0(Stack word32 dwArg04)
+rewriting: Register word32 fn080488E0(Stack ui32 dwArg04, Stack word32 dwArg08)
+rewriting: Register word32 fn08048950(Stack (ptr char) dwArg04, Stack word32 dwArg08)
+rewriting: void fn08048980()
+080489C0: error: Failed to write global variable g_ptr80489C0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+080489C0: error: Failed to write global variable g_ptr80489C0.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

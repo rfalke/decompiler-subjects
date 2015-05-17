@@ -1,7 +1,13 @@
-from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe: error: An internal error occurred while decompiling.
-    Relocation type 5 not handled yet
-       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+rewriting: void fn0805F118()
+rewriting: void fn08060E90(Stack word32 dwArg00)
+08163268: error: Failed to write global variable g_ptr8163268.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08163268: error: Failed to write global variable g_ptr8163268.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

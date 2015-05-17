@@ -1,3 +1,4 @@
+Using options:
 from_shootout/random_ocaml/x64_elf/subject.exe: error: An internal error occurred while decompiling.
     Processor format 62 is not supported.
        at Decompiler.ImageLoaders.Elf.ElfImageLoader.CreateArchitecture(UInt16 machineType)

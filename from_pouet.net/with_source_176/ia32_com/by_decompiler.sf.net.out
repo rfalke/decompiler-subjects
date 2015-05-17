@@ -1,15 +1,12 @@
-: error: The format of the file is unknown.
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
-   at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
-   at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_176/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+0C00:0169: error: Rewriting x86 opcode 'illegal' is not supported yet.
+rewriting: void fn0C00_0100(Register word32 eax, Register word16 bp, Register (ptr Eq_49) ds)
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)

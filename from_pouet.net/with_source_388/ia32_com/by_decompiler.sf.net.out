@@ -1,8 +1,2 @@
-fn07F0_0100_entry (1): idom l07F0_0100 (2)
-fn07F0_0100_exit (4): idom 
-l07F0_0100 (2): idom fn07F0_0100_exit (4)
-l07F0_0110 (3): idom fn07F0_0100_exit (4)
-l07F0_013A (5): idom l07F0_0151 (6)
-l07F0_0151 (6): idom l07F0_0153 (8)
-l07F0_0151_1 (7): idom l07F0_0151 (6)
-l07F0_0153 (8): idom fn07F0_0100_exit (4)
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+rewriting: void fn0C00_0100(Register (memptr (ptr Eq_6) word16) bx, Register word16 bp, Register word16 si, Register byte al, Register (ptr Eq_6) ds, Stack word16 wArg00)

@@ -1,3 +1,4 @@
+Using options:
 from_rec/vars2/x64_elf_from_rec_gcc_g/subject.exe: error: An internal error occurred while decompiling.
     Processor format 62 is not supported.
        at Decompiler.ImageLoaders.Elf.ElfImageLoader.CreateArchitecture(UInt16 machineType)

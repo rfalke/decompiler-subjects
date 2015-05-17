@@ -1,15 +1,12 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Unable to cast object of type 'Decompiler.Core.Types.EquivalenceClass' to type 'Decompiler.Core.Types.Pointer'.
+       at Decompiler.Typing.DerivedPointerAnalysis.VisitConstant(Constant c)
+   at Decompiler.Core.Expressions.Constant.Accept(IExpressionVisitor v)
+   at Decompiler.Core.Code.InstructionVisitorBase.VisitDeclaration(Declaration decl)
+   at Decompiler.Core.Code.Declaration.Accept(InstructionVisitor v)
+   at Decompiler.Typing.DerivedPointerAnalysis.FollowDerivedPointers()
+   at Decompiler.Typing.TypeTransformer.Transform()
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_340/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
-   at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+rewriting: void fn0C00_0100(Register word32 ebx, Register word32 ebp, Register word16 ax, Register byte cl, Register selector es, Register selector ds, FpuStack real64 rArg0)

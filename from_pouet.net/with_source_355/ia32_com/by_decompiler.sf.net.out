@@ -1,15 +1,100 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+l0C00_047E_thunk_fn0C00_0480: error: An error occurred while rewriting at linear address 0.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+l0C00_047E_thunk_fn0C00_04A6: error: An error occurred while rewriting at linear address 0.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+fn0C00_0480: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Analysis.Aliases.Def(Identifier idar)
+   at Decompiler.Analysis.Aliases.VisitAssignment(Assignment ass)
+   at Decompiler.Core.Code.Assignment.Accept(InstructionVisitor v)
+   at Decompiler.Analysis.Aliases.Transform()
+   at Decompiler.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Invalid pointer size.
+Parameter name: byteSize
+       at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
+   at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.DataTypeBuilder.MemAccessTrait(Expression tBase, Expression tStruct, Int32 structPtrSize, Expression tField, Int32 offset)
+   at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Core.Expressions.Dereference.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Core.Code.Store.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_355/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
+rewriting: void fn0C00_0100()
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+       at System.ThrowHelper.ThrowArgumentOutOfRangeException()
+   at Decompiler.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Decompiler.Structure.CompoundConditionCoalescer.Transform()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: void fn0C00_030F(Register selector ds)
+rewriting: Register word16 fn0C00_0334(Register selector es, Register out ptr16 bxOut)
+rewriting: Register word16 fn0C00_035B(Register out ptr16 bpOut)
+rewriting: Register word16 fn0C00_0371(Register word16 ax, Register word16 cx, Register word16 bx, Register word16 di, Register selector es)
+fn0C00_0371: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.Structure.StructureAnalysis.GenerateStructuredCode()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word16 fn0C00_037B(Register word16 bx, Register out ptr16 alOut, Register out ptr16 dlOut)
+rewriting: void fn0C00_0395(Register word16 cx, Register selector es, Register selector ds)
+rewriting: Register word16 fn0C00_03CA(Register word16 bx, Register word16 si, Register word16 di, Register selector ds, Register out ptr16 diOut)
+rewriting: Register word16 fn0C00_03E0(Register word16 bx, Register word16 si, Register out ptr16 bxOut, Register out ptr16 bpOut, Register out ptr16 siOut)
+rewriting: Register word16 fn0C00_03EF(Register word16 bx, Register word16 si, Register out ptr16 dxOut, Register out ptr16 bxOut, Register out ptr16 bpOut)
+rewriting: void fn0C00_0402(Register selector es, Register selector ds)
+rewriting: void fn0C00_0477(Register word16 ax, Register word16 di, Register selector es, Stack word16 wArg00, Stack word16 wArg02, Stack word16 wArg04, Stack word16 wArg06)
+rewriting: void fn0C00_047C(Register word16 ax, Register word16 cx, Register word16 dx, Register word16 bx, Register word16 di, Register selector es)
+fn0C00_047C: error: An error occurred while rewriting procedure to high-level language.
+    Unable to cast object of type 'Decompiler.Core.Code.ReturnInstruction' to type 'Decompiler.Core.Code.Branch'.
+       at Decompiler.Structure.AbsynCodeGenerator.BranchCondition(StructureNode node)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.IfConditional.GenerateCode(AbsynCodeGenerator codeGen, StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(StructureNode node, StructureNode latchNode, AbsynStatementEmitter emitter)
+   at Decompiler.Structure.AbsynCodeGenerator.GenerateCode(ProcedureStructure proc, List`1 stms)
+   at Decompiler.Structure.StructureAnalysis.GenerateStructuredCode()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word16 fn0C00_0480(Register word16 ax, Register word16 cx, Register word16 dx, Register word16 bx, Register word16 di, Register selector es, Register out ptr16 cxOut, Register out ptr16 dxOut)
+rewriting: void fn0C00_04A6(Register word16 ax, Register word16 cx, Register word16 dx, Register word16 bx, Register selector es)
+rewriting: Register word16 fn0C00_04FE(Register word16 bp, Register word16 si, Register word16 di, Register byte al, Register byte ah, Register byte dh, Register byte bh, Register selector es, Register out ptr16 clOut, Register out ptr16 chOut)
+rewriting: Register word16 fn0C00_0527(Register byte al, Register byte ah, Register out ptr16 chOut, Register out ptr16 dhOut)
+rewriting: void fn0C00_0539(Register word16 bx, Register word16 di, Register selector es, Register selector ds, Register selector fs)
+rewriting: Register selector fn0C00_060B(Register word16 ax, Register word16 bp)
+rewriting: void fn0C00_0695()
+rewriting: void fn0C00_0715(Register selector ds)
+rewriting: void fn0C00_0840()
+rewriting: void fn0C00_0852(Register word16 dx, Register byte ah, Register selector ds)
+rewriting: Register selector fn0C00_090C()
+
+Unhandled Exception: System.InvalidCastException: Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
    at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.DecompilerDriver.<>c__DisplayClass1b.<WriteDecompilerProducts>b__17(TextWriter w)
    at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
    at Decompiler.DecompilerDriver.WriteDecompilerProducts()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+   at Decompiler.CmdLine.CmdLineDriver.DecompileRawImage(DecompilerDriver dec, Dictionary`2 pArgs)
+   at Decompiler.CmdLine.CmdLineDriver.Execute(String[] args)
+   at Decompiler.CmdLine.CmdLineDriver.Main(String[] args)

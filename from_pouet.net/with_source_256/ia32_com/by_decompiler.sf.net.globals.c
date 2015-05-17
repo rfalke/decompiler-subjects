@@ -1,6 +1,11 @@
 // subject.c
-// Generated on 5/4/2015 12:07:34 AM by decompiling from_pouet.net/with_source_256/ia32_com/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_256/ia32_com/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
+
+Eq_73* g_ptrFFF80000;
+Eq_232* g_ptrFFFA0000;
+Eq_152* g_ptr60000;
+Eq_114* g_ptr70000;
 

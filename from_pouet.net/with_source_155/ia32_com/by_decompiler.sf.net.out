@@ -1,15 +1,15 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Unable to cast object of type 'Decompiler.Core.Types.PrimitiveType' to type 'Decompiler.Core.Types.Pointer'.
+       at Decompiler.Typing.DerivedPointerAnalysis.VisitConstant(Constant c)
+   at Decompiler.Core.Expressions.Constant.Accept(IExpressionVisitor v)
+   at Decompiler.Core.Code.InstructionVisitorBase.VisitBinaryExpression(BinaryExpression binExp)
+   at Decompiler.Typing.DerivedPointerAnalysis.VisitBinaryExpression(BinaryExpression binExp)
+   at Decompiler.Core.Expressions.BinaryExpression.Accept(IExpressionVisitor v)
+   at Decompiler.Core.Code.InstructionVisitorBase.VisitBranch(Branch b)
+   at Decompiler.Core.Code.Branch.Accept(InstructionVisitor v)
+   at Decompiler.Typing.DerivedPointerAnalysis.FollowDerivedPointers()
+   at Decompiler.Typing.TypeTransformer.Transform()
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_155/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
-   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
-   at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
-   at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
-   at Decompiler.DecompilerDriver.WriteDecompilerProducts()
-   at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+rewriting: void fn0C00_0100(Register word16 dx, Register word16 bx, Register word16 si, Register byte ah, Register selector ds, Stack word16 wArg00)

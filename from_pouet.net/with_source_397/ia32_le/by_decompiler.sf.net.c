@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:12:25 AM by decompiling from_pouet.net/with_source_397/ia32_le/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_397/ia32_le/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -619,7 +619,7 @@ word16 fn0800_05FE(word16 ax, word16 dx, word16 bx, selector ds)
 			al_112 = al_112 + 0x20;
 			ax = DPB(ax, al_112 + 0x20, 0, 8);
 		}
-		dx = DPB(dx_63, 0x00, 8, 8);
+		dx = DPB(dx, 0x00, 8, 8);
 		if (dx >= 0x0041 && dx <= 0x005A)
 		{
 			ah_107 = ah_107 + 0x20;
@@ -1145,13 +1145,11 @@ l0800_0CDB:
 word16 fn0800_0CE0(byte al, byte dh, selector ds, ptr16 dxOut)
 {
 	word16 ax_34;
-	word16 ax_16 = DPB(ax, 0x00, 8, 8);
 	word16 bx_20;
-	word16 dx_21 = fn0800_079D(ax_16, DPB(dx, al, 0, 8), ds, out bx_20);
+	word16 dx_21 = fn0800_079D(DPB(ax, 0x00, 8, 8), DPB(dx, al, 0, 8), ds, out bx_20);
 	if (bx_20 <u 0x0100)
 	{
-		word16 ax_53 = DPB(ax_16, 0x00, 8, 8);
-		if (ax_53 >= 0x0003)
+		if (DPB(ax, 0x00, 8, 8) >= 0x0003)
 		{
 			bx_20 = DPB(bx_20, 0x00, 8, 8);
 			if (bx_20 == 0x0050)
@@ -1161,12 +1159,12 @@ word16 fn0800_0CE0(byte al, byte dh, selector ds, ptr16 dxOut)
 			else if (bx_20 >= 0x0020)
 				dx_21 = DPB(dx_21, 0x05, 0, 8);
 		}
-		if (DPB(ax_53, 0x00, 8, 8) > 0x0013)
+		if (DPB(ax, 0x00, 8, 8) > 0x0013)
 			dx_21 = DPB(dx_21, 0x13, 0, 8);
 		ax_34 = (int16) Mem0[ds:DPB(bx_20, 0x00, 8, 8) + 0x036C:byte];
 	}
 	else
-		ax_34 = DPB(ax_16, 0x00, 8, 8);
+		ax_34 = DPB(ax, 0x00, 8, 8);
 	word16 bx_36;
 	fn0800_0780(ax_34, dx_21, ds, out bx_36);
 	word16 dx_44;

@@ -1,15 +1,27 @@
-: error: The format of the file is unknown.
+Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
 : error: Error when reconstructing types.
-    Object reference not set to an instance of an object.
-       at Decompiler.Core.Platform.get_PointerType()
+    Invalid pointer size.
+Parameter name: byteSize
+       at Decompiler.Core.Types.Pointer..ctor(DataType pointee, Int32 byteSize)
+   at Decompiler.Typing.DataTypeBuilder.MemoryAccessCommon(Expression tBase, Expression tStruct, Int32 offset, DataType tField, Int32 structPtrSize)
+   at Decompiler.Typing.DataTypeBuilder.MemAccessTrait(Expression tBase, Expression tStruct, Int32 structPtrSize, Expression tField, Int32 offset)
+   at Decompiler.Typing.TraitCollector.VisitDereference(Dereference deref)
+   at Decompiler.Core.Expressions.Dereference.Accept[T](ExpressionVisitor`1 v)
+   at Decompiler.Typing.TraitCollector.VisitStore(Store store)
+   at Decompiler.Core.Code.Store.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Typing.TraitCollector.CollectProgramTraits(Program prog)
    at Decompiler.Typing.TypeAnalyzer.RewriteProgram(Program prog)
    at Decompiler.DecompilerDriver.ReconstructTypes()
-from_pouet.net/with_source_243/ia32_com/subject.exe: error: An internal error occurred while decompiling.
-    The program's Architecture property must be set before accessing the Globals property.
-       at Decompiler.Core.Program.get_Globals()
+rewriting: void fn0C00_0100(Register word16 bx, Register word16 di, Register byte ch)
+rewriting: Register word16 fn0C00_01A4(Register word16 ax, Register selector fs, Stack word16 wArg02, Stack word16 wArg04, Stack word16 wArg06, Stack word16 wArg08, Stack word16 wArg0A, Stack word16 wArg0C, Stack word16 wArg0E, Register out ptr16 cxOut, Register out ptr16 dxOut, Register out ptr16 bxOut, Register out ptr16 bpOut, Register out ptr16 siOut, Register out ptr16 diOut)
+
+Unhandled Exception: System.InvalidCastException: Unable to cast object of type 'Decompiler.Core.Types.StructureType' to type 'Decompiler.Core.Types.EquivalenceClass'.
    at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
    at Decompiler.DecompilerDriver.WriteGlobals(Program program, TextWriter w)
+   at Decompiler.DecompilerDriver.<>c__DisplayClass1b.<WriteDecompilerProducts>b__17(TextWriter w)
    at Decompiler.CmdLine.CmdLineHost.WriteGlobals(Program program, Action`1 writer)
    at Decompiler.DecompilerDriver.WriteDecompilerProducts()
    at Decompiler.DecompilerDriver.StructureProgram()
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+   at Decompiler.CmdLine.CmdLineDriver.DecompileRawImage(DecompilerDriver dec, Dictionary`2 pArgs)
+   at Decompiler.CmdLine.CmdLineDriver.Execute(String[] args)
+   at Decompiler.CmdLine.CmdLineDriver.Main(String[] args)

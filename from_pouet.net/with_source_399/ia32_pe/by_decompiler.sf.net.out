@@ -1,3 +1,4 @@
+Using options:
 004035BB: warning: Unable to resolve imported reference MSVCR80.dll!printf.
 004050E4: warning: Unable to resolve imported reference SDL.dll!SDL_Init.
 004050F6: warning: Unable to resolve imported reference SDL.dll!SDL_ShowCursor.
@@ -13,12 +14,12 @@
 004086A1: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
 004086CD: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
 004086F9: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
-004085D5: Warning: Procedure fn00408490 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408802: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408807: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408813: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408825: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00408802: Warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+004085D5: warning: Procedure fn00408490 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408807: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408813: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408825: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 004053E1: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
 00402449: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
 00402477: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
@@ -63,6 +64,7 @@ from_pouet.net/with_source_399/ia32_pe/subject.exe: error: An internal error occ
        at Decompiler.Core.Lib.DirectedGraphImpl`1.CreateEdgeCollectionCore(T o, Boolean fSuccessors)
    at Decompiler.Analysis.RegisterLiveness.PropagateToCalleeExitBlocks(Statement stm)
    at Decompiler.Analysis.RegisterLiveness.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept(InstructionVisitor v)
    at Decompiler.Analysis.RegisterLiveness.ProcessBlock(BlockFlow item)
    at Decompiler.Analysis.RegisterLiveness.ProcessWorklist()
    at Decompiler.Analysis.RegisterLiveness.Compute(Program p, ProgramDataFlow procFlow, DecompilerEventListener eventListener)

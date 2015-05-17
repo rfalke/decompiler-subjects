@@ -1,7 +1,39 @@
-from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe: error: An internal error occurred while decompiling.
-    Relocation type 5 not handled yet
-       at Decompiler.ImageLoaders.Elf.ElfImageLoader.RelocateI386()
-   at Decompiler.ImageLoaders.Elf.ElfImageLoader.Relocate(Address addrLoad)
-   at Decompiler.Loading.Loader.LoadExecutable(String filename, Byte[] image, Address addrLoad)
-   at Decompiler.DecompilerDriver.Load(String fileName)
-   at Decompiler.DecompilerDriver.Decompile(String filename)
+Using options:
+0804885D: warning: Unable to resolve imported reference __fpstart.
+080487A0: warning: Unable to resolve imported reference __fpstart.
+08048877: error: Address is outside of image.
+Parameter name: addr
+l080493E0: error: An error occurred while rewriting at linear address 80493E2.
+    Expected stack depth to be negative.
+       at Decompiler.Analysis.ExpressionPropagator.GetStackDepthBeforeCall()
+   at Decompiler.Analysis.ExpressionPropagator.VisitCallInstruction(CallInstruction ci)
+   at Decompiler.Core.Code.CallInstruction.Accept[T](InstructionVisitor`1 visitor)
+   at Decompiler.Analysis.TrashedRegisterFinder.RewriteBlock(Block block)
+rewriting: void fn08048810(Register (ptr (ptr code)) edx, Stack word32 dwArg00)
+fn08048810: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Decompiler.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Decompiler.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Decompiler.Structure.ProcedureStructureBuilder.AnalyzeGraph()
+   at Decompiler.Structure.StructureAnalysis.BuildProcedureStructure()
+   at Decompiler.Structure.StructureAnalysis.Structure()
+   at Decompiler.DecompilerDriver.StructureProgram()
+rewriting: Register word32 fn080488D8(Register word32 ebp)
+rewriting: Register word32 fn080488E1(Register word32 ebp, Stack word32 dwArg00)
+rewriting: Register word32 fn08048918(Register word32 ebp, Stack ui32 dwArg04)
+rewriting: Register word32 fn08049170(Register word32 ebp)
+rewriting: Register (ptr Eq_96) fn08049179(Register (ptr Eq_96) ebp, Stack word32 dwArg00)
+rewriting: Register word32 fn080493C0(Register word32 ebp)
+rewriting: Register (ptr word32) fn080493CA(Register (ptr word32) ebp, Stack word32 dwArg00)
+rewriting: Register word32 fn08049410(Register word32 ebp)
+08048780: error: Failed to write global variable g_ptr8048780.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)
+08048780: error: Failed to write global variable g_ptr8048780.
+    Drill into struct
+       at Decompiler.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Decompiler.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Decompiler.Core.Output.GlobalDataWriter.WriteGlobals(Formatter formatter)

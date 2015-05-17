@@ -1,6 +1,6 @@
 // subject.c
-// Generated on 5/4/2015 12:10:55 AM by decompiling from_pouet.net/with_source_360/ia32_pe/subject.exe
-// using Decompiler version 0.4.2.0.
+// Generated on TIMESTAMP by decompiling from_pouet.net/with_source_360/ia32_pe/subject.exe
+// using Decompiler version VERSION
 
 #include "subject.h"
 
@@ -44,7 +44,8 @@ word32 fn00401020(real64 rArg0, ptr32 ebpOut, ptr32 esiOut, ptr32 ediOut)
 			byte dh_99 = SLICE(dx_80, byte, 8);
 			real64 rLoc1_101 = (real64) Mem94[0x0040213E:int16];
 			al_102 = bh_162;
-			eax_103 = DPB(eax_103, bh_162, 0, 8);
+			eax_103 = DPB(eax_537, bh_162, 0, 8);
+			word32 eax_537 = eax_103;
 		} while (P);
 		rArg0 = atan(rArg0, rLoc1_101) * (real64) Mem94[0x0040213A:word16];
 		Mem112[0x0040213E:int16] = (int16) rArg0;
@@ -53,7 +54,7 @@ word32 fn00401020(real64 rArg0, ptr32 ebpOut, ptr32 esiOut, ptr32 ediOut)
 		byte ah_115 = SLICE(ax_114, byte, 8);
 		byte cl_117 = 0x00;
 		cx = DPB(cx, 0x00, 0, 8);
-		eax_128 = DPB(eax_103, dh_99, 0, 8);
+		eax_128 = DPB(eax_537, dh_99, 0, 8);
 		byte dh_131 = (byte) (ax_121 & 0x0707) + SLICE(ax_121 & 0x0707, byte, 8) + dh_99;
 		if (dh_99 >=u 0xEF)
 		{
@@ -118,7 +119,7 @@ word32 fn00401020(real64 rArg0, ptr32 ebpOut, ptr32 esiOut, ptr32 ediOut)
 				ebp_156 = Mem283[esp_282 + 0x00000000:word32];
 				byte dh_274 = SLICE(dx_246, byte, 8);
 				byte ah_285 = Mem283[ebx_160 + Mem283[0x0040211C:word32]:byte];
-				eax_249 = DPB(eax_249, al_287, 0, 8);
+				eax_249 = DPB(eax_538, al_287, 0, 8);
 				bp_200 = (word16) ebp_156;
 				esp_220 = esp_282 + 0x00000004;
 				if (ah_285 < 0x00)
