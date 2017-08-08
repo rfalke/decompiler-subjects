@@ -1,0 +1,8 @@
+Using options:
+10010A3C: error: PowerPC instruction 'illegal' is not supported yet.
+10000410: warning: Call target address 10000000 is invalid.
+10010A44: error: PowerPC instruction 'illegal' is not supported yet.
+10010A44: error: PowerPC instruction 'illegal' is not supported yet.
+10010A34: error: PowerPC instruction 'illegal' is not supported yet.
+10010A34: error: PowerPC instruction 'illegal' is not supported yet.
+10010A44: error: PowerPC instruction 'illegal' is not supported yet.

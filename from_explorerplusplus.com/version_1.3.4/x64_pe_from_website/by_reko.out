@@ -1,0 +1,1409 @@
+Using options:
+0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
+0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
+0000000140052CC7: warning: Procedure fn0000000140052C58 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008EE21: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014008EFA7: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400D1C75: warning: Procedure fn00000001400D1B10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D1EAD: warning: Procedure fn00000001400D1DE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008F17E: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+000000014008F194: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+000000014007F324: warning: Procedure fn000000014007F0B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140009B31: warning: Procedure fn00000001400099E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140009AD5: warning: Procedure fn00000001400099E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140009AEE: warning: Procedure fn00000001400099E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140009730: warning: Procedure fn00000001400099E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008F47C: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400B03D9: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400B03ED: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400B03FF: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140084E48: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0000000140084E73: warning: Procedure fn0000000140084BE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140084C56: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+0000000140084C69: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140084C7A: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140084C85: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140084C8F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007F860: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007F8EA: warning: Procedure fn000000014007F810 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008F4DF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+000000014007DD2F: warning: Procedure fn000000014007DCB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007DCDB: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007DD22: warning: Procedure fn000000014007DCB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008F5D3: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+000000014008F552: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+000000014008F5D3: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+000000014008FB65: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140001079: warning: Procedure fn0000000140001000 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140001062: warning: Procedure fn0000000140001000 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140056949: warning: Procedure fn0000000140056918 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014004DFBB: warning: Procedure fn000000014004DF3C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014004E6FB: warning: Procedure fn000000014004E3EC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001BBAE: warning: Procedure fn000000014001BB80 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002C162: error: Object reference not set to an instance of an object
+0000000140009025: warning: Procedure fn0000000140008FC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140016B28: warning: Procedure fn0000000140016AB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007F59B: warning: Procedure fn000000014007F330 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007F3C1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F3DA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014000AA7D: warning: Procedure fn000000014000AA30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007F42F: warning: Procedure fn000000014007F330 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007F455: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F46C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+000000014000A6A9: warning: Procedure fn000000014000A630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140018F16: warning: Procedure fn0000000140018EA0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014002246F: warning: Procedure fn00000001400223F0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001E9BF: warning: Procedure fn000000014001E940 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400260AE: warning: Procedure fn0000000140024FD0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140018D69: warning: Procedure fn0000000140018CF0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000AC2A: warning: Procedure fn000000014000ABE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400DFE90: warning: Procedure fn00000001400DFE20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140032B08: warning: Procedure fn0000000140032AF8 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140060D60: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
+000000014005112A: warning: Procedure fn0000000140050C9C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014005BDC4: warning: Rewriting x86 opcode 'stmxcsr' is not supported yet.
+000000014005BDD4: warning: Rewriting x86 opcode 'ldmxcsr' is not supported yet.
+0000000140095E1D: warning: Procedure fn0000000140095E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400DA9C3: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+000000014001C4DF: warning: Procedure fn000000014001C460 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000A97F: warning: Procedure fn000000014000A910 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000ABDF: warning: Procedure fn000000014000AB70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000A61F: warning: Procedure fn000000014000A5B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140009F25: warning: Procedure fn0000000140009E90 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B208F: warning: Procedure fn00000001400B1FA0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007E0BD: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007E0DF: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E109: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014007E14E: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140079422: warning: Procedure fn0000000140079310 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5945: warning: Procedure fn00000001400B5880 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5836: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014007E22B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400B63C6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400B63F5: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400B562B: warning: Procedure fn00000001400B5600 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B5716: warning: Procedure fn00000001400B56A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400CA9E4: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400CD740: warning: Procedure fn00000001400CD620 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400CD6CF: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400B00FD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400B0109: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+000000014007E32E: warning: Procedure fn000000014007E270 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B101D: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
+00000001400B10E8: warning: Procedure fn00000001400B0FC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007CF85: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+000000014007D00F: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014007D066: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014007D07B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014007D0A1: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+000000014007B254: warning: Procedure fn000000014007B1C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D7ACE: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400BDCD5: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400BDD0E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400B55C8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400B66AA: warning: Procedure fn00000001400B64E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C4FB2: warning: Procedure fn00000001400C4F00 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B1177: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+000000014007E4F7: warning: Procedure fn000000014007E340 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D047B: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400947E1: warning: Unable to resolve imported reference USER32.dll!GetClassLongPtrW.
+0000000140094805: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+00000001400DAA16: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+00000001400D6FF1: warning: Procedure fn00000001400D6FB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D7001: warning: Procedure fn00000001400D6FB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D76C7: warning: Procedure fn00000001400D6FB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007EB4E: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400BE0C2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+00000001400BE139: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+0000000140073B8E: warning: Procedure fn0000000140073AB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007415D: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+0000000140082347: warning: Procedure fn0000000140082260 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400972E8: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+0000000140097302: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+0000000140096F80: warning: Procedure fn0000000140096CC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B0827: warning: Procedure fn00000001400B0710 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400CBF7D: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400CBFAB: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0000000140082CBA: warning: Procedure fn0000000140082AC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D03D3: warning: Procedure fn00000001400D0250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B61D7: warning: Procedure fn00000001400B60B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B8060: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400B8242: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B7E44: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B82B3: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D70EF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00000001400C3967: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400C39A3: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400D6A41: warning: Procedure fn00000001400D6760 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D68D8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400D691B: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400D6990: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400CB49A: warning: Procedure fn00000001400CB360 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400CB0A3: warning: Procedure fn00000001400CAF10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001CF2F: warning: Unable to resolve imported reference gdiplus.dll!GdiplusStartup.
+00000001400AF574: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400099D0: warning: Procedure fn0000000140009900 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400180C8: warning: Procedure fn0000000140018050 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000B481: warning: Procedure fn000000014000B3F0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000BAAA: warning: Procedure fn000000014000B780 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000B904: warning: Procedure fn000000014000B780 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000937A: warning: Procedure fn0000000140009260 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014004BEB7: warning: Procedure fn000000014004BDAC previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001B8E3: warning: Procedure fn000000014001B830 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140003A0D: warning: Procedure fn0000000140003930 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D3618: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00000001400D3639: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+00000001400D34EF: warning: Procedure fn00000001400D33C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D3836: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400D3847: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400D3881: warning: Unable to resolve imported reference SHLWAPI.dll!PathRenameExtensionW.
+0000000140083515: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+00000001400D2BD1: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00000001400D2A49: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
+00000001400D29F7: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+00000001400D2944: warning: Procedure fn00000001400D2910 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D2944: warning: Procedure fn00000001400D2910 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D27CD: warning: Procedure fn00000001400D26B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D27FB: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_413.
+00000001400D23E0: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400D2409: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400D2497: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400D24F8: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400D2522: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014001A3B9: warning: Procedure fn000000014001A300 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D2534: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00000001400D21B5: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400D1EA7: warning: Procedure fn00000001400D1DE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1E66: warning: Procedure fn00000001400D1DE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1E24: warning: Procedure fn00000001400D1DE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1F59: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400D1D6D: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400D1D8A: warning: Procedure fn00000001400D1CFB previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D1D8A: warning: Procedure fn00000001400D1CFB previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D1D8E: warning: Procedure fn00000001400D1D8C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1D90: warning: Procedure fn00000001400D1D8C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1CD4: warning: Procedure fn00000001400D1C80 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1C24: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+0000000140093907: warning: Procedure fn0000000140093760 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140093751: warning: Procedure fn00000001400935F0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009337D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014009293C: warning: Procedure fn0000000140092820 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400928DD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001C23B: warning: Procedure fn000000014001C1B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BE231: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400C0D0D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400C0D19: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+00000001400C0D22: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+00000001400C0D5A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400C0D90: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00000001400C0DAA: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007968F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140079D05: warning: Procedure fn0000000140079BD0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007A28B: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+000000014007A2CB: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
+00000001400BF537: warning: Procedure fn00000001400BF3D0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092EE2: warning: Procedure fn0000000140092D20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D187B: warning: Procedure fn00000001400D1840 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001A1EF: warning: Procedure fn000000014001A170 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400845AC: warning: Procedure fn0000000140084540 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092A16: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400927C7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400D17DB: warning: Procedure fn00000001400D17A0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D0429: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D0475: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007E640: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E6A0: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E700: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E760: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E7C0: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E820: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E880: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E8E0: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E942: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E9A4: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400CE1B9: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400CE1D0: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+00000001400CE10E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCatW.
+00000001400CD069: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400CCFE3: warning: Procedure fn00000001400CCE80 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400CCF2D: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400CD5B4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00000001400CD313: warning: Procedure fn00000001400CD150 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400CD211: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400D5D54: warning: Procedure fn00000001400D5D10 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400DAB86: warning: Procedure fn00000001400DAA70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400CA1AF: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
+00000001400CA218: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400C9EAB: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
+00000001400C9E3D: warning: Procedure fn00000001400C9DC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C9EF9: warning: Procedure fn00000001400C9EDB previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400821FC: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+000000014008223E: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+00000001400DAC39: warning: Procedure fn00000001400DABD0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007BECA: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BED7: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014007BEE0: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400C8E0F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400C8E1D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00000001400C8E2A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400C83A7: warning: Procedure fn00000001400C8230 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140080EF7: warning: Procedure fn0000000140080B70 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C8452: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+00000001400C8488: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+000000014000A277: warning: Procedure fn000000014000A200 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000A2FA: warning: Procedure fn000000014000A280 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C72BB: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+00000001400C72DB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00000001400C7307: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+00000001400C51E9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+000000014000AAEE: warning: Procedure fn000000014000AA90 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000AA1E: warning: Procedure fn000000014000A9C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C339B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400C2E04: warning: Procedure fn00000001400C2DED previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C2E04: warning: Procedure fn00000001400C2DED previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C2E04: warning: Procedure fn00000001400C2DD8 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400C2DD6: warning: Procedure fn00000001400C2D5E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C2DD6: warning: Procedure fn00000001400C2D5E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400C2DE7: warning: Procedure fn00000001400C2DD8 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400C2CA0: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+00000001400C2166: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400C2114: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400B12EE: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400C1837: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+00000001400C10C3: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C10D9: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C10EF: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C1105: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C111B: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C1131: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C1147: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C115D: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C1173: warning: Unable to resolve imported reference SHLWAPI.dll!StrChrW.
+00000001400C1256: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400C1264: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400C12AA: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00000001400C12CB: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+000000014000B3CF: warning: Procedure fn000000014000B360 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000B649: warning: Procedure fn000000014000B5B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400D196C: warning: Procedure fn00000001400D1940 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D19FB: warning: Procedure fn00000001400D19A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1AEF: warning: Procedure fn00000001400D1AD0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1A9F: warning: Procedure fn00000001400D1A80 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400D1A4C: warning: Procedure fn00000001400D1A20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140077049: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140077149: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140076E99: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+0000000140076938: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140076A78: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140076B05: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+000000014007655B: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+000000014007656C: warning: Unable to resolve imported reference SHLWAPI.dll!PathRenameExtensionW.
+00000001400765CC: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140075CE8: warning: Procedure fn0000000140075BF0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140075F89: warning: Procedure fn0000000140075E60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140075EAF: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007DFB6: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0000000140075ECC: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140077E1E: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400780E1: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400781B7: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140077A28: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140077879: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+000000014007755A: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140077674: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400BE5CE: warning: Procedure fn00000001400BE430 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BE75B: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400BE6C1: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+00000001400BE66F: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007F7FF: warning: Procedure fn000000014007F650 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007F6B4: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007F6D8: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007F7E8: warning: Procedure fn000000014007F650 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BDED4: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400B0214: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400BDC45: warning: Procedure fn00000001400BDB9E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400BDC47: warning: Procedure fn00000001400BDB9E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400BDC57: warning: Procedure fn00000001400BDC50 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BDADF: warning: Procedure fn00000001400BDA93 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BDADF: warning: Procedure fn00000001400BDA93 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BDAF0: warning: Procedure fn00000001400BDAE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400BC2D3: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400BB607: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+00000001400BB61C: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0000000140011A72: warning: Procedure fn0000000140011630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140011A69: warning: Procedure fn0000000140011630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140011A69: warning: Procedure fn0000000140011630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400146CA: warning: Procedure fn0000000140014610 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013F4E: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013FA5: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013FAD: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400150D8: warning: Procedure fn0000000140015020 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140014FD2: warning: Procedure fn0000000140014D90 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013F81: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400148D1: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400148ED: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013F14: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013F00: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013FC0: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013FEE: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001492C: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140014915: warning: Procedure fn0000000140013E30 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400135AB: warning: Procedure fn0000000140012A20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001354B: warning: Procedure fn0000000140012A20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013592: warning: Procedure fn0000000140012A20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140012F69: warning: Procedure fn0000000140012EB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140012BA5: warning: Procedure fn0000000140012AE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013B04: warning: Procedure fn0000000140012AE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140010143: warning: Procedure fn000000014000FFE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000FCE8: warning: Procedure fn000000014000FC70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000CB7D: warning: Procedure fn000000014000CB60 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000C930: warning: Procedure fn000000014000C5C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000CB5D: warning: Procedure fn000000014000C940 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BBD78: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400BBE78: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400BB079: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+00000001400BB0F2: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+00000001400BB105: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+00000001400BB129: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00000001400BB2E9: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400B9E1B: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+0000000140015A87: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00000001400161FE: warning: Procedure fn0000000140015FF0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400161EF: warning: Procedure fn0000000140015FF0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400165EE: warning: Procedure fn0000000140016200 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400165DD: warning: Procedure fn0000000140016200 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400BA33D: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400BA371: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+00000001400BA39C: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+00000001400B9176: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00000001400B8704: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400B8536: warning: Procedure fn00000001400B8425 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B8536: warning: Procedure fn00000001400B8425 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B7E4F: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00000001400B7AA7: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00000001400B7AF6: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+00000001400B7B1C: warning: Unable to resolve imported reference gdiplus.dll!GdipLoadImageFromFile.
+00000001400B6D45: warning: Procedure fn00000001400B6860 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B6836: warning: Procedure fn00000001400B6781 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140020ED6: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140020F1F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+00000001400B610B: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsUNCW.
+00000001400B6121: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+00000001400B5FAD: warning: Procedure fn00000001400B5F60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5FC1: warning: Procedure fn00000001400B5F60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5DE3: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400B5AC3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B58F4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400B56EE: warning: Procedure fn00000001400B56A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B5709: warning: Procedure fn00000001400B56A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140020C20: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400B575F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400B5263: warning: Procedure fn00000001400B514A previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5263: warning: Procedure fn00000001400B514A previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B5267: warning: Procedure fn00000001400B5265 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B5277: warning: Procedure fn00000001400B5265 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B527D: warning: Procedure fn00000001400B5265 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B5288: warning: Procedure fn00000001400B5265 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B528A: warning: Procedure fn00000001400B5265 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B512F: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+000000014008574B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0000000140085769: warning: Procedure fn0000000140085620 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085690: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400856A7: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400856BC: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400856C7: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+00000001400856D4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007568F: warning: Procedure fn00000001400755C0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140090E73: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+0000000140090ECB: warning: Unable to resolve imported reference SHLWAPI.dll!SHAutoComplete.
+000000014007CE9B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
+0000000140091865: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+000000014009187B: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014001F08B: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_410.
+000000014001F6E7: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014001F8AC: warning: Procedure fn000000014001F680 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B4BDF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_2.
+00000001400B4714: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400B4345: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400B435E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+00000001400B43B4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
+00000001400B4403: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400B465B: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400B465B: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400B3F2C: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400939D1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400939EE: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140093A62: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140083DD6: warning: Procedure fn0000000140083AD0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400B2BCD: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400B242A: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400B2440: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400B24A2: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400B252C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400B262C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400B22E2: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400B22F8: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400B232B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400B20EC: warning: Procedure fn00000001400B2090 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400B0F0C: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400B0EAA: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400B0A53: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400AF6A6: warning: Procedure fn00000001400AF685 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400AF50D: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+00000001400AF4D3: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400AE789: warning: Procedure fn00000001400AE520 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400AE789: warning: Procedure fn00000001400AE520 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001A5A5: warning: Procedure fn000000014001A540 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400AE110: warning: Procedure fn00000001400AE0BA previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400AE110: warning: Procedure fn00000001400AE0BA previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400AE0B8: warning: Procedure fn00000001400AE037 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400AE0B8: warning: Procedure fn00000001400AE037 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400AE0DA: warning: Procedure fn00000001400AE0BA previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400ADD23: warning: Procedure fn00000001400ADBD8 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400ADCAC: warning: Procedure fn00000001400ADCAC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400ADBD5: warning: Procedure fn00000001400AD900 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400AC58C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400AC910: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+00000001400AC927: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400AC98E: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400AC6E7: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400AC856: warning: Procedure fn00000001400AC670 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008053C: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+00000001400ACC19: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00000001400AB59C: warning: Procedure fn00000001400AB4B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400AB4A8: warning: Procedure fn00000001400AB310 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400ABA37: warning: Procedure fn00000001400AB8C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400A8237: warning: Procedure fn00000001400A8120 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400A837E: warning: Procedure fn00000001400A8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140018C23: warning: Procedure fn0000000140018B90 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400A8C63: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400A561B: warning: Procedure fn00000001400A53B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400A5E73: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400A5F95: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
+00000001400A52B2: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400A4AA7: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400A3737: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+00000001400A3167: warning: Procedure fn00000001400A3030 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400A2BD4: warning: Unable to resolve imported reference SHELL32.dll!SHBrowseForFolderW.
+00000001400A23A8: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+00000001400A23D1: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBlanksW.
+000000014000CCD8: warning: Procedure fn000000014000CC60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000CCB7: warning: Procedure fn000000014000CC60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000CCCA: warning: Procedure fn000000014000CC60 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400A1C66: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400A1DC3: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400A1DDF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400A1E2A: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400A19F5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+00000001400A1A2A: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400A1A36: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+00000001400A1407: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400A1443: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400A145B: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400A1488: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400A14C4: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400A14F8: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400A1534: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014009F8F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014009F92E: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014009F847: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014009F815: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014009F785: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014009E7F9: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+000000014009E804: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+000000014009E817: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014009E969: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+000000014009E974: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+000000014009E987: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+0000000140081287: warning: Procedure fn0000000140080F00 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009E241: warning: Procedure fn000000014009E206 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009E29B: warning: Procedure fn000000014009E26C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009E299: warning: Procedure fn000000014009E26C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009DB88: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+000000014009DBAD: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
+000000014009C15A: warning: Procedure fn000000014009BF80 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009C72E: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+000000014009C764: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009C8EE: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009C9C4: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009CA9A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009CB70: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009CC46: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014009B0DD: warning: Procedure fn000000014009B086 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009B106: warning: Procedure fn000000014009B086 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009B115: warning: Procedure fn000000014009B13A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009B161: warning: Procedure fn000000014009B13A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009A637: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014009A5DD: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014009A689: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014009A6CE: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014009A712: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014009A4DB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014009A36E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014009A384: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014009A0F0: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014009A14C: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140099A48: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140099E1A: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140098906: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400989A5: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140097835: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+00000001400761E3: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140097915: warning: Procedure fn0000000140097860 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140097AB5: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0000000140097564: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+00000001400975F1: warning: Procedure fn00000001400975D0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400975F1: warning: Procedure fn00000001400975D0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400975F1: warning: Procedure fn000000014009758C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009758A: warning: Procedure fn0000000140097540 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009758A: warning: Procedure fn0000000140097540 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400975CC: warning: Procedure fn000000014009758C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009753D: warning: Procedure fn00000001400974F5 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400943F1: warning: Procedure fn0000000140094290 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007E01D: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E066: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+000000014007E06F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014007E084: warning: Procedure fn000000014007DFF0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009464E: warning: Procedure fn00000001400945C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009655A: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+0000000140096578: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+00000001400948BC: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateBitmapFromScan0.
+00000001400948D5: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateHBITMAPFromBitmap.
+0000000140094A35: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+0000000140096397: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateBitmapFromScan0.
+00000001400963BA: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateHBITMAPFromBitmap.
+00000001400964F3: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+0000000140094B06: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateBitmapFromScan0.
+0000000140094B21: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateHBITMAPFromBitmap.
+0000000140094C9F: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateBitmapFromScan0.
+0000000140094CB6: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateHBITMAPFromBitmap.
+0000000140094D89: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+0000000140094D93: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+0000000140095C93: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+0000000140095CB7: warning: Unable to resolve imported reference USER32.dll!GetClassLongPtrW.
+0000000140080B62: warning: Procedure fn00000001400809F0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140093DC2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400940F4: warning: Procedure fn0000000140094130 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400941A5: warning: Procedure fn0000000140094130 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140093D64: warning: Procedure fn0000000140094130 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140093EE1: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001F8D9: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014001F968: warning: Procedure fn000000014001F8B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400217B9: warning: Procedure fn00000001400216B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400937E6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140093681: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140092F97: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140092FA5: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140092DFB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140092C2D: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092BA8: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092BB5: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092BCB: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092CBC: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092C0C: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092C1A: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092C27: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092BD1: warning: Procedure fn0000000140092B70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009262F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140091B6B: warning: Procedure fn0000000140091A80 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092191: warning: Procedure fn0000000140092169 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092191: warning: Procedure fn0000000140092169 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092191: warning: Procedure fn0000000140092140 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014009213E: warning: Procedure fn000000014009211E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014009213E: warning: Procedure fn000000014009211E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140092163: warning: Procedure fn0000000140092140 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140092072: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
+0000000140090BA5: warning: Procedure fn0000000140090B00 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140082000: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014008F3E8: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008F3C4: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008F3CA: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008EC86: warning: Procedure fn000000014008EC86 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008EB47: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+000000014008EABC: warning: Procedure fn000000014008EA50 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008E992: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
+000000014008D879: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C623: warning: Procedure fn000000014008C310 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008D414: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008D6B0: warning: Procedure fn000000014008D6A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008D6B0: warning: Procedure fn000000014008D6A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008D6A1: warning: Procedure fn000000014008D40F previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008D6A1: warning: Procedure fn000000014008D40F previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008D6A6: warning: Procedure fn000000014008D6A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008D01C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008D03A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007C8C2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BD7A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BDA6: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BDB3: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014007BDBD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008CF3E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008CBEC: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008CCBC: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C8BD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C8DB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089098: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008914C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089236: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089244: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140089251: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C6A4: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C5CD: warning: Procedure fn000000014008C3A1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014008C137: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140088A03: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008C03B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008C059: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008B09B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008B0AB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008B17F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008B1AD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008B1BB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014008B1C8: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008AFA2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A9DF: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A9FD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A29E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A36F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A452: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A460: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014008A46D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A18B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008A19B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089D1A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089DDB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089DDB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089F16: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089F24: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140089F31: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140089C5E: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400898AB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400898C9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008968C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008973C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400889A5: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400880CA: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008813E: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088159: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008866C: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088687: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400883E1: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400883FC: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400881F7: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088212: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088179: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008870B: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088726: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088232: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088746: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088766: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088245: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008841C: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008843C: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008844F: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008846D: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088488: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400884E8: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088513: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008852E: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400886A7: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400884A8: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088548: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008855B: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008857B: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088599: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400885B4: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400884C8: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400886C7: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400886DA: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400885D4: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400885F4: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400886ED: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088786: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400887BD: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088DC6: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088E02: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088E1D: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088937: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088E30: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088E4F: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088E95: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088EC1: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088ECF: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088F2F: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088EEF: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088F0F: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088F5A: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088F75: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088EA6: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008894A: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088F95: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088FB5: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088FD5: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088FF3: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140089001: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008896A: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008898A: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140089021: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140089034: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400889B0: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400889FD: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088199: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400881B9: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400881D9: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088DA9: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088266: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088291: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400882AC: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400883A5: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008832A: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088345: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400882CC: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088365: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088385: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400882EC: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008830C: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140088614: warning: Procedure fn0000000140088060 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014008692F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140086940: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140086955: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BA1B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BA27: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BA63: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007BA70: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014007BA79: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140087C90: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140087C9D: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140087CAA: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400864CB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400864DB: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140086224: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008612B: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140086149: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085B67: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085B77: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400860ED: warning: Procedure fn0000000140085B20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085C58: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085C86: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085C94: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140085CA1: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400852D9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085333: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+0000000140085347: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140085359: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140085364: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014008536F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085A77: warning: Procedure fn0000000140085A6A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140085A77: warning: Procedure fn0000000140085A6A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140085A68: warning: Procedure fn0000000140085A4E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085A68: warning: Procedure fn0000000140085A4E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085A6D: warning: Procedure fn0000000140085A6A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400858AA: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400855DD: warning: Procedure fn00000001400855CF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400855DD: warning: Procedure fn00000001400855CF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400855CD: warning: Procedure fn00000001400855B6 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400855CD: warning: Procedure fn00000001400855B6 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400855D2: warning: Procedure fn00000001400855CF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140085456: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085466: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+00000001400854DE: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008554A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014008542A: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085284: warning: Procedure fn0000000140085276 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140085284: warning: Procedure fn0000000140085276 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140085274: warning: Procedure fn000000014008525B previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085274: warning: Procedure fn000000014008525B previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085279: warning: Procedure fn0000000140085276 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140084FC2: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140085238: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
+0000000140085274: warning: Procedure fn0000000140085264 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140085274: warning: Procedure fn0000000140085264 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140084F16: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+0000000140084F29: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140084F3A: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140084F45: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+0000000140084F4F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140084D1C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+0000000140083437: warning: Procedure fn0000000140083300 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140083C23: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+00000001400833C7: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+0000000140082E2C: warning: Unable to resolve imported reference ADVAPI32.dll!GetSecurityInfo.
+0000000140082EAB: warning: Unable to resolve imported reference ADVAPI32.dll!ConvertSidToStringSidW.
+0000000140082BE4: warning: Unable to resolve imported reference ADVAPI32.dll!ConvertSidToStringSidW.
+00000001400825A1: warning: Unable to resolve imported reference gdiplus.dll!GdiplusShutdown.
+00000001400824C2: warning: Unable to resolve imported reference gdiplus.dll!GdipGetPropertySize.
+00000001400824FD: warning: Unable to resolve imported reference gdiplus.dll!GdipGetAllPropertyItems.
+00000001400823A7: warning: Unable to resolve imported reference gdiplus.dll!GdiplusStartup.
+00000001400823F4: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+0000000140082418: warning: Unable to resolve imported reference gdiplus.dll!GdipLoadImageFromFile.
+0000000140082459: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageWidth.
+0000000140082480: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHeight.
+00000001400824AB: warning: Procedure fn0000000140082350 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140081ADD: warning: Procedure fn00000001400819E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140081ADD: warning: Procedure fn00000001400819E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140081AE6: warning: Procedure fn0000000140081ADF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140081AEE: warning: Procedure fn0000000140081ADF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140081AF3: warning: Procedure fn0000000140081ADF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140081AF0: warning: Procedure fn0000000140081ADF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140081958: warning: Procedure fn0000000140081900 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140081894: warning: Unable to resolve imported reference SHELL32.dll!SHGetSpecialFolderPathW.
+00000001400818B0: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+000000014008163A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+0000000140080706: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00000001400804FB: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
+000000014007F83A: warning: Procedure fn000000014007F810 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007F838: warning: Procedure fn000000014007F810 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007F24F: warning: Unable to resolve imported reference SHLWAPI.dll!PathCanonicalizeW.
+000000014007F25A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsURLW.
+000000014007F297: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRelativeW.
+000000014007F2B7: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014007F1D2: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+000000014007F24F: warning: Unable to resolve imported reference SHLWAPI.dll!PathCanonicalizeW.
+000000014007F25A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsURLW.
+000000014007ED06: warning: Procedure fn000000014007ECCA previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007ED06: warning: Procedure fn000000014007ECCA previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007ED31: warning: Procedure fn000000014007ED08 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007ED3F: warning: Procedure fn000000014007ED08 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007ED06: warning: Procedure fn000000014007ECD8 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007ED06: warning: Procedure fn000000014007ECD8 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007ED06: warning: Procedure fn000000014007ECEE previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007ED06: warning: Procedure fn000000014007ECEE previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007E5B6: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014007E534: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007E54D: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007E451: warning: Unable to resolve imported reference SHLWAPI.dll!SHStrDupW.
+000000014007E2B5: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014007E2F6: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014007DE27: warning: Unable to resolve imported reference USERENV.dll!ExpandEnvironmentStringsForUserW.
+000000014007D1FE: warning: Procedure fn000000014007D1A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007D207: warning: Procedure fn000000014007D1A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007D1D3: warning: Procedure fn000000014007D1BB previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007CA78: warning: Procedure fn000000014007CA00 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007B9B0: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
+000000014007B9B9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
+000000014007A67B: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateSolidFill.
+000000014007A694: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateFromHDC.
+000000014007A6C1: warning: Unable to resolve imported reference gdiplus.dll!GdipFillRectangleI.
+000000014007A6CA: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteGraphics.
+000000014007A6D3: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+000000014007A74C: warning: Procedure fn000000014007A6E3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A739: warning: Procedure fn000000014007A6E3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A739: warning: Procedure fn000000014007A6E3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A710: warning: Procedure fn000000014007A6E3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A5E2: warning: Procedure fn000000014007A5CC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A54B: warning: Procedure fn000000014007A54B previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A378: warning: Procedure fn000000014007A340 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007A15C: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_413.
+00000001400760B4: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140075D45: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_412.
+0000000140075CA3: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+00000001400758BA: warning: Procedure fn0000000140075880 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140075985: warning: Procedure fn0000000140075982 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140074DF2: warning: Procedure fn0000000140074DB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140074DF2: warning: Procedure fn0000000140074DB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140074DF2: warning: Procedure fn0000000140074DB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140074E22: warning: Procedure fn0000000140074E16 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007459F: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+0000000140074A78: warning: Procedure fn0000000140074880 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140072CB3: warning: Procedure fn0000000140072C68 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140072C64: warning: Procedure fn0000000140072C40 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140072BC8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072AF9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014007286B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400728A6: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140072940: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014007297B: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400726F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400724CD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_727.
+00000001400722B3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140071FE3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140071FEF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+0000000140071FF8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+0000000140072001: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140072011: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140071CCC: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400719E8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014007086D: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070883: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007097E: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400708D3: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400708F9: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014007095F: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014006514A: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006517F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006538C: warning: Procedure fn00000001400650A0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014002AC90: warning: Procedure fn000000014002AB60 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002AC8A: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+0000000140070DD4: warning: Procedure fn0000000140070CE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400706F7: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014007110C: warning: Procedure fn0000000140070FC6 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007110C: warning: Procedure fn0000000140070FC6 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140071122: warning: Procedure fn0000000140071110 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070E20: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140070CB0: warning: Procedure fn0000000140070C0B previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140070C05: warning: Procedure fn0000000140070BE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070C05: warning: Procedure fn0000000140070BE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070AFE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014007097E: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007086D: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007097E: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400707E3: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070883: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070883: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007086D: warning: Procedure fn00000001400707E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070329: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014007036B: warning: Procedure fn0000000140070279 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007036B: warning: Procedure fn0000000140070279 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007036B: warning: Procedure fn0000000140070279 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014007036B: warning: Procedure fn0000000140070279 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140070371: warning: Procedure fn000000014007036D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140070371: warning: Procedure fn000000014007036D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014007024D: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014006FC7F: warning: Procedure fn000000014006FAF0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014006F93B: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014006F507: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014006F2AC: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014006F2DE: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006EC58: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006F0FD: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006F147: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006EF67: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006EED6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006EE60: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014006ECB8: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014006EBFA: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014006EAD0: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006EAED: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014006EB41: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014006EB41: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014006E93A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006E968: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006E49C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014006E3AB: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014006E3CD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006C3FC: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006BDD5: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+000000014006BB70: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006BB8D: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006BBC4: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014006BBD1: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014006B432: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006B290: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006B130: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006AFE0: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006A217: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006A248: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014000BDBF: warning: Procedure fn000000014000BD40 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014006885E: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+000000014006890A: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveExtensionW.
+000000014006AAC4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006AAE1: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006AB1A: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014006AB27: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014006A9A0: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006A58D: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006A5BE: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+000000014006983C: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140069684: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0000000140069570: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+0000000140069596: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+0000000140068A1F: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140068C18: warning: Procedure fn00000001400689D0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140068E5B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140068C62: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140068C6E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140068B79: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014002B480: warning: Procedure fn000000014002B130 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140068A46: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+0000000140068A75: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140068646: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00000001400685DD: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00000001400683AD: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400683E2: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400683FB: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140068258: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014006828A: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400682A0: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067FE5: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140068019: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+000000014006802F: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067E25: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140067E59: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067E72: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067BAF: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140067BE4: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067BFA: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+000000014006796F: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400679A4: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+00000001400679BA: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140067811: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140067680: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+000000014006768D: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+000000014006754B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140067568: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006759E: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400675D6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400675F3: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006762C: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014006764F: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014006765E: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00000001400676D0: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
+00000001400676FE: warning: Procedure fn0000000140067532 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140067735: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+0000000140067672: warning: Procedure fn0000000140067670 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014006769E: warning: Procedure fn0000000140067670 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014006752B: warning: Procedure fn00000001400674E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400676AB: warning: Procedure fn0000000140067532 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400676AB: warning: Procedure fn0000000140067532 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014006733A: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400671F8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140067223: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+000000014006723C: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140066A00: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066A1D: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066A56: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066AAE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066ACB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066B04: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066B4A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066B59: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066BEE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066C0E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066C6B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066CA1: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066CBB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066CF1: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066CFE: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066D0B: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066BEE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066C0E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140066C6B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066CA1: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066CBB: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066CF1: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066CFE: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066D0B: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00000001400665A4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400665C1: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400665F6: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066612: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006662F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066667: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140066671: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066680: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140066466: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014006633C: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140066365: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+000000014006637E: warning: Unable to resolve imported reference SHLWAPI.dll!PathCombineW.
+0000000140066388: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0000000140066395: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+00000001400660B2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400660CF: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066107: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014006613E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006615B: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140066193: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400661B9: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+00000001400661C8: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140065E0B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065E28: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140065E61: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140065E9B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065EB8: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140065EF1: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140065F17: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140065F26: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140065F65: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065F89: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065BA4: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140065A69: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065A88: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065A1E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400658C9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400658E8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006587E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400657C9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400657E8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065759: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140065778: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140064DA9: warning: Procedure fn00000001400649D0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140065098: warning: Procedure fn0000000140064DB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400653C5: warning: Procedure fn00000001400653A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400651DA: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140064F4C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140064B35: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140064A8B: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140064AC0: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400647BA: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+00000001400647CA: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140064837: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+00000001400645A7: warning: Procedure fn0000000140064560 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400639EF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140063A0C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140063A45: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140063A52: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140063853: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014006370F: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+00000001400634E5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140063502: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014006353D: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140063569: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014006335F: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006322C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006309D: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140062F2F: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140062BFB: warning: Procedure fn0000000140062B50 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014006278C: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140062797: warning: Unable to resolve imported reference SHLWAPI.dll!PathFindExtensionW.
+0000000140062539: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140062556: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140062592: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400625A0: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014006243F: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+0000000140062462: warning: Unable to resolve imported reference IPHLPAPI.DLL!GetAdaptersAddresses.
+0000000140062399: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+0000000140062300: warning: Procedure fn0000000140062332 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140062338: warning: Procedure fn0000000140062338 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140062332: warning: Procedure fn0000000140062332 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400622E3: warning: Procedure fn00000001400622BF previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140062279: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+00000001400621E0: warning: Procedure fn0000000140062212 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140062218: warning: Procedure fn0000000140062218 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140062212: warning: Procedure fn0000000140062212 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400621C3: warning: Procedure fn000000014006219F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140061F52: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+000000014006114A: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+00000001400615FF: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+0000000140061628: warning: Procedure fn00000001400610E0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140061D86: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140061056: warning: Procedure fn0000000140060F40 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140060E29: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+0000000140061016: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0000000140053622: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
+000000014005F484: warning: Procedure fn000000014005F484 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014005CFD6: warning: Procedure fn000000014005CFD4 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014005EE5B: warning: Procedure fn000000014005EE10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014005CFCB: warning: Procedure fn000000014005CFC0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014005A5FF: warning: Procedure fn000000014005A5F0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140060D60: warning: Unable to resolve imported reference KERNEL32.dll!RtlUnwindEx.
+0000000140054608: warning: Procedure fn00000001400545EC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140056955: warning: Procedure fn0000000140056918 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140054B14: warning: Procedure fn000000014004B61C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014005BDDA: warning: Rewriting x86 opcode 'stmxcsr' is not supported yet.
+000000014005BDDA: warning: Rewriting x86 opcode 'stmxcsr' is not supported yet.
+000000014002CBE8: warning: Procedure fn000000014002CBE8 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014004D40C: warning: Procedure fn000000014004D40C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014004C41C: warning: Procedure fn000000014004C41C previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014004C030: warning: Procedure fn000000014004C030 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014004BB89: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140008171: warning: Procedure fn0000000140008100 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400080F5: warning: Procedure fn0000000140008030 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140005828: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002EB1C: warning: Procedure fn000000014002EACC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140001EAB: warning: Procedure fn0000000140001E20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002B27D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014002B2FE: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014002B30F: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014002B323: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014002ABF4: warning: Procedure fn000000014002AB60 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002AEF1: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014002AF82: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
+000000014002ADBD: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014002A5DF: warning: Procedure fn000000014002A580 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002A5DF: warning: Procedure fn000000014002A580 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140029CCF: warning: Procedure fn0000000140029BE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002955F: warning: Procedure fn0000000140029470 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140029705: warning: Procedure fn000000014002962E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400296B9: warning: Procedure fn00000001400296B2 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400261A5: warning: Procedure fn0000000140026110 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400283C9: warning: Procedure fn00000001400283AA previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400283E5: warning: Procedure fn00000001400283AA previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400283FF: warning: Procedure fn00000001400283AA previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140028403: warning: Procedure fn0000000140028400 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400283A6: warning: Procedure fn0000000140028360 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140024BEB: warning: Procedure fn0000000140024BA0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140024287: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsSameRootW.
+0000000140023B63: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140023B8C: warning: Procedure fn0000000140023AD0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140023C07: warning: Procedure fn0000000140023BB2 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140023A9B: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+000000014002395D: warning: Procedure fn00000001400238F0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400239F6: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+0000000140023839: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140020864: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140020B0A: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140020B4F: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+0000000140020B68: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140020BBB: warning: Procedure fn0000000140020A40 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140020A30: warning: Procedure fn0000000140020830 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014002369E: warning: Procedure fn0000000140023647 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002369E: warning: Procedure fn0000000140023647 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400235FF: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140023616: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014002369E: warning: Procedure fn000000014002365B previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002369E: warning: Procedure fn000000014002365B previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140023585: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400235B6: warning: Procedure fn00000001400234B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400235BC: warning: Procedure fn00000001400234B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400236FF: warning: Procedure fn00000001400236F7 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140023407: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140022302: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderPathW.
+00000001400216A2: warning: Procedure fn0000000140021470 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140023346: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014002336C: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400231CA: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
+0000000140021067: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveBackslashW.
+0000000140021083: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+0000000140021464: warning: Procedure fn0000000140020FE0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140020CBD: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+0000000140020D68: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripPathW.
+0000000140022CBA: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
+000000014002220F: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140021528: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderPathW.
+000000014002120F: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014002129D: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+00000001400212D9: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400213A6: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+000000014002140E: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+00000001400212F8: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpIW.
+0000000140020A85: warning: Procedure fn0000000140020A40 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140020A83: warning: Procedure fn0000000140020A40 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014002092C: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+0000000140020971: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+000000014002099A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+0000000140020719: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140020757: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
+000000014001FEF2: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014001FF1E: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+000000014001FF92: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
+00000001400200B7: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
+00000001400200C5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
+00000001400200E4: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+00000001400200FA: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140020475: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+0000000140020261: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+0000000140020286: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014002029F: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014001FD1A: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FD2C: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FD43: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FD55: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FD6E: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FD80: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
+000000014001FDB5: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014001FDD2: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014001FDF3: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014001FE10: warning: Unable to resolve imported reference SHELL32.dll!SHGetPathFromIDListW.
+000000014001FE64: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
+000000014001F9D5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001F8F9: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014001F771: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001F654: warning: Unable to resolve imported reference COMCTL32.dll!Ordinal_413.
+000000014001EC10: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+000000014001EC80: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014001EB2D: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+000000014001EB3B: warning: Unable to resolve imported reference gdiplus.dll!GdipFree.
+000000014001EA8E: warning: Unable to resolve imported reference gdiplus.dll!GdipSetPathGradientSurroundColorsWithCount.
+000000014001E9EC: warning: Unable to resolve imported reference gdiplus.dll!GdipGetPathGradientPointCount.
+000000014001DA3B: warning: Unable to resolve imported reference gdiplus.dll!GdipCreatePath.
+000000014001DA9F: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateFromHDC.
+000000014001DAD0: warning: Unable to resolve imported reference gdiplus.dll!GdipAddPathRectangleI.
+000000014001DAF8: warning: Unable to resolve imported reference gdiplus.dll!GdipCreatePathGradientFromPath.
+000000014001DB0F: warning: Unable to resolve imported reference gdiplus.dll!GdipSetPathGradientCenterPointI.
+000000014001DB24: warning: Unable to resolve imported reference gdiplus.dll!GdipSetPathGradientCenterColor.
+000000014001DB5F: warning: Unable to resolve imported reference gdiplus.dll!GdipFillRectangleI.
+000000014001DB7F: warning: Unable to resolve imported reference gdiplus.dll!GdipCreatePen1.
+000000014001DBA1: warning: Unable to resolve imported reference gdiplus.dll!GdipDrawLineI.
+000000014001DBAB: warning: Unable to resolve imported reference gdiplus.dll!GdipDeletePen.
+000000014001DBB5: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+000000014001DBBF: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteGraphics.
+000000014001DBCA: warning: Unable to resolve imported reference gdiplus.dll!GdipDeletePath.
+000000014001E82E: warning: Procedure fn000000014001E812 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001E810: warning: Procedure fn000000014001E7C7 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001E810: warning: Procedure fn000000014001E7C7 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001E812: warning: Procedure fn000000014001E812 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001DFD9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001DFE5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
+000000014001DFF0: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_16.
+000000014001DFF9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
+000000014001E009: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
+000000014001E0FE: warning: Procedure fn000000014001DFD1 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001D391: error: Value was either too large or too small for an Int64.
+000000014001D14A: warning: Unable to resolve imported reference USER32.dll!GetWindowLongPtrW.
+000000014001D196: warning: Unable to resolve imported reference USER32.dll!SetWindowLongPtrW.
+000000014001D0E9: warning: Unable to resolve imported reference gdiplus.dll!GdiplusShutdown.
+000000014001C5AB: warning: Unable to resolve imported reference gdiplus.dll!GdipCloneBrush.
+000000014001C5BD: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+000000014001C5EC: warning: Unable to resolve imported reference gdiplus.dll!GdipDeleteBrush.
+000000014001C421: warning: Procedure fn000000014001C34A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001C3D5: warning: Procedure fn000000014001C3CE previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001BB96: warning: Procedure fn000000014001BB80 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001BBAC: warning: Procedure fn000000014001BB80 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400E04A7: warning: Procedure fn00000001400E0460 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140017E36: warning: Procedure fn0000000140017CB4 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140017E36: warning: Procedure fn0000000140017CB4 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140017E46: warning: Procedure fn0000000140017E38 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140017C5B: warning: Unable to resolve imported reference gdiplus.dll!GdipCloneImage.
+0000000140017C6D: warning: Unable to resolve imported reference gdiplus.dll!GdipAlloc.
+0000000140017C1A: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageWidth.
+0000000140017BDA: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHeight.
+0000000140017B9D: warning: Unable to resolve imported reference gdiplus.dll!GdipDisposeImage.
+0000000140017BAB: warning: Unable to resolve imported reference gdiplus.dll!GdipFree.
+00000001400174CF: warning: Procedure fn0000000140017460 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140017517: warning: Procedure fn0000000140017460 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001740F: warning: Procedure fn0000000140017390 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140016B1B: warning: Procedure fn0000000140016AB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400142A7: warning: Procedure fn000000014001429E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400142A7: warning: Procedure fn000000014001429E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001429C: warning: Procedure fn0000000140014286 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001429C: warning: Procedure fn0000000140014286 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001429E: warning: Procedure fn000000014001429E previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013FEE: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013FC0: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013FEE: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013FC0: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014001394A: warning: Procedure fn00000001400135B0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013C48: warning: Procedure fn0000000140013C1C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013C48: warning: Procedure fn0000000140013C1C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013C4D: warning: Procedure fn0000000140013C4A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013C4D: warning: Procedure fn0000000140013C4A previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140013C48: warning: Procedure fn0000000140013C2C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140013C48: warning: Procedure fn0000000140013C2C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000001400121C9: warning: Procedure fn0000000140012154 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140012211: warning: Procedure fn0000000140012154 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140012102: warning: Procedure fn0000000140012080 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000FCDB: warning: Procedure fn000000014000FC70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000CBC4: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000CBBC: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000CBCD: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000AEAB: warning: Procedure fn000000014000AD14 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000AEAB: warning: Procedure fn000000014000AD14 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014000AEBF: warning: Procedure fn000000014000AEB0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400E10B0: warning: Procedure fn00000001400E1090 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400057F6: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140005821: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000579F: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400057DC: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140005811: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140005819: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
+  at Reko.Core.Output.CodeFormatter.WriteExpression (Reko.Core.Expressions.Expression expr) <0x40458180 + 0x0002a> in <filename unknown>:0 
+  at Reko.Core.Output.CodeFormatter.WriteActuals (Reko.Core.Expressions.Expression[] arguments) <0x4045c230 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Output.CodeFormatter.VisitApplication (Reko.Core.Expressions.Application appl) <0x4045c1b0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x4045c120 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Output.CodeFormatter.VisitSideEffect (Reko.Core.Code.SideEffect side) <0x4045c0c0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.Code.SideEffect.Accept (InstructionVisitor v) <0x4045c000 + 0x0002a> in <filename unknown>:0 
+  at Reko.Core.Output.ProcedureFormatter.WriteBlock (Reko.Core.Block block, Reko.Core.Output.CodeFormatter writer) <0x40457ac0 + 0x000e1> in <filename unknown>:0 
+  at Reko.Core.Output.ProcedureFormatter.WriteProcedureBlocks () <0x40456fd0 + 0x00123> in <filename unknown>:0 
+  at Reko.Core.Procedure.Write (Boolean emitFrame, Boolean showEdges, System.IO.TextWriter writer) <0x40455090 + 0x001f3> in <filename unknown>:0 
+  at Reko.Core.Procedure.Write (Boolean emitFrame, System.IO.TextWriter writer) <0x40455050 + 0x00027> in <filename unknown>:0 
+  at Reko.DecompilerDriver.EmitProgram (Reko.Core.Program program, Reko.Analysis.DataFlowAnalysis dfa, System.IO.TextWriter output) <0x40454b60 + 0x00327> in <filename unknown>:0 
+  at Reko.DecompilerDriver+<>c__DisplayClass29_0.<ScanProgram>b__1 (System.IO.TextWriter w) <0x40454b20 + 0x00023> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineHost.WriteIntermediateCode (Reko.Core.Program program, System.Action`1 writer) <0x40454a80 + 0x0004b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ScanProgram (Reko.Core.Program program) <0x403d8c20 + 0x00367> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ScanPrograms () <0x403d8a80 + 0x00087> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40377d60 + 0x00208> in <filename unknown>:0 

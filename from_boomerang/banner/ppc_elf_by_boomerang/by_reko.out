@@ -1,0 +1,36 @@
+Using options:
+100122B8: error: PowerPC instruction 'illegal' is not supported yet.
+10000438: warning: Call target address 10000000 is invalid.
+100122A8: error: PowerPC instruction 'illegal' is not supported yet.
+100122A8: error: PowerPC instruction 'illegal' is not supported yet.
+100122B0: error: PowerPC instruction 'illegal' is not supported yet.
+100122B0: error: PowerPC instruction 'illegal' is not supported yet.
+100122A0: error: PowerPC instruction 'illegal' is not supported yet.
+100122A0: error: PowerPC instruction 'illegal' is not supported yet.
+100122A0: error: PowerPC instruction 'illegal' is not supported yet.
+100004D8: error: An error occurred while processing instruction at address 100004D8.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40dead30 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40c42bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40dea190 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40de9e20 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40de1590 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40de7770 + 0x0018c> in <filename unknown>:0 
+100006AC: error: An error occurred while processing instruction at address 100006AC.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40dead30 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40c42bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40dea190 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40de9e20 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40de1590 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40de7770 + 0x0018c> in <filename unknown>:0 
+10000690: error: An error occurred while processing instruction at address 10000690.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40dead30 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40c42bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40dea190 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40de9e20 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40de1590 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40de7770 + 0x0018c> in <filename unknown>:0 
+100120F4: warning: Expected sizes of arrays to have been determined by now
+100120F4: warning: Expected sizes of arrays to have been determined by now

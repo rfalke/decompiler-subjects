@@ -1,0 +1,10 @@
+Using options:
+08048310: error: The method or operation is not implemented.
+080564C3: error: An error occurred while processing instruction at address 080564C3.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x413273c0 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41150bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41326150 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41325de0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4131dc70 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41323820 + 0x0018c> in <filename unknown>:0 

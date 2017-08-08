@@ -1,0 +1,309 @@
+Using options:
+004126D0: warning: Unable to guess parameters of MSVCR80.dll!_amsg_exit.
+004128C4: warning: Unable to guess parameters of MSVCR80.dll!_initterm_e.
+004128BE: warning: Unable to guess parameters of MSVCR80.dll!_initterm.
+00412381: warning: Unable to guess parameters of MSVCR80.dll!__initenv.
+004035BB: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004050E4: warning: Unable to resolve imported reference SDL.dll!SDL_Init.
+004050F6: warning: Unable to resolve imported reference SDL.dll!SDL_ShowCursor.
+004050EA: warning: Unable to resolve imported reference SDL.dll!SDL_SetVideoMode.
+004027C3: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+00405114: warning: Unable to resolve imported reference SDL.dll!SDL_Quit.
+004027FD: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004023D7: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004023F7: warning: Unable to resolve imported reference MSVCR80.dll!fopen.
+00412AC6: warning: Unable to guess parameters of MSVCR80.dll!_crt_debugger_hook.
+00412AC6: warning: Unable to guess parameters of MSVCR80.dll!_crt_debugger_hook.
+00412500: warning: Unable to guess parameters of MSVCR80.dll!_setjmp3.
+0040859D: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+004085A7: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004085B7: warning: Unable to resolve imported reference MSVCR80.dll!longjmp.
+00408582: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+0040858C: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+00408697: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+004086A1: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004086C3: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+004086CD: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004086EF: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+004086F9: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004085D5: warning: Procedure fn00408490 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00405481: warning: Unable to determine index variable for indirect jump.
+00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408807: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408813: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408825: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00408802: warning: Procedure fn00408740 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00412500: warning: Unable to guess parameters of MSVCR80.dll!_setjmp3.
+004053E1: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+00402449: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00402477: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00412500: warning: Unable to guess parameters of MSVCR80.dll!_setjmp3.
+004024C9: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+0040A78A: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+0040A7BA: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+0040A28B: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+0040A295: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+0040AA4B: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+0040AA55: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+00409097: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+00408FF7: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+0040F414: error: Unexpected 5 fstsw mask for mov opcode .
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00412512: warning: Unable to guess parameters of MSVCR80.dll!_CIpow.
+00410565: warning: Unable to resolve imported reference MSVCR80.dll!sprintf.
+004025A2: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+004025BC: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+0040276E: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00401DC1: warning: Unable to resolve imported reference MSVCR80.dll!fopen.
+00401DE2: warning: Unable to resolve imported reference MSVCR80.dll!fclose.
+00401E30: warning: Unable to guess parameters of MSVCR80.dll!__iob_func.
+00401E3A: warning: Unable to resolve imported reference MSVCR80.dll!fprintf.
+004022CA: warning: Unable to resolve imported reference libmikmod.dll!MikMod_RegisterAllDrivers.
+004022D0: warning: Unable to resolve imported reference libmikmod.dll!MikMod_RegisterAllLoaders.
+004022D6: warning: Unable to resolve imported reference libmikmod.dll!md_mode.
+004022DB: warning: Unable to resolve imported reference libmikmod.dll!md_reverb.
+004022EE: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Init.
+004022F4: warning: Unable to resolve imported reference libmikmod.dll!md_mode.
+004022FE: warning: Unable to resolve imported reference libmikmod.dll!md_reverb.
+00402310: warning: Unable to resolve imported reference libmikmod.dll!Player_Load.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+0040373A: warning: Unable to resolve imported reference libmikmod.dll!Player_Start.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152AE: warning: Unable to guess parameters of MSVCR80.dll!_CIsqrt.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+0040394C: warning: Unable to resolve imported reference libmikmod.dll!Player_SetVolume.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+004152A8: warning: Unable to guess parameters of MSVCR80.dll!_CIcos.
+004152A2: warning: Unable to guess parameters of MSVCR80.dll!_CIsin.
+0040397D: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Update.
+0040510E: warning: Unable to resolve imported reference SDL.dll!SDL_Flip.
+00405108: warning: Unable to resolve imported reference SDL.dll!SDL_SetColors.
+004050FC: warning: Unable to resolve imported reference SDL.dll!SDL_LockSurface.
+00402981: warning: Unable to resolve imported reference MSVCR80.dll!printf.
+00405102: warning: Unable to resolve imported reference SDL.dll!SDL_UnlockSurface.
+004050DE: warning: Unable to resolve imported reference SDL.dll!SDL_UpdateRect.
+004050F0: warning: Unable to resolve imported reference SDL.dll!SDL_PollEvent.
+004050F0: warning: Unable to resolve imported reference SDL.dll!SDL_PollEvent.
+004039B8: warning: Unable to resolve imported reference libmikmod.dll!MikMod_Exit.
+004123EF: warning: Unable to guess parameters of MSVCR80.dll!_cexit.
+fn00408804: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x42197b60 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41f6fbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x4217c5c0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x421810f0 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x4212cb20 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitOutArgument (Reko.Core.Expressions.OutArgument outArg) <0x42191270 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Expressions.OutArgument.Accept (IExpressionVisitor visitor) <0x42191230 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x4214eb80 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x42144b30 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x42181550 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x42141810 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x421808a0 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x421806e0 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4216cdc0 + 0x0046f> in <filename unknown>:0 
+004084BA: error: An error occurred while processing the statement word32 ecx_146 = fp - 0x00000011 - dwArg08.
+    Pulling difference ptr32 and (ptr (struct (0 T_23585 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x421a9f90 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x42196f80 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x42106830 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x421a78a0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4219d620 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x00289> in <filename unknown>:0 
+004084CD: error: An error occurred while processing the statement word32 ebx_154 = fp - 0x00000014 - dwArg08.
+    Pulling difference ptr32 and (ptr (struct (0 T_23585 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x421a9f90 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x42196f80 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x42106830 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x421a78a0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4219d620 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x00289> in <filename unknown>:0 
+004084CF: error: An error occurred while processing the statement word32 ebp_156 = fp - 0x00000012 - dwArg08.
+    Pulling difference ptr32 and (ptr (struct (0 T_23585 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x421a9f90 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x42196f80 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x42106830 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x421a78a0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4219d620 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x00289> in <filename unknown>:0 
+004084D7: error: An error occurred while processing the statement word32 edi_159 = fp - 0x00000013 - dwArg08.
+    Pulling difference ptr32 and (ptr (struct (0 T_23585 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x421a9f90 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x42196f80 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x42106830 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x421a78a0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4219d620 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x00289> in <filename unknown>:0 
+004084D9: error: An error occurred while processing the statement word32 ecx_160 = fp - 0x00000010 - dwArg08.
+    Pulling difference ptr32 and (ptr (struct (0 T_23585 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x421a9f90 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x42196f80 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x42106830 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x421a78a0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4219d620 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x00289> in <filename unknown>:0 
+: error: Error when reconstructing types.
+    Specified argument was out of the range of valid values.
+Parameter name: Linear address 00000000 is not in known segment.
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x4217cdf0 + 0x0017f> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x421af700 + 0x0002f> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x421a67d0 + 0x002d5> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x4219f670 + 0x00597> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x4219f000 + 0x0022f> in <filename unknown>:0 
+fn004052B0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn004064B0: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x42197b60 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41f6fbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (DirectedGraph`1 graph, System.Collections.Generic.Dictionary`2 idoms) <0x42175e20 + 0x003e7> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (DirectedGraph`1 graph, Reko.Structure.Region entryNode) <0x42173160 + 0x0011f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x001cb> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn004085C0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn004087F0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00408804: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x421c0d30 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x42181fd0 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x421b2680 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x421b2000 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn00409E10: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l00409EEB (Tail) => l00409F0D
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x421bd430 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x421bcf10 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x421bde50 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x421bddd0 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x421bd960 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x421b60d0 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn0040C570: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l0040C6D7 (Tail) => l0040C717
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x421bd430 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x421bcf10 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x421bde50 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x421bddd0 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x421bd960 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x421b60d0 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn0040D5E0: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l0040D625 (IncSwitch) => l0040E54A
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x421bd430 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x421bcf10 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x421bde50 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x421bddd0 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x421bd960 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x421b60d0 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn0040E5E0: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l0040E93E (Tail) => l0040E96F
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x421bd430 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x421bcf10 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x421bde50 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x421bddd0 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x421bd960 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x421b60d0 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn0040F950: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l0040FA32 (Tail) => l0040FA40
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x421bd430 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x421bcf10 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x421bde50 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x421bddd0 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x421bd960 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x421b60d0 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn00412D50: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x42197b60 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41f6fbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (DirectedGraph`1 graph, System.Collections.Generic.Dictionary`2 idoms) <0x42175e20 + 0x003e7> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (DirectedGraph`1 graph, Reko.Structure.Region entryNode) <0x42173160 + 0x0011f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x001cb> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 
+fn00414B40: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x421bb840 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x421bb070 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x421b9940 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x421b1a90 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x421b0410 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x421aff30 + 0x00255> in <filename unknown>:0 

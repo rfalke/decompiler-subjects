@@ -1,0 +1,13 @@
+Using options:
+fn00401088: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x4071e7e0 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x404ecbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Core.Lib.DiGraph`1[T].Successors (Reko.Core.Lib.T item) <0x40716f50 + 0x00023> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSequence (Reko.Structure.Region n) <0x4071bd00 + 0x00031> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x40719850 + 0x0007f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40715480 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40714220 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40713d40 + 0x00255> in <filename unknown>:0 
+00402136: warning: Expected sizes of arrays to have been determined by now
+00402136: warning: Expected sizes of arrays to have been determined by now

@@ -1,0 +1,14 @@
+Using options:
+10010ABC: error: PowerPC instruction 'illegal' is not supported yet.
+100003E4: warning: Call target address 10000000 is invalid.
+10010AB4: error: PowerPC instruction 'illegal' is not supported yet.
+10010AB4: error: PowerPC instruction 'illegal' is not supported yet.
+10010AB4: error: PowerPC instruction 'illegal' is not supported yet.
+10010AB4: error: PowerPC instruction 'illegal' is not supported yet.
+10010AB4: error: PowerPC instruction 'illegal' is not supported yet.
+10000518: error: An error occurred while processing instruction at address 10000518.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41e19240 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41e18ed0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41e10420 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41e16820 + 0x0018c> in <filename unknown>:0 

@@ -1,0 +1,5 @@
+Using options:
+100109BC: error: PowerPC instruction 'illegal' is not supported yet.
+100003E8: warning: Call target address 10000000 is invalid.
+100109C4: error: PowerPC instruction 'illegal' is not supported yet.
+100109C4: error: PowerPC instruction 'illegal' is not supported yet.

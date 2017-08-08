@@ -1,0 +1,4 @@
+Using options:
+09F4:00DE: warning: Can't determine size of jump vector; probing only one entry.
+fn0967_0037: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0967_005D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

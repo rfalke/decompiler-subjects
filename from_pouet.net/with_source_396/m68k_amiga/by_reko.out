@@ -1,0 +1,11 @@
+Using options:
+00001066: error: An error occurred while processing the statement branch a0_31 - 0x000106A4 <u 0x00000000 l00001062.
+    Pulling difference (ptr (struct 0001 (0 byte b0000))) and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40c0c7e0 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c08830 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40b91ec0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c08830 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40b91ec0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x40c08630 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x40bb8190 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x40c06220 + 0x00289> in <filename unknown>:0 

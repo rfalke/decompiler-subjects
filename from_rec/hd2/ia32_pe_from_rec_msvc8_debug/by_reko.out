@@ -1,0 +1,58 @@
+Using options:
+00412FF0: warning: Unable to guess parameters of MSVCR90D.dll!_amsg_exit.
+004133B2: warning: Unable to guess parameters of MSVCR90D.dll!_initterm_e.
+004133AC: warning: Unable to guess parameters of MSVCR90D.dll!_initterm.
+00411E9E: warning: Unable to guess parameters of MSVCR90D.dll!_CrtDbgReportW.
+00411EE8: warning: Unable to guess parameters of MSVCR90D.dll!_CrtSetCheckCount.
+00411EF1: warning: Unable to guess parameters of MSVCR90D.dll!__initenv.
+00411888: warning: Unable to guess parameters of MSVCR90D.dll!_stat64i32.
+004133F4: warning: Unable to guess parameters of MSVCR90D.dll!_crt_debugger_hook.
+00411707: warning: Unable to resolve imported reference MSVCR90D.dll!fopen.
+0041175A: warning: Unable to resolve imported reference MSVCR90D.dll!fread.
+0041179A: warning: Unable to resolve imported reference MSVCR90D.dll!fclose.
+00411447: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
+0041149A: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
+004110AA: error: Specified cast is not valid.
+004110BE: error: Specified cast is not valid.
+004110C8: error: Specified cast is not valid.
+004115BE: warning: Unable to resolve imported reference MSVCR90D.dll!printf.
+00411F3E: warning: Unable to guess parameters of MSVCR90D.dll!_cexit.
+004127A2: error: An error occurred while processing the statement branch ecx_105 - (dwArg08 + 0x00000001) >u 0xFFFFFC2D l0041281F.
+    Pulling difference (ptr (struct (0 T_569 t0000))) and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40711c60 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x4070fa00 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x406af280 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4070d0f0 + 0x00289> in <filename unknown>:0 
+00412810: error: An error occurred while processing the statement word32 ecx_206 = eax_175 - 0x00415BB0 >>u 0x00000002.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40711c60 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x4070e1c0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x40703300 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4070d0f0 + 0x00289> in <filename unknown>:0 
+00412817: error: An error occurred while processing the statement word32 ecx_220 = eax_175 - 0x00415BB0 & 0x00000003.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40711c60 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x406feb70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40682f60 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x4070e1c0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x40703300 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4070d0f0 + 0x00289> in <filename unknown>:0 
+: warning: Type transformer has looped 51 times, quitting prematurely.
+00415B64: warning: Expected sizes of arrays to have been determined by now
+00415B7C: warning: Expected sizes of arrays to have been determined by now
+00415B94: warning: Expected sizes of arrays to have been determined by now
+00417008: warning: Expected sizes of arrays to have been determined by now
+00415B64: warning: Expected sizes of arrays to have been determined by now
+00415B7C: warning: Expected sizes of arrays to have been determined by now
+00415B94: warning: Expected sizes of arrays to have been determined by now
+00417008: warning: Expected sizes of arrays to have been determined by now

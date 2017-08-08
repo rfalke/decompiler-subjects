@@ -1,0 +1,26 @@
+Using options:
+08048340: error: The method or operation is not implemented.
+08057F8B: warning: Rewriting x86 opcode 'btc' is not supported yet.
+08057F8B: warning: Rewriting x86 opcode 'btc' is not supported yet.
+08057FD0: warning: Rewriting x86 opcode 'btc' is not supported yet.
+080580B9: warning: Rewriting x86 opcode 'btc' is not supported yet.
+080581A2: warning: Rewriting x86 opcode 'btc' is not supported yet.
+0805828C: warning: Rewriting x86 opcode 'btc' is not supported yet.
+080586FC: warning: Rewriting x86 opcode 'btc' is not supported yet.
+080586FC: warning: Rewriting x86 opcode 'btc' is not supported yet.
+08058740: warning: Rewriting x86 opcode 'btc' is not supported yet.
+08058828: warning: Rewriting x86 opcode 'btc' is not supported yet.
+08058910: warning: Rewriting x86 opcode 'btc' is not supported yet.
+080589F9: warning: Rewriting x86 opcode 'btc' is not supported yet.
+0805C253: error: The method or operation is not implemented.
+0805C347: error: The method or operation is not implemented.
+0805C430: error: The method or operation is not implemented.
+0805C519: error: The method or operation is not implemented.
+080D18C3: error: An error occurred while processing instruction at address 080D18C3.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x4217f380 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41f9dbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x4217de10 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x4217daa0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x42175800 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x4217b9c0 + 0x0018c> in <filename unknown>:0 

@@ -1,0 +1,1072 @@
+Using options:
+08049DA1: warning: Unable to resolve imported reference dup.
+08049F14: warning: Unable to resolve imported reference dup.
+0804A940: error: The method or operation is not implemented.
+080687B1: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+0805D6CE: warning: Unable to resolve imported reference tcflow.
+08049DD4: warning: Unable to resolve imported reference tcflow.
+0805F53E: warning: Unable to resolve imported reference dlerror.
+08049FD4: warning: Unable to resolve imported reference dlerror.
+0805B83E: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+080682A6: warning: Unable to resolve imported reference fchmod.
+0804A074: warning: Unable to resolve imported reference fchmod.
+08068312: warning: Unable to resolve imported reference fchmod.
+0804A074: warning: Unable to resolve imported reference fchmod.
+0805FBF3: warning: Unable to resolve imported reference fchmod.
+0804A074: warning: Unable to resolve imported reference fchmod.
+0806A5D5: warning: Unable to resolve imported reference gethostname.
+08049FC4: warning: Unable to resolve imported reference gethostname.
+0806A4C9: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+0806A3CB: warning: Unable to resolve imported reference sin.
+0804A044: warning: Unable to resolve imported reference sin.
+0806A205: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+0806307D: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08066728: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08066309: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08066313: warning: Unable to resolve imported reference tcgetattr.
+08049E84: warning: Unable to resolve imported reference tcgetattr.
+08066930: warning: Unable to resolve imported reference tcflow.
+08049DD4: warning: Unable to resolve imported reference tcflow.
+08066602: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+080665A1: warning: Unable to resolve imported reference getpwnam.
+0804A054: warning: Unable to resolve imported reference getpwnam.
+080664D2: warning: Unable to resolve imported reference readlink.
+08049FE4: warning: Unable to resolve imported reference readlink.
+0806627C: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+08066249: warning: Unable to resolve imported reference gethostname.
+08049FC4: warning: Unable to resolve imported reference gethostname.
+0806BE2C: warning: The call or jump table has invalid addresses; stopping.
+080635BF: warning: Unable to resolve imported reference gethostbyname_r.
+0804A004: warning: Unable to resolve imported reference gethostbyname_r.
+080635D0: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08063029: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08062B97: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08062B62: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08062B1B: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+080621BF: warning: Unable to resolve imported reference fchmod.
+0804A074: warning: Unable to resolve imported reference fchmod.
+08061BD1: warning: Unable to resolve imported reference getgroups.
+0804A024: warning: Unable to resolve imported reference getgroups.
+08061B8E: warning: Unable to resolve imported reference execvp.
+08049F34: warning: Unable to resolve imported reference execvp.
+08061AFD: warning: Unable to resolve imported reference sigaction.
+08049ED4: warning: Unable to resolve imported reference sigaction.
+080618B0: warning: Unable to resolve imported reference inet_pton.
+08049EB4: warning: Unable to resolve imported reference inet_pton.
+080619D9: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08061995: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060CB6: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060CCD: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060CB6: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060C34: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060BC9: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060B57: warning: Unable to resolve imported reference cfgetispeed.
+08049E24: warning: Unable to resolve imported reference cfgetispeed.
+08060024: warning: Unable to resolve imported reference expm1.
+08049EA4: warning: Unable to resolve imported reference expm1.
+0805BEA0: warning: Unable to resolve imported reference gethostname.
+08049FC4: warning: Unable to resolve imported reference gethostname.
+0805BEB6: warning: Unable to resolve imported reference gethostname.
+08049FC4: warning: Unable to resolve imported reference gethostname.
+0805BCB9: warning: Unable to resolve imported reference gethostbyname_r.
+0804A004: warning: Unable to resolve imported reference gethostbyname_r.
+0805BCD0: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+0805BBA2: warning: Unable to resolve imported reference gethostbyname_r.
+0804A004: warning: Unable to resolve imported reference gethostbyname_r.
+0805B4A5: warning: Unable to resolve imported reference chdir.
+08049F74: warning: Unable to resolve imported reference chdir.
+0805B00A: warning: Unable to resolve imported reference recv.
+08049E34: warning: Unable to resolve imported reference recv.
+0805AF35: warning: Unable to resolve imported reference sinh.
+08049E14: warning: Unable to resolve imported reference sinh.
+0805AF56: warning: Unable to resolve imported reference sinh.
+08049E14: warning: Unable to resolve imported reference sinh.
+0805AE89: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+0805ACFA: warning: Unable to resolve imported reference waitpid.
+08049F54: warning: Unable to resolve imported reference waitpid.
+0805A160: warning: Unable to resolve imported reference getaddrinfo.
+08049F04: warning: Unable to resolve imported reference getaddrinfo.
+0805A0E0: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+0805A016: warning: Unable to resolve imported reference gethostbyaddr_r.
+08049EE4: warning: Unable to resolve imported reference gethostbyaddr_r.
+08059F45: warning: Unable to resolve imported reference listen.
+08049E54: warning: Unable to resolve imported reference listen.
+08059E4A: warning: Unable to resolve imported reference ftruncate64.
+08049FB4: warning: Unable to resolve imported reference ftruncate64.
+0805968C: warning: Unable to resolve imported reference getpwnam.
+0804A054: warning: Unable to resolve imported reference getpwnam.
+0805921B: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08058FE4: warning: Unable to resolve imported reference log1p.
+08049DF4: warning: Unable to resolve imported reference log1p.
+08058E2F: warning: Unable to resolve imported reference getsockopt.
+0804A034: warning: Unable to resolve imported reference getsockopt.
+08058A81: warning: Unable to resolve imported reference chroot.
+08049F64: warning: Unable to resolve imported reference chroot.
+08058846: warning: Unable to resolve imported reference sigaltstack.
+08049E94: warning: Unable to resolve imported reference sigaltstack.
+080581AA: warning: Unable to resolve imported reference __sigsetjmp.
+0804A064: warning: Unable to resolve imported reference __sigsetjmp.
+08057DFB: warning: Unable to resolve imported reference sigpending.
+08049F84: warning: Unable to resolve imported reference sigpending.
+08057BFA: warning: Unable to resolve imported reference getprotobynumber.
+08049EC4: warning: Unable to resolve imported reference getprotobynumber.
+080572A9: warning: Unable to resolve imported reference tcgetattr.
+08049E84: warning: Unable to resolve imported reference tcgetattr.
+08057187: warning: Unable to resolve imported reference fchown.
+08049E44: warning: Unable to resolve imported reference fchown.
+08056797: warning: Procedure fn08056730 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080552EA: warning: Procedure camlHashtbl__insert_bucket_1068 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080560D3: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056718: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080560E8: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056729: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056792: warning: Procedure fn08056730 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080565C9: warning: Procedure camlHashtbl__find_all_1105 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080561D8: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080561ED: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055DB7: warning: Procedure fn08055D50 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055D38: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055D49: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055DB2: warning: Procedure fn08055D50 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055AF9: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055A3E: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055859: warning: Procedure camlHashtbl__remove_1185 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055748: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805575D: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056830: warning: Procedure camlHashtbl__mem_1122 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055E7B: warning: Procedure camlHashtbl__mem_1227 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054D6A: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054D85: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054B07: warning: Procedure camlList__stable_sort_1248 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053264: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053252: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054338: warning: Procedure camlList__exists2_1153 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080542C8: warning: Procedure camlList__for_all2_1145 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080541AA: warning: Procedure camlList__fold_right2_1128 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08054158: warning: Procedure camlList__fold_left2_1119 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080540F8: warning: Procedure camlList__iter2_1111 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052FB8: warning: Procedure camlList__rev_map2_1099 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054038: warning: Procedure camlList__map2_1090 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053FA5: warning: Procedure camlList__fold_right_1084 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08053E0C: warning: Procedure camlList__flatten_1058 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052E9F: warning: Procedure camlList__nth_1042 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08053D65: warning: Procedure camlList__tl_1039 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053D45: warning: Procedure camlList__hd_1036 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080537DF: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805478F: warning: Procedure camlList__partition_1212 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054088: warning: Procedure camlList__rev_map2_1099 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053ED8: warning: Procedure camlList__rev_map_1067 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08051DF4: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051EC9: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051EC9: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08052D55: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805143D: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080506F7: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080507FE: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080507E9: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050A8D: warning: Procedure camlArray__trickledown_1160 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050B8C: warning: Procedure camlArray__trickle_1165 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08050F5D: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050EFE: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051C8B: warning: Procedure camlArray__fill_1087 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051C8B: warning: Procedure camlArray__fill_1087 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051AA0: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051BC0: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051BC0: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080503B3: warning: Procedure camlArray__find_init_1077 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052C55: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804EC4A: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F973: warning: Procedure camlPervasives__read_line_1288 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F630: warning: Procedure camlPervasives__really_input_1235 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F615: warning: Procedure camlPervasives__input_1224 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F5B7: warning: Procedure camlPervasives__open_in_bin_1220 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F495: warning: Procedure camlPervasives__output_1194 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F3E7: warning: Procedure camlPervasives__open_out_bin_1181 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F330: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F295: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F285: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F215: warning: Procedure camlPervasives__char_of_int_1120 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080548B5: warning: Procedure camlList__combine_1226 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E2B4: warning: Procedure fn0804E27A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E2B4: warning: Procedure fn0804E27A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E275: warning: Procedure camlUnix__entry previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804E29E: warning: Procedure fn0804E27A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D475: warning: Procedure camlUnix__open_proc_full_1975 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804D081: warning: Procedure camlUnix__open_proc_1949 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804CA79: warning: Procedure fn0804CA41 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804CB10: warning: Procedure fn0804CA80 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C9C3: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804CBC1: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C64F: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C69D: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C6DD: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C6F9: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C789: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C8B9: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C2B8: warning: Procedure camlUnix__sendto_1576 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C255: warning: Procedure camlUnix__send_1570 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C205: warning: Procedure camlUnix__recvfrom_1564 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C1B5: warning: Procedure camlUnix__recv_1558 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BFF5: warning: Procedure camlUnix__single_write_1247 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BFA5: warning: Procedure camlUnix__write_1242 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BF55: warning: Procedure camlUnix__read_1237 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804B28D: error: An error occurred while processing instruction at address 0804B28D.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804C958: error: An error occurred while processing instruction at address 0804C958.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804C9B0: error: An error occurred while processing instruction at address 0804C9B0.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804C9FE: error: An error occurred while processing instruction at address 0804C9FE.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804C9FE: error: An error occurred while processing instruction at address 0804C9FE.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804D942: error: An error occurred while processing instruction at address 0804D942.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804DA14: error: An error occurred while processing instruction at address 0804DA14.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E29E: error: An error occurred while processing instruction at address 0804E29E.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E2A6: error: An error occurred while processing instruction at address 0804E2A6.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E2B4: error: An error occurred while processing instruction at address 0804E2B4.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E2B4: error: An error occurred while processing instruction at address 0804E2B4.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E325: error: An error occurred while processing instruction at address 0804E325.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804E42C: error: An error occurred while processing instruction at address 0804E42C.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804EC4A: error: An error occurred while processing instruction at address 0804EC4A.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804EC56: error: An error occurred while processing instruction at address 0804EC56.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804EC56: error: An error occurred while processing instruction at address 0804EC56.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804EC90: error: An error occurred while processing instruction at address 0804EC90.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804EC96: error: An error occurred while processing instruction at address 0804EC96.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+0804F523: error: An error occurred while processing instruction at address 0804F523.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+080501B9: error: An error occurred while processing instruction at address 080501B9.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+080552EA: error: An error occurred while processing instruction at address 080552EA.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+08055DB7: error: An error occurred while processing instruction at address 08055DB7.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+08055DB7: error: An error occurred while processing instruction at address 08055DB7.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+080560F9: error: An error occurred while processing instruction at address 080560F9.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+08056797: error: An error occurred while processing instruction at address 08056797.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+08056797: error: An error occurred while processing instruction at address 08056797.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x418c62e0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x418c5f70 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4189d8e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x418c39f0 + 0x0018c> in <filename unknown>:0 
+fn0804B2AD: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x418ea2f0 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+fn0804C9D0: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitSideEffect (Reko.Core.Code.SideEffect side) <0x418b7020 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.SideEffect.Accept (InstructionVisitor v) <0x418ab760 + 0x0002a> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+fn0804C9EB: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e08c0 + 0x00042> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitApplication (Reko.Core.Expressions.Application app) <0x418e0de0 + 0x0006f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitSideEffect (Reko.Core.Code.SideEffect side) <0x418b7020 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.SideEffect.Accept (InstructionVisitor v) <0x418ab760 + 0x0002a> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) <0x418dfd80 + 0x000da> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[] defOrig) <0x418df570 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.PlacePhiFunctions () <0x418df030 + 0x000af> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.Transform () <0x418def90 + 0x0000f> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1 gr, System.Collections.Generic.HashSet`1 implicitRegs) <0x418de9e0 + 0x001ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x418d6a20 + 0x001af> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x00203> in <filename unknown>:0 
+fn0804E2A1: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) <0x418b67d0 + 0x0003a> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (IExpressionVisitor v) <0x41893ab0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) <0x418f2f50 + 0x00026> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+fn0804EC53: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418b6b80 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept (IExpressionVisitor visitor) <0x418aaa70 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBranch (Reko.Core.Code.Branch b) <0x418b6b50 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x418aa930 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+fn0804EC93: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x418ea2f0 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+camlPervasives__$40_1143: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x418dae70 + 0x00057> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x418dae10 + 0x00023> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Transform () <0x418da400 + 0x000cd> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x418d6a20 + 0x000ef> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x00203> in <filename unknown>:0 
+camlPervasives__really_input_1235: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e08c0 + 0x00042> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x418fbdd0 + 0x00026> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x418fbd10 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) <0x418dfd80 + 0x000da> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[] defOrig) <0x418df570 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.PlacePhiFunctions () <0x418df030 + 0x000af> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.Transform () <0x418def90 + 0x0000f> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1 gr, System.Collections.Generic.HashSet`1 implicitRegs) <0x418de9e0 + 0x001ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x418d6a20 + 0x001af> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x00203> in <filename unknown>:0 
+camlList__sort_1271: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x418dae70 + 0x00057> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x418dae10 + 0x00023> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Transform () <0x418da400 + 0x000cd> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x418d6a20 + 0x000ef> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x00203> in <filename unknown>:0 
+camlHashtbl__find_in_bucket_1213: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x418dae70 + 0x00057> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x418dae10 + 0x00023> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Transform () <0x418da400 + 0x000cd> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x418d6a20 + 0x000ef> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x00203> in <filename unknown>:0 
+fn08055DB7: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x418ea2f0 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+camlHashtbl__find_rec_1088: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitOutArgument (Reko.Core.Expressions.OutArgument outArg) <0x418f5660 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Expressions.OutArgument.Accept (IExpressionVisitor visitor) <0x418f5620 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x418ea2f0 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+fn08056797: error: An error occurred during data flow analysis.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x418e4cd0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x418e9e80 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41893c10 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x418b6ef0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x418ab880 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x418ea2f0 + 0x00025> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x418a97c0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate () <0x418e9740 + 0x00188> in <filename unknown>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x418e9580 + 0x00047> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0046f> in <filename unknown>:0 
+compare_val: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4189cf50 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189cf20 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+caml_eq_float: error: An error occurred during data flow analysis.
+    Case PO not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x418e8260 + 0x00056> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189c0d0 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+caml_neq_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x418e8260 + 0x00056> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189c0d0 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+caml_float_compare: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4189cf50 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189cf20 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+caml_sqrt_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4189cf50 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189cf20 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+caml_fmod_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x418e8c50 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x418e8640 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x418e8540 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41891bf0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4189cf50 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4189cf20 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x418e7a90 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x418d5cf0 + 0x0045b> in <filename unknown>:0 
+0804B340: error: An error occurred while processing the statement word32 ecx_30 = (word32) Mem0[eax - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr (struct (0 T_2104 t0000))) and (union (ui32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x41916bd0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41916b80 + 0x00034> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x41910de0 + 0x00098> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x418fbd10 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804B3D8: error: An error occurred while processing the statement Mem38[eax_32 - 0x00000018 + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_2228 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C450: error: An error occurred while processing the statement Mem19[eax_12 - 0x00000030 + 0x00000000:word32] = 0x00000400.
+    Not handling (ptr (struct (0 T_3538 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C4C2: error: An error occurred while processing the statement Mem41[eax_35 - 0x00000014 + 0x00000000:word32] = 0x000010F7.
+    Not handling (ptr (struct (0 T_3634 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C531: error: An error occurred while processing the statement Mem173[eax_167 - 0x00000018 + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_3716 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C62E: error: An error occurred while processing the statement Mem87[eax_81 - 0x00000018 + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_3800 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C67C: error: An error occurred while processing the statement Mem104[eax_98 - 0x00000018 + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_3859 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C80C: error: An error occurred while processing the statement Mem9[eax_3 - 0x00000018 + 0x00000000:word32] = 0x000014F7.
+    Not handling (ptr (struct (0 T_4207 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804C97E: error: An error occurred while processing the statement Mem70[eax_64 - 0x00000008 + 0x00000000:word32] = 0x00000400.
+    Not handling (ptr (struct (0 T_4388 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804CB5A: error: An error occurred while processing the statement Mem95[eax_89 - 0x0000000C + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_4461 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804CABB: error: An error occurred while processing the statement Mem55[eax_49 - 0x00000008 + 0x00000000:word32] = 0x00000400.
+    Not handling (ptr (struct (0 T_4651 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804CB2B: error: An error occurred while processing the statement Mem9[eax_3 - 0x0000000C + 0x00000000:word32] = 0x00000800.
+    Not handling (ptr (struct (0 T_4719 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+0804D6E3: error: An error occurred while processing the statement Mem38[eax_32 - 0x00000014 + 0x00000000:word32] = 0x00001000.
+    Not handling (ptr (struct (0 T_6067 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41914ee0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41912560 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41912510 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41911240 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x419111f0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41911170 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41914a10 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x418a9920 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x00289> in <filename unknown>:0 
+: error: Error when reconstructing types.
+    Specified argument was out of the range of valid values.
+Parameter name: Linear address 00000000 is not in known segment.
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x418c6e80 + 0x0017f> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x418c6dd0 + 0x0002f> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4190fbe0 + 0x002d5> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x41908d30 + 0x00597> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x419086c0 + 0x0022f> in <filename unknown>:0 
+fn0804B2AD: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn0804C9D0: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn0804C9EB: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00323> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn0804E2A1: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn0804EC53: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn0804EC93: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlPervasives__scan_1249: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlPervasives__really_input_1235: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00323> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlArray__loop_1201: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlArray__trickledown_1160: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlArray__bubbledown_1170: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlArray__trickleup_1178: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn08055DB7: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+camlHashtbl__find_rec_1088: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+fn08056797: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+unix_tcsetattr: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+unix_write: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_main: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+caml_raise: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+caml_fl_allocate: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x41924080 + 0x003f7> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x419238b0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41920ea0 + 0x00077> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0044b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+compare_val: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+parse_sign_and_base: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l080605AE (Tail) => l080605B7
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x419258a0 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x41925380 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x41926fc0 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x41926f40 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x41926ad0 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x4191e220 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+parse_intnat: error: An error occurred while rewriting procedure to high-level language.
+    Sequence contains no elements
+      at System.Linq.Enumerable.First[TSource] (IEnumerable`1 source) <0x4191e8d0 + 0x0014b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSequence (Reko.Structure.Region n) <0x4191e740 + 0x00043> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x4191e220 + 0x0007f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_int64_of_string: error: An error occurred while rewriting procedure to high-level language.
+    Sequence contains no elements
+      at System.Linq.Enumerable.First[TSource] (IEnumerable`1 source) <0x4191e8d0 + 0x0014b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSequence (Reko.Structure.Region n) <0x4191e740 + 0x00043> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x4191e220 + 0x0007f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_eq_float: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_neq_float: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_float_compare: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_format_float: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+caml_sqrt_float: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+caml_fmod_float: error: An error occurred while rewriting procedure to high-level language.
+    The method or operation is not implemented.
+      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x41923790 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x418ead20 + 0x00033> in <filename unknown>:0 
+  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x4191aa60 + 0x00133> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x4191a3e0 + 0x00187> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+extern_rec: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x418c6d70 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x416debb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (DirectedGraph`1 graph, System.Collections.Generic.Dictionary`2 idoms) <0x418de4b0 + 0x003e7> in <filename unknown>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (DirectedGraph`1 graph, Reko.Structure.Region entryNode) <0x418db610 + 0x0011f> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x001cb> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 
+hash_aux: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse l08065E46 (Tail) => l08066027
+      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) <0x419258a0 + 0x002af> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.VirtualEdge vEdge) <0x41925380 + 0x0032b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) <0x41926fc0 + 0x0029b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) <0x41926f40 + 0x00017> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceSwitchRegion (Reko.Structure.Region n) <0x41926ad0 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x4191e220 + 0x0006b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41919e70 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41918c60 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41918780 + 0x00255> in <filename unknown>:0 

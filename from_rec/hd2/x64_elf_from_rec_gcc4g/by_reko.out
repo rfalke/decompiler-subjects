@@ -1,0 +1,40 @@
+Using options:
+0000000000400700: error: The method or operation is not implemented.
+000000000040078E: error: An error occurred while processing instruction at address 000000000040078E.
+    Expected stack depth to be negative.
+      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x417162c0 + 0x0020f> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41715f50 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4170d260 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41714cd0 + 0x0018c> in <filename unknown>:0 
+0000000000400AD8: error: An error occurred while processing the statement branch 0x0000000000600CAC - 0x0000000000600CAC >> 0x0000000000000003 == 0x0000000000000000 l0000000000400AF6.
+    Pulling difference ptr64 and ptr64
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x4175d250 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41749710 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x416cfd20 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41749710 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x416cfd20 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41749710 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x416cfd20 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x4175cb40 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x416ff430 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41755940 + 0x00289> in <filename unknown>:0 
+00400B8E: error: Failed to write global variable g_v400B8E.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x417828f0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x416fe690 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41782060 + 0x00225> in <filename unknown>:0 
+00400B92: error: Failed to write global variable g_v400B92.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x417828f0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x416fe690 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41782060 + 0x00225> in <filename unknown>:0 
+00400B8E: error: Failed to write global variable g_v400B8E.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x417828f0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x416fe690 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41782060 + 0x00225> in <filename unknown>:0 
+00400B92: error: Failed to write global variable g_v400B92.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x417828f0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x416fe690 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41782060 + 0x00225> in <filename unknown>:0 

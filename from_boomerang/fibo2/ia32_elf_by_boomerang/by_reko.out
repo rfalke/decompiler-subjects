@@ -1,0 +1,4 @@
+Using options:
+08048350: warning: Call target address 00000000 is invalid.
+08048438: warning: No valid entries could be found in jump vector.
+080483E4: error: The method or operation is not implemented.

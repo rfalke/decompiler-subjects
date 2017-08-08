@@ -1,0 +1,25 @@
+Using options:
+08048496: error: An error occurred while processing the statement branch 0x00000000 >=u 0x08049734 - 0x08049734 >> 0x00000002 l080484AE.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41c6d330 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x00065> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41c87810 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41c2e4b0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41c82740 + 0x00289> in <filename unknown>:0 
+080484DE: error: An error occurred while processing the statement word32 esi_23 = (0x08049734 - 0x08049734 >> 0x00000002) - 0x00000001.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41c6d330 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c6cc70 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c056a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x41c85120 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x41c78610 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41c82740 + 0x00289> in <filename unknown>:0 

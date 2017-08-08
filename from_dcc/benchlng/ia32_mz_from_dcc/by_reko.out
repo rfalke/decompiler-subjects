@@ -1,0 +1,11 @@
+Using options:
+0800:1846: warning: Can't determine size of jump vector; probing only one entry.
+main: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x40b6e8a0 + 0x0006d> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x40b6e060 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40b6a270 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40b68020 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40b67b40 + 0x00255> in <filename unknown>:0 
+fn0800_1107: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0800_112D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

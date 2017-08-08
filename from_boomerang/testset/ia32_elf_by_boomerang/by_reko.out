@@ -1,0 +1,47 @@
+Using options:
+08048444: error: Indirect call rewriter encountered an error while processing the statement call Mem0[ebx_13 - 0x000000E0 + esi_21 * 0x00000004:word32] (retsize: 4; depth: 16)	uses: C_20,dwLoc04_4,dwLoc08_8,dwLoc0C_11,eax_15,ebp_5,ebx_13,ecx_17,edx,esi_21,esp_9,SCZO,SZO_18,Z_19	defs: C_46,eax_44,ebp_39,ebx_41,ecx_43,edx_48,esi_40,esp_38,SCZO_42,SZO_45,Z_47.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41506c40 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00065> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccessCommon (Reko.Core.Expressions.Expression access, Reko.Core.Expressions.Expression ea) <0x41504060 + 0x0003a> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) <0x41504020 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T] (ExpressionVisitor`1 v) <0x414a37e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.IndirectCallRewriter.RewriteCall (Reko.Core.Statement stm, Reko.Core.Code.CallInstruction call) <0x415039d0 + 0x00056> in <filename unknown>:0 
+  at Reko.Analysis.IndirectCallRewriter.Rewrite () <0x414fa980 + 0x0012b> in <filename unknown>:0 
+080483F7: error: An error occurred while processing the statement branch 0x00000000 >=u 0x08049690 - 0x08049690 >> 0x00000002 l08048408.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41506c40 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x00065> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41520980 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x414c7a50 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4151bb90 + 0x00289> in <filename unknown>:0 
+080483FC: error: An error occurred while processing the statement call Mem0[0x08049690 + 0x080495B0:word32] (retsize: 4; depth: 32)	uses: C_25,dwLoc04_4,dwLoc08_8,dwLoc0C_11,dwLoc10_14,ebp_5,ebx_17,ecx_20,edi_43,edx_23,esi_22,esp_15,None,SCZO_24,SZO	defs: C_54,ebp_46,ebx_49,ecx_52,edi_47,edx_51,esi_48,esp_45,None_55,SCZO_50,SZO_53.
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x4151e770 + 0x000e4> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x4151e720 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x4151e6a0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitCallInstruction (Reko.Core.Code.CallInstruction call) <0x4151e480 + 0x0010c> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept (InstructionVisitor v) <0x414c5d50 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4151bb90 + 0x00289> in <filename unknown>:0 
+0804842D: error: An error occurred while processing the statement word32 ecx_16 = 0x08049690 - 0x08049690.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41506c40 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41506580 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4149e6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x4151e330 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x41512450 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x4151bb90 + 0x00289> in <filename unknown>:0 

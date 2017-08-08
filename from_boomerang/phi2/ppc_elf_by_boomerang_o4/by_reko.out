@@ -1,0 +1,31 @@
+Using options:
+10010A90: error: PowerPC instruction 'illegal' is not supported yet.
+10000410: warning: Call target address 10000000 is invalid.
+10010A88: error: PowerPC instruction 'illegal' is not supported yet.
+10010A88: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A88: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A88: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A88: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10010A98: error: PowerPC instruction 'illegal' is not supported yet.
+10000530: error: An error occurred while processing instruction at address 10000530.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x421ff720 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x42057bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x421fead0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x421fe760 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x421f5cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x421fc0b0 + 0x0018c> in <filename unknown>:0 
+10000544: error: An error occurred while processing instruction at address 10000544.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x421ff720 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x42057bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x421fead0 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x421fe760 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x421f5cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x421fc0b0 + 0x0018c> in <filename unknown>:0 

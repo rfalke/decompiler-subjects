@@ -1,0 +1,73 @@
+Using options:
+0000000140001B70: error: Object reference not set to an instance of an object
+0000000140001088: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
+00000001400010FE: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
+00000001400012A3: warning: Unable to resolve imported reference MSVCR90D.dll!printf.
+0000000140001844: warning: Procedure fn00000001400017C0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140003460: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
+0000000140002DDE: warning: Unable to guess parameters of MSVCR90D.dll!__crt_debugger_hook.
+0000000140002DDE: warning: Unable to guess parameters of MSVCR90D.dll!__crt_debugger_hook.
+0000000140002468: warning: Procedure fn0000000140002360 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140001462: warning: Unable to guess parameters of MSVCR90D.dll!_stat64i32.
+000000014000322C: warning: Procedure fn00000001400031D0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140003424: warning: Unable to guess parameters of MSVCR90D.dll!_unlock.
+0000000140002BE4: warning: Unable to guess parameters of MSVCR90D.dll!_XcptFilter.
+0000000140003226: warning: Procedure fn00000001400031D0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400029E0: warning: Unable to guess parameters of MSVCR90D.dll!_decode_pointer.
+0000000140003430: warning: Unable to guess parameters of MSVCR90D.dll!_lock.
+0000000140002A15: warning: Unable to guess parameters of MSVCR90D.dll!_decode_pointer.
+0000000140002A27: warning: Unable to guess parameters of MSVCR90D.dll!_decode_pointer.
+0000000140002A37: warning: Unable to guess parameters of MSVCR90D.dll!_encode_pointer.
+000000014000342A: warning: Unable to guess parameters of MSVCR90D.dll!__dllonexit.
+0000000140002A59: warning: Unable to guess parameters of MSVCR90D.dll!_encode_pointer.
+0000000140002A6B: warning: Unable to guess parameters of MSVCR90D.dll!_encode_pointer.
+0000000140003424: warning: Unable to guess parameters of MSVCR90D.dll!_unlock.
+00000001400024EA: warning: Procedure fn0000000140002470 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140001B26: warning: Unable to guess parameters of MSVCR90D.dll!__getmainargs.
+0000000140002AD0: warning: Unable to guess parameters of MSVCR90D.dll!_amsg_exit.
+0000000140001A54: warning: Unable to guess parameters of MSVCR90D.dll!__set_app_type.
+0000000140001A61: warning: Unable to guess parameters of MSVCR90D.dll!_encode_pointer.
+0000000140001AB4: warning: Unable to guess parameters of MSVCR90D.dll!__setusermatherr.
+0000000140001AC8: warning: Unable to guess parameters of MSVCR90D.dll!_configthreadlocale.
+0000000140002878: warning: Unable to guess parameters of MSVCR90D.dll!_CRT_RTC_INITW.
+0000000140002878: warning: Unable to guess parameters of MSVCR90D.dll!_CRT_RTC_INITW.
+0000000140001926: warning: Procedure fn0000000140001914 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140001926: warning: Procedure fn0000000140001914 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000140001939: warning: Procedure fn0000000140001930 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140001358: warning: Unable to resolve imported reference MSVCR90D.dll!fopen.
+00000001400013A7: warning: Unable to resolve imported reference MSVCR90D.dll!fread.
+00000001400013F0: warning: Unable to resolve imported reference MSVCR90D.dll!fclose.
+000000014000100F: warning: Procedure fn000000014000100F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+fn00000001400017A0: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitStore (Reko.Core.Code.Store store) <0x40291430 + 0x00079> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x4024cf00 + 0x0002a> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) <0x402801c0 + 0x000da> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[] defOrig) <0x4027f9b0 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.PlacePhiFunctions () <0x4027f470 + 0x000af> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform.Transform () <0x4027f3d0 + 0x0000f> in <filename unknown>:0 
+  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1 gr, System.Collections.Generic.HashSet`1 implicitRegs) <0x4027ee20 + 0x001ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40278610 + 0x001af> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x402778e0 + 0x00203> in <filename unknown>:0 
+: error: Error when reconstructing types.
+    Specified argument was out of the range of valid values.
+Parameter name: Linear address 00000000 is not in known segment.
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x402a3230 + 0x0017f> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x402b8630 + 0x0002f> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x402af160 + 0x002d5> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x402a8090 + 0x00597> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x402a7a20 + 0x0022f> in <filename unknown>:0 
+fn00000001400017A0: error: An error occurred while rewriting procedure to high-level language.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x402c5e00 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40083bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x402ba190 + 0x00323> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x402b9c20 + 0x0003b> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x402b9070 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x402b8b90 + 0x00255> in <filename unknown>:0 
+fn00000001400017DB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140001850: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400018BC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140001914: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140002610: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400026C0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

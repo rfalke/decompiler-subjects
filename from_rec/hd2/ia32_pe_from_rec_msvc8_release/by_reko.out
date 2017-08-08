@@ -1,0 +1,22 @@
+Using options:
+0040164C: warning: Unable to guess parameters of MSVCR90.dll!_amsg_exit.
+004018B4: warning: Unable to guess parameters of MSVCR90.dll!_initterm_e.
+004018AE: warning: Unable to guess parameters of MSVCR90.dll!_initterm.
+00401385: warning: Unable to guess parameters of MSVCR90.dll!__initenv.
+0040115A: warning: Unable to guess parameters of MSVCR90.dll!_stat64i32.
+004019FE: warning: Unable to guess parameters of MSVCR90.dll!_crt_debugger_hook.
+004019FE: warning: Unable to guess parameters of MSVCR90.dll!_crt_debugger_hook.
+0040118F: warning: Unable to resolve imported reference MSVCR90.dll!fopen.
+004011A6: warning: Unable to resolve imported reference MSVCR90.dll!fread.
+00401013: warning: Unable to resolve imported reference MSVCR90.dll!sprintf.
+00401116: warning: Unable to resolve imported reference MSVCR90.dll!printf.
+004011DE: warning: Unable to resolve imported reference MSVCR90.dll!fclose.
+004013F3: warning: Unable to guess parameters of MSVCR90.dll!_cexit.
+004010A7: error: An error occurred while processing the statement word32 eax_88 = eax_80 - (eax_76 + 0x00000001).
+    Pulling difference (ptr (struct 0001 (0 byte b0000))) and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x412772e0 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41276c50 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x411eff90 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x412761d0 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4126c330 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41275100 + 0x00289> in <filename unknown>:0 

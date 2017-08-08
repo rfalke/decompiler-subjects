@@ -1,0 +1,4 @@
+Using options:
+0800:1794: warning: Can't determine size of jump vector; probing only one entry.
+fn0800_1055: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0800_107B: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

@@ -1,0 +1,6 @@
+Using options:
+08048384: warning: Call target address 00000000 is invalid.
+0804856C: error: The method or operation is not implemented.
+080485C0: error: The address 0804AB0C is invalid.
+0804AB40: warning: Expected sizes of arrays to have been determined by now
+0804AB40: warning: Expected sizes of arrays to have been determined by now

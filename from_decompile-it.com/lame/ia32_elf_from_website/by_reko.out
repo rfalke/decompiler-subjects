@@ -1,0 +1,240 @@
+Using options:
+0804AAEC: warning: Unable to resolve imported reference tolower.
+0804A2BC: warning: Unable to resolve imported reference tolower.
+0804A029: warning: Unable to resolve imported reference lame_set_asm_optimizations.
+0804A18C: warning: Unable to resolve imported reference lame_set_asm_optimizations.
+0804AB00: error: The method or operation is not implemented.
+0804B09A: warning: Unable to resolve imported reference lame_set_original.
+0804A20C: warning: Unable to resolve imported reference lame_set_original.
+0804D066: warning: Unable to resolve imported reference lame_set_original.
+0804A20C: warning: Unable to resolve imported reference lame_set_original.
+0804D3D0: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804D363: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804D1E3: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804D282: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+080547B7: warning: Unable to resolve imported reference lame_get_framesize.
+0804A1AC: warning: Unable to resolve imported reference lame_get_framesize.
+0804CC16: warning: Unable to resolve imported reference getchar.
+0804A07C: warning: Unable to resolve imported reference getchar.
+080543FC: warning: Unable to resolve imported reference lame_set_VBR.
+0804A15C: warning: Unable to resolve imported reference lame_set_VBR.
+08053CA1: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+08053F27: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+08053F5C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+08053FD5: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
+08053AF2: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+08053B0E: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+08053B2A: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+08053B46: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+080536D7: warning: Unable to resolve imported reference __fxstat64.
+0804A23C: warning: Unable to resolve imported reference __fxstat64.
+080535E7: warning: Unable to resolve imported reference __fxstat64.
+0804A23C: warning: Unable to resolve imported reference __fxstat64.
+08052E3C: warning: Unable to resolve imported reference lame_set_num_channels.
+0804A05C: warning: Unable to resolve imported reference lame_set_num_channels.
+08052E68: warning: Unable to resolve imported reference lame_set_num_channels.
+0804A05C: warning: Unable to resolve imported reference lame_set_num_channels.
+0804F251: warning: Unable to resolve imported reference lame_set_quality.
+0804A1CC: warning: Unable to resolve imported reference lame_set_quality.
+0804F259: warning: Unable to resolve imported reference id3tag_init.
+0804A08C: warning: Unable to resolve imported reference id3tag_init.
+0804F261: warning: Unable to resolve imported reference lame_get_brate.
+0804A29C: warning: Unable to resolve imported reference lame_get_brate.
+08050609: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+08052613: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+08050637: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+0805266A: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+08052775: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+08052870: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+08052895: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+080528AA: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0805269F: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+08050ACC: warning: Unable to resolve imported reference clock.
+0804A14C: warning: Unable to resolve imported reference clock.
+08050C68: warning: Unable to resolve imported reference lame_get_encoder_delay.
+0804A12C: warning: Unable to resolve imported reference lame_get_encoder_delay.
+08050DB6: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
+0804A2DC: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
+08050E38: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
+0804A2DC: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
+0805037B: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
+08050439: warning: Unable to resolve imported reference lame_set_VBR_hard_min.
+0804A0EC: warning: Unable to resolve imported reference lame_set_VBR_hard_min.
+0805127B: warning: Unable to resolve imported reference lame_encode_buffer_int.
+0804A0CC: warning: Unable to resolve imported reference lame_encode_buffer_int.
+08051DAE: warning: Unable to resolve imported reference lame_set_error_protection.
+0804A0AC: warning: Unable to resolve imported reference lame_set_error_protection.
+0804E9B9: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804E764: warning: Unable to resolve imported reference lame_set_useTemporal.
+0804A0FC: warning: Unable to resolve imported reference lame_set_useTemporal.
+0804E46E: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804E518: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804DD3C: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804DF1A: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804E211: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
+0804E627: warning: Unable to resolve imported reference lame_set_original.
+0804A20C: warning: Unable to resolve imported reference lame_set_original.
+0804CECE: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804CC4F: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
+0804CA98: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804C76E: warning: Unable to resolve imported reference lame_set_msgf.
+0804A1DC: warning: Unable to resolve imported reference lame_set_msgf.
+0804C00B: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804C06F: warning: Unable to resolve imported reference lame_set_mode.
+0804A25C: warning: Unable to resolve imported reference lame_set_mode.
+0804C0DD: warning: Unable to resolve imported reference id3tag_add_v2.
+0804A21C: warning: Unable to resolve imported reference id3tag_add_v2.
+0804C13B: warning: Unable to resolve imported reference lame_set_msgf.
+0804A1DC: warning: Unable to resolve imported reference lame_set_msgf.
+0804C23C: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+0804BD28: warning: Unable to resolve imported reference lame_get_totalframes.
+0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
+0804C347: warning: Unable to resolve imported reference id3tag_set_fieldvalue.
+0804A2AC: warning: Unable to resolve imported reference id3tag_set_fieldvalue.
+0804BC9B: warning: Unable to resolve imported reference lame_set_num_samples.
+0804A24C: warning: Unable to resolve imported reference lame_set_num_samples.
+0804BCA8: warning: Unable to resolve imported reference tgetstr.
+0804A28C: warning: Unable to resolve imported reference tgetstr.
+0804B80F: warning: Unable to resolve imported reference lame_set_highpassfreq.
+0804A1BC: warning: Unable to resolve imported reference lame_set_highpassfreq.
+0804B95B: warning: Unable to resolve imported reference lame_set_in_samplerate.
+0804A27C: warning: Unable to resolve imported reference lame_set_in_samplerate.
+0804B549: warning: Unable to resolve imported reference lame_close.
+0804A11C: warning: Unable to resolve imported reference lame_close.
+0804B5C6: warning: Unable to resolve imported reference lame_set_nogap_currentindex.
+0804A16C: warning: Unable to resolve imported reference lame_set_nogap_currentindex.
+0804B5E2: warning: Unable to resolve imported reference lame_get_id3v1_tag.
+0804A22C: warning: Unable to resolve imported reference lame_get_id3v1_tag.
+0804BD49: error: An error occurred while processing the statement branch (byte) (word32) Mem0[dwArg0C - 0x00000003 + dwArg0C:byte] != 0x77 l0804BDA5.
+    Not handling ptr32 and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41cb8390 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x00b9c> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41cb3680 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x41cb3630 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb35b0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x41cb6ec0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb6e70 + 0x00034> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x41cb6ec0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb6e70 + 0x00034> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x00b9c> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41cb4720 + 0x00088> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41c4fda0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
+0804CDA0: error: An error occurred while processing the statement dwArg08 = dwArg08 - (fp + 0xFFFFEFF0).
+    Pulling difference int32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41ca4a70 + 0x0022b> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c9ec20 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c1c6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) <0x41cb7530 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x41c4ec30 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
+0804CE6C: error: An error occurred while processing the statement dwArg08 = dwArg08 - (fp + 0xFFFFEFF0).
+    Pulling difference int32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41ca4a70 + 0x0022b> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c9ec20 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c1c6a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) <0x41cb7530 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x41c4ec30 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
+parse_args: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x41cd1120 + 0x0006d> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x41cd08e0 + 0x00057> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41ccc7b0 + 0x00393> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41ccb590 + 0x000bf> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41ccb0b0 + 0x00255> in <filename unknown>:0 
+080548BB: error: Failed to write global variable g_v80548BB.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08054956: error: Failed to write global variable g_v8054956.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08054A58: warning: Expected sizes of arrays to have been determined by now
+08055007: error: Failed to write global variable g_v8055007.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08055332: error: Failed to write global variable g_v8055332.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+080554B5: error: Failed to write global variable g_v80554B5.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+080554E0: warning: Expected sizes of arrays to have been determined by now
+08058DA8: warning: Expected sizes of arrays to have been determined by now
+080596E8: warning: Expected sizes of arrays to have been determined by now
+080548BB: error: Failed to write global variable g_v80548BB.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08054956: error: Failed to write global variable g_v8054956.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08054A58: warning: Expected sizes of arrays to have been determined by now
+08055007: error: Failed to write global variable g_v8055007.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+08055332: error: Failed to write global variable g_v8055332.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+080554B5: error: Failed to write global variable g_v80554B5.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+080554E0: warning: Expected sizes of arrays to have been determined by now
+08058DA8: warning: Expected sizes of arrays to have been determined by now
+080596E8: warning: Expected sizes of arrays to have been determined by now

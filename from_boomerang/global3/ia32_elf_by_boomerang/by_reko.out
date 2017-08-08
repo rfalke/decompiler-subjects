@@ -1,0 +1,4 @@
+Using options:
+0804831C: warning: Call target address 00000000 is invalid.
+080483EC: error: The address 0804945C is invalid.
+08048398: error: The method or operation is not implemented.

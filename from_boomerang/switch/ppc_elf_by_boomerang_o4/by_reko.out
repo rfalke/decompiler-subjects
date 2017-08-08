@@ -1,0 +1,6 @@
+Using options:
+10010A78: error: PowerPC instruction 'illegal' is not supported yet.
+100003E4: warning: Call target address 10000000 is invalid.
+10000414: error: Object reference not set to an instance of an object
+10010A70: error: PowerPC instruction 'illegal' is not supported yet.
+10010A70: error: PowerPC instruction 'illegal' is not supported yet.

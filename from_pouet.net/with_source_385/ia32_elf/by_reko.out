@@ -1,0 +1,7 @@
+Using options:
+08048A48: warning: Call target address 00000000 is invalid.
+08048B5F: warning: Unable to resolve imported reference XClearWindow.
+08048864: warning: Unable to resolve imported reference XClearWindow.
+08048C50: warning: Unable to resolve imported reference XSetFont.
+08048854: warning: Unable to resolve imported reference XSetFont.
+08048D92: error: Unexpected 69 fstsw mask for jz opcode .

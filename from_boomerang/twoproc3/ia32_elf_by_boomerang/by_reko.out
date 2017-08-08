@@ -1,0 +1,39 @@
+Using options:
+0804849B: warning: Unable to resolve imported reference __gmon_start__.
+08048384: warning: Unable to resolve imported reference __gmon_start__.
+08048580: error: Indirect call rewriter encountered an error while processing the statement call Mem0[esi_47:word32] (retsize: 4; depth: 32)	uses: C_46,dwLoc04_4,dwLoc08_8,dwLoc0C_11,dwLoc10_14,dwLoc14_22,eax_23,ebp_5,ebx_17,edi_48,edx_19,esi_47,esp_15,SCZO_24,SZO_45,Z_25	defs: C_60,eax_56,ebp_51,ebx_54,edi_52,edx_57,esi_53,esp_50,SCZO_55,SZO_58,Z_59.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x420e6cb0 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x00065> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccessCommon (Reko.Core.Expressions.Expression access, Reko.Core.Expressions.Expression ea) <0x420df420 + 0x0003a> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) <0x420df3e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T] (ExpressionVisitor`1 v) <0x4207e7e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.IndirectCallRewriter.RewriteCall (Reko.Core.Statement stm, Reko.Core.Code.CallInstruction call) <0x420ded90 + 0x00056> in <filename unknown>:0 
+  at Reko.Analysis.IndirectCallRewriter.Rewrite () <0x420d5980 + 0x0012b> in <filename unknown>:0 
+080484F6: error: An error occurred while processing the statement word32 eax_21 = 0x080497D0 - 0x080497D0.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x420e6cb0 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x420f6c10 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x420eb210 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x420f4440 + 0x00289> in <filename unknown>:0 
+08048561: error: An error occurred while processing the statement word32 eax_20 = 0x080497D0 - 0x080497D0.
+    Pulling difference ptr32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x420e6cb0 + 0x00147> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x420e65f0 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x420796a0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x420f6c10 + 0x0004a> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x420eb210 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x420f4440 + 0x00289> in <filename unknown>:0 

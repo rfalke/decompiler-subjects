@@ -1,0 +1,24 @@
+Using options:
+0804842F: warning: Call target address 00000000 is invalid.
+08048654: error: Failed to write global variable g_ptr8048654.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt32 (System.Byte[] abImage, Int64 off) <0x4071e810 + 0x00051> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt32 (System.Byte[] img, Int64 off) <0x4071e7e0 + 0x00017> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x407c2d40 + 0x001e7> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x407c6030 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x407c5f90 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40860350 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPointer (Reko.Core.Types.Pointer ptr) <0x408600b0 + 0x00064> in <filename unknown>:0 
+  at Reko.Core.Types.Pointer.Accept[T] (IDataTypeVisitor`1 v) <0x407e6c40 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x4085fcd0 + 0x00225> in <filename unknown>:0 
+08048654: error: Failed to write global variable g_ptr8048654.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt32 (System.Byte[] abImage, Int64 off) <0x4071e810 + 0x00051> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt32 (System.Byte[] img, Int64 off) <0x4071e7e0 + 0x00017> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x407c2d40 + 0x001e7> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x407c6030 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x407c5f90 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40860350 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPointer (Reko.Core.Types.Pointer ptr) <0x408600b0 + 0x00064> in <filename unknown>:0 
+  at Reko.Core.Types.Pointer.Accept[T] (IDataTypeVisitor`1 v) <0x407e6c40 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x4085fcd0 + 0x00225> in <filename unknown>:0 

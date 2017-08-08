@@ -1,0 +1,13 @@
+Using options:
+00401A0F: warning: Unable to guess parameters of MSVCRT.dll!__set_app_type.
+00401A2C: warning: Unable to guess parameters of MSVCRT.dll!__p__fmode.
+00401A3A: warning: Unable to guess parameters of MSVCRT.dll!__p__commode.
+00401A48: warning: Unable to guess parameters of MSVCRT.dll!_adjust_fdiv.
+00401A68: warning: Unable to guess parameters of MSVCRT.dll!__setusermatherr.
+00401BF6: warning: Unable to guess parameters of MSVCRT.dll!_controlfp.
+00401B9C: warning: Unable to guess parameters of MSVCRT.dll!_initterm.
+00401AA8: warning: Unable to guess parameters of MSVCRT.dll!__getmainargs.
+00401B9C: warning: Unable to guess parameters of MSVCRT.dll!_initterm.
+00401AC3: warning: Unable to guess parameters of MSVCRT.dll!__p__acmdln.
+00401C60: warning: Unable to resolve imported reference MFC42.DLL!Ordinal_1576.
+00401C60: warning: Unable to resolve imported reference MFC42.DLL!Ordinal_1576.

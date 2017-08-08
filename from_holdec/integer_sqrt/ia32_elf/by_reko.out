@@ -1,0 +1,3 @@
+Using options:
+080483A0: error: The method or operation is not implemented.
+Error: Garbage collector could not allocate 16384 bytes of memory for major heap section.

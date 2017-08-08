@@ -12,7 +12,7 @@ echo
 
 printf "===     decompiler   | failed | success\n"
 
-for decomp in boomerang rec16 rec4 holdec dcc nemerle_dcc decompiler.sf.net snowman
+for decomp in boomerang rec16 rec4 holdec dcc nemerle_dcc decompiler.sf.net reko snowman
 do
   ok=$(find . -name "by_$decomp.c" | wc -l)
   failed=$(find . -name "by_$decomp.failed" | wc -l)
