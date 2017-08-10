@@ -1,0 +1,26 @@
+Using options:
+00008350: error: capstone.dll
+0000830C: error: capstone.dll
+0000838C: error: capstone.dll
+00008440: error: capstone.dll
+00008598: error: capstone.dll
+00008594: error: capstone.dll
+00008534: error: capstone.dll
+00008518: error: capstone.dll
+000084A8: error: capstone.dll
+00008478: error: capstone.dll
+00008418: error: capstone.dll
+000083E0: error: capstone.dll
+000083B0: error: capstone.dll
+00008350: error: capstone.dll
+error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (ExceptionArgument argument, ExceptionResource resource) <0x41448c60 + 0x00047> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () <0x41448c40 + 0x00013> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T].get_Item (Int32 index) <0x413269b0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) <0x41448940 + 0x0005f> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) <0x414487c0 + 0x00133> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (DecompilerEventListener listener) <0x414485e0 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () <0x414482b0 + 0x0009b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.AnalyzeDataFlow () <0x41446dd0 + 0x0027b> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x413d3d60 + 0x00223> in <filename unknown>:0 

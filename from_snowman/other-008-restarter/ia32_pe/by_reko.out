@@ -1,0 +1,3 @@
+Using options:
+00401177: warning: Multiple different values of stack delta in procedure Win32CrtStartup when processing RET instruction; was 4 previously.
+004012A3: warning: Multiple different values of stack delta in procedure Win32CrtStartup when processing RET instruction; was 4 previously.

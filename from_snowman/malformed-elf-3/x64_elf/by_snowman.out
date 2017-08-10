@@ -1,0 +1,3 @@
+QIODevice::read: maxSize argument exceeds QByteArray size limit
+QIODevice::read: maxSize argument exceeds QByteArray size limit
+nocode: from_snowman/malformed-elf-3/x64_elf/subject.exe:std::bad_alloc

@@ -1,0 +1,25 @@
+Using options:
+00401279: warning: Unable to guess parameters of msvcrt.dll!__set_app_type.
+00401B8C: warning: Unable to guess parameters of msvcrt.dll!__getmainargs.
+00401B94: warning: Unable to guess parameters of msvcrt.dll!__p__fmode.
+00401607: warning: Unable to guess parameters of msvcrt.dll!_iob.
+00401BBC: warning: Unable to resolve imported reference msvcrt.dll!fwrite.
+00401BC4: warning: Unable to resolve imported reference msvcrt.dll!vfprintf.
+00401940: warning: No valid entries could be found in jump vector.
+00401B9C: warning: Unable to guess parameters of msvcrt.dll!__p__environ.
+00401438: warning: Unable to guess parameters of libstdc++-6.dll!_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.
+00401440: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSolsEPFRSoS_E.
+00401BA4: warning: Unable to guess parameters of msvcrt.dll!_cexit.
+004010D1: warning: Unable to guess parameters of msvcrt.dll!_iob.
+00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
+00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
+00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
+00401291: warning: Unable to guess parameters of msvcrt.dll!__set_app_type.
+00401297: error: An error occurred while processing instruction at address 00401297.
+    The given key was not present in the dictionary.
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x4118a340 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40fa3bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41189b10 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x411897a0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41181b50 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41187420 + 0x0018c> in <filename unknown>:0 

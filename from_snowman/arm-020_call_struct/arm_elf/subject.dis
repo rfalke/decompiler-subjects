@@ -1,0 +1,91 @@
+// _init
+// Return size: 0
+void _init()
+_init_entry:
+_init_exit:
+
+
+// _start
+// Return size: 0
+void _start()
+_start_entry:
+_start_exit:
+
+
+// call_weak_fn
+// Return size: 0
+void call_weak_fn()
+call_weak_fn_entry:
+call_weak_fn_exit:
+
+
+// deregister_tm_clones
+// Return size: 0
+void deregister_tm_clones()
+deregister_tm_clones_entry:
+deregister_tm_clones_exit:
+
+
+// register_tm_clones
+// Return size: 0
+void register_tm_clones()
+register_tm_clones_entry:
+register_tm_clones_exit:
+
+
+// __do_global_dtors_aux
+// Return size: 0
+void __do_global_dtors_aux()
+__do_global_dtors_aux_entry:
+__do_global_dtors_aux_exit:
+
+
+// frame_dummy
+// Return size: 0
+void frame_dummy()
+frame_dummy_entry:
+frame_dummy_exit:
+
+
+// f
+// Return size: 0
+void f(word32 r0, word32 r1)
+_Z1f1A1B_entry:
+_Z1f1A1B_exit:
+
+
+// g
+// Return size: 0
+void g()
+_Z1gv_entry:
+_Z1gv_exit:
+
+
+// main
+// Return size: 0
+void main()
+main_entry:
+main_exit:
+
+
+// __libc_csu_init
+// Return size: 0
+void __libc_csu_init()
+__libc_csu_init_entry:
+__libc_csu_init_exit:
+
+
+// __libc_csu_fini
+// Return size: 0
+void __libc_csu_fini()
+__libc_csu_fini_entry:
+__libc_csu_fini_exit:
+
+
+// _fini
+// Return size: 0
+void _fini()
+_fini_entry:
+_fini_exit:
+
+

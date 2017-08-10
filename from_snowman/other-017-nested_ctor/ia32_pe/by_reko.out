@@ -1,0 +1,6 @@
+Using options:
+004015D8: warning: Unable to guess parameters of MSVCR100.dll!_amsg_exit.
+00401852: warning: Unable to guess parameters of MSVCR100.dll!_initterm_e.
+0040184C: warning: Unable to guess parameters of MSVCR100.dll!_initterm.
+0040131D: warning: Unable to guess parameters of MSVCR100.dll!__initenv.
+0040138B: warning: Unable to guess parameters of MSVCR100.dll!_cexit.

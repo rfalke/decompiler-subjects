@@ -1,0 +1,108 @@
+Using options:
+0000866C: error: capstone.dll
+000085B0: error: capstone.dll
+000086A8: error: capstone.dll
+0000875C: error: capstone.dll
+00008934: error: capstone.dll
+00009164: error: capstone.dll
+00009964: error: capstone.dll
+0000A120: error: capstone.dll
+0000A11C: error: capstone.dll
+0000A0BC: error: capstone.dll
+0000A094: error: capstone.dll
+0000A04C: error: capstone.dll
+0000A000: error: capstone.dll
+00009FDC: error: capstone.dll
+00009FAC: error: capstone.dll
+00009F88: error: capstone.dll
+00009F50: error: capstone.dll
+00009F18: error: capstone.dll
+00009EF4: error: capstone.dll
+00009EC8: error: capstone.dll
+00009E7C: error: capstone.dll
+00009E58: error: capstone.dll
+00009E30: error: capstone.dll
+00009E0C: error: capstone.dll
+00009DD4: error: capstone.dll
+00009D68: error: capstone.dll
+00009D38: error: capstone.dll
+00009D08: error: capstone.dll
+00009C84: error: capstone.dll
+00009BC8: error: capstone.dll
+00009BA0: error: capstone.dll
+00009B80: error: capstone.dll
+00009B1C: error: capstone.dll
+00009AF8: error: capstone.dll
+00009ACC: error: capstone.dll
+00009A38: error: capstone.dll
+000099F4: error: capstone.dll
+000099B4: error: capstone.dll
+0000998C: error: capstone.dll
+00009940: error: capstone.dll
+00009900: error: capstone.dll
+000098D8: error: capstone.dll
+000098B4: error: capstone.dll
+00009874: error: capstone.dll
+00009840: error: capstone.dll
+00009810: error: capstone.dll
+000097E8: error: capstone.dll
+000097B8: error: capstone.dll
+00009784: error: capstone.dll
+0000973C: error: capstone.dll
+00009704: error: capstone.dll
+000096C8: error: capstone.dll
+00009688: error: capstone.dll
+0000965C: error: capstone.dll
+000095E4: error: capstone.dll
+000095BC: error: capstone.dll
+00009560: error: capstone.dll
+00009538: error: capstone.dll
+000094FC: error: capstone.dll
+000094CC: error: capstone.dll
+00009490: error: capstone.dll
+00009470: error: capstone.dll
+00009430: error: capstone.dll
+00009404: error: capstone.dll
+000093AC: error: capstone.dll
+00009364: error: capstone.dll
+0000927C: error: capstone.dll
+00009240: error: capstone.dll
+00009204: error: capstone.dll
+000091B4: error: capstone.dll
+0000910C: error: capstone.dll
+000090E8: error: capstone.dll
+0000909C: error: capstone.dll
+0000905C: error: capstone.dll
+0000900C: error: capstone.dll
+00008BE8: error: capstone.dll
+00008BC4: error: capstone.dll
+00008B88: error: capstone.dll
+00008B38: error: capstone.dll
+00008B04: error: capstone.dll
+00008AB8: error: capstone.dll
+00008A78: error: capstone.dll
+00008A54: error: capstone.dll
+00008A1C: error: capstone.dll
+000089E4: error: capstone.dll
+000088F8: error: capstone.dll
+000088B8: error: capstone.dll
+00008878: error: capstone.dll
+00008840: error: capstone.dll
+00008818: error: capstone.dll
+000087FC: error: capstone.dll
+00008794: error: capstone.dll
+00008734: error: capstone.dll
+000086FC: error: capstone.dll
+000086CC: error: capstone.dll
+0000866C: error: capstone.dll
+error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (ExceptionArgument argument, ExceptionResource resource) <0x4096e260 + 0x00047> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () <0x4096e240 + 0x00013> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T].get_Item (Int32 index) <0x4084a9b0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) <0x4096df40 + 0x0005f> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) <0x4096ddc0 + 0x00133> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (DecompilerEventListener listener) <0x4096dbe0 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () <0x4096d8b0 + 0x0009b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.AnalyzeDataFlow () <0x4096c3d0 + 0x0027b> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x408f7d60 + 0x00223> in <filename unknown>:0 

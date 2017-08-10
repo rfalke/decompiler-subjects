@@ -1,0 +1,13 @@
+Using options:
+error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (ExceptionArgument argument, ExceptionResource resource) <0x40554950 + 0x00047> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () <0x40554930 + 0x00013> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T].get_Item (Int32 index) <0x4048c9b0 + 0x00023> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader32.GetSectionNameOffset (UInt32 idxString) <0x405548e0 + 0x00027> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.ReadSectionName (UInt32 idxString) <0x40554890 + 0x00019> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader32.LoadSectionHeaders () <0x40553d10 + 0x00343> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) <0x4053cc30 + 0x000ef> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x4053b360 + 0x002ab> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x4053a0c0 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40539d60 + 0x000dc> in <filename unknown>:0 
