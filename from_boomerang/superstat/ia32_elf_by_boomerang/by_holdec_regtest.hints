@@ -1,0 +1,10 @@
+[activeFunctions]
+main
+
+[func:__xstat]
+signature: int __xstat(int version, const char * path, char* stat_buf)
+
+[func:main]
+# 88 comes from using sizeof(struct stat) which may or may 
+# not match this old binary file
+local-variable: 16,88,default,st

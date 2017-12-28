@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+proc1
+
+[func:proc1]
+signature: int proc1 (int x, char* s)

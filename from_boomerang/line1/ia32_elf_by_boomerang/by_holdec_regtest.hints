@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+chomp
+
+[0x08048454]
+signature: char *chomp(char *s, int size, d1 *f)
+
+[func:main]
+local-variable: 32,1024,,buffer

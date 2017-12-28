@@ -1,0 +1,8 @@
+[activeFunctions]
+main
+
+[0x401150]
+signature: int main(int argc, char **argv)
+
+[0x4038e4]
+signature: int printf(char *format,...){format.type=printf,format.index=0}

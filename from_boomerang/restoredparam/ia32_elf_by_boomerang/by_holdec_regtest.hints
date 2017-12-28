@@ -1,0 +1,7 @@
+[activeFunctions]
+main
+my_twice
+
+# The symbol twice has wrong type in the binary
+[0x08048396]
+signature: d4 my_twice(d4 n<ebx>)
