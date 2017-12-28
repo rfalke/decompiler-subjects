@@ -1,0 +1,13 @@
+[activeFunctions]
+main
+addem
+passem
+
+[func:addem]
+signature: void addem(int a, int b, int c, int* res)
+
+[func:passem]
+signature: void passem(int a, int b, int c, int* res)
+
+[func:main]
+local-variable: 24,4,,n

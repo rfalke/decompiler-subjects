@@ -1,0 +1,8 @@
+[0x080482a8]
+signature: d4 puts(d1 *s)
+
+[activeFunctions]
+main
+
+[jumpTable]
+0x8048420,0,5

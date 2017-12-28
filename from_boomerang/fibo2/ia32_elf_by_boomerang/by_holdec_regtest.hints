@@ -1,0 +1,13 @@
+[activeFunctions]
+main
+fib1
+fib2
+
+[0x0804835c]
+signature: u4 fib1(u4 n)
+
+[0x08048368]
+signature: u4 fib2(u4 n)
+
+[func:main]
+local-variable: 20,4,,n

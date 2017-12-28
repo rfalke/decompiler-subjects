@@ -1,0 +1,6 @@
+[activeFunctions]
+bswap
+main
+
+[func:bswap]
+signature: d4 bswap(d4 x)

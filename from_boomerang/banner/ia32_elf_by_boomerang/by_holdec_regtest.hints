@@ -1,0 +1,21 @@
+[func:puts]
+signature: void puts(d1* str)
+
+[func:malloc@@GLIBC_2.0]
+signature: d1* malloc(u4 size)
+
+[func:strlen]
+signature: u4 strlen(d1* str)
+
+[func:main]
+signature: void main(void)
+local-variable: 0,4,,dummy1
+local-variable: 48,80,,line
+local-variable: 136,4,,len
+
+[activeFunctions]
+main
+
+[extraBlocks]
+0x000000;auto+added
+

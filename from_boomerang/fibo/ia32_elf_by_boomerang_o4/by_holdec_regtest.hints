@@ -1,0 +1,15 @@
+[func:fib]
+signature: u4 fib(u4 n)
+
+[func:main]
+signature: void main(void)
+local-variable: 20,4,,x
+
+[activeFunctions]
+fib
+main
+
+[extraBlocks]
+0x8048798;auto+added
+0x8048830;auto+added
+

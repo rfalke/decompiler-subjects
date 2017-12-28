@@ -1,0 +1,14 @@
+[func:main]
+signature: d4 main(void);auto-created
+local-variable: 4,4,,dummy1
+local-variable: 8,4,,dummy2
+local-variable: 12,4,,dummy3
+local-variable: 32,4,,b
+local-variable: 28,4,,v
+
+[activeFunctions]
+main
+
+[extraBlocks]
+0x000000;auto+added
+

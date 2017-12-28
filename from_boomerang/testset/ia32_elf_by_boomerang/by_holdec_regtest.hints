@@ -1,0 +1,7 @@
+[activeFunctions]
+main
+
+# The binary doesn't contain a valid value in the printf symbol in the
+# dynsym part of the ELF. Boomerang has a work around for this.
+[0x80482b0]
+signature: int printf(char *format,...){format.type=printf,format.index=0}

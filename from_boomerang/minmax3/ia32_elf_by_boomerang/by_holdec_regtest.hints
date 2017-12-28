@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+test
+
+[func:printf]
+signature: d4 printf(char *fmt, d4 value)
+
+[func:test]
+signature: void test(s4 n)
