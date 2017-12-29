@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+proc1
+
+[func:proc1]
+signature: u4 proc1(d4 x, d4 y)

@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+test
+
+[func:test]
+signature: d4 test(d4 x, d4 y, d4 z)

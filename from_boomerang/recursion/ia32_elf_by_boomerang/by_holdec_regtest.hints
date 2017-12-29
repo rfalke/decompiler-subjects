@@ -1,0 +1,46 @@
+[activeFunctions]
+main
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+
+[func:b]
+signature: void b(d4 x)
+
+[func:c]
+signature: void c(d4 x)
+
+[func:d]
+signature: void d(d4 x)
+
+[func:e]
+signature: void e(d4 x)
+
+[func:f]
+signature: void f(d4 x)
+
+[func:g]
+signature: void g(d4 x)
+
+[func:h]
+signature: void h(d4 x)
+
+[func:i]
+signature: void i(d4 x)
+
+[func:j]
+signature: void j(d4 x)
+
+[func:k]
+signature: void k(d4 x)
+
+[func:l]
+signature: void l(d4 x)
