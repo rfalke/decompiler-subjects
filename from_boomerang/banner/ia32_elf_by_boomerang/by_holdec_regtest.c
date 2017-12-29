@@ -46,6 +46,5 @@ void main(void)
     (void) puts("");
     reg_var2 += 4;
   }
-  return;
 }
 

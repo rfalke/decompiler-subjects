@@ -11,7 +11,6 @@ void test(s4 n)
     (void) STORE(&n, 3);
   }
   (void) printf("MinMax result %d\n", n);
-  return;
 }
 
 // address: 0804835d.0

@@ -30,6 +30,5 @@ void main(void)
     reg_var1 = reg_ab + reg_ac;
   }
   (void) printf("fibonacci(%d) = %d\n", x, reg_var1);
-  return;
 }
 

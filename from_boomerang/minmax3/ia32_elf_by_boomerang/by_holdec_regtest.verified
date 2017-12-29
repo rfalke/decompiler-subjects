@@ -6,7 +6,6 @@ void test(s4 n)
 {
   reg_aa = (n * -1 + 0xfffffffe & BIT_TO_INT(n > 4294967294) * -1 + (n >> 31) * -1 + 0xffffffff) * -1 + 0xfffffffb & BIT_TO_INT((n * -1 + 0xfffffffe & BIT_TO_INT(n > 4294967294) * -1 + (n >> 31) * -1 + 0xffffffff) + 5 > 0) * -1 + ((n * -1 + 0xfffffffe & BIT_TO_INT(n > 4294967294) * -1 + (n >> 31) * -1 + 0xffffffff) * -1 + 0xfffffffe >> 0x1f);
   (void) printf("MinMax result %d\n", reg_aa + 3);
-  return;
 }
 
 // address: 0804836f.0

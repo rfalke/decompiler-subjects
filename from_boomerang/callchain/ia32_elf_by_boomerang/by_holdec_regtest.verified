@@ -26,7 +26,6 @@ d4 add15(d4 ARG_0)
 void printarg(d4 value)
 {
   (void) printf("Fifty five is %d\n", value);
-  return;
 }
 
 // address: 080489c4.0

@@ -5,7 +5,6 @@
 void addem(s4 a, s4 b, s4 c, s4* res)
 {
   (void) STORE(res, a + b + c);
-  return;
 }
 
 // address: 08048938.0
@@ -13,7 +12,6 @@ void addem(s4 a, s4 b, s4 c, s4* res)
 void passem(s4 a, s4 b, s4 c, s4* res)
 {
   (void) addem(a, b, c, res);
-  return;
 }
 
 // address: 08048950.0
