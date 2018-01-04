@@ -1,0 +1,3 @@
+Tests the creation of short circuit boolean expressions. All methods can be expressed with nested && and/or ||.
+
+The generator creates all possible variants.
