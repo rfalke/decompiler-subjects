@@ -1,0 +1,24 @@
+A list of tests can be reordered but keep the same semantic. The subjects shows this.
+
+So the semantic of
+
+  int  test_3_blocks_base(int c0, int c1) {
+    if(c0) return 200;
+    if(c1) return 201;
+
+    return 202;
+  }
+
+and
+
+  int  test_3_blocks_variant_4(int c0, int c1) {
+    if(!c0 && !c1) return 202;
+    if(c1 && !c0) return 201;
+
+    return 200;
+  }
+
+are the same.
+
+The subject tests if the decompiler is able to reduce this complexity and create out 
+of test_3_blocks_variant_4 the code for test_3_blocks_base.
