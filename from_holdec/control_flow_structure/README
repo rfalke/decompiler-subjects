@@ -1,0 +1,8 @@
+Creates a CFG with a certain number of blocks (1, 2 or 3). All blocks (and the exit block) are 
+reachable. There is a variable number of outgoing edges (from 1 to number of blocks + 1). 
+All blocks have a body (a puts call). There is one exit block with a return statement. If there are
+multiple CFGs which are isomorphic to each other only one is generated. The methods are sorted
+by increasing edge number because a CFG with a higher edge number is more difficult to express 
+with common control flow structures (i.e. there is a high chance that the CFG is irreducible).
+
+This subject tests the recognition and output of arbitrary CFGs.
