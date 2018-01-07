@@ -75,8 +75,7 @@ void fun_407006(int32_t a1) {
     void** edi59;
     void* eax60;
     void* eax61;
-    void* eax62;
-    signed char tmp8_63;
+    signed char tmp8_62;
 
     ebp2 = reinterpret_cast<void*>(0xffffffff);
     ebx3 = reinterpret_cast<unsigned char>(0);
@@ -222,7 +221,7 @@ void fun_407006(int32_t a1) {
     }
     edi54 = v48;
     while (edi54->f0) {
-        ebx55 = reinterpret_cast<int32_t*>(reinterpret_cast<signed char>(edi54->f4) + reinterpret_cast<uint32_t>(esi47));
+        ebx55 = reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(edi54->f4) + reinterpret_cast<uint32_t>(esi47));
         v56 = edi54->f0 + reinterpret_cast<uint32_t>(esi47) + 0x5000;
         edi54 = reinterpret_cast<struct s1*>(reinterpret_cast<uint32_t>(edi54) + 8);
         esi47->f20580(ecx50, v56);
@@ -239,20 +238,20 @@ void fun_407006(int32_t a1) {
     }
     ebx58 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi47) - 4);
     edi59 = &edi54->f4;
-    while (eax60 = reinterpret_cast<void*>(0), *reinterpret_cast<void**>(&eax60) = *edi59, ++edi59, eax61 = eax60, !!eax61) {
-        if (*reinterpret_cast<unsigned char*>(&eax61) > 0xef) {
-            *reinterpret_cast<unsigned char*>(&eax61) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax61) & 15);
-            eax61 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(eax61) << 16);
-            *reinterpret_cast<void**>(&eax61) = *edi59;
+    while (eax60 = reinterpret_cast<void*>(0), *reinterpret_cast<void**>(&eax60) = *edi59, ++edi59, !!eax60) {
+        if (reinterpret_cast<unsigned char>(*reinterpret_cast<void**>(&eax60)) > 0xef) {
+            *reinterpret_cast<void**>(&eax60) = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void**>(&eax60)) & 15);
+            eax60 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(eax60) << 16);
+            *reinterpret_cast<void**>(&eax60) = *edi59;
             edi59 = edi59 + 2;
         }
-        ebx58 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx58) + reinterpret_cast<int32_t>(eax61));
-        eax62 = *ebx58;
+        ebx58 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx58) + reinterpret_cast<int32_t>(eax60));
+        eax61 = *ebx58;
         __asm__("rol eax, 0x10");
-        tmp8_63 = *reinterpret_cast<signed char*>(&eax62);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax62) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax62) + 1);
-        *reinterpret_cast<signed char*>(&eax62) = tmp8_63;
-        *ebx58 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax62) + reinterpret_cast<uint32_t>(esi47));
+        tmp8_62 = *reinterpret_cast<signed char*>(&eax61);
+        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax61) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax61) + 1);
+        *reinterpret_cast<signed char*>(&eax61) = tmp8_62;
+        *ebx58 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax61) + reinterpret_cast<uint32_t>(esi47));
     }
     __asm__("popad ");
 }

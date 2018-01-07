@@ -1,12 +1,12 @@
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
-QIODevice::read: maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
+QIODevice::read (QFile, "from_snowman/malformed-elf-5/ia32_elf/subject.exe"): maxSize argument exceeds QByteArray size limit
 nocode: from_snowman/malformed-elf-5/ia32_elf/subject.exe:std::bad_alloc

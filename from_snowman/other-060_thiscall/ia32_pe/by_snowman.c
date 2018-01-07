@@ -444,13 +444,13 @@ struct s6** cout_std_3V_basic_ostream_DU_char_traits_D_std_1_A = reinterpret_cas
  * ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
  * public: class std::basic_ostream<char,struct std::char_traits<char> > & __thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator<<(int)
  */
-int32_t 6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z = 0x8452;
+int32_t _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z = 0x8452;
 
 /*
  * ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
  * public: class std::basic_ostream<char,struct std::char_traits<char> > & __thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))
  */
-int32_t 6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z = 0x8380;
+int32_t _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z = 0x8380;
 
 void fun_401019(int32_t* ecx, int32_t a2, int32_t* a3) {
     int32_t eax4;
@@ -461,8 +461,8 @@ void fun_401019(int32_t* ecx, int32_t a2, int32_t* a3) {
     eax4 = endl_std_YAAAV_basic_ostream_DU_char_traits_D_std_1_AAV21_Z;
     v5 = *ecx + a2;
     ecx6 = cout_std_3V_basic_ostream_DU_char_traits_D_std_1_A;
-    eax7 = reinterpret_cast<int32_t>(6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z(ecx6, v5, eax4));
-    6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax7, v5, eax4);
+    eax7 = reinterpret_cast<int32_t>(_6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z(ecx6, v5, eax4));
+    _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax7, v5, eax4);
     return;
 }
 
@@ -623,7 +623,7 @@ struct s6*** fun_401037(struct s6*** ecx, struct s6** a2, int32_t* a3) {
     edx4 = endl_std_YAAAV_basic_ostream_DU_char_traits_D_std_1_AAV21_Z;
     eax5 = cout_std_3V_basic_ostream_DU_char_traits_D_std_1_A;
     eax6 = fun_401028(a2, eax5, "MyClass::MyClass()", edx4, ecx);
-    6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax6, edx4);
+    _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax6, edx4);
     return ecx;
 }
 
@@ -795,7 +795,7 @@ void fun_401005(struct s6*** ecx, int32_t* a2) {
     eax3 = endl_std_YAAAV_basic_ostream_DU_char_traits_D_std_1_AAV21_Z;
     ecx4 = cout_std_3V_basic_ostream_DU_char_traits_D_std_1_A;
     eax5 = fun_401028(ecx4, ecx4, "MyClass::~MyClass()", eax3, ecx);
-    6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax5, eax3, ecx);
+    _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z(eax5, eax3, ecx);
     return;
 }
 
@@ -929,7 +929,7 @@ void fun_4017c4(uint32_t ecx, int32_t a2) {
 }
 
 void fun_40175e() {
-    goto 6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z;
+    goto _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_P6AAAV01_AAV01_Z_Z;
 }
 
 int32_t g407138 = 0;
@@ -1295,7 +1295,7 @@ int32_t fun_401f74() {
 }
 
 void fun_40176a() {
-    goto 6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z;
+    goto _6_basic_ostream_DU_char_traits_D_std_std_QAEAAV01_H_Z;
 }
 
 struct s15* fun_4017da() {

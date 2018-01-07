@@ -489,10 +489,11 @@ struct s6 {
 int64_t camlList__length_aux_58(void** rdi, void** rsi) {
     struct s6* rbx3;
     int64_t rax4;
+    int64_t tmp64_5;
 
     while (rbx3 != 1) {
         rbx3 = rbx3->f8;
-        rax4 = rax4 + 2;
+        rax4 = tmp64_5;
     }
     return rax4;
 }
@@ -4287,11 +4288,10 @@ struct s24 {
 void** camlArray__list_length_153() {
     struct s24* rbx1;
     void** rax2;
-    void** tmp64_3;
 
     while (rbx1 != 1) {
         rbx1 = rbx1->f8;
-        rax2 = tmp64_3;
+        rax2 = rax2 + 2;
     }
     return rax2;
 }

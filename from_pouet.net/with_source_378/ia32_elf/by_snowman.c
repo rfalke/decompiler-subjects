@@ -1011,7 +1011,6 @@ void fun_8048500() {
                         *reinterpret_cast<int32_t**>(ecx5 + 0x87cab98) = reinterpret_cast<int32_t*>(0);
                     }
                     eax9 = fun_80486e2(ecx5);
-                    *reinterpret_cast<signed char*>(&eax9) = *reinterpret_cast<signed char*>(&eax9);
                     if (*reinterpret_cast<signed char*>(&eax9) && (((zf10 = *reinterpret_cast<signed char*>(&eax9) == -6, !zf10) || (*reinterpret_cast<int32_t**>(ecx5 + 0x804a6ba) = reinterpret_cast<int32_t*>(0xffffffff), !zf10)) && (((zf11 = *reinterpret_cast<signed char*>(&eax9) == -4, !zf11) || (*reinterpret_cast<signed char*>(ecx5 + 0x87cabc0) = *reinterpret_cast<signed char*>(&eax9), !zf11)) && (*reinterpret_cast<signed char*>(&eax9) != -5 || (*reinterpret_cast<signed char*>(&edx4) = 0, *reinterpret_cast<signed char*>(ecx5 + 0x87cabc0) = 0, !1))))) {
                         eax12 = eax9 + eax9;
                         *reinterpret_cast<int16_t*>(&eax12) = *reinterpret_cast<int16_t*>(eax12 + 0x804a628);

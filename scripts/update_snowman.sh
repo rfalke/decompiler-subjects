@@ -7,7 +7,7 @@ ulimit -t 600
 ulimit -v 4000000
 
 if test -z "$SNOWMANDIR"; then
-    echo "\$SNOWMANDIR not set. The executable \$SNOWMANDIR/nocode will be used."
+    echo "\$SNOWMANDIR not set. The executable \$SNOWMANDIR/build/nocode/nocode will be used."
     exit 1
 fi
 
@@ -21,13 +21,13 @@ do
   else
       echo -n "decompiling $line"
       rm -f $dir/by_snowman.c $dir/by_snoman.failed
-      if $SNOWMANDIR/nocode  --print-cxx=$dir/by_snowman.c -- "$line" >/tmp/tmp.out 2>&1 ; then
+      if $SNOWMANDIR/build/nocode/nocode  --print-cxx=$dir/by_snowman.c -- "$line" >/tmp/tmp.out 2>&1 ; then
 	  echo "  ok"
       else
 	  echo "  failed"
 	  touch $dir/by_snowman.failed
       fi
-      sed </tmp/tmp.out "s,$root/,,g" >$dir/by_snowman.out
+      sed </tmp/tmp.out "s,$root/,,g" | sed "s,$SNOWMANDIR,...,g" >$dir/by_snowman.out
   fi
 done
 rm -f /tmp/tmp.out

@@ -11,10 +11,10 @@ struct s0 {
  * ??3@YAXPAX@Z
  * void __cdecl operator delete(void *)
  */
-int32_t 3_YAXPAX_Z = 0x627c;
+int32_t _3_YAXPAX_Z = 0x627c;
 
 void fun_4013b2(struct s0* a1) {
-    goto 3_YAXPAX_Z;
+    goto _3_YAXPAX_Z;
 }
 
 void fun_401a50(struct s0* a1, struct s0* a2, struct s0* a3);
@@ -331,10 +331,10 @@ struct s23 {
  * ??2@YAPAXI@Z
  * void * __cdecl operator new(unsigned int)
  */
-int32_t 2_YAPAXI_Z = 0x628c;
+int32_t _2_YAPAXI_Z = 0x628c;
 
 struct s23* fun_4013b8(int32_t a1) {
-    goto 2_YAPAXI_Z;
+    goto _2_YAPAXI_Z;
 }
 
 uint32_t g405078 = 0xbb40e64e;

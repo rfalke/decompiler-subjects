@@ -5810,42 +5810,42 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             ++edi18;
         } while (*edi18);
         eax20 = reinterpret_cast<struct s5*>(~ecx19 + 0xffffffff);
-        goto addr_806de2e_9;
+        break;
     case 1:
         switch (edi15 + 3) {
         default:
             eax16 = reinterpret_cast<void**>(0x80779ab);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 0:
             ebx17 = 0;
             eax16 = reinterpret_cast<void**>(0x80779a1);
             goto addr_806dd5c_4;
         case 2:
             eax16 = reinterpret_cast<void**>(0x80779aa);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 3:
             eax16 = reinterpret_cast<void**>(0x80751c4);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 4:
             eax16 = reinterpret_cast<void**>(0x80779ad);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 5:
             eax16 = reinterpret_cast<void**>(0x80779b1);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 6:
             eax16 = reinterpret_cast<void**>(0x80779b8);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
             ebx17 = 0;
             eax16 = reinterpret_cast<void**>(0x80779bf);
             goto addr_806dd5c_4;
             eax16 = reinterpret_cast<void**>(0x80751c7);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
             eax16 = reinterpret_cast<void**>(0x80779e5);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
             eax16 = reinterpret_cast<void**>(0x80779c3);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
             eax16 = reinterpret_cast<void**>(0x80779cb);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
             while (1) {
                 eax21 = reinterpret_cast<void**>(0x8077a0f);
                 while (1) {
@@ -5877,7 +5877,7 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 if (reinterpret_cast<int32_t>(v42) <= reinterpret_cast<int32_t>(0)) {
                                     ++v41;
                                     if (reinterpret_cast<signed char>(v47) >= reinterpret_cast<signed char>(*v55) || reinterpret_cast<signed char>(v41) > reinterpret_cast<signed char>(*reinterpret_cast<void***>(v49 + 4))) {
-                                        addr_806e11b_32:
+                                        addr_806e11b_31:
                                         v23 = reinterpret_cast<void**>(0x8075ad6);
                                         v24 = reinterpret_cast<void**>(1);
                                         eax56 = gfp;
@@ -5896,12 +5896,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             do {
                                                 eax65 = eax65 + 2;
                                                 if (reinterpret_cast<signed char>(v66) <= reinterpret_cast<signed char>(eax65)) 
-                                                    goto addr_806e11b_32;
+                                                    goto addr_806e11b_31;
                                                 edi15 = eax65;
                                                 esi63 = edx64;
                                                 ecx = *reinterpret_cast<void***>(edx64 + 4);
                                                 if (reinterpret_cast<signed char>(ebx67) > reinterpret_cast<signed char>(ecx)) 
-                                                    goto addr_806e11b_32;
+                                                    goto addr_806e11b_31;
                                                 edx64 = edx64 + 32;
                                             } while (ebx67 != ecx);
                                         }
@@ -5926,13 +5926,13 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                                 eax81 = gfp;
                                                 eax87 = fun_8048f04(ecx, eax81, 1, 0x80779ef, v22, v27, 15, v82, v83, v84, v85, v86, v13);
                                                 v34 = v34 + reinterpret_cast<unsigned char>(eax87);
-                                                goto addr_806e11b_32;
+                                                goto addr_806e11b_31;
                                             } else {
                                                 if (reinterpret_cast<int1_t>(a4 == 2)) {
                                                     eax88 = gfp;
                                                     eax94 = fun_8048f04(ecx, eax88, 1, 0x80779ea, v22, v27, 15, v89, v90, v91, v92, v93, v13);
                                                     v34 = v34 + reinterpret_cast<unsigned char>(eax94);
-                                                    goto addr_806e11b_32;
+                                                    goto addr_806e11b_31;
                                                 }
                                             }
                                         }
@@ -5947,14 +5947,14 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             edi15 = edi15 + 4;
                                             esi63 = esi63 + 4;
                                         }
-                                        goto addr_806e11b_32;
+                                        goto addr_806e11b_31;
                                     }
                                 } else {
                                     if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(esi63 + 8) == 7)) {
                                         eax95 = gfp;
                                         eax101 = fun_8048f04(ecx, eax95, 1, 0x80779f3, v22, v27, 15, v96, v97, v98, v99, v100, v13);
                                         v34 = v34 + reinterpret_cast<unsigned char>(eax101);
-                                        goto addr_806e11b_32;
+                                        goto addr_806e11b_31;
                                     }
                                 }
                                 ++v51;
@@ -6030,12 +6030,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 }
                             } else {
                                 if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(v39) == 2)) 
-                                    goto addr_806e176_70;
+                                    goto addr_806e176_69;
                             }
                         }
                     }
-                    goto addr_806e3ca_71;
-                    addr_806e176_70:
+                    goto addr_806e3ca_70;
+                    addr_806e176_69:
                     ecx = v39;
                     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 8)) > reinterpret_cast<unsigned char>(9)) 
                         break;
@@ -6058,11 +6058,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                         break;
                     case 6:
                         if (a5) 
-                            goto addr_806e375_80;
+                            goto addr_806e375_79;
                         eax21 = reinterpret_cast<void**>(0x8075f0e);
                         if (!reinterpret_cast<int1_t>(a4 == 3)) 
                             break;
-                        addr_806e375_80:
+                        addr_806e375_79:
                         eax21 = reinterpret_cast<void**>(0x8077a2a);
                         break;
                     case 7:
@@ -6112,7 +6112,7 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     }
                 }
             }
-            addr_806e3ca_71:
+            addr_806e3ca_70:
             ebx140 = reinterpret_cast<unsigned char>(v41) - v141;
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx140) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx140 == 0))) {
                 do {
@@ -6396,12 +6396,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 }
                             } else {
                                 if (v169->f0 == 2) 
-                                    goto addr_806f3aa_163;
+                                    goto addr_806f3aa_162;
                             }
                         }
                     }
-                    goto addr_806f89f_164;
-                    addr_806f3aa_163:
+                    goto addr_806f89f_163;
+                    addr_806f3aa_162:
                     if (reinterpret_cast<unsigned char>(v169->f8) > reinterpret_cast<unsigned char>(9)) 
                         break;
                     switch (v169->f8) {
@@ -6423,11 +6423,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     case 6:
                         zf258 = power_starstar == 0;
                         if (!zf258) 
-                            goto addr_806f810_173;
+                            goto addr_806f810_172;
                         edi155 = reinterpret_cast<void**>(0x8077a81);
                         if (!reinterpret_cast<int1_t>(a6 == 3)) 
                             break;
-                        addr_806f810_173:
+                        addr_806f810_172:
                         edi155 = reinterpret_cast<void**>(0x8077a2a);
                         break;
                     case 7:
@@ -6442,7 +6442,7 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     }
                 }
             }
-            addr_806f89f_164:
+            addr_806f89f_163:
             edi259 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v171) - v260);
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edi259) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edi259 == 0))) {
                 esi261 = reinterpret_cast<int16_t*>(reinterpret_cast<int32_t>(v262) + reinterpret_cast<unsigned char>(v158));
@@ -6484,23 +6484,23 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         switch (edi15 + 3) {
         default:
             eax16 = reinterpret_cast<void**>(0x807799c);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 0:
             ebx17 = 0;
             eax16 = reinterpret_cast<void**>(0x8077993);
             goto addr_806dd5c_4;
         case 1:
             eax16 = reinterpret_cast<void**>(0x8077991);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 2:
             eax16 = reinterpret_cast<void**>(0x8077990);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 3:
             eax16 = reinterpret_cast<void**>(0x80751c8);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         case 6:
             eax16 = reinterpret_cast<void**>(0x8077999);
-            goto addr_806de3b_13;
+            goto addr_806de3b_12;
         }
     case 4:
         ebx17 = 0;
@@ -6508,8 +6508,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         goto addr_806dd5c_4;
     case 5:
         eax16 = reinterpret_cast<void**>(0x807207b);
+        goto addr_806de3b_12;
     }
-    addr_806de3b_13:
+    addr_806de2e_200:
+    return eax20;
+    addr_806de3b_12:
     ebx17 = 0;
     goto addr_806dd60_201;
     addr_806dd5c_4:
@@ -6552,8 +6555,7 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         ++edi304;
     } while (*edi304);
     eax20 = reinterpret_cast<struct s5*>(~ecx305 + 0xffffffff);
-    addr_806de2e_9:
-    return eax20;
+    goto addr_806de2e_200;
     addr_806ed14_214:
     addr_806f0f3_215:
     ebx306 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(edi15) - reinterpret_cast<unsigned char>(a4));
@@ -10389,7 +10391,7 @@ uint32_t strcmp_tospace(void** a1, void** a2, void** a3, void** a4, void** a5, v
 
 int32_t subst_constants(void** a1, void** a2, void** a3);
 
-void simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
+void** simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
 
 uint32_t calc_simp(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11) {
     void** v12;
@@ -16834,14 +16836,15 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
     goto addr_8058b6b_12;
 }
 
-void simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
+void** simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
     void** v8;
     void** v9;
+    void** eax10;
 
     __asm__("fld1 ");
     __asm__("fstp qword [esp+0xc]");
-    simp_ssub(ecx, a2, a3, 0, v8, v9, 1, 1, 6);
-    return;
+    eax10 = simp_ssub(ecx, a2, a3, 0, v8, v9, 1, 1, 6);
+    return eax10;
 }
 
 struct s67 {

@@ -122,10 +122,10 @@ void fun_401524(int32_t* a1, int32_t a2, int32_t a3, int32_t a4) {
  * ??3@YAXPAX@Z
  * void __cdecl operator delete(void *)
  */
-int32_t 3_YAXPAX_Z = 0x628c;
+int32_t _3_YAXPAX_Z = 0x628c;
 
 void fun_4014ae() {
-    goto 3_YAXPAX_Z;
+    goto _3_YAXPAX_Z;
 }
 
 int32_t _amsg_exit = 0x62aa;
@@ -401,10 +401,10 @@ int32_t fun_40100f(struct s0* ecx, int32_t a2, int32_t a3, int32_t* a4, int32_t 
  * ??2@YAPAXI@Z
  * void * __cdecl operator new(unsigned int)
  */
-int32_t 2_YAPAXI_Z = 0x627c;
+int32_t _2_YAPAXI_Z = 0x627c;
 
 struct s0* fun_4011c2(struct s0* ecx, int32_t a2) {
-    goto 2_YAPAXI_Z;
+    goto _2_YAPAXI_Z;
 }
 
 uint32_t g405058 = 0xbb40e64e;

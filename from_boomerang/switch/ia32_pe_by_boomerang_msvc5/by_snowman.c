@@ -796,9 +796,9 @@ uint32_t fun_4032d0(struct s5* a1, struct s5* a2, uint32_t a3, struct s5* a4) {
         ebx6 = a3;
         eax7 = a1;
         do {
+            ecx5 = reinterpret_cast<struct s5*>(reinterpret_cast<uint32_t>(ecx5) >> 1);
             __asm__("rcr ebx, 1");
             __asm__("rcr eax, 1");
-            ecx5 = reinterpret_cast<struct s5*>(reinterpret_cast<uint32_t>(ecx5) >> 1);
         } while (ecx5);
         eax8 = reinterpret_cast<uint32_t>(eax7) / ebx6;
         eax9 = reinterpret_cast<struct s5*>(eax8 * a3);
@@ -837,9 +837,9 @@ struct s5* fun_403260(struct s5* a1, struct s5* a2, uint32_t a3, struct s5* a4) 
         ebx6 = a3;
         eax7 = a1;
         do {
+            ecx5 = reinterpret_cast<struct s5*>(reinterpret_cast<uint32_t>(ecx5) >> 1);
             __asm__("rcr ebx, 1");
             __asm__("rcr eax, 1");
-            ecx5 = reinterpret_cast<struct s5*>(reinterpret_cast<uint32_t>(ecx5) >> 1);
         } while (ecx5);
         eax8 = reinterpret_cast<struct s5*>(reinterpret_cast<uint32_t>(eax7) / ebx6);
         esi9 = eax8;

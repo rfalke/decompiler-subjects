@@ -3538,11 +3538,10 @@ struct s16 {
 int32_t camlList__length_aux_1030() {
     struct s16* ebx1;
     int32_t eax2;
-    int32_t tmp32_3;
 
     while (ebx1 != 1) {
         ebx1 = ebx1->f4;
-        eax2 = tmp32_3;
+        eax2 = eax2 + 2;
     }
     return eax2;
 }
@@ -12624,7 +12623,7 @@ void** uerror(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
     goto v16;
 }
 
-void** alloc_inet_addr(void** a1, void** a2, void** a3);
+void** alloc_inet_addr(void** ecx, void** a2, void** a3, void** a4);
 
 void** caml_alloc_small(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, ...);
 
@@ -12698,7 +12697,7 @@ void** alloc_sockaddr(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
     ebx9 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx10) + 0x1254a);
     eax11 = reinterpret_cast<uint16_t>(*reinterpret_cast<void***>(a2));
     if (*reinterpret_cast<int16_t*>(&eax11) == 2) {
-        eax14 = alloc_inet_addr(a2 + 4, v12, v13);
+        eax14 = alloc_inet_addr(ecx, a2 + 4, v12, v13);
         edi15 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx9) - 24);
         v16 = *edi15;
         *edi15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffffc4);
@@ -12782,15 +12781,14 @@ void** __i686_get_pc_thunk_bx() {
 
 void** caml_alloc_string(void** ecx, void** a2, void** a3, void** a4);
 
-void** alloc_inet_addr(void** a1, void** a2, void** a3) {
-    void** ecx4;
+void** alloc_inet_addr(void** ecx, void** a2, void** a3, void** a4) {
     void** v5;
     void** v6;
     void** eax7;
 
     __i686_get_pc_thunk_bx();
-    eax7 = caml_alloc_string(ecx4, 4, v5, v6);
-    *reinterpret_cast<void***>(eax7) = *reinterpret_cast<void***>(a1);
+    eax7 = caml_alloc_string(ecx, 4, v5, v6);
+    *reinterpret_cast<void***>(eax7) = *reinterpret_cast<void***>(a2);
     return eax7;
 }
 
@@ -20288,11 +20286,12 @@ void** caml_raise_zero_divide(void** ecx) {
     goto 0x80724d0;
 }
 
-void** caml_copy_nativeint(void** ecx, void** a2) {
+void** caml_copy_nativeint(void** a1) {
+    void** ecx2;
     void** eax3;
 
-    eax3 = caml_alloc_custom(ecx, 0x807b794, 4, 0, 1);
-    *reinterpret_cast<void***>(eax3 + 4) = a2;
+    eax3 = caml_alloc_custom(ecx2, 0x807b794, 4, 0, 1);
+    *reinterpret_cast<void***>(eax3 + 4) = a1;
     return eax3;
 }
 
@@ -20398,11 +20397,12 @@ void** __divdi3(void** a1, void** a2, void** a3, void** a4) {
     }
 }
 
-void** caml_copy_int32(void** ecx, void** a2) {
+void** caml_copy_int32(void** a1) {
+    void** ecx2;
     void** eax3;
 
-    eax3 = caml_alloc_custom(ecx, 0x807b75c, 4, 0, 1);
-    *reinterpret_cast<void***>(eax3 + 4) = a2;
+    eax3 = caml_alloc_custom(ecx2, 0x807b75c, 4, 0, 1);
+    *reinterpret_cast<void***>(eax3 + 4) = a1;
     return eax3;
 }
 
@@ -21004,12 +21004,13 @@ void caml_sys_error(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     goto v45;
 }
 
-void** caml_alloc_channel(void** ecx, void** a2, void** a3) {
+void** caml_alloc_channel(void** a1, void** a2) {
+    void** ecx3;
     void** eax4;
 
-    *reinterpret_cast<void***>(a2 + 44) = *reinterpret_cast<void***>(a2 + 44) + 1;
-    eax4 = caml_alloc_custom(ecx, 0x807b7b0, 4, 1, 0x3e8);
-    *reinterpret_cast<void***>(eax4 + 4) = a2;
+    *reinterpret_cast<void***>(a1 + 44) = *reinterpret_cast<void***>(a1 + 44) + 1;
+    eax4 = caml_alloc_custom(ecx3, 0x807b7b0, 4, 1, 0x3e8);
+    *reinterpret_cast<void***>(eax4 + 4) = a1;
     return eax4;
 }
 
@@ -26488,7 +26489,6 @@ void** camlArray__size_1065() {
     struct s129* ebx1;
     uint32_t ebx2;
     void** eax3;
-    void* tmp32_4;
 
     while (ebx1 != 1) {
         if ((*reinterpret_cast<uint32_t*>(ebx1->f0 - 4) & 0xff) == 0xfe) {
@@ -26496,7 +26496,7 @@ void** camlArray__size_1065() {
         } else {
             ebx2 = *reinterpret_cast<uint32_t*>(ebx1->f0 - 4) >> 9;
         }
-        eax3 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(tmp32_4) - 1);
+        eax3 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax3) + (ebx2 | 1) - 1);
         ebx1 = ebx1->f4;
     }
     return eax3;
@@ -45950,7 +45950,7 @@ void** unix_inet_addr_of_string(void** ecx, void** a2) {
             eax10 = alloc_inet6_addr(reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, a2, v6);
         }
     } else {
-        eax10 = alloc_inet_addr(reinterpret_cast<int32_t>(ebp3) + 0xfffffff4, a2, v4);
+        eax10 = alloc_inet_addr(ecx, reinterpret_cast<int32_t>(ebp3) + 0xfffffff4, a2, v4);
     }
     return eax10;
 }
@@ -46474,38 +46474,39 @@ void unix_getgrnam(void** ecx, void** a2) {
     return;
 }
 
-void unix_getgroups(void** ecx) {
-    void* ebp2;
-    void** v3;
-    void** eax4;
-    void** esi5;
-    void* ebx6;
+void unix_getgroups() {
+    void* ebp1;
+    void** v2;
+    void** eax3;
+    void** esi4;
+    void* ebx5;
+    void** v6;
     void** v7;
     void** v8;
     void** v9;
-    void** v10;
+    void** ecx10;
     void** v11;
     void** eax12;
     void** edx13;
     void** edi14;
 
-    ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
+    ebp1 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
-    v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xfffbffe8);
-    eax4 = fun_804a774(0x10000, v3);
-    esi5 = eax4;
-    if (reinterpret_cast<int1_t>(eax4 == 0xffffffff)) {
-        v3 = reinterpret_cast<void**>(0);
-        eax4 = uerror(reinterpret_cast<int32_t>(ebx6) + 0x14c17 + 0xffffe86e, 0, v7, v8, v9, v10);
+    v2 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffbffe8);
+    eax3 = fun_804a774(0x10000, v2);
+    esi4 = eax3;
+    if (reinterpret_cast<int1_t>(eax3 == 0xffffffff)) {
+        v2 = reinterpret_cast<void**>(0);
+        eax3 = uerror(reinterpret_cast<int32_t>(ebx5) + 0x14c17 + 0xffffe86e, 0, v6, v7, v8, v9);
     }
-    eax12 = caml_alloc_tuple(ecx, eax4, v3, v11);
-    if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi5) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi5 == 0))) {
+    eax12 = caml_alloc_tuple(ecx10, eax3, v2, v11);
+    if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi4) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi4 == 0))) {
         edx13 = reinterpret_cast<void**>(0);
-        edi14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) - 0x40018);
+        edi14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) - 0x40018);
         do {
             *reinterpret_cast<void***>(eax12 + reinterpret_cast<unsigned char>(edx13) * 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edi14[reinterpret_cast<unsigned char>(edx13)]) + reinterpret_cast<int32_t>(edi14[reinterpret_cast<unsigned char>(edx13)]) + 1);
             ++edx13;
-        } while (edx13 != esi5);
+        } while (edx13 != esi4);
     }
     return;
 }
@@ -48532,13 +48533,15 @@ int32_t caml_update_dummy(void** a1, void** a2, void** a3, void** a4, void** a5,
     return 1;
 }
 
-void** caml_alloc_final(void** ecx, uint32_t a2, void** a3, void** a4, void** a5) {
+void** caml_alloc_final(uint32_t a1, void** a2, void** a3, void** a4) {
+    void** ecx5;
     void** eax6;
-    void** eax7;
+    void** ecx7;
+    void** eax8;
 
-    eax6 = caml_final_custom_operations(ecx, a3);
-    eax7 = caml_alloc_custom(ecx, eax6, a2 << 2, a4, a5);
-    return eax7;
+    eax6 = caml_final_custom_operations(ecx5, a2);
+    eax8 = caml_alloc_custom(ecx7, eax6, a1 << 2, a3, a4);
+    return eax8;
 }
 
 void** caml_alloc_dummy(int32_t a1) {
@@ -49171,7 +49174,7 @@ void** caml_ml_open_descriptor_in(void** ecx, int32_t a2) {
     void** eax7;
 
     eax5 = caml_open_descriptor_in(ecx, a2 >> 1, v3, v4);
-    eax7 = caml_alloc_channel(ecx, eax5, v6);
+    eax7 = caml_alloc_channel(eax5, v6);
     return eax7;
 }
 
@@ -53557,7 +53560,7 @@ void** alloc_one_addr(void** ecx, void** a2) {
     if (*reinterpret_cast<int32_t*>(ebx4 + 0x149d9 + 0x9720) != 16) {
         esi5 = reinterpret_cast<void**>(ebp3 + 0xfffffff4);
         fun_804a684(ecx, esi5, a2, 4, v6, v7, v8, v9, v10, v11, v12, v13, v14, ebx15, esi16, ebp17);
-        eax18 = alloc_inet_addr(esi5, a2, 4);
+        eax18 = alloc_inet_addr(ecx, esi5, a2, 4);
     } else {
         esi19 = reinterpret_cast<void**>(ebp3 + 0xffffffe4);
         fun_804a684(ecx, esi19, a2, 16, v20, v21, v22, v23, v24, v25, v26, v27, v28, ebx15, esi16, ebp17);
@@ -54855,10 +54858,11 @@ void** caml_startup(void** ecx, void** a2) {
     return eax3;
 }
 
-void caml_register_dyn_global(void** ecx, int32_t a2) {
+void caml_register_dyn_global(int32_t a1) {
+    void** ecx2;
     void** eax3;
 
-    eax3 = cons(ecx);
+    eax3 = cons(ecx2);
     caml_dyn_globals = eax3;
     return;
 }
@@ -55127,13 +55131,13 @@ void** caml_int64_float_of_bits(int32_t a1) {
     return eax5;
 }
 
-void** caml_nativeint_of_string(void** ecx, int32_t a2) {
+void** caml_nativeint_of_string(int32_t a1) {
+    void** eax2;
     void** eax3;
-    void** eax4;
 
-    eax3 = parse_intnat();
-    eax4 = caml_copy_nativeint(ecx, eax3);
-    return eax4;
+    eax2 = parse_intnat();
+    eax3 = caml_copy_nativeint(eax2);
+    return eax3;
 }
 
 struct s286 {
@@ -55153,7 +55157,7 @@ void** caml_nativeint_div(void** a1, struct s286* a2) {
         eax3 = caml_raise_zero_divide(ecx5);
     }
     if (!reinterpret_cast<int1_t>(edx4 == 0x80000000) || ecx5 != 0xffffffff) {
-        eax3 = caml_copy_nativeint(ecx5, reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
+        eax3 = caml_copy_nativeint(reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
     }
     return eax3;
 }
@@ -55170,12 +55174,11 @@ struct s288 {
 
 void** caml_nativeint_mul(struct s287* a1, struct s288* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(a2->f4 * a1->f4);
-    eax5 = caml_copy_nativeint(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 struct s289 {
@@ -55281,12 +55284,11 @@ struct s295 {
 
 void** caml_nativeint_to_int32(struct s295* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = a1->f4;
-    eax4 = caml_copy_int32(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_int32(v2);
+    return eax3;
 }
 
 struct s296 {
@@ -55306,7 +55308,7 @@ void** caml_int32_div(void** a1, struct s296* a2) {
         eax3 = caml_raise_zero_divide(ecx5);
     }
     if (!reinterpret_cast<int1_t>(edx4 == 0x80000000) || ecx5 != 0xffffffff) {
-        eax3 = caml_copy_int32(ecx5, reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
+        eax3 = caml_copy_int32(reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
     }
     return eax3;
 }
@@ -55323,12 +55325,11 @@ struct s298 {
 
 void** caml_int32_mul(struct s297* a1, struct s298* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(a2->f4 * a1->f4);
-    eax5 = caml_copy_int32(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 void** caml_expm1_float(int32_t a1) {
@@ -55704,13 +55705,12 @@ void** caml_ml_out_channels_list() {
     void** v6;
     void** v7;
     void** v8;
-    void** ecx9;
-    void** eax10;
+    void** eax9;
+    void** v10;
     void** v11;
     void** v12;
     void** v13;
-    void** v14;
-    void** eax15;
+    void** eax14;
 
     ebp1 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     esi2 = caml_local_roots;
@@ -55724,12 +55724,12 @@ void** caml_ml_out_channels_list() {
         v8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xffffffec);
         do {
             if (!*reinterpret_cast<void***>(ebx4 + 20)) {
-                eax10 = caml_alloc_channel(ecx9, ebx4, 0);
-                v11 = v3;
-                eax15 = caml_alloc_small(2, 0, v12, v13, v14, v5, 3, 1, v6, v7, v8);
-                v3 = eax15;
-                *reinterpret_cast<void***>(eax15) = eax10;
-                *reinterpret_cast<void***>(v3 + 4) = v11;
+                eax9 = caml_alloc_channel(ebx4, 0);
+                v10 = v3;
+                eax14 = caml_alloc_small(2, 0, v11, v12, v13, v5, 3, 1, v6, v7, v8);
+                v3 = eax14;
+                *reinterpret_cast<void***>(eax14) = eax9;
+                *reinterpret_cast<void***>(v3 + 4) = v10;
             }
             ebx4 = *reinterpret_cast<void***>(ebx4 + 28);
         } while (ebx4);
@@ -56983,18 +56983,17 @@ void** caml_md5_chan(void** ecx, struct s316* a2, int32_t a3) {
     return eax19;
 }
 
-void** caml_md5_string(void* a1, int32_t a2, int32_t a3) {
-    void** ebx4;
-    void** v5;
-    void** ecx6;
+void** caml_md5_string(void** ecx, void* a2, int32_t a3, int32_t a4) {
+    void** ebx5;
+    void** v6;
     void** eax7;
 
-    ebx4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffa0);
-    caml_MD5Init(ebx4);
-    v5 = reinterpret_cast<void**>(a3 >> 1);
-    caml_MD5Update(ebx4, (a2 >> 1) + reinterpret_cast<uint32_t>(a1), v5);
-    eax7 = caml_alloc_string(ecx6, 16, (a2 >> 1) + reinterpret_cast<uint32_t>(a1), v5);
-    caml_MD5Final(eax7, ebx4, v5);
+    ebx5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffa0);
+    caml_MD5Init(ebx5);
+    v6 = reinterpret_cast<void**>(a4 >> 1);
+    caml_MD5Update(ebx5, (a3 >> 1) + reinterpret_cast<uint32_t>(a2), v6);
+    eax7 = caml_alloc_string(ecx, 16, (a3 >> 1) + reinterpret_cast<uint32_t>(a2), v6);
+    caml_MD5Final(eax7, ebx5, v6);
     return eax7;
 }
 
@@ -59588,12 +59587,11 @@ struct s337 {
 
 void** caml_nativeint_of_int32(struct s337* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = a1->f4;
-    eax4 = caml_copy_nativeint(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_nativeint(v2);
+    return eax3;
 }
 
 struct s338 {
@@ -59608,12 +59606,11 @@ struct s339 {
 
 void** caml_nativeint_sub(struct s338* a1, struct s339* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1->f4) - a2->f4);
-    eax5 = caml_copy_nativeint(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 void** caml_int64_of_float(void** ecx, int32_t a2) {
@@ -59693,12 +59690,11 @@ struct s344 {
 
 void** caml_int64_to_int32(struct s344* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = a1->f4;
-    eax4 = caml_copy_int32(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_int32(v2);
+    return eax3;
 }
 
 struct s345 {
@@ -59713,12 +59709,11 @@ struct s346 {
 
 void** caml_int32_sub(struct s345* a1, struct s346* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1->f4) - a2->f4);
-    eax5 = caml_copy_int32(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 void fun_8049eba() {
@@ -59893,13 +59888,12 @@ int32_t caml_ml_output_char(struct s348* a1, int32_t a2) {
 void** caml_ml_open_descriptor_out(int32_t a1) {
     void** ecx2;
     void** eax3;
-    void** ecx4;
-    void** v5;
-    void** eax6;
+    void** v4;
+    void** eax5;
 
     eax3 = caml_open_descriptor_out(ecx2, a1 >> 1);
-    eax6 = caml_alloc_channel(ecx4, eax3, v5);
-    return eax6;
+    eax5 = caml_alloc_channel(eax3, v4);
+    return eax5;
 }
 
 void caml_serialize_block_2(void** ecx, void* a2, void* a3) {
@@ -60115,12 +60109,13 @@ void fun_804a61a() {
     goto 0x8049db4;
 }
 
-int32_t caml_gc_major(void** ecx) {
-    void** v2;
+int32_t caml_gc_major() {
+    void** v1;
+    void** ecx2;
 
-    caml_gc_message(1, 0x8071a55, 0, v2);
+    caml_gc_message(1, 0x8071a55, 0, v1);
     caml_empty_minor_heap(1, 0x8071a55, 0);
-    caml_finish_major_cycle(ecx, 1, 0x8071a55, 0);
+    caml_finish_major_cycle(ecx2, 1, 0x8071a55, 0);
     test_and_compact(1, 0x8071a55, 0);
     caml_final_do_calls(1, 0x8071a55, 0);
     return 1;
@@ -61135,17 +61130,16 @@ void** caml_int32_float_of_bits(int32_t a1) {
 }
 
 void** caml_nativeint_of_float(int32_t a1) {
-    void** ecx2;
-    void** v3;
-    void** eax4;
+    void** v2;
+    void** eax3;
 
     __asm__("fld qword [eax]");
     __asm__("fnstcw word [ebp-0xa]");
     __asm__("fldcw word [ebp-0xc]");
     __asm__("fistp dword [esp]");
     __asm__("fldcw word [ebp-0xa]");
-    eax4 = caml_copy_nativeint(ecx2, v3);
-    return eax4;
+    eax3 = caml_copy_nativeint(v2);
+    return eax3;
 }
 
 struct s365 {
@@ -61160,12 +61154,11 @@ struct s366 {
 
 void** caml_nativeint_add(struct s365* a1, struct s366* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a2->f4) + reinterpret_cast<uint32_t>(a1->f4));
-    eax5 = caml_copy_nativeint(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 void** caml_int64_of_int(void** ecx, int32_t a2) {
@@ -61252,14 +61245,13 @@ void** caml_int64_add(struct s369* a1, struct s370* a2) {
 }
 
 void** caml_int32_bits_of_float(int32_t a1) {
-    void** ecx2;
-    void** v3;
-    void** eax4;
+    void** v2;
+    void** eax3;
 
     __asm__("fld qword [eax]");
     __asm__("fstp dword [ebp-0x10]");
-    eax4 = caml_copy_int32(ecx2, v3);
-    return eax4;
+    eax3 = caml_copy_int32(v2);
+    return eax3;
 }
 
 struct s371 {
@@ -61274,12 +61266,11 @@ struct s372 {
 
 void** caml_int32_add(struct s371* a1, struct s372* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a2->f4) + reinterpret_cast<uint32_t>(a1->f4));
-    eax5 = caml_copy_int32(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 int32_t caml_classify_float(int32_t a1) {
@@ -62059,16 +62050,15 @@ struct s391 {
     int32_t f8;
 };
 
-void int64_serialize(struct s391* a1, int32_t* a2, int32_t* a3) {
-    int32_t edx4;
-    int32_t v5;
-    void** ecx6;
+void int64_serialize(void** ecx, struct s391* a2, int32_t* a3, int32_t* a4) {
+    int32_t edx5;
+    int32_t v6;
 
-    edx4 = a1->f8;
-    v5 = a1->f4;
-    caml_serialize_int_8(ecx6, v5, edx4);
+    edx5 = a2->f8;
+    v6 = a2->f4;
+    caml_serialize_int_8(ecx, v6, edx5);
+    *a4 = 8;
     *a3 = 8;
-    *a2 = 8;
     return;
 }
 
@@ -62085,11 +62075,10 @@ void** caml_int32_to_float(int32_t a1) {
 }
 
 void** caml_nativeint_of_int(int32_t a1) {
-    void** ecx2;
-    void** eax3;
+    void** eax2;
 
-    eax3 = caml_copy_nativeint(ecx2, a1 >> 1);
-    return eax3;
+    eax2 = caml_copy_nativeint(a1 >> 1);
+    return eax2;
 }
 
 struct s392 {
@@ -62099,12 +62088,11 @@ struct s392 {
 
 void** caml_nativeint_neg(struct s392* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = reinterpret_cast<void**>(-a1->f4);
-    eax4 = caml_copy_nativeint(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_nativeint(v2);
+    return eax3;
 }
 
 struct s393 {
@@ -62153,13 +62141,13 @@ void** caml_int64_neg(void** ecx, struct s394* a2) {
     return eax7;
 }
 
-void** caml_int32_of_string(void** ecx, int32_t a2) {
+void** caml_int32_of_string(int32_t a1) {
+    void** eax2;
     void** eax3;
-    void** eax4;
 
-    eax3 = parse_intnat();
-    eax4 = caml_copy_int32(ecx, eax3);
-    return eax4;
+    eax2 = parse_intnat();
+    eax3 = caml_copy_int32(eax2);
+    return eax3;
 }
 
 struct s395 {
@@ -62169,12 +62157,11 @@ struct s395 {
 
 void** caml_int32_neg(struct s395* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = reinterpret_cast<void**>(-a1->f4);
-    eax4 = caml_copy_int32(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_int32(v2);
+    return eax3;
 }
 
 void** caml_atan_float(int32_t a1) {
@@ -62429,13 +62416,13 @@ struct s400 {
 };
 
 void** caml_nativeint_shift_right_unsigned(struct s400* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_nativeint(ecx3, v4);
+    eax5 = caml_copy_nativeint(v4);
     return eax5;
 }
 
@@ -62446,26 +62433,24 @@ struct s401 {
 
 void** caml_int64_to_nativeint(struct s401* a1) {
     void** v2;
-    void** ecx3;
-    void** eax4;
+    void** eax3;
 
     v2 = a1->f4;
-    eax4 = caml_copy_nativeint(ecx3, v2);
-    return eax4;
+    eax3 = caml_copy_nativeint(v2);
+    return eax3;
 }
 
 void** caml_int32_of_float(int32_t a1) {
-    void** ecx2;
-    void** v3;
-    void** eax4;
+    void** v2;
+    void** eax3;
 
     __asm__("fld qword [eax]");
     __asm__("fnstcw word [ebp-0xa]");
     __asm__("fldcw word [ebp-0xc]");
     __asm__("fistp dword [esp]");
     __asm__("fldcw word [ebp-0xa]");
-    eax4 = caml_copy_int32(ecx2, v3);
-    return eax4;
+    eax3 = caml_copy_int32(v2);
+    return eax3;
 }
 
 int32_t caml_int_of_float(int32_t a1) {
@@ -62497,30 +62482,31 @@ void** caml_acos_float(int32_t a1) {
     return eax5;
 }
 
-void** caml_frexp_float(void** ecx, int32_t a2) {
-    void* ebp3;
-    void** ebx4;
+void** caml_frexp_float(int32_t a1) {
+    void* ebp2;
+    void** ebx3;
+    void** v4;
     void** v5;
     void** v6;
-    void** v7;
-    void** eax8;
+    void** eax7;
+    void** ecx8;
     void** v9;
     void** eax10;
     void* v11;
 
-    ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    ebx4 = caml_local_roots;
-    caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffb0);
-    v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffac);
+    ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
+    ebx3 = caml_local_roots;
+    caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffffb0);
+    v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffffac);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     fun_804a554();
     __asm__("fstp qword [esp]");
-    eax8 = caml_copy_double(v6, v7, v5);
-    eax10 = caml_alloc_tuple(ecx, 2, v9, v5);
-    *reinterpret_cast<void***>(eax10) = eax8;
+    eax7 = caml_copy_double(v5, v6, v4);
+    eax10 = caml_alloc_tuple(ecx8, 2, v9, v4);
+    *reinterpret_cast<void***>(eax10) = eax7;
     *reinterpret_cast<void***>(eax10 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v11) + reinterpret_cast<int32_t>(v11) + 1);
-    caml_local_roots = ebx4;
+    caml_local_roots = ebx3;
     return eax10;
 }
 
@@ -62819,21 +62805,21 @@ struct s406 {
 };
 
 void** caml_nativeint_shift_right(struct s406* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_nativeint(ecx3, v4);
+    eax5 = caml_copy_nativeint(v4);
     return eax5;
 }
 
-void** caml_int32_of_int(void** ecx, int32_t a2) {
-    void** eax3;
+void** caml_int32_of_int(int32_t a1) {
+    void** eax2;
 
-    eax3 = caml_copy_int32(ecx, a2 >> 1);
-    return eax3;
+    eax2 = caml_copy_int32(a1 >> 1);
+    return eax2;
 }
 
 uint32_t caml_eq_float(int32_t a1, uint32_t a2) {
@@ -62990,13 +62976,13 @@ struct s408 {
 };
 
 void** caml_nativeint_shift_left(struct s408* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 << *reinterpret_cast<unsigned char*>(&ecx3));
-    eax5 = caml_copy_nativeint(ecx3, v4);
+    eax5 = caml_copy_nativeint(v4);
     return eax5;
 }
 
@@ -63006,13 +62992,13 @@ struct s409 {
 };
 
 void** caml_int32_shift_right_unsigned(struct s409* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_int32(ecx3, v4);
+    eax5 = caml_copy_int32(v4);
     return eax5;
 }
 
@@ -63170,12 +63156,11 @@ struct s411 {
 
 void** caml_nativeint_xor(struct s410* a1, struct s411* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(a2->f4 ^ a1->f4);
-    eax5 = caml_copy_nativeint(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 struct s412 {
@@ -63184,13 +63169,13 @@ struct s412 {
 };
 
 void** caml_int32_shift_right(struct s412* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_int32(ecx3, v4);
+    eax5 = caml_copy_int32(v4);
     return eax5;
 }
 
@@ -63302,13 +63287,13 @@ struct s415 {
     uint32_t f4;
 };
 
-void** caml_nativeint_or(void** ecx, struct s414* a2, struct s415* a3) {
-    void** v4;
-    void** eax5;
+void** caml_nativeint_or(struct s414* a1, struct s415* a2) {
+    void** v3;
+    void** eax4;
 
-    v4 = reinterpret_cast<void**>(a3->f4 | a2->f4);
-    eax5 = caml_copy_nativeint(ecx, v4);
-    return eax5;
+    v3 = reinterpret_cast<void**>(a2->f4 | a1->f4);
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 struct s416 {
@@ -63317,13 +63302,13 @@ struct s416 {
 };
 
 void** caml_int32_shift_left(struct s416* a1, int32_t a2) {
-    void** ecx3;
+    int32_t ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = reinterpret_cast<void**>(a2 >> 1);
+    ecx3 = a2 >> 1;
     v4 = reinterpret_cast<void**>(a1->f4 << *reinterpret_cast<unsigned char*>(&ecx3));
-    eax5 = caml_copy_int32(ecx3, v4);
+    eax5 = caml_copy_int32(v4);
     return eax5;
 }
 
@@ -63508,12 +63493,11 @@ struct s418 {
 
 void** caml_nativeint_and(struct s417* a1, struct s418* a2) {
     void** v3;
-    void** ecx4;
-    void** eax5;
+    void** eax4;
 
     v3 = reinterpret_cast<void**>(a2->f4 & a1->f4);
-    eax5 = caml_copy_nativeint(ecx4, v3);
-    return eax5;
+    eax4 = caml_copy_nativeint(v3);
+    return eax4;
 }
 
 struct s419 {
@@ -63526,13 +63510,13 @@ struct s420 {
     uint32_t f4;
 };
 
-void** caml_int32_xor(void** ecx, struct s419* a2, struct s420* a3) {
-    void** v4;
-    void** eax5;
+void** caml_int32_xor(struct s419* a1, struct s420* a2) {
+    void** v3;
+    void** eax4;
 
-    v4 = reinterpret_cast<void**>(a3->f4 ^ a2->f4);
-    eax5 = caml_copy_int32(ecx, v4);
-    return eax5;
+    v3 = reinterpret_cast<void**>(a2->f4 ^ a1->f4);
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 uint32_t caml_ge_float(int32_t a1, uint32_t a2) {
@@ -63826,9 +63810,9 @@ void** caml_nativeint_mod(struct s422* a1, struct s423* a2) {
         caml_raise_zero_divide(ecx4);
     }
     if (edx3 != 0x80000000 || !reinterpret_cast<int1_t>(ecx4 == 0xffffffff)) {
-        eax5 = caml_copy_nativeint(ecx4, edx3 % reinterpret_cast<signed char>(ecx4));
+        eax5 = caml_copy_nativeint(edx3 % reinterpret_cast<signed char>(ecx4));
     } else {
-        eax5 = caml_copy_nativeint(ecx4, 0);
+        eax5 = caml_copy_nativeint(0);
     }
     return eax5;
 }
@@ -63843,13 +63827,13 @@ struct s425 {
     uint32_t f4;
 };
 
-void** caml_int32_or(void** ecx, struct s424* a2, struct s425* a3) {
-    void** v4;
-    void** eax5;
+void** caml_int32_or(struct s424* a1, struct s425* a2) {
+    void** v3;
+    void** eax4;
 
-    v4 = reinterpret_cast<void**>(a3->f4 | a2->f4);
-    eax5 = caml_copy_int32(ecx, v4);
-    return eax5;
+    v3 = reinterpret_cast<void**>(a2->f4 | a1->f4);
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 uint32_t caml_gt_float(int32_t a1, int32_t a2) {
@@ -63919,13 +63903,13 @@ struct s427 {
     uint32_t f4;
 };
 
-void** caml_int32_and(void** ecx, struct s426* a2, struct s427* a3) {
-    void** v4;
-    void** eax5;
+void** caml_int32_and(struct s426* a1, struct s427* a2) {
+    void** v3;
+    void** eax4;
 
-    v4 = reinterpret_cast<void**>(a3->f4 & a2->f4);
-    eax5 = caml_copy_int32(ecx, v4);
-    return eax5;
+    v3 = reinterpret_cast<void**>(a2->f4 & a1->f4);
+    eax4 = caml_copy_int32(v3);
+    return eax4;
 }
 
 int32_t caml_float_compare(int32_t a1, int32_t a2) {
@@ -64062,9 +64046,9 @@ void** caml_int32_mod(struct s428* a1, struct s429* a2) {
         caml_raise_zero_divide(ecx4);
     }
     if (edx3 != 0x80000000 || !reinterpret_cast<int1_t>(ecx4 == 0xffffffff)) {
-        eax5 = caml_copy_int32(ecx4, edx3 % reinterpret_cast<signed char>(ecx4));
+        eax5 = caml_copy_int32(edx3 % reinterpret_cast<signed char>(ecx4));
     } else {
-        eax5 = caml_copy_int32(ecx4, 0);
+        eax5 = caml_copy_int32(0);
     }
     return eax5;
 }

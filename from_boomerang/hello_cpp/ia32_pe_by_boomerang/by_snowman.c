@@ -4322,9 +4322,9 @@ uint32_t fun_4115a0(void** a1, void** a2, uint32_t a3, void** a4) {
         ebx6 = a3;
         eax7 = a1;
         do {
+            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
             __asm__("rcr ebx, 1");
             __asm__("rcr eax, 1");
-            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
         } while (ecx5);
         eax8 = reinterpret_cast<unsigned char>(eax7) / ebx6;
         eax9 = reinterpret_cast<void**>(eax8 * a3);
@@ -4363,9 +4363,9 @@ void** fun_411555(void** a1, void** a2, uint32_t a3, void** a4) {
         ebx6 = a3;
         eax7 = a1;
         do {
+            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
             __asm__("rcr ebx, 1");
             __asm__("rcr eax, 1");
-            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
         } while (ecx5);
         eax8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax7) / ebx6);
         esi9 = eax8;
@@ -8656,11 +8656,6 @@ void** fun_41134d(void** a1, void** a2, void** a3, int32_t a4, void** a5, void* 
             goto addr_4209f2_132;
             addr_4209ad_136:
             goto addr_4209d5_138;
-            addr_4205bd_114:
-            v69 = 16;
-            if (reinterpret_cast<unsigned char>(v31) & 0x80) {
-                v30 = reinterpret_cast<void**>(2);
-            }
             addr_420604_122:
             if (!(reinterpret_cast<unsigned char>(v31) & 0x8000)) {
                 if (!(reinterpret_cast<unsigned char>(v31) & 32)) {
@@ -8740,6 +8735,12 @@ void** fun_41134d(void** a1, void** a2, void** a3, int32_t a4, void** a5, void* 
                 ++v12;
                 goto addr_42085d_49;
             }
+            addr_4205bd_114:
+            v69 = 16;
+            if (reinterpret_cast<unsigned char>(v31) & 0x80) {
+                v30 = reinterpret_cast<void**>(2);
+            }
+            goto addr_420604_122;
         }
     }
     eax89 = fun_411087(v11, v22, v24, v25, v36);

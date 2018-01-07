@@ -102,10 +102,10 @@ void fun_40157c(int32_t* a1, int32_t a2, int32_t a3, int32_t a4) {
  * ??3@YAXPAX@Z
  * void __cdecl operator delete(void *)
  */
-int32_t 3_YAXPAX_Z = 0x72be;
+int32_t _3_YAXPAX_Z = 0x72be;
 
 void fun_401506() {
-    goto 3_YAXPAX_Z;
+    goto _3_YAXPAX_Z;
 }
 
 int32_t _amsg_exit = 0x72ce;

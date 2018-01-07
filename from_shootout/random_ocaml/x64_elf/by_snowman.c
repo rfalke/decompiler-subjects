@@ -11564,7 +11564,7 @@ void** fun_409250(uint64_t rdi);
 
 void** caml_raise_sys_error(void** rdi, void** rsi, void** rdx, void** rcx, void** r8, void** r9, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12);
 
-void caml_sys_error(void** rdi, void** rsi, void** rdx, void** rcx, void** r8, void** r9, void** a7, void** a8, void* a9, int64_t a10, int64_t a11, void** a12, ...) {
+void caml_sys_error(void** rdi, void** rsi, void** rdx, void** rcx, void** r8, void** r9, void** a7, void** a8, void* a9, int64_t a10, int64_t a11, void** a12) {
     void* rsp13;
     void** v14;
     void** v15;
@@ -31072,7 +31072,7 @@ void** caml_channel_size(void** rdi) {
     *reinterpret_cast<int32_t*>(&rdx4 + 4) = 0;
     rax5 = fun_409570(rdi2, rdi2);
     if (rax5 == 0xffffffffffffffff || (rsi3 = *reinterpret_cast<void***>(rdi + 8), *reinterpret_cast<void***>(&rdi6) = *reinterpret_cast<void***>(rdi), *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi6) + 4) = 0, *reinterpret_cast<int32_t*>(&rdx4) = 0, *reinterpret_cast<int32_t*>(&rdx4 + 4) = 0, rax7 = fun_409570(rdi6, rdi6), rax7 != *reinterpret_cast<void***>(rdi + 8))) {
-        caml_sys_error(1, rsi3, rdx4, rcx8, r8_9, r9_10, v11, rbx12, rbp13, __return_address(), v14, v15, 1, rsi3);
+        caml_sys_error(1, rsi3, rdx4, rcx8, r8_9, r9_10, v11, rbx12, rbp13, __return_address(), v14, v15);
     }
     return rax5;
 }
@@ -48275,7 +48275,7 @@ int64_t caml_sys_is_directory(void** rdi) {
     rdx2 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 0x90);
     rax3 = fun_409560(1, rdi, rdx2);
     if (*reinterpret_cast<int32_t*>(&rax3) == -1) {
-        caml_sys_error(rdi, rdi, rdx2, rcx4, r8_5, r9_6, v7, v8, v9, v10, v11, v12, rdi, rdi);
+        caml_sys_error(rdi, rdi, rdx2, rcx4, r8_5, r9_6, v7, v8, v9, v10, v11, v12);
     }
     *reinterpret_cast<uint32_t*>(&rax13) = reinterpret_cast<uint1_t>((v14 & 0xf000) == 0x4000);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax13) + 4) = 0;

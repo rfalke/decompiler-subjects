@@ -4864,11 +4864,10 @@ struct s25 {
 void** camlArray__list_length_153() {
     struct s25* rbx1;
     void** rax2;
-    void** tmp64_3;
 
     while (rbx1 != 1) {
         rbx1 = rbx1->f8;
-        rax2 = tmp64_3;
+        rax2 = rax2 + 2;
     }
     return rax2;
 }
@@ -9424,7 +9423,7 @@ void** fun_408f90(void** rdi, void** rsi, ...);
 
 void caml_raise_out_of_memory(void** rdi, void** rsi, void** rdx);
 
-void** caml_stat_alloc(void** rdi, void** rsi, void** rdx, ...) {
+void** caml_stat_alloc(void** rdi, void** rsi, void** rdx) {
     void** rax4;
     void** r12_5;
     void** rbp6;
@@ -38498,22 +38497,20 @@ void** caml_search_in_path(struct s124* rdi, void** rsi) {
     void** rdx6;
     void** rax7;
     void** rax8;
-    void** rdi9;
-    void** rax10;
-    void** rbx11;
-    int64_t rbp12;
-    int32_t r13d13;
-    void** rdi14;
+    void** rax9;
+    void** rbx10;
+    int64_t rbp11;
+    int32_t r13d12;
+    void** rdi13;
+    void** rax14;
     void** rax15;
     void** rax16;
-    void** rdi17;
-    void** rax18;
-    void** rsi19;
-    void* rsp20;
-    void** rax21;
-    void** rsp22;
-    int64_t rax23;
-    uint32_t v24;
+    void** rsi17;
+    void* rsp18;
+    void** rax19;
+    void** rsp20;
+    int64_t rax21;
+    uint32_t v22;
 
     r14_3 = rsi;
     r12_4 = rdi;
@@ -38538,46 +38535,44 @@ void** caml_search_in_path(struct s124* rdi, void** rsi) {
     if (reinterpret_cast<uint1_t>(r12_4->f0 < 0) | reinterpret_cast<uint1_t>(r12_4->f0 == 0)) {
         addr_434d80_5:
         rax8 = fun_409140(r14_3, r14_3);
-        rdi9 = rax8 + 1;
-        rax10 = caml_stat_alloc(rdi9, rsi, rdx6, rdi9, rsi);
-        rbx11 = rax10;
-        fun_409520(rax10, r14_3, rax10, r14_3);
+        rax9 = caml_stat_alloc(rax8 + 1, rsi, rdx6);
+        rbx10 = rax9;
+        fun_409520(rax9, r14_3, rax9, r14_3);
     } else {
-        *reinterpret_cast<int32_t*>(&rbp12) = 0;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp12) + 4) = 0;
-        r13d13 = 0;
+        *reinterpret_cast<int32_t*>(&rbp11) = 0;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp11) + 4) = 0;
+        r13d12 = 0;
         do {
-            rdi14 = *reinterpret_cast<void***>(r12_4->f8 + rbp12);
-            rax15 = fun_409140(rdi14, rdi14);
-            rax16 = fun_409140(r14_3, r14_3);
-            rdi17 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(rax15) + reinterpret_cast<unsigned char>(rax16) + 2);
-            rax18 = caml_stat_alloc(rdi17, rsi, rdx6, rdi17, rsi);
-            rbx11 = rax18;
-            rsi19 = *reinterpret_cast<void***>(r12_4->f8 + rbp12);
-            fun_409520(rbx11, rsi19, rbx11, rsi19);
-            rsp20 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp5) - 8 + 8 - 8 + 8 - 8 + 8 - 8 + 8);
-            if (*reinterpret_cast<void***>(rbx11)) {
-                rax21 = fun_409140(rbx11, rbx11);
-                rsp20 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp20) - 8 + 8);
-                *reinterpret_cast<int16_t*>(reinterpret_cast<unsigned char>(rbx11) + reinterpret_cast<unsigned char>(rax21)) = 47;
+            rdi13 = *reinterpret_cast<void***>(r12_4->f8 + rbp11);
+            rax14 = fun_409140(rdi13, rdi13);
+            rax15 = fun_409140(r14_3, r14_3);
+            rax16 = caml_stat_alloc(reinterpret_cast<unsigned char>(rax14) + reinterpret_cast<unsigned char>(rax15) + 2, rsi, rdx6);
+            rbx10 = rax16;
+            rsi17 = *reinterpret_cast<void***>(r12_4->f8 + rbp11);
+            fun_409520(rbx10, rsi17, rbx10, rsi17);
+            rsp18 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp5) - 8 + 8 - 8 + 8 - 8 + 8 - 8 + 8);
+            if (*reinterpret_cast<void***>(rbx10)) {
+                rax19 = fun_409140(rbx10, rbx10);
+                rsp18 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp18) - 8 + 8);
+                *reinterpret_cast<int16_t*>(reinterpret_cast<unsigned char>(rbx10) + reinterpret_cast<unsigned char>(rax19)) = 47;
             }
-            fun_4092f0(rbx11, r14_3, rdx6);
-            rsp22 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rsp20) - 8 + 8);
-            rdx6 = rsp22;
-            rsi = rbx11;
-            rax23 = fun_4095a0(1, rsi, rdx6);
-            if (*reinterpret_cast<int32_t*>(&rax23)) 
+            fun_4092f0(rbx10, r14_3, rdx6);
+            rsp20 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rsp18) - 8 + 8);
+            rdx6 = rsp20;
+            rsi = rbx10;
+            rax21 = fun_4095a0(1, rsi, rdx6);
+            if (*reinterpret_cast<int32_t*>(&rax21)) 
                 continue;
-            if ((v24 & 0xf000) == 0x8000) 
+            if ((v22 & 0xf000) == 0x8000) 
                 break;
-            ++r13d13;
-            rbp12 = rbp12 + 8;
-            caml_stat_free(rbx11, rsi, rbx11, rsi);
-            rsp5 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp22 - 8) + 8 - 8 + 8);
-        } while (r12_4->f0 > r13d13);
+            ++r13d12;
+            rbp11 = rbp11 + 8;
+            caml_stat_free(rbx10, rsi, rbx10, rsi);
+            rsp5 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp20 - 8) + 8 - 8 + 8);
+        } while (r12_4->f0 > r13d12);
         goto addr_434d80_5;
     }
-    return rbx11;
+    return rbx10;
 }
 
 int64_t __libc_start_main = 0x408fa6;
@@ -50890,14 +50885,13 @@ void fun_434f86() {
     void* rbx26;
     void* v27;
     int32_t ebp28;
-    int32_t tmp32_29;
-    int1_t less_or_equal30;
+    int1_t less_or_equal29;
+    void** rax30;
     void** rax31;
     void** rax32;
-    void** rax33;
-    void** r14_34;
-    void** v35;
-    int64_t v36;
+    void** r14_33;
+    void** v34;
+    int64_t v35;
 
     while (1) {
         addr_434f90_2:
@@ -50927,21 +50921,21 @@ void fun_434f86() {
         *reinterpret_cast<void***>(v18 + 24) = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rax22) + reinterpret_cast<int64_t>(rax22) + 1);
         rdx24 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(r13_23) + reinterpret_cast<int64_t>(r13_23) + 1);
         *reinterpret_cast<void***>(v18 + 32) = rdx24;
-        while (rdi25 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rbx26) + reinterpret_cast<uint64_t>(v27)), rsi9 = v18, ebp28 = tmp32_29, rbx26 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rbx26) + 8), caml_modify(rdi25, rsi9, rdx24), less_or_equal30 = caml_backtrace_pos <= ebp28, !less_or_equal30) {
-            rax31 = caml_backtrace_buffer;
-            rax2 = *reinterpret_cast<int64_t*>(reinterpret_cast<unsigned char>(rax31) + reinterpret_cast<uint64_t>(rbx26));
+        while (rdi25 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rbx26) + reinterpret_cast<uint64_t>(v27)), rsi9 = v18, ++ebp28, rbx26 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rbx26) + 8), caml_modify(rdi25, rsi9, rdx24), less_or_equal29 = caml_backtrace_pos <= ebp28, !less_or_equal29) {
+            rax30 = caml_backtrace_buffer;
+            rax2 = *reinterpret_cast<int64_t*>(reinterpret_cast<unsigned char>(rax30) + reinterpret_cast<uint64_t>(rbx26));
             if (*reinterpret_cast<unsigned char*>(rax2 + 8) & 1) 
                 goto addr_434f90_2;
-            rax32 = caml_alloc_small(1, 1, 1, 1);
-            v18 = rax32;
-            *reinterpret_cast<void***>(rax32) = reinterpret_cast<void**>(3);
+            rax31 = caml_alloc_small(1, 1, 1, 1);
+            v18 = rax31;
+            *reinterpret_cast<void***>(rax31) = reinterpret_cast<void**>(3);
         }
         break;
     }
-    rax33 = caml_alloc_small(1, 0, 1, 0);
-    caml_local_roots = r14_34;
-    *reinterpret_cast<void***>(rax33) = v35;
-    goto v36;
+    rax32 = caml_alloc_small(1, 0, 1, 0);
+    caml_local_roots = r14_33;
+    *reinterpret_cast<void***>(rax32) = v34;
+    goto v35;
 }
 
 void _fini() {

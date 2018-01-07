@@ -6119,7 +6119,7 @@ uint32_t fun_404c97(uint32_t a1, void** a2) {
     int32_t eax11;
 
     ebx3 = a1;
-    if (a2 || edx4 && (ebx3 = ebx3, !!ebx3)) {
+    if (a2 || edx4 && ebx3) {
         ebp5 = a2;
         ecx6 = 64;
         edi7 = reinterpret_cast<void**>(0);
@@ -6155,7 +6155,7 @@ void** fun_404d5a(uint32_t a1, void** a2) {
     int32_t eax11;
 
     ebx3 = a1;
-    if (a2 || edx4 && (ebx3 = ebx3, !!ebx3)) {
+    if (a2 || edx4 && ebx3) {
         ebp5 = a2;
         ecx6 = 64;
         edi7 = reinterpret_cast<void**>(0);
@@ -8072,10 +8072,9 @@ uint32_t fun_4010d0(int32_t a1, int32_t a2) {
     int1_t cf4;
     int32_t eax5;
     uint32_t eax6;
-    uint32_t eax7;
+    uint32_t v7;
     uint32_t v8;
-    uint32_t v9;
-    uint32_t eax10;
+    uint32_t eax9;
 
     if (!0) {
         eax3 = fun_407d3c();
@@ -8088,21 +8087,20 @@ uint32_t fun_4010d0(int32_t a1, int32_t a2) {
                 }
                 eax5 = fun_40998a(8, 0x9c);
                 eax6 = fun_4099b4(eax5, 8, 0x9c);
-                eax7 = eax6;
-                if (!eax7) {
-                    eax7 = fun_40106c(eax5, 8, 0x9c);
+                if (!eax6) {
+                    eax6 = fun_40106c(eax5, 8, 0x9c);
                 }
+                v7 = g40a10f;
+                fun_407d64(v7, eax6);
                 v8 = g40a10f;
-                fun_407d64(v8, eax7);
-                v9 = g40a10f;
-                eax3 = fun_407d78(v9);
+                eax3 = fun_407d78(v8);
             }
             return eax3;
         } else {
-            eax10 = fun_40106c(__return_address(), a1, a2);
+            eax9 = fun_40106c(__return_address(), a1, a2);
         }
     }
-    return eax10;
+    return eax9;
 }
 
 int32_t fun_401360(void** ecx, void*** a2, void*** a3, void*** a4) {
@@ -9584,8 +9582,8 @@ int32_t fun_404bfc(int32_t a1, int32_t a2) {
 uint32_t fun_404ce0(uint32_t a1, uint32_t a2) {
     uint32_t edi3;
     uint32_t ebx4;
-    int32_t edx5;
-    uint32_t ecx6;
+    uint32_t ecx5;
+    int32_t edx6;
     uint32_t ecx7;
     uint1_t cf8;
     uint32_t ebp9;
@@ -9599,18 +9597,18 @@ uint32_t fun_404ce0(uint32_t a1, uint32_t a2) {
 
     edi3 = 0;
     ebx4 = a1;
-    if (a2 || edx5 && (ebx4 = ebx4, !!ebx4)) {
+    ecx5 = a2;
+    if (ecx5 || edx6 && ebx4) {
         if (__intrinsic()) {
             edi3 = 1;
         }
-        ecx6 = a2;
         if (__intrinsic()) {
-            ecx7 = -ecx6;
+            ecx7 = -ecx5;
             cf8 = reinterpret_cast<uint1_t>(!!ebx4);
             ebx4 = -ebx4;
-            ecx6 = ecx7 - reinterpret_cast<uint1_t>(ecx7 < static_cast<uint32_t>(cf8));
+            ecx5 = ecx7 - reinterpret_cast<uint1_t>(ecx7 < static_cast<uint32_t>(cf8));
         }
-        ebp9 = ecx6;
+        ebp9 = ecx5;
         ecx10 = 64;
         v11 = edi3;
         edi12 = 0;
@@ -11012,10 +11010,10 @@ uint32_t fun_4044a0(uint32_t a1) {
 uint32_t fun_404c1f(uint32_t a1, uint32_t a2) {
     uint32_t edi3;
     uint32_t ebx4;
-    int32_t edx5;
-    uint32_t eax6;
-    int32_t eax7;
-    uint32_t ecx8;
+    uint32_t ecx5;
+    int32_t edx6;
+    uint32_t eax7;
+    int32_t eax8;
     uint32_t ecx9;
     uint1_t cf10;
     uint32_t ebp11;
@@ -11028,26 +11026,26 @@ uint32_t fun_404c1f(uint32_t a1, uint32_t a2) {
 
     edi3 = 0;
     ebx4 = a1;
-    if (a2 || edx5 && (ebx4 = ebx4, !!ebx4)) {
+    ecx5 = a2;
+    if (ecx5 || edx6 && ebx4) {
         if (__intrinsic()) {
-            eax6 = reinterpret_cast<uint32_t>(-eax7);
+            eax7 = reinterpret_cast<uint32_t>(-eax8);
             edi3 = 1;
         }
-        ecx8 = a2;
         if (__intrinsic()) {
-            ecx9 = -ecx8;
+            ecx9 = -ecx5;
             cf10 = reinterpret_cast<uint1_t>(!!ebx4);
             ebx4 = -ebx4;
-            ecx8 = ecx9 - reinterpret_cast<uint1_t>(ecx9 < static_cast<uint32_t>(cf10));
+            ecx5 = ecx9 - reinterpret_cast<uint1_t>(ecx9 < static_cast<uint32_t>(cf10));
             edi3 = edi3 ^ 1;
         }
-        ebp11 = ecx8;
+        ebp11 = ecx5;
         ecx12 = 64;
         v13 = edi3;
         edi14 = 0;
         esi15 = 0;
         do {
-            eax6 = eax6 << 1;
+            eax7 = eax7 << 1;
             __asm__("rcl edx, 1");
             __asm__("rcl esi, 1");
             __asm__("rcl edi, 1");
@@ -11055,17 +11053,17 @@ uint32_t fun_404c1f(uint32_t a1, uint32_t a2) {
                 cf16 = reinterpret_cast<uint1_t>(esi15 < ebx4);
                 esi15 = esi15 - ebx4;
                 edi14 = edi14 - (ebp11 + reinterpret_cast<uint1_t>(edi14 < ebp11 + cf16));
-                ++eax6;
+                ++eax7;
             }
             --ecx12;
         } while (ecx12);
         if (v13 & 1) {
-            eax6 = -eax6;
+            eax7 = -eax7;
         }
     } else {
-        eax6 = eax17 / ebx4;
+        eax7 = eax17 / ebx4;
     }
-    return eax6;
+    return eax7;
 }
 
 int32_t fun_404dc4(signed char cl) {

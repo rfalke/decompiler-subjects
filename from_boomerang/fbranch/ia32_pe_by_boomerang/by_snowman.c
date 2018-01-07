@@ -1451,9 +1451,9 @@ void** fun_4041b0(void** a1, void** a2, uint32_t a3, void** a4) {
         ebx6 = a3;
         eax7 = a1;
         do {
+            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
             __asm__("rcr ebx, 1");
             __asm__("rcr eax, 1");
-            ecx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx5) >> 1);
         } while (ecx5);
         eax8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax7) / ebx6);
         esi9 = eax8;
@@ -6506,15 +6506,14 @@ void** fun_4079c9(struct s5* a1, void*** a2, void** a3, void** a4, void* a5, uin
         if (bl33 != 43 && bl33 != 45) {
             goto addr_407aad_28;
         }
+        addr_407c1d_72:
+        v37 = reinterpret_cast<void**>(8);
         addr_407c8c_18:
         eax18 = v37;
         continue;
         addr_407c4e_20:
         eax18 = v38;
         goto addr_407c4f_88;
-        addr_407c1d_72:
-        v37 = reinterpret_cast<void**>(8);
-        goto addr_407c8c_18;
     }
     addr_407c9f_83:
     addr_407d29_90:

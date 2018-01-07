@@ -42705,13 +42705,14 @@ void fun_42d026() {
     void* rbx25;
     void* v26;
     int32_t ebp27;
-    int1_t less_or_equal28;
-    void** rax29;
+    int32_t tmp32_28;
+    int1_t less_or_equal29;
     void** rax30;
     void** rax31;
-    void** r14_32;
-    void** v33;
-    int64_t v34;
+    void** rax32;
+    void** r14_33;
+    void** v34;
+    int64_t v35;
 
     while (1) {
         addr_42d030_2:
@@ -42740,21 +42741,21 @@ void fun_42d026() {
         r13_23 = reinterpret_cast<void*>(static_cast<int64_t>(reinterpret_cast<int32_t>((r13d5 & 15) << 6 | *reinterpret_cast<uint32_t*>(&r12_4) >> 26)));
         *reinterpret_cast<void***>(v18 + 24) = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rax22) + reinterpret_cast<int64_t>(rax22) + 1);
         *reinterpret_cast<void***>(v18 + 32) = reinterpret_cast<void**>(reinterpret_cast<int64_t>(r13_23) + reinterpret_cast<int64_t>(r13_23) + 1);
-        while (rdi24 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rbx25) + reinterpret_cast<uint64_t>(v26)), rsi9 = v18, ++ebp27, rbx25 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rbx25) + 8), caml_modify(rdi24, rsi9), less_or_equal28 = caml_backtrace_pos <= ebp27, !less_or_equal28) {
-            rax29 = caml_backtrace_buffer;
-            rax2 = *reinterpret_cast<int64_t*>(reinterpret_cast<unsigned char>(rax29) + reinterpret_cast<uint64_t>(rbx25));
+        while (rdi24 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rbx25) + reinterpret_cast<uint64_t>(v26)), rsi9 = v18, ebp27 = tmp32_28, rbx25 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rbx25) + 8), caml_modify(rdi24, rsi9), less_or_equal29 = caml_backtrace_pos <= ebp27, !less_or_equal29) {
+            rax30 = caml_backtrace_buffer;
+            rax2 = *reinterpret_cast<int64_t*>(reinterpret_cast<unsigned char>(rax30) + reinterpret_cast<uint64_t>(rbx25));
             if (*reinterpret_cast<unsigned char*>(rax2 + 8) & 1) 
                 goto addr_42d030_2;
-            rax30 = caml_alloc_small(1, 1, 1, 1);
-            v18 = rax30;
-            *reinterpret_cast<void***>(rax30) = reinterpret_cast<void**>(3);
+            rax31 = caml_alloc_small(1, 1, 1, 1);
+            v18 = rax31;
+            *reinterpret_cast<void***>(rax31) = reinterpret_cast<void**>(3);
         }
         break;
     }
-    rax31 = caml_alloc_small(1, 0, 1, 0);
-    caml_local_roots = r14_32;
-    *reinterpret_cast<void***>(rax31) = v33;
-    goto v34;
+    rax32 = caml_alloc_small(1, 0, 1, 0);
+    caml_local_roots = r14_33;
+    *reinterpret_cast<void***>(rax32) = v34;
+    goto v35;
 }
 
 void _fini() {

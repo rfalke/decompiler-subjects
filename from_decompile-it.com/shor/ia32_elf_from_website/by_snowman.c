@@ -5698,7 +5698,7 @@ void fun_8048904(void** a1, void** a2, void** a3, void** a4, void** a5) {
 
 void** emul(int32_t a1, void** a2, void** a3, void** a4);
 
-void add_mod_n(void** a1, void* a2, void** a3, void** a4);
+void** add_mod_n(void** a1, void* a2, void** a3, void** a4);
 
 void muln(void** a1, int32_t a2, void** a3, void** a4, void** a5) {
     void** v6;
@@ -9960,10 +9960,12 @@ void** quantum_imag(void** a1, void** a2) {
     return a2;
 }
 
-void add_mod_n(void** a1, void* a2, void** a3, void** a4) {
+void** add_mod_n(void** a1, void* a2, void** a3, void** a4) {
+    void** eax5;
+
     addn(a1, a2, a3, a4);
-    addn_inv(a1, a2, a3, a4);
-    return;
+    eax5 = addn_inv(a1, a2, a3, a4);
+    return eax5;
 }
 
 int32_t feof = 0x804895a;

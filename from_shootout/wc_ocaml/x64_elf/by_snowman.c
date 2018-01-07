@@ -15804,7 +15804,7 @@ int64_t caml_raise_sys_blocked_io();
 
 int32_t caml_parser_trace = 0;
 
-void caml_sys_io_error(void** rdi, void** rsi, void** rdx, void** rcx, void** r8, void** r9) {
+void caml_sys_io_error(void** rdi, void** rsi, void** rdx, void** rcx, void** r8, void** r9, ...) {
     uint32_t* rax7;
     int64_t rdi8;
     int64_t rbx9;
@@ -15899,7 +15899,7 @@ int32_t caml_do_read(int32_t edi, void** rsi, int32_t edx, void** rcx, void** r8
     addr_42bbed_5:
     return eax10;
     addr_42bbe3_4:
-    caml_sys_io_error(1, rsi, rbx9, rcx, r8, r9);
+    caml_sys_io_error(1, rsi, rbx9, rcx, r8, r9, 1, rsi);
     goto addr_42bbed_5;
 }
 
