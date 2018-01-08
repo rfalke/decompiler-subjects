@@ -51,6 +51,7 @@ do
     cleanup "$dir/subject.h" $dir/by_reko.h
     cleanup "$dir/subject.c" $dir/by_reko.c
     cleanup "$dir/subject.globals.c" $dir/by_reko.globals.c
+    gzip -9 "$dir/by_reko.h"
   else
     echo "  failed"
     touch $dir/by_reko.failed
