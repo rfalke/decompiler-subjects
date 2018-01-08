@@ -1,4 +1,3 @@
 Using options:
 0800:10C6: warning: Procedure fn0800_10C6 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-fn0800_0BA3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0800_0BC9: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+l0800_0C5E: warning: Non-integral switch expression

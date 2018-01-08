@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80494D8();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80494DC();
-	return;
-}
-
-// 08048278: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048358, dwArg00, (char *) fp + 0x04, &globals->t8048230, &globals->t80483AC, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482C0: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80494E4 = 0x01;
 	}
-	return;
 }
 
 // 080482FC: void frame_dummy()
@@ -101,21 +82,18 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048328: void hello()
 void hello()
 {
-	printf@@GLIBC_2.0();
-	return;
+	printf("Hello, ");
 }
 
 // 08048340: void world()
 void world()
 {
-	printf@@GLIBC_2.0();
-	return;
+	printf("world!\n");
 }
 
 // 08048358: void main()
@@ -132,7 +110,6 @@ void main()
 	byte SCZO_20;
 	word32 eax_21;
 	globals->t8048340();
-	return;
 }
 
 // 08048388: void __do_global_ctors_aux()
@@ -153,13 +130,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 080483AC: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

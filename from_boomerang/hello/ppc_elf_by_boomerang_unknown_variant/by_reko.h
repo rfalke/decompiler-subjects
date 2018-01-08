@@ -36,8 +36,8 @@ Eq_42: (union "Eq_42" (int32 u0) (byte u1))
 	T_57 (in 1 : int32)
 	T_59 (in Mem38[0x1001094C:byte] : byte)
 Eq_83: (fn void ())
-	T_83 (in puts@@GLIBC_2.0 : ptr32)
-	T_84 (in signature of puts@@GLIBC_2.0 : void)
+	T_83 (in puts : ptr32)
+	T_84 (in signature of puts : void)
 Eq_87: (struct "Eq_87" (FFFF8000 word32 dwFFFF8000) (FFFF8004 (ptr (arr (ptr code))) ptrFFFF8004))
 	T_87 (in r30_17 : (ptr Eq_87))
 	T_93 (in globals->dw10000434 + 0x10000444 : word32)
@@ -728,15 +728,15 @@ T_82: (in dwArg04 : word32)
   Class: Eq_82
   DataType: word32
   OrigDataType: word32
-T_83: (in puts@@GLIBC_2.0 : ptr32)
+T_83: (in puts : ptr32)
   Class: Eq_83
   DataType: (ptr Eq_83)
   OrigDataType: (ptr (fn T_85 ()))
-T_84: (in signature of puts@@GLIBC_2.0 : void)
+T_84: (in signature of puts : void)
   Class: Eq_83
   DataType: (ptr Eq_83)
   OrigDataType: 
-T_85: (in puts@@GLIBC_2.0() : void)
+T_85: (in puts() : void)
   Class: Eq_85
   DataType: void
   OrigDataType: void

@@ -27,6 +27,5 @@ void fn0800_0001()
 		}
 		ax_2 = ax_2 - 0x01;
 	} while (ax_2 >= 0x00);
-	return;
 }
 

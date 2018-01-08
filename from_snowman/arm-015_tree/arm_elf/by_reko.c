@@ -7,91 +7,65 @@
 // 000082C8: void _init()
 void _init()
 {
-_init_entry:
-_init_exit:
 }
 
 // 00008330: void _start()
 void _start()
 {
-_start_entry:
-_start_exit:
 }
 
 // 0000836C: void call_weak_fn()
 void call_weak_fn()
 {
-call_weak_fn_entry:
-call_weak_fn_exit:
 }
 
 // 00008390: void deregister_tm_clones()
 void deregister_tm_clones()
 {
-deregister_tm_clones_entry:
-deregister_tm_clones_exit:
 }
 
 // 000083C0: void register_tm_clones()
 void register_tm_clones()
 {
-register_tm_clones_entry:
-register_tm_clones_exit:
 }
 
 // 000083F8: void __do_global_dtors_aux()
 void __do_global_dtors_aux()
 {
-__do_global_dtors_aux_entry:
-__do_global_dtors_aux_exit:
 }
 
 // 00008420: void frame_dummy()
 void frame_dummy()
 {
-frame_dummy_entry:
-frame_dummy_exit:
 }
 
 // 00008458: void insert()
 void insert()
 {
-insert_entry:
-insert_exit:
 }
 
 // 00008500: void printout()
 void printout()
 {
-printout_entry:
-printout_exit:
 }
 
 // 00008570: void main()
 void main()
 {
-main_entry:
-main_exit:
 }
 
 // 00008610: void __libc_csu_init()
 void __libc_csu_init()
 {
-__libc_csu_init_entry:
-__libc_csu_init_exit:
 }
 
 // 00008670: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-__libc_csu_fini_entry:
-__libc_csu_fini_exit:
 }
 
 // 00008674: void _fini()
 void _fini()
 {
-_fini_entry:
-_fini_exit:
 }
 

@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049580();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049584();
-	return;
-}
-
-// 08048278: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804836F, dwArg00, (char *) fp + 0x04, &globals->t80483C8, &globals->t80483F8, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482C0: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b804958C = 0x01;
 	}
-	return;
 }
 
 // 080482FC: void frame_dummy()
@@ -101,18 +82,19 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 08048328: void test(Stack word32 dwArg04)
-void test(word32 dwArg04)
+// 08048328: void test(Stack Eq_105 dwArg04)
+void test(Eq_105 dwArg04)
 {
-	printf@@GLIBC_2.0();
-	return;
+	ui64 ecx_ebx_15 = ~0x01 - SEQ(dwArg04 >> 0x1F, dwArg04);
+	Eq_112 edx_20 = ~0x01 - ((word32) ecx_ebx_15 & SLICE(ecx_ebx_15, word32, 32));
+	int64 ebx_edx_24 = SEQ(edx_20 >> 0x1F, edx_20 - 0x03);
+	printf("MinMax result %d\n", ((word32) (ebx_edx_24 - 0x03) & SLICE(ebx_edx_24 - 0x03, word32, 32)) + 0x03);
 }
 
-// 0804836F: void main(Stack word32 dwArg04)
-void main(word32 dwArg04)
+// 0804836F: void main(Stack Eq_105 dwArg04)
+void main(Eq_105 dwArg04)
 {
 	__align(fp - 0x0C);
 	test(~0x04);
@@ -120,7 +102,6 @@ void main(word32 dwArg04)
 	test(0x00);
 	test(dwArg04);
 	test(0x05);
-	return;
 }
 
 // 080483C8: void __libc_csu_init()
@@ -128,7 +109,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 080483F8: void __libc_csu_fini()
@@ -152,7 +133,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 0804842C: void __do_global_ctors_aux()
@@ -173,13 +153,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048450: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

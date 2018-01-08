@@ -5,16 +5,30 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t80482CA = <code>;
-<anonymous> g_t80482DA = <code>;
-<anonymous> g_t80482EA = <code>;
+Eq_29 g_t804829C = Unexpected function type (fn void ())
+;
+Eq_26 g_t8048410 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_30 g_t8048690 = Unexpected function type (fn void ())
+;
+char g_str80486B8[] = "%d";
+void g_v80486BB = ;
+void g_v80486C6 = ;
+void g_v80486CF = ;
+void g_v80486DE = ;
+void g_v80486F0 = ;
+void g_v80486F6 = ;
+void g_v8048708 = ;
+void g_v8048720 = ;
+void g_v804872D = ;
+void g_v8048738 = ;
+void g_v804873F = ;
+void g_v8048745 = ;
 <anonymous> ** g_ptr8049754 = &g_ptr8049830;
 <anonymous> * g_ptr8049824 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049830 = null;
 word32 g_dw8049834 = 0x00000000;
-<anonymous> * g_ptr8049844 = &g_t80482CA;
-<anonymous> * g_ptr8049848 = &g_t80482DA;
-<anonymous> * g_ptr804984C = &g_t80482EA;
 <anonymous> * g_ptr8049850 = null;
+FILE * g_ptr8049854 = null;
 byte g_b8049858 = 0x00;
 

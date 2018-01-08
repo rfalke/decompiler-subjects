@@ -4,17 +4,55 @@
 
 #include "subject.h"
 
+Eq_34 g_t0002;
 byte g_b0020;
+Eq_34 g_t0024;
 byte g_b0030;
 <anonymous> g_t404FE0 = <code>;
 ui32 g_dw40A10F = 0x00000000;
+Eq_34 g_t40A128 = 
+	{
+		0x54,
+		0x77,
+	};
+Eq_34 g_t40A12E = 
+	{
+		0x54,
+		0x68,
+	};
+Eq_34 g_t40A136 = 
+	{
+		0x46,
+		0x6F,
+	};
+Eq_34 g_t40A13D = 
+	{
+		0x46,
+		0x69,
+	};
+Eq_34 g_t40A144 = 
+	{
+		0x53,
+		0x69,
+	};
+Eq_34 g_t40A14A = 
+	{
+		0x53,
+		0x65,
+	};
+Eq_34 g_t40A152 = 
+	{
+		0x4F,
+		0x74,
+	};
 word32 g_dw40A5CC = 0x00000000;
-Eq_2501 g_t40B570 = 
+byte g_b40A6D0 = 0x00;
+Eq_2428 g_t40B570 = 
 	{
 		0x00000000,
 		0x00000001,
 	};
-struct Eq_2501 * g_ptr40B59C = &g_t40B570;
+struct Eq_2428 * g_ptr40B59C = &g_t40B570;
 <anonymous> * g_ptr40B780 = &g_t404FE0;
 <anonymous> * g_ptr40B784 = &g_t404FE0;
 

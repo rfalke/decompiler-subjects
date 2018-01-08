@@ -1,8 +1,8 @@
 Using options:
 error: An error occurred during decompilation. System.BadImageFormatException: Endianness is incorrectly specified.
-  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateReader (UInt32 fileOffset) <0x41a842f0 + 0x00107> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateLoader () <0x41a841a0 + 0x0001b> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) <0x41a83c30 + 0x00027> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41a82360 + 0x002ab> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x41a810c0 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x41a80d60 + 0x000dc> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateReader (UInt32 fileOffset) <0x4146a690 + 0x00107> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.CreateLoader () <0x4146a540 + 0x0001b> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) <0x41469fd0 + 0x00027> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41468700 + 0x002ab> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x41467460 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x41467100 + 0x000dc> in <filename unknown>:0 

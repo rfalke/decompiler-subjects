@@ -4,6 +4,11 @@
 
 #include "subject.h"
 
+Eq_604 g_t400000 = 
+	{
+		0x5A4D,
+		0x000000E0,
+	};
 ui32 g_dw405058 = 0xBB40E64E;
 ui32 g_dw40505C = 0x44BF19B1;
 word32 g_dw405170 = 0x00000000;
@@ -14,5 +19,5 @@ int32 g_dw405188 = 0;
 word32 g_dw40518C = 0x00000000;
 word32 g_dw4054C4 = 0x00000000;
 word32 g_dw4054EC = 0x00000000;
-<anonymous> * g_ptr4054F0 = null;
+Eq_190 g_t4054F0 = null;
 

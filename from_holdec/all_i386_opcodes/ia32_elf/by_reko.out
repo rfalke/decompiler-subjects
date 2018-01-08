@@ -1,4 +1,5 @@
 Using options:
+080482D4: warning: Unable to resolve imported reference !__gmon_start__.
 08048340: error: The method or operation is not implemented.
 08057F8B: warning: Rewriting x86 opcode 'btc' is not supported yet.
 08057F8B: warning: Rewriting x86 opcode 'btc' is not supported yet.
@@ -12,15 +13,145 @@ Using options:
 08058828: warning: Rewriting x86 opcode 'btc' is not supported yet.
 08058910: warning: Rewriting x86 opcode 'btc' is not supported yet.
 080589F9: warning: Rewriting x86 opcode 'btc' is not supported yet.
-0805C253: error: The method or operation is not implemented.
-0805C347: error: The method or operation is not implemented.
-0805C430: error: The method or operation is not implemented.
-0805C519: error: The method or operation is not implemented.
-080D18C3: error: An error occurred while processing instruction at address 080D18C3.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x4217f380 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41f9dbb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x4217de10 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x4217daa0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x42175800 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x4217b9c0 + 0x0018c> in <filename unknown>:0 
+080802E4: error: An error occurred while processing the statement branch eax != 0x00000000 && ecx != 0x00000000 l080802E3.
+    Not implemented: eax != 0x00000000 && ecx != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080327: error: An error occurred while processing the statement branch eax_17 != 0x00000000 && ecx_20 != 0x00000000 l08080326.
+    Not implemented: eax_17 != 0x00000000 && ecx_20 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+0808040E: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l0808040D.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080804F5: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l080804F4.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080805DD: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l080805DC.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080695: error: An error occurred while processing the statement branch eax != 0x00000000 && ecx != 0x00000000 l08080694.
+    Not implemented: eax != 0x00000000 && ecx != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080806D9: error: An error occurred while processing the statement branch eax_17 != 0x00000000 && ecx_20 != 0x00000000 l080806D8.
+    Not implemented: eax_17 != 0x00000000 && ecx_20 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080807C1: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l080807C0.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080808A9: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l080808A8.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080992: error: An error occurred while processing the statement branch eax_16 != 0x00000000 && ecx_19 != 0x00000000 l08080991.
+    Not implemented: eax_16 != 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080A4B: error: An error occurred while processing the statement branch eax == 0x00000000 && ecx != 0x00000000 l08080A4A.
+    Not implemented: eax == 0x00000000 && ecx != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080A8E: error: An error occurred while processing the statement branch eax_17 == 0x00000000 && ecx_20 != 0x00000000 l08080A8D.
+    Not implemented: eax_17 == 0x00000000 && ecx_20 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080B75: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l08080B74.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080C5C: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l08080C5B.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080D44: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l08080D43.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080DFC: error: An error occurred while processing the statement branch eax == 0x00000000 && ecx != 0x00000000 l08080DFB.
+    Not implemented: eax == 0x00000000 && ecx != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080E40: error: An error occurred while processing the statement branch eax_17 == 0x00000000 && ecx_20 != 0x00000000 l08080E3F.
+    Not implemented: eax_17 == 0x00000000 && ecx_20 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08080F28: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l08080F27.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+08081010: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l0808100F.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080810F9: error: An error occurred while processing the statement branch eax_16 == 0x00000000 && ecx_19 != 0x00000000 l080810F8.
+    Not implemented: eax_16 == 0x00000000 && ecx_19 != 0x00000000
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41be49c0 + 0x0047f> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41b51bd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41bf4370 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41b8c4e0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41bf1570 + 0x00289> in <filename unknown>:0 
+080D2B34: warning: Expected sizes of arrays to have been determined by now
+080D2B34: warning: Expected sizes of arrays to have been determined by now

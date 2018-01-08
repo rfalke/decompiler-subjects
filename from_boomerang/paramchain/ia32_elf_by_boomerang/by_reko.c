@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 08048818: void _start(Register (ptr Eq_2) edx, Stack word32 dwArg00)
-void _start( * edx, word32 dwArg00)
+// 08048818: void _start(Register (ptr Eq_2) edx, Stack ui32 dwArg00)
+void _start( * edx, ui32 dwArg00)
 {
 	if (0x080499F8 != 0x00)
 		atexit(edx);
@@ -20,7 +20,7 @@ void _start( * edx, word32 dwArg00)
 	byte C_33;
 	byte Z_34;
 	byte SCZO_35;
-	__fpstart();
+	!__fpstart();
 	fn08048880();
 	_init();
 	exit(main());
@@ -29,7 +29,6 @@ void _start( * edx, word32 dwArg00)
 // 0804887C: void _mcount()
 void _mcount()
 {
-	return;
 }
 
 // 08048880: void fn08048880()
@@ -47,28 +46,25 @@ void fn08048880()
 		if (false)
 			globals->dw8049B08 = 0x01;
 	}
-	return;
 }
 
-// 08048924: void addem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
-void addem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
+// 08048924: void addem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr word32) dwArg10)
+void addem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 * dwArg10)
 {
 	*dwArg10 = dwArg04 + dwArg08 + dwArg0C;
-	return;
 }
 
-// 08048938: void passem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack ptr32 dwArg10)
-void passem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, ptr32 dwArg10)
+// 08048938: void passem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr word32) dwArg10)
+void passem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 * dwArg10)
 {
 	addem(dwArg04, dwArg08, dwArg0C, dwArg10);
-	return;
 }
 
 // 08048950: Register word32 main()
 word32 main()
 {
 	passem(0x05, 0x0A, 0x28, fp - 0x08);
-	printf(&globals->b8049B2C, SLICE(134519596, <unknown>, 32));
+	printf(&globals->b8049B2C, dwLoc08);
 	return 0x00;
 }
 
@@ -87,7 +83,6 @@ void _init()
 		bcuiposr0 None_31;
 		(*(ecx_8 - 0x08))();
 	}
-	return;
 }
 
 // 080489A4: void _fini()
@@ -105,6 +100,5 @@ void _fini()
 		bcuiposr0 None_32;
 		(*(ecx_8 - 0x14))();
 	}
-	return;
 }
 

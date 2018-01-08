@@ -9,8 +9,7 @@ LRESULT g_t401324(HWND tArg04, UINT tArg08, WPARAM tArg0C, LPARAM tArg10) = Unex
 ;
 WCHAR g_t402000 = L'D';
 WCHAR g_t402012 = L'<';
-WCHAR g_t40204C = L'S';
-Eq_178 g_t40206C = 
+Eq_277 g_t40206C = 
 	{
 		
 		{
@@ -37,7 +36,7 @@ Eq_178 g_t40206C =
 			},
 		},
 	};
-Eq_630 g_t4020A4 = 
+Eq_413 g_t4020A4 = 
 	{
 		0x00000000,
 		&g_t401324,
@@ -50,28 +49,26 @@ Eq_630 g_t4020A4 =
 		null,
 		&g_t402000,
 	};
-Eq_606 g_t4020B4 = 
+Eq_387 g_t4020B4 = 
 	{
 		null
 	};
-Eq_615 g_t4020B8 = null;
-Eq_618 g_t4020BC = null;
-Eq_182 g_t4020CC = 
-	{
-		null
-	};
-Eq_351 g_t4020D0 = null;
+Eq_396 g_t4020B8 = null;
+Eq_399 g_t4020BC = null;
+Eq_259 g_t4020CC = null;
+Eq_267 g_t4020D0 = null;
 word32 g_dw4020D8 = 0x00000000;
 word32 g_dw4020DC = 0x00000000;
-Eq_182 g_t4020F8 = 
+struct tagRECT g_t4020F0 = 
 	{
-		null
+		0,
+		0,
+		0,
+		0,
 	};
-Eq_197 g_t4020FC = 
-	{
-		0x00000000
-	};
-Eq_171 g_t402100 = 
+int32 g_dw4020F8 = 0;
+int32 g_dw4020FC = 0;
+Eq_170 g_t402100 = 
 	{
 		null
 	};
@@ -84,8 +81,8 @@ Eq_2 g_t40210C =
 	{
 		null
 	};
-Eq_115 g_t40211C = null;
-Eq_118 g_t402120 = null;
+Eq_114 g_t40211C = null;
+Eq_117 g_t402120 = null;
 word16 g_w40213A = 0x28C0;
 word16 g_w40213B = 0x0028;
 cui16 g_w40213C = 0x0000;

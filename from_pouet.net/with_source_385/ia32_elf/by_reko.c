@@ -10,142 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048884: void MikMod_strerror()
-void MikMod_strerror()
+// 080489A4: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804A47C();
-	return;
-}
-
-// 08048894: void strlen@@GLIBC_2.0()
-void strlen@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804A480();
-	return;
-}
-
-// 080488A4: void XParseColor()
-void XParseColor()
-{
-	word32 esp_3;
-	globals->ptr804A484();
-	return;
-}
-
-// 080488B4: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804A488();
-	return;
-}
-
-// 080488C4: void XLoadQueryFont()
-void XLoadQueryFont()
-{
-	word32 esp_3;
-	globals->ptr804A48C();
-	return;
-}
-
-// 080488D4: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804A490();
-	return;
-}
-
-// 080488E4: void MikMod_RegisterAllDrivers()
-void MikMod_RegisterAllDrivers()
-{
-	word32 esp_3;
-	globals->ptr804A494();
-	return;
-}
-
-// 080488F4: void MikMod_Init()
-void MikMod_Init()
-{
-	word32 esp_3;
-	globals->ptr804A498();
-	return;
-}
-
-// 08048904: void XAllocColor()
-void XAllocColor()
-{
-	word32 esp_3;
-	globals->ptr804A49C();
-	return;
-}
-
-// 08048914: void XSetFont()
-void XSetFont()
-{
-	word32 esp_3;
-	globals->ptr804A4A0();
-	return;
-}
-
-// 08048924: void exit@@GLIBC_2.0()
-void exit@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804A4A4();
-	return;
-}
-
-// 08048944: void Player_Start()
-void Player_Start()
-{
-	word32 esp_3;
-	globals->ptr804A4AC();
-	return;
-}
-
-// 08048964: void Player_Load()
-void Player_Load()
-{
-	word32 esp_3;
-	globals->ptr804A4B4();
-	return;
-}
-
-// 08048974: void sin@@GLIBC_2.0()
-void sin@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804A4B8();
-	return;
-}
-
-// 08048984: void XCreateGC()
-void XCreateGC()
-{
-	word32 esp_3;
-	globals->ptr804A4BC();
-	return;
-}
-
-// 08048994: void XOpenDisplay()
-void XOpenDisplay()
-{
-	word32 esp_3;
-	globals->ptr804A4C0();
-	return;
-}
-
-// 080489A4: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048CBE, dwArg00, (char *) fp + 0x04, &globals->t80487FC, &globals->t8048DE8, edx, fp);
 	__hlt();
 }
 
@@ -165,7 +36,6 @@ void call_gmon_start()
 		byte Z_34;
 		eax_13();
 	}
-	return;
 }
 
 // 080489EC: void __do_global_dtors_aux()
@@ -196,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b804A4E8 = 0x01;
 	}
-	return;
 }
 
 // 08048A28: void frame_dummy()
@@ -213,107 +82,177 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 08048A54: void FontInit(Stack word32 dwArg04)
-void FontInit(word32 dwArg04)
+// 08048A54: Register word32 FontInit(Stack word32 dwArg04)
+word32 FontInit(word32 dwArg04)
 {
-	XLoadQueryFont();
-	XSetFont();
-	return;
+	word32 esp_19;
+	word32 ebp_20;
+	byte SCZO_21;
+	word32 eax_22;
+	!XLoadQueryFont();
+	word32 esp_37;
+	word32 ebp_38;
+	byte SCZO_39;
+	word32 eax_40;
+	!XSetFont();
+	return eax_40;
 }
 
-// 08048A98: void XPrint(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14)
-void XPrint(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, word32 dwArg14)
+// 08048A98: void XPrint(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack (ptr char) dwArg14)
+void XPrint(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, char * dwArg14)
 {
-	strlen@@GLIBC_2.0();
-	uint16 wLoc16_37 = __fstcw();
-	uint16 ax_40 = DPB(wLoc16_37, 0x0C, 8);
-	__fldcw(ax_40);
-	__fldcw(wLoc16_37);
-	__fldcw(ax_40);
-	__fldcw(wLoc16_37);
-	char * v13_55 = globals->ptr804A514;
-	fprintf(globals->ptr804A580, v13_55, SLICE(v13_55, <unknown>, 32));
-	return;
+	strlen(dwArg14);
+	uint16 wLoc16_38 = __fstcw();
+	uint16 ax_41 = DPB(wLoc16_38, 0x0C, 8);
+	__fldcw(ax_41);
+	__fldcw(wLoc16_38);
+	__fldcw(ax_41);
+	__fldcw(wLoc16_38);
+	word32 esp_62;
+	word32 ebp_63;
+	byte SCZO_64;
+	word32 eax_65;
+	word32 edx_66;
+	word16 ax_67;
+	byte ah_68;
+	!XDrawString();
 }
 
-// 08048B14: void init(Register (ptr Eq_172) eax, Stack word32 dwArg04, Stack word32 dwArg08)
-void init(Eq_172 * eax, word32 dwArg04, word32 dwArg08)
+// 08048B14: void init(Stack word32 dwArg04, Stack word32 dwArg08)
+void init(word32 dwArg04, word32 dwArg08)
 {
-	XOpenDisplay();
-	globals->ptr804A580 = eax;
-	word32 esp_45;
-	word32 ebp_46;
-	byte SCZO_47;
-	char * eax_48;
-	XClearWindow();
-	globals->ptr804A514 = eax_48;
-	strlen(globals->ptr804A580);
-	word32 eax_63 = *((char *) *((char *) globals->ptr804A580 + 0x008C) + 0x0030);
-	globals->dw804A504 = eax_63;
-	XCreateGC();
-	globals->dw804A500 = eax_63;
-	XParseColor();
-	XAllocColor();
-	XOpenDisplay(globals->ptr804A580);
-	return;
+	globals->ptr804A580 = XOpenDisplay(null);
+	word32 esp_44;
+	word32 ebp_45;
+	byte SCZO_46;
+	word32 eax_47;
+	!XCreateSimpleWindow();
+	globals->dw804A514 = eax_47;
+	word32 esp_58;
+	word32 ebp_59;
+	byte SCZO_60;
+	word32 eax_61;
+	!XMapWindow();
+	word32 eax_66 = globals->ptr804A580->ptr008C->dw0030;
+	globals->dw804A504 = eax_66;
+	word32 esp_78;
+	word32 ebp_79;
+	byte SCZO_80;
+	word32 eax_81;
+	!XCreateGC();
+	globals->dw804A500 = eax_81;
+	word32 esp_95;
+	word32 ebp_96;
+	byte SCZO_97;
+	word32 eax_98;
+	!XParseColor();
+	word32 esp_110;
+	word32 ebp_111;
+	byte SCZO_112;
+	word32 eax_113;
+	!XAllocColor();
+	word32 esp_126;
+	word32 ebp_127;
+	byte SCZO_128;
+	word32 eax_129;
+	!XSetForeground();
 }
 
-// 08048C0C: void MikmodInit()
-void MikmodInit()
+// 08048C0C: void MikmodInit(Register word32 eax)
+void MikmodInit(word32 eax)
 {
-	MikMod_RegisterAllDrivers();
-	int32 eax_10 = printf(ptrLoc0C, tLoc08);
-	MikMod_Init();
-	ptr32 esp_15 = fp - 0x0C;
-	if (eax_10 != 0x00)
+	word32 esp_8;
+	word32 ebp_9;
+	byte SCZO_10;
+	word32 eax_11;
+	byte SZO_12;
+	byte C_13;
+	byte Z_14;
+	!MikMod_RegisterAllDrivers();
+	word32 esp_15;
+	word32 ebp_16;
+	byte SCZO_17;
+	word32 eax_18;
+	byte SZO_19;
+	byte C_20;
+	byte Z_21;
+	!MikMod_RegisterAllLoaders();
+	word32 esp_26;
+	word32 ebp_27;
+	byte SCZO_28;
+	word32 eax_29;
+	byte SZO_30;
+	byte C_31;
+	byte Z_32;
+	!MikMod_Init();
+	if (eax_29 == 0x00)
 	{
-		MikMod_strerror();
-		word32 esp_86;
-		word32 ebp_87;
-		byte SCZO_88;
-		byte SZO_90;
-		byte C_91;
-		byte Z_92;
-		XSetFont();
-		exit@@GLIBC_2.0();
-		esp_15 = fp - 0x1C;
+		word32 esp_73;
+		word32 ebp_74;
+		byte SCZO_75;
+		word32 eax_76;
+		byte SZO_77;
+		byte C_78;
+		byte Z_79;
+		!Player_Load();
+		if (eax_76 != 0x00)
+		{
+			word32 esp_113;
+			word32 ebp_114;
+			byte SCZO_115;
+			word32 eax_116;
+			byte SZO_117;
+			byte C_118;
+			byte Z_119;
+			!Player_Start();
+		}
+		else
+		{
+			word32 esp_90;
+			word32 ebp_91;
+			byte SCZO_92;
+			char * eax_93;
+			byte SZO_94;
+			byte C_95;
+			byte Z_96;
+			!MikMod_strerror();
+			printf("MikMod Error: %s\n", eax_93);
+			exit(0x01);
+		}
 	}
-	ptr32 esp_29 = esp_15 - 0x04;
-	*(esp_29 - 0x04) = 0x00;
-	*(esp_29 - 0x08) = 0x80;
-	*(esp_29 - 0x0C) = 0x08048E1D;
-	Player_Load();
-	ptr32 esp_37 = esp_29 + 0x04;
-	if (eax_10 == 0x00)
+	else
 	{
-		*(esp_29 - 0x0C) = globals->dw804A4E4;
-		MikMod_strerror();
-		*(esp_29 - 0x08) = eax_10;
-		*(esp_29 - 0x0C) = 0x08048E26;
-		printf@@GLIBC_2.0();
-		*(esp_29 - 0x0C) = 0x01;
-		exit@@GLIBC_2.0();
-		esp_37 = esp_29 - 0x0C;
+		word32 esp_44;
+		word32 ebp_45;
+		byte SCZO_46;
+		char * eax_47;
+		byte SZO_48;
+		byte C_49;
+		byte Z_50;
+		!MikMod_strerror();
+		fprintf(globals->ptr804A4E0, "MikMod: %s\n", eax_47);
+		exit(0x01);
 	}
-	*(esp_37 - 0x10) = eax_10;
-	Player_Start();
-	return;
 }
 
 // 08048CBE: FpuStack real64 main(FpuStack real64 rArg0)
 real64 main(real64 rArg0)
 {
 	__align(fp - 0x0C);
-	init(null, 300, 100);
-	FontInit(0x08048E38);
-	MikmodInit();
-	sin@@GLIBC_2.0();
-	real64 rArg0_39 = rArg0 * globals->r8048E48 + globals->r8048E50;
-	real64 rArg0_48 = (real64) globals->r8048E5C - (real64) globals->r804A588 / (real64) globals->r8048E58;
-	XPrint((word32) rArg0_48, SLICE(rArg0_48, word32, 32), (word32) rArg0_39, SLICE(rArg0_39, word32, 32), 0x08049020);
+	init(300, 100);
+	word32 eax_20 = FontInit(0x08048E38);
+	MikmodInit(eax_20);
+	word32 esp_34;
+	word32 ebp_35;
+	byte SCZO_36;
+	word32 eax_37;
+	byte FPUF_38;
+	!sin();
+	real64 rArg0_45 = rArg0 * globals->r8048E48 + globals->r8048E50;
+	real64 rArg0_54 = (real64) globals->r8048E5C - (real64) globals->r804A588 / (real64) globals->r8048E58;
+	XPrint((word32) rArg0_54, SLICE(rArg0_54, word32, 32), (word32) rArg0_45, SLICE(rArg0_45, word32, 32), &globals->b8049020);
 	globals->r804A588 = (real32) ((real64) globals->r804A588 + globals->r8048E60);
 	globals->r804A584 = (real32) ((real64) globals->r804A584 + 1.0);
 }
@@ -336,13 +275,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048DE8: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

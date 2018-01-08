@@ -1,2 +1,5 @@
 Using options:
+080484A0: warning: Unable to resolve imported reference !__gmon_start__.
 08048570: error: The method or operation is not implemented.
+08048490: warning: Unable to resolve imported reference !__xstat.
+080484E0: warning: Unable to resolve imported reference !__strcat_chk.

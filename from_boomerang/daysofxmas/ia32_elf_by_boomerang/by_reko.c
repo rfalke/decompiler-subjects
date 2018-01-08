@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048280: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 080482A0: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049814();
-	return;
-}
-
-// 08048290: void _IO_putc@@GLIBC_2.0()
-void _IO_putc@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049818();
-	return;
-}
-
-// 080482A0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048350, dwArg00, (char *) fp + 0x04, &globals->t8048258, &globals->t80484F0, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482E8: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049824 = 0x01;
 	}
-	return;
 }
 
 // 08048324: void frame_dummy()
@@ -101,16 +82,15 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 08048350: Register int32 main(Stack int32 dwArg04, Stack int32 dwArg08, Stack (ptr Eq_99) dwArg0C)
-int32 main(int32 dwArg04, int32 dwArg08, Eq_99 * dwArg0C)
+// 08048350: Register int32 main(Stack int32 dwArg04, Stack int32 dwArg08, Stack (ptr Eq_108) dwArg0C)
+int32 main(int32 dwArg04, int32 dwArg08, Eq_108 * dwArg0C)
 {
 	int32 dwLoc28_141;
-	struct Eq_99 * dwLoc24_138;
+	struct Eq_108 * dwLoc24_138;
 	int32 dwLoc2C_263;
-	int32 eax_266;
+	int32 eax_272;
 	int32 ebx_128;
 	__align(fp - 0x1C);
 	if (dwArg04 > 0x01)
@@ -142,8 +122,7 @@ int32 main(int32 dwArg04, int32 dwArg08, Eq_99 * dwArg0C)
 				{
 					if (dwArg08 == (int32) dwArg0C->b0000)
 					{
-						eax_266 = (int32) dwArg0C->b001F;
-						_IO_putc@@GLIBC_2.0();
+						eax_272 = _IO_putc((int32) dwArg0C->b001F, globals->ptr8049820);
 						goto l080483BF;
 					}
 					dwLoc24_138 = &dwArg0C->b0000 + 0x01;
@@ -154,10 +133,10 @@ int32 main(int32 dwArg04, int32 dwArg08, Eq_99 * dwArg0C)
 				{
 					dwLoc24_138 = &dwArg0C->b0000 + 0x01;
 					dwLoc28_141 = dwArg08;
-					int32 eax_282 = dwArg04;
+					int32 eax_283 = dwArg04;
 					if (dwArg0C->b0000 == 0x2F)
-						eax_282 = dwArg04 + 0x01;
-					dwLoc2C_263 = eax_282;
+						eax_283 = dwArg04 + 0x01;
+					dwLoc2C_263 = eax_283;
 				}
 			}
 			else
@@ -167,9 +146,9 @@ int32 main(int32 dwArg04, int32 dwArg08, Eq_99 * dwArg0C)
 				dwLoc2C_263 = dwArg08;
 			}
 l080483BA:
-			eax_266 = main(dwLoc2C_263, dwLoc28_141, dwLoc24_138);
+			eax_272 = main(dwLoc2C_263, dwLoc28_141, dwLoc24_138);
 l080483BF:
-			ebx_128 = eax_266;
+			ebx_128 = eax_272;
 			return ebx_128;
 		}
 		if (dwArg04 <= 0x00)
@@ -205,13 +184,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 080484F0: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

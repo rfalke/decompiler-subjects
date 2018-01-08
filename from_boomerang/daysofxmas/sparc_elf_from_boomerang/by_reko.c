@@ -77,13 +77,11 @@ void __do_global_dtors_aux(word32 o7)
 			fn00020BA0();
 		*l7_114->ptr000C = 0x01;
 	}
-	return;
 }
 
 // 00010604: void call___do_global_dtors_aux()
 void call___do_global_dtors_aux()
 {
-	return;
 }
 
 // 00010614: void frame_dummy(Register word32 o7)
@@ -92,12 +90,10 @@ void frame_dummy(word32 o7)
 	struct Eq_54 * l7_22 = fn0001054C(o7, 0x00010504);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0014 != 0x00)
-		{
-			if (l7_22->dw001C != 0x00)
-				fn00020BB8();
-		}
-		return;
+		if (*l7_22->ptr0014 == 0x00 || l7_22->dw001C == 0x00)
+			;
+		else
+			fn00020BB8();
 	}
 	else
 		fn00020BAC();
@@ -106,7 +102,6 @@ void frame_dummy(word32 o7)
 // 00010698: void call_frame_dummy()
 void call_frame_dummy()
 {
-	return;
 }
 
 // 000106A8: Register Eq_10 main(Register Eq_10 o0, Register Eq_10 o1, Register (ptr Eq_15) o2, Register out ptr32 i0Out, Register out Eq_35 i1Out, Register out ptr32 i2Out)
@@ -297,7 +292,6 @@ word32 * __do_global_ctors_aux(word32 o7)
 // 000108E8: void call___do_global_ctors_aux()
 void call___do_global_ctors_aux()
 {
-	return;
 }
 
 // 000108F8: Register word32 _init(Register word32 o7)
@@ -311,64 +305,52 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-	return;
 }
 
 // 00020B4C: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020B4C_entry:
-l00020B4C:
-l00020B4C:
-fn00020B4C_exit:
 }
 
 // 00020B7C: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020B88: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020B94: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020BA0: void fn00020BA0()
 void fn00020BA0()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020BAC: void fn00020BAC()
 void fn00020BAC()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020BB8: void fn00020BB8()
 void fn00020BB8()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020BC4: void __flsbuf()
 void __flsbuf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

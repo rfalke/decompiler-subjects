@@ -4,4 +4,57 @@
 
 #include "subject.h"
 
+Eq_5039 g_a0005[];
+Eq_5040 g_a000D[];
+word16 g_w40000000;
+word32 g_dw4000003C;
+struct Eq_232 g_t40006800;
+struct Eq_232 g_t400068A0;
+word64 g_a40006C70[];
+Eq_2476 g_a40006CD8[];
+Eq_3032 g_a40006D00[];
+word64 g_qw400075C0;
+word64 g_qw400077D8;
+word64 g_qw400078F0;
+word64 g_qw40007B08;
+ui64 g_qw40009000;
+word64 g_qw40009008;
+word32 g_a40009010[];
+word32 g_dw40009018;
+word32 g_dw4000901C;
+word32 g_dw40009020;
+word32 g_dw40009024;
+word32 g_dw40009028;
+int64 g_qw40009038;
+byte g_b40009150;
+word32 g_dw40009158;
+word32 g_dw4000915C;
+word64 g_qw40009160;
+word32 g_dw40009170;
+word32 g_dw40009174;
+word32 g_dw40009178;
+word32 g_dw4000917C;
+word32 g_dw40009180;
+word32 g_dw40009184;
+word64 g_qw40009190;
+BOOL g_t40009218;
+ui64 g_qw400092A0;
+ptr64 g_ptr400092B8;
+ULONGLONG g_t40009318;
+ui64 g_qw400096F0;
+word64 g_qw400096F8;
+word64 g_qw40009700;
+word32 g_dw40009708;
+word32 g_dw4000970C;
+word32 g_dw40009714;
+word64 g_qw40009718;
+byte g_b40009720;
+word32 g_dw40009724;
+word32 g_dw40009728;
+uint64 g_qw40009738;
+word64 g_qw40009740;
+word64 g_qw40009758;
+word64 g_qw40009760;
+word32 * g_ptr4000B540;
+word32 * g_ptr4000B548;
 

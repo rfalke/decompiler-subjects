@@ -10,30 +10,13 @@ void _init(word32 esi)
 	call_gmon_start();
 	frame_dummy(esi);
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482A0: void fn080482A0()
-void fn080482A0()
+// 080482C0: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804958C();
-	return;
-}
-
-// 080482B0: void fn080482B0()
-void fn080482B0()
-{
-	word32 esp_3;
-	globals->ptr8049590();
-	return;
-}
-
-// 080482C0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482A0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804837A, dwArg00, (char *) fp + 0x04, &globals->t80483B8, &globals->t8048400, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 08048308: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80495A0 = 0x01;
 	}
-	return;
 }
 
 // 08048344: void frame_dummy(Register word32 esi)
@@ -102,23 +83,19 @@ void frame_dummy(word32 esi)
 		word32 esi_40;
 		null();
 	}
-	return;
 }
 
-// 08048370: void bswap(Stack word32 dwArg04)
-void bswap(word32 dwArg04)
+// 08048370: Register word32 bswap(Stack word32 dwArg04)
+word32 bswap(word32 dwArg04)
 {
-	__bswap(dwArg04);
-	return;
+	return __bswap(dwArg04);
 }
 
 // 0804837A: void main()
 void main()
 {
 	__align(fp - 0x0C);
-	bswap(305419896);
-	fn080482B0();
-	return;
+	printf("Output is %x\n", bswap(305419896));
 }
 
 // 080483B8: void __libc_csu_init(Register word32 esi)
@@ -143,13 +120,12 @@ void __libc_csu_init(word32 esi)
 			(0x08049660 + 0x08049580)();
 		} while (esi_48 + 0x01 < edi_47);
 	}
-	return;
 }
 
 // 08048400: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	int32 ecx_16 = 0x08049660 - 0x08049660;
+	word32 ecx_16 = 0x08049660 - 0x08049660;
 	int32 esi_21 = (ecx_16 >> 0x02) - 0x01;
 	if (ecx_16 >> 0x02 != 0x00)
 	{
@@ -170,7 +146,6 @@ void __libc_csu_fini()
 		} while (esi_40 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048444: void __do_global_ctors_aux()
@@ -191,13 +166,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048468: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

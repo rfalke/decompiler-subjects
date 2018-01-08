@@ -10,47 +10,34 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482A8: void fn080482A8()
-void fn080482A8()
+// 080482D8: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80497B8();
-	return;
-}
-
-// 080482B8: void fn080482B8()
-void fn080482B8()
-{
-	word32 esp_3;
-	globals->ptr80497BC();
-	return;
-}
-
-// 080482C8: void fn080482C8()
-void fn080482C8()
-{
-	word32 esp_3;
-	globals->ptr80497C0();
-	return;
-}
-
-// 080482D8: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482A8();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804837C, dwArg00, (char *) fp + 0x04, &globals->t80485F8, &globals->t8048648, edx, fp);
 	__hlt();
 }
 
 // 080482FC: void call_gmon_start()
 void call_gmon_start()
 {
-	if (globals->dw80497B0 != 0x00)
-		fn080482C8();
-	return;
+	word32 edx_15 = globals->dw80497B0;
+	if (edx_15 != 0x00)
+	{
+		word32 esp_33;
+		word32 ebp_34;
+		word32 ebx_35;
+		word32 ecx_36;
+		byte SCZO_37;
+		word32 edx_38;
+		byte SZO_39;
+		byte C_40;
+		byte Z_41;
+		word32 eax_42;
+		!__gmon_start__();
+	}
 }
 
 // 08048320: void __do_global_dtors_aux()
@@ -77,7 +64,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80497D8 = 0x01;
 	}
-	return;
 }
 
 // 08048354: void frame_dummy()
@@ -94,51 +80,49 @@ void frame_dummy()
 		byte Z_37;
 		null();
 	}
-	return;
 }
 
 // 0804837C: void main()
 void main()
 {
 	__align(fp - 0x0C);
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C4 / (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0 / (real64) globals->w80486C4;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C4 / (real64) globals->w80486C0;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0 / (real64) globals->w80486C4;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
-	fn080482B8();
-	globals->r80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
-	fn080482B8();
+	printf("Hello, world\n");
+	globals->t80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc24, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc30, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
+	printf("Result is %f\n", DPB(rLoc3C, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc48, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc54, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
+	printf("Result is %f\n", DPB(rLoc60, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C4 / (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc6C, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc78, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0 / (real64) globals->w80486C4;
+	printf("Result is %f\n", DPB(rLoc84, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc90, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C4 / (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLoc9C, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0 / (real64) globals->w80486C4;
+	printf("Result is %f\n", DPB(rLocA8, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C0 - (real64) globals->w80486C4;
+	printf("Result is %f\n", DPB(rLocB4, globals->t80497D0, 0));
+	globals->t80497D0 = (real64) globals->w80486C4 - (real64) globals->w80486C0;
+	printf("Result is %f\n", DPB(rLocC0, globals->t80497D0, 0));
 	__rdtsc();
-	return;
 }
 
 // 080485F8: void __libc_csu_init()
 void __libc_csu_init()
 {
 	_init();
-	int32 eax_21 = 0x0804988C - 0x0804988C;
+	word32 eax_21 = 0x0804988C - 0x0804988C;
 	if (eax_21 >> 0x02 != 0x00)
 	{
 		do
@@ -157,16 +141,12 @@ void __libc_csu_init()
 			bcuiposr0 None_67;
 			(*(<anonymous> **) 0x0804988C)();
 		} while (edi_58 + 0x01 < eax_21 >> 0x02);
-		return;
 	}
-	else
-		return;
 }
 
 // 08048648: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08048650: void __do_global_ctors_aux()
@@ -187,13 +167,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*(ebx_28 - 0x04) != ~0x00);
 	}
-	return;
 }
 
 // 08048678: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

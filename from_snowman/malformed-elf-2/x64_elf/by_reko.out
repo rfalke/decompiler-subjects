@@ -1,10 +1,10 @@
 Using options:
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.ElfLoader64.GetDependencyList (System.Byte[] rawImage) <0x4130eba0 + 0x00336> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader64.Dump (System.IO.TextWriter writer) <0x41322150 + 0x0089f> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Dump () <0x41322030 + 0x00039> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.LoadImage (IPlatform platform, System.Byte[] rawImage) <0x413209f0 + 0x000a7> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) <0x41307c30 + 0x00123> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41306360 + 0x002ab> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x413050c0 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x41304d60 + 0x000dc> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader64.GetDependencyList (System.Byte[] rawImage) <0x421339b0 + 0x00336> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader64.Dump (System.IO.TextWriter writer) <0x42130e90 + 0x0089f> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Dump () <0x42130d70 + 0x00039> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.LoadImage (IPlatform platform, System.Byte[] rawImage) <0x4212f820 + 0x000a7> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) <0x4211bfd0 + 0x00123> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x4211a700 + 0x002ab> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x42119460 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x42119100 + 0x000dc> in <filename unknown>:0 

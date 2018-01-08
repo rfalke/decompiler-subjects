@@ -5,16 +5,17 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t80482AE = <code>;
-<anonymous> g_t80482BE = <code>;
-<anonymous> g_t80482CE = <code>;
+Eq_22 g_t8048394 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t80483DC = Unexpected function type (fn void ())
+;
+Eq_26 g_t804842C = Unexpected function type (fn void ())
+;
+char g_str8048480[] = "Result is %d\x0A";
 <anonymous> * g_ptr8049494 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80494A0 = null;
 word32 g_dw80494A4 = 0x00000000;
 word32 g_dw8049578 = 0x00000000;
-<anonymous> * g_ptr8049580 = &g_t80482AE;
-<anonymous> * g_ptr8049584 = &g_t80482BE;
-<anonymous> * g_ptr8049588 = &g_t80482CE;
 <anonymous> ** g_ptr8049594 = &g_ptr80494A0;
 byte g_b8049598 = 0x00;
 

@@ -73,13 +73,11 @@ void __do_global_dtors_aux(word32 o7)
 			fn000209C4();
 		*l7_116->ptr0010 = 0x01;
 	}
-	return;
 }
 
 // 000105F8: void call___do_global_dtors_aux()
 void call___do_global_dtors_aux()
 {
-	return;
 }
 
 // 00010604: void frame_dummy(Register word32 o7)
@@ -88,12 +86,10 @@ void frame_dummy(word32 o7)
 	struct Eq_39 * l7_22 = fn00010544(o7, 66360);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0008 != 0x00)
-		{
-			if (l7_22->dw001C != 0x00)
-				fn000209DC();
-		}
-		return;
+		if (*l7_22->ptr0008 == 0x00 || l7_22->dw001C == 0x00)
+			;
+		else
+			fn000209DC();
 	}
 	else
 		fn000209D0();
@@ -102,7 +98,6 @@ void frame_dummy(word32 o7)
 // 00010688: void call_frame_dummy()
 void call_frame_dummy()
 {
-	return;
 }
 
 // 00010694: void main()
@@ -160,7 +155,6 @@ word32 * __do_global_ctors_aux(word32 o7)
 // 00010884: void call___do_global_ctors_aux()
 void call___do_global_ctors_aux()
 {
-	return;
 }
 
 // 00010890: Register word32 _init(Register word32 o7)
@@ -174,64 +168,52 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-	return;
 }
 
 // 00020970: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020970_entry:
-l00020970:
-l00020970:
-fn00020970_exit:
 }
 
 // 000209A0: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209AC: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209B8: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209C4: void fn000209C4()
 void fn000209C4()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209D0: void fn000209D0()
 void fn000209D0()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209DC: void fn000209DC()
 void fn000209DC()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000209E8: void scanf()
 void scanf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

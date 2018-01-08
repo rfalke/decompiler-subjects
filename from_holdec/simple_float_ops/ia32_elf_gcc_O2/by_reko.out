@@ -1,0 +1,33 @@
+Using options:
+080482AC: error: Value cannot be null.
+Parameter name: key
+080482C5: error: Value cannot be null.
+Parameter name: key
+0804842B: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08048445: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08048330: warning: The format specifier '%z' passed to *printf is not known.
+08048330: warning: The format specifier '%z' passed to *printf is not known.
+08048330: warning: The format specifier '%z' passed to *printf is not known.
+08048330: warning: The format specifier '%z' passed to *printf is not known.
+08048330: warning: The format specifier '%z' passed to *printf is not known.
+08048343: warning: The format specifier '%z' passed to *printf is not known.
+08048343: warning: The format specifier '%z' passed to *printf is not known.
+08048343: warning: The format specifier '%z' passed to *printf is not known.
+compare_floats: error: An error occurred during data flow analysis.
+    Case PO not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40632580 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40631f70 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40631e70 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x405e0f00 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x40631b30 + 0x00056> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x405e6870 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40630fd0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4061fff0 + 0x004a3> in <filename unknown>:0 
+: error: Error when reconstructing types.
+    Specified argument was out of the range of valid values.
+Parameter name: Linear address 00000000 is not in known segment.
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x4063ffa0 + 0x0017f> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x40657eb0 + 0x0002f> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x40650030 + 0x002d5> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x40649100 + 0x00597> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x40648a90 + 0x0022f> in <filename unknown>:0 

@@ -10,54 +10,13 @@ void _init(word32 esi, word32 edi)
 	call_gmon_start();
 	frame_dummy(esi, edi);
 	__do_global_ctors_aux(esi, edi);
-	return;
 }
 
-// 08048334: void fgets@@GLIBC_2.0()
-void fgets@@GLIBC_2.0()
+// 08048390: void _start(Register (ptr Eq_17) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049758();
-	return;
-}
-
-// 08048344: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804975C();
-	return;
-}
-
-// 08048354: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049760();
-	return;
-}
-
-// 08048364: void fclose@@GLIBC_2.1()
-void fclose@@GLIBC_2.1()
-{
-	word32 esp_3;
-	globals->ptr8049764();
-	return;
-}
-
-// 08048374: void fopen@@GLIBC_2.1()
-void fopen@@GLIBC_2.1()
-{
-	word32 esp_3;
-	globals->ptr8049768();
-	return;
-}
-
-// 08048390: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80484A3, dwArg00, (char *) fp + 0x04, &globals->t8048540, &globals->t80485A0, edx, fp);
 	__hlt();
 }
 
@@ -77,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080483E0: void __do_global_dtors_aux(Register int32 esi)
@@ -108,7 +66,6 @@ void __do_global_dtors_aux(int32 esi)
 		}
 		globals->b8049770 = 0x01;
 	}
-	return;
 }
 
 // 08048420: void frame_dummy(Register word32 esi, Register word32 edi)
@@ -127,44 +84,41 @@ void frame_dummy(word32 esi, word32 edi)
 		word32 edi_40;
 		fn00000000();
 	}
-	return;
 }
 
-// 08048454: Register (ptr char) chomp(Stack ptr32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-char * chomp(ptr32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 08048454: Register (ptr char) chomp(Stack (ptr char) dwArg04, Stack int32 dwArg08, Stack (ptr Eq_117) dwArg0C)
+char * chomp(char * dwArg04, int32 dwArg08, FILE * dwArg0C)
 {
-	fgets@@GLIBC_2.0();
-	if (dwArg04 != null)
+	char * eax_16 = fgets(dwArg04, dwArg08, dwArg0C);
+	if (eax_16 != null)
 	{
-		byte * eax_36 = printf(dwArg04, SLICE(dwArg04, <unknown>, 32));
+		char * eax_36 = strchr(eax_16, '\x0A');
 		if (eax_36 != null)
 			*eax_36 = 0x00;
 	}
-	return dwArg04;
+	return eax_16;
 }
 
-// 080484A3: void main(Stack word32 dwArg04, Stack word32 dwArg08)
-void main(word32 dwArg04, word32 dwArg08)
+// 080484A3: void main(Stack int32 dwArg04, Stack (ptr Eq_141) dwArg08)
+void main(int32 dwArg04, Eq_141 * dwArg08)
 {
 	__align(fp - 0x043C);
 	if (dwArg04 > 0x01)
 	{
-		word32 eax_38 = dwArg08->dw0004;
-		fopen@@GLIBC_2.1();
-		if (eax_38 != 0x00)
+		FILE * eax_39 = fopen(dwArg08->ptr0004, "r");
+		if (eax_39 != null)
 		{
-			if (chomp(fp - 0x041C, 0x0400, eax_38) != 0x00)
-				printf@@GLIBC_2.0();
-			fclose@@GLIBC_2.1();
+			if (chomp(fp - 0x041C, 0x0400, eax_39) != 0x00)
+				printf("%s\n", fp - 0x041C);
+			fclose(eax_39);
 		}
 	}
-	return;
 }
 
 // 08048540: void __libc_csu_init(Register word32 edi)
 void __libc_csu_init(word32 edi)
 {
-	struct Eq_172 * ebx_19 = __i686.get_pc_thunk.bx(dwLoc20);
+	struct Eq_182 * ebx_19 = __i686.get_pc_thunk.bx(dwLoc20);
 	_init(0x00, edi);
 	if (0x00 < &ebx_19->ptr110C - &ebx_19->ptr110C >> 0x02)
 	{
@@ -183,13 +137,12 @@ void __libc_csu_init(word32 edi)
 			ebx_19->ptr110C();
 		} while (esi_50 + 0x01 < edi_49);
 	}
-	return;
 }
 
 // 080485A0: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	struct Eq_172 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc10);
+	struct Eq_182 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc10);
 	int32 eax_17 = ebx_11->a10AE - ebx_11->a10AE;
 	int32 esi_22 = (eax_17 >> 0x02) - 0x01;
 	if (eax_17 >> 0x02 != 0x00)
@@ -211,7 +164,6 @@ void __libc_csu_fini()
 		} while (esi_40 != 0x00);
 	}
 	_fini(esi_22);
-	return;
 }
 
 // 080485F0: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
@@ -239,13 +191,11 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			eax_12();
 		} while (*ebx_35 != ~0x00);
 	}
-	return;
 }
 
 // 08048630: void _fini(Register int32 esi)
 void _fini(int32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

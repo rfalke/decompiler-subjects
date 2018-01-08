@@ -8,10 +8,10 @@ Eq_1: (struct "Globals")
 	globals_t (in globals : (ptr (struct "Globals")))
 Eq_2: (struct "Eq_2")
 	seg0858_t (in seg0858 : selector)
-Eq_3: (segment "Eq_3")
+Eq_3: (segment "Eq_3" (194 byte b0194))
 	T_3 (in ds : (ptr Eq_3))
 	T_6 (in ds : (ptr Eq_3))
-Eq_4: (fn void ((ptr Eq_3), word16))
+Eq_4: (fn void ((ptr Eq_3), (memptr (ptr Eq_3) byte)))
 	T_4 (in fn0800_0205 : ptr32)
 	T_5 (in signature of fn0800_0205 : void)
 // Type Variables ////////////
@@ -39,48 +39,44 @@ T_6: (in ds : (ptr Eq_3))
   Class: Eq_3
   DataType: (ptr Eq_3)
   OrigDataType: (ptr (segment))
-T_7: (in wArg02 : word16)
+T_7: (in wArg02 : (memptr (ptr Eq_3) byte))
   Class: Eq_7
-  DataType: word16
-  OrigDataType: word16
+  DataType: (memptr (ptr Eq_3) byte)
+  OrigDataType: (memptr T_6 (struct 0001 (0 byte b0000)))
 T_8: (in 0x0194 : word16)
   Class: Eq_7
-  DataType: word16
+  DataType: (memptr (ptr Eq_3) byte)
   OrigDataType: word16
-T_9: (in fn0800_0205(ds, 0x0194) : void)
+T_9: (in fn0800_0205(ds, &Eq_3::b0194) : void)
   Class: Eq_9
   DataType: void
   OrigDataType: void
-T_10: (in wArg02 : word16)
+T_10: (in 0x0001 : word16)
   Class: Eq_10
-  DataType: (memptr (ptr Eq_3) byte)
-  OrigDataType: (memptr T_6 (struct 0001 (0 byte b0000)))
-T_11: (in 0x0001 : word16)
-  Class: Eq_11
   DataType: word16
   OrigDataType: word16
-T_12: (in wArg02 + 0x0001 : word16)
-  Class: Eq_10
+T_11: (in wArg02 + 0x0001 : word16)
+  Class: Eq_7
   DataType: (memptr (ptr Eq_3) byte)
   OrigDataType: word16
-T_13: (in 0x0000 : word16)
+T_12: (in 0x0000 : word16)
+  Class: Eq_12
+  DataType: word16
+  OrigDataType: word16
+T_13: (in wArg02 + 0x0000 : word16)
   Class: Eq_13
   DataType: word16
   OrigDataType: word16
-T_14: (in wArg02 + 0x0000 : word16)
+T_14: (in Mem0[ds:wArg02 + 0x0000:byte] : byte)
   Class: Eq_14
-  DataType: word16
-  OrigDataType: word16
-T_15: (in Mem0[ds:wArg02 + 0x0000:byte] : byte)
-  Class: Eq_15
   DataType: byte
   OrigDataType: byte
-T_16: (in 0x00 : byte)
-  Class: Eq_15
+T_15: (in 0x00 : byte)
+  Class: Eq_14
   DataType: byte
   OrigDataType: byte
-T_17: (in ds->*wArg02 != 0x00 : bool)
-  Class: Eq_17
+T_16: (in ds->*wArg02 != 0x00 : bool)
+  Class: Eq_16
   DataType: bool
   OrigDataType: bool
 */
@@ -91,7 +87,8 @@ typedef struct Eq_2 {
 } Eq_2;
 
 typedef struct Eq_3 {
+	byte b0194;	// 194
 } Eq_3;
 
-typedef void (Eq_4)(Eq_3 *, word16);
+typedef void (Eq_4)(Eq_3 *, byte Eq_3::*);
 

@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void scanf@@GLIBC_2.0()
-void scanf@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804959C();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495A0();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495A4();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804838C, dwArg00, (char *) fp + 0x04, &globals->t80483D0, &globals->t8048400, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80495AC = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,34 +82,38 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 0804835C: void fib(Stack word32 dwArg04)
-void fib(word32 dwArg04)
+// 0804835C: Register int32 fib(Stack int32 dwArg04)
+int32 fib(int32 dwArg04)
 {
+	int32 eax_13 = dwArg04;
 	if (dwArg04 > 0x01)
 	{
+		int32 ecx_28 = 0x01;
+		int32 ebx_29 = 0x01;
 		if (dwArg04 > 0x02)
 		{
 			int32 edx_37 = dwArg04 - 0x02;
 			do
+			{
+				ecx_28 = ecx_28 + ebx_29;
 				edx_37 = edx_37 - 0x01;
-			while (edx_37 != 0x00);
+				ebx_29 = ecx_28;
+			} while (edx_37 != 0x00);
 		}
+		eax_13 = ecx_28;
 	}
-	return;
+	return eax_13;
 }
 
 // 0804838C: void main()
 void main()
 {
 	__align(fp - 0x0C);
-	printf@@GLIBC_2.0();
-	scanf@@GLIBC_2.0();
-	fib(dwLoc08);
-	printf@@GLIBC_2.0();
-	return;
+	printf("Input number: ");
+	scanf("%d", tLoc20);
+	printf("fibonacci(%d) = %d\n", dwLoc08, fib(dwLoc08));
 }
 
 // 080483D0: void __libc_csu_init()
@@ -144,7 +121,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 08048400: void __libc_csu_fini()
@@ -168,7 +145,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048434: void __do_global_ctors_aux()
@@ -189,13 +165,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048458: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

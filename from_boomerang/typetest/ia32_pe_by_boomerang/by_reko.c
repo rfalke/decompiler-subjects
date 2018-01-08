@@ -26,182 +26,181 @@ DWORD Win32CrtStartup()
 	_set_app_type();
 	globals->dw40312C = ~0x00;
 	globals->dw403130 = ~0x00;
-	word32 esp_53;
-	word32 ebp_54;
-	word32 * eax_55;
-	struct Eq_35 * fs_56;
-	byte SCZO_57;
-	word32 ebx_58;
-	word32 esi_59;
-	word32 edi_60;
-	word32 ecx_61;
-	word32 edx_62;
-	byte SZO_63;
-	byte C_64;
-	byte Z_65;
-	byte al_66;
-	byte CZ_67;
+	word32 esp_52;
+	word32 ebp_53;
+	word32 * eax_54;
+	struct Eq_35 * fs_55;
+	byte SCZO_56;
+	word32 ebx_57;
+	word32 esi_58;
+	word32 edi_59;
+	word32 ecx_60;
+	word32 edx_61;
+	byte SZO_62;
+	byte C_63;
+	byte Z_64;
+	byte al_65;
+	byte CZ_66;
 	_p__fmode();
-	word32 ecx_69 = globals->dw403120;
-	*eax_55 = ecx_69;
-	word32 esp_71;
-	word32 ebp_72;
-	word32 * eax_73;
-	struct Eq_58 * fs_74;
-	byte SCZO_75;
-	word32 ebx_76;
-	word32 esi_77;
-	word32 edi_78;
-	word32 ecx_79;
-	word32 edx_80;
-	byte SZO_81;
-	byte C_82;
-	byte Z_83;
-	byte al_84;
-	byte CZ_85;
+	word32 ecx_67 = globals->dw403120;
+	*eax_54 = ecx_67;
+	word32 ebp_70;
+	word32 * eax_71;
+	struct Eq_57 * fs_72;
+	byte SCZO_73;
+	word32 ebx_74;
+	word32 esi_75;
+	word32 edi_76;
+	word32 ecx_77;
+	word32 edx_78;
+	byte SZO_79;
+	byte C_80;
+	byte Z_81;
+	byte al_82;
+	byte CZ_83;
+	ptr32 esp_293;
 	_p__commode();
-	word32 edx_87 = globals->dw40311C;
-	*eax_73 = edx_87;
-	word32 ecx_90 = *adjust_fdiv;
-	globals->dw403128 = ecx_90;
+	word32 edx_84 = globals->dw40311C;
+	*eax_71 = edx_84;
+	word32 ecx_87 = *adjust_fdiv;
+	globals->dw403128 = ecx_87;
 	fn00401BE0();
-	ptr32 esp_303 = &fp->dwFFFFFF68 + 0x01;
-	word32 eax_92 = globals->dw403040;
-	if (eax_92 == 0x00)
+	word32 eax_89 = globals->dw403040;
+	if (eax_89 == 0x00)
 	{
-		fp->dwFFFFFF68 = 4201424;
-		ptr32 esp_287;
-		word32 ebp_288;
-		word32 eax_289;
-		struct Eq_236 * fs_290;
-		byte SCZO_291;
-		word32 ebx_292;
-		word32 esi_293;
-		word32 edi_294;
-		word32 ecx_295;
-		word32 edx_296;
-		byte SZO_297;
-		byte C_298;
-		byte Z_299;
-		byte al_300;
-		byte CZ_301;
+		*(esp_293 - 0x04) = 4201424;
+		word32 esp_278;
+		word32 ebp_279;
+		word32 eax_280;
+		struct Eq_233 * fs_281;
+		byte SCZO_282;
+		word32 ebx_283;
+		word32 esi_284;
+		word32 edi_285;
+		word32 ecx_286;
+		word32 edx_287;
+		byte SZO_288;
+		byte C_289;
+		byte Z_290;
+		byte al_291;
+		byte CZ_292;
 		_setusermatherr();
-		esp_303 = esp_287;
+		esp_293 = esp_278 + 0x04;
 	}
 	fn00401BB0();
-	word32 * esp_97 = esp_303 - 0x04;
-	*esp_97 = 0x00403014;
-	*(esp_97 - 0x04) = 0x00403010;
-	ptr32 * esp_101;
-	word32 ebp_102;
-	word32 eax_103;
-	struct Eq_116 * fs_104;
-	byte SCZO_105;
-	word32 ebx_106;
-	word32 esi_107;
-	word32 edi_108;
-	word32 ecx_109;
-	word32 edx_110;
-	byte SZO_111;
-	byte C_112;
-	byte Z_113;
-	byte al_114;
-	byte CZ_115;
+	word32 * esp_94 = esp_293 - 0x04;
+	*esp_94 = 0x00403014;
+	*(esp_94 - 0x04) = 0x00403010;
+	struct Eq_110 * esp_98;
+	word32 ebp_99;
+	word32 eax_100;
+	struct Eq_113 * fs_101;
+	byte SCZO_102;
+	word32 ebx_103;
+	word32 esi_104;
+	word32 edi_105;
+	word32 ecx_106;
+	word32 edx_107;
+	byte SZO_108;
+	byte C_109;
+	byte Z_110;
+	byte al_111;
+	byte CZ_112;
 	initterm();
-	*esp_101 = fp - 0x70;
-	*(esp_101 - 0x04) = globals->dw403114;
-	*(esp_101 - 0x08) = fp - 0x68;
-	*(esp_101 - 0x0C) = fp - 116;
-	*(esp_101 - 0x10) = fp - 100;
-	struct Eq_163 * esp_136;
-	word32 ebp_137;
-	word32 eax_138;
-	struct Eq_166 * fs_139;
-	byte SCZO_140;
-	word32 ebx_141;
-	word32 esi_142;
-	word32 edi_143;
-	word32 ecx_144;
-	word32 edx_145;
-	byte SZO_146;
-	byte C_147;
-	byte Z_148;
-	byte al_149;
-	byte CZ_150;
+	esp_98->ptr0004 = fp - 0x70;
+	esp_98->dw0000 = globals->dw403114;
+	*(esp_98 - 0x04) = fp - 0x68;
+	*(esp_98 - 0x08) = fp - 116;
+	*(esp_98 - 0x0C) = fp - 100;
+	struct Eq_158 * esp_132;
+	word32 ebp_133;
+	word32 eax_134;
+	struct Eq_161 * fs_135;
+	byte SCZO_136;
+	word32 ebx_137;
+	word32 esi_138;
+	word32 edi_139;
+	word32 ecx_140;
+	word32 edx_141;
+	byte SZO_142;
+	byte C_143;
+	byte Z_144;
+	byte al_145;
+	byte CZ_146;
 	_getmainargs();
-	esp_136->dw000C = 0x0040300C;
-	esp_136->dw0008 = 0x00403000;
-	word32 esp_158;
-	word32 ebp_159;
-	word32 eax_160;
-	struct Eq_191 * fs_161;
-	byte SCZO_162;
-	word32 ebx_163;
-	word32 esi_164;
-	word32 edi_165;
-	word32 ecx_166;
-	word32 edx_167;
-	byte SZO_168;
-	byte C_169;
-	byte Z_170;
-	byte al_171;
-	byte CZ_172;
+	esp_132->dw0010 = 0x0040300C;
+	esp_132->dw000C = 0x00403000;
+	word32 esp_153;
+	word32 ebp_154;
+	word32 eax_155;
+	struct Eq_186 * fs_156;
+	byte SCZO_157;
+	word32 ebx_158;
+	word32 esi_159;
+	word32 edi_160;
+	word32 ecx_161;
+	word32 edx_162;
+	byte SZO_163;
+	byte C_164;
+	byte Z_165;
+	byte al_166;
+	byte CZ_167;
 	initterm();
-	ptr32 esp_176;
-	word32 ebp_177;
-	word32 eax_178;
-	struct Eq_208 * fs_179;
-	byte SCZO_180;
-	word32 ebx_181;
-	word32 esi_182;
-	word32 edi_183;
-	word32 ecx_184;
-	word32 edx_185;
-	byte SZO_186;
-	byte C_187;
-	byte Z_188;
-	byte al_189;
-	byte CZ_190;
+	ptr32 esp_170;
+	word32 ebp_171;
+	word32 eax_172;
+	struct Eq_203 * fs_173;
+	byte SCZO_174;
+	word32 ebx_175;
+	word32 esi_176;
+	word32 edi_177;
+	word32 ecx_178;
+	word32 edx_179;
+	byte SZO_180;
+	byte C_181;
+	byte Z_182;
+	byte al_183;
+	byte CZ_184;
 	_p__acmdln();
-	cu8 * esi_193 = dwLoc74;
+	cu8 * esi_186 = dwLoc74;
 	if (*dwLoc74 == 0x22)
 	{
 		do
 		{
-			esi_193 = esi_193 + 0x01;
-			cu8 al_260 = *esi_193;
-		} while (al_260 == 0x00 || al_260 == 0x22);
-		if (*esi_193 == 0x22)
-			esi_193 = esi_193 + 0x01;
+			esi_186 = esi_186 + 0x01;
+			cu8 al_251 = *esi_186;
+		} while (al_251 != 0x00 && al_251 != 0x22);
+		if (*esi_186 == 0x22)
+			esi_186 = esi_186 + 0x01;
 	}
 	else
 	{
-		while (*esi_193 > 0x20)
-			esi_193 = esi_193 + 0x01;
+		while (*esi_186 > 0x20)
+			esi_186 = esi_186 + 0x01;
 	}
 	while (true)
 	{
-		cu8 al_202 = *esi_193;
-		if (al_202 == 0x00 || al_202 > 0x20)
+		cu8 al_195 = *esi_186;
+		if (al_195 == 0x00 || al_195 > 0x20)
 			break;
-		esi_193 = esi_193 + 0x01;
+		esi_186 = esi_186 + 0x01;
 	}
-	ui32 eax_220;
-	*(esp_176 - 0x08) = fp - 0x60;
-	GetStartupInfoA(*(esp_176 - 0x08));
+	ui32 eax_212;
+	*(esp_170 - 0x04) = fp - 0x60;
+	GetStartupInfoA(*(esp_170 - 0x04));
 	if (0x00 != 0x00)
-		eax_220 = dwLoc30 & 0xFFFF;
+		eax_212 = dwLoc30 & 0xFFFF;
 	else
-		eax_220 = 0x0A;
-	*(esp_176 - 0x08) = eax_220;
-	*(esp_176 - 0x0C) = (cu8 **) esi_193;
-	*(esp_176 - 0x10) = 0x00;
-	*(esp_176 - 0x14) = 0x00;
-	Eq_329 eax_230 = GetModuleHandleA(*(esp_176 - 0x14));
-	*(esp_176 - 0x14) = (HMODULE *) eax_230;
+		eax_212 = 0x0A;
+	*(esp_170 - 0x08) = eax_212;
+	*(esp_170 - 0x0C) = (cu8 **) esi_186;
+	*(esp_170 - 0x10) = 0x00;
+	*(esp_170 - 0x14) = 0x00;
+	Eq_328 eax_222 = GetModuleHandleA(*(esp_170 - 0x14));
+	*(esp_170 - 0x18) = (HMODULE *) eax_222;
 	fn00401BFC(dwArg00, dwArg04, dwArg08, dwArg0C);
-	*(esp_176 - 0x08) = (HMODULE *) eax_230;
-	exit(*(esp_176 - 0x08));
+	*(esp_170 - 0x0C) = (HMODULE *) eax_222;
+	exit(*(esp_170 - 0x0C));
 }
 
 // 00401BB0: void fn00401BB0()
@@ -210,13 +209,11 @@ void fn00401BB0()
 	word32 esp_6;
 	byte SCZO_7;
 	controlfp();
-	return;
 }
 
 // 00401BE0: void fn00401BE0()
 void fn00401BE0()
 {
-	return;
 }
 
 // 00401BFC: void fn00401BFC(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
@@ -224,6 +221,5 @@ void fn00401BFC(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
 {
 	word32 esp_18;
 	MFC42.DLL!Ordinal_1576();
-	return;
 }
 

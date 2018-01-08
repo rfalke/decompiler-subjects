@@ -14,7 +14,7 @@ word32 g_dw10011D14 = 0xFFFFFFFF;
 word32 g_dw10011D20 = 0x00000000;
 word32 g_dw10011D24 = 0x00000000;
 word32 * g_ptr10011E04 = &g_dw10011D20;
-Eq_1216 g_a10011E08[] = 
+Eq_1220 g_a10011E08[] = 
 	{
 	};
 Eq_43 g_t10011FE4 = 

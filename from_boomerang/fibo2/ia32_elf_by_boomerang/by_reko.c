@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void scanf@@GLIBC_2.0()
-void scanf@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80495B0();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495B4();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495B8();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483A0, dwArg00, (char *) fp + 0x04, &globals->t80483E4, &globals->t8048414, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80495C0 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,7 +82,6 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 0804835C: Register word32 fib1(Register ptr32 ebp)
@@ -118,8 +90,8 @@ word32 fib1(ptr32 ebp)
 	return fib2(dwArg00);
 }
 
-// 08048368: Register int32 fib2(Stack word32 dwArg04)
-int32 fib2(word32 dwArg04)
+// 08048368: Register int32 fib2(Stack int32 dwArg04)
+int32 fib2(int32 dwArg04)
 {
 	int32 eax_20;
 	if (dwArg04 <= 0x01)
@@ -133,11 +105,9 @@ int32 fib2(word32 dwArg04)
 void main()
 {
 	__align(fp - 0x0C);
-	printf@@GLIBC_2.0();
-	scanf@@GLIBC_2.0();
-	fib1(fp - 0x04);
-	printf@@GLIBC_2.0();
-	return;
+	printf("Input number: ");
+	scanf("%d", tLoc20);
+	printf("fibonacci(%d) = %d\n", dwLoc08, fib1(fp - 0x04));
 }
 
 // 080483E4: void __libc_csu_init()
@@ -145,7 +115,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 08048414: void __libc_csu_fini()
@@ -169,7 +139,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048448: void __do_global_ctors_aux()
@@ -190,13 +159,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 0804846C: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

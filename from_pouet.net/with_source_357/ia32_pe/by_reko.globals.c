@@ -4,4 +4,5 @@
 
 #include "subject.h"
 
+Eq_71433 g_t0001;
 

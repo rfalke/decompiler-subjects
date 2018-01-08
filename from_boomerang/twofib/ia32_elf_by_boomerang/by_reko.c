@@ -10,38 +10,13 @@ void _init(word32 esi)
 	call_gmon_start();
 	frame_dummy(esi);
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482C4: void fn080482C4()
-void fn080482C4()
+// 080482F4: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049660();
-	return;
-}
-
-// 080482D4: void fn080482D4()
-void fn080482D4()
-{
-	word32 esp_3;
-	globals->ptr8049664();
-	return;
-}
-
-// 080482E4: void fn080482E4()
-void fn080482E4()
-{
-	word32 esp_3;
-	globals->ptr8049668();
-	return;
-}
-
-// 080482F4: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482D4();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483F5, dwArg00, (char *) fp + 0x04, &globals->t8048464, &globals->t80484B8, edx, fp);
 	__hlt();
 }
 
@@ -62,7 +37,6 @@ void call_gmon_start()
 		byte Z_39;
 		eax_15();
 	}
-	return;
 }
 
 // 0804833C: void __do_global_dtors_aux()
@@ -89,7 +63,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049678 = 0x01;
 	}
-	return;
 }
 
 // 08048370: void frame_dummy(Register word32 esi)
@@ -107,11 +80,10 @@ void frame_dummy(word32 esi)
 		word32 esi_40;
 		null();
 	}
-	return;
 }
 
-// 0804839C: void twofib(Stack ptr32 dwArg04, Stack word32 dwArg08)
-void twofib(ptr32 dwArg04, word32 dwArg08)
+// 0804839C: void twofib(Stack (ptr Eq_99) dwArg04, Stack int32 dwArg08)
+void twofib(Eq_99 * dwArg04, int32 dwArg08)
 {
 	word32 dwLoc08_16;
 	word32 dwLoc0C_15;
@@ -128,18 +100,16 @@ void twofib(ptr32 dwArg04, word32 dwArg08)
 	}
 	dwArg04->dw0000 = dwLoc0C_15;
 	dwArg04->dw0004 = dwLoc08_16;
-	return;
 }
 
 // 080483F5: void main()
 void main()
 {
 	__align(fp - 0x1C);
-	fn080482E4();
-	fn080482C4();
+	printf("Enter number: ");
+	scanf("%d", tLoc40);
 	twofib(fp - 0x14, dwLoc08);
-	fn080482E4();
-	return;
+	printf("Fibonacci of %d is %d\n", dwLoc08, dwLoc14);
 }
 
 // 08048464: void __libc_csu_init(Register word32 esi)
@@ -152,7 +122,7 @@ void __libc_csu_init(word32 esi)
 		{
 			word32 esp_47;
 			word32 ebp_48;
-			Eq_151 edi_49;
+			Eq_166 edi_49;
 			uint32 esi_50;
 			word32 ebx_51;
 			byte SCZO_52;
@@ -164,7 +134,6 @@ void __libc_csu_init(word32 esi)
 			(*(<anonymous> **) 0x08049734)();
 		} while (esi_50 + 0x01 <u 0x08049734 - edi_49 >> 0x02);
 	}
-	return;
 }
 
 // 080484B8: void __libc_csu_fini()
@@ -186,7 +155,6 @@ void __libc_csu_fini()
 		esi_23 = esi_48 - 0x01;
 	}
 	_fini();
-	return;
 }
 
 // 080484FC: void __do_global_ctors_aux()
@@ -205,13 +173,11 @@ void __do_global_ctors_aux()
 		eax_14();
 		eax_14 = (<anonymous> *) *ebx_32;
 	}
-	return;
 }
 
 // 08048520: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

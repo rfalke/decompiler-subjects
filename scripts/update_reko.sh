@@ -47,12 +47,14 @@ do
     gzip -9 $dir/by_reko.asm
     mv "$dir/subject.dis" $dir/by_reko.dis
     gzip -9 $dir/by_reko.dis
+    rm -f "$dir/subject.exe.sufa-raw.ubj"
     cleanup "$dir/subject.h" $dir/by_reko.h
     cleanup "$dir/subject.c" $dir/by_reko.c
     cleanup "$dir/subject.globals.c" $dir/by_reko.globals.c
   else
     echo "  failed"
     touch $dir/by_reko.failed
+    rm -f "$dir/subject.asm" "$dir/subject.dis" "$dir/subject.h"
   fi
   cleanup out $dir/by_reko.out
   rm -f "$dir/subject.{asm,dis,exe.sufa-raw.ubj,c,h}"

@@ -4,7 +4,12 @@
 
 #include "subject.h"
 
-Eq_253 g_t405830 = Unexpected function type (fn (ptr basic_ostream) ((ptr (struct "std::basic_ostream")), (ptr basic_ostream)))
+Eq_1043 g_t400000 = 
+	{
+		0x5A4D,
+		0x000000D8,
+	};
+Eq_248 g_t405830 = Unexpected function type (fn (ptr basic_ostream) ((ptr (struct "std::basic_ostream")), (ptr basic_ostream)))
 ;
 Eq_7 g_t405848 = Unexpected function type (fn (ptr basic_ostream) ((ptr (struct "std::basic_ostream")), (ptr basic_ostream)))
 ;
@@ -18,5 +23,5 @@ int32 g_dw407138 = 0;
 word32 g_dw40713C = 0x00000000;
 word32 g_dw407474 = 0x00000000;
 word32 g_dw40749C = 0x00000000;
-<anonymous> * g_ptr4074A0 = null;
+Eq_631 g_t4074A0 = null;
 

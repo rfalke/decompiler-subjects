@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049570();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049574();
-	return;
-}
-
-// 08048278: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048328, dwArg00, (char *) fp + 0x04, &globals->t80483B4, &globals->t80483E4, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482C0: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b804957C = 0x01;
 	}
-	return;
 }
 
 // 080482FC: void frame_dummy()
@@ -101,17 +82,18 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 08048328: void main(Stack word32 dwArg04)
-void main(word32 dwArg04)
+// 08048328: void main(Stack int32 dwArg04)
+void main(int32 dwArg04)
 {
 	__align(fp - 0x1C);
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	return;
+	printf("Figure 19.2\n");
+	printf("1");
+	int32 dwLoc0C_19 = 0x00;
+	if (dwArg04 <= 0x03)
+		dwLoc0C_19 = dwArg04;
+	printf("C is %d\n", dwArg04 + dwLoc0C_19);
 }
 
 // 080483B4: void __libc_csu_init()
@@ -119,7 +101,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 080483E4: void __libc_csu_fini()
@@ -143,7 +125,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048418: void __do_global_ctors_aux()
@@ -164,13 +145,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 0804843C: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

@@ -1,11 +1,2 @@
 Using options:
-0804842E: warning: Unable to resolve imported reference __gmon_start__.
-080482CC: warning: Unable to resolve imported reference __gmon_start__.
-0804848A: error: An error occurred while processing the statement word32 eax_21 = 0x080496F4 - 0x080496F4.
-    Pulling difference ptr32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41d67600 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41d66f40 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41cf76a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x41d75730 + 0x0004a> in <filename unknown>:0 
-  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x41d69360 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41d73230 + 0x00289> in <filename unknown>:0 
+080482FC: warning: Unable to resolve imported reference !__gmon_start__.

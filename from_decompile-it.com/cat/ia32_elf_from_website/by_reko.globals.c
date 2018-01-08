@@ -4,47 +4,26 @@
 
 #include "subject.h"
 
-void g_vFFFFFFFF;
+<anonymous> g_tFFFFFFFF;
 byte g_a0000[];
-Eq_3068 g_a0001[];
-word16 (* g_ptr007E)[];
-<anonymous> g_t8048B92 = <code>;
-<anonymous> g_t8048BA2 = <code>;
-<anonymous> g_t8048BB2 = <code>;
-<anonymous> g_t8048BC2 = <code>;
-<anonymous> g_t8048BD2 = <code>;
-<anonymous> g_t8048BE2 = <code>;
-<anonymous> g_t8048BF2 = <code>;
-<anonymous> g_t8048C02 = <code>;
-<anonymous> g_t8048C12 = <code>;
-<anonymous> g_t8048C22 = <code>;
-<anonymous> g_t8048C32 = <code>;
-<anonymous> g_t8048C42 = <code>;
-<anonymous> g_t8048C52 = <code>;
-<anonymous> g_t8048C62 = <code>;
-<anonymous> g_t8048C72 = <code>;
-<anonymous> g_t8048C82 = <code>;
-<anonymous> g_t8048C92 = <code>;
-<anonymous> g_t8048CA2 = <code>;
-<anonymous> g_t8048CB2 = <code>;
-<anonymous> g_t8048CC2 = <code>;
-<anonymous> g_t8048CD2 = <code>;
-<anonymous> g_t8048CE2 = <code>;
-<anonymous> g_t8048CF2 = <code>;
-<anonymous> g_t8048D02 = <code>;
-<anonymous> g_t8048D12 = <code>;
-<anonymous> g_t8048D22 = <code>;
-<anonymous> g_t8048D32 = <code>;
-<anonymous> g_t8048D42 = <code>;
-<anonymous> g_t8048D52 = <code>;
-<anonymous> g_t8048D62 = <code>;
-<anonymous> g_t8048D72 = <code>;
-<anonymous> g_t8048D92 = <code>;
-<anonymous> g_t8048DA2 = <code>;
-<anonymous> g_t8048DB2 = <code>;
+Eq_2900 g_t0001;
+Eq_36 g_t8049671 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_40 g_t804FBE0 = Unexpected function type (fn void ())
+;
+Eq_39 g_t804FBF0 = Unexpected function type (fn void ())
+;
+char g_str8050279[] = "coreutils";
+char g_str80502A9[] = "6.10";
+char g_str80502AE[] = "GNU coreutils";
+char g_str80502BC[] = "cat";
+char g_str80502DB[] = "-";
+char g_str8050314[] = "%s (%s) %s\x0A";
+char g_str8050320[] = "%s %s\x0A";
 <anonymous> * g_a8050574[] = 
 	{
 	};
+char g_str80505A0[] = "Copyright %s %d Free Software Foundation, Inc.";
 <anonymous> * g_a8050684[] = 
 	{
 	};
@@ -66,84 +45,47 @@ word16 (* g_ptr007E)[];
 <anonymous> * g_a8050A14[] = 
 	{
 	};
-<anonymous> * g_ptr8051F08 = &g_vFFFFFFFF;
+<anonymous> * g_ptr8051F08 = &g_tFFFFFFFF;
 word32 g_dw8051F18 = 0x00000000;
 word32 g_dw8051FFC = 0x00000000;
-<anonymous> * g_ptr805202C = &g_t8048B92;
-<anonymous> * g_ptr8052030 = &g_t8048BA2;
-<anonymous> * g_ptr8052034 = &g_t8048BB2;
-<anonymous> * g_ptr8052038 = &g_t8048BC2;
-<anonymous> * g_ptr805203C = &g_t8048BD2;
-<anonymous> * g_ptr8052040 = &g_t8048BE2;
-<anonymous> * g_ptr8052044 = &g_t8048BF2;
-<anonymous> * g_ptr8052048 = &g_t8048C02;
-<anonymous> * g_ptr805204C = &g_t8048C12;
-<anonymous> * g_ptr8052050 = &g_t8048C22;
-<anonymous> * g_ptr8052054 = &g_t8048C32;
-<anonymous> * g_ptr8052058 = &g_t8048C42;
-<anonymous> * g_ptr805205C = &g_t8048C52;
-<anonymous> * g_ptr8052060 = &g_t8048C62;
-<anonymous> * g_ptr8052064 = &g_t8048C72;
-<anonymous> * g_ptr8052068 = &g_t8048C82;
-<anonymous> * g_ptr805206C = &g_t8048C92;
-<anonymous> * g_ptr8052070 = &g_t8048CA2;
-<anonymous> * g_ptr8052074 = &g_t8048CB2;
-<anonymous> * g_ptr8052078 = &g_t8048CC2;
-<anonymous> * g_ptr805207C = &g_t8048CD2;
-<anonymous> * g_ptr8052080 = &g_t8048CE2;
-<anonymous> * g_ptr8052084 = &g_t8048CF2;
-<anonymous> * g_ptr8052088 = &g_t8048D02;
-<anonymous> * g_ptr805208C = &g_t8048D12;
-<anonymous> * g_ptr8052090 = &g_t8048D22;
-<anonymous> * g_ptr8052094 = &g_t8048D32;
-<anonymous> * g_ptr8052098 = &g_t8048D42;
-<anonymous> * g_ptr805209C = &g_t8048D52;
-<anonymous> * g_ptr80520A0 = &g_t8048D62;
-<anonymous> * g_ptr80520A4 = &g_t8048D72;
-<anonymous> * g_ptr80520AC = &g_t8048D92;
-<anonymous> * g_ptr80520B0 = &g_t8048DA2;
-<anonymous> * g_ptr80520B4 = &g_t8048DB2;
 byte g_b80520C0 = 0x20;
-void g_v80520CC = ;
-void g_v80520D1 = ;
-Eq_16 g_t80520D4 = 
+byte g_b80520CC = 0x20;
+byte g_b80520D1 = 0x30;
+byte * g_ptr80520D4 = &g_b80520CC;
+byte * g_ptr80520D8 = &g_b80520D1;
+byte * g_ptr80520DC = &g_b80520D1;
+FILE * g_ptr80520E0 = &g_t0001;
+Eq_84 g_t80520E4 = 
 	{
-		&g_v80520CC
-	};
-Eq_16 g_t80520D8 = 
-	{
-		&g_v80520D1
-	};
-Eq_16 g_t80520DC = 
-	{
-		&g_v80520D1
-	};
-word32 g_dw80520E0 = 0x00000001;
-Eq_3123 g_t80520E4 = 
-	{
-		1
+		&g_t0001
 	};
 word32 g_dw80520E8 = 0x00000100;
-word32 g_dw80520EC = 0x08052180;
-struct Eq_3306 * g_ptr80520F0 = &g_dw80520E8;
-word32 g_dw8052100 = 0x00000000;
-word32 g_dw8052104 = 0x00000000;
-Eq_16 g_t8052120 = 
+Eq_84 g_t80520EC = 
 	{
-		null
+		&g_v8052180
 	};
+Eq_84 g_t80520F0 = 
+	{
+		&g_dw80520E8
+	};
+FILE * g_ptr8052104 = null;
+FILE * g_ptr8052120 = null;
 byte g_b8052124 = 0x00;
 uint32 g_dw8052128 = 0x00000000;
 int32 g_dw805212C = 0;
-Eq_16 g_t8052130 = 
+Eq_84 g_t8052130 = 
 	{
 		null
 	};
-Eq_16 g_t8052134 = 
+Eq_84 g_t8052134 = 
 	{
 		null
 	};
-word32 g_dw8052138 = 0x00000000;
+Eq_84 g_t8052138 = 
+	{
+		null
+	};
 word32 g_dw8052140 = 0x00000000;
+void g_v8052180 = ;
 word32 g_dw8052280 = 0x00000000;
 

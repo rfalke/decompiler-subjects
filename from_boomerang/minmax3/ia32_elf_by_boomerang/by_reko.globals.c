@@ -5,15 +5,18 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t804825E = <code>;
-<anonymous> g_t804826E = <code>;
+Eq_22 g_t804836F = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t80483C8 = Unexpected function type (fn void ())
+;
+Eq_26 g_t80483F8 = Unexpected function type (fn void ())
+;
+char g_str8048474[] = "MinMax result %d\x0A";
 <anonymous> * g_ptr8049488;
 <anonymous> ** g_ptr8049494 = &g_ptr804956C;
 <anonymous> * g_ptr8049560 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804956C = null;
 word32 g_dw8049570 = 0x00000000;
-<anonymous> * g_ptr8049580 = &g_t804825E;
-<anonymous> * g_ptr8049584 = &g_t804826E;
 <anonymous> * g_ptr8049588 = null;
 byte g_b804958C = 0x00;
 

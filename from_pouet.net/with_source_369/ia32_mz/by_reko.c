@@ -24,6 +24,5 @@ void fn0800_0000()
 		}
 		dx_10 = dx_10 - 0x01;
 	} while (dx_10 != 0x00);
-	return;
 }
 

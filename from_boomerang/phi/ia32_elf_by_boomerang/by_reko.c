@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void scanf@@GLIBC_2.0()
-void scanf@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80495F8();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495FC();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049600();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804835C, dwArg00, (char *) fp + 0x04, &globals->t804842C, &globals->t804845C, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049608 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,28 +82,31 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 0804835C: void main(Register int32 eax)
 void main(int32 eax)
 {
+	int32 eax_36;
 	__align(fp - 0x0C);
-	printf@@GLIBC_2.0();
-	scanf@@GLIBC_2.0();
+	printf("Input number: ");
+	scanf("%d", tLoc20);
+	int32 ebx_28 = eax;
 	if (eax <= 0x01)
 	{
+		eax_36 = 0x01;
 		if (eax == 0x01)
 			goto l08048398;
 	}
 	else
 	{
-		fib(fib(eax - 0x01) - 0x01);
-		printf@@GLIBC_2.0();
+		int32 eax_71 = fib(eax - 0x01);
+		printf("%d", fib(eax_71 - 0x01) + eax_71);
+		ebx_28 = eax_71;
 	}
+	eax_36 = ebx_28;
 l08048398:
-	printf@@GLIBC_2.0();
-	return;
+	printf("fibonacci(%d) = %d\n", eax, eax_36);
 }
 
 // 080483E0: Register int32 fib(Stack int32 dwArg04)
@@ -147,8 +123,7 @@ int32 fib(int32 dwArg04)
 	else
 	{
 		int32 eax_47 = fib(dwArg04 - 0x01);
-		fib(eax_47 - 0x01);
-		printf@@GLIBC_2.0();
+		printf("%d", fib(eax_47 - 0x01) + eax_47);
 		ebx_12 = eax_47;
 	}
 	eax_21 = ebx_12;
@@ -160,7 +135,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 0804845C: void __libc_csu_fini()
@@ -184,7 +159,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048490: void __do_global_ctors_aux()
@@ -205,13 +179,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 080484B4: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

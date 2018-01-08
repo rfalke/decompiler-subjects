@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_23 g_t4004E4 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t4004E4 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_27 g_t400500 = Unexpected function type (fn void ())
+Eq_26 g_t400500 = Unexpected function type (fn void ())
 ;
-Eq_26 g_t400510 = Unexpected function type (fn void ())
+Eq_25 g_t400510 = Unexpected function type (fn void ())
 ;
 char g_str4005EC[] = "Hello, World!";
 word64 g_qw6006A0 = 0xFFFFFFFFFFFFFFFF;

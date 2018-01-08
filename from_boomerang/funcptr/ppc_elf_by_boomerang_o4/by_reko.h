@@ -42,11 +42,11 @@ Eq_92: (fn void (word32))
 	T_92 (in world : ptr32)
 	T_93 (in signature of world : void)
 Eq_96: (fn void ())
-	T_96 (in puts@@GLIBC_2.0 : ptr32)
-	T_97 (in signature of puts@@GLIBC_2.0 : void)
+	T_96 (in puts : ptr32)
+	T_97 (in signature of puts : void)
 Eq_99: (fn void ())
-	T_99 (in printf@@GLIBC_2.0 : ptr32)
-	T_100 (in signature of printf@@GLIBC_2.0 : void)
+	T_99 (in printf : ptr32)
+	T_100 (in signature of printf : void)
 Eq_108: (struct "Eq_108" (FFFF8000 word32 dwFFFF8000) (FFFF8004 int32 dwFFFF8004))
 	T_108 (in r30_17 : (ptr Eq_108))
 	T_110 (in r5_15 + 0x100004C8 : word32)
@@ -795,27 +795,27 @@ T_95: (in world(dwLoc0C) : void)
   Class: Eq_95
   DataType: void
   OrigDataType: void
-T_96: (in puts@@GLIBC_2.0 : ptr32)
+T_96: (in puts : ptr32)
   Class: Eq_96
   DataType: (ptr Eq_96)
   OrigDataType: (ptr (fn T_98 ()))
-T_97: (in signature of puts@@GLIBC_2.0 : void)
+T_97: (in signature of puts : void)
   Class: Eq_96
   DataType: (ptr Eq_96)
   OrigDataType: 
-T_98: (in puts@@GLIBC_2.0() : void)
+T_98: (in puts() : void)
   Class: Eq_98
   DataType: void
   OrigDataType: void
-T_99: (in printf@@GLIBC_2.0 : ptr32)
+T_99: (in printf : ptr32)
   Class: Eq_99
   DataType: (ptr Eq_99)
   OrigDataType: (ptr (fn T_101 ()))
-T_100: (in signature of printf@@GLIBC_2.0 : void)
+T_100: (in signature of printf : void)
   Class: Eq_99
   DataType: (ptr Eq_99)
   OrigDataType: 
-T_101: (in printf@@GLIBC_2.0() : void)
+T_101: (in printf() : void)
   Class: Eq_101
   DataType: void
   OrigDataType: void

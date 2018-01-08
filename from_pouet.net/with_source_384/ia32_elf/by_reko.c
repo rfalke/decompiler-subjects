@@ -19,26 +19,17 @@ void _init()
 		byte C_37;
 		byte Z_38;
 		word32 eax_39;
-		cosf();
+		!__gmon_start__();
 	}
 	fn080489C0();
 	fn08049410();
-	return;
 }
 
-// 08048824: void fn08048824()
-void fn08048824()
+// 08048960: void fn08048960(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+void fn08048960( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804A130();
-	return;
-}
-
-// 08048960: void fn08048960(Stack word32 dwArg00)
-void fn08048960(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn08048824();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804922C, dwArg00, (char *) fp + 0x04, &globals->t80493B0, &globals->t80493A0, edx, fp);
 	__hlt();
 }
 
@@ -66,7 +57,6 @@ void fn08048990()
 		}
 		globals->b804A188 = 0x01;
 	}
-	return;
 }
 
 // 080489C0: void fn080489C0()
@@ -83,7 +73,6 @@ void fn080489C0()
 		byte Z_34;
 		null();
 	}
-	return;
 }
 
 // 08049410: void fn08049410()
@@ -96,7 +85,7 @@ void fn08049410()
 		{
 			word32 esp_29;
 			word32 ebp_30;
-			struct Eq_89 * ebx_31;
+			struct Eq_101 * ebx_31;
 			byte SCZO_32;
 			word32 eax_33;
 			byte Z_34;
@@ -105,13 +94,11 @@ void fn08049410()
 			eax_11();
 		} while (ebx_31->dw8049FFC != ~0x00);
 	}
-	return;
 }
 
 // 0804943C: void _fini()
 void _fini()
 {
 	fn08048990();
-	return;
 }
 

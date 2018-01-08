@@ -1,5 +1,4 @@
 Using options:
-080488C5: warning: Unable to resolve imported reference __fpstart.
-08048808: warning: Unable to resolve imported reference __fpstart.
+08048808: warning: Unable to resolve imported reference !__fpstart.
 08048EF8: warning: Expected sizes of arrays to have been determined by now
 08048EF8: warning: Expected sizes of arrays to have been determined by now

@@ -11,28 +11,28 @@ LONG g_t401110(struct _EXCEPTION_POINTERS * ExceptionInfo) = Unexpected function
 ;
 <anonymous> g_t40148C = <code>;
 ui32 g_dw401C60 = 0xFFFFFFFF;
-Eq_695 g_t401C74 = 
+Eq_698 g_t401C74 = 
 	{
 		null,
 		null,
 	};
 word32 g_dw402000 = 0xFFFFFFFF;
 byte * g_ptr402004 = &g_b4000;
-struct Eq_695 * g_ptr402008 = &g_t401C74;
+struct Eq_698 * g_ptr402008 = &g_t401C74;
 <anonymous> * g_ptr403074 = &g_t40148C;
 word32 g_dw403128 = 0x00000000;
 word32 g_dw40312C = 0x00000000;
-Eq_176 g_t403130 = 
+Eq_173 g_t403130 = 
 	{
 		0x0001
 	};
-Eq_612 g_t403134 = 
+Eq_620 g_t403134 = 
 	{
 		0x0000618C,
 		0x000013AD,
 		0x00000020,
 	};
-Eq_612 g_t403140;
+Eq_620 g_t403140;
 word32 g_dw405000 = 0x00000000;
 word32 g_dw405004 = 0x00000000;
 byte * g_ptr405034 = null;

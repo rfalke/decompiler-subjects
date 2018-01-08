@@ -1,38 +1,13 @@
 Using options:
-fn00407006: error: An error occurred during data flow analysis.
-    Value was either too large or too small for an Int32.
-      at System.Convert.ToInt32 (UInt32 value) <0x4199bf60 + 0x0004b> in <filename unknown>:0 
-  at System.UInt32.System.IConvertible.ToInt32 (IFormatProvider provider) <0x4199bf10 + 0x00013> in <filename unknown>:0 
-  at System.Convert.ToInt32 (System.Object value) <0x4199bda0 + 0x000bc> in <filename unknown>:0 
-  at Reko.Core.Expressions.Constant.Negate () <0x4199bbc0 + 0x00113> in <filename unknown>:0 
-  at Reko.Analysis.LinearInductionVariableFinder.FindLinearIncrement (ICollection`1 sids) <0x4199b6f0 + 0x002cc> in <filename unknown>:0 
-  at Reko.Analysis.LinearInductionVariableFinder.ProcessScc (IList`1 scc) <0x4198b1a0 + 0x000c3> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x002f1> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Dfs (Reko.Core.Lib.Node node) <0x4198a580 + 0x0011f> in <filename unknown>:0 
-  at Reko.Core.Lib.SccFinder`1[T].Find (Reko.Core.Lib.T start) <0x4198a3c0 + 0x00057> in <filename unknown>:0 
-  at Reko.Analysis.LinearInductionVariableFinder.Find () <0x41989db0 + 0x00213> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41977110 + 0x00643> in <filename unknown>:0 
-: error: Error when reconstructing types.
-    Specified argument was out of the range of valid values.
-Parameter name: Linear address 00000000 is not in known segment.
-      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x419ae760 + 0x0017f> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x419ae6b0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x419a94d0 + 0x002d5> in <filename unknown>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x419a2810 + 0x00597> in <filename unknown>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () <0x419a21a0 + 0x0022f> in <filename unknown>:0 
-fn00407006: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x419b5080 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41987e80 + 0x00033> in <filename unknown>:0 
-  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x419b0c80 + 0x00133> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x419b0600 + 0x00187> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x419b0090 + 0x0003b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x419af4e0 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x419af000 + 0x00255> in <filename unknown>:0 
+004060AA: error: An error occurred while processing the statement Mem25184[esp_25176 - 0x00000004 + 0x00000000:word32] = edx_25140.
+    Not handling (ptr (struct (0 T_84979 t0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41466520 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41463510 + 0x001a3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41463460 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x414646f0 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x414646a0 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41464650 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41463330 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x41401fa0 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41460790 + 0x00289> in <filename unknown>:0 
+: warning: Type transformer has looped 51 times, quitting prematurely.

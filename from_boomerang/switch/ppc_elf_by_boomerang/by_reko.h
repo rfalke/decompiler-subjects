@@ -36,8 +36,8 @@ Eq_43: (union "Eq_43" (int32 u0) (byte u1))
 	T_55 (in 1 : int32)
 	T_57 (in Mem41[0x10010A58:byte] : byte)
 Eq_92: (fn void ())
-	T_92 (in printf@@GLIBC_2.0 : ptr32)
-	T_93 (in signature of printf@@GLIBC_2.0 : void)
+	T_92 (in printf : ptr32)
+	T_93 (in signature of printf : void)
 Eq_101: (struct "Eq_101" (FFFF8000 word32 dwFFFF8000) (FFFF8004 int32 dwFFFF8004))
 	T_101 (in r30_17 : (ptr Eq_101))
 	T_103 (in r5_15 + 0x10000504 : word32)
@@ -770,15 +770,15 @@ T_91: (in Test(GT,cond(r3 - 0x00000007)) : bool)
   Class: Eq_91
   DataType: bool
   OrigDataType: bool
-T_92: (in printf@@GLIBC_2.0 : ptr32)
+T_92: (in printf : ptr32)
   Class: Eq_92
   DataType: (ptr Eq_92)
   OrigDataType: (ptr (fn T_94 ()))
-T_93: (in signature of printf@@GLIBC_2.0 : void)
+T_93: (in signature of printf : void)
   Class: Eq_92
   DataType: (ptr Eq_92)
   OrigDataType: 
-T_94: (in printf@@GLIBC_2.0() : void)
+T_94: (in printf() : void)
   Class: Eq_94
   DataType: void
   OrigDataType: void

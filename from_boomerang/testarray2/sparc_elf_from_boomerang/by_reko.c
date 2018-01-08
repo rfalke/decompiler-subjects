@@ -72,13 +72,11 @@ void __do_global_dtors_aux(word32 o7)
 			fn00020958();
 		*l7_114->ptr000C = 0x01;
 	}
-	return;
 }
 
 // 00010628: void call___do_global_dtors_aux()
 void call___do_global_dtors_aux()
 {
-	return;
 }
 
 // 00010638: void frame_dummy(Register word32 o7)
@@ -87,12 +85,10 @@ void frame_dummy(word32 o7)
 	struct Eq_39 * l7_22 = fn00010570(o7, 66200);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0014 != 0x00)
-		{
-			if (l7_22->dw0024 != 0x00)
-				fn00020970();
-		}
-		return;
+		if (*l7_22->ptr0014 == 0x00 || l7_22->dw0024 == 0x00)
+			;
+		else
+			fn00020970();
 	}
 	else
 		fn00020964();
@@ -101,21 +97,18 @@ void frame_dummy(word32 o7)
 // 000106BC: void call_frame_dummy()
 void call_frame_dummy()
 {
-	return;
 }
 
 // 000106CC: void mid(Register word32 o0, Stack word32 dwArg44)
 void mid(word32 o0, word32 dwArg44)
 {
 	printf();
-	return;
 }
 
 // 00010708: void fst(Register word32 o0, Stack word32 dwArg44)
 void fst(word32 o0, word32 dwArg44)
 {
 	printf();
-	return;
 }
 
 // 00010744: void main()
@@ -131,7 +124,6 @@ void main()
 		fp->dwFFFFFFEC = fp->dwFFFFFFEC + 0x01;
 	}
 	printf();
-	return;
 }
 
 // 00010800: Register word32 fn00010800(Register word32 o7, Register word32 l7)
@@ -182,7 +174,6 @@ word32 * __do_global_ctors_aux(word32 o7)
 // 00010858: void call___do_global_ctors_aux()
 void call___do_global_ctors_aux()
 {
-	return;
 }
 
 // 00010868: Register word32 _init(Register word32 o7)
@@ -196,64 +187,52 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-	return;
 }
 
 // 00020904: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020904_entry:
-l00020904:
-l00020904:
-fn00020904_exit:
 }
 
 // 00020934: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020940: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 0002094C: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020958: void fn00020958()
 void fn00020958()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020964: void fn00020964()
 void fn00020964()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020970: void fn00020970()
 void fn00020970()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 0002097C: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

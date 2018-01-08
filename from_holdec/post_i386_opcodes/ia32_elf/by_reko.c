@@ -7,34 +7,29 @@
 // 08048274: void _init()
 void _init()
 {
-	if (globals->dw8057718 != 0x00)
-		fn080482B4();
+	word32 edx_13 = globals->dw8057718;
+	if (edx_13 != 0x00)
+	{
+		word32 esp_31;
+		word32 ebp_32;
+		word32 ebx_33;
+		byte SCZO_34;
+		word32 edx_35;
+		byte SZO_36;
+		byte C_37;
+		byte Z_38;
+		word32 eax_39;
+		!__gmon_start__();
+	}
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482B4: void fn080482B4()
-void fn080482B4()
+// 080482E0: void _start(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8057720();
-	return;
-}
-
-// 080482C4: void fn080482C4()
-void fn080482C4()
-{
-	word32 esp_3;
-	globals->ptr8057724();
-	return;
-}
-
-// 080482E0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482C4();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80564C4, dwArg00, (char *) fp + 0x04, &globals->t80564E0, &globals->t80564D0, edx, fp);
 	__hlt();
 }
 
@@ -48,7 +43,6 @@ void __do_global_dtors_aux(word32 esi)
 			globals->dw8057730 = eax_23 + 0x01;
 		globals->b805772C = 0x01;
 	}
-	return;
 }
 
 // 08048370: void frame_dummy()
@@ -65,310 +59,301 @@ void frame_dummy()
 		byte Z_34;
 		null();
 	}
-	return;
 }
 
-// 08048394: void bswap_plain(Register word32 eax)
-void bswap_plain(word32 eax)
+// 08048394: void bswap_plain(Register (ptr Eq_83) eax)
+void bswap_plain(Eq_83 * eax)
 {
 	__bswap(eax);
-	return;
 }
 
 // 0804839C: void bswap_allregs()
 void bswap_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_16 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_17 = (struct Eq_72 **) 0x1004;
-	word32 ecx_18 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_16 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_17 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_18 = (struct Eq_83 **) 0x1008;
 	word32 edx_19 = (word32 *) 0x100C;
 	word32 ebp_20 = (word32 *) 0x1010;
 	word32 esi_21 = (word32 *) 0x1014;
 	word32 edi_22 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) __bswap(eax_16);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_17;
-	(word32 *) 0x2008 = ecx_18;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) __bswap(eax_16);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_17;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_18;
 	(word32 *) 0x200C = edx_19;
 	(word32 *) 0x2010 = ebp_20;
 	(word32 *) 8212 = esi_21;
 	(word32 *) 0x2018 = edi_22;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804848D: void bswap_constant_simple()
 void bswap_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) __bswap(0x02);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) __bswap((struct Eq_83 *) 0x02);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08048573: void bswap_constant_complex1()
 void bswap_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) __bswap(2746317188);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) __bswap((struct Eq_83 *) 2746317188);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08048659: Register word32 bswap_constant_complex2(Register out Eq_286 blOut)
-word32 bswap_constant_complex2(Eq_286 & blOut)
+// 08048659: Register word32 bswap_constant_complex2(Register out Eq_313 blOut)
+word32 bswap_constant_complex2(Eq_313 & blOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) __bswap(0x313EC0E8);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) __bswap((struct Eq_83 *) 0x313EC0E8);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte bl_16;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte bl_17;
 	*blOut = 0xC3;
 	return 0x00;
 }
 
-// 08048740: void cmpxchg1_mv_plain(Register word32 eax, Register byte bl)
-void cmpxchg1_mv_plain(word32 eax, byte bl)
+// 08048740: void cmpxchg1_mv_plain(Register (ptr Eq_83) eax, Register byte bl)
+void cmpxchg1_mv_plain(Eq_83 * eax, byte bl)
 {
 	word32 eax_5;
 	__cmpxchg(bl, al, eax, out eax_5);
-	return;
 }
 
 // 08048749: void cmpxchg1_mv_allregs()
 void cmpxchg1_mv_allregs()
 {
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_15 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	word32 ecx_17 = (word32 *) 0x1008;
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_15 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ecx_17 = (struct Eq_83 **) 0x1008;
 	word32 edx_18 = (word32 *) 0x100C;
 	word32 ebp_19 = (word32 *) 0x1010;
 	word32 esi_20 = (word32 *) 0x1014;
 	word32 edi_21 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_23;
-	Eq_69 Z_24 = __cmpxchg((byte) ebx_15, (byte) eax_13, eax_13, out eax_23);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_23;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = ecx_17;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	struct Eq_83 * eax_23;
+	Eq_88 Z_24 = __cmpxchg((byte) ebx_15, (byte) eax_13, eax_13, out eax_23);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_23;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_15;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_17;
 	(word32 *) 0x200C = edx_18;
 	(word32 *) 0x2010 = ebp_19;
 	(word32 *) 8212 = esi_20;
 	(word32 *) 0x2018 = edi_21;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_24;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_24;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804883B: void cmpxchg1_mv_constant_simple()
 void cmpxchg1_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_21;
-	Eq_69 Z_22 = __cmpxchg(0x03, 0x02, 0x02, out eax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_21;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_22;
+	Eq_88 Z_23 = __cmpxchg(0x03, 0x02, (struct Eq_83 *) 0x02, out eax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_22;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08048922: void cmpxchg1_mv_constant_complex1()
 void cmpxchg1_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_21;
-	Eq_69 Z_22 = __cmpxchg(~0x28, 0x84, 2746317188, out eax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_21;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_22;
+	Eq_88 Z_23 = __cmpxchg(~0x28, 0x84, (struct Eq_83 *) 2746317188, out eax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_22;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08048A09: Register word16 cmpxchg1_mv_constant_complex2(Register out Eq_597 bxOut)
-word16 cmpxchg1_mv_constant_complex2(Eq_597 & bxOut)
+// 08048A09: Register word16 cmpxchg1_mv_constant_complex2(Register out Eq_641 bxOut)
+word16 cmpxchg1_mv_constant_complex2(Eq_641 & bxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_22;
-	Eq_69 Z_23 = __cmpxchg(0xC3, 232, 0x313EC0E8, out eax_22);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_22;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_23;
+	Eq_88 Z_24 = __cmpxchg(0xC3, 232, (struct Eq_83 *) 0x313EC0E8, out eax_23);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_23;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_23;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word16 bx_15;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_24;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word16 bx_16;
 	*bxOut = 33219;
 	return 0x00;
 }
@@ -378,963 +363,939 @@ void cmpxchg2_mv_plain(word16 ax, word16 bx)
 {
 	word16 ax_4;
 	__cmpxchg(bx, ax, ax, out ax_4);
-	return;
 }
 
 // 08048AFB: void cmpxchg2_mv_allregs()
 void cmpxchg2_mv_allregs()
 {
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_15 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	word32 ecx_17 = (word32 *) 0x1008;
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_15 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ecx_17 = (struct Eq_83 **) 0x1008;
 	word32 edx_18 = (word32 *) 0x100C;
 	word32 ebp_19 = (word32 *) 0x1010;
 	word32 esi_20 = (word32 *) 0x1014;
 	word32 edi_21 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	word16 ax_14 = (word16) eax_13;
 	word16 ax_23;
-	Eq_69 Z_24 = __cmpxchg((word16) ebx_15, ax_14, ax_14, out ax_23);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_13;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = ecx_17;
+	Eq_88 Z_24 = __cmpxchg((word16) ebx_15, ax_14, ax_14, out ax_23);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_13;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_15;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_17;
 	(word32 *) 0x200C = edx_18;
 	(word32 *) 0x2010 = ebp_19;
 	(word32 *) 8212 = esi_20;
 	(word32 *) 0x2018 = edi_21;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_24;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_24;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_24;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_24;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08048BEE: void cmpxchg2_mv_constant_simple()
 void cmpxchg2_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word16 ax_21;
-	Eq_69 Z_22 = __cmpxchg(0x03, 0x02, 0x02, out ax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word16 ax_22;
+	Eq_88 Z_23 = __cmpxchg(0x03, 0x02, 0x02, out ax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08048CD6: void cmpxchg2_mv_constant_complex1()
 void cmpxchg2_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word16 ax_21;
-	Eq_69 Z_22 = __cmpxchg(0x1AD7, 31108, 31108, out ax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word16 ax_22;
+	Eq_88 Z_23 = __cmpxchg(0x1AD7, 31108, 31108, out ax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08048DBE: Register word32 cmpxchg2_mv_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ebxOut)
 word32 cmpxchg2_mv_constant_complex2(ptr32 & ecxOut, ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word16 ax_21;
-	Eq_69 Z_22 = __cmpxchg(33219, 0xC0E8, 0xC0E8, out ax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word16 ax_22;
+	Eq_88 Z_23 = __cmpxchg(33219, 0xC0E8, 0xC0E8, out ax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word32 ebx_13;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word32 ebx_14;
 	*ebxOut = 1231978947;
-	word32 ecx_15;
+	word32 ecx_16;
 	*ecxOut = 507473074;
 	return 0x00;
 }
 
-// 08048EA7: void cmpxchg3_plain(Register word32 eax, Register word32 ecx, Register word32 ebx)
-void cmpxchg3_plain(word32 eax, word32 ecx, word32 ebx)
+// 08048EA7: void cmpxchg3_plain(Register (ptr Eq_83) eax, Register (ptr Eq_83) ecx, Register (ptr Eq_83) ebx)
+void cmpxchg3_plain(Eq_83 * eax, Eq_83 * ecx, Eq_83 * ebx)
 {
 	word32 eax_5;
 	__cmpxchg(ecx, ebx, eax, out eax_5);
-	return;
 }
 
 // 08048EB0: void cmpxchg3_allregs()
 void cmpxchg3_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_14 = (struct Eq_72 **) 0x1004;
-	word32 ecx_15 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_14 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_15 = (struct Eq_83 **) 0x1008;
 	word32 edx_16 = (word32 *) 0x100C;
 	word32 ebp_17 = (word32 *) 0x1010;
 	word32 esi_18 = (word32 *) 0x1014;
 	word32 edi_19 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_21;
-	Eq_69 Z_22 = __cmpxchg(ecx_15, ebx_14, eax_13, out eax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_21;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_14;
-	(word32 *) 0x2008 = ecx_15;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(ecx_15, ebx_14, eax_13, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_14;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_15;
 	(word32 *) 0x200C = edx_16;
 	(word32 *) 0x2010 = ebp_17;
 	(word32 *) 8212 = esi_18;
 	(word32 *) 0x2018 = edi_19;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08048FA2: void cmpxchg3_constant_simple()
 void cmpxchg3_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg(0x04, 0x03, 0x02, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 *) 0x04, (struct Eq_83 *) 0x03, (struct Eq_83 *) 0x02, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08049089: void cmpxchg3_constant_complex1()
 void cmpxchg3_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg(1181241928, 0x06671AD7, 2746317188, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 *) 1181241928, (struct Eq_83 *) 0x06671AD7, (struct Eq_83 *) 2746317188, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08049170: Register word32 cmpxchg3_constant_complex2(Register out ptr32 ebxOut)
 word32 cmpxchg3_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg(507473074, 1231978947, 0x313EC0E8, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 *) 507473074, (struct Eq_83 *) 1231978947, (struct Eq_83 *) 0x313EC0E8, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word32 ebx_12;
-	*ebxOut = 1231978947;
-	return 0x00;
-}
-
-// 08049258: void cmpxchg4_mv_plain(Register word32 eax, Register (ptr word32) ebx)
-void cmpxchg4_mv_plain(word32 eax, word32 * ebx)
-{
-	word32 eax_5;
-	__cmpxchg(*ebx, eax, eax, out eax_5);
-	return;
-}
-
-// 08049261: void cmpxchg4_mv_allregs()
-void cmpxchg4_mv_allregs()
-{
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_14 = (struct Eq_72 **) 0x1004;
-	word32 ecx_15 = (word32 *) 0x1008;
-	word32 edx_16 = (word32 *) 0x100C;
-	word32 ebp_17 = (word32 *) 0x1010;
-	word32 esi_18 = (word32 *) 0x1014;
-	word32 edi_19 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_21;
-	Eq_69 Z_22 = __cmpxchg(ebx_14->t0000, eax_13, eax_13, out eax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_21;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_14;
-	(word32 *) 0x2008 = ecx_15;
-	(word32 *) 0x200C = edx_16;
-	(word32 *) 0x2010 = ebp_17;
-	(word32 *) 8212 = esi_18;
-	(word32 *) 0x2018 = edi_19;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 08049353: void cmpxchg4_mv_constant_simple()
-void cmpxchg4_mv_constant_simple()
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1415 *) 0x03, 0x02, 0x02, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
-	(word32 *) 0x200C = 0x05;
-	(word32 *) 0x2010 = 0x06;
-	(word32 *) 8212 = 0x07;
-	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 0804943A: void cmpxchg4_mv_constant_complex1()
-void cmpxchg4_mv_constant_complex1()
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1488 *) 0x06671AD7, 2746317188, 2746317188, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
-	(word32 *) 0x200C = 958682820;
-	(word32 *) 0x2010 = 3163119780;
-	(word32 *) 8212 = 2906402168;
-	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 08049521: Register word32 cmpxchg4_mv_constant_complex2()
-word32 cmpxchg4_mv_constant_complex2()
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1562 *) 1231978947, 0x313EC0E8, 0x313EC0E8, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
-	(word32 *) 0x200C = 1315513779;
-	(word32 *) 0x2010 = 0x4F312610;
-	(word32 *) 8212 = 792175781;
-	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return 0x00;
-}
-
-// 08049609: void cmpxchg5_mv_plain(Register word32 eax)
-void cmpxchg5_mv_plain(word32 eax)
-{
-	word32 eax_4;
-	__cmpxchg(al, al, eax, out eax_4);
-	return;
-}
-
-// 08049612: void cmpxchg5_mv_allregs()
-void cmpxchg5_mv_allregs()
-{
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_15 = (struct Eq_72 **) 0x1004;
-	word32 ecx_16 = (word32 *) 0x1008;
-	word32 edx_17 = (word32 *) 0x100C;
-	word32 ebp_18 = (word32 *) 0x1010;
-	word32 esi_19 = (word32 *) 0x1014;
-	word32 edi_20 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	byte al_14 = (byte) eax_13;
-	struct Eq_72 * eax_22;
-	Eq_69 Z_23 = __cmpxchg(al_14, al_14, eax_13, out eax_22);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_22;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = ecx_16;
-	(word32 *) 0x200C = edx_17;
-	(word32 *) 0x2010 = ebp_18;
-	(word32 *) 8212 = esi_19;
-	(word32 *) 0x2018 = edi_20;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_23;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_23;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 08049704: void cmpxchg5_mv_constant_simple()
-void cmpxchg5_mv_constant_simple()
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_20;
-	Eq_69 Z_21 = __cmpxchg(0x02, 0x02, 0x02, out eax_20);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
-	(word32 *) 0x200C = 0x05;
-	(word32 *) 0x2010 = 0x06;
-	(word32 *) 8212 = 0x07;
-	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_21;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 080497EB: void cmpxchg5_mv_constant_complex1()
-void cmpxchg5_mv_constant_complex1()
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_20;
-	Eq_69 Z_21 = __cmpxchg(0x84, 0x84, 2746317188, out eax_20);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
-	(word32 *) 0x200C = 958682820;
-	(word32 *) 0x2010 = 3163119780;
-	(word32 *) 8212 = 2906402168;
-	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_21;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
-}
-
-// 080498D2: Register word32 cmpxchg5_mv_constant_complex2(Register out ptr32 ebxOut)
-word32 cmpxchg5_mv_constant_complex2(ptr32 & ebxOut)
-{
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_20;
-	Eq_69 Z_21 = __cmpxchg(232, 232, 0x313EC0E8, out eax_20);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
-	(word32 *) 0x200C = 1315513779;
-	(word32 *) 0x2010 = 0x4F312610;
-	(word32 *) 8212 = 792175781;
-	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_21;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_21;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	word32 ebx_13;
 	*ebxOut = 1231978947;
 	return 0x00;
 }
 
-// 080499BA: void cmpxchg_locked_mv_plain(Register word32 eax, Register (ptr word32) ebx)
-void cmpxchg_locked_mv_plain(word32 eax, word32 * ebx)
+// 08049258: void cmpxchg4_mv_plain(Register (ptr Eq_83) eax, Register (ptr (ptr Eq_83)) ebx)
+void cmpxchg4_mv_plain(Eq_83 * eax, Eq_83 * * ebx)
+{
+	word32 eax_5;
+	__cmpxchg(*ebx, eax, eax, out eax_5);
+}
+
+// 08049261: void cmpxchg4_mv_allregs()
+void cmpxchg4_mv_allregs()
+{
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_14 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_15 = (struct Eq_83 **) 0x1008;
+	word32 edx_16 = (word32 *) 0x100C;
+	word32 ebp_17 = (word32 *) 0x1010;
+	word32 esi_18 = (word32 *) 0x1014;
+	word32 edi_19 = (word32 *) 0x1018;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(ebx_14->ptr0000, eax_13, eax_13, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_14;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_15;
+	(word32 *) 0x200C = edx_16;
+	(word32 *) 0x2010 = ebp_17;
+	(word32 *) 8212 = esi_18;
+	(word32 *) 0x2018 = edi_19;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
+}
+
+// 08049353: void cmpxchg4_mv_constant_simple()
+void cmpxchg4_mv_constant_simple()
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 0x03, (struct Eq_83 *) 0x02, (struct Eq_83 *) 0x02, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
+	(word32 *) 0x200C = 0x05;
+	(word32 *) 0x2010 = 0x06;
+	(word32 *) 8212 = 0x07;
+	(word32 *) 0x2018 = 0x08;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+}
+
+// 0804943A: void cmpxchg4_mv_constant_complex1()
+void cmpxchg4_mv_constant_complex1()
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 0x06671AD7, (struct Eq_83 *) 2746317188, (struct Eq_83 *) 2746317188, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
+	(word32 *) 0x200C = 958682820;
+	(word32 *) 0x2010 = 3163119780;
+	(word32 *) 8212 = 2906402168;
+	(word32 *) 0x2018 = 3831882066;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+}
+
+// 08049521: Register word32 cmpxchg4_mv_constant_complex2()
+word32 cmpxchg4_mv_constant_complex2()
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 1231978947, (struct Eq_83 *) 0x313EC0E8, (struct Eq_83 *) 0x313EC0E8, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
+	(word32 *) 0x200C = 1315513779;
+	(word32 *) 0x2010 = 0x4F312610;
+	(word32 *) 8212 = 792175781;
+	(word32 *) 0x2018 = 2443777972;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	return 0x00;
+}
+
+// 08049609: void cmpxchg5_mv_plain(Register (ptr Eq_83) eax)
+void cmpxchg5_mv_plain(Eq_83 * eax)
+{
+	word32 eax_4;
+	__cmpxchg(al, al, eax, out eax_4);
+}
+
+// 08049612: void cmpxchg5_mv_allregs()
+void cmpxchg5_mv_allregs()
+{
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_15 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_16 = (struct Eq_83 **) 0x1008;
+	word32 edx_17 = (word32 *) 0x100C;
+	word32 ebp_18 = (word32 *) 0x1010;
+	word32 esi_19 = (word32 *) 0x1014;
+	word32 edi_20 = (word32 *) 0x1018;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	byte al_14 = (byte) eax_13;
+	struct Eq_83 * eax_22;
+	Eq_88 Z_23 = __cmpxchg(al_14, al_14, eax_13, out eax_22);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_22;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_15;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_16;
+	(word32 *) 0x200C = edx_17;
+	(word32 *) 0x2010 = ebp_18;
+	(word32 *) 8212 = esi_19;
+	(word32 *) 0x2018 = edi_20;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_23;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_23;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
+}
+
+// 08049704: void cmpxchg5_mv_constant_simple()
+void cmpxchg5_mv_constant_simple()
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(0x02, 0x02, (struct Eq_83 *) 0x02, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
+	(word32 *) 0x200C = 0x05;
+	(word32 *) 0x2010 = 0x06;
+	(word32 *) 8212 = 0x07;
+	(word32 *) 0x2018 = 0x08;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+}
+
+// 080497EB: void cmpxchg5_mv_constant_complex1()
+void cmpxchg5_mv_constant_complex1()
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(0x84, 0x84, (struct Eq_83 *) 2746317188, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
+	(word32 *) 0x200C = 958682820;
+	(word32 *) 0x2010 = 3163119780;
+	(word32 *) 8212 = 2906402168;
+	(word32 *) 0x2018 = 3831882066;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+}
+
+// 080498D2: Register word32 cmpxchg5_mv_constant_complex2(Register out ptr32 ebxOut)
+word32 cmpxchg5_mv_constant_complex2(ptr32 & ebxOut)
+{
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(232, 232, (struct Eq_83 *) 0x313EC0E8, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
+	(word32 *) 0x200C = 1315513779;
+	(word32 *) 0x2010 = 0x4F312610;
+	(word32 *) 8212 = 792175781;
+	(word32 *) 0x2018 = 2443777972;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word32 ebx_14;
+	*ebxOut = 1231978947;
+	return 0x00;
+}
+
+// 080499BA: void cmpxchg_locked_mv_plain(Register (ptr Eq_83) eax, Register (ptr (ptr Eq_83)) ebx)
+void cmpxchg_locked_mv_plain(Eq_83 * eax, Eq_83 * * ebx)
 {
 	__lock();
 	word32 eax_5;
 	__cmpxchg(*ebx, eax, eax, out eax_5);
-	return;
 }
 
 // 080499C4: void cmpxchg_locked_mv_allregs()
 void cmpxchg_locked_mv_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_13 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_14 = (struct Eq_72 **) 0x1004;
-	word32 ecx_15 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_13 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_14 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_15 = (struct Eq_83 **) 0x1008;
 	word32 edx_16 = (word32 *) 0x100C;
 	word32 ebp_17 = (word32 *) 0x1010;
 	word32 esi_18 = (word32 *) 0x1014;
 	word32 edi_19 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	__lock();
-	struct Eq_72 * eax_21;
-	Eq_69 Z_22 = __cmpxchg(ebx_14->t0000, eax_13, eax_13, out eax_21);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_21;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_14;
-	(word32 *) 0x2008 = ecx_15;
+	struct Eq_83 * eax_21;
+	Eq_88 Z_22 = __cmpxchg(ebx_14->ptr0000, eax_13, eax_13, out eax_21);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_14;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_15;
 	(word32 *) 0x200C = edx_16;
 	(word32 *) 0x2010 = ebp_17;
 	(word32 *) 8212 = esi_18;
 	(word32 *) 0x2018 = edi_19;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_22;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_22;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_22;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_22;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08049AB7: void cmpxchg_locked_mv_constant_simple()
 void cmpxchg_locked_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1415 *) 0x03, 0x02, 0x02, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 0x03, (struct Eq_83 *) 0x02, (struct Eq_83 *) 0x02, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08049B9F: void cmpxchg_locked_mv_constant_complex1()
 void cmpxchg_locked_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1488 *) 0x06671AD7, 2746317188, 2746317188, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 0x06671AD7, (struct Eq_83 *) 2746317188, (struct Eq_83 *) 2746317188, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08049C87: Register word32 cmpxchg_locked_mv_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 edxOut, Register out ptr32 ebxOut)
 word32 cmpxchg_locked_mv_constant_complex2(ptr32 & ecxOut, ptr32 & edxOut, ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	struct Eq_72 * eax_19;
-	Eq_69 Z_20 = __cmpxchg((union Eq_1562 *) 1231978947, 0x313EC0E8, 0x313EC0E8, out eax_19);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_19;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	struct Eq_83 * eax_20;
+	Eq_88 Z_21 = __cmpxchg((struct Eq_83 **) 1231978947, (struct Eq_83 *) 0x313EC0E8, (struct Eq_83 *) 0x313EC0E8, out eax_20);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_20;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) Z_20;
-	(union Eq_69 *) 8448 = (union Eq_69 *) Z_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word32 ebx_12;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) Z_21;
+	(union Eq_88 *) 8448 = (union Eq_88 *) Z_21;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word32 ebx_13;
 	*ebxOut = 1231978947;
-	word32 ecx_13;
+	word32 ecx_14;
 	*ecxOut = 507473074;
-	word32 edx_14;
+	word32 edx_15;
 	*edxOut = 1315513779;
 	return 0x00;
 }
 
-// 08049D70: void cpuid_plain(Register word32 eax, Register word32 ecx, Register word32 edx, Register word32 ebx)
-void cpuid_plain(word32 eax, word32 ecx, word32 edx, word32 ebx)
+// 08049D70: void cpuid_plain(Register (ptr Eq_83) eax, Register (ptr Eq_83) ecx, Register word32 edx, Register word32 ebx)
+void cpuid_plain(Eq_83 * eax, Eq_83 * ecx, word32 edx, word32 ebx)
 {
 	word32 eax_4;
 	word32 ebx_5;
 	word32 ecx_6;
 	word32 edx_7;
 	__cpuid(eax, ecx, &eax_4, &ebx_5, &ecx_6, &edx_7);
-	return;
 }
 
 // 08049D78: void cpuid_allregs()
 void cpuid_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_16 = (struct Eq_72 **) 0x1000;
-	word32 ecx_18 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_16 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ecx_18 = (struct Eq_83 **) 0x1008;
 	word32 ebp_20 = (word32 *) 0x1010;
 	word32 esi_21 = (word32 *) 0x1014;
 	word32 edi_22 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_24;
-	struct Eq_72 * ebx_25;
-	word32 ecx_26;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	struct Eq_83 * eax_24;
+	struct Eq_83 * ebx_25;
+	struct Eq_83 * ecx_26;
 	word32 edx_27;
 	__cpuid(eax_16, ecx_18, &eax_24, &ebx_25, &ecx_26, &edx_27);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_24;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = ecx_26;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_24;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_25;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_26;
 	(word32 *) 0x200C = edx_27;
 	(word32 *) 0x2010 = ebp_20;
 	(word32 *) 8212 = esi_21;
 	(word32 *) 0x2018 = edi_22;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08049E69: void cpuid_constant_simple()
 void cpuid_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_22;
-	struct Eq_72 * ebx_23;
-	word32 ecx_24;
-	word32 edx_25;
-	__cpuid(0x02, 0x04, &eax_22, &ebx_23, &ecx_24, &edx_25);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_22;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_23;
-	(word32 *) 0x2008 = ecx_24;
-	(word32 *) 0x200C = edx_25;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_23;
+	struct Eq_83 * ebx_24;
+	struct Eq_83 * ecx_25;
+	word32 edx_26;
+	__cpuid((struct Eq_83 *) 0x02, (struct Eq_83 *) 0x04, &eax_23, &ebx_24, &ecx_25, &edx_26);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_23;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_24;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_25;
+	(word32 *) 0x200C = edx_26;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08049F4F: void cpuid_constant_complex1()
 void cpuid_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_22;
-	struct Eq_72 * ebx_23;
-	word32 ecx_24;
-	word32 edx_25;
-	__cpuid(2746317188, 1181241928, &eax_22, &ebx_23, &ecx_24, &edx_25);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_22;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_23;
-	(word32 *) 0x2008 = ecx_24;
-	(word32 *) 0x200C = edx_25;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_23;
+	struct Eq_83 * ebx_24;
+	struct Eq_83 * ecx_25;
+	word32 edx_26;
+	__cpuid((struct Eq_83 *) 2746317188, (struct Eq_83 *) 1181241928, &eax_23, &ebx_24, &ecx_25, &edx_26);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_23;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_24;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_25;
+	(word32 *) 0x200C = edx_26;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 0804A035: Register byte cpuid_constant_complex2(Register out Eq_2529 blOut)
-byte cpuid_constant_complex2(Eq_2529 & blOut)
+// 0804A035: Register byte cpuid_constant_complex2(Register out Eq_2663 blOut)
+byte cpuid_constant_complex2(Eq_2663 & blOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * eax_23;
-	struct Eq_72 * ebx_24;
-	word32 ecx_25;
-	word32 edx_26;
-	__cpuid(0x313EC0E8, 507473074, &eax_23, &ebx_24, &ecx_25, &edx_26);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_23;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_24;
-	(word32 *) 0x2008 = ecx_25;
-	(word32 *) 0x200C = edx_26;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * eax_24;
+	struct Eq_83 * ebx_25;
+	struct Eq_83 * ecx_26;
+	word32 edx_27;
+	__cpuid((struct Eq_83 *) 0x313EC0E8, (struct Eq_83 *) 507473074, &eax_24, &ebx_25, &ecx_26, &edx_27);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_24;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_25;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_26;
+	(word32 *) 0x200C = edx_27;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte bl_16;
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte bl_17;
 	*blOut = 0xC3;
 	return 0x00;
 }
@@ -1342,248 +1303,235 @@ byte cpuid_constant_complex2(Eq_2529 & blOut)
 // 0804A11C: void invd_plain()
 void invd_plain()
 {
-invd_plain_entry:
-l0804A11C:
-invd_plain_exit:
 }
 
 // 0804A124: void invd_allregs()
 void invd_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804A215: void invd_constant_simple()
 void invd_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A2FB: void invd_constant_complex1()
 void invd_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A3E1: void invd_constant_complex2()
 void invd_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A4C8: void invlpg_plain()
 void invlpg_plain()
 {
-invlpg_plain_entry:
-l0804A4C8:
-invlpg_plain_exit:
 }
 
 // 0804A4D1: void invlpg_allregs()
 void invlpg_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804A5C3: void invlpg_constant_simple()
 void invlpg_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A6AA: void invlpg_constant_complex1()
 void invlpg_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A791: void invlpg_constant_complex2()
 void invlpg_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804A879: void wbinvd_plain()
 void wbinvd_plain()
 {
-wbinvd_plain_entry:
-l0804A879:
-wbinvd_plain_exit:
 }
 
 // 0804A881: void wbinvd_allregs()
 void wbinvd_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804A972: void wbinvd_constant_simple()
 void wbinvd_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804AA58: void wbinvd_constant_complex1()
 void wbinvd_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804AB3E: void wbinvd_constant_complex2()
 void wbinvd_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804AC25: void xadd1_mv_plain(Register byte al, Register byte bl)
 void xadd1_mv_plain(byte al, byte bl)
 {
 	__xadd(bl, al);
-	return;
 }
 
 // 0804AC2E: void xadd1_mv_allregs()
 void xadd1_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_11 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_11 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char bl_19 = __xadd((byte) ebx_11, (byte) eax_9);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) DPB(ebx_11, bl_19, 0);
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) DPB(ebx_11, bl_19, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bl_19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bl_19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bl_19 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bl_19 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bl_19 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bl_19 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bl_19 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bl_19 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bl_19 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bl_19 >= 0x00);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bl_19 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bl_19 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bl_19 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bl_19 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bl_19);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bl_19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bl_19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bl_19 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bl_19 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bl_19 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bl_19 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bl_19 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bl_19 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bl_19 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bl_19 >= 0x00);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bl_19 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bl_19 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bl_19 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bl_19 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bl_19);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804AD20: void xadd1_mv_constant_simple()
 void xadd1_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char bl_17 = __xadd(0x03, 0x02);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = DPB(0x03, bl_17, 0);
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char bl_18 = __xadd(0x03, 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = DPB(0x03, bl_18, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bl_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bl_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bl_17 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bl_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bl_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bl_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bl_18 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bl_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804AE07: void xadd1_mv_constant_complex1()
 void xadd1_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char bl_17 = __xadd(~0x28, 0x84);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = DPB(0x06671AD7, bl_17, 0);
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char bl_18 = __xadd(~0x28, 0x84);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = DPB(0x06671AD7, bl_18, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bl_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bl_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bl_17 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bl_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bl_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bl_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bl_18 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bl_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 0804AEEE: Register word16 xadd1_mv_constant_complex2(Register out Eq_2966 bxOut)
-word16 xadd1_mv_constant_complex2(Eq_2966 & bxOut)
+// 0804AEEE: Register word16 xadd1_mv_constant_complex2(Register out Eq_3133 bxOut)
+word16 xadd1_mv_constant_complex2(Eq_3133 & bxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char bl_17 = __xadd(0xC3, 232);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = DPB(1231978947, bl_17, 0);
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char bl_18 = __xadd(0xC3, 232);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = DPB(1231978947, bl_18, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bl_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bl_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bl_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bl_17 >= 0x00);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bl_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bl_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bl_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bl_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bl_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word16 bx_20;
-	*bxOut = DPB(bx, bl_17, 0);
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bl_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bl_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bl_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bl_18 >= 0x00);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bl_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bl_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bl_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bl_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bl_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word16 bx_21;
+	*bxOut = DPB(bx, bl_18, 0);
 	return 0x00;
 }
 
@@ -1591,456 +1539,444 @@ word16 xadd1_mv_constant_complex2(Eq_2966 & bxOut)
 void xadd2_mv_plain(word16 ax, word16 bx)
 {
 	__xadd(bx, ax);
-	return;
 }
 
 // 0804AFE0: void xadd2_mv_allregs()
 void xadd2_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_11 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_11 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	wchar_t bx_19 = __xadd((word16) ebx_11, (word16) eax_9);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) DPB(ebx_11, bx_19, 0);
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) DPB(ebx_11, bx_19, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bx_19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bx_19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bx_19 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bx_19 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bx_19 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bx_19 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bx_19 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bx_19 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bx_19 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bx_19 >= 0x00);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bx_19 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bx_19 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bx_19 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bx_19 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bx_19);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bx_19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bx_19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bx_19 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bx_19 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bx_19 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bx_19 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bx_19 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bx_19 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bx_19 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bx_19 >= 0x00);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bx_19 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bx_19 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bx_19 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bx_19 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bx_19);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804B0D3: void xadd2_mv_constant_simple()
 void xadd2_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	wchar_t bx_17 = __xadd(0x03, 0x02);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = DPB(0x03, bx_17, 0);
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	wchar_t bx_18 = __xadd(0x03, 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = DPB(0x03, bx_18, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bx_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bx_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bx_17 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bx_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bx_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bx_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bx_18 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bx_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804B1BB: void xadd2_mv_constant_complex1()
 void xadd2_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	wchar_t bx_17 = __xadd(0x1AD7, 31108);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = DPB(0x06671AD7, bx_17, 0);
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	wchar_t bx_18 = __xadd(0x1AD7, 31108);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = DPB(0x06671AD7, bx_18, 0);
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bx_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bx_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bx_17 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bx_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bx_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bx_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bx_18 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bx_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804B2A3: Register word32 xadd2_mv_constant_complex2(Register out ptr32 ebxOut)
 word32 xadd2_mv_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	wchar_t bx_17 = __xadd(33219, 0xC0E8);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	struct Eq_72 * ebx_18 = DPB(1231978947, bx_17, 0);
-	*ebxOut = ebx_18;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_18;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	wchar_t bx_18 = __xadd(33219, 0xC0E8);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	struct Eq_83 * ebx_19 = DPB(1231978947, bx_18, 0);
+	*ebxOut = ebx_19;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(bx_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (bx_17 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (bx_17 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (bx_17 >= 0x00);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (bx_17 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (bx_17 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (bx_17 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (bx_17 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(bx_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(bx_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (bx_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (bx_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (bx_18 >= 0x00);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (bx_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (bx_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (bx_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (bx_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(bx_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
-// 0804B38C: void xadd3_plain(Register word32 eax, Register word32 ebx)
-void xadd3_plain(word32 eax, word32 ebx)
+// 0804B38C: void xadd3_plain(Register (ptr Eq_83) eax, Register (ptr Eq_83) ebx)
+void xadd3_plain(Eq_83 * eax, Eq_83 * ebx)
 {
 	__xadd(ebx, eax);
-	return;
 }
 
 // 0804B395: void xadd3_allregs()
 void xadd3_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_10 = (struct Eq_72 **) 0x1004;
-	word32 ecx_11 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_10 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_11 = (struct Eq_83 **) 0x1008;
 	word32 edx_12 = (word32 *) 0x100C;
 	word32 ebp_13 = (word32 *) 0x1010;
 	word32 esi_14 = (word32 *) 0x1014;
 	word32 edi_15 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * ebx_17 = __xadd(ebx_10, eax_9);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_17;
-	(word32 *) 0x2008 = ecx_11;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	struct Eq_83 * ebx_17 = __xadd(ebx_10, eax_9);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_17;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_11;
 	(word32 *) 0x200C = edx_12;
 	(word32 *) 0x2010 = ebp_13;
 	(word32 *) 8212 = esi_14;
 	(word32 *) 0x2018 = edi_15;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_17);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_17);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_17 < null);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_17 >= null);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_17 == null);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_17 != null);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_17 <= null);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_17 > null);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_17 < null);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_17 >= null);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_17 < null);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_17 >= null);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_17 <= null);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_17 > null);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(ebx_17);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_17);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_17);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_17 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_17 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_17 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_17 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_17 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_17 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_17 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_17 >= null);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_17 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_17 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_17 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_17 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(ebx_17);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804B487: void xadd3_constant_simple()
 void xadd3_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * ebx_15 = __xadd(0x03, 0x02);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * ebx_16 = __xadd((struct Eq_83 *) 0x03, (struct Eq_83 *) 0x02);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_16;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_15 == null);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_15 != null);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_15 >= null);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(ebx_15);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_16 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_16 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_16 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(ebx_16);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804B56E: void xadd3_constant_complex1()
 void xadd3_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * ebx_15 = __xadd(0x06671AD7, 2746317188);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * ebx_16 = __xadd((struct Eq_83 *) 0x06671AD7, (struct Eq_83 *) 2746317188);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_16;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_15 == null);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_15 != null);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_15 >= null);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(ebx_15);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_16 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_16 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_16 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(ebx_16);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804B655: Register word32 xadd3_constant_complex2(Register out ptr32 ebxOut)
 word32 xadd3_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	struct Eq_72 * ebx_15 = __xadd(1231978947, 0x313EC0E8);
-	*ebxOut = ebx_15;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_15;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	struct Eq_83 * ebx_16 = __xadd((struct Eq_83 *) 1231978947, (struct Eq_83 *) 0x313EC0E8);
+	*ebxOut = ebx_16;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_16;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_15);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_15 == null);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_15 != null);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_15 >= null);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_15 < null);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_15 >= null);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_15 <= null);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_15 > null);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(ebx_15);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_16);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_16 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_16 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_16 >= null);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_16 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_16 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_16 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_16 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(ebx_16);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
-// 0804B73D: void xadd4_mv_plain(Register word32 eax, Register (ptr word32) ebx)
-void xadd4_mv_plain(word32 eax, word32 * ebx)
+// 0804B73D: void xadd4_mv_plain(Register (ptr Eq_83) eax, Register (ptr (ptr Eq_83)) ebx)
+void xadd4_mv_plain(Eq_83 * eax, Eq_83 * * ebx)
 {
-	*ebx = __xadd(*ebx, eax);
-	return;
+	*ebx = (struct Eq_83 **) __xadd(*ebx, eax);
 }
 
 // 0804B746: void xadd4_mv_allregs()
 void xadd4_mv_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_10 = (struct Eq_72 **) 0x1004;
-	word32 ecx_11 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_10 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_11 = (struct Eq_83 **) 0x1008;
 	word32 edx_12 = (word32 *) 0x100C;
 	word32 ebp_13 = (word32 *) 0x1010;
 	word32 esi_14 = (word32 *) 0x1014;
 	word32 edi_15 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	ebx_10->t0000 = __xadd(ebx_10->t0000, eax_9);
-	Eq_69 SCZO_18 = cond(ebx_10->t0000);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = ecx_11;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
+	ebx_10->ptr0000 = __xadd(ebx_10->ptr0000, eax_9);
+	Eq_88 SCZO_18 = cond(ebx_10->ptr0000);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_11;
 	(word32 *) 0x200C = edx_12;
 	(word32 *) 0x2010 = ebp_13;
 	(word32 *) 8212 = esi_14;
 	(word32 *) 0x2018 = edi_15;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_10->t0000);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_10->t0000);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_10->t0000 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_10->t0000 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_10->t0000 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_10->t0000 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_10->t0000 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_10->t0000 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_10->ptr0000);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_10->ptr0000);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_10->ptr0000 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_10->ptr0000 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_10->ptr0000 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_10->ptr0000 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_10->ptr0000 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_10->ptr0000 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_18;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804B838: void xadd4_mv_constant_simple()
 void xadd4_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(union Eq_1415 *) 0x03 = (union Eq_1415 *) __xadd((union Eq_1415 *) 0x03, 0x02);
-	Eq_69 SCZO_16 = cond((union Eq_1415 *) 0x03);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 0x03 = (struct Eq_83 **) __xadd((struct Eq_83 **) 0x03, (struct Eq_83 *) 0x02);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 0x03);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1415 *) 0x03);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1415 *) 0x03);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1415 *) 0x03 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1415 *) 0x03 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1415 *) 0x03 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1415 *) 0x03 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1415 *) 0x03 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1415 *) 0x03 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 0x03);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 0x03);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 0x03 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 0x03 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 0x03 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 0x03 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 0x03 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 0x03 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804B91F: void xadd4_mv_constant_complex1()
 void xadd4_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(union Eq_1488 *) 0x06671AD7 = (union Eq_1488 *) __xadd((union Eq_1488 *) 0x06671AD7, 2746317188);
-	Eq_69 SCZO_16 = cond((union Eq_1488 *) 0x06671AD7);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 0x06671AD7 = (struct Eq_83 **) __xadd((struct Eq_83 **) 0x06671AD7, (struct Eq_83 *) 2746317188);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 0x06671AD7);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1488 *) 0x06671AD7);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1488 *) 0x06671AD7);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 0x06671AD7);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 0x06671AD7);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804BA06: Register byte xadd4_mv_constant_complex2()
 byte xadd4_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	(union Eq_1562 *) 1231978947 = (union Eq_1562 *) __xadd((union Eq_1562 *) 1231978947, 0x313EC0E8);
-	Eq_69 SCZO_16 = cond((union Eq_1562 *) 1231978947);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	(struct Eq_83 **) 1231978947 = (struct Eq_83 **) __xadd((struct Eq_83 **) 1231978947, (struct Eq_83 *) 0x313EC0E8);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 1231978947);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1562 *) 1231978947);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1562 *) 1231978947);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1562 *) 1231978947 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1562 *) 1231978947 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 1231978947);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 1231978947);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 1231978947 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 1231978947 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
@@ -2048,344 +1984,332 @@ byte xadd4_mv_constant_complex2()
 void xadd5_mv_plain(byte al)
 {
 	__xadd(al, al);
-	return;
 }
 
 // 0804BAF7: void xadd5_mv_allregs()
 void xadd5_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_11 = (struct Eq_72 **) 0x1004;
-	word32 ecx_12 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_12 = (struct Eq_83 **) 0x1008;
 	word32 edx_13 = (word32 *) 0x100C;
 	word32 ebp_14 = (word32 *) 0x1010;
 	word32 esi_15 = (word32 *) 0x1014;
 	word32 edi_16 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	byte al_10 = (byte) eax_9;
 	char al_18 = __xadd(al_10, al_10);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) DPB(eax_9, al_18, 0);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_11;
-	(word32 *) 0x2008 = ecx_12;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) DPB(eax_9, al_18, 0);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_12;
 	(word32 *) 0x200C = edx_13;
 	(word32 *) 0x2010 = ebp_14;
 	(word32 *) 8212 = esi_15;
 	(word32 *) 0x2018 = edi_16;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_18);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_18);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_18 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_18 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_18 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_18 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_18 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_18 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_18 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_18 >= 0x00);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_18 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_18 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_18 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_18 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(al_18);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_18);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_18);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_18 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_18 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_18 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_18 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_18 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_18 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_18 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_18 >= 0x00);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_18 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_18 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_18 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_18 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(al_18);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804BBE9: void xadd5_mv_constant_simple()
 void xadd5_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char al_16 = __xadd(0x02, 0x02);
-	(struct Eq_72 **) 0x2000 = DPB(0x02, al_16, 0);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char al_17 = __xadd(0x02, 0x02);
+	(struct Eq_83 **) 0x2000 = DPB(0x02, al_17, 0);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_16);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_16);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_16 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_16 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_16 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(al_16);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_17);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_17);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_17 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_17 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_17 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(al_17);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804BCD0: void xadd5_mv_constant_complex1()
 void xadd5_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char al_16 = __xadd(0x84, 0x84);
-	(struct Eq_72 **) 0x2000 = DPB(2746317188, al_16, 0);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char al_17 = __xadd(0x84, 0x84);
+	(struct Eq_83 **) 0x2000 = DPB(2746317188, al_17, 0);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_16);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_16);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_16 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_16 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_16 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(al_16);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_17);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_17);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_17 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_17 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_17 >= 0x00);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(al_17);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804BDB7: Register word32 xadd5_mv_constant_complex2(Register out ptr32 ebxOut)
 word32 xadd5_mv_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	char al_16 = __xadd(232, 232);
-	(struct Eq_72 **) 0x2000 = DPB(0x313EC0E8, al_16, 0);
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	char al_17 = __xadd(232, 232);
+	(struct Eq_83 **) 0x2000 = DPB(0x313EC0E8, al_17, 0);
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_16);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_16);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_16 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_16 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_16 >= 0x00);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_16 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_16 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_16 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_16 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) cond(al_16);
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	word32 ebx_9;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_17);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_17);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_17 == 0x00);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_17 != 0x00);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_17 >= 0x00);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_17 < 0x00);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_17 >= 0x00);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_17 <= 0x00);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_17 > 0x00);
+	(union Eq_88 *) 8448 = (union Eq_88 *) cond(al_17);
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	word32 ebx_10;
 	*ebxOut = 1231978947;
 	return 0x00;
 }
 
-// 0804BE9F: void xadd_locked_mv_plain(Register word32 eax, Register (ptr word32) ebx)
-void xadd_locked_mv_plain(word32 eax, word32 * ebx)
+// 0804BE9F: void xadd_locked_mv_plain(Register (ptr Eq_83) eax, Register (ptr (ptr Eq_83)) ebx)
+void xadd_locked_mv_plain(Eq_83 * eax, Eq_83 * * ebx)
 {
 	__lock();
-	*ebx = __xadd(*ebx, eax);
-	return;
+	*ebx = (struct Eq_83 **) __xadd(*ebx, eax);
 }
 
 // 0804BEA9: void xadd_locked_mv_allregs()
 void xadd_locked_mv_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_10 = (struct Eq_72 **) 0x1004;
-	word32 ecx_11 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_10 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_11 = (struct Eq_83 **) 0x1008;
 	word32 edx_12 = (word32 *) 0x100C;
 	word32 ebp_13 = (word32 *) 0x1010;
 	word32 esi_14 = (word32 *) 0x1014;
 	word32 edi_15 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	__lock();
-	ebx_10->t0000 = __xadd(ebx_10->t0000, eax_9);
-	Eq_69 SCZO_18 = cond(ebx_10->t0000);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = ecx_11;
+	ebx_10->ptr0000 = __xadd(ebx_10->ptr0000, eax_9);
+	Eq_88 SCZO_18 = cond(ebx_10->ptr0000);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_11;
 	(word32 *) 0x200C = edx_12;
 	(word32 *) 0x2010 = ebp_13;
 	(word32 *) 8212 = esi_14;
 	(word32 *) 0x2018 = edi_15;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(ebx_10->t0000);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(ebx_10->t0000);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (ebx_10->t0000 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (ebx_10->t0000 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (ebx_10->t0000 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (ebx_10->t0000 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (ebx_10->t0000 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (ebx_10->t0000 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (ebx_10->t0000 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (ebx_10->t0000 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(ebx_10->ptr0000);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(ebx_10->ptr0000);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (ebx_10->ptr0000 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (ebx_10->ptr0000 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (ebx_10->ptr0000 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (ebx_10->ptr0000 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (ebx_10->ptr0000 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (ebx_10->ptr0000 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (ebx_10->ptr0000 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (ebx_10->ptr0000 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_18;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804BF9C: void xadd_locked_mv_constant_simple()
 void xadd_locked_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	(union Eq_1415 *) 0x03 = (union Eq_1415 *) __xadd((union Eq_1415 *) 0x03, 0x02);
-	Eq_69 SCZO_16 = cond((union Eq_1415 *) 0x03);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(struct Eq_83 **) 0x03 = (struct Eq_83 **) __xadd((struct Eq_83 **) 0x03, (struct Eq_83 *) 0x02);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 0x03);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1415 *) 0x03);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1415 *) 0x03);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1415 *) 0x03 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1415 *) 0x03 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1415 *) 0x03 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1415 *) 0x03 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1415 *) 0x03 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1415 *) 0x03 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1415 *) 0x03 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1415 *) 0x03 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 0x03);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 0x03);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 0x03 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 0x03 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 0x03 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 0x03 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 0x03 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 0x03 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 0x03 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 0x03 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804C084: void xadd_locked_mv_constant_complex1()
 void xadd_locked_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	(union Eq_1488 *) 0x06671AD7 = (union Eq_1488 *) __xadd((union Eq_1488 *) 0x06671AD7, 2746317188);
-	Eq_69 SCZO_16 = cond((union Eq_1488 *) 0x06671AD7);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(struct Eq_83 **) 0x06671AD7 = (struct Eq_83 **) __xadd((struct Eq_83 **) 0x06671AD7, (struct Eq_83 *) 2746317188);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 0x06671AD7);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1488 *) 0x06671AD7);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1488 *) 0x06671AD7);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1488 *) 0x06671AD7 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 0x06671AD7);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 0x06671AD7);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 0x06671AD7 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804C16C: void xadd_locked_mv_constant_complex2()
 void xadd_locked_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
-	(union Eq_1562 *) 1231978947 = (union Eq_1562 *) __xadd((union Eq_1562 *) 1231978947, 0x313EC0E8);
-	Eq_69 SCZO_16 = cond((union Eq_1562 *) 1231978947);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(struct Eq_83 **) 1231978947 = (struct Eq_83 **) __xadd((struct Eq_83 **) 1231978947, (struct Eq_83 *) 0x313EC0E8);
+	Eq_88 SCZO_17 = cond((struct Eq_83 **) 1231978947);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW((union Eq_1562 *) 1231978947);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW((union Eq_1562 *) 1231978947);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 == 0x00);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 != 0x00);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 <= 0x00);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 > 0x00);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ((union Eq_1562 *) 1231978947 < 0x00);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ((union Eq_1562 *) 1231978947 >= 0x00);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ((union Eq_1562 *) 1231978947 <= 0x00);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ((union Eq_1562 *) 1231978947 > 0x00);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW((struct Eq_83 **) 1231978947);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW((struct Eq_83 **) 1231978947);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 == null);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 != null);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 <= null);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 > null);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ((struct Eq_83 **) 1231978947 < null);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ((struct Eq_83 **) 1231978947 >= null);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ((struct Eq_83 **) 1231978947 <= null);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ((struct Eq_83 **) 1231978947 > null);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804C255: void cmpxchg8b_plain()
 void cmpxchg8b_plain()
 {
-cmpxchg8b_plain_entry:
-l0804C255:
-cmpxchg8b_plain_exit:
 }
 
 // 0804C25E: void cmpxchg8b_allregs()
 void cmpxchg8b_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804C350: void cmpxchg8b_constant_simple()
 void cmpxchg8b_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804C437: void cmpxchg8b_constant_complex1()
 void cmpxchg8b_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804C51E: void cmpxchg8b_constant_complex2()
 void cmpxchg8b_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804C606: void cmpxchg8b_locked_mv_plain()
@@ -2397,28 +2321,28 @@ void cmpxchg8b_locked_mv_plain()
 // 0804C610: void cmpxchg8b_locked_mv_allregs()
 void cmpxchg8b_locked_mv_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	__lock();
 }
 
 // 0804C703: void cmpxchg8b_locked_mv_constant_simple()
 void cmpxchg8b_locked_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
 }
 
 // 0804C7EB: void cmpxchg8b_locked_mv_constant_complex1()
 void cmpxchg8b_locked_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
 }
 
 // 0804C8D3: void cmpxchg8b_locked_mv_constant_complex2()
 void cmpxchg8b_locked_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 	__lock();
 }
 
@@ -2426,6190 +2350,6031 @@ void cmpxchg8b_locked_mv_constant_complex2()
 void rdtsc_plain()
 {
 	__rdtsc();
-	return;
 }
 
 // 0804C9C4: void rdtsc_allregs()
 void rdtsc_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_17 = (struct Eq_72 **) 0x1004;
-	word32 ecx_18 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_17 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_18 = (struct Eq_83 **) 0x1008;
 	word32 ebp_20 = (word32 *) 0x1010;
 	word32 esi_21 = (word32 *) 0x1014;
 	word32 edi_22 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	word64 edx_eax_24 = __rdtsc();
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (word32) edx_eax_24;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_17;
-	(word32 *) 0x2008 = ecx_18;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (word32) edx_eax_24;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_17;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_18;
 	(word32 *) 0x200C = SLICE(edx_eax_24, word32, 32);
 	(word32 *) 0x2010 = ebp_20;
 	(word32 *) 8212 = esi_21;
 	(word32 *) 0x2018 = edi_22;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804CAB5: void rdtsc_constant_simple()
 void rdtsc_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word64 edx_eax_20 = __rdtsc();
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (word32) edx_eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
-	(word32 *) 0x200C = SLICE(edx_eax_20, word32, 32);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word64 edx_eax_21 = __rdtsc();
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (word32) edx_eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
+	(word32 *) 0x200C = SLICE(edx_eax_21, word32, 32);
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804CB9B: void rdtsc_constant_complex1()
 void rdtsc_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word64 edx_eax_20 = __rdtsc();
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (word32) edx_eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
-	(word32 *) 0x200C = SLICE(edx_eax_20, word32, 32);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word64 edx_eax_21 = __rdtsc();
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (word32) edx_eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
+	(word32 *) 0x200C = SLICE(edx_eax_21, word32, 32);
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	Eq_69 SCZDOP_4 = 0x00;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	Eq_88 SCZDOP_5 = 0x00;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804CC81: FlagGroup byte rdtsc_constant_complex2()
 byte rdtsc_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	word64 edx_eax_20 = __rdtsc();
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (word32) edx_eax_20;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
-	(word32 *) 0x200C = SLICE(edx_eax_20, word32, 32);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	word64 edx_eax_21 = __rdtsc();
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (word32) edx_eax_21;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
+	(word32 *) 0x200C = SLICE(edx_eax_21, word32, 32);
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	ui32 eax_52 = (union Eq_93 *) 0x2050 - fp;
-	(ui32 *) 0x2020 = eax_52;
-	return cond(eax_52);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	ui32 eax_53 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	(ui32 *) 0x2020 = eax_53;
+	return cond(eax_53);
 }
 
 // 0804CD68: void rdmsr_plain()
 void rdmsr_plain()
 {
-rdmsr_plain_entry:
-l0804CD68:
-rdmsr_plain_exit:
 }
 
 // 0804CD70: void rdmsr_allregs()
 void rdmsr_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804CE61: void rdmsr_constant_simple()
 void rdmsr_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804CF47: void rdmsr_constant_complex1()
 void rdmsr_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804D02D: void rdmsr_constant_complex2()
 void rdmsr_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804D114: void wrmsr_plain()
 void wrmsr_plain()
 {
-wrmsr_plain_entry:
-l0804D114:
-wrmsr_plain_exit:
 }
 
 // 0804D11C: void wrmsr_allregs()
 void wrmsr_allregs()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 }
 
 // 0804D20D: void wrmsr_constant_simple()
 void wrmsr_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804D2F3: void wrmsr_constant_complex1()
 void wrmsr_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804D3D9: void wrmsr_constant_complex2()
 void wrmsr_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
 }
 
 // 0804D4C0: void cmov1_mv_plain()
 void cmov1_mv_plain()
 {
-	return;
 }
 
 // 0804D4CA: void cmov1_mv_allregs()
 void cmov1_mv_allregs()
 {
-	struct Eq_72 * ebx_19 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_17 = (struct Eq_72 **) 0x1000;
-	word32 ecx_21 = (word32 *) 0x1008;
+	struct Eq_83 * ebx_19 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_17 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ecx_21 = (struct Eq_83 **) 0x1008;
 	word32 edx_22 = (word32 *) 0x100C;
 	word32 ebp_23 = (word32 *) 0x1010;
 	word32 esi_24 = (word32 *) 0x1014;
 	word32 edi_25 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	word16 bx_20 = (word16) ebx_19;
 	if (!ax_3)
 		eax_17 = DPB(eax_17, bx_20, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_17;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_19;
-	(word32 *) 0x2008 = ecx_21;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_17;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_21;
 	(word32 *) 0x200C = edx_22;
 	(word32 *) 0x2010 = ebp_23;
 	(word32 *) 8212 = esi_24;
 	(word32 *) 0x2018 = edi_25;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804D5BD: void cmov1_mv_constant_simple()
 void cmov1_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x02;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x03;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x02;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804D6A5: void cmov1_mv_constant_complex1()
 void cmov1_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 2746317188;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 2746292951;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 2746317188;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 2746292951;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804D78D: FlagGroup byte cmov1_mv_constant_complex2()
 byte cmov1_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x313EC0E8;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x313E81C3;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x313EC0E8;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x313E81C3;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	ui32 eax_55 = (union Eq_93 *) 0x2050 - fp;
-	(ui32 *) 0x2020 = eax_55;
-	return cond(eax_55);
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	ui32 eax_56 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	(ui32 *) 0x2020 = eax_56;
+	return cond(eax_56);
 }
 
 // 0804D876: void cmov2_mv_plain()
 void cmov2_mv_plain()
 {
-	return;
 }
 
 // 0804D880: void cmov2_mv_allregs()
 void cmov2_mv_allregs()
 {
-	struct Eq_72 * ebx_19 = (struct Eq_72 **) 0x1004;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_17 = (struct Eq_72 **) 0x1000;
-	word32 ecx_21 = (word32 *) 0x1008;
+	struct Eq_83 * ebx_19 = (struct Eq_83 **) 0x1004;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_17 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ecx_21 = (struct Eq_83 **) 0x1008;
 	word32 edx_22 = (word32 *) 0x100C;
 	word32 ebp_23 = (word32 *) 0x1010;
 	word32 esi_24 = (word32 *) 0x1014;
 	word32 edi_25 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	word16 bx_20 = (word16) ebx_19;
 	if (!ax_3)
 		eax_17 = DPB(eax_17, bx_20, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_17;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_19;
-	(word32 *) 0x2008 = ecx_21;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_17;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_21;
 	(word32 *) 0x200C = edx_22;
 	(word32 *) 0x2010 = ebp_23;
 	(word32 *) 8212 = esi_24;
 	(word32 *) 0x2018 = edi_25;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804D973: void cmov2_mv_constant_simple()
 void cmov2_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x02;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x03;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x02;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804DA5B: void cmov2_mv_constant_complex1()
 void cmov2_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 2746317188;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 2746292951;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 2746317188;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 2746292951;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804DB43: FlagGroup byte cmov2_mv_constant_complex2()
 byte cmov2_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x313EC0E8;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x313E81C3;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x313EC0E8;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x313E81C3;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	ui32 eax_55 = (union Eq_93 *) 0x2050 - fp;
-	(ui32 *) 0x2020 = eax_55;
-	return cond(eax_55);
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	ui32 eax_56 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	(ui32 *) 0x2020 = eax_56;
+	return cond(eax_56);
 }
 
 // 0804DC2C: void cmov3_plain()
 void cmov3_plain()
 {
-	return;
 }
 
 // 0804DC35: void cmov3_allregs()
 void cmov3_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_17 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_19 = (struct Eq_72 **) 0x1004;
-	word32 ecx_20 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_17 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_19 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_20 = (struct Eq_83 **) 0x1008;
 	word32 edx_21 = (word32 *) 0x100C;
 	word32 ebp_22 = (word32 *) 0x1010;
 	word32 esi_23 = (word32 *) 0x1014;
 	word32 edi_24 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	if (!ax_3)
 		eax_17 = ebx_19;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_17;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_19;
-	(word32 *) 0x2008 = ecx_20;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_17;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_20;
 	(word32 *) 0x200C = edx_21;
 	(word32 *) 0x2010 = ebp_22;
 	(word32 *) 8212 = esi_23;
 	(word32 *) 0x2018 = edi_24;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804DD27: void cmov3_constant_simple()
 void cmov3_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x02;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x03;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x02;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804DE0E: void cmov3_constant_complex1()
 void cmov3_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 2746317188;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 0x06671AD7;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 2746317188;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804DEF5: FlagGroup byte cmov3_constant_complex2(Register out ptr32 ebxOut)
 byte cmov3_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x313EC0E8;
-	word32 ebx_17;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x313EC0E8;
+	word32 ebx_18;
 	*ebxOut = 1231978947;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) 1231978947;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	ui32 eax_54 = (union Eq_93 *) 0x2050 - fp;
-	(ui32 *) 0x2020 = eax_54;
-	return cond(eax_54);
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	ui32 eax_55 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	(ui32 *) 0x2020 = eax_55;
+	return cond(eax_55);
 }
 
 // 0804DFDD: void cmov4_mv_plain(Register word32 ebx)
 void cmov4_mv_plain(word32 ebx)
 {
-	return;
 }
 
 // 0804DFE8: void cmov4_mv_allregs()
 void cmov4_mv_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_17 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_19 = (struct Eq_72 **) 0x1004;
-	word32 ecx_20 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_17 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_19 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_20 = (struct Eq_83 **) 0x1008;
 	word32 edx_21 = (word32 *) 0x100C;
 	word32 ebp_22 = (word32 *) 0x1010;
 	word32 esi_23 = (word32 *) 0x1014;
 	word32 edi_24 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	if (!ax_3)
 		eax_17 = DPB(eax_17, ebx_19->w000C, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_17;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_19;
-	(word32 *) 0x2008 = ecx_20;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_17;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_20;
 	(word32 *) 0x200C = edx_21;
 	(word32 *) 0x2010 = ebp_22;
 	(word32 *) 8212 = esi_23;
 	(word32 *) 0x2018 = edi_24;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804E0DC: void cmov4_mv_constant_simple()
 void cmov4_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x02;
-	if (!SCZDOP_4)
-		eax_15 = DPB(0x02, (word16 *) 0x0F, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x02;
+	if (!SCZDOP_5)
+		eax_16 = DPB(0x02, (word16 *) 0x0F, 0);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804E1C5: void cmov4_mv_constant_complex1()
 void cmov4_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 2746317188;
-	if (!SCZDOP_4)
-		eax_15 = DPB(2746317188, (word16 *) 0x06671AE3, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 2746317188;
+	if (!SCZDOP_5)
+		eax_16 = DPB(2746317188, (word16 *) 0x06671AE3, 0);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804E2AE: FlagGroup byte cmov4_mv_constant_complex2(Register out ptr32 ebxOut)
 byte cmov4_mv_constant_complex2(ptr32 & ebxOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x313EC0E8;
-	word32 ebx_17;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x313EC0E8;
+	word32 ebx_18;
 	*ebxOut = 1231978947;
-	if (!SCZDOP_4)
-		eax_15 = DPB(0x313EC0E8, (word16 *) 1231978959, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	if (!SCZDOP_5)
+		eax_16 = DPB(0x313EC0E8, (word16 *) 1231978959, 0);
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	ui32 eax_54 = (union Eq_93 *) 0x2050 - fp;
-	(ui32 *) 0x2020 = eax_54;
-	return cond(eax_54);
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	ui32 eax_55 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	(ui32 *) 0x2020 = eax_55;
+	return cond(eax_55);
 }
 
 // 0804E398: void cmov5_mv_plain(Register word32 ebx)
 void cmov5_mv_plain(word32 ebx)
 {
-	return;
 }
 
 // 0804E3A2: void cmov5_mv_allregs()
 void cmov5_mv_allregs()
 {
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * eax_17 = (struct Eq_72 **) 0x1000;
-	struct Eq_72 * ebx_19 = (struct Eq_72 **) 0x1004;
-	word32 ecx_20 = (word32 *) 0x1008;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * eax_17 = (struct Eq_83 **) 0x1000;
+	struct Eq_83 * ebx_19 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_20 = (struct Eq_83 **) 0x1008;
 	word32 edx_21 = (word32 *) 0x100C;
 	word32 ebp_22 = (word32 *) 0x1010;
 	word32 esi_23 = (word32 *) 0x1014;
 	word32 edi_24 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	if (!ax_3)
 		eax_17 = ebx_19->ptr0022;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_17;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_19;
-	(word32 *) 0x2008 = ecx_20;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_17;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_19;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_20;
 	(word32 *) 0x200C = edx_21;
 	(word32 *) 0x2010 = ebp_22;
 	(word32 *) 8212 = esi_23;
 	(word32 *) 0x2018 = edi_24;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 8448 = (union Eq_69 *) ax_3;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 8448 = (union Eq_88 *) ax_3;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804E495: void cmov5_mv_constant_simple()
 void cmov5_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x02;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) (struct Eq_72 **) 0x25;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x03;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x02;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) (struct Eq_83 **) 0x25;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x03;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804E57D: void cmov5_mv_constant_complex1()
 void cmov5_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 2746317188;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) (struct Eq_72 **) 107420409;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 0x06671AD7;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 2746317188;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) (struct Eq_83 **) 107420409;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 0x06671AD7;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804E665: Register byte cmov5_mv_constant_complex2()
 byte cmov5_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * eax_15 = (struct Eq_72 *) 0x313EC0E8;
-	if (!SCZDOP_4)
-		eax_15 = (struct Eq_72 *) (struct Eq_72 **) 1231978981;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_15;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) (struct Eq_72 *) 1231978947;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * eax_16 = (struct Eq_83 *) 0x313EC0E8;
+	if (!SCZDOP_5)
+		eax_16 = (struct Eq_83 *) (struct Eq_83 **) 1231978981;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_16;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) (struct Eq_83 *) 1231978947;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZDOP_4;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZDOP_5;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804E74E: void cmov_w_with_code_0_plain(Register byte al)
 void cmov_w_with_code_0_plain(byte al)
 {
-	return;
 }
 
 // 0804E75A: void cmov_w_with_code_0_allregs()
 void cmov_w_with_code_0_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (OVERFLOW(al_11 - 0x02))
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804E84F: void cmov_w_with_code_0_constant_simple()
 void cmov_w_with_code_0_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (OVERFLOW(0x00))
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804E939: void cmov_w_with_code_0_constant_complex1()
 void cmov_w_with_code_0_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (OVERFLOW(0x82))
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804EA23: Register byte cmov_w_with_code_0_constant_complex2()
 byte cmov_w_with_code_0_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (OVERFLOW(~0x19))
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804EB0E: void cmov_w_with_code_1_mv_plain(Register byte al)
 void cmov_w_with_code_1_mv_plain(byte al)
 {
-	return;
 }
 
 // 0804EB1A: void cmov_w_with_code_1_mv_allregs()
 void cmov_w_with_code_1_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (!OVERFLOW(al_11 - 0x02))
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804EC0F: void cmov_w_with_code_1_mv_constant_simple()
 void cmov_w_with_code_1_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (!OVERFLOW(0x00))
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804ECF9: void cmov_w_with_code_1_mv_constant_complex1()
 void cmov_w_with_code_1_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (!OVERFLOW(0x82))
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804EDE3: Register byte cmov_w_with_code_1_mv_constant_complex2()
 byte cmov_w_with_code_1_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (!OVERFLOW(~0x19))
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804EECE: void cmov_w_with_code_2_mv_plain(Register cu8 al)
 void cmov_w_with_code_2_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 0804EEDA: void cmov_w_with_code_2_mv_allregs()
 void cmov_w_with_code_2_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804EFCF: void cmov_w_with_code_2_mv_constant_simple()
 void cmov_w_with_code_2_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F0B9: void cmov_w_with_code_2_mv_constant_complex1()
 void cmov_w_with_code_2_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F1A3: Register byte cmov_w_with_code_2_mv_constant_complex2()
 byte cmov_w_with_code_2_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804F28E: void cmov_w_with_code_3_mv_plain(Register cu8 al)
 void cmov_w_with_code_3_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 0804F29A: void cmov_w_with_code_3_mv_allregs()
 void cmov_w_with_code_3_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804F38F: void cmov_w_with_code_3_mv_constant_simple()
 void cmov_w_with_code_3_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F479: void cmov_w_with_code_3_mv_constant_complex1()
 void cmov_w_with_code_3_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F563: Register byte cmov_w_with_code_3_mv_constant_complex2()
 byte cmov_w_with_code_3_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804F64E: void cmov_w_with_code_4_mv_plain(Register byte al)
 void cmov_w_with_code_4_mv_plain(byte al)
 {
-	return;
 }
 
 // 0804F65A: void cmov_w_with_code_4_mv_allregs()
 void cmov_w_with_code_4_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 == 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804F74F: void cmov_w_with_code_4_mv_constant_simple()
 void cmov_w_with_code_4_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F839: void cmov_w_with_code_4_mv_constant_complex1()
 void cmov_w_with_code_4_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804F923: Register byte cmov_w_with_code_4_mv_constant_complex2()
 byte cmov_w_with_code_4_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804FA0E: void cmov_w_with_code_5_mv_plain(Register byte al)
 void cmov_w_with_code_5_mv_plain(byte al)
 {
-	return;
 }
 
 // 0804FA1A: void cmov_w_with_code_5_mv_allregs()
 void cmov_w_with_code_5_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 != 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804FB0F: void cmov_w_with_code_5_mv_constant_simple()
 void cmov_w_with_code_5_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (0x02 != 0x02)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804FBF9: void cmov_w_with_code_5_mv_constant_complex1()
 void cmov_w_with_code_5_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (0x84 != 0x02)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804FCE3: Register byte cmov_w_with_code_5_mv_constant_complex2()
 byte cmov_w_with_code_5_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (232 != 0x02)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0804FDCE: void cmov_w_with_code_6_mv_plain(Register cu8 al)
 void cmov_w_with_code_6_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 0804FDDA: void cmov_w_with_code_6_mv_allregs()
 void cmov_w_with_code_6_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 <= 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0804FECF: void cmov_w_with_code_6_mv_constant_simple()
 void cmov_w_with_code_6_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0804FFB9: void cmov_w_with_code_6_mv_constant_complex1()
 void cmov_w_with_code_6_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080500A3: Register byte cmov_w_with_code_6_mv_constant_complex2()
 byte cmov_w_with_code_6_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805018E: void cmov_w_with_code_7_mv_plain(Register cu8 al)
 void cmov_w_with_code_7_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 0805019A: void cmov_w_with_code_7_mv_allregs()
 void cmov_w_with_code_7_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 > 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805028F: void cmov_w_with_code_7_mv_constant_simple()
 void cmov_w_with_code_7_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050379: void cmov_w_with_code_7_mv_constant_complex1()
 void cmov_w_with_code_7_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050463: Register byte cmov_w_with_code_7_mv_constant_complex2()
 byte cmov_w_with_code_7_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805054E: void cmov_w_with_code_8_mv_plain(Register ci8 al)
 void cmov_w_with_code_8_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 0805055A: void cmov_w_with_code_8_mv_allregs()
 void cmov_w_with_code_8_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805064F: void cmov_w_with_code_8_mv_constant_simple()
 void cmov_w_with_code_8_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050739: void cmov_w_with_code_8_mv_constant_complex1()
 void cmov_w_with_code_8_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050823: Register byte cmov_w_with_code_8_mv_constant_complex2()
 byte cmov_w_with_code_8_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805090E: void cmov_w_with_code_9_mv_plain(Register ci8 al)
 void cmov_w_with_code_9_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 0805091A: void cmov_w_with_code_9_mv_allregs()
 void cmov_w_with_code_9_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08050A0F: void cmov_w_with_code_9_mv_constant_simple()
 void cmov_w_with_code_9_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050AF9: void cmov_w_with_code_9_mv_constant_complex1()
 void cmov_w_with_code_9_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08050BE3: FlagGroup Eq_69 cmov_w_with_code_9_mv_constant_complex2(Register out Eq_11061 alOut)
-Eq_69 cmov_w_with_code_9_mv_constant_complex2(Eq_11061 & alOut)
+// 08050BE3: FlagGroup Eq_88 cmov_w_with_code_9_mv_constant_complex2(Register out Eq_11511 alOut)
+Eq_88 cmov_w_with_code_9_mv_constant_complex2(Eq_11511 & alOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte al_70;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte al_71;
 	*alOut = 0x00;
-	return SCZDOP_4;
+	return SCZDOP_5;
 }
 
 // 08050CCE: void cmov_w_with_code_a_mv_plain(Register byte al)
 void cmov_w_with_code_a_mv_plain(byte al)
 {
-	return;
 }
 
 // 08050CDA: void cmov_w_with_code_a_mv_allregs()
 void cmov_w_with_code_a_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (!ax_3)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08050DCF: void cmov_w_with_code_a_mv_constant_simple()
 void cmov_w_with_code_a_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08050EB9: void cmov_w_with_code_a_mv_constant_complex1()
 void cmov_w_with_code_a_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08050FA3: FlagGroup Eq_69 cmov_w_with_code_a_mv_constant_complex2(Register out Eq_11450 alOut)
-Eq_69 cmov_w_with_code_a_mv_constant_complex2(Eq_11450 & alOut)
+// 08050FA3: FlagGroup Eq_88 cmov_w_with_code_a_mv_constant_complex2(Register out Eq_11912 alOut)
+Eq_88 cmov_w_with_code_a_mv_constant_complex2(Eq_11912 & alOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte al_70;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte al_71;
 	*alOut = 0x00;
-	return SCZDOP_4;
+	return SCZDOP_5;
 }
 
 // 0805108E: void cmov_w_with_code_b_mv_plain(Register byte al)
 void cmov_w_with_code_b_mv_plain(byte al)
 {
-	return;
 }
 
 // 0805109A: void cmov_w_with_code_b_mv_allregs()
 void cmov_w_with_code_b_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (!ax_3)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805118F: void cmov_w_with_code_b_mv_constant_simple()
 void cmov_w_with_code_b_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051279: void cmov_w_with_code_b_mv_constant_complex1()
 void cmov_w_with_code_b_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051363: Register byte cmov_w_with_code_b_mv_constant_complex2()
 byte cmov_w_with_code_b_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
-	if (!SCZDOP_4)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
+	if (!SCZDOP_5)
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805144E: void cmov_w_with_code_c_mv_plain(Register ci8 al)
 void cmov_w_with_code_c_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 0805145A: void cmov_w_with_code_c_mv_allregs()
 void cmov_w_with_code_c_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805154F: void cmov_w_with_code_c_mv_constant_simple()
 void cmov_w_with_code_c_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051639: void cmov_w_with_code_c_mv_constant_complex1()
 void cmov_w_with_code_c_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051723: Register byte cmov_w_with_code_c_mv_constant_complex2()
 byte cmov_w_with_code_c_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805180E: void cmov_w_with_code_d_mv_plain(Register ci8 al)
 void cmov_w_with_code_d_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 0805181A: void cmov_w_with_code_d_mv_allregs()
 void cmov_w_with_code_d_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805190F: void cmov_w_with_code_d_mv_constant_simple()
 void cmov_w_with_code_d_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080519F9: void cmov_w_with_code_d_mv_constant_complex1()
 void cmov_w_with_code_d_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051AE3: Register byte cmov_w_with_code_d_mv_constant_complex2()
 byte cmov_w_with_code_d_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08051BCE: void cmov_w_with_code_e_mv_plain(Register ci8 al)
 void cmov_w_with_code_e_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 08051BDA: void cmov_w_with_code_e_mv_allregs()
 void cmov_w_with_code_e_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 <= 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08051CCF: void cmov_w_with_code_e_mv_constant_simple()
 void cmov_w_with_code_e_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051DB9: void cmov_w_with_code_e_mv_constant_complex1()
 void cmov_w_with_code_e_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08051EA3: Register byte cmov_w_with_code_e_mv_constant_complex2()
 byte cmov_w_with_code_e_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (true)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08051F8E: void cmov_w_with_code_f_mv_plain(Register ci8 al)
 void cmov_w_with_code_f_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 08051F9A: void cmov_w_with_code_f_mv_allregs()
 void cmov_w_with_code_f_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_14 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_14 = (struct Eq_83 **) 0x1008;
 	word32 edx_15 = (word32 *) 0x100C;
 	word32 ebp_16 = (word32 *) 0x1010;
 	word32 esi_17 = (word32 *) 0x1014;
 	word32 edi_18 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
 	word16 ax_10 = (word16) eax_9;
-	Eq_69 SCZO_20 = cond(al_11 - 0x02);
+	Eq_88 SCZO_20 = cond(al_11 - 0x02);
 	if (al_11 > 0x02)
 		ebx_12 = DPB(ebx_12, ax_10, 0);
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_14;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_14;
 	(word32 *) 0x200C = edx_15;
 	(word32 *) 0x2010 = ebp_16;
 	(word32 *) 8212 = esi_17;
 	(word32 *) 0x2018 = edi_18;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_20;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_20;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805208F: void cmov_w_with_code_f_mv_constant_simple()
 void cmov_w_with_code_f_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_18 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_19 = cond(0x00);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 0x04;
+		ebx_11 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08052179: void cmov_w_with_code_f_mv_constant_complex1()
 void cmov_w_with_code_f_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_18 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_19 = cond(0x82);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 107444612;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_11 = (struct Eq_83 *) 107444612;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08052263: Register byte cmov_w_with_code_f_mv_constant_complex2()
 byte cmov_w_with_code_f_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_10 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_18 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_11 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_19 = cond(~0x19);
 	if (false)
-		ebx_10 = (struct Eq_72 *) 1231995112;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_10;
-	(word32 *) 0x2008 = 507473074;
+		ebx_11 = (struct Eq_83 *) 1231995112;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_11;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_18;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805234E: void cmov_l_with_code_0_plain(Register byte al)
 void cmov_l_with_code_0_plain(byte al)
 {
-	return;
 }
 
 // 08052359: void cmov_l_with_code_0_allregs()
 void cmov_l_with_code_0_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (OVERFLOW(al_11 - 0x02))
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805244D: void cmov_l_with_code_0_constant_simple()
 void cmov_l_with_code_0_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (OVERFLOW(0x00))
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08052536: void cmov_l_with_code_0_constant_complex1()
 void cmov_l_with_code_0_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (OVERFLOW(0x82))
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0805261F: Register byte cmov_l_with_code_0_constant_complex2()
 byte cmov_l_with_code_0_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (OVERFLOW(~0x19))
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08052709: void cmov_l_with_code_1_mv_plain(Register byte al)
 void cmov_l_with_code_1_mv_plain(byte al)
 {
-	return;
 }
 
 // 08052714: void cmov_l_with_code_1_mv_allregs()
 void cmov_l_with_code_1_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (!OVERFLOW(al_11 - 0x02))
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08052808: void cmov_l_with_code_1_mv_constant_simple()
 void cmov_l_with_code_1_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (!OVERFLOW(0x00))
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080528F1: void cmov_l_with_code_1_mv_constant_complex1()
 void cmov_l_with_code_1_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (!OVERFLOW(0x82))
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080529DA: Register byte cmov_l_with_code_1_mv_constant_complex2()
 byte cmov_l_with_code_1_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (!OVERFLOW(~0x19))
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08052AC4: void cmov_l_with_code_2_mv_plain(Register cu8 al)
 void cmov_l_with_code_2_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 08052ACF: void cmov_l_with_code_2_mv_allregs()
 void cmov_l_with_code_2_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08052BC3: void cmov_l_with_code_2_mv_constant_simple()
 void cmov_l_with_code_2_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08052CAC: void cmov_l_with_code_2_mv_constant_complex1()
 void cmov_l_with_code_2_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08052D95: Register byte cmov_l_with_code_2_mv_constant_complex2()
 byte cmov_l_with_code_2_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08052E7F: void cmov_l_with_code_3_mv_plain(Register cu8 al)
 void cmov_l_with_code_3_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 08052E8A: void cmov_l_with_code_3_mv_allregs()
 void cmov_l_with_code_3_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08052F7E: void cmov_l_with_code_3_mv_constant_simple()
 void cmov_l_with_code_3_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053067: void cmov_l_with_code_3_mv_constant_complex1()
 void cmov_l_with_code_3_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053150: Register byte cmov_l_with_code_3_mv_constant_complex2()
 byte cmov_l_with_code_3_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 0805323A: void cmov_l_with_code_4_mv_plain(Register byte al)
 void cmov_l_with_code_4_mv_plain(byte al)
 {
-	return;
 }
 
 // 08053245: void cmov_l_with_code_4_mv_allregs()
 void cmov_l_with_code_4_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 == 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08053339: void cmov_l_with_code_4_mv_constant_simple()
 void cmov_l_with_code_4_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053422: void cmov_l_with_code_4_mv_constant_complex1()
 void cmov_l_with_code_4_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0805350B: Register byte cmov_l_with_code_4_mv_constant_complex2()
 byte cmov_l_with_code_4_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 080535F5: void cmov_l_with_code_5_mv_plain(Register byte al)
 void cmov_l_with_code_5_mv_plain(byte al)
 {
-	return;
 }
 
 // 08053600: void cmov_l_with_code_5_mv_allregs()
 void cmov_l_with_code_5_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 != 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 080536F4: void cmov_l_with_code_5_mv_constant_simple()
 void cmov_l_with_code_5_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (0x02 != 0x02)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080537DD: void cmov_l_with_code_5_mv_constant_complex1()
 void cmov_l_with_code_5_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (0x84 != 0x02)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080538C6: Register byte cmov_l_with_code_5_mv_constant_complex2()
 byte cmov_l_with_code_5_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (232 != 0x02)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 080539B0: void cmov_l_with_code_6_mv_plain(Register cu8 al)
 void cmov_l_with_code_6_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 080539BB: void cmov_l_with_code_6_mv_allregs()
 void cmov_l_with_code_6_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 <= 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08053AAF: void cmov_l_with_code_6_mv_constant_simple()
 void cmov_l_with_code_6_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053B98: void cmov_l_with_code_6_mv_constant_complex1()
 void cmov_l_with_code_6_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053C81: Register byte cmov_l_with_code_6_mv_constant_complex2()
 byte cmov_l_with_code_6_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08053D6B: void cmov_l_with_code_7_mv_plain(Register cu8 al)
 void cmov_l_with_code_7_mv_plain(cu8 al)
 {
-	return;
 }
 
 // 08053D76: void cmov_l_with_code_7_mv_allregs()
 void cmov_l_with_code_7_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 > 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08053E6A: void cmov_l_with_code_7_mv_constant_simple()
 void cmov_l_with_code_7_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08053F53: void cmov_l_with_code_7_mv_constant_complex1()
 void cmov_l_with_code_7_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0805403C: Register byte cmov_l_with_code_7_mv_constant_complex2()
 byte cmov_l_with_code_7_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08054126: void cmov_l_with_code_8_mv_plain(Register ci8 al)
 void cmov_l_with_code_8_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 08054131: void cmov_l_with_code_8_mv_allregs()
 void cmov_l_with_code_8_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08054225: void cmov_l_with_code_8_mv_constant_simple()
 void cmov_l_with_code_8_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0805430E: void cmov_l_with_code_8_mv_constant_complex1()
 void cmov_l_with_code_8_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080543F7: Register byte cmov_l_with_code_8_mv_constant_complex2()
 byte cmov_l_with_code_8_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 080544E1: void cmov_l_with_code_9_mv_plain(Register ci8 al)
 void cmov_l_with_code_9_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 080544EC: void cmov_l_with_code_9_mv_allregs()
 void cmov_l_with_code_9_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 080545E0: void cmov_l_with_code_9_mv_constant_simple()
 void cmov_l_with_code_9_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080546C9: void cmov_l_with_code_9_mv_constant_complex1()
 void cmov_l_with_code_9_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 080547B2: FlagGroup Eq_69 cmov_l_with_code_9_mv_constant_complex2(Register out Eq_17295 alOut)
-Eq_69 cmov_l_with_code_9_mv_constant_complex2(Eq_17295 & alOut)
+// 080547B2: FlagGroup Eq_88 cmov_l_with_code_9_mv_constant_complex2(Register out Eq_17937 alOut)
+Eq_88 cmov_l_with_code_9_mv_constant_complex2(Eq_17937 & alOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte al_67;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte al_68;
 	*alOut = 0x00;
-	return SCZDOP_4;
+	return SCZDOP_5;
 }
 
 // 0805489C: void cmov_l_with_code_a_mv_plain(Register byte al)
 void cmov_l_with_code_a_mv_plain(byte al)
 {
-	return;
 }
 
 // 080548A7: void cmov_l_with_code_a_mv_allregs()
 void cmov_l_with_code_a_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (!ax_3)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 0805499B: void cmov_l_with_code_a_mv_constant_simple()
 void cmov_l_with_code_a_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08054A84: void cmov_l_with_code_a_mv_constant_complex1()
 void cmov_l_with_code_a_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08054B6D: FlagGroup Eq_69 cmov_l_with_code_a_mv_constant_complex2(Register out Eq_17681 alOut)
-Eq_69 cmov_l_with_code_a_mv_constant_complex2(Eq_17681 & alOut)
+// 08054B6D: FlagGroup Eq_88 cmov_l_with_code_a_mv_constant_complex2(Register out Eq_18335 alOut)
+Eq_88 cmov_l_with_code_a_mv_constant_complex2(Eq_18335 & alOut)
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	byte al_67;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
+	byte al_68;
 	*alOut = 0x00;
-	return SCZDOP_4;
+	return SCZDOP_5;
 }
 
 // 08054C57: void cmov_l_with_code_b_mv_plain(Register byte al)
 void cmov_l_with_code_b_mv_plain(byte al)
 {
-	return;
 }
 
 // 08054C62: void cmov_l_with_code_b_mv_allregs()
 void cmov_l_with_code_b_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (!ax_3)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08054D56: void cmov_l_with_code_b_mv_constant_simple()
 void cmov_l_with_code_b_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08054E3F: void cmov_l_with_code_b_mv_constant_complex1()
 void cmov_l_with_code_b_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08054F28: Register byte cmov_l_with_code_b_mv_constant_complex2()
 byte cmov_l_with_code_b_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
-	if (!SCZDOP_4)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
+	if (!SCZDOP_5)
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08055012: void cmov_l_with_code_c_mv_plain(Register ci8 al)
 void cmov_l_with_code_c_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 0805501D: void cmov_l_with_code_c_mv_allregs()
 void cmov_l_with_code_c_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 < 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08055111: void cmov_l_with_code_c_mv_constant_simple()
 void cmov_l_with_code_c_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080551FA: void cmov_l_with_code_c_mv_constant_complex1()
 void cmov_l_with_code_c_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080552E3: Register byte cmov_l_with_code_c_mv_constant_complex2()
 byte cmov_l_with_code_c_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 080553CD: void cmov_l_with_code_d_mv_plain(Register ci8 al)
 void cmov_l_with_code_d_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 080553D8: void cmov_l_with_code_d_mv_allregs()
 void cmov_l_with_code_d_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 >= 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 080554CC: void cmov_l_with_code_d_mv_constant_simple()
 void cmov_l_with_code_d_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 080555B5: void cmov_l_with_code_d_mv_constant_complex1()
 void cmov_l_with_code_d_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 0805569E: Register byte cmov_l_with_code_d_mv_constant_complex2()
 byte cmov_l_with_code_d_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08055788: void cmov_l_with_code_e_mv_plain(Register ci8 al)
 void cmov_l_with_code_e_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 08055793: void cmov_l_with_code_e_mv_allregs()
 void cmov_l_with_code_e_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 <= 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08055887: void cmov_l_with_code_e_mv_constant_simple()
 void cmov_l_with_code_e_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08055970: void cmov_l_with_code_e_mv_constant_complex1()
 void cmov_l_with_code_e_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08055A59: Register byte cmov_l_with_code_e_mv_constant_complex2()
 byte cmov_l_with_code_e_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (true)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 	return 0x00;
 }
 
 // 08055B43: void cmov_l_with_code_f_mv_plain(Register ci8 al)
 void cmov_l_with_code_f_mv_plain(ci8 al)
 {
-	return;
 }
 
 // 08055B4E: void cmov_l_with_code_f_mv_allregs()
 void cmov_l_with_code_f_mv_allregs()
 {
-	struct Eq_72 * eax_9 = (struct Eq_72 **) 0x1000;
-	Eq_69 ax_3 = (union Eq_69 *) 0x1100;
-	struct Eq_72 * ebx_12 = (struct Eq_72 **) 0x1004;
-	word32 ecx_13 = (word32 *) 0x1008;
+	struct Eq_83 * eax_9 = (struct Eq_83 **) 0x1000;
+	Eq_88 ax_3 = (union Eq_88 *) 0x1100;
+	struct Eq_83 * ebx_12 = (struct Eq_83 **) 0x1004;
+	struct Eq_83 * ecx_13 = (struct Eq_83 **) 0x1008;
 	word32 edx_14 = (word32 *) 0x100C;
 	word32 ebp_15 = (word32 *) 0x1010;
 	word32 esi_16 = (word32 *) 0x1014;
 	word32 edi_17 = (word32 *) 0x1018;
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) fp;
 	char al_11 = (byte) eax_9;
-	Eq_69 SCZO_19 = cond(al_11 - 0x02);
+	Eq_88 SCZO_19 = cond(al_11 - 0x02);
 	if (al_11 > 0x02)
 		ebx_12 = eax_9;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) eax_9;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_12;
-	(word32 *) 0x2008 = ecx_13;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) eax_9;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_12;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) ecx_13;
 	(word32 *) 0x200C = edx_14;
 	(word32 *) 0x2010 = ebp_15;
 	(word32 *) 8212 = esi_16;
 	(word32 *) 0x2018 = edi_17;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(al_11 - 0x02);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (al_11 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) (al_11 != 0x02);
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220A = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) ax_3;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) (al_11 < 0x02);
-	(union Eq_69 *) 0x220D = (union Eq_69 *) (al_11 >= 0x02);
-	(union Eq_69 *) 0x220E = (union Eq_69 *) (al_11 <= 0x02);
-	(union Eq_69 *) 0x220F = (union Eq_69 *) (al_11 > 0x02);
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_19;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(al_11 - 0x02);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (al_11 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) (al_11 != 0x02);
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220A = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) ax_3;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) (al_11 < 0x02);
+	(union Eq_88 *) 0x220D = (union Eq_88 *) (al_11 >= 0x02);
+	(union Eq_88 *) 0x220E = (union Eq_88 *) (al_11 <= 0x02);
+	(union Eq_88 *) 0x220F = (union Eq_88 *) (al_11 > 0x02);
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_19;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - fp;
 }
 
 // 08055C42: void cmov_l_with_code_f_mv_constant_simple()
 void cmov_l_with_code_f_mv_constant_simple()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x03;
-	Eq_69 SCZO_16 = cond(0x00);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x03;
+	Eq_88 SCZO_17 = cond(0x00);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x02;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 0x04;
+		ebx_10 = (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x02;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 0x04;
 	(word32 *) 0x200C = 0x05;
 	(word32 *) 0x2010 = 0x06;
 	(word32 *) 8212 = 0x07;
 	(word32 *) 0x2018 = 0x08;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x00);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x00);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x02 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x00);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x00);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x02 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08055D2B: void cmov_l_with_code_f_mv_constant_complex1()
 void cmov_l_with_code_f_mv_constant_complex1()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = 0x00;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 0x06671AD7;
-	Eq_69 SCZO_16 = cond(0x82);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = 0x00;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 0x06671AD7;
+	Eq_88 SCZO_17 = cond(0x82);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 2746317188;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 1181241928;
+		ebx_10 = (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 2746317188;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 1181241928;
 	(word32 *) 0x200C = 958682820;
 	(word32 *) 0x2010 = 3163119780;
 	(word32 *) 8212 = 2906402168;
 	(word32 *) 0x2018 = 3831882066;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(0x82);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(0x82);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (0x84 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(0x82);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(0x82);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (0x84 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
 // 08055E14: void cmov_l_with_code_f_mv_constant_complex2()
 void cmov_l_with_code_f_mv_constant_complex2()
 {
-	(union Eq_93 *) 0x2050 = (union Eq_93 *) fp;
-	Eq_69 SCZDOP_4 = ~0x0100;
-	struct Eq_72 * ebx_25 = (struct Eq_72 *) 1231978947;
-	Eq_69 SCZO_16 = cond(~0x19);
+	(union Eq_112 *) 0x2050 = (union Eq_112 *) (fp - 0x02);
+	Eq_88 SCZDOP_5 = ~0x0100;
+	struct Eq_83 * ebx_10 = (struct Eq_83 *) 1231978947;
+	Eq_88 SCZO_17 = cond(~0x19);
 	if (false)
-		ebx_25 = (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2000 = (struct Eq_72 **) (struct Eq_72 *) 0x313EC0E8;
-	(struct Eq_72 **) 0x2004 = (struct Eq_72 **) ebx_25;
-	(word32 *) 0x2008 = 507473074;
+		ebx_10 = (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2000 = (struct Eq_83 **) (struct Eq_83 *) 0x313EC0E8;
+	(struct Eq_83 **) 0x2004 = (struct Eq_83 **) ebx_10;
+	(struct Eq_83 **) 0x2008 = (struct Eq_83 **) (struct Eq_83 *) 507473074;
 	(word32 *) 0x200C = 1315513779;
 	(word32 *) 0x2010 = 0x4F312610;
 	(word32 *) 8212 = 792175781;
 	(word32 *) 0x2018 = 2443777972;
-	(union Eq_69 *) 0x2200 = (union Eq_69 *) OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2201 = (union Eq_69 *) !OVERFLOW(~0x19);
-	(union Eq_69 *) 0x2202 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2203 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2204 = (union Eq_69 *) (232 == 0x02);
-	(union Eq_69 *) 0x2205 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2206 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2207 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x2208 = (union Eq_69 *) true;
-	(union Eq_69 *) 0x2209 = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220A = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220B = (union Eq_69 *) SCZDOP_4;
-	(union Eq_69 *) 0x220C = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220D = (union Eq_69 *) false;
-	(union Eq_69 *) 0x220E = (union Eq_69 *) true;
-	(union Eq_69 *) 0x220F = (union Eq_69 *) false;
-	(union Eq_69 *) 8448 = (union Eq_69 *) SCZO_16;
-	(ui32 *) 0x2020 = (union Eq_93 *) 0x2050 - fp;
-	return;
+	(union Eq_88 *) 0x2200 = (union Eq_88 *) OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2201 = (union Eq_88 *) !OVERFLOW(~0x19);
+	(union Eq_88 *) 0x2202 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2203 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2204 = (union Eq_88 *) (232 == 0x02);
+	(union Eq_88 *) 0x2205 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2206 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2207 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x2208 = (union Eq_88 *) true;
+	(union Eq_88 *) 0x2209 = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220A = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220B = (union Eq_88 *) SCZDOP_5;
+	(union Eq_88 *) 0x220C = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220D = (union Eq_88 *) false;
+	(union Eq_88 *) 0x220E = (union Eq_88 *) true;
+	(union Eq_88 *) 0x220F = (union Eq_88 *) false;
+	(union Eq_88 *) 8448 = (union Eq_88 *) SCZO_17;
+	(ui32 *) 0x2020 = (union Eq_112 *) 0x2050 - (fp - 0x02);
 }
 
-// 08055EFE: void callAll(Register word32 eax)
-void callAll(word32 eax)
+// 08055EFE: void callAll(Register (ptr Eq_83) eax)
+void callAll(Eq_83 * eax)
 {
 	bswap_plain(eax);
 	bswap_allregs();
 	bswap_constant_simple();
 	bswap_constant_complex1();
 	byte bl_3;
-	word32 eax_4 = bswap_constant_complex2(out bl_3);
+	struct Eq_83 * eax_4 = bswap_constant_complex2(out bl_3);
 	cmpxchg1_mv_plain(eax_4, bl_3);
 	cmpxchg1_mv_allregs();
 	cmpxchg1_mv_constant_simple();
@@ -8620,15 +8385,15 @@ void callAll(word32 eax)
 	cmpxchg2_mv_allregs();
 	cmpxchg2_mv_constant_simple();
 	cmpxchg2_mv_constant_complex1();
-	word32 ecx_7;
-	word32 ebx_8;
-	word32 eax_9 = cmpxchg2_mv_constant_complex2(out ecx_7, out ebx_8);
+	struct Eq_83 * ecx_7;
+	struct Eq_83 * ebx_8;
+	struct Eq_83 * eax_9 = cmpxchg2_mv_constant_complex2(out ecx_7, out ebx_8);
 	cmpxchg3_plain(eax_9, ecx_7, ebx_8);
 	cmpxchg3_allregs();
 	cmpxchg3_constant_simple();
 	cmpxchg3_constant_complex1();
-	word32 * ebx_10;
-	word32 eax_11 = cmpxchg3_constant_complex2(out ebx_10);
+	struct Eq_83 ** ebx_10;
+	struct Eq_83 * eax_11 = cmpxchg3_constant_complex2(out ebx_10);
 	cmpxchg4_mv_plain(eax_11, ebx_10);
 	cmpxchg4_mv_allregs();
 	cmpxchg4_mv_constant_simple();
@@ -8637,16 +8402,16 @@ void callAll(word32 eax)
 	cmpxchg5_mv_allregs();
 	cmpxchg5_mv_constant_simple();
 	cmpxchg5_mv_constant_complex1();
-	word32 * ebx_13;
-	word32 eax_14 = cmpxchg5_mv_constant_complex2(out ebx_13);
+	struct Eq_83 ** ebx_13;
+	struct Eq_83 * eax_14 = cmpxchg5_mv_constant_complex2(out ebx_13);
 	cmpxchg_locked_mv_plain(eax_14, ebx_13);
 	cmpxchg_locked_mv_allregs();
 	cmpxchg_locked_mv_constant_simple();
 	cmpxchg_locked_mv_constant_complex1();
-	word32 ecx_15;
+	struct Eq_83 * ecx_15;
 	word32 edx_16;
 	word32 ebx_17;
-	word32 eax_18 = cmpxchg_locked_mv_constant_complex2(out ecx_15, out edx_16, out ebx_17);
+	struct Eq_83 * eax_18 = cmpxchg_locked_mv_constant_complex2(out ecx_15, out edx_16, out ebx_17);
 	cpuid_plain(eax_18, ecx_15, edx_16, ebx_17);
 	cpuid_allregs();
 	cpuid_constant_simple();
@@ -8678,14 +8443,14 @@ void callAll(word32 eax)
 	xadd2_mv_allregs();
 	xadd2_mv_constant_simple();
 	xadd2_mv_constant_complex1();
-	word32 ebx_23;
-	word32 eax_24 = xadd2_mv_constant_complex2(out ebx_23);
+	struct Eq_83 * ebx_23;
+	struct Eq_83 * eax_24 = xadd2_mv_constant_complex2(out ebx_23);
 	xadd3_plain(eax_24, ebx_23);
 	xadd3_allregs();
 	xadd3_constant_simple();
 	xadd3_constant_complex1();
-	word32 * ebx_25;
-	word32 eax_26 = xadd3_constant_complex2(out ebx_25);
+	struct Eq_83 ** ebx_25;
+	struct Eq_83 * eax_26 = xadd3_constant_complex2(out ebx_25);
 	xadd4_mv_plain(eax_26, ebx_25);
 	xadd4_mv_allregs();
 	xadd4_mv_constant_simple();
@@ -8694,8 +8459,8 @@ void callAll(word32 eax)
 	xadd5_mv_allregs();
 	xadd5_mv_constant_simple();
 	xadd5_mv_constant_complex1();
-	word32 * ebx_28;
-	word32 eax_29 = xadd5_mv_constant_complex2(out ebx_28);
+	struct Eq_83 ** ebx_28;
+	struct Eq_83 * eax_29 = xadd5_mv_constant_complex2(out ebx_28);
 	xadd_locked_mv_plain(eax_29, ebx_28);
 	xadd_locked_mv_allregs();
 	xadd_locked_mv_constant_simple();
@@ -8890,25 +8655,22 @@ void callAll(word32 eax)
 	cmov_l_with_code_f_mv_constant_complex1();
 	cmov_l_with_code_f_mv_constant_complex2();
 	main();
-	return;
 }
 
 // 080564C4: void main()
 void main()
 {
-	return;
 }
 
 // 080564D0: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 080564E0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_20647 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
+	struct Eq_21365 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
 	_init();
 	if (&ebx_16->ptr1149 - &ebx_16->ptr1149 >> 0x02 != 0x00)
 	{
@@ -8927,7 +8689,6 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_16->ptr1149();
 		} while (esi_63 + 0x01 < edi_62);
 	}
-	return;
 }
 
 // 0805653A: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
@@ -8953,13 +8714,11 @@ void __do_global_ctors_aux()
 			eax_11();
 		} while (*ebx_28 != ~0x00);
 	}
-	return;
 }
 
 // 0805656C: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

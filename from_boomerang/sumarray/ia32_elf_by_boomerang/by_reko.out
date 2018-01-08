@@ -2,3 +2,5 @@ Using options:
 0804831C: warning: Call target address 00000000 is invalid.
 08048380: error: The method or operation is not implemented.
 080483D4: error: The address 0804943C is invalid.
+08049460: warning: Expected sizes of arrays to have been determined by now
+08049460: warning: Expected sizes of arrays to have been determined by now

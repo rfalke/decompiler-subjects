@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804955C();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049560();
-	return;
-}
-
-// 08048278: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048363, dwArg00, (char *) fp + 0x04, &globals->t8048398, &globals->t80483C8, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482C0: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049568 = 0x01;
 	}
-	return;
 }
 
 // 080482FC: void frame_dummy()
@@ -101,22 +82,19 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048328: void foo2()
 void foo2()
 {
 	globals->dw8049470 = 0x0C;
-	printf@@GLIBC_2.0();
-	return;
+	printf("a = %f\n", DPB(rLoc18, globals->dw8049468, 0));
 }
 
 // 08048356: void foo1()
 void foo1()
 {
 	foo2();
-	return;
 }
 
 // 08048363: void main()
@@ -124,8 +102,7 @@ void main()
 {
 	__align(fp - 0x0C);
 	foo1();
-	printf@@GLIBC_2.0();
-	return;
+	printf("b = %i\n", globals->dw8049470);
 }
 
 // 08048398: void __libc_csu_init()
@@ -133,7 +110,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 080483C8: void __libc_csu_fini()
@@ -157,7 +134,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 080483FC: void __do_global_ctors_aux()
@@ -178,13 +154,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048420: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

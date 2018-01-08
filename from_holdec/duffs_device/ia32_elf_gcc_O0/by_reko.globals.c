@@ -5,9 +5,12 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t804830A = <code>;
-<anonymous> g_t804831A = <code>;
-<anonymous> g_t804832A = <code>;
+Eq_36 g_t8048704 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_40 g_t80487D0 = Unexpected function type (fn void ())
+;
+Eq_39 g_t80487E0 = Unexpected function type (fn void ())
+;
 <anonymous> * g_a8048894[] = 
 	{
 	};
@@ -17,9 +20,6 @@
 <anonymous> * g_ptr8049974 = &g_tFFFFFFFF;
 word32 g_dw8049984 = 0x00000000;
 word32 g_dw8049A58 = 0x00000000;
-<anonymous> * g_ptr8049A64 = &g_t804830A;
-<anonymous> * g_ptr8049A68 = &g_t804831A;
-<anonymous> * g_ptr8049A6C = &g_t804832A;
 byte g_b8049A74 = 0x00;
 uint32 g_dw8049A78 = 0x00000000;
 

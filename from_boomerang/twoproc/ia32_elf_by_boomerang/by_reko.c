@@ -10,30 +10,13 @@ void _init(word32 esi)
 	call_gmon_start();
 	frame_dummy(esi);
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482A0: void fn080482A0()
-void fn080482A0()
+// 080482C0: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049584();
-	return;
-}
-
-// 080482B0: void fn080482B0()
-void fn080482B0()
-{
-	word32 esp_3;
-	globals->ptr8049588();
-	return;
-}
-
-// 080482C0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482A0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048375, dwArg00, (char *) fp + 0x04, &globals->t80483B0, &globals->t8048404, edx, fp);
 	__hlt();
 }
 
@@ -54,7 +37,6 @@ void call_gmon_start()
 		byte Z_39;
 		eax_15();
 	}
-	return;
 }
 
 // 08048308: void __do_global_dtors_aux()
@@ -81,7 +63,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049598 = 0x01;
 	}
-	return;
 }
 
 // 0804833C: void frame_dummy(Register word32 esi)
@@ -99,22 +80,19 @@ void frame_dummy(word32 esi)
 		word32 esi_40;
 		null();
 	}
-	return;
 }
 
-// 08048368: void proc1(Stack word32 dwArg04, Stack word32 dwArg08)
-void proc1(word32 dwArg04, word32 dwArg08)
+// 08048368: Register word32 proc1(Stack word32 dwArg04, Stack word32 dwArg08)
+word32 proc1(word32 dwArg04, word32 dwArg08)
 {
-	return;
+	return dwArg04 - dwArg08;
 }
 
 // 08048375: void main()
 void main()
 {
 	__align(fp - 0x0C);
-	proc1(11, 0x04);
-	fn080482B0();
-	return;
+	printf("%i\n", proc1(11, 0x04));
 }
 
 // 080483B0: void __libc_csu_init(Register word32 esi)
@@ -127,7 +105,7 @@ void __libc_csu_init(word32 esi)
 		{
 			word32 esp_47;
 			word32 ebp_48;
-			Eq_118 edi_49;
+			Eq_132 edi_49;
 			uint32 esi_50;
 			word32 ebx_51;
 			byte SCZO_52;
@@ -139,7 +117,6 @@ void __libc_csu_init(word32 esi)
 			(*(<anonymous> **) 0x08049658)();
 		} while (esi_50 + 0x01 <u 0x08049658 - edi_49 >> 0x02);
 	}
-	return;
 }
 
 // 08048404: void __libc_csu_fini()
@@ -161,7 +138,6 @@ void __libc_csu_fini()
 		esi_23 = esi_48 - 0x01;
 	}
 	_fini();
-	return;
 }
 
 // 08048448: void __do_global_ctors_aux()
@@ -180,13 +156,11 @@ void __do_global_ctors_aux()
 		eax_14();
 		eax_14 = (<anonymous> *) *ebx_32;
 	}
-	return;
 }
 
 // 0804846C: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

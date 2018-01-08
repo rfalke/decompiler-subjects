@@ -4,4 +4,39 @@
 
 #include "subject.h"
 
+word16 g_w40000000;
+word32 g_dw4000003C;
+word32 * g_ptr40002098;
+word32 * g_ptr400020A0;
+word64 * g_ptr400020B0;
+word32 g_dw400021F0;
+word64 g_qw40002260;
+word64 g_qw40002270;
+word64 g_qw40003000;
+word64 g_qw40003008;
+word32 g_dw40003018;
+word32 g_dw4000301C;
+word32 g_dw40003020;
+word32 g_dw40003024;
+word64 g_qw40003028;
+word64 g_qw40003030;
+int32 g_dw40003038;
+word32 g_dw4000303C;
+word32 g_dw40003040;
+word32 g_dw40003044;
+word32 g_dw40003050;
+word32 g_dw40003054;
+word64 g_qw40003060;
+BOOL g_t400030E8;
+ui64 g_qw40003170;
+ptr64 g_ptr40003188;
+ULONGLONG g_t400031E8;
+word32 g_dw400035C4;
+word32 g_dw400035C8;
+word32 g_dw400035CC;
+word32 g_dw400035D0;
+word64 g_qw400035D8;
+word64 g_qw400035E0;
+word64 g_qw400035E8;
+word64 g_qw400035F0;
 

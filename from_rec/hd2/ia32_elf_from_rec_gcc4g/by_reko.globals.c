@@ -5,30 +5,21 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-char g_b0003;
-<anonymous> g_t80484DE = <code>;
-<anonymous> g_t80484EE = <code>;
-<anonymous> g_t80484FE = <code>;
-<anonymous> g_t804850E = <code>;
-<anonymous> g_t804851E = <code>;
-<anonymous> g_t804852E = <code>;
-<anonymous> g_t804853E = <code>;
-<anonymous> g_t804854E = <code>;
-<anonymous> g_t804855E = <code>;
-<anonymous> g_t804856E = <code>;
+Eq_36 g_t80488CA = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_40 g_t8048920 = Unexpected function type (fn void ())
+;
+Eq_39 g_t8048930 = Unexpected function type (fn void ())
+;
+char g_str8048A20[] = "%08lX:";
+char g_str8048A27[] = " %02lX";
+char g_str8048A2E[] = "   ";
+void g_v8048A32 = ;
+void g_v8048A36 = ;
+char g_str8048A38[] = "rb";
 <anonymous> * g_ptr8049F0C = &g_tFFFFFFFF;
 word32 g_dw8049F1C = 0x00000000;
 word32 g_dw8049FF8 = 0x00000000;
-<anonymous> * g_ptr804A00C = &g_t80484DE;
-<anonymous> * g_ptr804A010 = &g_t80484EE;
-<anonymous> * g_ptr804A014 = &g_t80484FE;
-<anonymous> * g_ptr804A018 = &g_t804850E;
-<anonymous> * g_ptr804A01C = &g_t804851E;
-<anonymous> * g_ptr804A020 = &g_t804852E;
-<anonymous> * g_ptr804A024 = &g_t804853E;
-<anonymous> * g_ptr804A028 = &g_t804854E;
-<anonymous> * g_ptr804A02C = &g_t804855E;
-<anonymous> * g_ptr804A030 = &g_t804856E;
 byte g_b804A03C = 0x00;
 uint32 g_dw804A040 = 0x00000000;
 

@@ -1,12 +1,3 @@
 Using options:
+080482D4: warning: Unable to resolve imported reference !__gmon_start__.
 08048340: error: The method or operation is not implemented.
-copy2_four_times: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x4192fa60 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x4192f1d0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4192b580 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x41924860 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x41923b40 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x41923660 + 0x00255> in <filename unknown>:0 
-080487B4: warning: Expected sizes of arrays to have been determined by now
-080487B4: warning: Expected sizes of arrays to have been determined by now

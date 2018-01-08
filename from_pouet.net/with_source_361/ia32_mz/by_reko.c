@@ -7,334 +7,332 @@
 // 0800:0000: void fn0800_0000()
 void fn0800_0000()
 {
-fn0800_0000_entry:
-	struct Eq_3 * ds_10 = cs
-	struct Eq_5 * es_13 = &cs->b00AF + 0x0022
-	byte Eq_3::* si_16 = &Eq_3::b00AF
-	byte Eq_5::* di_17 = &Eq_5::b0000
-	goto l0800_001A
-l0800_0000:
+	struct Eq_3 * ds_10 = cs;
+	struct Eq_5 * es_13 = &cs->b00AF + 0x0022;
+	byte Eq_3::* si_16 = &Eq_3::b00AF;
+	byte Eq_5::* di_17 = &Eq_5::b0000;
 l0800_001A:
-	es_582->*di_17 = ds_583->*si_16
-l0800_001B:
-	word16 sp_68
-	struct Eq_129 * ss_70
-	word16 ax_72
-	byte SCZO_74
-	byte SZO_77
-	bool C_78
-	byte D_79
-	byte dl_80
-	word16 bp_81
-	word16 cx_82
-	word16 bx_83
-	byte bl_84
-	byte Z_85
-	byte al_86
-	byte cl_87
-	byte bh_88
-	byte CZ_89
-	word16 dx_90
-	byte dh_91
-	cs_581->t006D()
-	struct Eq_3 * cs_581 = cs
-	struct Eq_5 * es_582 = es_13
-	struct Eq_3 * ds_583 = ds_10
-	branch C_78 l0800_001A
-l0800_0022:
-	word16 cx_142
-	cu16 bx_185
-	byte cl_245
-	byte Eq_30::* di_141
-	byte bh_242
-	word16 bx_241
-	bool C_238
-	cu16 Eq_29::* sp_236
-	struct Eq_28 * ds_235
-	struct Eq_29 * ss_208
-	struct Eq_30 * es_129
-	word16 si_231
-	cu16 Eq_29::* sp_210
-	cu8 al_145
-	int16 bx_138
-	word16 sp_92
-	struct Eq_36 * ds_93
-	struct Eq_37 * ss_94
-	struct Eq_38 * es_95
-	word16 ax_96
-	struct Eq_40 * cs_97
-	byte SCZO_98
-	word16 si_99
-	word16 di_100
-	byte SZO_101
-	bool C_102
-	byte D_103
-	byte dl_104
-	word16 bp_105
-	word16 cx_106
-	word16 bx_107
-	byte bl_108
-	byte Z_109
-	byte al_110
-	byte cl_111
-	byte bh_112
-	byte CZ_113
-	word16 dx_114
-	byte dh_115
-	cs->t006D()
-	branch C_102 l0800_0036
-l0800_0027:
-	word16 ax_287
-	struct Eq_62 * cs_288
-	byte SCZO_289
-	byte SZO_292
-	byte D_294
-	byte dl_295
-	word16 bp_296
-	byte bl_299
-	byte Z_300
-	byte al_301
-	byte CZ_304
-	word16 dx_305
-	byte dh_306
-	cs_97->t006D()
-	branch C_238 l0800_004F
-l0800_002B:
-	word16 sp_307
-	struct Eq_85 * ds_308
-	struct Eq_86 * ss_309
-	int16 ax_311
-	struct Eq_88 * cs_312
-	byte SCZO_313
-	word16 si_314
-	byte SZO_316
-	byte C_317
-	byte D_318
-	byte dl_319
-	word16 bp_320
-	word16 bx_322
-	bui8 bl_323
-	byte Z_324
-	byte al_325
-	byte cl_326
-	byte bh_327
-	byte CZ_328
-	word16 dx_329
-	byte dh_330
-	cs_288->t006D()
-	cu8 bl_331 = bl_323 * 0x02 + C_317
-	bx_185 = DPB(bx_322, bl_331, 0)
-	branch bl_331 >= 0x00 l0800_002B
-l0800_0031:
-	branch bl_331 != 0x00 l0800_0063
-l0800_0033:
-	al_145 = bl_331
-	bx_138 = ax_311
-	goto l0800_0068
-l0800_0038:
-	struct Eq_169 Eq_168::* sp_346
-	struct Eq_210 * ds_347
-	struct Eq_168 * ss_348
-	struct Eq_211 * es_349
-	word16 ax_350
-	struct Eq_207 * cs_351
-	byte SCZO_352
-	word16 di_354
-	byte SZO_355
-	byte C_356
-	byte D_357
-	byte dl_358
-	word16 bp_359
-	word16 cx_360
-	word16 bx_361
-	byte bl_362
-	byte Z_363
-	byte al_364
-	byte cl_365
-	bui8 bh_366
-	byte CZ_367
-	word16 dx_368
-	byte dh_369
-	struct Eq_230 Eq_210::* si_353
-	cs_97->t006D()
-	cu8 bh_370 = bh_366 * 0x02 + C_356
-	branch bh_370 < 0x00 l0800_0076
-l0800_003E:
-	word16 sp_377
-	struct Eq_184 * ds_378
-	struct Eq_185 * ss_379
-	struct Eq_186 * es_380
-	word16 ax_381
-	struct Eq_188 * cs_382
-	byte SCZO_383
-	word16 si_384
-	word16 di_385
-	byte SZO_386
-	bool C_387
-	byte D_388
-	byte dl_389
-	word16 bp_390
-	word16 cx_391
-	word16 bx_392
-	byte bl_393
-	byte Z_394
-	byte al_395
-	byte cl_396
-	byte bh_397
-	byte CZ_398
-	word16 dx_399
-	byte dh_400
-	cs_351->t006D()
-	branch C_387 l0800_0038
-l0800_0042:
-	word16 sp_401
-	struct Eq_240 * ds_402
-	struct Eq_241 * ss_403
-	struct Eq_242 * es_404
-	word16 ax_405
-	struct Eq_244 * cs_406
-	byte SCZO_407
-	word16 si_408
-	word16 di_409
-	byte SZO_410
-	byte C_411
-	byte D_412
-	byte dl_413
-	word16 bp_414
-	word16 cx_415
-	word16 bx_416
-	byte bl_417
-	byte Z_418
-	byte al_419
-	byte cl_420
-	byte bh_421
-	byte CZ_422
-	word16 dx_423
-	byte dh_424
-	cs_382->t006D()
-	word16 ax_436
-	struct Eq_266 * cs_437
-	byte SCZO_438
-	byte SZO_441
-	bool C_442
-	byte D_443
-	byte dl_444
-	word16 bp_445
-	word16 bx_447
-	byte bl_448
-	byte Z_449
-	byte al_450
-	cu8 bh_452
-	byte CZ_453
-	word16 dx_454
-	byte dh_455
-	cs_406->t006D()
-	branch C_442 l0800_0042
-l0800_004A:
-	bh_242 = bh_452 - 0x03
-	bx_241 = DPB(bx_447, bh_452 - 0x03, 8)
-	C_238 = cond(bh_452 - 0x03)
-	branch bh_452 < 0x03 l0800_0061
+	es_576->*di_17 = ds_577->*si_16;
+	do
+	{
+		word16 sp_68;
+		struct Eq_126 * ss_70;
+		word16 ax_72;
+		byte SCZO_74;
+		byte SZO_77;
+		bool C_78;
+		byte D_79;
+		byte dl_80;
+		word16 bp_81;
+		word16 cx_82;
+		word16 bx_83;
+		byte bl_84;
+		byte Z_85;
+		byte al_86;
+		byte cl_87;
+		byte bh_88;
+		byte CZ_89;
+		word16 dx_90;
+		byte dh_91;
+		cs_575->t006D();
+		struct Eq_3 * cs_575 = cs;
+		struct Eq_5 * es_576 = es_13;
+		struct Eq_3 * ds_577 = ds_10;
+		if (C_78)
+			goto l0800_001A;
+		word16 cx_142;
+		cu16 bx_185;
+		byte cl_245;
+		byte Eq_30::* di_141;
+		byte bh_242;
+		word16 bx_241;
+		bool C_238;
+		cu16 Eq_29::* sp_236;
+		struct Eq_28 * ds_235;
+		struct Eq_29 * ss_208;
+		struct Eq_30 * es_129;
+		bcu8 Eq_28::* si_231;
+		cu16 Eq_29::* sp_210;
+		cu8 al_145;
+		int16 bx_138;
+		word16 sp_92;
+		struct Eq_36 * ds_93;
+		struct Eq_37 * ss_94;
+		struct Eq_38 * es_95;
+		word16 ax_96;
+		struct Eq_40 * cs_97;
+		byte SCZO_98;
+		word16 si_99;
+		word16 di_100;
+		byte SZO_101;
+		bool C_102;
+		byte D_103;
+		byte dl_104;
+		word16 bp_105;
+		word16 cx_106;
+		word16 bx_107;
+		byte bl_108;
+		byte Z_109;
+		byte al_110;
+		byte cl_111;
+		byte bh_112;
+		byte CZ_113;
+		word16 dx_114;
+		byte dh_115;
+		cs->t006D();
+		if (C_102)
+		{
+			do
+			{
+				struct Eq_160 Eq_159::* sp_340;
+				struct Eq_201 * ds_341;
+				struct Eq_159 * ss_342;
+				struct Eq_202 * es_343;
+				word16 ax_344;
+				struct Eq_198 * cs_345;
+				byte SCZO_346;
+				word16 di_348;
+				byte SZO_349;
+				byte C_350;
+				byte D_351;
+				byte dl_352;
+				word16 bp_353;
+				word16 cx_354;
+				word16 bx_355;
+				byte bl_356;
+				byte Z_357;
+				byte al_358;
+				byte cl_359;
+				bui8 bh_360;
+				byte CZ_361;
+				word16 dx_362;
+				byte dh_363;
+				struct Eq_221 Eq_201::* si_347;
+				cs_97->t006D();
+				cu8 bh_364 = bh_360 * 0x02 + C_350;
+				if (bh_364 < 0x00)
+				{
+					struct Eq_158 * bx_463 = (ss_342->*sp_340).ptr0002;
+					cui16 ax_468 = DPB((ss_342->*sp_340).w0000, 232, 0);
+					union Eq_170 Eq_158::* di_470 = &Eq_158::t0000;
+					word16 cx_473 = 0x10B3;
+					do
+					{
+						if (cx_473 != 0x00)
+						{
+							di_470 = (union Eq_170 Eq_158::*) ((char *) di_470 + 0x01);
+							cx_473 = cx_473 - 0x01;
+							if (232 == bx_463->*di_470)
+								continue;
+						}
+						if (cx_473 == 0x00)
+							break;
+						bx_463->*di_470 = bx_463->*di_470 - di_470;
+						word16 cx_565 = cx_473 - 0x01;
+						di_470 = (union Eq_170 Eq_158::*) ((char *) di_470 + 0x02);
+						cx_473 = cx_565 - 0x01;
+					} while (cx_565 != 0x00 && cx_565 != 0x01);
+					struct Eq_158 * dx_488 = bx_463;
+					byte dh_490 = SLICE(bx_463, byte, 8);
+					Eq_312 di_491 = 0x00;
+					word16 cx_494 = 22;
+					do
+					{
+						cui16 ax_506 = DPB(ax_468, (ds_341->*si_347).t0000, 0);
+						si_347 = si_347 + 0x01;
+						ax_468 = ax_506 & 0xFF;
+						if ((ax_506 & 0xFF) == 0x00)
+						{
+							ax_468 = (ds_341->*si_347).t0000;
+							si_347 = si_347 + 0x02;
+						}
+						di_491 = (word16) di_491 + ax_468;
+						if (di_491 < 0x00)
+						{
+							dh_490 = dh_490 + 0x10;
+							dx_488 = DPB(dx_488, dh_490, 8);
+						}
+						dx_488->*di_491 = bx_463 + dx_488->*di_491 / 0x02;
+						cx_494 = cx_494 - 0x01;
+					} while (cx_494 != 0x00);
+					word16 sp_531;
+					struct Eq_370 * ds_532;
+					struct Eq_371 * ss_533;
+					struct Eq_372 * es_534;
+					word16 ax_535;
+					struct Eq_374 * cs_536;
+					byte SCZO_537;
+					word16 si_538;
+					word16 di_539;
+					byte SZO_540;
+					byte C_541;
+					byte D_542;
+					byte dl_543;
+					word16 bp_544;
+					word16 cx_545;
+					word16 bx_546;
+					byte bl_547;
+					byte Z_548;
+					byte al_549;
+					byte cl_550;
+					byte bh_551;
+					byte CZ_552;
+					word16 dx_553;
+					byte dh_554;
+					fn08D1_067D();
+					return;
+				}
+				word16 sp_371;
+				struct Eq_175 * ds_372;
+				struct Eq_176 * ss_373;
+				struct Eq_177 * es_374;
+				word16 ax_375;
+				struct Eq_179 * cs_376;
+				byte SCZO_377;
+				word16 si_378;
+				word16 di_379;
+				byte SZO_380;
+				bool C_381;
+				byte D_382;
+				byte dl_383;
+				word16 bp_384;
+				word16 cx_385;
+				word16 bx_386;
+				byte bl_387;
+				byte Z_388;
+				byte al_389;
+				byte cl_390;
+				byte bh_391;
+				byte CZ_392;
+				word16 dx_393;
+				byte dh_394;
+				cs_345->t006D();
+			} while (C_381);
+			do
+			{
+				word16 sp_395;
+				struct Eq_231 * ds_396;
+				struct Eq_232 * ss_397;
+				struct Eq_233 * es_398;
+				word16 ax_399;
+				struct Eq_235 * cs_400;
+				byte SCZO_401;
+				word16 si_402;
+				word16 di_403;
+				byte SZO_404;
+				byte C_405;
+				byte D_406;
+				byte dl_407;
+				word16 bp_408;
+				word16 cx_409;
+				word16 bx_410;
+				byte bl_411;
+				byte Z_412;
+				byte al_413;
+				byte cl_414;
+				byte bh_415;
+				byte CZ_416;
+				word16 dx_417;
+				byte dh_418;
+				cs_376->t006D();
+				word16 ax_430;
+				struct Eq_257 * cs_431;
+				byte SCZO_432;
+				byte SZO_435;
+				bool C_436;
+				byte D_437;
+				byte dl_438;
+				word16 bp_439;
+				word16 bx_441;
+				byte bl_442;
+				byte Z_443;
+				byte al_444;
+				cu8 bh_446;
+				byte CZ_447;
+				word16 dx_448;
+				byte dh_449;
+				cs_400->t006D();
+			} while (C_436);
+			bh_242 = bh_446 - 0x03;
+			bx_241 = DPB(bx_441, bh_446 - 0x03, 8);
+			C_238 = cond(bh_446 - 0x03);
+			if (bh_446 >= 0x03)
+			{
 l0800_004F:
-	bcu8 Eq_28::* si_249 = si_231 + 0x01
-	branch C_238 l0800_0058
-	bcu8 bl_250 = ds_235->*si_249
-	bx_185 = DPB(bx_241, bl_250, 0)
-	branch C_238 l0800_0058
-l0800_0054:
-	bx_185 = DPB(bx_241, bl_250 >> 0x02, 0)
-	cx_142 = DPB(cx_142, cl_245 - bh_242 - (bl_250 >> 0x01 < 0x00) - bh_242 - (bl_250 >> 0x02 < 0x00), 0)
-l0800_0058:
-	branch bx_185 > 0x7F l0800_005F
-l0800_005D:
-	cx_142 = cx_142 + 0x02
-l0800_005F:
-	sp_210 = sp_236 + 0x01
-	goto l0800_0062
-l0800_0061:
-	bx_185 = ss_208->*sp_236
-	sp_210 = sp_236 + 0x01
-l0800_0062:
-	ss_208->*(sp_210 - 0x02) = bx_185
+				bcu8 bl_248 = ds_235->*si_231;
+				bx_185 = DPB(bx_241, bl_248, 0);
+				if (!C_238)
+				{
+					bx_185 = DPB(bx_241, bl_248 >> 0x01, 0);
+					cx_142 = DPB(cx_142, cl_245 - bh_242 - (bl_248 >> 0x01 < 0x00), 0);
+				}
+				if (bx_185 <= 0x7F)
+					cx_142 = cx_142 + 0x02;
+				sp_210 = sp_236 + 0x01;
+			}
+			else
+			{
+				bx_185 = ss_208->*sp_236;
+				sp_210 = sp_236 + 0x01;
+			}
+			ss_208->*(sp_210 - 0x02) = bx_185;
 l0800_0063:
-	bx_138 = -bx_185
-l0800_0065:
-	al_145 = di_141[bx_138]
+			bx_138 = -bx_185;
+			break;
+		}
+		word16 ax_281;
+		struct Eq_62 * cs_282;
+		byte SCZO_283;
+		byte SZO_286;
+		byte D_288;
+		byte dl_289;
+		word16 bp_290;
+		byte bl_293;
+		byte Z_294;
+		byte al_295;
+		byte CZ_298;
+		word16 dx_299;
+		byte dh_300;
+		cs_97->t006D();
+		if (C_238)
+			goto l0800_004F;
+		do
+		{
+			word16 sp_301;
+			struct Eq_82 * ds_302;
+			struct Eq_83 * ss_303;
+			int16 ax_305;
+			struct Eq_85 * cs_306;
+			byte SCZO_307;
+			word16 si_308;
+			byte SZO_310;
+			byte C_311;
+			byte D_312;
+			byte dl_313;
+			word16 bp_314;
+			word16 bx_316;
+			bui8 bl_317;
+			byte Z_318;
+			byte al_319;
+			byte cl_320;
+			byte bh_321;
+			byte CZ_322;
+			word16 dx_323;
+			byte dh_324;
+			cs_282->t006D();
+			cu8 bl_325 = bl_317 * 0x02 + C_311;
+			bx_185 = DPB(bx_316, bl_325, 0);
+		} while (bl_325 >= 0x00);
+		if (bl_325 != 0x00)
+			goto l0800_0063;
+		al_145 = bl_325;
+		bx_138 = ax_305;
 l0800_0068:
-	es_129->*di_141 = al_145
-	di_141 = di_141 + 0x01
-	cx_142 = cx_142 - 0x01
-	branch cx_142 != 0x00 l0800_0065
-	goto l0800_001B
-l0800_0076:
-	struct Eq_167 * bx_469 = (ss_348->*sp_346).ptr0002
-	cui16 ax_474 = DPB((ss_348->*sp_346).w0000, 232, 0)
-	union Eq_179 Eq_167::* di_476 = &Eq_167::t0000
-	word16 cx_479 = 0x10B3
-l0800_0081:
-	branch cx_479 == 0x00 l0800_0083
-l0800_0081_1:
-	di_476 = (union Eq_179 Eq_167::*) ((char *) di_476 + 0x01)
-	cx_479 = cx_479 - 0x01
-	branch 232 == bx_469->*di_476 l0800_0081
-l0800_0083:
-	branch cx_479 == 0x00 l0800_008C
-l0800_0085:
-	bx_469->*di_476 = bx_469->*di_476 - di_476
-	word16 cx_571 = cx_479 - 0x01
-	di_476 = (union Eq_179 Eq_167::*) ((char *) di_476 + 0x02)
-	cx_479 = cx_571 - 0x01
-	branch cx_571 != 0x00 && cx_571 != 0x01 l0800_0081
-l0800_008C:
-	struct Eq_167 * dx_494 = bx_469
-	byte dh_496 = SLICE(bx_469, byte, 8)
-	Eq_321 di_497 = 0x00
-	word16 cx_500 = 22
-l0800_0093:
-	cui16 ax_512 = DPB(ax_474, (ds_347->*si_353).t0000, 0)
-	si_353 = si_353 + 0x01
-	ax_474 = ax_512 & 0xFF
-	branch (ax_512 & 0xFF) != 0x00 l0800_009A
-l0800_0099:
-	ax_474 = (ds_347->*si_353).t0000
-	si_353 = si_353 + 0x02
-l0800_009A:
-	di_497 = (word16) di_497 + ax_474
-	branch di_497 >= 0x00 l0800_00A1
-l0800_009E:
-	dh_496 = dh_496 + 0x10
-	dx_494 = DPB(dx_494, dh_496, 8)
-l0800_00A1:
-	dx_494->*di_497 = bx_469 + dx_494->*di_497 / 0x02
-	cx_500 = cx_500 - 0x01
-	branch cx_500 != 0x00 l0800_0093
-l0800_00A8:
-	word16 sp_537
-	struct Eq_379 * ds_538
-	struct Eq_380 * ss_539
-	struct Eq_381 * es_540
-	word16 ax_541
-	struct Eq_383 * cs_542
-	byte SCZO_543
-	word16 si_544
-	word16 di_545
-	byte SZO_546
-	byte C_547
-	byte D_548
-	byte dl_549
-	word16 bp_550
-	word16 cx_551
-	word16 bx_552
-	byte bl_553
-	byte Z_554
-	byte al_555
-	byte cl_556
-	byte bh_557
-	byte CZ_558
-	word16 dx_559
-	byte dh_560
-	fn08D1_067D()
-	return
-fn0800_0000_exit:
+		es_129->*di_141 = al_145;
+		di_141 = di_141 + 0x01;
+		cx_142 = cx_142 - 0x01;
+	} while (cx_142 == 0x00);
+	al_145 = di_141[bx_138];
+	goto l0800_0068;
 }
 

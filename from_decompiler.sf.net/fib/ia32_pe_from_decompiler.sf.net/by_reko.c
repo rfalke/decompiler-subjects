@@ -13,8 +13,8 @@ word32 fn00401000(int32 dwArg04)
 		return 0x01;
 }
 
-// 00401050: Register uint32 fn00401050(Stack word32 dwArg04, Stack ptr32 dwArg08, Stack word32 dwArg0C)
-uint32 fn00401050(word32 dwArg04, ptr32 dwArg08, word32 dwArg0C)
+// 00401050: Register uint32 fn00401050(Stack uint32 dwArg04, Stack (ptr byte) dwArg08, Stack uint32 dwArg0C)
+uint32 fn00401050(uint32 dwArg04, byte * dwArg08, uint32 dwArg0C)
 {
 	byte * ecx_25 = dwArg08;
 	uint32 eax_23 = dwArg0C;
@@ -37,7 +37,7 @@ uint32 fn00401050(word32 dwArg04, ptr32 dwArg08, word32 dwArg0C)
 	return eax_23;
 }
 
-// 004010A0: Register Eq_64 Win32CrtStartup()
+// 004010A0: Register Eq_60 Win32CrtStartup()
 DWORD Win32CrtStartup()
 {
 	return fn00401050(fn00401000(0x09) + fn00401000(0x08), fp - 100, 100);

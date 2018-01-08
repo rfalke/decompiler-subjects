@@ -36,9 +36,9 @@ Eq_43: (union "Eq_43" (int32 u0) (byte u1))
 	T_55 (in 1 : int32)
 	T_57 (in Mem41[0x10010A08:byte] : byte)
 Eq_87: (fn void ())
-	T_87 (in printf@@GLIBC_2.0 : ptr32)
-	T_88 (in signature of printf@@GLIBC_2.0 : void)
-	T_91 (in printf@@GLIBC_2.0 : ptr32)
+	T_87 (in printf : ptr32)
+	T_88 (in signature of printf : void)
+	T_91 (in printf : ptr32)
 Eq_118: (struct "Eq_118" (FFFF8000 word32 dwFFFF8000) (FFFF8004 int32 dwFFFF8004))
 	T_118 (in r30_17 : (ptr Eq_118))
 	T_120 (in r5_15 + 0x100004FC : word32)
@@ -751,15 +751,15 @@ T_86: (in dwArg04 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
-T_87: (in printf@@GLIBC_2.0 : ptr32)
+T_87: (in printf : ptr32)
   Class: Eq_87
   DataType: (ptr Eq_87)
   OrigDataType: (ptr (fn T_89 ()))
-T_88: (in signature of printf@@GLIBC_2.0 : void)
+T_88: (in signature of printf : void)
   Class: Eq_87
   DataType: (ptr Eq_87)
   OrigDataType: 
-T_89: (in printf@@GLIBC_2.0() : void)
+T_89: (in printf() : void)
   Class: Eq_89
   DataType: void
   OrigDataType: void
@@ -767,11 +767,11 @@ T_90: (in dwArg04 : word32)
   Class: Eq_90
   DataType: word32
   OrigDataType: word32
-T_91: (in printf@@GLIBC_2.0 : ptr32)
+T_91: (in printf : ptr32)
   Class: Eq_87
   DataType: (ptr Eq_87)
   OrigDataType: (ptr (fn T_92 ()))
-T_92: (in printf@@GLIBC_2.0() : void)
+T_92: (in printf() : void)
   Class: Eq_89
   DataType: void
   OrigDataType: void

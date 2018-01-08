@@ -1,12 +1,2 @@
 Using options:
 000010AA: warning: Call target address 000301C4 is invalid.
-000010A2: error: An error occurred while processing the statement branch 0x000301C4 - a2_148 < 0x00000000 l0000101A.
-    Pulling difference ptr32 and (ptr (struct 0001 (0 (union (byte u1) ((arr T_232) u0) (T_129 u2)) u0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40c3c550 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c39070 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40bc0f40 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c39070 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40bc0f40 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x40c3cda0 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x40be1d00 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40c37c70 + 0x00289> in <filename unknown>:0 

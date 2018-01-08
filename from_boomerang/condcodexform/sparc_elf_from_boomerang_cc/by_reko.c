@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 00010958: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack word32 dwArg40)
-void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
+// 00010958: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack int32 dwArg40)
+void _start(word32 g1, Eq_3 * o7, int32 dwArg40)
 {
 	globals->ptr20E60 = fp + 0x44;
 	globals->ptr20E3C = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
@@ -27,49 +27,41 @@ void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
 // 00010A5C: void func1()
 void func1()
 {
-	return;
 }
 
 // 00010A74: void func2()
 void func2()
 {
-	return;
 }
 
 // 00010A8C: void func3()
 void func3()
 {
-	return;
 }
 
 // 00010AA4: void func4()
 void func4()
 {
-	return;
 }
 
 // 00010ABC: void func5()
 void func5()
 {
-	return;
 }
 
 // 00010AD4: void func6()
 void func6()
 {
-	return;
 }
 
 // 00010AEC: void func7()
 void func7()
 {
-	return;
 }
 
 // 00010B04: void func8()
 void func8()
 {
-	return;
 }
 
 // 00010B0C: void main(Register int32 o0)
@@ -102,47 +94,24 @@ void main(int32 o0)
 	bool Z_38;
 	if (o0_154 != 0x00)
 	{
-		if (o0_150 == 68188)
+		if (o0_150 != 68188 || (o3_145 != 68236 || (o2_140 != 68284 || o1_135 != 68332)))
 		{
-			if (o3_145 == 68236)
-			{
-				if (o2_140 == 68284)
-				{
-					if (o1_135 == 68332)
-					{
-						i1_100 = 0x01;
-						goto l00010C40;
-					}
-				}
-			}
+			i1_100 = 0x00;
+			Z_38 = cond(0x00);
+			goto l00010C44;
 		}
+		i1_100 = 0x01;
+	}
+	else if (o0_150 == 68212 && (o3_145 == 0x00010AA4 && (o2_140 == 68308 && o1_135 == 0x00010B04)))
+		i1_100 = 0x01;
+	else
 		i1_100 = 0x00;
-		Z_38 = cond(0x00);
-		goto l00010C44;
-	}
-	if (o0_150 == 68212)
-	{
-		if (o3_145 == 0x00010AA4)
-		{
-			if (o2_140 == 68308)
-			{
-				if (o1_135 == 0x00010B04)
-				{
-					i1_100 = 0x01;
-l00010C40:
-					Z_38 = cond(i1_100);
+	Z_38 = cond(i1_100);
 l00010C44:
-					if (!Z_38)
-						printf();
-					else
-						printf();
-					return;
-				}
-			}
-		}
-	}
-	i1_100 = 0x00;
-	goto l00010C40;
+	if (!Z_38)
+		printf();
+	else
+		printf();
 }
 
 // 00010C80: void _init(Register (ptr Eq_3) o7)
@@ -154,10 +123,10 @@ void _init(Eq_3 * o7)
 // 00010C90: void fn00010C90(Register (ptr Eq_3) o7)
 void fn00010C90(Eq_3 * o7)
 {
-	struct Eq_106 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_105 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -184,19 +153,19 @@ void fn00010C90(Eq_3 * o7)
 	}
 }
 
-// 00010CB8: void _fini(Register (ptr Eq_137) o7)
-void _fini(Eq_137 * o7)
+// 00010CB8: void _fini(Register (ptr Eq_136) o7)
+void _fini(Eq_136 * o7)
 {
 	fn00010CC8(o7);
 }
 
-// 00010CC8: void fn00010CC8(Register (ptr Eq_137) o7)
-void fn00010CC8(Eq_137 * o7)
+// 00010CC8: void fn00010CC8(Register (ptr Eq_136) o7)
+void fn00010CC8(Eq_136 * o7)
 {
-	struct Eq_142 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_141 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -226,37 +195,29 @@ void fn00010CC8(Eq_137 * o7)
 // 00020D10: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020D10_entry:
-l00020D10:
-l00020D10:
-fn00020D10_exit:
 }
 
 // 00020D40: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020D4C: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020D58: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020D64: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

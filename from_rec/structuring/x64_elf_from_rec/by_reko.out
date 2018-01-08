@@ -1,22 +1,4 @@
 Using options:
 00000000004003E0: error: The method or operation is not implemented.
-0000000000400471: error: An error occurred while processing instruction at address 0000000000400471.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x403a2b70 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x403a2800 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4039a9c0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x403a1580 + 0x0018c> in <filename unknown>:0 
-00000000004005A8: error: An error occurred while processing the statement branch 0x0000000000600794 - 0x0000000000600794 >> 0x0000000000000003 == 0x0000000000000000 l00000000004005C6.
-    Pulling difference ptr64 and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x403ec510 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x403d67a0 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4035ed20 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x403d67a0 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4035ed20 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x403d67a0 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4035ed20 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x403e9a40 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x4038cb40 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x403e27a0 + 0x00289> in <filename unknown>:0 
 006009C0: warning: Expected sizes of arrays to have been determined by now
 006009C0: warning: Expected sizes of arrays to have been determined by now

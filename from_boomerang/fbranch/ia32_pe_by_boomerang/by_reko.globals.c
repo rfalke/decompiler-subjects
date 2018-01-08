@@ -5,19 +5,19 @@
 #include "subject.h"
 
 byte g_bFFBF4B24;
-Eq_12166 g_tFFBF4C08;
-Eq_12235 g_t0001;
-Eq_11799 g_t0041;
-Eq_11799 g_t005A;
-Eq_11799 g_t0061;
-Eq_11799 g_t007A;
-Eq_12235 g_t00FF;
-Eq_11799 g_t0100;
+Eq_11981 g_tFFBF4C08;
+Eq_12055 g_t0001;
+Eq_10689 g_t0004;
+Eq_4 g_t0014;
+Eq_11611 g_t0041;
+Eq_11611 g_t005A;
+Eq_11611 g_t0061;
+Eq_11611 g_t007A;
+Eq_12055 g_t00FF;
+Eq_11611 g_t0100;
+word32 * g_ptr1010;
 <anonymous> g_t401164 = <code>;
 <anonymous> * g_a404C40[] = 
-	{
-	};
-<anonymous> * g_a404D3C[] = 
 	{
 	};
 <anonymous> * g_a404DCC[] = 
@@ -30,16 +30,13 @@ Eq_11799 g_t0100;
 <anonymous> * g_a405A60[] = 
 	{
 	};
-<anonymous> * g_a405B5C[] = 
-	{
-	};
 <anonymous> * g_a405BEC[] = 
 	{
 	};
 <anonymous> * g_a405C98[] = 
 	{
 	};
-Eq_19869 g_a409708[] = 
+Eq_20019 g_a409708[] = 
 	{
 	};
 word32 g_dw40B000 = 0x00000000;
@@ -53,12 +50,12 @@ word32 g_dw40B030 = 0x00000000;
 <anonymous> * g_ptr40B0AC = &g_t401164;
 <anonymous> * g_ptr40B0B8 = fn004031EB;
 word32 g_dw40B0BC = 0x00000001;
-Eq_1234 g_t40B0C0 = 
+Eq_1206 g_t40B0C0 = 
 	{
 		4231508
 	};
 word32 g_dw40B0C4 = 0x00409144;
-Eq_763 g_t40B0E8 = 
+Eq_185 g_t40B0E8 = 
 	{
 		
 		{
@@ -76,7 +73,7 @@ Eq_763 g_t40B0E8 =
 		},
 		0x00000000,
 	};
-Eq_763 g_t40B108 = 
+Eq_185 g_t40B108 = 
 	{
 		
 		{
@@ -98,20 +95,23 @@ Eq_763 g_t40B108 =
 <anonymous> * g_ptr40B34C = &g_t4051BD;
 <anonymous> * g_ptr40B350 = &g_t4051BD;
 <anonymous> * g_ptr40B354 = &g_t4051BD;
-Eq_19881 g_a40B360[] = 
+Eq_20031 g_a40B360[] = 
 	{
 	};
-Eq_9654 g_t40B480 = 
+Eq_9521 g_t40B480 = 
 	{
 		0x80,
 	};
-Eq_19869 (* g_ptr40B490)[] = &g_a409708;
+Eq_20019 (* g_ptr40B490)[] = &g_a409708;
 Eq_4 g_t40B498 = 
 	{
 		0x4E
 	};
-int32 g_dw40B4A0 = 1;
-Eq_4225 g_t40B4A4 = 
+Eq_402 g_t40B4A0 = 
+	{
+		&g_t0001
+	};
+Eq_4166 g_t40B4A4 = 
 	{
 		0x2E
 	};
@@ -123,7 +123,7 @@ byte g_a40B4E0[5] =
 		0x08,
 		0x00,
 	};
-Eq_19912 g_a40B4E8[6] = 
+Eq_20059 g_a40B4E8[6] = 
 	{
 		
 		{
@@ -168,23 +168,26 @@ Eq_19912 g_a40B4E8[6] =
 			},
 		},
 	};
-Eq_19983 g_a40B5F8[] = 
+Eq_20129 g_a40B5F8[] = 
 	{
 	};
-Eq_19982 g_a40B5FC[] = 
+Eq_20128 g_a40B5FC[] = 
 	{
 	};
-Eq_4 g_t40BA28 = 
-	{
-		0x00
-	};
+union Eq_4 * g_ptr40BA28 = null;
 Eq_4 g_t40BA30 = 
 	{
 		0x00
 	};
 word32 g_dw40BA3C = 0x00000000;
-uint32 g_dw40BA50 = 0x00000000;
-uint32 g_dw40BA54 = 0x00000000;
+Eq_4 g_t40BA50 = 
+	{
+		0x00
+	};
+Eq_4 g_t40BA54 = 
+	{
+		0x00
+	};
 word32 g_dw40BA5C = 0x00000000;
 Eq_4 g_t40BA60 = 
 	{
@@ -213,11 +216,11 @@ word32 g_dw40BA9C = 0x00000000;
 <anonymous> * g_ptr40BAA0 = null;
 byte g_b40BBAC = 0x00;
 word32 g_dw40BBB0 = 0x00000000;
-Eq_6913 g_t40BBE0 = null;
-Eq_6913 g_t40BBE4 = null;
-Eq_6913 g_t40BBE8 = null;
-Eq_6913 g_t40BBEC = null;
-Eq_6913 g_t40BBF0 = null;
+Eq_6776 g_t40BBE0 = null;
+Eq_6776 g_t40BBE4 = null;
+Eq_6776 g_t40BBE8 = null;
+Eq_6776 g_t40BBEC = null;
+Eq_6776 g_t40BBF0 = null;
 word32 g_dw40BBF4 = 0x00000000;
 <anonymous> * g_ptr40BC44 = null;
 word32 g_dw40BC48 = 0x00000000;
@@ -250,13 +253,13 @@ Eq_4 g_t40BC88 =
 		0x00
 	};
 ui32 g_dw40BC8C = 0x00000000;
-Eq_12721 g_t40BC90 = 
+Eq_12509 g_t40BC90 = 
 	{
 		0
 	};
 word32 g_dw40BC94 = 0x00000000;
 word32 g_dw40BC98 = 0x00000000;
-Eq_11747 g_a40BCA0[] = 
+Eq_11559 g_a40BCA0[] = 
 	{
 	};
 byte g_a40BCA1[257] = 
@@ -784,7 +787,7 @@ Eq_4 g_t40BDA4 =
 word32 g_dw40BDB0 = 0x00000000;
 word32 g_dw40BDB4 = 0x00000000;
 word32 g_dw40BDB8 = 0x00000000;
-Eq_19901 g_a40BDC0[257] = 
+Eq_20048 g_a40BDC0[257] = 
 	{
 		
 		{
@@ -2599,12 +2602,12 @@ Eq_4 g_t40BEE0 =
 	{
 		0x00
 	};
-Eq_4 g_a40BEE4[] = 
-	{
-	};
 word32 g_dw40BFE0 = 0x00000000;
-<anonymous> ** g_ptr40BFE4 = null;
-<anonymous> * g_ptr40BFE8 = null;
+union Eq_4 * g_ptr40BFE4 = null;
+Eq_4 g_t40BFE8 = 
+	{
+		0x00
+	};
 word32 g_dw40BFEC = 0x00000000;
 Eq_4 g_t40D004 = 
 	{

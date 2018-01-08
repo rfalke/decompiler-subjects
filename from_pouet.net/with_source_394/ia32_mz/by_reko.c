@@ -8,7 +8,6 @@
 void fn1676_0061(byte al)
 {
 	bios_video_set_mode(0x13);
-	return;
 }
 
 // 1676:0068: Register byte fn1676_0068(Register byte al)
@@ -21,97 +20,95 @@ byte fn1676_0068(byte al)
 // 1676:006F: void fn1676_006F()
 void fn1676_006F()
 {
-	bios_video_set_block_of_DAC_registers(0x00, 0xFF, 0x0800, 0xD5C0);
-	return;
+	bios_video_set_block_of_DAC_registers(0x00, 0xFF, seg0800, 0xD5C0);
 }
 
-// 1676:0084: Register selector fn1676_0084()
-selector fn1676_0084()
+// 1676:0084: Register (ptr Eq_2) fn1676_0084()
+Eq_2 * fn1676_0084()
 {
-	word16 si_10 = 0x08C0;
-	word16 di_11 = 0x3200;
+	byte Eq_2::* si_10 = Eq_2::a08C0;
+	byte Eq_36::* di_11 = Eq_36::a3200;
 	word16 cx_12 = 0x9100;
 	while (cx_12 != 0x00)
 	{
-		Mem15[0xA000:di_11 + 0x00:byte] = Mem0[0x0800:si_10 + 0x00:byte];
+		0xA000->*di_11 = seg0800->*si_10;
 		si_10 = si_10 + 0x01;
 		di_11 = di_11 + 0x01;
 		cx_12 = cx_12 - 0x01;
 	}
-	return 0x0800;
+	return seg0800;
 }
 
-// 1676:009B: Register selector fn1676_009B()
-selector fn1676_009B()
+// 1676:009B: Register (ptr Eq_2) fn1676_009B()
+Eq_2 * fn1676_009B()
 {
-	word16 bx_12 = Mem0[0x0800:56162:word16] + 0x08C0 + (word16) ((Mem0[0x0800:56164:word16] - 0x28) *u 0x0140);
-	word16 bx_21 = Mem0[0x0800:56162:word16] + (word16) (Mem0[0x0800:56164:word16] *u 0x0140);
-	Mem24[0x0800:~0x2493:word16] = bx_12;
-	Mem25[0x0800:~0x2491:word16] = bx_21;
-	Mem26[0x0800:56158:word16] = 0x00;
-	word16 si_13 = bx_12;
-	word16 di_23 = bx_21;
+	byte Eq_2::* bx_12 = seg0800->wDB62 + 0x08C0 + (word16) ((seg0800->wDB64 - 0x28) * 0x0140);
+	byte Eq_36::* bx_21 = seg0800->wDB62 + (word16) (seg0800->wDB64 * 0x0140);
+	seg0800->ptrDB6C = bx_12;
+	seg0800->ptrDB6E = bx_21;
+	seg0800->wDB5E = 0x00;
+	byte Eq_2::* si_13 = bx_12;
+	byte Eq_36::* di_23 = bx_21;
 	do
 	{
 		word16 cx_35 = 0x39;
 		while (cx_35 != 0x00)
 		{
-			Mem40[0xA000:di_23 + 0x00:byte] = Mem26[0x0800:si_13 + 0x00:byte];
+			0xA000->*di_23 = seg0800->*si_13;
 			si_13 = si_13 + 0x01;
 			di_23 = di_23 + 0x01;
 			cx_35 = cx_35 - 0x01;
 		}
-		Mem45[0x0800:56158:word16] = Mem26[0x0800:56158:word16] + 0x01;
-		word16 ax_49 = (word16) (Mem45[0x0800:56158:word16] *u 0x0140);
-		si_13 = Mem45[0x0800:~0x2493:word16] + ax_49;
-		di_23 = Mem45[0x0800:~0x2491:word16] + ax_49;
-	} while (Mem45[0x0800:56158:word16] != 0x06);
-	Mem56[0x0800:56158:word16] = 0x00;
-	return 0x0800;
+		seg0800->wDB5E = seg0800->wDB5E + 0x01;
+		word16 ax_49 = (word16) (seg0800->wDB5E * 0x0140);
+		si_13 = seg0800->ptrDB6C + ax_49;
+		di_23 = seg0800->ptrDB6E + ax_49;
+	} while (seg0800->wDB5E != 0x06);
+	seg0800->wDB5E = 0x00;
+	return seg0800;
 }
 
-// 1676:0104: Register selector fn1676_0104()
-selector fn1676_0104()
+// 1676:0104: void fn1676_0104()
+void fn1676_0104()
 {
-	word16 bx_13 = Mem0[0x0800:56162:word16] + (word16) (Mem0[0x0800:56164:word16] *u 0x0140);
-	Mem16[0x0800:~0x2493:word16] = 0x00;
-	Mem17[0x0800:~0x2491:word16] = bx_13;
-	Mem18[0x0800:56158:word16] = 0x00;
-	word16 si_27 = 0x00;
-	word16 di_15 = bx_13;
+	byte Eq_36::* bx_13 = seg0800->wDB62 + (word16) (seg0800->wDB64 * 0x0140);
+	seg0800->ptrDB6C = &Eq_2::b0000;
+	seg0800->ptrDB6E = bx_13;
+	seg0800->wDB5E = 0x00;
+	byte Eq_2::* si_27 = &Eq_2::b0000;
+	byte Eq_36::* di_15 = bx_13;
 	do
 	{
 		word16 cx_31 = 0x39;
 		do
 		{
-			byte al_38 = Mem18[0x0800:si_27 + 0x00:byte];
+			byte al_38 = seg0800->*si_27;
 			if (al_38 != 0x00)
-				Mem60[0xA000:di_15 + 0x00:byte] = al_38;
+				0xA000->*di_15 = al_38;
 			si_27 = si_27 + 0x01;
 			di_15 = di_15 + 0x01;
 			cx_31 = cx_31 - 0x01;
 		} while (cx_31 != 0x00);
-		Mem48[0x0800:56158:word16] = Mem18[0x0800:56158:word16] + 0x01;
-		word16 ax_52 = (word16) (Mem48[0x0800:56158:word16] *u 0x0140);
-		si_27 = Mem48[0x0800:~0x2493:word16] + ax_52;
-		di_15 = Mem48[0x0800:~0x2491:word16] + ax_52;
-	} while (Mem48[0x0800:56158:word16] != 0x06);
-	Mem59[0x0800:56158:word16] = 0x00;
-	return 0x0800;
+		seg0800->wDB5E = seg0800->wDB5E + 0x01;
+		word16 ax_52 = (word16) (seg0800->wDB5E * 0x0140);
+		si_27 = seg0800->ptrDB6C + ax_52;
+		di_15 = seg0800->ptrDB6E + ax_52;
+	} while (seg0800->wDB5E != 0x06);
+	seg0800->wDB5E = 0x00;
 }
 
-// 1676:0165: void fn1676_0165()
-void fn1676_0165()
+// 1676:0165: Register (ptr Eq_2) fn1676_0165()
+Eq_2 * fn1676_0165()
 {
-	word16 di_21 = 0xD840;
-	word16 si_20 = 55362;
+	byte Eq_36::* di_21 = &Eq_36::bFFFFD840;
+	byte Eq_36::* si_20 = &Eq_36::bFFFFD842;
 	byte ah_11 = 0x08;
 	do
 	{
 		word16 cx_22 = 0x013E;
 		while (cx_22 != 0x00)
 		{
-			Mem28[0xA000:di_21 + 0x00:byte] = Mem0[0xA000:si_20 + 0x00:byte];
+			0xA000->*di_21 = 0xA000->*si_20;
 			si_20 = si_20 + 0x01;
 			di_21 = di_21 + 0x01;
 			cx_22 = cx_22 - 0x01;
@@ -120,302 +117,144 @@ void fn1676_0165()
 		si_20 = si_20 + 0x02;
 		ah_11 = ah_11 - 0x01;
 	} while (ah_11 != 0x00);
-	fn1676_0186();
-	return;
+	return fn1676_0186();
 }
 
-// 1676:0186: void fn1676_0186()
-void fn1676_0186()
+// 1676:0186: Register (ptr Eq_2) fn1676_0186()
+Eq_2 * fn1676_0186()
 {
-fn1676_0186_entry:
-	def v3
-	def Mem0
-	def dx
-	def SZO
-	def ah
-	sp_1 = v3
-	ax_2 = 0x0800
-	ds_3 = 0x0800
-	si_4 = 0xE055
-	si_6 = 0xE055 + Mem0[0x0800:~0x2495:word16]
-	ax_7 = Mem0[0x0800:si_6 + 0x00:word16]
-	dx_ax_9 = SEQ(dx, ax_7) (alias)
-	al_10 = (byte) ax_7 (alias)
-	SCZO_11 = cond(al_10 - 0x00)
-	Z_12 = SCZO_11 (alias)
-	branch al_10 != 0x00 l1676_01A6
-	goto l1676_0196_thunk_fn1676_0198
-l1676_0186:
-l1676_0196_thunk_fn1676_0198:
-	fn1676_0198(ds)
-	return
-l1676_01A6:
-	SCZO_13 = cond(al_10 - 0x20)
-	Z_14 = SCZO_13 (alias)
-	branch al_10 != 0x20 l1676_01B0
-l1676_01AA:
-	bx_74 = 0x0A00
-	goto l1676_0248
-l1676_01B0:
-	SCZO_76 = cond(al_10 - 0x30)
-	Z_77 = SCZO_76 (alias)
-	branch al_10 != 0x30 l1676_01BA
-l1676_01B4:
-	bx_78 = 0xD0
-	goto l1676_0248
-l1676_01BA:
-	SCZO_79 = cond(al_10 - 0x31)
-	Z_80 = SCZO_79 (alias)
-	branch al_10 != 0x31 l1676_01C4
-l1676_01BE:
-	bx_81 = 0xD8
-	goto l1676_0248
-l1676_01C4:
-	SCZO_82 = cond(al_10 - 0x32)
-	Z_83 = SCZO_82 (alias)
-	branch al_10 != 0x32 l1676_01CE
-l1676_01C8:
-	bx_84 = 0xE0
-	goto l1676_0248
-l1676_01CE:
-	SCZO_85 = cond(al_10 - 0x33)
-	Z_86 = SCZO_85 (alias)
-	branch al_10 != 0x33 l1676_01D8
-l1676_01D2:
-	bx_87 = 232
-	goto l1676_0248
-l1676_01D8:
-	SCZO_88 = cond(al_10 - 0x34)
-	Z_89 = SCZO_88 (alias)
-	branch al_10 != 0x34 l1676_01E2
-l1676_01DC:
-	bx_90 = 0xF0
-	goto l1676_0248
-l1676_01E2:
-	SCZO_91 = cond(al_10 - 0x35)
-	Z_92 = SCZO_91 (alias)
-	branch al_10 != 0x35 l1676_01EC
-l1676_01E6:
-	bx_93 = 0xF8
-	goto l1676_0248
-l1676_01EC:
-	SCZO_94 = cond(al_10 - 0x36)
-	Z_95 = SCZO_94 (alias)
-	branch al_10 != 0x36 l1676_01F6
-l1676_01F0:
-	bx_96 = 0x0100
-	goto l1676_0248
-l1676_01F6:
-	SCZO_97 = cond(al_10 - 55)
-	Z_98 = SCZO_97 (alias)
-	branch al_10 != 55 l1676_0200
-l1676_01FA:
-	bx_99 = 0x0108
-	goto l1676_0248
-l1676_0200:
-	SCZO_100 = cond(al_10 - 0x38)
-	Z_101 = SCZO_100 (alias)
-	branch al_10 != 0x38 l1676_020A
-l1676_0204:
-	bx_102 = 0x0110
-	goto l1676_0248
-l1676_020A:
-	SCZO_103 = cond(al_10 - 0x39)
-	Z_104 = SCZO_103 (alias)
-	branch al_10 != 0x39 l1676_0214
-l1676_020E:
-	bx_105 = 0x0118
-	goto l1676_0248
-l1676_0214:
-	SCZO_106 = cond(al_10 - 0x3F)
-	Z_107 = SCZO_106 (alias)
-	branch al_10 != 0x3F l1676_021E
-l1676_0218:
-	bx_108 = 288
-	goto l1676_0248
-l1676_021E:
-	SCZO_109 = cond(al_10 - 33)
-	Z_110 = SCZO_109 (alias)
-	branch al_10 != 33 l1676_0228
-l1676_0222:
-	bx_111 = 0x0128
-	goto l1676_0248
-l1676_0228:
-	SCZO_112 = cond(al_10 - 0x2E)
-	Z_113 = SCZO_112 (alias)
-	branch al_10 != 0x2E l1676_0232
-l1676_022C:
-	bx_114 = 0x0130
-	goto l1676_0248
-l1676_0232:
-	SCZO_115 = cond(al_10 - 44)
-	Z_116 = SCZO_115 (alias)
-	branch al_10 != 44 l1676_023C
-l1676_0236:
-	bx_117 = 0x0138
-	goto l1676_0248
-l1676_023C:
-	ax_118 = ax_7 - 0x41
-	ah_119 = 0x00
-	ax_120 = DPB(ax_118, ah_119, 8) (alias)
-	dx_121 = 0x08
-	dx_ax_122 = 0x08 *u ax_120
-	ax_123 = (word16) dx_ax_122 (alias)
-	SCZO_124 = cond(dx_ax_122)
-	bx_125 = ax_123
-l1676_0248:
-	bx_15 = PHI(bx_74, bx_78, bx_81, bx_84, bx_87, bx_90, bx_93, bx_96, bx_99, bx_102, bx_105, bx_108, bx_111, bx_114, bx_117, bx_125)
-	ah_16 = PHI(ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah_119)
-	Z_17 = PHI(Z_14, Z_77, Z_80, Z_83, Z_86, Z_89, Z_92, Z_95, Z_98, Z_101, Z_104, Z_107, Z_110, Z_113, Z_116, Z_116)
-	ax_18 = 0x0800
-	ds_19 = 0x0800
-	si_20 = 0x99C0
-	si_21 = 0x99C0 + Mem0[0x0800:0xDB60:word16]
-	si_22 = si_21 + bx_15
-	SCZO_23 = cond(si_22)
-	ax_24 = 0xA000
-	es_25 = 0xA000
-	di_26 = 55678
-	al_27 = 0x00
-	ax_28 = DPB(ax_24, al_27, 0) (alias)
-	cx_29 = si_22
-	dx_30 = 55678
-	dx_ax_31 = SEQ(dx_30, ax_28) (alias)
-l1676_0264:
-	di_33 = PHI(di_26, di_64)
-	SCZO_34 = PHI(SCZO_23, SCZO_65)
-	Z_35 = PHI(Z_17, Z_66)
-	si_36 = PHI(si_22, si_68)
-	al_37 = PHI(al_27, al_70)
-	ax_38 = PHI(ax_28, ax_71)
-	dx_ax_39 = PHI(dx_ax_31, dx_ax_72)
-	SZO_40 = PHI(SZO, SZO_73)
-	ah_41 = 0x08
-	ax_42 = DPB(ax_38, ah_41, 8) (alias)
-	dx_ax_43 = DPB(dx_ax_39, ah_41, 8) (alias)
-l1676_0266:
-	ah_44 = PHI(ah_56, ah_41)
-	di_45 = PHI(di_54, di_33)
-	si_46 = PHI(si_53, si_36)
-	ax_47 = PHI(ax_57, ax_42)
-	dx_ax_48 = PHI(dx_ax_58, dx_ax_43)
-	v16_49 = Mem0[0x0800:si_46 + 0x00:byte]
-	Mem50[0xA000:di_45 + 0x00:byte] = v16_49
-	si_51 = si_46 + 0x01
-	di_52 = di_45 + 0x01
-	si_53 = si_51 + 0x013F
-	di_54 = di_52 + 0x013F
-	SCZO_55 = cond(di_54)
-	ah_56 = ah_44 - 0x01
-	ax_57 = DPB(ax_47, ah_56, 8) (alias)
-	dx_ax_58 = DPB(dx_ax_48, ah_56, 8) (alias)
-	SZO_59 = cond(ah_56)
-	Z_60 = SZO_59 (alias)
-	branch ah_56 != 0x00 l1676_0266
-l1676_0273:
-	si_61 = cx_29
-	di_62 = 55678
-	si_63 = si_61 + 0x01
-	di_64 = 55679
-	SCZO_65 = cond(al_37 - 0x01)
-	Z_66 = SCZO_65 (alias)
-	branch al_37 == 0x01 l1676_0287
-	goto l1676_027D
-l1676_027B_thunk_fn1676_0287:
-	fn1676_0287()
-	return
-l1676_027D:
-	si_67 = cx_29
-	si_68 = si_67 + 0x01
-	SZO_69 = cond(si_68)
-	fn1676_0287()
-	al_70 = al_37 + 0x01
-	ax_71 = DPB(ax_57, al_70, 0) (alias)
-	dx_ax_72 = DPB(dx_ax_58, al_70, 0) (alias)
-	SZO_73 = cond(al_70)
-	goto l1676_0264
-fn1676_0186_exit:
+	word16 ax_7 = (seg0800->*seg0800->ptrDB6A).wE055;
+	byte al_10 = (byte) ax_7;
+	if (al_10 != 0x00)
+	{
+		word16 bx_100;
+		if (al_10 == 0x20)
+			bx_100 = 0x0A00;
+		else if (al_10 == 0x30)
+			bx_100 = 0xD0;
+		else if (al_10 == 0x31)
+			bx_100 = 0xD8;
+		else if (al_10 == 0x32)
+			bx_100 = 0xE0;
+		else if (al_10 == 0x33)
+			bx_100 = 232;
+		else if (al_10 == 0x34)
+			bx_100 = 0xF0;
+		else if (al_10 == 0x35)
+			bx_100 = 0xF8;
+		else if (al_10 == 0x36)
+			bx_100 = 0x0100;
+		else if (al_10 == 55)
+			bx_100 = 0x0108;
+		else if (al_10 == 0x38)
+			bx_100 = 0x0110;
+		else if (al_10 == 0x39)
+			bx_100 = 0x0118;
+		else if (al_10 == 0x3F)
+			bx_100 = 288;
+		else if (al_10 == 33)
+			bx_100 = 0x0128;
+		else if (al_10 == 0x2E)
+			bx_100 = 0x0130;
+		else if (al_10 == 44)
+			bx_100 = 0x0138;
+		else
+			bx_100 = (word16) (DPB(ax_7 - 0x41, 0x00, 8) * 0x08);
+		struct Eq_232 Eq_2::* si_43 = seg0800->wDB60 + 0x99C0 + bx_100;
+		struct Eq_238 Eq_36::* di_47 = &Eq_36::tFFFFD97E;
+		byte al_48 = 0x00;
+		si_56 = si_43;
+		while (true)
+		{
+			struct Eq_232 Eq_2::* si_56;
+			byte ah_61 = 0x08;
+			do
+			{
+				(0xA000->*di_47).b0000 = (seg0800->*si_56).b0000;
+				si_56 = si_56 + 0x01;
+				di_47 = di_47 + 0x01;
+				ah_61 = ah_61 - 0x01;
+			} while (ah_61 != 0x00);
+			di_47 = &Eq_36::tFFFFD97F;
+			if (al_48 == 0x01)
+				break;
+			fn1676_0287();
+			si_56 = &si_43->b0000 + 0x01;
+			al_48 = al_48 + 0x01;
+		}
+		fn1676_0287();
+		return seg0800;
+	}
+	else
+		return fn1676_0198(seg0800);
 }
 
-// 1676:0198: void fn1676_0198(Register selector ds)
-void fn1676_0198(selector ds)
+// 1676:0198: Register (ptr Eq_2) fn1676_0198(Register (ptr Eq_2) ds)
+Eq_2 * fn1676_0198(Eq_2 * ds)
 {
 	sp = fp;
-	Mem0[ds:0xDB60:word16] = 0x00;
-	Mem0[ds:~0x2495:word16] = 0x00;
-	Mem0[ds:0xDB60:word16] = 0x00;
-	Mem0[ds:~0x2495:word16] = 0x00;
-	fn1676_0186();
-	return;
+	ds->wDB60 = 0x00;
+	ds->ptrDB6A = &Eq_2::b0000;
+	ds = fn1676_0186();
+	return ds;
 }
 
 // 1676:0287: void fn1676_0287()
 void fn1676_0287()
 {
-fn1676_0287_entry:
-l1676_0287:
-fn1676_0287_exit:
 }
 
-// 1676:029E: void fn1676_029E(Register selector ds)
-void fn1676_029E(selector ds)
+// 1676:029E: void fn1676_029E(Register (ptr Eq_334) ds)
+void fn1676_029E(Eq_334 * ds)
 {
-fn1676_029E_entry:
-l1676_029E:
-	branch Mem0[ds:~0x24A2:byte] == 0x01 l1676_02C6
-l1676_02A5:
-	__outb(0x03C8, ~0x01)
-	byte al_18 = Mem0[ds:56156:byte]
-	__outb(969, al_18)
-	__outb(969, al_18)
-	__outb(969, al_18)
-	branch Mem0[ds:56156:byte] == 0x3F l1676_02BE
-l1676_02B9:
-	Mem22[ds:56156:byte] = Mem0[ds:56156:byte] + 0x01
-	return
-l1676_02BE:
-	Mem24[ds:~0x24A2:byte] = 0x01
-	goto l1676_029E
-l1676_02C6:
-	__outb(0x03C8, ~0x01)
-	byte al_28 = Mem0[ds:56156:byte]
-	__outb(969, al_28)
-	__outb(969, al_28)
-	__outb(969, al_28)
-	branch Mem0[ds:56156:byte] == 0x0F l1676_02DF
-l1676_02DA:
-	Mem32[ds:56156:byte] = Mem0[ds:56156:byte] - 0x01
-	return
-l1676_02DF:
-	Mem34[ds:~0x24A2:byte] = 0x00
-	goto l1676_029E
-fn1676_029E_exit:
+	while (true)
+	{
+		while (ds->bDB5D != 0x01)
+		{
+			__outb(0x03C8, ~0x01);
+			byte al_18 = ds->bDB5C;
+			__outb(969, al_18);
+			__outb(969, al_18);
+			__outb(969, al_18);
+			if (ds->bDB5C != 0x3F)
+			{
+				ds->bDB5C = ds->bDB5C + 0x01;
+				return;
+			}
+			ds->bDB5D = 0x01;
+		}
+		__outb(0x03C8, ~0x01);
+		byte al_28 = ds->bDB5C;
+		__outb(969, al_28);
+		__outb(969, al_28);
+		__outb(969, al_28);
+		if (ds->bDB5C != 0x0F)
+			break;
+		ds->bDB5D = 0x00;
+	}
+	ds->bDB5C = ds->bDB5C - 0x01;
 }
 
 // 1676:02E7: void fn1676_02E7()
 void fn1676_02E7()
 {
-	Mem9[0x0800:56164:word16] = Mem0[0x0800:Mem0[0x0800:56168:word16] + 55488:word16] + 100;
-	Mem14[0x0800:56162:word16] = Mem9[0x0800:Mem9[0x0800:56166:word16] + 55584:word16] + 0x44;
-	if (Mem14[0x0800:56168:word16] == 0x5E)
-		Mem28[0x0800:56168:word16] = 0x00;
+	seg0800->wDB64 = (seg0800->*seg0800->ptrDB68).wD8C0 + 100;
+	seg0800->wDB62 = (seg0800->*seg0800->ptrDB66).wD920 + 0x44;
+	if (seg0800->ptrDB68 == &Eq_2::t005E)
+		seg0800->ptrDB68 = &Eq_2::b0000;
 	else
 	{
-		Mem31[0x0800:56168:word16] = Mem14[0x0800:56168:word16] + 0x01;
-		Mem33[0x0800:56168:word16] = Mem31[0x0800:56168:word16] + 0x01;
+		seg0800->ptrDB68 = (struct Eq_399 Eq_2::*) ((char *) seg0800->ptrDB68 + 0x01);
+		seg0800->ptrDB68 = (struct Eq_399 Eq_2::*) ((char *) seg0800->ptrDB68 + 0x01);
 	}
-	if (Mem14[0x0800:56166:word16] != 0xFE)
+	if (seg0800->ptrDB66 != &Eq_2::t00FE)
 	{
-		Mem23[0x0800:56166:word16] = Mem14[0x0800:56166:word16] + 0x01;
-		Mem25[0x0800:56166:word16] = Mem23[0x0800:56166:word16] + 0x01;
-		Mem27[0x0800:~0x248D:word16] = 0x00;
-		return;
+		seg0800->ptrDB66 = (struct Eq_408 Eq_2::*) ((char *) seg0800->ptrDB66 + 0x01);
+		seg0800->ptrDB66 = (struct Eq_408 Eq_2::*) ((char *) seg0800->ptrDB66 + 0x01);
+		seg0800->wDB72 = 0x00;
 	}
 	else
-	{
-		Mem21[0x0800:56166:word16] = 0x00;
-		return;
-	}
+		seg0800->ptrDB66 = &Eq_2::b0000;
 }
 
 // 1676:0340: void fn1676_0340(Register byte al)
@@ -424,13 +263,12 @@ void fn1676_0340(byte al)
 	fn1676_0061(al);
 	fn1676_006F();
 	fn1676_0198(fn1676_0084());
-	Mem4[0x0800:56166:word16] = 0x00;
-	Mem5[0x0800:56168:word16] = 0x00;
+	seg0800->ptrDB66 = &Eq_2::b0000;
+	seg0800->ptrDB68 = &Eq_2::b0000;
 	__outb(0x03C8, ~0x01);
 	__outb(969, 0x00);
 	__outb(969, 0x00);
 	__outb(969, 0x00);
-	return;
 }
 
 // 1676:0365: Register byte fn1676_0365()
@@ -443,71 +281,70 @@ byte fn1676_0365()
 	return al_3;
 }
 
-// 1676:036E: void fn1676_036E(Register selector ds)
-void fn1676_036E(selector ds)
+// 1676:036E: void fn1676_036E(Register (ptr Eq_498) ds)
+void fn1676_036E(Eq_498 * ds)
 {
 	__outb(0x03C8, ~0x02);
-	byte al_8 = Mem0[ds:56188:byte];
+	byte al_8 = ds->bDB7C;
 	__outb(969, al_8);
 	__outb(969, al_8);
 	__outb(969, al_8);
-	return;
 }
 
-// 1676:037C: Register selector fn1676_037C(Register selector ds)
-selector fn1676_037C(selector ds)
+// 1676:037C: Register (ptr Eq_498) fn1676_037C(Register (ptr Eq_498) ds)
+Eq_498 * fn1676_037C(Eq_498 * ds)
 {
-	if (Mem0[ds:~0x2488:byte] == 0x01)
+	if (ds->bDB77 == 0x01)
 	{
-		if (Mem0[ds:56188:byte] == 0x00)
+		if (ds->bDB7C == 0x00)
 			return fn1676_03BF();
 		else
 		{
 			fn1676_036E(ds);
-			Mem26[ds:56188:byte] = Mem0[ds:56188:byte] - 0x01;
+			ds->bDB7C = ds->bDB7C - 0x01;
 			return ds;
 		}
 	}
-	else if (Mem0[ds:56188:byte] == 0x3F)
+	else if (ds->bDB7C == 0x3F)
 	{
-		if (Mem0[ds:~0x2489:byte] == ~0x00)
+		if (ds->bDB76 == ~0x00)
 		{
-			Mem20[ds:~0x2488:byte] = 0x01;
-			Mem21[ds:~0x2489:byte] = 0x00;
+			ds->bDB77 = 0x01;
+			ds->bDB76 = 0x00;
 			return ds;
 		}
 		else
 		{
-			Mem18[ds:~0x2489:byte] = Mem0[ds:~0x2489:byte] + 0x01;
+			ds->bDB76 = ds->bDB76 + 0x01;
 			return ds;
 		}
 	}
 	else
 	{
-		Mem13[ds:56188:byte] = Mem0[ds:56188:byte] + 0x01;
+		ds->bDB7C = ds->bDB7C + 0x01;
 		fn1676_036E(ds);
 		return ds;
 	}
 }
 
-// 1676:03BF: Register selector fn1676_03BF()
-selector fn1676_03BF()
+// 1676:03BF: Register (ptr Eq_2) fn1676_03BF()
+Eq_2 * fn1676_03BF()
 {
 	word16 bx_15;
-	word16 ax_7 = Mem0[0x0800:Mem0[0x0800:~0x2487:word16] + ~0x2482:word16];
+	word16 ax_7 = seg0800->*((word16) seg0800->tDB78 + 0x0000DB7D);
 	if ((byte) ax_7 == 0x20)
 		bx_15 = 0x1400;
 	else
 		bx_15 = DPB(ax_7 - 0x01, 0x00, 8);
-	word16 si_20 = bx_15 + 44480;
-	word16 di_30 = (word16) (DPB(0xA000, Mem0[0x0800:~0x2484:byte], 0) *u 0x08) + 0x0F00;
+	byte Eq_2::* si_20 = bx_15 + 44480;
+	byte Eq_36::* di_30 = (word16) (DPB(0xA000, seg0800->bDB7B, 0) * 0x08) + 0x0F00;
 	word16 dx_32 = 0x10;
 	do
 	{
 		word16 cx_41 = 0x08;
 		while (cx_41 != 0x00)
 		{
-			Mem46[0xA000:di_30 + 0x00:byte] = Mem0[0x0800:si_20 + 0x00:byte];
+			0xA000->*di_30 = seg0800->*si_20;
 			si_20 = si_20 + 0x01;
 			di_30 = di_30 + 0x01;
 			cx_41 = cx_41 - 0x01;
@@ -516,31 +353,31 @@ selector fn1676_03BF()
 		di_30 = di_30 + 0x0138;
 		dx_32 = dx_32 - 0x01;
 	} while (dx_32 != 0x00);
-	if (Mem0[0x0800:~0x2484:byte] == 0x27)
+	if (seg0800->bDB7B == 0x27)
 	{
-		Mem66[0x0800:~0x2484:byte] = 0x00;
-		Mem67[0x0800:~0x2488:byte] = 0x00;
-		if (Mem67[0x0800:~0x2487:word16] > 0x04B0)
+		seg0800->bDB7B = 0x00;
+		seg0800->bDB77 = 0x00;
+		if (seg0800->tDB78 > 0x04B0)
 		{
-			Mem73[0x0800:~0x2487:word16] = 0x00;
-			return 0x0800;
+			seg0800->tDB78.u0 = 0x00;
+			return seg0800;
 		}
 		else
 		{
-			Mem71[0x0800:~0x2487:word16] = Mem67[0x0800:~0x2487:word16] + 0x01;
-			return 0x0800;
+			seg0800->tDB78 = (word16) seg0800->tDB78 + 0x01;
+			return seg0800;
 		}
 	}
 	else
 	{
-		Mem62[0x0800:~0x2484:byte] = Mem0[0x0800:~0x2484:byte] + 0x01;
-		Mem64[0x0800:~0x2487:word16] = Mem62[0x0800:~0x2487:word16] + 0x01;
-		return 0x0800;
+		seg0800->bDB7B = seg0800->bDB7B + 0x01;
+		seg0800->tDB78 = (word16) seg0800->tDB78 + 0x01;
+		return seg0800;
 	}
 }
 
-// 1676:0442: void fn1676_0442(Register byte al, Register selector es)
-void fn1676_0442(byte al, selector es)
+// 1676:0442: void fn1676_0442(Register byte al, Register (ptr Eq_649) es)
+void fn1676_0442(byte al, Eq_649 * es)
 {
 	word16 bx_5;
 	msdos_resize_memory_block(es, 0x186A, out bx_5);
@@ -556,15 +393,14 @@ void fn1676_0442(byte al, selector es)
 	do
 	{
 		fn1676_02E7();
-		selector ds_27 = fn1676_0104();
+		fn1676_0104();
 		fn1676_0365();
-		fn1676_0165();
-		fn1676_029E(fn1676_037C(ds_27));
-		selector ds_30 = fn1676_009B();
+		fn1676_029E(fn1676_037C(fn1676_0165()));
+		struct Eq_702 * ds_32 = fn1676_009B();
 	} while (__inb(0x60) != 0x01);
 	__outb(33, 0x00);
 	fn1676_0068(0x00);
-	msdos_display_string(SEQ(ds_30, 59060));
+	msdos_display_string((char *) ds_32 - 6476);
 	msdos_terminate(0x00);
 }
 

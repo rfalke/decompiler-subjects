@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 0001054C: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack word32 dwArg40)
-void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
+// 0001054C: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack ui32 dwArg40)
+void _start(word32 g1, Eq_3 * o7, ui32 dwArg40)
 {
 	globals->ptr208CC = fp + 0x44;
 	globals->ptr208C0 = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
@@ -38,7 +38,6 @@ void main(ui32 o0, Eq_3 * o7)
 	test(0x00, o7);
 	test(o0, o7);
 	test(0x05, o7);
-	return;
 }
 
 // 000106A4: void _init(Register (ptr Eq_3) o7)
@@ -50,13 +49,13 @@ void _init(Eq_3 * o7)
 // 000106B4: void fn000106B4(Register (ptr Eq_3) o7)
 void fn000106B4(Eq_3 * o7)
 {
-	struct Eq_68 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_67 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
 	<anonymous> * l1_7 = o0_5->ptrFFFFFFF0;
 	if (l0_6 == null)
 	{
 		if (l1_7 == null)
-			return;
+			;
 		else
 		{
 			word32 sp_50;
@@ -110,22 +109,22 @@ void fn000106B4(Eq_3 * o7)
 	}
 }
 
-// 000106F4: void _fini(Register (ptr Eq_127) o7)
-void _fini(Eq_127 * o7)
+// 000106F4: void _fini(Register (ptr Eq_126) o7)
+void _fini(Eq_126 * o7)
 {
 	fn00010704(o7);
 }
 
-// 00010704: void fn00010704(Register (ptr Eq_127) o7)
-void fn00010704(Eq_127 * o7)
+// 00010704: void fn00010704(Register (ptr Eq_126) o7)
+void fn00010704(Eq_126 * o7)
 {
-	struct Eq_132 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_131 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	<anonymous> * l1_7 = o0_5->ptrFFFFFFF4;
 	if (l0_6 == null)
 	{
 		if (l1_7 == null)
-			return;
+			;
 		else
 		{
 			word32 sp_50;
@@ -182,37 +181,29 @@ void fn00010704(Eq_127 * o7)
 // 00020764: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020764_entry:
-l00020764:
-l00020764:
-fn00020764_exit:
 }
 
 // 00020794: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000207A0: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000207AC: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000207B8: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

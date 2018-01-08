@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void __xstat@@GLIBC_2.0()
-void __xstat@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049678();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804967C();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049680();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804835C, dwArg00, (char *) fp + 0x04, &globals->t8048454, &globals->t8048484, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049688 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,29 +82,35 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 0804835C: void main(Stack word32 dwArg08)
 void main(word32 dwArg08)
 {
 	__align(fp - 0x6C);
-	__xstat@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	return;
+	word32 esp_22;
+	word32 ebp_23;
+	byte SCZO_24;
+	word32 ecx_25;
+	word32 edx_26;
+	int32 eax_27;
+	byte SZO_28;
+	byte C_29;
+	!__xstat();
+	printf("res: %i\n", eax_27);
+	printf("dev: %i\n", dwLoc6C);
+	printf("ino: %i\n", dwLoc60);
+	printf("mode: %i\n", dwLoc5C);
+	printf("nlink: %i\n", dwLoc58);
+	printf("uid: %i\n", dwLoc54);
+	printf("gid: %i\n", dwLoc50);
+	printf("rdev: %i\n", dwLoc4C);
+	printf("size: %i\n", dwLoc40);
+	printf("blksize: %i\n", dwLoc3C);
+	printf("blocks: %i\n", dwLoc38);
+	printf("atime: %i\n", dwLoc34);
+	printf("mtime: %i\n", dwLoc2C);
+	printf("ctime: %i\n", dwLoc24);
 }
 
 // 08048454: void __libc_csu_init()
@@ -139,7 +118,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 08048484: void __libc_csu_fini()
@@ -163,7 +142,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 080484B8: void __do_global_ctors_aux()
@@ -184,13 +162,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 080484DC: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

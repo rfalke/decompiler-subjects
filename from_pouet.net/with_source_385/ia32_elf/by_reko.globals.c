@@ -5,54 +5,31 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t804888A = <code>;
-<anonymous> g_t804889A = <code>;
-<anonymous> g_t80488AA = <code>;
-<anonymous> g_t80488BA = <code>;
-<anonymous> g_t80488CA = <code>;
-<anonymous> g_t80488DA = <code>;
-<anonymous> g_t80488EA = <code>;
-<anonymous> g_t80488FA = <code>;
-<anonymous> g_t804890A = <code>;
-<anonymous> g_t804891A = <code>;
-<anonymous> g_t804892A = <code>;
-<anonymous> g_t804894A = <code>;
-<anonymous> g_t804896A = <code>;
-<anonymous> g_t804897A = <code>;
-<anonymous> g_t804898A = <code>;
-<anonymous> g_t804899A = <code>;
+Eq_25 g_t80487FC = Unexpected function type (fn void ())
+;
+Eq_22 g_t8048CBE = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_26 g_t8048DE8 = Unexpected function type (fn void ())
+;
+char g_str8048E11[] = "MikMod: %s\x0A";
+char g_str8048E26[] = "MikMod Error: %s\x0A";
 real64 g_r8048E48 = 20.0;
 real64 g_r8048E50 = 60.0;
 real32 g_r8048E58 = 2.0F;
 real32 g_r8048E5C = 400.0F;
 real64 g_r8048E60 = 0.1;
 <anonymous> ** g_ptr8049008 = &g_ptr804A450;
+char g_b8049020 = 'H';
 <anonymous> * g_ptr804A444 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804A450 = null;
 word32 g_dw804A454 = 0x00000000;
-<anonymous> * g_ptr804A47C = &g_t804888A;
-<anonymous> * g_ptr804A480 = &g_t804889A;
-<anonymous> * g_ptr804A484 = &g_t80488AA;
-<anonymous> * g_ptr804A488 = &g_t80488BA;
-<anonymous> * g_ptr804A48C = &g_t80488CA;
-<anonymous> * g_ptr804A490 = &g_t80488DA;
-<anonymous> * g_ptr804A494 = &g_t80488EA;
-<anonymous> * g_ptr804A498 = &g_t80488FA;
-<anonymous> * g_ptr804A49C = &g_t804890A;
-<anonymous> * g_ptr804A4A0 = &g_t804891A;
-<anonymous> * g_ptr804A4A4 = &g_t804892A;
-<anonymous> * g_ptr804A4AC = &g_t804894A;
-<anonymous> * g_ptr804A4B4 = &g_t804896A;
-<anonymous> * g_ptr804A4B8 = &g_t804897A;
-<anonymous> * g_ptr804A4BC = &g_t804898A;
-<anonymous> * g_ptr804A4C0 = &g_t804899A;
 <anonymous> * g_ptr804A4C4 = null;
-word32 g_dw804A4E4 = 0x00000000;
+FILE * g_ptr804A4E0 = null;
 byte g_b804A4E8 = 0x00;
 word32 g_dw804A500 = 0x00000000;
 word32 g_dw804A504 = 0x00000000;
-char * g_ptr804A514 = null;
-union Eq_172 * g_ptr804A580 = null;
+word32 g_dw804A514 = 0x00000000;
+Display * g_ptr804A580 = null;
 real32 g_r804A584 = 0.0F;
 real32 g_r804A588 = 0.0F;
 

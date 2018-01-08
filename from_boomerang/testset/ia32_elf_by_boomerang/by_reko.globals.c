@@ -5,14 +5,19 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t80482A6 = <code>;
-<anonymous> g_t80482B6 = <code>;
+Eq_24 g_t8048370 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_27 g_t80483C8 = Unexpected function type (fn void ())
+;
+Eq_28 g_t8048410 = Unexpected function type (fn void ())
+;
+char g_str804849C[] = "Hello, set\x0A";
+char g_str80484A8[] = "argc <u 3: %d\x0A";
+char g_str80484B7[] = "(argc - 4) >= 0: %d\x0A";
 <anonymous> * g_ptr80494D0 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80494DC = null;
 word32 g_dw80494E0 = 0x00000000;
 <anonymous> * g_ptr80495B4 = null;
-<anonymous> * g_ptr80495BC = &g_t80482A6;
-<anonymous> * g_ptr80495C0 = &g_t80482B6;
 <anonymous> ** g_ptr80495CC = &g_ptr80494DC;
 byte g_b80495D0 = 0x00;
 

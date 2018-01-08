@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 00010840: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack word32 dwArg40)
-void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
+// 00010840: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack ui32 dwArg40)
+void _start(word32 g1, Eq_3 * o7, ui32 dwArg40)
 {
 	globals->ptr20B5C = fp + 0x44;
 	globals->ptr20B38 = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
@@ -28,7 +28,6 @@ void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
 void addem(word32 o0, word32 o1, word32 o2, word32 * o3)
 {
 	*o3 = o0 + o1 + o2;
-	return;
 }
 
 // 00010954: void passem(Register word32 o0, Register word32 o1, Register word32 o2, Register (ptr word32) o3, Register (ptr Eq_3) o7)
@@ -42,7 +41,6 @@ void main(Eq_3 * o7)
 {
 	passem(0x05, 0x0A, 0x28, fp + ~0x03, o7);
 	printf();
-	return;
 }
 
 // 00010990: void _init(Register (ptr Eq_3) o7)
@@ -54,10 +52,10 @@ void _init(Eq_3 * o7)
 // 000109A0: void fn000109A0(Register (ptr Eq_3) o7)
 void fn000109A0(Eq_3 * o7)
 {
-	struct Eq_76 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_75 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -84,19 +82,19 @@ void fn000109A0(Eq_3 * o7)
 	}
 }
 
-// 000109C8: void _fini(Register (ptr Eq_107) o7)
-void _fini(Eq_107 * o7)
+// 000109C8: void _fini(Register (ptr Eq_106) o7)
+void _fini(Eq_106 * o7)
 {
 	fn000109D8(o7);
 }
 
-// 000109D8: void fn000109D8(Register (ptr Eq_107) o7)
-void fn000109D8(Eq_107 * o7)
+// 000109D8: void fn000109D8(Register (ptr Eq_106) o7)
+void fn000109D8(Eq_106 * o7)
 {
-	struct Eq_112 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_111 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -126,37 +124,29 @@ void fn000109D8(Eq_107 * o7)
 // 00020A0C: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020A0C_entry:
-l00020A0C:
-l00020A0C:
-fn00020A0C_exit:
 }
 
 // 00020A3C: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020A48: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020A54: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020A60: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

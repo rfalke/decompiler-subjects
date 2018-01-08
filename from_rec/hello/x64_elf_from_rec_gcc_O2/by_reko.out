@@ -1,20 +1,2 @@
 Using options:
 0000000000400470: error: The method or operation is not implemented.
-0000000000400501: error: An error occurred while processing instruction at address 0000000000400501.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40d7e450 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40d7e0e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40d75ca0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40d7ce60 + 0x0018c> in <filename unknown>:0 
-0000000000400588: error: An error occurred while processing the statement branch 0x0000000000600E14 - 0x0000000000600E14 >> 0x0000000000000003 == 0x0000000000000000 l00000000004005A6.
-    Pulling difference ptr64 and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40dc0d20 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40dacb90 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40d39d20 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40dacb90 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40d39d20 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40dacb90 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40d39d20 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x40dbf580 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x40d67a20 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40db82e0 + 0x00289> in <filename unknown>:0 

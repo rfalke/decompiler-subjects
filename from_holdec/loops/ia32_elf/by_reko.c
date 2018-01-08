@@ -7,42 +7,29 @@
 // 08048294: void _init()
 void _init()
 {
-	if (globals->dw8049650 != 0x00)
-		fn080482D4();
+	word32 edx_13 = globals->dw8049650;
+	if (edx_13 != 0x00)
+	{
+		word32 esp_31;
+		word32 ebp_32;
+		word32 ebx_33;
+		byte SCZO_34;
+		word32 edx_35;
+		byte SZO_36;
+		byte C_37;
+		byte Z_38;
+		word32 eax_39;
+		!__gmon_start__();
+	}
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080482D4: void fn080482D4()
-void fn080482D4()
+// 08048310: void _start(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049658();
-	return;
-}
-
-// 080482E4: void fn080482E4()
-void fn080482E4()
-{
-	word32 esp_3;
-	globals->ptr804965C();
-	return;
-}
-
-// 080482F4: void fn080482F4()
-void fn080482F4()
-{
-	word32 esp_3;
-	globals->ptr8049660();
-	return;
-}
-
-// 08048310: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482E4();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483EB, dwArg00, (char *) fp + 0x04, &globals->t8048410, &globals->t8048400, edx, fp);
 	__hlt();
 }
 
@@ -56,7 +43,6 @@ void __do_global_dtors_aux(word32 esi)
 			globals->dw804966C = eax_23 + 0x01;
 		globals->b8049668 = 0x01;
 	}
-	return;
 }
 
 // 080483A0: void frame_dummy()
@@ -73,14 +59,17 @@ void frame_dummy()
 		byte Z_34;
 		null();
 	}
-	return;
 }
 
 // 080483C4: void forever()
 void forever()
 {
+	int32 dwLoc10_12 = 0x00;
 	while (true)
-		fn080482F4();
+	{
+		printf("i=%d\n", dwLoc10_12);
+		dwLoc10_12 = dwLoc10_12 + 0x01;
+	}
 }
 
 // 080483EB: void main()
@@ -88,19 +77,17 @@ void main()
 {
 	__align(fp - 0x04);
 	forever();
-	return;
 }
 
 // 08048400: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08048410: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_83 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
+	struct Eq_104 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
 	_init();
 	if (&ebx_16->ptr1151 - &ebx_16->ptr1151 >> 0x02 != 0x00)
 	{
@@ -119,7 +106,6 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_16->ptr1151();
 		} while (esi_63 + 0x01 < edi_62);
 	}
-	return;
 }
 
 // 0804846A: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
@@ -145,13 +131,11 @@ void __do_global_ctors_aux()
 			eax_11();
 		} while (*ebx_28 != ~0x00);
 	}
-	return;
 }
 
 // 0804849C: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

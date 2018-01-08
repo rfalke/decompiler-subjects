@@ -4,6 +4,7 @@
 
 #include "subject.h"
 
+ui32 g_dwFFFFFFFF;
 Eq_2 g_t8048780 = Unexpected function type (fn void ())
 ;
 ui32 g_a8048EA0[] = 
@@ -20,12 +21,21 @@ char g_str804947A[] = "Seven!\x0A";
 char g_str8049482[] = "Other!\x0A";
 byte g_b804948A = 0x00;
 byte g_b804948B = 0x65;
-struct Eq_50 g_t804A490 = 
+struct Eq_48 g_t804A490 = 
 	{
 		&g_ptr804A568,
 	};
 word32 g_dw804A564 = 0xFFFFFFFF;
 <anonymous> * g_ptr804A568 = null;
-struct Eq_705 * g_ptr804AA84 = null;
+struct Eq_83 g_t804AA6C = 
+	{
+		0x00000000,
+		0x00000000,
+		0x00000000,
+		0x00000000,
+		0x00000000,
+		0x00000000,
+	};
+struct Eq_322 * g_ptr804AA84 = null;
 ptr32 g_ptr804AA88 = 0x00000000;
 

@@ -9,61 +9,73 @@ void fn00401000(Eq_2 eax, Eq_2 dwArg04)
 {
 	Eq_2 eax_18 = GetLastError();
 	FormatMessageW(0x1300, null, eax_18, 0x0400, fp - 0x08, 0x00, null);
-	int32 ecx_50 = lstrlenW(dwLoc08) + lstrlenW(eax);
-	Eq_2 eax_56 = LocalAlloc(0x40, ecx_50 + 0x2000 + ecx_50);
-	wsprintfW(eax_56, 0x00402080, SLICE(0x00402080, <unknown>, 32));
-	*((word32) eax_56 + 0x0800) = 0x00;
-	MessageBoxW(null, eax_56, 0x00402234, 0x00);
+	int32 ecx_47 = lstrlenW(dwLoc08) + lstrlenW(eax);
+	Eq_2 eax_53 = LocalAlloc(0x40, ecx_47 + 0x2000 + ecx_47);
+	wsprintfW(eax_53, 0x00402080, SLICE(0x00402080, <unknown>, 32));
+	*((word32) eax_53 + 0x0800) = 0x00;
+	MessageBoxW(null, eax_53, 0x00402234, 0x00);
 	LocalFree(dwLoc08);
-	LocalFree(eax_56);
+	LocalFree(eax_53);
 	ExitProcess(eax_18);
 }
 
-// 004010A0: Register word32 fn004010A0(Register Eq_2 edi)
-word32 fn004010A0(Eq_2 edi)
+// 004010A0: Register word32 fn004010A0(Register Eq_2 edi, Register out (ptr Eq_80) ebxOut, Register out ptr32 esiOut)
+word32 fn004010A0(Eq_2 edi, Eq_80 * & ebxOut, ptr32 & esiOut)
 {
+	struct Eq_82 * esp_124 = fp - 0x0260;
 	if (DeleteFileW(edi) == 0x00)
 	{
 		SetFileAttributesW(edi, 0x80);
-		ptr32 esp_65 = fp - 0x025C;
+		esp_124 = fp - 0x026C;
 		if (DeleteFileW(edi) == 0x00)
 		{
-			<anonymous> * ebx_100 = Sleep;
-			Eq_2 edi_102 = edi;
+			<anonymous> * ebx_101 = Sleep;
+			Eq_2 edi_103 = edi;
 			do
 			{
-				union Eq_2 * esp_78 = esp_65 - 0x04;
-				*esp_78 = (union Eq_2 *) edi_102;
-				if (DeleteFileW(*esp_78) != 0x00)
-					return 0x01;
-				*esp_78 = (union Eq_2 *) (fp - 0x0254);
-				*(esp_78 - 0x04) = (union Eq_2 *) edi_102;
-				Eq_2 eax_90 = FindFirstFileW(*(esp_78 - 0x04), *esp_78);
-				if (eax_90 == ~0x00)
+				esp_124 = esp_124 - 0x04;
+				esp_124->t0000 = edi_103;
+				if (DeleteFileW(esp_124->t0000) != 0x00)
+					goto l004010BA;
+				*(esp_124 - 0x04) = fp - 0x0254;
+				*(esp_124 - 0x08) = (union Eq_2 *) edi_103;
+				esp_124 = esp_124 - 0x08;
+				Eq_133 eax_92 = FindFirstFileW(*(esp_124 - 0x08), *(esp_124 - 0x04));
+				if (eax_92 == (void *) ~0x00)
 				{
 					if (GetLastError() == 0x02)
-						return 0x01;
+						goto l004010BA;
 				}
 				else
 				{
-					*esp_78 = (union Eq_2 *) eax_90;
-					FindClose(*esp_78);
+					*(esp_124 - 0x0C) = (HANDLE *) eax_92;
+					FindClose(*(esp_124 - 0x0C));
+					esp_124 = esp_124 - 0x0C;
 				}
-				word32 * esp_95 = esp_65 - 0x04;
-				*esp_95 = 100;
-				word32 ebp_98;
-				byte SCZO_99;
-				int32 esi_101;
-				byte SZO_103;
-				byte C_104;
-				word32 eax_105;
-				byte Z_106;
-				byte SO_107;
-				ebx_100();
-			} while (esi_101 < ~0x08);
+				word32 * esp_96 = esp_124 - 0x04;
+				*esp_96 = 100;
+				word32 ebp_99;
+				byte SCZO_100;
+				int32 esi_102;
+				byte SZO_104;
+				byte C_105;
+				word32 eax_106;
+				byte Z_107;
+				byte SO_108;
+				ebx_101();
+			} while (esi_102 < ~0x08);
+			word32 esi_112;
+			*esiOut = esp_124->t0000;
+			word32 ebx_117;
+			*ebxOut = esp_124->dw0004;
 			return 0x00;
 		}
 	}
+l004010BA:
+	word32 esi_55;
+	*esiOut = esp_124->t0000;
+	word32 ebx_57;
+	*ebxOut = esp_124->dw0004;
 	return 0x01;
 }
 
@@ -71,85 +83,87 @@ word32 fn004010A0(Eq_2 edi)
 Eq_2 Win32CrtStartup()
 {
 	__align(fp - 0x04);
-	struct Eq_182 * eax_22 = CommandLineToArgvW(GetCommandLineW(), fp - 0x60);
+	struct Eq_216 * eax_22 = CommandLineToArgvW(GetCommandLineW(), fp - 0x60);
 	if (eax_22 == null)
 		fn00401000(0x00402240, 4202620);
 	if (esi == 0x05)
 	{
-		Eq_2 esi_127;
-		uint32 edx_101;
-		Eq_2 edi_81 = eax_22->t0004;
-		Eq_2 ecx_103 = 0x00;
-		if (edi_81 != 0x00)
+		Eq_133 esi_113;
+		uint32 edx_119;
+		Eq_2 edi_98 = eax_22->t0004;
+		Eq_2 ecx_107 = 0x00;
+		if (edi_98 != 0x00)
 		{
-			esi_127.u0 = 0x14;
-			Eq_2 eax_275 = edi_81;
+			esi_113 = (void *) 0x14;
+			Eq_2 eax_294 = edi_98;
 			do
 			{
-				if (*eax_275 == 0x00)
+				if (*eax_294 == 0x00)
 					goto l004011CF;
-				eax_275 = (word32) eax_275 + 0x02;
-				esi_127 = esi_127 - 0x01;
-			} while (esi_127 != 0x00);
+				eax_294 = (word32) eax_294 + 0x02;
+				esi_113 = esi_113 - 0x01;
+			} while (esi_113 != null);
 		}
 l00401193:
-		edx_101 = 0x00;
+		edx_119 = 0x00;
 		while (true)
 		{
-			uint32 eax_112 = 0x00;
-			if (edx_101 != 0x00)
+			uint32 eax_131 = 0x00;
+			if (edx_119 != 0x00)
 			{
 				do
 				{
-					eax_112 = eax_112 + 0x01;
-					ecx_103 = (word32) *((word32) edi_81 + eax_112 * 0x02) - 0x30 + (ecx_103 * 0x05) * 0x02;
-				} while (eax_112 < edx_101);
+					eax_131 = eax_131 + 0x01;
+					ecx_107 = (word32) *((word32) edi_98 + eax_131 * 0x02) - 0x30 + (ecx_107 * 0x05) * 0x02;
+				} while (eax_131 < edx_119);
 			}
-			Eq_2 eax_125 = OpenProcess(0x01, 0x00, ecx_103);
-			esi_127 = eax_125;
-			if (eax_125 != 0x00)
+			Eq_133 eax_144 = OpenProcess(0x01, 0x00, ecx_107);
+			esi_113 = eax_144;
+			if (eax_144 != null)
 				break;
 			fn00401000(0x00402268, eax_22->t0004);
-			if (esi_127 == 0x00)
+l004011CF:
+			if (esi_113 == null)
 				goto l00401193;
-			edx_101 = 0x14 - esi_127;
+			edx_119 = 0x14 - esi_113;
 		}
-		if (TerminateProcess(eax_125, 0x00) == 0x00)
+		if (TerminateProcess(eax_144, 0x00) == 0x00)
 			fn00401000(0x00402280, 4202620);
-		Eq_2 esi_153;
-		CloseHandle(eax_125);
-		if (fn004010A0(eax_22->t000C) == 0x00)
-			esi_153 = eax_22->t0010;
+		Eq_2 esi_171;
+		CloseHandle(eax_144);
+		word32 esi_166;
+		struct Eq_316 * ebx_165;
+		if (fn004010A0(eax_22->t000C, out ebx_165, out esi_166) == 0x00)
+			esi_171 = ebx_165->t0010;
 		else
-			esi_153 = eax_22->t000C;
-		if (MoveFileW(eax_22->t0008, esi_153) == 0x00)
-			fn00401000(0x004022A4, eax_22->t0008);
-		word32 ecx_165 = 0x44;
-		byte * eax_167 = fp - 0x54;
+			esi_171 = ebx_165->t000C;
+		if (MoveFileW(ebx_165->t0008, esi_171) == 0x00)
+			fn00401000(0x004022A4, ebx_165->t0008);
+		word32 ecx_182 = 0x44;
+		byte * eax_184 = fp - 116;
 		do
 		{
-			*eax_167 = 0x00;
-			eax_167 = eax_167 + 0x01;
-			ecx_165 = ecx_165 - 0x01;
-		} while (ecx_165 != 0x00);
-		Eq_2 ecx_178 = 0x10;
-		byte * eax_180 = fp - 100;
+			*eax_184 = 0x00;
+			eax_184 = eax_184 + 0x01;
+			ecx_182 = ecx_182 - 0x01;
+		} while (ecx_182 != 0x00);
+		Eq_2 ecx_195 = 0x10;
+		byte * eax_197 = fp - 0x84;
 		do
 		{
-			*eax_180 = 0x00;
-			eax_180 = eax_180 + 0x01;
-			ecx_178 = ecx_178 - 0x01;
-		} while (ecx_178 != 0x00);
-		if (CreateProcessW(ecx_178, esi_153, ecx_178, ecx_178, ecx_178, ecx_178, ecx_178, ecx_178, fp - 0x54, fp - 100) == 0x00)
-			fn00401000(0x004022B8, esi_153);
-		if (esi_153 != eax_22->t000C)
+			*eax_197 = 0x00;
+			eax_197 = eax_197 + 0x01;
+			ecx_195 = ecx_195 - 0x01;
+		} while (ecx_195 != 0x00);
+		if (CreateProcessW(ecx_195, esi_171, ecx_195, ecx_195, ecx_195, ecx_195, ecx_195, ecx_195, fp - 116, fp - 0x84) == 0x00)
+			fn00401000(0x004022B8, esi_171);
+		if (esi_171 != ebx_165->t000C)
 		{
-			word32 esi_233 = 100;
 			do
 			{
-				fn004010A0(eax_22->t000C);
-				esi_233 = esi_233 - 0x01;
-			} while (esi_233 != 0x00);
+				word32 esi_253;
+				fn004010A0(ebx_165->t000C, out ebx_165, out esi_253);
+			} while (esi_253 != 0x01);
 		}
 		return 0x00;
 	}

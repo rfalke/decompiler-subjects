@@ -72,13 +72,11 @@ void __do_global_dtors_aux(word32 o7)
 			fn00020840();
 		*l7_114->ptr000C = 0x01;
 	}
-	return;
 }
 
 // 000105FC: void call___do_global_dtors_aux()
 void call___do_global_dtors_aux()
 {
-	return;
 }
 
 // 0001060C: void frame_dummy(Register word32 o7)
@@ -87,12 +85,10 @@ void frame_dummy(word32 o7)
 	struct Eq_39 * l7_22 = fn00010544(o7, 0x000101AC);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0014 != 0x00)
-		{
-			if (l7_22->dw001C != 0x00)
-				fn00020858();
-		}
-		return;
+		if (*l7_22->ptr0014 == 0x00 || l7_22->dw001C == 0x00)
+			;
+		else
+			fn00020858();
 	}
 	else
 		fn0002084C();
@@ -101,7 +97,6 @@ void frame_dummy(word32 o7)
 // 00010690: void call_frame_dummy()
 void call_frame_dummy()
 {
-	return;
 }
 
 // 000106A0: Register word32 proc1(Register word32 o0, Register word32 o1, Stack word32 dwArg44, Stack word32 dwArg48)
@@ -117,7 +112,6 @@ void main()
 	printf();
 	proc1(0x05, 0x06, dwLoc2C, dwLoc28);
 	printf();
-	return;
 }
 
 // 00010720: Register word32 fn00010720(Register word32 o7, Register word32 l7)
@@ -168,7 +162,6 @@ word32 * __do_global_ctors_aux(word32 o7)
 // 00010778: void call___do_global_ctors_aux()
 void call___do_global_ctors_aux()
 {
-	return;
 }
 
 // 00010788: Register word32 _init(Register word32 o7)
@@ -182,64 +175,52 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-	return;
 }
 
 // 000207EC: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn000207EC_entry:
-l000207EC:
-l000207EC:
-fn000207EC_exit:
 }
 
 // 0002081C: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020828: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020834: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020840: void fn00020840()
 void fn00020840()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 0002084C: void fn0002084C()
 void fn0002084C()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020858: void fn00020858()
 void fn00020858()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020864: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

@@ -1,11 +1,18 @@
 Using options:
-0800:17D2: warning: Can't determine size of jump vector; probing only one entry.
-main: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x405c1410 + 0x0006d> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x405c0bd0 + 0x00057> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x405bc5b0 + 0x00393> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x405badd0 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x405ba8f0 + 0x00255> in <filename unknown>:0 
-fn0800_1093: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0800_10B9: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+0800:1784: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:17CB: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:17A8: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:17A2: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1806: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:18B5: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:198C: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:18AF: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1A23: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:18B2: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1A80: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1989: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1925: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1AFD: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1B03: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1B08: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+l0800_114E: warning: Non-integral switch expression

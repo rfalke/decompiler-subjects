@@ -18,31 +18,28 @@ Using options:
 00467425: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsURLW.
 00467436: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRelativeW.
 00467456: warning: Unable to resolve imported reference SHLWAPI.dll!PathAppendW.
-0043BA50: warning: Can't determine size of jump vector; probing only one entry.
+0043BA50: error: The method or operation is not implemented.
 0043BA29: warning: Can't determine size of jump vector; probing only one entry.
-0043BB37: warning: Can't determine size of jump vector; probing only one entry.
 0043BA54: warning: The call or jump table has invalid addresses; stopping.
 0043BA41: warning: No valid entries could be found in jump vector.
-0043BB50: warning: The call or jump table has invalid addresses; stopping.
-0043BA48: warning: No valid entries could be found in jump vector.
+0043BA48: error: The method or operation is not implemented.
 0043BBE0: warning: The call or jump table has invalid addresses; stopping.
 0043BBD5: warning: No valid entries could be found in jump vector.
-0043BBDC: warning: Can't determine size of jump vector; probing only one entry.
+0043BBDC: error: The method or operation is not implemented.
 0043BBAF: warning: Can't determine size of jump vector; probing only one entry.
 00409383: warning: Multiple different values of stack delta in procedure fn00409240 when processing RET instruction; was 4 previously.
-00439B30: warning: Can't determine size of jump vector; probing only one entry.
+00439B30: error: The method or operation is not implemented.
 00439B09: warning: Can't determine size of jump vector; probing only one entry.
-00439C17: warning: Can't determine size of jump vector; probing only one entry.
-00439C36: warning: Procedure fn00439AB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 00439B34: warning: The call or jump table has invalid addresses; stopping.
 00439B21: warning: No valid entries could be found in jump vector.
+00439C36: warning: Procedure fn00439AB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+00439B28: error: The method or operation is not implemented.
 00439CC0: warning: The call or jump table has invalid addresses; stopping.
 00439CB5: warning: No valid entries could be found in jump vector.
+00439CBC: error: The method or operation is not implemented.
 00439C8F: warning: Can't determine size of jump vector; probing only one entry.
-00439CBC: warning: Can't determine size of jump vector; probing only one entry.
 00439DD2: warning: Procedure fn00439AB0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00439C30: warning: The call or jump table has invalid addresses; stopping.
-00439B28: warning: No valid entries could be found in jump vector.
+0043BA0F: warning: Procedure fn0043B9D0 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0040A28D: warning: Multiple different values of stack delta in procedure fn0040A200 when processing RET instruction; was 8 previously.
 00474855: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 00467845: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
@@ -65,8 +62,6 @@ Using options:
 0046C1E3: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C280: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C280: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-0046C3CA: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
-0046C3CA: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
 0046C465: warning: Unable to resolve imported reference PSAPI.DLL!GetModuleFileNameExW.
 0046C7AD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
 0046C7AD: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_9.
@@ -80,85 +75,17 @@ Using options:
 0046C51C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 00441A92: error: An error occurred while processing instruction at address 00441A92.
     The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c48a80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40a56bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40c47360 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40c46ff0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c3dc70 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40c44780 + 0x0018c> in <filename unknown>:0 
-0046C3DA: error: An error occurred while processing instruction at address 0046C3DA.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40c47360 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40c46ff0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c3dc70 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40c44780 + 0x0018c> in <filename unknown>:0 
-fn0043B9D0: error: An error occurred during data flow analysis.
-    Index was outside the bounds of the array.
-      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x40c61ae0 + 0x00042> in <filename unknown>:0 
-  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x40c299c0 + 0x00027> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionVisitorBase.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) <0x40c36aa0 + 0x00032> in <filename unknown>:0 
-  at Reko.Core.Code.ReturnInstruction.Accept (InstructionVisitor v) <0x40c2c030 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) <0x40c61940 + 0x000da> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[] defOrig) <0x40c61130 + 0x000ab> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.PlacePhiFunctions () <0x40c60bf0 + 0x000af> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.Transform () <0x40c60b50 + 0x0000f> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1 gr, System.Collections.Generic.HashSet`1 implicitRegs) <0x40c605a0 + 0x001ab> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40c583c0 + 0x001af> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40c576c0 + 0x00203> in <filename unknown>:0 
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x417471c0 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x4153cbb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41745f20 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41745bb0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4173cce0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41743490 + 0x001c0> in <filename unknown>:0 
 : error: Error when reconstructing types.
     Object reference not set to an instance of an object
-      at Reko.Core.Types.TypeStore.MergeClasses (Reko.Core.Types.TypeVariable tv1, Reko.Core.Types.TypeVariable tv2) <0x40c8faf0 + 0x0001b> in <filename unknown>:0 
-  at Reko.Typing.EquivalenceClassBuilder.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) <0x40c907c0 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.Code.ReturnInstruction.Accept (InstructionVisitor v) <0x40c2c030 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.EquivalenceClassBuilder.Build (Reko.Core.Program program) <0x40c8e410 + 0x001f4> in <filename unknown>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x40c8a290 + 0x00563> in <filename unknown>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () <0x40c89c20 + 0x0022f> in <filename unknown>:0 
-fn00439AB0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0043B9D0: error: An error occurred while rewriting procedure to high-level language.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c48a80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40a56bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x40c93e00 + 0x00323> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x0003b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
-fn00440A57: error: An error occurred while rewriting procedure to high-level language.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c48a80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40a56bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (DirectedGraph`1 graph, System.Collections.Generic.Dictionary`2 idoms) <0x40c60070 + 0x003e7> in <filename unknown>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (DirectedGraph`1 graph, Reko.Structure.Region entryNode) <0x40c5d3b0 + 0x0011f> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x001cb> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
-fn0044330F: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d9c0 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d220 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c99a20 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
-fn00443ABA: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x40c98560 + 0x0006d> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x40c97eb0 + 0x00057> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x00393> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
-fn00443BF5: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d9c0 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d220 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c99a20 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
-fn00474780: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d9c0 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c9d220 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c99a20 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c93890 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c91820 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c91340 + 0x00255> in <filename unknown>:0 
+      at Reko.Core.Types.TypeStore.MergeClasses (Reko.Core.Types.TypeVariable tv1, Reko.Core.Types.TypeVariable tv2) <0x41790520 + 0x0001b> in <filename unknown>:0 
+  at Reko.Typing.EquivalenceClassBuilder.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) <0x417911f0 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.Code.ReturnInstruction.Accept (InstructionVisitor v) <0x41729dd0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.EquivalenceClassBuilder.Build (Reko.Core.Program program) <0x4178ee40 + 0x001f4> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x4178a5b0 + 0x00563> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x41789f40 + 0x0022f> in <filename unknown>:0 

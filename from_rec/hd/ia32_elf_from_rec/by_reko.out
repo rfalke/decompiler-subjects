@@ -1,3 +1,5 @@
 Using options:
+08048578: warning: Unable to resolve imported reference !__setfpucw.
+080484F8: warning: Unable to resolve imported reference !__libc_init.
 080499F8: warning: Expected sizes of arrays to have been determined by now
 080499F8: warning: Expected sizes of arrays to have been determined by now

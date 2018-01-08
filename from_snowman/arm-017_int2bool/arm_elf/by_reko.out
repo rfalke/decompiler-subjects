@@ -15,12 +15,12 @@ Using options:
 00008350: error: capstone.dll
 error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
-  at System.ThrowHelper.ThrowArgumentOutOfRangeException (ExceptionArgument argument, ExceptionResource resource) <0x41bcec60 + 0x00047> in <filename unknown>:0 
-  at System.ThrowHelper.ThrowArgumentOutOfRangeException () <0x41bcec40 + 0x00013> in <filename unknown>:0 
-  at System.Collections.Generic.List`1[T].get_Item (Int32 index) <0x41aac9b0 + 0x00023> in <filename unknown>:0 
-  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) <0x41bce940 + 0x0005f> in <filename unknown>:0 
-  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) <0x41bce7c0 + 0x00133> in <filename unknown>:0 
-  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (DecompilerEventListener listener) <0x41bce5e0 + 0x000ab> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () <0x41bce2b0 + 0x0009b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.AnalyzeDataFlow () <0x41bccdd0 + 0x0027b> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x41b59d60 + 0x00223> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (ExceptionArgument argument, ExceptionResource resource) <0x414447c0 + 0x00047> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () <0x414447a0 + 0x00013> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T].get_Item (Int32 index) <0x413159b0 + 0x00023> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) <0x41444490 + 0x0005f> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) <0x41444310 + 0x00137> in <filename unknown>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (DecompilerEventListener listener) <0x41444130 + 0x000ab> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () <0x41443e00 + 0x0009b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.AnalyzeDataFlow () <0x41442920 + 0x0027b> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x413ca100 + 0x00223> in <filename unknown>:0 

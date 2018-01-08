@@ -10,30 +10,13 @@ void _init(word32 esi, word32 edi)
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux(esi, edi);
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048280: void fn08048280(Register (ptr Eq_15) edx, Stack int32 dwArg00)
+void fn08048280( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049564();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049568();
-	return;
-}
-
-// 08048280: void fn08048280(Stack word32 dwArg00)
-void fn08048280(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483CF, dwArg00, (char *) fp + 0x04, &globals->t8048230, &globals->t8048440, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482D0: void __do_global_dtors_aux(Register word32 esi)
@@ -97,7 +79,6 @@ void __do_global_dtors_aux(word32 esi)
 		}
 		globals->b8049570 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -127,7 +108,6 @@ void frame_dummy()
 		byte Z_53;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048390: Register int32 fib(Stack int32 dwArg04)
@@ -145,9 +125,7 @@ int32 fib(int32 dwArg04)
 void main()
 {
 	__align(fp - 0x0C);
-	fib(0x0A);
-	printf@@GLIBC_2.0();
-	return;
+	printf("%i\n", fib(0x0A));
 }
 
 // 08048410: void __do_global_ctors_aux(Register word32 esi, Register word32 edi)
@@ -169,13 +147,11 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			eax_11();
 		} while (*ebx_35 != ~0x00);
 	}
-	return;
 }
 
 // 08048440: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

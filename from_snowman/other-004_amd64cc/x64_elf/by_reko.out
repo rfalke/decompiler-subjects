@@ -1,11 +1,11 @@
 Using options:
 error: An error occurred during decompilation. System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-  at System.ThrowHelper.ThrowKeyNotFoundException () <0x413a0630 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x4128dbb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate (Reko.Core.Program program) <0x413a0330 + 0x00193> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate (Reko.Core.Program program) <0x413a0220 + 0x00017> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader64.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x4139fd80 + 0x0004b> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x4139fd10 + 0x0002c> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41380360 + 0x0034b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x4137f0c0 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x4137ed60 + 0x000dc> in <filename unknown>:0 
+  at System.ThrowHelper.ThrowKeyNotFoundException () <0x409f13d0 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x408d4bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate (Reko.Core.Program program) <0x409f10d0 + 0x00193> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate (Reko.Core.Program program) <0x409f0fc0 + 0x00017> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x409ef770 + 0x00044> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x409ef720 + 0x0002f> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x409ce700 + 0x0034b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x409cd460 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x409cd100 + 0x000dc> in <filename unknown>:0 

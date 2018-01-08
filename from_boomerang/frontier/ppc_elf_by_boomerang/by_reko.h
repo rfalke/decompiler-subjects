@@ -747,7 +747,7 @@ T_86: (in r3 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
-T_87: (in dwLoc28_61 : word32)
+T_87: (in dwLoc28_59 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
@@ -815,7 +815,7 @@ T_103: (in Test(EQ,cond(r3 - 2)) : bool)
   Class: Eq_103
   DataType: bool
   OrigDataType: bool
-T_104: (in r9_66 : word32)
+T_104: (in r9_64 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
@@ -823,15 +823,15 @@ T_105: (in 12 : int32)
   Class: Eq_105
   DataType: int32
   OrigDataType: int32
-T_106: (in r9_66 - 12 : word32)
+T_106: (in r9_64 - 12 : word32)
   Class: Eq_106
   DataType: word32
   OrigDataType: word32
-T_107: (in cond(r9_66 - 12) : byte)
+T_107: (in cond(r9_64 - 12) : byte)
   Class: Eq_107
   DataType: byte
   OrigDataType: byte
-T_108: (in Test(NE,cond(r9_66 - 12)) : bool)
+T_108: (in Test(NE,cond(r9_64 - 12)) : bool)
   Class: Eq_108
   DataType: bool
   OrigDataType: bool
@@ -839,7 +839,7 @@ T_109: (in -1 : int32)
   Class: Eq_109
   DataType: int32
   OrigDataType: int32
-T_110: (in r9_66 + -1 : word32)
+T_110: (in r9_64 + -1 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
@@ -847,23 +847,23 @@ T_111: (in 2 : int32)
   Class: Eq_111
   DataType: int32
   OrigDataType: int32
-T_112: (in r9_66 - 2 : word32)
+T_112: (in r9_64 - 2 : word32)
   Class: Eq_112
   DataType: word32
   OrigDataType: word32
-T_113: (in cond(r9_66 - 2) : byte)
+T_113: (in cond(r9_64 - 2) : byte)
   Class: Eq_113
   DataType: byte
   OrigDataType: byte
-T_114: (in Test(LE,cond(r9_66 - 2)) : bool)
+T_114: (in Test(LE,cond(r9_64 - 2)) : bool)
   Class: Eq_114
   DataType: bool
   OrigDataType: bool
-T_115: (in cond(dwLoc28_61) : byte)
+T_115: (in cond(dwLoc28_59) : byte)
   Class: Eq_115
   DataType: byte
   OrigDataType: byte
-T_116: (in Test(GT,cond(dwLoc28_61)) : bool)
+T_116: (in Test(GT,cond(dwLoc28_59)) : bool)
   Class: Eq_116
   DataType: bool
   OrigDataType: bool
@@ -871,7 +871,7 @@ T_117: (in -1 : int32)
   Class: Eq_117
   DataType: int32
   OrigDataType: int32
-T_118: (in dwLoc28_61 + -1 : word32)
+T_118: (in dwLoc28_59 + -1 : word32)
   Class: Eq_86
   DataType: word32
   OrigDataType: word32
@@ -879,15 +879,15 @@ T_119: (in 1 : int32)
   Class: Eq_119
   DataType: int32
   OrigDataType: int32
-T_120: (in dwLoc28_61 - 1 : word32)
+T_120: (in dwLoc28_59 - 1 : word32)
   Class: Eq_120
   DataType: word32
   OrigDataType: word32
-T_121: (in cond(dwLoc28_61 - 1) : byte)
+T_121: (in cond(dwLoc28_59 - 1) : byte)
   Class: Eq_121
   DataType: byte
   OrigDataType: byte
-T_122: (in Test(LE,cond(dwLoc28_61 - 1)) : bool)
+T_122: (in Test(LE,cond(dwLoc28_59 - 1)) : bool)
   Class: Eq_122
   DataType: bool
   OrigDataType: bool

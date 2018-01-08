@@ -4,12 +4,13 @@
 
 #include "subject.h"
 
-<anonymous> g_t8048306 = <code>;
-<anonymous> g_t8048316 = <code>;
-<anonymous> g_t8048326 = <code>;
-ui32 g_dw8049624 = 0x00000000;
-<anonymous> * g_ptr8049724 = &g_t8048306;
-<anonymous> * g_ptr8049728 = &g_t8048316;
-<anonymous> * g_ptr804972C = &g_t8048326;
+Eq_32 g_t804842D = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_35 g_t80484A0 = Unexpected function type (fn void ())
+;
+Eq_36 g_t8048510 = Unexpected function type (fn void ())
+;
+char g_str8048530[] = "Hello, World!";
+word32 g_dw8049624 = 0x00000000;
 byte g_b8049738 = 0x00;
 

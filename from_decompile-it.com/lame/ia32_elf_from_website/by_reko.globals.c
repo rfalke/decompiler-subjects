@@ -4,204 +4,169 @@
 
 #include "subject.h"
 
-void g_vFFFFFFFF;
-void g_v0001;
-void g_v0002;
-Eq_2527 g_t000F;
-void g_v001A;
-void g_v002D;
-Eq_2527 g_t0100;
-<anonymous> g_t804A2F2 = <code>;
-<anonymous> g_t804A312 = <code>;
-<anonymous> g_t804A322 = <code>;
-<anonymous> g_t804A332 = <code>;
-<anonymous> g_t804A342 = <code>;
-<anonymous> g_t804A362 = <code>;
-<anonymous> g_t804A372 = <code>;
-<anonymous> g_t804A382 = <code>;
-<anonymous> g_t804A3A2 = <code>;
-<anonymous> g_t804A3B2 = <code>;
-<anonymous> g_t804A3C2 = <code>;
-<anonymous> g_t804A3D2 = <code>;
-<anonymous> g_t804A3E2 = <code>;
-<anonymous> g_t804A3F2 = <code>;
-<anonymous> g_t804A412 = <code>;
-<anonymous> g_t804A432 = <code>;
-<anonymous> g_t804A442 = <code>;
-<anonymous> g_t804A452 = <code>;
-<anonymous> g_t804A462 = <code>;
-<anonymous> g_t804A472 = <code>;
-<anonymous> g_t804A482 = <code>;
-<anonymous> g_t804A492 = <code>;
-<anonymous> g_t804A4A2 = <code>;
-<anonymous> g_t804A4B2 = <code>;
-<anonymous> g_t804A4C2 = <code>;
-<anonymous> g_t804A4D2 = <code>;
-<anonymous> g_t804A4E2 = <code>;
-<anonymous> g_t804A4F2 = <code>;
-<anonymous> g_t804A502 = <code>;
-<anonymous> g_t804A512 = <code>;
-<anonymous> g_t804A522 = <code>;
-<anonymous> g_t804A532 = <code>;
-<anonymous> g_t804A542 = <code>;
-<anonymous> g_t804A552 = <code>;
-<anonymous> g_t804A562 = <code>;
-<anonymous> g_t804A572 = <code>;
-<anonymous> g_t804A582 = <code>;
-<anonymous> g_t804A592 = <code>;
-<anonymous> g_t804A5B2 = <code>;
-<anonymous> g_t804A5D2 = <code>;
-<anonymous> g_t804A5E2 = <code>;
-<anonymous> g_t804A5F2 = <code>;
-<anonymous> g_t804A602 = <code>;
-<anonymous> g_t804A612 = <code>;
-<anonymous> g_t804A632 = <code>;
-<anonymous> g_t804A642 = <code>;
-<anonymous> g_t804A652 = <code>;
-<anonymous> g_t804A662 = <code>;
-<anonymous> g_t804A672 = <code>;
-<anonymous> g_t804A692 = <code>;
-<anonymous> g_t804A6A2 = <code>;
-<anonymous> g_t804A6B2 = <code>;
-<anonymous> g_t804A6C2 = <code>;
-<anonymous> g_t804A6F2 = <code>;
-<anonymous> g_t804A702 = <code>;
-<anonymous> g_t804A712 = <code>;
-<anonymous> g_t804A722 = <code>;
-<anonymous> g_t804A732 = <code>;
-<anonymous> g_t804A742 = <code>;
-<anonymous> g_t804A762 = <code>;
-<anonymous> g_t804A772 = <code>;
-<anonymous> g_t804A792 = <code>;
-<anonymous> g_t804A7A2 = <code>;
-<anonymous> g_t804A7B2 = <code>;
-<anonymous> g_t804A7C2 = <code>;
-<anonymous> g_t804A7D2 = <code>;
-<anonymous> g_t804A7E2 = <code>;
-<anonymous> g_t804A7F2 = <code>;
-<anonymous> g_t804A802 = <code>;
-<anonymous> g_t804A812 = <code>;
-<anonymous> g_t804A822 = <code>;
-<anonymous> g_t804A842 = <code>;
-<anonymous> g_t804A852 = <code>;
-<anonymous> g_t804A862 = <code>;
-<anonymous> g_t804A882 = <code>;
-<anonymous> g_t804A892 = <code>;
-<anonymous> g_t804A8A2 = <code>;
-<anonymous> g_t804A8C2 = <code>;
-<anonymous> g_t804A8D2 = <code>;
-<anonymous> g_t804A8E2 = <code>;
-<anonymous> g_t804A8F2 = <code>;
-<anonymous> g_t804A912 = <code>;
-<anonymous> g_t804A922 = <code>;
-<anonymous> g_t804A932 = <code>;
-<anonymous> g_t804A942 = <code>;
-<anonymous> g_t804A952 = <code>;
-<anonymous> g_t804A962 = <code>;
-<anonymous> g_t804A972 = <code>;
-<anonymous> g_t804A982 = <code>;
-<anonymous> g_t804A992 = <code>;
-<anonymous> g_t804A9A2 = <code>;
-<anonymous> g_t804A9B2 = <code>;
-<anonymous> g_t804A9C2 = <code>;
-<anonymous> g_t804A9D2 = <code>;
-<anonymous> g_t804A9E2 = <code>;
-<anonymous> g_t804A9F2 = <code>;
-<anonymous> g_t804AA12 = <code>;
-<anonymous> g_t804AA22 = <code>;
-<anonymous> g_t804AA32 = <code>;
-<anonymous> g_t804AA42 = <code>;
-<anonymous> g_t804AA62 = <code>;
-<anonymous> g_t804AA72 = <code>;
-<anonymous> g_t804AA82 = <code>;
-<anonymous> g_t804AA92 = <code>;
-<anonymous> g_t804AAA2 = <code>;
-<anonymous> g_t804AAB2 = <code>;
-<anonymous> g_t804AAC2 = <code>;
+<anonymous> g_tFFFFFFFF;
+char g_b0001;
+Eq_36 g_t804BFA5 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
 <anonymous> g_t8052C9E = <code>;
 <anonymous> g_t8052CD3 = <code>;
-void g_v80548BB = ;
-void g_v8054956 = ;
+Eq_40 g_t8054720 = Unexpected function type (fn void ())
+;
+Eq_39 g_t8054730 = Unexpected function type (fn void ())
+;
 <anonymous> * g_a8054A58[] = 
 	{
 	};
+char g_str8054EFF[] = "LAMEOPT";
 real64 g_r8054F10 = 4294967248.0;
 real32 g_r8054F20 = 10.0F;
-Eq_972 g_t8054F28 = 
+Eq_747 g_t8054F28 = 
 	{
 		0xBFB999999999999A
 	};
-void g_v8055007 = ;
-int32 g_dw805511C = 1179603533;
-int32 g_dw8055120 = 1095321158;
-int32 g_dw8055124 = 1095321155;
-int32 g_dw8055128 = 1129270605;
-int32 g_dw805512C = 1397968452;
-int32 g_dw8055134 = 1313820229;
-int32 g_dw8055138 = 1953984371;
-int32 g_dw805513C = 1936684916;
-int32 g_dw8055140 = 1380533830;
-int32 g_dw8055144 = 1463899717;
-int32 g_dw8055148 = 1718449184;
-int32 g_dw805514C = 1684108385;
+char g_str8054F30[] = "TERM";
+char g_str8054F4B[] = "a";
+char g_str8055009[] = "w+b";
+void g_v805508B = ;
+void g_v8055090 = ;
+void g_v8055099 = ;
+Eq_2870 g_t805511C = 
+	{
+		1179603533
+	};
+Eq_2870 g_t8055120 = 
+	{
+		1095321158
+	};
+Eq_2870 g_t8055124 = 
+	{
+		1095321155
+	};
+Eq_2870 g_t8055128 = 
+	{
+		1129270605
+	};
+Eq_2870 g_t805512C = 
+	{
+		1397968452
+	};
+Eq_2870 g_t8055134 = 
+	{
+		1313820229
+	};
+Eq_2870 g_t8055138 = 
+	{
+		1953984371
+	};
+Eq_2870 g_t805513C = 
+	{
+		1936684916
+	};
+Eq_2870 g_t8055140 = 
+	{
+		1380533830
+	};
+Eq_2870 g_t8055144 = 
+	{
+		1463899717
+	};
+Eq_2870 g_t8055148 = 
+	{
+		1718449184
+	};
+Eq_2870 g_t805514C = 
+	{
+		1684108385
+	};
 word16 g_w8055150 = 0x0001;
 word16 g_w8055152 = 0xFFFE;
-void g_v8055332 = ;
-void g_v80554B5 = ;
+char g_str8055332[] = "rb";
+void g_v805540A = ;
 real64 g_r80554C0 = 8.0;
 real64 g_r80554C8 = 1000.0;
 real64 g_r80554D0 = 1000000.0;
 <anonymous> * g_a80554E0[] = 
 	{
 	};
-Eq_1841 g_t8058D58 = 
-	{
-	};
-Eq_1841 g_t8058D5D = 
-	{
-	};
-Eq_1841 g_t8058D62 = 
-	{
-	};
-Eq_1841 g_t8058D67 = 
-	{
-	};
-Eq_1841 g_t8058D6C = 
-	{
-	};
-Eq_1841 g_t8058D71 = 
-	{
-	};
-Eq_1841 g_t8058D76 = 
-	{
-	};
-Eq_1841 g_t8058D7B = 
-	{
-	};
+char g_str8055544[] = "LAME %s version %s (%s)\x0A\x0A";
+char g_str805555E[] = "LAME version %s (%s)\x0A\x0A";
+char g_str8055575[] = "LAME %s version %s\x0A%*s(%s)\x0A\x0A";
+char g_str8055593[] = "LAME version %s\x0A%*s(%s)\x0A\x0A";
+void g_v80555B0 = ;
+void g_v80556B0 = ;
+void g_v8055760 = ;
+void g_v8055800 = ;
+void g_v80559E8 = ;
+void g_v8055A58 = ;
+char g_str8055B5C[] = "usage: %s [options] <infile> [outfile]\x0A\x0A    <infile> and/or <outfile> can be ""-"", which means stdin/stdout.\x0A\x0ATry:\x0A     ""%s --help""           for general usage information\x0A or:\x0A     ""%s --preset help""    for information on suggested predefined settings\x0A or:\x0A     ""%s --longhelp""\x0A  or ""%s -?""              for a complete options list\x0A\x0A";
+char g_str8055CAC[] = "usage: %s [options] <infile> [outfile]\x0A\x0A    <infile> and/or <outfile> can be ""-"", which means stdin/stdout.\x0A\x0ARECOMMENDED:\x0A    lame -V2 input.wav output.mp3\x0A\x0A";
+char g_str8055D4C[] = "OPTIONS:\x0A    -b bitrate      set the bitrate, default 128 kbps\x0A    -h              higher quality, but a little slower.  Recommended.\x0A    -f              fast mode (lower quality)\x0A    -V n            quality setting for VBR.  default n=%i\x0A                    0=high quality,bigger files. 9=smaller files\x0A";
+void g_v8055E80 = ;
+void g_v8055FC4 = ;
+void g_v8056020 = ;
+void g_v80562C4 = ;
+void g_v8056470 = ;
+void g_v80567A0 = ;
+void g_v805690C = ;
+void g_v80569F0 = ;
+void g_v8056B7C = ;
+void g_v8056CB0 = ;
+char g_str8056DAC[] = "  VBR options:\x0A    -V n            quality setting for VBR.  default n=%i\x0A                    0=high quality,bigger files. 9=smaller files\x0A    -v              the same as -V 4\x0A    --vbr-old       use old variable bitrate (VBR) routine\x0A    --vbr-new       use new variable bitrate (VBR) routine (default)\x0A";
+void g_v8056EE0 = ;
+void g_v8057051 = ;
+void g_v8057064 = ;
+void g_v8057234 = ;
+void g_v805726C = ;
+void g_v80572C8 = ;
+char g_str8057464[] = "  Filter options:\x0A  --lowpass <freq>        frequency(kHz), lowpass filter cutoff above freq\x0A  --lowpass-width <freq>  frequency(kHz) - default 15%% of lowpass freq\x0A  --highpass <freq>       frequency(kHz), highpass filter cutoff below freq\x0A  --highpass-width <freq> frequency(kHz) - default 15%% of highpass freq\x0A";
+void g_v80575A0 = ;
+void g_v80575F4 = ;
+void g_v805796C = ;
+void g_v8057B4C = ;
+void g_v8057C8C = ;
+char g_str8057CF0[] = "\x0AMPEG-%-3s layer III sample frequencies (kHz):  %2d  %2d  %g\x0Abitrates (kbps):";
+char g_str8057D3E[] = " %2i";
+char g_str8057D43[] = "1";
+char g_str8057D45[] = "2";
+char g_str8057D47[] = "2.5";
+void g_v8057D4C = ;
+void g_v8057D88 = ;
+void g_v8057DD4 = ;
+void g_v8057F18 = ;
+void g_v8058018 = ;
+void g_v8058184 = ;
+void g_v80582B0 = ;
+void g_v80583E8 = ;
+void g_v8058568 = ;
+void g_v80585AC = ;
+void g_v805874C = ;
+void g_v805882C = ;
 <anonymous> * g_a8058DA8[] = 
 	{
 	};
+char g_str8058E4C[] = "rb";
 <anonymous> * g_a80596E8[] = 
 	{
 	};
-Eq_5849 g_t8059828 = 
+real64 g_r8059820 = 44.1;
+Eq_6417 g_t8059828 = 
 	{
 		0x408F400000000000
 	};
-Eq_5873 g_t8059830 = 
+Eq_6440 g_t8059830 = 
 	{
 		0x3F50624DD2F1A9FC
 	};
-Eq_9461 g_t8059838 = 
+Eq_10733 g_t8059838 = 
 	{
 		0x40E86A0000000000
 	};
-Eq_9840 g_t8059840 = 
+Eq_11205 g_t8059840 = 
 	{
 		0x4049000000000000
 	};
 real64 g_r8059848 = 0.5;
-Eq_9469 g_t8059850 = 
+Eq_10742 g_t8059850 = 
 	{
 		0x4030000000000000
 	};
@@ -211,144 +176,49 @@ real64 g_r8059AE8 = 100.0;
 real64 g_r8059AF0 = 0.5;
 real64 g_r8059B00 = 10.0;
 real64 g_r8059B08 = 0.1;
-word16 g_w8059BBD = 0x0000;
+char g_str8059B56[] = " [%*i]";
+char g_str8059B83[] = "%*d:%02u:%02u";
+char g_str8059B91[] = "%02u:%02u";
+char g_str8059B9B[] = "%.*s";
 real32 g_r8059C48 = 3600.0F;
-<anonymous> * g_ptr805AEFC = &g_vFFFFFFFF;
+<anonymous> * g_ptr805AEFC = &g_tFFFFFFFF;
 word32 g_dw805AF0C = 0x00000000;
 word32 g_dw805AFF8 = 0x00000000;
-<anonymous> * g_ptr805B0A8 = &g_t804A2F2;
-<anonymous> * g_ptr805B0B0 = &g_t804A312;
-<anonymous> * g_ptr805B0B4 = &g_t804A322;
-<anonymous> * g_ptr805B0B8 = &g_t804A332;
-<anonymous> * g_ptr805B0BC = &g_t804A342;
-<anonymous> * g_ptr805B0C4 = &g_t804A362;
-<anonymous> * g_ptr805B0C8 = &g_t804A372;
-<anonymous> * g_ptr805B0CC = &g_t804A382;
-<anonymous> * g_ptr805B0D4 = &g_t804A3A2;
-<anonymous> * g_ptr805B0D8 = &g_t804A3B2;
-<anonymous> * g_ptr805B0DC = &g_t804A3C2;
-<anonymous> * g_ptr805B0E0 = &g_t804A3D2;
-<anonymous> * g_ptr805B0E4 = &g_t804A3E2;
-<anonymous> * g_ptr805B0E8 = &g_t804A3F2;
-<anonymous> * g_ptr805B0F0 = &g_t804A412;
-<anonymous> * g_ptr805B0F8 = &g_t804A432;
-<anonymous> * g_ptr805B0FC = &g_t804A442;
-<anonymous> * g_ptr805B100 = &g_t804A452;
-<anonymous> * g_ptr805B104 = &g_t804A462;
-<anonymous> * g_ptr805B108 = &g_t804A472;
-<anonymous> * g_ptr805B10C = &g_t804A482;
-<anonymous> * g_ptr805B110 = &g_t804A492;
-<anonymous> * g_ptr805B114 = &g_t804A4A2;
-<anonymous> * g_ptr805B118 = &g_t804A4B2;
-<anonymous> * g_ptr805B11C = &g_t804A4C2;
-<anonymous> * g_ptr805B120 = &g_t804A4D2;
-<anonymous> * g_ptr805B124 = &g_t804A4E2;
-<anonymous> * g_ptr805B128 = &g_t804A4F2;
-<anonymous> * g_ptr805B12C = &g_t804A502;
-<anonymous> * g_ptr805B130 = &g_t804A512;
-<anonymous> * g_ptr805B134 = &g_t804A522;
-<anonymous> * g_ptr805B138 = &g_t804A532;
-<anonymous> * g_ptr805B13C = &g_t804A542;
-<anonymous> * g_ptr805B140 = &g_t804A552;
-<anonymous> * g_ptr805B144 = &g_t804A562;
-<anonymous> * g_ptr805B148 = &g_t804A572;
-<anonymous> * g_ptr805B14C = &g_t804A582;
-<anonymous> * g_ptr805B150 = &g_t804A592;
-<anonymous> * g_ptr805B158 = &g_t804A5B2;
-<anonymous> * g_ptr805B160 = &g_t804A5D2;
-<anonymous> * g_ptr805B164 = &g_t804A5E2;
-<anonymous> * g_ptr805B168 = &g_t804A5F2;
-<anonymous> * g_ptr805B16C = &g_t804A602;
-<anonymous> * g_ptr805B170 = &g_t804A612;
-<anonymous> * g_ptr805B178 = &g_t804A632;
-<anonymous> * g_ptr805B17C = &g_t804A642;
-<anonymous> * g_ptr805B180 = &g_t804A652;
-<anonymous> * g_ptr805B184 = &g_t804A662;
-<anonymous> * g_ptr805B188 = &g_t804A672;
-<anonymous> * g_ptr805B190 = &g_t804A692;
-<anonymous> * g_ptr805B194 = &g_t804A6A2;
-<anonymous> * g_ptr805B198 = &g_t804A6B2;
-<anonymous> * g_ptr805B19C = &g_t804A6C2;
-<anonymous> * g_ptr805B1A8 = &g_t804A6F2;
-<anonymous> * g_ptr805B1AC = &g_t804A702;
-<anonymous> * g_ptr805B1B0 = &g_t804A712;
-<anonymous> * g_ptr805B1B4 = &g_t804A722;
-<anonymous> * g_ptr805B1B8 = &g_t804A732;
-<anonymous> * g_ptr805B1BC = &g_t804A742;
-<anonymous> * g_ptr805B1C4 = &g_t804A762;
-<anonymous> * g_ptr805B1C8 = &g_t804A772;
-<anonymous> * g_ptr805B1D0 = &g_t804A792;
-<anonymous> * g_ptr805B1D4 = &g_t804A7A2;
-<anonymous> * g_ptr805B1D8 = &g_t804A7B2;
-<anonymous> * g_ptr805B1DC = &g_t804A7C2;
-<anonymous> * g_ptr805B1E0 = &g_t804A7D2;
-<anonymous> * g_ptr805B1E4 = &g_t804A7E2;
-<anonymous> * g_ptr805B1E8 = &g_t804A7F2;
-<anonymous> * g_ptr805B1EC = &g_t804A802;
-<anonymous> * g_ptr805B1F0 = &g_t804A812;
-<anonymous> * g_ptr805B1F4 = &g_t804A822;
-<anonymous> * g_ptr805B1FC = &g_t804A842;
-<anonymous> * g_ptr805B200 = &g_t804A852;
-<anonymous> * g_ptr805B204 = &g_t804A862;
-<anonymous> * g_ptr805B20C = &g_t804A882;
-<anonymous> * g_ptr805B210 = &g_t804A892;
-<anonymous> * g_ptr805B214 = &g_t804A8A2;
-<anonymous> * g_ptr805B21C = &g_t804A8C2;
-<anonymous> * g_ptr805B220 = &g_t804A8D2;
-<anonymous> * g_ptr805B224 = &g_t804A8E2;
-<anonymous> * g_ptr805B228 = &g_t804A8F2;
-<anonymous> * g_ptr805B230 = &g_t804A912;
-<anonymous> * g_ptr805B234 = &g_t804A922;
-<anonymous> * g_ptr805B238 = &g_t804A932;
-<anonymous> * g_ptr805B23C = &g_t804A942;
-<anonymous> * g_ptr805B240 = &g_t804A952;
-<anonymous> * g_ptr805B244 = &g_t804A962;
-<anonymous> * g_ptr805B248 = &g_t804A972;
-<anonymous> * g_ptr805B24C = &g_t804A982;
-<anonymous> * g_ptr805B250 = &g_t804A992;
-<anonymous> * g_ptr805B254 = &g_t804A9A2;
-<anonymous> * g_ptr805B258 = &g_t804A9B2;
-<anonymous> * g_ptr805B25C = &g_t804A9C2;
-<anonymous> * g_ptr805B260 = &g_t804A9D2;
-<anonymous> * g_ptr805B264 = &g_t804A9E2;
-<anonymous> * g_ptr805B268 = &g_t804A9F2;
-<anonymous> * g_ptr805B270 = &g_t804AA12;
-<anonymous> * g_ptr805B274 = &g_t804AA22;
-<anonymous> * g_ptr805B278 = &g_t804AA32;
-<anonymous> * g_ptr805B27C = &g_t804AA42;
-<anonymous> * g_ptr805B284 = &g_t804AA62;
-<anonymous> * g_ptr805B288 = &g_t804AA72;
-<anonymous> * g_ptr805B28C = &g_t804AA82;
-<anonymous> * g_ptr805B290 = &g_t804AA92;
-<anonymous> * g_ptr805B294 = &g_t804AAA2;
-<anonymous> * g_ptr805B298 = &g_t804AAB2;
-<anonymous> * g_ptr805B29C = &g_t804AAC2;
 word32 g_dw805B2A8 = 0xFFFFFFFF;
-Eq_464 g_t805B2AC = 
+Eq_2100 g_t805B2AC = 
 	{
-		0x0000000000000010
+		16
 	};
-Eq_464 g_t805B3A0 = 
+int32 g_a805B2E0[] = 
 	{
-		0x0000000000000000
 	};
-void * g_ptr805B3A4 = null;
-Eq_464 g_t805B3C0 = 
+Eq_83 g_t805B3A0 = 
 	{
-		0x0000000000000000
+		null
+	};
+Eq_83 g_t805B3A4 = 
+	{
+		null
+	};
+Eq_83 g_t805B3C0 = 
+	{
+		null
 	};
 byte g_b805B3C4 = 0x00;
 uint32 g_dw805B3C8 = 0x00000000;
 word32 g_dw805B3CC = 0x00000000;
-Eq_464 g_t805B3D0 = 
+Eq_2100 g_t805B3D0 = 
 	{
-		0x0000000000000000
+		0
 	};
 word32 g_dw805B3D4 = 0x00000000;
 word32 g_dw805B3D8 = 0x00000000;
 uint32 g_dw805B3DC = 0x00000000;
-word32 g_dw805B3E0 = 0x00000000;
-int32 g_dw805B3E4 = 0;
+Eq_83 g_t805B3E0 = 
+	{
+		null
+	};
+word32 g_dw805B3E4 = 0x00000000;
 word32 g_dw805B3E8 = 0x00000000;
 word32 g_dw805B3EC = 0x00000000;
 word32 g_dw805B3F0 = 0x00000000;
@@ -360,59 +230,128 @@ real64 g_r805B430 = 0.0;
 real64 g_r805B440 = 0.0;
 real64 g_r805B448 = 0.0;
 real64 g_r805B450 = 0.0;
-Eq_12303 g_t805B458 = 
+Eq_14157 g_t805B458 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw805B460 = 0x00000000;
 int32 g_dw805B480 = 0;
 int32 g_dw805B484 = 0;
-word32 g_dw805B4C0 = 0x00000000;
-Eq_464 g_t805BCE8 = 
+word32 g_a805B488[] = 
 	{
-		0x0000000000000000
 	};
-Eq_464 g_t805BCEC = 
+int32 g_dw805B4C0 = 0;
+Eq_526 g_t805B4C4 = 
 	{
-		0x0000000000000000
+		
+		{
+		},
+		0x00000000,
+		0x00000000,
+		0,
+		
+		{
+		},
 	};
-Eq_464 g_t805BCF0 = 
+Eq_526 g_t805B6C5 = 
 	{
-		0x0000000000000000
+		
+		{
+		},
+		0x00000000,
+		0x00000000,
+		0,
+		
+		{
+		},
+	};
+Eq_526 g_t805B8C6 = 
+	{
+		
+		{
+		},
+		0x00000000,
+		0x00000000,
+		0,
+		
+		{
+		},
+	};
+Eq_526 g_t805BAC7 = 
+	{
+		
+		{
+		},
+		0x00000000,
+		0x00000000,
+		0,
+		
+		{
+		},
+	};
+Eq_2528 g_t805BCE0 = 
+	{
+		0x00000000,
+		
+		{
+			null
+		},
+		
+		{
+			null
+		},
+		0x00000000,
+		0,
+		0,
+		0x00000000,
+	};
+Eq_83 g_t805BCE8 = 
+	{
+		null
+	};
+Eq_83 g_t805BCEC = 
+	{
+		null
+	};
+Eq_83 g_t805BCF0 = 
+	{
+		null
 	};
 int32 g_dw805BCF4 = 0;
+char g_b805BCFC = '\x00';
 byte g_b805BD06 = 0x00;
-Eq_464 g_t805C540 = 
+Eq_2100 g_t805C540 = 
 	{
-		0x0000000000000000
+		0
 	};
-uint32 g_dw805C544 = 0x00000000;
+Eq_288 g_t805C544 = 
+	{
+		0
+	};
 word32 g_dw805C548 = 0x00000000;
 int32 g_dw805C54C = 0;
 real32 g_r805C550 = 0.0F;
 word32 g_dw805C554 = 0x00000000;
 word32 g_dw805C558 = 0x00000000;
 word32 g_dw805C55C = 0x00000000;
-Eq_4481 g_t805C560 = 
+Eq_492 g_t805C560 = 
 	{
 		0x00000000,
 		0x00000000,
-		0x00000000,
-		0,
 	};
-void * g_ptr805C564 = null;
-int32 g_dw805C568 = 0;
+word32 g_dw805C564 = 0x00000000;
+word32 g_dw805C568 = 0x00000000;
 int32 g_dw805C56C = 0;
-Eq_653 g_t805C578 = 
+Eq_377 g_t805C578 = 
 	{
 		0
 	};
-void * g_ptr805C57C = null;
-Eq_726 g_t805C580 = 
+word32 g_dw805C57C = 0x00000000;
+Eq_459 g_t805C580 = 
 	{
 		0
 	};
-Eq_726 g_t805C584 = 
+Eq_459 g_t805C584 = 
 	{
 		0
 	};

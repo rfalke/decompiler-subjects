@@ -19,23 +19,34 @@ Using options:
 00005C0A: warning: Procedure fn00005B6E previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00006B56: warning: Procedure fn00006B20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 00005DF4: warning: Procedure fn00005CD2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00001036: error: An error occurred while processing instruction at address 00001036.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40567d50 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x405679e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4055ed20 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40565570 + 0x0018c> in <filename unknown>:0 
-0000103C: error: An error occurred while processing instruction at address 0000103C.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40567d50 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x405679e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4055ed20 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40565570 + 0x0018c> in <filename unknown>:0 
-error: An error occurred during decompilation. System.NotImplementedException: The method or operation is not implemented.
-  at Reko.Arch.M68k.M68kArchitecture.GetFlagGroup (UInt32 grf) <0x40579220 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.SignatureBuilder.AddFlagGroupReturnValue (UInt32 bitMask, IStorageBinder frame) <0x405790a0 + 0x0008d> in <filename unknown>:0 
-  at Reko.Analysis.GlobalCallRewriter.EnsureSignature (Reko.Core.Procedure proc, Reko.Analysis.ProcedureFlow flow) <0x40576160 + 0x00133> in <filename unknown>:0 
-  at Reko.Analysis.GlobalCallRewriter.Rewrite (Reko.Core.Program program, Reko.Analysis.ProgramDataFlow summaries, DecompilerEventListener eventListener) <0x40575bd0 + 0x0016f> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () <0x405523d0 + 0x00287> in <filename unknown>:0 
-  at Reko.DecompilerDriver.AnalyzeDataFlow () <0x405510e0 + 0x0027b> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x404c4d60 + 0x00223> in <filename unknown>:0 
+: warning: Type transformer has looped 51 times, quitting prematurely.
+000013FC: warning: Expected sizes of arrays to have been determined by now
+0000163C: warning: Expected sizes of arrays to have been determined by now
+00014FCA: warning: Expected sizes of arrays to have been determined by now
+00015222: warning: Expected sizes of arrays to have been determined by now
+00015268: warning: Expected sizes of arrays to have been determined by now
+0001565E: warning: Expected sizes of arrays to have been determined by now
+00015674: warning: Expected sizes of arrays to have been determined by now
+00015674: warning: Expected sizes of arrays to have been determined by now
+0002D854: warning: Expected sizes of arrays to have been determined by now
+0002D856: warning: Expected sizes of arrays to have been determined by now
+0002D876: warning: Expected sizes of arrays to have been determined by now
+0002D896: warning: Expected sizes of arrays to have been determined by now
+0002D8C6: warning: Expected sizes of arrays to have been determined by now
+0003AAB4: warning: Expected sizes of arrays to have been determined by now
+0003AC8A: warning: Expected sizes of arrays to have been determined by now
+000013FC: warning: Expected sizes of arrays to have been determined by now
+0000163C: warning: Expected sizes of arrays to have been determined by now
+00014FCA: warning: Expected sizes of arrays to have been determined by now
+00015222: warning: Expected sizes of arrays to have been determined by now
+00015268: warning: Expected sizes of arrays to have been determined by now
+0001565E: warning: Expected sizes of arrays to have been determined by now
+00015674: warning: Expected sizes of arrays to have been determined by now
+00015674: warning: Expected sizes of arrays to have been determined by now
+0002D854: warning: Expected sizes of arrays to have been determined by now
+0002D856: warning: Expected sizes of arrays to have been determined by now
+0002D876: warning: Expected sizes of arrays to have been determined by now
+0002D896: warning: Expected sizes of arrays to have been determined by now
+0002D8C6: warning: Expected sizes of arrays to have been determined by now
+0003AAB4: warning: Expected sizes of arrays to have been determined by now
+0003AC8A: warning: Expected sizes of arrays to have been determined by now

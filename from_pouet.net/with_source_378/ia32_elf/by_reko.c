@@ -4,80 +4,8 @@
 
 #include "subject.h"
 
-// 08048470: void SDL_PauseAudio()
-void SDL_PauseAudio()
-{
-	word32 esp_3;
-	globals->ptr804AB00();
-	return;
-}
-
-// 08048480: void SDL_GetTicks()
-void SDL_GetTicks()
-{
-	word32 esp_3;
-	globals->ptr804AB04();
-	return;
-}
-
-// 08048490: void SDL_OpenAudio()
-void SDL_OpenAudio()
-{
-	word32 esp_3;
-	globals->ptr804AB08();
-	return;
-}
-
-// 080484A0: void SDL_GL_SwapBuffers()
-void SDL_GL_SwapBuffers()
-{
-	word32 esp_3;
-	globals->ptr804AB0C();
-	return;
-}
-
-// 080484B0: void SDL_Init()
-void SDL_Init()
-{
-	word32 esp_3;
-	globals->ptr804AB10();
-	return;
-}
-
-// 080484C0: void SDL_PollEvent()
-void SDL_PollEvent()
-{
-	word32 esp_3;
-	globals->ptr804AB14();
-	return;
-}
-
-// 080484D0: void SDL_ShowCursor()
-void SDL_ShowCursor()
-{
-	word32 esp_3;
-	globals->ptr804AB18();
-	return;
-}
-
-// 080484E0: void SDL_SetVideoMode()
-void SDL_SetVideoMode()
-{
-	word32 esp_3;
-	globals->ptr804AB1C();
-	return;
-}
-
-// 080484F0: void dlopen()
-void dlopen()
-{
-	word32 esp_3;
-	globals->ptr804AB20();
-	return;
-}
-
-// 08048714: Register ptr32 fn08048714(Register out ptr32 ebpOut)
-ptr32 fn08048714(ptr32 & ebpOut)
+// 08048714: Register ptr32 fn08048714(Register out ptr32 ediOut)
+ptr32 fn08048714(ptr32 & ediOut)
 {
 	ptr32 esp_112 = fp - 0x20;
 	cu16 * esi_27 = &globals->w804A6B8;
@@ -90,7 +18,7 @@ ptr32 fn08048714(ptr32 & ebpOut)
 		edi_28 = edi_28 - 0x02;
 		ecx_29 = ecx_29 - 0x01;
 	} while (ecx_29 != 0x00);
-	struct Eq_57 * edi_42 = globals->a804AB70;
+	struct Eq_30 * edi_42 = globals->a804AB70;
 	ui32 ebx_105 = 0x00;
 	word32 ecx_107 = 0x00010000;
 	do
@@ -100,34 +28,34 @@ ptr32 fn08048714(ptr32 & ebpOut)
 			eax_137 = -0x7FFF;
 		edi_42->dw0000 = eax_137;
 		edi_42 = edi_42 + 0x01;
-		edi_42[0x0001FFFF] = (struct Eq_57) ((uint32) ((int64) ((uint32) ((int64) ebx_105 % 0xA8) << 0x10) /u 0xA8) - 0x8000);
-		edi_42[0x0002FFFF] = (struct Eq_57) ((fn0804890C() & 0xFFFF) - 0x8000);
+		edi_42[0x0001FFFF] = (struct Eq_30) ((uint32) ((int64) ((uint32) ((int64) ebx_105 % 0xA8) << 0x10) /u 0xA8) - 0x8000);
+		edi_42[0x0002FFFF] = (struct Eq_30) ((fn0804890C() & 0xFFFF) - 0x8000);
 		real64 rLoc1_96 = globals->r804A71E;
 		rLoc2 = sin(rLoc2) * globals->r804A726;
 		globals->dw804A712 = (int32) rLoc2;
 		globals->r804A71E = rLoc1_96 + globals->r804A716;
-		edi_42[0x0000FFFF] = (struct Eq_57) globals->dw804A712;
+		edi_42[0x0000FFFF] = (struct Eq_30) globals->dw804A712;
 		ebx_105 = ebx_105 + 0x01;
 		ecx_107 = ecx_107 - 0x01;
 	} while (ecx_107 != 0x00);
-	struct Eq_136 * ebp_108 = &globals->t804A200;
+	struct Eq_111 * ebp_108 = &globals->t804A200;
 	word32 ecx_109 = 0x09;
 	do
 	{
 		*(esp_112 - 0x04) = ecx_109;
-		struct Eq_145 * esp_115 = fn080487CB(ebp_108);
+		struct Eq_120 * esp_115 = fn080487CB(ebp_108);
 		word32 ecx_118 = esp_115->dw0000;
 		ebp_108 = &ebp_108->dw001C + 0x01;
-		esp_112 = &esp_115->dw0000 + 0x01;
+		esp_112 = &esp_115->dw0004;
 		ecx_109 = ecx_118 - 0x01;
 	} while (ecx_118 != 0x01);
-	word32 ebp_125;
-	*ebpOut = esp_115->dw000C;
-	return &esp_115->dw000C + 0x06;
+	word32 edi_121;
+	*ediOut = esp_115->dw0004;
+	return &esp_115->dw0004 + 0x08;
 }
 
-// 080487CB: Register ptr32 fn080487CB(Register (ptr Eq_136) ebp)
-ptr32 fn080487CB(Eq_136 * ebp)
+// 080487CB: Register ptr32 fn080487CB(Register (ptr Eq_111) ebp)
+ptr32 fn080487CB(Eq_111 * ebp)
 {
 	globals->dw804AB40 = 0x00;
 	globals->dw804AB44 = 0x00;
@@ -140,34 +68,36 @@ ptr32 fn080487CB(Eq_136 * ebp)
 	word32 eax_24 = ebp->dw0018;
 	if (eax_24 != 0x00)
 	{
-		Eq_211 edx_eax_67 = (int64) eax_24;
+		Eq_185 edx_eax_67 = (int64) eax_24;
 		globals->dw804AB40 = (uint32) (edx_eax_67 /u 0x67);
 		globals->dw804AB44 = (word32) ((uint32) (edx_eax_67 % 0x67) * 41698711);
 	}
 	else
 		globals->dw804AB48 = 0x2A;
-	Eq_226 ecx_37 = ebp->t0008;
+	Eq_200 ecx_37 = ebp->t0008;
 	int32 (* esi_35)[] = (ebp->dw0004 << 0x12) + 0x0804AB70;
 	word32 * edi_43 = fn0804888C((uint32) (0x00200000 /u ecx_37), ecx_37, esi_35, (ebp->dw0000 << 0x12) + 0x082CAB70);
 	globals->t804AB54 = -globals->t804AB54;
 	word32 * edi_55 = fn0804888C(0x00, ebp->t0010, esi_35, fn08048891(ebp->t000C, esi_35, edi_43));
-	Eq_226 ecx_56 = ebp->t0014;
+	Eq_200 ecx_56 = ebp->t0014;
 	fn0804888C(-(int32) ((int64) globals->dw804AB50 / ecx_56), ecx_56, esi_35, edi_55);
 	return fp + 0x04;
 }
 
-// 0804888C: Register (ptr word32) fn0804888C(Register Eq_241 eax, Register Eq_226 ecx, Register (ptr (arr int32)) esi, Register (ptr word32) edi)
-word32 * fn0804888C(Eq_241 eax, Eq_226 ecx, int32 * esi[], word32 * edi)
+// 0804888C: Register (ptr word32) fn0804888C(Register Eq_215 eax, Register Eq_200 ecx, Register (ptr (arr int32)) esi, Register (ptr word32) edi)
+word32 * fn0804888C(Eq_215 eax, Eq_200 ecx, int32 * esi[], word32 * edi)
 {
 	globals->t804AB54 = eax;
 	return fn08048891(ecx, esi, edi);
 }
 
-// 08048891: Register (ptr word32) fn08048891(Register Eq_226 ecx, Register (arr int32) esi, Register (ptr word32) edi)
-word32 * fn08048891(Eq_226 ecx, int32 esi[], word32 * edi)
+// 08048891: Register (ptr word32) fn08048891(Register Eq_200 ecx, Register (arr int32) esi, Register (ptr word32) edi)
+word32 * fn08048891(Eq_200 ecx, int32 esi[], word32 * edi)
 {
-	if (ecx != 0x00)
+	do
 	{
+		if (ecx == 0x00)
+			return edi;
 		globals->dw804AB60 = globals->dw804AB60 + globals->dw804AB64;
 		globals->dw804AB64 = globals->dw804AB64 + globals->dw804AB68;
 		*edi = (word32) (((word32) ((globals->dw804AB50 >> 0x0A) *s esi[globals->dw804AB60 >> 0x10]) >> 11) *s ((globals->a808AB70)[(globals->dw804AB48 & 0xFFFF) * 0x04] >> 0x04)) >> 0x0C;
@@ -177,12 +107,8 @@ word32 * fn08048891(Eq_226 ecx, int32 esi[], word32 * edi)
 		globals->dw804AB48 = (ui32) ((byte) (v17_60 < 0x00) + (globals->dw804AB48 + globals->dw804AB40));
 		edi = edi + 0x01;
 		ecx = ecx - 0x01;
-		if (ecx != 0x00)
-			goto l08048891;
-		return edi;
-	}
-	else
-		return edi;
+	} while (ecx != 0x00);
+	return edi;
 }
 
 // 0804890C: Register word32 fn0804890C()
@@ -196,84 +122,219 @@ word32 fn0804890C()
 // 08048930: void fn08048930()
 void fn08048930()
 {
-	word32 * ebp_2;
-	ptr32 esp_3 = fn08048714(out ebp_2);
-	*(esp_3 - 0x04) = 0x31;
-	SDL_Init();
-	*(esp_3 - 0x08) = 0x00;
-	*(esp_3 - 0x0C) = 0x0804A734;
-	SDL_OpenAudio();
-	*(esp_3 - 0x10) = 0x80000003;
-	*(esp_3 - 0x14) = 0x20;
-	*(esp_3 - 0x18) = 0x01E0;
-	*(esp_3 - 0x1C) = 0x0280;
-	SDL_SetVideoMode();
+	word32 edi_2;
+	*(fn08048714(out edi_2) - 0x04) = 0x31;
+	ptr32 esp_11;
+	word32 eax_12;
+	byte SZO_13;
+	byte C_14;
+	byte al_15;
+	word16 ax_16;
+	byte SCZO_17;
+	byte Z_18;
+	word32 ebx_19;
+	word32 esi_20;
+	word16 cx_21;
+	word32 edi_22;
+	word32 ecx_23;
+	word32 edx_24;
+	byte S_25;
+	byte SO_26;
+	!SDL_Init();
+	*(esp_11 - 0x04) = 0x00;
+	*(esp_11 - 0x08) = 0x0804A734;
+	ptr32 esp_35;
+	word32 eax_36;
+	byte SZO_37;
+	byte C_38;
+	byte al_39;
+	word16 ax_40;
+	byte SCZO_41;
+	byte Z_42;
+	word32 ebx_43;
+	word32 esi_44;
+	word16 cx_45;
+	word32 edi_46;
+	word32 ecx_47;
+	word32 edx_48;
+	byte S_49;
+	byte SO_50;
+	!SDL_OpenAudio();
+	*(esp_35 - 0x04) = 0x80000003;
+	*(esp_35 - 0x08) = 0x20;
+	*(esp_35 - 0x0C) = 0x01E0;
+	*(esp_35 - 0x10) = 0x0280;
+	ptr32 esp_69;
+	word32 eax_70;
+	byte SZO_71;
+	byte C_72;
+	byte al_73;
+	word16 ax_74;
+	byte SCZO_75;
+	byte Z_76;
+	word32 ebx_77;
+	word32 esi_78;
+	word16 cx_79;
+	word32 edi_80;
+	word32 ecx_81;
+	word32 edx_82;
+	byte S_83;
+	byte SO_84;
+	!SDL_SetVideoMode();
 	fn080491C0();
-	*(esp_3 - 0x20) = 0x00;
-	SDL_ShowCursor();
-	SDL_PauseAudio();
-	SDL_GetTicks();
+	*(esp_69 - 0x04) = 0x00;
+	word32 esp_92;
+	word32 eax_93;
+	byte SZO_94;
+	byte C_95;
+	byte al_96;
+	word16 ax_97;
+	byte SCZO_98;
+	byte Z_99;
+	word32 ebx_100;
+	word32 esi_101;
+	word16 cx_102;
+	word32 edi_103;
+	word32 ecx_104;
+	word32 edx_105;
+	byte S_106;
+	byte SO_107;
+	!SDL_ShowCursor();
+	word32 esp_108;
+	word32 eax_109;
+	byte SZO_110;
+	byte C_111;
+	byte al_112;
+	word16 ax_113;
+	byte SCZO_114;
+	byte Z_115;
+	word32 ebx_116;
+	word32 esi_117;
+	word16 cx_118;
+	word32 edi_119;
+	word32 ecx_120;
+	word32 edx_121;
+	byte S_122;
+	byte SO_123;
+	!SDL_PauseAudio();
+	word32 esp_124;
+	word32 eax_125;
+	byte SZO_126;
+	byte C_127;
+	byte al_128;
+	word16 ax_129;
+	byte SCZO_130;
+	byte Z_131;
+	word32 ebx_132;
+	word32 esi_133;
+	word16 cx_134;
+	word32 edi_135;
+	word32 ecx_136;
+	word32 edx_137;
+	byte S_138;
+	byte SO_139;
+	!SDL_GetTicks();
 	globals->dw87CABE8 = 0x00;
-	word32 eax_133 = 0x00;
-	ptr32 esp_136 = esp_3 - 0x20;
-l08048983:
-	SDL_GetTicks();
-	*(esp_136 - 0x04) = eax_133 - globals->dw87CABE8;
-	word32 edi_56;
-	word32 * esp_57 = fn08048E99(ebp_2, dwArg00, out ebp_2, out edi_56);
-	SDL_GL_SwapBuffers();
-	if (globals->b804A74C == 0x00)
-	{
-		*esp_57 = 142388204;
-		SDL_PollEvent();
-		eax_133 = *esp_57;
-		esp_136 = esp_57 + 0x01;
-		if (globals->b87CABEC != 0x02)
-			goto l08048983;
-	}
-	ptr32 esp_62;
-	word32 eax_63;
-	byte SZO_64;
-	byte C_65;
-	byte al_66;
-	word16 ax_67;
-	byte SCZO_68;
-	byte Z_69;
-	word32 ebx_70;
-	word32 esi_71;
-	word16 cx_72;
-	word16 edi_73[];
-	word32 edx_75;
-	byte S_76;
-	byte SO_77;
-	word32 ebp_78;
-	word32 ecx_74;
-	SDL_GetTicks();
-	__syscall(0x80);
-	int32 esi_108 = 0x00;
-	int32 ebx_109 = 0x00;
 	do
 	{
-		word16 cx_92 = edi_73[ebx_109];
-		ecx_74 = DPB(ecx_74, cx_92, 0);
-		*(esp_62 - 0x04) = ecx_74;
-		globals->a87D55E0[ebx_109 * 0x04] = (real32) ((real64) *(esp_62 - 0x04) * globals->t804A8C8);
-		int32 edx_100 = (int32) cx_92;
-		if (edx_100 < 0x00)
-			edx_100 = -edx_100;
-		if (edx_100 >= esi_108)
-			esi_108 = edx_100;
-		ebx_109 = ebx_109 + 0x01;
-	} while (ebx_109 <= 0x03FF);
-	*(esp_62 - 0x04) = esi_108;
-	globals->t87D55C0 = (real32) ((real64) *(esp_62 - 0x04) * globals->t804A8CC + (real64) globals->r804A8D0 * globals->t87D55C0);
+		ptr32 esp_141;
+		word32 eax_142;
+		byte SZO_143;
+		byte C_144;
+		byte al_145;
+		word16 ax_146;
+		byte SCZO_147;
+		byte Z_148;
+		word32 ebx_149;
+		word32 esi_150;
+		word16 cx_151;
+		word32 edi_152;
+		word32 ecx_153;
+		word32 edx_154;
+		byte S_155;
+		byte SO_156;
+		!SDL_GetTicks();
+		*(esp_141 - 0x04) = eax_142 - globals->dw87CABE8;
+		fn08048E99(dwArg00);
+		ptr32 esp_164;
+		word32 eax_165;
+		byte SZO_166;
+		byte C_167;
+		byte al_168;
+		word16 ax_169;
+		byte SCZO_170;
+		byte Z_171;
+		word32 ebx_172;
+		word32 esi_173;
+		word16 cx_174;
+		word32 edi_175;
+		word32 ecx_176;
+		word32 edx_177;
+		byte S_178;
+		byte SO_179;
+		!SDL_GL_SwapBuffers();
+		if (globals->b804A74C != 0x00)
+			break;
+		*(esp_164 - 0x04) = 142388204;
+		word32 esp_252;
+		word32 eax_253;
+		byte SZO_254;
+		byte C_255;
+		byte al_256;
+		word16 ax_257;
+		byte SCZO_258;
+		byte Z_259;
+		word32 ebx_260;
+		word32 esi_261;
+		word16 cx_262;
+		word32 edi_263;
+		word32 ecx_264;
+		word32 edx_265;
+		byte S_266;
+		byte SO_267;
+		!SDL_PollEvent();
+	} while (globals->b87CABEC != 0x02);
+	ptr32 esp_182;
+	word32 eax_183;
+	byte SZO_184;
+	byte C_185;
+	byte al_186;
+	word16 ax_187;
+	byte SCZO_188;
+	byte Z_189;
+	word32 ebx_190;
+	word32 esi_191;
+	word16 cx_192;
+	word16 edi_193[];
+	word32 edx_195;
+	byte S_196;
+	byte SO_197;
+	word32 ecx_194;
+	!SDL_Quit();
+	__syscall(0x80);
+	int32 esi_201 = 0x00;
+	int32 ebx_202 = 0x00;
+	do
+	{
+		word16 cx_211 = edi_193[ebx_202];
+		ecx_194 = DPB(ecx_194, cx_211, 0);
+		*(esp_182 - 0x04) = ecx_194;
+		globals->a87D55E0[ebx_202 * 0x04] = (real32) ((real64) *(esp_182 - 0x04) * globals->t804A8C8);
+		int32 edx_219 = (int32) cx_211;
+		if (edx_219 < 0x00)
+			edx_219 = -edx_219;
+		if (edx_219 >= esi_201)
+			esi_201 = edx_219;
+		ebx_202 = ebx_202 + 0x01;
+	} while (ebx_202 <= 0x03FF);
+	*(esp_182 - 0x04) = esi_201;
+	globals->t87D55C0 = (real32) ((real64) *(esp_182 - 0x04) * globals->t804A8CC + (real64) globals->r804A8D0 * globals->t87D55C0);
 	if (globals->dw87D55C4 > 0x2F)
 		globals->t87D55C0.u0 = 0x00;
-	return;
 }
 
-// 08048A31: void fn08048A31(Stack real32 rArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-void fn08048A31(real32 rArg04, word32 dwArg08, word32 dwArg0C)
+// 08048A31: void fn08048A31(Stack Eq_687 rArg04, Stack (ptr Eq_688) dwArg08, Stack (arr real32) dwArg0C)
+void fn08048A31(Eq_687 rArg04, Eq_688 * dwArg08, real32 dwArg0C[])
 {
 	int32 eax_107 = 0x00;
 	do
@@ -282,10 +343,10 @@ void fn08048A31(real32 rArg04, word32 dwArg08, word32 dwArg0C)
 		real64 rLoc3_23 = (real64) rArg04;
 		real64 rLoc1_20 = (rLoc1_18 + rLoc1_18) * rArg04;
 		real64 rLoc3_24 = rLoc3_23 * rLoc3_23;
-		Eq_612 rLoc6_68 = globals->t87D4848 + 1.0;
+		Eq_701 rLoc6_68 = globals->t87D4848 + 1.0;
 		real32 rLoc08_25 = (real32) rLoc3_24;
 		real64 rLoc4_59 = 1.0 - globals->t87D4848;
-		Eq_624 rLoc3_57 = globals->t87D484C + 1.0;
+		Eq_713 rLoc3_57 = globals->t87D484C + 1.0;
 		real64 rLoc7_70 = rLoc6_68 * rLoc6_68;
 		real32 rLoc0C_55 = (real32) (1.0 - globals->t87D4844);
 		real64 rLoc2_22 = (real64) rArg04 * rLoc1_20;
@@ -294,7 +355,6 @@ void fn08048A31(real32 rArg04, word32 dwArg08, word32 dwArg0C)
 		dwArg0C[eax_107] = (real32) ((real64) globals->t804A8DC * rLoc2_80 * (((rArg04 - 1.0) * (real64) rLoc08_25) * (((((real64) ((dwArg08->a0018))[eax_107].t0000 - ((dwArg08->a000C))[eax_107].t0000) * rLoc7_70) * (rLoc6_68 * rLoc3_57) + ((1.0 - globals->t87D484C) * (real32) rLoc4_59) * ((real64) (dwArg08->a0024)[eax_107] - ((dwArg08->a0018))[eax_107].t0000)) * rLoc5)) + (rLoc2_80 + ((rLoc2_22 + 1.0) * ((dwArg08->a000C))[eax_107].t0000 + ((rLoc2_22 - rLoc3_24 * globals->t804A8D4) + rLoc5 * globals->t804A8D8) * ((dwArg08->a0018))[eax_107].t0000)));
 		eax_107 = eax_107 + 0x01;
 	} while (eax_107 <= 0x01);
-	return;
 }
 
 // 08048B1E: void fn08048B1E(Stack real32 rArg04)
@@ -309,13 +369,13 @@ void fn08048B1E(real32 rArg04)
 		{
 			ui32 ebx_59 = dwLoc14_113 * 0x03;
 			real64 rLoc1_69 = (real64) globals->r804A8E0 * (real64) edi_109;
-			fn08048A31((real32) rLoc1_69, (ebx_59 << 0x02) + 0x0804A800, 142428260);
-			real32 rLoc18_70 = (real32) rLoc1_69;
-			fn08048A31(rLoc18_70, (ebx_59 << 0x02) + 0x0804A860, 142428272);
+			fn08048A31((real32) rLoc1_69, (ebx_59 << 0x02) + 0x0804A800, globals->a87D4864);
+			Eq_687 rLoc18_70 = (real32) rLoc1_69;
+			fn08048A31(rLoc18_70, (ebx_59 << 0x02) + 0x0804A860, globals->a87D4870);
 			int32 edx_82 = 0x00;
 			do
 			{
-				Eq_749 rLoc2_152 = (real64) rArg04 * (globals->a87D4870)[edx_82];
+				Eq_836 rLoc2_152 = (real64) rArg04 * (globals->a87D4870)[edx_82];
 				globals->a87D48A0[(esi_108 * 0x03 + edx_82) * 0x04] = (real32) ((globals->r804A8E4 - (real64) rArg04) * (globals->a87D4864)[edx_82 * 0x04] + rLoc2_152);
 				edx_82 = edx_82 + 0x01;
 			} while (edx_82 <= 0x02);
@@ -339,7 +399,7 @@ void fn08048B1E(real32 rArg04)
 			real64 rLoc3_169 = (real64) globals->r87D55C8;
 			real64 rLoc4_178 = sin(rLoc2_152 * globals->t804A8DC + rLoc4_170 * rLoc4_170) * globals->t87D55C0;
 			real64 rLoc5_180 = rLoc4_170 * globals->t804A8F4;
-			globals->a87D48A4[ebx_155] = (struct Eq_1867) (real32) (rLoc4_170 * (rLoc5_180 * rLoc4_178) + (globals->a87D48A4)[ebx_155]);
+			globals->a87D48A4[ebx_155] = (struct Eq_1947) (real32) (rLoc4_170 * (rLoc5_180 * rLoc4_178) + (globals->a87D48A4)[ebx_155]);
 			real64 rLoc2_205 = rLoc5_180 + 1.0 + (real64) dwLoc14_116;
 			globals->a87D48A8[ebx_155 * 0x04] = (real32) (sin((rLoc5_180 + 1.0) * globals->t804A8F8 + rLoc3_169 * globals->t804A8FC) * globals->t87D55C0 * rLoc2_205 * globals->t804A900 + (globals->a87D48A8)[ebx_155 * 0x04]);
 			word32 esp_214;
@@ -613,11 +673,10 @@ void fn08048B1E(real32 rArg04)
 			dwLoc14_116 = v40_602;
 		} while (v40_602 < esi_591 - 0x01);
 	}
-	return;
 }
 
-// 08048E99: Register ptr32 fn08048E99(Register (ptr word32) ebp, Stack word32 dwArg04, Register out ptr32 ebpOut, Register out ptr32 ediOut)
-ptr32 fn08048E99(word32 * ebp, word32 dwArg04, ptr32 & ebpOut, ptr32 & ediOut)
+// 08048E99: void fn08048E99(Stack word32 dwArg04)
+void fn08048E99(word32 dwArg04)
 {
 	globals->r87D55C8 = (real32) (real64) dwArg04;
 	real64 rLoc1_26 = ((real64) globals->r804A914 * (real64) globals->dw804A72E - globals->t804A918) * globals->t804A91C;
@@ -635,447 +694,452 @@ ptr32 fn08048E99(word32 * ebp, word32 dwArg04, ptr32 & ebpOut, ptr32 & ediOut)
 	if (dwLoc18_40 != globals->dw804A8B4)
 	{
 		globals->dw804A8B4 = dwLoc18_40;
-		struct Eq_1322 * ebx_120 = null;
+		struct Eq_1392 * ebx_110 = null;
 		do
 		{
-			int32 eax_125 = (int32) ebx_694->a804A769[ebx_694].b0000;
-			if (globals->dw87D55C4 < eax_125)
+			int32 eax_115 = (int32) ebx_684->a804A769[ebx_684].b0000;
+			if (globals->dw87D55C4 < eax_115)
 			{
-				struct Eq_1329 * ecx_670 = (struct Eq_1329 *) 0x01;
+				struct Eq_1399 * ecx_660 = (struct Eq_1399 *) 0x01;
 				do
 				{
-					globals->a87D4840[ecx_670 * 0x04] = (real32) ((real64) globals->r804A924 * (real64) (globals->a87D4840)[ecx_670 * 0x04] + (real64) ((int16) ((ecx_670->a804A760))[ebx_694].b0000) * globals->t804A928);
-					ecx_670 = (struct Eq_1329 *) ((char *) ecx_670 + 0x01);
-				} while (ecx_670 <= (struct Eq_1329 *) 0x09);
+					globals->a87D4840[ecx_660 * 0x04] = (real32) ((real64) globals->r804A924 * (real64) (globals->a87D4840)[ecx_660 * 0x04] + (real64) ((int16) ((ecx_660->a804A760))[ebx_684].b0000) * globals->t804A928);
+					ecx_660 = (struct Eq_1399 *) ((char *) ecx_660 + 0x01);
+				} while (ecx_660 <= (struct Eq_1399 *) 0x09);
 				break;
 			}
-			ebx_120 = (struct Eq_1322 *) ((char *) ebx_694 + 0x01);
-			struct Eq_1322 * ebx_694 = ebx_120;
-		} while (ebx_120 <= (struct Eq_1322 *) 0x0F);
-		word32 esp_139;
-		word32 ebp_140;
-		word32 edi_141;
-		word32 esi_142;
-		word32 ebx_143;
-		byte SCZO_144;
-		word16 ax_145;
-		byte ah_146;
-		byte SZO_147;
-		word32 eax_148;
-		byte Z_149;
-		byte C_150;
-		byte SO_151;
-		word32 ecx_152;
-		word32 edx_153;
-		byte CZ_154;
+			ebx_110 = (struct Eq_1392 *) ((char *) ebx_684 + 0x01);
+			struct Eq_1392 * ebx_684 = ebx_110;
+		} while (ebx_110 <= (struct Eq_1392 *) 0x0F);
+		word32 esp_129;
+		word32 ebp_130;
+		word32 edi_131;
+		word32 esi_132;
+		word32 ebx_133;
+		byte SCZO_134;
+		word16 ax_135;
+		byte ah_136;
+		byte SZO_137;
+		word32 eax_138;
+		byte Z_139;
+		byte C_140;
+		byte SO_141;
+		word32 ecx_142;
+		word32 edx_143;
+		byte CZ_144;
 		globals->ptr87D5578();
-		word32 esp_156;
-		word32 ebp_157;
-		word32 edi_158;
-		word32 esi_159;
-		word32 ebx_160;
-		byte SCZO_161;
-		word16 ax_162;
-		byte ah_163;
-		byte SZO_164;
-		word32 eax_165;
-		byte Z_166;
-		byte C_167;
-		byte SO_168;
-		word32 ecx_169;
-		word32 edx_170;
-		byte CZ_171;
+		word32 esp_146;
+		word32 ebp_147;
+		word32 edi_148;
+		word32 esi_149;
+		word32 ebx_150;
+		byte SCZO_151;
+		word16 ax_152;
+		byte ah_153;
+		byte SZO_154;
+		word32 eax_155;
+		byte Z_156;
+		byte C_157;
+		byte SO_158;
+		word32 ecx_159;
+		word32 edx_160;
+		byte CZ_161;
 		globals->ptr87D557C();
-		word32 esp_173;
-		word32 ebp_174;
-		word32 edi_175;
-		word32 esi_176;
-		word32 ebx_177;
-		byte SCZO_178;
-		word16 ax_179;
-		byte ah_180;
-		byte SZO_181;
-		word32 eax_182;
-		byte Z_183;
-		byte C_184;
-		byte SO_185;
-		word32 ecx_186;
-		word32 edx_187;
-		byte CZ_188;
+		word32 esp_163;
+		word32 ebp_164;
+		word32 edi_165;
+		word32 esi_166;
+		word32 ebx_167;
+		byte SCZO_168;
+		word16 ax_169;
+		byte ah_170;
+		byte SZO_171;
+		word32 eax_172;
+		byte Z_173;
+		byte C_174;
+		byte SO_175;
+		word32 ecx_176;
+		word32 edx_177;
+		byte CZ_178;
 		globals->ptr87D5570();
-		word32 esp_189;
-		word32 ebp_190;
-		word32 edi_191;
-		word32 esi_192;
-		word32 ebx_193;
-		byte SCZO_194;
-		word16 ax_195;
-		byte ah_196;
-		byte SZO_197;
-		word32 eax_198;
-		byte Z_199;
-		byte C_200;
-		byte SO_201;
-		word32 ecx_202;
-		word32 edx_203;
-		byte CZ_204;
+		word32 esp_179;
+		word32 ebp_180;
+		word32 edi_181;
+		word32 esi_182;
+		word32 ebx_183;
+		byte SCZO_184;
+		word16 ax_185;
+		byte ah_186;
+		byte SZO_187;
+		word32 eax_188;
+		byte Z_189;
+		byte C_190;
+		byte SO_191;
+		word32 ecx_192;
+		word32 edx_193;
+		byte CZ_194;
 		globals->ptr87D5574();
-		word32 esp_231;
-		word32 ebp_232;
-		word32 edi_233;
-		word32 esi_234;
-		word32 ebx_235;
-		byte SCZO_236;
-		word16 ax_237;
-		byte ah_238;
-		byte SZO_239;
-		word32 eax_240;
-		byte Z_241;
-		byte C_242;
-		byte SO_243;
-		word32 ecx_244;
-		word32 edx_245;
-		byte CZ_246;
+		word32 esp_221;
+		word32 ebp_222;
+		word32 edi_223;
+		word32 esi_224;
+		word32 ebx_225;
+		byte SCZO_226;
+		word16 ax_227;
+		byte ah_228;
+		byte SZO_229;
+		word32 eax_230;
+		byte Z_231;
+		byte C_232;
+		byte SO_233;
+		word32 ecx_234;
+		word32 edx_235;
+		byte CZ_236;
 		globals->ptr87D55A0();
-		word32 esp_251;
-		word32 ebp_252;
-		word32 edi_253;
-		word32 esi_254;
-		word32 ebx_255;
-		byte SCZO_256;
-		word16 ax_257;
-		byte ah_258;
-		byte SZO_259;
-		word32 eax_260;
-		byte Z_261;
-		byte C_262;
-		byte SO_263;
-		word32 ecx_264;
-		word32 edx_265;
-		byte CZ_266;
+		word32 esp_241;
+		word32 ebp_242;
+		word32 edi_243;
+		word32 esi_244;
+		word32 ebx_245;
+		byte SCZO_246;
+		word16 ax_247;
+		byte ah_248;
+		byte SZO_249;
+		word32 eax_250;
+		byte Z_251;
+		byte C_252;
+		byte SO_253;
+		word32 ecx_254;
+		word32 edx_255;
+		byte CZ_256;
 		globals->ptr87D5570();
-		word32 esp_267;
-		word32 ebp_268;
-		word32 edi_269;
-		word32 esi_270;
-		word32 ebx_271;
-		byte SCZO_272;
-		word16 ax_273;
-		byte ah_274;
-		byte SZO_275;
-		word32 eax_276;
-		byte Z_277;
-		byte C_278;
-		byte SO_279;
-		word32 ecx_280;
-		word32 edx_281;
-		byte CZ_282;
+		word32 esp_257;
+		word32 ebp_258;
+		word32 edi_259;
+		word32 esi_260;
+		word32 ebx_261;
+		byte SCZO_262;
+		word16 ax_263;
+		byte ah_264;
+		byte SZO_265;
+		word32 eax_266;
+		byte Z_267;
+		byte C_268;
+		byte SO_269;
+		word32 ecx_270;
+		word32 edx_271;
+		byte CZ_272;
 		globals->ptr87D5574();
-		word32 esp_293;
-		word32 ebp_294;
-		word32 edi_295;
-		word32 esi_296;
-		word32 ebx_297;
-		byte SCZO_298;
-		word16 ax_299;
-		byte ah_300;
-		byte SZO_301;
-		word32 eax_302;
-		byte Z_303;
-		byte C_304;
-		byte SO_305;
-		word32 ecx_306;
-		word32 edx_307;
-		byte CZ_308;
+		word32 esp_283;
+		word32 ebp_284;
+		word32 edi_285;
+		word32 esi_286;
+		word32 ebx_287;
+		byte SCZO_288;
+		word16 ax_289;
+		byte ah_290;
+		byte SZO_291;
+		word32 eax_292;
+		byte Z_293;
+		byte C_294;
+		byte SO_295;
+		word32 ecx_296;
+		word32 edx_297;
+		byte CZ_298;
 		globals->ptr87D5588();
-		word32 esp_321;
-		word32 ebp_322;
-		word32 edi_323;
-		word32 esi_324;
-		word32 ebx_325;
-		byte SCZO_326;
-		word16 ax_327;
-		byte ah_328;
-		byte SZO_329;
-		word32 eax_330;
-		byte Z_331;
-		byte C_332;
-		byte SO_333;
-		word32 ecx_334;
-		word32 edx_335;
-		byte CZ_336;
+		word32 esp_311;
+		word32 ebp_312;
+		word32 edi_313;
+		word32 esi_314;
+		word32 ebx_315;
+		byte SCZO_316;
+		word16 ax_317;
+		byte ah_318;
+		byte SZO_319;
+		word32 eax_320;
+		byte Z_321;
+		byte C_322;
+		byte SO_323;
+		word32 ecx_324;
+		word32 edx_325;
+		byte CZ_326;
 		globals->ptr87D5584();
 		globals->t87D5560 = (real32) ((real64) globals->r804A930 * globals->t87D485C + globals->t87D5560);
-		word32 esp_351;
-		word32 ebp_352;
-		word32 edi_353;
-		word32 esi_354;
-		word32 ebx_355;
-		byte SCZO_356;
-		word16 ax_357;
-		byte ah_358;
-		byte SZO_359;
-		word32 eax_360;
-		byte Z_361;
-		byte C_362;
-		byte SO_363;
-		word32 ecx_364;
-		word32 edx_365;
-		byte CZ_366;
+		word32 esp_341;
+		word32 ebp_342;
+		word32 edi_343;
+		word32 esi_344;
+		word32 ebx_345;
+		byte SCZO_346;
+		word16 ax_347;
+		byte ah_348;
+		byte SZO_349;
+		word32 eax_350;
+		byte Z_351;
+		byte C_352;
+		byte SO_353;
+		word32 ecx_354;
+		word32 edx_355;
+		byte CZ_356;
 		globals->ptr87D5584();
 		if (globals->dw87D55C4 <= 0x2F)
 		{
-			word32 esp_499;
-			word32 ebp_500;
-			word32 edi_501;
-			word32 esi_502;
-			word32 ebx_503;
-			byte SCZO_504;
-			word16 ax_505;
-			byte ah_506;
-			byte SZO_507;
-			word32 eax_508;
-			byte Z_509;
-			byte C_510;
-			byte SO_511;
-			word32 ecx_512;
-			word32 edx_513;
-			byte CZ_514;
+			word32 esp_489;
+			word32 ebp_490;
+			word32 edi_491;
+			word32 esi_492;
+			word32 ebx_493;
+			byte SCZO_494;
+			word16 ax_495;
+			byte ah_496;
+			byte SZO_497;
+			word32 eax_498;
+			byte Z_499;
+			byte C_500;
+			byte SO_501;
+			word32 ecx_502;
+			word32 edx_503;
+			byte CZ_504;
 			globals->ptr87D5590();
-			word32 esp_516;
-			word32 ebp_517;
-			word32 edi_518;
-			word32 esi_519;
-			word32 ebx_520;
-			byte SCZO_521;
-			word16 ax_522;
-			byte ah_523;
-			byte SZO_524;
-			word32 eax_525;
-			byte Z_526;
-			byte C_527;
-			byte SO_528;
-			word32 ecx_529;
-			word32 edx_530;
-			byte CZ_531;
+			word32 esp_506;
+			word32 ebp_507;
+			word32 edi_508;
+			word32 esi_509;
+			word32 ebx_510;
+			byte SCZO_511;
+			word16 ax_512;
+			byte ah_513;
+			byte SZO_514;
+			word32 eax_515;
+			byte Z_516;
+			byte C_517;
+			byte SO_518;
+			word32 ecx_519;
+			word32 edx_520;
+			byte CZ_521;
 			globals->ptr87D559C();
 			do
 			{
-				word32 esp_544;
-				word32 ebp_545;
-				word32 edi_546;
-				word32 esi_547;
-				word32 ebx_548;
-				byte SCZO_549;
-				word16 ax_550;
-				byte ah_551;
-				byte SZO_552;
-				word32 eax_553;
-				byte Z_554;
-				byte C_555;
-				byte SO_556;
-				word32 ecx_557;
-				word32 edx_558;
-				byte CZ_559;
+				word32 esp_534;
+				word32 ebp_535;
+				word32 edi_536;
+				word32 esi_537;
+				word32 ebx_538;
+				byte SCZO_539;
+				word16 ax_540;
+				byte ah_541;
+				byte SZO_542;
+				word32 eax_543;
+				byte Z_544;
+				byte C_545;
+				byte SO_546;
+				word32 ecx_547;
+				word32 edx_548;
+				byte CZ_549;
 				globals->ptr87D5564();
-				word32 ebx_560 = 0x00;
+				word32 ebx_550 = 0x00;
 				do
 				{
-					sin((real64) ebx_560 * globals->t804A934);
-					word32 esp_576;
-					word32 ebp_577;
-					word32 edi_578;
-					word32 esi_579;
-					word32 ebx_580;
-					byte SCZO_581;
-					word16 ax_582;
-					byte ah_583;
-					byte SZO_584;
-					word32 eax_585;
-					byte Z_586;
-					byte C_587;
-					byte SO_588;
-					word32 ecx_589;
-					word32 edx_590;
-					byte CZ_591;
+					sin((real64) ebx_550 * globals->t804A934);
+					word32 esp_566;
+					word32 ebp_567;
+					word32 edi_568;
+					word32 esi_569;
+					word32 ebx_570;
+					byte SCZO_571;
+					word16 ax_572;
+					byte ah_573;
+					byte SZO_574;
+					word32 eax_575;
+					byte Z_576;
+					byte C_577;
+					byte SO_578;
+					word32 ecx_579;
+					word32 edx_580;
+					byte CZ_581;
 					globals->ptr87D5580();
-					word32 esp_605;
-					word32 ebp_606;
-					word32 edi_607;
-					word32 esi_608;
-					int32 ebx_609;
-					byte SCZO_610;
-					word16 ax_611;
-					byte ah_612;
-					byte SZO_613;
-					word32 eax_614;
-					byte Z_615;
-					byte C_616;
-					byte SO_617;
-					word32 ecx_618;
-					word32 edx_619;
-					byte CZ_620;
+					word32 esp_595;
+					word32 ebp_596;
+					word32 edi_597;
+					word32 esi_598;
+					int32 ebx_599;
+					byte SCZO_600;
+					word16 ax_601;
+					byte ah_602;
+					byte SZO_603;
+					word32 eax_604;
+					byte Z_605;
+					byte C_606;
+					byte SO_607;
+					word32 ecx_608;
+					word32 edx_609;
+					byte CZ_610;
 					globals->ptr87D556C();
-					ebx_560 = ebx_609 + 0x01;
-				} while (ebx_609 <= ~0x03FD);
-				word32 esp_625;
-				word32 ebp_626;
-				word32 edi_627;
-				word32 esi_628;
-				word32 ebx_629;
-				byte SCZO_630;
-				word16 ax_631;
-				byte ah_632;
-				byte SZO_633;
-				word32 eax_634;
-				byte Z_635;
-				byte C_636;
-				byte SO_637;
-				word32 ecx_638;
-				word32 edx_639;
-				byte CZ_640;
+					ebx_550 = ebx_599 + 0x01;
+				} while (ebx_599 <= ~0x03FD);
+				word32 esp_615;
+				word32 ebp_616;
+				word32 edi_617;
+				word32 esi_618;
+				word32 ebx_619;
+				byte SCZO_620;
+				word16 ax_621;
+				byte ah_622;
+				byte SZO_623;
+				word32 eax_624;
+				byte Z_625;
+				byte C_626;
+				byte SO_627;
+				word32 ecx_628;
+				word32 edx_629;
+				byte CZ_630;
 				globals->ptr87D5568();
-				word32 esp_650;
-				word32 ebp_651;
-				word32 edi_652;
-				int32 esi_653;
-				word32 ebx_654;
-				byte SCZO_655;
-				word16 ax_656;
-				byte ah_657;
-				byte SZO_658;
-				word32 eax_659;
-				byte Z_660;
-				byte C_661;
-				byte SO_662;
-				word32 ecx_663;
-				word32 edx_664;
-				byte CZ_665;
+				word32 esp_640;
+				word32 ebp_641;
+				word32 edi_642;
+				int32 esi_643;
+				word32 ebx_644;
+				byte SCZO_645;
+				word16 ax_646;
+				byte ah_647;
+				byte SZO_648;
+				word32 eax_649;
+				byte Z_650;
+				byte C_651;
+				byte SO_652;
+				word32 ecx_653;
+				word32 edx_654;
+				byte CZ_655;
 				globals->ptr87D5584();
-			} while (esi_653 <= 0x00);
+			} while (esi_643 <= 0x00);
 		}
-		word32 esp_381;
-		word32 ebp_382;
-		word32 edi_383;
-		word32 esi_384;
-		word32 ebx_385;
-		byte SCZO_386;
-		word16 ax_387;
-		byte ah_388;
-		byte SZO_389;
-		word32 eax_390;
-		byte Z_391;
-		byte C_392;
-		byte SO_393;
-		word32 ecx_394;
-		word32 edx_395;
-		byte CZ_396;
+		word32 esp_371;
+		word32 ebp_372;
+		word32 edi_373;
+		word32 esi_374;
+		word32 ebx_375;
+		byte SCZO_376;
+		word16 ax_377;
+		byte ah_378;
+		byte SZO_379;
+		word32 eax_380;
+		byte Z_381;
+		byte C_382;
+		byte SO_383;
+		word32 ecx_384;
+		word32 edx_385;
+		byte CZ_386;
 		globals->ptr87D5594();
-		word32 esp_398;
-		word32 ebp_399;
-		word32 edi_400;
-		word32 esi_401;
-		word32 ebx_402;
-		byte SCZO_403;
-		word16 ax_404;
-		byte ah_405;
-		byte SZO_406;
-		word32 eax_407;
-		byte Z_408;
-		byte C_409;
-		byte SO_410;
-		word32 ecx_411;
-		word32 edx_412;
-		byte CZ_413;
+		word32 esp_388;
+		word32 ebp_389;
+		word32 edi_390;
+		word32 esi_391;
+		word32 ebx_392;
+		byte SCZO_393;
+		word16 ax_394;
+		byte ah_395;
+		byte SZO_396;
+		word32 eax_397;
+		byte Z_398;
+		byte C_399;
+		byte SO_400;
+		word32 ecx_401;
+		word32 edx_402;
+		byte CZ_403;
 		globals->ptr87D558C();
-		word32 esp_415;
-		word32 ebp_416;
-		word32 edi_417;
-		word32 esi_418;
-		word32 ebx_419;
-		byte SCZO_420;
-		word16 ax_421;
-		byte ah_422;
-		byte SZO_423;
-		word32 eax_424;
-		byte Z_425;
-		byte C_426;
-		byte SO_427;
-		word32 ecx_428;
-		word32 edx_429;
-		byte CZ_430;
+		word32 esp_405;
+		word32 ebp_406;
+		word32 edi_407;
+		word32 esi_408;
+		word32 ebx_409;
+		byte SCZO_410;
+		word16 ax_411;
+		byte ah_412;
+		byte SZO_413;
+		word32 eax_414;
+		byte Z_415;
+		byte C_416;
+		byte SO_417;
+		word32 ecx_418;
+		word32 edx_419;
+		byte CZ_420;
 		globals->ptr87D558C();
-		word32 esp_440;
-		word32 ebp_441;
-		word32 edi_442;
-		word32 esi_443;
-		word32 ebx_444;
-		byte SCZO_445;
-		word16 ax_446;
-		byte ah_447;
-		byte SZO_448;
-		word32 eax_449;
-		byte Z_450;
-		byte C_451;
-		byte SO_452;
-		word32 ecx_453;
-		word32 edx_454;
-		byte CZ_455;
+		word32 esp_430;
+		word32 ebp_431;
+		word32 edi_432;
+		word32 esi_433;
+		word32 ebx_434;
+		byte SCZO_435;
+		word16 ax_436;
+		byte ah_437;
+		byte SZO_438;
+		word32 eax_439;
+		byte Z_440;
+		byte C_441;
+		byte SO_442;
+		word32 ecx_443;
+		word32 edx_444;
+		byte CZ_445;
 		globals->ptr87D5584();
 		do
 		{
-			word32 esp_468;
-			word32 ebp_469;
-			word32 edi_470;
-			word32 esi_471;
-			int32 ebx_472;
-			byte SCZO_473;
-			word16 ax_474;
-			byte ah_475;
-			byte SZO_476;
-			word32 eax_477;
-			byte Z_478;
-			byte C_479;
-			byte SO_480;
-			word32 ecx_481;
-			word32 edx_482;
-			byte CZ_483;
+			word32 esp_458;
+			word32 ebp_459;
+			word32 edi_460;
+			word32 esi_461;
+			int32 ebx_462;
+			byte SCZO_463;
+			word16 ax_464;
+			byte ah_465;
+			byte SZO_466;
+			word32 eax_467;
+			byte Z_468;
+			byte C_469;
+			byte SO_470;
+			word32 ecx_471;
+			word32 edx_472;
+			byte CZ_473;
 			globals->ptr87D5584();
-			fn08048B1E((real32) (sin((real64) globals->t804A900 * (real64) edi_470) * globals->t804A8DC + globals->t804A8DC));
-		} while (ebx_472 <= ~0x09);
+			fn08048B1E((real32) (sin((real64) globals->t804A900 * (real64) edi_460) * globals->t804A8DC + globals->t804A8DC));
+		} while (ebx_462 <= ~0x09);
 	}
-	return fp - 0x04;
-	word32 edi_113;
-	*ediOut = *(ebp - 0x04);
-	word32 ebp_115;
-	*ebpOut = *ebp;
-	return ebp + 0x01;
 }
 
 // 080491C0: void fn080491C0()
 void fn080491C0()
 {
-	dlopen();
-	word32 * esi_40 = &globals->dw804A945;
+	word32 esp_34;
+	word32 eax_35;
+	word32 ecx_36;
+	word32 edx_37;
+	word32 ebx_38;
+	word32 ebp_39;
+	word32 esi_40;
+	word32 edi_41;
+	byte SZO_42;
+	byte C_43;
+	byte SCZO_44;
+	byte Z_45;
+	!dlopen();
+	word32 * esi_52 = &globals->dw804A945;
 	while (true)
 	{
-		word32 eax_53 = *esi_40;
-		if (eax_53 == 0x00)
+		word32 eax_65 = *esi_52;
+		if (eax_65 == 0x00)
 			break;
-		word32 esp_61;
-		word32 eax_62;
-		word32 ecx_63;
-		word32 edx_64;
-		word32 ebx_65;
-		word32 ebp_66;
-		word32 * edi_68;
-		byte SZO_69;
-		byte C_70;
-		byte SCZO_71;
-		byte Z_72;
-		SDL_PollEvent();
-		*edi_68 = eax_62;
+		word32 esp_73;
+		word32 eax_74;
+		word32 ecx_75;
+		word32 edx_76;
+		word32 ebx_77;
+		word32 ebp_78;
+		word32 * edi_80;
+		byte SZO_81;
+		byte C_82;
+		byte SCZO_83;
+		byte Z_84;
+		!dlsym();
+		*edi_80 = eax_74;
 	}
-	return;
 }
 

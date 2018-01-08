@@ -5,17 +5,20 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t8048282 = <code>;
-<anonymous> g_t8048292 = <code>;
-<anonymous> g_t80482A2 = <code>;
+Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t804842C = Unexpected function type (fn void ())
+;
+Eq_26 g_t804845C = Unexpected function type (fn void ())
+;
+char g_str80484D8[] = "Input number: ";
+char g_str80484E7[] = "%d";
+char g_str80484EA[] = "fibonacci(%d) = %d\x0A";
 <anonymous> * g_ptr8049500;
 <anonymous> ** g_ptr804950C = &g_ptr80495E4;
 <anonymous> * g_ptr80495D8 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80495E4 = null;
 word32 g_dw80495E8 = 0x00000000;
-<anonymous> * g_ptr80495F8 = &g_t8048282;
-<anonymous> * g_ptr80495FC = &g_t8048292;
-<anonymous> * g_ptr8049600 = &g_t80482A2;
 <anonymous> * g_ptr8049604 = null;
 byte g_b8049608 = 0x00;
 

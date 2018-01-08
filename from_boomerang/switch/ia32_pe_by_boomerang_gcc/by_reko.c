@@ -11,19 +11,19 @@ DWORD Win32CrtStartup()
 		int3();
 	ui32 eax_17 = (word32) (word16) ((word32) __fstcw() & ~0x0F3F);
 	__fldcw((word16) (eax_17 | 0x033F));
-	fn00401470(fp - 0x04, edi, 0x00401080);
+	fn00401470(fp - 0x04, edi, &globals->t401080);
 	return eax_17 | 0x033F;
 }
 
-// 00401470: void fn00401470(Register ptr32 ebp, Register word32 edi, Stack word32 dwArg04)
-void fn00401470(ptr32 ebp, word32 edi, word32 dwArg04)
+// 00401470: void fn00401470(Register ptr32 ebp, Register word32 edi, Stack (ptr Eq_27) dwArg04)
+void fn00401470(ptr32 ebp, word32 edi, Eq_27 * dwArg04)
 {
 	ptr32 esp_30;
 	ptr32 ebp_29;
-	word32 * esi_28;
+	struct Eq_27 * esi_28;
 	word32 edi_24;
 	ptr32 ebp_5 = fp - 0x04;
-	word32 * esi_11 = dwArg04;
+	struct Eq_27 * esi_11 = dwArg04;
 	word32 eax_17 = fn00401530(fp - 0x04, edi, dwArg04, null);
 	ptr32 esp_19 = fp - 0x1C;
 	edi_24 = edi;
@@ -41,39 +41,39 @@ l0040149D:
 		byte Z_52;
 		cygwin1.dll!dll_crt0__FP11per_process();
 	}
-	struct Eq_60 * esp_31 = esp_30 - 0xB0;
+	struct Eq_62 * esp_31 = esp_30 - 0xB0;
 	esp_31->dw0008 = 0x00;
 	esp_31->ptr0004 = (word32 *) &esp_31->dw0008;
 	esp_31->ptr0000 = esi_28;
 	fn00401530(ebp_29, edi_24, dwArg00, dwArg04);
-	esp_31->ptr0000 = (word32 *) &esp_31->dw0008;
+	esp_31->ptr0000 = (struct Eq_27 *) &esp_31->dw0008;
 	goto l0040149D;
 }
 
-// 00401530: Register word32 fn00401530(Register ptr32 ebp, Register word32 edi, Stack (ptr word32) dwArg04, Stack (ptr word32) dwArg08)
-word32 fn00401530(ptr32 ebp, word32 edi, word32 * dwArg04, word32 * dwArg08)
+// 00401530: Register word32 fn00401530(Register ptr32 ebp, Register word32 edi, Stack (ptr Eq_27) dwArg04, Stack (ptr Eq_27) dwArg08)
+word32 fn00401530(ptr32 ebp, word32 edi, Eq_27 * dwArg04, Eq_27 * dwArg08)
 {
 	word32 eax_27;
-	word32 eax_100 = 0x00;
+	word32 eax_35 = 0x00;
 	LPCSTR * esp_10 = fp - 0x0C;
-	struct Eq_97 * ebx_12 = dwArg08;
+	struct Eq_27 * ebx_12 = dwArg08;
 	if (dwArg08 == null)
 	{
-		word32 ebp_85;
-		word32 eax_86;
-		byte SZO_87;
-		byte C_88;
-		word32 ebx_89;
-		byte SCZO_90;
-		byte Z_91;
-		word32 ecx_92;
-		word32 edx_93;
+		word32 ebp_84;
+		word32 eax_85;
+		byte SZO_86;
+		byte C_87;
+		word32 ebx_88;
+		byte SCZO_89;
+		byte Z_90;
+		word32 ecx_91;
+		word32 edx_92;
 		cygwin1.dll!cygwin_internal();
 		eax_27 = 0x00;
 		if (0x01 == 0x00)
 			return eax_27;
 		ebx_12 = null;
-		eax_100 = 0x01;
+		eax_35 = 0x01;
 	}
 	ebx_12->dw0004 = 0xA8;
 	ebx_12->dw0008 = 1005;
@@ -83,18 +83,18 @@ word32 fn00401530(ptr32 ebp, word32 edi, word32 * dwArg04, word32 * dwArg08)
 	ebx_12->dw002C = 0x004017A0;
 	ebx_12->dw0030 = 4200364;
 	ebx_12->dw0014 = 0x00403020;
-	if (eax_100 != 0x00)
+	if (eax_35 != 0x00)
 		globals->dw403024 = ebx_12->dw00A4;
 	else
 		ebx_12->dw0010 = 0x00403024;
 	ebx_12->dw0078 = 0x00;
 	ebx_12->dw0048 = 4200240;
 	ebx_12->dw004C = 4200224;
-	ebx_12->dw0028 = dwArg04;
+	ebx_12->ptr0028 = dwArg04;
 	ebx_12->dw0050 = 0x00401710;
 	ebx_12->dw0054 = 0x00401700;
 	ebx_12->dw0024 = 0x00403028;
-	ebx_12->ptr0000 = ebp;
+	ebx_12->dw0000 = ebp;
 	ebx_12->dw0018 = 0x00401510;
 	ebx_12->dw001C = 0x004014F0;
 	ebx_12->dw0020 = 0x004016F0;
@@ -110,10 +110,10 @@ word32 fn00401530(ptr32 ebp, word32 edi, word32 * dwArg04, word32 * dwArg08)
 	return eax_27;
 }
 
-// 00401670: void fn00401670(Register word32 edi, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-void fn00401670(word32 edi, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 00401670: void fn00401670(Register word32 edi, Stack (ptr Eq_243) dwArg04, Stack (ptr Eq_243) dwArg08, Stack word32 dwArg0C)
+void fn00401670(word32 edi, Eq_243 * dwArg04, Eq_243 * dwArg08, word32 dwArg0C)
 {
-	struct Eq_246 * ecx_37 = &dwArg04->dw0000 + 0x01;
+	struct Eq_243 * ecx_37 = &dwArg04->dw0000 + 0x01;
 	if (dwArg04 < dwArg08)
 	{
 		do
@@ -123,13 +123,11 @@ void fn00401670(word32 edi, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ecx_37 = ecx_37 + 0x01;
 		} while (ecx_37 < dwArg08);
 	}
-	return;
 }
 
 // 004016B0: void fn004016B0(Register word32 edi)
 void fn004016B0(word32 edi)
 {
-	fn00401670(edi, 0x00403000, 0x00403000, 0x00400000);
-	return;
+	fn00401670(edi, &globals->dw403000, &globals->dw403000, 0x00400000);
 }
 

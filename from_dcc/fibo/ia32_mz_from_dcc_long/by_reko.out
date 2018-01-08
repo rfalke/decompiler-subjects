@@ -1,4 +1,18 @@
 Using options:
-09F4:00DE: warning: Can't determine size of jump vector; probing only one entry.
-fn0967_0037: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0967_005D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+09F4:0084: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:00D7: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:00B0: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:00AA: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:0112: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:01CE: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:02C5: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:01C8: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:0368: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:01CB: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:03CD: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:02C2: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:024A: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:0452: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:0458: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+09F4:045D: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+l0967_00FD: warning: Non-integral switch expression

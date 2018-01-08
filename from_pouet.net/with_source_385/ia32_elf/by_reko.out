@@ -1,7 +1,20 @@
 Using options:
 08048A48: warning: Call target address 00000000 is invalid.
-08048B5F: warning: Unable to resolve imported reference XClearWindow.
-08048864: warning: Unable to resolve imported reference XClearWindow.
-08048C50: warning: Unable to resolve imported reference XSetFont.
-08048854: warning: Unable to resolve imported reference XSetFont.
+08048824: warning: Unable to resolve imported reference !XDrawString.
+08048864: warning: Unable to resolve imported reference !XCreateSimpleWindow.
+08048834: warning: Unable to resolve imported reference !XMapWindow.
+08048984: warning: Unable to resolve imported reference !XCreateGC.
+080488A4: warning: Unable to resolve imported reference !XParseColor.
+08048904: warning: Unable to resolve imported reference !XAllocColor.
+08048874: warning: Unable to resolve imported reference !XSetForeground.
+080488C4: warning: Unable to resolve imported reference !XLoadQueryFont.
+08048914: warning: Unable to resolve imported reference !XSetFont.
+080488E4: warning: Unable to resolve imported reference !MikMod_RegisterAllDrivers.
+08048844: warning: Unable to resolve imported reference !MikMod_RegisterAllLoaders.
+080488F4: warning: Unable to resolve imported reference !MikMod_Init.
+08048884: warning: Unable to resolve imported reference !MikMod_strerror.
+08048964: warning: Unable to resolve imported reference !Player_Load.
+08048884: warning: Unable to resolve imported reference !MikMod_strerror.
+08048944: warning: Unable to resolve imported reference !Player_Start.
+08048974: warning: Unable to resolve imported reference !sin.
 08048D92: error: Unexpected 69 fstsw mask for jz opcode .

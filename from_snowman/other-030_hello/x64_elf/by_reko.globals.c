@@ -4,11 +4,26 @@
 
 #include "subject.h"
 
+Eq_1795 g_t0001;
+Eq_1795 g_t0002;
+Eq_1795 g_t0004;
+Eq_1795 g_t0008;
 <anonymous> g_t853E;
+word64 g_qw8694;
 <anonymous> g_t86AE;
+byte * g_ptr86E4;
 word32 g_dw8706;
+word16 g_w400000 = 0x5A4D;
+Eq_2856 g_a400006[] = 
+	{
+	};
+word32 g_dw40003C = 0x00000080;
+Eq_3014 g_a400090[] = 
+	{
+	};
 word64 g_qw402D10 = 0xFFFFFFFFFFFFFFFF;
 word64 g_qw402D30 = 0x0000000000000000;
+word64 g_qw403000 = 0x0000000000401600;
 word64 * g_ptr403030 = &g_qw402D30;
 word32 g_dw403050 = 0x00000002;
 word32 g_dw403060 = 0xFFFFFFFF;
@@ -20,6 +35,11 @@ word32 g_a404164[] =
 word32 g_dw404288 = 0x00000000;
 word32 g_dw40428C = 0x00000000;
 word32 g_dw404290 = 0x00000001;
+word32 g_dw407000 = 0x00000000;
+word32 g_dw407004 = 0x00000000;
+Eq_619 (* g_ptr407008)[] = null;
+word64 g_qw407010 = 0x0000000000000000;
+word32 g_dw407018 = 0x00000000;
 word32 g_dw40701C = 0x00000000;
 word32 g_dw407020 = 0x00000000;
 word32 g_dw407024 = 0x00000000;
@@ -30,11 +50,11 @@ word32 g_dw407068 = 0x00000000;
 word32 g_dw407070 = 0x00000000;
 word32 g_dw407080 = 0x00000000;
 word32 g_dw407090 = 0x00000000;
-<anonymous> * g_ptr4070A0 = null;
+word64 g_qw4070A0 = 0x0000000000000000;
 word32 g_dw4070A8 = 0x00000000;
 word64 g_qw4070C0 = 0x0000000000000000;
 word64 g_qw407240 = 0x0000000000000000;
-Eq_3515 g_a407244[] = 
+Eq_3747 g_a407244[] = 
 	{
 	};
 word64 g_qw407340 = 0x0000000000000000;
@@ -51,17 +71,23 @@ word32 g_dw407884 = 0x00000000;
 word64 g_qw407890 = 0x0000000000000000;
 word32 g_dw407920 = 0x00000000;
 word64 g_qw407968 = 0x0000000000000000;
+byte * g_ptr407990 = null;
+word32 g_dw407998 = 0x00000000;
+ptr64 g_ptr4079A0 = 0x0000000000000000;
 word64 g_qw4079A8 = 0x0000000000000000;
 word64 g_qw4079B0 = 0x0000000000000000;
+word32 g_dw4079B8 = 0x00000000;
+word64 g_qw4079C0 = 0x0000000000000000;
 <anonymous> * g_ptr4082A8 = &g_t853E;
-word64 g_qw408310 = 0x000000000000864E;
+word64 * g_ptr408338 = &g_qw8694;
 <anonymous> * g_ptr408348 = &g_t86AE;
-union Eq_1069 g_u408358 = 
+union Eq_1633 g_u408358 = 
 	{
 		0x000086D0
 	};
+byte ** g_ptr408360 = &g_ptr86E4;
 word32 * g_ptr408378 = &g_dw8706;
-union Eq_1595 g_u4083D8 = 
+union Eq_2077 g_u4083D8 = 
 	{
 		0x00008778
 	};

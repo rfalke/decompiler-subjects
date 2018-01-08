@@ -7,25 +7,8 @@
 // 08048314: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1CDF != 0x00)
-		fn08048360();
-	return;
-}
-
-// 08048350: void fn08048350()
-void fn08048350()
-{
-	word32 esp_3;
-	globals->ptr804A00C();
-	return;
-}
-
-// 08048360: void fn08048360()
-void fn08048360()
-{
-	word32 esp_3;
-	globals->ptr8049FFC();
-	return;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1CDF == 0x00)
+		;
 }
 
 // 08048370: void main(Register word32 eax)
@@ -35,14 +18,13 @@ void main(word32 eax)
 	overlapping2();
 	overlapping3();
 	overlapping4(eax);
-	return;
 }
 
-// 08048387: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
+// 08048387: void _start(Register (ptr Eq_27) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	__align(fp + 0x04);
-	fn08048350();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048370, dwArg00, (char *) fp + 0x04, &globals->t8048550, &globals->t80485B0, edx, fp);
 	__hlt();
 }
 
@@ -67,7 +49,6 @@ void deregister_tm_clones()
 		word32 ebp_40;
 		null();
 	}
-	return;
 }
 
 // 080483F0: void register_tm_clones()
@@ -85,7 +66,6 @@ void register_tm_clones()
 		word32 ebp_48;
 		null();
 	}
-	return;
 }
 
 // 08048430: void __do_global_dtors_aux()
@@ -96,49 +76,26 @@ void __do_global_dtors_aux()
 		deregister_tm_clones();
 		globals->b804A014 = 0x01;
 	}
-	return;
 }
 
 // 08048450: void frame_dummy()
 void frame_dummy()
 {
-frame_dummy_entry:
-	esp = fp
-	eax = 0x08049F08
-	edx = globals->dw8049F08
-	SZO = cond(edx & edx)
-	Z = SZO
-	C = false
-	branch Test(NE,Z) l08048460
-	goto l0804845B
-l08048450:
-l0804845B:
-	register_tm_clones()
-	return
-l08048460:
-	edx = 0x00
-	SZO = cond(0x00)
-	Z = SZO
-	C = false
-	branch Test(EQ,Z) l0804845B
-l08048469:
-	esp = fp - 0x04
-	dwLoc04 = ebp
-	ebp = fp - 0x04
-	esp = fp - 0x18
-	SCZO = cond(fp - 0x18)
-	esp = fp - 0x1C
-	dwLoc1C = 0x08049F08
-	null()
-	esp = fp - 0x0C
-	SCZO = cond(fp - 0x0C)
-	esp = fp - 0x04
-	ebp = dwLoc04
-	esp = fp
-	register_tm_clones()
-	return
-l08048475_thunk_register_tm_clones:
-frame_dummy_exit:
+	if (globals->dw8049F08 != 0x00 && 0x00 != 0x00)
+	{
+		word32 esp_37;
+		word32 eax_38;
+		word32 edx_39;
+		byte SZO_40;
+		byte C_41;
+		byte Z_42;
+		word32 ebp_43;
+		byte SCZO_44;
+		null();
+		register_tm_clones();
+	}
+	else
+		register_tm_clones();
 }
 
 // 0804847B: void overlapping1(Register word32 eax)
@@ -158,13 +115,11 @@ void overlapping2()
 // 08048540: void overlapping3()
 void overlapping3()
 {
-	return;
 }
 
 // 08048547: void overlapping4(Register word32 eax)
 void overlapping4(word32 eax)
 {
-	return;
 }
 
 // 08048550: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
@@ -189,19 +144,16 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_15->ptr19A7();
 		} while (esi_69 != edi_68 + 0x01);
 	}
-	return;
 }
 
 // 080485B0: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 080485B4: void _fini()
 void _fini()
 {
 	__x86.get_pc_thunk.bx(dwLoc10);
-	return;
 }
 

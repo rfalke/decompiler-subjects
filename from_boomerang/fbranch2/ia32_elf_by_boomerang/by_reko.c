@@ -10,55 +10,34 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048300: void fn08048300()
-void fn08048300()
+// 08048340: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049708();
-	return;
-}
-
-// 08048310: void fn08048310()
-void fn08048310()
-{
-	word32 esp_3;
-	globals->ptr804970C();
-	return;
-}
-
-// 08048320: void fn08048320()
-void fn08048320()
-{
-	word32 esp_3;
-	globals->ptr8049710();
-	return;
-}
-
-// 08048330: void fn08048330()
-void fn08048330()
-{
-	word32 esp_3;
-	globals->ptr8049714();
-	return;
-}
-
-// 08048340: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn08048310();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483E4, dwArg00, (char *) fp + 0x04, &globals->t804851C, &globals->t804856C, edx, fp);
 	__hlt();
 }
 
 // 08048364: void call_gmon_start()
 void call_gmon_start()
 {
-	if (globals->dw80496FC != 0x00)
-		fn08048330();
-	return;
+	word32 edx_15 = globals->dw80496FC;
+	if (edx_15 != 0x00)
+	{
+		word32 esp_33;
+		word32 ebp_34;
+		word32 ebx_35;
+		word32 ecx_36;
+		byte SCZO_37;
+		word32 edx_38;
+		byte SZO_39;
+		byte C_40;
+		byte Z_41;
+		word32 eax_42;
+		!__gmon_start__();
+	}
 }
 
 // 08048388: void __do_global_dtors_aux()
@@ -85,7 +64,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049724 = 0x01;
 	}
-	return;
 }
 
 // 080483BC: void frame_dummy()
@@ -102,26 +80,25 @@ void frame_dummy()
 		byte Z_37;
 		null();
 	}
-	return;
 }
 
 // 080483E4: void main()
 void main()
 {
 	__align(fp - 0x1C);
-	fn08048300();
-	fn08048320();
+	scanf("%f", tLoc40);
+	printf("a is %f, b is %f\n", (real64) 0x40A00000, (real64) rLoc0C);
 	if (((byte) cond((real64) 0x40A00000 - (real64) rLoc0C) & 0x45) == 0x40)
-		printf("Equal", SLICE(134514133, <unknown>, 32));
+		puts("Equal");
 	if (((byte) cond((real64) 0x40A00000 - (real64) rLoc0C) & 0x45 ^ 0x40) != 0x00)
-		printf("Not Equal", SLICE(134514139, <unknown>, 32));
+		puts("Not Equal");
 }
 
 // 0804851C: void __libc_csu_init()
 void __libc_csu_init()
 {
 	_init();
-	int32 eax_21 = 0x080497D8 - 0x080497D8;
+	word32 eax_21 = 0x080497D8 - 0x080497D8;
 	if (eax_21 >> 0x02 != 0x00)
 	{
 		do
@@ -140,16 +117,12 @@ void __libc_csu_init()
 			bcuiposr0 None_67;
 			(*(<anonymous> **) 0x080497D8)();
 		} while (edi_58 + 0x01 < eax_21 >> 0x02);
-		return;
 	}
-	else
-		return;
 }
 
 // 0804856C: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08048574: void __do_global_ctors_aux()
@@ -170,13 +143,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*(ebx_28 - 0x04) != ~0x00);
 	}
-	return;
 }
 
 // 0804859C: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

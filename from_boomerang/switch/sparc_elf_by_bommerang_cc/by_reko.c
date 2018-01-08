@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 00010800: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack word32 dwArg40)
-void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
+// 00010800: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack uint32 dwArg40)
+void _start(word32 g1, Eq_3 * o7, uint32 dwArg40)
 {
 	globals->ptr20BC4 = fp + 0x44;
 	globals->ptr20BA0 = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
@@ -28,12 +28,7 @@ void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
 void main(uint32 o0)
 {
 	if (o0 >= 0x07)
-	{
 		printf();
-		return;
-	}
-	else
-		return;
 }
 
 // 000109C0: void _init(Register (ptr Eq_3) o7)
@@ -45,10 +40,10 @@ void _init(Eq_3 * o7)
 // 000109D0: void fn000109D0(Register (ptr Eq_3) o7)
 void fn000109D0(Eq_3 * o7)
 {
-	struct Eq_52 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_51 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -75,19 +70,19 @@ void fn000109D0(Eq_3 * o7)
 	}
 }
 
-// 000109F8: void _fini(Register (ptr Eq_83) o7)
-void _fini(Eq_83 * o7)
+// 000109F8: void _fini(Register (ptr Eq_82) o7)
+void _fini(Eq_82 * o7)
 {
 	fn00010A08(o7);
 }
 
-// 00010A08: void fn00010A08(Register (ptr Eq_83) o7)
-void fn00010A08(Eq_83 * o7)
+// 00010A08: void fn00010A08(Register (ptr Eq_82) o7)
+void fn00010A08(Eq_82 * o7)
 {
-	struct Eq_88 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_87 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	if (l0_6 == null)
-		return;
+		;
 	else
 	{
 		word32 sp_11;
@@ -117,37 +112,29 @@ void fn00010A08(Eq_83 * o7)
 // 00020A74: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020A74_entry:
-l00020A74:
-l00020A74:
-fn00020A74_exit:
 }
 
 // 00020AA4: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020AB0: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020ABC: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020AC8: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

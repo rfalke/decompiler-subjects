@@ -4,6 +4,10 @@
 
 #include "subject.h"
 
-<anonymous> g_t8048896 = <code>;
-<anonymous> * g_ptr804B774 = &g_t8048896;
+Eq_13 g_t8048B10 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_16 g_t8049E04 = Unexpected function type (fn void ())
+;
+Eq_17 g_t8049E4C = Unexpected function type (fn void ())
+;
 

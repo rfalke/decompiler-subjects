@@ -1,0 +1,18 @@
+Using options:
+error: An error occurred during decompilation. System.NotImplementedException: The method or operation is not implemented.
+  at Reko.Core.TypeLibraryDeserializer.VisitTemplate (Reko.Core.Serialization.SerializedTemplate sTemplate) <0x40e32bc0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Serialization.SerializedTemplate.Accept[T] (ISerializedTypeVisitor`1 visitor) <0x40e32b40 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.TypeLibraryDeserializer.VisitReference (Reko.Core.Serialization.ReferenceType_v1 reference) <0x40e32a80 + 0x00054> in <filename unknown>:0 
+  at Reko.Core.Serialization.ReferenceType_v1.Accept[T] (ISerializedTypeVisitor`1 visitor) <0x40e32a30 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Serialization.ProcedureSerializer.<Deserialize>b__26_1 (Reko.Core.Serialization.Argument_v1 p) <0x40e1b030 + 0x0002e> in <filename unknown>:0 
+  at System.Linq.Enumerable+WhereSelectEnumerableIterator`2[TSource,TResult].MoveNext () <0x40da97f0 + 0x00139> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T]..ctor (IEnumerable`1 collection) <0x40da3e00 + 0x00286> in <filename unknown>:0 
+  at System.Linq.Enumerable.ToList[TSource] (IEnumerable`1 source) <0x40da3c40 + 0x00063> in <filename unknown>:0 
+  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) <0x40e19370 + 0x00763> in <filename unknown>:0 
+  at Reko.Core.TypeLibraryDeserializer.LoadExternalProcedure (Reko.Core.Serialization.ProcedureBase_v1 sProc) <0x40e31190 + 0x000af> in <filename unknown>:0 
+  at Reko.Scanning.ScannerBase.EnsureProcedure (Reko.Core.Address addr, System.String procedureName) <0x40e2c720 + 0x001bb> in <filename unknown>:0 
+  at Reko.Scanning.Scanner.ScanProceduresRecursively () <0x40e2a8b0 + 0x005c3> in <filename unknown>:0 
+  at Reko.Scanning.Scanner.ScanImage () <0x40e28980 + 0x00017> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ScanProgram (Reko.Core.Program program) <0x40e26500 + 0x0015d> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ScanPrograms () <0x40e26360 + 0x00087> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40dbb100 + 0x00208> in <filename unknown>:0 

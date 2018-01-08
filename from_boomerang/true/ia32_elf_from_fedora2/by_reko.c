@@ -4,19 +4,11 @@
 
 #include "subject.h"
 
-// 08048890: void fn08048890()
-void fn08048890()
+// 08048980: void fn08048980(Register (ptr Eq_2) edx, Stack int32 dwArg00)
+void fn08048980( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr804B774();
-	return;
-}
-
-// 08048980: void fn08048980(Stack word32 dwArg00)
-void fn08048980(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn08048890();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048B10, dwArg00, (char *) fp + 0x04, &globals->t8049E04, &globals->t8049E4C, edx, fp);
 	__hlt();
 }
 

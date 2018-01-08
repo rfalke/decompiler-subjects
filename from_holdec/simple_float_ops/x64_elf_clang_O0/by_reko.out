@@ -1,0 +1,39 @@
+Using options:
+00000000004009D0: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009D0: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009D0: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009D0: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009D0: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
+00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
+00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004004F0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+compare_floats: error: An error occurred during data flow analysis.
+    Case PO not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40e5d5e0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40e5cfd0 + 0x001eb> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40e5ced0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x40e10360 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x40e5cba0 + 0x00056> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x40e01380 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40e5c3d0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40e49820 + 0x004a3> in <filename unknown>:0 
+00602060: error: Failed to write global variable g_r602060.
+    Real type real80 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40da8ad0 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40da8840 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40da8790 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40da8760 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40e9e930 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40e22950 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40e9e410 + 0x00225> in <filename unknown>:0 
+00602060: error: Failed to write global variable g_r602060.
+    Real type real80 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40da8ad0 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40da8840 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40da8790 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40da8760 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40e9e930 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40e22950 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40e9e410 + 0x00225> in <filename unknown>:0 

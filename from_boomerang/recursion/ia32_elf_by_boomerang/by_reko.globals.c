@@ -5,19 +5,31 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t80482AE = <code>;
-<anonymous> g_t80482BE = <code>;
-<anonymous> g_t80482CE = <code>;
+Eq_22 g_t804837C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t8048608 = Unexpected function type (fn void ())
+;
+Eq_26 g_t8048658 = Unexpected function type (fn void ())
+;
+char g_str80486AC[] = "a(%d)\x0A";
+char g_str80486B3[] = "b(%d)\x0A";
+char g_str80486BA[] = "c(%d)\x0A";
 <anonymous> * g_a80486C4[] = 
 	{
 	};
+char g_str80486E0[] = "d(%d)\x0A";
+char g_str80486E7[] = "e(%d)\x0A";
+char g_str80486EE[] = "f(%d)\x0A";
+char g_str80486F5[] = "g(%d)\x0A";
+char g_str80486FC[] = "h(%d)\x0A";
+char g_str8048703[] = "i(%d)\x0A";
+char g_str804870A[] = "j(%d)\x0A";
+char g_str8048711[] = "k(%d)\x0A";
+char g_str8048718[] = "l(%d)\x0A";
 <anonymous> * g_ptr8049724 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049730 = null;
 word32 g_dw8049734 = 0x00000000;
 word32 g_dw8049808 = 0x00000000;
-<anonymous> * g_ptr8049810 = &g_t80482AE;
-<anonymous> * g_ptr8049814 = &g_t80482BE;
-<anonymous> * g_ptr8049818 = &g_t80482CE;
 <anonymous> ** g_ptr8049824 = &g_ptr8049730;
 byte g_b8049828 = 0x00;
 

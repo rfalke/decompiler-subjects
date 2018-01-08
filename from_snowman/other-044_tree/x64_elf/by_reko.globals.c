@@ -4,13 +4,14 @@
 
 #include "subject.h"
 
-Eq_28 g_t400673 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_27 g_t400673 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_31 g_t4006F0 = Unexpected function type (fn void ())
+Eq_30 g_t4006F0 = Unexpected function type (fn void ())
 ;
-Eq_32 g_t400780 = Unexpected function type (fn void ())
+Eq_31 g_t400780 = Unexpected function type (fn void ())
 ;
-union Eq_291 g_u6008F8 = 
+char g_str400794[] = "%d\x0A";
+union Eq_286 g_u6008F8 = 
 	{
 		0x00400560
 	};

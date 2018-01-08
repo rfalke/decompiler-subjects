@@ -5,14 +5,20 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t804825E = <code>;
-<anonymous> g_t804826E = <code>;
+Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t8048358 = Unexpected function type (fn void ())
+;
+Eq_26 g_t8048388 = Unexpected function type (fn void ())
+;
+char g_str8048404[] = "Sum is %d\x0A";
 <anonymous> ** g_ptr8049428 = &g_ptr804953C;
+word32 g_a8049440[] = 
+	{
+	};
 <anonymous> * g_ptr8049530 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804953C = null;
 word32 g_dw8049540 = 0x00000000;
-<anonymous> * g_ptr8049550 = &g_t804825E;
-<anonymous> * g_ptr8049554 = &g_t804826E;
 <anonymous> * g_ptr8049558 = null;
 byte g_b804955C = 0x00;
 

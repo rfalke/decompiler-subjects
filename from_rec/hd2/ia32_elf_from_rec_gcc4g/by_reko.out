@@ -1,2 +1,24 @@
 Using options:
+080484C8: warning: Unable to resolve imported reference !__gmon_start__.
 080485B0: error: The method or operation is not implemented.
+080484B8: warning: Unable to resolve imported reference !__xstat.
+08048A32: error: Failed to write global variable g_v8048A32.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41a1d720 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41997db0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41a1ceb0 + 0x00225> in <filename unknown>:0 
+08048A36: error: Failed to write global variable g_v8048A36.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41a1d720 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41997db0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41a1ceb0 + 0x00225> in <filename unknown>:0 
+08048A32: error: Failed to write global variable g_v8048A32.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41a1d720 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41997db0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41a1ceb0 + 0x00225> in <filename unknown>:0 
+08048A36: error: Failed to write global variable g_v8048A36.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41a1d720 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41997db0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41a1ceb0 + 0x00225> in <filename unknown>:0 

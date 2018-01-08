@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 00010538: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack word32 dwArg40)
-void _start(word32 g1, Eq_3 * o7, word32 dwArg40)
+// 00010538: void _start(Register word32 g1, Register (ptr Eq_3) o7, Stack ui32 dwArg40)
+void _start(word32 g1, Eq_3 * o7, ui32 dwArg40)
 {
 	globals->ptr20854 = fp + 0x44;
 	globals->ptr20848 = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
@@ -46,13 +46,13 @@ void _init(Eq_3 * o7)
 // 00010650: void fn00010650(Register (ptr Eq_3) o7)
 void fn00010650(Eq_3 * o7)
 {
-	struct Eq_57 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_56 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
 	<anonymous> * l1_7 = o0_5->ptrFFFFFFF0;
 	if (l0_6 == null)
 	{
 		if (l1_7 == null)
-			return;
+			;
 		else
 		{
 			word32 sp_50;
@@ -106,22 +106,22 @@ void fn00010650(Eq_3 * o7)
 	}
 }
 
-// 00010690: void _fini(Register (ptr Eq_116) o7)
-void _fini(Eq_116 * o7)
+// 00010690: void _fini(Register (ptr Eq_115) o7)
+void _fini(Eq_115 * o7)
 {
 	fn000106A0(o7);
 }
 
-// 000106A0: void fn000106A0(Register (ptr Eq_116) o7)
-void fn000106A0(Eq_116 * o7)
+// 000106A0: void fn000106A0(Register (ptr Eq_115) o7)
+void fn000106A0(Eq_115 * o7)
 {
-	struct Eq_121 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_120 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	<anonymous> * l1_7 = o0_5->ptrFFFFFFF4;
 	if (l0_6 == null)
 	{
 		if (l1_7 == null)
-			return;
+			;
 		else
 		{
 			word32 sp_50;
@@ -178,37 +178,29 @@ void fn000106A0(Eq_116 * o7)
 // 000206EC: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn000206EC_entry:
-l000206EC:
-l000206EC:
-fn000206EC_exit:
 }
 
 // 0002071C: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020728: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020734: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020740: void printf()
 void printf()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

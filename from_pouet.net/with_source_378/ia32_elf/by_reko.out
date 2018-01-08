@@ -1,21 +1,17 @@
 Using options:
 0804888C: warning: Procedure fn0804888C previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080491E7: warning: Unable to resolve imported reference SDL_PollEvent.
-08048460: warning: Unable to resolve imported reference SDL_PollEvent.
-080489B8: warning: Unable to resolve imported reference SDL_GetTicks.
-08048450: warning: Unable to resolve imported reference SDL_GetTicks.
-08048874: error: An error occurred while processing instruction at address 08048874.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40b38920 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40b385b0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40b30880 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40b377e0 + 0x0018c> in <filename unknown>:0 
-08048886: error: An error occurred while processing instruction at address 08048886.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40b38920 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40b385b0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40b30880 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40b377e0 + 0x0018c> in <filename unknown>:0 
+080484B0: warning: Unable to resolve imported reference !SDL_Init.
+08048490: warning: Unable to resolve imported reference !SDL_OpenAudio.
+080484E0: warning: Unable to resolve imported reference !SDL_SetVideoMode.
+080484F0: warning: Unable to resolve imported reference !dlopen.
+08048460: warning: Unable to resolve imported reference !dlsym.
+080484D0: warning: Unable to resolve imported reference !SDL_ShowCursor.
+08048470: warning: Unable to resolve imported reference !SDL_PauseAudio.
+08048480: warning: Unable to resolve imported reference !SDL_GetTicks.
+08048480: warning: Unable to resolve imported reference !SDL_GetTicks.
+080484A0: warning: Unable to resolve imported reference !SDL_GL_SwapBuffers.
+080484C0: warning: Unable to resolve imported reference !SDL_PollEvent.
+08048450: warning: Unable to resolve imported reference !SDL_Quit.
 0804AB70: warning: Expected sizes of arrays to have been determined by now
 0808AB6C: warning: Expected sizes of arrays to have been determined by now
 0808AB70: warning: Expected sizes of arrays to have been determined by now

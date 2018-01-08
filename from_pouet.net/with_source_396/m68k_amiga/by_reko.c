@@ -28,7 +28,7 @@ void fn00001000(word32 d3, word32 d4)
 		*a1_33 = *a0_31;
 		a0_31 = a0_31 + 0x01;
 		a1_33 = a1_33 + 0x01;
-	} while (a0_31 - 0x000106A4 <u 0x00);
+	} while (a0_31 - (byte *) 67236 < 0x00);
 	word32 a7_46;
 	word32 a6_47;
 	word32 d0_48;
@@ -45,6 +45,5 @@ void fn00001000(word32 d3, word32 d4)
 	word32 a3_59;
 	byte C_60;
 	((<anonymous> *) 1202)();
-	return;
 }
 

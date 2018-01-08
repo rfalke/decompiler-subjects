@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 080487E4: void _start(Register (ptr Eq_2) edx, Stack word32 dwArg00)
-void _start( * edx, word32 dwArg00)
+// 080487E4: void _start(Register (ptr Eq_2) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
 	if (0x080499A0 != 0x00)
 		atexit(edx);
@@ -20,7 +20,7 @@ void _start( * edx, word32 dwArg00)
 	byte C_33;
 	byte Z_34;
 	byte SCZO_35;
-	__fpstart();
+	!__fpstart();
 	fn0804884C();
 	_init();
 	exit(main(dwArg00));
@@ -29,7 +29,6 @@ void _start( * edx, word32 dwArg00)
 // 08048848: void _mcount()
 void _mcount()
 {
-	return;
 }
 
 // 0804884C: void fn0804884C()
@@ -47,13 +46,17 @@ void fn0804884C()
 		if (false)
 			globals->dw8049AB0 = 0x01;
 	}
-	return;
 }
 
-// 080488F0: Register word32 main(Stack ui32 dwArg04)
-word32 main(ui32 dwArg04)
+// 080488F0: Register word32 main(Stack int32 dwArg04)
+word32 main(int32 dwArg04)
 {
-	printf(&globals->b8049AD4, SLICE(0x08049AD4, <unknown>, 32));
+	int32 eax_11 = dwArg04;
+	if (dwArg04 < ~0x01)
+		eax_11 = ~0x01;
+	else if (dwArg04 > 0x03)
+		eax_11 = 0x03;
+	printf(&globals->b8049AD4, eax_11);
 	return 0x00;
 }
 
@@ -72,7 +75,6 @@ void _init()
 		bcuiposr0 None_31;
 		(*(ecx_8 - 0x08))();
 	}
-	return;
 }
 
 // 0804894C: void _fini()
@@ -90,6 +92,5 @@ void _fini()
 		bcuiposr0 None_32;
 		(*(ecx_8 - 0x14))();
 	}
-	return;
 }
 

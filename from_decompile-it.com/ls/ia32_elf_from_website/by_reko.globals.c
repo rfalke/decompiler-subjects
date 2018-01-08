@@ -4,95 +4,41 @@
 
 #include "subject.h"
 
-Eq_11950 g_tFFFFDFC4;
-Eq_18659 g_tFFFFFFFF;
+Eq_10323 g_tFFFFFFFF;
 byte g_a0000[];
-Eq_16880 g_t0001;
-Eq_22542 g_t0007;
-Eq_18659 g_t0008;
-Eq_31450 g_a002C[];
-word16 (* g_ptr007E)[];
-<anonymous> g_t8049642 = <code>;
-<anonymous> g_t8049652 = <code>;
-<anonymous> g_t8049662 = <code>;
-<anonymous> g_t8049672 = <code>;
-<anonymous> g_t8049682 = <code>;
-<anonymous> g_t8049692 = <code>;
-<anonymous> g_t80496A2 = <code>;
-<anonymous> g_t80496B2 = <code>;
-<anonymous> g_t80496C2 = <code>;
-<anonymous> g_t80496D2 = <code>;
-<anonymous> g_t80496E2 = <code>;
-<anonymous> g_t80496F2 = <code>;
-<anonymous> g_t8049702 = <code>;
-<anonymous> g_t8049712 = <code>;
-<anonymous> g_t8049722 = <code>;
-<anonymous> g_t8049732 = <code>;
-<anonymous> g_t8049742 = <code>;
-<anonymous> g_t8049752 = <code>;
-<anonymous> g_t8049762 = <code>;
-<anonymous> g_t8049772 = <code>;
-<anonymous> g_t8049782 = <code>;
-<anonymous> g_t8049792 = <code>;
-<anonymous> g_t80497A2 = <code>;
-<anonymous> g_t80497B2 = <code>;
-<anonymous> g_t80497C2 = <code>;
-<anonymous> g_t80497D2 = <code>;
-<anonymous> g_t80497E2 = <code>;
-<anonymous> g_t80497F2 = <code>;
-<anonymous> g_t8049802 = <code>;
-<anonymous> g_t8049812 = <code>;
-<anonymous> g_t8049832 = <code>;
-<anonymous> g_t8049842 = <code>;
-<anonymous> g_t8049852 = <code>;
-<anonymous> g_t8049862 = <code>;
-<anonymous> g_t8049872 = <code>;
-<anonymous> g_t8049882 = <code>;
-<anonymous> g_t8049892 = <code>;
-<anonymous> g_t80498A2 = <code>;
-<anonymous> g_t80498B2 = <code>;
-<anonymous> g_t80498C2 = <code>;
-<anonymous> g_t80498D2 = <code>;
-<anonymous> g_t80498E2 = <code>;
-<anonymous> g_t80498F2 = <code>;
-<anonymous> g_t8049902 = <code>;
-<anonymous> g_t8049912 = <code>;
-<anonymous> g_t8049922 = <code>;
-<anonymous> g_t8049932 = <code>;
-<anonymous> g_t8049942 = <code>;
-<anonymous> g_t8049952 = <code>;
-<anonymous> g_t8049962 = <code>;
-<anonymous> g_t8049972 = <code>;
-<anonymous> g_t8049982 = <code>;
-<anonymous> g_t8049992 = <code>;
-<anonymous> g_t80499A2 = <code>;
-<anonymous> g_t80499B2 = <code>;
-<anonymous> g_t80499C2 = <code>;
-<anonymous> g_t80499D2 = <code>;
-<anonymous> g_t80499E2 = <code>;
-<anonymous> g_t80499F2 = <code>;
-<anonymous> g_t8049A02 = <code>;
-<anonymous> g_t8049A12 = <code>;
-<anonymous> g_t8049A22 = <code>;
-<anonymous> g_t8049A32 = <code>;
-<anonymous> g_t8049A62 = <code>;
-<anonymous> g_t8049A72 = <code>;
-<anonymous> g_t8049A82 = <code>;
-<anonymous> g_t8049A92 = <code>;
-<anonymous> g_t8049AA2 = <code>;
-<anonymous> g_t8049AB2 = <code>;
-<anonymous> g_t8049AC2 = <code>;
+Eq_10323 g_t0001;
+Eq_10323 g_t0003;
+Eq_10323 g_t0005;
+Eq_10323 g_t0006;
+Eq_10323 g_t0007;
+Eq_17292 g_t0008;
+Eq_10323 g_t0009;
+Eq_2182 g_t0024;
+<anonymous> g_t8049A9C = <code>;
+Eq_36 g_t804A04A = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
 <anonymous> g_t804B824 = <code>;
+<anonymous> g_t804D6BB = <code>;
+Eq_40 g_t805E310 = Unexpected function type (fn void ())
+;
+Eq_39 g_t805E320 = Unexpected function type (fn void ())
+;
 word32 g_a805E53C[] = 
 	{
 	};
-Eq_2288 g_a805E5E0[] = 
+word32 g_a805E5E0[] = 
 	{
 	};
 byte g_b805E639 = 0x30;
+char g_str805EC84[] = "dev_ino_pop";
+char g_str805EC90[] = "ls.c";
+char g_str805EC98[] = "sizeof (struct dev_ino) <= __extension__ ({ struct obstack const *__o = (&dev_ino_obstack); (unsigned) (__o->next_free - __o->object_base); })";
+char g_str805ED27[] = " %lu";
+char g_str805ED2F[] = "main";
 word32 g_a805ED40[] = 
 	{
 	};
+char g_str805ED89[] = "coreutils";
 <anonymous> * g_a805F05C[] = 
 	{
 	};
@@ -100,32 +46,45 @@ word32 g_a805ED40[] =
 <anonymous> * g_a805F880[] = 
 	{
 	};
-byte g_b805F916 = 0x25;
+char g_str805F8BC[] = "gobble_file";
+char g_str805F8C8[] = "! command_line_arg || inode == NOT_AN_INODE_NUMBER";
+char g_str805F95C[] = "sort_files";
+char g_str805F967[] = "sort_type != sort_version";
 <anonymous> * g_a805F984[] = 
 	{
 	};
+char g_str805F998[] = "%*lu ";
+char g_str805F9A4[] = "%*s ";
+char g_str8061508[] = "%s (%s) %s\x0A";
+char g_str8061514[] = "%s %s\x0A";
 <anonymous> * g_a8061768[] = 
 	{
 	};
-Eq_17400 g_t8061860 = 
-	{
-		0.0F,
-		1.0F,
-		0.8F,
-		1.414F,
-	};
+char g_str80617A0[] = "Copyright %s %d Free Software Foundation, Inc.";
+char g_str8061830[] = "\x0A  - `%s'";
+char g_str806183A[] = ", `%s'";
 real32 g_r8061868 = 0.8F;
 byte g_b8061870 = 0x00;
+char g_str8061874[] = "# entries:         %lu\x0A";
+char g_str806188C[] = "# buckets:         %lu\x0A";
+char g_str80618A4[] = "# buckets used:    %lu (%.2f%%)\x0A";
+char g_str80618C5[] = "max bucket length: %lu\x0A";
 real32 g_r80618E8 = 4.294967e+09F;
+Eq_2182 g_t806191C = 
+	{
+		
+		{
+		},
+		0x08061917,
+	};
+uint32 g_dw8061928 = 0x000000B0;
 real80 g_r8061970 = ;
 real80 g_r8061980 = ;
 real80 g_r8061990 = ;
-Eq_1808 g_a8061A00[] = 
+word32 g_a8061A00[] = 
 	{
 	};
-word32 g_a8061A20[] = 
-	{
-	};
+uint32 g_dw8061A20 = 0x00000000;
 <anonymous> * g_a8061A44[] = 
 	{
 	};
@@ -138,9 +97,15 @@ word32 g_a8061A20[] =
 <anonymous> * g_a8061D08[] = 
 	{
 	};
+char g_str8061F58[] = "xstrtoul";
+char g_str8061F61[] = "xstrtol.c";
+char g_str8061F6C[] = "0 <= strtol_base && strtol_base <= 36";
 <anonymous> * g_a8061F94[] = 
 	{
 	};
+char g_str806206C[] = "xstrtoumax";
+char g_str8062077[] = "xstrtol.c";
+char g_str8062084[] = "0 <= strtol_base && strtol_base <= 36";
 <anonymous> * g_a80620AC[] = 
 	{
 	};
@@ -159,106 +124,45 @@ word32 g_a8061A20[] =
 <anonymous> * g_ptr8063F00 = &g_tFFFFFFFF;
 word32 g_dw8063F10 = 0x00000000;
 word32 g_dw8063FFC = 0x00000000;
-<anonymous> * g_ptr8064060 = &g_t8049642;
-<anonymous> * g_ptr8064064 = &g_t8049652;
-<anonymous> * g_ptr8064068 = &g_t8049662;
-<anonymous> * g_ptr806406C = &g_t8049672;
-<anonymous> * g_ptr8064070 = &g_t8049682;
-<anonymous> * g_ptr8064074 = &g_t8049692;
-<anonymous> * g_ptr8064078 = &g_t80496A2;
-<anonymous> * g_ptr806407C = &g_t80496B2;
-<anonymous> * g_ptr8064080 = &g_t80496C2;
-<anonymous> * g_ptr8064084 = &g_t80496D2;
-<anonymous> * g_ptr8064088 = &g_t80496E2;
-<anonymous> * g_ptr806408C = &g_t80496F2;
-<anonymous> * g_ptr8064090 = &g_t8049702;
-<anonymous> * g_ptr8064094 = &g_t8049712;
-<anonymous> * g_ptr8064098 = &g_t8049722;
-<anonymous> * g_ptr806409C = &g_t8049732;
-<anonymous> * g_ptr80640A0 = &g_t8049742;
-<anonymous> * g_ptr80640A4 = &g_t8049752;
-<anonymous> * g_ptr80640A8 = &g_t8049762;
-<anonymous> * g_ptr80640AC = &g_t8049772;
-<anonymous> * g_ptr80640B0 = &g_t8049782;
-<anonymous> * g_ptr80640B4 = &g_t8049792;
-<anonymous> * g_ptr80640B8 = &g_t80497A2;
-<anonymous> * g_ptr80640BC = &g_t80497B2;
-<anonymous> * g_ptr80640C0 = &g_t80497C2;
-<anonymous> * g_ptr80640C4 = &g_t80497D2;
-<anonymous> * g_ptr80640C8 = &g_t80497E2;
-<anonymous> * g_ptr80640CC = &g_t80497F2;
-<anonymous> * g_ptr80640D0 = &g_t8049802;
-<anonymous> * g_ptr80640D4 = &g_t8049812;
-<anonymous> * g_ptr80640DC = &g_t8049832;
-<anonymous> * g_ptr80640E0 = &g_t8049842;
-<anonymous> * g_ptr80640E4 = &g_t8049852;
-<anonymous> * g_ptr80640E8 = &g_t8049862;
-<anonymous> * g_ptr80640EC = &g_t8049872;
-<anonymous> * g_ptr80640F0 = &g_t8049882;
-<anonymous> * g_ptr80640F4 = &g_t8049892;
-<anonymous> * g_ptr80640F8 = &g_t80498A2;
-<anonymous> * g_ptr80640FC = &g_t80498B2;
-<anonymous> * g_ptr8064100 = &g_t80498C2;
-<anonymous> * g_ptr8064104 = &g_t80498D2;
-<anonymous> * g_ptr8064108 = &g_t80498E2;
-<anonymous> * g_ptr806410C = &g_t80498F2;
-<anonymous> * g_ptr8064110 = &g_t8049902;
-<anonymous> * g_ptr8064114 = &g_t8049912;
-<anonymous> * g_ptr8064118 = &g_t8049922;
-<anonymous> * g_ptr806411C = &g_t8049932;
-<anonymous> * g_ptr8064120 = &g_t8049942;
-<anonymous> * g_ptr8064124 = &g_t8049952;
-<anonymous> * g_ptr8064128 = &g_t8049962;
-<anonymous> * g_ptr806412C = &g_t8049972;
-<anonymous> * g_ptr8064130 = &g_t8049982;
-<anonymous> * g_ptr8064134 = &g_t8049992;
-<anonymous> * g_ptr8064138 = &g_t80499A2;
-<anonymous> * g_ptr806413C = &g_t80499B2;
-<anonymous> * g_ptr8064140 = &g_t80499C2;
-<anonymous> * g_ptr8064144 = &g_t80499D2;
-<anonymous> * g_ptr8064148 = &g_t80499E2;
-<anonymous> * g_ptr806414C = &g_t80499F2;
-<anonymous> * g_ptr8064150 = &g_t8049A02;
-<anonymous> * g_ptr8064154 = &g_t8049A12;
-<anonymous> * g_ptr8064158 = &g_t8049A22;
-<anonymous> * g_ptr806415C = &g_t8049A32;
-<anonymous> * g_ptr8064168 = &g_t8049A62;
-<anonymous> * g_ptr806416C = &g_t8049A72;
-<anonymous> * g_ptr8064170 = &g_t8049A82;
-<anonymous> * g_ptr8064174 = &g_t8049A92;
-<anonymous> * g_ptr8064178 = &g_t8049AA2;
-<anonymous> * g_ptr806417C = &g_t8049AB2;
-<anonymous> * g_ptr8064180 = &g_t8049AC2;
 int32 g_dw80641C0 = -2147483648;
 int32 g_dw80641C4 = -1;
 byte g_b80641CA = 0x01;
 byte g_b80641CB = 0x01;
-word32 g_dw80641D0 = 0x00000001;
-word32 g_dw80641D4 = 0x00000000;
-Eq_31354 g_a80641E0[] = 
+Eq_83 g_t80641D0 = 
+	{
+		true
+	};
+Eq_83 g_t80641D4 = 
+	{
+		false
+	};
+Eq_27944 g_a80641E0[] = 
 	{
 	};
-Eq_31355 g_a80641E4[] = 
+Eq_27945 g_a80641E4[] = 
 	{
 	};
+word32 g_dw80641E8 = 0x00000001;
+word32 g_dw80641F0 = 0x00000000;
 word32 g_dw80641F4 = 0x00000000;
+word32 g_dw80641F8 = 0x00000001;
 word32 g_dw8064210 = 0x00000005;
-Eq_2288 g_t8064214 = 
+Eq_83 g_t8064214 = 
 	{
-		134604353
+		true
 	};
 word32 g_dw806423C = 0x00000000;
 word32 g_dw8064244 = 0x00000000;
-Eq_272 g_t8064280 = 
+Eq_83 g_t8064280 = 
 	{
-		'z'
+		true
 	};
-Eq_272 g_t8064284 = 
+Eq_83 g_t8064284 = 
 	{
-		'\x84'
+		true
 	};
 byte g_b8064288 = 0x01;
-word32 g_a80642A0[] = 
+<anonymous> * g_a80642A0[] = 
 	{
 	};
 int32 g_dw8064380 = -1;
@@ -267,134 +171,182 @@ ui32 g_a80643A0[] =
 	};
 word32 g_dw80643C8 = 0x00000001;
 word32 g_dw80643CC = 0x08051A20;
-word32 g_dw80643D0 = 0x00000001;
-Eq_10216 g_t80643D4 = 
+Eq_83 g_t80643D0 = 
 	{
-		1
+		true
+	};
+Eq_83 g_t80643D4 = 
+	{
+		true
 	};
 word32 g_dw80643D8 = 0x00000100;
-word32 g_dw80643DC = 0x08064760;
-struct Eq_21081 * g_ptr80643E0 = &g_dw80643D8;
-word32 g_dw8064400 = 0x00000000;
-word32 g_dw8064404 = 0x00000000;
-Eq_272 g_t8064420 = 
+Eq_83 g_t80643DC = 
 	{
-		'\x00'
+		true
+	};
+Eq_83 g_t80643E0 = 
+	{
+		true
+	};
+word32 g_dw8064400 = 0x00000000;
+Eq_83 g_t8064404 = 
+	{
+		false
+	};
+Eq_83 g_t8064420 = 
+	{
+		false
 	};
 byte g_b8064428 = 0x00;
 uint32 g_dw806442C = 0x00000000;
-struct Eq_3630 * g_ptr8064440 = null;
-Eq_272 g_t8064444 = 
+struct Eq_3623 * g_ptr8064440 = null;
+Eq_83 g_t8064444 = 
 	{
-		'\x00'
+		false
 	};
-Eq_272 g_t8064448 = 
+Eq_83 g_t8064448 = 
 	{
-		'\x00'
+		false
 	};
-Eq_14103 (* g_ptr806444C)[] = null;
-Eq_272 g_t8064450 = 
+Eq_83 g_t806444C = 
 	{
-		'\x00'
+		false
 	};
-Eq_272 g_t8064454 = 
+Eq_83 g_t8064450 = 
 	{
-		'\x00'
+		false
 	};
-Eq_14103 (* g_ptr8064458)[] = null;
+Eq_83 g_t8064454 = 
+	{
+		false
+	};
+Eq_83 g_t8064458 = 
+	{
+		false
+	};
 uint32 g_dw806445C = 0x00000000;
 byte g_b8064460 = 0x00;
-struct Eq_775 * g_ptr8064464 = null;
+Eq_83 g_t8064464 = 
+	{
+		false
+	};
 byte g_b8064468 = 0x00;
 bool g_f8064469 = false;
 int32 g_dw806446C = 0;
 int32 g_dw8064470 = 0;
 int32 g_dw8064474 = 0;
-Eq_5898 g_t8064478 = 
+Eq_5968 g_t8064478 = 
 	{
 		0
 	};
-int32 g_dw806447C = 0;
-Eq_272 g_t8064480 = 
+Eq_5968 g_t806447C = 
 	{
-		'\x00'
+		0
 	};
-Eq_272 g_t8064484 = 
+Eq_5968 g_t8064480 = 
 	{
-		'\x00'
+		0
+	};
+Eq_5968 g_t8064484 = 
+	{
+		0
 	};
 int32 g_dw8064488 = 0;
-word32 g_dw806448C = 0x00000000;
+int32 g_dw806448C = 0;
 int32 g_dw8064490 = 0;
-Eq_825 g_t8064494 = 
-	{
-		0
-	};
+uint32 g_dw8064494 = 0x00000000;
 uint32 g_dw8064498 = 0x00000000;
 ui32 g_dw806449C = 0x00000000;
 byte g_b80644A0 = 0x00;
 byte g_b80644A1 = 0x00;
 byte g_b80644A2 = 0x00;
 byte g_b80644A3 = 0x00;
-int32 g_dw80644A4 = 0;
-word32 g_dw80644A8 = 0x00000000;
-word32 g_dw80644AC = 0x00000000;
+Eq_83 g_t80644A4 = 
+	{
+		false
+	};
+Eq_83 g_t80644A8 = 
+	{
+		false
+	};
+Eq_83 g_t80644AC = 
+	{
+		false
+	};
 byte g_b80644B0 = 0x00;
 uint32 g_dw80644B4 = 0x00000000;
 byte g_b80644B8 = 0x00;
-Eq_2288 g_t80644BC = 
+Eq_83 g_t80644BC = 
 	{
-		0
+		false
 	};
 byte g_b80644C0 = 0x00;
 byte g_b80644C1 = 0x00;
-byte * g_ptr80644C4 = null;
+uint32 g_dw80644C4 = 0x00000000;
 byte g_b80644C8 = 0x00;
 byte g_b80644C9 = 0x00;
 byte g_b80644CA = 0x00;
 word32 g_dw80644CC = 0x00000000;
-word32 g_dw80644D0 = 0x00000000;
-word32 g_dw80644D4 = 0x00000000;
-byte g_b80644D8 = 0x00;
-Eq_272 g_t80644DC = 
+Eq_83 g_t80644D0 = 
 	{
-		'\x00'
+		false
 	};
-Eq_272 g_t80644E0 = 
+Eq_83 g_t80644D4 = 
 	{
-		'\x00'
+		false
+	};
+byte g_b80644D8 = 0x00;
+Eq_83 g_t80644DC = 
+	{
+		false
+	};
+Eq_83 g_t80644E0 = 
+	{
+		false
 	};
 uint32 g_dw80644E4 = 0x00000000;
 byte g_b80644E8 = 0x00;
 uint32 g_dw80644EC = 0x00000000;
 byte g_b80644F0 = 0x00;
 byte g_b80644F1 = 0x00;
-ui32 g_dw8064580 = 0x00000000;
+int32 g_dw8064580 = 0;
 ui32 g_dw8064584 = 0x00000000;
 word32 g_dw8064588 = 0x00000000;
-Eq_14103 (* g_ptr806458C)[] = null;
-Eq_272 g_t8064590 = 
+Eq_83 g_t806458C = 
 	{
-		'\x00'
+		false
 	};
-word32 g_dw8064594 = 0x00000000;
+Eq_83 g_t8064590 = 
+	{
+		false
+	};
+Eq_1512 g_t8064594 = 0x00000000;
 uint32 g_dw8064628 = 0x00000000;
-Eq_274 g_t806462C = 
+Eq_83 g_t806462C = 
 	{
-		0
+		false
 	};
-int32 g_dw8064630 = 0;
-Eq_272 g_t80646FC = 
+word32 g_dw8064630 = 0x00000000;
+Eq_83 g_t80646FC = 
 	{
-		'\x00'
+		false
 	};
-struct Eq_19514 * g_ptr8064700 = null;
-struct Eq_19661 * g_ptr8064704 = null;
-struct Eq_19805 * g_ptr8064708 = null;
-struct Eq_19952 * g_ptr806470C = null;
+Eq_83 g_t8064700 = 
+	{
+		false
+	};
+Eq_83 g_t8064704 = 
+	{
+		false
+	};
+Eq_83 g_t8064708 = 
+	{
+		false
+	};
+Eq_83 g_t806470C = 
+	{
+		false
+	};
 word32 g_dw8064720 = 0x00000000;
-Eq_747 g_t8064868 = 
-	{
-		0x00
-	};
+word32 g_dw8064868 = 0x00000000;
 

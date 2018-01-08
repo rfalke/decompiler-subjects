@@ -45,6 +45,5 @@ void fn00001000(word32 d0, word32 a1, word32 a6)
 		}
 		*a4_126 = d2_116;
 	}
-	return;
 }
 

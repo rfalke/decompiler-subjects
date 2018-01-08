@@ -10,30 +10,13 @@ void _init(word32 esi, word32 edi)
 	call_gmon_start();
 	frame_dummy(esi, edi);
 	__do_global_ctors_aux(esi, edi);
-	return;
 }
 
-// 08048278: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 080482A0: void _start(Register (ptr Eq_17) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80495B4();
-	return;
-}
-
-// 08048288: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495B8();
-	return;
-}
-
-// 080482A0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048364, dwArg00, (char *) fp + 0x04, &globals->t80483A0, &globals->t8048400, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F0: void __do_global_dtors_aux(Register int32 esi)
@@ -84,7 +66,6 @@ void __do_global_dtors_aux(int32 esi)
 		}
 		globals->b80495C0 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy(Register word32 esi, Register word32 edi)
@@ -103,21 +84,19 @@ void frame_dummy(word32 esi, word32 edi)
 		word32 edi_40;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048364: void main()
 void main()
 {
 	__align(fp - 0x1C);
-	printf@@GLIBC_2.0();
-	return;
+	printf("%08X\n", 2271556641);
 }
 
 // 080483A0: void __libc_csu_init(Register word32 edi)
 void __libc_csu_init(word32 edi)
 {
-	struct Eq_114 * ebx_19 = __i686.get_pc_thunk.bx(dwLoc20);
+	struct Eq_127 * ebx_19 = __i686.get_pc_thunk.bx(dwLoc20);
 	_init(0x00, edi);
 	if (0x00 < &ebx_19->ptr110C - &ebx_19->ptr110C >> 0x02)
 	{
@@ -136,13 +115,12 @@ void __libc_csu_init(word32 edi)
 			ebx_19->ptr110C();
 		} while (esi_50 + 0x01 < edi_49);
 	}
-	return;
 }
 
 // 08048400: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	struct Eq_114 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc10);
+	struct Eq_127 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc10);
 	int32 eax_17 = ebx_11->a10AE - ebx_11->a10AE;
 	int32 esi_22 = (eax_17 >> 0x02) - 0x01;
 	if (eax_17 >> 0x02 != 0x00)
@@ -164,7 +142,6 @@ void __libc_csu_fini()
 		} while (esi_40 != 0x00);
 	}
 	_fini(esi_22);
-	return;
 }
 
 // 08048450: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
@@ -192,13 +169,11 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			eax_12();
 		} while (*ebx_35 != ~0x00);
 	}
-	return;
 }
 
 // 08048490: void _fini(Register int32 esi)
 void _fini(int32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

@@ -1,9 +1,9 @@
 Using options:
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.LoadImportReferencesFromRelPlt (System.Collections.Generic.Dictionary`2 importReferences) <0x41117870 + 0x00061> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) <0x411174a0 + 0x00027> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader32.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41117000 + 0x0004b> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x410f6c50 + 0x0002c> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x410fa360 + 0x0034b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x410f90c0 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x410f8d60 + 0x000dc> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.LoadImportReferencesFromRelPlt (System.Collections.Generic.Dictionary`2 importReferences) <0x404bd7e0 + 0x00064> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) <0x404bd4d0 + 0x00027> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x404bca00 + 0x00044> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x404bc9b0 + 0x0002f> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x4049e700 + 0x0034b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x4049d460 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x4049d100 + 0x000dc> in <filename unknown>:0 

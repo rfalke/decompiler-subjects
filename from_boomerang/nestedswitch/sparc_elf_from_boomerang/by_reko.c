@@ -74,13 +74,11 @@ void __do_global_dtors_aux(word32 o7)
 			fn0002089C();
 		*l7_116->ptr0010 = 0x01;
 	}
-	return;
 }
 
 // 000105D0: void call___do_global_dtors_aux()
 void call___do_global_dtors_aux()
 {
-	return;
 }
 
 // 000105DC: void frame_dummy(Register word32 o7)
@@ -89,12 +87,10 @@ void frame_dummy(word32 o7)
 	struct Eq_41 * l7_22 = fn0001051C(o7, 66104);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0008 != 0x00)
-		{
-			if (l7_22->dw001C != 0x00)
-				fn000208B4();
-		}
-		return;
+		if (*l7_22->ptr0008 == 0x00 || l7_22->dw001C == 0x00)
+			;
+		else
+			fn000208B4();
 	}
 	else
 		fn000208A8();
@@ -103,19 +99,13 @@ void frame_dummy(word32 o7)
 // 00010660: void call_frame_dummy()
 void call_frame_dummy()
 {
-	return;
 }
 
 // 000106A4: void main(Register uint32 o0)
 void main(uint32 o0)
 {
 	if (o0 >= 0x07)
-	{
 		puts();
-		return;
-	}
-	else
-		return;
 }
 
 // 00010754: Register word32 fn00010754(Register word32 o7, Register word32 l7)
@@ -167,7 +157,6 @@ word32 * __do_global_ctors_aux(word32 o7)
 // 000107A8: void call___do_global_ctors_aux()
 void call___do_global_ctors_aux()
 {
-	return;
 }
 
 // 000107B4: Register word32 _init(Register word32 o7)
@@ -181,64 +170,52 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-	return;
 }
 
 // 00020848: void _PROCEDURE_LINKAGE_TABLE_()
 void _PROCEDURE_LINKAGE_TABLE_()
 {
-fn00020848_entry:
-l00020848:
-l00020848:
-fn00020848_exit:
 }
 
 // 00020878: void atexit()
 void atexit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020884: void exit()
 void exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 00020890: void _exit()
 void _exit()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 0002089C: void fn0002089C()
 void fn0002089C()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000208A8: void fn000208A8()
 void fn000208A8()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000208B4: void fn000208B4()
 void fn000208B4()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 
 // 000208C0: void puts()
 void puts()
 {
 	_PROCEDURE_LINKAGE_TABLE_();
-	return;
 }
 

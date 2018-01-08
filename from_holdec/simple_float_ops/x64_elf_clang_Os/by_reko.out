@@ -1,0 +1,29 @@
+Using options:
+0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
+0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
+0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
+0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
+0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
+000000000040089B: warning: The format specifier '%z' passed to *printf is not known.
+000000000040089B: warning: The format specifier '%z' passed to *printf is not known.
+000000000040089B: warning: The format specifier '%z' passed to *printf is not known.
+00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004004F0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00601060: error: Failed to write global variable g_r601060.
+    Real type real80 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41139ad0 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41139840 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41139790 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41139760 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x4122c310 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41142fb0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x4122bdf0 + 0x00225> in <filename unknown>:0 
+00601060: error: Failed to write global variable g_r601060.
+    Real type real80 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41139ad0 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41139840 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41139790 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41139760 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x4122c310 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41142fb0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x4122bdf0 + 0x00225> in <filename unknown>:0 

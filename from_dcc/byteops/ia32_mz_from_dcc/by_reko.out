@@ -1,3 +1,2 @@
 Using options:
-fn0800_0B48: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0800_0B6E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+l0800_0C03: warning: Non-integral switch expression

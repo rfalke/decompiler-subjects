@@ -10,86 +10,13 @@ void _init(word32 esi)
 	call_gmon_start();
 	frame_dummy(esi);
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048594: void fn08048594()
-void fn08048594()
+// 08048624: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049ACC();
-	return;
-}
-
-// 080485A4: void fn080485A4()
-void fn080485A4()
-{
-	word32 esp_3;
-	globals->ptr8049AD0();
-	return;
-}
-
-// 080485B4: void fn080485B4()
-void fn080485B4()
-{
-	word32 esp_3;
-	globals->ptr8049AD4();
-	return;
-}
-
-// 080485C4: void fn080485C4()
-void fn080485C4()
-{
-	word32 esp_3;
-	globals->ptr8049AD8();
-	return;
-}
-
-// 080485D4: void fn080485D4()
-void fn080485D4()
-{
-	word32 esp_3;
-	globals->ptr8049ADC();
-	return;
-}
-
-// 080485E4: void fn080485E4()
-void fn080485E4()
-{
-	word32 esp_3;
-	globals->ptr8049AE0();
-	return;
-}
-
-// 080485F4: void fn080485F4()
-void fn080485F4()
-{
-	word32 esp_3;
-	globals->ptr8049AE4();
-	return;
-}
-
-// 08048604: void fn08048604()
-void fn08048604()
-{
-	word32 esp_3;
-	globals->ptr8049AE8();
-	return;
-}
-
-// 08048614: void fn08048614()
-void fn08048614()
-{
-	word32 esp_3;
-	globals->ptr8049AEC();
-	return;
-}
-
-// 08048624: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080485C4();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048824, dwArg00, (char *) fp + 0x04, &globals->t804886C, &globals->t80488C0, edx, fp);
 	__hlt();
 }
 
@@ -110,7 +37,6 @@ void call_gmon_start()
 		byte Z_39;
 		eax_15();
 	}
-	return;
 }
 
 // 0804866C: void __do_global_dtors_aux()
@@ -137,7 +63,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049B74 = 0x01;
 	}
-	return;
 }
 
 // 080486A0: void frame_dummy(Register word32 esi)
@@ -155,61 +80,86 @@ void frame_dummy(word32 esi)
 		word32 esi_40;
 		null();
 	}
-	return;
 }
 
 // 080486CC: Register word32 MAIN__()
 word32 MAIN__()
 {
-	fn08048614();
-	word32 esp_21;
-	word32 ebp_22;
-	byte SCZO_23;
-	word32 eax_24;
-	byte Z_25;
-	s_rsle();
-	word32 esp_28;
-	word32 ebp_29;
-	byte SCZO_30;
-	word32 eax_31;
-	byte Z_32;
-	f_init();
-	fn08048594();
-	word32 esp_48;
-	word32 ebp_49;
-	byte SCZO_50;
-	word32 eax_51;
-	byte Z_52;
-	s_rsle();
-	fn080485B4();
-	<anonymous> * dwLoc10_55 = &globals->t8048760;
+	word32 esp_11;
+	word32 ebp_12;
+	byte SCZO_13;
+	word32 eax_14;
+	byte Z_15;
+	!s_wsle();
+	word32 esp_26;
+	word32 ebp_27;
+	byte SCZO_28;
+	word32 eax_29;
+	byte Z_30;
+	!do_lio();
+	word32 esp_33;
+	word32 ebp_34;
+	byte SCZO_35;
+	word32 eax_36;
+	byte Z_37;
+	!e_wsle();
+	word32 esp_42;
+	word32 ebp_43;
+	byte SCZO_44;
+	word32 eax_45;
+	byte Z_46;
+	!s_rsle();
+	word32 esp_58;
+	word32 ebp_59;
+	byte SCZO_60;
+	word32 eax_61;
+	byte Z_62;
+	!do_lio();
+	word32 esp_65;
+	word32 ebp_66;
+	byte SCZO_67;
+	word32 eax_68;
+	byte Z_69;
+	!e_rsle();
+	<anonymous> * dwLoc10_70 = &globals->t8048760;
 	if (dwLoc08 == 0x02)
-		dwLoc10_55 = &globals->t8048793;
+		dwLoc10_70 = &globals->t8048793;
 	if (dwLoc08 == 0x03)
-		dwLoc10_55 = &globals->t80487C3;
+		dwLoc10_70 = &globals->t80487C3;
 	if (dwLoc08 == 0x04)
-		dwLoc10_55 = &globals->t80487F3;
-	word32 esp_67;
-	word32 ebp_68;
-	byte SCZO_69;
-	word32 eax_70;
-	byte Z_71;
-	dwLoc10_55();
-	return esp_67;
+		dwLoc10_70 = &globals->t80487F3;
+	word32 esp_82;
+	word32 ebp_83;
+	byte SCZO_84;
+	word32 eax_85;
+	byte Z_86;
+	dwLoc10_70();
+	return esp_82;
 }
 
-// 08048824: void main(Register word32 esi, Stack word32 dwArg04, Stack word32 dwArg08)
-void main(word32 esi, word32 dwArg04, word32 dwArg08)
+// 08048824: void main(Stack word32 dwArg04, Stack word32 dwArg08)
+void main(word32 dwArg04, word32 dwArg08)
 {
 	__align(fp - 0x0C);
-	fn08048604();
-	fn080485E4();
-	fn080485D4();
+	word32 esp_15;
+	word32 ebp_16;
+	byte SCZO_17;
+	word32 eax_18;
+	!f_setarg();
+	word32 esp_19;
+	word32 ebp_20;
+	byte SCZO_21;
+	word32 eax_22;
+	!f_setsig();
+	word32 esp_23;
+	word32 ebp_24;
+	byte SCZO_25;
+	word32 eax_26;
+	!f_init();
 	atexit(0x08048584);
-	*MAIN__() = 0x00;
-	fn080485F4();
-	__libc_csu_init(esi);
-	return;
+	int32 * esp_28 = MAIN__();
+	*esp_28 = 0x00;
+	exit(*esp_28);
 }
 
 // 0804886C: void __libc_csu_init(Register word32 esi)
@@ -222,7 +172,7 @@ void __libc_csu_init(word32 esi)
 		{
 			word32 esp_47;
 			word32 ebp_48;
-			Eq_204 edi_49;
+			Eq_208 edi_49;
 			uint32 esi_50;
 			word32 ebx_51;
 			byte SCZO_52;
@@ -234,7 +184,6 @@ void __libc_csu_init(word32 esi)
 			(*(<anonymous> **) 0x08049BB0)();
 		} while (esi_50 + 0x01 <u 0x08049BB0 - edi_49 >> 0x02);
 	}
-	return;
 }
 
 // 080488C0: void __libc_csu_fini()
@@ -256,14 +205,22 @@ void __libc_csu_fini()
 		esi_23 = esi_48 - 0x01;
 	}
 	_fini();
-	return;
 }
 
 // 08048904: void atexit(Stack word32 dwArg04)
 void atexit(word32 dwArg04)
 {
-	fn080485A4();
-	return;
+	word32 edx_12 = globals->dw8049ABC;
+	word32 esp_26;
+	word32 ebp_27;
+	word32 ebx_28;
+	byte SCZO_29;
+	word32 edx_30;
+	word32 eax_31;
+	byte SZO_32;
+	byte C_33;
+	byte Z_34;
+	!__cxa_atexit();
 }
 
 // 08048934: void __do_global_ctors_aux()
@@ -282,13 +239,11 @@ void __do_global_ctors_aux()
 		eax_14();
 		eax_14 = (<anonymous> *) *ebx_32;
 	}
-	return;
 }
 
 // 08048958: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

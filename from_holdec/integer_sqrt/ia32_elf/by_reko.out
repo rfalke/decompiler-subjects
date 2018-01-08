@@ -1,3 +1,4 @@
 Using options:
+0804832C: warning: Unable to resolve imported reference !__gmon_start__.
 080483A0: error: The method or operation is not implemented.
 Error: Garbage collector could not allocate 16384 bytes of memory for major heap section.

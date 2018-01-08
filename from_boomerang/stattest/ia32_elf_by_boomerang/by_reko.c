@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void __xstat@@GLIBC_2.0()
-void __xstat@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049580();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049584();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049588();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804835C, dwArg00, (char *) fp + 0x04, &globals->t8048394, &globals->t80483C4, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049590 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,16 +82,21 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 0804835C: void main()
-void main()
+// 0804835C: void main(Register word32 eax)
+void main(word32 eax)
 {
 	__align(fp - 0x6C);
-	__xstat@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	return;
+	word32 esp_21;
+	word32 ebp_22;
+	word32 ebx_23;
+	byte SCZO_24;
+	word32 edx_25;
+	word32 ecx_26;
+	int32 eax_27;
+	!__xstat();
+	printf("Stat returns %d; size of file is %d\n", eax_27, dwLoc40);
 }
 
 // 08048394: void __libc_csu_init()
@@ -126,7 +104,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 080483C4: void __libc_csu_fini()
@@ -150,7 +128,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 080483F8: void __do_global_ctors_aux()
@@ -171,13 +148,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 0804841C: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

@@ -181,11 +181,11 @@ T_41: (in d2_116 : word32)
   Class: Eq_41
   DataType: word32
   OrigDataType: word32
-T_42: (in 0x00000004 : word32)
+T_42: (in 4 : int32)
   Class: Eq_42
-  DataType: ui32
-  OrigDataType: ui32
-T_43: (in a1_60 - 0x00000004 : word32)
+  DataType: int32
+  OrigDataType: int32
+T_43: (in a1_60 - 4 : word32)
   Class: Eq_43
   DataType: (ptr word32)
   OrigDataType: (ptr (struct (0 T_46 t0000)))
@@ -193,11 +193,11 @@ T_44: (in 0x00000000 : word32)
   Class: Eq_44
   DataType: word32
   OrigDataType: word32
-T_45: (in a1_60 - 0x00000004 + 0x00000000 : word32)
+T_45: (in a1_60 - 4 + 0x00000000 : word32)
   Class: Eq_45
   DataType: word32
   OrigDataType: word32
-T_46: (in Mem0[a1_60 - 0x00000004 + 0x00000000:word32] : word32)
+T_46: (in Mem0[a1_60 - 4 + 0x00000000:word32] : word32)
   Class: Eq_41
   DataType: word32
   OrigDataType: word32
@@ -217,15 +217,15 @@ T_50: (in byteSize : word32)
   Class: Eq_50
   DataType: word32
   OrigDataType: 
-T_51: (in 0x00000008 : word32)
+T_51: (in 8 : int32)
   Class: Eq_51
-  DataType: ui32
-  OrigDataType: ui32
-T_52: (in a1_60 - 0x00000008 : word32)
+  DataType: int32
+  OrigDataType: int32
+T_52: (in a1_60 - 8 : word32)
   Class: Eq_49
   DataType: ptr32
   OrigDataType: ptr32
-T_53: (in a1_60 - 0x00000008 : word32)
+T_53: (in a1_60 - 8 : word32)
   Class: Eq_53
   DataType: (ptr word32)
   OrigDataType: (ptr (struct (0 T_56 t0000)))
@@ -233,15 +233,15 @@ T_54: (in 0x00000000 : word32)
   Class: Eq_54
   DataType: word32
   OrigDataType: word32
-T_55: (in a1_60 - 0x00000008 + 0x00000000 : word32)
+T_55: (in a1_60 - 8 + 0x00000000 : word32)
   Class: Eq_55
   DataType: ptr32
   OrigDataType: ptr32
-T_56: (in Mem0[a1_60 - 0x00000008 + 0x00000000:word32] : word32)
+T_56: (in Mem0[a1_60 - 8 + 0x00000000:word32] : word32)
   Class: Eq_50
   DataType: word32
   OrigDataType: word32
-T_57: (in FreeMem(a1_60 - 0x00000008, *(a1_60 - 0x00000008)) : void)
+T_57: (in FreeMem(a1_60 - 8, *(a1_60 - 8)) : void)
   Class: Eq_57
   DataType: void
   OrigDataType: void

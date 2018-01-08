@@ -7,32 +7,25 @@
 // 08048274: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw141B != 0x00)
-		fn080482B0();
-	return;
+	word32 eax_11 = __x86.get_pc_thunk.bx(dwLoc10)->dw141B;
+	if (eax_11 != 0x00)
+	{
+		word32 esp_23;
+		word32 ebx_24;
+		byte SCZO_25;
+		word32 eax_26;
+		byte SZO_27;
+		byte C_28;
+		byte Z_29;
+		!__gmon_start__();
+	}
 }
 
-// 080482B0: void fn080482B0()
-void fn080482B0()
+// 080482D0: void _start(Register (ptr Eq_21) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80496A8();
-	return;
-}
-
-// 080482C0: void fn080482C0()
-void fn080482C0()
-{
-	word32 esp_3;
-	globals->ptr80496AC();
-	return;
-}
-
-// 080482D0: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080482C0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483E4, dwArg00, (char *) fp + 0x04, &globals->t8048410, &globals->t8048480, edx, fp);
 	__hlt();
 }
 
@@ -56,10 +49,7 @@ void deregister_tm_clones()
 		byte Z_42;
 		word32 ebp_43;
 		null();
-		return;
 	}
-	else
-		return;
 }
 
 // 08048340: void register_tm_clones()
@@ -76,10 +66,7 @@ void register_tm_clones()
 		byte C_49;
 		word32 ebp_50;
 		null();
-		return;
 	}
-	else
-		return;
 }
 
 // 08048380: void __do_global_dtors_aux()
@@ -90,45 +77,26 @@ void __do_global_dtors_aux()
 		deregister_tm_clones();
 		globals->b80496B8 = 0x01;
 	}
-	return;
 }
 
 // 080483A0: void frame_dummy()
 void frame_dummy()
 {
-frame_dummy_entry:
-	esp = fp
-	eax = globals->dw80495AC
-	SZO = cond(eax & eax)
-	Z = SZO
-	C = false
-	branch Test(EQ,Z) l080483C8
-	goto l080483A9
-l080483A0:
-l080483A9:
-	eax = 0x00
-	SZO = cond(0x00)
-	Z = SZO
-	C = false
-	branch Test(EQ,Z) l080483C8
-l080483B2:
-	esp = fp - 0x04
-	dwLoc04 = ebp
-	ebp = fp - 0x04
-	esp = fp - 0x1C
-	SCZO = cond(fp - 0x1C)
-	dwLoc1C = 134518188
-	null()
-	esp = fp - 0x04
-	ebp = dwLoc04
-	esp = fp
-	register_tm_clones()
-	return
-l080483C1_thunk_register_tm_clones:
-l080483C8:
-	register_tm_clones()
-	return
-frame_dummy_exit:
+	if (globals->dw80495AC == 0x00 || 0x00 == 0x00)
+		register_tm_clones();
+	else
+	{
+		word32 esp_36;
+		word32 eax_37;
+		byte SZO_38;
+		byte C_39;
+		byte Z_40;
+		word32 ebp_41;
+		byte SCZO_42;
+		word32 edx_43;
+		null();
+		register_tm_clones();
+	}
 }
 
 // 080483CD: void f(Stack int32 dwArg04, Stack word32 dwArg05)
@@ -136,7 +104,6 @@ void f(int32 dwArg04, word32 dwArg05)
 {
 	globals->dw80496BC = dwArg04;
 	globals->dw80496BD = dwArg05;
-	return;
 }
 
 // 080483E4: void main()
@@ -148,13 +115,12 @@ void main()
 		f(dwLoc08_12, dwLoc17);
 		dwLoc08_12 = dwLoc08_12 + 0x01;
 	}
-	return;
 }
 
 // 08048410: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_18 = __x86.get_pc_thunk.bx(dwLoc14);
+	struct Eq_7 * ebx_18 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
 	if ((char *) &ebx_18->ptr1189 + 0x04 - &ebx_18->ptr1189 >> 0x02 != 0x00)
 	{
@@ -174,19 +140,16 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_18->ptr1189();
 		} while (edi_65 + 0x01 != esi_68);
 	}
-	return;
 }
 
 // 08048480: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08048484: void _fini()
 void _fini()
 {
 	__x86.get_pc_thunk.bx(dwLoc10);
-	return;
 }
 

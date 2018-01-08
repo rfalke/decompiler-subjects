@@ -13,10 +13,7 @@ void fn00001000()
 	SumKickData();
 	globals->dw1152 = d0_5;
 	if (d0_5 == 0x00)
-	{
 		fn00001092();
-		return;
-	}
 	else
 	{
 		ptr32 a6_38 = globals->ptr114A;
@@ -39,10 +36,7 @@ void fn00001000()
 		(a6_38 + -0x0396)();
 		globals->dw1158 = d0_47;
 		if (d0_47 == 0x00)
-		{
 			fn00001092();
-			return;
-		}
 		else
 		{
 			word32 d0_64 = AllocMem(d0_47, 0x01);
@@ -54,7 +48,6 @@ void fn00001000()
 				globals->w1156 = globals->w1156 + 0x01;
 			} while (globals->w1156 < 0x0A);
 			fn00001092();
-			return;
 		}
 	}
 }
@@ -85,12 +78,7 @@ void fn000010BE()
 	word32 d0_6 = OpenLibrary(0x1135, 0x00);
 	globals->ptr114A = d0_6;
 	if (d0_6 == 0x00)
-	{
 		fn00001092();
-		return;
-	}
-	else
-		return;
 }
 
 // 000010DA: Register word32 fn000010DA()

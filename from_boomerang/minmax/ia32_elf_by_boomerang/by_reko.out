@@ -1,4 +1,3 @@
 Using options:
-0804881C: warning: Unable to resolve imported reference __fpstart.
-080487B4: warning: Unable to resolve imported reference __fpstart.
+080487B4: warning: Unable to resolve imported reference !__fpstart.
 080488C5: warning: Rewriting x86 opcode 'btc' is not supported yet.

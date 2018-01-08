@@ -1,6 +1,5 @@
 Using options:
-0804885D: warning: Unable to resolve imported reference __fpstart.
-080487A0: warning: Unable to resolve imported reference __fpstart.
+080487A0: warning: Unable to resolve imported reference !__fpstart.
 08048934: warning: The call or jump table has invalid addresses; stopping.
 08048EA0: warning: Expected sizes of arrays to have been determined by now
 08048EA0: warning: Expected sizes of arrays to have been determined by now

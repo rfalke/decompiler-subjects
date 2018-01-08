@@ -5,18 +5,15 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t80482DA = <code>;
-<anonymous> g_t80482EA = <code>;
-<anonymous> g_t80482FA = <code>;
-<anonymous> * g_a80487B4[] = 
-	{
-	};
+Eq_36 g_t8048650 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_40 g_t80486F0 = Unexpected function type (fn void ())
+;
+Eq_39 g_t8048700 = Unexpected function type (fn void ())
+;
 <anonymous> * g_ptr8049894 = &g_tFFFFFFFF;
 word32 g_dw80498A4 = 0x00000000;
 word32 g_dw8049978 = 0x00000000;
-<anonymous> * g_ptr8049980 = &g_t80482DA;
-<anonymous> * g_ptr8049984 = &g_t80482EA;
-<anonymous> * g_ptr8049988 = &g_t80482FA;
 byte g_b8049990 = 0x00;
 uint32 g_dw8049994 = 0x00000000;
 

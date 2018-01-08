@@ -5,88 +5,62 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_1272 g_t0002;
-Eq_1272 g_t0004;
 byte g_b0007;
-<anonymous> g_t80488AA = <code>;
-<anonymous> g_t80488BA = <code>;
-<anonymous> g_t80488CA = <code>;
-<anonymous> g_t80488DA = <code>;
-<anonymous> g_t80488EA = <code>;
-<anonymous> g_t804890A = <code>;
-<anonymous> g_t804891A = <code>;
-<anonymous> g_t804892A = <code>;
-<anonymous> g_t804893A = <code>;
-<anonymous> g_t804894A = <code>;
-<anonymous> g_t804895A = <code>;
-<anonymous> g_t804896A = <code>;
-<anonymous> g_t804897A = <code>;
-<anonymous> g_t804898A = <code>;
-<anonymous> g_t804899A = <code>;
-<anonymous> g_t80489AA = <code>;
-<anonymous> g_t80489BA = <code>;
-<anonymous> g_t80489CA = <code>;
-<anonymous> g_t80489DA = <code>;
-<anonymous> g_t80489EA = <code>;
-<anonymous> g_t80489FA = <code>;
-<anonymous> g_t8048A0A = <code>;
-<anonymous> g_t8048A1A = <code>;
-Eq_26332 g_t804EB38 = 
-	{
-	};
+Eq_36 g_t8052614 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_40 g_t8054170 = Unexpected function type (fn void ())
+;
+Eq_39 g_t8054180 = Unexpected function type (fn void ())
+;
 real64 g_r8054278 = 5e-06;
 real64 g_r8054280 = -2.0;
+char g_str805431D[] = "ERROR: %s\x0A";
 real80 g_r8054330 = ;
 real64 g_r8054340 = 1e-06;
 real64 g_r8054348 = 1000000.0;
 real32 g_r8054350 = 2.0F;
-real32 g_r8054354 = -2.0F;
 real64 g_r8054358 = 3.14159265358979;
 real64 g_r8054360 = -3.14159265358979;
+char g_str8054368[] = "%g %+gi ";
 real64 g_r8054378 = 2147483647.0;
+char g_str80543CA[] = "w";
+char g_str80543CC[] = "r";
+char g_str80543D0[] = "quantum_objcode_run: Could not open %s: ";
+char g_str80543F9[] = "%i: Unknown opcode 0x(%X)!\x0A";
 <anonymous> * g_a8054418[] = 
 	{
 	};
-Eq_23027 g_t8054430 = 
+real64 g_r8054430 = 2.0;
+real64 g_r8054438 = 6.0;
+Eq_106 g_t8054440 = 
 	{
-		2.0
+		0.2
 	};
-Eq_23690 g_t8054438 = 
-	{
-		6.0
-	};
-real64 g_r8054440 = 0.2;
-Eq_26332 g_t8054448 = 
-	{
-	};
+char g_str8054448[] = "QUOBFILE";
+char g_str8054451[] = "% f %+fi|%lli> (%e) (|";
+char g_str8054468[] = "%i";
+char g_str805446B[] = ">)";
+char g_str805446E[] = "%i: %lli\x0A";
+char g_str8054478[] = "%i: %i %llu\x0A";
+char g_str8054488[] = "Usage: shor [number]\x0A";
+char g_str805449E[] = "Invalid number\x0A";
+char g_str80544AE[] = "N = %i, %i qubits required\x0A";
+char g_str80544CA[] = "Random seed: %i\x0A";
+char g_str80544DB[] = "Impossible Measurement!";
+char g_str80544F3[] = "Measured zero, try again.";
+char g_str805450D[] = "Measured %i (%f), ";
+char g_str8054520[] = "fractional approximation is %i/%i.\x0A";
+char g_str8054544[] = "Odd denominator, trying to expand by 2.";
+char g_str805456C[] = "Odd period, try again.";
+char g_str8054583[] = "Possible period is %i.\x0A";
+char g_str805459B[] = "%i = %i * %i\x0A";
+char g_str80545AC[] = "Unable to determine factors, try again.";
 <anonymous> * g_ptr8055F00 = &g_tFFFFFFFF;
 word32 g_dw8055F10 = 0x00000000;
 word32 g_dw8055FFC = 0x00000000;
-<anonymous> * g_ptr8056020 = &g_t80488AA;
-<anonymous> * g_ptr8056024 = &g_t80488BA;
-<anonymous> * g_ptr8056028 = &g_t80488CA;
-<anonymous> * g_ptr805602C = &g_t80488DA;
-<anonymous> * g_ptr8056030 = &g_t80488EA;
-<anonymous> * g_ptr8056038 = &g_t804890A;
-<anonymous> * g_ptr805603C = &g_t804891A;
-<anonymous> * g_ptr8056040 = &g_t804892A;
-<anonymous> * g_ptr8056044 = &g_t804893A;
-<anonymous> * g_ptr8056048 = &g_t804894A;
-<anonymous> * g_ptr805604C = &g_t804895A;
-<anonymous> * g_ptr8056050 = &g_t804896A;
-<anonymous> * g_ptr8056054 = &g_t804897A;
-<anonymous> * g_ptr8056058 = &g_t804898A;
-<anonymous> * g_ptr805605C = &g_t804899A;
-<anonymous> * g_ptr8056060 = &g_t80489AA;
-<anonymous> * g_ptr8056064 = &g_t80489BA;
-<anonymous> * g_ptr8056068 = &g_t80489CA;
-<anonymous> * g_ptr805606C = &g_t80489DA;
-<anonymous> * g_ptr8056070 = &g_t80489EA;
-<anonymous> * g_ptr8056074 = &g_t80489FA;
-<anonymous> * g_ptr8056078 = &g_t8048A0A;
-<anonymous> * g_ptr805607C = &g_t8048A1A;
 int32 g_dw8056088 = 1073741824;
-word32 g_dw80560A0 = 0x00000000;
+FILE * g_ptr80560A0 = null;
+FILE * g_ptr80560C0 = null;
 byte g_b80560C4 = 0x00;
 uint32 g_dw80560C8 = 0x00000000;
 word32 g_dw80560CC = 0x00000000;
@@ -96,14 +70,20 @@ word32 g_dw80560D8 = 0x00000000;
 int32 g_dw80560DC = 0;
 int32 g_dw80560E0 = 0;
 word32 g_dw80560E4 = 0x00000000;
-FILE * g_ptr80560E8 = null;
-Eq_18986 g_t80560EC = 
+Eq_106 g_t80560E8 = 
 	{
-		0
+		0.0
+	};
+Eq_106 g_t80560EC = 
+	{
+		0.0
 	};
 ui32 g_dw80560F0 = 0x00000000;
 word32 g_dw80560F4 = 0x00000000;
-ui32 g_dw80560F8 = 0x00000000;
+Eq_106 g_t80560F8 = 
+	{
+		0.0
+	};
 int32 g_dw80560FC = 0;
-word32 g_dw8056100 = 0x00000000;
+char * g_ptr8056100 = null;
 

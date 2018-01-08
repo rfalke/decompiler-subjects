@@ -4,205 +4,32 @@
 
 #include "subject.h"
 
-// 080487E4: void _init(Register (ptr void) ebx, Register Eq_3 ebp)
-void _init(void, Eq_3 ebp)
+// 080487E4: void _init()
+void _init()
 {
-	if (globals->dw8055FFC != 0x00)
-		memcpy(ptrLoc0C, ebx, ebp);
+	word32 edx_13 = globals->dw8055FFC;
+	if (edx_13 != 0x00)
+	{
+		word32 esp_31;
+		word32 ebp_32;
+		word32 ebx_33;
+		byte SCZO_34;
+		word32 edx_35;
+		byte SZO_36;
+		byte C_37;
+		byte Z_38;
+		word32 eax_39;
+		!__gmon_start__();
+	}
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 080488A4: void fn080488A4()
-void fn080488A4()
+// 08048A30: void _start(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8056020();
-	return;
-}
-
-// 080488B4: void fn080488B4()
-void fn080488B4()
-{
-	word32 esp_3;
-	globals->ptr8056024();
-	return;
-}
-
-// 080488C4: void fn080488C4()
-void fn080488C4()
-{
-	word32 esp_3;
-	globals->ptr8056028();
-	return;
-}
-
-// 080488D4: void fn080488D4()
-void fn080488D4()
-{
-	word32 esp_3;
-	globals->ptr805602C();
-	return;
-}
-
-// 080488E4: void fn080488E4()
-void fn080488E4()
-{
-	word32 esp_3;
-	globals->ptr8056030();
-	return;
-}
-
-// 08048904: void fn08048904()
-void fn08048904()
-{
-	word32 esp_3;
-	globals->ptr8056038();
-	return;
-}
-
-// 08048914: void fn08048914()
-void fn08048914()
-{
-	word32 esp_3;
-	globals->ptr805603C();
-	return;
-}
-
-// 08048924: void fn08048924()
-void fn08048924()
-{
-	word32 esp_3;
-	globals->ptr8056040();
-	return;
-}
-
-// 08048934: void fn08048934()
-void fn08048934()
-{
-	word32 esp_3;
-	globals->ptr8056044();
-	return;
-}
-
-// 08048944: void fn08048944()
-void fn08048944()
-{
-	word32 esp_3;
-	globals->ptr8056048();
-	return;
-}
-
-// 08048954: void fn08048954()
-void fn08048954()
-{
-	word32 esp_3;
-	globals->ptr805604C();
-	return;
-}
-
-// 08048964: void fn08048964()
-void fn08048964()
-{
-	word32 esp_3;
-	globals->ptr8056050();
-	return;
-}
-
-// 08048974: void fn08048974()
-void fn08048974()
-{
-	word32 esp_3;
-	globals->ptr8056054();
-	return;
-}
-
-// 08048984: void fn08048984()
-void fn08048984()
-{
-	word32 esp_3;
-	globals->ptr8056058();
-	return;
-}
-
-// 08048994: void fn08048994()
-void fn08048994()
-{
-	word32 esp_3;
-	globals->ptr805605C();
-	return;
-}
-
-// 080489A4: void fn080489A4()
-void fn080489A4()
-{
-	word32 esp_3;
-	globals->ptr8056060();
-	return;
-}
-
-// 080489B4: void fn080489B4()
-void fn080489B4()
-{
-	word32 esp_3;
-	globals->ptr8056064();
-	return;
-}
-
-// 080489C4: void fn080489C4()
-void fn080489C4()
-{
-	word32 esp_3;
-	globals->ptr8056068();
-	return;
-}
-
-// 080489D4: void fn080489D4()
-void fn080489D4()
-{
-	word32 esp_3;
-	globals->ptr805606C();
-	return;
-}
-
-// 080489E4: void fn080489E4()
-void fn080489E4()
-{
-	word32 esp_3;
-	globals->ptr8056070();
-	return;
-}
-
-// 080489F4: void fn080489F4()
-void fn080489F4()
-{
-	word32 esp_3;
-	globals->ptr8056074();
-	return;
-}
-
-// 08048A04: void fn08048A04()
-void fn08048A04()
-{
-	word32 esp_3;
-	globals->ptr8056078();
-	return;
-}
-
-// 08048A14: void fn08048A14()
-void fn08048A14()
-{
-	word32 esp_3;
-	globals->ptr805607C();
-	return;
-}
-
-// 08048A30: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn080488B4();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8052614, dwArg00, (char *) fp + 0x04, &globals->t8054180, &globals->t8054170, edx, fp);
 	__hlt();
 }
 
@@ -216,7 +43,6 @@ void __do_global_dtors_aux(word32 esi)
 			globals->dw80560C8 = edx_25 + 0x01;
 		globals->b80560C4 = 0x01;
 	}
-	return;
 }
 
 // 08048AC0: void frame_dummy()
@@ -233,11 +59,10 @@ void frame_dummy()
 		byte Z_34;
 		null();
 	}
-	return;
 }
 
-// 08048AE4: Register int32 quantum_ipow(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-int32 quantum_ipow(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 08048AE4: Register int32 quantum_ipow(Stack Eq_84 dwArg04, Stack int32 dwArg08)
+int32 quantum_ipow(Eq_84 dwArg04, int32 dwArg08)
 {
 	int32 dwLoc0C_10 = 0x01;
 	int32 dwLoc08_11 = 0x00;
@@ -249,8 +74,8 @@ int32 quantum_ipow(Eq_136 * dwArg04, Eq_136 * dwArg08)
 	return dwLoc0C_10;
 }
 
-// 08048B15: Register Eq_148 quantum_gcd(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-Eq_148 quantum_gcd(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 08048B15: Register Eq_84 quantum_gcd(Stack Eq_84 dwArg04, Stack Eq_84 dwArg08)
+Eq_84 quantum_gcd(Eq_84 dwArg04, Eq_84 dwArg08)
 {
 	while (dwArg08 != 0x00)
 	{
@@ -260,8 +85,8 @@ Eq_148 quantum_gcd(Eq_136 * dwArg04, Eq_136 * dwArg08)
 	return dwArg04;
 }
 
-// 08048B42: void quantum_frac_approx(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C)
-void quantum_frac_approx(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C)
+// 08048B42: void quantum_frac_approx(Stack (ptr int32) dwArg04, Stack (ptr int32) dwArg08, Stack Eq_106 dwArg0C)
+void quantum_frac_approx(int32 * dwArg04, int32 * dwArg08, Eq_106 dwArg0C)
 {
 	real32 rLoc08_24 = (real32) ((real64) *dwArg04 / (real64) (*dwArg08));
 	real32 dwLoc0C_26 = rLoc08_24;
@@ -272,15 +97,16 @@ void quantum_frac_approx(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C)
 	int32 dwLoc24_103 = 0x00;
 	int32 dwLoc28_107 = 0x00;
 	uint16 wLoc3A_33 = __fstcw();
-	word16 ax_37 = DPB(ax, 0x0C, 8);
-l08048BA4:
-	real64 rLoc1_54 = (real64) dwLoc0C_26 + globals->r8054278;
-	__fldcw(ax_37);
-	__fldcw(wLoc3A_33);
-	int32 dwLoc10_55 = (int32) rLoc1_54;
-	dwLoc0C_26 = (real32) (1.0 / (real32) ((real64) dwLoc0C_26 - ((real64) dwLoc10_55 - globals->r8054278)));
-	if (dwLoc10_55 *s dwLoc20_115 + dwLoc18_111 <= 0x01 << (byte) dwArg0C)
+	uint16 ax_37 = DPB(ax, 0x0C, 8);
+	do
 	{
+		real64 rLoc1_54 = (real64) dwLoc0C_26 + globals->r8054278;
+		__fldcw(ax_37);
+		__fldcw(wLoc3A_33);
+		int32 dwLoc10_55 = (int32) rLoc1_54;
+		dwLoc0C_26 = (real32) (1.0 / (real32) ((real64) dwLoc0C_26 - ((real64) dwLoc10_55 - globals->r8054278)));
+		if (dwLoc10_55 *s dwLoc20_115 + dwLoc18_111 > 0x01 << (byte) dwArg0C)
+			break;
 		int32 eax_102 = dwLoc10_55 *s dwLoc1C_113 + dwLoc14_109;
 		int32 eax_106 = dwLoc10_55 *s dwLoc20_115 + dwLoc18_111;
 		dwLoc24_103 = eax_102;
@@ -289,16 +115,13 @@ l08048BA4:
 		dwLoc18_111 = dwLoc20_115;
 		dwLoc1C_113 = eax_102;
 		dwLoc20_115 = eax_106;
-		if (fabs((real64) eax_102 / (real64) eax_106 - (real64) rLoc08_24) > 1.0 / (real64) (0x02 << (byte) dwArg0C))
-			goto l08048BA4;
-	}
+	} while (fabs((real64) eax_102 / (real64) eax_106 - (real64) rLoc08_24) > 1.0 / (real64) (0x02 << (byte) dwArg0C));
 	*dwArg04 = dwLoc24_103;
 	*dwArg08 = dwLoc28_107;
-	return;
 }
 
-// 08048C63: Register word32 quantum_getwidth(Stack (ptr Eq_136) dwArg04)
-word32 quantum_getwidth(Eq_136 * dwArg04)
+// 08048C63: Register word32 quantum_getwidth(Stack Eq_84 dwArg04)
+word32 quantum_getwidth(Eq_84 dwArg04)
 {
 	word32 dwLoc08_22 = 0x01;
 	while (0x01 << (byte) dwLoc08_22 < dwArg04)
@@ -306,61 +129,73 @@ word32 quantum_getwidth(Eq_136 * dwArg04)
 	return dwLoc08_22;
 }
 
-// 08048C8A: void quantum_inverse_mod(Stack (ptr Eq_136) dwArg04, Stack word32 dwArg08)
-void quantum_inverse_mod(Eq_136 * dwArg04, word32 dwArg08)
+// 08048C8A: Register int32 quantum_inverse_mod(Stack Eq_84 dwArg04, Stack Eq_208 dwArg08)
+int32 quantum_inverse_mod(Eq_84 dwArg04, Eq_208 dwArg08)
 {
-	int32 dwLoc08_29 = 0x01;
+	int32 dwLoc08_30 = 0x01;
 	while (true)
 	{
-		Eq_265 edx_13 = dwLoc08_29 *s dwArg08;
+		Eq_211 edx_13 = dwLoc08_30 *s dwArg08;
 		if ((int32) (SEQ(edx_13 >> 0x1F, edx_13) % dwArg04) == 0x01)
 			break;
-		dwLoc08_29 = dwLoc08_29 + 0x01;
+		dwLoc08_30 = dwLoc08_30 + 0x01;
 	}
-	return;
+	return dwLoc08_30;
 }
 
-// 08048CBC: void quantum_conj(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_conj(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 08048CBC: void quantum_conj(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_conj(Eq_106 dwArg04, Eq_106 dwArg08)
 {
 	quantum_real(dwArg04);
-	__mulsc3((real32) quantum_imag(dwArg08), null, (struct Eq_136 *) 0x80000000, (struct Eq_136 *) 0xBF800000);
-	return;
+	__mulsc3((real32) quantum_imag(dwArg08), 0x00, 0x80000000, 0xBF800000);
 }
 
-// 08048D63: FpuStack real64 quantum_real(Stack word32 dwArg04)
-real64 quantum_real(word32 dwArg04)
+// 08048D63: FpuStack real64 quantum_real(Stack Eq_106 dwArg04)
+real64 quantum_real(Eq_106 dwArg04)
 {
 	return (real64) dwArg04;
 }
 
-// 08048D7C: FpuStack real64 quantum_imag(Stack word32 dwArg08)
-real64 quantum_imag(word32 dwArg08)
+// 08048D7C: FpuStack real64 quantum_imag(Stack Eq_106 dwArg08)
+real64 quantum_imag(Eq_106 dwArg08)
 {
 	return (real64) dwArg08;
 }
 
-// 08048D98: FpuStack real64 quantum_prob(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_309) dwArg08)
-real64 quantum_prob(Eq_136 * dwArg04, Eq_309 * dwArg08)
+// 08048D98: FpuStack real64 quantum_prob(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+real64 quantum_prob(Eq_106 dwArg04, Eq_106 dwArg08)
 {
 	return (real64) (real32) quantum_prob_inline(dwArg04, dwArg08);
 }
 
-// 08048DBE: FpuStack real64 quantum_prob_inline(Stack word32 dwArg04, Stack word32 dwArg08)
-real64 quantum_prob_inline(word32 dwArg04, word32 dwArg08)
+// 08048DBE: FpuStack real64 quantum_prob_inline(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+real64 quantum_prob_inline(Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	Eq_320 rLoc08_15 = (real32) quantum_real(dwArg04);
-	Eq_325 rLoc0C_21 = (real32) quantum_imag(dwArg08);
+	Eq_258 rLoc08_15 = (real32) quantum_real(dwArg04);
+	Eq_262 rLoc0C_21 = (real32) quantum_imag(dwArg08);
 	return (real64) rLoc08_15 * rLoc08_15 + (real64) rLoc0C_21 * rLoc0C_21;
 }
 
-// 08048DFE: void quantum_cexp(Stack (ptr Eq_136) rArg04, FpuStack real64 rArg0, FpuStack real64 rArg1)
-void quantum_cexp(Eq_136 * rArg04, real64 rArg0, real64 rArg1)
+// 08048DFE: void quantum_cexp(Stack Eq_106 rArg04, FpuStack real64 rArg0, FpuStack real64 rArg1)
+void quantum_cexp(Eq_106 rArg04, real64 rArg0, real64 rArg1)
 {
-	fn08048934();
-	fn08048A14();
+	word32 esp_14;
+	word32 ebp_15;
+	word32 ebx_16;
+	byte SCZO_17;
+	word32 eax_18;
+	word32 edx_19;
+	word32 ecx_20;
+	!cos();
+	word32 esp_27;
+	word32 ebp_28;
+	word32 ebx_29;
+	byte SCZO_30;
+	word32 eax_31;
+	word32 edx_32;
+	word32 ecx_33;
+	!sin();
 	__muldc3(fp - 0x1C, rArg1, 0.0, 0.0, 1.0);
-	return;
 }
 
 // 08048E84: FpuStack real64 quantum_get_decoherence()
@@ -369,11 +204,11 @@ real64 quantum_get_decoherence()
 	return (real64) globals->r80560D0;
 }
 
-// 08048E97: void quantum_set_decoherence(Stack (ptr Eq_136) rArg04)
-void quantum_set_decoherence(Eq_136 * rArg04)
+// 08048E97: void quantum_set_decoherence(Stack real32 rArg04)
+void quantum_set_decoherence(real32 rArg04)
 {
-	Eq_363 rLoc1_7 = (real64) rArg04;
-	Eq_363 v6_9 = 0.0;
+	Eq_309 rLoc1_7 = (real64) rArg04;
+	Eq_309 v6_9 = 0.0;
 	if (!P && rLoc1_7 == v6_9)
 		globals->dw80560CC = 0x00;
 	else
@@ -381,297 +216,205 @@ void quantum_set_decoherence(Eq_136 * rArg04)
 		globals->dw80560CC = 0x01;
 		globals->r80560D0 = rArg04;
 	}
-	return;
 }
 
-// 08048ECA: FpuStack real64 quantum_decohere(Register (ptr Eq_379) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, FpuStack real64 rArg0)
-real64 quantum_decohere(Eq_379 * ebp, Eq_380 * gs, Eq_136 * dwArg04, real64 rArg0)
+// 08048ECA: FpuStack real64 quantum_decohere(Stack Eq_106 dwArg04, FpuStack real64 rArg0)
+real64 quantum_decohere(Eq_106 dwArg04, real64 rArg0)
 {
 	quantum_gate_counter(0x01);
 	if (globals->dw80560CC != 0x00)
 	{
-		struct Eq_391 * esp_65;
-		struct Eq_392 * ebp_66;
-		word32 edi_67;
-		word32 esi_68;
-		word32 ebx_69;
-		byte SCZO_70;
-		word32 eax_71;
-		byte SZO_72;
-		byte C_73;
-		byte Z_74;
-		byte FPUF_75;
-		word32 edx_76;
-		word32 ecx_77;
-		byte cl_78;
-		byte al_79;
-		struct Eq_380 * gs_80;
-		log();
-		if (eax_71 == 0x00)
-			quantum_error(gs_80, (struct Eq_136 *) 0x02);
-		esp_65->t0000 = ebp_66->ptr0008->dw0000 << 0x02;
-		quantum_memman(dwArg00);
-		*(ebp_66 - 44) = 0x00;
-		int32 eax_94 = ebp_66->ptr0008->dw0000;
-		if (eax_94 > *(ebp_66 - 44))
+		Eq_106 eax_72 = calloc(*dwArg04, 0x04);
+		if (eax_72 == 0x00)
+			quantum_error(0x02);
+		quantum_memman(*dwArg04 << 0x02);
+		Eq_106 eax_83 = *dwArg04;
+		if (eax_83 > 0x00)
 		{
 			do
 			{
-				*(ebp_66 - 0x14) = (real32) (quantum_frand(eax_94) + rLoc2 - 1.0);
-				*(ebp_66 - 0x18) = (real32) (quantum_frand(eax_94) + 1.0 - 1.0);
-				*(ebp_66 - 0x1C) = (real32) ((real64) *(ebp_66 - 0x14) * *(ebp_66 - 0x14) + (real64) (*(ebp_66 - 0x18)) * *(ebp_66 - 0x18));
-				Eq_455 rLoc1_246 = (real64) *(ebp_66 - 0x1C);
-				rLoc2 = rLoc1_246;
-			} while (rLoc1_246 >= 1.0);
-			*(ebp_66 - 0x50) = (real64) *(ebp_66 - 0x14);
-			esp_65->t0000 = (real64) *(ebp_66 - 0x1C);
-			fn080489D4();
-			*(ebp_66 - 0x48) = rArg0 * globals->r8054280 / (real64) (*(ebp_66 - 0x1C));
-			*(ebp_66 - 0x60) = sqrt(*(ebp_66 - 0x48));
+				Eq_366 rLoc18_231 = (real32) (quantum_frand(eax_83) + rLoc2 - 1.0);
+				Eq_376 rLoc1C_237 = (real32) (quantum_frand(eax_83) + 1.0 - 1.0);
+				real32 rLoc20_243 = (real32) ((real64) rLoc18_231 * rLoc18_231 + (real64) rLoc1C_237 * rLoc1C_237);
+				Eq_371 rLoc1_244 = (real64) rLoc20_243;
+				rLoc2 = rLoc1_244;
+			} while (rLoc1_244 >= 1.0);
+			word32 esp_256;
+			word32 ebp_257;
+			word32 edi_258;
+			word32 esi_259;
+			word32 ebx_260;
+			byte SCZO_261;
+			word32 eax_262;
+			byte SZO_263;
+			byte C_264;
+			byte Z_265;
+			byte FPUF_266;
+			word32 edx_267;
+			word32 ecx_268;
+			byte cl_269;
+			byte al_270;
+			!log();
+			sqrt(rArg0 * globals->r8054280 / (real64) rLoc20_243);
 		}
-		*(ebp_66 - 44) = 0x00;
-		while (ebp_66->ptr0008->dw0004 > *(ebp_66 - 44))
+		while (Mem0[dwArg04 + 0x04:word32] > 0x00)
 		{
-			*(ebp_66 - 0x28) = 0x00;
-			*(ebp_66 - 0x30) = 0x00;
-			while (ebp_66->ptr0008->dw0000 > *(ebp_66 - 0x30))
+			Eq_106 dwLoc2C_121 = 0x00;
+			Eq_106 dwLoc34_122 = 0x00;
+			while (*dwArg04 > dwLoc34_122)
 			{
-				struct Eq_634 * eax_182 = ebp_66->ptr0008->dw000C + (*(ebp_66 - 44) << 0x04);
-				uint32 edx_183 = eax_182->dw000C;
-				byte cl_186 = (byte) *(ebp_66 - 0x30);
-				uint32 eax_187 = __shrd(eax_182->dw0008, edx_183, cl_186);
-				uint32 edx_189 = edx_183 >> cl_186;
-				if ((cl_186 & 0x20) != 0x00)
-					eax_187 = edx_189;
-				if ((byte) (eax_187 & 0x01) != 0x00)
-					*(ebp_66 - 0x28) = (real32) ((real64) *((char *) *(ebp_66 - 0x24) + *(ebp_66 - 0x30) * 0x04) + (real64) (*(ebp_66 - 0x28)));
+				word32 edx_176 = Mem0[dwArg04 + 0x0C:word32];
+				Eq_106 edx_180 = *((word32) edx_176 + 0x0C);
+				byte cl_183 = (byte) dwLoc34_122;
+				uint32 eax_184 = __shrd(*((word32) edx_176 + 0x08), edx_180, cl_183);
+				uint32 edx_186 = edx_180 >> cl_183;
+				if ((cl_183 & 0x20) != 0x00)
+					eax_184 = edx_186;
+				if ((byte) (eax_184 & 0x01) != 0x00)
+					dwLoc2C_121 = (real32) ((real64) eax_72[dwLoc34_122 * 0x04] + (real64) dwLoc2C_121);
 				else
-					*(ebp_66 - 0x28) = (real32) ((real64) *(ebp_66 - 0x28) - (real64) (*((char *) (*(ebp_66 - 0x24)) + *(ebp_66 - 0x30) * 0x04)));
-				*(ebp_66 - 0x30) = *(ebp_66 - 0x30) + 0x01;
+					dwLoc2C_121 = (real32) ((real64) dwLoc2C_121 - (real64) eax_72[dwLoc34_122 * 0x04]);
+				dwLoc34_122 = dwLoc34_122 + 0x01;
 			}
-			word32 edx_144 = ebp_66->ptr0008->dw000C;
-			struct Eq_679 * eax_148 = edx_144 + (*(ebp_66 - 44) << 0x04);
-			struct Eq_688 * edi_142 = ebp_66->ptr0008->dw000C + (*(ebp_66 - 44) << 0x04);
-			Eq_417 esi_149 = eax_148->t0000;
-			*(ebp_66 - 0x38) = eax_148->r0004;
-			Eq_417 eax_152 = *(ebp_66 - 0x28);
-			esp_65->t0000 = eax_152;
-			quantum_cexp(dwArg00, rArg0, rArg1);
-			word32 ebx_160 = *(ebp_66 - 0x38);
-			esp_65->dw000C = edx_144;
-			esp_65->t0008 = eax_152;
-			esp_65->dw0004 = ebx_160;
-			esp_65->t0000 = esi_149;
-			__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-			edi_142->dw0000 = edx_144;
-			edi_142->t0004 = eax_152;
-			*(ebp_66 - 44) = *(ebp_66 - 44) + 0x01;
+			word32 edx_143 = Mem0[dwArg04 + 0x0C:word32];
+			word32 edx_138 = Mem0[dwArg04 + 0x0C:word32];
+			Eq_106 esi_148 = *edx_143;
+			Eq_106 rLoc3C_150 = *((word32) edx_143 + 0x04);
+			quantum_cexp(dwLoc2C_121, rArg0, rArg1);
+			__mulsc3(esi_148, rLoc3C_150, dwLoc2C_121, edx_143);
+			*edx_138 = edx_143;
+			*((word32) edx_138 + 0x04) = dwLoc2C_121;
 		}
-		esp_65->t0000 = *(ebp_66 - 0x24);
-		fn080488D4();
-		esp_65->t0000 = -(ebp_66->ptr0008->dw0000 << 0x02);
-		quantum_memman(dwArg00);
+		free(eax_72);
+		quantum_memman(-(*dwArg04 << 0x02));
 	}
 	return rArg0;
 }
 
-// 0804911C: void quantum_new_density_op(Register ptr32 ebp, Register (ptr Eq_841) gs, Stack word32 dwArg08)
-void quantum_new_density_op(ptr32 ebp, Eq_841 * gs, word32 dwArg08)
+// 0804911C: void quantum_new_density_op(Stack (ptr Eq_520) dwArg04, Stack Eq_106 dwArg08, Stack (arr Eq_106) dwArg0C, Stack (ptr Eq_523) dwArg10)
+void quantum_new_density_op(Eq_520 * dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C[], Eq_523 * dwArg10)
 {
-	struct Eq_843 * esp_14;
-	struct Eq_844 * ebp_15;
-	byte SCZO_16;
-	word32 eax_17;
-	byte SZO_18;
-	byte C_19;
-	byte Z_20;
-	word32 edx_21;
-	word32 ecx_22;
-	byte SO_23;
-	struct Eq_380 * gs_24;
-	word32 ebx_25;
-	log();
-	if (eax_17 == 0x00)
-		quantum_error(gs_24, (struct Eq_136 *) 0x02);
-	word32 eax_33 = ebp_15->dw000C;
-	esp_14->dw0004 = 0x14;
-	esp_14->dw0000 = eax_33;
-	ui32 * esp_36;
-	struct Eq_870 * ebp_37;
-	byte SCZO_38;
-	word32 eax_39;
-	byte SZO_40;
-	byte C_41;
-	byte Z_42;
-	word32 edx_43;
-	word32 ecx_44;
-	byte SO_45;
-	struct Eq_380 * gs_46;
-	word32 ebx_47;
-	log();
-	*(ebp_37 - 0x10) = eax_39;
-	if (*(ebp_37 - 0x10) == 0x00)
+	Eq_106 eax_13 = calloc(dwArg08, 0x04);
+	if (eax_13 == 0x00)
+		quantum_error(0x02);
+	Eq_106 eax_22 = calloc(dwArg08, 0x14);
+	if (eax_22 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg08 * 0x18);
+	*eax_13 = dwArg0C[0x00];
+	Eq_106 eax_43 = dwArg10->t0010;
+	Eq_106 eax_46 = dwArg10->t0008;
+	*eax_22 = dwArg10->a0000[0x00];
+	Mem53[eax_22 + 0x04:word32] = Mem51[dwArg10 + 0x04:word32];
+	Mem55[eax_22 + 0x08:word32] = Mem53[dwArg10 + 0x08:word32];
+	Mem57[eax_22 + 0x0C:word32] = Mem55[dwArg10 + 0x0C:word32];
+	Mem59[eax_22 + 0x10:word32] = Mem57[dwArg10 + 0x10:word32];
+	dwArg10->t0004.u0 = 0x00;
+	dwArg10->a0000[0x00].u0 = 0x00;
+	dwArg10->t000C.u0 = 0x00;
+	dwArg10->t0010.u0 = 0x00;
+	Eq_106 dwLoc08_169 = 0x01;
+	while (dwLoc08_169 < dwArg08)
 	{
-		*esp_36 = 0x02;
-		quantum_error(gs_46, dwArg00);
+		eax_13[dwLoc08_169 * 0x04] = dwArg0C[dwLoc08_169 * 0x04];
+		word32 edx_111 = dwLoc08_169 * 0x14 + dwArg10;
+		word32 ecx_104 = eax_22 + dwLoc08_169 * 0x14;
+		ecx_104->dw0000 = edx_111->dw0000;
+		ecx_104->dw0004 = edx_111->dw0004;
+		ecx_104->dw0008 = edx_111->dw0008;
+		ecx_104->dw000C = edx_111->dw000C;
+		ecx_104->dw0010 = edx_111->dw0010;
+		Mem130[eax_22 + dwLoc08_169 * 0x14 + 0x10:word32] = eax_43;
+		Mem139[eax_22 + dwLoc08_169 * 0x14 + 0x08:word32] = eax_46;
+		(dwArg10 + (dwLoc08_169 * 0x14) / 0x0024)->t0004 = 0x00;
+		dwArg10[dwLoc08_169 * 0x14 / 0x0024] = (struct Eq_523) 0x00;
+		(dwArg10 + (dwLoc08_169 * 0x14) / 0x0024)->t000C = 0x00;
+		(dwArg10 + (dwLoc08_169 * 0x14) / 0x0024)->t0010 = 0x00;
+		dwLoc08_169 = dwLoc08_169 + 0x01;
 	}
-	*esp_36 = ebp_37->dw000C * 0x18;
-	quantum_memman(dwArg00);
-	**(ebp_37 - 0x14) = ebp_37->ptr0010[0x00];
-	*(ebp_37 - 0x08) = ebp_37->ptr0014->dw0010;
-	*(ebp_37 - 0x0C) = ebp_37->ptr0014->dw0008;
-	struct Eq_924 * edx_73 = ebp_37->ptr0014;
-	struct Eq_948 * ecx_72 = *(ebp_37 - 0x10);
-	ecx_72->t0000->dw0000 = edx_73->a0000[0x00].dw0000;
-	ecx_72->dw0004 = edx_73->dw0004;
-	ecx_72->dw0008 = edx_73->dw0008;
-	ecx_72->dw000C = edx_73->dw000C;
-	ecx_72->dw0010 = edx_73->dw0010;
-	ebp_37->ptr0014->dw0004 = 0x00;
-	Mem87[Mem85[ebp_37 + 0x14:word32] + 0x00:word32] = 0x00;
-	ebp_37->ptr0014->dw000C = 0x00;
-	ebp_37->ptr0014->dw0010 = 0x00;
-	*(ebp_37 - 0x04) = 0x01;
-	while (*(ebp_37 - 0x04) < ebp_37->dw000C)
-	{
-		*((char *) *(ebp_37 - 0x14) + *(ebp_37 - 0x04) * 0x04) = ebp_37->ptr0010[*(ebp_37 - 0x04)];
-		word32 edx_133 = Mem119[ebp_37 - 0x04 + 0x00:word32] * 0x14 + Mem119[ebp_37 + 0x14:word32];
-		struct Eq_1069 * ecx_126 = *(ebp_37 - 0x10) + *(ebp_37 - 0x04) * 0x14;
-		ecx_126->dw0000 = edx_133->dw0000;
-		ecx_126->dw0004 = edx_133->dw0004;
-		ecx_126->dw0008 = edx_133->dw0008;
-		ecx_126->dw000C = edx_133->dw000C;
-		ecx_126->dw0010 = edx_133->dw0010;
-		(*(ebp_37 - 0x10) + *(ebp_37 - 0x04) * 0x14)->dw0010 = *(ebp_37 - 0x08);
-		(*(ebp_37 - 0x10) + *(ebp_37 - 0x04) * 0x14)->dw0008 = *(ebp_37 - 0x0C);
-		(ebp_37->ptr0014 + *(ebp_37 - 0x04))->dw0004 = 0x00;
-		ebp_37->ptr0014[*(ebp_37 - 0x04)] = (struct Eq_924) 0x00;
-		(ebp_37->ptr0014 + *(ebp_37 - 0x04))->dw000C = 0x00;
-		(ebp_37->ptr0014 + *(ebp_37 - 0x04))->dw0010 = 0x00;
-		*(ebp_37 - 0x04) = *(ebp_37 - 0x04) + 0x01;
-	}
-	ebp_37->ptr0008->dw0000 = *(ebp_37 - 0x18);
-	ebp_37->ptr0008->dw0004 = *(ebp_37 - 0x14);
-	ebp_37->ptr0008->dw0008 = *(ebp_37 - 0x10);
-	return;
+	dwArg04->t0000 = dwArg08;
+	dwArg04->t0004 = eax_13;
+	dwArg04->t0008 = eax_22;
 }
 
-// 08049315: void quantum_qureg2density_op(Register (ptr Eq_841) gs, Stack word32 dwArg04, Stack word32 dwArg08)
-void quantum_qureg2density_op(Eq_841 * gs, word32 dwArg04, word32 dwArg08)
+// 08049315: void quantum_qureg2density_op(Stack (ptr Eq_520) dwArg04, Stack (ptr Eq_523) dwArg08)
+void quantum_qureg2density_op(Eq_520 * dwArg04, Eq_523 * dwArg08)
 {
-	quantum_new_density_op(fp - 0x04, gs, 0x01);
-	return;
+	quantum_new_density_op(dwArg04, 0x01, fp - 0x0C, dwArg08);
 }
 
-// 08049351: void quantum_reduced_density_op(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg08)
-void quantum_reduced_density_op(word32 ebp, Eq_380 * gs, word32 dwArg08)
+// 08049351: void quantum_reduced_density_op(Stack Eq_106 dwArg04, Stack (ptr Eq_711) dwArg08)
+void quantum_reduced_density_op(Eq_106 dwArg04, Eq_711 * dwArg08)
 {
-	dwArg08->ptr0004 = feof(dwArg08->ptr0004);
-	struct Eq_1281 * ebp_243 = fp - 0x04;
-	struct Eq_1285 * esp_246 = fp - 0x9C;
-	if (dwArg08->ptr0004 == null)
-		quantum_error(gs, (struct Eq_136 *) 0x02);
-	FILE * eax_41 = fp->ptr0008->ptr0008;
-	*(fp - 0x98) = fp->ptr0008->dw0000 * 0x28;
-	*(fp - 0x9C) = (FILE **) eax_41;
-	fp->ptr0008->ptr0008 = feof(*(fp - 0x9C));
-	if (fp->ptr0008->ptr0008 == null)
+	dwArg08->t0004 = realloc(dwArg08->t0004, dwArg08->dw0000 << 0x03);
+	if (dwArg08->t0004 == 0x00)
+		quantum_error(0x02);
+	dwArg08->t0008 = realloc(dwArg08->t0008, dwArg08->dw0000 * 0x28);
+	if (dwArg08->t0008 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg08->dw0000 * 0x18);
+	byte cl_62 = (byte) dwArg04;
+	Eq_763 edx_343 = __shld(0x00, 0x01, cl_62);
+	Eq_763 eax_344 = 0x01 << cl_62;
+	if ((cl_62 & 0x20) != 0x00)
 	{
-		*(fp - 0x9C) = 0x02;
-		quantum_error(gs, dwArg00);
+		edx_343 = eax_344;
+		eax_344.u0 = 0x00;
 	}
-	*(fp - 0x9C) = fp->ptr0008->dw0000 * 0x18;
-	quantum_memman(dwArg00);
-	byte cl_65 = (byte) fp->dw0004;
-	ui32 edx_314 = __shld(0x00, 0x01, cl_65);
-	ui32 eax_315 = 0x01 << cl_65;
-	if ((cl_65 & 0x20) != 0x00)
+	int32 dwLoc10_114 = 0x00;
+	while (dwArg08->dw0000 > dwLoc10_114)
 	{
-		edx_314 = eax_315;
-		eax_315 = 0x00;
-	}
-	*(fp - 44) = eax_315;
-	*(fp - 0x28) = edx_314;
-	*(fp - 0x10) = 0x00;
-	while (ebp_243->ptr000C->dw0000 > *(ebp_243 - 0x0C))
-	{
-		*(ebp_243 - 0x20) = (real64) ebp_243->ptr000C->ptr0004[*(ebp_243 - 0x0C)];
-		struct Eq_1428 * edx_118 = ebp_243->ptr000C->ptr0008 + *(ebp_243 - 0x0C) * 0x14;
-		*(ebp_243 - 0x3C) = edx_118->dw0000;
-		*(ebp_243 - 0x38) = edx_118->dw0004;
-		*(ebp_243 - 0x34) = edx_118->dw0008;
-		*(ebp_243 - 0x30) = edx_118->dw000C;
-		*(ebp_243 - 44) = edx_118->dw0010;
-		*(ebp_243 - 0x18) = 0.0;
-		*(ebp_243 - 0x10) = 0x00;
-		while ((ebp_243->ptr000C->ptr0008 + *(ebp_243 - 0x0C) * 0x14)->dw0004 > *(ebp_243 - 0x10))
+		word32 edx_146 = Mem45[dwArg08 + 0x08:word32] + dwLoc10_114 * 0x14;
+		real64 rLoc1_136 = (real64) Mem45[dwArg08 + 0x04:word32][dwLoc10_114 * 0x04];
+		Eq_106 eax_147 = edx_146->t0000;
+		Eq_106 eax_149 = edx_146->t0004;
+		Eq_106 eax_151 = edx_146->t0008;
+		Eq_106 eax_153 = edx_146->t000C;
+		Eq_106 eax_155 = edx_146->t0010;
+		real64 rLoc1C_158 = 0.0;
+		int32 dwLoc14_159 = 0x00;
+		while (Mem45[Mem45[dwArg08 + 0x08:word32] + dwLoc10_114 * 0x14 + 0x04:word32] > dwLoc14_159)
 		{
-			struct Eq_1532 * eax_274 = (ebp_243->ptr000C->ptr0008 + *(ebp_243 - 0x0C) * 0x14)->dw000C + (*(ebp_243 - 0x10) << 0x04);
-			if ((eax_274->dw0008 & *(ebp_243 - 0x28) | eax_274->dw000C & *(ebp_243 - 0x24)) == 0x00)
+			word32 eax_300 = Mem45[Mem45[dwArg08 + 0x08:word32] + dwLoc10_114 * 0x14 + 0x0C:word32] + (dwLoc14_159 << 0x04);
+			if ((eax_300->dw0008 & eax_344 | eax_300->dw000C & edx_343) == 0x00)
 			{
-				struct Eq_1918 * edx_304 = (ebp_243->ptr000C->ptr0008 + *(ebp_243 - 0x0C) * 0x14)->dw000C + (*(ebp_243 - 0x10) << 0x04);
-				esp_246->ptr0000 = edx_304->ptr0000;
-				esp_246->dw0004 = edx_304->dw0004;
-				*(ebp_243 - 0x18) = quantum_prob_inline(dwArg00, dwArg04) + *(ebp_243 - 0x18);
+				word32 edx_333 = Mem45[Mem45[dwArg08 + 0x08:word32] + dwLoc10_114 * 0x14 + 0x0C:word32] + (dwLoc14_159 << 0x04);
+				rLoc1C_158 = quantum_prob_inline(edx_333->dw0000, edx_333->dw0004) + rLoc1C_158;
 			}
-			*(ebp_243 - 0x10) = *(ebp_243 - 0x10) + 0x01;
+			dwLoc14_159 = dwLoc14_159 + 0x01;
 		}
-		real32 * eax_152 = ebp_243->ptr000C->ptr0004 + (*(ebp_243 - 0x0C) << 0x02) / 0x04;
-		*(ebp_243 - 0x4C) = (real32) (*(ebp_243 - 0x20) * *(ebp_243 - 0x18));
-		*eax_152 = *(ebp_243 - 0x4C);
-		real32 * eax_164 = ebp_243->ptr000C->ptr0004 + ((ebp_243->ptr000C)->dw0000 + *(ebp_243 - 0x0C) << 0x02) / 0x04;
-		*(ebp_243 - 0x4C) = (real32) ((1.0 - *(ebp_243 - 0x18)) * *(ebp_243 - 0x20));
-		*eax_164 = *(ebp_243 - 0x4C);
-		esp_246->dw000C = *(ebp_243 - 0x3C);
-		esp_246->dw0010 = *(ebp_243 - 0x38);
-		esp_246->dw0014 = *(ebp_243 - 0x34);
-		esp_246->dw0018 = *(ebp_243 - 0x30);
-		esp_246->dw001C = *(ebp_243 - 44);
-		esp_246->dw0008 = 0x00;
-		esp_246->dw0004 = ebp_243->dw0008;
-		esp_246->ptr0000 = ebp_243 - 0x78;
-		struct Eq_1723 * esp_200;
-		struct Eq_1281 * ebp_201;
-		struct Eq_1725 * ebx_202 = quantum_state_collapse(ebp_243, gs, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg18, out esp_200, out ebp_201);
-		ebx_202->dw0000 = *(ebp_201 - 0x78);
-		ebx_202->dw0004 = *(ebp_201 - 116);
-		ebx_202->dw0008 = *(ebp_201 - 0x70);
-		ebx_202->dw000C = *(ebp_201 - 0x6C);
-		ebx_202->dw0010 = *(ebp_201 - 0x68);
-		esp_200->dw000C = *(ebp_201 - 0x3C);
-		esp_200->dw0010 = *(ebp_201 - 0x38);
-		esp_200->dw0014 = *(ebp_201 - 0x34);
-		esp_200->dw0018 = *(ebp_201 - 0x30);
-		esp_200->dw001C = *(ebp_201 - 44);
-		esp_200->dw0008 = 0x01;
-		esp_200->dw0004 = ebp_201->dw0008;
-		esp_200->ptr0000 = ebp_201 - 0x78;
-		struct Eq_1285 * esp_242;
-		struct Eq_1725 * ebx_244 = quantum_state_collapse(ebp_201, gs, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg18, out esp_242, out ebp_243);
-		ebx_244->dw0000 = *(ebp_243 - 0x78);
-		ebx_244->dw0004 = *(ebp_243 - 116);
-		ebx_244->dw0008 = *(ebp_243 - 0x70);
-		ebx_244->dw000C = *(ebp_243 - 0x6C);
-		ebx_244->dw0010 = *(ebp_243 - 0x68);
-		esp_242->ptr0000 = ebp_243 - 0x3C;
-		quantum_delete_qureg_hashpreserve(dwArg00);
-		*(ebp_243 - 0x0C) = *(ebp_243 - 0x0C) + 0x01;
-		esp_246 = esp_242;
+		Mem45[dwArg08 + 0x04:word32][dwLoc10_114 * 0x04] = (real32) (rLoc1_136 * rLoc1C_158);
+		Mem189[dwArg08 + 0x04:word32][(Mem189[dwArg08 + 0x00:word32] + dwLoc10_114) * 0x04] = (real32) ((1.0 - rLoc1C_158) * rLoc1_136);
+		word32 ebx_211 = Mem202[dwArg08 + 0x08:word32] + dwLoc10_114 * 0x14;
+		quantum_state_collapse(fp - 0x7C, dwArg04, 0x00, eax_147, eax_149, eax_151, eax_153, eax_155);
+		ebx_211->dw0000 = dwLoc7C;
+		ebx_211->dw0004 = dwLoc78;
+		ebx_211->dw0008 = dwLoc74;
+		ebx_211->dw000C = dwLoc70;
+		ebx_211->dw0010 = dwLoc6C;
+		word32 ebx_255 = Mem243[dwArg08 + 0x08:word32] + (Mem243[dwArg08 + 0x00:word32] + dwLoc10_114) * 0x14;
+		quantum_state_collapse(fp - 0x7C, dwArg04, 0x01, eax_147, eax_149, eax_151, eax_153, eax_155);
+		ebx_255->dw0000 = dwLoc7C;
+		ebx_255->dw0004 = dwLoc78;
+		ebx_255->dw0008 = dwLoc74;
+		ebx_255->dw000C = dwLoc70;
+		ebx_255->dw0010 = dwLoc6C;
+		quantum_delete_qureg_hashpreserve(fp - 0x40);
+		dwLoc10_114 = dwLoc10_114 + 0x01;
 	}
-	ebp_243->ptr000C->dw0000 = ebp_243->ptr000C->dw0000 * 0x02;
-	return;
+	dwArg08->dw0000 = dwArg08->dw0000 * 0x02;
 }
 
-// 0804966A: FpuStack real64 quantum_prob_inline(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-real64 quantum_prob_inline(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0804966A: FpuStack real64 quantum_prob_inline(Stack word32 dwArg04, Stack word32 dwArg08)
+real64 quantum_prob_inline(word32 dwArg04, word32 dwArg08)
 {
-	Eq_1973 rLoc08_15 = (real32) quantum_real(dwArg04);
-	Eq_1980 rLoc0C_21 = (real32) quantum_imag(dwArg08);
+	Eq_1001 rLoc08_15 = (real32) quantum_real(dwArg04);
+	Eq_1007 rLoc0C_21 = (real32) quantum_imag(dwArg08);
 	return (real64) rLoc08_15 * rLoc08_15 + (real64) rLoc0C_21 * rLoc0C_21;
 }
 
-// 080496AA: FpuStack real64 quantum_real(Stack (ptr Eq_136) dwArg04)
-real64 quantum_real(Eq_136 * dwArg04)
+// 080496AA: FpuStack real64 quantum_real(Stack word32 dwArg04)
+real64 quantum_real(word32 dwArg04)
 {
 	return (real64) dwArg04;
 }
@@ -682,157 +425,106 @@ real64 quantum_imag(word32 dwArg08)
 	return (real64) dwArg08;
 }
 
-// 080496DF: void quantum_density_matrix(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08)
-void quantum_density_matrix(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg08)
+// 080496DF: void quantum_density_matrix(Stack (ptr Eq_1022) dwArg04, Stack (ptr Eq_1023) dwArg08)
+void quantum_density_matrix(Eq_1022 * dwArg04, Eq_1023 * dwArg08)
 {
-	if (0x01 << (byte) (dwArg08->ptr0008)->dw0000 < 0x00)
-		quantum_error(gs, (struct Eq_136 *) 0x03);
-	*(fp - 100) = *(fp - 0x28);
-	*(fp - 0x68) = *(fp - 0x28);
-	*(fp - 0x6C) = fp - 0x34;
-	quantum_new_matrix(fp - 0x04, gs, dwArg04, dwArg08);
-	*(fp - 0x1C) = 0x00;
-	while (fp->ptr0008->dw0000 > *(fp - 0x1C))
+	int32 eax_23 = 0x01 << (byte) (*dwArg08->ptr0008);
+	if (eax_23 < 0x00)
+		quantum_error(0x03);
+	quantum_new_matrix(fp - 0x34, eax_23, eax_23);
+	int32 dwLoc1C_148 = 0x00;
+	while (dwArg08->dw0000 > dwLoc1C_148)
 	{
-		*(fp - 0x6C) = fp->ptr0008->ptr0008 + *(fp - 0x1C) * 0x14;
-		quantum_reconstruct_hash(fp - 0x04, gs, dwArg00);
-		*(fp - 0x14) = 0x00;
-		while (*(fp - 0x14) < *(fp - 0x28))
+		quantum_reconstruct_hash(dwArg08->ptr0008 + dwLoc1C_148 * 0x14);
+		int32 dwLoc14_118 = 0x00;
+		while (dwLoc14_118 < eax_23)
 		{
-			*(fp - 0x18) = 0x00;
-			while (*(fp - 0x18) < *(fp - 0x28))
+			int32 dwLoc18_150 = 0x00;
+			while (dwLoc18_150 < eax_23)
 			{
-				struct Eq_2178 * edx_133 = fp->ptr0008->ptr0008 + *(fp - 0x1C) * 0x14;
-				int32 eax_134 = *(fp - 0x14);
-				*(fp - 100) = edx_133->dw0000;
-				*(fp - 0x60) = edx_133->dw0004;
-				*(fp - 0x5C) = edx_133->dw0008;
-				*(fp - 88) = edx_133->dw000C;
-				*(fp - 0x54) = edx_133->dw0010;
-				*(fp - 0x6C) = eax_134;
-				*(fp - 0x68) = eax_134 >> 0x1F;
-				*(fp - 0x20) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-				struct Eq_2266 * edx_163 = fp->ptr0008->ptr0008 + *(fp - 0x1C) * 0x14;
-				int32 eax_164 = *(fp - 0x18);
-				*(fp - 100) = edx_163->dw0000;
-				*(fp - 0x60) = edx_163->dw0004;
-				*(fp - 0x5C) = edx_163->dw0008;
-				*(fp - 88) = edx_163->dw000C;
-				*(fp - 0x54) = edx_163->dw0010;
-				*(fp - 0x6C) = eax_164;
-				*(fp - 0x68) = eax_164 >> 0x1F;
-				*(fp - 0x24) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-				if (*(fp - 0x20) >= 0x00 && *(fp - 0x24) >= 0x00)
+				struct Eq_1084 * edx_188 = dwArg08->ptr0008 + dwLoc1C_148 * 0x14;
+				int32 eax_206 = quantum_get_state(dwLoc14_118, dwLoc14_118 >> 0x1F, edx_188->dw0008, edx_188->dw000C, edx_188->ptr0010);
+				struct Eq_1111 * edx_215 = dwArg08->ptr0008 + dwLoc1C_148 * 0x14;
+				int32 eax_233 = quantum_get_state(dwLoc18_150, dwLoc18_150 >> 0x1F, edx_215->dw0008, edx_215->dw000C, edx_215->ptr0010);
+				if (eax_206 >= 0x00 && eax_233 >= 0x00)
 				{
-					struct Eq_2383 * eax_212 = *(fp - 44) + (*(fp - 0x30) *s *(fp - 0x18) + *(fp - 0x14) << 0x03);
-					struct Eq_2409 * edi_206 = *(fp - 44) + (*(fp - 0x30) *s *(fp - 0x18) + *(fp - 0x14) << 0x03);
-					*(fp - 0x48) = eax_212->r0000;
-					*(fp - 0x4C) = eax_212->r0004;
-					struct Eq_2451 * eax_237 = (fp->ptr0008->ptr0008 + *(fp - 0x1C) * 0x14)->dw000C + (*(fp - 0x24) << 0x04);
-					word32 eax_222 = fp->ptr0008->ptr0004[*(fp - 0x1C)];
-					word32 edx_238 = eax_237->dw0000;
-					word32 eax_239 = eax_237->dw0004;
-					*(fp - 0x60) = eax_239;
-					*(fp - 100) = edx_238;
-					*(fp - 0x68) = 0x00;
-					*(fp - 0x6C) = eax_222;
-					__mulsc3(dwArg00, dwArg04, dwArg08, rArg0C);
-					*(fp - 0x44) = edx_238;
-					struct Eq_2528 * edx_263 = (fp->ptr0008->ptr0008 + *(fp - 0x1C) * 0x14)->dw000C + (*(fp - 0x20) << 0x04);
-					*(fp - 0x6C) = edx_263->dw0000;
-					word32 eax_267 = edx_263->dw0004;
-					*(fp - 0x68) = eax_267;
-					quantum_conj(dwArg00, dwArg04);
-					word32 ebx_274 = *(fp - 0x44);
-					*(fp - 0x60) = (struct Eq_2528 **) edx_263;
-					*(fp - 100) = eax_267;
-					*(fp - 0x68) = ebx_274;
-					*(fp - 0x6C) = eax_239;
-					__mulsc3(dwArg00, dwArg04, dwArg08, rArg0C);
-					real64 rLoc1_285 = (real64) *(fp - 0x48);
-					real64 rLoc2_286 = (real64) *(fp - 0x4C);
-					*(fp - 0x50) = (struct Eq_2528 **) edx_263;
-					real64 rLoc3_288 = (real64) *(fp - 0x50);
-					*(fp - 0x50) = eax_267;
-					real64 rLoc2_295 = rLoc2_286 + (real64) (*(fp - 0x50));
-					*(fp - 0x50) = (real32) (rLoc1_285 + rLoc3_288);
-					word32 eax_300 = *(fp - 0x50);
-					*(fp - 0x50) = (real32) rLoc2_295;
-					word32 edx_302 = *(fp - 0x50);
-					edi_206->dw0000 = eax_300;
-					edi_206->dw0004 = edx_302;
+					struct Eq_1140 * eax_272 = dwLoc2C + (dwLoc30 *s dwLoc18_150 + dwLoc14_118 << 0x03);
+					struct Eq_1146 * eax_297 = (dwArg08->ptr0008 + dwLoc1C_148 * 0x14)[0x03] + (eax_233 << 0x04);
+					real32 rLoc48_274 = eax_272->r0000;
+					real32 rLoc4C_276 = eax_272->r0004;
+					Eq_106 edx_298 = eax_297->t0000;
+					Eq_106 eax_299 = eax_297->t0004;
+					__mulsc3(dwArg08->ptr0004[dwLoc1C_148].t0000, 0x00, edx_298, eax_299);
+					Eq_106 edx_322 = (dwArg08->ptr0008 + dwLoc1C_148 * 0x14)[0x03] + (eax_206 << 0x04);
+					word32 eax_326 = Mem0[edx_322 + 0x04:word32];
+					quantum_conj(*edx_322, eax_326);
+					__mulsc3(eax_299, edx_298, eax_326, edx_322);
+					struct Eq_1209 * edi_266 = dwLoc2C + (dwLoc30 *s dwLoc18_150 + dwLoc14_118 << 0x03);
+					edi_266->r0000 = (real32) ((real64) rLoc48_274 + (real64) edx_322);
+					edi_266->r0004 = (real32) ((real64) rLoc4C_276 + (real64) eax_326);
 				}
-				*(fp - 0x18) = *(fp - 0x18) + 0x01;
+				dwLoc18_150 = dwLoc18_150 + 0x01;
 			}
-			*(fp - 0x14) = *(fp - 0x14) + 0x01;
+			dwLoc14_118 = dwLoc14_118 + 0x01;
 		}
-		*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
+		dwLoc1C_148 = dwLoc1C_148 + 0x01;
 	}
-	fp->ptr0004->dw0000 = *(fp - 0x34);
-	fp->ptr0004->dw0004 = *(fp - 0x30);
-	fp->ptr0004->dw0008 = *(fp - 44);
-	return;
+	dwArg04->dw0000 = dwLoc34;
+	dwArg04->dw0004 = dwLoc30;
+	dwArg04->dw0008 = dwLoc2C;
 }
 
-// 08049996: void quantum_reconstruct_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_reconstruct_hash(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 08049996: void quantum_reconstruct_hash(Stack (ptr Eq_1056) dwArg04)
+void quantum_reconstruct_hash(Eq_1056 * dwArg04)
 {
-	int32 dwLoc08_10 = 0x00;
-	while (0x01 << (byte) dwArg04->dw0008 > dwLoc08_10)
+	int32 dwLoc08_11 = 0x00;
+	while (0x01 << (byte) dwArg04->dw0008 > dwLoc08_11)
 	{
-		dwArg04->ptr0010[dwLoc08_10] = 0x00;
-		dwLoc08_10 = dwLoc08_10 + 0x01;
+		dwArg04->ptr0010[dwLoc08_11] = 0x00;
+		dwLoc08_11 = dwLoc08_11 + 0x01;
 	}
-	while (fp->ptr0004->dw0004 > *(fp - 0x08))
+	int32 dwLoc08_21 = 0x00;
+	while (dwArg04->dw0004 > dwLoc08_21)
 	{
-		struct Eq_2702 * eax_36 = fp->ptr0004->dw000C + (*(fp - 0x08) << 0x04);
-		word32 edx_37 = eax_36->dw0008;
-		word32 ecx_38 = eax_36->dw000C;
-		*(fp - 0x20) = (struct Eq_2692 **) fp->ptr0004;
-		*(fp - 0x24) = *(fp - 0x08);
-		*(fp - 44) = edx_37;
-		*(fp - 0x28) = ecx_38;
-		quantum_add_hash(fp - 0x04, gs, dwArg00, dwArg04, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		struct Eq_1253 * eax_45 = dwArg04->dw000C + (dwLoc08_21 << 0x04);
+		quantum_add_hash(eax_45->dw0008, eax_45->dw000C, dwLoc08_21, dwArg04);
+		dwLoc08_21 = dwLoc08_21 + 0x01;
 	}
-	return;
 }
 
-// 08049A19: void quantum_add_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack (ptr Eq_2673) dwArg08, Stack word32 dwArg10)
-void quantum_add_hash(ptr32 ebp, Eq_380 * gs, word32 dwArg04, Eq_2673 * dwArg08, word32 dwArg10)
+// 08049A19: void quantum_add_hash(Stack int32 dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C, Stack (ptr Eq_1056) dwArg10)
+void quantum_add_hash(int32 dwArg04, int32 dwArg08, int32 dwArg0C, Eq_1056 * dwArg10)
 {
-	quantum_hash64(dwArg04, dwArg08, dwArg10->dw0008);
-	while (fp->ptr0010->ptr0010[*(fp - 0x08)] != 0x00)
+	word32 dwLoc0C_14 = 0x00;
+	ui32 dwLoc08_25 = quantum_hash64(dwArg04, dwArg08, dwArg10->dw0008);
+	while (dwArg10->ptr0010[dwLoc08_25] != 0x00)
 	{
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
-		if (0x01 << (byte) (fp->ptr0010)->dw0008 == *(fp - 0x08))
+		ui32 v10_56 = dwLoc08_25 + 0x01;
+		dwLoc08_25 = v10_56;
+		if (0x01 << (byte) dwArg10->dw0008 == v10_56)
 		{
-			if (*(fp - 0x0C) == 0x00)
+			if (dwLoc0C_14 == 0x00)
 			{
-				*(fp - 0x08) = 0x00;
-				*(fp - 0x0C) = 0x01;
+				dwLoc08_25 = 0x00;
+				dwLoc0C_14 = 0x01;
 			}
 			else
-			{
-				*(fp - 44) = 0x05;
-				quantum_error(gs, dwArg00);
-			}
+				quantum_error(0x05);
 		}
 	}
-	fp->ptr0010->ptr0010[*(fp - 0x08)] = fp->dw000C + 0x01;
-	return;
+	dwArg10->ptr0010[dwLoc08_25] = dwArg0C + 0x01;
 }
 
-// 08049AB8: Register uint32 quantum_hash64(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-uint32 quantum_hash64(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 08049AB8: Register uint32 quantum_hash64(Stack int32 dwArg04, Stack int32 dwArg08, Stack word32 dwArg0C)
+uint32 quantum_hash64(int32 dwArg04, int32 dwArg08, word32 dwArg0C)
 {
 	return (dwArg08 ^ dwArg04) *s 0x9E370001 >> (byte) (0x20 - dwArg0C);
 }
 
-// 08049AFA: Register word32 quantum_get_state(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack word32 dwArg14, Stack word32 dwArg18, Stack word32 dwArg1C)
-word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, word32 dwArg18, word32 dwArg1C)
+// 08049AFA: Register int32 quantum_get_state(Stack int32 dwArg04, Stack int32 dwArg08, Stack word32 dwArg14, Stack word32 dwArg18, Stack (arr ui32) dwArg1C)
+int32 quantum_get_state(int32 dwArg04, int32 dwArg08, word32 dwArg14, word32 dwArg18, ui32 dwArg1C[])
 {
-	word32 dwLoc20_29;
+	int32 dwLoc20_29;
 	if (dwArg14 == 0x00)
 		dwLoc20_29 = dwArg04;
 	else
@@ -840,7 +532,7 @@ word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, wor
 		ui32 dwLoc08_105 = quantum_hash64(dwArg04, dwArg08, dwArg14);
 		while (dwArg1C[dwLoc08_105] != 0x00)
 		{
-			struct Eq_2907 * eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105] << 0x04);
+			struct Eq_1340 * eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105] << 0x04);
 			if ((eax_79->dw0008 ^ dwArg04 | eax_79->dw000C ^ dwArg08) == 0x00)
 			{
 				dwLoc20_29 = dwArg1C[dwLoc08_105] - 0x01;
@@ -856,128 +548,77 @@ word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, wor
 	return dwLoc20_29;
 }
 
-// 08049BC0: void quantum_print_density_matrix(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04)
-void quantum_print_density_matrix(word32 ebp, Eq_380 * gs, word32 dwArg04)
+// 08049BC0: void quantum_print_density_matrix(Stack (ptr Eq_1023) dwArg04)
+void quantum_print_density_matrix(Eq_1023 * dwArg04)
 {
-	quantum_density_matrix(fp - 0x04, gs, dwArg04);
-	*(fp - 0x18) = *(fp - 44);
-	*(fp - 0x14) = *(fp - 0x28);
-	*(fp - 0x10) = *(fp - 0x24);
-	*(fp - 0x3C) = *(fp - 0x18);
-	*(fp - 0x38) = *(fp - 0x14);
-	*(fp - 0x34) = *(fp - 0x10);
-	quantum_print_matrix(dwArg00, dwArg04, dwArg08);
-	*(fp - 0x3C) = fp - 0x18;
-	quantum_delete_matrix(dwArg00);
-	return;
+	quantum_density_matrix(fp - 44, dwArg04);
+	quantum_print_matrix(dwLoc2C, dwLoc28, dwLoc24);
+	quantum_delete_matrix(fp - 0x18);
 }
 
-// 08049C13: void quantum_delete_density_op(Stack word32 dwArg04)
-void quantum_delete_density_op(word32 dwArg04)
+// 08049C13: void quantum_delete_density_op(Stack (ptr Eq_1397) dwArg04)
+void quantum_delete_density_op(Eq_1397 * dwArg04)
 {
-	quantum_destroy_hash(dwArg04->ptr0008);
+	quantum_destroy_hash(dwArg04->t0008);
 	int32 dwLoc08_13 = 0x00;
 	while (dwArg04->dw0000 > dwLoc08_13)
 	{
-		quantum_delete_qureg_hashpreserve(dwArg04->ptr0008 + dwLoc08_13);
+		quantum_delete_qureg_hashpreserve(Mem0[dwArg04 + 0x08:word32] + dwLoc08_13 * 0x14);
 		dwLoc08_13 = dwLoc08_13 + 0x01;
 	}
-	fn080488D4();
-	fn080488D4();
+	free(dwArg04->t0004);
+	free(dwArg04->t0008);
 	quantum_memman(dwArg04->dw0000 *s ~0x17);
-	dwArg04->dw0004 = 0x00;
-	dwArg04->ptr0008 = null;
-	return;
+	dwArg04->t0004.u0 = 0x00;
+	dwArg04->t0008.u0 = 0x00;
 }
 
-// 08049C9E: FpuStack real64 quantum_purity(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04)
-real64 quantum_purity(word32 ebp, Eq_380 * gs, word32 dwArg04)
+// 08049C9E: FpuStack real64 quantum_purity(Stack (ptr Eq_1447) dwArg04)
+real64 quantum_purity(Eq_1447 * dwArg04)
 {
-	real32 dwLoc24_18 = 0.0F;
+	real32 dwLoc24_114 = 0.0F;
 	int32 dwLoc14_19 = 0x00;
 	while (dwArg04->dw0000 > dwLoc14_19)
 	{
-		rLoc2 = (real64) dwLoc24_18;
-		dwLoc24_18 = (real32) ((real64) dwArg04->ptr0004[dwLoc14_19 * 0x04 / 0x0014] * (real64) (dwArg04->ptr0004)[(dwLoc14_19 * 0x04) / 0x0014] + rLoc2);
+		rLoc2 = (real64) dwLoc24_114;
+		dwLoc24_114 = (real32) ((real64) dwArg04->ptr0004[dwLoc14_19] * (real64) (dwArg04->ptr0004)[dwLoc14_19] + rLoc2);
 		dwLoc14_19 = dwLoc14_19 + 0x01;
 	}
-	while (fp->ptr0004->dw0000 > *(fp - 0x14))
+	int32 dwLoc14_126 = 0x00;
+	while (dwArg04->dw0000 > dwLoc14_126)
 	{
-		*(fp - 0x18) = 0x00;
-		while (*(fp - 0x18) < *(fp - 0x14))
+		int32 dwLoc18_116 = 0x00;
+		while (dwLoc18_116 < dwLoc14_126)
 		{
-			word32 eax_96 = fp->ptr0004->ptr0008 + *(fp - 0x14) * 0x14;
-			*(fp - 0x68) = fp->ptr0004->ptr0008 + *(fp - 0x18) * 0x14;
-			*(fp - 0x6C) = eax_96;
-			word32 edx_100;
-			*(fp - 0x34) = quantum_dot_product(fp - 0x04, gs, dwArg04, out edx_100);
-			*(fp - 0x30) = edx_100;
-			*(fp - 0x1C) = 0x00;
-			while ((fp->ptr0004->ptr0008 + *(fp - 0x14) * 0x14)->dw0004 > *(fp - 0x1C))
+			quantum_dot_product(dwArg04->ptr0008 + dwLoc14_126 * 0x14, dwArg04->ptr0008 + dwLoc18_116 * 0x14);
+			int32 dwLoc1C_153 = 0x00;
+			while ((dwArg04->ptr0008 + dwLoc14_126 * 0x14)->dw0004 > dwLoc1C_153)
 			{
-				struct Eq_3256 * eax_149 = (fp->ptr0004->ptr0008 + *(fp - 0x14) * 0x14)->dw000C + (*(fp - 0x1C) << 0x04);
-				struct Eq_3282 * ecx_136 = fp->ptr0004->ptr0008 + *(fp - 0x18) * 0x14;
-				word32 ebx_150 = eax_149->dw0008;
-				word32 esi_151 = eax_149->dw000C;
-				*(fp - 100) = ecx_136->dw0000;
-				*(fp - 0x60) = ecx_136->dw0004;
-				*(fp - 0x5C) = ecx_136->dw0008;
-				*(fp - 88) = ecx_136->dw000C;
-				*(fp - 0x54) = ecx_136->dw0010;
-				*(fp - 0x6C) = ebx_150;
-				*(fp - 0x68) = esi_151;
-				*(fp - 0x20) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-				if (*(fp - 0x20) >= 0x00)
+				struct Eq_1518 * eax_207 = (dwArg04->ptr0008 + dwLoc14_126 * 0x14)->dw000C + (dwLoc1C_153 << 0x04);
+				struct Eq_1531 * ecx_194 = dwArg04->ptr0008 + dwLoc18_116 * 0x14;
+				int32 eax_222 = quantum_get_state(eax_207->dw0008, eax_207->dw000C, ecx_194->dw0008, ecx_194->dw000C, ecx_194->ptr0010);
+				if (eax_222 >= 0x00)
 				{
-					rLoc2 = (real64) fp->ptr0004->ptr0004[*(fp - 0x18)];
-					*(fp - 0x44) = (real32) ((real64) fp->ptr0004->ptr0004[*(fp - 0x14)] * rLoc2);
-					word32 eax_206 = *(fp - 0x44);
-					word32 edx_210 = *(fp - 0x34);
-					word32 eax_211 = *(fp - 0x30);
-					*(fp - 0x60) = eax_211;
-					*(fp - 100) = edx_210;
-					*(fp - 0x68) = 0x00;
-					*(fp - 0x6C) = eax_206;
-					__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-					struct Eq_3475 * eax_236 = (fp->ptr0004->ptr0008 + *(fp - 0x14) * 0x14)->dw000C + (*(fp - 0x1C) << 0x04);
-					word32 edx_237 = eax_236->dw0000;
-					word32 eax_238 = eax_236->dw0004;
-					*(fp - 0x60) = eax_238;
-					*(fp - 100) = edx_237;
-					*(fp - 0x68) = edx_210;
-					*(fp - 0x6C) = eax_211;
-					__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-					struct Eq_3530 * edx_261 = (fp->ptr0004->ptr0008 + *(fp - 0x18) * 0x14)->dw000C + (*(fp - 0x20) << 0x04);
-					*(fp - 0x6C) = edx_261->dw0000;
-					word32 eax_265 = edx_261->dw0004;
-					*(fp - 0x68) = eax_265;
-					quantum_conj(dwArg00, dwArg04);
-					*(fp - 0x60) = (struct Eq_3530 **) edx_261;
-					*(fp - 100) = eax_265;
-					*(fp - 0x68) = edx_237;
-					*(fp - 0x6C) = eax_238;
-					__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-					*(fp - 44) = (struct Eq_3530 **) edx_261;
-					*(fp - 0x28) = eax_265;
+					rLoc2 = (real64) dwArg04->ptr0004[dwLoc18_116];
+					__mulsc3((real32) ((real64) dwArg04->ptr0004[dwLoc14_126] * rLoc2), 0x00, 0x00, 0x00);
+					struct Eq_1581 * eax_293 = (dwArg04->ptr0008 + dwLoc14_126 * 0x14)->dw000C + (dwLoc1C_153 << 0x04);
+					Eq_106 edx_294 = eax_293->t0000;
+					Eq_106 eax_295 = eax_293->t0004;
+					__mulsc3(0x00, 0x00, edx_294, eax_295);
+					Eq_106 edx_318 = (dwArg04->ptr0008 + dwLoc18_116 * 0x14)->dw000C + (eax_222 << 0x04);
+					word32 eax_322 = Mem0[edx_318 + 0x04:word32];
+					quantum_conj(*edx_318, eax_322);
+					__mulsc3(eax_295, edx_294, eax_322, edx_318);
 				}
-				else
-				{
-					*(fp - 44) = 0x00;
-					*(fp - 0x28) = 0x00;
-				}
-				*(fp - 0x6C) = *(fp - 44);
-				*(fp - 0x68) = *(fp - 0x28);
-				real64 rLoc1_184 = quantum_real(dwArg00) + rLoc2;
-				rLoc2 = (real64) *(fp - 0x24);
-				*(fp - 0x24) = (real32) (rLoc1_184 + rLoc2);
-				*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
+				rLoc2 = (real64) dwLoc24_114;
+				dwLoc24_114 = (real32) (quantum_real(0x00) + rLoc2 + rLoc2);
+				dwLoc1C_153 = dwLoc1C_153 + 0x01;
 			}
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			dwLoc18_116 = dwLoc18_116 + 0x01;
 		}
-		*(fp - 0x14) = *(fp - 0x14) + 0x01;
+		dwLoc14_126 = dwLoc14_126 + 0x01;
 	}
-	*(fp - 0x44) = *(fp - 0x24);
-	return (real64) *(fp - 0x44);
+	return (real64) dwLoc24_114;
 }
 
 // 08049F64: Register word32 quantum_error_handler(Stack word32 dwArg04)
@@ -988,8 +629,8 @@ word32 quantum_error_handler(word32 dwArg04)
 	return globals->dw80560D4;
 }
 
-// 08049F7C: Register word32 quantum_strerr(Stack word32 dwArg04)
-word32 quantum_strerr(word32 dwArg04)
+// 08049F7C: Register word32 quantum_strerr(Stack int32 dwArg04)
+word32 quantum_strerr(int32 dwArg04)
 {
 	word32 dwLoc08_16;
 	if (dwArg04 == 0x03)
@@ -1042,979 +683,680 @@ l0804A010:
 	}
 }
 
-// 0804A01C: Register word32 quantum_error(Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-word32 quantum_error(Eq_380 * gs, Eq_136 * dwArg04)
+// 0804A01C: void quantum_error(Stack int32 dwArg04)
+void quantum_error(int32 dwArg04)
 {
 	<anonymous> * eax_9 = quantum_error_handler(0x00);
 	if (eax_9 == null)
 	{
-		fn080488E4();
-		quantum_strerr(dwArg04);
-		fn08048994();
-		fn080488E4();
-		word32 esp_56;
-		ptr32 ebp_57;
-		byte SCZO_58;
-		word32 eax_59;
-		byte Z_60;
-		word32 edx_61;
-		struct Eq_380 * gs_62;
-		word32 ebx_63;
-		__gmon_start__();
-		return quantum_exp_mod_n(ebp_57, gs_62, dwLoc1C, dwLoc18);
+		fflush(globals->ptr80560C0);
+		fprintf(globals->ptr80560A0, "ERROR: %s\n", quantum_strerr(dwArg04));
+		fflush(globals->ptr80560A0);
+		abort();
 	}
 	else
 	{
-		word32 esp_33;
-		word32 ebp_34;
-		byte SCZO_35;
-		word32 eax_36;
-		byte Z_37;
-		word32 edx_38;
-		struct Eq_3728 * gs_39;
-		word32 ebx_40;
+		word32 esp_17;
+		word32 ebp_18;
+		byte SCZO_19;
+		word32 eax_20;
+		byte Z_21;
+		word32 edx_22;
 		eax_9();
-		return ebx_40;
 	}
 }
 
-// 0804A088: Register word32 quantum_exp_mod_n(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg10, Stack word32 dwArg14)
-word32 quantum_exp_mod_n(ptr32 ebp, Eq_380 * gs, word32 dwArg10, word32 dwArg14)
+// 0804A088: void quantum_exp_mod_n(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_84 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14)
+void quantum_exp_mod_n(Eq_1715 * gs, Eq_84 dwArg04, Eq_84 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14)
 {
-	quantum_sigma_x(fp - 0x04, gs, (dwArg10 + 0x01) * 0x02, dwArg14);
-	*(fp - 0x08) = 0x01;
-	while (*(fp - 0x08) <= fp->dw000C)
+	quantum_sigma_x(gs, (dwArg10 + 0x01) * 0x02, dwArg14);
+	Eq_106 dwLoc08_17 = 0x01;
+	while (dwLoc08_17 <= dwArg0C)
 	{
-		Eq_3771 edx_31 = fp->t0008;
-		*(fp - 0x10) = (int32) (SEQ(edx_31 >> 0x1F, edx_31) % fp->dw0004);
-		*(fp - 0x0C) = 0x01;
-		while (*(fp - 0x0C) < *(fp - 0x08))
+		Eq_208 dwLoc10_53 = (int32) (SEQ(dwArg08 >> 0x1F, dwArg08) % dwArg04);
+		Eq_106 dwLoc0C_54 = 0x01;
+		while (dwLoc0C_54 < dwLoc08_17)
 		{
-			*(fp - 0x10) = *(fp - 0x10) *s *(fp - 0x10);
-			Eq_3821 edx_74 = *(fp - 0x10);
-			*(fp - 0x10) = (int32) (SEQ(edx_74 >> 0x1F, edx_74) % fp->dw0004);
-			*(fp - 0x0C) = *(fp - 0x0C) + 0x01;
+			Eq_1743 eax_83 = dwLoc10_53 *s dwLoc10_53;
+			dwLoc10_53 = (int32) (SEQ(eax_83 >> 0x1F, eax_83) % dwArg04);
+			dwLoc0C_54 = dwLoc0C_54 + 0x01;
 		}
-		word32 edx_52 = fp->dw0010 * 0x03 + 0x01 + *(fp - 0x08);
-		*(fp - 44) = fp->dw0014;
-		*(fp - 0x30) = fp->dw0010;
-		*(fp - 0x34) = edx_52;
-		*(fp - 0x38) = *(fp - 0x10);
-		*(fp - 0x3C) = fp->dw0004;
-		ebx = mul_mod_n(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C, dwArg10);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		mul_mod_n(gs, dwArg04, dwLoc10_53, dwArg10 * 0x03 + 0x01 + dwLoc08_17, dwArg10, dwArg14);
+		dwLoc08_17 = dwLoc08_17 + 0x01;
 	}
-	return ebx;
 }
 
-// 0804A130: void quantum_cnot(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C)
-void quantum_cnot(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C)
+// 0804A130: void quantum_cnot(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_cnot(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
-	quantum_qec_get_status(fp - 0x1C, 0x00);
+	quantum_qec_get_status(fp - 0x1C, null);
 	if (dwLoc1C != 0x00)
-		quantum_cnot_ft(fp - 0x04, gs, dwArg04, dwArg08, dwArg0C);
-	else
+		quantum_cnot_ft(gs, dwArg04, dwArg08, dwArg0C);
+	else if (quantum_objcode_put(gs, 0x01, dwArg04, DPB(rLoc44, dwArg08, 0), rLoc40) == 0x00)
 	{
-		word32 edx_72;
-		word32 ebx_73;
-		if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x01, dwArg04, DPB(rLoc44, dwArg08, 0), rLoc40, out edx_72, out ebx_73) == 0x00)
+		Eq_106 dwLoc18_142 = 0x00;
+		while (Mem0[dwArg0C + 0x04:word32] > dwLoc18_142)
 		{
-			*(fp - 0x18) = 0x00;
-			while (fp->ptr000C->dw0004 > *(fp - 0x18))
+			word32 eax_109 = Mem0[dwArg0C + 0x0C:word32] + (dwLoc18_142 << 0x04);
+			Eq_106 edx_110 = eax_109->t000C;
+			byte cl_113 = (byte) dwArg04;
+			uint32 eax_114 = __shrd(eax_109->t0008, edx_110, cl_113);
+			uint32 edx_116 = edx_110 >> cl_113;
+			if ((cl_113 & 0x20) != 0x00)
+				eax_114 = edx_116;
+			if ((byte) (eax_114 & 0x01) != 0x00)
 			{
-				struct Eq_4002 * eax_100 = fp->ptr000C->dw000C + (*(fp - 0x18) << 0x04);
-				uint32 edx_101 = eax_100->dw000C;
-				byte cl_104 = (byte) fp->dw0004;
-				uint32 eax_105 = __shrd(eax_100->dw0008, edx_101, cl_104);
-				uint32 edx_107 = edx_101 >> cl_104;
-				if ((cl_104 & 0x20) != 0x00)
-					eax_105 = edx_107;
-				if ((byte) (eax_105 & 0x01) != 0x00)
+				word32 eax_154 = Mem0[dwArg0C + 0x0C:word32] + (dwLoc18_142 << 0x04);
+				word32 edx_148 = Mem0[dwArg0C + 0x0C:word32] + (dwLoc18_142 << 0x04);
+				word32 esi_155 = eax_154->dw0008;
+				word32 edi_156 = eax_154->dw000C;
+				byte cl_158 = (byte) dwArg08;
+				Eq_763 edx_163 = __shld(0x00, 0x01, cl_158);
+				Eq_763 eax_164 = 0x01 << cl_158;
+				if ((cl_158 & 0x20) != 0x00)
 				{
-					*(fp - 0x28) = fp->ptr000C->dw000C + (*(fp - 0x18) << 0x04);
-					struct Eq_4088 * eax_142 = fp->ptr000C->dw000C + (*(fp - 0x18) << 0x04);
-					word32 esi_143 = eax_142->dw0008;
-					word32 edi_144 = eax_142->dw000C;
-					byte cl_146 = (byte) fp->dw0008;
-					*(fp - 0x34) = 0x01;
-					*(fp - 0x30) = 0x00;
-					ui32 eax_149 = *(fp - 0x34);
-					ui32 edx_151 = __shld(*(fp - 0x30), eax_149, cl_146);
-					ui32 eax_152 = eax_149 << cl_146;
-					if ((cl_146 & 0x20) != 0x00)
-					{
-						edx_151 = eax_152;
-						eax_152 = 0x00;
-					}
-					struct Eq_4148 * ecx_168 = *(fp - 0x28);
-					ecx_168->dw0008 = esi_143 ^ eax_152;
-					ecx_168->dw000C = edi_144 ^ edx_151;
+					edx_163 = eax_164;
+					eax_164.u0 = 0x00;
 				}
-				*(fp - 0x18) = *(fp - 0x18) + 0x01;
+				edx_148->dw0008 = esi_155 ^ eax_164;
+				edx_148->dw000C = edi_156 ^ edx_163;
 			}
-			*(fp - 0x4C) = (struct Eq_3992 **) fp->ptr000C;
-			quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
+			dwLoc18_142 = dwLoc18_142 + 0x01;
 		}
+		quantum_decohere(dwArg0C, rArg0);
 	}
-	return;
 }
 
-// 0804A252: void quantum_toffoli(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C, Stack (ptr Eq_136) dwArg10)
-void quantum_toffoli(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C, Eq_136 * dwArg10)
+// 0804A252: void quantum_toffoli(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void quantum_toffoli(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	quantum_qec_get_status(fp - 0x1C, 0x00);
+	quantum_qec_get_status(fp - 0x1C, null);
 	if (dwLoc1C != 0x00)
-		quantum_toffoli_ft(fp - 0x04, gs, dwArg04, dwArg08, dwArg0C, dwArg10);
-	else
+		quantum_toffoli_ft(gs, dwArg04, dwArg08, dwArg0C, dwArg10);
+	else if (quantum_objcode_put(gs, 0x02, dwArg04, DPB(rLoc44, dwArg08, 0), DPB(rLoc40, dwArg0C, 0)) == 0x00)
 	{
-		word32 edx_80;
-		word32 ebx_81;
-		if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x02, dwArg04, DPB(rLoc44, dwArg08, 0), DPB(rLoc40, dwArg0C, 0), out edx_80, out ebx_81) == 0x00)
+		Eq_106 dwLoc18_101 = 0x00;
+		while (Mem0[dwArg10 + 0x04:word32] > dwLoc18_101)
 		{
-			*(fp - 0x18) = 0x00;
-			while (fp->ptr0010->dw0004 > *(fp - 0x18))
+			word32 eax_117 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc18_101 << 0x04);
+			Eq_106 edx_118 = eax_117->t000C;
+			byte cl_121 = (byte) dwArg04;
+			uint32 eax_122 = __shrd(eax_117->t0008, edx_118, cl_121);
+			uint32 edx_124 = edx_118 >> cl_121;
+			if ((cl_121 & 0x20) != 0x00)
+				eax_122 = edx_124;
+			if ((byte) (eax_122 & 0x01) != 0x00)
 			{
-				struct Eq_4225 * eax_108 = fp->ptr0010->dw000C + (*(fp - 0x18) << 0x04);
-				uint32 edx_109 = eax_108->dw000C;
-				byte cl_112 = (byte) fp->dw0004;
-				uint32 eax_113 = __shrd(eax_108->dw0008, edx_109, cl_112);
-				uint32 edx_115 = edx_109 >> cl_112;
-				if ((cl_112 & 0x20) != 0x00)
-					eax_113 = edx_115;
-				if ((byte) (eax_113 & 0x01) != 0x00)
+				word32 eax_156 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc18_101 << 0x04);
+				Eq_106 edx_157 = eax_156->t000C;
+				byte cl_160 = (byte) dwArg08;
+				uint32 eax_161 = __shrd(eax_156->t0008, edx_157, cl_160);
+				uint32 edx_163 = edx_157 >> cl_160;
+				if ((cl_160 & 0x20) != 0x00)
+					eax_161 = edx_163;
+				if ((byte) (eax_161 & 0x01) != 0x00)
 				{
-					struct Eq_4291 * eax_144 = fp->ptr0010->dw000C + (*(fp - 0x18) << 0x04);
-					uint32 edx_145 = eax_144->dw000C;
-					byte cl_148 = (byte) fp->dw0008;
-					uint32 eax_149 = __shrd(eax_144->dw0008, edx_145, cl_148);
-					uint32 edx_151 = edx_145 >> cl_148;
-					if ((cl_148 & 0x20) != 0x00)
-						eax_149 = edx_151;
-					if ((byte) (eax_149 & 0x01) != 0x00)
+					word32 eax_184 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc18_101 << 0x04);
+					word32 edx_178 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc18_101 << 0x04);
+					word32 esi_185 = eax_184->dw0008;
+					word32 edi_186 = eax_184->dw000C;
+					byte cl_188 = (byte) dwArg0C;
+					Eq_763 edx_193 = __shld(0x00, 0x01, cl_188);
+					Eq_763 eax_194 = 0x01 << cl_188;
+					if ((cl_188 & 0x20) != 0x00)
 					{
-						*(fp - 0x28) = fp->ptr0010->dw000C + (*(fp - 0x18) << 0x04);
-						struct Eq_4351 * eax_172 = fp->ptr0010->dw000C + (*(fp - 0x18) << 0x04);
-						word32 esi_173 = eax_172->dw0008;
-						word32 edi_174 = eax_172->dw000C;
-						byte cl_176 = (byte) fp->dw000C;
-						*(fp - 0x34) = 0x01;
-						*(fp - 0x30) = 0x00;
-						ui32 eax_179 = *(fp - 0x34);
-						ui32 edx_181 = __shld(*(fp - 0x30), eax_179, cl_176);
-						ui32 eax_182 = eax_179 << cl_176;
-						if ((cl_176 & 0x20) != 0x00)
-						{
-							edx_181 = eax_182;
-							eax_182 = 0x00;
-						}
-						struct Eq_4411 * ecx_198 = *(fp - 0x28);
-						ecx_198->dw0008 = esi_173 ^ eax_182;
-						ecx_198->dw000C = edi_174 ^ edx_181;
+						edx_193 = eax_194;
+						eax_194.u0 = 0x00;
 					}
+					edx_178->dw0008 = esi_185 ^ eax_194;
+					edx_178->dw000C = edi_186 ^ edx_193;
 				}
-				*(fp - 0x18) = *(fp - 0x18) + 0x01;
 			}
-			*(fp - 0x4C) = (struct Eq_4215 **) fp->ptr0010;
-			quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
+			dwLoc18_101 = dwLoc18_101 + 0x01;
 		}
+		quantum_decohere(dwArg10, rArg0);
 	}
-	return;
 }
 
-// 0804A3B3: void quantum_unbounded_toffoli(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04)
-void quantum_unbounded_toffoli(word32 ebp, Eq_380 * gs, word32 dwArg04)
+// 0804A3B3: void quantum_unbounded_toffoli(Stack int32 dwArg04, Stack Eq_106 dwArg08)
+void quantum_unbounded_toffoli(int32 dwArg04, Eq_106 dwArg08)
 {
-	fn080489B4();
-	if (dwArg04 << 0x02 == 0x00)
-		quantum_error(gs, (struct Eq_136 *) 0x02);
-	*(fp - 0x4C) = fp->dw0004 << 0x02;
-	quantum_memman(dwArg00);
-	*(fp - 0x18) = (char *) &fp->ptr0008 + 0x04;
-	*(fp - 0x24) = 0x00;
-	while (*(fp - 0x24) < fp->dw0004)
+	Eq_106 eax_20 = malloc(dwArg04 << 0x02);
+	if (eax_20 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg04 << 0x02);
+	word32 * dwLoc18_224 = fp + 0x0C;
+	int32 dwLoc24_229 = 0x00;
+	while (dwLoc24_229 < dwArg04)
 	{
-		word32 * ecx_236 = (*(fp - 0x24) << 0x02) + *(fp - 0x20);
-		word32 * edx_237 = *(fp - 0x18);
-		*(fp - 0x18) = edx_237 + 0x01;
-		*ecx_236 = *edx_237;
-		*(fp - 0x24) = *(fp - 0x24) + 0x01;
+		eax_20[dwLoc24_229 * 0x04] = Mem0[dwLoc18_224 + 0x00:word32];
+		dwLoc18_224 = dwLoc18_224 + 0x01;
+		dwLoc24_229 = dwLoc24_229 + 0x01;
 	}
-	word32 * edx_42 = *(fp - 0x18);
-	*(fp - 0x18) = edx_42 + 0x01;
-	*(fp - 0x1C) = *edx_42;
-	*(fp - 0x24) = 0x00;
-	while (fp->ptr0008->dw0004 > *(fp - 0x24))
+	word32 eax_45 = *dwLoc18_224;
+	Eq_106 dwLoc24_137 = 0x00;
+	while (Mem0[dwArg08 + 0x04:word32] > dwLoc24_137)
 	{
-		*(fp - 0x28) = 0x00;
-		while (*(fp - 0x28) < fp->dw0004)
+		int32 dwLoc28_211 = 0x00;
+		while (dwLoc28_211 < dwArg04)
 		{
-			struct Eq_4628 * eax_202 = fp->ptr0008->dw000C + (*(fp - 0x24) << 0x04);
-			uint32 esi_204 = eax_202->dw000C;
-			byte cl_209 = (byte) *((char *) *(fp - 0x20) + *(fp - 0x28) * 0x04);
-			uint32 eax_212 = __shrd(eax_202->dw0008, esi_204, cl_209);
-			uint32 edx_214 = esi_204 >> cl_209;
-			if ((cl_209 & 0x20) != 0x00)
-				eax_212 = edx_214;
-			if ((byte) (eax_212 & 0x01) == 0x00)
+			word32 eax_187 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc24_137 << 0x04);
+			Eq_106 esi_189 = eax_187->t000C;
+			byte cl_194 = (byte) eax_20[dwLoc28_211 * 0x04];
+			uint32 eax_197 = __shrd(eax_187->t0008, esi_189, cl_194);
+			uint32 edx_199 = esi_189 >> cl_194;
+			if ((cl_194 & 0x20) != 0x00)
+				eax_197 = edx_199;
+			if ((byte) (eax_197 & 0x01) == 0x00)
 				break;
-			*(fp - 0x28) = *(fp - 0x28) + 0x01;
+			dwLoc28_211 = dwLoc28_211 + 0x01;
 		}
-		if (*(fp - 0x28) == fp->dw0004)
+		if (dwLoc28_211 == dwArg04)
 		{
-			*(fp - 0x38) = fp->ptr0008->dw000C + (*(fp - 0x24) << 0x04);
-			byte cl_144 = (byte) *(fp - 0x1C);
-			*(fp - 0x44) = 0x01;
-			*(fp - 0x40) = 0x00;
-			__shld(*(fp - 0x40), *(fp - 0x44), cl_144);
-			*(fp - 0x38) = fp->ptr0008->dw000C + (*(fp - 0x24) << 0x04);
-			struct Eq_4764 * eax_163 = fp->ptr0008->dw000C + (*(fp - 0x24) << 0x04);
-			word32 esi_164 = eax_163->dw0008;
-			word32 edi_165 = eax_163->dw000C;
-			byte cl_167 = (byte) *(fp - 0x1C);
-			*(fp - 0x44) = 0x01;
-			*(fp - 0x40) = 0x00;
-			ui32 eax_170 = *(fp - 0x44);
-			word32 edx_172 = __shld(*(fp - 0x40), eax_170, cl_167);
-			ui32 eax_173 = eax_170 << cl_167;
-			if ((cl_167 & 0x20) != 0x00)
+			word32 eax_149 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc24_137 << 0x04);
+			word32 edx_143 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc24_137 << 0x04);
+			word32 esi_150 = eax_149->dw0008;
+			word32 edi_151 = eax_149->dw000C;
+			byte cl_153 = (byte) eax_45;
+			Eq_763 edx_158 = __shld(0x00, 0x01, cl_153);
+			Eq_763 eax_159 = 0x01 << cl_153;
+			if ((cl_153 & 0x20) != 0x00)
 			{
-				edx_172 = 0x00;
-				eax_173 = 0x00;
+				edx_158 = eax_159;
+				eax_159.u0 = 0x00;
 			}
-			struct Eq_4826 * ecx_189 = *(fp - 0x38);
-			ecx_189->dw0008 = esi_164 ^ eax_173;
-			ecx_189->dw000C = edi_165 ^ edx_172;
+			edx_143->dw0008 = esi_150 ^ eax_159;
+			edx_143->dw000C = edi_151 ^ edx_158;
 		}
-		*(fp - 0x24) = *(fp - 0x24) + 0x01;
+		dwLoc24_137 = dwLoc24_137 + 0x01;
 	}
-	*(fp - 0x4C) = *(fp - 0x20);
-	fn080488D4();
-	*(fp - 0x4C) = -(fp->dw0004 << 0x02);
-	quantum_memman(dwArg00);
-	*(fp - 0x4C) = (struct Eq_4550 **) fp->ptr0008;
-	quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
-	return;
+	free(eax_20);
+	quantum_memman(-(dwArg04 << 0x02));
+	quantum_decohere(dwArg08, rArg0);
 }
 
-// 0804A535: void quantum_sigma_x(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_sigma_x(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0804A535: void quantum_sigma_x(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_sigma_x(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	quantum_qec_get_status(fp - 0x1C, 0x00);
+	quantum_qec_get_status(fp - 0x1C, null);
 	if (dwLoc1C != 0x00)
-		quantum_sigma_x_ft(fp - 0x04, gs, dwArg04, dwArg08);
-	else
+		quantum_sigma_x_ft(gs, dwArg04, dwArg08);
+	else if (quantum_objcode_put(gs, 0x03, dwArg04, rLoc34, rLoc30) == 0x00)
 	{
-		word32 edx_62;
-		word32 ebx_63;
-		if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x03, dwArg04, rLoc34, rLoc30, out edx_62, out ebx_63) == 0x00)
+		Eq_106 dwLoc18_132 = 0x00;
+		while (Mem0[dwArg08 + 0x04:word32] > dwLoc18_132)
 		{
-			*(fp - 0x18) = 0x00;
-			while (fp->ptr0008->dw0004 > *(fp - 0x18))
+			word32 eax_104 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_132 << 0x04);
+			word32 edx_98 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_132 << 0x04);
+			word32 esi_105 = eax_104->dw0008;
+			word32 edi_106 = eax_104->dw000C;
+			byte cl_108 = (byte) dwArg04;
+			Eq_763 edx_113 = __shld(0x00, 0x01, cl_108);
+			Eq_763 eax_114 = 0x01 << cl_108;
+			if ((cl_108 & 0x20) != 0x00)
 			{
-				*(fp - 0x28) = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				struct Eq_4923 * eax_95 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				word32 esi_96 = eax_95->dw0008;
-				word32 edi_97 = eax_95->dw000C;
-				byte cl_99 = (byte) fp->dw0004;
-				*(fp - 0x34) = 0x01;
-				*(fp - 0x30) = 0x00;
-				ui32 eax_102 = *(fp - 0x34);
-				ui32 edx_104 = __shld(*(fp - 0x30), eax_102, cl_99);
-				ui32 eax_105 = eax_102 << cl_99;
-				if ((cl_99 & 0x20) != 0x00)
-				{
-					edx_104 = eax_105;
-					eax_105 = 0x00;
-				}
-				struct Eq_4996 * ecx_119 = *(fp - 0x28);
-				ecx_119->dw0008 = esi_96 ^ eax_105;
-				ecx_119->dw000C = edi_97 ^ edx_104;
-				*(fp - 0x18) = *(fp - 0x18) + 0x01;
+				edx_113 = eax_114;
+				eax_114.u0 = 0x00;
 			}
-			*(fp - 0x3C) = (struct Eq_4894 **) fp->ptr0008;
-			quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
+			edx_98->dw0008 = esi_105 ^ eax_114;
+			edx_98->dw000C = edi_106 ^ edx_113;
+			dwLoc18_132 = dwLoc18_132 + 0x01;
 		}
+		quantum_decohere(dwArg08, rArg0);
 	}
-	return;
 }
 
-// 0804A615: void quantum_sigma_y(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_sigma_y(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804A615: void quantum_sigma_y(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_sigma_y(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	word32 edx_24;
-	word32 ebx_25;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x04, dwArg04, rLoc44, rLoc40, out edx_24, out ebx_25) == 0x00)
+	if (quantum_objcode_put(gs, 0x04, dwArg04, rLoc44, rLoc40) == 0x00)
 	{
-		*(fp - 0x18) = 0x00;
-		while (fp->ptr0008->dw0004 > *(fp - 0x18))
+		while (Mem0[dwArg08 + 0x04:word32] > 0x00)
 		{
-			*(fp - 0x28) = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-			struct Eq_5078 * eax_82 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-			word32 esi_83 = eax_82->dw0008;
-			word32 edi_84 = eax_82->dw000C;
-			byte cl_86 = (byte) fp->dw0004;
-			*(fp - 0x34) = 0x01;
-			*(fp - 0x30) = 0x00;
-			ui32 eax_89 = *(fp - 0x34);
-			ui32 edx_199 = __shld(*(fp - 0x30), eax_89, cl_86);
-			ui32 eax_200 = eax_89 << cl_86;
-			if ((cl_86 & 0x20) != 0x00)
+			word32 edx_99 = Mem0[dwArg08 + 0x0C:word32];
+			word32 edx_93 = Mem0[dwArg08 + 0x0C:word32];
+			Eq_106 esi_103 = *((word32) edx_99 + 0x08);
+			Eq_106 edi_104 = *((word32) edx_99 + 0x0C);
+			byte cl_106 = (byte) dwArg04;
+			Eq_763 edx_111 = __shld(0x00, 0x01, cl_106);
+			Eq_763 eax_112 = 0x01 << cl_106;
+			if ((cl_106 & 0x20) != 0x00)
 			{
-				edx_199 = eax_200;
-				eax_200 = 0x00;
+				edx_111 = eax_112;
+				eax_112.u0 = 0x00;
 			}
-			struct Eq_5151 * ecx_105 = *(fp - 0x28);
-			ecx_105->dw0008 = esi_83 ^ eax_200;
-			ecx_105->dw000C = edi_84 ^ edx_199;
-			struct Eq_5165 * eax_112 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-			uint32 edx_113 = eax_112->dw000C;
-			byte cl_116 = (byte) fp->dw0004;
-			uint32 eax_117 = __shrd(eax_112->dw0008, edx_113, cl_116);
-			uint32 edx_119 = edx_113 >> cl_116;
-			if ((cl_116 & 0x20) != 0x00)
-				eax_117 = edx_119;
-			if ((byte) (eax_117 & 0x01) != 0x00)
+			*((word32) edx_93 + 0x08) = esi_103 ^ eax_112;
+			*((word32) edx_93 + 0x0C) = edi_104 ^ edx_111;
+			word32 edx_129 = Mem127[dwArg08 + 0x0C:word32];
+			Eq_106 edx_133 = *((word32) edx_129 + 0x0C);
+			byte cl_136 = (byte) dwArg04;
+			uint32 eax_137 = __shrd(*((word32) edx_129 + 0x08), edx_133, cl_136);
+			uint32 edx_139 = edx_133 >> cl_136;
+			if ((cl_136 & 0x20) != 0x00)
+				eax_137 = edx_139;
+			if ((byte) (eax_137 & 0x01) != 0x00)
 			{
-				struct Eq_5277 * eax_148 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				struct Eq_5292 * esi_142 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				word32 edx_149 = eax_148->dw0000;
-				word32 eax_150 = eax_148->dw0004;
-				*(fp - 0x40) = 0x3F800000;
-				*(fp - 0x44) = 0x00;
-				*(fp - 0x48) = eax_150;
-				*(fp - 0x4C) = edx_149;
-				__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-				esi_142->dw0000 = 0x00;
-				esi_142->dw0004 = eax_150;
+				word32 edx_168 = Mem127[dwArg08 + 0x0C:word32];
+				word32 edx_163 = Mem127[dwArg08 + 0x0C:word32];
+				Eq_106 eax_174 = *((word32) edx_168 + 0x04);
+				__mulsc3(*edx_168, eax_174, 0x00, 0x3F800000);
+				edx_163->u0 = 0x00;
+				*((word32) edx_163 + 0x04) = eax_174;
 			}
 			else
 			{
-				struct Eq_5207 * eax_177 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				struct Eq_5222 * esi_171 = fp->ptr0008->dw000C + (*(fp - 0x18) << 0x04);
-				word32 edx_178 = eax_177->dw0000;
-				word32 eax_179 = eax_177->dw0004;
-				*(fp - 0x40) = 0xBF800000;
-				*(fp - 0x44) = 0x00;
-				*(fp - 0x48) = eax_179;
-				*(fp - 0x4C) = edx_178;
-				__mulsc3(dwArg00, dwArg04, rArg08, rArg0C);
-				esi_171->dw0000 = 0x00;
-				esi_171->dw0004 = eax_179;
+				word32 edx_195 = Mem127[dwArg08 + 0x0C:word32];
+				word32 edx_190 = Mem127[dwArg08 + 0x0C:word32];
+				Eq_106 eax_201 = *((word32) edx_195 + 0x04);
+				__mulsc3(*edx_195, eax_201, 0x00, 0xBF800000);
+				edx_190->u0 = 0x00;
+				*((word32) edx_190 + 0x04) = eax_201;
 			}
 			*(fp - 0x18) = *(fp - 0x18) + 0x01;
 		}
-		*(fp - 0x4C) = (struct Eq_5049 **) fp->ptr0008;
-		quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
+		quantum_decohere(dwArg08, rArg0);
 	}
-	return;
 }
 
-// 0804A79E: void quantum_sigma_z(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_sigma_z(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804A79E: void quantum_sigma_z(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_sigma_z(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	word32 edx_15;
-	word32 ebx_16;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x05, dwArg04, rLoc24, rLoc20, out edx_15, out ebx_16) == 0x00)
+	if (quantum_objcode_put(gs, 0x05, dwArg04, rLoc24, rLoc20) == 0x00)
 	{
-		*(fp - 0x08) = 0x00;
-		while (fp->ptr0008->dw0004 > *(fp - 0x08))
+		Eq_106 dwLoc08_46 = 0x00;
+		while (Mem0[dwArg08 + 0x04:word32] > dwLoc08_46)
 		{
-			struct Eq_5393 * eax_64 = fp->ptr0008->dw000C + (*(fp - 0x08) << 0x04);
-			uint32 edx_65 = eax_64->dw000C;
-			byte cl_68 = (byte) fp->dw0004;
-			uint32 eax_124 = __shrd(eax_64->dw0008, edx_65, cl_68);
-			uint32 edx_71 = edx_65 >> cl_68;
-			if ((cl_68 & 0x20) != 0x00)
-				eax_124 = edx_71;
-			if ((byte) (eax_124 & 0x01) != 0x00)
+			word32 eax_70 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc08_46 << 0x04);
+			Eq_106 edx_71 = eax_70->t000C;
+			byte cl_74 = (byte) dwArg04;
+			uint32 eax_131 = __shrd(eax_70->t0008, edx_71, cl_74);
+			uint32 edx_77 = edx_71 >> cl_74;
+			if ((cl_74 & 0x20) != 0x00)
+				eax_131 = edx_77;
+			if ((byte) (eax_131 & 0x01) != 0x00)
 			{
-				struct Eq_5459 * eax_100 = fp->ptr0008->dw000C + (*(fp - 0x08) << 0x04);
-				struct Eq_5474 * ecx_94 = fp->ptr0008->dw000C + (*(fp - 0x08) << 0x04);
-				word32 eax_102 = eax_100->dw0004;
-				*(fp - 0x18) = eax_100->dw0000;
-				real64 rLoc1_104 = (real64) *(fp - 0x18);
-				*(fp - 0x18) = eax_102;
-				real64 rLoc2_114 = -(real64) *(fp - 0x18);
-				*(fp - 0x18) = (real32) -rLoc1_104;
-				word32 eax_119 = *(fp - 0x18);
-				*(fp - 0x18) = (real32) rLoc2_114;
-				word32 edx_121 = *(fp - 0x18);
-				ecx_94->dw0000 = eax_119;
-				ecx_94->dw0004 = edx_121;
+				word32 eax_107 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc08_46 << 0x04);
+				word32 ecx_101 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc08_46 << 0x04);
+				real32 dwLoc18_127 = (real32) -(real64) eax_107->dw0004;
+				ecx_101->r0000 = (real32) -(real64) eax_107->dw0000;
+				ecx_101->r0004 = dwLoc18_127;
 			}
-			*(fp - 0x08) = *(fp - 0x08) + 0x01;
+			dwLoc08_46 = dwLoc08_46 + 0x01;
 		}
-		*(fp - 44) = (struct Eq_5383 **) fp->ptr0008;
-		quantum_decohere(fp - 0x04, gs, dwArg00, rArg0);
+		quantum_decohere(dwArg08, rArg0);
 	}
-	return;
 }
 
-// 0804A85F: Register byte quantum_swaptheleads(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs)
-byte quantum_swaptheleads(Eq_3742 * ebp, Eq_380 * gs)
+// 0804A85F: void quantum_swaptheleads(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_swaptheleads(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	quantum_qec_get_status(fp - 0x28, 0x00);
+	quantum_qec_get_status(fp - 0x28, null);
 	if (dwLoc28 != 0x00)
 	{
-		while (*(fp - 0x18) < fp->dw0004)
+		Eq_106 dwLoc18_108 = 0x00;
+		while (dwLoc18_108 < dwArg04)
 		{
-			word32 edx_61 = fp->dw0004 + *(fp - 0x18);
-			*(fp - 0x44) = (struct Eq_5575 **) fp->ptr0008;
-			*(fp - 0x48) = edx_61;
-			*(fp - 0x4C) = *(fp - 0x18);
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-			word32 edx_73 = fp->dw0004 + *(fp - 0x18);
-			*(fp - 0x44) = (struct Eq_5575 **) fp->ptr0008;
-			*(fp - 0x48) = *(fp - 0x18);
-			*(fp - 0x4C) = edx_73;
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-			word32 edx_81 = fp->dw0004 + *(fp - 0x18);
-			*(fp - 0x44) = (struct Eq_5575 **) fp->ptr0008;
-			*(fp - 0x48) = edx_81;
-			*(fp - 0x4C) = *(fp - 0x18);
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			quantum_cnot(gs, dwLoc18_108, dwArg04 + dwLoc18_108, dwArg08);
+			quantum_cnot(gs, dwArg04 + dwLoc18_108, dwLoc18_108, dwArg08);
+			quantum_cnot(gs, dwLoc18_108, dwArg04 + dwLoc18_108, dwArg08);
+			dwLoc18_108 = dwLoc18_108 + 0x01;
 		}
 	}
 	else
 	{
-		while (fp->ptr0008->dw0004 > *(fp - 0x18))
+		Eq_106 dwLoc18_110 = 0x00;
+		while (Mem0[dwArg08 + 0x04:word32] > dwLoc18_110 && quantum_objcode_put(gs, 0x0E, dwArg04, rLoc44, rLoc40) == 0x00)
 		{
-			*(fp - 0x48) = fp->dw0004;
-			*(fp - 0x4C) = 0x0E;
-			word32 edx_112;
-			word32 ebx_113;
-			if (quantum_objcode_put(fp - 0x04, gs, dwArg00, dwArg04, rArg08, rArg0C, out edx_112, out ebx_113) != 0x00)
-				return (byte) *(fp - 0x04);
-			ui32 eax_124 = (fp->ptr0008->ptr000C + (*(fp - 0x18) << 0x04))->dw0008;
-			byte cl_127 = (byte) fp->dw0004;
-			__shld(0x00, 0x01, cl_127);
-			ui32 eax_131 = 0x01 << cl_127;
-			if ((cl_127 & 0x20) != 0x00)
-				eax_131 = 0x00;
-			*(fp - 0x20) = eax_131 - 0x01 & eax_124;
-			*(fp - 0x24) = 0x00;
-			*(fp - 0x1C) = 0x00;
-			while (*(fp - 0x1C) < fp->dw0004)
+			word32 eax_154 = Mem0[Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_110 << 0x04) + 0x08:word32];
+			byte cl_157 = (byte) dwArg04;
+			__shld(0x00, 0x01, cl_157);
+			ui32 eax_161 = 0x01 << cl_157;
+			if ((cl_157 & 0x20) != 0x00)
+				eax_161 = 0x00;
+			ui32 eax_170 = eax_161 - 0x01 & eax_154;
+			int32 dwLoc24_174 = 0x00;
+			Eq_106 dwLoc1C_175 = 0x00;
+			while (dwLoc1C_175 < dwArg04)
 			{
-				ui32 eax_224 = (fp->ptr0008->ptr000C + (*(fp - 0x18) << 0x04))->dw0008;
-				byte cl_229 = (byte) (fp->dw0004 + *(fp - 0x1C));
-				__shld(0x00, 0x01, cl_229);
-				ui32 eax_233 = 0x01 << cl_229;
-				if ((cl_229 & 0x20) != 0x00)
-					eax_233 = 0x00;
-				*(fp - 0x24) = (eax_224 & eax_233) + *(fp - 0x24);
-				*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
+				word32 eax_260 = Mem0[Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_110 << 0x04) + 0x08:word32];
+				byte cl_265 = (byte) (dwArg04 + dwLoc1C_175);
+				__shld(0x00, 0x01, cl_265);
+				ui32 eax_269 = 0x01 << cl_265;
+				if ((cl_265 & 0x20) != 0x00)
+					eax_269 = 0x00;
+				dwLoc24_174 = (eax_260 & eax_269) + dwLoc24_174;
+				dwLoc1C_175 = dwLoc1C_175 + 0x01;
 			}
-			struct Eq_5842 * eax_161 = fp->ptr0008->ptr000C + (*(fp - 0x18) << 0x04);
-			Eq_5857 eax_166 = *(fp - 0x20) + *(fp - 0x24);
-			ui64 edi_esi_175 = SEQ(Mem145[eax_161 + 0x0C:word32], Mem145[eax_161 + 0x08:word32] - eax_166) - SEQ(eax_166 >> 0x1F, eax_166);
-			*(fp - 0x34) = (word32) edi_esi_175;
-			*(fp - 0x30) = SLICE(edi_esi_175, word32, 32);
-			int32 eax_185 = *(fp - 0x20) << (byte) fp->dw0004;
-			uint32 v17_188 = *(fp - 0x34) + eax_185;
-			*(fp - 0x34) = v17_188;
-			*(fp - 0x30) = (word32) ((byte) (v17_188 < 0x00) + (*(fp - 0x30) + (eax_185 >> 0x1F)));
-			int32 eax_197 = *(fp - 0x24) >> (byte) fp->dw0004;
-			uint32 v19_200 = *(fp - 0x34) + eax_197;
-			*(fp - 0x34) = v19_200;
-			*(fp - 0x30) = (word32) ((byte) (v19_200 < 0x00) + (*(fp - 0x30) + (eax_197 >> 0x1F)));
-			struct Eq_5972 * ecx_210 = fp->ptr0008->ptr000C + (*(fp - 0x18) << 0x04);
-			word32 edx_212 = *(fp - 0x30);
-			ecx_210->dw0008 = *(fp - 0x34);
-			ecx_210->dw000C = edx_212;
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			word32 eax_193 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_110 << 0x04);
+			Eq_2595 eax_198 = eax_170 + dwLoc24_174;
+			word32 ecx_246 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc18_110 << 0x04);
+			Mem249[ecx_246 + 0x08:word32] = (word32) (SEQ(Mem0[eax_193 + 0x0C:word32], Mem0[eax_193 + 0x08:word32] - eax_198) - SEQ(eax_198 >> 0x1F, eax_198)) + (eax_170 << (byte) dwArg04) + (dwLoc24_174 >> (byte) dwArg04);
+			ecx_246->dw000C = v20;
+			dwLoc18_110 = dwLoc18_110 + 0x01;
 		}
 	}
-	return (byte) *(fp - 0x04);
 }
 
-// 0804AA4B: void quantum_swaptheleads_omuln_controlled(Register ptr32 ebp, Register (ptr Eq_380) gs)
-void quantum_swaptheleads_omuln_controlled(ptr32 ebp, Eq_380 * gs)
+// 0804AA4B: void quantum_swaptheleads_omuln_controlled(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_swaptheleads_omuln_controlled(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
-	while (*(fp - 0x08) < fp->dw0008)
+	Eq_106 dwLoc08_21 = 0x00;
+	while (dwLoc08_21 < dwArg08)
 	{
-		word32 eax_22 = fp->dw0008 * 0x02 + *(fp - 0x08);
-		word32 edx_27 = fp->dw0008 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw000C;
-		*(fp - 0x24) = eax_22 + 0x02;
-		*(fp - 0x28) = edx_27;
-		*(fp - 44) = fp->dw0004;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		word32 ecx_41 = fp->dw0008 + *(fp - 0x08);
-		word32 eax_44 = fp->dw0008 * 0x02 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw000C;
-		*(fp - 0x24) = ecx_41;
-		*(fp - 0x28) = eax_44 + 0x02;
-		*(fp - 44) = fp->dw0004;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		word32 eax_55 = fp->dw0008 * 0x02 + *(fp - 0x08);
-		word32 edx_60 = fp->dw0008 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw000C;
-		*(fp - 0x24) = eax_55 + 0x02;
-		*(fp - 0x28) = edx_60;
-		*(fp - 44) = fp->dw0004;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		quantum_toffoli(gs, dwArg04, dwArg08 + dwLoc08_21, dwArg08 * 0x02 + dwLoc08_21 + 0x02, dwArg0C);
+		quantum_toffoli(gs, dwArg04, dwArg08 * 0x02 + dwLoc08_21 + 0x02, dwArg08 + dwLoc08_21, dwArg0C);
+		quantum_toffoli(gs, dwArg04, dwArg08 + dwLoc08_21, dwArg08 * 0x02 + dwLoc08_21 + 0x02, dwArg0C);
+		dwLoc08_21 = dwLoc08_21 + 0x01;
 	}
-	return;
 }
 
-// 0804AAF9: Register ptr32 quantum_gate1(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C, Register out ptr32 ebpOut)
-ptr32 quantum_gate1(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg08, Eq_136 * dwArg0C, ptr32 & ebpOut)
+// 0804AAF9: void quantum_gate1(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14)
+void quantum_gate1(Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14)
 {
-	if (dwArg0C != (struct Eq_136 *) 0x02 || dwArg08 != (struct Eq_136 *) 0x02)
-		quantum_error(gs, (struct Eq_136 *) 0x04);
-	*(fp - 0xCC) = (struct Eq_6246 **) fp->ptr0014;
-	quantum_reconstruct_hash(fp - 0x04, gs, dwArg00);
-	*(fp - 0x20) = 0x00;
-	while (fp->ptr0014->dw0004 > *(fp - 0x20))
+	int32 dwLoc30_16 = 0x00;
+	int32 dwLoc34_17 = 0x00;
+	word32 dwLoc38_18 = 0x01;
+	if (dwArg0C != 0x02 || dwArg08 != 0x02)
+		quantum_error(0x04);
+	quantum_reconstruct_hash(dwArg14);
+	Eq_106 dwLoc20_32 = 0x00;
+	while (Mem0[dwArg14 + 0x04:word32] > dwLoc20_32)
 	{
-		if (*(fp - 0x38) != 0x00)
+		if (dwLoc38_18 != 0x00)
 		{
-			struct Eq_6422 * eax_846 = fp->ptr0014->ptr000C + (*(fp - 0x20) << 0x04) / 0x00;
-			int32 eax_849 = *(fp - 0x20);
-			if ((eax_849 ^ eax_846->dw0008 | eax_846->dw000C ^ eax_849 >> 0x1F) != 0x00)
-				*(fp - 0x38) = 0x00;
+			word32 eax_906 = Mem0[dwArg14 + 0x0C:word32] + (dwLoc20_32 << 0x04);
+			if ((dwLoc20_32 ^ eax_906->dw0008 | eax_906->dw000C ^ dwLoc20_32 >> 0x1F) != 0x00)
+				dwLoc38_18 = 0x00;
 		}
-		struct Eq_6362 * eax_789 = fp->ptr0014->ptr000C + (*(fp - 0x20) << 0x04) / 0x00;
-		word32 esi_790 = eax_789->dw0008;
-		word32 edi_791 = eax_789->dw000C;
-		byte cl_793 = (byte) fp->dw0004;
-		*(fp - 0xAC) = 0x01;
-		*(fp - 0xA8) = 0x00;
-		ui32 eax_796 = *(fp - 0xAC);
-		ui32 edx_798 = __shld(*(fp - 0xA8), eax_796, cl_793);
-		ui32 eax_799 = eax_796 << cl_793;
-		if ((cl_793 & 0x20) != 0x00)
+		word32 eax_848 = Mem0[dwArg14 + 0x0C:word32] + (dwLoc20_32 << 0x04);
+		word32 esi_849 = eax_848->dw0008;
+		word32 edi_850 = eax_848->dw000C;
+		byte cl_852 = (byte) dwArg04;
+		Eq_763 edx_857 = __shld(0x00, 0x01, cl_852);
+		Eq_763 eax_858 = 0x01 << cl_852;
+		if ((cl_852 & 0x20) != 0x00)
 		{
-			edx_798 = eax_799;
-			eax_799 = 0x00;
+			edx_857 = eax_858;
+			eax_858.u0 = 0x00;
 		}
-		struct Eq_6246 * ebx_815 = fp->ptr0014;
-		*(fp - 0xC4) = ebx_815->dw0000;
-		*(fp - 0xC0) = ebx_815->dw0004;
-		*(fp - 188) = ebx_815->dw0008;
-		*(fp - 0xB8) = (FILE **) ebx_815->ptr000C;
-		*(fp - 0xB4) = ebx_815->dw0010;
-		*(fp - 0xCC) = esi_790 ^ eax_799;
-		*(fp - 200) = edi_791 ^ edx_798;
-		if (quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18) == ~0x00)
-			*(fp - 0x30) = *(fp - 0x30) + 0x01;
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		if (quantum_get_state(esi_849 ^ eax_858, edi_850 ^ edx_857, Mem0[dwArg14 + 0x08:word32], Mem0[dwArg14 + 0x0C:word32], Mem0[dwArg14 + 0x10:word32]) == ~0x00)
+			dwLoc30_16 = dwLoc30_16 + 0x01;
+		dwLoc20_32 = dwLoc20_32 + 0x01;
 	}
-	FILE * eax_61 = fp->ptr0014->ptr000C;
-	*(fp - 200) = fp->ptr0014->dw0004 + *(fp - 0x30) << 0x04;
-	*(fp - 0xCC) = (FILE **) eax_61;
-	fp->ptr0014->ptr000C = feof(*(fp - 0xCC));
-	if (fp->ptr0014->ptr000C == null)
+	Mem84[dwArg14 + 0x0C:word32] = realloc(Mem0[dwArg14 + 0x0C:word32], Mem0[dwArg14 + 0x04:word32] + dwLoc30_16 << 0x04);
+	if (Mem84[dwArg14 + 0x0C:word32] == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwLoc30_16 << 0x04);
+	int32 dwLoc20_837 = 0x00;
+	while (dwLoc20_837 < dwLoc30_16)
 	{
-		*(fp - 0xCC) = 0x02;
-		quantum_error(gs, dwArg00);
+		word32 eax_822 = Mem84[dwArg14 + 0x0C:word32] + (Mem84[dwArg14 + 0x04:word32] + dwLoc20_837 << 0x04);
+		eax_822->dw0008 = 0x00;
+		eax_822->dw000C = 0x00;
+		word32 edx_831 = Mem824[dwArg14 + 0x0C:word32] + (Mem824[dwArg14 + 0x04:word32] + dwLoc20_837 << 0x04);
+		edx_831->dw0000 = 0x00;
+		edx_831->dw0004 = 0x00;
+		dwLoc20_837 = dwLoc20_837 + 0x01;
 	}
-	*(fp - 0xCC) = *(fp - 0x30) << 0x04;
-	quantum_memman(dwArg00);
-	*(fp - 0x20) = 0x00;
-	while (*(fp - 0x20) < *(fp - 0x30))
+	word32 eax_105 = calloc(Mem84[dwArg14 + 0x04:word32] + dwLoc30_16, 0x01);
+	if (eax_105 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(Mem84[dwArg14 + 0x04:word32] + dwLoc30_16);
+	byte cl_120 = (byte) *dwArg14;
+	Eq_763 edx_123 = __shld(0x00, 0x01, cl_120);
+	Eq_763 eax_124 = 0x01 << cl_120;
+	if ((cl_120 & 0x20) != 0x00)
 	{
-		struct Eq_6567 * eax_763 = fp->ptr0014->ptr000C + ((fp->ptr0014)->dw0004 + *(fp - 0x20) << 0x04) / 0x00;
-		eax_763->dw0008 = 0x00;
-		eax_763->dw000C = 0x00;
-		struct Eq_6597 * edx_772 = fp->ptr0014->ptr000C + ((fp->ptr0014)->dw0004 + *(fp - 0x20) << 0x04) / 0x00;
-		edx_772->dw0000 = 0x00;
-		edx_772->dw0004 = 0x00;
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		edx_123 = eax_124;
+		eax_124.u0 = 0x00;
 	}
-	word32 eax_85 = fp->ptr0014->dw0004 + *(fp - 0x30);
-	*(fp - 200) = 0x01;
-	*(fp - 0xCC) = eax_85;
-	struct Eq_6662 * esp_89;
-	struct Eq_379 * ebp_90;
-	word32 edi_91;
-	word32 esi_92;
-	word32 ebx_93;
-	byte SCZO_94;
-	word32 eax_95;
-	byte Z_96;
-	byte SZO_97;
-	word32 edx_98;
-	byte C_99;
-	word32 ecx_100;
-	byte cl_101;
-	byte SO_102;
-	byte S_103;
-	byte al_104;
-	byte FPUF_105;
-	byte CZ_106;
-	struct Eq_380 * gs_107;
-	log();
-	*(ebp_90 - 0x3C) = eax_95;
-	if (*(ebp_90 - 0x3C) == 0x00)
+	real80 rLoc8C_140 = (real80) (real64) DPB(qwLocD4, eax_124, 0);
+	if (edx_123 < 0x00)
+		rLoc8C_140 = (real80) ((real64) globals->r8054330 + (real64) rLoc8C_140);
+	real32 rLoc3C_152 = (real32) (1.0 / (real64) rLoc8C_140 * globals->r8054340);
+	Eq_106 dwLoc20_153 = 0x00;
+	while (Mem84[dwArg14 + 0x04:word32] > dwLoc20_153)
 	{
-		esp_89->ptr0000 = (FILE *) 0x02;
-		quantum_error(gs_107, dwArg00);
-	}
-	esp_89->ptr0000 = *((char *) ebp_90->ptr0018 + 0x04) + *(ebp_90 - 44) / 0x00;
-	quantum_memman(dwArg00);
-	*(ebp_90 - 0x24) = (union Eq_6699 *) *((char *) ebp_90->ptr0018 + 0x04);
-	byte cl_123 = (byte) *ebp_90->ptr0018;
-	int32 edx_126 = __shld(0x00, 0x01, cl_123);
-	int32 eax_127 = 0x01 << cl_123;
-	if ((cl_123 & 0x20) != 0x00)
-	{
-		edx_126 = eax_127;
-		eax_127 = 0x00;
-	}
-	*(esp_89 - 0x04) = edx_126;
-	*(esp_89 - 0x08) = eax_127;
-	*(ebp_90 - 0x88) = (real80) (real64) *(esp_89 - 0x08);
-	if (edx_126 < 0x00)
-		*(ebp_90 - 0x88) = (real80) ((real64) globals->r8054330 + (real64) (*(ebp_90 - 0x88)));
-	*(ebp_90 - 0x60) = (real64) *(ebp_90 - 0x88);
-	*(ebp_90 - 0x38) = (real32) (1.0 / *(ebp_90 - 0x60) * globals->r8054340);
-	*(ebp_90 - 0x1C) = 0x00;
-	if (*((char *) ebp_90->ptr0018 + 0x04) > *(ebp_90 - 0x1C))
-	{
-		if ((byte) (word32) (*(ebp_90 - 0x1C) + *(ebp_90 - 0x3C)) == 0x00)
+		if ((byte) (word32) Mem84[dwLoc20_153 + eax_105:byte] == 0x00)
 		{
-			ui32 eax_357 = *((char *) (*((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00) + 0x08);
-			byte cl_360 = (byte) ebp_90->dw0008;
-			__shld(0x00, 0x01, cl_360);
-			ui32 eax_364 = 0x01 << cl_360;
-			if ((cl_360 & 0x20) != 0x00)
-				eax_364 = 0x00;
-			*(ebp_90 - 0x28) = eax_364 & eax_357;
-			*(ebp_90 - 0x4C) = 0x00;
-			*(ebp_90 - 0x48) = 0x00;
-			struct Eq_7000 * eax_380 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-			word32 esi_381 = eax_380->dw0008;
-			word32 edi_382 = eax_380->dw000C;
-			byte cl_384 = (byte) ebp_90->dw0008;
-			*(ebp_90 - 0xA8) = 0x01;
-			*(ebp_90 - 0xA4) = 0x00;
-			ui32 eax_387 = *(ebp_90 - 0xA8);
-			ui32 edx_389 = __shld(*(ebp_90 - 0xA4), eax_387, cl_384);
-			ui32 eax_390 = eax_387 << cl_384;
-			if ((cl_384 & 0x20) != 0x00)
+			word32 eax_409 = Mem84[Mem84[dwArg14 + 0x0C:word32] + (dwLoc20_153 << 0x04) + 0x08:word32];
+			byte cl_413 = (byte) dwArg04;
+			__shld(0x00, 0x01, cl_413);
+			ui32 eax_417 = 0x01 << cl_413;
+			if ((cl_413 & 0x20) != 0x00)
+				eax_417 = 0x00;
+			word32 eax_433 = Mem84[dwArg14 + 0x0C:word32] + (dwLoc20_153 << 0x04);
+			word32 esi_434 = eax_433->dw0008;
+			word32 edi_435 = eax_433->dw000C;
+			byte cl_437 = (byte) dwArg04;
+			ui32 eax_423 = eax_417 & eax_409;
+			Eq_106 dwLoc50_426 = 0x00;
+			Eq_106 dwLoc4C_428 = 0x00;
+			Eq_763 edx_442 = __shld(0x00, 0x01, cl_437);
+			Eq_763 eax_443 = 0x01 << cl_437;
+			if ((cl_437 & 0x20) != 0x00)
 			{
-				edx_389 = eax_390;
-				eax_390 = 0x00;
+				edx_442 = eax_443;
+				eax_443.u0 = 0x00;
 			}
-			FILE * ebx_406 = ebp_90->ptr0018;
-			esp_89->dw0008 = *ebx_406;
-			esp_89->t000C = *((char *) ebx_406 + 0x04);
-			esp_89->dw0010 = *((char *) ebx_406 + 0x08);
-			esp_89->ptr0014 = *((char *) ebx_406 + 0x0C);
-			esp_89->dw0018 = *((char *) ebx_406 + 0x0010);
-			esp_89->ptr0000 = esi_381 ^ eax_390;
-			esp_89->dw0004 = edi_382 ^ edx_389;
-			*(ebp_90 - 0x20) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-			struct Eq_7233 * eax_428 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-			word32 eax_430 = eax_428->dw0004;
-			*(ebp_90 - 0x44) = eax_428->dw0000;
-			*(ebp_90 - 0x40) = eax_430;
-			if (*(ebp_90 - 0x20) >= 0x00)
+			word32 eax_472 = quantum_get_state(esi_434 ^ eax_443, edi_435 ^ edx_442, Mem84[dwArg14 + 0x08:word32], Mem84[dwArg14 + 0x0C:word32], Mem84[dwArg14 + 0x10:word32]);
+			word32 eax_478 = Mem84[dwArg14 + 0x0C:word32] + (dwLoc20_153 << 0x04);
+			Eq_106 edx_479 = eax_478->t0000;
+			Eq_106 eax_480 = eax_478->t0004;
+			if (eax_472 >= 0x00)
 			{
-				struct Eq_7280 * eax_731 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x20) << 0x04) / 0x00;
-				word32 eax_733 = eax_731->dw0004;
-				*(ebp_90 - 0x4C) = eax_731->dw0000;
-				*(ebp_90 - 0x48) = eax_733;
+				word32 eax_791 = Mem84[dwArg14 + 0x0C:word32] + (eax_472 << 0x04);
+				dwLoc50_426 = eax_791->t0000;
+				dwLoc4C_428 = eax_791->t0004;
 			}
-			if (*(ebp_90 - 0x28) != 0x00)
+			if (eax_423 != 0x00)
 			{
-				struct Eq_7355 * eax_608 = ebp_90->ptr0014;
-				struct Eq_7530 * esi_607 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-				FILE * edx_611 = eax_608->ptr0010;
-				ui32 eax_612 = eax_608->dw0014;
-				word32 edx_615 = *(ebp_90 - 0x4C);
-				Eq_6699 eax_616 = *(ebp_90 - 0x48);
-				esp_89->t000C = eax_616;
-				esp_89->dw0008 = edx_615;
-				esp_89->dw0004 = eax_612;
-				esp_89->ptr0000 = edx_611;
-				__mulsc3(dwArg00, dwArg04, dwArg08, dwArg0C);
-				*(ebp_90 - 0x78) = edx_615;
-				struct Eq_7355 * eax_627 = ebp_90->ptr0014;
-				FILE * edx_630 = eax_627->ptr0018;
-				ui32 eax_631 = eax_627->dw001C;
-				word32 edx_634 = *(ebp_90 - 0x44);
-				Eq_6699 eax_635 = *(ebp_90 - 0x40);
-				esp_89->t000C = eax_635;
-				esp_89->dw0008 = edx_634;
-				esp_89->dw0004 = eax_631;
-				esp_89->ptr0000 = edx_630;
-				__mulsc3(dwArg00, dwArg04, dwArg08, dwArg0C);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_616;
-				real64 rLoc1_645 = (real64) *(ebp_90 - 0x9C);
-				real64 rLoc2_646 = (real64) *(ebp_90 - 0x78);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_635;
-				real64 rLoc3_648 = (real64) *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = edx_634;
-				real64 rLoc2_655 = rLoc2_646 + (real64) (*(ebp_90 - 0x9C));
-				*(ebp_90 - 0x9C) = (real32) (rLoc1_645 + rLoc3_648);
-				word32 eax_660 = *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = (real32) rLoc2_655;
-				word32 edx_662 = *(ebp_90 - 0x9C);
-				esi_607->dw0000 = eax_660;
-				esi_607->dw0004 = edx_662;
+				word32 esi_667 = Mem84[dwArg14 + 0x0C:word32] + (dwLoc20_153 << 0x04);
+				__mulsc3(Mem84[dwArg10 + 0x10:word32], Mem84[dwArg10 + 0x14:word32], dwLoc50_426, dwLoc4C_428);
+				__mulsc3(Mem84[dwArg10 + 0x18:word32], Mem84[dwArg10 + 0x1C:word32], edx_479, eax_480);
+				esi_667->r0000 = (real32) ((real64) dwLoc4C_428 + (real64) eax_480);
+				esi_667->r0004 = (real32) ((real64) dwLoc50_426 + (real64) edx_479);
 			}
 			else
 			{
-				struct Eq_7355 * eax_671 = ebp_90->ptr0014;
-				struct Eq_7359 * esi_670 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-				FILE * edx_672 = eax_671->ptr0000;
-				ui32 eax_673 = eax_671->dw0004;
-				word32 edx_676 = *(ebp_90 - 0x44);
-				Eq_6699 eax_677 = *(ebp_90 - 0x40);
-				esp_89->t000C = eax_677;
-				esp_89->dw0008 = edx_676;
-				esp_89->dw0004 = eax_673;
-				esp_89->ptr0000 = edx_672;
-				__mulsc3(dwArg00, dwArg04, dwArg08, dwArg0C);
-				*(ebp_90 - 116) = edx_676;
-				struct Eq_7355 * eax_688 = ebp_90->ptr0014;
-				FILE * edx_691 = eax_688->ptr0008;
-				ui32 eax_692 = eax_688->dw000C;
-				word32 edx_695 = *(ebp_90 - 0x4C);
-				Eq_6699 eax_696 = *(ebp_90 - 0x48);
-				esp_89->t000C = eax_696;
-				esp_89->dw0008 = edx_695;
-				esp_89->dw0004 = eax_692;
-				esp_89->ptr0000 = edx_691;
-				__mulsc3(dwArg00, dwArg04, dwArg08, dwArg0C);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_677;
-				real64 rLoc1_706 = (real64) *(ebp_90 - 0x9C);
-				real64 rLoc2_707 = (real64) *(ebp_90 - 116);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_696;
-				real64 rLoc3_709 = (real64) *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = edx_695;
-				real64 rLoc2_716 = rLoc2_707 + (real64) (*(ebp_90 - 0x9C));
-				*(ebp_90 - 0x9C) = (real32) (rLoc1_706 + rLoc3_709);
-				word32 eax_721 = *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = (real32) rLoc2_716;
-				word32 edx_723 = *(ebp_90 - 0x9C);
-				esi_670->dw0000 = eax_721;
-				esi_670->dw0004 = edx_723;
+				word32 esi_730 = Mem84[dwArg14 + 0x0C:word32] + (dwLoc20_153 << 0x04);
+				__mulsc3(*dwArg10, Mem84[dwArg10 + 0x04:word32], edx_479, eax_480);
+				__mulsc3(Mem84[dwArg10 + 0x08:word32], Mem84[dwArg10 + 0x0C:word32], dwLoc50_426, dwLoc4C_428);
+				esi_730->r0000 = (real32) ((real64) eax_480 + (real64) dwLoc4C_428);
+				esi_730->r0004 = (real32) ((real64) edx_479 + (real64) dwLoc50_426);
 			}
-			if (*(ebp_90 - 0x20) < 0x00)
+			if (*(fp - 0x24) < 0x00)
 			{
-				struct Eq_7355 * eax_593 = ebp_90->ptr0014;
-				ui32 eax_597 = eax_593->dw000C;
-				*(ebp_90 - 0x9C) = (FILE **) eax_593->ptr0008;
-				*(ebp_90 - 0x9C) = eax_597;
+				struct Eq_3253 * eax_653 = fp->ptr0010;
+				word32 eax_657 = eax_653->dw000C;
+				*(fp - 0xA0) = eax_653->dw0008;
+				*(fp - 0xA0) = eax_657;
 			}
-			if (*(ebp_90 - 0x28) != 0x00)
+			if (*(fp - 44) != 0x00)
 			{
-				struct Eq_7355 * eax_475 = ebp_90->ptr0014;
-				struct Eq_8005 * esi_474 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x20) << 0x04) / 0x00;
-				FILE * edx_476 = eax_475->ptr0000;
-				ui32 eax_477 = eax_475->dw0004;
-				word32 edx_480 = *(ebp_90 - 0x4C);
-				Eq_6699 eax_481 = *(ebp_90 - 0x48);
-				esp_89->t000C = eax_481;
-				esp_89->dw0008 = edx_480;
-				esp_89->dw0004 = eax_477;
-				esp_89->ptr0000 = edx_476;
+				struct Eq_3253 * eax_534 = fp->ptr0010;
+				struct Eq_3471 * esi_533 = fp->ptr0014->dw000C + (*(fp - 0x24) << 0x04);
+				word32 edx_535 = eax_534->dw0000;
+				word32 eax_536 = eax_534->dw0004;
+				word32 edx_539 = *(fp - 0x50);
+				word32 eax_540 = *(fp - 0x4C);
+				*(fp - 0xC0) = eax_540;
+				*(fp - 0xC4) = edx_539;
+				*(fp - 200) = eax_536;
+				*(fp - 0xCC) = edx_535;
 				__mulsc3(dwArg04, dwArg08, dwArg0C, dwArg10);
-				*(ebp_90 - 0x70) = edx_480;
-				struct Eq_7355 * eax_493 = ebp_90->ptr0014;
-				FILE * edx_496 = eax_493->ptr0008;
-				ui32 eax_497 = eax_493->dw000C;
-				word32 edx_500 = *(ebp_90 - 0x44);
-				Eq_6699 eax_501 = *(ebp_90 - 0x40);
-				esp_89->t000C = eax_501;
-				esp_89->dw0008 = edx_500;
-				esp_89->dw0004 = eax_497;
-				esp_89->ptr0000 = edx_496;
+				*(fp - 116) = edx_539;
+				struct Eq_3253 * eax_553 = fp->ptr0010;
+				word32 edx_556 = eax_553->dw0008;
+				word32 eax_557 = eax_553->dw000C;
+				word32 edx_560 = *(fp - 0x48);
+				word32 eax_561 = *(fp - 0x44);
+				*(fp - 0xC0) = eax_561;
+				*(fp - 0xC4) = edx_560;
+				*(fp - 200) = eax_557;
+				*(fp - 0xCC) = edx_556;
 				__mulsc3(dwArg04, dwArg08, dwArg0C, dwArg10);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_481;
-				real64 rLoc1_511 = (real64) *(ebp_90 - 0x9C);
-				real64 rLoc2_512 = (real64) *(ebp_90 - 0x70);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_501;
-				real64 rLoc3_514 = (real64) *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = edx_500;
-				real64 rLoc2_521 = rLoc2_512 + (real64) (*(ebp_90 - 0x9C));
-				*(ebp_90 - 0x9C) = (real32) (rLoc1_511 + rLoc3_514);
-				word32 eax_526 = *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = (real32) rLoc2_521;
-				word32 edx_528 = *(ebp_90 - 0x9C);
-				esi_474->dw0000 = eax_526;
-				esi_474->dw0004 = edx_528;
+				*(fp - 0xA0) = eax_540;
+				real64 rLoc1_571 = (real64) *(fp - 0xA0);
+				real64 rLoc2_572 = (real64) *(fp - 116);
+				*(fp - 0xA0) = eax_561;
+				real64 rLoc3_574 = (real64) *(fp - 0xA0);
+				*(fp - 0xA0) = edx_560;
+				real64 rLoc2_581 = rLoc2_572 + (real64) (*(fp - 0xA0));
+				*(fp - 0xA0) = (real32) (rLoc1_571 + rLoc3_574);
+				word32 eax_586 = *(fp - 0xA0);
+				*(fp - 0xA0) = (real32) rLoc2_581;
+				word32 edx_588 = *(fp - 0xA0);
+				esi_533->dw0000 = eax_586;
+				esi_533->dw0004 = edx_588;
 			}
 			else
 			{
-				struct Eq_7355 * eax_536 = ebp_90->ptr0014;
-				struct Eq_7834 * esi_535 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x20) << 0x04) / 0x00;
-				FILE * edx_539 = eax_536->ptr0010;
-				ui32 eax_540 = eax_536->dw0014;
-				word32 edx_543 = *(ebp_90 - 0x44);
-				Eq_6699 eax_544 = *(ebp_90 - 0x40);
-				esp_89->t000C = eax_544;
-				esp_89->dw0008 = edx_543;
-				esp_89->dw0004 = eax_540;
-				esp_89->ptr0000 = edx_539;
+				struct Eq_3253 * eax_596 = fp->ptr0010;
+				struct Eq_3285 * esi_595 = fp->ptr0014->dw000C + (*(fp - 0x24) << 0x04);
+				word32 edx_599 = eax_596->dw0010;
+				word32 eax_600 = eax_596->dw0014;
+				word32 edx_603 = *(fp - 0x48);
+				word32 eax_604 = *(fp - 0x44);
+				*(fp - 0xC0) = eax_604;
+				*(fp - 0xC4) = edx_603;
+				*(fp - 200) = eax_600;
+				*(fp - 0xCC) = edx_599;
 				__mulsc3(dwArg04, dwArg08, dwArg0C, dwArg10);
-				*(ebp_90 - 0x6C) = edx_543;
-				struct Eq_7355 * eax_555 = ebp_90->ptr0014;
-				FILE * edx_558 = eax_555->ptr0018;
-				ui32 eax_559 = eax_555->dw001C;
-				word32 edx_562 = *(ebp_90 - 0x4C);
-				Eq_6699 eax_563 = *(ebp_90 - 0x48);
-				esp_89->t000C = eax_563;
-				esp_89->dw0008 = edx_562;
-				esp_89->dw0004 = eax_559;
-				esp_89->ptr0000 = edx_558;
+				*(fp - 0x70) = edx_603;
+				struct Eq_3253 * eax_615 = fp->ptr0010;
+				word32 edx_618 = eax_615->dw0018;
+				word32 eax_619 = eax_615->dw001C;
+				word32 edx_622 = *(fp - 0x50);
+				word32 eax_623 = *(fp - 0x4C);
+				*(fp - 0xC0) = eax_623;
+				*(fp - 0xC4) = edx_622;
+				*(fp - 200) = eax_619;
+				*(fp - 0xCC) = edx_618;
 				__mulsc3(dwArg04, dwArg08, dwArg0C, dwArg10);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_544;
-				real64 rLoc1_573 = (real64) *(ebp_90 - 0x9C);
-				real64 rLoc2_574 = (real64) *(ebp_90 - 0x6C);
-				*(ebp_90 - 0x9C) = (union Eq_6699 *) eax_563;
-				real64 rLoc3_576 = (real64) *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = edx_562;
-				real64 rLoc2_583 = rLoc2_574 + (real64) (*(ebp_90 - 0x9C));
-				*(ebp_90 - 0x9C) = (real32) (rLoc1_573 + rLoc3_576);
-				word32 eax_588 = *(ebp_90 - 0x9C);
-				*(ebp_90 - 0x9C) = (real32) rLoc2_583;
-				word32 edx_590 = *(ebp_90 - 0x9C);
-				esi_535->dw0000 = eax_588;
-				esi_535->dw0004 = edx_590;
+				*(fp - 0xA0) = eax_604;
+				real64 rLoc1_633 = (real64) *(fp - 0xA0);
+				real64 rLoc2_634 = (real64) *(fp - 0x70);
+				*(fp - 0xA0) = eax_623;
+				real64 rLoc3_636 = (real64) *(fp - 0xA0);
+				*(fp - 0xA0) = edx_622;
+				real64 rLoc2_643 = rLoc2_634 + (real64) (*(fp - 0xA0));
+				*(fp - 0xA0) = (real32) (rLoc1_633 + rLoc3_636);
+				word32 eax_648 = *(fp - 0xA0);
+				*(fp - 0xA0) = (real32) rLoc2_643;
+				word32 edx_650 = *(fp - 0xA0);
+				esi_595->dw0000 = eax_648;
+				esi_595->dw0004 = edx_650;
 			}
-			if (*(ebp_90 - 0x20) >= 0x00)
-				*(ebp_90 - 0x20) + *(ebp_90 - 0x3C) = (byte *) 0x01;
+			if (*(fp - 0x24) >= 0x00)
+				*(fp - 0x24) + *(fp - 0x40) = (byte *) 0x01;
 		}
-		*(ebp_90 - 0x1C) = *(ebp_90 - 0x1C) + 0x01;
-		goto l0804B393;
+		dwLoc20_153 = dwLoc20_153 + 0x01;
 	}
-	else
+	Mem205[dwArg14 + 0x04:word32] = Mem84[dwArg14 + 0x04:word32] + dwLoc30_16;
+	free(eax_105);
+	quantum_memman(-Mem205[dwArg14 + 0x04:word32]);
+	if (dwLoc38_18 == 0x00)
 	{
-		*((char *) ebp_90->ptr0018 + 0x04) = *((char *) ebp_90->ptr0018 + 0x04) + *(ebp_90 - 44) / 0x00;
-		esp_89->ptr0000 = (FILE *) *(ebp_90 - 0x3C);
-		fn080488D4();
-		esp_89->ptr0000 = -*((char *) ebp_90->ptr0018 + 0x04);
-		quantum_memman(dwArg00);
-		if (*(ebp_90 - 0x34) == 0x00)
+		Eq_106 dwLoc20_245 = 0x00;
+		int32 dwLoc24_246 = 0x00;
+		while (Mem205[dwArg14 + 0x04:word32] > dwLoc20_245)
 		{
-			*(ebp_90 - 0x1C) = 0x00;
-			*(ebp_90 - 0x20) = 0x00;
-			while (*((char *) ebp_90->ptr0018 + 0x04) > *(ebp_90 - 0x1C))
+			word32 edx_299 = Mem205[dwArg14 + 0x0C:word32] + (dwLoc20_245 << 0x04);
+			if ((real64) rLoc3C_152 > quantum_prob_inline(edx_299->dw0000, edx_299->dw0004))
 			{
-				struct Eq_7061 * edx_266 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-				esp_89->ptr0000 = edx_266->ptr0000;
-				esp_89->dw0004 = edx_266->dw0004;
-				if ((real64) *(ebp_90 - 0x38) > quantum_prob_inline(dwArg00, dwArg04))
-				{
-					*(ebp_90 - 0x20) = *(ebp_90 - 0x20) + 0x01;
-					*(ebp_90 - 0x30) = *(ebp_90 - 0x30) + 0x01;
-				}
-				else if (*(ebp_90 - 0x20) != 0x00)
-				{
-					struct Eq_7704 * eax_303 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-					struct Eq_7719 * ecx_298 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) - *(ebp_90 - 0x20) << 0x04) / 0x00;
-					word32 edx_304 = eax_303->dw000C;
-					ecx_298->dw0008 = eax_303->dw0008;
-					ecx_298->dw000C = edx_304;
-					struct Eq_7753 * eax_320 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) << 0x04) / 0x00;
-					struct Eq_7768 * ecx_314 = *((char *) ebp_90->ptr0018 + 0x0C) + (*(ebp_90 - 0x1C) - *(ebp_90 - 0x20) << 0x04) / 0x00;
-					word32 eax_322 = eax_320->dw0004;
-					ecx_314->dw0000 = eax_320->dw0000;
-					ecx_314->dw0004 = eax_322;
-				}
-				*(ebp_90 - 0x1C) = *(ebp_90 - 0x1C) + 0x01;
+				dwLoc24_246 = dwLoc24_246 + 0x01;
+				dwLoc34_17 = dwLoc34_17 + 0x01;
 			}
-			if (*(ebp_90 - 0x30) != 0x00)
+			else if (dwLoc24_246 != 0x00)
 			{
-				*((char *) ebp_90->ptr0018 + 0x04) = (FILE *) (*((char *) ebp_90->ptr0018 + 0x04) - *(ebp_90 - 0x30));
-				FILE * eax_241 = *((char *) ebp_90->ptr0018 + 0x0C);
-				esp_89->dw0004 = *((char *) ebp_90->ptr0018 + 0x04) << 0x04;
-				esp_89->ptr0000 = eax_241;
-				*((char *) ebp_90->ptr0018 + 0x0C) = feof(esp_89->ptr0000);
-				if (*((char *) ebp_90->ptr0018 + 0x0C) == null)
-				{
-					esp_89->ptr0000 = (FILE *) 0x02;
-					quantum_error(gs_107, dwArg00);
-				}
-				esp_89->ptr0000 = -(*(ebp_90 - 0x30) << 0x04);
-				quantum_memman(dwArg00);
+				word32 eax_337 = Mem205[dwArg14 + 0x0C:word32] + (dwLoc20_245 << 0x04);
+				word32 ecx_332 = Mem205[dwArg14 + 0x0C:word32] + (dwLoc20_245 - dwLoc24_246 << 0x04);
+				word32 edx_338 = eax_337->dw000C;
+				ecx_332->dw0008 = eax_337->dw0008;
+				ecx_332->dw000C = edx_338;
+				word32 eax_354 = Mem341[dwArg14 + 0x0C:word32] + (dwLoc20_245 << 0x04);
+				word32 ecx_348 = Mem341[dwArg14 + 0x0C:word32] + (dwLoc20_245 - dwLoc24_246 << 0x04);
+				word32 eax_356 = eax_354->dw0004;
+				ecx_348->dw0000 = eax_354->dw0000;
+				ecx_348->dw0004 = eax_356;
 			}
+			dwLoc20_245 = dwLoc20_245 + 0x01;
 		}
-		esp_89->ptr0000 = ebp_90->ptr0018;
-		quantum_decohere(ebp_90, gs_107, dwArg00, rArg0);
-		word32 ebp_212;
-		*ebpOut = esp_89->dw00C8;
-		return &esp_89->dw00C8 + 0x01;
+		if (dwLoc34_17 != 0x00)
+		{
+			Mem270[dwArg14 + 0x04:word32] = Mem205[dwArg14 + 0x04:word32] - dwLoc34_17;
+			Mem282[dwArg14 + 0x0C:word32] = realloc(Mem270[dwArg14 + 0x0C:word32], Mem270[dwArg14 + 0x04:word32] << 0x04);
+			if (Mem282[dwArg14 + 0x0C:word32] == 0x00)
+				quantum_error(0x02);
+			quantum_memman(-(dwLoc34_17 << 0x04));
+		}
+	}
+	quantum_decohere(dwArg14, rArg0);
+}
+
+// 0804B509: void quantum_reconstruct_hash(Stack Eq_106 dwArg04)
+void quantum_reconstruct_hash(Eq_106 dwArg04)
+{
+	int32 dwLoc08_11 = 0x00;
+	while (0x01 << (byte) Mem0[dwArg04 + 0x08:word32] > dwLoc08_11)
+	{
+		Mem0[dwArg04 + 0x10:word32][dwLoc08_11 * 0x04] = 0x00;
+		dwLoc08_11 = dwLoc08_11 + 0x01;
+	}
+	Eq_106 dwLoc08_21 = 0x00;
+	while (Mem0[dwArg04 + 0x04:word32] > dwLoc08_21)
+	{
+		word32 eax_45 = Mem0[dwArg04 + 0x0C:word32] + (dwLoc08_21 << 0x04);
+		quantum_add_hash(eax_45->dw0008, eax_45->dw000C, dwLoc08_21, dwArg04);
+		dwLoc08_21 = dwLoc08_21 + 0x01;
 	}
 }
 
-// 0804B509: void quantum_reconstruct_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_reconstruct_hash(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804B58C: void quantum_add_hash(Stack ui32 dwArg04, Stack ui32 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void quantum_add_hash(ui32 dwArg04, ui32 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	int32 dwLoc08_10 = 0x00;
-	while (0x01 << (byte) dwArg04->ptr0008 > dwLoc08_10)
+	word32 dwLoc0C_14 = 0x00;
+	word32 dwLoc08_25 = quantum_hash64(dwArg04, dwArg08, Mem0[dwArg10 + 0x08:word32]);
+	while (Mem0[dwArg10 + 0x10:word32][dwLoc08_25 * 0x04] != 0x00)
 	{
-		dwArg04->ptr0010[dwLoc08_10] = 0x00;
-		dwLoc08_10 = dwLoc08_10 + 0x01;
-	}
-	while (fp->ptr0004->dw0004 > *(fp - 0x08))
-	{
-		struct Eq_8224 * eax_36 = fp->ptr0004->dw000C + (*(fp - 0x08) << 0x04);
-		word32 edx_37 = eax_36->dw0008;
-		word32 ecx_38 = eax_36->dw000C;
-		*(fp - 0x20) = (struct Eq_8214 **) fp->ptr0004;
-		*(fp - 0x24) = *(fp - 0x08);
-		*(fp - 44) = edx_37;
-		*(fp - 0x28) = ecx_38;
-		quantum_add_hash(fp - 0x04, gs, dwArg00, dwArg04, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
-	}
-	return;
-}
-
-// 0804B58C: void quantum_add_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg10)
-void quantum_add_hash(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg10)
-{
-	quantum_hash64(dwArg04, dwArg08, dwArg10->dw0008);
-	while (fp->ptr0010->ptr0010[*(fp - 0x08)] != 0x00)
-	{
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
-		if (0x01 << (byte) (fp->ptr0010)->dw0008 == *(fp - 0x08))
+		ui32 v10_56 = dwLoc08_25 + 0x01;
+		dwLoc08_25 = v10_56;
+		if (0x01 << (byte) Mem0[dwArg10 + 0x08:word32] == v10_56)
 		{
-			if (*(fp - 0x0C) == 0x00)
+			if (dwLoc0C_14 == 0x00)
 			{
-				*(fp - 0x08) = 0x00;
-				*(fp - 0x0C) = 0x01;
+				dwLoc08_25 = 0x00;
+				dwLoc0C_14 = 0x01;
 			}
 			else
-			{
-				*(fp - 44) = 0x05;
-				quantum_error(gs, dwArg00);
-			}
+				quantum_error(0x05);
 		}
 	}
-	fp->ptr0010->ptr0010[*(fp - 0x08)] = fp->dw000C + 0x01;
-	return;
+	Mem0[dwArg10 + 0x10:word32][dwLoc08_25 * 0x04] = dwArg0C + 0x01;
 }
 
-// 0804B62B: Register uint32 quantum_hash64(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-uint32 quantum_hash64(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 0804B62B: Register uint32 quantum_hash64(Stack ui32 dwArg04, Stack ui32 dwArg08, Stack Eq_106 dwArg0C)
+uint32 quantum_hash64(ui32 dwArg04, ui32 dwArg08, Eq_106 dwArg0C)
 {
 	return (dwArg08 ^ dwArg04) *s 0x9E370001 >> (byte) (0x20 - dwArg0C);
 }
 
-// 0804B66D: Register word32 quantum_get_state(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg14, Stack word32 dwArg18, Stack word32 dwArg1C)
-word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg14, word32 dwArg18, word32 dwArg1C)
+// 0804B66D: Register ui32 quantum_get_state(Stack ui32 dwArg04, Stack ui32 dwArg08, Stack Eq_106 dwArg14, Stack Eq_106 dwArg18, Stack Eq_106 dwArg1C)
+ui32 quantum_get_state(ui32 dwArg04, ui32 dwArg08, Eq_106 dwArg14, Eq_106 dwArg18, Eq_106 dwArg1C)
 {
-	word32 dwLoc20_29;
+	ui32 dwLoc20_29;
 	if (dwArg14 == 0x00)
 		dwLoc20_29 = dwArg04;
 	else
 	{
 		ui32 dwLoc08_105 = quantum_hash64(dwArg04, dwArg08, dwArg14);
-		while (dwArg1C[dwLoc08_105] != 0x00)
+		while (dwArg1C[dwLoc08_105 * 0x04] != 0x00)
 		{
-			struct Eq_8429 * eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105] << 0x04);
+			word32 eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105 * 0x04] << 0x04);
 			if ((eax_79->dw0008 ^ dwArg04 | eax_79->dw000C ^ dwArg08) == 0x00)
 			{
-				dwLoc20_29 = dwArg1C[dwLoc08_105] - 0x01;
+				dwLoc20_29 = dwArg1C[dwLoc08_105 * 0x04] - 0x01;
 				return dwLoc20_29;
 			}
 			ui32 v11_97 = dwLoc08_105 + 0x01;
@@ -2027,11 +1369,11 @@ word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg14, w
 	return dwLoc20_29;
 }
 
-// 0804B733: FpuStack real64 quantum_prob_inline(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-real64 quantum_prob_inline(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0804B733: FpuStack real64 quantum_prob_inline(Stack word32 dwArg04, Stack word32 dwArg08)
+real64 quantum_prob_inline(word32 dwArg04, word32 dwArg08)
 {
-	Eq_8466 rLoc08_15 = (real32) quantum_real(dwArg04);
-	Eq_8473 rLoc0C_21 = (real32) quantum_imag(dwArg08);
+	Eq_3819 rLoc08_15 = (real32) quantum_real(dwArg04);
+	Eq_3825 rLoc0C_21 = (real32) quantum_imag(dwArg08);
 	return (real64) rLoc08_15 * rLoc08_15 + (real64) rLoc0C_21 * rLoc0C_21;
 }
 
@@ -2047,372 +1389,221 @@ real64 quantum_imag(word32 dwArg08)
 	return (real64) dwArg08;
 }
 
-// 0804B7A8: void quantum_gate2(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C, Stack word32 dwArg10)
-void quantum_gate2(word32 ebp, Eq_380 * gs, word32 dwArg0C, word32 dwArg10)
+// 0804B7A8: void quantum_gate2(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack int32 dwArg10, Stack word32 dwArg14, Stack Eq_106 dwArg18)
+void quantum_gate2(word32 dwArg04, word32 dwArg08, word32 dwArg0C, int32 dwArg10, word32 dwArg14, Eq_106 dwArg18)
 {
-	if (dwArg10 != (struct Eq_136 *) 0x04 || dwArg0C != (struct Eq_136 *) 0x04)
-		quantum_error(gs, (struct Eq_136 *) 0x04);
-	*(fp - 0x20) = 0x00;
-	while (0x01 << (byte) (fp->ptr0018)->dw0008 > *(fp - 0x20))
+	int32 dwLoc30_16 = 0x00;
+	int32 dwLoc34_17 = 0x00;
+	if (dwArg10 != 0x04 || dwArg0C != 0x04)
+		quantum_error(0x04);
+	int32 dwLoc20_26 = 0x00;
+	while (0x01 << (byte) Mem0[dwArg18 + 0x08:word32] > dwLoc20_26)
 	{
-		fp->ptr0018->ptr0010[*(fp - 0x20)] = 0x00;
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		Mem0[dwArg18 + 0x10:word32][dwLoc20_26 * 0x04] = 0x00;
+		dwLoc20_26 = dwLoc20_26 + 0x01;
 	}
-	*(fp - 0x20) = 0x00;
-	while (fp->ptr0018->dw0004 > *(fp - 0x20))
+	Eq_106 dwLoc20_39 = 0x00;
+	while (Mem0[dwArg18 + 0x04:word32] > dwLoc20_39)
 	{
-		struct Eq_8571 * eax_853 = fp->ptr0018->ptr000C + (*(fp - 0x20) << 0x04) / 0x00;
-		word32 edx_854 = eax_853->dw0008;
-		word32 ecx_855 = eax_853->dw000C;
-		*(fp - 0xF0) = (struct Eq_8514 **) fp->ptr0018;
-		*(fp - 244) = *(fp - 0x20);
-		*(fp - 252) = edx_854;
-		*(fp - 0xF8) = ecx_855;
-		quantum_add_hash(fp - 0x04, gs, dwArg00, dwArg04, dwArg0C);
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		word32 eax_946 = Mem0[dwArg18 + 0x0C:word32] + (dwLoc20_39 << 0x04);
+		quantum_add_hash(eax_946->dw0008, eax_946->dw000C, dwLoc20_39, dwArg18);
+		dwLoc20_39 = dwLoc20_39 + 0x01;
 	}
-	*(fp - 0x20) = 0x00;
-	while (fp->ptr0018->dw0004 > *(fp - 0x20))
+	Eq_106 dwLoc20_54 = 0x00;
+	while (Mem0[dwArg18 + 0x04:word32] > dwLoc20_54)
 	{
-		struct Eq_8658 * eax_740 = fp->ptr0018->ptr000C + (*(fp - 0x20) << 0x04) / 0x00;
-		word32 esi_741 = eax_740->dw0008;
-		word32 edi_742 = eax_740->dw000C;
-		byte cl_744 = (byte) fp->dw0004;
-		*(fp - 212) = 0x01;
-		*(fp - 0xD0) = 0x00;
-		ui32 eax_747 = *(fp - 212);
-		ui32 edx_749 = __shld(*(fp - 0xD0), eax_747, cl_744);
-		ui32 eax_750 = eax_747 << cl_744;
-		if ((cl_744 & 0x20) != 0x00)
+		word32 eax_831 = Mem0[dwArg18 + 0x0C:word32] + (dwLoc20_54 << 0x04);
+		word32 esi_832 = eax_831->dw0008;
+		word32 edi_833 = eax_831->dw000C;
+		byte cl_835 = (byte) dwArg04;
+		Eq_763 edx_840 = __shld(0x00, 0x01, cl_835);
+		Eq_763 eax_841 = 0x01 << cl_835;
+		if ((cl_835 & 0x20) != 0x00)
 		{
-			edx_749 = eax_750;
-			eax_750 = 0x00;
+			edx_840 = eax_841;
+			eax_841.u0 = 0x00;
 		}
-		struct Eq_8514 * ebx_766 = fp->ptr0018;
-		*(fp - 244) = ebx_766->dw0000;
-		*(fp - 0xF0) = ebx_766->dw0004;
-		*(fp - 0xEC) = ebx_766->dw0008;
-		*(fp - 232) = (FILE **) ebx_766->ptr000C;
-		*(fp - 228) = ebx_766->ptr0010;
-		*(fp - 252) = esi_741 ^ eax_750;
-		*(fp - 0xF8) = edi_742 ^ edx_749;
-		if (quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18) == ~0x00)
-			*(fp - 0x30) = *(fp - 0x30) + 0x01;
-		struct Eq_8856 * eax_787 = fp->ptr0018->ptr000C + (*(fp - 0x20) << 0x04) / 0x00;
-		word32 esi_788 = eax_787->dw0008;
-		word32 edi_789 = eax_787->dw000C;
-		byte cl_791 = (byte) fp->dw0008;
-		*(fp - 212) = 0x01;
-		*(fp - 0xD0) = 0x00;
-		ui32 eax_794 = *(fp - 212);
-		ui32 edx_796 = __shld(*(fp - 0xD0), eax_794, cl_791);
-		ui32 eax_797 = eax_794 << cl_791;
-		if ((cl_791 & 0x20) != 0x00)
+		if (quantum_get_state(esi_832 ^ eax_841, edi_833 ^ edx_840, Mem0[dwArg18 + 0x08:word32], Mem0[dwArg18 + 0x0C:word32], Mem0[dwArg18 + 0x10:word32]) == ~0x00)
+			dwLoc30_16 = dwLoc30_16 + 0x01;
+		word32 eax_879 = Mem0[dwArg18 + 0x0C:word32] + (dwLoc20_54 << 0x04);
+		word32 esi_880 = eax_879->dw0008;
+		word32 edi_881 = eax_879->dw000C;
+		byte cl_883 = (byte) dwArg08;
+		Eq_763 edx_888 = __shld(0x00, 0x01, cl_883);
+		Eq_763 eax_889 = 0x01 << cl_883;
+		if ((cl_883 & 0x20) != 0x00)
 		{
-			edx_796 = eax_797;
-			eax_797 = 0x00;
+			edx_888 = eax_889;
+			eax_889.u0 = 0x00;
 		}
-		struct Eq_8514 * ebx_813 = fp->ptr0018;
-		*(fp - 244) = ebx_813->dw0000;
-		*(fp - 0xF0) = ebx_813->dw0004;
-		*(fp - 0xEC) = ebx_813->dw0008;
-		*(fp - 232) = (FILE **) ebx_813->ptr000C;
-		*(fp - 228) = ebx_813->ptr0010;
-		*(fp - 252) = esi_788 ^ eax_797;
-		*(fp - 0xF8) = edi_789 ^ edx_796;
-		if (quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18) == ~0x00)
-			*(fp - 0x30) = *(fp - 0x30) + 0x01;
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		if (quantum_get_state(esi_880 ^ eax_889, edi_881 ^ edx_888, Mem0[dwArg18 + 0x08:word32], Mem0[dwArg18 + 0x0C:word32], Mem0[dwArg18 + 0x10:word32]) == ~0x00)
+			dwLoc30_16 = dwLoc30_16 + 0x01;
+		dwLoc20_54 = dwLoc20_54 + 0x01;
 	}
-	FILE * eax_66 = fp->ptr0018->ptr000C;
-	*(fp - 0xF8) = fp->ptr0018->dw0004 + *(fp - 0x30) << 0x04;
-	*(fp - 252) = (FILE **) eax_66;
-	fp->ptr0018->ptr000C = feof(*(fp - 252));
-	if (fp->ptr0018->ptr000C == null)
+	Mem98[dwArg18 + 0x0C:word32] = realloc(Mem0[dwArg18 + 0x0C:word32], Mem0[dwArg18 + 0x04:word32] + dwLoc30_16 << 0x04);
+	if (Mem98[dwArg18 + 0x0C:word32] == 0x00)
+		quantum_error(0x04);
+	quantum_memman(dwLoc30_16 << 0x04);
+	int32 dwLoc20_108 = 0x00;
+	while (dwLoc20_108 < dwLoc30_16)
 	{
-		*(fp - 252) = 0x04;
-		quantum_error(gs, dwArg00);
+		word32 eax_809 = Mem98[dwArg18 + 0x0C:word32] + (Mem98[dwArg18 + 0x04:word32] + dwLoc20_108 << 0x04);
+		eax_809->dw0008 = 0x00;
+		eax_809->dw000C = 0x00;
+		word32 edx_818 = Mem811[dwArg18 + 0x0C:word32] + (Mem811[dwArg18 + 0x04:word32] + dwLoc20_108 << 0x04);
+		edx_818->dw0000 = 0x00;
+		edx_818->dw0004 = 0x00;
+		dwLoc20_108 = dwLoc20_108 + 0x01;
 	}
-	*(fp - 252) = *(fp - 0x30) << 0x04;
-	quantum_memman(dwArg00);
-	*(fp - 0x20) = 0x00;
-	while (*(fp - 0x20) < *(fp - 0x30))
+	word32 eax_119 = calloc(Mem98[dwArg18 + 0x04:word32] + dwLoc30_16, 0x01);
+	if (eax_119 == 0x00)
+		quantum_error(0x04);
+	quantum_memman(Mem98[dwArg18 + 0x04:word32] + dwLoc30_16);
+	word32 dwLoc2C_131 = Mem98[dwArg18 + 0x04:word32];
+	byte cl_134 = (byte) *dwArg18;
+	Eq_763 edx_137 = __shld(0x00, 0x01, cl_134);
+	Eq_763 eax_138 = 0x01 << cl_134;
+	if ((cl_134 & 0x20) != 0x00)
 	{
-		struct Eq_8999 * eax_716 = fp->ptr0018->ptr000C + ((fp->ptr0018)->dw0004 + *(fp - 0x20) << 0x04) / 0x00;
-		eax_716->dw0008 = 0x00;
-		eax_716->dw000C = 0x00;
-		struct Eq_9029 * edx_725 = fp->ptr0018->ptr000C + ((fp->ptr0018)->dw0004 + *(fp - 0x20) << 0x04) / 0x00;
-		edx_725->dw0000 = 0x00;
-		edx_725->dw0004 = 0x00;
-		*(fp - 0x20) = *(fp - 0x20) + 0x01;
+		edx_137 = eax_138;
+		eax_138.u0 = 0x00;
 	}
-	word32 eax_91 = fp->ptr0018->dw0004 + *(fp - 0x30);
-	*(fp - 0xF8) = 0x01;
-	*(fp - 252) = eax_91;
-	struct Eq_9094 * esp_95;
-	struct Eq_379 * ebp_96;
-	word32 edi_97;
-	word32 esi_98;
-	word32 ebx_99;
-	byte SCZO_100;
-	word32 eax_101;
-	byte Z_102;
-	word32 ecx_103;
-	byte cl_104;
-	byte SZO_105;
-	word32 edx_106;
-	byte C_107;
-	byte SO_108;
-	byte S_109;
-	byte al_110;
-	byte FPUF_111;
-	byte CZ_112;
-	struct Eq_380 * gs_113;
-	log();
-	*(ebp_96 - 0x38) = eax_101;
-	if (*(ebp_96 - 0x38) == 0x00)
+	real80 rLocAC_154 = (real80) (real64) DPB(qwLoc0104, eax_138, 0);
+	if (edx_137 < 0x00)
+		rLocAC_154 = (real80) ((real64) globals->r8054330 + (real64) rLocAC_154);
+	real32 rLoc38_166 = (real32) (1.0 / (real64) rLocAC_154 / globals->r8054348);
+	Eq_106 dwLoc20_173 = 0x00;
+	while (Mem98[dwArg18 + 0x04:word32] > dwLoc20_173)
 	{
-		esp_95->ptr0000 = (FILE *) 0x04;
-		quantum_error(gs_113, dwArg00);
-	}
-	esp_95->ptr0000 = *((char *) ebp_96->ptr001C + 0x04) + *(ebp_96 - 44) / 0x00;
-	quantum_memman(dwArg00);
-	*(ebp_96 - 0x28) = (union Eq_6699 *) *((char *) ebp_96->ptr001C + 0x04);
-	byte cl_129 = (byte) *ebp_96->ptr001C;
-	int32 edx_132 = __shld(0x00, 0x01, cl_129);
-	int32 eax_133 = 0x01 << cl_129;
-	if ((cl_129 & 0x20) != 0x00)
-	{
-		edx_132 = eax_133;
-		eax_133 = 0x00;
-	}
-	*(esp_95 - 0x04) = edx_132;
-	*(esp_95 - 0x08) = eax_133;
-	*(ebp_96 - 0xA8) = (real80) (real64) *(esp_95 - 0x08);
-	if (edx_132 < 0x00)
-		*(ebp_96 - 0xA8) = (real80) ((real64) globals->r8054330 + (real64) (*(ebp_96 - 0xA8)));
-	*(ebp_96 - 0x80) = (real64) *(ebp_96 - 0xA8);
-	*(ebp_96 - 0x34) = (real32) (1.0 / *(ebp_96 - 0x80) / globals->r8054348);
-	*(ebp_96 - 0x40) = ebp_96->dw0008;
-	*(ebp_96 - 0x3C) = ebp_96->dw000C;
-	*(ebp_96 - 0x1C) = 0x00;
-	while (*((char *) ebp_96->ptr001C + 0x04) > *(ebp_96 - 0x1C))
-	{
-		if ((byte) (word32) (*(ebp_96 - 0x1C) + *(ebp_96 - 0x38)) == 0x00)
+		if ((byte) (word32) Mem98[dwLoc20_173 + eax_119:byte] == 0x00)
 		{
-			struct Eq_9409 * eax_358 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			FILE * edx_359 = eax_358->ptr0008;
-			ui32 ecx_360 = eax_358->dw000C;
-			esp_95->t000C = ebp_96 - 0x40;
-			esp_95->dw0008 = 0x02;
-			esp_95->ptr0000 = edx_359;
-			esp_95->dw0004 = ecx_360;
-			*(ebp_96 - 0x20) = quantum_bitmask(dwArg00, dwArg04, dwArg08, dwArg0C);
-			(ebp_96 - 0x50)[*(ebp_96 - 0x20)] = *(ebp_96 - 0x1C);
-			*(ebp_96 - 0x98) = *(ebp_96 - 0x20) ^ 0x01;
-			struct Eq_9487 * eax_381 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			word32 esi_382 = eax_381->dw0008;
-			word32 edi_383 = eax_381->dw000C;
-			byte cl_385 = (byte) ebp_96->dw000C;
-			*(ebp_96 - 0xD0) = 0x01;
-			*(ebp_96 - 0xCC) = 0x00;
-			ui32 eax_388 = *(ebp_96 - 0xD0);
-			ui32 edx_390 = __shld(*(ebp_96 - 0xCC), eax_388, cl_385);
-			ui32 eax_391 = eax_388 << cl_385;
-			if ((cl_385 & 0x20) != 0x00)
+			word32 eax_432 = Mem98[dwArg18 + 0x0C:word32] + (dwLoc20_173 << 0x04);
+			ui32 eax_440 = quantum_bitmask(eax_432->t0008, eax_432->t000C, 0x02, fp - 0x44);
+			(fp - 0x54)[eax_440].t0000 = dwLoc20_173;
+			word32 eax_453 = Mem444[dwArg18 + 0x0C:word32] + (dwLoc20_173 << 0x04);
+			word32 esi_454 = eax_453->dw0008;
+			word32 edi_455 = eax_453->dw000C;
+			byte cl_457 = (byte) dwArg08;
+			Eq_763 edx_462 = __shld(0x00, 0x01, cl_457);
+			Eq_763 eax_463 = 0x01 << cl_457;
+			if ((cl_457 & 0x20) != 0x00)
 			{
-				edx_390 = eax_391;
-				eax_391 = 0x00;
+				edx_462 = eax_463;
+				eax_463.u0 = 0x00;
 			}
-			FILE * ebx_406 = ebp_96->ptr001C;
-			esp_95->dw0008 = *ebx_406;
-			esp_95->t000C = *((char *) ebx_406 + 0x04);
-			esp_95->dw0010 = *((char *) ebx_406 + 0x08);
-			esp_95->ptr0014 = *((char *) ebx_406 + 0x0C);
-			esp_95->dw0018 = *((char *) ebx_406 + 0x0010);
-			esp_95->ptr0000 = esi_382 ^ eax_391;
-			esp_95->dw0004 = edi_383 ^ edx_390;
-			(ebp_96 - 0x50)[*(ebp_96 - 0x98)] = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-			*(ebp_96 - 0x94) = *(ebp_96 - 0x20) ^ 0x02;
-			struct Eq_9613 * eax_432 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			word32 esi_433 = eax_432->dw0008;
-			word32 edi_434 = eax_432->dw000C;
-			byte cl_436 = (byte) ebp_96->dw0008;
-			*(ebp_96 - 0xD0) = 0x01;
-			*(ebp_96 - 0xCC) = 0x00;
-			ui32 eax_439 = *(ebp_96 - 0xD0);
-			ui32 edx_441 = __shld(*(ebp_96 - 0xCC), eax_439, cl_436);
-			ui32 eax_442 = eax_439 << cl_436;
-			if ((cl_436 & 0x20) != 0x00)
+			(fp - 0x54)[(eax_440 ^ 0x01) * 0x04] = quantum_get_state(esi_454 ^ eax_463, edi_455 ^ edx_462, Mem444[dwArg18 + 0x08:word32], Mem444[dwArg18 + 0x0C:word32], Mem444[dwArg18 + 0x10:word32]);
+			word32 eax_502 = Mem493[dwArg18 + 0x0C:word32] + (dwLoc20_173 << 0x04);
+			word32 esi_503 = eax_502->dw0008;
+			word32 edi_504 = eax_502->dw000C;
+			byte cl_506 = (byte) dwArg04;
+			Eq_763 edx_511 = __shld(0x00, 0x01, cl_506);
+			Eq_763 eax_512 = 0x01 << cl_506;
+			if ((cl_506 & 0x20) != 0x00)
 			{
-				edx_441 = eax_442;
-				eax_442 = 0x00;
+				edx_511 = eax_512;
+				eax_512.u0 = 0x00;
 			}
-			FILE * ebx_457 = ebp_96->ptr001C;
-			esp_95->dw0008 = *ebx_457;
-			esp_95->t000C = *((char *) ebx_457 + 0x04);
-			esp_95->dw0010 = *((char *) ebx_457 + 0x08);
-			esp_95->ptr0014 = *((char *) ebx_457 + 0x0C);
-			esp_95->dw0018 = *((char *) ebx_457 + 0x0010);
-			esp_95->ptr0000 = esi_433 ^ eax_442;
-			esp_95->dw0004 = edi_434 ^ edx_441;
-			(ebp_96 - 0x50)[*(ebp_96 - 0x94)] = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-			*(ebp_96 - 0x90) = *(ebp_96 - 0x20) ^ 0x03;
-			struct Eq_9869 * eax_481 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			word32 esi_482 = eax_481->dw0008;
-			word32 edi_483 = eax_481->dw000C;
-			byte cl_485 = (byte) ebp_96->dw0008;
-			*(ebp_96 - 0xD0) = 0x01;
-			*(ebp_96 - 0xCC) = 0x00;
-			ui32 eax_488 = *(ebp_96 - 0xD0);
-			ui32 edx_490 = __shld(*(ebp_96 - 0xCC), eax_488, cl_485);
-			ui32 eax_491 = eax_488 << cl_485;
-			if ((cl_485 & 0x20) != 0x00)
+			(fp - 0x54)[(eax_440 ^ 0x02) * 0x04] = quantum_get_state(esi_503 ^ eax_512, edi_504 ^ edx_511, Mem493[dwArg18 + 0x08:word32], Mem493[dwArg18 + 0x0C:word32], Mem493[dwArg18 + 0x10:word32]);
+			word32 eax_551 = Mem542[dwArg18 + 0x0C:word32] + (dwLoc20_173 << 0x04);
+			word32 esi_552 = eax_551->dw0008;
+			word32 edi_553 = eax_551->dw000C;
+			byte cl_555 = (byte) dwArg04;
+			Eq_763 edx_560 = __shld(0x00, 0x01, cl_555);
+			Eq_763 eax_561 = 0x01 << cl_555;
+			if ((cl_555 & 0x20) != 0x00)
 			{
-				edx_490 = eax_491;
-				eax_491 = 0x00;
+				edx_560 = eax_561;
+				eax_561.u0 = 0x00;
 			}
-			*(ebp_96 - 200) = ebp_96->dw000C;
-			*(ebp_96 - 0xD8) = 0x01;
-			*(ebp_96 - 212) = 0x00;
-			ui32 ebx_509 = *(ebp_96 - 0xD8);
-			byte cl_512 = (byte) (word32) *(ebp_96 - 200);
-			ui32 eax_501 = esi_482 ^ eax_491;
-			ui32 edx_504 = edi_483 ^ edx_490;
-			ui32 esi_513 = __shld(*(ebp_96 - 212), ebx_509, cl_512);
-			ui32 ebx_514 = ebx_509 << cl_512;
-			if ((cl_512 & 0x20) != 0x00)
+			byte cl_583 = (byte) (word32) (byte) dwArg08;
+			ui32 eax_571 = esi_552 ^ eax_561;
+			ui32 edx_574 = edi_553 ^ edx_560;
+			Eq_763 esi_584 = __shld(0x00, 0x01, cl_583);
+			Eq_763 ebx_585 = 0x01 << cl_583;
+			if ((cl_583 & 0x20) != 0x00)
 			{
-				esi_513 = ebx_514;
-				ebx_514 = 0x00;
+				esi_584 = ebx_585;
+				ebx_585.u0 = 0x00;
 			}
-			*(ebp_96 - 200) = ebx_514;
-			*(ebp_96 - 0xC4) = esi_513;
-			FILE * edx_528 = ebp_96->ptr001C;
-			FILE * ecx_523 = *(ebp_96 - 200) ^ eax_501;
-			ui32 ebx_525 = *(ebp_96 - 0xC4) ^ edx_504;
-			esp_95->dw0008 = *edx_528;
-			esp_95->t000C = *((char *) edx_528 + 0x04);
-			esp_95->dw0010 = *((char *) edx_528 + 0x08);
-			esp_95->ptr0014 = *((char *) edx_528 + 0x0C);
-			esp_95->dw0018 = *((char *) edx_528 + 0x0010);
-			esp_95->ptr0000 = ecx_523;
-			esp_95->dw0004 = ebx_525;
-			(ebp_96 - 0x50)[*(ebp_96 - 0x90)] = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-			*(ebp_96 - 0x20) = 0x00;
-			while (*(ebp_96 - 0x20) <= 0x03)
+			(fp - 0x54)[(eax_440 ^ 0x03) * 0x04] = quantum_get_state(ebx_585 ^ eax_571, esi_584 ^ edx_574, Mem542[dwArg18 + 0x08:word32], Mem542[dwArg18 + 0x0C:word32], Mem542[dwArg18 + 0x10:word32]);
+			int32 dwLoc24_615 = 0x00;
+			while (dwLoc24_615 <= 0x03)
 			{
-				if ((ebp_96 - 0x50)[*(ebp_96 - 0x20)] == ~0x00)
+				if ((fp - 0x54)[dwLoc24_615] == ~0x00)
 				{
-					(ebp_96 - 0x50)[*(ebp_96 - 0x20)] = *(ebp_96 - 0x28);
-					*(ebp_96 - 0x28) = *(ebp_96 - 0x28) + 0x01;
+					(fp - 0x54)[dwLoc24_615].t0000 = dwLoc2C_131;
+					dwLoc2C_131 = (word32) dwLoc2C_131 + 0x01;
 				}
-				struct Eq_10239 * eax_666 = *((char *) ebp_96->ptr001C + 0x0C) + ((ebp_96 - 0x50)[*(ebp_96 - 0x20)] << 0x04) / 0x00;
-				ui32 ecx_660 = *(ebp_96 - 0x20);
-				word32 eax_668 = eax_666->dw0004;
-				(ebp_96 - 0x70)[ecx_660].dw0000 = eax_666->dw0000;
-				(ebp_96 - 0x6C)[ecx_660].dw0000 = eax_668;
-				*(ebp_96 - 0x20) = *(ebp_96 - 0x20) + 0x01;
+				word32 eax_760 = Mem614[dwArg18 + 0x0C:word32] + ((fp - 0x54)[dwLoc24_615 * 0x04] << 0x04);
+				word32 eax_762 = eax_760->dw0004;
+				(fp - 116)[dwLoc24_615].dw0000 = eax_760->dw0000;
+				(fp - 0x70)[dwLoc24_615].dw0000 = eax_762;
+				dwLoc24_615 = dwLoc24_615 + 0x01;
 			}
-			*(ebp_96 - 0x20) = 0x00;
-			while (*(ebp_96 - 0x20) <= 0x03)
+			int32 dwLoc24_624 = 0x00;
+			while (dwLoc24_624 <= 0x03)
 			{
-				struct Eq_10321 * edx_569 = *((char *) ebp_96->ptr001C + 0x0C) + ((ebp_96 - 0x50)[*(ebp_96 - 0x20)] << 0x04) / 0x00;
-				edx_569->dw0000 = 0x00;
-				edx_569->dw0004 = 0x00;
-				*(ebp_96 - 0x24) = 0x00;
-				while (*(ebp_96 - 0x24) <= 0x03)
+				word32 edx_651 = Mem614[dwArg18 + 0x0C:word32] + ((fp - 0x54)[dwLoc24_624 * 0x04] << 0x04);
+				edx_651->dw0000 = 0x00;
+				edx_651->dw0004 = 0x00;
+				while (true)
 				{
-					struct Eq_10362 * eax_606 = *((char *) ebp_96->ptr001C + 0x0C) + ((ebp_96 - 0x50)[*(ebp_96 - 0x20)] << 0x04) / 0x00;
-					struct Eq_10382 * edi_600 = *((char *) ebp_96->ptr001C + 0x0C) + ((ebp_96 - 0x50)[*(ebp_96 - 0x20)] << 0x04) / 0x00;
-					*(ebp_96 - 0x88) = eax_606->r0000;
-					*(ebp_96 - 0x8C) = eax_606->r0004;
-					struct Eq_10418 * eax_617 = ebp_96->ptr0018 + (ebp_96->ptr0014 *s *(ebp_96 - 0x20) + *(ebp_96 - 0x24) << 0x03) / 0x00;
-					ui32 eax_620 = *(ebp_96 - 0x24);
-					FILE * edx_618 = eax_617->ptr0000;
-					ui32 ecx_619 = eax_617->dw0004;
-					word32 ebx_621 = (ebp_96 - 0x70)[eax_620].dw0000;
-					Eq_6699 eax_622 = (ebp_96 - 0x6C)[eax_620].t0000;
-					esp_95->t000C = eax_622;
-					esp_95->dw0008 = ebx_621;
-					esp_95->dw0004 = ecx_619;
-					esp_95->ptr0000 = edx_618;
-					__mulsc3(dwArg00, dwArg04, dwArg08, dwArg0C);
-					real64 rLoc1_633 = (real64) *(ebp_96 - 0x88);
-					real64 rLoc2_634 = (real64) *(ebp_96 - 0x8C);
-					*(ebp_96 - 188) = (union Eq_6699 *) eax_622;
-					real64 rLoc3_636 = (real64) *(ebp_96 - 188);
-					*(ebp_96 - 188) = ebx_621;
-					real64 rLoc2_643 = rLoc2_634 + (real64) (*(ebp_96 - 188));
-					*(ebp_96 - 188) = (real32) (rLoc1_633 + rLoc3_636);
-					word32 eax_648 = *(ebp_96 - 188);
-					*(ebp_96 - 188) = (real32) rLoc2_643;
-					word32 edx_650 = *(ebp_96 - 188);
-					edi_600->dw0000 = eax_648;
-					edi_600->dw0004 = edx_650;
-					*(ebp_96 - 0x24) = *(ebp_96 - 0x24) + 0x01;
+					word32 eax_696 = Mem656[dwArg18 + 0x0C:word32] + ((fp - 0x54)[dwLoc24_624 * 0x04] << 0x04);
+					struct Eq_4574 * eax_708 = dwArg14 + (dwArg10 *s dwLoc24_624 << 0x03);
+					word32 edi_690 = Mem656[dwArg18 + 0x0C:word32] + ((fp - 0x54)[dwLoc24_624 * 0x04] << 0x04);
+					real32 rLoc8C_698 = eax_696->r0000;
+					real32 rLoc90_700 = eax_696->r0004;
+					__mulsc3(eax_708->t0000, eax_708->t0004, dwLoc74, dwLoc70);
+					edi_690->r0000 = (real32) ((real64) rLoc8C_698 + (real64) dwLoc70);
+					edi_690->r0004 = (real32) ((real64) rLoc90_700 + (real64) dwLoc74);
 				}
-				(ebp_96 - 0x50)[*(ebp_96 - 0x20)] + *(ebp_96 - 0x38) = (byte *) 0x01;
-				*(ebp_96 - 0x20) = *(ebp_96 - 0x20) + 0x01;
+				*((word32) eax_119 + (fp - 0x54)[dwLoc24_624]) = 0x01;
+				dwLoc24_624 = dwLoc24_624 + 0x01;
 			}
 		}
-		*(ebp_96 - 0x1C) = *(ebp_96 - 0x1C) + 0x01;
-		*(ebp_96 - 0x1C) = *(ebp_96 - 0x1C) + 0x01;
+		dwLoc20_173 = dwLoc20_173 + 0x01;
 	}
-	*((char *) ebp_96->ptr001C + 0x04) = *((char *) ebp_96->ptr001C + 0x04) + *(ebp_96 - 44) / 0x00;
-	esp_95->ptr0000 = (FILE *) *(ebp_96 - 0x38);
-	fn080488D4();
-	esp_95->ptr0000 = -*((char *) ebp_96->ptr001C + 0x04);
-	quantum_memman(dwArg00);
-	*(ebp_96 - 0x1C) = 0x00;
-	*(ebp_96 - 0x20) = 0x00;
-	while (*((char *) ebp_96->ptr001C + 0x04) > *(ebp_96 - 0x1C))
+	Mem235[dwArg18 + 0x04:word32] = Mem98[dwArg18 + 0x04:word32] + dwLoc30_16;
+	free(eax_119);
+	quantum_memman(-Mem235[dwArg18 + 0x04:word32]);
+	Eq_106 dwLoc20_244 = 0x00;
+	int32 dwLoc24_245 = 0x00;
+	while (Mem235[dwArg18 + 0x04:word32] > dwLoc20_244)
 	{
-		struct Eq_9674 * edx_267 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-		esp_95->ptr0000 = edx_267->ptr0000;
-		esp_95->dw0004 = edx_267->dw0004;
-		if ((real64) *(ebp_96 - 0x34) > quantum_prob_inline(dwArg00, dwArg04))
+		word32 edx_319 = Mem235[dwArg18 + 0x0C:word32] + (dwLoc20_244 << 0x04);
+		if ((real64) rLoc38_166 > quantum_prob_inline(edx_319->dw0000, edx_319->dw0004))
 		{
-			*(ebp_96 - 0x20) = *(ebp_96 - 0x20) + 0x01;
-			*(ebp_96 - 0x30) = *(ebp_96 - 0x30) + 0x01;
+			dwLoc24_245 = dwLoc24_245 + 0x01;
+			dwLoc34_17 = dwLoc34_17 + 0x01;
 		}
-		else if (*(ebp_96 - 0x20) != 0x00)
+		else if (dwLoc24_245 != 0x00)
 		{
-			struct Eq_10109 * eax_304 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			struct Eq_10124 * ecx_299 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) - *(ebp_96 - 0x20) << 0x04) / 0x00;
-			word32 edx_305 = eax_304->dw000C;
-			ecx_299->dw0008 = eax_304->dw0008;
-			ecx_299->dw000C = edx_305;
-			struct Eq_10158 * eax_321 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) << 0x04) / 0x00;
-			struct Eq_10173 * ecx_315 = *((char *) ebp_96->ptr001C + 0x0C) + (*(ebp_96 - 0x1C) - *(ebp_96 - 0x20) << 0x04) / 0x00;
-			word32 eax_323 = eax_321->dw0004;
-			ecx_315->dw0000 = eax_321->dw0000;
-			ecx_315->dw0004 = eax_323;
+			word32 eax_357 = Mem235[dwArg18 + 0x0C:word32] + (dwLoc20_244 << 0x04);
+			word32 ecx_352 = Mem235[dwArg18 + 0x0C:word32] + (dwLoc20_244 - dwLoc24_245 << 0x04);
+			word32 edx_358 = eax_357->dw000C;
+			ecx_352->dw0008 = eax_357->dw0008;
+			ecx_352->dw000C = edx_358;
+			word32 eax_374 = Mem361[dwArg18 + 0x0C:word32] + (dwLoc20_244 << 0x04);
+			word32 ecx_368 = Mem361[dwArg18 + 0x0C:word32] + (dwLoc20_244 - dwLoc24_245 << 0x04);
+			word32 eax_376 = eax_374->dw0004;
+			ecx_368->dw0000 = eax_374->dw0000;
+			ecx_368->dw0004 = eax_376;
 		}
-		*(ebp_96 - 0x1C) = *(ebp_96 - 0x1C) + 0x01;
+		dwLoc20_244 = dwLoc20_244 + 0x01;
 	}
-	if (*(ebp_96 - 0x30) != 0x00)
+	if (dwLoc34_17 != 0x00)
 	{
-		*((char *) ebp_96->ptr001C + 0x04) = (FILE *) (*((char *) ebp_96->ptr001C + 0x04) - *(ebp_96 - 0x30));
-		FILE * eax_242 = *((char *) ebp_96->ptr001C + 0x0C);
-		esp_95->dw0004 = *((char *) ebp_96->ptr001C + 0x04) << 0x04;
-		esp_95->ptr0000 = eax_242;
-		*((char *) ebp_96->ptr001C + 0x0C) = feof(esp_95->ptr0000);
-		if (*((char *) ebp_96->ptr001C + 0x0C) == null)
-		{
-			esp_95->ptr0000 = (FILE *) 0x02;
-			quantum_error(gs_113, dwArg00);
-		}
-		esp_95->ptr0000 = -(*(ebp_96 - 0x30) << 0x04);
-		quantum_memman(dwArg00);
+		Mem290[dwArg18 + 0x04:word32] = Mem235[dwArg18 + 0x04:word32] - dwLoc34_17;
+		Mem302[dwArg18 + 0x0C:word32] = realloc(Mem290[dwArg18 + 0x0C:word32], Mem290[dwArg18 + 0x04:word32] << 0x04);
+		if (Mem302[dwArg18 + 0x0C:word32] == 0x00)
+			quantum_error(0x02);
+		quantum_memman(-(dwLoc34_17 << 0x04));
 	}
-	esp_95->ptr0000 = ebp_96->ptr001C;
-	quantum_decohere(ebp_96, gs_113, dwArg00, rArg0);
-	return;
+	quantum_decohere(dwArg18, rArg0);
 }
 
-// 0804C059: Register word32 quantum_bitmask(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C, Stack (ptr Eq_136) dwArg10)
-word32 quantum_bitmask(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C, Eq_136 * dwArg10)
+// 0804C059: Register word32 quantum_bitmask(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack int32 dwArg0C, Stack (arr word32) dwArg10)
+word32 quantum_bitmask(Eq_106 dwArg04, Eq_106 dwArg08, int32 dwArg0C, word32 dwArg10[])
 {
 	word32 dwLoc0C_14 = 0x00;
 	int32 dwLoc08_15 = 0x00;
@@ -2430,222 +1621,275 @@ word32 quantum_bitmask(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C, Eq_
 	return dwLoc0C_14;
 }
 
-// 0804C0BF: void quantum_hadamard(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_hadamard(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804C0BF: void quantum_hadamard(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_hadamard(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	word32 edx_15;
-	word32 ebx_16;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x06, dwArg04, rLoc44, rLoc40, out edx_15, out ebx_16) == 0x00)
+	if (quantum_objcode_put(gs, 0x06, dwArg04, rLoc44, rLoc40) == 0x00)
 	{
-		*(fp - 0x44) = 0x02;
-		*(fp - 0x48) = 0x02;
-		*(fp - 0x4C) = fp - 44;
-		quantum_new_matrix(fp - 0x04, gs, dwArg04, dwArg08);
-		*(fp - 0x18) = *(fp - 44);
-		*(fp - 0x14) = *(fp - 0x28);
-		*(fp - 0x10) = *(fp - 0x24);
-		struct Eq_10698 * edx_43 = *(fp - 0x10);
-		edx_43->dw0000 = 0x3F3504F3;
-		edx_43->dw0004 = 0x00;
-		struct Eq_10712 * eax_48 = *(fp - 0x10);
-		eax_48->dw0008 = 0x3F3504F3;
-		eax_48->dw000C = 0x00;
-		struct Eq_10726 * eax_54 = *(fp - 0x10);
-		eax_54->dw0010 = 0x3F3504F3;
-		eax_54->dw0014 = 0x00;
-		struct Eq_10740 * eax_60 = *(fp - 0x10);
-		eax_60->dw0018 = ~0x40CAFB0C;
-		eax_60->dw001C = 0x00;
-		*(fp - 0x3C) = fp->dw0008;
-		*(fp - 0x48) = *(fp - 0x18);
-		*(fp - 0x44) = *(fp - 0x14);
-		*(fp - 0x40) = *(fp - 0x10);
-		*(fp - 0x4C) = fp->dw0004;
-		word32 ebp_76;
-		word32 * esp_77 = quantum_gate1(fp - 0x04, gs, dwArg04, dwArg08, out ebp_76);
-		*esp_77 = ebp_76 - 0x14;
-		quantum_delete_matrix(dwArg00);
+		quantum_new_matrix(fp - 44, 0x02, 0x02);
+		dwLoc24->u0 = 0x3F3504F3;
+		((word32) dwLoc24 + 0x04)->u0 = 0x00;
+		((word32) dwLoc24 + 0x08)->u0 = 0x3F3504F3;
+		((word32) dwLoc24 + 0x0C)->u0 = 0x00;
+		((word32) dwLoc24 + 0x0010)->u0 = 0x3F3504F3;
+		((word32) dwLoc24 + 0x0014)->u0 = 0x00;
+		((word32) dwLoc24 + 0x0018)->u0 = ~0x40CAFB0C;
+		((word32) dwLoc24 + 0x001C)->u0 = 0x00;
+		quantum_gate1(dwArg04, dwLoc2C, dwLoc28, dwLoc24, dwArg08);
+		quantum_delete_matrix(fp - 0x18);
 	}
-	return;
 }
 
-// 0804C195: void quantum_walsh(Register word32 ebp, Register (ptr Eq_380) gs)
-void quantum_walsh(word32 ebp, Eq_380 * gs)
+// 0804C195: void quantum_walsh(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_walsh(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	while (*(fp - 0x08) < fp->dw0004)
+	Eq_106 dwLoc08_13 = 0x00;
+	while (dwLoc08_13 < dwArg04)
 	{
-		*(fp - 0x18) = fp->dw0008;
-		*(fp - 0x1C) = *(fp - 0x08);
-		quantum_hadamard(fp - 0x04, gs, dwArg00);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		quantum_hadamard(gs, dwLoc08_13, dwArg08);
+		dwLoc08_13 = dwLoc08_13 + 0x01;
 	}
-	return;
 }
 
-// 0804C1C4: FpuStack real64 quantum_r_x(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack real32 rArg08, FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3)
-real64 quantum_r_x(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08, real64 rArg0, real64 rArg1, real64 rArg2, real64 rArg3)
+// 0804C1C4: FpuStack real64 quantum_r_x(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack real32 rArg08, Stack Eq_106 dwArg0C, FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3)
+real64 quantum_r_x(Eq_1715 * gs, Eq_106 dwArg04, real32 rArg08, Eq_106 dwArg0C, real64 rArg0, real64 rArg1, real64 rArg2, real64 rArg3)
 {
-	word32 edx_20;
-	word32 ebx_21;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x07, dwArg04, (real64) rArg08, rLoc80, out edx_20, out ebx_21) == 0x00)
+	if (quantum_objcode_put(gs, 0x07, dwArg04, (real64) rArg08, rLoc80) == 0x00)
 	{
-		*(fp - 0x84) = 0x02;
-		*(fp - 0x88) = 0x02;
-		*(fp - 0x8C) = fp - 44;
-		quantum_new_matrix(fp - 0x04, gs, dwArg04, rArg08);
-		*(fp - 0x18) = *(fp - 44);
-		*(fp - 0x14) = *(fp - 0x28);
-		*(fp - 0x10) = *(fp - 0x24);
-		struct Eq_10939 * ebx_59 = *(fp - 0x10);
-		*(fp - 0x8C) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048934();
-		*(fp - 0x30) = (real32) rArg0;
-		*(fp - 0x50) = *(fp - 0x30);
-		ebx_59->dw0000 = *(fp - 0x50);
-		ebx_59->dw0004 = 0x00;
-		struct Eq_10988 * eax_71 = *(fp - 0x10);
-		*(fp - 0x8C) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048A14();
-		*(fp - 0x70) = -1.0;
-		*(fp - 0x78) = 0.0;
-		*(fp - 0x80) = 0.0;
-		*(fp - 0x88) = rArg1;
-		*(fp - 0x8C) = fp - 0x44;
-		__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-		real64 rArg0_95 = *(fp - 0x3C);
-		*(fp - 0x30) = (real32) *(fp - 0x44);
-		real64 rArg0_100 = (real64) *(fp - 0x30);
-		*(fp - 0x30) = (real32) rArg0_95;
-		real64 rArg0_105 = (real64) *(fp - 0x30);
-		*(fp - 0x50) = (real32) rArg0_100;
-		word32 eax_110 = *(fp - 0x50);
-		*(fp - 0x50) = (real32) rArg0_105;
-		word32 edx_112 = *(fp - 0x50);
-		eax_71->dw0008 = eax_110;
-		eax_71->dw000C = edx_112;
-		struct Eq_11112 * eax_115 = *(fp - 0x10);
-		*(fp - 0x90) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048A14();
-		*(fp - 116) = -1.0;
-		*(fp - 0x7C) = 0.0;
-		*(fp - 0x84) = 0.0;
-		*(fp - 0x8C) = rArg2;
-		*(fp - 0x90) = fp - 0x44;
-		__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-		real64 rArg1_134 = *(fp - 0x3C);
-		*(fp - 0x30) = (real32) *(fp - 0x44);
-		real64 rArg1_139 = (real64) *(fp - 0x30);
-		*(fp - 0x30) = (real32) rArg1_134;
-		real64 rArg1_144 = (real64) *(fp - 0x30);
-		*(fp - 0x50) = (real32) rArg1_139;
-		word32 eax_149 = *(fp - 0x50);
-		*(fp - 0x50) = (real32) rArg1_144;
-		word32 edx_151 = *(fp - 0x50);
-		eax_115->dw0010 = eax_149;
-		eax_115->dw0014 = edx_151;
-		struct Eq_11232 * eax_154 = *(fp - 0x10);
-		*(fp - 0x94) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048934();
-		*(fp - 0x30) = (real32) rArg3;
-		*(fp - 0x50) = *(fp - 0x30);
-		eax_154->dw0018 = *(fp - 0x50);
-		eax_154->dw001C = 0x00;
-		*(fp - 0x84) = fp->dw000C;
-		*(fp - 0x90) = *(fp - 0x18);
-		*(fp - 0x8C) = *(fp - 0x14);
-		*(fp - 0x88) = *(fp - 0x10);
-		*(fp - 0x94) = fp->dw0004;
-		word32 ebp_177;
-		word32 * esp_178 = quantum_gate1(fp - 0x04, gs, dwArg04, rArg08, out ebp_177);
-		*esp_178 = ebp_177 - 0x14;
-		quantum_delete_matrix(dwArg00);
+		quantum_new_matrix(fp - 44, 0x02, 0x02);
+		word32 esp_105;
+		word32 ebp_106;
+		struct Eq_4758 * ebx_107;
+		byte SCZO_108;
+		word32 eax_109;
+		byte SZO_110;
+		byte C_111;
+		byte Z_112;
+		word32 edx_113;
+		struct Eq_4765 * gs_114;
+		!cos();
+		real32 rLoc30_115 = (real32) rArg0;
+		ebx_107->r0000 = rLoc30_115;
+		ebx_107->dw0004 = 0x00;
+		word32 esp_128;
+		word32 ebp_129;
+		struct Eq_4778 * ebx_130;
+		byte SCZO_131;
+		word32 eax_132;
+		byte SZO_133;
+		byte C_134;
+		byte Z_135;
+		word32 edx_136;
+		struct Eq_4785 * gs_137;
+		!sin();
+		__muldc3(fp - 0x44, rArg1, 0.0, 0.0, -1.0);
+		ebx_130->r0000 = (real32) rLoc44;
+		real32 rLoc30_162 = (real32) rLoc3C;
+		ebx_130->r0004 = rLoc30_162;
+		word32 esp_179;
+		word32 ebp_180;
+		struct Eq_4808 * ebx_181;
+		byte SCZO_182;
+		word32 eax_183;
+		byte SZO_184;
+		byte C_185;
+		byte Z_186;
+		word32 edx_187;
+		struct Eq_4815 * gs_188;
+		!sin();
+		__muldc3(fp - 0x44, rArg2, 0.0, 0.0, -1.0);
+		ebx_181->r0000 = (real32) rLoc44;
+		real32 rLoc30_211 = (real32) rLoc3C;
+		ebx_181->r0004 = rLoc30_211;
+		word32 esp_228;
+		word32 ebp_229;
+		struct Eq_4836 * ebx_230;
+		byte SCZO_231;
+		word32 eax_232;
+		byte SZO_233;
+		byte C_234;
+		byte Z_235;
+		word32 edx_236;
+		struct Eq_4843 * gs_237;
+		!cos();
+		ebx_230->r0000 = (real32) rArg3;
+		ebx_230->dw0004 = 0x00;
+		quantum_gate1(dwArg04, dwLoc2C, dwLoc28, dwLoc24, dwArg0C);
+		quantum_delete_matrix(fp - 0x18);
 		rArg0 = 0.0;
 	}
 	return rArg0;
 }
 
-// 0804C382: FpuStack real64 quantum_r_y(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack real32 rArg08, FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3)
-real64 quantum_r_y(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08, real64 rArg0, real64 rArg1, real64 rArg2, real64 rArg3)
+// 0804C382: FpuStack real64 quantum_r_y(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack real32 rArg08, Stack Eq_106 dwArg0C, FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3)
+real64 quantum_r_y(Eq_1715 * gs, Eq_106 dwArg04, real32 rArg08, Eq_106 dwArg0C, real64 rArg0, real64 rArg1, real64 rArg2, real64 rArg3)
 {
-	word32 edx_20;
-	word32 ebx_21;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x08, dwArg04, (real64) rArg08, rLoc60, out edx_20, out ebx_21) == 0x00)
+	if (quantum_objcode_put(gs, 0x08, dwArg04, (real64) rArg08, rLoc60) == 0x00)
 	{
-		*(fp - 100) = 0x02;
-		*(fp - 0x68) = 0x02;
-		*(fp - 0x6C) = fp - 44;
-		quantum_new_matrix(fp - 0x04, gs, dwArg04, rArg08);
-		*(fp - 0x18) = *(fp - 44);
-		*(fp - 0x14) = *(fp - 0x28);
-		*(fp - 0x10) = *(fp - 0x24);
-		struct Eq_11416 * ebx_59 = *(fp - 0x10);
-		*(fp - 0x6C) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048934();
-		*(fp - 0x30) = (real32) rArg0;
-		*(fp - 0x40) = *(fp - 0x30);
-		ebx_59->dw0000 = *(fp - 0x40);
-		ebx_59->dw0004 = 0x00;
-		struct Eq_11465 * eax_71 = *(fp - 0x10);
-		*(fp - 0x6C) = (real64) fp->r0008 / (real64) globals->r8054354;
-		fn08048A14();
-		*(fp - 0x30) = (real32) rArg1;
-		*(fp - 0x40) = *(fp - 0x30);
-		eax_71->dw0008 = *(fp - 0x40);
-		eax_71->dw000C = 0x00;
+		quantum_new_matrix(fp - 44, 0x02, 0x02);
+		word32 esp_89;
+		word32 ebp_90;
+		struct Eq_4887 * ebx_91;
+		byte SCZO_92;
+		word32 eax_93;
+		byte SZO_94;
+		byte C_95;
+		byte Z_96;
+		word32 edx_97;
+		struct Eq_4894 * gs_98;
+		!cos();
+		real32 rLoc30_99 = (real32) rArg0;
+		ebx_91->r0000 = rLoc30_99;
+		ebx_91->dw0004 = 0x00;
+		word32 esp_112;
+		word32 ebp_113;
+		struct Eq_4907 * ebx_114;
+		byte SCZO_115;
+		word32 eax_116;
+		byte SZO_117;
+		byte C_118;
+		byte Z_119;
+		word32 edx_120;
+		struct Eq_4914 * gs_121;
+		!sin();
+		real32 rLoc30_122 = (real32) rArg1;
+		ebx_114->r0000 = rLoc30_122;
+		ebx_114->dw0004 = 0x00;
+		word32 esp_135;
+		word32 ebp_136;
+		struct Eq_4927 * ebx_137;
+		byte SCZO_138;
+		word32 eax_139;
+		byte SZO_140;
+		byte C_141;
+		byte Z_142;
+		word32 edx_143;
+		struct Eq_4934 * gs_144;
+		!sin();
+		real32 rLoc30_145 = (real32) rArg2;
 		rArg0 = (real64) globals->r8054350;
-		struct Eq_11516 * eax_84 = *(fp - 0x10);
-		*(fp - 0x6C) = (real64) fp->r0008 / rArg0;
-		fn08048A14();
-		*(fp - 0x30) = (real32) rArg2;
-		*(fp - 0x40) = *(fp - 0x30);
-		eax_84->dw0010 = *(fp - 0x40);
-		eax_84->dw0014 = 0x00;
-		struct Eq_11561 * eax_97 = *(fp - 0x10);
-		*(fp - 0x6C) = (real64) fp->r0008 / (real64) globals->r8054350;
-		fn08048934();
-		*(fp - 0x30) = (real32) rArg3;
-		*(fp - 0x40) = *(fp - 0x30);
-		eax_97->dw0018 = *(fp - 0x40);
-		eax_97->dw001C = 0x00;
-		*(fp - 0x5C) = fp->dw000C;
-		*(fp - 0x68) = *(fp - 0x18);
-		*(fp - 100) = *(fp - 0x14);
-		*(fp - 0x60) = *(fp - 0x10);
-		*(fp - 0x6C) = fp->dw0004;
-		word32 ebp_120;
-		word32 * esp_121 = quantum_gate1(fp - 0x04, gs, dwArg04, rArg08, out ebp_120);
-		*esp_121 = ebp_120 - 0x14;
-		quantum_delete_matrix(dwArg00);
+		ebx_137->r0000 = rLoc30_145;
+		ebx_137->dw0004 = 0x00;
+		word32 esp_158;
+		word32 ebp_159;
+		struct Eq_4950 * ebx_160;
+		byte SCZO_161;
+		word32 eax_162;
+		byte SZO_163;
+		byte C_164;
+		byte Z_165;
+		word32 edx_166;
+		struct Eq_4957 * gs_167;
+		!cos();
+		ebx_160->r0000 = (real32) rArg3;
+		ebx_160->dw0004 = 0x00;
+		quantum_gate1(dwArg04, dwLoc2C, dwLoc28, dwLoc24, dwArg0C);
+		quantum_delete_matrix(fp - 0x18);
 	}
 	return rArg0;
 }
 
-// 0804C4CB: void quantum_r_z(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack real32 rArg08)
-void quantum_r_z(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08)
+// 0804C4CB: void quantum_r_z(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 rArg08)
+void quantum_r_z(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 rArg08)
 {
-	word32 edx_23;
-	word32 ebx_24;
-	int32 eax_25 = quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x09, dwArg04, (real64) rArg08, rLoc20, out edx_23, out ebx_24);
-	if (eax_25 == 0x00)
+	if (quantum_objcode_put(gs, 0x09, dwArg04, (real64) rArg08, rLoc20) == 0x00)
 	{
-		*(fp - 44) = (real32) ((real64) fp->r0008 / (real64) globals->r8054350);
-		quantum_cexp(rArg00, rArg0, rArg1);
-		*(fp - 0x18) = eax_25;
-		*(fp - 0x14) = edx_23;
-		*(fp - 0x10) = 0x00;
+		quantum_cexp((real32) ((real64) rArg08 / (real64) globals->r8054350), rArg0, rArg1);
 		while (fp->ptr000C->dw0004 > *(fp - 0x10))
 		{
-			struct Eq_11736 * eax_87 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			uint32 edx_88 = eax_87->dw000C;
+			struct Eq_5009 * eax_92 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			Eq_106 edx_93 = eax_92->t000C;
+			byte cl_96 = (byte) fp->dw0004;
+			uint32 eax_104 = __shrd(eax_92->t0008, edx_93, cl_96);
+			uint32 edx_99 = edx_93 >> cl_96;
+			if ((cl_96 & 0x20) != 0x00)
+				eax_104 = edx_99;
+			if ((byte) (eax_104 & 0x01) != 0x00)
+			{
+				struct Eq_5145 * eax_128 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				struct Eq_5160 * esi_122 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				word32 edx_129 = eax_128->dw0000;
+				word32 eax_130 = eax_128->dw0004;
+				word32 edx_133 = *(fp - 0x18);
+				word32 eax_134 = *(fp - 0x14);
+				*(fp - 0x20) = eax_134;
+				*(fp - 0x24) = edx_133;
+				*(fp - 0x28) = eax_130;
+				*(fp - 44) = edx_129;
+				__mulsc3(dwArg04, rArg08, rArg0C, rArg10);
+				esi_122->dw0000 = eax_134;
+				esi_122->dw0004 = edx_133;
+			}
+			else
+			{
+				struct Eq_5061 * eax_157 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				struct Eq_5076 * esi_151 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				word32 edx_158 = eax_157->dw0000;
+				word32 eax_159 = eax_157->dw0004;
+				word32 edx_162 = *(fp - 0x18);
+				word32 eax_163 = *(fp - 0x14);
+				*(fp - 0x20) = eax_163;
+				*(fp - 0x24) = edx_162;
+				*(fp - 0x28) = eax_159;
+				*(fp - 44) = edx_158;
+				__divsc3(dwArg04, rArg08, rArg0C, rArg10);
+				esi_151->dw0000 = eax_163;
+				esi_151->dw0004 = edx_162;
+			}
+			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		}
+		*(fp - 44) = (struct Eq_4999 **) fp->ptr000C;
+		quantum_decohere(dwArg04, rArg2);
+	}
+}
+
+// 0804C612: void quantum_phase_scale(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 rArg08)
+void quantum_phase_scale(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 rArg08)
+{
+	if (quantum_objcode_put(gs, 11, dwArg04, (real64) rArg08, rLoc20) == 0x00)
+	{
+		quantum_cexp(rArg08, rArg0, rArg1);
+		while (fp->ptr000C->dw0004 > *(fp - 0x10))
+		{
+			struct Eq_5261 * eax_83 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			struct Eq_5276 * esi_77 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			word32 edx_84 = eax_83->dw0000;
+			word32 eax_85 = eax_83->dw0004;
+			word32 edx_88 = *(fp - 0x18);
+			word32 eax_89 = *(fp - 0x14);
+			*(fp - 0x20) = eax_89;
+			*(fp - 0x24) = edx_88;
+			*(fp - 0x28) = eax_85;
+			*(fp - 44) = edx_84;
+			__mulsc3(dwArg04, rArg08, rArg0C, rArg10);
+			esi_77->dw0000 = eax_89;
+			esi_77->dw0004 = edx_88;
+			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		}
+		*(fp - 44) = (struct Eq_5251 **) fp->ptr000C;
+		quantum_decohere(dwArg04, rArg2);
+	}
+}
+
+// 0804C6CD: void quantum_phase_kick(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 rArg08)
+void quantum_phase_kick(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 rArg08)
+{
+	if (quantum_objcode_put(gs, 0x0A, dwArg04, (real64) rArg08, rLoc20) == 0x00)
+	{
+		quantum_cexp(rArg08, rArg0, rArg1);
+		while (fp->ptr000C->dw0004 > *(fp - 0x10))
+		{
+			struct Eq_5390 * eax_87 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			Eq_106 edx_88 = eax_87->t000C;
 			byte cl_91 = (byte) fp->dw0004;
-			uint32 eax_169 = __shrd(eax_87->dw0008, edx_88, cl_91);
+			uint32 eax_142 = __shrd(eax_87->t0008, edx_88, cl_91);
 			uint32 edx_94 = edx_88 >> cl_91;
 			if ((cl_91 & 0x20) != 0x00)
-				eax_169 = edx_94;
-			if ((byte) (eax_169 & 0x01) != 0x00)
+				eax_142 = edx_94;
+			if ((byte) (eax_142 & 0x01) != 0x00)
 			{
-				struct Eq_11872 * eax_123 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_11887 * esi_117 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				struct Eq_5454 * eax_123 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				struct Eq_5469 * esi_117 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
 				word32 edx_124 = eax_123->dw0000;
 				word32 eax_125 = eax_123->dw0004;
 				word32 edx_128 = *(fp - 0x18);
@@ -2658,396 +1902,235 @@ void quantum_r_z(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08)
 				esi_117->dw0000 = eax_129;
 				esi_117->dw0004 = edx_128;
 			}
-			else
-			{
-				struct Eq_11788 * eax_152 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_11803 * esi_146 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				word32 edx_153 = eax_152->dw0000;
-				word32 eax_154 = eax_152->dw0004;
-				word32 edx_157 = *(fp - 0x18);
-				word32 eax_158 = *(fp - 0x14);
-				*(fp - 0x20) = eax_158;
-				*(fp - 0x24) = edx_157;
-				*(fp - 0x28) = eax_154;
-				*(fp - 44) = edx_153;
-				__divsc3(dwArg04, rArg08, rArg0C, rArg10);
-				esi_146->dw0000 = eax_158;
-				esi_146->dw0004 = edx_157;
-			}
 			*(fp - 0x10) = *(fp - 0x10) + 0x01;
 		}
-		*(fp - 44) = (struct Eq_11726 **) fp->ptr000C;
-		quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
+		*(fp - 44) = (struct Eq_5380 **) fp->ptr000C;
+		quantum_decohere(dwArg04, rArg2);
 	}
-	return;
 }
 
-// 0804C612: void quantum_phase_scale(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack real32 rArg08)
-void quantum_phase_scale(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08)
+// 0804C7B9: void quantum_cond_phase(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_cond_phase(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	word32 edx_23;
-	word32 ebx_24;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 11, dwArg04, (real64) rArg08, rLoc20, out edx_23, out ebx_24) == 0x00)
+	if (quantum_objcode_put(gs, 0x0C, dwArg04, DPB(rLoc44, dwArg08, 0), rLoc40) == 0x00)
 	{
-		word32 eax_45 = fp->dw0008;
-		*(fp - 44) = eax_45;
-		quantum_cexp(rArg00, rArg0, rArg1);
-		*(fp - 0x18) = eax_45;
-		*(fp - 0x14) = edx_23;
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr000C->dw0004 > *(fp - 0x10))
+		byte cl_80 = (byte) (dwArg04 - dwArg08);
+		Eq_763 edx_237 = __shld(0x00, 0x01, cl_80);
+		Eq_763 eax_238 = 0x01 << cl_80;
+		if ((cl_80 & 0x20) != 0x00)
 		{
-			struct Eq_12023 * eax_78 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_12038 * esi_72 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			word32 edx_79 = eax_78->dw0000;
-			word32 eax_80 = eax_78->dw0004;
-			word32 edx_83 = *(fp - 0x18);
-			word32 eax_84 = *(fp - 0x14);
-			*(fp - 0x20) = eax_84;
-			*(fp - 0x24) = edx_83;
-			*(fp - 0x28) = eax_80;
-			*(fp - 44) = edx_79;
-			__mulsc3(dwArg04, rArg08, rArg0C, rArg10);
-			esi_72->dw0000 = eax_84;
-			esi_72->dw0004 = edx_83;
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			edx_237 = eax_238;
+			eax_238.u0 = 0x00;
 		}
-		*(fp - 44) = (struct Eq_12013 **) fp->ptr000C;
-		quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
-	}
-	return;
-}
-
-// 0804C6CD: void quantum_phase_kick(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack real32 rArg08)
-void quantum_phase_kick(word32 ebp, Eq_380 * gs, word32 dwArg04, real32 rArg08)
-{
-	word32 edx_23;
-	word32 ebx_24;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x0A, dwArg04, (real64) rArg08, rLoc20, out edx_23, out ebx_24) == 0x00)
-	{
-		word32 eax_51 = fp->dw0008;
-		*(fp - 44) = eax_51;
-		quantum_cexp(rArg00, rArg0, rArg1);
-		*(fp - 0x18) = eax_51;
-		*(fp - 0x14) = edx_23;
-		*(fp - 0x10) = 0x00;
+		real80 rLoc3C_103 = (real80) (real64) DPB(qwLoc54, eax_238, 0);
+		if (edx_237 < 0x00)
+			rLoc3C_103 = (real80) ((real64) globals->r8054330 + (real64) rLoc3C_103);
+		quantum_cexp((real32) (globals->r8054358 / (real64) rLoc3C_103), rArg0, rArg1);
 		while (fp->ptr000C->dw0004 > *(fp - 0x10))
 		{
-			struct Eq_12187 * eax_82 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			uint32 edx_83 = eax_82->dw000C;
-			byte cl_86 = (byte) fp->dw0004;
-			uint32 eax_137 = __shrd(eax_82->dw0008, edx_83, cl_86);
-			uint32 edx_89 = edx_83 >> cl_86;
-			if ((cl_86 & 0x20) != 0x00)
-				eax_137 = edx_89;
-			if ((byte) (eax_137 & 0x01) != 0x00)
+			struct Eq_5595 * eax_141 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			Eq_106 edx_142 = eax_141->t000C;
+			byte cl_145 = (byte) fp->dw0004;
+			uint32 eax_146 = __shrd(eax_141->t0008, edx_142, cl_145);
+			uint32 edx_148 = edx_142 >> cl_145;
+			if ((cl_145 & 0x20) != 0x00)
+				eax_146 = edx_148;
+			if ((byte) (eax_146 & 0x01) != 0x00)
 			{
-				struct Eq_12251 * eax_118 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_12266 * esi_112 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				word32 edx_119 = eax_118->dw0000;
-				word32 eax_120 = eax_118->dw0004;
-				word32 edx_123 = *(fp - 0x18);
-				word32 eax_124 = *(fp - 0x14);
-				*(fp - 0x20) = eax_124;
-				*(fp - 0x24) = edx_123;
-				*(fp - 0x28) = eax_120;
-				*(fp - 44) = edx_119;
-				__mulsc3(dwArg04, rArg08, rArg0C, rArg10);
-				esi_112->dw0000 = eax_124;
-				esi_112->dw0004 = edx_123;
-			}
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
-		}
-		*(fp - 44) = (struct Eq_12177 **) fp->ptr000C;
-		quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
-	}
-	return;
-}
-
-// 0804C7B9: void quantum_cond_phase(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_cond_phase(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08)
-{
-	word32 edx_25;
-	word32 ebx_26;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x0C, dwArg04, DPB(rLoc44, dwArg08, 0), rLoc40, out edx_25, out ebx_26) == 0x00)
-	{
-		byte cl_64 = (byte) (fp->dw0004 - fp->dw0008);
-		int32 edx_219 = __shld(0x00, 0x01, cl_64);
-		int32 eax_220 = 0x01 << cl_64;
-		if ((cl_64 & 0x20) != 0x00)
-		{
-			edx_219 = eax_220;
-			eax_220 = 0x00;
-		}
-		*(fp - 0x50) = edx_219;
-		*(fp - 0x54) = eax_220;
-		*(fp - 0x3C) = (real80) (real64) *(fp - 0x54);
-		if (edx_219 < 0x00)
-			*(fp - 0x3C) = (real80) ((real64) globals->r8054330 + (real64) (*(fp - 0x3C)));
-		*(fp - 0x24) = (real64) *(fp - 0x3C);
-		*(fp - 0x28) = (real32) (globals->r8054358 / *(fp - 0x24));
-		*(fp - 0x4C) = *(fp - 0x28);
-		quantum_cexp(rArg00, rArg0, rArg1);
-		*(fp - 0x18) = eax_220;
-		*(fp - 0x14) = edx_219;
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr000C->dw0004 > *(fp - 0x10))
-		{
-			struct Eq_12480 * eax_123 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			uint32 edx_124 = eax_123->dw000C;
-			byte cl_127 = (byte) fp->dw0004;
-			uint32 eax_128 = __shrd(eax_123->dw0008, edx_124, cl_127);
-			uint32 edx_130 = edx_124 >> cl_127;
-			if ((cl_127 & 0x20) != 0x00)
-				eax_128 = edx_130;
-			if ((byte) (eax_128 & 0x01) != 0x00)
-			{
-				struct Eq_12544 * eax_158 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				uint32 edx_159 = eax_158->dw000C;
-				byte cl_162 = (byte) fp->dw0008;
-				uint32 eax_163 = __shrd(eax_158->dw0008, edx_159, cl_162);
-				uint32 edx_165 = edx_159 >> cl_162;
-				if ((cl_162 & 0x20) != 0x00)
-					eax_163 = edx_165;
-				if ((byte) (eax_163 & 0x01) != 0x00)
+				struct Eq_5659 * eax_176 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				Eq_106 edx_177 = eax_176->t000C;
+				byte cl_180 = (byte) fp->dw0008;
+				uint32 eax_181 = __shrd(eax_176->t0008, edx_177, cl_180);
+				uint32 edx_183 = edx_177 >> cl_180;
+				if ((cl_180 & 0x20) != 0x00)
+					eax_181 = edx_183;
+				if ((byte) (eax_181 & 0x01) != 0x00)
 				{
-					struct Eq_12585 * eax_186 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-					struct Eq_12600 * esi_180 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-					word32 edx_187 = eax_186->dw0000;
-					word32 eax_188 = eax_186->dw0004;
-					word32 edx_191 = *(fp - 0x18);
-					word32 eax_192 = *(fp - 0x14);
-					*(fp - 0x40) = eax_192;
-					*(fp - 0x44) = edx_191;
-					*(fp - 0x48) = eax_188;
-					*(fp - 0x4C) = edx_187;
+					struct Eq_5700 * eax_204 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+					struct Eq_5715 * esi_198 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+					word32 edx_205 = eax_204->dw0000;
+					word32 eax_206 = eax_204->dw0004;
+					word32 edx_209 = *(fp - 0x18);
+					word32 eax_210 = *(fp - 0x14);
+					*(fp - 0x40) = eax_210;
+					*(fp - 0x44) = edx_209;
+					*(fp - 0x48) = eax_206;
+					*(fp - 0x4C) = edx_205;
 					__mulsc3(dwArg04, dwArg08, rArg0C, rArg10);
-					esi_180->dw0000 = eax_192;
-					esi_180->dw0004 = edx_191;
+					esi_198->dw0000 = eax_210;
+					esi_198->dw0004 = edx_209;
 				}
 			}
 			*(fp - 0x10) = *(fp - 0x10) + 0x01;
 		}
-		*(fp - 0x4C) = (struct Eq_12470 **) fp->ptr000C;
-		quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
+		*(fp - 0x4C) = (struct Eq_5585 **) fp->ptr000C;
+		quantum_decohere(dwArg04, rArg2);
 	}
-	return;
 }
 
-// 0804C929: void quantum_cond_phase_inv(Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack word32 dwArg08)
-void quantum_cond_phase_inv(Eq_380 * gs, Eq_136 * dwArg04, word32 dwArg08)
+// 0804C929: void quantum_cond_phase_inv(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_cond_phase_inv(Eq_106 dwArg04, Eq_106 dwArg08)
 {
 	byte cl_19 = (byte) (dwArg04 - dwArg08);
-	int32 edx_187 = __shld(0x00, 0x01, cl_19);
-	int32 eax_188 = 0x01 << cl_19;
+	Eq_763 edx_186 = __shld(0x00, 0x01, cl_19);
+	Eq_763 eax_187 = 0x01 << cl_19;
 	if ((cl_19 & 0x20) != 0x00)
 	{
-		edx_187 = eax_188;
-		eax_188 = 0x00;
+		edx_186 = eax_187;
+		eax_187.u0 = 0x00;
 	}
-	real80 rLoc3C_186 = (real80) (real64) DPB(qwLoc54, eax_188, 0);
-	if (edx_187 < 0x00)
-		rLoc3C_186 = (real80) ((real64) globals->r8054330 + (real64) rLoc3C_186);
-	quantum_cexp((real32) (globals->r8054360 / (real64) rLoc3C_186), rArg0, rArg1);
+	real80 rLoc3C_185 = (real80) (real64) DPB(qwLoc54, eax_187, 0);
+	if (edx_186 < 0x00)
+		rLoc3C_185 = (real80) ((real64) globals->r8054330 + (real64) rLoc3C_185);
+	quantum_cexp((real32) (globals->r8054360 / (real64) rLoc3C_185), rArg0, rArg1);
 	while (fp->ptr000C->dw0004 > *(fp - 0x10))
 	{
-		struct Eq_12720 * eax_91 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-		uint32 edx_92 = eax_91->dw000C;
-		byte cl_95 = (byte) fp->dw0004;
-		uint32 eax_103 = __shrd(eax_91->dw0008, edx_92, cl_95);
-		uint32 edx_98 = edx_92 >> cl_95;
-		if ((cl_95 & 0x20) != 0x00)
-			eax_103 = edx_98;
-		if ((byte) (eax_103 & 0x01) != 0x00)
+		struct Eq_5832 * eax_90 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+		Eq_106 edx_91 = eax_90->t000C;
+		byte cl_94 = (byte) fp->dw0004;
+		uint32 eax_102 = __shrd(eax_90->t0008, edx_91, cl_94);
+		uint32 edx_97 = edx_91 >> cl_94;
+		if ((cl_94 & 0x20) != 0x00)
+			eax_102 = edx_97;
+		if ((byte) (eax_102 & 0x01) != 0x00)
 		{
-			struct Eq_12786 * eax_126 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			uint32 edx_127 = eax_126->dw000C;
-			byte cl_130 = (byte) fp->dw0008;
-			uint32 eax_131 = __shrd(eax_126->dw0008, edx_127, cl_130);
-			uint32 edx_133 = edx_127 >> cl_130;
-			if ((cl_130 & 0x20) != 0x00)
-				eax_131 = edx_133;
-			if ((byte) (eax_131 & 0x01) != 0x00)
+			struct Eq_5896 * eax_125 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+			Eq_106 edx_126 = eax_125->t000C;
+			byte cl_129 = (byte) fp->dw0008;
+			uint32 eax_130 = __shrd(eax_125->t0008, edx_126, cl_129);
+			uint32 edx_132 = edx_126 >> cl_129;
+			if ((cl_129 & 0x20) != 0x00)
+				eax_130 = edx_132;
+			if ((byte) (eax_130 & 0x01) != 0x00)
 			{
-				struct Eq_12827 * eax_154 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_12842 * esi_148 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-				word32 edx_155 = eax_154->dw0000;
-				word32 eax_156 = eax_154->dw0004;
-				word32 edx_159 = *(fp - 0x18);
-				word32 eax_160 = *(fp - 0x14);
-				*(fp - 0x40) = eax_160;
-				*(fp - 0x44) = edx_159;
-				*(fp - 0x48) = eax_156;
-				*(fp - 0x4C) = edx_155;
+				struct Eq_5937 * eax_153 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				struct Eq_5952 * esi_147 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
+				word32 edx_154 = eax_153->dw0000;
+				word32 eax_155 = eax_153->dw0004;
+				word32 edx_158 = *(fp - 0x18);
+				word32 eax_159 = *(fp - 0x14);
+				*(fp - 0x40) = eax_159;
+				*(fp - 0x44) = edx_158;
+				*(fp - 0x48) = eax_155;
+				*(fp - 0x4C) = edx_154;
 				__mulsc3(dwArg04, dwArg08, rArg0C, rArg10);
-				esi_148->dw0000 = eax_160;
-				esi_148->dw0004 = edx_159;
+				esi_147->dw0000 = eax_159;
+				esi_147->dw0004 = edx_158;
 			}
 		}
 		*(fp - 0x10) = *(fp - 0x10) + 0x01;
 	}
-	*(fp - 0x4C) = (struct Eq_12710 **) fp->ptr000C;
-	quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
-	return;
+	*(fp - 0x4C) = (struct Eq_5822 **) fp->ptr000C;
+	quantum_decohere(dwArg04, rArg2);
 }
 
-// 0804CA77: void quantum_cond_phase_kick(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) rArg0C)
-void quantum_cond_phase_kick(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * rArg0C)
+// 0804CA77: void quantum_cond_phase_kick(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 rArg0C)
+void quantum_cond_phase_kick(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 rArg0C)
 {
-	word32 edx_27;
-	word32 ebx_28;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x0C, dwArg04, DPB(rLoc34, dwArg08, 0), (real64) rArg0C, out edx_27, out ebx_28) == 0x00)
+	if (quantum_objcode_put(gs, 0x0C, dwArg04, DPB(rLoc34, dwArg08, 0), (real64) rArg0C) == 0x00)
 	{
-		word32 eax_55 = fp->dw000C;
-		*(fp - 0x3C) = eax_55;
-		quantum_cexp(rArg00, rArg0, rArg1);
-		*(fp - 0x18) = eax_55;
-		*(fp - 0x14) = edx_27;
-		*(fp - 0x10) = 0x00;
+		quantum_cexp(rArg0C, rArg0, rArg1);
 		while (fp->ptr0010->dw0004 > *(fp - 0x10))
 		{
-			struct Eq_12971 * eax_86 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
-			uint32 edx_87 = eax_86->dw000C;
-			byte cl_90 = (byte) fp->dw0004;
-			uint32 eax_172 = __shrd(eax_86->dw0008, edx_87, cl_90);
-			uint32 edx_93 = edx_87 >> cl_90;
-			if ((cl_90 & 0x20) != 0x00)
-				eax_172 = edx_93;
-			if ((byte) (eax_172 & 0x01) != 0x00)
+			struct Eq_6045 * eax_91 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
+			Eq_106 edx_92 = eax_91->t000C;
+			byte cl_95 = (byte) fp->dw0004;
+			uint32 eax_103 = __shrd(eax_91->t0008, edx_92, cl_95);
+			uint32 edx_98 = edx_92 >> cl_95;
+			if ((cl_95 & 0x20) != 0x00)
+				eax_103 = edx_98;
+			if ((byte) (eax_103 & 0x01) != 0x00)
 			{
-				struct Eq_13035 * eax_121 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
-				uint32 edx_122 = eax_121->dw000C;
-				byte cl_125 = (byte) fp->dw0008;
-				uint32 eax_126 = __shrd(eax_121->dw0008, edx_122, cl_125);
-				uint32 edx_128 = edx_122 >> cl_125;
-				if ((cl_125 & 0x20) != 0x00)
-					eax_126 = edx_128;
-				if ((byte) (eax_126 & 0x01) != 0x00)
+				struct Eq_6109 * eax_126 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
+				Eq_106 edx_127 = eax_126->t000C;
+				byte cl_130 = (byte) fp->dw0008;
+				uint32 eax_131 = __shrd(eax_126->t0008, edx_127, cl_130);
+				uint32 edx_133 = edx_127 >> cl_130;
+				if ((cl_130 & 0x20) != 0x00)
+					eax_131 = edx_133;
+				if ((byte) (eax_131 & 0x01) != 0x00)
 				{
-					struct Eq_13076 * eax_149 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
-					struct Eq_13091 * esi_143 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
-					word32 edx_150 = eax_149->dw0000;
-					word32 eax_151 = eax_149->dw0004;
-					word32 edx_154 = *(fp - 0x18);
-					word32 eax_155 = *(fp - 0x14);
-					*(fp - 0x30) = eax_155;
-					*(fp - 0x34) = edx_154;
-					*(fp - 0x38) = eax_151;
-					*(fp - 0x3C) = edx_150;
+					struct Eq_6150 * eax_154 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
+					struct Eq_6165 * esi_148 = fp->ptr0010->dw000C + (*(fp - 0x10) << 0x04);
+					word32 edx_155 = eax_154->dw0000;
+					word32 eax_156 = eax_154->dw0004;
+					word32 edx_159 = *(fp - 0x18);
+					word32 eax_160 = *(fp - 0x14);
+					*(fp - 0x30) = eax_160;
+					*(fp - 0x34) = edx_159;
+					*(fp - 0x38) = eax_156;
+					*(fp - 0x3C) = edx_155;
 					__mulsc3(dwArg04, dwArg08, rArg0C, rArg10);
-					esi_143->dw0000 = eax_155;
-					esi_143->dw0004 = edx_154;
+					esi_148->dw0000 = eax_160;
+					esi_148->dw0004 = edx_159;
 				}
 			}
 			*(fp - 0x10) = *(fp - 0x10) + 0x01;
 		}
-		*(fp - 0x3C) = (struct Eq_12961 **) fp->ptr0010;
-		quantum_decohere(fp - 0x04, gs, dwArg04, rArg2);
+		*(fp - 0x3C) = (struct Eq_6035 **) fp->ptr0010;
+		quantum_decohere(dwArg04, rArg2);
 	}
-	return;
 }
 
-// 0804CB9A: void quantum_gate_counter(Stack word32 dwArg04)
-void quantum_gate_counter(word32 dwArg04)
+// 0804CB9A: void quantum_gate_counter(Stack int32 dwArg04)
+void quantum_gate_counter(int32 dwArg04)
 {
 	if (dwArg04 > 0x00)
 		globals->dw80560D8 = globals->dw80560D8 + dwArg04;
 	else if (dwArg04 < 0x00)
 		globals->dw80560D8 = 0x00;
-	return;
 }
 
-// 0804CBCC: void quantum_memman(Stack (ptr Eq_136) dwArg04)
-void quantum_memman(Eq_136 * dwArg04)
+// 0804CBCC: void quantum_memman(Stack int32 dwArg04)
+void quantum_memman(int32 dwArg04)
 {
 	globals->dw80560E0 = globals->dw80560E0 + dwArg04;
 	if (globals->dw80560E0 > globals->dw80560DC)
 		globals->dw80560DC = globals->dw80560E0;
-	return;
 }
 
-// 0804CBFC: void quantum_new_matrix(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C)
-void quantum_new_matrix(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg08, Eq_136 * dwArg0C)
+// 0804CBFC: void quantum_new_matrix(Stack (ptr Eq_1038) dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C)
+void quantum_new_matrix(Eq_1038 * dwArg04, int32 dwArg08, int32 dwArg0C)
 {
-	ui32 * esp_18;
-	struct Eq_13183 * ebp_19;
-	byte SCZO_20;
-	word32 eax_21;
-	byte SZO_22;
-	byte C_23;
-	byte Z_24;
-	word32 edx_25;
-	struct Eq_380 * gs_26;
-	word32 ebx_27;
-	log();
-	if (eax_21 == 0x00)
-		quantum_error(gs_26, (struct Eq_136 *) 0x02);
-	*esp_18 = ebp_19->dw0010 *s ebp_19->dw000C << 0x03;
-	quantum_memman(dwArg00);
-	ebp_19->ptr0008->dw0000 = *(ebp_19 - 0x0C);
-	ebp_19->ptr0008->dw0004 = *(ebp_19 - 0x08);
-	ebp_19->ptr0008->dw0008 = *(ebp_19 - 0x04);
-	return;
+	Eq_106 eax_17 = calloc(dwArg08 *s dwArg0C, 0x08);
+	if (eax_17 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg0C *s dwArg08 << 0x03);
+	dwArg04->dw0000 = dwArg0C;
+	dwArg04->dw0004 = dwArg08;
+	dwArg04->t0008 = eax_17;
 }
 
-// 0804CC70: void quantum_delete_matrix(Stack (ptr Eq_136) dwArg04)
-void quantum_delete_matrix(Eq_136 * dwArg04)
+// 0804CC70: void quantum_delete_matrix(Stack (ptr Eq_1393) dwArg04)
+void quantum_delete_matrix(Eq_1393 * dwArg04)
 {
-	fn080488D4();
+	free(dwArg04->t0008);
 	quantum_memman(-(dwArg04->dw0000 *s dwArg04->dw0004 << 0x03));
-	dwArg04->dw0008 = 0x00;
-	return;
+	dwArg04->t0008.u0 = 0x00;
 }
 
-// 0804CCAD: void quantum_print_matrix(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C)
-void quantum_print_matrix(Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C)
+// 0804CCAD: void quantum_print_matrix(Stack int32 dwArg04, Stack int32 dwArg08, Stack (arr Eq_13554) dwArg0C)
+void quantum_print_matrix(int32 dwArg04, int32 dwArg08, Eq_13554 dwArg0C[])
 {
 	word32 dwLoc10_21 = 0x00;
 	do
 	{
-		dwLoc10_21 = dwLoc10_138 + 0x01;
-		word32 dwLoc10_138 = dwLoc10_21;
-	} while (0x01 << (byte) dwLoc10_138 < dwArg04 != 0x00);
-	int32 dwLoc08_102 = 0x00;
-	while (dwArg04 > dwLoc08_102)
+		dwLoc10_21 = dwLoc10_109 + 0x01;
+		word32 dwLoc10_109 = dwLoc10_21;
+	} while (0x01 << (byte) dwLoc10_109 < dwArg04 != 0x00);
+	int32 dwLoc08_28 = 0x00;
+	while (dwArg04 > dwLoc08_28)
 	{
-		int32 dwLoc0C_136 = 0x00;
-		while (dwArg08 > dwLoc0C_136)
+		int32 dwLoc0C_107 = 0x00;
+		while (dwArg08 > dwLoc0C_107)
 		{
-			quantum_imag(*((word32) &(&(dwArg0C + (dwArg08 *s dwLoc08_102 + dwLoc0C_136 << 0x03) / 0x08)->dw0000)[0x00].dw0000 + 0x04));
-			quantum_real(dwArg0C[dwArg08 *s dwLoc08_102 + dwLoc0C_136].dw0000);
-			fn08048964();
-			dwLoc0C_136 = dwLoc0C_136 + 0x01;
+			printf("%g %+gi ", quantum_real(dwArg0C[dwArg08 *s dwLoc08_28 + dwLoc0C_107].dw0000), quantum_imag(*((word32) &(&(dwArg0C + (dwArg08 *s dwLoc08_28 + dwLoc0C_107 << 0x03) / 0x08)->dw0000)[0x00].dw0000 + 0x04)));
+			dwLoc0C_107 = dwLoc0C_107 + 0x01;
 		}
-		word32 esp_89;
-		word32 ebp_90;
-		byte SCZO_91;
-		word32 ecx_92;
-		word32 eax_93;
-		word32 edx_94;
-		byte cl_95;
-		byte al_96;
-		byte SO_97;
-		byte SZO_98;
-		byte C_99;
-		byte Z_100;
-		sin();
-		dwLoc08_102 = dwLoc08_102 + 0x01;
+		putchar(0x0A);
+		dwLoc08_28 = dwLoc08_28 + 0x01;
 	}
-	word32 esp_59;
-	word32 ebp_60;
-	byte SCZO_61;
-	word32 ecx_62;
-	word32 eax_63;
-	word32 edx_64;
-	byte cl_65;
-	byte al_66;
-	byte SO_67;
-	byte SZO_68;
-	byte C_69;
-	byte Z_70;
-	sin();
-	return;
+	putchar(0x0A);
 }
 
 // 0804CD85: FpuStack real64 quantum_imag(Stack word32 dwArg08)
@@ -3062,115 +2145,85 @@ real64 quantum_real(word32 dwArg04)
 	return (real64) dwArg04;
 }
 
-// 0804CDBA: void quantum_mmult(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C, Stack word32 dwArg14)
-void quantum_mmult(word32 ebp, Eq_380 * gs, word32 dwArg0C, word32 dwArg14)
+// 0804CDBA: void quantum_mmult(Stack (ptr Eq_6360) dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C, Stack word32 dwArg10, Stack int32 dwArg14, Stack int32 dwArg18, Stack word32 dwArg1C)
+void quantum_mmult(Eq_6360 * dwArg04, int32 dwArg08, int32 dwArg0C, word32 dwArg10, int32 dwArg14, int32 dwArg18, word32 dwArg1C)
 {
 	if (dwArg0C != dwArg14)
-		quantum_error(gs, (struct Eq_136 *) 0x04);
-	int32 edx_27 = fp->dw0018;
-	*(fp - 0x44) = fp->dw0008;
-	*(fp - 0x48) = edx_27;
-	*(fp - 0x4C) = fp - 0x28;
-	quantum_new_matrix(fp - 0x04, gs, dwArg04, dwArg08);
-	*(fp - 0x14) = 0x00;
-	while (fp->dw0018 > *(fp - 0x14))
+		quantum_error(0x04);
+	quantum_new_matrix(fp - 0x28, dwArg18, dwArg08);
+	int32 dwLoc14_109 = 0x00;
+	while (dwArg18 > dwLoc14_109)
 	{
-		*(fp - 0x18) = 0x00;
-		while (fp->dw0008 > *(fp - 0x18))
+		int32 dwLoc18_100 = 0x00;
+		while (dwArg08 > dwLoc18_100)
 		{
-			*(fp - 0x1C) = 0x00;
-			while (fp->dw0014 > *(fp - 0x1C))
+			while (dwArg14 > 0x00)
 			{
-				struct Eq_13476 * eax_117 = *(fp - 0x20) + (*(fp - 0x24) *s *(fp - 0x18) + *(fp - 0x14) << 0x03);
-				struct Eq_13502 * esi_111 = *(fp - 0x20) + (*(fp - 0x24) *s *(fp - 0x18) + *(fp - 0x14) << 0x03);
-				word32 edi_118 = eax_117->dw0000;
-				*(fp - 0x34) = eax_117->r0004;
-				struct Eq_13540 * eax_126 = fp->dw0010 + (fp->dw000C *s *(fp - 0x18) + *(fp - 0x1C) << 0x03);
-				struct Eq_13562 * eax_135 = fp->dw001C + (fp->dw0018 *s *(fp - 0x1C) + *(fp - 0x14) << 0x03);
-				word32 ecx_127 = eax_126->dw0000;
-				word32 edx_136 = eax_135->dw0000;
-				word32 eax_137 = eax_135->dw0004;
-				*(fp - 0x38) = eax_126->r0004;
-				word32 ecx_140 = *(fp - 0x38);
-				*(fp - 0x40) = eax_137;
-				*(fp - 0x44) = edx_136;
-				*(fp - 0x48) = ecx_140;
-				*(fp - 0x4C) = ecx_127;
-				__mulsc3(rArg00, dwArg04, dwArg08, dwArg0C);
-				*(fp - 0x38) = edi_118;
-				real64 rLoc1_151 = (real64) *(fp - 0x38);
-				real64 rLoc2_152 = (real64) *(fp - 0x34);
-				*(fp - 0x38) = eax_137;
-				real64 rLoc3_154 = (real64) *(fp - 0x38);
-				*(fp - 0x38) = edx_136;
-				real64 rLoc2_161 = rLoc2_152 + (real64) (*(fp - 0x38));
-				*(fp - 0x38) = (real32) (rLoc1_151 + rLoc3_154);
-				word32 eax_166 = *(fp - 0x38);
-				*(fp - 0x38) = (real32) rLoc2_161;
-				word32 edx_168 = *(fp - 0x38);
-				esi_111->dw0000 = eax_166;
-				esi_111->dw0004 = edx_168;
-				*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
+				struct Eq_6398 * eax_145 = dwLoc20 + (dwLoc24 *s dwLoc18_100 + dwLoc14_109 << 0x03);
+				struct Eq_6404 * eax_166 = dwArg1C + (dwArg18 *s 0x00 + dwLoc14_109 << 0x03);
+				struct Eq_6410 * eax_156 = dwArg10 + (dwArg0C *s dwLoc18_100 << 0x03);
+				word32 edi_147 = eax_145->dw0000;
+				real32 rLoc34_149 = eax_145->r0004;
+				Eq_106 edx_167 = eax_166->t0000;
+				Eq_106 eax_168 = eax_166->t0004;
+				__mulsc3(eax_156->t0000, eax_156->t0004, edx_167, eax_168);
+				struct Eq_6439 * esi_139 = dwLoc20 + (dwLoc24 *s dwLoc18_100 + dwLoc14_109 << 0x03);
+				esi_139->r0000 = (real32) ((real64) edi_147 + (real64) eax_168);
+				esi_139->r0004 = (real32) ((real64) rLoc34_149 + (real64) edx_167);
 			}
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			dwLoc18_100 = dwLoc18_100 + 0x01;
 		}
-		*(fp - 0x14) = *(fp - 0x14) + 0x01;
+		dwLoc14_109 = dwLoc14_109 + 0x01;
 	}
-	fp->ptr0004->dw0000 = *(fp - 0x28);
-	fp->ptr0004->dw0004 = *(fp - 0x24);
-	fp->ptr0004->dw0008 = *(fp - 0x20);
-	return;
+	dwArg04->dw0000 = dwLoc28;
+	dwArg04->dw0004 = dwLoc24;
+	dwArg04->dw0008 = dwLoc20;
 }
 
-// 0804CF20: FpuStack real64 quantum_frand(Register int32 eax)
-real64 quantum_frand(int32 eax)
+// 0804CF20: FpuStack real64 quantum_frand(Register Eq_106 eax)
+real64 quantum_frand(Eq_106 eax)
 {
-	fn080489F4();
-	return (real64) eax / globals->r8054378;
+	word32 esp_8;
+	word32 ebp_9;
+	byte SCZO_10;
+	word32 eax_11;
+	!rand();
+	return (real64) eax_11 / globals->r8054378;
 }
 
-// 0804CF3D: Register word32 quantum_measure(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs)
-word32 quantum_measure(Eq_3742 * ebp, Eq_380 * gs)
+// 0804CF3D: Register word32 quantum_measure(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg08, Stack Eq_106 dwArg10)
+word32 quantum_measure(Eq_1715 * gs, Eq_106 dwArg08, Eq_106 dwArg10)
 {
-	word32 edx_13;
-	word32 ebx_14;
-	int32 eax_15 = quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x80, dwLoc28, rLoc24, rLoc20, out edx_13, out ebx_14);
-	if (eax_15 != 0x00)
-	{
-		*(fp - 0x1C) = 0x00;
-		*(fp - 0x18) = 0x00;
-	}
+	word32 dwLoc1C_28;
+	Eq_106 eax_13 = quantum_objcode_put(gs, 0x80, dwLoc28, rLoc24, rLoc20);
+	if (eax_13 != 0x00)
+		dwLoc1C_28 = 0x00;
 	else
 	{
-		*(fp - 0x14) = quantum_frand(eax_15);
-		*(fp - 0x08) = 0x00;
-		while (fp->dw0008 > *(fp - 0x08))
+		Eq_370 rLoc14_44 = quantum_frand(eax_13);
+		Eq_106 dwLoc08_45 = 0x00;
+		while (dwArg08 > dwLoc08_45)
 		{
-			struct Eq_13798 * edx_54 = fp->dw0010 + (*(fp - 0x08) << 0x04);
-			*(fp - 44) = edx_54->dw0000;
-			*(fp - 0x28) = edx_54->dw0004;
-			*(fp - 0x14) = *(fp - 0x14) - quantum_prob_inline(dwArg00, dwArg04);
-			if (0.0 >= *(fp - 0x14))
+			word32 edx_66 = dwArg10 + (dwLoc08_45 << 0x04);
+			Eq_370 rLoc1_75 = rLoc14_44 - quantum_prob_inline(edx_66->dw0000, edx_66->dw0004);
+			rLoc14_44 = rLoc1_75;
+			if (0.0 >= rLoc1_75)
 			{
-				struct Eq_13875 * eax_75 = fp->dw0010 + (*(fp - 0x08) << 0x04);
-				word32 ecx_77 = eax_75->dw000C;
-				*(fp - 0x1C) = eax_75->dw0008;
-				*(fp - 0x18) = ecx_77;
-				return *(fp - 0x1C);
+				dwLoc1C_28 = Mem0[dwArg10 + (dwLoc08_45 << 0x04) + 0x08:word32];
+				return dwLoc1C_28;
 			}
-			*(fp - 0x08) = *(fp - 0x08) + 0x01;
+			dwLoc08_45 = dwLoc08_45 + 0x01;
 		}
-		*(fp - 0x1C) = ~0x00;
-		*(fp - 0x18) = ~0x00;
+		dwLoc1C_28 = ~0x00;
 	}
-	return *(fp - 0x1C);
+	return dwLoc1C_28;
 }
 
-// 0804CFE0: FpuStack real64 quantum_prob_inline(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-real64 quantum_prob_inline(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0804CFE0: FpuStack real64 quantum_prob_inline(Stack word32 dwArg04, Stack word32 dwArg08)
+real64 quantum_prob_inline(word32 dwArg04, word32 dwArg08)
 {
-	Eq_13905 rLoc08_15 = (real32) quantum_real(dwArg04);
-	Eq_13912 rLoc0C_21 = (real32) quantum_imag(dwArg08);
+	Eq_6521 rLoc08_15 = (real32) quantum_real(dwArg04);
+	Eq_6527 rLoc0C_21 = (real32) quantum_imag(dwArg08);
 	return (real64) rLoc08_15 * rLoc08_15 + (real64) rLoc0C_21 * rLoc0C_21;
 }
 
@@ -3186,855 +2239,431 @@ real64 quantum_imag(word32 dwArg08)
 	return (real64) dwArg08;
 }
 
-// 0804D055: Register word32 quantum_bmeasure(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-word32 quantum_bmeasure(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804D055: Register word32 quantum_bmeasure(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+word32 quantum_bmeasure(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	struct Eq_13934 * ebp_110 = fp - 0x04;
-	word32 edx_21;
-	word32 ebx_22;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x81, dwArg04, rLoc74, rLoc70, out edx_21, out ebx_22) != 0x00)
-		*(fp - 0x50) = 0x00;
+	word32 dwLoc50_156;
+	word32 dwLoc14_11 = 0x00;
+	Eq_370 rLoc1C_13 = 0.0;
+	if (quantum_objcode_put(gs, 0x81, dwArg04, rLoc74, rLoc70) != 0x00)
+		dwLoc50_156 = 0x00;
 	else
 	{
-		byte cl_52 = (byte) fp->dw0004;
-		ui32 edx_168 = __shld(0x00, 0x01, cl_52);
-		ui32 eax_169 = 0x01 << cl_52;
-		if ((cl_52 & 0x20) != 0x00)
+		byte cl_74 = (byte) dwArg04;
+		Eq_763 edx_197 = __shld(0x00, 0x01, cl_74);
+		Eq_763 eax_198 = 0x01 << cl_74;
+		if ((cl_74 & 0x20) != 0x00)
 		{
-			edx_168 = eax_169;
-			eax_169 = 0x00;
+			edx_197 = eax_198;
+			eax_198.u0 = 0x00;
 		}
-		*(fp - 44) = eax_169;
-		*(fp - 0x28) = edx_168;
-		*(fp - 0x10) = 0x00;
+		Eq_106 dwLoc10_181 = 0x00;
 		while (true)
 		{
-			int32 eax_75 = fp->ptr0008->dw0004;
-			if (eax_75 <= *(fp - 0x10))
+			word32 eax_103 = Mem0[dwArg08 + 0x04:word32];
+			if (eax_103 <= dwLoc10_181)
 				break;
-			struct Eq_14009 * eax_136 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			if ((eax_136->dw0008 & *(fp - 44) | eax_136->dw000C & *(fp - 0x28)) == 0x00)
+			word32 eax_162 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_181 << 0x04);
+			if ((eax_162->dw0008 & eax_198 | eax_162->dw000C & edx_197) == 0x00)
 			{
-				struct Eq_14223 * edx_158 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-				*(fp - 0x7C) = edx_158->dw0000;
-				*(fp - 0x78) = edx_158->dw0004;
-				*(fp - 0x1C) = quantum_prob_inline(dwArg00, dwArg04) + *(fp - 0x1C);
+				word32 edx_187 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_181 << 0x04);
+				rLoc1C_13 = quantum_prob_inline(edx_187->dw0000, edx_187->dw0004) + rLoc1C_13;
 			}
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			dwLoc10_181 = dwLoc10_181 + 0x01;
 		}
-		*(fp - 0x24) = quantum_frand(eax_75);
-		if (*(fp - 0x24) > *(fp - 0x1C))
-			*(fp - 0x14) = 0x01;
-		struct Eq_13999 * edx_89 = fp->ptr0008;
-		*(fp - 0x70) = edx_89->dw0000;
-		*(fp - 0x6C) = edx_89->dw0004;
-		*(fp - 0x68) = edx_89->dw0008;
-		*(fp - 100) = edx_89->dw000C;
-		*(fp - 0x60) = edx_89->dw0010;
-		*(fp - 116) = *(fp - 0x14);
-		*(fp - 0x78) = fp->dw0004;
-		*(fp - 0x7C) = fp - 0x40;
-		struct Eq_14144 ** esp_109;
-		quantum_state_collapse(fp - 0x04, gs, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg18, out esp_109, out ebp_110);
-		*esp_109 = (struct Eq_14144 **) ebp_110->ptr000C;
-		quantum_delete_qureg_hashpreserve(dwArg00);
-		struct Eq_14144 * edx_118 = ebp_110->ptr000C;
-		edx_118->dw0000 = *(ebp_110 - 0x3C);
-		edx_118->dw0004 = *(ebp_110 - 0x38);
-		edx_118->dw0008 = *(ebp_110 - 0x34);
-		edx_118->dw000C = *(ebp_110 - 0x30);
-		edx_118->dw0010 = *(ebp_110 - 44);
-		*(ebp_110 - 0x4C) = *(ebp_110 - 0x10);
+		if (quantum_frand(eax_103) > rLoc1C_13)
+			dwLoc14_11 = 0x01;
+		quantum_state_collapse(fp - 0x40, dwArg04, dwLoc14_11, *dwArg08, Mem0[dwArg08 + 0x04:word32], Mem0[dwArg08 + 0x08:word32], Mem0[dwArg08 + 0x0C:word32], Mem0[dwArg08 + 0x10:word32]);
+		quantum_delete_qureg_hashpreserve(dwArg08);
+		*dwArg08 = dwLoc40;
+		Mem145[dwArg08 + 0x04:word32] = dwLoc3C;
+		Mem148[dwArg08 + 0x08:word32] = dwLoc38;
+		Mem151[dwArg08 + 0x0C:word32] = dwLoc34;
+		Mem154[dwArg08 + 0x10:word32] = dwLoc30;
+		dwLoc50_156 = dwLoc14_11;
 	}
-	return *(ebp_110 - 0x4C);
+	return dwLoc50_156;
 }
 
-// 0804D1A8: void quantum_bmeasure_bitpreserve(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_bmeasure_bitpreserve(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804D1A8: void quantum_bmeasure_bitpreserve(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_bmeasure_bitpreserve(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	word32 edx_27;
-	word32 ebx_28;
-	if (quantum_objcode_put(fp - 0x04, gs, (struct Eq_136 *) 0x82, dwArg04, rLoc94, rLoc90, out edx_27, out ebx_28) != 0x00)
-		*(fp - 116) = 0x00;
-	else
+	Eq_106 dwLoc18_134 = 0x00;
+	word32 dwLoc1C_131 = 0x00;
+	real64 rLoc24_133 = 0.0;
+	Eq_370 rLoc2C_104 = 0.0;
+	if (quantum_objcode_put(gs, 0x82, dwArg04, rLoc94, rLoc90) == 0x00)
 	{
-		byte cl_65 = (byte) fp->dw0004;
-		ui32 edx_371 = __shld(0x00, 0x01, cl_65);
-		ui32 eax_372 = 0x01 << cl_65;
-		if ((cl_65 & 0x20) != 0x00)
+		byte cl_89 = (byte) dwArg04;
+		Eq_763 edx_400 = __shld(0x00, 0x01, cl_89);
+		Eq_763 eax_100 = 0x01 << cl_89;
+		if ((cl_89 & 0x20) != 0x00)
 		{
-			edx_371 = eax_372;
-			eax_372 = 0x00;
+			edx_400 = eax_100;
+			eax_100.u0 = 0x00;
 		}
-		*(fp - 0x3C) = eax_372;
-		*(fp - 0x38) = edx_371;
-		*(fp - 0x10) = 0x00;
+		Eq_106 dwLoc10_103 = 0x00;
 		while (true)
 		{
-			int32 eax_88 = fp->ptr0008->dw0004;
-			if (eax_88 <= *(fp - 0x10))
+			word32 eax_118 = Mem0[dwArg08 + 0x04:word32];
+			if (eax_118 <= dwLoc10_103)
 				break;
-			struct Eq_14337 * eax_339 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			if ((eax_339->dw0008 & *(fp - 0x3C) | eax_339->dw000C & *(fp - 0x38)) == 0x00)
+			word32 eax_365 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_103 << 0x04);
+			if ((eax_365->dw0008 & eax_100 | eax_365->dw000C & edx_400) == 0x00)
 			{
-				struct Eq_14415 * edx_361 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-				*(fp - 0x9C) = edx_361->dw0000;
-				*(fp - 0x98) = edx_361->dw0004;
-				*(fp - 44) = quantum_prob_inline(dwArg00, dwArg04) + *(fp - 44);
+				word32 edx_390 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_103 << 0x04);
+				rLoc2C_104 = quantum_prob_inline(edx_390->dw0000, edx_390->dw0004) + rLoc2C_104;
 			}
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			dwLoc10_103 = dwLoc10_103 + 0x01;
 		}
-		*(fp - 0x34) = quantum_frand(eax_88);
-		if (*(fp - 0x34) > *(fp - 44))
-			*(fp - 0x1C) = 0x01;
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr0008->dw0004 > *(fp - 0x10))
+		if (quantum_frand(eax_118) > rLoc2C_104)
+			dwLoc1C_131 = 0x01;
+		Eq_106 dwLoc10_132 = 0x00;
+		while (Mem0[dwArg08 + 0x04:word32] > dwLoc10_132)
 		{
-			struct Eq_14472 * eax_257 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			if ((eax_257->dw0008 & *(fp - 0x3C) | eax_257->dw000C & *(fp - 0x38)) != 0x00)
+			word32 eax_279 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_132 << 0x04);
+			if ((eax_279->dw0008 & eax_100 | eax_279->dw000C & edx_400) != 0x00)
 			{
-				if (*(fp - 0x1C) == 0x00)
+				if (dwLoc1C_131 == 0x00)
 				{
-					struct Eq_14695 * edx_282 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-					edx_282->dw0000 = 0x00;
-					edx_282->dw0004 = 0x00;
+					word32 edx_308 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_132 << 0x04);
+					edx_308->dw0000 = 0x00;
+					edx_308->dw0004 = 0x00;
 				}
 				else
 				{
-					struct Eq_14640 * edx_292 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-					*(fp - 0x9C) = edx_292->dw0000;
-					*(fp - 0x98) = edx_292->dw0004;
-					*(fp - 0x24) = quantum_prob_inline(dwArg00, dwArg04) + *(fp - 0x24);
-					*(fp - 0x18) = *(fp - 0x18) + 0x01;
+					word32 edx_318 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_132 << 0x04);
+					rLoc24_133 = quantum_prob_inline(edx_318->dw0000, edx_318->dw0004) + rLoc24_133;
+					dwLoc18_134 = dwLoc18_134 + 0x01;
 				}
 			}
-			else if (*(fp - 0x1C) != 0x00)
+			else if (dwLoc1C_131 != 0x00)
 			{
-				struct Eq_14785 * edx_311 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-				edx_311->dw0000 = 0x00;
-				edx_311->dw0004 = 0x00;
+				word32 edx_337 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_132 << 0x04);
+				edx_337->dw0000 = 0x00;
+				edx_337->dw0004 = 0x00;
 			}
 			else
 			{
-				struct Eq_14730 * edx_321 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-				*(fp - 0x9C) = edx_321->dw0000;
-				*(fp - 0x98) = edx_321->dw0004;
-				*(fp - 0x24) = quantum_prob_inline(dwArg00, dwArg04) + *(fp - 0x24);
-				*(fp - 0x18) = *(fp - 0x18) + 0x01;
+				word32 edx_347 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_132 << 0x04);
+				rLoc24_133 = quantum_prob_inline(edx_347->dw0000, edx_347->dw0004) + rLoc24_133;
+				dwLoc18_134 = dwLoc18_134 + 0x01;
 			}
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			dwLoc10_132 = dwLoc10_132 + 0x01;
 		}
-		*(fp - 0x4C) = *(fp - 0x18);
-		word32 eax_115 = *(fp - 0x18);
-		*(fp - 0x98) = 0x10;
-		*(fp - 0x9C) = eax_115;
-		struct Eq_14569 ** esp_118;
-		struct Eq_14535 * ebp_119;
-		word32 esi_120;
-		word32 ebx_121;
-		byte SCZO_122;
-		word32 eax_123;
-		byte SZO_124;
-		byte C_125;
-		byte Z_126;
-		word32 ecx_127;
-		word32 edx_128;
-		byte cl_129;
-		byte FPUF_130;
-		byte CZ_131;
-		bool P_132;
-		struct Eq_380 * gs_133;
-		log();
-		*(ebp_119 - 0x40) = eax_123;
-		if (*(ebp_119 - 0x40) == 0x00)
+		Eq_106 eax_154 = calloc(dwLoc18_134, 0x10);
+		if (eax_154 == 0x00)
+			quantum_error(0x02);
+		quantum_memman(dwLoc18_134 << 0x04);
+		word32 eax_165 = Mem0[dwArg08 + 0x08:word32];
+		word32 eax_168 = Mem0[dwArg08 + 0x10:word32];
+		Eq_106 eax_171 = *dwArg08;
+		Eq_106 dwLoc10_173 = 0x00;
+		while (Mem0[dwArg08 + 0x04:word32] > dwLoc10_173)
 		{
-			*esp_118 = (struct Eq_14569 **) (struct Eq_14569 *) 0x02;
-			quantum_error(gs_133, dwArg00);
-		}
-		*esp_118 = (struct Eq_14569 **) (*(ebp_119 - 0x14) << 0x04);
-		quantum_memman(dwArg00);
-		*(ebp_119 - 0x44) = ebp_119->ptr000C->dw0008;
-		*(ebp_119 - 0x3C) = ebp_119->ptr000C->dw0010;
-		*(ebp_119 - 0x4C) = ebp_119->ptr000C->dw0000;
-		*(ebp_119 - 0x0C) = 0x00;
-		*(ebp_119 - 0x10) = 0x00;
-		if (ebp_119->ptr000C->dw0004 > *(ebp_119 - 0x0C))
-		{
-			struct Eq_14820 * eax_186 = ebp_119->ptr000C->dw000C + (*(ebp_119 - 0x0C) << 0x04);
-			word32 edx_187 = eax_186->dw0000;
-			*(ebp_119 - 0x6C) = eax_186->dw0004;
-			*(ebp_119 - 0x84) = edx_187;
-			if ((real64) *(ebp_119 - 0x84) == 0.0 && !P_132)
+			word32 eax_208 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_173 << 0x04);
+			word32 eax_210 = eax_208->dw0004;
+			if ((real64) eax_208->dw0000 != 0.0 || P)
 			{
-				Eq_15025 rLoc1_237 = (real64) *(ebp_119 - 0x6C);
-				Eq_15025 v25_239 = 0.0;
-				if (!P_132 && rLoc1_237 == v25_239)
-				{
-					*(ebp_119 - 0x0C) = *(ebp_119 - 0x0C) + 0x01;
-					goto l0804D4E9;
-				}
+l0804D425:
+				word32 eax_235 = Mem0[dwArg08 + 0x0C:word32] + (dwLoc10_173 << 0x04);
+				Eq_106 edx_236 = eax_235->t000C;
+				Mem238[eax_154 + 0x08:word32] = Mem0[eax_235 + 0x08:word32];
+				Mem239[eax_154 + 0x0C:word32] = edx_236;
+				sqrt(rLoc24_133);
 			}
-			struct Eq_14922 * eax_213 = ebp_119->ptr000C->dw000C + (*(ebp_119 - 0x0C) << 0x04);
-			struct Eq_14937 * ecx_208 = *(ebp_119 - 0x40) + (*(ebp_119 - 0x10) << 0x04);
-			word32 edx_214 = eax_213->dw000C;
-			ecx_208->dw0008 = eax_213->dw0008;
-			ecx_208->dw000C = edx_214;
-			*(ebp_119 - 0x68) = *(ebp_119 - 0x40) + (*(ebp_119 - 0x10) << 0x04);
-			struct Eq_14982 * eax_228 = ebp_119->ptr000C->dw000C + (*(ebp_119 - 0x0C) << 0x04);
-			*(ebp_119 - 0x60) = eax_228->r0000;
-			*(ebp_119 - 100) = eax_228->r0004;
-			*(ebp_119 - 0x80) = sqrt(*(ebp_119 - 0x20));
+			Eq_6927 rLoc1_260 = (real64) eax_210;
+			Eq_6927 v25_262 = 0.0;
+			if (P || rLoc1_260 != v25_262)
+				goto l0804D425;
+			dwLoc10_173 = dwLoc10_173 + 0x01;
 		}
-		*esp_118 = (struct Eq_14569 **) ebp_119->ptr000C;
-		quantum_delete_qureg_hashpreserve(dwArg00);
-		struct Eq_14569 * edx_169 = ebp_119->ptr000C;
-		edx_169->dw0000 = *(ebp_119 - 0x4C);
-		edx_169->dw0004 = *(ebp_119 - 0x48);
-		edx_169->dw0008 = *(ebp_119 - 0x44);
-		edx_169->dw000C = *(ebp_119 - 0x40);
-		edx_169->dw0010 = *(ebp_119 - 0x3C);
-		*(ebp_119 - 0x70) = *(ebp_119 - 0x18);
+		quantum_delete_qureg_hashpreserve(dwArg08);
+		*dwArg08 = eax_171;
+		Mem195[dwArg08 + 0x04:word32] = dwLoc18_134;
+		Mem197[dwArg08 + 0x08:word32] = eax_165;
+		Mem199[dwArg08 + 0x0C:word32] = eax_154;
+		Mem201[dwArg08 + 0x10:word32] = eax_168;
 	}
-	return;
 }
 
-// 0804D538: void test_sum(Register byte bpl, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-void test_sum(byte bpl, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 0804D538: void test_sum(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void test_sum(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
-	byte cl_22 = (byte) (dwArg08 - 0x01);
-	uint32 eax_25 = __shrd(dwArg04, dwArg04 >> 0x1F, cl_22);
-	uint32 edx_27 = dwArg04 >> 0x1F >> cl_22;
-	if ((cl_22 & 0x20) != 0x00)
-		eax_25 = edx_27;
-	if ((byte) (eax_25 & 0x01) != 0x00)
+	byte cl_21 = (byte) (dwArg08 - 0x01);
+	uint32 eax_24 = __shrd(dwArg04, dwArg04 >> 0x1F, cl_21);
+	uint32 edx_26 = dwArg04 >> 0x1F >> cl_21;
+	if ((cl_21 & 0x20) != 0x00)
+		eax_24 = edx_26;
+	if ((byte) (eax_24 & 0x01) != 0x00)
 	{
-		quantum_cnot(fp - 0x04, gs, dwArg08 * 0x02 - 0x01, dwArg08 - 0x01, dwArg0C);
-		ui32 edx_310 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x28) = fp->dw000C;
-		*(fp - 44) = edx_310;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		ui32 edx_317 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x24) = fp->dw000C;
-		*(fp - 0x28) = 0x00;
-		*(fp - 44) = edx_317;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, dwArg08 - 0x01, dwArg0C);
+		quantum_sigma_x(gs, dwArg08 * 0x02 - 0x01, dwArg0C);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, 0x00, dwArg0C);
 	}
 	else
 	{
-		quantum_sigma_x(fp - 0x04, gs, dwArg08 * 0x02 - 0x01, dwArg0C);
-		int32 eax_329 = fp->dw0008;
-		ui32 edx_334 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x24) = fp->dw000C;
-		*(fp - 0x28) = eax_329 - 0x01;
-		*(fp - 44) = edx_334;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_sigma_x(gs, dwArg08 * 0x02 - 0x01, dwArg0C);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, dwArg08 - 0x01, dwArg0C);
 	}
-	*(fp - 0x10) = fp->dw0008 - 0x02;
-	while (*(fp - 0x10) > 0x00)
+	Eq_106 dwLoc10_274 = dwArg08 - 0x02;
+	while (dwLoc10_274 > 0x00)
 	{
-		if ((byte) (fp->dw0004 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
+		if ((byte) (dwArg04 >> (byte) dwLoc10_274 & 0x01) != 0x00)
 		{
-			word32 edx_255 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_256 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = *(fp - 0x10);
-			*(fp - 0x28) = edx_255;
-			*(fp - 44) = eax_256 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-			word32 edx_266 = fp->dw0008 + *(fp - 0x10);
-			*(fp - 0x28) = fp->dw000C;
-			*(fp - 44) = edx_266;
-			quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-			word32 ecx_272 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_273 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = 0x00;
-			*(fp - 0x28) = ecx_272;
-			*(fp - 44) = eax_273 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+			quantum_toffoli(gs, dwLoc10_274 + 0x01, dwArg08 + dwLoc10_274, dwLoc10_274, dwArg0C);
+			quantum_sigma_x(gs, dwArg08 + dwLoc10_274, dwArg0C);
+			quantum_toffoli(gs, dwLoc10_274 + 0x01, dwArg08 + dwLoc10_274, 0x00, dwArg0C);
 		}
 		else
 		{
-			word32 edx_282 = fp->dw0008 + *(fp - 0x10);
-			*(fp - 0x28) = fp->dw000C;
-			*(fp - 44) = edx_282;
-			quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-			word32 edx_288 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_289 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = *(fp - 0x10);
-			*(fp - 0x28) = edx_288;
-			*(fp - 44) = eax_289 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+			quantum_sigma_x(gs, dwArg08 + dwLoc10_274, dwArg0C);
+			quantum_toffoli(gs, dwLoc10_274 + 0x01, dwArg08 + dwLoc10_274, dwLoc10_274, dwArg0C);
 		}
-		*(fp - 0x10) = *(fp - 0x10) - 0x01;
+		dwLoc10_274 = dwLoc10_274 - 0x01;
 	}
-	if ((byte) (fp->dw0004 & 0x01) != 0x00)
+	if ((byte) (dwArg04 & 0x01) != 0x00)
 	{
-		*(fp - 0x28) = fp->dw000C;
-		*(fp - 44) = fp->dw0008;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x20) = fp->dw000C;
-		*(fp - 0x24) = 0x00;
-		*(fp - 0x28) = 0x01;
-		*(fp - 44) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+		quantum_sigma_x(gs, dwArg08, dwArg0C);
+		quantum_toffoli(gs, dwArg08, 0x01, 0x00, dwArg0C);
 	}
-	int32 eax_63 = fp->dw0008;
-	word32 edx_68 = fp->dw0008 * 0x02 + 0x01;
-	*(fp - 0x20) = fp->dw000C;
-	*(fp - 0x24) = eax_63 * 0x02;
-	*(fp - 0x28) = 0x00;
-	*(fp - 44) = edx_68;
-	quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-	if ((byte) (fp->dw0004 & 0x01) != 0x00)
+	quantum_toffoli(gs, dwArg08 * 0x02 + 0x01, 0x00, dwArg08 * 0x02, dwArg0C);
+	if ((byte) (dwArg04 & 0x01) != 0x00)
 	{
-		*(fp - 0x20) = fp->dw000C;
-		*(fp - 0x24) = 0x00;
-		*(fp - 0x28) = 0x01;
-		*(fp - 44) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x28) = fp->dw000C;
-		*(fp - 44) = fp->dw0008;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_toffoli(gs, dwArg08, 0x01, 0x00, dwArg0C);
+		quantum_sigma_x(gs, dwArg08, dwArg0C);
 	}
-	*(fp - 0x10) = 0x01;
-	while (fp->dw0008 - 0x02 >= *(fp - 0x10))
+	Eq_106 dwLoc10_191 = 0x01;
+	while (dwArg08 - 0x02 >= dwLoc10_191)
 	{
-		if ((byte) (fp->dw0004 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
+		if ((byte) (dwArg04 >> (byte) dwLoc10_191 & 0x01) != 0x00)
 		{
-			word32 ecx_176 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_177 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = 0x00;
-			*(fp - 0x28) = ecx_176;
-			*(fp - 44) = eax_177 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-			word32 edx_186 = fp->dw0008 + *(fp - 0x10);
-			*(fp - 0x28) = fp->dw000C;
-			*(fp - 44) = edx_186;
-			quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-			word32 edx_192 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_193 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = *(fp - 0x10);
-			*(fp - 0x28) = edx_192;
-			*(fp - 44) = eax_193 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+			quantum_toffoli(gs, dwLoc10_191 + 0x01, dwArg08 + dwLoc10_191, 0x00, dwArg0C);
+			quantum_sigma_x(gs, dwArg08 + dwLoc10_191, dwArg0C);
+			quantum_toffoli(gs, dwLoc10_191 + 0x01, dwArg08 + dwLoc10_191, dwLoc10_191, dwArg0C);
 		}
 		else
 		{
-			word32 edx_203 = fp->dw0008 + *(fp - 0x10);
-			word32 eax_204 = *(fp - 0x10);
-			*(fp - 0x20) = fp->dw000C;
-			*(fp - 0x24) = *(fp - 0x10);
-			*(fp - 0x28) = edx_203;
-			*(fp - 44) = eax_204 + 0x01;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-			word32 edx_214 = fp->dw0008 + *(fp - 0x10);
-			*(fp - 0x28) = fp->dw000C;
-			*(fp - 44) = edx_214;
-			quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+			quantum_toffoli(gs, dwLoc10_191 + 0x01, dwArg08 + dwLoc10_191, dwLoc10_191, dwArg0C);
+			quantum_sigma_x(gs, dwArg08 + dwLoc10_191, dwArg0C);
 		}
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		dwLoc10_191 = dwLoc10_191 + 0x01;
 	}
-	if ((byte) (fp->dw0004 >> (byte) (fp->dw0008 - 0x01) & 0x01) != 0x00)
+	if ((byte) (dwArg04 >> (byte) (dwArg08 - 0x01) & 0x01) != 0x00)
 	{
-		ui32 edx_120 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x24) = fp->dw000C;
-		*(fp - 0x28) = 0x00;
-		*(fp - 44) = edx_120;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		ui32 edx_128 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x28) = fp->dw000C;
-		*(fp - 44) = edx_128;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		int32 eax_132 = fp->dw0008;
-		ui32 edx_137 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x24) = fp->dw000C;
-		*(fp - 0x28) = eax_132 - 0x01;
-		*(fp - 44) = edx_137;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, 0x00, dwArg0C);
+		quantum_sigma_x(gs, dwArg08 * 0x02 - 0x01, dwArg0C);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, dwArg08 - 0x01, dwArg0C);
 	}
 	else
 	{
-		int32 eax_142 = fp->dw0008;
-		ui32 edx_147 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x24) = fp->dw000C;
-		*(fp - 0x28) = eax_142 - 0x01;
-		*(fp - 44) = edx_147;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		ui32 edx_155 = fp->dw0008 * 0x02 - 0x01;
-		*(fp - 0x28) = fp->dw000C;
-		*(fp - 44) = edx_155;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_cnot(gs, dwArg08 * 0x02 - 0x01, dwArg08 - 0x01, dwArg0C);
+		quantum_sigma_x(gs, dwArg08 * 0x02 - 0x01, dwArg0C);
 	}
-	return;
 }
 
-// 0804D8FE: void muxfa(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg20)
-void muxfa(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, word32 dwArg20)
+// 0804D8FE: void muxfa(Register (ptr Eq_1715) gs, Stack word32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14, Stack Eq_106 dwArg18, Stack Eq_106 dwArg20)
+void muxfa(Eq_1715 * gs, word32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14, Eq_106 dwArg18, Eq_106 dwArg20)
 {
-	if (dwArg04 == null)
+	if (dwArg04 == 0x00)
 	{
-		quantum_toffoli(fp - 0x04, gs, dwArg08, dwArg0C, dwArg10, dwArg20);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
 	}
-	if (fp->dw0004 == 0x03)
+	if (dwArg04 == 0x03)
 	{
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_toffoli(gs, dwArg18, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg18, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
 	}
-	if (fp->dw0004 == 0x01)
+	if (dwArg04 == 0x01)
 	{
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
 	}
-	if (fp->dw0004 == 0x02)
+	if (dwArg04 == 0x02)
 	{
-		*(fp - 0x18) = fp->dw0020;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x18) = fp->dw0020;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_sigma_x(gs, dwArg14, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
+		quantum_sigma_x(gs, dwArg14, dwArg20);
 	}
-	return;
 }
 
-// 0804DBA7: void muxfa_inv(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C, Stack word32 dwArg20)
-void muxfa_inv(ptr32 ebp, Eq_380 * gs, word32 dwArg04, int32 dwArg08, int32 dwArg0C, word32 dwArg20)
+// 0804DBA7: void muxfa_inv(Register (ptr Eq_1715) gs, Stack word32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14, Stack Eq_106 dwArg18, Stack Eq_106 dwArg20)
+void muxfa_inv(Eq_1715 * gs, word32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14, Eq_106 dwArg18, Eq_106 dwArg20)
 {
-	if (dwArg04 == null)
+	if (dwArg04 == 0x00)
 	{
-		quantum_cnot(fp - 0x04, gs, dwArg08, dwArg0C, dwArg20);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
 	}
-	if (fp->dw0004 == 0x03)
+	if (dwArg04 == 0x03)
 	{
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_cnot(gs, dwArg18, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg0C, dwArg10, dwArg20);
 	}
-	if (fp->dw0004 == 0x01)
+	if (dwArg04 == 0x01)
 	{
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
 	}
-	if (fp->dw0004 == 0x02)
+	if (dwArg04 == 0x02)
 	{
-		*(fp - 0x18) = fp->dw0020;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x14) = fp->dw0020;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0010;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x10) = fp->dw0020;
-		*(fp - 0x14) = fp->dw0008;
-		*(fp - 0x18) = fp->dw0014;
-		*(fp - 0x1C) = fp->dw0018;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x18) = fp->dw0020;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_sigma_x(gs, dwArg14, dwArg20);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg0C, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_toffoli(gs, dwArg08, dwArg0C, dwArg10, dwArg20);
+		quantum_toffoli(gs, dwArg18, dwArg14, dwArg08, dwArg20);
+		quantum_sigma_x(gs, dwArg14, dwArg20);
 	}
-	return;
 }
 
-// 0804DE50: void muxha(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg1C)
-void muxha(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg1C)
+// 0804DE50: void muxha(Register (ptr Eq_1715) gs, Stack word32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14, Stack Eq_106 dwArg1C)
+void muxha(Eq_1715 * gs, word32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14, Eq_106 dwArg1C)
 {
-	if (dwArg04 == null)
-		quantum_cnot(fp - 0x04, gs, dwArg08, dwArg0C, dwArg1C);
-	if (fp->dw0004 == 0x03)
+	if (dwArg04 == 0x00)
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+	if (dwArg04 == 0x03)
 	{
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_cnot(gs, dwArg14, dwArg0C, dwArg1C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
 	}
-	if (fp->dw0004 == 0x01)
+	if (dwArg04 == 0x01)
 	{
-		*(fp - 0x10) = fp->dw001C;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0010;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_toffoli(gs, dwArg14, dwArg10, dwArg0C, dwArg1C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
 	}
-	if (fp->dw0004 == 0x02)
+	if (dwArg04 == 0x02)
 	{
-		*(fp - 0x18) = fp->dw001C;
-		*(fp - 0x1C) = fp->dw0010;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x10) = fp->dw001C;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0010;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x18) = fp->dw001C;
-		*(fp - 0x1C) = fp->dw0010;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_sigma_x(gs, dwArg10, dwArg1C);
+		quantum_toffoli(gs, dwArg14, dwArg10, dwArg0C, dwArg1C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+		quantum_sigma_x(gs, dwArg10, dwArg1C);
 	}
-	return;
 }
 
-// 0804DF51: void muxha_inv(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack ui32 dwArg0C, Stack word32 dwArg1C)
-void muxha_inv(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, ui32 dwArg0C, word32 dwArg1C)
+// 0804DF51: void muxha_inv(Register (ptr Eq_1715) gs, Stack word32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14, Stack Eq_106 dwArg1C)
+void muxha_inv(Eq_1715 * gs, word32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14, Eq_106 dwArg1C)
 {
-	if (dwArg04 == null)
-		quantum_cnot(fp - 0x04, gs, dwArg08, dwArg0C, dwArg1C);
-	if (fp->dw0004 == 0x03)
+	if (dwArg04 == 0x00)
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+	if (dwArg04 == 0x03)
 	{
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+		quantum_cnot(gs, dwArg14, dwArg0C, dwArg1C);
 	}
-	if (fp->dw0004 == 0x01)
+	if (dwArg04 == 0x01)
 	{
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw001C;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0010;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+		quantum_toffoli(gs, dwArg14, dwArg10, dwArg0C, dwArg1C);
 	}
-	if (fp->dw0004 == 0x02)
+	if (dwArg04 == 0x02)
 	{
-		*(fp - 0x18) = fp->dw001C;
-		*(fp - 0x1C) = fp->dw0010;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x14) = fp->dw001C;
-		*(fp - 0x18) = fp->dw000C;
-		*(fp - 0x1C) = fp->dw0008;
-		quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-		*(fp - 0x10) = fp->dw001C;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = fp->dw0010;
-		*(fp - 0x1C) = fp->dw0014;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x18) = fp->dw001C;
-		*(fp - 0x1C) = fp->dw0010;
-		quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
+		quantum_sigma_x(gs, dwArg10, dwArg1C);
+		quantum_cnot(gs, dwArg08, dwArg0C, dwArg1C);
+		quantum_toffoli(gs, dwArg14, dwArg10, dwArg0C, dwArg1C);
+		quantum_sigma_x(gs, dwArg10, dwArg1C);
 	}
-	return;
 }
 
-// 0804E052: void madd(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C)
-void madd(ptr32 ebp, Eq_380 * gs, word32 dwArg0C)
+// 0804E052: void madd(Register (ptr Eq_1715) gs, Stack int32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void madd(Eq_1715 * gs, int32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	while (fp->dw000C - 0x01 > *(fp - 0x10))
+	Eq_106 dwLoc10_162 = 0x00;
+	while (dwArg0C - 0x01 > dwLoc10_162)
 	{
-		if ((byte) (fp->dw0004 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
-			*(fp - 0x14) = 0x02;
+		word32 dwLoc14_127;
+		if ((byte) (dwArg04 >> (byte) dwLoc10_162 & 0x01) != 0x00)
+			dwLoc14_127 = 0x02;
 		else
-			*(fp - 0x14) = 0x00;
-		if ((byte) (fp->dw0008 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
-			*(fp - 0x14) = *(fp - 0x14) + 0x01;
-		word32 ebx_120 = fp->dw000C * 0x02 + 0x01;
-		int32 eax_121 = fp->dw000C;
-		word32 eax_123 = *(fp - 0x10);
-		word32 edx_127 = fp->dw000C + *(fp - 0x10);
-		*(fp - 0x20) = fp->dw0010;
-		*(fp - 0x24) = *(fp - 0x18);
-		*(fp - 0x28) = ebx_120;
-		*(fp - 44) = eax_121 * 0x02;
-		*(fp - 0x30) = eax_123 + 0x01;
-		*(fp - 0x34) = *(fp - 0x10);
-		*(fp - 0x38) = edx_127;
-		*(fp - 0x3C) = *(fp - 0x14);
-		muxfa(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C, dwArg1C);
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			dwLoc14_127 = 0x00;
+		if ((byte) (dwArg08 >> (byte) dwLoc10_162 & 0x01) != 0x00)
+			dwLoc14_127 = dwLoc14_127 + 0x01;
+		muxfa(gs, dwLoc14_127, dwArg0C + dwLoc10_162, dwLoc10_162, dwLoc10_162 + 0x01, dwArg0C * 0x02, dwArg0C * 0x02 + 0x01, dwArg10);
+		dwLoc10_162 = dwLoc10_162 + 0x01;
 	}
-	*(fp - 0x14) = 0x00;
-	if ((byte) (fp->dw0004 >> (byte) (fp->dw000C - 0x01) & 0x01) != 0x00)
-		*(fp - 0x14) = 0x02;
-	if ((byte) (fp->dw0008 >> (byte) (fp->dw000C - 0x01) & 0x01) != 0x00)
-		*(fp - 0x14) = *(fp - 0x14) + 0x01;
-	word32 ebx_63 = fp->dw000C * 0x02 + 0x01;
-	int32 eax_64 = fp->dw000C;
-	int32 eax_66 = fp->dw000C;
-	ui32 ecx_71 = fp->dw000C * 0x02 - 0x01;
-	*(fp - 0x24) = fp->dw0010;
-	*(fp - 0x28) = *(fp - 0x18);
-	*(fp - 44) = ebx_63;
-	*(fp - 0x30) = eax_64 * 0x02;
-	*(fp - 0x34) = eax_66 - 0x01;
-	*(fp - 0x38) = ecx_71;
-	*(fp - 0x3C) = *(fp - 0x14);
-	muxha(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg18);
-	return;
-}
-
-// 0804E187: void madd_inv(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack ui32 dwArg10)
-void madd_inv(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, ui32 dwArg10)
-{
-	word32 dwLoc14_146 = 0x00;
+	word32 dwLoc14_115 = 0x00;
 	if ((byte) (dwArg04 >> (byte) (dwArg0C - 0x01) & 0x01) != 0x00)
-		dwLoc14_146 = 0x02;
+		dwLoc14_115 = 0x02;
 	if ((byte) (dwArg08 >> (byte) (dwArg0C - 0x01) & 0x01) != 0x00)
-		dwLoc14_146 = dwLoc14_146 + 0x01;
-	muxha_inv(fp - 0x04, gs, dwLoc14_146, dwArg0C - 0x01, dwArg0C * 0x02 - 0x01, dwArg10);
-	*(fp - 0x10) = fp->dw000C - 0x02;
-	while (*(fp - 0x10) >= 0x00)
+		dwLoc14_115 = dwLoc14_115 + 0x01;
+	muxha(gs, dwLoc14_115, dwArg0C * 0x02 - 0x01, dwArg0C - 0x01, dwArg0C * 0x02, dwArg0C * 0x02 + 0x01, dwArg10);
+}
+
+// 0804E187: void madd_inv(Register (ptr Eq_1715) gs, Stack int32 dwArg04, Stack int32 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void madd_inv(Eq_1715 * gs, int32 dwArg04, int32 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
+{
+	word32 dwLoc14_156 = 0x00;
+	if ((byte) (dwArg04 >> (byte) (dwArg0C - 0x01) & 0x01) != 0x00)
+		dwLoc14_156 = 0x02;
+	if ((byte) (dwArg08 >> (byte) (dwArg0C - 0x01) & 0x01) != 0x00)
+		dwLoc14_156 = dwLoc14_156 + 0x01;
+	muxha_inv(gs, dwLoc14_156, dwArg0C - 0x01, dwArg0C * 0x02 - 0x01, dwArg0C * 0x02, dwArg0C * 0x02 + 0x01, dwArg10);
+	Eq_106 dwLoc10_148 = dwArg0C - 0x02;
+	while (dwLoc10_148 >= 0x00)
 	{
-		if ((byte) (fp->dw0004 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
-			*(fp - 0x14) = 0x02;
+		word32 dwLoc14_111;
+		if ((byte) (dwArg04 >> (byte) dwLoc10_148 & 0x01) != 0x00)
+			dwLoc14_111 = 0x02;
 		else
-			*(fp - 0x14) = 0x00;
-		if ((byte) (fp->dw0008 >> (byte) (*(fp - 0x10)) & 0x01) != 0x00)
-			*(fp - 0x14) = *(fp - 0x14) + 0x01;
-		word32 ebx_112 = fp->dw000C * 0x02 + 0x01;
-		ui32 eax_113 = fp->dw000C;
-		word32 ecx_118 = fp->dw000C + 0x01 + *(fp - 0x10);
-		word32 edx_122 = fp->dw000C + *(fp - 0x10);
-		*(fp - 0x20) = fp->dw0010;
-		*(fp - 0x24) = *(fp - 0x18);
-		*(fp - 0x28) = ebx_112;
-		*(fp - 44) = eax_113 * 0x02;
-		*(fp - 0x30) = ecx_118;
-		*(fp - 0x34) = edx_122;
-		*(fp - 0x38) = *(fp - 0x10);
-		*(fp - 0x3C) = *(fp - 0x14);
-		muxfa_inv(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg1C);
-		*(fp - 0x10) = *(fp - 0x10) - 0x01;
+			dwLoc14_111 = 0x00;
+		if ((byte) (dwArg08 >> (byte) dwLoc10_148 & 0x01) != 0x00)
+			dwLoc14_111 = dwLoc14_111 + 0x01;
+		muxfa_inv(gs, dwLoc14_111, dwLoc10_148, dwArg0C + dwLoc10_148, dwArg0C + 0x01 + dwLoc10_148, dwArg0C * 0x02, dwArg0C * 0x02 + 0x01, dwArg10);
+		dwLoc10_148 = dwLoc10_148 - 0x01;
 	}
-	return;
 }
 
-// 0804E2BE: void addn(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
-void addn(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
+// 0804E2BE: void addn(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void addn(Eq_1715 * gs, Eq_84 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	test_sum((byte) (fp - 0x04), gs, dwArg04 - dwArg08, dwArg0C, dwArg10);
-	word32 edx_31 = (0x01 << (byte) fp->dw000C) + fp->dw0008 - fp->dw0004;
-	*(fp - 0x10) = fp->dw0010;
-	*(fp - 0x14) = fp->dw000C;
-	*(fp - 0x18) = fp->dw0008;
-	*(fp - 0x1C) = edx_31;
-	madd(fp - 0x04, gs, dwArg08);
-	return;
+	test_sum(gs, dwArg04 - dwArg08, dwArg0C, dwArg10);
+	madd(gs, (0x01 << (byte) dwArg0C) + dwArg08 - dwArg04, dwArg08, dwArg0C, dwArg10);
 }
 
-// 0804E317: void addn_inv(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C, Stack word32 dwArg10)
-void addn_inv(ptr32 ebp, Eq_380 * gs, word32 dwArg0C, word32 dwArg10)
+// 0804E317: void addn_inv(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void addn_inv(Eq_1715 * gs, Eq_84 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	quantum_cnot(fp - 0x04, gs, dwArg0C * 0x02 + 0x01, dwArg0C * 0x02, dwArg10);
-	word32 ecx_24 = fp->dw0004 - fp->dw0008;
-	ui32 ecx_31 = (0x01 << (byte) fp->dw000C) - fp->dw0008;
-	*(fp - 0x10) = fp->dw0010;
-	*(fp - 0x14) = fp->dw000C;
-	*(fp - 0x18) = ecx_24;
-	*(fp - 0x1C) = ecx_31;
-	madd_inv(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-	*(fp - 0x18) = fp->dw0010;
-	*(fp - 0x1C) = fp->dw000C;
-	byte bpl_46 = quantum_swaptheleads(fp - 0x04, gs);
-	struct Eq_18504 * ebp_47 = DPB(fp - 0x04, bpl_46, 0);
-	*(fp - 0x14) = ebp_47->dw0014;
-	*(fp - 0x18) = ebp_47->dw0010;
-	*(fp - 0x1C) = ebp_47->dw000C;
-	test_sum(bpl_46, gs, dwArg00, dwArg04, dwArg08);
-	return;
+	quantum_cnot(gs, dwArg0C * 0x02 + 0x01, dwArg0C * 0x02, dwArg10);
+	madd_inv(gs, (0x01 << (byte) dwArg0C) - dwArg08, dwArg04 - dwArg08, dwArg0C, dwArg10);
+	quantum_swaptheleads(gs, dwArg0C, dwArg10);
+	test_sum(gs, dwArg08, dwArg0C, dwArg10);
 }
 
-// 0804E3A0: void add_mod_n(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C, Stack (ptr Eq_136) dwArg10)
-void add_mod_n(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C, Eq_136 * dwArg10)
+// 0804E3A0: void add_mod_n(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void add_mod_n(Eq_1715 * gs, Eq_84 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	addn(fp - 0x04, gs, dwArg04, dwArg08, dwArg0C, dwArg10);
-	*(fp - 0x10) = fp->dw0010;
-	*(fp - 0x14) = fp->dw000C;
-	*(fp - 0x18) = fp->dw0008;
-	*(fp - 0x1C) = fp->dw0004;
-	addn_inv(fp - 0x04, gs, dwArg08, dwArg0C);
-	return;
+	addn(gs, dwArg04, dwArg08, dwArg0C, dwArg10);
+	addn_inv(gs, dwArg04, dwArg08, dwArg0C, dwArg10);
 }
 
-// 0804E3E8: void quantum_mu2char(Stack word32 dwArg04, Stack word32 dwArg08, Stack ptr32 dwArg0C)
-void quantum_mu2char(word32 dwArg04, word32 dwArg08, ptr32 dwArg0C)
+// 0804E3E8: void quantum_mu2char(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack ptr32 dwArg0C)
+void quantum_mu2char(Eq_106 dwArg04, Eq_106 dwArg08, ptr32 dwArg0C)
 {
-	ui32 dwLoc24_13 = dwArg04;
-	uint32 dwLoc20_16 = dwArg08;
+	Eq_106 dwLoc24_13 = dwArg04;
+	Eq_106 dwLoc20_16 = dwArg08;
 	int32 dwLoc10_101 = 0x00;
 	while (dwLoc10_101 < 0x08)
 	{
@@ -4046,36 +2675,34 @@ void quantum_mu2char(word32 dwArg04, word32 dwArg08, ptr32 dwArg0C)
 			al_110 = (byte) edx_62;
 		*ebx_51 = al_110;
 		byte cl_74 = (byte) (~(dwLoc10_101 - 0x08) * 0x08);
-		uint32 edx_103 = __shld(0x00, 0x01, cl_74);
-		uint32 eax_104 = 0x01 << cl_74;
+		Eq_763 edx_103 = __shld(0x00, 0x01, cl_74);
+		Eq_763 eax_104 = 0x01 << cl_74;
 		if ((cl_74 & 0x20) != 0x00)
 		{
 			edx_103 = eax_104;
-			eax_104 = 0x00;
+			eax_104.u0 = 0x00;
 		}
-		ui64 edx_eax_89 = SEQ(edx_103, eax_104 + ~0x00);
+		ui64 edx_eax_89 = SEQ(edx_103, (word32) eax_104.u1 - 0x01);
 		dwLoc24_13 = dwLoc24_13 & (word32) (edx_eax_89 + 0xFFFFFFFFFF);
 		dwLoc20_16 = dwLoc20_16 & SLICE(edx_eax_89 + 0xFFFFFFFFFF, word32, 32);
 		dwLoc10_101 = dwLoc10_101 + 0x01;
 	}
-	return;
 }
 
-// 0804E481: void quantum_int2char(Stack word32 dwArg04, Stack ptr32 dwArg08)
-void quantum_int2char(word32 dwArg04, ptr32 dwArg08)
+// 0804E481: void quantum_int2char(Stack Eq_106 dwArg04, Stack Eq_7610 dwArg08)
+void quantum_int2char(Eq_106 dwArg04, Eq_7610 dwArg08)
 {
-	Eq_18654 dwLoc0C_12 = 0x00;
+	Eq_7611 dwLoc0C_12 = 0x00;
 	while (dwLoc0C_12 < 0x04)
 	{
-		*((word32) dwLoc0C_12 + dwArg08) = (byte) (int32) (SEQ(dwArg04 >> 0x1F, dwArg04) / (0x01 << (byte) (~(dwLoc0C_12 - 0x04) * 0x08)));
+		Mem62[dwLoc0C_12 + dwArg08:byte] = (byte) (int32) (SEQ(dwArg04 >> 0x1F, dwArg04) / (0x01 << (byte) (~(dwLoc0C_12 - 0x04) * 0x08)));
 		dwArg04 = (int32) (SEQ(dwArg04 >> 0x1F, dwArg04) % (0x01 << (byte) (~(dwLoc0C_12 - 0x04) * 0x08)));
 		dwLoc0C_12 = (word32) dwLoc0C_12 + 0x01;
 	}
-	return;
 }
 
-// 0804E509: void quantum_double2char(Stack word32 dwArg04, Stack word32 dwArg08, Stack ptr32 dwArg0C)
-void quantum_double2char(word32 dwArg04, word32 dwArg08, ptr32 dwArg0C)
+// 0804E509: void quantum_double2char(Stack word32 dwArg04, Stack word32 dwArg08, Stack (ptr byte) dwArg0C)
+void quantum_double2char(word32 dwArg04, word32 dwArg08, byte * dwArg0C)
 {
 	byte * dwLoc08_16 = null;
 	while (dwLoc08_16 <= (byte *) 0x07)
@@ -4083,18 +2710,17 @@ void quantum_double2char(word32 dwArg04, word32 dwArg08, ptr32 dwArg0C)
 		Mem37[dwLoc08_16 + dwArg0C:byte] = (byte) (word32) Mem0[dwLoc08_16 + (fp - 0x1C):byte];
 		dwLoc08_16 = dwLoc08_16 + 0x01;
 	}
-	return;
 }
 
-// 0804E54B: Register word32 quantum_char2mu(Stack (ptr Eq_136) dwArg04, Register out ptr32 edxOut)
-word32 quantum_char2mu(Eq_136 * dwArg04, ptr32 & edxOut)
+// 0804E54B: Register word32 quantum_char2mu(Stack Eq_7665 dwArg04, Register out ptr32 edxOut)
+word32 quantum_char2mu(Eq_7665 dwArg04, ptr32 & edxOut)
 {
 	word32 dwLoc1C_13 = 0x00;
 	word32 dwLoc18_14 = 0x00;
-	Eq_18717 dwLoc10_19 = 0x07;
+	Eq_7671 dwLoc10_19 = 0x07;
 	while (dwLoc10_19 >= 0x00)
 	{
-		ui32 eax_67 = (word32) (byte) (word32) *((word32) dwLoc10_19 + dwArg04);
+		word32 eax_67 = (word32) (byte) (word32) Mem0[dwLoc10_19 + dwArg04:byte];
 		byte cl_75 = (byte) (~(dwLoc10_19 - 0x08) * 0x08);
 		__shld(0x00, eax_67, cl_75);
 		ui32 eax_102 = eax_67 << cl_75;
@@ -4109,782 +2735,505 @@ word32 quantum_char2mu(Eq_136 * dwArg04, ptr32 & edxOut)
 	return dwLoc1C_13;
 }
 
-// 0804E5C6: Register word32 quantum_char2int(Stack (ptr Eq_136) dwArg04)
-word32 quantum_char2int(Eq_136 * dwArg04)
+// 0804E5C6: Register word32 quantum_char2int(Stack Eq_7705 dwArg04)
+word32 quantum_char2int(Eq_7705 dwArg04)
 {
 	word32 dwLoc14_10 = 0x00;
-	Eq_18755 dwLoc0C_15 = 0x03;
+	Eq_7708 dwLoc0C_15 = 0x03;
 	while (dwLoc0C_15 >= 0x00)
 	{
-		dwLoc14_10 = dwLoc14_10 + ((word32) ((byte) ((word32) (*((word32) dwLoc0C_15 + dwArg04)))) << (byte) (~(dwLoc0C_15 - 0x04) * 0x08));
+		dwLoc14_10 = dwLoc14_10 + ((word32) ((byte) ((word32) Mem0[dwLoc0C_15 + dwArg04:byte])) << (byte) (~(dwLoc0C_15 - 0x04) * 0x08));
 		dwLoc0C_15 = dwLoc0C_15 - 0x01;
 	}
 	return dwLoc14_10;
 }
 
-// 0804E61D: FpuStack real64 quantum_char2double(Stack (ptr Eq_136) dwArg04)
-real64 quantum_char2double(Eq_136 * dwArg04)
+// 0804E61D: FpuStack real64 quantum_char2double(Stack (ptr real64) dwArg04)
+real64 quantum_char2double(real64 * dwArg04)
 {
 	return *dwArg04;
 }
 
-// 0804E630: void quantum_objcode_start(Register (ptr Eq_1272) eax, Register (ptr Eq_3953) ebp, Register (ptr Eq_380) gs)
-void quantum_objcode_start(FILE * eax, Eq_3953 * ebp, Eq_380 * gs)
+// 0804E630: void quantum_objcode_start()
+void quantum_objcode_start()
 {
 	globals->dw80560E4 = 0x01;
 	globals->dw80560F0 = 0x01;
-	fn080489B4();
-	globals->ptr80560E8 = eax;
-	if (globals->ptr80560E8 == null)
-		quantum_error(gs, (struct Eq_136 *) 0x02);
-	*(fp - 0x0C) = 0x00010000;
-	quantum_memman(dwArg00);
-	return;
+	globals->t80560E8 = malloc(0x00010000);
+	if (globals->t80560E8 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(0x00010000);
 }
 
 // 0804E67E: void quantum_objcode_stop()
 void quantum_objcode_stop()
 {
 	globals->dw80560E4 = 0x00;
-	fn080488D4();
-	globals->ptr80560E8 = null;
+	free(globals->t80560E8);
+	globals->t80560E8.u0 = 0x00;
 	quantum_memman(-(globals->dw80560F0 << 0x10));
 	globals->dw80560F0 = 0x00;
-	return;
 }
 
-// 0804E6C3: Register word32 quantum_objcode_put(Register (ptr Eq_3953) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack real64 rArg0C, Stack real64 rArg10, Register out ptr32 edxOut, Register out ptr32 ebxOut)
-word32 quantum_objcode_put(Eq_3953 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, real64 rArg0C, real64 rArg10, ptr32 & edxOut, ptr32 & ebxOut)
+// 0804E6C3: Register word32 quantum_objcode_put(Register (ptr Eq_1715) gs, Stack word32 dwArg04, Stack Eq_106 dwArg08, Stack real64 rArg0C, Stack real64 rArg10)
+word32 quantum_objcode_put(Eq_1715 * gs, word32 dwArg04, Eq_106 dwArg08, real64 rArg0C, real64 rArg10)
 {
-	*ebxOut = ebx;
+	word32 dwLoc80_110;
 	byte al_9 = (byte) dwArg04;
+	word32 eax_13 = gs->dw0014;
+	Eq_7780 dwLoc60_16 = 0x00;
 	if (globals->dw80560E4 == 0x00)
 	{
-l0804EA67:
-		word32 eax_39 = *(fp - 0x80);
-		ui32 edx_42 = *(fp - 0x08) ^ gs->dw0014;
-		*edxOut = edx_42;
-		if (edx_42 != 0x00)
-			fn080489C4();
-		return eax_39;
+		dwLoc80_110 = 0x00;
+		goto l0804EA67;
 	}
-	int32 edx_73 = (word32) al_9;
-	if (edx_73 <= 11)
+	int32 edx_69 = (word32) al_9;
+	if (edx_69 <= 11)
 	{
-		if (edx_73 >= 0x07)
+		if (edx_69 >= 0x07)
 		{
 			quantum_int2char(dwArg08, fp - 0x57);
 			quantum_double2char((word32) rArg0C, SLICE(rArg0C, word32, 32), fp - 0x53);
+			dwLoc60_16.u0 = 0x0D;
 			goto l0804E9BD;
 		}
-		if (edx_73 == 0x02)
+		if (edx_69 == 0x02)
 		{
 			quantum_int2char(dwArg08, fp - 0x57);
 			quantum_int2char(dwArg0C, fp - 0x53);
 			quantum_int2char(dwArg10, fp - 0x4F);
+			dwLoc60_16.u0 = 0x0D;
 			goto l0804E9BD;
 		}
-		if (edx_73 <= 0x02)
+		if (edx_69 <= 0x02)
 		{
-			if (edx_73 == 0x00)
+			if (edx_69 == 0x00)
 			{
 				quantum_mu2char(dwArg08, dwArg0C, fp - 0x57);
+				dwLoc60_16.u0 = 0x09;
 				goto l0804E9BD;
 			}
-			if (edx_73 != 0x01)
+			if (edx_69 != 0x01)
 			{
 l0804E9B1:
-				word32 ebx_152;
-				*ebxOut = quantum_error(gs, (struct Eq_136 *) 0x00010001);
+				quantum_error(0x00010001);
 				goto l0804E9BD;
 			}
 l0804E7D8:
 			quantum_int2char(dwArg08, fp - 0x57);
 			quantum_int2char(dwArg0C, fp - 0x53);
+			dwLoc60_16.u0 = 0x09;
 			goto l0804E9BD;
 		}
 		goto l0804E8A9;
 	}
-	if (edx_73 != 0x80)
+	if (edx_69 != 0x80)
 	{
-		if (edx_73 <= 0x80)
+		if (edx_69 <= 0x80)
 		{
-			if (edx_73 != 0x0D)
+			if (edx_69 != 0x0D)
 			{
-				if (edx_73 < 0x0D)
+				if (edx_69 < 0x0D)
 					goto l0804E7D8;
-				if (edx_73 != 0x0E)
+				if (edx_69 != 0x0E)
 					goto l0804E9B1;
 l0804E8A9:
 				quantum_int2char(dwArg08, fp - 0x57);
+				dwLoc60_16.u0 = 0x05;
 				goto l0804E9BD;
 			}
 			quantum_int2char(dwArg08, fp - 0x57);
 			quantum_int2char(dwArg0C, fp - 0x53);
 			quantum_double2char((word32) rArg10, SLICE(rArg10, word32, 32), fp - 0x4F);
+			dwLoc60_16.u0 = 0x11;
 l0804E9BD:
-			if ((word32) globals->t80560EC + *(fp - 0x60) >> 0x10 > globals->t80560EC >> 0x10)
+			if (Mem0[0x080560EC:word32] + dwLoc60_16 >>u 0x10 >u Mem0[0x080560EC:word32] >>u 0x10)
 			{
 				globals->dw80560F0 = globals->dw80560F0 + 0x01;
-				FILE * edx_133 = globals->ptr80560E8;
-				*(fp - 0x98) = globals->dw80560F0 << 0x10;
-				*(fp - 0x9C) = (FILE **) edx_133;
-				globals->ptr80560E8 = feof(*(fp - 0x9C));
-				if (globals->ptr80560E8 == null)
-				{
-					*(fp - 0x9C) = 0x02;
-					word32 ebx_146;
-					*ebxOut = quantum_error(gs, dwArg00);
-				}
-				*(fp - 0x9C) = 0x00010000;
-				quantum_memman(dwArg00);
+				globals->t80560E8 = realloc(globals->t80560E8, globals->dw80560F0 << 0x10);
+				if (globals->t80560E8 == 0x00)
+					quantum_error(0x02);
+				quantum_memman(0x00010000);
 			}
-			*(fp - 0x5C) = 0x00;
-			while (*(fp - 0x5C) < *(fp - 0x60))
+			Eq_7780 dwLoc5C_103 = 0x00;
+			while (dwLoc5C_103 < dwLoc60_16)
 			{
-				Mem121[Mem107[0x080560E8:word32] + Mem107[0x080560EC:word32]:byte] = (byte) (word32) (fp - 88 + *(fp - 0x5C));
-				globals->t80560EC = (word32) globals->t80560EC + 0x01;
-				*(fp - 0x5C) = *(fp - 0x5C) + 0x01;
+				Mem117[Mem0[0x080560E8:word32] + Mem0[0x080560EC:word32]:byte] = (byte) (word32) Mem0[fp - 88 + dwLoc5C_103:byte];
+				Mem120[0x080560EC:word32] = Mem117[0x080560EC:word32] + 0x01;
+				dwLoc5C_103 = (word32) dwLoc5C_103.u0 + 0x01;
 			}
-			*(fp - 0x80) = 0x01;
-			goto l0804EA67;
+			dwLoc80_110 = 0x01;
+l0804EA67:
+			if ((eax_13 ^ gs->dw0014) != 0x00)
+				__stack_chk_fail();
+			return dwLoc80_110;
 		}
-		if (edx_73 <= 0x82)
+		if (edx_69 <= 0x82)
 			goto l0804E8A9;
-		if (edx_73 != 0xFF)
+		if (edx_69 != 0xFF)
 			goto l0804E9B1;
 	}
+	dwLoc60_16.u0 = 0x01;
 	goto l0804E9BD;
 }
 
-// 0804EA7D: void quantum_objcode_write(Stack word32 dwArg04)
-void quantum_objcode_write(word32 dwArg04)
+// 0804EA7D: void quantum_objcode_write(Stack (ptr char) dwArg04)
+void quantum_objcode_write(char * dwArg04)
 {
 	if (globals->dw80560E4 == 0x00)
-		fn08048984();
+		fwrite(0x08054380, 0x01, 0x49, globals->ptr80560A0);
 	else
 	{
-		if (dwArg04 == 0x00)
-			dwArg04 = globals->dw8056100;
-		fn08048924();
-		if (dwArg04 != 0x00)
+		if (dwArg04 == null)
+			dwArg04 = globals->ptr8056100;
+		FILE * eax_45 = fopen(dwArg04, "w");
+		if (eax_45 != null)
 		{
-			fn08048984();
-			fn08048904();
+			fwrite(globals->t80560E8, globals->t80560EC, 0x01, eax_45);
+			fclose(eax_45);
 		}
 	}
-	return;
 }
 
-// 0804EB2B: void quantum_objcode_file(Stack (ptr Eq_136) dwArg04)
-void quantum_objcode_file(Eq_136 * dwArg04)
+// 0804EB2B: void quantum_objcode_file(Stack (ptr char) dwArg04)
+void quantum_objcode_file(char * dwArg04)
 {
-	globals->dw8056100 = dwArg04;
-	return;
+	globals->ptr8056100 = dwArg04;
 }
 
 // 0804EB38: void quantum_objcode_exit()
 void quantum_objcode_exit()
 {
-	quantum_objcode_write(0x00);
+	quantum_objcode_write(null);
 	quantum_objcode_stop();
-	return;
 }
 
-// 0804EB51: void quantum_objcode_run(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08)
-void quantum_objcode_run(word32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08)
+// 0804EB51: void quantum_objcode_run(Register (ptr Eq_1715) gs, Stack (ptr char) dwArg04, Stack Eq_106 dwArg08)
+void quantum_objcode_run(Eq_1715 * gs, char * dwArg04, Eq_106 dwArg08)
 {
-	fn08048924();
-	struct Eq_3742 * ebp_140 = fp - 0x04;
-	if (dwArg04 == null)
+	word32 eax_18 = gs->dw0014;
+	FILE * eax_24 = fopen(dwArg04, "r");
+	if (eax_24 == null)
 	{
-		fn08048994();
-		fn080488C4();
-		goto l0804F2DD;
-	}
-l0804F2BF:
-	word32 eax_99 = *(ebp_140 - 116);
-	*(fp - 252) = eax_99;
-	fn08048954();
-	if (eax_99 != 0x00)
-	{
-		*(fp - 252) = *(ebp_140 - 116);
-		fn08048904();
-l0804F2DD:
-		if ((*(ebp_140 - 0x0C) ^ gs->dw0014) != 0x00)
-			fn080489C4();
-		return;
-	}
-	*(ebp_140 - 0x68) = 0x00;
-	while (*(ebp_140 - 0x68) <= 0x4F)
-	{
-		ebp_140 - 0x5C + *(ebp_140 - 0x68) = (byte *) 0x00;
-		*(ebp_140 - 0x68) = *(ebp_140 - 0x68) + 0x01;
-	}
-	word32 eax_111 = *(ebp_140 - 116);
-	*(fp - 252) = eax_111;
-	fn08048944();
-	byte al_112 = (byte) eax_111;
-	*(ebp_140 - 0x5D) = al_112;
-	*(ebp_140 - 200) = (word32) *(ebp_140 - 0x5D);
-	if (*(ebp_140 - 200) > 11)
-	{
-		if (*(ebp_140 - 200) == 0x80)
-		{
-			struct Eq_20210 * edx_426 = *(ebp_140 - 0x90);
-			*(fp - 252) = edx_426->dw0000;
-			*(fp - 0xF8) = edx_426->dw0004;
-			*(fp - 244) = edx_426->dw0008;
-			*(fp - 0xF0) = edx_426->dw000C;
-			*(fp - 0xEC) = edx_426->dw0010;
-			quantum_measure(ebp_140, gs);
-			goto l0804F2BB;
-		}
-		if (*(ebp_140 - 200) <= 0x80)
-		{
-			if (*(ebp_140 - 200) == 0x0D)
-			{
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x04;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x68) = quantum_char2int(dwArg00);
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x04;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x6C) = quantum_char2int(dwArg00);
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x08;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x88) = quantum_char2double(dwArg00);
-				*(ebp_140 - 188) = (real32) *(ebp_140 - 0x88);
-				real64 rLoc1_414 = (real64) *(ebp_140 - 188);
-				*(fp - 0xF0) = *(ebp_140 - 0x90);
-				*(fp - 244) = (real32) rLoc1_414;
-				*(fp - 0xF8) = *(ebp_140 - 0x6C);
-				*(fp - 252) = *(ebp_140 - 0x68);
-				quantum_cond_phase_kick(ebp_140, gs, dwArg00, dwArg04, dwArg08);
-				goto l0804F2BB;
-			}
-			if (*(ebp_140 - 200) < 0x0D)
-			{
-l0804ED50:
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x04;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x68) = quantum_char2int(dwArg00);
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x04;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x6C) = quantum_char2int(dwArg00);
-				*(ebp_140 - 0xC4) = (word32) *(ebp_140 - 0x5D);
-				if (*(ebp_140 - 0xC4) != 0x01)
-				{
-					if (*(ebp_140 - 0xC4) == 0x0C)
-					{
-						*(fp - 244) = *(ebp_140 - 0x90);
-						*(fp - 0xF8) = *(ebp_140 - 0x6C);
-						*(fp - 252) = *(ebp_140 - 0x68);
-						quantum_cond_phase(ebp_140, gs, dwArg00, dwArg04);
-					}
-				}
-				else
-				{
-					*(fp - 244) = *(ebp_140 - 0x90);
-					*(fp - 0xF8) = *(ebp_140 - 0x6C);
-					*(fp - 252) = *(ebp_140 - 0x68);
-					quantum_cnot(ebp_140, gs, dwArg00, dwArg04, dwArg08);
-				}
-				goto l0804F2BB;
-			}
-			if (*(ebp_140 - 200) == 0x0E)
-			{
-l0804EECB:
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x04;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				*(ebp_140 - 0x68) = quantum_char2int(dwArg00);
-				*(ebp_140 - 0xC0) = (word32) *(ebp_140 - 0x5D);
-				if (*(ebp_140 - 0xC0) != 0x06)
-				{
-					if (*(ebp_140 - 0xC0) <= 0x06)
-					{
-						if (*(ebp_140 - 0xC0) != 0x04)
-						{
-							if (*(ebp_140 - 0xC0) <= 0x04)
-							{
-								if (*(ebp_140 - 0xC0) == 0x03)
-								{
-									*(fp - 0xF8) = *(ebp_140 - 0x90);
-									*(fp - 252) = *(ebp_140 - 0x68);
-									quantum_sigma_x(ebp_140, gs, dwArg00, dwArg04);
-								}
-							}
-							else
-							{
-								*(fp - 0xF8) = *(ebp_140 - 0x90);
-								*(fp - 252) = *(ebp_140 - 0x68);
-								quantum_sigma_z(ebp_140, gs, dwArg00);
-							}
-						}
-						else
-						{
-							*(fp - 0xF8) = *(ebp_140 - 0x90);
-							*(fp - 252) = *(ebp_140 - 0x68);
-							quantum_sigma_y(ebp_140, gs, dwArg00);
-						}
-					}
-					else if (*(ebp_140 - 0xC0) != 0x81)
-					{
-						if (*(ebp_140 - 0xC0) != 0x82)
-						{
-							if (*(ebp_140 - 0xC0) == 0x0E)
-							{
-								*(fp - 0xF8) = *(ebp_140 - 0x90);
-								*(fp - 252) = *(ebp_140 - 0x68);
-								ebp_140 = DPB(ebp_140, quantum_swaptheleads(ebp_140, gs), 0);
-							}
-						}
-						else
-						{
-							*(fp - 0xF8) = *(ebp_140 - 0x90);
-							*(fp - 252) = *(ebp_140 - 0x68);
-							quantum_bmeasure_bitpreserve(ebp_140, gs, dwArg00);
-						}
-					}
-					else
-					{
-						*(fp - 0xF8) = *(ebp_140 - 0x90);
-						*(fp - 252) = *(ebp_140 - 0x68);
-						quantum_bmeasure(ebp_140, gs, dwArg00);
-					}
-				}
-				else
-				{
-					*(fp - 0xF8) = *(ebp_140 - 0x90);
-					*(fp - 252) = *(ebp_140 - 0x68);
-					quantum_hadamard(ebp_140, gs, dwArg00);
-				}
-l0804F2BB:
-				*(ebp_140 - 100) = *(ebp_140 - 100) + 0x01;
-				goto l0804F2BF;
-			}
-		}
-		else
-		{
-			if (*(ebp_140 - 200) <= 0x82)
-				goto l0804EECB;
-			if (*(ebp_140 - 200) == 0xFF)
-				goto l0804F2BB;
-		}
-l0804F294:
-		word32 edx_124 = globals->dw80560A0;
-		*(fp - 0xF0) = (word32) *(ebp_140 - 0x5D);
-		*(fp - 244) = *(ebp_140 - 100);
-		*(fp - 0xF8) = 0x080543F9;
-		*(fp - 252) = edx_124;
-		fn08048994();
-		goto l0804F2DD;
+		fprintf(globals->ptr80560A0, "quantum_objcode_run: Could not open %s: ", dwArg04);
+		perror(null);
 	}
 	else
 	{
-		if (*(ebp_140 - 200) >= 0x07)
+		int32 dwLoc68_124 = 0x00;
+		while (feof(eax_24) == 0x00)
 		{
-			*(fp - 0xF0) = *(ebp_140 - 116);
-			*(fp - 244) = 0x01;
-			*(fp - 0xF8) = 0x04;
-			*(fp - 252) = ebp_140 - 0x5C;
-			fn08048A04();
-			*(fp - 252) = ebp_140 - 0x5C;
-			*(ebp_140 - 0x68) = quantum_char2int(dwArg00);
-			*(fp - 0xF0) = *(ebp_140 - 116);
-			*(fp - 244) = 0x01;
-			*(fp - 0xF8) = 0x08;
-			*(fp - 252) = ebp_140 - 0x5C;
-			fn08048A04();
-			*(fp - 252) = ebp_140 - 0x5C;
-			*(ebp_140 - 0x88) = quantum_char2double(dwArg00);
-			*(ebp_140 - 0xCC) = (word32) *(ebp_140 - 0x5D) - 0x07;
-			if (*(ebp_140 - 0xCC) <= 0x04)
+			int32 dwLoc6C_162 = 0x00;
+			while (dwLoc6C_162 <= 0x4F)
 			{
-				ui32 edx_355 = *(ebp_140 - 0xCC);
-				<anonymous> * eax_356 = *((char *) globals->a8054418 + edx_355 * 0x04);
-				word32 esp_357;
-				word32 ebp_358;
-				word32 ebx_359;
-				byte SCZO_360;
-				word32 eax_361;
-				struct Eq_20200 * gs_362;
-				byte SZO_363;
-				byte C_364;
-				byte Z_365;
-				word32 edx_366;
-				byte al_367;
-				byte SO_368;
-				word32 ecx_369;
-				byte CZ_370;
-				byte bpl_371;
-				eax_356();
-				return;
+				Mem521[fp - 0x60 + dwLoc6C_162:byte] = 0x00;
+				dwLoc6C_162 = dwLoc6C_162 + 0x01;
 			}
-			goto l0804F2BB;
-		}
-		if (*(ebp_140 - 200) == 0x02)
-		{
-			*(fp - 0xF0) = *(ebp_140 - 116);
-			*(fp - 244) = 0x01;
-			*(fp - 0xF8) = 0x04;
-			*(fp - 252) = ebp_140 - 0x5C;
-			fn08048A04();
-			*(fp - 252) = ebp_140 - 0x5C;
-			*(ebp_140 - 0x68) = quantum_char2int(dwArg00);
-			*(fp - 0xF0) = *(ebp_140 - 116);
-			*(fp - 244) = 0x01;
-			*(fp - 0xF8) = 0x04;
-			*(fp - 252) = ebp_140 - 0x5C;
-			fn08048A04();
-			*(fp - 252) = ebp_140 - 0x5C;
-			*(ebp_140 - 0x6C) = quantum_char2int(dwArg00);
-			*(fp - 0xF0) = *(ebp_140 - 116);
-			*(fp - 244) = 0x01;
-			*(fp - 0xF8) = 0x04;
-			*(fp - 252) = ebp_140 - 0x5C;
-			fn08048A04();
-			*(fp - 252) = ebp_140 - 0x5C;
-			*(ebp_140 - 0x70) = quantum_char2int(dwArg00);
-			*(fp - 0xF0) = *(ebp_140 - 0x90);
-			*(fp - 244) = *(ebp_140 - 0x70);
-			*(fp - 0xF8) = *(ebp_140 - 0x6C);
-			*(fp - 252) = *(ebp_140 - 0x68);
-			quantum_toffoli(ebp_140, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-			goto l0804F2BB;
-		}
-		if (*(ebp_140 - 200) <= 0x02)
-		{
-			if (*(ebp_140 - 200) == 0x00)
+			byte al_170 = (byte) fgetc(eax_24);
+			int32 edx_172 = (word32) al_170;
+			if (edx_172 <= 11)
 			{
-				*(fp - 0xF0) = *(ebp_140 - 116);
-				*(fp - 244) = 0x01;
-				*(fp - 0xF8) = 0x08;
-				*(fp - 252) = ebp_140 - 0x5C;
-				fn08048A04();
-				*(fp - 252) = ebp_140 - 0x5C;
-				word32 edx_265;
-				*(ebp_140 - 0x80) = quantum_char2mu(dwArg00, out edx_265);
-				*(ebp_140 - 0x7C) = edx_265;
-				*(fp - 0xF0) = 0x0C;
-				word32 edx_273 = *(ebp_140 - 0x7C);
-				*(fp - 0xF8) = *(ebp_140 - 0x80);
-				*(fp - 244) = edx_273;
-				*(fp - 252) = ebp_140 - 0xB8;
-				struct Eq_19705 * ebx_278 = quantum_new_qureg(ebp_140, gs, dwArg04, dwArg08, dwArg0C);
-				ebx_278->dw0000 = *(ebp_140 - 0xB8);
-				ebx_278->dw0004 = *(ebp_140 - 0xB4);
-				ebx_278->dw0008 = *(ebp_140 - 0xB0);
-				ebx_278->dw000C = *(ebp_140 - 0xAC);
-				ebx_278->dw0010 = *(ebp_140 - 0xA8);
+				if (edx_172 < 0x07)
+				{
+					if (edx_172 != 0x02)
+					{
+						if (edx_172 > 0x02)
+							goto l0804EECB;
+						if (edx_172 != 0x00)
+						{
+							if (edx_172 != 0x01)
+								goto l0804F294;
+							goto l0804ED50;
+						}
+						fread(fp - 0x60, 0x08, 0x01, eax_24);
+						int32 edx_337;
+						Eq_106 eax_338 = quantum_char2mu(fp - 0x60, out edx_337);
+						quantum_new_qureg(gs, fp - 188, eax_338, edx_337, 0x0C);
+						*dwArg08 = dwLocBC;
+						Mem357[dwArg08 + 0x04:word32] = dwLocB8;
+						Mem360[dwArg08 + 0x08:word32] = dwLocB4;
+						Mem363[dwArg08 + 0x0C:word32] = dwLocB0;
+						Mem366[dwArg08 + 0x10:word32] = dwLocAC;
+					}
+					else
+					{
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_376 = quantum_char2int(fp - 0x60);
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_387 = quantum_char2int(fp - 0x60);
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						quantum_toffoli(gs, eax_376, eax_387, quantum_char2int(fp - 0x60), dwArg08);
+					}
+				}
+				else
+				{
+					fread(fp - 0x60, 0x04, 0x01, eax_24);
+					quantum_char2int(fp - 0x60);
+					fread(fp - 0x60, 0x08, 0x01, eax_24);
+					quantum_char2double(fp - 0x60);
+					uint32 eax_430 = (word32) al_170;
+					if (eax_430 <= 11)
+					{
+						<anonymous> * eax_436 = *((char *) globals->a8054418 + (eax_430 - 0x07) * 0x04);
+						word32 esp_437;
+						word32 ebp_438;
+						word32 ebx_439;
+						byte SCZO_440;
+						word32 eax_441;
+						struct Eq_8290 * gs_442;
+						byte SZO_443;
+						byte C_444;
+						byte Z_445;
+						word32 edx_446;
+						byte al_447;
+						byte SO_448;
+						word32 ecx_449;
+						byte CZ_450;
+						eax_436();
+						return;
+					}
+				}
 				goto l0804F2BB;
 			}
-			if (*(ebp_140 - 200) != 0x01)
-				goto l0804F294;
-			goto l0804ED50;
+			if (edx_172 != 0x80)
+			{
+				if (edx_172 <= 0x80)
+				{
+					if (edx_172 != 0x0D)
+					{
+						if (edx_172 >= 0x0D)
+						{
+							if (edx_172 != 0x0E)
+								goto l0804F294;
+							goto l0804EECB;
+						}
+l0804ED50:
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_227 = quantum_char2int(fp - 0x60);
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_238 = quantum_char2int(fp - 0x60);
+						word32 eax_240 = (word32) al_170;
+						if (eax_240 != 0x01)
+						{
+							if (eax_240 == 0x0C)
+								quantum_cond_phase(gs, eax_227, eax_238);
+						}
+						else
+							quantum_cnot(gs, eax_227, eax_238, dwArg08);
+					}
+					else
+					{
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_470 = quantum_char2int(fp - 0x60);
+						fread(fp - 0x60, 0x04, 0x01, eax_24);
+						Eq_106 eax_481 = quantum_char2int(fp - 0x60);
+						fread(fp - 0x60, 0x08, 0x01, eax_24);
+						quantum_cond_phase_kick(gs, eax_470, eax_481, (real32) quantum_char2double(fp - 0x60));
+					}
+				}
+				else if (edx_172 > 0x82)
+				{
+					if (edx_172 != 0xFF)
+					{
+l0804F294:
+						fprintf(globals->ptr80560A0, "%i: Unknown opcode 0x(%X)!\n", dwLoc68_124, (word32) al_170);
+						goto l0804F2DD;
+					}
+				}
+				else
+				{
+l0804EECB:
+					fread(fp - 0x60, 0x04, 0x01, eax_24);
+					Eq_106 eax_269 = quantum_char2int(fp - 0x60);
+					int32 edx_271 = (word32) al_170;
+					if (edx_271 != 0x06)
+					{
+						if (edx_271 <= 0x06)
+						{
+							if (edx_271 != 0x04)
+							{
+								if (edx_271 <= 0x04)
+								{
+									if (edx_271 == 0x03)
+										quantum_sigma_x(gs, eax_269, dwArg08);
+								}
+								else
+									quantum_sigma_z(gs, eax_269, dwArg08);
+							}
+							else
+								quantum_sigma_y(gs, eax_269, dwArg08);
+						}
+						else if (edx_271 != 0x81)
+						{
+							if (edx_271 != 0x82)
+							{
+								if (edx_271 == 0x0E)
+									quantum_swaptheleads(gs, eax_269, dwArg08);
+							}
+							else
+								quantum_bmeasure_bitpreserve(gs, eax_269, dwArg08);
+						}
+						else
+							quantum_bmeasure(gs, eax_269, dwArg08);
+					}
+					else
+						quantum_hadamard(gs, eax_269, dwArg08);
+				}
+			}
+			else
+				quantum_measure(gs, Mem0[dwArg08 + 0x04:word32], Mem0[dwArg08 + 0x0C:word32]);
+l0804F2BB:
+			dwLoc68_124 = dwLoc68_124 + 0x01;
 		}
-		goto l0804EECB;
+		fclose(eax_24);
 	}
+l0804F2DD:
+	if ((eax_18 ^ gs->dw0014) != 0x00)
+		__stack_chk_fail();
 }
 
-// 0804F2F4: void emul(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg0C)
-void emul(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg0C)
+// 0804F2F4: void emul(Register (ptr Eq_1715) gs, Stack int32 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void emul(Eq_1715 * gs, int32 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	while (*(fp - 0x08) >= 0x00)
+	int32 dwLoc08_11 = dwArg0C - 0x01;
+	while (dwLoc08_11 >= 0x00)
 	{
-		if ((byte) (fp->dw0004 >> (byte) (*(fp - 0x08)) & 0x01) != 0x00)
-		{
-			word32 edx_50 = fp->dw000C + *(fp - 0x08);
-			ui32 ecx_54 = (fp->dw000C + 0x01) * 0x02;
-			*(fp - 0x20) = fp->dw0010;
-			*(fp - 0x24) = edx_50;
-			*(fp - 0x28) = fp->dw0008;
-			*(fp - 44) = ecx_54;
-			quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		}
-		*(fp - 0x08) = *(fp - 0x08) - 0x01;
+		if ((byte) (dwArg04 >> (byte) dwLoc08_11 & 0x01) != 0x00)
+			quantum_toffoli(gs, (dwArg0C + 0x01) * 0x02, dwArg08, dwArg0C + dwLoc08_11, dwArg10);
+		dwLoc08_11 = dwLoc08_11 - 0x01;
 	}
-	return;
 }
 
-// 0804F34C: void muln(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14)
-void muln(ptr32 ebp, Eq_380 * gs, word32 dwArg0C, word32 dwArg10, word32 dwArg14)
+// 0804F34C: void muln(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_208 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14)
+void muln(Eq_1715 * gs, Eq_84 dwArg04, Eq_208 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14)
 {
-	quantum_toffoli(fp - 0x04, gs, dwArg0C, (dwArg10 + 0x01) * 0x02, dwArg10 * 0x02 + 0x01, dwArg14);
-	Eq_20596 edx_27 = fp->t0008;
-	int32 edx_32 = (int32) (SEQ(edx_27 >> 0x1F, edx_27) % fp->dw0004);
-	*(fp - 0x20) = fp->dw0014;
-	*(fp - 0x24) = fp->dw0010;
-	*(fp - 0x28) = *(fp - 0x0C);
-	*(fp - 44) = edx_32;
-	emul(fp - 0x04, gs, dwArg08);
-	ui32 edx_46 = (fp->dw0010 + 0x01) * 0x02;
-	*(fp - 0x20) = fp->dw0014;
-	*(fp - 0x24) = *(fp - 0x0C);
-	*(fp - 0x28) = edx_46;
-	*(fp - 44) = fp->dw000C;
-	quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-	*(fp - 0x08) = 0x01;
-	while (*(fp - 0x08) < fp->dw0010)
+	Eq_106 eax_10 = dwArg10 * 0x02 + 0x01;
+	quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02, eax_10, dwArg14);
+	emul(gs, (int32) (SEQ(dwArg08 >> 0x1F, dwArg08) % dwArg04), eax_10, dwArg10, dwArg14);
+	quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02, eax_10, dwArg14);
+	Eq_106 dwLoc08_118 = 0x01;
+	while (dwLoc08_118 < dwArg10)
 	{
-		word32 edx_73 = (fp->dw0010 + 0x01) * 0x02 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = *(fp - 0x0C);
-		*(fp - 0x28) = edx_73;
-		*(fp - 44) = fp->dw000C;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		Eq_20750 edx_86 = fp->t0008 << (byte) (*(fp - 0x08));
-		int32 edx_91 = (int32) (SEQ(edx_86 >> 0x1F, edx_86) % fp->dw0004);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = fp->dw0010;
-		*(fp - 0x28) = edx_91;
-		*(fp - 44) = fp->dw0004;
-		add_mod_n(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		word32 edx_105 = (fp->dw0010 + 0x01) * 0x02 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = *(fp - 0x0C);
-		*(fp - 0x28) = edx_105;
-		*(fp - 44) = fp->dw000C;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02 + dwLoc08_118, eax_10, dwArg14);
+		Eq_8423 edx_89 = dwArg08 << (byte) dwLoc08_118;
+		add_mod_n(gs, dwArg04, (int32) (SEQ(edx_89 >> 0x1F, edx_89) % dwArg04), dwArg10, dwArg14);
+		quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02 + dwLoc08_118, eax_10, dwArg14);
+		dwLoc08_118 = dwLoc08_118 + 0x01;
 	}
-	return;
 }
 
-// 0804F472: Register word32 muln_inv(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg10)
-word32 muln_inv(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg10)
+// 0804F472: void muln_inv(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_208 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14)
+void muln_inv(Eq_1715 * gs, Eq_84 dwArg04, Eq_208 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14)
 {
-	quantum_inverse_mod(dwArg04, dwArg08);
-	while (*(fp - 0x08) > 0x00)
+	Eq_106 eax_10 = dwArg10 * 0x02 + 0x01;
+	Eq_8454 eax_19 = quantum_inverse_mod(dwArg04, dwArg08);
+	int32 dwLoc08_136 = dwArg10 - 0x01;
+	while (dwLoc08_136 > 0x00)
 	{
-		word32 edx_84 = (fp->dw0010 + 0x01) * 0x02 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = *(fp - 0x0C);
-		*(fp - 0x28) = edx_84;
-		*(fp - 44) = fp->dw000C;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg04, dwArg0C);
-		Eq_20931 edx_97 = fp->t0008 << (byte) (*(fp - 0x08));
-		word32 ecx_106 = fp->dw0004 - (int32) (SEQ(edx_97 >> 0x1F, edx_97) % fp->dw0004);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = fp->dw0010;
-		*(fp - 0x28) = ecx_106;
-		*(fp - 44) = fp->dw0004;
-		add_mod_n(fp - 0x04, gs, dwArg00, dwArg04, dwArg04, dwArg0C);
-		word32 edx_120 = (fp->dw0010 + 0x01) * 0x02 + *(fp - 0x08);
-		*(fp - 0x20) = fp->dw0014;
-		*(fp - 0x24) = *(fp - 0x0C);
-		*(fp - 0x28) = edx_120;
-		*(fp - 44) = fp->dw000C;
-		quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg04, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) - 0x01;
+		quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02 + dwLoc08_136, eax_10, dwArg14);
+		Eq_8470 edx_103 = eax_19 << (byte) dwLoc08_136;
+		add_mod_n(gs, dwArg04, dwArg04 - (int32) (SEQ(edx_103 >> 0x1F, edx_103) % dwArg04), dwArg10, dwArg14);
+		quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02 + dwLoc08_136, eax_10, dwArg14);
+		dwLoc08_136 = dwLoc08_136 - 0x01;
 	}
-	ui32 edx_39 = (fp->dw0010 + 0x01) * 0x02;
-	*(fp - 0x20) = fp->dw0014;
-	*(fp - 0x24) = *(fp - 0x0C);
-	*(fp - 0x28) = edx_39;
-	*(fp - 44) = fp->dw000C;
-	quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg04, dwArg0C);
-	Eq_20934 edx_50 = fp->t0008;
-	int32 edx_55 = (int32) (SEQ(edx_50 >> 0x1F, edx_50) % fp->dw0004);
-	*(fp - 0x20) = fp->dw0014;
-	*(fp - 0x24) = fp->dw0010;
-	*(fp - 0x28) = *(fp - 0x0C);
-	*(fp - 44) = edx_55;
-	emul(fp - 0x04, gs, dwArg04);
-	ui32 edx_68 = (fp->dw0010 + 0x01) * 0x02;
-	*(fp - 0x20) = fp->dw0014;
-	*(fp - 0x24) = *(fp - 0x0C);
-	*(fp - 0x28) = edx_68;
-	*(fp - 44) = fp->dw000C;
-	quantum_toffoli(fp - 0x04, gs, dwArg00, dwArg04, dwArg04, dwArg0C);
-	return ebx;
+	quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02, eax_10, dwArg14);
+	emul(gs, (int32) (SEQ(eax_19 >> 0x1F, eax_19) % dwArg04), eax_10, dwArg10, dwArg14);
+	quantum_toffoli(gs, dwArg0C, (dwArg10 + 0x01) * 0x02, eax_10, dwArg14);
 }
 
-// 0804F5B6: Register word32 mul_mod_n(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack ui32 dwArg14)
-word32 mul_mod_n(ptr32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, ui32 dwArg14)
+// 0804F5B6: void mul_mod_n(Register (ptr Eq_1715) gs, Stack Eq_84 dwArg04, Stack Eq_208 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14)
+void mul_mod_n(Eq_1715 * gs, Eq_84 dwArg04, Eq_208 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14)
 {
-	muln(fp - 0x04, gs, dwArg0C, dwArg10, dwArg14);
-	*(fp - 0x14) = fp->dw0014;
-	*(fp - 0x18) = fp->dw0010;
-	*(fp - 0x1C) = fp->dw000C;
-	quantum_swaptheleads_omuln_controlled(fp - 0x04, gs);
-	*(fp - 0x0C) = fp->dw0014;
-	*(fp - 0x10) = fp->dw0010;
-	*(fp - 0x14) = fp->dw000C;
-	*(fp - 0x18) = fp->dw0008;
-	*(fp - 0x1C) = fp->dw0004;
-	return muln_inv(fp - 0x04, gs, dwArg00, dwArg04, dwArg0C);
+	muln(gs, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg14);
+	quantum_swaptheleads_omuln_controlled(gs, dwArg0C, dwArg10, dwArg14);
+	muln_inv(gs, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg14);
 }
 
-// 0804F628: void quantum_qec_set_status(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_qec_set_status(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0804F628: void quantum_qec_set_status(Stack word32 dwArg04, Stack Eq_106 dwArg08)
+void quantum_qec_set_status(word32 dwArg04, Eq_106 dwArg08)
 {
 	globals->dw80560F4 = dwArg04;
-	globals->dw80560F8 = dwArg08;
-	return;
+	globals->t80560F8 = dwArg08;
 }
 
-// 0804F63D: void quantum_qec_get_status(Stack ptr32 dwArg04, Stack word32 dwArg08)
-void quantum_qec_get_status(ptr32 dwArg04, word32 dwArg08)
+// 0804F63D: void quantum_qec_get_status(Stack (ptr word32) dwArg04, Stack (ptr Eq_106) dwArg08)
+void quantum_qec_get_status(word32 * dwArg04, Eq_106 * dwArg08)
 {
 	if (dwArg04 != null)
 		*dwArg04 = globals->dw80560F4;
 	if (dwArg08 != null)
-		*dwArg08 = globals->dw80560F8;
-	return;
+		*dwArg08 = (union Eq_106 *) globals->t80560F8;
 }
 
-// 0804F664: void quantum_qec_encode(Register ptr32 ebp, Register (ptr Eq_380) gs)
-void quantum_qec_encode(ptr32 ebp, Eq_380 * gs)
+// 0804F664: void quantum_qec_encode(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_qec_encode(Eq_1715 * gs, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
-	quantum_get_decoherence();
-	quantum_set_decoherence(null);
-	while (*fp->ptr000C > *(fp - 0x08))
+	real32 rLoc0C_9 = (real32) quantum_get_decoherence();
+	quantum_set_decoherence(0x00);
+	Eq_106 dwLoc08_12 = 0x00;
+	while (*dwArg0C > dwLoc08_12)
 	{
-		if (*fp->ptr000C - 0x01 == *(fp - 0x08))
+		if (*dwArg0C - 0x01 == dwLoc08_12)
+			quantum_set_decoherence(rLoc0C_9);
+		if (dwLoc08_12 < dwArg08)
 		{
-			*(fp - 44) = *(fp - 0x0C);
-			quantum_set_decoherence(dwArg00);
-		}
-		if (*(fp - 0x08) < fp->dw0008)
-		{
-			word32 edx_57 = *fp->ptr000C + *(fp - 0x08);
-			*(fp - 0x28) = fp->ptr000C;
-			*(fp - 44) = edx_57;
-			quantum_hadamard(fp - 0x04, gs, dwArg00);
-			word32 edx_67 = *fp->ptr000C * 0x02 + *(fp - 0x08);
-			*(fp - 0x28) = fp->ptr000C;
-			*(fp - 44) = edx_67;
-			quantum_hadamard(fp - 0x04, gs, dwArg00);
-			word32 edx_75 = *fp->ptr000C + *(fp - 0x08);
-			*(fp - 0x24) = fp->ptr000C;
-			*(fp - 0x28) = *(fp - 0x08);
-			*(fp - 44) = edx_75;
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-			word32 edx_87 = *fp->ptr000C * 0x02 + *(fp - 0x08);
-			*(fp - 0x24) = fp->ptr000C;
-			*(fp - 0x28) = *(fp - 0x08);
-			*(fp - 44) = edx_87;
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+			quantum_hadamard(gs, Mem0[dwArg0C + 0x00:word32] + dwLoc08_12, dwArg0C);
+			quantum_hadamard(gs, Mem0[dwArg0C + 0x00:word32] * 0x02 + dwLoc08_12, dwArg0C);
+			quantum_cnot(gs, Mem0[dwArg0C + 0x00:word32] + dwLoc08_12, dwLoc08_12, dwArg0C);
+			quantum_cnot(gs, Mem0[dwArg0C + 0x00:word32] * 0x02 + dwLoc08_12, dwLoc08_12, dwArg0C);
 		}
 		else
 		{
-			word32 edx_97 = *fp->ptr000C + *(fp - 0x08);
-			*(fp - 0x24) = fp->ptr000C;
-			*(fp - 0x28) = edx_97;
-			*(fp - 44) = *(fp - 0x08);
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-			word32 edx_108 = *fp->ptr000C * 0x02 + *(fp - 0x08);
-			*(fp - 0x24) = fp->ptr000C;
-			*(fp - 0x28) = edx_108;
-			*(fp - 44) = *(fp - 0x08);
-			quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
+			quantum_cnot(gs, dwLoc08_12, Mem0[dwArg0C + 0x00:word32] + dwLoc08_12, dwArg0C);
+			quantum_cnot(gs, dwLoc08_12, Mem0[dwArg0C + 0x00:word32] * 0x02 + dwLoc08_12, dwArg0C);
 		}
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		dwLoc08_12 = dwLoc08_12 + 0x01;
 	}
-	*(fp - 0x28) = *fp->ptr000C;
-	*(fp - 44) = 0x01;
-	quantum_qec_set_status(dwArg00, dwArg04);
-	*fp->ptr000C = *fp->ptr000C * 0x03;
-	return;
+	quantum_qec_set_status(0x01, *dwArg0C);
+	*dwArg0C = *dwArg0C * 0x03;
 }
 
-// 0804F79F: void quantum_qec_decode(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C)
-void quantum_qec_decode(ptr32 ebp, Eq_380 * gs, word32 dwArg0C)
+// 0804F79F: void quantum_qec_decode(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_qec_decode(Eq_1715 * gs, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
-	quantum_get_decoherence();
-	quantum_set_decoherence(null);
-	quantum_qec_set_status(null, null);
-	while (*(fp - 0x08) >= 0x00)
+	real32 rLoc18_9 = (real32) quantum_get_decoherence();
+	quantum_set_decoherence(0x00);
+	Eq_106 eax_15 = *dwArg0C;
+	quantum_qec_set_status(0x00, 0x00);
+	Eq_106 eax_32 = *dwArg0C;
+	Eq_106 edx_25 = SLICE(eax_15 *s 0x55555556, word32, 32) - (eax_15 >> 0x1F);
+	Eq_106 dwLoc08_129 = SLICE(eax_32 *s 0x55555556, word32, 32) - (eax_32 >> 0x1F) - 0x01;
+	while (dwLoc08_129 >= 0x00)
 	{
-		if (*(fp - 0x08) == 0x00)
+		if (dwLoc08_129 == 0x00)
+			quantum_set_decoherence(rLoc18_9);
+		if (dwLoc08_129 < dwArg08)
 		{
-			*(fp - 0x3C) = *(fp - 0x18);
-			quantum_set_decoherence(rArg00);
-		}
-		if (*(fp - 0x08) < fp->dw0008)
-		{
-			word32 edx_116 = *(fp - 0x14) * 0x02 + *(fp - 0x08);
-			*(fp - 0x34) = fp->dw000C;
-			*(fp - 0x38) = *(fp - 0x08);
-			*(fp - 0x3C) = edx_116;
-			quantum_cnot(fp - 0x04, gs, rArg00, dwArg04, dwArg08);
-			word32 edx_127 = *(fp - 0x14) + *(fp - 0x08);
-			*(fp - 0x34) = fp->dw000C;
-			*(fp - 0x38) = *(fp - 0x08);
-			*(fp - 0x3C) = edx_127;
-			quantum_cnot(fp - 0x04, gs, rArg00, dwArg04, dwArg08);
-			word32 edx_136 = *(fp - 0x14) * 0x02 + *(fp - 0x08);
-			*(fp - 0x38) = fp->dw000C;
-			*(fp - 0x3C) = edx_136;
-			quantum_hadamard(fp - 0x04, gs, rArg00);
-			word32 edx_143 = *(fp - 0x14) + *(fp - 0x08);
-			*(fp - 0x38) = fp->dw000C;
-			*(fp - 0x3C) = edx_143;
-			quantum_hadamard(fp - 0x04, gs, rArg00);
+			quantum_cnot(gs, edx_25 * 0x02 + dwLoc08_129, dwLoc08_129, dwArg0C);
+			quantum_cnot(gs, edx_25 + dwLoc08_129, dwLoc08_129, dwArg0C);
+			quantum_hadamard(gs, edx_25 * 0x02 + dwLoc08_129, dwArg0C);
+			quantum_hadamard(gs, edx_25 + dwLoc08_129, dwArg0C);
 		}
 		else
 		{
-			word32 edx_150 = *(fp - 0x14) * 0x02 + *(fp - 0x08);
-			*(fp - 0x34) = fp->dw000C;
-			*(fp - 0x38) = edx_150;
-			*(fp - 0x3C) = *(fp - 0x08);
-			quantum_cnot(fp - 0x04, gs, rArg00, dwArg04, dwArg08);
-			word32 edx_159 = *(fp - 0x14) + *(fp - 0x08);
-			*(fp - 0x34) = fp->dw000C;
-			*(fp - 0x38) = edx_159;
-			*(fp - 0x3C) = *(fp - 0x08);
-			quantum_cnot(fp - 0x04, gs, rArg00, dwArg04, dwArg08);
+			quantum_cnot(gs, dwLoc08_129, edx_25 * 0x02 + dwLoc08_129, dwArg0C);
+			quantum_cnot(gs, dwLoc08_129, edx_25 + dwLoc08_129, dwArg0C);
 		}
-		*(fp - 0x08) = *(fp - 0x08) - 0x01;
+		dwLoc08_129 = dwLoc08_129 - 0x01;
 	}
-	*(fp - 0x08) = 0x01;
-	while (*(fp - 0x08) <= *(fp - 0x14))
+	Eq_106 dwLoc08_103 = 0x01;
+	while (dwLoc08_103 <= edx_25)
 	{
-		*(fp - 0x38) = fp->dw000C;
-		*(fp - 0x3C) = *(fp - 0x14);
-		*(fp - 0x0C) = quantum_bmeasure(fp - 0x04, gs, rArg00);
-		ui32 edx_76 = *(fp - 0x14) * 0x02 - *(fp - 0x08);
-		*(fp - 0x38) = fp->dw000C;
-		*(fp - 0x3C) = edx_76;
-		*(fp - 0x10) = quantum_bmeasure(fp - 0x04, gs, rArg00);
-		if (*(fp - 0x0C) == 0x01 && (*(fp - 0x10) == 0x01 && *(fp - 0x08) - 0x01 < fp->dw0008))
-		{
-			word32 eax_98 = *(fp - 0x08);
-			*(fp - 0x38) = fp->dw000C;
-			*(fp - 0x3C) = eax_98 - 0x01;
-			quantum_sigma_z(fp - 0x04, gs, rArg00);
-		}
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		word32 eax_82 = quantum_bmeasure(gs, edx_25, dwArg0C);
+		word32 eax_92 = quantum_bmeasure(gs, edx_25 * 0x02 - dwLoc08_103, dwArg0C);
+		if (eax_82 == 0x01 && (eax_92 == 0x01 && dwLoc08_103 - 0x01 < dwArg08))
+			quantum_sigma_z(gs, dwLoc08_103 - 0x01, dwArg0C);
+		dwLoc08_103 = dwLoc08_103 + 0x01;
 	}
-	return;
 }
 
-// 0804F96E: void quantum_qec_counter(Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C)
-void quantum_qec_counter(Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136 * dwArg0C)
+// 0804F96E: void quantum_qec_counter(Register (ptr Eq_1715) gs, Stack int32 dwArg04, Stack int32 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_qec_counter(Eq_1715 * gs, int32 dwArg04, int32 dwArg08, Eq_106 dwArg0C)
 {
 	if (dwArg04 > 0x00)
 		globals->dw80560FC = globals->dw80560FC + dwArg04;
@@ -4895,83 +3244,53 @@ void quantum_qec_counter(Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, Eq_136
 	if (globals->dw80560FC >= globals->dw8056088)
 	{
 		globals->dw80560FC = 0x00;
-		quantum_qec_decode(fp - 0x04, gs, dwArg0C);
-		ui32 edx_42 = globals->dw80560F8;
-		word32 ecx_43 = globals->dw80560F4;
-		*(fp - 0x14) = fp->dw000C;
-		*(fp - 0x18) = edx_42;
-		*(fp - 0x1C) = ecx_43;
-		quantum_qec_encode(fp - 0x04, gs);
+		quantum_qec_decode(gs, globals->t80560F8, dwArg0C);
+		quantum_qec_encode(gs, globals->t80560F8, dwArg0C);
 	}
-	return;
 }
 
-// 0804FA05: void quantum_sigma_x_ft(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack word32 dwArg08)
-void quantum_sigma_x_ft(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, word32 dwArg08)
+// 0804FA05: void quantum_sigma_x_ft(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_sigma_x_ft(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
+	word32 eax_9 = globals->dw80560F4;
 	globals->dw80560F4 = 0x00;
-	quantum_get_decoherence();
-	quantum_set_decoherence(null);
-	quantum_sigma_x(fp - 0x04, gs, dwArg04, dwArg08);
-	word32 edx_25 = globals->dw80560F8 + fp->dw0004;
-	*(fp - 0x28) = fp->dw0008;
-	*(fp - 44) = edx_25;
-	quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-	*(fp - 44) = *(fp - 0x0C);
-	quantum_set_decoherence(dwArg00);
-	word32 edx_36 = globals->dw80560F8 * 0x02 + fp->dw0004;
-	*(fp - 0x28) = fp->dw0008;
-	*(fp - 44) = edx_36;
-	quantum_sigma_x(fp - 0x04, gs, dwArg00, dwArg04);
-	*(fp - 0x24) = fp->dw0008;
-	*(fp - 0x28) = 0x00;
-	*(fp - 44) = 0x01;
-	quantum_qec_counter(gs, dwArg00, dwArg04, dwArg08);
-	globals->dw80560F4 = *(fp - 0x08);
-	return;
+	real32 rLoc0C_13 = (real32) quantum_get_decoherence();
+	quantum_set_decoherence(0x00);
+	quantum_sigma_x(gs, dwArg04, dwArg08);
+	quantum_sigma_x(gs, Mem11[0x080560F8:word32] + dwArg04, dwArg08);
+	quantum_set_decoherence(rLoc0C_13);
+	quantum_sigma_x(gs, Mem11[0x080560F8:word32] * 0x02 + dwArg04, dwArg08);
+	quantum_qec_counter(gs, 0x01, 0x00, dwArg08);
+	globals->dw80560F4 = eax_9;
 }
 
-// 0804FAA8: void quantum_cnot_ft(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-void quantum_cnot_ft(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, word32 dwArg08, word32 dwArg0C)
+// 0804FAA8: void quantum_cnot_ft(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C)
+void quantum_cnot_ft(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C)
 {
+	word32 eax_9 = globals->dw80560F4;
 	globals->dw80560F4 = 0x00;
-	quantum_get_decoherence();
-	quantum_set_decoherence(null);
-	quantum_cnot(fp - 0x04, gs, dwArg04, dwArg08, dwArg0C);
-	word32 edx_28 = globals->dw80560F8 + fp->dw0008;
-	word32 ecx_31 = globals->dw80560F8 + fp->dw0004;
-	*(fp - 0x24) = fp->dw000C;
-	*(fp - 0x28) = edx_28;
-	*(fp - 44) = ecx_31;
-	quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-	*(fp - 44) = *(fp - 0x0C);
-	quantum_set_decoherence(dwArg00);
-	word32 ecx_43 = globals->dw80560F8 * 0x02 + fp->dw0008;
-	word32 edx_47 = globals->dw80560F8 * 0x02 + fp->dw0004;
-	*(fp - 0x24) = fp->dw000C;
-	*(fp - 0x28) = ecx_43;
-	*(fp - 44) = edx_47;
-	quantum_cnot(fp - 0x04, gs, dwArg00, dwArg04, dwArg08);
-	*(fp - 0x24) = fp->dw000C;
-	*(fp - 0x28) = 0x00;
-	*(fp - 44) = 0x01;
-	quantum_qec_counter(gs, dwArg00, dwArg04, dwArg08);
-	globals->dw80560F4 = *(fp - 0x08);
-	return;
+	real32 rLoc0C_13 = (real32) quantum_get_decoherence();
+	quantum_set_decoherence(0x00);
+	quantum_cnot(gs, dwArg04, dwArg08, dwArg0C);
+	quantum_cnot(gs, Mem11[0x080560F8:word32] + dwArg04, Mem11[0x080560F8:word32] + dwArg08, dwArg0C);
+	quantum_set_decoherence(rLoc0C_13);
+	quantum_cnot(gs, Mem11[0x080560F8:word32] * 0x02 + dwArg04, Mem11[0x080560F8:word32] * 0x02 + dwArg08, dwArg0C);
+	quantum_qec_counter(gs, 0x01, 0x00, dwArg0C);
+	globals->dw80560F4 = eax_9;
 }
 
-// 0804FB70: void quantum_toffoli_ft(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
-void quantum_toffoli_ft(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
+// 0804FB70: void quantum_toffoli_ft(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void quantum_toffoli_ft(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
 	byte cl_15 = (byte) dwArg0C;
-	uint32 esi_20 = __shld(0x00, 0x01, cl_15);
-	uint32 ebx_21 = 0x01 << cl_15;
+	Eq_763 esi_20 = __shld(0x00, 0x01, cl_15);
+	Eq_763 ebx_21 = 0x01 << cl_15;
 	if ((cl_15 & 0x20) != 0x00)
 	{
 		esi_20 = ebx_21;
-		ebx_21 = 0x00;
+		ebx_21.u0 = 0x00;
 	}
-	byte cl_33 = (byte) (globals->dw80560F8 + dwArg0C);
+	byte cl_33 = (byte) (Mem0[0x080560F8:word32] + dwArg0C);
 	uint32 eax_37 = 0x01 << cl_33;
 	uint64 edx_eax_38 = SEQ(__shld(0x00, 0x01, cl_33), eax_37);
 	if ((cl_33 & 0x20) != 0x00)
@@ -4979,602 +3298,399 @@ void quantum_toffoli_ft(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, word32 dwArg08
 		eax_37 = 0x00;
 		edx_eax_38 = SEQ(eax_37, 0x00);
 	}
-	ui64 esi_ebx_48 = SEQ(esi_20, ebx_21 + eax_37) + edx_eax_38;
-	byte cl_55 = (byte) (globals->dw80560F8 * 0x02 + dwArg0C);
+	ui64 esi_ebx_48 = SEQ(esi_20, (word32) ebx_21.u0 + eax_37) + edx_eax_38;
+	byte cl_55 = (byte) (Mem0[0x080560F8:word32] * 0x02 + dwArg0C);
 	uint32 ebx_50 = (word32) esi_ebx_48;
-	uint32 edx_380 = __shld(0x00, 0x01, cl_55);
-	uint32 eax_381 = 0x01 << cl_55;
+	Eq_763 edx_379 = __shld(0x00, 0x01, cl_55);
+	Eq_763 eax_380 = 0x01 << cl_55;
 	if ((cl_55 & 0x20) != 0x00)
 	{
-		edx_380 = eax_381;
-		eax_381 = 0x00;
+		edx_379 = eax_380;
+		eax_380.u0 = 0x00;
 	}
-	ui64 edx_eax_73 = SEQ(edx_380, eax_381 + ebx_50) + esi_ebx_48;
+	ui64 edx_eax_73 = SEQ(edx_379, (word32) eax_380.u1 + ebx_50) + esi_ebx_48;
 	word32 eax_74 = (word32) edx_eax_73;
 	word32 edx_75 = SLICE(edx_eax_73, word32, 32);
-	struct Eq_136 * dwLoc10_302 = null;
-	while (dwArg10->ptr0004 > dwLoc10_302)
+	Eq_106 dwLoc10_301 = 0x00;
+	while (Mem0[dwArg10 + 0x04:word32] > dwLoc10_301)
 	{
-		struct Eq_22383 * eax_125 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 edx_126 = eax_125->dw000C;
-		byte cl_129 = (byte) dwArg04;
-		ui32 dwLoc14_119 = 0x00;
-		ui32 dwLoc18_120 = 0x00;
-		uint32 eax_130 = __shrd(eax_125->dw0008, edx_126, cl_129);
-		uint32 edx_132 = edx_126 >> cl_129;
-		if ((cl_129 & 0x20) != 0x00)
-			eax_130 = edx_132;
-		if ((byte) (eax_130 & 0x01) != 0x00)
-			dwLoc14_119 = 0x01;
-		struct Eq_22448 * eax_150 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 esi_152 = eax_150->dw000C;
-		byte cl_156 = (byte) (dwArg04 + globals->dw80560F8 / 0x0014);
-		uint32 eax_159 = __shrd(eax_150->dw0008, esi_152, cl_156);
-		uint32 edx_161 = esi_152 >> cl_156;
-		if ((cl_156 & 0x20) != 0x00)
-			eax_159 = edx_161;
-		if ((byte) (eax_159 & 0x01) != 0x00)
-			dwLoc14_119 = dwLoc14_119 ^ 0x01;
-		struct Eq_22482 * eax_179 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 esi_181 = eax_179->dw000C;
-		byte cl_186 = (byte) (dwArg04 + (globals->dw80560F8 * 0x02) / 0x0014);
-		uint32 eax_189 = __shrd(eax_179->dw0008, esi_181, cl_186);
-		uint32 edx_191 = esi_181 >> cl_186;
-		if ((cl_186 & 0x20) != 0x00)
-			eax_189 = edx_191;
-		if ((byte) (eax_189 & 0x01) != 0x00)
-			dwLoc14_119 = dwLoc14_119 ^ 0x01;
-		struct Eq_22519 * eax_209 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 edx_210 = eax_209->dw000C;
-		byte cl_213 = (byte) dwArg08;
-		uint32 eax_214 = __shrd(eax_209->dw0008, edx_210, cl_213);
-		uint32 edx_216 = edx_210 >> cl_213;
-		if ((cl_213 & 0x20) != 0x00)
-			eax_214 = edx_216;
-		if ((byte) (eax_214 & 0x01) != 0x00)
-			dwLoc18_120 = 0x01;
-		struct Eq_22551 * eax_234 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 esi_236 = eax_234->dw000C;
-		byte cl_240 = (byte) (dwArg08 + globals->dw80560F8 / 0x0014);
-		uint32 eax_243 = __shrd(eax_234->dw0008, esi_236, cl_240);
-		uint32 edx_245 = esi_236 >> cl_240;
-		if ((cl_240 & 0x20) != 0x00)
-			eax_243 = edx_245;
-		if ((byte) (eax_243 & 0x01) != 0x00)
-			dwLoc18_120 = dwLoc18_120 ^ 0x01;
-		struct Eq_22585 * eax_263 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-		uint32 esi_265 = eax_263->dw000C;
-		byte cl_270 = (byte) (dwArg08 + (globals->dw80560F8 * 0x02) / 0x0014);
-		uint32 eax_273 = __shrd(eax_263->dw0008, esi_265, cl_270);
-		uint32 edx_275 = esi_265 >> cl_270;
-		if ((cl_270 & 0x20) != 0x00)
-			eax_273 = edx_275;
-		if ((byte) (eax_273 & 0x01) != 0x00)
-			dwLoc18_120 = dwLoc18_120 ^ 0x01;
-		if (dwLoc14_119 == 0x01 && dwLoc18_120 == 0x01)
+		word32 eax_122 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 edx_123 = eax_122->t000C;
+		byte cl_127 = (byte) dwArg04;
+		ui32 dwLoc14_116 = 0x00;
+		ui32 dwLoc18_117 = 0x00;
+		uint32 eax_128 = __shrd(eax_122->t0008, edx_123, cl_127);
+		uint32 edx_130 = edx_123 >> cl_127;
+		if ((cl_127 & 0x20) != 0x00)
+			eax_128 = edx_130;
+		if ((byte) (eax_128 & 0x01) != 0x00)
+			dwLoc14_116 = 0x01;
+		word32 eax_148 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 esi_150 = eax_148->t000C;
+		byte cl_154 = (byte) (Mem0[0x080560F8:word32] + dwArg04);
+		uint32 eax_157 = __shrd(eax_148->t0008, esi_150, cl_154);
+		uint32 edx_159 = esi_150 >> cl_154;
+		if ((cl_154 & 0x20) != 0x00)
+			eax_157 = edx_159;
+		if ((byte) (eax_157 & 0x01) != 0x00)
+			dwLoc14_116 = dwLoc14_116 ^ 0x01;
+		word32 eax_177 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 esi_179 = eax_177->t000C;
+		byte cl_184 = (byte) (Mem0[0x080560F8:word32] * 0x02 + dwArg04);
+		uint32 eax_187 = __shrd(eax_177->t0008, esi_179, cl_184);
+		uint32 edx_189 = esi_179 >> cl_184;
+		if ((cl_184 & 0x20) != 0x00)
+			eax_187 = edx_189;
+		if ((byte) (eax_187 & 0x01) != 0x00)
+			dwLoc14_116 = dwLoc14_116 ^ 0x01;
+		word32 eax_207 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 edx_208 = eax_207->t000C;
+		byte cl_212 = (byte) dwArg08;
+		uint32 eax_213 = __shrd(eax_207->t0008, edx_208, cl_212);
+		uint32 edx_215 = edx_208 >> cl_212;
+		if ((cl_212 & 0x20) != 0x00)
+			eax_213 = edx_215;
+		if ((byte) (eax_213 & 0x01) != 0x00)
+			dwLoc18_117 = 0x01;
+		word32 eax_233 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 esi_235 = eax_233->t000C;
+		byte cl_239 = (byte) (Mem0[0x080560F8:word32] + dwArg08);
+		uint32 eax_242 = __shrd(eax_233->t0008, esi_235, cl_239);
+		uint32 edx_244 = esi_235 >> cl_239;
+		if ((cl_239 & 0x20) != 0x00)
+			eax_242 = edx_244;
+		if ((byte) (eax_242 & 0x01) != 0x00)
+			dwLoc18_117 = dwLoc18_117 ^ 0x01;
+		word32 eax_262 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+		Eq_106 esi_264 = eax_262->t000C;
+		byte cl_269 = (byte) (Mem0[0x080560F8:word32] * 0x02 + dwArg08);
+		uint32 eax_272 = __shrd(eax_262->t0008, esi_264, cl_269);
+		uint32 edx_274 = esi_264 >> cl_269;
+		if ((cl_269 & 0x20) != 0x00)
+			eax_272 = edx_274;
+		if ((byte) (eax_272 & 0x01) != 0x00)
+			dwLoc18_117 = dwLoc18_117 ^ 0x01;
+		if (dwLoc14_116 == 0x01 && dwLoc18_117 == 0x01)
 		{
-			struct Eq_22630 * eax_315 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-			struct Eq_22637 * esi_310 = dwArg10->dw000C + (dwLoc10_302 << 0x04);
-			ui32 edx_321 = eax_315->dw000C ^ edx_75;
-			esi_310->dw0008 = eax_315->dw0008 ^ eax_74;
-			esi_310->dw000C = edx_321;
+			word32 eax_314 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+			word32 esi_309 = Mem0[dwArg10 + 0x0C:word32] + (dwLoc10_301 << 0x04);
+			ui32 edx_320 = eax_314->dw000C ^ edx_75;
+			esi_309->dw0008 = eax_314->dw0008 ^ eax_74;
+			esi_309->dw000C = edx_320;
 		}
-		dwLoc10_302 = (struct Eq_136 *) ((char *) &dwLoc10_302->dw0000 + 0x01);
+		dwLoc10_301 = dwLoc10_301 + 0x01;
 	}
-	quantum_decohere(fp - 0x04, gs, dwArg10, rArg0);
-	*(fp - 0x34) = fp->dw0010;
-	*(fp - 0x38) = 0x00;
-	*(fp - 0x3C) = 0x01;
-	quantum_qec_counter(gs, dwArg00, dwArg04, dwArg08);
-	return;
+	quantum_decohere(dwArg10, rArg0);
+	quantum_qec_counter(gs, 0x01, 0x00, dwArg10);
 }
 
-// 0804FDE4: void quantum_qft(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_qft(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 0804FDE4: void quantum_qft(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_qft(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	while (*(fp - 0x08) >= 0x00)
+	Eq_106 dwLoc08_11 = dwArg04 - 0x01;
+	while (dwLoc08_11 >= 0x00)
 	{
-		*(fp - 0x0C) = fp->dw0004 - 0x01;
-		while (*(fp - 0x0C) > *(fp - 0x08))
+		Eq_106 dwLoc0C_32 = dwArg04 - 0x01;
+		while (dwLoc0C_32 > dwLoc08_11)
 		{
-			*(fp - 0x24) = fp->dw0008;
-			*(fp - 0x28) = *(fp - 0x08);
-			*(fp - 44) = *(fp - 0x0C);
-			quantum_cond_phase(fp - 0x04, gs, dwArg00, dwArg04);
-			*(fp - 0x0C) = *(fp - 0x0C) - 0x01;
+			quantum_cond_phase(gs, dwLoc0C_32, dwLoc08_11);
+			dwLoc0C_32 = dwLoc0C_32 - 0x01;
 		}
-		*(fp - 0x28) = fp->dw0008;
-		*(fp - 44) = *(fp - 0x08);
-		quantum_hadamard(fp - 0x04, gs, dwArg00);
-		*(fp - 0x08) = *(fp - 0x08) - 0x01;
+		quantum_hadamard(gs, dwLoc08_11, dwArg08);
+		dwLoc08_11 = dwLoc08_11 - 0x01;
 	}
-	return;
 }
 
-// 0804FE43: void quantum_qft_inv(Register word32 ebp, Register (ptr Eq_380) gs)
-void quantum_qft_inv(word32 ebp, Eq_380 * gs)
+// 0804FE43: void quantum_qft_inv(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_qft_inv(Eq_1715 * gs, Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	while (*(fp - 0x08) < fp->dw0004)
+	Eq_106 dwLoc08_17 = 0x01;
+	while (dwLoc08_17 < dwArg04)
 	{
-		*(fp - 0x28) = fp->dw0008;
-		*(fp - 44) = *(fp - 0x08);
-		quantum_hadamard(fp - 0x04, gs, dwArg00);
-		*(fp - 0x0C) = *(fp - 0x08) + 0x01;
-		while (*(fp - 0x0C) < fp->dw0004)
+		quantum_hadamard(gs, dwLoc08_17, dwArg08);
+		Eq_106 dwLoc0C_34 = dwLoc08_17;
+		while (dwLoc0C_34 < dwArg04)
 		{
-			*(fp - 0x24) = fp->dw0008;
-			*(fp - 0x28) = *(fp - 0x08);
-			*(fp - 44) = *(fp - 0x0C);
-			quantum_cond_phase_inv(gs, dwArg00, dwArg04);
-			*(fp - 0x0C) = *(fp - 0x0C) + 0x01;
+			quantum_cond_phase_inv(dwLoc0C_34, dwLoc08_17);
+			dwLoc0C_34 = dwLoc0C_34 + 0x01;
 		}
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		dwLoc08_17 = dwLoc08_17 + 0x01;
 	}
-	return;
 }
 
-// 0804FEA4: void quantum_rk4(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14, Stack word32 dwArg18)
-void quantum_rk4(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg0C, word32 dwArg10, word32 dwArg14, word32 dwArg18)
+// 0804FEA4: void quantum_rk4(Register (ptr Eq_9204) ebp, Stack Eq_106 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14, Stack (ptr code) dwArg18)
+void quantum_rk4(Eq_9204 * ebp, Eq_106 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, word32 dwArg14, code * dwArg18)
 {
-	dwArg04->dw0010 = 0x00;
-	dwArg04->dw0008 = 0x00;
+	Mem32[dwArg04 + 0x10:word32] = 0x00;
+	Mem37[dwArg04 + 0x08:word32] = 0x00;
 	real64 rLoc74_15 = DPB(rLoc74, dwArg0C, 32);
-	quantum_matrix_qureg(fp - 0x04, gs, (word32) rLoc74_15, SLICE(rLoc74_15, word32, 32), dwArg04);
-	*(fp - 0x38) = *(fp - 0x9C);
-	*(fp - 0x34) = *(fp - 0x98);
-	*(fp - 0x30) = *(fp - 0x94);
-	*(fp - 44) = *(fp - 0x90);
-	*(fp - 0x28) = *(fp - 0x8C);
-	real64 rLoc1_61 = *(fp - 0x7C);
-	*(fp - 0xE0) = -1.0;
-	*(fp - 232) = 0.0;
-	*(fp - 0xF0) = 0.0;
-	*(fp - 0xF8) = rLoc1_61;
-	*(fp - 252) = fp - 0xAC;
-	__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	real64 rLoc1_79 = *(fp - 0xAC);
-	real64 rLoc2_80 = *(fp - 0xA4);
-	*(fp - 228) = 0.0;
-	*(fp - 0xEC) = (union Eq_23027 *) globals->t8054430;
-	*(fp - 244) = rLoc2_80;
-	*(fp - 252) = rLoc1_79;
-	*(fp - 0x0100) = fp - 0xAC;
-	__divdc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	real64 rLoc2_92 = *(fp - 0xA4);
-	*(fp - 0xB0) = (real32) *(fp - 0xAC);
-	real64 rLoc2_97 = (real64) *(fp - 0xB0);
-	*(fp - 0xB0) = (real32) rLoc2_92;
-	real64 rLoc2_102 = (real64) *(fp - 0xB0);
-	*(fp - 0xC0) = (real32) rLoc2_97;
-	word32 eax_107 = *(fp - 0xC0);
-	*(fp - 0xC0) = (real32) rLoc2_102;
-	word32 edx_109 = *(fp - 0xC0);
-	*(fp - 252) = fp - 0x38;
-	*(fp - 0x0104) = eax_107;
-	*(fp - 0x0100) = edx_109;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	*(fp - 252) = fp - 0x38;
-	*(fp - 0x0100) = fp->dw0004;
-	*(fp - 0x0104) = fp - 0x9C;
-	struct Eq_22903 * ebp_121;
-	struct Eq_23165 * esp_122 = quantum_vectoradd(fp - 0x04, gs, dwArg04, out ebp_121);
-	*(ebp_121 - 0x5C) = *(ebp_121 - 0x98);
-	*(ebp_121 - 88) = *(ebp_121 - 0x94);
-	*(ebp_121 - 0x54) = *(ebp_121 - 0x90);
-	*(ebp_121 - 0x50) = *(ebp_121 - 0x8C);
-	*(ebp_121 - 0x4C) = *(ebp_121 - 0x88);
-	esp_122->t0008 = ebp_121 - 0x34;
-	esp_122->t0000.u0 = 0x3EAAAAAB;
-	esp_122->t0004.u0 = 0x00;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	esp_122->t0008 = ebp_121 - 0x34;
-	esp_122->t0004 = ebp_121->t0008;
-	esp_122->t0000 = ebp_121 - 0x98;
-	struct Eq_22903 * ebp_148;
-	struct Eq_23165 * esp_149 = quantum_vectoradd(ebp_121, gs, dwArg04, out ebp_148);
-	*(ebp_148 - 0x48) = *(ebp_148 - 0x98);
-	*(ebp_148 - 0x44) = *(ebp_148 - 0x94);
-	*(ebp_148 - 0x40) = *(ebp_148 - 0x90);
-	*(ebp_148 - 0x3C) = *(ebp_148 - 0x8C);
-	*(ebp_148 - 0x38) = *(ebp_148 - 0x88);
-	esp_149->t0000 = ebp_148 - 0x34;
-	quantum_delete_qureg(dwArg00);
-	Eq_23226 rLoc1_168 = *(ebp_148 - 0x78) / globals->t8054430 + *(ebp_148 - 0x70);
-	esp_149->t0010 = ebp_148 - 0x5C;
-	esp_149->t0008 = rLoc1_168;
-	esp_149->t0004 = ebp_148->t001C;
-	esp_149->t0000 = ebp_148 - 0x98;
-	quantum_matrix_qureg(ebp_148, gs, dwArg08, dwArg0C, dwArg10);
-	*(ebp_148 - 0x34) = *(ebp_148 - 0x98);
-	*(ebp_148 - 0x30) = *(ebp_148 - 0x94);
-	*(ebp_148 - 44) = *(ebp_148 - 0x90);
-	*(ebp_148 - 0x28) = *(ebp_148 - 0x8C);
-	*(ebp_148 - 0x24) = *(ebp_148 - 0x88);
-	esp_149->t0000 = ebp_148 - 0x5C;
-	quantum_delete_qureg(dwArg00);
-	Eq_23234 rLoc1_191 = *(ebp_148 - 0x78);
-	esp_149->r001C = -1.0;
-	esp_149->r0014 = 0.0;
-	esp_149->r000C = 0.0;
-	esp_149->t0004 = rLoc1_191;
-	esp_149->t0000 = ebp_148 - 0xA8;
-	__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	Eq_23230 rLoc1_204 = *(ebp_148 - 0xA8);
-	Eq_23226 rLoc2_205 = *(ebp_148 - 0xA0);
-	esp_149->r0018 = 0.0;
-	esp_149->t0010 = globals->t8054430;
-	esp_149->t0008 = rLoc2_205;
-	esp_149->t0000 = rLoc1_204;
-	*(esp_149 - 0x04) = ebp_148 - 0xA8;
-	__divdc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	real64 rLoc2_217 = *(ebp_148 - 0xA0);
-	*(ebp_148 - 0xAC) = (real32) *(ebp_148 - 0xA8);
-	real64 rLoc2_222 = (real64) *(ebp_148 - 0xAC);
-	*(ebp_148 - 0xAC) = (real32) rLoc2_217;
-	real64 rLoc2_227 = (real64) *(ebp_148 - 0xAC);
-	*(ebp_148 - 188) = (real32) rLoc2_222;
-	word32 eax_232 = *(ebp_148 - 188);
-	*(ebp_148 - 188) = (real32) rLoc2_227;
-	word32 edx_234 = *(ebp_148 - 188);
-	esp_149->t0000 = ebp_148 - 0x34;
-	*(esp_149 - 0x08) = eax_232;
-	*(esp_149 - 0x04) = edx_234;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	esp_149->t0000 = ebp_148 - 0x34;
-	*(esp_149 - 0x04) = (union Eq_23234 *) ebp_148->t0008;
-	*(esp_149 - 0x08) = ebp_148 - 0x98;
-	struct Eq_22903 * ebp_246;
-	struct Eq_23165 * esp_247 = quantum_vectoradd(ebp_148, gs, dwArg04, out ebp_246);
-	*(ebp_246 - 0x5C) = *(ebp_246 - 0x98);
-	*(ebp_246 - 88) = *(ebp_246 - 0x94);
-	*(ebp_246 - 0x54) = *(ebp_246 - 0x90);
-	*(ebp_246 - 0x50) = *(ebp_246 - 0x8C);
-	*(ebp_246 - 0x4C) = *(ebp_246 - 0x88);
-	esp_247->t0008 = ebp_246 - 0x34;
-	esp_247->t0000.u0 = 0x3F2AAAAB;
-	esp_247->t0004.u0 = 0x00;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	esp_247->t0004 = ebp_246 - 0x34;
-	esp_247->t0000 = ebp_246 - 0x48;
-	struct Eq_22903 * ebp_271;
-	struct Eq_23657 * esp_272 = quantum_vectoradd_inplace(ebp_246, gs, dwArg00, dwArg04, out ebp_271);
-	esp_272->t0000 = ebp_271 - 0x34;
-	quantum_delete_qureg(dwArg00);
-	real64 rLoc1_278 = *(ebp_271 - 0x78) / globals->t8054430 + *(ebp_271 - 0x70);
-	esp_272->t0010 = ebp_271 - 0x5C;
-	esp_272->r0008 = rLoc1_278;
-	esp_272->t0004 = ebp_271->t001C;
-	esp_272->t0000 = ebp_271 - 0x98;
-	quantum_matrix_qureg(ebp_271, gs, dwArg08, dwArg0C, dwArg10);
-	*(ebp_271 - 0x34) = *(ebp_271 - 0x98);
-	*(ebp_271 - 0x30) = *(ebp_271 - 0x94);
-	*(ebp_271 - 44) = *(ebp_271 - 0x90);
-	*(ebp_271 - 0x28) = *(ebp_271 - 0x8C);
-	*(ebp_271 - 0x24) = *(ebp_271 - 0x88);
-	esp_272->t0000 = ebp_271 - 0x5C;
-	quantum_delete_qureg(dwArg00);
-	Eq_23234 rLoc1_301 = *(ebp_271 - 0x78);
-	esp_272->r001C = -1.0;
-	esp_272->r0014 = 0.0;
-	esp_272->r000C = 0.0;
-	esp_272->t0004 = rLoc1_301;
-	esp_272->t0000 = ebp_271 - 0xA8;
-	__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	real64 rLoc2_315 = *(ebp_271 - 0xA0);
-	*(ebp_271 - 0xAC) = (real32) *(ebp_271 - 0xA8);
-	real64 rLoc2_320 = (real64) *(ebp_271 - 0xAC);
-	*(ebp_271 - 0xAC) = (real32) rLoc2_315;
-	real64 rLoc2_325 = (real64) *(ebp_271 - 0xAC);
-	*(ebp_271 - 188) = (real32) rLoc2_320;
-	word32 eax_330 = *(ebp_271 - 188);
-	*(ebp_271 - 188) = (real32) rLoc2_325;
-	Eq_23234 edx_332 = *(ebp_271 - 188);
-	esp_272->t0004 = ebp_271 - 0x34;
-	*(esp_272 - 0x04) = eax_330;
-	esp_272->t0000 = edx_332;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	esp_272->t0004 = ebp_271 - 0x34;
-	esp_272->t0000 = ebp_271->t0008;
-	*(esp_272 - 0x04) = ebp_271 - 0x98;
-	struct Eq_22903 * ebp_344;
-	struct Eq_23165 * esp_345 = quantum_vectoradd(ebp_271, gs, dwArg04, out ebp_344);
-	*(ebp_344 - 0x5C) = *(ebp_344 - 0x98);
-	*(ebp_344 - 88) = *(ebp_344 - 0x94);
-	*(ebp_344 - 0x54) = *(ebp_344 - 0x90);
-	*(ebp_344 - 0x50) = *(ebp_344 - 0x8C);
-	*(ebp_344 - 0x4C) = *(ebp_344 - 0x88);
-	esp_345->t0008 = ebp_344 - 0x34;
-	esp_345->t0000.u0 = 0x3EAAAAAB;
-	esp_345->t0004.u0 = 0x00;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	esp_345->t0004 = ebp_344 - 0x34;
-	esp_345->t0000 = ebp_344 - 0x48;
-	struct Eq_22903 * ebp_369;
-	struct Eq_23657 * esp_370 = quantum_vectoradd_inplace(ebp_344, gs, dwArg00, dwArg04, out ebp_369);
-	esp_370->t0000 = ebp_369 - 0x34;
-	quantum_delete_qureg(dwArg00);
-	real64 rLoc1_374 = *(ebp_369 - 0x70) + *(ebp_369 - 0x78);
-	esp_370->t0010 = ebp_369 - 0x5C;
-	esp_370->r0008 = rLoc1_374;
-	esp_370->t0004 = ebp_369->t001C;
-	esp_370->t0000 = ebp_369 - 0x98;
-	quantum_matrix_qureg(ebp_369, gs, dwArg08, dwArg0C, dwArg10);
-	*(ebp_369 - 0x34) = *(ebp_369 - 0x98);
-	*(ebp_369 - 0x30) = *(ebp_369 - 0x94);
-	*(ebp_369 - 44) = *(ebp_369 - 0x90);
-	*(ebp_369 - 0x28) = *(ebp_369 - 0x8C);
-	*(ebp_369 - 0x24) = *(ebp_369 - 0x88);
-	esp_370->t0000 = ebp_369 - 0x5C;
-	quantum_delete_qureg(dwArg00);
-	Eq_23234 rLoc1_397 = *(ebp_369 - 0x78);
-	esp_370->r001C = -1.0;
-	esp_370->r0014 = 0.0;
-	esp_370->r000C = 0.0;
-	esp_370->t0004 = rLoc1_397;
-	esp_370->t0000 = ebp_369 - 0xA8;
-	__muldc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	Eq_23234 rLoc1_410 = *(ebp_369 - 0xA8);
-	real64 rLoc2_411 = *(ebp_369 - 0xA0);
-	esp_370->r0018 = 0.0;
-	esp_370->t0010 = globals->t8054438;
-	esp_370->r0008 = rLoc2_411;
-	esp_370->t0000 = rLoc1_410;
-	*(esp_370 - 0x04) = ebp_369 - 0xA8;
-	__divdc3(dwArg00, rArg04, rArg0C, rArg14, rArg1C);
-	real64 rLoc2_423 = *(ebp_369 - 0xA0);
-	*(ebp_369 - 0xAC) = (real32) *(ebp_369 - 0xA8);
-	real64 rLoc2_428 = (real64) *(ebp_369 - 0xAC);
-	*(ebp_369 - 0xAC) = (real32) rLoc2_423;
-	real64 rLoc2_433 = (real64) *(ebp_369 - 0xAC);
-	*(ebp_369 - 188) = (real32) rLoc2_428;
-	word32 eax_438 = *(ebp_369 - 188);
-	*(ebp_369 - 188) = (real32) rLoc2_433;
-	word32 edx_440 = *(ebp_369 - 188);
-	esp_370->t0000 = ebp_369 - 0x34;
-	*(esp_370 - 0x08) = eax_438;
-	*(esp_370 - 0x04) = edx_440;
-	quantum_scalar_qureg(dwArg00, dwArg04, dwArg08);
-	*(esp_370 - 0x04) = ebp_369 - 0x34;
-	*(esp_370 - 0x08) = ebp_369 - 0x48;
-	struct Eq_24227 * ebp_450;
-	struct Eq_23657 * esp_451 = quantum_vectoradd_inplace(ebp_369, gs, dwArg00, dwArg04, out ebp_450);
-	esp_451->t0000 = ebp_450 - 0x34;
-	quantum_delete_qureg(dwArg00);
-	esp_451->t0000 = ebp_450->t0008;
-	quantum_delete_qureg(dwArg00);
-	*(ebp_450 - 0x0C) = 0x00;
-	while (*(ebp_450 - 0x44) > *(ebp_450 - 0x0C))
+	quantum_matrix_qureg(fp - 0x04, fp - 0x9C, dwArg18, (word32) rLoc74_15, SLICE(rLoc74_15, word32, 32), dwArg04);
+	real64 rLoc7C_23 = DPB(rLoc7C, dwArg14, 32);
+	__muldc3(fp - 0xAC, rLoc7C_23, 0.0, 0.0, -1.0);
+	__divdc3(fp - 0xAC, rLocAC, rLocA4, globals->r8054430, 0.0);
+	quantum_scalar_qureg((real32) rLocAC, (real32) rLocA4, fp - 0x38);
+	quantum_vectoradd(fp - 0x9C, dwArg04, fp - 0x38);
+	quantum_scalar_qureg(0x3EAAAAAB, 0x00, fp - 0x38);
+	quantum_vectoradd(fp - 0x9C, dwArg04, fp - 0x38);
+	quantum_delete_qureg(fp - 0x38);
+	real64 rLoc1_167 = rLoc7C_23 / globals->r8054430 + rLoc74_15;
+	quantum_matrix_qureg(fp - 0x04, fp - 0x9C, dwArg18, (word32) rLoc1_167, SLICE(rLoc1_167, word32, 32), fp - 0x60);
+	quantum_delete_qureg(fp - 0x60);
+	__muldc3(fp - 0xAC, rLoc7C_23, 0.0, 0.0, -1.0);
+	__divdc3(fp - 0xAC, rLocAC, rLocA4, globals->r8054430, 0.0);
+	quantum_scalar_qureg((real32) rLocAC, (real32) rLocA4, fp - 0x38);
+	quantum_vectoradd(fp - 0x9C, dwArg04, fp - 0x38);
+	quantum_scalar_qureg(0x3F2AAAAB, 0x00, fp - 0x38);
+	quantum_vectoradd_inplace(fp - 0x4C, fp - 0x38);
+	quantum_delete_qureg(fp - 0x38);
+	real64 rLoc1_275 = rLoc7C_23 / globals->r8054430 + rLoc74_15;
+	quantum_matrix_qureg(fp - 0x04, fp - 0x9C, dwArg18, (word32) rLoc1_275, SLICE(rLoc1_275, word32, 32), fp - 0x60);
+	quantum_delete_qureg(fp - 0x60);
+	__muldc3(fp - 0xAC, rLoc7C_23, 0.0, 0.0, -1.0);
+	quantum_scalar_qureg((real32) rLocAC, (real32) rLocA4, fp - 0x38);
+	quantum_vectoradd(fp - 0x9C, dwArg04, fp - 0x38);
+	quantum_scalar_qureg(0x3EAAAAAB, 0x00, fp - 0x38);
+	quantum_vectoradd_inplace(fp - 0x4C, fp - 0x38);
+	quantum_delete_qureg(fp - 0x38);
+	real64 rLoc1_369 = rLoc74_15 + rLoc7C_23;
+	quantum_matrix_qureg(fp - 0x04, fp - 0x9C, dwArg18, (word32) rLoc1_369, SLICE(rLoc1_369, word32, 32), fp - 0x60);
+	quantum_delete_qureg(fp - 0x60);
+	__muldc3(fp - 0xAC, rLoc7C_23, 0.0, 0.0, -1.0);
+	__divdc3(fp - 0xAC, rLocAC, rLocA4, globals->r8054438, 0.0);
+	quantum_scalar_qureg((real32) rLocAC, (real32) rLocA4, fp - 0x38);
+	quantum_vectoradd_inplace(fp - 0x4C, fp - 0x38);
+	quantum_delete_qureg(fp - 0x38);
+	quantum_delete_qureg(dwArg04);
+	while (*(fp - 0x48) > *(fp - 0x10))
 	{
-		struct Eq_24264 * edx_484 = *(ebp_450 - 0x3C) + (*(ebp_450 - 0x0C) << 0x04);
-		esp_451->t0000 = edx_484->t0000;
-		esp_451->t0004 = edx_484->t0004;
-		*(ebp_450 - 0x20) = quantum_prob(dwArg00, dwArg04) + *(ebp_450 - 0x20);
-		*(ebp_450 - 0x0C) = *(ebp_450 - 0x0C) + 0x01;
+		struct Eq_9479 * edx_479 = *(fp - 0x40) + (*(fp - 0x10) << 0x04);
+		*(fp - 0x0118) = edx_479->dw0000;
+		*(fp - 0x0114) = edx_479->dw0004;
+		*(fp - 0x24) = quantum_prob(dwArg00, dwArg04) + *(fp - 0x24);
+		*(fp - 0x10) = *(fp - 0x10) + 0x01;
 	}
-	*(ebp_450 - 0x38) = *(ebp_450 - 0x10);
-	*(ebp_450 - 0x40) = *(ebp_450 - 0x14);
-	Eq_23234 edx_467 = ebp_450->t0008;
-	*edx_467 = *(ebp_450 - 0x48);
-	*((word64) edx_467 + 0x04) = *(ebp_450 - 0x44);
-	*((word64) edx_467 + 0x08) = *(ebp_450 - 0x40);
-	*((word64) edx_467 + 0x0C) = *(ebp_450 - 0x3C);
-	*((word64) edx_467 + 0x0010) = *(ebp_450 - 0x38);
-	return;
+	*(fp - 0x3C) = *(fp - 0x14);
+	*(fp - 0x44) = *(fp - 0x18);
+	struct Eq_9556 * edx_462 = fp->ptr0004;
+	edx_462->dw0000 = *(fp - 0x4C);
+	edx_462->dw0004 = *(fp - 0x48);
+	edx_462->dw0008 = *(fp - 0x44);
+	edx_462->dw000C = *(fp - 0x40);
+	edx_462->dw0010 = *(fp - 0x3C);
 }
 
-// 0805057C: FpuStack Eq_24380 quantum_rk4a(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg14, Stack word32 dwArg18, FpuStack Eq_24380 rArg0)
-Eq_24380 quantum_rk4a(word32 ebp, Eq_380 * gs, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg14, word32 dwArg18, Eq_24380 rArg0)
+// 0805057C: FpuStack Eq_9600 quantum_rk4a(Stack Eq_106 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr real64) dwArg10, Stack word32 dwArg14, Stack word32 dwArg18, Stack (ptr code) dwArg1C, FpuStack Eq_9600 rArg0)
+Eq_9600 quantum_rk4a(Eq_106 dwArg04, word32 dwArg08, word32 dwArg0C, real64 * dwArg10, word32 dwArg14, word32 dwArg18, code * dwArg1C, Eq_9600 rArg0)
 {
-	dwArg04->ptr0010 = null;
-	dwArg04->ptr0008 = null;
-	quantum_copy_qureg(fp - 0x04, gs, dwArg04, fp - 0x5C);
-	*(fp - 200) = fp - 0x48;
-	*(fp - 0xCC) = (struct Eq_24418 **) fp->ptr0004;
-	quantum_copy_qureg(fp - 0x04, gs, dwArg00, dwArg04);
+	Mem29[dwArg04 + 0x10:word32] = 0x00;
+	Mem34[dwArg04 + 0x08:word32] = 0x00;
+	quantum_copy_qureg(dwArg04, fp - 0x5C);
+	quantum_copy_qureg(dwArg04, fp - 0x48);
+	struct Eq_9204 * ebp_137 = fp - 0x04;
+	struct Eq_9631 * esp_136 = fp - 0xCC;
 	do
 	{
-		real64 rLoc1_64 = *fp->ptr0010;
-		*(fp - 0xB8) = fp->dw001C;
-		*(fp - 0xC0) = rLoc1_64;
-		*(fp - 200) = *(fp - 0x84);
-		*(fp - 0xCC) = (struct Eq_24418 **) fp->ptr0004;
-		quantum_rk4(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg14);
-		real64 rLoc1_76 = *fp->ptr0010 / globals->t8054430;
-		*(fp - 0xB8) = fp->dw001C;
-		*(fp - 0xC0) = rLoc1_76;
-		*(fp - 200) = *(fp - 0x84);
-		*(fp - 0xCC) = fp - 0x48;
-		quantum_rk4(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg14);
-		real64 rLoc1_87 = *fp->ptr0010 / globals->t8054430;
-		*(fp - 0xB8) = fp->dw001C;
-		*(fp - 0xC0) = rLoc1_87;
-		*(fp - 200) = *(fp - 0x84);
-		*(fp - 0xCC) = fp - 0x48;
-		quantum_rk4(fp - 0x04, gs, dwArg00, dwArg04, dwArg08, dwArg0C, dwArg10, dwArg14);
-		*(fp - 0x24) = 0.0;
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr0004->dw0004 > *(fp - 0x10))
+		real64 rLoc1_65 = *dwArg10;
+		quantum_rk4(ebp_137, dwArg04, (word32) rLoc84, SLICE(rLoc84, word32, 32), (word32) rLoc1_65, SLICE(rLoc1_65, word32, 32), dwArg1C);
+		real64 rLoc1_82 = *dwArg10 / globals->r8054430;
+		quantum_rk4(ebp_137, fp - 0x48, (word32) rLoc84, SLICE(rLoc84, word32, 32), (word32) rLoc1_82, SLICE(rLoc1_82, word32, 32), dwArg1C);
+		real64 rLoc1_97 = *dwArg10 / globals->r8054430;
+		word32 dwLocC0_101 = (word32) rLoc1_97;
+		word32 dwLocBC_102 = SLICE(rLoc1_97, word32, 32);
+		word32 dwLocC8_105 = (word32) rLoc84;
+		word32 dwLocC4_106 = SLICE(rLoc84, word32, 32);
+		quantum_rk4(ebp_137, fp - 0x48, dwLocC8_105, dwLocC4_106, dwLocC0_101, dwLocBC_102, dwArg1C);
+		while (ebp_137->ptr0008->dw0004 > *(ebp_137 - 0x0C))
 		{
-			struct Eq_24440 * eax_215 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_24455 * eax_222 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-			word32 ebx_217 = eax_215->dw0004;
-			word32 edx_223 = eax_222->dw0000;
-			word32 eax_224 = eax_222->dw0004;
-			*(fp - 0xB0) = eax_215->dw0000;
-			real64 rLoc1_226 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = ebx_217;
-			real64 rLoc2_228 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = edx_223;
-			real64 rLoc3_230 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = eax_224;
-			real64 rLoc2_237 = rLoc2_228 - (real64) (*(fp - 0xB0));
-			*(fp - 0xB0) = (real32) (rLoc1_226 - rLoc3_230);
-			word32 eax_242 = *(fp - 0xB0);
-			*(fp - 0xB0) = (real32) rLoc2_237;
-			word32 edx_244 = *(fp - 0xB0);
-			*(fp - 0xCC) = eax_242;
-			*(fp - 200) = edx_244;
-			*(fp - 0xA0) = (real32) quantum_real(dwArg04);
-			struct Eq_24577 * eax_253 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_24592 * eax_260 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-			word32 ebx_255 = eax_253->dw0004;
-			word32 edx_261 = eax_260->dw0000;
-			word32 eax_262 = eax_260->dw0004;
-			*(fp - 0xB0) = eax_253->dw0000;
-			real64 rLoc1_264 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = ebx_255;
-			real64 rLoc2_266 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = edx_261;
-			real64 rLoc3_268 = (real64) *(fp - 0xB0);
-			*(fp - 0xB0) = eax_262;
-			real64 rLoc2_275 = rLoc2_266 - (real64) (*(fp - 0xB0));
-			*(fp - 0xB0) = (real32) (rLoc1_264 - rLoc3_268);
-			word32 eax_280 = *(fp - 0xB0);
-			*(fp - 0xB0) = (real32) rLoc2_275;
-			word32 edx_282 = *(fp - 0xB0);
-			*(fp - 0xCC) = eax_280;
-			*(fp - 200) = edx_282;
-			if ((real64) *(fp - 0xA0) > quantum_imag(dwArg08))
+			word32 eax_240 = Mem34[Mem34[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem34[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+			struct Eq_9661 * eax_247 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+			word32 ebx_242 = eax_240->dw0004;
+			word32 edx_248 = eax_247->dw0000;
+			word32 eax_249 = eax_247->dw0004;
+			*(ebp_137 - 0xAC) = eax_240->dw0000;
+			real64 rLoc1_251 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = ebx_242;
+			real64 rLoc2_253 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = edx_248;
+			real64 rLoc3_255 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = eax_249;
+			real64 rLoc2_262 = rLoc2_253 - (real64) (*(ebp_137 - 0xAC));
+			*(ebp_137 - 0xAC) = (real32) (rLoc1_251 - rLoc3_255);
+			Eq_106 eax_267 = *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = (real32) rLoc2_262;
+			Eq_106 edx_269 = *(ebp_137 - 0xAC);
+			esp_136->t0000 = eax_267;
+			esp_136->t0004 = edx_269;
+			*(ebp_137 - 0x9C) = (real32) quantum_real(dwArg04);
+			word32 eax_278 = Mem273[Mem273[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem273[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+			struct Eq_9795 * eax_285 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+			word32 ebx_280 = eax_278->dw0004;
+			word32 edx_286 = eax_285->dw0000;
+			word32 eax_287 = eax_285->dw0004;
+			*(ebp_137 - 0xAC) = eax_278->dw0000;
+			real64 rLoc1_289 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = ebx_280;
+			real64 rLoc2_291 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = edx_286;
+			real64 rLoc3_293 = (real64) *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = eax_287;
+			real64 rLoc2_300 = rLoc2_291 - (real64) (*(ebp_137 - 0xAC));
+			*(ebp_137 - 0xAC) = (real32) (rLoc1_289 - rLoc3_293);
+			Eq_106 eax_305 = *(ebp_137 - 0xAC);
+			*(ebp_137 - 0xAC) = (real32) rLoc2_300;
+			Eq_106 edx_307 = *(ebp_137 - 0xAC);
+			esp_136->t0000 = eax_305;
+			esp_136->t0004 = edx_307;
+			if ((real64) *(ebp_137 - 0x9C) > quantum_imag(dwArg08))
 			{
-				struct Eq_25289 * eax_314 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_25304 * eax_321 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-				word32 ebx_316 = eax_314->dw0004;
-				word32 edx_322 = eax_321->dw0000;
-				word32 eax_323 = eax_321->dw0004;
-				*(fp - 0xB0) = eax_314->dw0000;
-				real64 rLoc1_325 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = ebx_316;
-				real64 rLoc2_327 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = edx_322;
-				real64 rLoc3_329 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = eax_323;
-				real64 rLoc1_335 = rLoc1_325 - rLoc3_329;
-				real64 rLoc2_336 = rLoc2_327 - (real64) (*(fp - 0xB0));
-				*(fp - 0xB0) = (real32) rLoc1_335;
-				word32 eax_341 = *(fp - 0xB0);
-				*(fp - 0xB0) = (real32) rLoc2_336;
-				word32 edx_343 = *(fp - 0xB0);
-				*(fp - 0xCC) = eax_341;
-				*(fp - 200) = edx_343;
-				*(fp - 0x9C) = (real32) (quantum_real(dwArg04) + rLoc1_335);
-				struct Eq_25426 * eax_354 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_25441 * eax_361 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-				word32 ebx_356 = eax_354->dw0004;
-				word32 edx_362 = eax_361->dw0000;
-				word32 eax_363 = eax_361->dw0004;
-				*(fp - 0xB0) = eax_354->dw0000;
-				real64 rLoc1_365 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = ebx_356;
-				real64 rLoc2_367 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = edx_362;
-				real64 rLoc3_369 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = eax_363;
-				real64 rLoc2_376 = rLoc2_367 + (real64) (*(fp - 0xB0));
-				*(fp - 0xB0) = (real32) (rLoc1_365 + rLoc3_369);
-				word32 eax_381 = *(fp - 0xB0);
-				*(fp - 0xB0) = (real32) rLoc2_376;
-				word32 edx_383 = *(fp - 0xB0);
-				*(fp - 0xCC) = eax_381;
-				*(fp - 200) = edx_383;
-				*(fp - 44) = (union Eq_25560 *) (*(fp - 0x9C) / quantum_real(dwArg04));
+				word32 eax_339 = Mem309[Mem309[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem309[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+				struct Eq_10512 * eax_346 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+				word32 ebx_341 = eax_339->dw0004;
+				word32 edx_347 = eax_346->dw0000;
+				word32 eax_348 = eax_346->dw0004;
+				*(ebp_137 - 0xAC) = eax_339->dw0000;
+				real64 rLoc1_350 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = ebx_341;
+				real64 rLoc2_352 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = edx_347;
+				real64 rLoc3_354 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = eax_348;
+				real64 rLoc1_360 = rLoc1_350 - rLoc3_354;
+				real64 rLoc2_361 = rLoc2_352 - (real64) (*(ebp_137 - 0xAC));
+				*(ebp_137 - 0xAC) = (real32) rLoc1_360;
+				Eq_106 eax_366 = *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = (real32) rLoc2_361;
+				Eq_106 edx_368 = *(ebp_137 - 0xAC);
+				esp_136->t0000 = eax_366;
+				esp_136->t0004 = edx_368;
+				*(ebp_137 - 0x98) = (real32) (quantum_real(dwArg04) + rLoc1_360);
+				word32 eax_379 = Mem374[Mem374[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem374[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+				struct Eq_10646 * eax_386 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+				word32 ebx_381 = eax_379->dw0004;
+				word32 edx_387 = eax_386->dw0000;
+				word32 eax_388 = eax_386->dw0004;
+				*(ebp_137 - 0xAC) = eax_379->dw0000;
+				real64 rLoc1_390 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = ebx_381;
+				real64 rLoc2_392 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = edx_387;
+				real64 rLoc3_394 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = eax_388;
+				real64 rLoc2_401 = rLoc2_392 + (real64) (*(ebp_137 - 0xAC));
+				*(ebp_137 - 0xAC) = (real32) (rLoc1_390 + rLoc3_394);
+				Eq_106 eax_406 = *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = (real32) rLoc2_401;
+				Eq_106 edx_408 = *(ebp_137 - 0xAC);
+				esp_136->t0000 = eax_406;
+				esp_136->t0004 = edx_408;
+				*(ebp_137 - 0x28) = (union Eq_10762 *) (*(ebp_137 - 0x98) / quantum_real(dwArg04));
 			}
 			else
 			{
-				struct Eq_25012 * eax_393 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_25027 * eax_400 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-				word32 ebx_395 = eax_393->dw0004;
-				word32 edx_401 = eax_400->dw0000;
-				word32 eax_402 = eax_400->dw0004;
-				*(fp - 0xB0) = eax_393->dw0000;
-				real64 rLoc1_404 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = ebx_395;
-				real64 rLoc2_406 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = edx_401;
-				real64 rLoc3_408 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = eax_402;
-				real64 rLoc1_414 = rLoc1_404 - rLoc3_408;
-				real64 rLoc2_415 = rLoc2_406 - (real64) (*(fp - 0xB0));
-				*(fp - 0xB0) = (real32) rLoc1_414;
-				word32 eax_420 = *(fp - 0xB0);
-				*(fp - 0xB0) = (real32) rLoc2_415;
-				word32 edx_422 = *(fp - 0xB0);
-				*(fp - 0xCC) = eax_420;
-				*(fp - 200) = edx_422;
-				*(fp - 0x98) = (real32) (quantum_imag(dwArg08) + rLoc1_414);
-				struct Eq_25149 * eax_433 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-				struct Eq_25164 * eax_440 = *(fp - 0x3C) + (*(fp - 0x10) << 0x04);
-				word32 ebx_435 = eax_433->dw0004;
-				word32 edx_441 = eax_440->dw0000;
-				word32 eax_442 = eax_440->dw0004;
-				*(fp - 0xB0) = eax_433->dw0000;
-				real64 rLoc1_444 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = ebx_435;
-				real64 rLoc2_446 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = edx_441;
-				real64 rLoc3_448 = (real64) *(fp - 0xB0);
-				*(fp - 0xB0) = eax_442;
-				real64 rLoc2_455 = rLoc2_446 + (real64) (*(fp - 0xB0));
-				*(fp - 0xB0) = (real32) (rLoc1_444 + rLoc3_448);
-				word32 eax_460 = *(fp - 0xB0);
-				*(fp - 0xB0) = (real32) rLoc2_455;
-				word32 edx_462 = *(fp - 0xB0);
-				*(fp - 0xCC) = eax_460;
-				*(fp - 200) = edx_462;
-				*(fp - 44) = (union Eq_25283 *) (*(fp - 0x98) / quantum_imag(dwArg08));
+				word32 eax_418 = Mem309[Mem309[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem309[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+				struct Eq_10241 * eax_425 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+				word32 ebx_420 = eax_418->dw0004;
+				word32 edx_426 = eax_425->dw0000;
+				word32 eax_427 = eax_425->dw0004;
+				*(ebp_137 - 0xAC) = eax_418->dw0000;
+				real64 rLoc1_429 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = ebx_420;
+				real64 rLoc2_431 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = edx_426;
+				real64 rLoc3_433 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = eax_427;
+				real64 rLoc1_439 = rLoc1_429 - rLoc3_433;
+				real64 rLoc2_440 = rLoc2_431 - (real64) (*(ebp_137 - 0xAC));
+				*(ebp_137 - 0xAC) = (real32) rLoc1_439;
+				Eq_106 eax_445 = *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = (real32) rLoc2_440;
+				Eq_106 edx_447 = *(ebp_137 - 0xAC);
+				esp_136->t0000 = eax_445;
+				esp_136->t0004 = edx_447;
+				*(ebp_137 - 0x94) = (real32) (quantum_imag(dwArg08) + rLoc1_439);
+				word32 eax_458 = Mem453[Mem453[ebp_137 + 0x08:word32] + 0x0C:word32] + (Mem453[(ebp_137 - 0x0C) + 0x00:word32] << 0x04);
+				struct Eq_10375 * eax_465 = *(ebp_137 - 0x38) + (*(ebp_137 - 0x0C) << 0x04);
+				word32 ebx_460 = eax_458->dw0004;
+				word32 edx_466 = eax_465->dw0000;
+				word32 eax_467 = eax_465->dw0004;
+				*(ebp_137 - 0xAC) = eax_458->dw0000;
+				real64 rLoc1_469 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = ebx_460;
+				real64 rLoc2_471 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = edx_466;
+				real64 rLoc3_473 = (real64) *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = eax_467;
+				real64 rLoc2_480 = rLoc2_471 + (real64) (*(ebp_137 - 0xAC));
+				*(ebp_137 - 0xAC) = (real32) (rLoc1_469 + rLoc3_473);
+				Eq_106 eax_485 = *(ebp_137 - 0xAC);
+				*(ebp_137 - 0xAC) = (real32) rLoc2_480;
+				Eq_106 edx_487 = *(ebp_137 - 0xAC);
+				esp_136->t0000 = eax_485;
+				esp_136->t0004 = edx_487;
+				*(ebp_137 - 0x28) = (union Eq_10491 *) (*(ebp_137 - 0x94) / quantum_imag(dwArg08));
 			}
-			if (*(fp - 44) > *(fp - 0x24))
-				*(fp - 0x24) = *(fp - 44);
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			if (*(ebp_137 - 0x28) > *(ebp_137 - 0x20))
+				*(ebp_137 - 0x20) = *(ebp_137 - 0x28);
+			*(ebp_137 - 0x0C) = *(ebp_137 - 0x0C) + 0x01;
 		}
-		*(fp - 0x34) = *fp->ptr0010;
-		*(fp - 0x94) = *fp->ptr0010;
-		real64 rLoc1_118 = *(fp - 0x8C) / *(fp - 0x24);
-		*(fp - 0xC4) = globals->r8054440;
-		*(fp - 0xCC) = rLoc1_118;
-		fn080488A4();
-		*fp->ptr0010 = rArg0 * *(fp - 0x94);
-		if (*(fp - 0x24) > *(fp - 0x8C))
+		*(ebp_137 - 0x30) = *ebp_137->ptr0014;
+		real64 * eax_128 = ebp_137->ptr0014;
+		*(ebp_137 - 0x90) = *eax_128;
+		Eq_106 rLoc1_132 = *(ebp_137 - 0x88) / *(ebp_137 - 0x20);
+		esp_136->t0008 = globals->t8054440;
+		esp_136->t0000 = rLoc1_132;
+		word32 ebx_138;
+		byte SCZO_139;
+		word32 eax_140;
+		byte SZO_141;
+		byte FPUF_142;
+		byte CZ_143;
+		word32 edx_144;
+		word32 ecx_145;
+		!pow();
+		*ebp_137->ptr0014 = rArg0 * *(ebp_137 - 0x90);
+		if (*(ebp_137 - 0x20) > *(ebp_137 - 0x88))
 		{
-			struct Eq_24418 * edx_157 = fp->ptr0004;
-			*(fp - 0x70) = edx_157->dw0000;
-			*(fp - 0x6C) = edx_157->dw0004;
-			*(fp - 0x68) = edx_157->dw0008;
-			*(fp - 100) = edx_157->dw000C;
-			*(fp - 0x60) = edx_157->dw0010;
-			struct Eq_24418 * edx_168 = fp->ptr0004;
-			edx_168->dw0000 = *(fp - 0x5C);
-			edx_168->dw0004 = *(fp - 88);
-			edx_168->dw0008 = *(fp - 0x54);
-			edx_168->dw000C = *(fp - 0x50);
-			edx_168->dw0010 = *(fp - 0x4C);
-			*(fp - 0x5C) = *(fp - 0x70);
-			*(fp - 88) = *(fp - 0x6C);
-			*(fp - 0x54) = *(fp - 0x68);
-			*(fp - 0x50) = *(fp - 100);
-			*(fp - 0x4C) = *(fp - 0x60);
-			word32 eax_195 = fp->ptr0004->dw000C;
-			word32 edx_196 = *(fp - 0x3C);
-			*(fp - 0xC4) = fp->ptr0004->dw0004 << 0x04;
-			*(fp - 200) = eax_195;
-			*(fp - 0xCC) = edx_196;
-			fn08048914();
-			word32 eax_206 = fp->ptr0004->dw000C;
-			word32 edx_207 = *(fp - 0x50);
-			*(fp - 0xC4) = fp->ptr0004->dw0004 << 0x04;
-			*(fp - 200) = eax_206;
-			*(fp - 0xCC) = edx_207;
-			fn08048914();
+			struct Eq_9636 * edx_181 = ebp_137->ptr0008;
+			*(ebp_137 - 0x6C) = edx_181->dw0000;
+			*(ebp_137 - 0x68) = edx_181->dw0004;
+			*(ebp_137 - 100) = edx_181->dw0008;
+			*(ebp_137 - 0x60) = (union Eq_106 *) edx_181->t000C;
+			*(ebp_137 - 0x5C) = edx_181->dw0010;
+			struct Eq_9636 * edx_192 = ebp_137->ptr0008;
+			edx_192->dw0000 = *(ebp_137 - 88);
+			edx_192->dw0004 = *(ebp_137 - 0x54);
+			edx_192->dw0008 = *(ebp_137 - 0x50);
+			edx_192->t000C = *(ebp_137 - 0x4C);
+			edx_192->dw0010 = *(ebp_137 - 0x48);
+			*(ebp_137 - 88) = *(ebp_137 - 0x6C);
+			*(ebp_137 - 0x54) = *(ebp_137 - 0x68);
+			*(ebp_137 - 0x50) = *(ebp_137 - 100);
+			*(ebp_137 - 0x4C) = *(ebp_137 - 0x60);
+			*(ebp_137 - 0x48) = *(ebp_137 - 0x5C);
+			Eq_106 eax_218 = ebp_137->ptr0008->t000C;
+			Eq_106 edx_219 = *(ebp_137 - 0x38);
+			esp_136->t0008 = ebp_137->ptr0008->dw0004 << 0x04;
+			esp_136->t0004 = eax_218;
+			esp_136->t0000 = edx_219;
+			memcpy(esp_136->t0000, esp_136->t0004, esp_136->t0008);
+			Eq_106 eax_230 = ebp_137->ptr0008->t000C;
+			Eq_106 edx_231 = *(ebp_137 - 0x4C);
+			esp_136->t0008 = ebp_137->ptr0008->dw0004 << 0x04;
+			esp_136->t0004 = eax_230;
+			esp_136->t0000 = edx_231;
+			memcpy(esp_136->t0000, esp_136->t0004, esp_136->t0008);
 		}
-		Eq_24380 rLoc1_137 = *(fp - 0x8C);
-		rArg0 = rLoc1_137;
-	} while (*(fp - 0x24) > rLoc1_137);
-	fp->ptr0004->dw0010 = *(fp - 0x14);
-	fp->ptr0004->dw0008 = *(fp - 0x18);
-	return *(fp - 0x34);
+		Eq_9600 rLoc1_161 = *(ebp_137 - 0x88);
+		rArg0 = rLoc1_161;
+	} while (*(ebp_137 - 0x20) > rLoc1_161);
+	ebp_137->ptr0008->dw0010 = *(ebp_137 - 0x10);
+	ebp_137->ptr0008->dw0008 = *(ebp_137 - 0x14);
+	return *(ebp_137 - 0x30);
 }
 
-// 08050B0E: FpuStack real64 quantum_real(Stack (ptr Eq_136) dwArg04)
-real64 quantum_real(Eq_136 * dwArg04)
+// 08050B0E: FpuStack real64 quantum_real(Stack Eq_106 dwArg04)
+real64 quantum_real(Eq_106 dwArg04)
 {
 	return (real64) dwArg04;
 }
@@ -5585,408 +3701,216 @@ real64 quantum_imag(word32 dwArg08)
 	return (real64) dwArg08;
 }
 
-// 08050B44: void quantum_matrix2qureg(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg08)
-void quantum_matrix2qureg(word32 ebp, Eq_380 * gs, word32 dwArg08)
+// 08050B44: void quantum_matrix2qureg(Stack (ptr Eq_10878) dwArg04, Stack (ptr Eq_10879) dwArg08, Stack word32 dwArg0C)
+void quantum_matrix2qureg(Eq_10878 * dwArg04, Eq_10879 * dwArg08, word32 dwArg0C)
 {
+	Eq_106 dwLoc10_206 = 0x00;
 	if (dwArg08->dw0004 != 0x01)
-		quantum_error(gs, (struct Eq_136 *) 0x00010000);
-	*(fp - 0x24) = fp->dw000C;
-	*(fp - 0x08) = 0x00;
-	if (fp->ptr0008->dw0000 <= *(fp - 0x08))
+		quantum_error(0x00010000);
+	int32 dwLoc08_19 = 0x00;
+	while (dwArg08->dw0000 > dwLoc08_19)
 	{
-		*(fp - 0x20) = *(fp - 0x10);
-		*(fp - 0x1C) = fp->dw000C + 0x02;
-		word32 eax_42 = *(fp - 0x10);
-		*(fp - 0x38) = 0x10;
-		*(fp - 0x3C) = eax_42;
-		struct Eq_25888 * esp_45;
-		ptr32 ebp_46;
-		byte SCZO_47;
-		word32 eax_48;
-		byte Z_49;
-		byte SZO_50;
-		byte C_51;
-		word32 edx_52;
-		byte FPUF_53;
-		byte P_54;
-		word32 ecx_55;
-		byte cl_56;
-		struct Eq_380 * gs_57;
-		word32 ebx_58;
-		log();
-		*(ebp_46 - 0x14) = eax_48;
-		if (*(ebp_46 - 0x14) == 0x00)
+		struct Eq_10897 * eax_193 = dwArg08->dw0008 + (dwLoc08_19 << 0x03);
+		word32 eax_195 = eax_193->dw0004;
+		if ((real64) eax_193->dw0000 == 0.0 && !P)
 		{
-			esp_45->dw0000 = 0x02;
-			quantum_error(gs_57, dwArg00);
+			Eq_10941 rLoc1_225 = (real64) eax_195;
+			Eq_10941 v15_227 = 0.0;
+			if (!P && rLoc1_225 == v15_227)
+				goto l08050BB5;
 		}
-		esp_45->dw0000 = *(ebp_46 - 0x0C) << 0x04;
-		quantum_memman(dwArg00);
-		word32 ecx_69 = *(ebp_46 - 0x18);
-		esp_45->dw0004 = 0x04;
-		byte cl_70 = (byte) ecx_69;
-		ui32 eax_72 = 0x01 << cl_70;
-		esp_45->dw0000 = eax_72;
-		ui32 * esp_76;
-		struct Eq_25947 * ebp_77;
-		byte SCZO_78;
-		word32 eax_79;
-		byte Z_80;
-		byte SZO_81;
-		byte C_82;
-		word32 edx_83;
-		byte FPUF_84;
-		bool P_85;
-		word32 ecx_86;
-		byte cl_87;
-		struct Eq_380 * gs_88;
-		word32 ebx_89;
-		log();
-		*(ebp_77 - 0x10) = eax_79;
-		if (*(ebp_77 - 0x10) == 0x00)
-		{
-			*esp_76 = 0x02;
-			quantum_error(gs_88, dwArg00);
-		}
-		*esp_76 = 0x04 << (byte) (*(ebp_77 - 0x18));
-		quantum_memman(dwArg00);
-		*(ebp_77 - 0x04) = 0x00;
-		*(ebp_77 - 0x08) = 0x00;
-		if (ebp_77->ptr000C->dw0000 <= *(ebp_77 - 0x04))
-		{
-			ebp_77->ptr0008->dw0000 = *(ebp_77 - 0x20);
-			ebp_77->ptr0008->dw0004 = *(ebp_77 - 0x1C);
-			ebp_77->ptr0008->dw0008 = *(ebp_77 - 0x18);
-			ebp_77->ptr0008->dw000C = *(ebp_77 - 0x14);
-			ebp_77->ptr0008->dw0010 = *(ebp_77 - 0x10);
-			return;
-		}
-		struct Eq_26057 * eax_138 = ebp_77->ptr000C->dw0008 + (*(ebp_77 - 0x04) << 0x03);
-		word32 edx_139 = eax_138->dw0000;
-		*(ebp_77 - 0x24) = eax_138->dw0004;
-		*(ebp_77 - 44) = edx_139;
-		if ((real64) *(ebp_77 - 44) == 0.0 && !P_85)
-		{
-			Eq_26234 rLoc1_194 = (real64) *(ebp_77 - 0x24);
-			Eq_26234 v21_196 = 0.0;
-			if (!P_85 && rLoc1_194 == v21_196)
-			{
-l08050CDB:
-				*(ebp_77 - 0x04) = *(ebp_77 - 0x04) + 0x01;
-				goto l08050CDF;
-			}
-		}
-		struct Eq_26152 * ecx_172 = *(ebp_77 - 0x14) + (*(ebp_77 - 0x08) << 0x04);
-		int32 eax_173 = *(ebp_77 - 0x04);
-		ecx_172->dw0008 = eax_173;
-		ecx_172->dw000C = eax_173 >> 0x1F;
-		struct Eq_26180 * eax_186 = ebp_77->ptr000C->dw0008 + (*(ebp_77 - 0x04) << 0x03);
-		struct Eq_26195 * ecx_181 = *(ebp_77 - 0x14) + (*(ebp_77 - 0x08) << 0x04);
-		word32 eax_188 = eax_186->dw0004;
-		ecx_181->dw0000 = eax_186->dw0000;
-		ecx_181->dw0004 = eax_188;
-		*(ebp_77 - 0x08) = *(ebp_77 - 0x08) + 0x01;
-		goto l08050CDB;
-	}
-	struct Eq_25811 * eax_212 = fp->ptr0008->dw0008 + (*(fp - 0x08) << 0x03);
-	word32 edx_213 = eax_212->dw0000;
-	*(fp - 44) = eax_212->dw0004;
-	*(fp - 0x30) = edx_213;
-	if ((real64) *(fp - 0x30) == 0.0 && !P)
-	{
-		Eq_25992 rLoc1_244 = (real64) *(fp - 44);
-		Eq_25992 v15_246 = 0.0;
-		if (!P && rLoc1_244 == v15_246)
-		{
+		dwLoc10_206 = dwLoc10_206 + 0x01;
 l08050BB5:
-			*(fp - 0x08) = *(fp - 0x08) + 0x01;
-			goto l08050BB9;
-		}
+		dwLoc08_19 = dwLoc08_19 + 0x01;
 	}
-	*(fp - 0x10) = *(fp - 0x10) + 0x01;
-	goto l08050BB5;
-}
-
-// 08050D20: Register word32 quantum_new_qureg(Register (ptr Eq_3742) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_136) dwArg0C, Stack (ptr Eq_136) dwArg10)
-word32 quantum_new_qureg(Eq_3742 * ebp, Eq_380 * gs, Eq_136 * dwArg08, Eq_136 * dwArg0C, Eq_136 * dwArg10)
-{
-	struct Eq_26257 * esp_23;
-	ptr32 ebp_24;
-	byte SCZO_25;
-	word32 eax_26;
-	byte SZO_27;
-	byte C_28;
-	byte Z_29;
-	word32 ecx_30;
-	byte cl_31;
-	word32 edx_32;
-	struct Eq_380 * gs_33;
-	word32 ebx_34;
-	log();
-	if (eax_26 == 0x00)
-		quantum_error(gs_33, (struct Eq_136 *) 0x02);
-	esp_23->dw0000 = 0x10;
-	quantum_memman(dwArg00);
-	word32 ecx_43 = *(ebp_24 - 0x10);
-	esp_23->dw0004 = 0x04;
-	byte cl_44 = (byte) ecx_43;
-	ui32 eax_46 = 0x01 << cl_44;
-	esp_23->dw0000 = eax_46;
-	struct Eq_26297 * esp_50;
-	struct Eq_3953 * ebp_51;
-	byte SCZO_52;
-	word32 eax_53;
-	byte SZO_54;
-	byte C_55;
-	byte Z_56;
-	word32 ecx_57;
-	byte cl_58;
-	word32 edx_59;
-	struct Eq_380 * gs_60;
-	word32 ebx_61;
-	log();
-	*(ebp_51 - 0x08) = eax_53;
-	if (*(ebp_51 - 0x08) == 0x00)
+	Eq_106 eax_49 = calloc(dwLoc10_206, 0x10);
+	if (eax_49 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwLoc10_206 << 0x04);
+	Eq_106 eax_65 = calloc(0x01 << (byte) (dwArg0C + 0x02), 0x04);
+	if (eax_65 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(0x04 << (byte) (dwArg0C + 0x02));
+	int32 dwLoc08_143 = 0x00;
+	ui32 dwLoc0C_139 = 0x00;
+	while (dwArg08->dw0000 > dwLoc08_143)
 	{
-		esp_50->ptr0000 = (FILE *) 0x02;
-		quantum_error(gs_60, dwArg00);
-	}
-	esp_50->ptr0000 = 0x04 << (byte) (*(ebp_51 - 0x10));
-	quantum_memman(dwArg00);
-	struct Eq_26338 * ecx_74 = *(ebp_51 - 0x0C);
-	word32 edx_76 = *(ebp_51 - 0x24);
-	ecx_74->dw0008 = *(ebp_51 - 0x28);
-	ecx_74->dw000C = edx_76;
-	struct Eq_26361 * edx_79 = *(ebp_51 - 0x0C);
-	edx_79->dw0000 = 0x3F800000;
-	edx_79->dw0004 = 0x00;
-	esp_50->ptr0000 = &globals->t8054448;
-	FILE * eax_85 = fprintf(esp_50->ptr0000, esp_50->ptr0004, esp_50->dw0008);
-	*(ebp_51 - 0x04) = (FILE **) eax_85;
-	if (*(ebp_51 - 0x04) != 0x00)
-	{
-		quantum_objcode_start(eax_85, ebp_51, gs_60);
-		esp_50->ptr0000 = (FILE *) *(ebp_51 - 0x04);
-		quantum_objcode_file(dwArg00);
-		esp_50->ptr0000 = &globals->t804EB38;
-		atexit(dwArg00);
-	}
-	word32 edx_90 = *(ebp_51 - 0x24);
-	esp_50->ptr0004 = (char *) *(ebp_51 - 0x28);
-	esp_50->dw0008 = edx_90;
-	esp_50->ptr0000 = null;
-	word32 edx_97;
-	word32 ebx_98;
-	quantum_objcode_put(ebp_51, gs_60, dwArg00, dwArg04, rArg08, rArg0C, out edx_97, out ebx_98);
-	ebp_51->ptr0008->dw0000 = *(ebp_51 - 0x18);
-	ebp_51->ptr0008->dw0004 = *(ebp_51 - 0x14);
-	ebp_51->ptr0008->dw0008 = *(ebp_51 - 0x10);
-	ebp_51->ptr0008->dw000C = *(ebp_51 - 0x0C);
-	ebp_51->ptr0008->dw0010 = *(ebp_51 - 0x08);
-	return ebx_98;
-}
-
-// 08050E60: void quantum_new_qureg_size(Register word32 ebp, Register (ptr Eq_26521) gs, Stack word32 dwArg08, Stack word32 dwArg0C)
-void quantum_new_qureg_size(word32 ebp, Eq_26521 * gs, word32 dwArg08, word32 dwArg0C)
-{
-	ui32 * esp_19;
-	struct Eq_26525 * ebp_20;
-	byte SCZO_21;
-	word32 eax_22;
-	byte SZO_23;
-	byte C_24;
-	byte Z_25;
-	word32 edx_26;
-	struct Eq_380 * gs_27;
-	word32 ebx_28;
-	log();
-	if (eax_22 == 0x00)
-		quantum_error(gs_27, (struct Eq_136 *) 0x02);
-	*esp_19 = ebp_20->dw000C << 0x04;
-	quantum_memman(dwArg00);
-	ebp_20->ptr0008->dw0000 = *(ebp_20 - 0x14);
-	ebp_20->ptr0008->dw0004 = *(ebp_20 - 0x10);
-	ebp_20->ptr0008->dw0008 = *(ebp_20 - 0x0C);
-	ebp_20->ptr0008->dw000C = *(ebp_20 - 0x08);
-	ebp_20->ptr0008->dw0010 = *(ebp_20 - 0x04);
-	return;
-}
-
-// 08050EEA: void quantum_qureg2matrix(Register (ptr Eq_380) gs, Stack word32 dwArg08)
-void quantum_qureg2matrix(Eq_380 * gs, word32 dwArg08)
-{
-	quantum_new_matrix(fp - 0x04, gs, (struct Eq_136 *) 0x01, 0x01 << (byte) dwArg08);
-	*(fp - 0x08) = 0x00;
-	while (fp->dw000C > *(fp - 0x08))
-	{
-		struct Eq_26633 * eax_52 = fp->ptr0014 + (*(fp - 0x08) << 0x04);
-		struct Eq_26645 * ecx_48 = *(fp - 0x0C) + ((fp->ptr0014 + (*(fp - 0x08) << 0x04))->dw0008 << 0x03);
-		word32 eax_54 = eax_52->dw0004;
-		ecx_48->dw0000 = eax_52->dw0000;
-		ecx_48->dw0004 = eax_54;
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
-	}
-	fp->ptr0004->dw0000 = *(fp - 0x14);
-	fp->ptr0004->dw0004 = *(fp - 0x10);
-	fp->ptr0004->dw0008 = *(fp - 0x0C);
-	return;
-}
-
-// 08050F7A: void quantum_destroy_hash(Stack (ptr Eq_3034) dwArg04)
-void quantum_destroy_hash(Eq_3034 * dwArg04)
-{
-	fn080488D4();
-	quantum_memman(~0x03 << (byte) dwArg04->dw0008);
-	dwArg04->dw0010 = 0x00;
-	return;
-}
-
-// 08050FAF: void quantum_delete_qureg(Stack (ptr Eq_136) dwArg04)
-void quantum_delete_qureg(Eq_136 * dwArg04)
-{
-	if (dwArg04->dw0008 != 0x00 && dwArg04->dw0010 != 0x00)
-		quantum_destroy_hash(dwArg04);
-	fn080488D4();
-	quantum_memman(-(dwArg04->dw0004 << 0x04));
-	dwArg04->dw000C = 0x00;
-	return;
-}
-
-// 08051001: void quantum_delete_qureg_hashpreserve(Stack (ptr Eq_136) dwArg04)
-void quantum_delete_qureg_hashpreserve(Eq_136 * dwArg04)
-{
-	fn080488D4();
-	quantum_memman(-(dwArg04->dw0004 << 0x04));
-	dwArg04->dw000C = 0x00;
-	return;
-}
-
-// 08051034: void quantum_copy_qureg(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_copy_qureg(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_136 * dwArg08)
-{
-	dwArg08->dw0000 = dwArg04->dw0000;
-	dwArg08->dw0004 = dwArg04->dw0004;
-	dwArg08->dw0008 = dwArg04->dw0008;
-	dwArg08->dw000C = dwArg04->dw000C;
-	dwArg08->dw0010 = dwArg04->dw0010;
-	byte SCZO_29;
-	word32 ecx_30;
-	word32 edx_31;
-	word32 eax_32;
-	byte SZO_33;
-	byte C_34;
-	byte Z_35;
-	byte cl_36;
-	struct Eq_380 * gs_37;
-	word32 ebx_38;
-	struct Eq_26825 * ebp_28;
-	struct Eq_26826 * esp_27;
-	log();
-	dwArg08->dw000C = eax_32;
-	if (dwArg08->dw000C == 0x00)
-		quantum_error(gs_37, (struct Eq_136 *) 0x02);
-	esp_27->dw0000 = ebp_28->ptr000C->dw0004 << 0x04;
-	quantum_memman(dwArg00);
-	if (ebp_28->ptr000C->dw0008 != 0x00)
-	{
-		word32 ecx_84 = ebp_28->ptr000C->dw0008;
-		esp_27->dw0004 = 0x04;
-		byte cl_85 = (byte) ecx_84;
-		ui32 eax_87 = 0x01 << cl_85;
-		esp_27->dw0000 = eax_87;
-		byte SCZO_93;
-		word32 ecx_94;
-		word32 edx_95;
-		word32 eax_96;
-		byte SZO_97;
-		byte C_98;
-		byte Z_99;
-		byte cl_100;
-		struct Eq_380 * gs_101;
-		word32 ebx_102;
-		log();
-		ebp_28->ptr000C->dw0010 = eax_96;
-		if (ebp_28->ptr000C->dw0010 == 0x00)
+		struct Eq_10965 * eax_119 = dwArg08->dw0008 + (dwLoc08_143 << 0x03);
+		word32 eax_121 = eax_119->dw0004;
+		if ((real64) eax_119->dw0000 == 0.0 && !P)
 		{
-			esp_27->dw0000 = 0x02;
-			quantum_error(gs_101, dwArg00);
+			Eq_11036 rLoc1_177 = (real64) eax_121;
+			Eq_11036 v21_179 = 0.0;
+			if (!P && rLoc1_177 == v21_179)
+				goto l08050CDB;
 		}
-		esp_27->dw0000 = 0x04 << (byte) (ebp_28->ptr000C)->dw0008;
-		quantum_memman(dwArg00);
+		word32 ecx_154 = eax_49 + (dwLoc0C_139 << 0x04);
+		ecx_154->dw0008 = dwLoc08_143;
+		ecx_154->dw000C = dwLoc08_143 >> 0x1F;
+		struct Eq_11010 * eax_168 = dwArg08->dw0008 + (dwLoc08_143 << 0x03);
+		word32 ecx_163 = eax_49 + (dwLoc0C_139 << 0x04);
+		word32 eax_170 = eax_168->dw0004;
+		ecx_163->dw0000 = eax_168->dw0000;
+		ecx_163->dw0004 = eax_170;
+		dwLoc0C_139 = dwLoc0C_139 + 0x01;
+l08050CDB:
+		dwLoc08_143 = dwLoc08_143 + 0x01;
 	}
-	word32 ecx_74 = ebp_28->ptr0008->dw000C;
-	ui32 eax_76 = ebp_28->ptr000C->dw000C;
-	esp_27->dw0008 = ebp_28->ptr0008->dw0004 << 0x04;
-	esp_27->dw0004 = ecx_74;
-	esp_27->dw0000 = eax_76;
-	fn08048914();
-	return;
+	dwArg04->dw0000 = dwArg0C;
+	dwArg04->t0004 = dwLoc10_206;
+	dwArg04->dw0008 = dwArg0C + 0x02;
+	dwArg04->t000C = eax_49;
+	dwArg04->t0010 = eax_65;
 }
 
-// 08051124: void quantum_print_qureg(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg10)
-void quantum_print_qureg(word32 dwArg04, word32 dwArg08, word32 dwArg10)
+// 08050D20: void quantum_new_qureg(Register (ptr Eq_1715) gs, Stack (ptr Eq_8172) dwArg04, Stack Eq_106 dwArg08, Stack int32 dwArg0C, Stack Eq_106 dwArg10)
+void quantum_new_qureg(Eq_1715 * gs, Eq_8172 * dwArg04, Eq_106 dwArg08, int32 dwArg0C, Eq_106 dwArg10)
+{
+	Eq_106 eax_22 = calloc(0x01, 0x10);
+	if (eax_22 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(0x10);
+	word32 eax_35 = calloc(0x01 << (byte) (dwArg10 + 0x02), 0x04);
+	if (eax_35 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(0x04 << (byte) (dwArg10 + 0x02));
+	Mem50[eax_22 + 0x08:word32] = dwArg08;
+	Mem51[eax_22 + 0x0C:word32] = dwArg0C;
+	*eax_22 = 0x3F800000;
+	Mem56[eax_22 + 0x04:word32] = 0x00;
+	char * eax_58 = getenv("QUOBFILE");
+	if (eax_58 != null)
+	{
+		quantum_objcode_start();
+		quantum_objcode_file(eax_58);
+		atexit(0x0804EB38);
+	}
+	quantum_objcode_put(gs, 0x00, dwArg08, DPB(rLoc34, dwArg0C, 0), rLoc30);
+	dwArg04->t0000 = dwArg10;
+	dwArg04->dw0004 = 0x01;
+	Mem81[dwArg04 + 0x08:word32] = dwArg10 + 0x02;
+	dwArg04->t000C = eax_22;
+	dwArg04->t0010 = eax_35;
+}
+
+// 08050E60: void quantum_new_qureg_size(Stack (ptr Eq_11132) dwArg04, Stack Eq_106 dwArg08, Stack word32 dwArg0C)
+void quantum_new_qureg_size(Eq_11132 * dwArg04, Eq_106 dwArg08, word32 dwArg0C)
+{
+	Eq_106 eax_18 = calloc(dwArg08, 0x10);
+	if (eax_18 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg08 << 0x04);
+	dwArg04->dw0000 = dwArg0C;
+	dwArg04->t0004 = dwArg08;
+	dwArg04->dw0008 = 0x00;
+	dwArg04->t000C = eax_18;
+	dwArg04->dw0010 = 0x00;
+}
+
+// 08050EEA: void quantum_qureg2matrix(Stack (ptr Eq_11165) dwArg04, Stack word32 dwArg08, Stack int32 dwArg0C, Stack ptr32 dwArg14)
+void quantum_qureg2matrix(Eq_11165 * dwArg04, word32 dwArg08, int32 dwArg0C, ptr32 dwArg14)
+{
+	quantum_new_matrix(fp - 0x14, 0x01, 0x01 << (byte) dwArg08);
+	int32 dwLoc08_20 = 0x00;
+	while (dwArg0C > dwLoc08_20)
+	{
+		struct Eq_11181 * eax_59 = dwArg14 + (dwLoc08_20 << 0x04);
+		struct Eq_11185 * ecx_55 = dwLoc0C + ((dwArg14 + (dwLoc08_20 << 0x04))->dw0008 << 0x03);
+		word32 eax_61 = eax_59->dw0004;
+		ecx_55->dw0000 = eax_59->dw0000;
+		ecx_55->dw0004 = eax_61;
+		dwLoc08_20 = dwLoc08_20 + 0x01;
+	}
+	dwArg04->dw0000 = dwLoc14;
+	dwArg04->dw0004 = dwLoc10;
+	dwArg04->dw0008 = dwLoc0C;
+}
+
+// 08050F7A: void quantum_destroy_hash(Stack Eq_106 dwArg04)
+void quantum_destroy_hash(Eq_106 dwArg04)
+{
+	free(Mem0[dwArg04 + 0x10:word32]);
+	quantum_memman(~0x03 << (byte) Mem0[dwArg04 + 0x08:word32]);
+	Mem20[dwArg04 + 0x10:word32] = 0x00;
+}
+
+// 08050FAF: void quantum_delete_qureg(Stack Eq_106 dwArg04)
+void quantum_delete_qureg(Eq_106 dwArg04)
+{
+	if (Mem0[dwArg04 + 0x08:word32] != 0x00 && Mem0[dwArg04 + 0x10:word32] != 0x00)
+		quantum_destroy_hash(dwArg04);
+	free(Mem0[dwArg04 + 0x0C:word32]);
+	quantum_memman(-(Mem0[dwArg04 + 0x04:word32] << 0x04));
+	Mem27[dwArg04 + 0x0C:word32] = 0x00;
+}
+
+// 08051001: void quantum_delete_qureg_hashpreserve(Stack Eq_106 dwArg04)
+void quantum_delete_qureg_hashpreserve(Eq_106 dwArg04)
+{
+	free(Mem0[dwArg04 + 0x0C:word32]);
+	quantum_memman(-(Mem0[dwArg04 + 0x04:word32] << 0x04));
+	Mem20[dwArg04 + 0x0C:word32] = 0x00;
+}
+
+// 08051034: void quantum_copy_qureg(Stack Eq_106 dwArg04, Stack (ptr Eq_9619) dwArg08)
+void quantum_copy_qureg(Eq_106 dwArg04, Eq_9619 * dwArg08)
+{
+	dwArg08->t0000 = *dwArg04;
+	Mem15[dwArg08 + 0x04:word32] = Mem13[dwArg04 + 0x04:word32];
+	Mem17[dwArg08 + 0x08:word32] = Mem15[dwArg04 + 0x08:word32];
+	Mem19[dwArg08 + 0x0C:word32] = Mem17[dwArg04 + 0x0C:word32];
+	Mem21[dwArg08 + 0x10:word32] = Mem19[dwArg04 + 0x10:word32];
+	dwArg08->t000C = calloc(dwArg08->t0004, 0x10);
+	if (dwArg08->t000C == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwArg08->t0004 << 0x04);
+	if (dwArg08->t0008 != 0x00)
+	{
+		dwArg08->t0010 = calloc(0x01 << (byte) dwArg08->t0008, 0x04);
+		if (dwArg08->t0010 == 0x00)
+			quantum_error(0x02);
+		quantum_memman(0x04 << (byte) dwArg08->t0008);
+	}
+	memcpy(dwArg08->t000C, Mem29[dwArg04 + 0x0C:word32], Mem29[dwArg04 + 0x04:word32] << 0x04);
+}
+
+// 08051124: void quantum_print_qureg(Stack word32 dwArg04, Stack int32 dwArg08, Stack (arr Eq_13560) dwArg10)
+void quantum_print_qureg(word32 dwArg04, int32 dwArg08, Eq_13560 dwArg10[])
 {
 	int32 dwLoc10_14 = 0x00;
 	while (dwArg08 > dwLoc10_14)
 	{
-		struct Eq_26965 * edx_86 = &(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000;
-		quantum_prob_inline(edx_86->dw0000, edx_86->dw0004);
-		quantum_imag(*((word32) &(&(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000)[0x00].dw0000 + 0x04));
-		quantum_real(dwArg10[dwLoc10_14].dw0000);
-		fn08048964();
-		Eq_27000 dwLoc14_134 = dwArg04 - 0x01;
-		while (dwLoc14_134 >= 0x00)
+		struct Eq_11391 * edx_74 = &(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000;
+		real64 rLoc1_81 = quantum_prob_inline(edx_74->dw0000, edx_74->dw0004);
+		qwLoc48 = DPB(qwLoc48, *((word32) &(&(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000)[0x00].dw0000 + 0x0C), 32);
+		printf("% f %+fi|%lli> (%e) (|", quantum_real(dwArg10[dwLoc10_14].dw0000), quantum_imag(*((word32) &(&(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000)[0x00].dw0000 + 0x04)), qwLoc48, rLoc1_81);
+		Eq_11440 dwLoc14_124 = dwArg04 - 0x01;
+		while (dwLoc14_124 >= 0x00)
 		{
-			Eq_27020 eax_157 = dwLoc14_134 >> 0x1F;
-			ui32 eax_162 = ((word32) dwLoc14_134 + (eax_157 >> 0x1E) & 0x03) - (eax_157 >> 0x1E);
-			if (eax_162 == 0x03)
-			{
-				word32 esp_200;
-				word32 ebp_201;
-				word32 esi_202;
-				word32 ebx_203;
-				byte SCZO_204;
-				word32 eax_205;
-				byte SZO_206;
-				word32 edx_207;
-				byte S_208;
-				word32 ecx_209;
-				byte C_210;
-				byte Z_211;
-				byte cl_212;
-				sin();
-			}
-			struct Eq_27038 * eax_175 = &(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000;
-			byte cl_179 = (byte) dwLoc14_134;
-			__shrd(eax_175->dw0008, eax_175->dw000C, cl_179);
-			fn08048964();
-			dwLoc14_134 = dwLoc14_134 - 0x01;
+			Eq_11448 eax_144 = dwLoc14_124 >> 0x1F;
+			if (((word32) dwLoc14_124 + (eax_144 >> 0x1E) & 0x03) - (eax_144 >> 0x1E) == 0x03)
+				putchar(0x20);
+			struct Eq_11467 * eax_156 = &(dwArg10 + (dwLoc10_14 << 0x04) / 0x0010)->dw0000;
+			Eq_106 edx_157 = eax_156->t000C;
+			byte cl_160 = (byte) dwLoc14_124;
+			uint32 eax_161 = __shrd(eax_156->t0008, edx_157, cl_160);
+			uint32 edx_162 = edx_157 >> cl_160;
+			if ((cl_160 & 0x20) != 0x00)
+				eax_161 = edx_162;
+			printf("%i", eax_161 & 0x01);
+			dwLoc14_124 = dwLoc14_124 - 0x01;
 		}
-		fn080489E4();
+		puts(">)");
 		dwLoc10_14 = dwLoc10_14 + 0x01;
 	}
-	word32 esp_61;
-	word32 ebp_62;
-	word32 esi_63;
-	word32 ebx_64;
-	byte SCZO_65;
-	word32 eax_66;
-	byte SZO_67;
-	word32 edx_68;
-	byte S_69;
-	word32 ecx_70;
-	byte C_71;
-	byte Z_72;
-	byte cl_73;
-	sin();
-	return;
+	putchar(0x0A);
 }
 
 // 0805126A: FpuStack real64 quantum_prob_inline(Stack word32 dwArg04, Stack word32 dwArg08)
 real64 quantum_prob_inline(word32 dwArg04, word32 dwArg08)
 {
-	Eq_27075 rLoc08_15 = (real32) quantum_real(dwArg04);
-	Eq_27080 rLoc0C_21 = (real32) quantum_imag(dwArg08);
+	Eq_11502 rLoc08_15 = (real32) quantum_real(dwArg04);
+	Eq_11506 rLoc0C_21 = (real32) quantum_imag(dwArg08);
 	return (real64) rLoc08_15 * rLoc08_15 + (real64) rLoc0C_21 * rLoc0C_21;
 }
 
@@ -6002,397 +3926,273 @@ real64 quantum_real(word32 dwArg04)
 	return (real64) dwArg04;
 }
 
-// 080512DF: void quantum_print_expn(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg10)
-void quantum_print_expn(word32 dwArg04, word32 dwArg08, word32 dwArg10)
+// 080512DF: void quantum_print_expn(Stack Eq_11519 dwArg04, Stack int32 dwArg08, Stack word32 dwArg10)
+void quantum_print_expn(Eq_11519 dwArg04, int32 dwArg08, word32 dwArg10)
 {
 	int32 dwLoc10_14 = 0x00;
 	while (dwArg08 > dwLoc10_14)
 	{
-		fn08048964();
+		struct Eq_11525 * eax_57 = dwArg10 + (dwLoc10_14 << 0x04);
+		word32 eax_72 = dwLoc10_14 << (byte) ((dwArg04 >>u 0x1F) + dwArg04 >> 0x01);
+		qwLoc34 = DPB(qwLoc34, SLICE(SEQ(Mem0[eax_57 + 0x0C:word32], Mem0[eax_57 + 0x08:word32] - eax_72) - SEQ(eax_72 >> 0x1F, eax_72), word32, 32), 32);
+		printf("%i: %lli\n", dwLoc10_14, qwLoc34);
 		dwLoc10_14 = dwLoc10_14 + 0x01;
 	}
-	return;
 }
 
-// 0805135C: void quantum_addscratch(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08)
-void quantum_addscratch(Eq_136 * dwArg04, Eq_136 * dwArg08)
+// 0805135C: void quantum_addscratch(Stack word32 dwArg04, Stack (ptr Eq_11561) dwArg08)
+void quantum_addscratch(word32 dwArg04, Eq_11561 * dwArg08)
 {
 	dwArg08->dw0000 = dwArg08->dw0000 + dwArg04;
 	int32 dwLoc08_20 = 0x00;
 	while (dwArg08->dw0004 > dwLoc08_20)
 	{
-		struct Eq_27124 * eax_46 = dwArg08->dw000C + (dwLoc08_20 << 0x04);
+		struct Eq_11575 * eax_46 = dwArg08->dw000C + (dwLoc08_20 << 0x04);
 		ui32 eax_48 = eax_46->dw0008;
 		byte cl_50 = (byte) dwArg04;
-		ui32 edx_51 = __shld(eax_46->dw000C, eax_48, cl_50);
-		ui32 eax_52 = eax_48 << cl_50;
+		Eq_763 edx_51 = __shld(eax_46->dw000C, eax_48, cl_50);
+		Eq_763 eax_52 = eax_48 << cl_50;
 		if ((cl_50 & 0x20) != 0x00)
 		{
 			edx_51 = eax_52;
-			eax_52 = 0x00;
+			eax_52.u0 = 0x00;
 		}
-		struct Eq_27149 * ecx_66 = dwArg08->dw000C + (dwLoc08_20 << 0x04);
-		ecx_66->dw0008 = eax_52;
-		ecx_66->dw000C = edx_51;
+		struct Eq_11600 * ecx_66 = dwArg08->dw000C + (dwLoc08_20 << 0x04);
+		ecx_66->t0008 = eax_52;
+		ecx_66->t000C = edx_51;
 		dwLoc08_20 = dwLoc08_20 + 0x01;
 	}
-	return;
 }
 
-// 080513DA: void quantum_print_hash(Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14)
-void quantum_print_hash(word32 dwArg0C, word32 dwArg10, word32 dwArg14)
+// 080513DA: void quantum_print_hash(Stack word32 dwArg0C, Stack ptr32 dwArg10, Stack (arr ui32) dwArg14)
+void quantum_print_hash(word32 dwArg0C, ptr32 dwArg10, ui32 dwArg14[])
 {
 	int32 dwLoc0C_11 = 0x00;
 	while (0x01 << (byte) dwArg0C > dwLoc0C_11)
 	{
 		if (dwLoc0C_11 != 0x00)
-			fn08048964();
+		{
+			qwLoc20 = DPB(qwLoc20, (dwArg10 + -(0x01 - dwArg14[dwLoc0C_11] << 0x04))->dw000C, 32);
+			printf("%i: %i %llu\n", dwLoc0C_11, dwArg14[dwLoc0C_11] - 0x01, qwLoc20);
+		}
 		dwLoc0C_11 = dwLoc0C_11 + 0x01;
 	}
-	return;
 }
 
-// 08051461: void quantum_kronecker(Register word32 ebp, Register (ptr Eq_27182) gs, Stack word32 dwArg08, Stack word32 dwArg0C)
-void quantum_kronecker(word32 ebp, Eq_27182 * gs, word32 dwArg08, word32 dwArg0C)
+// 08051461: void quantum_kronecker(Stack (ptr Eq_11655) dwArg04, Stack (ptr Eq_11656) dwArg08, Stack (ptr Eq_11657) dwArg0C)
+void quantum_kronecker(Eq_11655 * dwArg04, Eq_11656 * dwArg08, Eq_11657 * dwArg0C)
 {
-	struct Eq_27185 * esp_42;
-	ptr32 ebp_43;
-	word32 edi_44;
-	word32 esi_45;
-	word32 ebx_46;
-	byte SCZO_47;
-	word32 eax_48;
-	word32 edx_49;
-	byte SZO_50;
-	byte C_51;
-	byte Z_52;
-	word32 ecx_53;
-	byte cl_54;
-	struct Eq_380 * gs_55;
-	log();
-	if (eax_48 == 0x00)
-		quantum_error(gs_55, (struct Eq_136 *) 0x02);
-	esp_42->dw0000 = *(ebp_43 - 0x24) << 0x04;
-	quantum_memman(dwArg00);
-	word32 ecx_67 = *(ebp_43 - 0x20);
-	esp_42->dw0004 = 0x04;
-	byte cl_68 = (byte) ecx_67;
-	ui32 eax_70 = 0x01 << cl_68;
-	esp_42->dw0000 = eax_70;
-	struct Eq_27233 * esp_74;
-	struct Eq_27234 * ebp_75;
-	word32 edi_76;
-	word32 esi_77;
-	word32 ebx_78;
-	byte SCZO_79;
-	word32 eax_80;
-	word32 edx_81;
-	byte SZO_82;
-	byte C_83;
-	byte Z_84;
-	word32 ecx_85;
-	byte cl_86;
-	struct Eq_380 * gs_87;
-	log();
-	*(ebp_75 - 0x18) = eax_80;
-	if (*(ebp_75 - 0x18) == 0x00)
+	word32 eax_23 = dwArg08->dw0000 + dwArg0C->dw0000;
+	Eq_106 eax_29 = dwArg0C->dw0004 *s dwArg08->dw0004;
+	int32 eax_35 = dwArg0C->dw0004 *s dwArg08->dw0004;
+	Eq_106 eax_41 = calloc(eax_29, 0x10);
+	if (eax_41 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(eax_29 << 0x04);
+	Eq_106 eax_57 = calloc(0x01 << (byte) (eax_35 + 0x02), 0x04);
+	if (eax_57 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(0x04 << (byte) (eax_35 + 0x02));
+	int32 dwLoc14_140 = 0x00;
+	while (dwArg08->dw0004 > dwLoc14_140)
 	{
-		esp_74->dw0000 = 0x02;
-		quantum_error(gs_87, dwArg00);
-	}
-	esp_74->dw0000 = 0x04 << (byte) (*(ebp_75 - 0x20));
-	quantum_memman(dwArg00);
-	*(ebp_75 - 0x10) = 0x00;
-	while (ebp_75->ptr000C->dw0004 > *(ebp_75 - 0x10))
-	{
-		*(ebp_75 - 0x14) = 0x00;
-		while (ebp_75->ptr0010->dw0004 > *(ebp_75 - 0x14))
+		while (dwArg0C->dw0004 > 0x00)
 		{
-			*(ebp_75 - 0x30) = *(ebp_75 - 0x1C) + ((ebp_75->ptr0010)->dw0004 *s *(ebp_75 - 0x10) + *(ebp_75 - 0x14) << 0x04);
-			struct Eq_27404 * eax_167 = ebp_75->ptr000C->dw000C + (*(ebp_75 - 0x10) << 0x04);
-			ui32 ebx_168 = eax_167->dw0008;
-			byte cl_172 = (byte) ebp_75->ptr0010->dw0000;
-			ui32 edi_175 = __shld(eax_167->dw000C, ebx_168, cl_172);
-			ui32 esi_176 = ebx_168 << cl_172;
-			if ((cl_172 & 0x20) != 0x00)
+			struct Eq_11742 * eax_154 = dwArg08->dw000C + (dwLoc14_140 << 0x04);
+			word32 edx_148 = eax_41 + (Mem0[dwArg0C + 0x04:word32] *s dwLoc14_140 << 0x04);
+			ui32 ebx_155 = eax_154->dw0008;
+			byte cl_159 = (byte) dwArg0C->dw0000;
+			Eq_763 edi_162 = __shld(eax_154->dw000C, ebx_155, cl_159);
+			Eq_763 esi_163 = ebx_155 << cl_159;
+			if ((cl_159 & 0x20) != 0x00)
 			{
-				edi_175 = esi_176;
-				esi_176 = 0x00;
+				edi_162 = esi_163;
+				esi_163.u0 = 0x00;
 			}
-			struct Eq_27455 * eax_188 = ebp_75->ptr0010->dw000C + (*(ebp_75 - 0x14) << 0x04);
-			ui32 edx_194 = edi_175 | eax_188->dw000C;
-			struct Eq_27475 * ecx_195 = *(ebp_75 - 0x30);
-			ecx_195->dw0008 = esi_176 | eax_188->dw0008;
-			ecx_195->dw000C = edx_194;
-			struct Eq_27491 * eax_209 = ebp_75->ptr000C->dw000C + (*(ebp_75 - 0x10) << 0x04);
-			struct Eq_27506 * eax_217 = ebp_75->ptr0010->dw000C + (*(ebp_75 - 0x14) << 0x04);
-			struct Eq_27521 * edi_204 = *(ebp_75 - 0x1C) + ((ebp_75->ptr0010)->dw0004 *s *(ebp_75 - 0x10) + *(ebp_75 - 0x14) << 0x04);
-			ui32 ecx_210 = eax_209->dw0000;
-			word32 ebx_211 = eax_209->dw0004;
-			word32 edx_218 = eax_217->dw0000;
-			word32 eax_219 = eax_217->dw0004;
-			esp_74->dw000C = eax_219;
-			esp_74->dw0008 = edx_218;
-			esp_74->dw0004 = ebx_211;
-			esp_74->dw0000 = ecx_210;
-			__mulsc3(dwArg00, rArg04, dwArg08, dwArg0C);
-			edi_204->dw0000 = eax_219;
-			edi_204->dw0004 = edx_218;
-			*(ebp_75 - 0x14) = *(ebp_75 - 0x14) + 0x01;
+			struct Eq_11780 * edx_172 = dwArg0C->ptr000C;
+			ui32 edx_181 = edi_162 | edx_172->dw000C;
+			edx_148->dw0008 = esi_163 | edx_172->dw0008;
+			edx_148->dw000C = edx_181;
+			struct Eq_11780 * edx_200 = dwArg0C->ptr000C;
+			struct Eq_11803 * eax_196 = dwArg08->dw000C + (dwLoc14_140 << 0x04);
+			word32 edi_191 = eax_41 + (Mem184[dwArg0C + 0x04:word32] *s dwLoc14_140 << 0x04);
+			Eq_106 edx_205 = edx_200->t0000;
+			Eq_106 eax_206 = edx_200->t0004;
+			__mulsc3(eax_196->t0000, eax_196->t0004, edx_205, eax_206);
+			edi_191->t0000 = eax_206;
+			edi_191->t0004 = edx_205;
 		}
-		*(ebp_75 - 0x10) = *(ebp_75 - 0x10) + 0x01;
+		dwLoc14_140 = dwLoc14_140 + 0x01;
 	}
-	ebp_75->ptr0008->dw0000 = *(ebp_75 - 0x28);
-	ebp_75->ptr0008->dw0004 = *(ebp_75 - 0x24);
-	ebp_75->ptr0008->dw0008 = *(ebp_75 - 0x20);
-	ebp_75->ptr0008->dw000C = *(ebp_75 - 0x1C);
-	ebp_75->ptr0008->dw0010 = *(ebp_75 - 0x18);
-	return;
+	dwArg04->dw0000 = eax_23;
+	dwArg04->t0004 = eax_29;
+	dwArg04->dw0008 = eax_35 + 0x02;
+	dwArg04->t000C = eax_41;
+	dwArg04->t0010 = eax_57;
 }
 
-// 0805165E: Register word32 quantum_state_collapse(Register (ptr Eq_1281) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08, Stack (ptr Eq_1273) dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14, Stack word32 dwArg1C, Register out ptr32 espOut, Register out (ptr Eq_1736) ebpOut)
-word32 quantum_state_collapse(Eq_1281 * ebp, Eq_380 * gs, Eq_136 * dwArg08, Eq_1273 * dwArg0C, word32 dwArg10, word32 dwArg14, word32 dwArg1C, ptr32 & espOut, Eq_1736 * & ebpOut)
+// 0805165E: void quantum_state_collapse(Stack (ptr Eq_901) dwArg04, Stack Eq_106 dwArg08, Stack word32 dwArg0C, Stack Eq_106 dwArg10, Stack Eq_106 dwArg14, Stack Eq_106 dwArg18, Stack Eq_106 dwArg1C, Stack Eq_106 dwArg20)
+void quantum_state_collapse(Eq_901 * dwArg04, Eq_106 dwArg08, word32 dwArg0C, Eq_106 dwArg10, Eq_106 dwArg14, Eq_106 dwArg18, Eq_106 dwArg1C, Eq_106 dwArg20)
 {
 	byte cl_22 = (byte) dwArg08;
-	ui32 edx_25 = __shld(0x00, 0x01, cl_22);
-	ui32 eax_26 = 0x01 << cl_22;
+	Eq_106 dwLoc1C_13 = 0x00;
+	real64 rLoc24_15 = 0.0;
+	Eq_763 edx_25 = __shld(0x00, 0x01, cl_22);
+	Eq_763 eax_26 = 0x01 << cl_22;
 	if ((cl_22 & 0x20) != 0x00)
 	{
 		edx_25 = eax_26;
-		eax_26 = 0x00;
+		eax_26.u0 = 0x00;
 	}
-	int32 dwLoc10_351 = 0x00;
-	if (dwArg14 <= dwLoc10_351)
+	Eq_106 dwLoc10_354 = 0x00;
+	while (dwArg14 > dwLoc10_354)
 	{
-		ui32 * esp_68;
-		struct Eq_27638 * ebp_69;
-		word32 esi_70;
-		word32 ebx_71;
-		byte SCZO_72;
-		word32 ecx_73;
-		word32 eax_74;
-		word32 edx_75;
-		byte cl_76;
-		byte SZO_77;
-		byte C_78;
-		byte Z_79;
-		byte SO_80;
-		struct Eq_380 * gs_81;
-		log();
-		if (eax_74 == 0x00)
-			quantum_error(gs_81, (struct Eq_136 *) 0x02);
-		*esp_68 = *(ebp_69 - 0x18) << 0x04;
-		quantum_memman(dwArg00);
-		*(ebp_69 - 0x44) = ebp_69->dw001C;
-		*(ebp_69 - 0x3C) = ebp_69->dw0024;
-		*(ebp_69 - 0x0C) = 0x00;
-		*(ebp_69 - 0x10) = 0x00;
-		if (ebp_69->dw0018 > *(ebp_69 - 0x0C))
+		word32 eax_329 = dwArg1C + (dwLoc10_354 << 0x04);
+		if ((eax_329->dw0008 & eax_26 | eax_329->dw000C & edx_25) != 0x00 && dwArg0C != 0x00)
 		{
-			struct Eq_27741 * eax_138 = ebp_69->dw0020 + (*(ebp_69 - 0x0C) << 0x04);
-			if ((eax_138->dw0008 & *(ebp_69 - 0x38) | eax_138->dw000C & *(ebp_69 - 0x34)) == 0x00 || ebp_69->dw0010 == 0x00)
+l08051708:
+			word32 edx_364 = dwArg1C + (dwLoc10_354 << 0x04);
+			rLoc24_15 = quantum_prob_inline(edx_364->dw0000, edx_364->dw0004) + rLoc24_15;
+			dwLoc1C_13 = dwLoc1C_13 + 0x01;
+			goto l08051730;
+		}
+		word32 eax_381 = dwArg1C + (dwLoc10_354 << 0x04);
+		if ((eax_381->dw0008 & eax_26 | eax_381->dw000C & edx_25) == 0x00 && dwArg0C == 0x00)
+			goto l08051708;
+l08051730:
+		dwLoc10_354 = dwLoc10_354 + 0x01;
+	}
+	Eq_106 eax_67 = calloc(dwLoc1C_13, 0x10);
+	if (eax_67 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwLoc1C_13 << 0x04);
+	Eq_106 dwLoc10_318 = 0x00;
+	while (dwArg14 > dwLoc10_318)
+	{
+		word32 eax_123 = dwArg1C + (dwLoc10_318 << 0x04);
+		if ((eax_123->dw0008 & eax_26 | eax_123->dw000C & edx_25) != 0x00 && dwArg0C != 0x00)
+		{
+l080517FD:
+			Eq_106 dwLoc18_143 = 0x00;
+			ui32 dwLoc34_144 = 0x00;
+			ui32 dwLoc30_145 = 0x00;
+			while (dwLoc18_143 < dwArg08)
 			{
-				struct Eq_27845 * eax_301 = ebp_69->dw0020 + (*(ebp_69 - 0x0C) << 0x04);
-				if ((eax_301->dw0008 & *(ebp_69 - 0x38) | eax_301->dw000C & *(ebp_69 - 0x34)) != 0x00 || ebp_69->dw0010 != 0x00)
-				{
-					*(ebp_69 - 0x0C) = *(ebp_69 - 0x0C) + 0x01;
-					goto l08051975;
-				}
+				byte cl_272 = (byte) dwLoc18_143;
+				__shld(0x00, 0x01, cl_272);
+				ui32 eax_276 = 0x01 << cl_272;
+				if ((cl_272 & 0x20) != 0x00)
+					eax_276 = 0x00;
+				dwLoc34_144 = dwLoc34_144 + eax_276;
+				dwLoc30_145 = v25;
+				dwLoc18_143 = dwLoc18_143 + 0x01;
 			}
-			*(ebp_69 - 0x14) = 0x00;
-			*(ebp_69 - 0x30) = 0x00;
-			*(ebp_69 - 44) = 0x00;
-			while (*(ebp_69 - 0x14) < ebp_69->dw000C)
+			word32 eax_166 = dwArg1C + (dwLoc10_318 << 0x04);
+			ui32 v19_169 = dwLoc34_144 & eax_166->dw0008;
+			ui32 v20_172 = dwLoc30_145 & eax_166->dw000C;
+			Eq_106 dwLoc18_176 = 0x3F;
+			ui32 dwLoc2C_177 = 0x00;
+			ui32 dwLoc28_178 = 0x00;
+			while (dwLoc18_176 > dwArg08)
 			{
-				byte cl_270 = (byte) *(ebp_69 - 0x14);
-				ui32 edx_273 = __shld(0x00, 0x01, cl_270);
-				ui32 eax_274 = 0x01 << cl_270;
-				if ((cl_270 & 0x20) != 0x00)
-				{
-					edx_273 = eax_274;
-					eax_274 = 0x00;
-				}
-				uint32 v24_283 = *(ebp_69 - 0x30) + eax_274;
-				*(ebp_69 - 0x30) = v24_283;
-				*(ebp_69 - 44) = (word32) ((byte) (v24_283 < 0x00) + (*(ebp_69 - 44) + edx_273));
-				*(ebp_69 - 0x14) = *(ebp_69 - 0x14) + 0x01;
-			}
-			struct Eq_27946 * eax_173 = ebp_69->dw0020 + (*(ebp_69 - 0x0C) << 0x04);
-			ui32 edx_174 = eax_173->dw000C;
-			*(ebp_69 - 0x30) = *(ebp_69 - 0x30) & eax_173->dw0008;
-			*(ebp_69 - 44) = *(ebp_69 - 44) & edx_174;
-			*(ebp_69 - 0x14) = 0x3F;
-			*(ebp_69 - 0x28) = 0x00;
-			*(ebp_69 - 0x24) = 0x00;
-			while (*(ebp_69 - 0x14) > ebp_69->dw000C)
-			{
-				byte cl_242 = (byte) *(ebp_69 - 0x14);
-				ui32 edx_245 = __shld(0x00, 0x01, cl_242);
+				byte cl_242 = (byte) dwLoc18_176;
+				__shld(0x00, 0x01, cl_242);
 				ui32 eax_246 = 0x01 << cl_242;
 				if ((cl_242 & 0x20) != 0x00)
-				{
-					edx_245 = eax_246;
 					eax_246 = 0x00;
-				}
-				uint32 v27_255 = *(ebp_69 - 0x28) + eax_246;
-				*(ebp_69 - 0x28) = v27_255;
-				*(ebp_69 - 0x24) = (word32) ((byte) (v27_255 < 0x00) + (*(ebp_69 - 0x24) + edx_245));
-				*(ebp_69 - 0x14) = *(ebp_69 - 0x14) - 0x01;
+				dwLoc2C_177 = dwLoc2C_177 + eax_246;
+				dwLoc28_178 = v28;
+				dwLoc18_176 = dwLoc18_176 - 0x01;
 			}
-			struct Eq_28072 * eax_198 = ebp_69->dw0020 + (*(ebp_69 - 0x0C) << 0x04);
-			ui32 edx_199 = eax_198->dw000C;
-			*(ebp_69 - 0x28) = *(ebp_69 - 0x28) & eax_198->dw0008;
-			*(ebp_69 - 0x24) = *(ebp_69 - 0x24) & edx_199;
-			struct Eq_28113 * esi_210 = *(ebp_69 - 0x40) + (*(ebp_69 - 0x10) << 0x04);
-			uint32 edx_212 = *(ebp_69 - 0x24);
-			ui32 eax_218 = __shrd(*(ebp_69 - 0x28), edx_212, 0x01) | *(ebp_69 - 0x30);
-			ui32 edx_220 = edx_212 >> 0x01 | *(ebp_69 - 44);
-			esi_210->dw0008 = eax_218;
-			esi_210->dw000C = edx_220;
-			*(ebp_69 - 0x68) = *(ebp_69 - 0x40) + (*(ebp_69 - 0x10) << 0x04);
-			struct Eq_28181 * eax_232 = ebp_69->dw0020 + (*(ebp_69 - 0x0C) << 0x04);
-			*(ebp_69 - 0x60) = eax_232->r0000;
-			*(ebp_69 - 100) = eax_232->r0004;
-			*(ebp_69 - 0x70) = sqrt(*(ebp_69 - 0x20));
+			word32 eax_198 = dwArg1C + (dwLoc10_318 << 0x04);
+			Eq_106 v23_204 = dwLoc28_178 & eax_198->dw000C;
+			Mem221[eax_67 + 0x08:word32] = __shrd(dwLoc2C_177 & eax_198->dw0008, v23_204, 0x01) | v19_169;
+			Mem222[eax_67 + 0x0C:word32] = v23_204 >>u 0x01 | v20_172;
+			sqrt(rLoc24_15);
 		}
-		else
-		{
-			ebp_69->ptr0008->dw0000 = *(ebp_69 - 0x4C);
-			ebp_69->ptr0008->dw0004 = *(ebp_69 - 0x48);
-			ebp_69->ptr0008->dw0008 = *(ebp_69 - 0x44);
-			ebp_69->ptr0008->dw000C = *(ebp_69 - 0x40);
-			ebp_69->ptr0008->dw0010 = *(ebp_69 - 0x3C);
-			word32 ebp_131;
-			*ebpOut = *(esp_68 - ~0x87);
-			word32 esp_132;
-			*espOut = esp_68 - ~0x8B;
-			return *(esp_68 - ~0x7F);
-		}
+		word32 eax_305 = dwArg1C + (dwLoc10_318 << 0x04);
+		if ((eax_305->dw0008 & eax_26 | eax_305->dw000C & edx_25) == 0x00 && dwArg0C == 0x00)
+			goto l080517FD;
+		dwLoc10_318 = dwLoc10_318 + 0x01;
 	}
-	struct Eq_27621 * eax_326 = dwArg1C + (dwLoc10_351 << 0x04);
-	if ((eax_326->dw0008 & eax_26 | eax_326->dw000C & edx_25) == 0x00 || dwArg0C == 0x00)
-	{
-		struct Eq_27698 * eax_378 = dwArg1C + (dwLoc10_351 << 0x04);
-		if ((eax_378->dw0008 & eax_26 | eax_378->dw000C & edx_25) != 0x00 || dwArg0C != 0x00)
-			goto l08051730;
-	}
-	struct Eq_27716 * edx_361 = dwArg1C + (dwLoc10_351 << 0x04);
-	quantum_prob_inline(edx_361->dw0000, edx_361->dw0004);
-l08051730:
-	dwLoc10_351 = dwLoc10_351 + 0x01;
-	goto l08051734;
+	dwArg04->dw0000 = dwArg10 - 0x01;
+	dwArg04->t0004 = dwLoc1C_13;
+	dwArg04->t0008 = dwArg18;
+	dwArg04->t000C = eax_67;
+	dwArg04->t0010 = dwArg20;
 }
 
-// 080519B9: Register word32 quantum_dot_product(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg08, Register out ptr32 edxOut)
-word32 quantum_dot_product(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg08, ptr32 & edxOut)
+// 080519B9: void quantum_dot_product(Stack (ptr Eq_1489) dwArg04, Stack Eq_106 dwArg08)
+void quantum_dot_product(Eq_1489 * dwArg04, Eq_106 dwArg08)
 {
-	if (dwArg08->ptr0008 != null)
-		quantum_reconstruct_hash(fp - 0x04, gs, dwArg08);
-	*(fp - 0x10) = 0x00;
-	while (fp->ptr0004->dw0004 > *(fp - 0x10))
+	if (Mem0[dwArg08 + 0x08:word32] != 0x00)
+		quantum_reconstruct_hash(dwArg08);
+	int32 dwLoc10_125 = 0x00;
+	while (dwArg04->dw0004 > dwLoc10_125)
 	{
-		struct Eq_28294 * eax_68 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-		struct Eq_28309 * edx_71 = fp->ptr0008;
-		word32 ecx_69 = eax_68->dw0008;
-		word32 ebx_70 = eax_68->dw000C;
-		*(fp - 0x34) = edx_71->dw0000;
-		*(fp - 0x30) = edx_71->dw0004;
-		*(fp - 44) = edx_71->dw0008;
-		*(fp - 0x28) = edx_71->dw000C;
-		*(fp - 0x24) = edx_71->dw0010;
-		*(fp - 0x3C) = ecx_69;
-		*(fp - 0x38) = ebx_70;
-		*(fp - 0x14) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-		if (*(fp - 0x14) >= 0x00)
+		struct Eq_12090 * eax_88 = dwArg04->dw000C + (dwLoc10_125 << 0x04);
+		word32 eax_104 = quantum_get_state(eax_88->dw0008, eax_88->dw000C, Mem0[dwArg08 + 0x08:word32], Mem0[dwArg08 + 0x0C:word32], Mem0[dwArg08 + 0x10:word32]);
+		if (eax_104 >= 0x00)
 		{
-			struct Eq_28420 * edx_109 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-			*(fp - 0x3C) = edx_109->dw0000;
-			word32 eax_113 = edx_109->dw0004;
-			*(fp - 0x38) = eax_113;
-			quantum_conj(dwArg00, dwArg04);
-			struct Eq_28453 * eax_126 = fp->ptr0008->dw000C + (*(fp - 0x14) << 0x04);
-			word32 edx_127 = eax_126->dw0000;
-			word32 eax_128 = eax_126->dw0004;
-			*(fp - 0x30) = eax_128;
-			*(fp - 0x34) = edx_127;
-			*(fp - 0x38) = (struct Eq_28420 **) edx_109;
-			*(fp - 0x3C) = eax_113;
-			__mulsc3(dwArg00, dwArg04, dwArg08, rArg0C);
-			*(fp - 0x20) = eax_128;
-			real64 rLoc1_141 = (real64) *(fp - 0x20);
-			*(fp - 0x20) = edx_127;
-			real64 rLoc2_150 = (real64) *(fp - 0x20) + (real64) (*(fp - 0x18));
-			*(fp - 0x20) = (real32) (rLoc1_141 + (real64) (*(fp - 0x1C)));
-			word32 eax_155 = *(fp - 0x20);
-			*(fp - 0x20) = (real32) rLoc2_150;
-			word32 edx_157 = *(fp - 0x20);
-			*(fp - 0x1C) = eax_155;
-			*(fp - 0x18) = edx_157;
+			Eq_106 edx_131 = dwArg04->dw000C + (dwLoc10_125 << 0x04);
+			word32 eax_135 = Mem0[edx_131 + 0x04:word32];
+			quantum_conj(*edx_131, eax_135);
+			word32 eax_148 = Mem0[dwArg08 + 0x0C:word32] + (eax_104 << 0x04);
+			__mulsc3(eax_135, edx_131, eax_148->t0000, eax_148->t0004);
 		}
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		dwLoc10_125 = dwLoc10_125 + 0x01;
 	}
-	word32 edx_53;
-	*edxOut = *(fp - 0x18);
-	return *(fp - 0x1C);
 }
 
-// 08051AF8: void quantum_reconstruct_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04)
-void quantum_reconstruct_hash(ptr32 ebp, Eq_380 * gs, Eq_136 * dwArg04)
+// 08051AF8: void quantum_reconstruct_hash(Stack Eq_106 dwArg04)
+void quantum_reconstruct_hash(Eq_106 dwArg04)
 {
-	int32 dwLoc08_10 = 0x00;
-	while (0x01 << (byte) dwArg04->dw0008 > dwLoc08_10)
+	int32 dwLoc08_11 = 0x00;
+	while (0x01 << (byte) Mem0[dwArg04 + 0x08:word32] > dwLoc08_11)
 	{
-		dwArg04->ptr0010[dwLoc08_10] = 0x00;
-		dwLoc08_10 = dwLoc08_10 + 0x01;
+		Mem0[dwArg04 + 0x10:word32][dwLoc08_11 * 0x04] = 0x00;
+		dwLoc08_11 = dwLoc08_11 + 0x01;
 	}
-	while (fp->ptr0004->dw0004 > *(fp - 0x08))
+	Eq_106 dwLoc08_21 = 0x00;
+	while (Mem0[dwArg04 + 0x04:word32] > dwLoc08_21)
 	{
-		struct Eq_28602 * eax_36 = fp->ptr0004->dw000C + (*(fp - 0x08) << 0x04);
-		word32 edx_37 = eax_36->dw0008;
-		word32 ecx_38 = eax_36->dw000C;
-		*(fp - 0x20) = (struct Eq_28592 **) fp->ptr0004;
-		*(fp - 0x24) = *(fp - 0x08);
-		*(fp - 44) = edx_37;
-		*(fp - 0x28) = ecx_38;
-		quantum_add_hash(fp - 0x04, gs, dwArg00, dwArg04, dwArg0C);
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
+		word32 eax_45 = Mem0[dwArg04 + 0x0C:word32] + (dwLoc08_21 << 0x04);
+		quantum_add_hash(eax_45->dw0008, eax_45->dw000C, dwLoc08_21, dwArg04);
+		dwLoc08_21 = dwLoc08_21 + 0x01;
 	}
-	return;
 }
 
-// 08051B7B: void quantum_add_hash(Register ptr32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04, Stack (ptr Eq_28573) dwArg08, Stack word32 dwArg10)
-void quantum_add_hash(ptr32 ebp, Eq_380 * gs, word32 dwArg04, Eq_28573 * dwArg08, word32 dwArg10)
+// 08051B7B: void quantum_add_hash(Stack word32 dwArg04, Stack word32 dwArg08, Stack Eq_106 dwArg0C, Stack Eq_106 dwArg10)
+void quantum_add_hash(word32 dwArg04, word32 dwArg08, Eq_106 dwArg0C, Eq_106 dwArg10)
 {
-	quantum_hash64(dwArg04, dwArg08, dwArg10->dw0008);
-	while (fp->ptr0010->ptr0010[*(fp - 0x08)] != 0x00)
+	word32 dwLoc0C_14 = 0x00;
+	word32 dwLoc08_25 = quantum_hash64(dwArg04, dwArg08, Mem0[dwArg10 + 0x08:word32]);
+	while (Mem0[dwArg10 + 0x10:word32][dwLoc08_25 * 0x04] != 0x00)
 	{
-		*(fp - 0x08) = *(fp - 0x08) + 0x01;
-		if (0x01 << (byte) (fp->ptr0010)->dw0008 == *(fp - 0x08))
+		ui32 v10_56 = dwLoc08_25 + 0x01;
+		dwLoc08_25 = v10_56;
+		if (0x01 << (byte) Mem0[dwArg10 + 0x08:word32] == v10_56)
 		{
-			if (*(fp - 0x0C) == 0x00)
+			if (dwLoc0C_14 == 0x00)
 			{
-				*(fp - 0x08) = 0x00;
-				*(fp - 0x0C) = 0x01;
+				dwLoc08_25 = 0x00;
+				dwLoc0C_14 = 0x01;
 			}
 			else
-			{
-				*(fp - 44) = 0x05;
-				quantum_error(gs, dwArg00);
-			}
+				quantum_error(0x05);
 		}
 	}
-	fp->ptr0010->ptr0010[*(fp - 0x08)] = fp->dw000C + 0x01;
-	return;
+	Mem0[dwArg10 + 0x10:word32][dwLoc08_25 * 0x04] = dwArg0C + 0x01;
 }
 
-// 08051C1A: Register uint32 quantum_hash64(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
-uint32 quantum_hash64(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
+// 08051C1A: Register uint32 quantum_hash64(Stack word32 dwArg04, Stack word32 dwArg08, Stack Eq_106 dwArg0C)
+uint32 quantum_hash64(word32 dwArg04, word32 dwArg08, Eq_106 dwArg0C)
 {
 	return (dwArg08 ^ dwArg04) *s 0x9E370001 >> (byte) (0x20 - dwArg0C);
 }
 
-// 08051C5C: Register word32 quantum_get_state(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_136) dwArg08, Stack word32 dwArg14, Stack word32 dwArg18, Stack word32 dwArg1C)
-word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, word32 dwArg18, word32 dwArg1C)
+// 08051C5C: Register word32 quantum_get_state(Stack word32 dwArg04, Stack word32 dwArg08, Stack Eq_106 dwArg14, Stack Eq_106 dwArg18, Stack Eq_106 dwArg1C)
+word32 quantum_get_state(word32 dwArg04, word32 dwArg08, Eq_106 dwArg14, Eq_106 dwArg18, Eq_106 dwArg1C)
 {
 	word32 dwLoc20_29;
 	if (dwArg14 == 0x00)
@@ -6400,12 +4200,12 @@ word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, wor
 	else
 	{
 		ui32 dwLoc08_105 = quantum_hash64(dwArg04, dwArg08, dwArg14);
-		while (dwArg1C[dwLoc08_105] != 0x00)
+		while (dwArg1C[dwLoc08_105 * 0x04] != 0x00)
 		{
-			struct Eq_28807 * eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105] << 0x04);
+			word32 eax_79 = dwArg18 + -(0x01 - dwArg1C[dwLoc08_105 * 0x04] << 0x04);
 			if ((eax_79->dw0008 ^ dwArg04 | eax_79->dw000C ^ dwArg08) == 0x00)
 			{
-				dwLoc20_29 = dwArg1C[dwLoc08_105] - 0x01;
+				dwLoc20_29 = dwArg1C[dwLoc08_105 * 0x04] - 0x01;
 				return dwLoc20_29;
 			}
 			ui32 v11_97 = dwLoc08_105 + 0x01;
@@ -6418,305 +4218,168 @@ word32 quantum_get_state(Eq_136 * dwArg04, Eq_136 * dwArg08, word32 dwArg14, wor
 	return dwLoc20_29;
 }
 
-// 08051D22: Register word32 quantum_dot_product_noconj(Register (ptr Eq_28844) ebp, Register (ptr Eq_380) gs, Stack word32 dwArg08, Register out ptr32 edxOut)
-word32 quantum_dot_product_noconj(Eq_28844 * ebp, Eq_380 * gs, word32 dwArg08, ptr32 & edxOut)
+// 08051D22: void quantum_dot_product_noconj(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08)
+void quantum_dot_product_noconj(Eq_106 dwArg04, Eq_106 dwArg08)
 {
-	if (dwArg08->ptr0008 != null)
-		quantum_reconstruct_hash(fp - 0x04, gs, dwArg08);
-	*(fp - 0x10) = 0x00;
-	while (fp->ptr0004->dw0004 > *(fp - 0x10))
+	if (Mem0[dwArg08 + 0x08:word32] != 0x00)
+		quantum_reconstruct_hash(dwArg08);
+	Eq_106 dwLoc10_125 = 0x00;
+	while (Mem0[dwArg04 + 0x04:word32] > dwLoc10_125)
 	{
-		struct Eq_28877 * eax_68 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-		struct Eq_28892 * edx_71 = fp->ptr0008;
-		word32 ecx_69 = eax_68->dw0008;
-		word32 ebx_70 = eax_68->dw000C;
-		*(fp - 0x34) = edx_71->dw0000;
-		*(fp - 0x30) = edx_71->dw0004;
-		*(fp - 44) = edx_71->dw0008;
-		*(fp - 0x28) = edx_71->dw000C;
-		*(fp - 0x24) = edx_71->dw0010;
-		*(fp - 0x3C) = ecx_69;
-		*(fp - 0x38) = ebx_70;
-		*(fp - 0x14) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-		if (*(fp - 0x14) >= 0x00)
+		word32 eax_88 = Mem0[dwArg04 + 0x0C:word32] + (dwLoc10_125 << 0x04);
+		word32 eax_104 = quantum_get_state(eax_88->dw0008, eax_88->dw000C, Mem0[dwArg08 + 0x08:word32], Mem0[dwArg08 + 0x0C:word32], Mem0[dwArg08 + 0x10:word32]);
+		if (eax_104 >= 0x00)
 		{
-			struct Eq_28997 * eax_109 = fp->ptr0004->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29012 * eax_117 = fp->ptr0008->dw000C + (*(fp - 0x14) << 0x04);
-			word32 ecx_110 = eax_109->dw0000;
-			word32 ebx_111 = eax_109->dw0004;
-			word32 edx_118 = eax_117->dw0000;
-			word32 eax_119 = eax_117->dw0004;
-			*(fp - 0x30) = eax_119;
-			*(fp - 0x34) = edx_118;
-			*(fp - 0x38) = ebx_111;
-			*(fp - 0x3C) = ecx_110;
-			__mulsc3(dwArg00, dwArg04, dwArg08, rArg0C);
-			*(fp - 0x20) = eax_119;
-			real64 rLoc1_132 = (real64) *(fp - 0x20);
-			*(fp - 0x20) = edx_118;
-			real64 rLoc2_141 = (real64) *(fp - 0x20) + (real64) (*(fp - 0x18));
-			*(fp - 0x20) = (real32) (rLoc1_132 + (real64) (*(fp - 0x1C)));
-			word32 eax_146 = *(fp - 0x20);
-			*(fp - 0x20) = (real32) rLoc2_141;
-			word32 edx_148 = *(fp - 0x20);
-			*(fp - 0x1C) = eax_146;
-			*(fp - 0x18) = edx_148;
+			word32 eax_131 = Mem0[dwArg04 + 0x0C:word32] + (dwLoc10_125 << 0x04);
+			word32 eax_139 = Mem0[dwArg08 + 0x0C:word32] + (eax_104 << 0x04);
+			__mulsc3(eax_131->t0000, eax_131->t0004, eax_139->t0000, eax_139->t0004);
 		}
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		dwLoc10_125 = dwLoc10_125 + 0x01;
 	}
-	word32 edx_53;
-	*edxOut = *(fp - 0x18);
-	return *(fp - 0x1C);
 }
 
-// 08051E46: Register (ptr Eq_29137) quantum_vectoradd(Register (ptr Eq_22903) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_309) dwArg08, Register out ptr32 ebpOut)
-Eq_29137 * quantum_vectoradd(Eq_22903 * ebp, Eq_380 * gs, Eq_309 * dwArg08, ptr32 & ebpOut)
+// 08051E46: void quantum_vectoradd(Stack (ptr Eq_9276) dwArg04, Stack Eq_106 dwArg08, Stack (ptr Eq_9278) dwArg0C)
+void quantum_vectoradd(Eq_9276 * dwArg04, Eq_106 dwArg08, Eq_9278 * dwArg0C)
 {
-	quantum_copy_qureg(fp - 0x04, gs, dwArg08, fp - 0x30);
-	if (fp->ptr0008->dw0008 != 0x00 || (fp->ptr000C)->dw0008 != 0x00)
+	quantum_copy_qureg(dwArg08, fp - 0x30);
+	ui32 dwLoc1C_14 = 0x00;
+	if (Mem0[dwArg08 + 0x08:word32] != 0x00 || dwArg0C->dw0008 != 0x00)
 	{
-		*(fp - 0x5C) = (struct Eq_29148 **) fp->ptr0008;
-		quantum_reconstruct_hash(fp - 0x04, gs, dwArg00);
-		*(fp - 88) = fp - 0x30;
-		*(fp - 0x5C) = (struct Eq_29148 **) fp->ptr0008;
-		quantum_copy_qureg(fp - 0x04, gs, dwArg00, dwArg04);
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr000C->dw0004 > *(fp - 0x10))
+		quantum_reconstruct_hash(dwArg08);
+		quantum_copy_qureg(dwArg08, fp - 0x30);
+		int32 dwLoc10_238 = 0x00;
+		while (dwArg0C->dw0004 > dwLoc10_238)
 		{
-			struct Eq_29266 * eax_234 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29148 * edx_237 = fp->ptr0008;
-			word32 ecx_235 = eax_234->dw0008;
-			word32 ebx_236 = eax_234->dw000C;
-			*(fp - 0x54) = edx_237->dw0000;
-			*(fp - 0x50) = edx_237->dw0004;
-			*(fp - 0x4C) = edx_237->dw0008;
-			*(fp - 0x48) = edx_237->dw000C;
-			*(fp - 0x44) = edx_237->dw0010;
-			*(fp - 0x5C) = ecx_235;
-			*(fp - 88) = ebx_236;
-			if (quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18) == ~0x00)
-				*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			struct Eq_12414 * eax_268 = dwArg0C->dw000C + (dwLoc10_238 << 0x04);
+			if (quantum_get_state(eax_268->dw0008, eax_268->dw000C, Mem0[dwArg08 + 0x08:word32], Mem0[dwArg08 + 0x0C:word32], Mem0[dwArg08 + 0x10:word32]) == ~0x00)
+				dwLoc1C_14 = dwLoc1C_14 + 0x01;
+			dwLoc10_238 = dwLoc10_238 + 0x01;
 		}
 	}
-	*(fp - 44) = *(fp - 44) + *(fp - 0x1C);
-	word32 edx_35 = *(fp - 0x24);
-	*(fp - 88) = *(fp - 44) << 0x04;
-	*(fp - 0x5C) = edx_35;
-	*(fp - 0x24) = (FILE **) feof(*(fp - 0x5C));
-	if (*(fp - 0x24) == 0x00)
+	ui32 eax_38 = dwLoc2C + dwLoc1C_14;
+	Eq_106 eax_46 = realloc(dwLoc24, eax_38 << 0x04);
+	if (eax_46 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwLoc1C_14 << 0x04);
+	word32 dwLoc18_145 = Mem0[dwArg08 + 0x04:word32];
+	int32 dwLoc10_157 = 0x00;
+	while (dwArg0C->dw0004 > dwLoc10_157)
 	{
-		*(fp - 0x5C) = 0x02;
-		quantum_error(gs, dwArg00);
-	}
-	*(fp - 0x5C) = *(fp - 0x1C) << 0x04;
-	quantum_memman(dwArg00);
-	*(fp - 0x18) = fp->ptr0008->dw0004;
-	*(fp - 0x10) = 0x00;
-	while (fp->ptr000C->dw0004 > *(fp - 0x10))
-	{
-		struct Eq_29422 * eax_102 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-		struct Eq_29148 * edx_105 = fp->ptr0008;
-		word32 ecx_103 = eax_102->dw0008;
-		word32 ebx_104 = eax_102->dw000C;
-		*(fp - 0x54) = edx_105->dw0000;
-		*(fp - 0x50) = edx_105->dw0004;
-		*(fp - 0x4C) = edx_105->dw0008;
-		*(fp - 0x48) = edx_105->dw000C;
-		*(fp - 0x44) = edx_105->dw0010;
-		*(fp - 0x5C) = ecx_103;
-		*(fp - 88) = ebx_104;
-		*(fp - 0x14) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-		if (*(fp - 0x14) >= 0x00)
+		struct Eq_12461 * eax_125 = dwArg0C->dw000C + (dwLoc10_157 << 0x04);
+		word32 eax_141 = quantum_get_state(eax_125->dw0008, eax_125->dw000C, Mem0[dwArg08 + 0x08:word32], Mem0[dwArg08 + 0x0C:word32], Mem0[dwArg08 + 0x10:word32]);
+		if (eax_141 >= 0x00)
 		{
-			struct Eq_29670 * eax_145 = *(fp - 0x24) + (*(fp - 0x14) << 0x04);
-			struct Eq_29684 * eax_153 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29699 * esi_141 = *(fp - 0x24) + (*(fp - 0x14) << 0x04);
-			word32 ebx_147 = eax_145->dw0004;
-			word32 edx_154 = eax_153->dw0000;
-			word32 eax_155 = eax_153->dw0004;
-			*(fp - 0x40) = eax_145->dw0000;
-			real64 rLoc1_157 = (real64) *(fp - 0x40);
-			*(fp - 0x40) = ebx_147;
-			real64 rLoc2_159 = (real64) *(fp - 0x40);
-			*(fp - 0x40) = edx_154;
-			real64 rLoc3_161 = (real64) *(fp - 0x40);
-			*(fp - 0x40) = eax_155;
-			real64 rLoc2_168 = rLoc2_159 + (real64) (*(fp - 0x40));
-			*(fp - 0x40) = (real32) (rLoc1_157 + rLoc3_161);
-			word32 eax_173 = *(fp - 0x40);
-			*(fp - 0x40) = (real32) rLoc2_168;
-			word32 edx_175 = *(fp - 0x40);
-			esi_141->dw0000 = eax_173;
-			esi_141->dw0004 = edx_175;
+			word32 eax_166 = eax_46 + (eax_141 << 0x04);
+			struct Eq_12560 * eax_174 = dwArg0C->dw000C + (dwLoc10_157 << 0x04);
+			word32 esi_162 = eax_46 + (eax_141 << 0x04);
+			real32 dwLoc40_195 = (real32) ((real64) eax_166->dw0004 + (real64) eax_174->dw0004);
+			esi_162->r0000 = (real32) ((real64) eax_166->dw0000 + (real64) eax_174->dw0000);
+			esi_162->r0004 = dwLoc40_195;
 		}
 		else
 		{
-			struct Eq_29574 * eax_186 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29589 * ecx_181 = *(fp - 0x24) + (*(fp - 0x18) << 0x04);
-			word32 edx_187 = eax_186->dw000C;
-			ecx_181->dw0008 = eax_186->dw0008;
-			ecx_181->dw000C = edx_187;
-			struct Eq_29616 * eax_199 = fp->ptr000C->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29631 * ecx_194 = *(fp - 0x24) + (*(fp - 0x18) << 0x04);
-			word32 eax_201 = eax_199->dw0004;
-			ecx_194->dw0000 = eax_199->dw0000;
-			ecx_194->dw0004 = eax_201;
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			struct Eq_12506 * eax_207 = dwArg0C->dw000C + (dwLoc10_157 << 0x04);
+			word32 ecx_202 = eax_46 + (dwLoc18_145 << 0x04);
+			word32 edx_208 = eax_207->dw000C;
+			ecx_202->dw0008 = eax_207->dw0008;
+			ecx_202->dw000C = edx_208;
+			struct Eq_12530 * eax_220 = dwArg0C->dw000C + (dwLoc10_157 << 0x04);
+			word32 ecx_215 = eax_46 + (dwLoc18_145 << 0x04);
+			word32 eax_222 = eax_220->dw0004;
+			ecx_215->dw0000 = eax_220->dw0000;
+			ecx_215->dw0004 = eax_222;
+			dwLoc18_145 = (word32) dwLoc18_145 + 0x01;
 		}
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		dwLoc10_157 = dwLoc10_157 + 0x01;
 	}
-	fp->ptr0004->dw0000 = *(fp - 0x30);
-	fp->ptr0004->dw0004 = *(fp - 44);
-	fp->ptr0004->dw0008 = *(fp - 0x28);
-	fp->ptr0004->dw000C = *(fp - 0x24);
-	fp->ptr0004->dw0010 = *(fp - 0x20);
-	word32 ebp_94;
-	*ebpOut = *(fp - 0x04);
-	return fp;
+	dwArg04->dw0000 = dwLoc30;
+	dwArg04->dw0004 = eax_38;
+	dwArg04->dw0008 = dwLoc28;
+	dwArg04->t000C = eax_46;
+	dwArg04->dw0010 = dwLoc20;
 }
 
-// 080520A8: Register (ptr Eq_29820) quantum_vectoradd_inplace(Register (ptr Eq_22903) ebp, Register (ptr Eq_380) gs, Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_309) dwArg08, Register out ptr32 ebpOut)
-Eq_29820 * quantum_vectoradd_inplace(Eq_22903 * ebp, Eq_380 * gs, Eq_136 * dwArg04, Eq_309 * dwArg08, ptr32 & ebpOut)
+// 080520A8: void quantum_vectoradd_inplace(Stack Eq_106 dwArg04, Stack (ptr Eq_9356) dwArg08)
+void quantum_vectoradd_inplace(Eq_106 dwArg04, Eq_9356 * dwArg08)
 {
-	if (dwArg04->ptr0008 != null || dwArg08->dw0008 != 0x00)
+	ui32 dwLoc1C_13 = 0x00;
+	if (Mem0[dwArg04 + 0x08:word32] != 0x00 || dwArg08->dw0008 != 0x00)
 	{
-		quantum_reconstruct_hash(fp - 0x04, gs, dwArg04);
-		*(fp - 0x10) = 0x00;
-		while (fp->ptr0008->dw0004 > *(fp - 0x10))
+		quantum_reconstruct_hash(dwArg04);
+		int32 dwLoc10_221 = 0x00;
+		while (dwArg08->dw0004 > dwLoc10_221)
 		{
-			struct Eq_29907 * eax_223 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_29847 * edx_226 = fp->ptr0004;
-			word32 ecx_224 = eax_223->dw0008;
-			word32 ebx_225 = eax_223->dw000C;
-			*(fp - 0x34) = edx_226->dw0000;
-			*(fp - 0x30) = edx_226->dw0004;
-			*(fp - 44) = edx_226->dw0008;
-			*(fp - 0x28) = (FILE **) edx_226->ptr000C;
-			*(fp - 0x24) = edx_226->dw0010;
-			*(fp - 0x3C) = ecx_224;
-			*(fp - 0x38) = ebx_225;
-			if (quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18) == ~0x00)
-				*(fp - 0x1C) = *(fp - 0x1C) + 0x01;
-			*(fp - 0x10) = *(fp - 0x10) + 0x01;
+			struct Eq_12639 * eax_252 = dwArg08->dw000C + (dwLoc10_221 << 0x04);
+			if (quantum_get_state(eax_252->dw0008, eax_252->dw000C, Mem0[dwArg04 + 0x08:word32], Mem0[dwArg04 + 0x0C:word32], Mem0[dwArg04 + 0x10:word32]) == ~0x00)
+				dwLoc1C_13 = dwLoc1C_13 + 0x01;
+			dwLoc10_221 = dwLoc10_221 + 0x01;
 		}
 	}
-	FILE * eax_31 = fp->ptr0004->ptr000C;
-	*(fp - 0x38) = fp->ptr0004->dw0004 + *(fp - 0x1C) << 0x04;
-	*(fp - 0x3C) = (FILE **) eax_31;
-	fp->ptr0004->ptr000C = feof(*(fp - 0x3C));
-	if (fp->ptr0004->ptr000C == null)
+	Mem43[dwArg04 + 0x0C:word32] = realloc(Mem0[dwArg04 + 0x0C:word32], Mem0[dwArg04 + 0x04:word32] + dwLoc1C_13 << 0x04);
+	if (Mem43[dwArg04 + 0x0C:word32] == 0x00)
+		quantum_error(0x02);
+	quantum_memman(dwLoc1C_13 << 0x04);
+	word32 dwLoc18_128 = Mem43[dwArg04 + 0x04:word32];
+	int32 dwLoc10_140 = 0x00;
+	while (dwArg08->dw0004 > dwLoc10_140)
 	{
-		*(fp - 0x3C) = 0x02;
-		quantum_error(gs, dwArg00);
-	}
-	*(fp - 0x3C) = *(fp - 0x1C) << 0x04;
-	quantum_memman(dwArg00);
-	*(fp - 0x18) = fp->ptr0004->dw0004;
-	*(fp - 0x10) = 0x00;
-	while (fp->ptr0008->dw0004 > *(fp - 0x10))
-	{
-		struct Eq_30064 * eax_91 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-		struct Eq_29847 * edx_94 = fp->ptr0004;
-		word32 ecx_92 = eax_91->dw0008;
-		word32 ebx_93 = eax_91->dw000C;
-		*(fp - 0x34) = edx_94->dw0000;
-		*(fp - 0x30) = edx_94->dw0004;
-		*(fp - 44) = edx_94->dw0008;
-		*(fp - 0x28) = (FILE **) edx_94->ptr000C;
-		*(fp - 0x24) = edx_94->dw0010;
-		*(fp - 0x3C) = ecx_92;
-		*(fp - 0x38) = ebx_93;
-		*(fp - 0x14) = quantum_get_state(dwArg00, dwArg04, dwArg10, dwArg14, dwArg18);
-		if (*(fp - 0x14) >= 0x00)
+		struct Eq_12686 * eax_108 = dwArg08->dw000C + (dwLoc10_140 << 0x04);
+		word32 eax_124 = quantum_get_state(eax_108->dw0008, eax_108->dw000C, Mem43[dwArg04 + 0x08:word32], Mem43[dwArg04 + 0x0C:word32], Mem43[dwArg04 + 0x10:word32]);
+		if (eax_124 >= 0x00)
 		{
-			struct Eq_30277 * eax_135 = fp->ptr0004->ptr000C + (*(fp - 0x14) << 0x04) / 0x00;
-			struct Eq_30292 * eax_143 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_30307 * esi_130 = fp->ptr0004->ptr000C + (*(fp - 0x14) << 0x04) / 0x00;
-			word32 ebx_137 = eax_135->dw0004;
-			word32 edx_144 = eax_143->dw0000;
-			word32 eax_145 = eax_143->dw0004;
-			*(fp - 0x20) = eax_135->dw0000;
-			real64 rLoc1_147 = (real64) *(fp - 0x20);
-			*(fp - 0x20) = ebx_137;
-			real64 rLoc2_149 = (real64) *(fp - 0x20);
-			*(fp - 0x20) = edx_144;
-			real64 rLoc3_151 = (real64) *(fp - 0x20);
-			*(fp - 0x20) = eax_145;
-			real64 rLoc2_158 = rLoc2_149 + (real64) (*(fp - 0x20));
-			*(fp - 0x20) = (real32) (rLoc1_147 + rLoc3_151);
-			word32 eax_163 = *(fp - 0x20);
-			*(fp - 0x20) = (real32) rLoc2_158;
-			word32 edx_165 = *(fp - 0x20);
-			esi_130->dw0000 = eax_163;
-			esi_130->dw0004 = edx_165;
+			word32 eax_151 = Mem43[dwArg04 + 0x0C:word32] + (eax_124 << 0x04);
+			struct Eq_12783 * eax_159 = dwArg08->dw000C + (dwLoc10_140 << 0x04);
+			word32 esi_146 = Mem43[dwArg04 + 0x0C:word32] + (eax_124 << 0x04);
+			real32 dwLoc20_180 = (real32) ((real64) eax_151->dw0004 + (real64) eax_159->dw0004);
+			esi_146->r0000 = (real32) ((real64) eax_151->dw0000 + (real64) eax_159->dw0000);
+			esi_146->r0004 = dwLoc20_180;
 		}
 		else
 		{
-			struct Eq_30179 * eax_177 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_30194 * ecx_172 = fp->ptr0004->ptr000C + (*(fp - 0x18) << 0x04) / 0x00;
-			word32 edx_178 = eax_177->dw000C;
-			ecx_172->dw0008 = eax_177->dw0008;
-			ecx_172->dw000C = edx_178;
-			struct Eq_30222 * eax_191 = fp->ptr0008->dw000C + (*(fp - 0x10) << 0x04);
-			struct Eq_30237 * ecx_186 = fp->ptr0004->ptr000C + (*(fp - 0x18) << 0x04) / 0x00;
-			word32 eax_193 = eax_191->dw0004;
-			ecx_186->dw0000 = eax_191->dw0000;
-			ecx_186->dw0004 = eax_193;
-			*(fp - 0x18) = *(fp - 0x18) + 0x01;
+			struct Eq_12720 * eax_193 = dwArg08->dw000C + (dwLoc10_140 << 0x04);
+			word32 ecx_188 = Mem43[dwArg04 + 0x0C:word32] + (dwLoc18_128 << 0x04);
+			word32 edx_194 = eax_193->dw000C;
+			ecx_188->dw0008 = eax_193->dw0008;
+			ecx_188->dw000C = edx_194;
+			struct Eq_12747 * eax_207 = dwArg08->dw000C + (dwLoc10_140 << 0x04);
+			word32 ecx_202 = Mem197[dwArg04 + 0x0C:word32] + (dwLoc18_128 << 0x04);
+			word32 eax_209 = eax_207->dw0004;
+			ecx_202->dw0000 = eax_207->dw0000;
+			ecx_202->dw0004 = eax_209;
+			dwLoc18_128 = (word32) dwLoc18_128 + 0x01;
 		}
-		*(fp - 0x10) = *(fp - 0x10) + 0x01;
+		dwLoc10_140 = dwLoc10_140 + 0x01;
 	}
-	fp->ptr0004->dw0004 = fp->ptr0004->dw0004 + *(fp - 0x1C);
-	word32 ebp_83;
-	*ebpOut = *(fp - 0x04);
-	return fp;
+	Mem94[dwArg04 + 0x04:word32] = Mem43[dwArg04 + 0x04:word32] + dwLoc1C_13;
 }
 
-// 080522D8: void quantum_matrix_qureg(Register (ptr Eq_22903) ebp, Register (ptr Eq_380) gs, Stack word32 dwArg0C, Stack word32 dwArg10, Stack (ptr Eq_309) dwArg14)
-void quantum_matrix_qureg(Eq_22903 * ebp, Eq_380 * gs, word32 dwArg0C, word32 dwArg10, Eq_309 * dwArg14)
+// 080522D8: void quantum_matrix_qureg(Register ptr32 ebp, Stack Eq_106 dwArg04, Stack (ptr code) dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack Eq_106 dwArg14)
+void quantum_matrix_qureg(ptr32 ebp, Eq_106 dwArg04, code * dwArg08, word32 dwArg0C, word32 dwArg10, Eq_106 dwArg14)
 {
-	word32 esi_37;
-	word32 ebx_38;
-	byte SCZO_39;
-	word32 eax_40;
-	word32 ecx_41;
-	byte cl_42;
-	byte SZO_43;
-	byte C_44;
-	byte Z_45;
-	word32 edx_46;
-	byte CZ_47;
-	struct Eq_380 * gs_48;
-	struct Eq_28844 * ebp_104;
-	struct Eq_30442 * esp_117;
-	log();
-	if (eax_40 == 0x00)
-		quantum_error(gs_48, (struct Eq_136 *) 0x02);
-	esp_117->t0000 = *(ebp_104 - 0x20) << 0x04;
-	quantum_memman(dwArg00);
-	*(ebp_104 - 0x10) = 0x00;
-	*(ebp_104 - 0x0C) = 0x00;
+	Eq_106 eax_22 = *dwArg14;
+	Eq_106 eax_27 = 0x01 << (byte) eax_22;
+	struct Eq_12834 * esp_116 = fp - 0x9C;
+	Eq_106 eax_34 = calloc(eax_27, 0x10);
+	if (eax_34 == 0x00)
+		quantum_error(0x02);
+	quantum_memman(eax_27 << 0x04);
+	Eq_12848 dwLoc14_152 = 0x00;
+	Eq_12850 dwLoc10_157 = 0x00;
 	while (true)
 	{
-		byte cl_75 = (byte) *ebp_104->ptr0018;
-		int32 eax_77 = 0x01 << cl_75;
-		*(ebp_104 - 0x70) = eax_77;
-		*(ebp_104 - 0x6C) = eax_77 >> 0x1F;
-		if (*(ebp_104 - 0x6C) <= *(ebp_104 - 0x0C) && (*(ebp_104 - 0x6C) < *(ebp_104 - 0x0C) || *(ebp_104 - 0x70) <= *(ebp_104 - 0x10)))
+		byte cl_73 = (byte) *dwArg14;
+		Eq_12848 eax_75 = 0x01 << cl_73;
+		if (eax_75 >> 0x1F <= dwLoc10_157 && (eax_75 >> 0x1F < dwLoc10_157 || eax_75 <= dwLoc14_152))
 			break;
-		struct Eq_30508 * ecx_89 = *(ebp_104 - 0x18) + (*(ebp_104 - 0x10) << 0x04);
-		word32 edx_91 = *(ebp_104 - 0x0C);
-		ecx_89->dw0008 = *(ebp_104 - 0x10);
-		ecx_89->dw000C = edx_91;
-		esp_117->r000C = *(ebp_104 - 0x40);
-		word32 edx_98 = *(ebp_104 - 0x0C);
-		esp_117->dw0004 = *(ebp_104 - 0x10);
-		esp_117->dw0008 = edx_98;
-		Eq_30452 ecx_94 = ebp_104 - 0x68;
-		esp_117->t0000 = ecx_94;
-		<anonymous> * eax_102 = ebp_104->ptr000C;
-		word32 ** esp_103;
+		word32 ecx_87 = eax_34 + (dwLoc14_152 << 0x04);
+		ecx_87->t0008 = dwLoc14_152;
+		ecx_87->t000C = dwLoc10_157;
+		esp_116->r000C = rLoc44;
+		esp_116->t0004 = dwLoc14_152;
+		esp_116->t0008 = dwLoc10_157;
+		esp_116->ptr0000 = fp - 0x6C;
+		union Eq_106 * esp_103;
+		word32 ebp_104;
 		word32 esi_105;
 		word32 ebx_106;
 		byte SCZO_107;
@@ -6728,311 +4391,208 @@ void quantum_matrix_qureg(Eq_22903 * ebp, Eq_380 * gs, word32 dwArg0C, word32 dw
 		byte Z_113;
 		word32 edx_114;
 		byte CZ_115;
-		struct Eq_380 * gs_116;
-		eax_102();
-		*(ebp_104 - 0x38) = *(ebp_104 - 0x68);
-		*(ebp_104 - 0x34) = *(ebp_104 - 100);
-		*(ebp_104 - 0x30) = *(ebp_104 - 0x60);
-		*(ebp_104 - 44) = *(ebp_104 - 0x5C);
-		*(ebp_104 - 0x28) = *(ebp_104 - 88);
-		struct Eq_30637 * esi_132 = *(ebp_104 - 0x18) + (*(ebp_104 - 0x10) << 0x04);
-		*esp_103 = ebp_104->ptr0018;
-		*(esp_103 - 0x04) = ebp_104 - 0x38;
-		word32 edx_138;
-		esi_132->dw0000 = quantum_dot_product_noconj(ebp_104, gs_116, dwArg04, out edx_138);
-		esi_132->dw0004 = edx_138;
-		*(esp_103 - 0x04) = ebp_104 - 0x38;
+		dwArg08();
+		*esp_103 = (union Eq_106 *) dwArg14;
+		*(esp_103 - 0x04) = fp - 0x3C;
+		quantum_dot_product_noconj(dwArg00, dwArg04);
+		word32 esi_136 = eax_34 + (dwLoc14_152 << 0x04);
+		esi_136->dw0000 = 0x00;
+		esi_136->dw0004 = 0x00;
+		*(esp_103 - 0x04) = fp - 0x3C;
 		quantum_delete_qureg(dwArg00);
-		uint32 v16_148 = *(ebp_104 - 0x10) + 0x01;
-		*(ebp_104 - 0x10) = v16_148;
-		*(ebp_104 - 0x0C) = (word32) ((byte) (v16_148 < 0x00) + *(ebp_104 - 0x0C));
-		esp_117 = esp_103 - 0x04;
+		esp_116 = esp_103 - 0x04;
+		dwLoc14_152 = (word32) dwLoc14_152.u1 + 0x01;
+		dwLoc10_157 = v17;
 	}
-	ebp_104->ptr0008->dw0000 = *(ebp_104 - 0x24);
-	ebp_104->ptr0008->dw0004 = *(ebp_104 - 0x20);
-	ebp_104->ptr0008->dw0008 = *(ebp_104 - 0x1C);
-	ebp_104->ptr0008->dw000C = *(ebp_104 - 0x18);
-	ebp_104->ptr0008->dw0010 = *(ebp_104 - 0x14);
-	return;
+	*dwArg04 = eax_22;
+	Mem169[dwArg04 + 0x04:word32] = eax_27;
+	Mem172[dwArg04 + 0x08:word32] = 0x00;
+	Mem175[dwArg04 + 0x0C:word32] = eax_34;
+	Mem178[dwArg04 + 0x10:word32] = 0x00;
 }
 
-// 08052462: void quantum_scalar_qureg(Stack (ptr Eq_136) dwArg04, Stack (ptr Eq_309) dwArg08, Stack word32 dwArg0C)
-void quantum_scalar_qureg(Eq_136 * dwArg04, Eq_309 * dwArg08, word32 dwArg0C)
+// 08052462: void quantum_scalar_qureg(Stack Eq_106 dwArg04, Stack Eq_106 dwArg08, Stack (ptr Eq_9268) dwArg0C)
+void quantum_scalar_qureg(Eq_106 dwArg04, Eq_106 dwArg08, Eq_9268 * dwArg0C)
 {
 	while (dwArg0C->dw0004 > 0x00)
 	{
-		struct Eq_30794 * edx_50 = dwArg0C->ptr000C;
-		struct Eq_30794 * edx_45 = dwArg0C->ptr000C;
-		__mulsc3(edx_50->ptr0000, edx_50->ptr0004, dwArg04, dwArg08);
-		edx_45->ptr0000 = dwArg08;
-		edx_45->ptr0004 = dwArg04;
+		struct Eq_12967 * edx_50 = dwArg0C->ptr000C;
+		struct Eq_12967 * edx_45 = dwArg0C->ptr000C;
+		__mulsc3(edx_50->t0000, edx_50->t0004, dwArg04, dwArg08);
+		edx_45->t0000 = dwArg08;
+		edx_45->t0004 = dwArg04;
 	}
-	return;
 }
 
-// 080524D7: void quantum_print_timeop(Register word32 ebp, Register (ptr Eq_380) gs, Stack word32 dwArg04)
-void quantum_print_timeop(word32 ebp, Eq_380 * gs, word32 dwArg04)
+// 080524D7: void quantum_print_timeop(Register (ptr Eq_1715) gs, Stack Eq_106 dwArg04, Stack (ptr code) dwArg08)
+void quantum_print_timeop(Eq_1715 * gs, Eq_106 dwArg04, code * dwArg08)
 {
-	quantum_new_matrix(fp - 0x04, gs, 0x01 << (byte) dwArg04, 0x01 << (byte) dwArg04);
-	*(fp - 0x20) = *(fp - 0x4C);
-	*(fp - 0x1C) = *(fp - 0x48);
-	*(fp - 0x18) = *(fp - 0x44);
-	*(fp - 0x10) = 0x00;
-	struct Eq_3742 * ebp_40 = fp - 0x04;
-	struct Eq_30871 * esp_27 = fp - 0x7C;
+	quantum_new_matrix(fp - 0x4C, 0x01 << (byte) dwArg04, 0x01 << (byte) dwArg04);
+	Eq_106 dwLoc10_133 = 0x00;
 	while (true)
 	{
-		byte cl_43 = (byte) ebp_40->dw0008;
-		if (0x01 << cl_43 <= *(ebp_40 - 0x0C))
+		byte cl_63 = (byte) dwArg04;
+		if (0x01 << cl_63 <= dwLoc10_133)
 			break;
-		int32 eax_62 = *(ebp_40 - 0x0C);
-		esp_27->dw000C = ebp_40->dw0008;
-		esp_27->dw0004 = eax_62;
-		esp_27->dw0008 = eax_62 >> 0x1F;
-		esp_27->ptr0000 = ebp_40 - 0x68;
-		struct Eq_19705 * ebx_74 = quantum_new_qureg(ebp_40, gs, dwArg04, dwArg08, dwArg0C);
-		*(ebp_40 - 0x30) = *(ebp_40 - 0x68);
-		*(ebp_40 - 44) = *(ebp_40 - 100);
-		*(ebp_40 - 0x28) = *(ebp_40 - 0x60);
-		*(ebp_40 - 0x24) = *(ebp_40 - 0x5C);
-		*(ebp_40 - 0x20) = *(ebp_40 - 88);
-		esp_27->ptr0000 = ebp_40 - 0x30;
-		<anonymous> * eax_90 = ebp_40->ptr000C;
-		word32 ebx_93;
-		byte SCZO_94;
-		word32 ecx_95;
-		word32 eax_96;
-		byte cl_97;
-		word32 edx_98;
-		byte SZO_99;
-		eax_90();
-		*(ebp_40 - 0x10) = 0x00;
-		while (*(ebp_40 - 44) > *(ebp_40 - 0x10))
+		int32 ecx_83 = dwLoc10_133 >> 0x1F;
+		quantum_new_qureg(gs, fp - 0x6C, dwLoc10_133, ecx_83, dwArg04);
+		word32 esp_113;
+		word32 ebp_114;
+		word32 ebx_115;
+		byte SCZO_116;
+		word32 ecx_117;
+		word32 eax_118;
+		byte cl_119;
+		word32 edx_120;
+		byte SZO_121;
+		dwArg08();
+		int32 dwLoc14_123 = 0x00;
+		while (dwLoc68 > dwLoc14_123)
 		{
-			struct Eq_31034 * eax_128 = *(ebp_40 - 0x24) + (*(ebp_40 - 0x10) << 0x04);
-			struct Eq_31048 * ecx_124 = *(ebp_40 - 0x14) + ((*(ebp_40 - 0x24) + (*(ebp_40 - 0x10) << 0x04))->dw0008 + *(ebp_40 - 0x18) *s *(ebp_40 - 0x0C) << 0x03);
-			word32 eax_130 = eax_128->dw0004;
-			ecx_124->dw0000 = eax_128->dw0000;
-			ecx_124->dw0004 = eax_130;
-			*(ebp_40 - 0x10) = *(ebp_40 - 0x10) + 0x01;
+			struct Eq_13039 * eax_152 = dwLoc60 + (dwLoc14_123 << 0x04);
+			struct Eq_13044 * ecx_148 = &(dwLoc44 + ((dwLoc60 + (dwLoc14_123 << 0x04))->dw0008 + dwLoc48 *s dwLoc10_133 << 0x03) / 0x08)->dw0000;
+			word32 eax_154 = eax_152->dw0004;
+			ecx_148->dw0000 = eax_152->dw0000;
+			ecx_148->dw0004 = eax_154;
+			dwLoc14_123 = dwLoc14_123 + 0x01;
 		}
-		esp_27->ptr0000 = ebp_40 - 0x30;
-		quantum_delete_qureg(dwArg00);
-		*(ebp_40 - 0x0C) = *(ebp_40 - 0x0C) + 0x01;
+		quantum_delete_qureg(fp - 0x34);
+		dwLoc10_133 = dwLoc10_133 + 0x01;
 	}
-	esp_27->ptr0000 = *(ebp_40 - 0x1C);
-	esp_27->dw0004 = *(ebp_40 - 0x18);
-	esp_27->dw0008 = *(ebp_40 - 0x14);
-	quantum_print_matrix(dwArg00, dwArg04, dwArg08);
-	esp_27->ptr0000 = ebp_40 - 0x1C;
-	quantum_delete_matrix(dwArg00);
-	return;
+	quantum_print_matrix(dwLoc4C, dwLoc48, dwLoc44);
+	quantum_delete_matrix(fp - 0x20);
 }
 
-// 08052614: void main(Register int32 eax, Register (ptr Eq_380) gs, Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08)
-void main(int32 eax, Eq_380 * gs, word32 dwArg00, word32 dwArg04, word32 dwArg08)
+// 08052614: void main(Register (ptr Eq_13077) gs, Stack word32 dwArg00, Stack int32 dwArg04, Stack (ptr Eq_13080) dwArg08)
+void main(Eq_13077 * gs, word32 dwArg00, int32 dwArg04, Eq_13080 * dwArg08)
 {
 	__align(fp);
-	fn080489A4();
-	putchar(eax);
-	struct Eq_136 * dwLoc20_104 = null;
-	if (dwArg04 == (struct Eq_136 *) 0x01)
-		fn080489E4();
+	Eq_84 dwLoc20_142 = 0x00;
+	Eq_13086 eax_18 = time(null);
+	word32 esp_20;
+	word32 ecx_21;
+	word32 ebp_22;
+	byte SCZO_23;
+	word32 eax_24;
+	byte Z_25;
+	word32 edx_26;
+	byte SZO_27;
+	byte SO_28;
+	byte C_29;
+	byte cl_30;
+	struct Eq_1715 * gs_141;
+	!srand();
+	if (dwArg04 == 0x01)
+		puts("Usage: shor [number]\n");
 	else
 	{
-		struct Eq_136 * eax_73 = dwArg08->ptr0004;
-		fn08048974();
-		if (eax_73 <= (struct Eq_136 *) 0x0E)
-			fn080489E4();
+		Eq_84 eax_110 = atoi(dwArg08->ptr0004);
+		if (eax_110 <= 0x0E)
+			puts("Invalid number\n");
 		else
 		{
-			struct Eq_136 * eax_84 = quantum_getwidth(eax_73 *s eax_73);
-			quantum_getwidth(eax_73);
-			fn08048964();
-			if (dwArg04 > (struct Eq_136 *) 0x02)
-			{
-				struct Eq_136 * eax_435 = dwArg08->ptr0008;
-				fn08048974();
-				dwLoc20_104 = eax_435;
-			}
+			Eq_106 eax_121 = quantum_getwidth(eax_110 *s eax_110);
+			Eq_106 eax_125 = quantum_getwidth(eax_110);
+			printf("N = %i, %i qubits required\n", eax_110, eax_125 * 0x03 + eax_121 + 0x02);
+			if (dwArg04 > 0x02)
+				dwLoc20_142 = atoi(dwArg08->ptr0008);
 			while (true)
 			{
-				Eq_31174 eax_110 = quantum_gcd(eax_73, dwLoc20_104);
-				if (eax_110 <= 0x01 && dwLoc20_104 > (struct Eq_136 *) 0x01)
+				Eq_84 eax_155 = quantum_gcd(eax_110, dwLoc20_142);
+				if (eax_155 <= 0x01 && dwLoc20_142 > 0x01)
 					break;
-				fn080489F4();
-				dwLoc20_104 = (int32) (SEQ(eax_110 >> 0x1F, eax_110) % eax_73);
+				word32 esp_160;
+				word32 ecx_161;
+				word32 ebp_162;
+				byte SCZO_163;
+				Eq_13159 eax_164;
+				byte Z_165;
+				word32 edx_166;
+				byte SZO_167;
+				byte SO_168;
+				byte C_169;
+				byte cl_170;
+				!rand();
+				dwLoc20_142 = (int32) (SEQ(eax_164 >> 0x1F, eax_164) % eax_110);
 			}
-			fn08048964();
-			quantum_new_qureg(fp - 0x08, gs, null, null, eax_84);
-			*(fp - 0x4C) = *(fp - 0x70);
-			*(fp - 0x48) = *(fp - 0x6C);
-			*(fp - 0x44) = *(fp - 0x68);
-			*(fp - 0x40) = *(fp - 100);
-			*(fp - 0x3C) = *(fp - 0x60);
-			*(fp - 0x14) = 0x00;
-			while (*(fp - 0x14) < *(fp - 0x18))
+			printf("Random seed: %i\n", dwLoc20_142);
+			quantum_new_qureg(gs_141, fp - 0x70, 0x00, 0x00, eax_121);
+			Eq_106 dwLoc14_211 = 0x00;
+			while (dwLoc14_211 < eax_121)
 			{
-				*(fp - 188) = fp - 0x4C;
-				*(fp - 0xC0) = *(fp - 0x14);
-				quantum_hadamard(fp - 0x08, gs, dwArg00);
-				*(fp - 0x14) = *(fp - 0x14) + 0x01;
+				quantum_hadamard(gs_141, dwLoc14_211, fp - 0x4C);
+				dwLoc14_211 = dwLoc14_211 + 0x01;
 			}
-			word32 edx_159 = *(fp - 0x1C) * 0x03 + 0x02;
-			*(fp - 188) = fp - 0x4C;
-			*(fp - 0xC0) = edx_159;
-			quantum_addscratch(dwArg00, dwArg04);
-			*(fp - 0xB0) = fp - 0x4C;
-			*(fp - 0xB4) = *(fp - 0x1C);
-			*(fp - 0xB8) = *(fp - 0x18);
-			*(fp - 188) = *(fp - 0x20);
-			*(fp - 0xC0) = *(fp - 0x24);
-			quantum_exp_mod_n(fp - 0x08, gs, dwArg0C, dwArg10);
-			*(fp - 0x14) = 0x00;
-			while (*(fp - 0x1C) * 0x03 + 0x02 > *(fp - 0x14))
+			quantum_addscratch(eax_125 * 0x03 + 0x02, fp - 0x4C);
+			quantum_exp_mod_n(gs_141, eax_110, dwLoc20_142, eax_121, eax_125, fp - 0x4C);
+			int32 dwLoc14_237 = 0x00;
+			while (eax_125 * 0x03 + 0x02 > dwLoc14_237)
 			{
-				*(fp - 188) = fp - 0x4C;
-				*(fp - 0xC0) = 0x00;
-				quantum_bmeasure(fp - 0x08, gs, dwArg00);
-				*(fp - 0x14) = *(fp - 0x14) + 0x01;
+				quantum_bmeasure(gs_141, 0x00, fp - 0x4C);
+				dwLoc14_237 = dwLoc14_237 + 0x01;
 			}
-			*(fp - 188) = fp - 0x4C;
-			*(fp - 0xC0) = *(fp - 0x18);
-			quantum_qft(fp - 0x08, gs, dwArg00);
-			*(fp - 0x14) = 0x00;
-			while (true)
+			quantum_qft(gs_141, eax_121, fp - 0x4C);
+			Eq_106 dwLoc14_252 = 0x00;
+			while ((eax_121 >>u 0x1F) + eax_121 >> 0x01 > dwLoc14_252)
 			{
-				Eq_31452 edx_189 = *(fp - 0x18);
-				if ((edx_189 >>u 0x1F) + edx_189 >> 0x01 <= Mem188[(fp - 0x14) + 0x00:word32])
-					break;
-				word32 eax_386 = *(fp - 0x18) - *(fp - 0x14);
-				*(fp - 0xB8) = fp - 0x4C;
-				*(fp - 188) = eax_386 - 0x01;
-				*(fp - 0xC0) = *(fp - 0x14);
-				quantum_cnot(fp - 0x08, gs, dwArg00, dwArg04, dwArg08);
-				word32 eax_396 = *(fp - 0x18) - *(fp - 0x14);
-				*(fp - 0xB8) = fp - 0x4C;
-				*(fp - 188) = *(fp - 0x14);
-				*(fp - 0xC0) = eax_396 - 0x01;
-				quantum_cnot(fp - 0x08, gs, dwArg00, dwArg04, dwArg08);
-				word32 eax_406 = *(fp - 0x18) - *(fp - 0x14);
-				*(fp - 0xB8) = fp - 0x4C;
-				*(fp - 188) = eax_406 - 0x01;
-				*(fp - 0xC0) = *(fp - 0x14);
-				quantum_cnot(fp - 0x08, gs, dwArg00, dwArg04, dwArg08);
-				*(fp - 0x14) = *(fp - 0x14) + 0x01;
+				quantum_cnot(gs_141, dwLoc14_252, eax_121 - dwLoc14_252 - 0x01, fp - 0x4C);
+				quantum_cnot(gs_141, eax_121 - dwLoc14_252 - 0x01, dwLoc14_252, fp - 0x4C);
+				quantum_cnot(gs_141, dwLoc14_252, eax_121 - dwLoc14_252 - 0x01, fp - 0x4C);
+				dwLoc14_252 = dwLoc14_252 + 0x01;
 			}
-			*(fp - 0xC0) = *(fp - 0x4C);
-			*(fp - 188) = *(fp - 0x48);
-			*(fp - 0xB8) = *(fp - 0x44);
-			*(fp - 0xB4) = *(fp - 0x40);
-			*(fp - 0xB0) = *(fp - 0x3C);
-			*(fp - 0x28) = quantum_measure(fp - 0x08, gs);
-			if (*(fp - 0x28) == ~0x00)
-			{
-				*(fp - 0xC0) = 134563035;
-				fn080489E4();
-				*(fp - 116) = 0x01;
-			}
-			else if (*(fp - 0x28) == 0x00)
-			{
-				*(fp - 0xC0) = 0x080544F3;
-				fn080489E4();
-				*(fp - 116) = 0x02;
-			}
+			int32 eax_274 = quantum_measure(gs_141, dwLoc6C, dwLoc64);
+			if (eax_274 == ~0x00)
+				puts("Impossible Measurement!");
+			else if (eax_274 == 0x00)
+				puts("Measured zero, try again.");
 			else
 			{
-				*(fp - 44) = 0x01 << (byte) (*(fp - 0x18));
-				*(fp - 0xC4) = *(fp - 0x28);
-				real64 rLoc1_229 = (real64) *(fp - 0xC4);
-				*(fp - 0xC4) = *(fp - 44);
-				word32 eax_237 = *(fp - 0x28);
-				*(fp - 0xB8) = rLoc1_229 / (real64) (*(fp - 0xC4));
-				*(fp - 188) = eax_237;
-				*(fp - 0xC0) = 0x0805450D;
-				fn08048964();
-				*(fp - 0xB8) = *(fp - 0x18);
-				*(fp - 188) = fp - 44;
-				*(fp - 0xC0) = fp - 0x28;
-				quantum_frac_approx(dwArg00, dwArg04, dwArg08);
-				word32 edx_248 = *(fp - 0x28);
-				*(fp - 0xB8) = *(fp - 44);
-				*(fp - 188) = edx_248;
-				*(fp - 0xC0) = 0x08054520;
-				fn08048964();
-				Eq_31802 edx_252 = *(fp - 44);
-				uint32 ecx_256 = edx_252 >> 0x1F >> 0x1F;
-				if (((word32) edx_252 + ecx_256 & 0x01) - ecx_256 == 0x01 && *(fp - 44) * 0x02 < 0x01 << (byte) (*(fp - 0x18)))
+				Eq_13270 eax_292 = 0x01 << (byte) eax_121;
+				printf("Measured %i (%f), ", eax_274, (real64) eax_274 / (real64) eax_292);
+				quantum_frac_approx(fp - 0x28, fp - 44, eax_121);
+				printf("fractional approximation is %i/%i.\n", eax_274, eax_292);
+				uint32 ecx_327 = eax_292 >> 0x1F >> 0x1F;
+				Eq_13270 dwLoc2C_294 = eax_292;
+				if (((word32) eax_292 + ecx_327 & 0x01) - ecx_327 == 0x01 && eax_292 * 0x02 < 0x01 << (byte) eax_121)
 				{
-					*(fp - 0xC0) = 0x08054544;
-					fn080489E4();
-					*(fp - 44) = *(fp - 44) * 0x02;
+					puts("Odd denominator, trying to expand by 2.");
+					dwLoc2C_294 = eax_292 * 0x02;
 				}
-				Eq_31832 edx_264 = *(fp - 44);
-				uint32 ecx_268 = edx_264 >> 0x1F >> 0x1F;
-				if (((word32) edx_264 + ecx_268 & 0x01) - ecx_268 == 0x01)
-				{
-					*(fp - 0xC0) = 0x0805456C;
-					fn080489E4();
-					*(fp - 116) = 0x02;
-				}
+				Eq_13311 eax_339 = dwLoc2C_294 >> 0x1F;
+				if (((word32) dwLoc2C_294 + (eax_339 >> 0x1F) & 0x01) - (eax_339 >> 0x1F) == 0x01)
+					puts("Odd period, try again.");
 				else
 				{
-					*(fp - 188) = *(fp - 44);
-					*(fp - 0xC0) = 0x08054583;
-					fn08048964();
-					Eq_31901 edx_279 = *(fp - 44);
-					Mem285[fp - 188 + 0x00:word32] = (edx_279 >>u 0x1F) + edx_279 >> 0x01;
-					*(fp - 0xC0) = *(fp - 0x20);
-					*(fp - 0x30) = quantum_ipow(dwArg00, dwArg04) + (int32) (0x01 % *(fp - 0x24));
-					Eq_31943 edx_300 = *(fp - 44);
-					Mem306[fp - 188 + 0x00:word32] = (edx_300 >>u 0x1F) + edx_300 >> 0x01;
-					*(fp - 0xC0) = *(fp - 0x20);
-					*(fp - 0x34) = quantum_ipow(dwArg00, dwArg04) - (int32) (0x01 % *(fp - 0x24));
-					*(fp - 188) = *(fp - 0x30);
-					*(fp - 0xC0) = *(fp - 0x24);
-					*(fp - 0x30) = (union Eq_31174 *) quantum_gcd(dwArg00, dwArg04);
-					*(fp - 188) = *(fp - 0x34);
-					*(fp - 0xC0) = *(fp - 0x24);
-					*(fp - 0x34) = (union Eq_31174 *) quantum_gcd(dwArg00, dwArg04);
-					if (*(fp - 0x30) > *(fp - 0x34))
-						*(fp - 0x38) = *(fp - 0x30);
+					Eq_84 dwLoc38_414;
+					printf("Possible period is %i.\n", dwLoc2C_294);
+					word32 eax_373 = quantum_ipow(dwLoc20_142, (dwLoc2C_294 >>u 0x1F) + dwLoc2C_294 >> 0x01) + (int32) (0x01 % eax_110);
+					word32 edx_395 = quantum_ipow(dwLoc20_142, (dwLoc2C_294 >>u 0x1F) + dwLoc2C_294 >> 0x01) - (int32) (0x01 % eax_110);
+					Eq_84 eax_403 = quantum_gcd(eax_110, eax_373);
+					Eq_84 eax_409 = quantum_gcd(eax_110, edx_395);
+					if (eax_403 > eax_409)
+						dwLoc38_414 = eax_403;
 					else
-						*(fp - 0x38) = *(fp - 0x34);
-					if (*(fp - 0x38) < *(fp - 0x24) && *(fp - 0x38) > 0x01)
+						dwLoc38_414 = eax_409;
+					if (dwLoc38_414 < eax_110 && dwLoc38_414 > 0x01)
 					{
-						*(fp - 0x94) = *(fp - 0x24);
-						Eq_32121 edx_350 = *(fp - 0x94);
-						*(fp - 0xB4) = (int32) (SEQ(edx_350 >> 0x1F, edx_350) / *(fp - 0x38));
-						*(fp - 0xB8) = *(fp - 0x38);
-						*(fp - 188) = *(fp - 0x24);
-						*(fp - 0xC0) = 0x0805459B;
-						fn08048964();
-						*(fp - 0xC0) = fp - 0x4C;
-						quantum_delete_qureg(dwArg00);
-						*(fp - 116) = 0x00;
+						printf("%i = %i * %i\n", eax_110, dwLoc38_414, (int32) (SEQ(eax_110 >> 0x1F, eax_110) / dwLoc38_414));
+						quantum_delete_qureg(fp - 0x4C);
 					}
 					else
-					{
-						*(fp - 0xC0) = 0x080545AC;
-						fn080489E4();
-						*(fp - 116) = 0x02;
-					}
+						puts("Unable to determine factors, try again.");
 				}
 			}
 		}
 	}
-	return;
 }
 
 // 08052B30: void quantum_get_version()
 void quantum_get_version()
 {
-	return;
 }
 
-// 08052B40: void __mulsc3(Stack (ptr Eq_136) rArg04, Stack (ptr Eq_136) rArg08, Stack (ptr Eq_136) rArg0C, Stack (ptr Eq_136) rArg10)
-void __mulsc3(Eq_136 * rArg04, Eq_136 * rArg08, Eq_136 * rArg0C, Eq_136 * rArg10)
+// 08052B40: void __mulsc3(Stack Eq_106 rArg04, Stack Eq_106 rArg08, Stack Eq_106 rArg0C, Stack Eq_106 rArg10)
+void __mulsc3(Eq_106 rArg04, Eq_106 rArg08, Eq_106 rArg0C, Eq_106 rArg10)
 {
 	__i686.get_pc_thunk.cx(dwLoc44);
 }
@@ -7043,8 +4603,8 @@ word32 __i686.get_pc_thunk.cx(word32 dwArg00)
 	return dwArg00;
 }
 
-// 080531E0: void __muldc3(Stack (ptr Eq_136) dwArg04, Stack real64 rArg08, Stack real64 rArg10, Stack real64 rArg18, Stack real64 rArg20)
-void __muldc3(Eq_136 * dwArg04, real64 rArg08, real64 rArg10, real64 rArg18, real64 rArg20)
+// 080531E0: void __muldc3(Stack ptr32 dwArg04, Stack real64 rArg08, Stack real64 rArg10, Stack real64 rArg18, Stack real64 rArg20)
+void __muldc3(ptr32 dwArg04, real64 rArg08, real64 rArg10, real64 rArg18, real64 rArg20)
 {
 	__i686.get_pc_thunk.bx(dwLoc80);
 }
@@ -7055,20 +4615,20 @@ word32 __i686.get_pc_thunk.bx(word32 dwArg00)
 	return dwArg00;
 }
 
-// 08053890: void __divsc3(Stack (ptr Eq_136) rArg04, Stack (ptr Eq_136) rArg08, Stack (ptr Eq_136) rArg0C, Stack (ptr Eq_136) rArg10)
-void __divsc3(Eq_136 * rArg04, Eq_136 * rArg08, Eq_136 * rArg0C, Eq_136 * rArg10)
+// 08053890: void __divsc3(Stack Eq_106 rArg04, Stack Eq_106 rArg08, Stack Eq_106 rArg0C, Stack Eq_106 rArg10)
+void __divsc3(Eq_106 rArg04, Eq_106 rArg08, Eq_106 rArg0C, Eq_106 rArg10)
 {
-	real64 rLoc5_17 = fabs((real64) rArg10);
+	Eq_154 rLoc5_17 = fabs((real64) rArg10);
 	byte FPUF_20 = cond(fabs(rLoc5_17) - rLoc5_17);
 	__i686.get_pc_thunk.cx(dwLoc10);
 	if ((word16) FPUF_20 << 0x08)
 		;
 }
 
-// 08053D00: void __divdc3(Stack (ptr Eq_136) dwArg04, Stack real64 rArg08, Stack real64 rArg10, Stack real64 rArg18, Stack real64 rArg20)
-void __divdc3(Eq_136 * dwArg04, real64 rArg08, real64 rArg10, real64 rArg18, real64 rArg20)
+// 08053D00: void __divdc3(Stack ptr32 dwArg04, Stack real64 rArg08, Stack real64 rArg10, Stack real64 rArg18, Stack Eq_154 rArg20)
+void __divdc3(ptr32 dwArg04, real64 rArg08, real64 rArg10, real64 rArg18, Eq_154 rArg20)
 {
-	real64 rLoc5_22 = fabs(rArg20);
+	Eq_154 rLoc5_22 = fabs(rArg20);
 	byte FPUF_25 = cond(fabs(rLoc5_22) - rLoc5_22);
 	__i686.get_pc_thunk.bx(dwLoc18);
 	if ((word16) FPUF_25 << 0x08)
@@ -7078,14 +4638,13 @@ void __divdc3(Eq_136 * dwArg04, real64 rArg08, real64 rArg10, real64 rArg18, rea
 // 08054170: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08054180: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_32194 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
-	_init(&ebx_16->dw1E05 + 0x0019, fp - 0x04);
+	struct Eq_13407 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
+	_init();
 	if (&ebx_16->ptr1D75 - &ebx_16->ptr1D75 >> 0x02 != 0x00)
 	{
 		do
@@ -7103,14 +4662,22 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_16->ptr1D75();
 		} while (esi_62 + 0x01 < edi_61);
 	}
-	return;
 }
 
-// 080541E0: void atexit(Stack (ptr Eq_136) dwArg04)
-void atexit(Eq_136 * dwArg04)
+// 080541E0: void atexit(Stack word32 dwArg04)
+void atexit(word32 dwArg04)
 {
-	free(dwArg04);
-	return;
+	word32 edx_17 = __i686.get_pc_thunk.bx(dwLoc0C)->dw1E05;
+	word32 esp_27;
+	word32 ebp_28;
+	word32 eax_29;
+	byte SZO_30;
+	byte C_31;
+	word32 ebx_32;
+	byte SCZO_33;
+	word32 edx_34;
+	byte Z_35;
+	!__cxa_atexit();
 }
 
 // 08054220: void __do_global_ctors_aux()
@@ -7130,13 +4697,11 @@ void __do_global_ctors_aux()
 			eax_11();
 		} while (*ebx_28 != ~0x00);
 	}
-	return;
 }
 
 // 0805424C: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

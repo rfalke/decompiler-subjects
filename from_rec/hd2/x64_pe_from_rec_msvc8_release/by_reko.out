@@ -1,12 +1,22 @@
 Using options:
-0000000140001388: error: Object reference not set to an instance of an object
-000000014000103D: warning: Unable to resolve imported reference MSVCR90.dll!sprintf.
-0000000140001084: warning: Unable to resolve imported reference MSVCR90.dll!sprintf.
-000000014000115E: warning: Unable to resolve imported reference MSVCR90.dll!printf.
+00000001400017AC: warning: Unable to guess parameters of MSVCR90.dll!_amsg_exit.
+00000001400019C8: warning: Unable to guess parameters of MSVCR90.dll!_initterm_e.
+00000001400019C2: warning: Unable to guess parameters of MSVCR90.dll!_initterm.
+00000001400011AD: warning: Unable to guess parameters of MSVCR90.dll!_stat64i32.
 0000000140001AA6: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
+00000001400011EA: warning: Unable to resolve imported reference MSVCR90.dll!fopen.
+000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001231: warning: Unable to resolve imported reference MSVCR90.dll!fread.
+000000014000103D: warning: Unable to resolve imported reference MSVCR90.dll!sprintf.
+0000000140001084: warning: Unable to resolve imported reference MSVCR90.dll!sprintf.
+000000014000115E: warning: Unable to resolve imported reference MSVCR90.dll!printf.
+0000000140001255: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000140001260: warning: Unable to resolve imported reference MSVCR90.dll!fclose.
+00000001400014C2: warning: Unable to guess parameters of MSVCR90.dll!_cexit.
+000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000001400015F9: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
 00000001400018F2: warning: Unable to guess parameters of MSVCR90.dll!_XcptFilter.
 00000001400017C4: warning: Unable to guess parameters of MSVCR90.dll!_decode_pointer.
@@ -18,89 +28,13 @@ Using options:
 0000000140001832: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001844: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
+000000014000131A: warning: Procedure fn0000000140001300 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001578: warning: Unable to guess parameters of MSVCR90.dll!__set_app_type.
 0000000140001582: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 00000001400015CE: warning: Unable to guess parameters of MSVCR90.dll!__setusermatherr.
 00000001400015E0: warning: Unable to guess parameters of MSVCR90.dll!_configthreadlocale.
 0000000140001366: warning: Unable to guess parameters of MSVCR90.dll!__getmainargs.
 00000001400017AC: warning: Unable to guess parameters of MSVCR90.dll!_amsg_exit.
-00000001400011AD: warning: Unable to guess parameters of MSVCR90.dll!_stat64i32.
-00000001400011EA: warning: Unable to resolve imported reference MSVCR90.dll!fopen.
-0000000140001260: warning: Unable to resolve imported reference MSVCR90.dll!fclose.
 000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014000120C: error: An error occurred while processing instruction at address 000000014000120C.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c33f80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41614bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40c33450 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40c330e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c2a750 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40c30990 + 0x0018c> in <filename unknown>:0 
-0000000140001255: error: An error occurred while processing instruction at address 0000000140001255.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c33f80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41614bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40c33450 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40c330e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c2a750 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40c30990 + 0x0018c> in <filename unknown>:0 
-0000000140001B12: error: An error occurred while processing instruction at address 0000000140001B12.
-    Expected stack depth to be negative.
-      at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x40c33450 + 0x0020f> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x40c330e0 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c2a750 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x40c30990 + 0x0018c> in <filename unknown>:0 
-fn0000000140001268: error: An error occurred during data flow analysis.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c33f80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41614bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x40c52200 + 0x00023> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x40c57a10 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x40c16010 + 0x00027> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionVisitorBase.VisitOutArgument (Reko.Core.Expressions.OutArgument outArg) <0x40c66920 + 0x00025> in <filename unknown>:0 
-  at Reko.Core.Expressions.OutArgument.Accept (IExpressionVisitor visitor) <0x40c668e0 + 0x00027> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x40c23c40 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Expressions.Application.Accept (IExpressionVisitor v) <0x40c1a3a0 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) <0x40c58000 + 0x00025> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40c15f10 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.Eliminate () <0x40c57390 + 0x00188> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x40c571d0 + 0x00047> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40c42590 + 0x0046f> in <filename unknown>:0 
-fn0000000140001300: error: An error occurred during data flow analysis.
-    Index was outside the bounds of the array.
-      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitStore (Reko.Core.Code.Store store) <0x40c4e9d0 + 0x00079> in <filename unknown>:0 
-  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x40c16100 + 0x0002a> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) <0x40c4d240 + 0x000da> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[] defOrig) <0x40c4ca30 + 0x000ab> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.PlacePhiFunctions () <0x40c4c4f0 + 0x000af> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform.Transform () <0x40c4c450 + 0x0000f> in <filename unknown>:0 
-  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1 gr, System.Collections.Generic.HashSet`1 implicitRegs) <0x40c4bea0 + 0x001ab> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40c432c0 + 0x001af> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40c42590 + 0x00203> in <filename unknown>:0 
-: error: Error when reconstructing types.
-    Specified argument was out of the range of valid values.
-Parameter name: Linear address 00000000 is not in known segment.
-      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x40c34090 + 0x0017f> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x40c33fe0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40c74970 + 0x002d5> in <filename unknown>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x40c6da30 + 0x00597> in <filename unknown>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () <0x40c6d3c0 + 0x0022f> in <filename unknown>:0 
-fn0000000140001190: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0000000140001268: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.RegionFactory.VisitDefInstruction (Reko.Core.Code.DefInstruction def) <0x40c8b780 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Code.DefInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x40c58ad0 + 0x00033> in <filename unknown>:0 
-  at Reko.Structure.RegionFactory.Create (Reko.Core.Block b) <0x40c805d0 + 0x00133> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x40c7ff50 + 0x00187> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c7f9e0 + 0x0003b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c7e350 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c7de70 + 0x00255> in <filename unknown>:0 
-fn0000000140001300: error: An error occurred while rewriting procedure to high-level language.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x40c33f80 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41614bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) <0x40c7ff50 + 0x00323> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c7f9e0 + 0x0003b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c7e350 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c7de70 + 0x00255> in <filename unknown>:0 
+0000000140001201: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+fn000000014000120E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

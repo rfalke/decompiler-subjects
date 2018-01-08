@@ -1,19 +1,10 @@
 Using options:
-10010A68: error: PowerPC instruction 'illegal' is not supported yet.
 10000410: warning: Call target address 10000000 is invalid.
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.
-10010A70: error: PowerPC instruction 'illegal' is not supported yet.
-10010A70: error: PowerPC instruction 'illegal' is not supported yet.
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.
-10010A70: error: PowerPC instruction 'illegal' is not supported yet.
-10010A70: error: PowerPC instruction 'illegal' is not supported yet.
 100004D0: error: An error occurred while processing instruction at address 100004D0.
     The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41583170 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x413dbbb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x415825d0 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41582260 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41579d30 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x4157fbb0 + 0x0018c> in <filename unknown>:0 
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x4200d420 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41e54bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x4200c920 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x4200c5b0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x42003c80 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x42009eb0 + 0x001c0> in <filename unknown>:0 

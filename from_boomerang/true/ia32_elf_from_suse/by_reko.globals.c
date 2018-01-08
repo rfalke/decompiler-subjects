@@ -4,4 +4,55 @@
 
 #include "subject.h"
 
+<anonymous> g_tFFFFFFFF;
+byte g_b0000;
+void g_v0001;
+Eq_22 g_t8048B60 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_26 g_t8049DC0 = Unexpected function type (fn void ())
+;
+Eq_25 g_t8049E30 = Unexpected function type (fn void ())
+;
+char g_str8049F28[] = "Usage: %s [ignored command line arguments]\x0A  or:  %s OPTION\x0AExit with a status code indicating success.\x0A\x0AThese option names may not be abbreviated.\x0A\x0A";
+char g_str8049FC0[] = "      --help     display this help and exit\x0A";
+char g_str8049FF0[] = "      --version  output version information and exit\x0A";
+char g_str804A026[] = "\x0AReport bugs to <%s>.\x0A";
+char g_str804A065[] = "POSIXLY_CORRECT";
+byte g_b804A075 = 0x2D;
+byte g_b804A07C = 0x2D;
+char g_str804A093[] = "5.2.1";
+char g_str804A099[] = "GNU coreutils";
+char g_str804A09D[] = "coreutils";
+Eq_294 g_t804A0A7 = 
+	{
+		't'
+	};
+char g_str804A0AC[] = "write error";
+char g_str804A3C4[] = "Copyright (C) 2004 Free Software Foundation, Inc.";
+char g_str804A3F8[] = "Written by %s, %s, %s,\x0A%s, %s, %s, %s,\x0A%s, %s, and others.\x0A";
+char g_str804A434[] = "This is free software; see the source for copying conditions.  There is NO\x0Awarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\x0A";
+char g_str804A5C8[] = "%s (%s) %s\x0A";
+char g_str804A617[] = "%s %s\x0A";
+char g_str804A648[] = "memory exhausted";
+<anonymous> * g_ptr804B660 = &g_tFFFFFFFF;
+<anonymous> * g_ptr804B66C = null;
+word32 g_dw804B670 = 0x00000000;
+<anonymous> * g_ptr804B748 = null;
+<anonymous> ** g_ptr804B7D0 = &g_ptr804B66C;
+word32 g_dw804B7D4 = 0x00000001;
+Eq_303 g_t804B7D8 = &g_v0001;
+word32 g_dw804B7DC = 0x00000100;
+Eq_525 g_t804B7E0 = 
+	{
+		0x0804B820,
+	};
+Eq_303 g_t804B7E4 = &g_dw804B7DC;
+char * g_ptr804B7E8 = &g_str804A3C4;
+union Eq_132 * g_ptr804B800 = null;
+byte g_b804B804 = 0x00;
+Eq_303 g_t804B808 = null;
+void g_v804B820 = ;
+word32 g_dw804B920 = 0x00000000;
+<anonymous> * g_ptr804B944 = null;
+char * g_ptr804B948 = null;
 

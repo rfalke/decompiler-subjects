@@ -1,4 +1,18 @@
 Using options:
-0800:173F: warning: Can't determine size of jump vector; probing only one entry.
-fn0800_1000: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-fn0800_1026: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+0800:16F1: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1738: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1715: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:170F: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1773: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1822: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:18F9: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:181C: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1990: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:181F: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:19ED: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:18F6: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1892: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1A6A: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1A70: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0800:1A75: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+l0800_10BB: warning: Non-integral switch expression

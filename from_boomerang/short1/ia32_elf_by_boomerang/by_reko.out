@@ -1,9 +1,2 @@
 Using options:
-0804846E: error: An error occurred while processing the statement word32 eax_21 = 0x08049710 - 0x08049710.
-    Pulling difference ptr32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41669560 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41668ea0 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x415fd6a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x41677b00 + 0x0004a> in <filename unknown>:0 
-  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x4166b450 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41675610 + 0x00289> in <filename unknown>:0 
+080482C8: warning: Unable to resolve imported reference !__gmon_start__.

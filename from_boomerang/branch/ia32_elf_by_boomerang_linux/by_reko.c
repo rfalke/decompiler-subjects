@@ -10,38 +10,13 @@ void _init(word32 esi, word32 edi)
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux(esi, edi);
-	return;
 }
 
-// 080482C4: void scanf@@GLIBC_2.0()
-void scanf@@GLIBC_2.0()
+// 08048300: void fn08048300(Register (ptr Eq_15) edx, Stack int32 dwArg00)
+void fn08048300( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049844();
-	return;
-}
-
-// 080482D4: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr8049848();
-	return;
-}
-
-// 080482E4: void fwrite@@GLIBC_2.0()
-void fwrite@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804984C();
-	return;
-}
-
-// 08048300: void fn08048300(Stack word32 dwArg00)
-void fn08048300(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048410, dwArg00, (char *) fp + 0x04, &globals->t804829C, &globals->t8048690, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 08048350: void __do_global_dtors_aux(Register word32 esi)
@@ -105,7 +79,6 @@ void __do_global_dtors_aux(word32 esi)
 		}
 		globals->b8049858 = 0x01;
 	}
-	return;
 }
 
 // 080483B0: void frame_dummy()
@@ -135,61 +108,60 @@ void frame_dummy()
 		byte Z_53;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048410: void main()
 void main()
 {
 	__align(fp - 44);
-	scanf@@GLIBC_2.0();
-	scanf@@GLIBC_2.0();
+	scanf("%d", tLoc30);
+	scanf("%d", tLoc30);
 	if (0x05 == dwLoc0C)
 	{
-		fwrite@@GLIBC_2.0();
+		fwrite(&globals->v8048745, 0x01, 0x06, globals->ptr8049854);
 		if (0x05 == dwLoc0C)
 			goto l08048476;
 	}
-	fwrite@@GLIBC_2.0();
+	fwrite(&globals->v80486BB, 0x01, 0x0A, globals->ptr8049854);
 l08048476:
 	if (0x05 > dwLoc0C)
 	{
-		fwrite@@GLIBC_2.0();
+		fwrite(&globals->v80486C6, 0x01, 0x08, globals->ptr8049854);
 		if (0x05 > dwLoc0C)
 		{
 l080484CE:
-			fwrite@@GLIBC_2.0();
+			fwrite(&globals->v80486DE, 0x01, 0x11, globals->ptr8049854);
 			if (0x05 >= dwLoc0C)
 				goto l0804851D;
 l080484F8:
-			fwrite@@GLIBC_2.0();
+			fwrite(&globals->v80486F0, 0x01, 0x05, globals->ptr8049854);
 l0804851D:
 			if (0x05 > dwLoc10)
 			{
-				fwrite@@GLIBC_2.0();
+				fwrite(&globals->v80486F6, 0x01, 0x11, globals->ptr8049854);
 				if (0x05 > dwLoc10)
 				{
 l08048576:
-					fwrite@@GLIBC_2.0();
+					fwrite(&globals->v8048720, 0x01, 0x0C, globals->ptr8049854);
 					if (0x05 >= dwLoc10)
 						goto l080485C5;
 l080485A0:
-					fwrite@@GLIBC_2.0();
+					fwrite(&globals->v804872D, 0x01, 0x0A, globals->ptr8049854);
 l080485C5:
 					if (0x05 >= dwLoc0C)
-						fwrite@@GLIBC_2.0();
+						fwrite(&globals->v8048738, 0x01, 0x06, globals->ptr8049854);
 					if (0x05 < dwLoc0C)
-						fwrite@@GLIBC_2.0();
+						fwrite(&globals->v804873F, 0x01, 0x05, globals->ptr8049854);
 					return;
 				}
 			}
-			fwrite@@GLIBC_2.0();
+			fwrite(&globals->v8048708, 0x01, 0x17, globals->ptr8049854);
 			if (0x05 < dwLoc10)
 				goto l080485A0;
 			goto l08048576;
 		}
 	}
-	fwrite@@GLIBC_2.0();
+	fwrite(&globals->v80486CF, 0x01, 0x0E, globals->ptr8049854);
 	if (0x05 < dwLoc0C)
 		goto l080484F8;
 	goto l080484CE;
@@ -214,13 +186,11 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			eax_11();
 		} while (*ebx_35 != ~0x00);
 	}
-	return;
 }
 
 // 08048690: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

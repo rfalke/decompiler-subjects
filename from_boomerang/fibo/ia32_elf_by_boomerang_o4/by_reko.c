@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 080486DC: void _start(Register (ptr Eq_2) edx, Register word32 ebx, Stack word32 dwArg00)
-void _start( * edx, word32 ebx, word32 dwArg00)
+// 080486DC: void _start(Register (ptr Eq_2) edx, Stack ui32 dwArg00)
+void _start( * edx, ui32 dwArg00)
 {
 	if (134514300 != 0x00)
 		atexit(&globals->t804867C);
@@ -22,15 +22,13 @@ void _start( * edx, word32 ebx, word32 dwArg00)
 	byte C_41;
 	byte Z_42;
 	byte SCZO_43;
-	word32 ebx_44;
-	__fpstart();
-	exit(main(ebx_44));
+	!__fpstart();
+	exit(main());
 }
 
 // 0804874B: void _mcount()
 void _mcount()
 {
-	return;
 }
 
 // 0804874C: void __do_global_dtors_aux()
@@ -44,7 +42,7 @@ void __do_global_dtors_aux()
 			<anonymous> * eax_30 = *esi_15;
 			word32 esp_31;
 			word32 ebp_32;
-			struct Eq_65 * esi_33;
+			struct Eq_61 * esi_33;
 			word32 ebx_34;
 			byte SCZO_35;
 			word32 eax_36;
@@ -53,13 +51,11 @@ void __do_global_dtors_aux()
 			esi_15 = (word32 *) &esi_33->dw0004;
 		} while (esi_33->dw0004 != 0x00);
 	}
-	return;
 }
 
 // 08048780: void fini_dummy()
 void fini_dummy()
 {
-	return;
 }
 
 // 08048798: Register int32 fib(Stack int32 dwArg04)
@@ -73,18 +69,17 @@ int32 fib(int32 dwArg04)
 	return eax_18;
 }
 
-// 080487CC: Register word32 main(Register word32 ebx)
-word32 main(word32 ebx)
+// 080487CC: Register word32 main()
+word32 main()
 {
-	printf("Input number: ", SLICE(0x080488B8, <unknown>, 32));
-	scanf("%d", SLICE(0x080488C7, <unknown>, 32));
+	int32 eax_29;
+	printf("Input number: ");
+	scanf("%d", tLoc20);
 	if (dwLoc08 > 0x01)
-	{
-		fib(dwLoc08 - 0x01);
-		fib(dwLoc08 - 0x02);
-	}
-	printf("fibonacci(%d) = %d
-", SLICE(0x080488CA, <unknown>, 32));
+		eax_29 = fib(dwLoc08 - 0x02) + fib(dwLoc08 - 0x01);
+	else
+		eax_29 = dwLoc08;
+	printf("fibonacci(%d) = %d\n", dwLoc08, eax_29);
 	return 0x00;
 }
 
@@ -99,7 +94,7 @@ void __do_global_ctors_aux()
 			<anonymous> * eax_30 = *esi_15;
 			word32 esp_31;
 			word32 ebp_32;
-			struct Eq_140 * esi_33;
+			struct Eq_134 * esi_33;
 			word32 ebx_34;
 			byte SCZO_35;
 			word32 eax_36;
@@ -108,26 +103,22 @@ void __do_global_ctors_aux()
 			esi_15 = (word32 *) &esi_33->dwFFFFFFFC;
 		} while (esi_33->dwFFFFFFFC != ~0x00);
 	}
-	return;
 }
 
 // 08048864: void init_dummy()
 void init_dummy()
 {
-	return;
 }
 
 // 08048880: void _init()
 void _init()
 {
 	__do_global_ctors_aux();
-	return;
 }
 
 // 080488A0: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

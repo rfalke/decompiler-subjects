@@ -7,16 +7,14 @@
 // 0800:01FA: void main(Register (ptr Eq_3) ds)
 void main(Eq_3 * ds)
 {
-	fn0800_0205(ds, 404);
-	return;
+	fn0800_0205(ds, &Eq_3::b0194);
 }
 
-// 0800:0205: void fn0800_0205(Register (ptr Eq_3) ds, Stack word16 wArg02)
-void fn0800_0205(Eq_3 * ds, word16 wArg02)
+// 0800:0205: void fn0800_0205(Register (ptr Eq_3) ds, Stack (memptr (ptr Eq_3) byte) wArg02)
+void fn0800_0205(Eq_3 * ds, byte Eq_3::*wArg02)
 {
 	do
 		wArg02 = wArg02 + 0x01;
 	while (ds->*wArg02 != 0x00);
-	return;
 }
 

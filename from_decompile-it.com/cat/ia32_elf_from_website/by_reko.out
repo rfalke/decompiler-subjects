@@ -1,67 +1,65 @@
 Using options:
+08048B5C: warning: Unable to resolve imported reference !__gmon_start__.
 08048DF0: error: The method or operation is not implemented.
-0804B940: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804BAC4: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804BBD9: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804BD0F: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804BE50: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804C8AB: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804C44C: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804C906: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804C2B2: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804E1E9: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804E21F: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804AC2A: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804B45C: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08048AEC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-0804A352: warning: Unable to resolve imported reference __signbitl.
-08048B4C: warning: Unable to resolve imported reference __signbitl.
-0804FC82: warning: Unable to resolve imported reference ferror_unlocked.
-08048B0C: warning: Unable to resolve imported reference ferror_unlocked.
-0804B3A9: warning: Unable to resolve imported reference iswprint.
-08048B7C: warning: Unable to resolve imported reference iswprint.
-0804968E: warning: Unable to resolve imported reference __cxa_atexit.
-08048ADC: warning: Unable to resolve imported reference __cxa_atexit.
-08049A02: warning: Unable to resolve imported reference ioctl.
-08048B2C: warning: Unable to resolve imported reference ioctl.
-0804F30B: error: An error occurred while processing the statement branch 0x00000000 >=u Mem1262[eax_266 + 0x00000010:word32] - Mem1262[eax_266 + 0x0000000C:word32] l0804F313.
-    Pulling difference (ptr (struct 0001 (0 byte b0000))) and (ptr (struct 0001 (0 byte b0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x4107d390 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x4107c5b0 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40ffa6a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x4107c5b0 + 0x00065> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40ffa6a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41090100 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x4102c2a0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x4108ef00 + 0x00289> in <filename unknown>:0 
-cat: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x410b15e0 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x410b0d50 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x410ae6a0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x410a7940 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x410a6720 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x410a6240 + 0x00255> in <filename unknown>:0 
-vasnprintf: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x410b15e0 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x410b0d50 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x410ae6a0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x410a7940 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x410a6720 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x410a6240 + 0x00255> in <filename unknown>:0 
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048CCC: warning: Unable to resolve imported reference !__signbitl.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048B4C: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+08048C5C: warning: Unable to resolve imported reference !__ctype_b_loc.
+08048BFC: warning: Unable to resolve imported reference !mbrtowc.
+08048D8C: warning: Unable to resolve imported reference !iswprint.
+08048C7C: warning: Unable to resolve imported reference !mbsinit.
+08048D6C: warning: Unable to resolve imported reference !__fxstat64.
+08048B0C: warning: Unable to resolve imported reference !__cxa_atexit.
+08048D2C: warning: Unable to resolve imported reference !__fpending.
+08048BCC: warning: Unable to resolve imported reference !ferror_unlocked.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048BDC: warning: Unable to resolve imported reference !_exit.
+08048BDC: warning: Unable to resolve imported reference !_exit.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048CAC: warning: Unable to resolve imported reference !setlocale.
+08048BEC: warning: Unable to resolve imported reference !bindtextdomain.
+08048C3C: warning: Unable to resolve imported reference !getopt_long.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048EA5: warning: Unable to determine format string for call to 'fprintf'.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048EC8: warning: Unable to determine format string for call to 'printf'.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048F86: warning: Unable to determine format string for call to 'printf'.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048FB8: warning: Unable to determine format string for call to 'printf'.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048C4C: warning: Unable to resolve imported reference !ioctl.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048BBC: warning: Unable to resolve imported reference !stpcpy.
+08048BBC: warning: Unable to resolve imported reference !stpcpy.
+08048C1C: warning: Unable to resolve imported reference !gettext.
+08048D3C: warning: Unable to resolve imported reference !error.
+08048D3C: warning: Unable to resolve imported reference !error.
 08050574: warning: Expected sizes of arrays to have been determined by now
 08050684: warning: Expected sizes of arrays to have been determined by now
 080506A0: warning: Expected sizes of arrays to have been determined by now
@@ -70,16 +68,11 @@ vasnprintf: error: An error occurred while rewriting procedure to high-level lan
 0805094C: warning: Expected sizes of arrays to have been determined by now
 080509B8: warning: Expected sizes of arrays to have been determined by now
 08050A14: warning: Expected sizes of arrays to have been determined by now
-080520CC: error: Failed to write global variable g_v80520CC.
+08052180: error: Failed to write global variable g_v8052180.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x410bc920 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4102d7e0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x410bb900 + 0x00225> in <filename unknown>:0 
-080520D1: error: Failed to write global variable g_v80520D1.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x410bc920 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4102d7e0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x410bb900 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x4221a380 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4218a1e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x42218fb0 + 0x00225> in <filename unknown>:0 
 08050574: warning: Expected sizes of arrays to have been determined by now
 08050684: warning: Expected sizes of arrays to have been determined by now
 080506A0: warning: Expected sizes of arrays to have been determined by now
@@ -88,13 +81,8 @@ vasnprintf: error: An error occurred while rewriting procedure to high-level lan
 0805094C: warning: Expected sizes of arrays to have been determined by now
 080509B8: warning: Expected sizes of arrays to have been determined by now
 08050A14: warning: Expected sizes of arrays to have been determined by now
-080520CC: error: Failed to write global variable g_v80520CC.
+08052180: error: Failed to write global variable g_v8052180.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x410bc920 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4102d7e0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x410bb900 + 0x00225> in <filename unknown>:0 
-080520D1: error: Failed to write global variable g_v80520D1.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x410bc920 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4102d7e0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x410bb900 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x4221a380 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x4218a1e0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x42218fb0 + 0x00225> in <filename unknown>:0 

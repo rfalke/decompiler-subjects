@@ -10,38 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 0804827C: void strlen@@GLIBC_2.0()
-void strlen@@GLIBC_2.0()
+// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80495C0();
-	return;
-}
-
-// 0804828C: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495C4();
-	return;
-}
-
-// 0804829C: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr80495C8();
-	return;
-}
-
-// 080482AC: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t80483CF, dwArg00, (char *) fp + 0x04, &globals->t804840C, &globals->t804843C, edx, fp);
 	__hlt();
 }
 
@@ -61,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482F4: void __do_global_dtors_aux()
@@ -92,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b80495D0 = 0x01;
 	}
-	return;
 }
 
 // 08048330: void frame_dummy()
@@ -109,31 +82,31 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
-// 0804835C: void proc1(Register word32 eax, Stack word32 dwArg04, Stack word32 dwArg08)
-void proc1(word32 eax, word32 dwArg04, word32 dwArg08)
+// 0804835C: Register Eq_105 proc1(Stack int32 dwArg04, Stack (ptr char) dwArg08)
+Eq_105 proc1(int32 dwArg04, char * dwArg08)
 {
+	Eq_105 dwArg04_10;
 	if (dwArg04 > 0x02)
 	{
-		strlen@@GLIBC_2.0();
-		strlen@@GLIBC_2.0();
-		printf@@GLIBC_2.0();
+		Eq_105 eax_33 = strlen(dwArg08);
+		Eq_105 eax_40 = strlen(dwArg08);
+		printf("%d", eax_40 + eax_33);
+		dwArg04_10 = eax_33;
+		dwLoc08 = eax_40;
 	}
 	else
-		strlen@@GLIBC_2.0();
-	printf@@GLIBC_2.0();
-	return;
+		dwArg04_10 = strlen(dwArg08);
+	printf("%d, %d", dwArg04_10, dwLoc08);
+	return dwArg04_10;
 }
 
-// 080483CF: void main(Stack word32 dwArg04, Stack word32 dwArg08)
-void main(word32 dwArg04, word32 dwArg08)
+// 080483CF: void main(Stack int32 dwArg04, Stack (ptr Eq_136) dwArg08)
+void main(int32 dwArg04, Eq_136 * dwArg08)
 {
 	__align(fp - 0x0C);
-	proc1(&dwArg08->dw0004, dwArg04, dwArg08->dw0004);
-	printf@@GLIBC_2.0();
-	return;
+	printf("%d\n", proc1(dwArg04, dwArg08->ptr0004));
 }
 
 // 0804840C: void __libc_csu_init()
@@ -141,7 +114,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 0804843C: void __libc_csu_fini()
@@ -165,7 +138,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 08048470: void __do_global_ctors_aux()
@@ -186,13 +158,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 08048494: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

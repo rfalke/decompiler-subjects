@@ -10,30 +10,13 @@ void _init()
 	call_gmon_start();
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048258: void __libc_start_main@@GLIBC_2.0()
-void __libc_start_main@@GLIBC_2.0()
+// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr8049518();
-	return;
-}
-
-// 08048268: void printf@@GLIBC_2.0()
-void printf@@GLIBC_2.0()
-{
-	word32 esp_3;
-	globals->ptr804951C();
-	return;
-}
-
-// 08048278: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	__libc_start_main@@GLIBC_2.0();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048328, dwArg00, (char *) fp + 0x04, &globals->t8048360, &globals->t8048390, edx, fp);
 	__hlt();
 }
 
@@ -53,7 +36,6 @@ void call_gmon_start()
 		byte Z_36;
 		eax_15();
 	}
-	return;
 }
 
 // 080482C0: void __do_global_dtors_aux()
@@ -84,7 +66,6 @@ void __do_global_dtors_aux()
 		}
 		globals->b8049524 = 0x01;
 	}
-	return;
 }
 
 // 080482FC: void frame_dummy()
@@ -101,15 +82,13 @@ void frame_dummy()
 		byte Z_37;
 		fn00000000();
 	}
-	return;
 }
 
 // 08048328: void main()
 void main()
 {
 	__align(fp - 0x0C);
-	printf@@GLIBC_2.0();
-	return;
+	printf("Pi is about %.5f\n", SLICE(0x0804840C, <unknown>, 32));
 }
 
 // 08048360: void __libc_csu_init()
@@ -117,7 +96,7 @@ void __libc_csu_init()
 {
 	_init();
 	if (true)
-		return;
+		;
 }
 
 // 08048390: void __libc_csu_fini()
@@ -141,7 +120,6 @@ void __libc_csu_fini()
 		} while (ebx_36 != 0x00);
 	}
 	_fini();
-	return;
 }
 
 // 080483C4: void __do_global_ctors_aux()
@@ -162,13 +140,11 @@ void __do_global_ctors_aux()
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}
-	return;
 }
 
 // 080483E8: void _fini()
 void _fini()
 {
 	__do_global_dtors_aux();
-	return;
 }
 

@@ -1,6 +1,3 @@
 Using options:
-10010A68: error: PowerPC instruction 'illegal' is not supported yet.
 100003D8: warning: Call target address 10000000 is invalid.
 10000408: error: Object reference not set to an instance of an object
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.
-10010A60: error: PowerPC instruction 'illegal' is not supported yet.

@@ -1,240 +1,711 @@
 Using options:
-0804AAEC: warning: Unable to resolve imported reference tolower.
-0804A2BC: warning: Unable to resolve imported reference tolower.
-0804A029: warning: Unable to resolve imported reference lame_set_asm_optimizations.
-0804A18C: warning: Unable to resolve imported reference lame_set_asm_optimizations.
+0804A18C: warning: Unable to resolve imported reference !__gmon_start__.
 0804AB00: error: The method or operation is not implemented.
-0804B09A: warning: Unable to resolve imported reference lame_set_original.
-0804A20C: warning: Unable to resolve imported reference lame_set_original.
-0804D066: warning: Unable to resolve imported reference lame_set_original.
-0804A20C: warning: Unable to resolve imported reference lame_set_original.
-0804D3D0: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804D363: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804D1E3: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804D282: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-080547B7: warning: Unable to resolve imported reference lame_get_framesize.
-0804A1AC: warning: Unable to resolve imported reference lame_get_framesize.
-0804CC16: warning: Unable to resolve imported reference getchar.
-0804A07C: warning: Unable to resolve imported reference getchar.
-080543FC: warning: Unable to resolve imported reference lame_set_VBR.
-0804A15C: warning: Unable to resolve imported reference lame_set_VBR.
-08053CA1: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-08053F27: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-08053F5C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-08053FD5: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-0804A09C: warning: Unable to resolve imported reference lame_get_id3v2_tag.
-08053AF2: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-08053B0E: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-08053B2A: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-08053B46: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-080536D7: warning: Unable to resolve imported reference __fxstat64.
-0804A23C: warning: Unable to resolve imported reference __fxstat64.
-080535E7: warning: Unable to resolve imported reference __fxstat64.
-0804A23C: warning: Unable to resolve imported reference __fxstat64.
-08052E3C: warning: Unable to resolve imported reference lame_set_num_channels.
-0804A05C: warning: Unable to resolve imported reference lame_set_num_channels.
-08052E68: warning: Unable to resolve imported reference lame_set_num_channels.
-0804A05C: warning: Unable to resolve imported reference lame_set_num_channels.
-0804F251: warning: Unable to resolve imported reference lame_set_quality.
-0804A1CC: warning: Unable to resolve imported reference lame_set_quality.
-0804F259: warning: Unable to resolve imported reference id3tag_init.
-0804A08C: warning: Unable to resolve imported reference id3tag_init.
-0804F261: warning: Unable to resolve imported reference lame_get_brate.
-0804A29C: warning: Unable to resolve imported reference lame_get_brate.
-08050609: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-08052613: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-08050637: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-0805266A: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-08052775: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-08052870: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-08052895: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-080528AA: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0805269F: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-08050ACC: warning: Unable to resolve imported reference clock.
-0804A14C: warning: Unable to resolve imported reference clock.
-08050C68: warning: Unable to resolve imported reference lame_get_encoder_delay.
-0804A12C: warning: Unable to resolve imported reference lame_get_encoder_delay.
-08050DB6: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
-0804A2DC: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
-08050E38: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
-0804A2DC: warning: Unable to resolve imported reference lame_get_VBR_mean_bitrate_kbps.
-0805037B: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
-08050439: warning: Unable to resolve imported reference lame_set_VBR_hard_min.
-0804A0EC: warning: Unable to resolve imported reference lame_set_VBR_hard_min.
-0805127B: warning: Unable to resolve imported reference lame_encode_buffer_int.
-0804A0CC: warning: Unable to resolve imported reference lame_encode_buffer_int.
-08051DAE: warning: Unable to resolve imported reference lame_set_error_protection.
-0804A0AC: warning: Unable to resolve imported reference lame_set_error_protection.
-0804E9B9: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804E764: warning: Unable to resolve imported reference lame_set_useTemporal.
-0804A0FC: warning: Unable to resolve imported reference lame_set_useTemporal.
-0804E46E: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804E518: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804DD3C: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804DF1A: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804E211: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804A0BC: warning: Unable to resolve imported reference lame_get_compression_ratio.
-0804E627: warning: Unable to resolve imported reference lame_set_original.
-0804A20C: warning: Unable to resolve imported reference lame_set_original.
-0804CECE: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804CC4F: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804A26C: warning: Unable to resolve imported reference lame_set_experimentalY.
-0804CA98: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804C76E: warning: Unable to resolve imported reference lame_set_msgf.
-0804A1DC: warning: Unable to resolve imported reference lame_set_msgf.
-0804C00B: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804C06F: warning: Unable to resolve imported reference lame_set_mode.
-0804A25C: warning: Unable to resolve imported reference lame_set_mode.
-0804C0DD: warning: Unable to resolve imported reference id3tag_add_v2.
-0804A21C: warning: Unable to resolve imported reference id3tag_add_v2.
-0804C13B: warning: Unable to resolve imported reference lame_set_msgf.
-0804A1DC: warning: Unable to resolve imported reference lame_set_msgf.
-0804C23C: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-0804BD28: warning: Unable to resolve imported reference lame_get_totalframes.
-0804A1EC: warning: Unable to resolve imported reference lame_get_totalframes.
-0804C347: warning: Unable to resolve imported reference id3tag_set_fieldvalue.
-0804A2AC: warning: Unable to resolve imported reference id3tag_set_fieldvalue.
-0804BC9B: warning: Unable to resolve imported reference lame_set_num_samples.
-0804A24C: warning: Unable to resolve imported reference lame_set_num_samples.
-0804BCA8: warning: Unable to resolve imported reference tgetstr.
-0804A28C: warning: Unable to resolve imported reference tgetstr.
-0804B80F: warning: Unable to resolve imported reference lame_set_highpassfreq.
-0804A1BC: warning: Unable to resolve imported reference lame_set_highpassfreq.
-0804B95B: warning: Unable to resolve imported reference lame_set_in_samplerate.
-0804A27C: warning: Unable to resolve imported reference lame_set_in_samplerate.
-0804B549: warning: Unable to resolve imported reference lame_close.
-0804A11C: warning: Unable to resolve imported reference lame_close.
-0804B5C6: warning: Unable to resolve imported reference lame_set_nogap_currentindex.
-0804A16C: warning: Unable to resolve imported reference lame_set_nogap_currentindex.
-0804B5E2: warning: Unable to resolve imported reference lame_get_id3v1_tag.
-0804A22C: warning: Unable to resolve imported reference lame_get_id3v1_tag.
-0804BD49: error: An error occurred while processing the statement branch (byte) (word32) Mem0[dwArg0C - 0x00000003 + dwArg0C:byte] != 0x77 l0804BDA5.
-    Not handling ptr32 and (union (int32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x41cb8390 + 0x0017b> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x001a3> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x00b9c> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x41cb3680 + 0x004a1> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x41cb3630 + 0x00033> in <filename unknown>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb35b0 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x41cb6ec0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb6e70 + 0x00034> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x41cb6ec0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb6e70 + 0x00034> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x41cb4810 + 0x00b9c> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x41cb47c0 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x41cb4720 + 0x00088> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x41c4fda0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
-0804CDA0: error: An error occurred while processing the statement dwArg08 = dwArg08 - (fp + 0xFFFFEFF0).
-    Pulling difference int32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41ca4a70 + 0x0022b> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c9ec20 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c1c6a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) <0x41cb7530 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x41c4ec30 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
-0804CE6C: error: An error occurred while processing the statement dwArg08 = dwArg08 - (fp + 0xFFFFEFF0).
-    Pulling difference int32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41ca4a70 + 0x0022b> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c9ec20 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41c1c6a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) <0x41cb7530 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x41c4ec30 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41cb1ff0 + 0x00289> in <filename unknown>:0 
-parse_args: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x41cd1120 + 0x0006d> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x41cd08e0 + 0x00057> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x41ccc7b0 + 0x00393> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x41ccb590 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x41ccb0b0 + 0x00255> in <filename unknown>:0 
-080548BB: error: Failed to write global variable g_v80548BB.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-08054956: error: Failed to write global variable g_v8054956.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+0804A75C: warning: Unable to resolve imported reference !lame_get_num_channels.
+0804A06C: warning: Unable to resolve imported reference !lame_get_in_samplerate.
+0804A8EC: warning: Unable to resolve imported reference !vfprintf.
+0804A20C: warning: Unable to resolve imported reference !lame_get_num_samples.
+0804A06C: warning: Unable to resolve imported reference !lame_get_in_samplerate.
+0804A75C: warning: Unable to resolve imported reference !lame_get_num_channels.
+0804A5FC: warning: Unable to resolve imported reference !lame_get_framesize.
+0804A20C: warning: Unable to resolve imported reference !lame_get_num_samples.
+0804A3AC: warning: Unable to resolve imported reference !hip_decode1_headers.
+0804A3AC: warning: Unable to resolve imported reference !hip_decode1_headers.
+0804A8CC: warning: Unable to resolve imported reference !hip_decode_exit.
+0804A3AC: warning: Unable to resolve imported reference !hip_decode1_headers.
+0804A8CC: warning: Unable to resolve imported reference !hip_decode_exit.
+0804A75C: warning: Unable to resolve imported reference !lame_get_num_channels.
+0804A06C: warning: Unable to resolve imported reference !lame_get_in_samplerate.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804A06C: warning: Unable to resolve imported reference !lame_get_in_samplerate.
+0804A1AC: warning: Unable to resolve imported reference !__xstat64.
+0804A83C: warning: Unable to resolve imported reference !__fxstat64.
+0804A4EC: warning: Unable to resolve imported reference !lame_bitrate_stereo_mode_hist.
+0804A15C: warning: Unable to resolve imported reference !lame_bitrate_hist.
+0804A10C: warning: Unable to resolve imported reference !lame_stereo_mode_hist.
+0804A5AC: warning: Unable to resolve imported reference !lame_block_type_hist.
+0804A6FC: warning: Unable to resolve imported reference !lame_get_totalframes.
+0804A5FC: warning: Unable to resolve imported reference !lame_get_framesize.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A5DC: warning: Unable to resolve imported reference !lame_bitrate_kbps.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A84C: warning: Unable to resolve imported reference !lame_get_frameNum.
+0804A6FC: warning: Unable to resolve imported reference !lame_get_totalframes.
+0804A5FC: warning: Unable to resolve imported reference !lame_get_framesize.
+0804A36C: warning: Unable to resolve imported reference !gettimeofday.
+0804A47C: warning: Unable to resolve imported reference !clock.
+0804A84C: warning: Unable to resolve imported reference !lame_get_frameNum.
+0804A4CC: warning: Unable to resolve imported reference !lame_print_config.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A51C: warning: Unable to resolve imported reference !lame_get_VBR.
+0804A58C: warning: Unable to resolve imported reference !lame_get_quality.
+0804A91C: warning: Unable to resolve imported reference !lame_get_VBR_quality.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A58C: warning: Unable to resolve imported reference !lame_get_quality.
+0804A9BC: warning: Unable to resolve imported reference !lame_get_brate.
+0804A23C: warning: Unable to resolve imported reference !lame_get_compression_ratio.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A7AC: warning: Unable to resolve imported reference !lame_get_version.
+0804A98C: warning: Unable to resolve imported reference !lame_get_force_ms.
+0804A6AC: warning: Unable to resolve imported reference !lame_get_mode.
+0804A7AC: warning: Unable to resolve imported reference !lame_get_version.
+0804A98C: warning: Unable to resolve imported reference !lame_get_force_ms.
+0804A6AC: warning: Unable to resolve imported reference !lame_get_mode.
+0804A8DC: warning: Unable to resolve imported reference !lame_print_internals.
+0804A58C: warning: Unable to resolve imported reference !lame_get_quality.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804A23C: warning: Unable to resolve imported reference !lame_get_compression_ratio.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A91C: warning: Unable to resolve imported reference !lame_get_VBR_quality.
+0804A95C: warning: Unable to resolve imported reference !lame_get_out_samplerate.
+0804A7AC: warning: Unable to resolve imported reference !lame_get_version.
+0804A98C: warning: Unable to resolve imported reference !lame_get_force_ms.
+0804A6AC: warning: Unable to resolve imported reference !lame_get_mode.
+0804A7AC: warning: Unable to resolve imported reference !lame_get_version.
+0804A98C: warning: Unable to resolve imported reference !lame_get_force_ms.
+0804A6AC: warning: Unable to resolve imported reference !lame_get_mode.
+0804A05C: warning: Unable to resolve imported reference !ldexp.
+0804A05C: warning: Unable to resolve imported reference !ldexp.
+0804A17C: warning: Unable to resolve imported reference !id3tag_init.
+0804A1CC: warning: Unable to resolve imported reference !get_lame_os_bitness.
+0804A08C: warning: Unable to resolve imported reference !get_lame_version.
+0804A29C: warning: Unable to resolve imported reference !get_lame_url.
+0804F360: warning: The format specifier '%*' passed to *printf is not known.
+0804F39F: warning: The format specifier '%*' passed to *printf is not known.
+0804AA3C: warning: Unable to resolve imported reference !tolower.
+0804AA3C: warning: Unable to resolve imported reference !tolower.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A56C: warning: Unable to resolve imported reference !lame_set_out_samplerate.
+0804A30C: warning: Unable to resolve imported reference !lame_get_decode_only.
+0804A5EC: warning: Unable to resolve imported reference !lame_set_findReplayGain.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A4DC: warning: Unable to resolve imported reference !lame_get_bWriteVbrTag.
+0804A7DC: warning: Unable to resolve imported reference !lame_set_bWriteVbrTag.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A7DC: warning: Unable to resolve imported reference !lame_set_bWriteVbrTag.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A66C: warning: Unable to resolve imported reference !lame_set_VBR_mean_bitrate_kbps.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804A66C: warning: Unable to resolve imported reference !lame_set_VBR_mean_bitrate_kbps.
+0804A6AC: warning: Unable to resolve imported reference !lame_get_mode.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A89C: warning: Unable to resolve imported reference !lame_get_free_format.
+0804A9BC: warning: Unable to resolve imported reference !lame_get_brate.
+0804A9BC: warning: Unable to resolve imported reference !lame_get_brate.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A66C: warning: Unable to resolve imported reference !lame_set_VBR_mean_bitrate_kbps.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804AABC: warning: Unable to resolve imported reference !lame_get_VBR_mean_bitrate_kbps.
+0804A66C: warning: Unable to resolve imported reference !lame_set_VBR_mean_bitrate_kbps.
+0804A88C: warning: Unable to resolve imported reference !lame_set_preset.
+0804A96C: warning: Unable to resolve imported reference !lame_set_VBR_q.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A96C: warning: Unable to resolve imported reference !lame_set_VBR_q.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A96C: warning: Unable to resolve imported reference !lame_set_VBR_q.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A88C: warning: Unable to resolve imported reference !lame_set_preset.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A88C: warning: Unable to resolve imported reference !lame_set_preset.
+0804A4BC: warning: Unable to resolve imported reference !lame_set_VBR.
+0804A8BC: warning: Unable to resolve imported reference !lame_set_mode.
+0804A14C: warning: Unable to resolve imported reference !lame_set_decode_only.
+0804A39C: warning: Unable to resolve imported reference !lame_set_disable_reservoir.
+0804A32C: warning: Unable to resolve imported reference !lame_set_strict_ISO.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804AA0C: warning: Unable to resolve imported reference !lame_set_scale.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A9AC: warning: Unable to resolve imported reference !lame_set_scale_left.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A12C: warning: Unable to resolve imported reference !lame_set_scale_right.
+0804A57C: warning: Unable to resolve imported reference !lame_set_asm_optimizations.
+0804A42C: warning: Unable to resolve imported reference !lame_set_free_format.
+0804A57C: warning: Unable to resolve imported reference !lame_set_asm_optimizations.
+0804A5EC: warning: Unable to resolve imported reference !lame_set_findReplayGain.
+0804A57C: warning: Unable to resolve imported reference !lame_set_asm_optimizations.
+0804A2DC: warning: Unable to resolve imported reference !lame_set_decode_on_the_fly.
+0804A5EC: warning: Unable to resolve imported reference !lame_set_findReplayGain.
+0804A5EC: warning: Unable to resolve imported reference !lame_set_findReplayGain.
+0804A2DC: warning: Unable to resolve imported reference !lame_set_decode_on_the_fly.
+0804A9EC: warning: Unable to resolve imported reference !strdup.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804A55C: warning: Unable to resolve imported reference !ftell.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804A0EC: warning: Unable to resolve imported reference !id3tag_set_albumart.
+0804A7BC: warning: Unable to resolve imported reference !id3tag_add_v2.
+0804A0CC: warning: Unable to resolve imported reference !id3tag_v1_only.
+0804A0DC: warning: Unable to resolve imported reference !id3tag_v2_only.
+0804AA8C: warning: Unable to resolve imported reference !id3tag_space_v1.
+0804A78C: warning: Unable to resolve imported reference !id3tag_pad_v2.
+0804A80C: warning: Unable to resolve imported reference !id3tag_genre_list.
+0804A71C: warning: Unable to resolve imported reference !id3tag_set_pad.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A99C: warning: Unable to resolve imported reference !lame_set_lowpassfreq.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A63C: warning: Unable to resolve imported reference !lame_set_highpassfreq.
+0804AA5C: warning: Unable to resolve imported reference !lame_set_lowpasswidth.
+0804A63C: warning: Unable to resolve imported reference !lame_set_highpassfreq.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A9DC: warning: Unable to resolve imported reference !lame_set_highpasswidth.
+0804A99C: warning: Unable to resolve imported reference !lame_set_lowpassfreq.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A33C: warning: Unable to resolve imported reference !lame_set_useTemporal.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A85C: warning: Unable to resolve imported reference !lame_set_interChRatio.
+0804A35C: warning: Unable to resolve imported reference !lame_set_compression_ratio.
+0804A33C: warning: Unable to resolve imported reference !lame_set_useTemporal.
+0804A81C: warning: Unable to resolve imported reference !lame_get_exp_nspsytune.
+0804A46C: warning: Unable to resolve imported reference !lame_set_exp_nspsytune.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A50C: warning: Unable to resolve imported reference !lame_set_msfix.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A81C: warning: Unable to resolve imported reference !lame_get_exp_nspsytune.
+0804A46C: warning: Unable to resolve imported reference !lame_set_exp_nspsytune.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A81C: warning: Unable to resolve imported reference !lame_get_exp_nspsytune.
+0804A46C: warning: Unable to resolve imported reference !lame_set_exp_nspsytune.
+0804A81C: warning: Unable to resolve imported reference !lame_get_exp_nspsytune.
+0804A46C: warning: Unable to resolve imported reference !lame_set_exp_nspsytune.
+0804A81C: warning: Unable to resolve imported reference !lame_get_exp_nspsytune.
+0804A46C: warning: Unable to resolve imported reference !lame_set_exp_nspsytune.
+0804AA9C: warning: Unable to resolve imported reference !lame_get_VBR_q.
+0804A13C: warning: Unable to resolve imported reference !getchar.
+0804AA9C: warning: Unable to resolve imported reference !lame_get_VBR_q.
+0804A0AC: warning: Unable to resolve imported reference !popen.
+0804AAAC: warning: Unable to resolve imported reference !pclose.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A60C: warning: Unable to resolve imported reference !atof.
+0804A52C: warning: Unable to resolve imported reference !lame_set_athaa_sensitivity.
+0804A8CC: warning: Unable to resolve imported reference !hip_decode_exit.
+0804A76C: warning: Unable to resolve imported reference !hip_decode_init.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804AA2C: warning: Unable to resolve imported reference !hip_decode1_headersB.
+0804AA2C: warning: Unable to resolve imported reference !hip_decode1_headersB.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A93C: warning: Unable to resolve imported reference !lame_set_in_samplerate.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A0BC: warning: Unable to resolve imported reference !lame_set_num_channels.
+0804A93C: warning: Unable to resolve imported reference !lame_set_in_samplerate.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804A55C: warning: Unable to resolve imported reference !ftell.
+0804A20C: warning: Unable to resolve imported reference !lame_get_num_samples.
+0804A06C: warning: Unable to resolve imported reference !lame_get_in_samplerate.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A93C: warning: Unable to resolve imported reference !lame_set_in_samplerate.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A75C: warning: Unable to resolve imported reference !lame_get_num_channels.
+0804A87C: warning: Unable to resolve imported reference !lame_set_num_samples.
+0804A8EC: warning: Unable to resolve imported reference !vfprintf.
+0804A8EC: warning: Unable to resolve imported reference !vfprintf.
+0804A3DC: warning: Unable to resolve imported reference !tgetent.
+0804A79C: warning: Unable to resolve imported reference !tgetnum.
+0804A79C: warning: Unable to resolve imported reference !tgetnum.
+0804A97C: warning: Unable to resolve imported reference !tgetstr.
+0804A97C: warning: Unable to resolve imported reference !tgetstr.
+0804A97C: warning: Unable to resolve imported reference !tgetstr.
+0804A97C: warning: Unable to resolve imported reference !tgetstr.
+0804A9CC: warning: Unable to resolve imported reference !lame_init.
+0804A44C: warning: Unable to resolve imported reference !lame_set_errorf.
+0804A21C: warning: Unable to resolve imported reference !lame_set_debugf.
+0804A6BC: warning: Unable to resolve imported reference !lame_set_msgf.
+0804A3BC: warning: Unable to resolve imported reference !lame_close.
+0804A3BC: warning: Unable to resolve imported reference !lame_close.
+0804A69C: warning: Unable to resolve imported reference !strncat.
+0804A30C: warning: Unable to resolve imported reference !lame_get_decode_only.
+0804A3BC: warning: Unable to resolve imported reference !lame_close.
+0804A2AC: warning: Unable to resolve imported reference !lame_set_write_id3tag_automatic.
+0804A7CC: warning: Unable to resolve imported reference !lame_init_params.
+0804A3BC: warning: Unable to resolve imported reference !lame_close.
+0804A30C: warning: Unable to resolve imported reference !lame_get_decode_only.
+0804A3BC: warning: Unable to resolve imported reference !lame_close.
+0804A24C: warning: Unable to resolve imported reference !lame_get_VBR_max_bitrate_kbps.
+0804A28C: warning: Unable to resolve imported reference !lame_get_VBR_min_bitrate_kbps.
+0804A1BC: warning: Unable to resolve imported reference !lame_get_id3v2_tag.
+0804A27C: warning: Unable to resolve imported reference !lame_encode_buffer_int.
+0804A72C: warning: Unable to resolve imported reference !lame_encode_flush_nogap.
+0804A62C: warning: Unable to resolve imported reference !lame_encode_flush.
+0804A7FC: warning: Unable to resolve imported reference !lame_get_id3v1_tag.
+0804A4DC: warning: Unable to resolve imported reference !lame_get_bWriteVbrTag.
+0804A40C: warning: Unable to resolve imported reference !fseek.
+0804A31C: warning: Unable to resolve imported reference !lame_get_lametag_frame.
+0804A4DC: warning: Unable to resolve imported reference !lame_get_bWriteVbrTag.
+0804A92C: warning: Unable to resolve imported reference !lame_get_findReplayGain.
+0804A11C: warning: Unable to resolve imported reference !lame_get_RadioGain.
+0804A49C: warning: Unable to resolve imported reference !lame_get_decode_on_the_fly.
+0804A16C: warning: Unable to resolve imported reference !lame_get_noclipGainChange.
+0804A22C: warning: Unable to resolve imported reference !lame_get_noclipScale.
+0804A45C: warning: Unable to resolve imported reference !lame_init_bitstream.
+0804A3CC: warning: Unable to resolve imported reference !lame_set_nogap_total.
+0804A4FC: warning: Unable to resolve imported reference !lame_set_nogap_currentindex.
 08054A58: warning: Expected sizes of arrays to have been determined by now
-08055007: error: Failed to write global variable g_v8055007.
+0805508B: error: Failed to write global variable g_v805508B.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-08055332: error: Failed to write global variable g_v8055332.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055090: error: Failed to write global variable g_v8055090.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-080554B5: error: Failed to write global variable g_v80554B5.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055099: error: Failed to write global variable g_v8055099.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805540A: error: Failed to write global variable g_v805540A.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 080554E0: warning: Expected sizes of arrays to have been determined by now
+080555B0: error: Failed to write global variable g_v80555B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080556B0: error: Failed to write global variable g_v80556B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055760: error: Failed to write global variable g_v8055760.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055800: error: Failed to write global variable g_v8055800.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080559E8: error: Failed to write global variable g_v80559E8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055A58: error: Failed to write global variable g_v8055A58.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055E80: error: Failed to write global variable g_v8055E80.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055FC4: error: Failed to write global variable g_v8055FC4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056020: error: Failed to write global variable g_v8056020.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080562C4: error: Failed to write global variable g_v80562C4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056470: error: Failed to write global variable g_v8056470.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080567A0: error: Failed to write global variable g_v80567A0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805690C: error: Failed to write global variable g_v805690C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080569F0: error: Failed to write global variable g_v80569F0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056B7C: error: Failed to write global variable g_v8056B7C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056CB0: error: Failed to write global variable g_v8056CB0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056EE0: error: Failed to write global variable g_v8056EE0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057051: error: Failed to write global variable g_v8057051.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057064: error: Failed to write global variable g_v8057064.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057234: error: Failed to write global variable g_v8057234.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805726C: error: Failed to write global variable g_v805726C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080572C8: error: Failed to write global variable g_v80572C8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080575A0: error: Failed to write global variable g_v80575A0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080575F4: error: Failed to write global variable g_v80575F4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805796C: error: Failed to write global variable g_v805796C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057B4C: error: Failed to write global variable g_v8057B4C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057C8C: error: Failed to write global variable g_v8057C8C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057D4C: error: Failed to write global variable g_v8057D4C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057D88: error: Failed to write global variable g_v8057D88.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057DD4: error: Failed to write global variable g_v8057DD4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057F18: error: Failed to write global variable g_v8057F18.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058018: error: Failed to write global variable g_v8058018.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058184: error: Failed to write global variable g_v8058184.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080582B0: error: Failed to write global variable g_v80582B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080583E8: error: Failed to write global variable g_v80583E8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058568: error: Failed to write global variable g_v8058568.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080585AC: error: Failed to write global variable g_v80585AC.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805874C: error: Failed to write global variable g_v805874C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805882C: error: Failed to write global variable g_v805882C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 08058DA8: warning: Expected sizes of arrays to have been determined by now
 080596E8: warning: Expected sizes of arrays to have been determined by now
-080548BB: error: Failed to write global variable g_v80548BB.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-08054956: error: Failed to write global variable g_v8054956.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+0805B2E0: warning: Expected sizes of arrays to have been determined by now
+0805B488: warning: Expected sizes of arrays to have been determined by now
+0805B4C4: warning: Expected sizes of arrays to have been determined by now
+0805BDC4: warning: Expected sizes of arrays to have been determined by now
+0805B6C5: warning: Expected sizes of arrays to have been determined by now
+0805BFC5: warning: Expected sizes of arrays to have been determined by now
+0805B8C6: warning: Expected sizes of arrays to have been determined by now
+0805C1C6: warning: Expected sizes of arrays to have been determined by now
+0805BAC7: warning: Expected sizes of arrays to have been determined by now
+0805C3C7: warning: Expected sizes of arrays to have been determined by now
 08054A58: warning: Expected sizes of arrays to have been determined by now
-08055007: error: Failed to write global variable g_v8055007.
+0805508B: error: Failed to write global variable g_v805508B.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-08055332: error: Failed to write global variable g_v8055332.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055090: error: Failed to write global variable g_v8055090.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
-080554B5: error: Failed to write global variable g_v80554B5.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055099: error: Failed to write global variable g_v8055099.
     The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x41ce0f80 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x41c51f90 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41ce0b30 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805540A: error: Failed to write global variable g_v805540A.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 080554E0: warning: Expected sizes of arrays to have been determined by now
+080555B0: error: Failed to write global variable g_v80555B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080556B0: error: Failed to write global variable g_v80556B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055760: error: Failed to write global variable g_v8055760.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055800: error: Failed to write global variable g_v8055800.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080559E8: error: Failed to write global variable g_v80559E8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055A58: error: Failed to write global variable g_v8055A58.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055E80: error: Failed to write global variable g_v8055E80.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08055FC4: error: Failed to write global variable g_v8055FC4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056020: error: Failed to write global variable g_v8056020.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080562C4: error: Failed to write global variable g_v80562C4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056470: error: Failed to write global variable g_v8056470.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080567A0: error: Failed to write global variable g_v80567A0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805690C: error: Failed to write global variable g_v805690C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080569F0: error: Failed to write global variable g_v80569F0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056B7C: error: Failed to write global variable g_v8056B7C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056CB0: error: Failed to write global variable g_v8056CB0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08056EE0: error: Failed to write global variable g_v8056EE0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057051: error: Failed to write global variable g_v8057051.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057064: error: Failed to write global variable g_v8057064.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057234: error: Failed to write global variable g_v8057234.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805726C: error: Failed to write global variable g_v805726C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080572C8: error: Failed to write global variable g_v80572C8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080575A0: error: Failed to write global variable g_v80575A0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080575F4: error: Failed to write global variable g_v80575F4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805796C: error: Failed to write global variable g_v805796C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057B4C: error: Failed to write global variable g_v8057B4C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057C8C: error: Failed to write global variable g_v8057C8C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057D4C: error: Failed to write global variable g_v8057D4C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057D88: error: Failed to write global variable g_v8057D88.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057DD4: error: Failed to write global variable g_v8057DD4.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08057F18: error: Failed to write global variable g_v8057F18.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058018: error: Failed to write global variable g_v8058018.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058184: error: Failed to write global variable g_v8058184.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080582B0: error: Failed to write global variable g_v80582B0.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080583E8: error: Failed to write global variable g_v80583E8.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+08058568: error: Failed to write global variable g_v8058568.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+080585AC: error: Failed to write global variable g_v80585AC.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805874C: error: Failed to write global variable g_v805874C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
+0805882C: error: Failed to write global variable g_v805882C.
+    The method or operation is not implemented.
+      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
+  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 08058DA8: warning: Expected sizes of arrays to have been determined by now
 080596E8: warning: Expected sizes of arrays to have been determined by now
+0805B2E0: warning: Expected sizes of arrays to have been determined by now
+0805B488: warning: Expected sizes of arrays to have been determined by now
+0805B4C4: warning: Expected sizes of arrays to have been determined by now
+0805BDC4: warning: Expected sizes of arrays to have been determined by now
+0805B6C5: warning: Expected sizes of arrays to have been determined by now
+0805BFC5: warning: Expected sizes of arrays to have been determined by now
+0805B8C6: warning: Expected sizes of arrays to have been determined by now
+0805C1C6: warning: Expected sizes of arrays to have been determined by now
+0805BAC7: warning: Expected sizes of arrays to have been determined by now
+0805C3C7: warning: Expected sizes of arrays to have been determined by now

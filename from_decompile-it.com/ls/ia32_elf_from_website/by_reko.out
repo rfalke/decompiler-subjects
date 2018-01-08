@@ -1,335 +1,200 @@
 Using options:
+0804959C: warning: Unable to resolve imported reference !__gmon_start__.
 08049B00: error: The method or operation is not implemented.
-08051A18: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-080537AD: warning: Unable to resolve imported reference gnu_dev_minor.
-0804950C: warning: Unable to resolve imported reference gnu_dev_minor.
-08053CDA: error: Unexpected 5 fstsw mask for setz opcode .
-08055688: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08054F3A: warning: Unable to resolve imported reference __ctype_b_loc.
-0804956C: warning: Unable to resolve imported reference __ctype_b_loc.
-08055077: warning: Unable to resolve imported reference strtoumax.
-0804954C: warning: Unable to resolve imported reference strtoumax.
-080556C5: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804FB17: warning: Unable to resolve imported reference __ctype_b_loc.
-0804956C: warning: Unable to resolve imported reference __ctype_b_loc.
-0804FD30: warning: Unable to resolve imported reference __ctype_b_loc.
-0804956C: warning: Unable to resolve imported reference __ctype_b_loc.
-08051555: warning: Unable to resolve imported reference __ctype_b_loc.
-0804956C: warning: Unable to resolve imported reference __ctype_b_loc.
-0804A005: warning: Unable to resolve imported reference mbsinit.
-0804957C: warning: Unable to resolve imported reference mbsinit.
-0805E3E7: warning: Unable to resolve imported reference __signbitl.
-080495BC: warning: Unable to resolve imported reference __signbitl.
-0805DCD0: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805DC89: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805974C: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805CAA1: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08059A80: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08059C04: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08059D19: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08059E4F: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08059F90: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805A9EB: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805A58C: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805AA46: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805A3F2: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805C329: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805C35F: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0805C5A5: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805CA28: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080595FA: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08059611: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08059244: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805929F: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-080592C4: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080592CF: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08059340: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-08059375: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-08058D38: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08058D90: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-08058DAE: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08058DB9: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08058E24: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-08058E53: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-08058B3B: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08058C03: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08058A9D: warning: Unable to resolve imported reference fflush_unlocked.
-0804960C: warning: Unable to resolve imported reference fflush_unlocked.
-08058865: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08058880: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080588A5: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080557F4: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08055812: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08055998: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080556DC: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805574A: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08054DE6: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08054E1B: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080548FA: warning: Unable to resolve imported reference __fpending.
-080495DC: warning: Unable to resolve imported reference __fpending.
-080543EA: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-080543FF: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-080543A1: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-08051ADE: warning: Unable to resolve imported reference strtoumax.
-0804954C: warning: Unable to resolve imported reference strtoumax.
-08052E0E: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08052B35: warning: Unable to resolve imported reference fflush_unlocked.
-0804960C: warning: Unable to resolve imported reference fflush_unlocked.
-08052FE3: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08053115: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-080526FE: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-080526A3: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08052614: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-08051ED0: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08051EFC: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08051D38: warning: Unable to resolve imported reference strtoumax.
-0804954C: warning: Unable to resolve imported reference strtoumax.
-08051C8B: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-080494DC: warning: Unable to resolve imported reference __ctype_get_mb_cur_max.
-08051C02: warning: Unable to resolve imported reference strtoumax.
-0804954C: warning: Unable to resolve imported reference strtoumax.
-080510CD: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080510EB: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051109: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051127: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051145: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051163: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051181: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0805119F: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080511BD: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080511DB: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080511F9: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051217: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051235: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051253: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051271: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0805128F: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080512AD: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080512CB: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-080512E9: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051307: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051325: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051343: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051361: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0805137F: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0805139D: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0805180F: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-08051472: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0805147E: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-08051493: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-080514F5: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804F18E: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0804F421: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804EE42: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804F89C: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804D6C4: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804D6DC: warning: Unable to resolve imported reference gettext.
-0804953C: warning: Unable to resolve imported reference gettext.
-0804D6E4: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804D727: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804D46D: warning: Unable to resolve imported reference iswprint.
-0804961C: warning: Unable to resolve imported reference iswprint.
-0804BEDE: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804D32B: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804D313: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804CBB0: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804CD38: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804CD44: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804CDD3: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804BFB9: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804C19B: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804C287: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804C2BA: warning: Unable to resolve imported reference __cxa_atexit.
-080494CC: warning: Unable to resolve imported reference __cxa_atexit.
-0804C58D: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804C620: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804BAF0: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804BAB2: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0804A911: warning: Unable to resolve imported reference sigemptyset.
-080494BC: warning: Unable to resolve imported reference sigemptyset.
-0804A994: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804AA27: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804AA57: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804AA87: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804AB4F: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804B5BC: warning: Unable to resolve imported reference __fxstat64.
-080495FC: warning: Unable to resolve imported reference __fxstat64.
-0804B63B: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-0804B662: warning: Unable to resolve imported reference readlink.
-080495EC: warning: Unable to resolve imported reference readlink.
-0804A242: warning: Unable to resolve imported reference readdir64.
-0804958C: warning: Unable to resolve imported reference readdir64.
-08049D0D: warning: Unable to resolve imported reference strverscmp.
-0804955C: warning: Unable to resolve imported reference strverscmp.
-0804A72F: warning: Unable to resolve imported reference readdir64.
-0804958C: warning: Unable to resolve imported reference readdir64.
-0804A74D: warning: Unable to resolve imported reference mbsinit.
-0804957C: warning: Unable to resolve imported reference mbsinit.
-08054220: error: An error occurred while processing the statement dwLoc34_159 = group_number(gs_71, dwLoc34_159, dwLoc3C_151 - dwLoc34_159, eax_83, dwLoc50_1282).
-    Pulling difference ptr32 and (ptr (struct (0 T_19048 t0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40c271d0 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c26c80 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40ba16a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x40c2d290 + 0x00064> in <filename unknown>:0 
-  at Reko.Core.Expressions.Application.Accept[T] (ExpressionVisitor`1 v) <0x40bbef40 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) <0x40c3ff20 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40bd4b80 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40c3ab40 + 0x00289> in <filename unknown>:0 
-0805D44B: error: An error occurred while processing the statement branch 0x00000000 >=u Mem1287[eax_272 + 0x00000010:word32] - Mem1287[eax_272 + 0x0000000C:word32] l0805D453.
-    Pulling difference (ptr (struct 0001 (0 byte b0000))) and (ptr (struct 0001 (0 byte b0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40c271d0 + 0x00147> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c26c80 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40ba16a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x40c26c80 + 0x00065> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x40ba16a0 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x40c3bd40 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x40bd5cf0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40c3ab40 + 0x00289> in <filename unknown>:0 
-mpsort_into_tmp: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f800 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f000 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c5b6b0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c54a50 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c53830 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c53350 + 0x00255> in <filename unknown>:0 
-mpsort_with_tmp: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f800 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f000 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c5b6b0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c54a50 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c53830 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c53350 + 0x00255> in <filename unknown>:0 
-strftime_case_: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n, Boolean reduceTailregions) <0x40c59110 + 0x0006d> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) <0x40c588d0 + 0x00057> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c54a50 + 0x00393> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c53830 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c53350 + 0x00255> in <filename unknown>:0 
-vasnprintf: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f800 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x40c5f000 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40c5b6b0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40c54a50 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x40c53830 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x40c53350 + 0x00255> in <filename unknown>:0 
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804950C: warning: Unable to resolve imported reference !localeconv.
+08053CDA: error: Unexpected instruction setz	al after fstsw
+0804956C: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+080496DC: warning: Unable to resolve imported reference !mbrtowc.
+08049A6C: warning: Unable to resolve imported reference !iswprint.
+080497EC: warning: Unable to resolve imported reference !mbsinit.
+0804956C: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+0804956C: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+0804956C: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+080496DC: warning: Unable to resolve imported reference !mbrtowc.
+080497BC: warning: Unable to resolve imported reference !iswcntrl.
+080497EC: warning: Unable to resolve imported reference !mbsinit.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+080496DC: warning: Unable to resolve imported reference !mbrtowc.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+080497EC: warning: Unable to resolve imported reference !mbsinit.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+0805002D: warning: The format specifier '%*' passed to *printf is not known.
+080500E1: warning: The format specifier '%*' passed to *printf is not known.
+08050139: warning: The format specifier '%*' passed to *printf is not known.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+08049A2C: warning: Unable to resolve imported reference !fflush_unlocked.
+0804994C: warning: Unable to resolve imported reference !sigprocmask.
+080498BC: warning: Unable to resolve imported reference !raise.
+0804994C: warning: Unable to resolve imported reference !sigprocmask.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+0804971C: warning: Unable to resolve imported reference !__lxstat64.
+080499EC: warning: Unable to resolve imported reference !__fxstat64.
+080495BC: warning: Unable to resolve imported reference !__xstat64.
+0804952C: warning: Unable to resolve imported reference !__cxa_atexit.
+080498EC: warning: Unable to resolve imported reference !__signbitl.
+0804996C: warning: Unable to resolve imported reference !__fpending.
+0804968C: warning: Unable to resolve imported reference !ferror_unlocked.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+0804972C: warning: Unable to resolve imported reference !strtoumax.
+080499CC: warning: Unable to resolve imported reference !strndup.
+080497AC: warning: Unable to resolve imported reference !__ctype_b_loc.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080498CC: warning: Unable to resolve imported reference !mbrlen.
+080497EC: warning: Unable to resolve imported reference !mbsinit.
+08049A8C: warning: Unable to resolve imported reference !tolower.
+0804963C: warning: Unable to resolve imported reference !toupper.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080495DC: warning: Unable to resolve imported reference !getgrnam.
+0804998C: warning: Unable to resolve imported reference !getgrgid.
+08049A7C: warning: Unable to resolve imported reference !getpwnam.
+080525BB: warning: The format specifier '%.' passed to *printf is not known.
+0804987C: warning: Unable to resolve imported reference !setlocale.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804969C: warning: Unable to resolve imported reference !_exit.
+0804969C: warning: Unable to resolve imported reference !_exit.
+0804997C: warning: Unable to resolve imported reference !error.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080496EC: warning: Unable to resolve imported reference !gettext.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+080494DC: warning: Unable to resolve imported reference !putc_unlocked.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080496EC: warning: Unable to resolve imported reference !gettext.
+080499AC: warning: Unable to resolve imported reference !readlink.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+0804EE8F: warning: The format specifier '%*' passed to *printf is not known.
+0804962C: warning: Unable to resolve imported reference !gnu_dev_minor.
+080499FC: warning: Unable to resolve imported reference !gnu_dev_major.
+080496FC: warning: Unable to resolve imported reference !gettimeofday.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+080497FC: warning: Unable to resolve imported reference !_setjmp.
+0804976C: warning: Unable to resolve imported reference !strverscmp.
+0804953C: warning: Unable to resolve imported reference !strcoll.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804989C: warning: Unable to resolve imported reference !longjmp.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080499FC: warning: Unable to resolve imported reference !gnu_dev_major.
+0804962C: warning: Unable to resolve imported reference !gnu_dev_minor.
+0804977C: warning: Unable to resolve imported reference !opendir.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804951C: warning: Unable to resolve imported reference !dirfd.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804990C: warning: Unable to resolve imported reference !closedir.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804990C: warning: Unable to resolve imported reference !closedir.
+0804982C: warning: Unable to resolve imported reference !readdir64.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804990C: warning: Unable to resolve imported reference !closedir.
+080496EC: warning: Unable to resolve imported reference !gettext.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+080496EC: warning: Unable to resolve imported reference !gettext.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+080498DC: warning: Unable to resolve imported reference !fwrite_unlocked.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080497CC: warning: Unable to resolve imported reference !isatty.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804979C: warning: Unable to resolve imported reference !ioctl.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804978C: warning: Unable to resolve imported reference !getopt_long.
+080496EC: warning: Unable to resolve imported reference !gettext.
+0804997C: warning: Unable to resolve imported reference !error.
+0804987C: warning: Unable to resolve imported reference !setlocale.
+080496CC: warning: Unable to resolve imported reference !bindtextdomain.
+0804980C: warning: Unable to resolve imported reference !tcgetpgrp.
+080494EC: warning: Unable to resolve imported reference !sigemptyset.
+0804967C: warning: Unable to resolve imported reference !_obstack_begin.
+0804975C: warning: Unable to resolve imported reference !sigaction.
+0804999C: warning: Unable to resolve imported reference !sigaddset.
+0804958C: warning: Unable to resolve imported reference !sigismember.
+0804967C: warning: Unable to resolve imported reference !_obstack_begin.
+0804967C: warning: Unable to resolve imported reference !_obstack_begin.
+0804975C: warning: Unable to resolve imported reference !sigaction.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+08049A2C: warning: Unable to resolve imported reference !fflush_unlocked.
+08049ABC: warning: Unable to resolve imported reference !putchar_unlocked.
+080498BC: warning: Unable to resolve imported reference !raise.
+0804958C: warning: Unable to resolve imported reference !sigismember.
+080498BC: warning: Unable to resolve imported reference !raise.
+0804973C: warning: Unable to resolve imported reference !_obstack_newchunk.
+0804F43F: error: An error occurred while processing the statement Mem739[0x08064594:word32] = v19_131 - (fp + 0xFFFFF171) + Mem0[0x08064594:word32].
+    Pulling difference ptr32 and (union ((ptr char) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x41c4ca40 + 0x001ef> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c4c4a0 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41bbdbd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x41c4c4a0 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41bbdbd0 + 0x00030> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x41c64420 + 0x00031> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x41bf8cd0 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41c5f680 + 0x00289> in <filename unknown>:0 
 0805E53C: warning: Expected sizes of arrays to have been determined by now
 0805E5E0: warning: Expected sizes of arrays to have been determined by now
 0805ED40: warning: Expected sizes of arrays to have been determined by now
@@ -337,35 +202,35 @@ vasnprintf: error: An error occurred while rewriting procedure to high-level lan
 0805F880: warning: Expected sizes of arrays to have been determined by now
 0805F984: warning: Expected sizes of arrays to have been determined by now
 08061768: warning: Expected sizes of arrays to have been determined by now
+0806191C: warning: Expected sizes of arrays to have been determined by now
 08061970: error: Failed to write global variable g_r8061970.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061980: error: Failed to write global variable g_r8061980.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061990: error: Failed to write global variable g_r8061990.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061A00: warning: Expected sizes of arrays to have been determined by now
-08061A20: warning: Expected sizes of arrays to have been determined by now
 08061A44: warning: Expected sizes of arrays to have been determined by now
 08061A60: warning: Expected sizes of arrays to have been determined by now
 08061C5C: warning: Expected sizes of arrays to have been determined by now
@@ -387,35 +252,35 @@ vasnprintf: error: An error occurred while rewriting procedure to high-level lan
 0805F880: warning: Expected sizes of arrays to have been determined by now
 0805F984: warning: Expected sizes of arrays to have been determined by now
 08061768: warning: Expected sizes of arrays to have been determined by now
+0806191C: warning: Expected sizes of arrays to have been determined by now
 08061970: error: Failed to write global variable g_r8061970.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061980: error: Failed to write global variable g_r8061980.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061990: error: Failed to write global variable g_r8061990.
     Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40ba8d40 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40bac030 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40babf90 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40c69490 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40c69450 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40bc7190 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40c68eb0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79b20 + 0x001cf> in <filename unknown>:0 
+  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x41b79890 + 0x0008b> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x41b797e0 + 0x00037> in <filename unknown>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x41b797b0 + 0x00013> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x41c8fe60 + 0x00021> in <filename unknown>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x41be65d0 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x41c8f700 + 0x00225> in <filename unknown>:0 
 08061A00: warning: Expected sizes of arrays to have been determined by now
-08061A20: warning: Expected sizes of arrays to have been determined by now
 08061A44: warning: Expected sizes of arrays to have been determined by now
 08061A60: warning: Expected sizes of arrays to have been determined by now
 08061C5C: warning: Expected sizes of arrays to have been determined by now

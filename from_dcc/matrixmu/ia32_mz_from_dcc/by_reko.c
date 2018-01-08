@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 0800:01FA: void fn0800_01FA(Register (ptr Eq_3) ds, Stack mp16 wArg02, Stack mp16 wArg04, Stack mp16 wArg06)
-void fn0800_01FA(Eq_3 * ds, mp16 wArg02, mp16 wArg04, mp16 wArg06)
+// 0800:01FA: void multMatrix(Register (ptr Eq_3) ds, Stack (memptr (ptr Eq_3) uint16) wArg02, Stack Eq_5 wArg04, Stack Eq_6 wArg06)
+void multMatrix(Eq_3 * ds, uint16 Eq_3::*wArg02, Eq_5 wArg04, Eq_6 wArg06)
 {
 	Eq_7 si_13 = 0x00;
 	while (si_13 < 0x05)
@@ -23,13 +23,11 @@ void fn0800_01FA(Eq_3 * ds, mp16 wArg02, mp16 wArg04, mp16 wArg06)
 		}
 		si_13 = (word16) si_13 + 0x01;
 	}
-	return;
 }
 
-// 0800:0283: void main(Register (ptr Eq_3) ds)
-void main(Eq_3 * ds)
+// 0800:0283: void _main(Register (ptr Eq_3) ds)
+void _main(Eq_3 * ds)
 {
-	fn0800_01FA(ds, fp - 122, fp - 0x52, fp - 0x2A);
-	return;
+	multMatrix(ds, fp - 122, fp - 0x52, fp - 0x2A);
 }
 

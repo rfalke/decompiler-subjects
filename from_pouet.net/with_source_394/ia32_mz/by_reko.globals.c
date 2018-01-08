@@ -4,4 +4,7 @@
 
 #include "subject.h"
 
+struct Eq_36 * g_ptrFFFA0000;
+Eq_2 g_t0F0F;
+struct Eq_2 * g_ptr8000 = &g_t0F0F;
 

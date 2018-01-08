@@ -5,15 +5,21 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t804825E = <code>;
-<anonymous> g_t804826E = <code>;
+Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t80483B4 = Unexpected function type (fn void ())
+;
+Eq_26 g_t80483E4 = Unexpected function type (fn void ())
+;
+char g_str8048460[] = "Population exceeds %u\x0A";
+char g_str8048477[] = "The mask is %x\x0A";
+char g_str8048487[] = "Arguments supplied\x0A";
+char g_str804849B[] = "Three or more arguments\x0A";
 <anonymous> * g_ptr80494B4;
 <anonymous> ** g_ptr80494C0 = &g_ptr8049598;
 <anonymous> * g_ptr804958C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049598 = null;
 word32 g_dw804959C = 0x00000000;
-<anonymous> * g_ptr80495AC = &g_t804825E;
-<anonymous> * g_ptr80495B0 = &g_t804826E;
 <anonymous> * g_ptr80495B4 = null;
 byte g_b80495B8 = 0x00;
 

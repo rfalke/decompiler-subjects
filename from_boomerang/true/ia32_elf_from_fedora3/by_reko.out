@@ -1,21 +1,18 @@
 Using options:
-08048DE5: warning: Unable to resolve imported reference iswprint.
-08048934: warning: Unable to resolve imported reference iswprint.
-08049D47: warning: Unable to resolve imported reference iswprint.
-08048934: warning: Unable to resolve imported reference iswprint.
+080488E4: warning: Unable to resolve imported reference !__fpending.
+08048A94: warning: Unable to resolve imported reference !error.
+08048A24: warning: Unable to resolve imported reference !__ctype_get_mb_cur_max.
+08048AA4: warning: Unable to resolve imported reference !__ctype_b_loc.
+080489B4: warning: Unable to resolve imported reference !mbrtowc.
+08048A54: warning: Unable to resolve imported reference !iswprint.
+08048A84: warning: Unable to resolve imported reference !mbsinit.
+08048A94: warning: Unable to resolve imported reference !error.
+08048A94: warning: Unable to resolve imported reference !error.
 08049E3A: error: An error occurred while processing instruction at address 08049E3A.
     The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x404a5ac0 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x402cabb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x404a3570 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x404a3200 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4049aee0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x404a2430 + 0x0018c> in <filename unknown>:0 
-fn08049721: error: An error occurred while rewriting procedure to high-level language.
-    The method or operation is not implemented.
-      at Reko.Structure.StructureAnalysis.DetermineFollowLatch (Reko.Structure.Region head, ISet`1 loopNodes) <0x4050ab80 + 0x003f7> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.RefineLoop (Reko.Structure.Region head, ISet`1 loopNodes) <0x4050a380 + 0x0004b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x405079e0 + 0x00077> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x40500240 + 0x0044b> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x404ff680 + 0x000bf> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x404ff1a0 + 0x00255> in <filename unknown>:0 
+      at System.ThrowHelper.ThrowKeyNotFoundException () <0x410242d0 + 0x0001f> in <filename unknown>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40e37bb0 + 0x0004b> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41023830 + 0x00073> in <filename unknown>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x410234c0 + 0x0005f> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4101b7c0 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41020b40 + 0x001c0> in <filename unknown>:0 

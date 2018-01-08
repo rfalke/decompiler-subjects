@@ -5,17 +5,18 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-<anonymous> g_t8048282 = <code>;
-<anonymous> g_t8048292 = <code>;
-<anonymous> g_t80482A2 = <code>;
+Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+;
+Eq_25 g_t8048394 = Unexpected function type (fn void ())
+;
+Eq_26 g_t80483C4 = Unexpected function type (fn void ())
+;
+char g_str8048460[] = "Stat returns %d; size of file is %d\x0A";
 <anonymous> * g_ptr8049488;
 <anonymous> ** g_ptr8049494 = &g_ptr804956C;
 <anonymous> * g_ptr8049560 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804956C = null;
 word32 g_dw8049570 = 0x00000000;
-<anonymous> * g_ptr8049580 = &g_t8048282;
-<anonymous> * g_ptr8049584 = &g_t8048292;
-<anonymous> * g_ptr8049588 = &g_t80482A2;
 <anonymous> * g_ptr804958C = null;
 byte g_b8049590 = 0x00;
 

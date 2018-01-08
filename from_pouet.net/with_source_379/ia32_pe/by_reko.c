@@ -19,7 +19,6 @@ void fn00401000()
 		edx_20 = (char *) &edx_15->t0001 + 0x02;
 		bl_21 = (word32) bl_21 + 0x01;
 	} while (bl_21 != 0x00);
-	return;
 }
 
 // 00401020: void fn00401020()
@@ -35,14 +34,12 @@ void fn00401020()
 		edi_32 = (word32) edi_32 + 0x01;
 		ch_33 = SLICE(cx_36, byte, 8);
 	} while (cx_36 != 0x0B00);
-	return;
 }
 
 // 00401052: void fn00401052(FpuStack real64 rArg0)
 void fn00401052(real64 rArg0)
 {
 	globals->w402140 = globals->w402140 + 0x01;
-	ptr32 esp_198 = fp - 0x20;
 	word32 eax_126 = 0x00;
 	word16 cx_117 = 0x00;
 	word16 bx_161 = 0x00;
@@ -63,8 +60,8 @@ void fn00401052(real64 rArg0)
 			cu8 dh_96 = SLICE(dx_78, byte, 8);
 			real64 rLoc1_98 = (real64) globals->w402144;
 			al_75 = bh_164;
-			eax_100 = DPB(eax_530, bh_164, 0);
-			word32 eax_530 = eax_100;
+			eax_100 = DPB(eax_459, bh_164, 0);
+			word32 eax_459 = eax_100;
 		} while (P);
 		rArg0 = atan(rArg0, rLoc1_98) * (real64) globals->w40213E;
 		globals->w402144 = (int16) rArg0;
@@ -75,7 +72,7 @@ void fn00401052(real64 rArg0)
 		bcu8 ah_113 = SLICE(ax_112, byte, 8);
 		uint8 cl_115 = 0x00;
 		cx_117 = DPB(cx_117, 0x00, 0);
-		eax_126 = DPB(eax_530, dh_96, 0);
+		eax_126 = DPB(eax_459, dh_96, 0);
 		byte dh_129 = (byte) (ax_119 & 0x0707) + SLICE(ax_119 & 0x0707, byte, 8) + dh_96;
 		if (dh_96 <= ~0x13 && dh_96 >= ~0x14)
 		{
@@ -102,169 +99,141 @@ void fn00401052(real64 rArg0)
 				cl_115 = (byte) cx_117;
 			}
 		}
-		*((char *) globals->t40211C + ebx_162) = (Eq_155) cl_115;
-		*((char *) globals->t402120 + ebx_162) = (Eq_161) (dh_129 + 0x80);
+		*((char *) globals->t40211C + ebx_162) = (Eq_154) cl_115;
+		*((char *) globals->t402120 + ebx_162) = (Eq_160) (dh_129 + 0x80);
 		bx_161 = bx_161 + 0x01;
 		ebx_162 = DPB(ebx_162, bx_161, 0);
 		bl_163 = (byte) bx_161;
 		bh_164 = SLICE(bx_161, byte, 8);
 	} while (bx_161 != 0x00);
-	Eq_194 edi_167 = 0x0003E800;
+	ptr32 edi_167 = 0x0003E800;
 	word16 si_169 = 100;
 	do
 	{
 		globals->w402142 = ~0x9F;
 		do
 		{
-			struct Eq_207 * esp_215 = esp_198 - 0x04;
-			esp_215->t0000 = edi_167;
-			int32 dx_ax_224 = (int32) (int16) (byte) (globals->w402140 << 0x01);
-			bi8 al_228 = ((byte) dx_ax_224 & 0x7F) - 0x40;
-			int16 ax_229 = al_228 *s al_228;
-			int16 ax_232 = DPB(ax_229, SLICE(ax_229, byte, 8) - 0x10, 8);
-			ui16 dx_233 = SLICE(dx_ax_224, word16, 16) ^ ax_232;
-			word16 cx_217 = 0x7F40;
-			ui32 eax_239 = DPB(eax_126, SLICE(ax_232 * 0x02, byte, 8) - 0x01, 8);
-			ui16 dx_243 = DPB(dx_233, SLICE(dx_233, byte, 8) + 0x20, 8);
-l00401157:
-			cx_217 = cx_217 + globals->w402142;
-			ebx_162 = DPB(ebx_162, SLICE(cx_217, byte, 8), 0);
-			dx_243 = dx_243 + si_169;
-			byte al_273 = *((char *) globals->t402120 + ebx_162);
-			cu8 dh_264 = SLICE(dx_243, byte, 8);
-			ci8 ah_271 = *((char *) globals->t40211C + ebx_162);
-			eax_239 = DPB(eax_239, al_273, 0);
-			if (ah_271 >= 0x00)
+			int32 dx_ax_225 = (int32) (int16) (byte) (globals->w402140 << 0x01);
+			bi8 al_229 = ((byte) dx_ax_225 & 0x7F) - 0x40;
+			int16 ax_230 = al_229 *s al_229;
+			int16 ax_233 = DPB(ax_230, SLICE(ax_230, byte, 8) - 0x10, 8);
+			ui16 dx_234 = SLICE(dx_ax_225, word16, 16) ^ ax_233;
+			word16 cx_218 = 0x7F40;
+			ui32 eax_240 = DPB(eax_126, SLICE(ax_233 * 0x02, byte, 8) - 0x01, 8);
+			ui16 dx_244 = DPB(dx_234, SLICE(dx_234, byte, 8) + 0x20, 8);
+			do
 			{
-				if (ah_271 != 0x00)
+				cx_218 = cx_218 + globals->w402142;
+				ebx_162 = DPB(ebx_162, SLICE(cx_218, byte, 8), 0);
+				dx_244 = dx_244 + si_169;
+				byte al_274 = *((char *) globals->t402120 + ebx_162);
+				cu8 dh_265 = SLICE(dx_244, byte, 8);
+				ci8 ah_272 = *((char *) globals->t40211C + ebx_162);
+				eax_240 = DPB(eax_240, al_274, 0);
+				if (ah_272 < 0x00)
+					break;
+				if (ah_272 != 0x00)
 				{
-					ebx_162 = DPB(ebx_162, dh_264 >> 0x01, 8);
-					byte ah_454 = *((word32) globals->t402124 + ebx_162);
-					eax_239 = DPB(eax_239, ah_454, 8);
-					if (ah_454 != 0x00)
+					ebx_162 = DPB(ebx_162, dh_265 >> 0x01, 8);
+					byte ah_383 = *((word32) globals->t402124 + ebx_162);
+					eax_240 = DPB(eax_240, ah_383, 8);
+					if (ah_383 != 0x00)
 					{
-						eax_239 = DPB(eax_239, al_273 + 0x80, 0);
+						eax_240 = DPB(eax_240, al_274 + 0x80, 0);
 						break;
 					}
 				}
-				if (dh_264 <= 0x46)
-					goto l00401157;
-			}
-			ui32 eax_300 = *((word32) globals->t402104 + (eax_239 & 0xFF) * 0x04);
-			Mem301[Mem216[esp_215 + 0x00:word32] + Mem216[0x00402100:word32]:word32] = eax_300;
+			} while (dh_265 <= 0x46);
+			eax_126 = (word32) *((word32) globals->t402104 + (eax_240 & 0xFF) * 0x04);
+			*((word32) globals->t402100 + edi_167) = eax_126;
 			globals->w402142 = globals->w402142 + 0x01;
-			Eq_224 edi_307 = esp_215->t0004;
-			eax_126 = (word32) *((word32) globals->t402104 + (eax_300 & 0xFF) * 0x04);
-			Mem314[edi_307 + Mem304[0x00402100:word32]:word32] = eax_126;
-			globals->w402142 = globals->w402142 + 0x01;
-			esp_198 = &esp_215->dw0008;
-			edi_167 = edi_307 - 0x04;
+			edi_167 = edi_167 - 0x04;
 		} while (globals->w402142 != 0xA0);
-		word16 si_321 = si_169 - 0x01;
-		si_169 = si_321 - 0x01;
-	} while (si_321 != ~0x62);
-	esp_215->t0024.u0 = 0x004020F0;
-	esp_215->t0020 = globals->t4020CC;
-	GetClientRect(esp_215->t0020, esp_215->t0024);
-	esp_215->t0024.u0 = 0x00CC0020;
-	&esp_215->t0020.u0->unused = 0x00;
-	esp_215->ptr001C = &globals->t40206C;
-	esp_215->t0018 = globals->t402100;
-	esp_215->t0014 = (struct HDC__ *) 200;
-	esp_215->dw0010 = 0x0140;
-	esp_215->dw000C = 0x00;
-	esp_215->dw0008 = 0x00;
-	esp_215->t0004 = globals->t4020FC;
-	esp_215->t0000 = globals->t4020F8;
-	*(esp_215 - 0x04) = 0x00;
-	*(esp_215 - 0x08) = 0x00;
-	*(esp_215 - 0x0C) = (HDC *) globals->t4020D0;
-	StretchDIBits(*(esp_215 - 0x0C), *(esp_215 - 0x08), *(esp_215 - 0x04), esp_215->t0000, esp_215->t0004, esp_215->dw0008, esp_215->dw000C, esp_215->dw0010, esp_215->t0014, esp_215->t0018, esp_215->ptr001C, esp_215->t0020, esp_215->t0024);
-	return;
-	esp_215->t0044.u0 = 0x004020F0;
-	esp_215->t0040 = globals->t4020CC;
-	GetClientRect(esp_215->t0040, esp_215->t0044);
-	esp_215->t0044.u0 = 0x00CC0020;
-	&esp_215->t0040.u0->unused = 0x00;
-	esp_215->ptr003C = &globals->t40206C;
-	esp_215->t0038 = globals->t402100;
-	esp_215->t0034 = (struct HDC__ *) 200;
-	esp_215->dw0030 = 0x0140;
-	esp_215->dw002C = 0x00;
-	esp_215->dw0028 = 0x00;
-	esp_215->t0024 = globals->t4020FC;
-	esp_215->t0020 = globals->t4020F8;
-	esp_215->ptr001C = null;
-	esp_215->t0018.u0 = 0x00;
-	esp_215->t0014 = globals->t4020D0;
-	StretchDIBits(esp_215->t0014, esp_215->t0018, esp_215->ptr001C, esp_215->t0020, esp_215->t0024, esp_215->dw0028, esp_215->dw002C, esp_215->dw0030, esp_215->t0034, esp_215->t0038, esp_215->ptr003C, esp_215->t0040, esp_215->t0044);
-	return;
+		si_169 = si_169 - 0x01;
+	} while (si_169 != ~0x63);
+	GetClientRect(globals->t4020CC, &globals->t4020F0);
+	StretchDIBits(globals->t4020D0, 0x00, 0x00, globals->dw4020F8, globals->dw4020FC, 0x00, 0x00, 0x0140, 200, globals->t402100, &globals->t40206C, 0x00, 0x00CC0020);
 }
 
-// 00401230: Register Eq_224 Win32CrtStartup()
-Eq_224 Win32CrtStartup()
+// 00401230: Register Eq_310 Win32CrtStartup()
+DWORD Win32CrtStartup()
 {
+	ptr32 esp_106;
+	ptr32 esp_147 = fp - 0x08;
 	Eq_2 eax_6 = GlobalAlloc(0x00, 1000000);
 	if (eax_6 != 0x00)
 	{
 		globals->t40210C = eax_6;
 		globals->t402104 = eax_6;
-		Mem88[0x00402100:word32] = eax_6 + 2000;
-		Mem90[0x0040211C:word32] = eax_6 + 402000;
-		Mem92[0x00402120:word32] = eax_6 + 602000;
-		Mem95[0x00402124:word32] = eax_6 + 702000;
-		word32 ebx_103 = 499999;
+		Mem113[0x00402100:word32] = eax_6 + 2000;
+		Mem115[0x0040211C:word32] = eax_6 + 402000;
+		Mem117[0x00402120:word32] = eax_6 + 602000;
+		Mem120[0x00402124:word32] = eax_6 + 702000;
+		word32 ebx_121 = 499999;
 		do
 		{
 			*globals->t40210C = 0x00;
-			ebx_103 = ebx_103 - 0x01;
-		} while (ebx_103 != 0x00);
+			ebx_121 = ebx_121 - 0x01;
+		} while (ebx_121 != 0x00);
 		globals->t4020B4 = GetModuleHandleW(null);
 		globals->t4020B8 = LoadIconW(0x00, (WCHAR *) 0x7F00);
-		Eq_671 eax_122 = LoadCursorW(0x00, (WCHAR *) 0x7F00);
-		globals->t4020BC = eax_122;
-		if (DPB(eax_122, RegisterClassW(&globals->t4020A4), 0) != null)
+		Eq_464 eax_145 = LoadCursorW(0x00, (WCHAR *) 0x7F00);
+		globals->t4020BC = eax_145;
+		esp_147 = fp - 0x20;
+		if (DPB(eax_145, RegisterClassW(&globals->t4020A4), 0) != null)
 		{
-			Eq_194 eax_157 = CreateWindowExW(0x00, &globals->t402000, &globals->t402012, 0x10CF0000, 0x8000, 0x8000, 0x021C, 400, 0x00, null, globals->t4020B4, null);
-			if (eax_157 != 0x00)
+			esp_147 = fp - 0x50;
+			Eq_290 eax_178 = CreateWindowExW(0x00, &globals->t402000, &globals->t402012, 0x10CF0000, 0x8000, 0x8000, 0x021C, 400, null, null, globals->t4020B4, null);
+			if (eax_178 != null)
 			{
-				globals->t4020CC = eax_157;
-				globals->t4020D0 = GetDC(eax_157);
+				globals->t4020CC = eax_178;
+				globals->t4020D0 = GetDC(eax_178);
 				fn00401000();
 				fn00401020();
 				fn00401052(rArg0);
-				*(fp - 0x04) = 0x04;
-				*(fp - 0x08) = (HDC *) globals->t4020D0;
-				SetStretchBltMode(*(fp - 0x08), *(fp - 0x04));
+				*(fp - 88) = 0x04;
+				*(fp - 0x5C) = (HDC *) globals->t4020D0;
+				SetStretchBltMode(*(fp - 0x5C), *(fp - 88));
+				ptr32 esp_192 = fp - 0x5C;
 				while (true)
 				{
-					*(fp - 0x04) = 0x01;
-					*(fp - 0x08) = 0x00;
-					*(fp - 0x0C) = 0x00;
-					*(fp - 0x10) = 0x00;
-					*(fp - 0x14) = 0x004020D4;
-					PeekMessageW(*(fp - 0x14), *(fp - 0x10), *(fp - 0x0C), *(fp - 0x08), *(fp - 0x04));
+					UINT * esp_197 = esp_192 - 0x04;
+					*esp_197 = (uint32) 0x01;
+					*(esp_197 - 0x04) = 0x00;
+					*(esp_197 - 0x08) = 0x00;
+					*(esp_197 - 0x0C) = 0x00;
+					*(esp_197 - 0x10) = 0x004020D4;
+					PeekMessageW(*(esp_197 - 0x10), *(esp_197 - 0x0C), *(esp_197 - 0x08), *(esp_197 - 0x04), *esp_197);
+					esp_106 = esp_197 - 0x10;
 					if (globals->dw4020D8 == 0x12)
 						break;
-					*(fp - 0x04) = 0x004020D4;
-					TranslateMessage(*(fp - 0x04));
-					*(fp - 0x04) = 0x004020D4;
-					DispatchMessageW(*(fp - 0x04));
+					*(esp_197 - 0x14) = 0x004020D4;
+					TranslateMessage(*(esp_197 - 0x14));
+					*(esp_197 - 0x18) = 0x004020D4;
+					DispatchMessageW(*(esp_197 - 0x18));
 					fn00401052(rArg1);
 					globals->dw402108 = globals->dw402108 + 0x01;
+					esp_192 = esp_197 - 0x18;
 				}
 l0040138C:
-				*(fp - 0x04) = (HDC *) globals->t4020D0;
-				*(fp - 0x08) = (union Eq_194 *) globals->t4020CC;
-				ReleaseDC(*(fp - 0x08), *(fp - 0x04));
-				*(fp - 0x04) = (union Eq_2 *) globals->t40210C;
-				GlobalFree(*(fp - 0x04));
-				*(fp - 0x04) = globals->dw4020DC;
-				ExitProcess(*(fp - 0x04));
+				HDC * esp_61 = esp_106 - 0x04;
+				*esp_61 = (HDC *) globals->t4020D0;
+				*(esp_61 - 0x04) = (HWND *) globals->t4020CC;
+				ReleaseDC(*(esp_61 - 0x04), *esp_61);
+				*(esp_61 - 0x08) = (union Eq_2 *) globals->t40210C;
+				GlobalFree(*(esp_61 - 0x08));
+				*(esp_61 - 0x0C) = globals->dw4020DC;
+				ExitProcess(*(esp_61 - 0x0C));
 			}
 		}
 	}
-	MessageBoxW(0x00, &globals->t40204C, null, 0x10);
+	UINT * esp_100 = esp_147 - 0x04;
+	*esp_100 = (uint32) 0x10;
+	*(esp_100 - 0x04) = 0x00;
+	*(esp_100 - 0x08) = 0x0040204C;
+	*(esp_100 - 0x0C) = 0x00;
+	MessageBoxW(*(esp_100 - 0x0C), *(esp_100 - 0x08), *(esp_100 - 0x04), *esp_100);
+	esp_106 = esp_100 - 0x0C;
 	goto l0040138C;
 }
 

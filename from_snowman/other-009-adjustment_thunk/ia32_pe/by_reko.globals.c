@@ -5,6 +5,11 @@
 #include "subject.h"
 
 <anonymous> ** g_ptr0010;
+Eq_501 g_t400000 = 
+	{
+		0x5A4D,
+		0x000000E0,
+	};
 <anonymous> g_t401005 = <code>;
 <anonymous> g_t401069 = <code>;
 <anonymous> * g_ptr40375C = &g_t401069;
@@ -14,10 +19,10 @@ ui32 g_dw40507C = 0x44BF19B1;
 word32 g_dw405190 = 0x00000000;
 int32 g_dw405194 = 0;
 word32 g_dw405198 = 0x00000000;
-word32 g_dw40519C = 0x00000000;
+Eq_92 g_t40519C = null;
 int32 g_dw4051A8 = 0;
-word32 g_dw4051AC = 0x00000000;
+Eq_92 g_t4051AC = null;
 word32 g_dw4054E4 = 0x00000000;
 word32 g_dw40550C = 0x00000000;
-<anonymous> * g_ptr405510 = null;
+Eq_92 g_t405510 = null;
 

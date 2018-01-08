@@ -2,3 +2,7 @@ Using options:
 0804831C: warning: Call target address 00000000 is invalid.
 08048374: error: The method or operation is not implemented.
 080483C8: warning: No valid entries could be found in jump vector.
+08048369: warning: The format specifier '%.' passed to *printf is not known.
+08048369: warning: The format specifier '%.' passed to *printf is not known.
+08048369: warning: The format specifier '%.' passed to *printf is not known.
+08048369: warning: The format specifier '%.' passed to *printf is not known.

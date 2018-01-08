@@ -4,45 +4,32 @@
 
 #include "subject.h"
 
-// 080482D8: void _init(Register word32 ebx)
-void _init(word32 ebx)
+// 080482D8: void _init()
+void _init()
 {
-	if (globals->dw8049794 != 0x00)
-		__isoc99_scanf(ptrLoc0C, tLoc08);
+	word32 edx_13 = globals->dw8049794;
+	if (edx_13 != 0x00)
+	{
+		word32 esp_31;
+		word32 ebp_32;
+		word32 ebx_33;
+		byte SCZO_34;
+		word32 edx_35;
+		byte SZO_36;
+		byte C_37;
+		byte Z_38;
+		word32 eax_39;
+		!__gmon_start__();
+	}
 	frame_dummy();
 	__do_global_ctors_aux();
-	return;
 }
 
-// 08048328: void fn08048328()
-void fn08048328()
+// 08048360: void _start(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	word32 esp_3;
-	globals->ptr80497A0();
-	return;
-}
-
-// 08048338: void fn08048338()
-void fn08048338()
-{
-	word32 esp_3;
-	globals->ptr80497A4();
-	return;
-}
-
-// 08048348: void fn08048348()
-void fn08048348()
-{
-	word32 esp_3;
-	globals->ptr80497A8();
-	return;
-}
-
-// 08048360: void _start(Stack word32 dwArg00)
-void _start(word32 dwArg00)
-{
-	__align(fp + 0x04);
-	fn08048328();
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t804849E, dwArg00, (char *) fp + 0x04, &globals->t8048530, &globals->t8048520, edx, fp);
 	__hlt();
 }
 
@@ -56,7 +43,6 @@ void __do_global_dtors_aux(word32 esi)
 			globals->dw80497B4 = eax_23 + 0x01;
 		globals->b80497B0 = 0x01;
 	}
-	return;
 }
 
 // 080483F0: void frame_dummy()
@@ -73,7 +59,6 @@ void frame_dummy()
 		byte Z_34;
 		null();
 	}
-	return;
 }
 
 // 08048414: Register int32 fibo_normal(Stack int32 dwArg04)
@@ -87,47 +72,43 @@ int32 fibo_normal(int32 dwArg04)
 	return eax_10;
 }
 
-// 0804844D: void fibo_return_on_stack(Stack int32 dwArg04)
-void fibo_return_on_stack(int32 dwArg04)
+// 0804844D: Register int32 fibo_return_on_stack(Stack int32 dwArg04)
+int32 fibo_return_on_stack(int32 dwArg04)
 {
 	if (dwArg04 > 0x01)
 	{
 		fibo_return_on_stack(dwArg04 - 0x01);
 		fibo_return_on_stack(dwArg04 - 0x02);
+		eax = dwArg04 - 0x01 + (dwArg04 - 0x02);
 	}
-	return;
+	return eax;
 }
 
-// 08048488: void fibo_wrapper_return_on_stack(Stack word32 dwArg04)
-void fibo_wrapper_return_on_stack(word32 dwArg04)
+// 08048488: void fibo_wrapper_return_on_stack(Stack int32 dwArg04)
+void fibo_wrapper_return_on_stack(int32 dwArg04)
 {
 	fibo_return_on_stack(dwArg04);
-	return;
 }
 
 // 0804849E: void main()
 void main()
 {
 	__align(fp - 0x04);
-	fn08048338();
-	fn08048348();
-	fibo_normal(dwLoc10);
-	fibo_return_on_stack(dwLoc10);
-	fn08048338();
-	return;
+	printf("Input number: ");
+	__isoc99_scanf("%d", tLoc28);
+	printf("fibonacci(%d) = %d %d\n", dwLoc10, fibo_normal(dwLoc10), fibo_return_on_stack(dwLoc10));
 }
 
 // 08048520: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	return;
 }
 
 // 08048530: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_128 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
-	_init((char *) &ebx_16->ptr1175 + 224);
+	struct Eq_149 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
+	_init();
 	if (&ebx_16->ptr1175 - &ebx_16->ptr1175 >> 0x02 != 0x00)
 	{
 		do
@@ -145,7 +126,6 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			ebx_16->ptr1175();
 		} while (esi_63 + 0x01 < edi_62);
 	}
-	return;
 }
 
 // 0804858A: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
@@ -171,13 +151,11 @@ void __do_global_ctors_aux()
 			eax_11();
 		} while (*ebx_28 != ~0x00);
 	}
-	return;
 }
 
 // 080485BC: void _fini(Register word32 esi)
 void _fini(word32 esi)
 {
 	__do_global_dtors_aux(esi);
-	return;
 }
 

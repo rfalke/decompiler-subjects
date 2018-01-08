@@ -89,7 +89,6 @@ l000010EC:
 void fn0000110C(word32 a6)
 {
 	execPrivate2();
-	return;
 }
 
 // 0000112A: void fn0000112A(Register (ptr Eq_26) a0, Register word32 a6)
@@ -97,7 +96,6 @@ void fn0000112A(Eq_26 * a0, word32 a6)
 {
 	if (fn00001156(a0) != 0x00)
 		execPrivate3();
-	return;
 }
 
 // 00001156: Register int32 fn00001156(Register (ptr Eq_26) a0)
