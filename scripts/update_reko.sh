@@ -24,7 +24,7 @@ function cleanup {
 
 cd "$REKODIR"
 
-find $root -name subject.exe | sort | while read line
+find $root -name subject.exe | grep -v ppc_macho | sort | while read line
 do
   dir=$(dirname $line)
   if test -f $dir/by_reko.out
