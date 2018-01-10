@@ -6,11 +6,11 @@
 
 Eq_28 g_t50BB20 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_31 g_t50BB30 = Unexpected function type (fn void ())
+Eq_31 g_t50BBF0 = Unexpected function type (fn void ())
 ;
-Eq_32 g_t50BBA0 = Unexpected function type (fn void ())
+Eq_32 g_t50BC60 = Unexpected function type (fn void ())
 ;
-union Eq_636545 g_u70CE08 = 
+union Eq_636665 g_u70CE08 = 
 	{
 		0x004004D0
 	};

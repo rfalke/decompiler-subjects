@@ -41058,4 +41058,47 @@ void unsigned_long_long_modulo() {
   unsigned_long_long_dest[1022] = unsigned_long_long_src[1022] % 1023;
   unsigned_long_long_dest[1023] = unsigned_long_long_src[1023] % 1024;
 }
-int main() {return 0;}
+
+int main() {
+  signed_char_add();
+  signed_char_mult();
+  signed_char_div();
+  signed_char_modulo();
+  unsigned_char_add();
+  unsigned_char_mult();
+  unsigned_char_div();
+  unsigned_char_modulo();
+  signed_short_add();
+  signed_short_mult();
+  signed_short_div();
+  signed_short_modulo();
+  unsigned_short_add();
+  unsigned_short_mult();
+  unsigned_short_div();
+  unsigned_short_modulo();
+  signed_int_add();
+  signed_int_mult();
+  signed_int_div();
+  signed_int_modulo();
+  unsigned_int_add();
+  unsigned_int_mult();
+  unsigned_int_div();
+  unsigned_int_modulo();
+  signed_long_int_add();
+  signed_long_int_mult();
+  signed_long_int_div();
+  signed_long_int_modulo();
+  unsigned_long_int_add();
+  unsigned_long_int_mult();
+  unsigned_long_int_div();
+  unsigned_long_int_modulo();
+  signed_long_long_add();
+  signed_long_long_mult();
+  signed_long_long_div();
+  signed_long_long_modulo();
+  unsigned_long_long_add();
+  unsigned_long_long_mult();
+  unsigned_long_long_div();
+  unsigned_long_long_modulo();
+  return 0;
+}

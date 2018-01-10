@@ -1,1 +1,1 @@
-scripts/update_retdec_helper.sh: error: curl: (6) Could not resolve host: retdec.com
+scripts/update_retdec_helper.sh: error: Time limit exceeded.

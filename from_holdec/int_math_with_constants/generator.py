@@ -7,7 +7,9 @@ numbers=sorted(list(set(numbers)))
 def write_array(out, ctype, num, name):
     out.write("%s %s[%d];\n"%(ctype, name,num))
 
+all_fnames=[]
 def write_op(out, fname, arr_prefix, op):
+    all_fnames.append(fname)
     out.write("void %s() {\n"%fname)
     for index, number in enumerate(numbers):
         x="%s_src[%d]"%(arr_prefix, index)
@@ -27,4 +29,8 @@ for t in ["char", "short", "int", "long int", "long long"]:
                             ("modulo", lambda x,n:x+" % "+n)]:
             write_op(out, prefix+"_"+opname, prefix, opf)    
 
-out.write("int main() {return 0;}\n")
+out.write('''
+int main() {
+%s
+  return 0;
+}'''%("\n".join(["  %s();"%x for x in all_fnames])))

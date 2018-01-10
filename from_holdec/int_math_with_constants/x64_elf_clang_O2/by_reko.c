@@ -25,7 +25,7 @@ void _init()
 void _start( * rdx, Eq_18 qwArg00)
 {
 	__align(fp + 0x08);
-	__libc_start_main(&globals->t50BD20, qwArg00, fp + 0x08, &globals->t50BD30, &globals->t50BDA0, rdx, ptrLoc04);
+	__libc_start_main(&globals->t50BD20, qwArg00, fp + 0x08, &globals->t50BDF0, &globals->t50BE60, rdx, ptrLoc04);
 	__hlt();
 }
 
@@ -48883,12 +48883,52 @@ void unsigned_long_long_modulo()
 	globals->qw713438 = globals->qw725038 & 0x03FF;
 }
 
-// 000000000050BD20: void main()
-void main()
+// 000000000050BD20: void main(Register word64 mm0, Register word64 mm2)
+void main(word64 mm0, word64 mm2)
 {
+	signed_char_add();
+	signed_char_mult();
+	signed_char_div();
+	signed_char_modulo();
+	unsigned_char_add();
+	unsigned_char_mult();
+	unsigned_char_div(mm0, mm2);
+	unsigned_char_modulo();
+	signed_short_add();
+	signed_short_mult();
+	signed_short_div();
+	signed_short_modulo();
+	unsigned_short_add();
+	unsigned_short_mult();
+	unsigned_short_div();
+	unsigned_short_modulo();
+	signed_int_add();
+	signed_int_mult();
+	signed_int_div();
+	signed_int_modulo();
+	unsigned_int_add();
+	unsigned_int_mult();
+	unsigned_int_div();
+	unsigned_int_modulo();
+	signed_long_int_add();
+	signed_long_int_mult();
+	signed_long_int_div();
+	signed_long_int_modulo();
+	unsigned_long_int_add();
+	unsigned_long_int_mult();
+	unsigned_long_int_div();
+	unsigned_long_int_modulo();
+	signed_long_long_add();
+	signed_long_long_mult();
+	signed_long_long_div();
+	signed_long_long_modulo();
+	unsigned_long_long_add();
+	unsigned_long_long_mult();
+	unsigned_long_long_div();
+	unsigned_long_long_modulo();
 }
 
-// 000000000050BD30: void __libc_csu_init(Register word32 edi)
+// 000000000050BDF0: void __libc_csu_init(Register word32 edi)
 void __libc_csu_init(word32 edi)
 {
 	_init();
@@ -48918,12 +48958,12 @@ void __libc_csu_init(word32 edi)
 	}
 }
 
-// 000000000050BDA0: void __libc_csu_fini()
+// 000000000050BE60: void __libc_csu_fini()
 void __libc_csu_fini()
 {
 }
 
-// 000000000050BDA4: void _fini()
+// 000000000050BE64: void _fini()
 void _fini()
 {
 }
