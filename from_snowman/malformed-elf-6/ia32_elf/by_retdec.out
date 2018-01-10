@@ -1,0 +1,1 @@
+scripts/update_retdec_helper.sh: error: Unsupported target architecture 'UNKNOWN MACHINE TYPE'. Supported architectures: Intel x86 ARM ARM+Thumb MIPS PIC32 PowerPC.
