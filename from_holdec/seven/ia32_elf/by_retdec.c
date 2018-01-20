@@ -14,52 +14,56 @@ int32_t test_1(int64_t a1);
 int32_t test_2(int64_t a1);
 int32_t test_3(int64_t a1);
 
+// --------------------- Global Variables ---------------------
+
+int32_t g1 = 0; // edi
+
 // ------------------------ Functions -------------------------
 
-// Address range: 0x804840b - 0x8048426
-int32_t test_1(int64_t a1) {
-    int32_t v1 = (uint64_t)(0x24924925 * a1) / 0x100000000; // 0x8048418
-    return (((int32_t)a1 - v1) / 2 + v1) / 4;
-}
-
-// Address range: 0x8048427 - 0x804848d
-int32_t test_2(int64_t a1) {
-    int32_t v1 = (uint64_t)(0x24924925 * a1) / 0x100000000; // 0x8048451
-    return (((int32_t)a1 - v1) / 2 + v1) / 4;
-}
-
-// Address range: 0x804848e - 0x80484df
-int32_t test_3(int64_t a1) {
-    // 0x804848e
-    return (uint64_t)(0x24924925 * a1) / 0x100000000;
-}
-
-// Address range: 0x80484e0 - 0x804859f
+// Address range: 0x8048310 - 0x804839d
 int main(int argc, char ** argv) {
-    int32_t v1 = 0;
-    int32_t v2 = 0;
-    // branch -> 0x80484ff
+    int32_t v1 = 0; // 0x804831f11
+    // branch -> 0x8048344
     while (true) {
-        int64_t v3 = v2;
-        int32_t v4 = test_1(v3); // 0x8048502
-        int32_t v5 = test_2(v3); // 0x8048513
-        int32_t v6 = test_3(v3); // 0x8048524
-        if (v5 != v4 || v6 != v4) {
-            // 0x804853f
-            printf("%u %u %u (diff=%d) %u (diff=%d)\n", v2, v4, v5, v5 - v4, v6, v6 - v4);
-            // branch -> 0x804856b
+        int64_t v2 = v1;
+        int32_t v3 = test_1(v2); // 0x8048345
+        int32_t v4 = test_2(v2); // 0x804834d
+        int32_t v5 = test_3(v2); // 0x8048358
+        if (v4 != v3 || v4 != v5) {
+            // 0x8048366
+            printf("%u %u %u (diff=%d) %u (diff=%d)\n", v1, v3, v4, v4 - v3, v5, v5 - v3);
+            // branch -> 0x8048334
         }
-        // 0x804856b
-        if (v2 < v1) {
-            // break -> 0x804858b
-            break;
+        uint32_t v6 = g1; // 0x8048334
+        if (v6 != 0 && v6 > v1) {
+            // 0x8048390
+            return 0;
         }
-        v1 = v2;
-        v2 += 0xf4240;
-        // continue -> 0x80484ff
+        // 0x804833c
+        v1 += 0xf4240;
+        // branch -> 0x8048344
     }
-    // 0x804858b
-    return 0;
+}
+
+// Address range: 0x8048490 - 0x80484af
+int32_t test_1(int64_t a1) {
+    int32_t v1 = (uint64_t)(0x24924925 * a1) / 0x100000000; // 0x804849b
+    return (((int32_t)a1 - v1) / 2 + v1) / 4;
+}
+
+// Address range: 0x80484b0 - 0x80484cc
+int32_t test_2(int64_t a1) {
+    // 0x80484b0
+    int32_t v1;
+    g1 = v1;
+    int32_t v2 = 0x24924925 * (a1 & 0xffffffff) / 0x100000000; // 0x80484bf
+    return (((int32_t)a1 - v2) / 2 + v2) / 4;
+}
+
+// Address range: 0x80484d0 - 0x80484df
+int32_t test_3(int64_t a1) {
+    // 0x80484d0
+    return (uint64_t)(0x24924925 * a1) / 0x100000000;
 }
 
 // --------------- Dynamically Linked Functions ---------------
