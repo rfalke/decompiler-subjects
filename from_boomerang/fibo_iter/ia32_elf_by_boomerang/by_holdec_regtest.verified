@@ -7,15 +7,15 @@ u4 fib(u4 n)
   reg_result = n;
   if(n > 1) {
     reg_var2 = 1;
-    reg_var1 = 1;
+    reg_var3 = 1;
     if(n > 2) {
-      reg_var3 = n + -2;
+      reg_var1 = n + -2;
       do {
         reg_ah = reg_var2;
-        reg_var2 += reg_var1;
-        reg_aj = reg_var3 + -1;
-        reg_var3--;
-        reg_var1 = reg_ah;
+        reg_var2 += reg_var3;
+        reg_aj = reg_var1 + -1;
+        reg_var1--;
+        reg_var3 = reg_ah;
       } while(reg_aj != 0);
     }
     reg_result = reg_var2;
