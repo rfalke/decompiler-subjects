@@ -1,0 +1,8 @@
+Source: https://github.com/tothi/Bundesnachrichtendienst
+Person: Unknown
+Arch:   ia32
+Format: PE
+Size:   small
+Description:
+        Level 2 from a Software Reversing / Malware Analysis recruitment challenge 
+        for German Federal Intelligence (=Bundesnachrichtendienst aka BND)
