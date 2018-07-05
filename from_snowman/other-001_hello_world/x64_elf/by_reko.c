@@ -26,48 +26,44 @@ void call_gmon_start()
 	word64 rax_4 = globals->qw600868;
 	if (rax_4 != 0x00)
 	{
-		word64 rsp_17;
-		byte SCZO_18;
-		word64 rax_19;
-		byte SZO_20;
-		byte C_21;
-		byte Z_22;
-		word32 eax_23;
-		eax();
+		word64 rsp_15;
+		byte SCZO_16;
+		word64 rax_17;
+		byte SZO_18;
+		byte C_19;
+		byte Z_20;
+		__gmon_start__();
 	}
 }
 
 // 0000000000400450: void __do_global_dtors_aux()
 void __do_global_dtors_aux()
 {
-	if (globals->b6008A8 == 0x00)
-	{
-		uint64 rax_24 = globals->qw6008B0;
-		if (rax_24 < 0x00)
-			globals->qw6008B0 = rax_24 + 0x01;
+	if (globals->b6008A8 != 0x00)
+		return;
+	up64 rax_24 = globals->qw6008B0;
+	if (rax_24 >= 0x00)
 		globals->b6008A8 = 0x01;
-	}
+	else
+		globals->qw6008B0 = rax_24 + 0x01;
 }
 
 // 00000000004004C0: void frame_dummy()
 void frame_dummy()
 {
 	if (globals->qw6006C0 == 0x00 || 0x00 == 0x00)
-		;
-	else
-	{
-		word64 rsp_40;
-		word64 rbp_41;
-		byte SCZO_42;
-		byte Z_43;
-		word32 eax_44;
-		word64 rax_45;
-		byte SZO_46;
-		byte C_47;
-		word32 edi_48;
-		word64 rdi_49;
-		eax();
-	}
+		return;
+	word64 rsp_40;
+	word64 rbp_41;
+	byte SCZO_42;
+	byte Z_43;
+	word32 eax_44;
+	word64 rax_45;
+	byte SZO_46;
+	byte C_47;
+	word32 edi_48;
+	word64 rdi_49;
+	null();
 }
 
 // 00000000004004E4: void main()
@@ -85,17 +81,17 @@ void __libc_csu_fini()
 void __libc_csu_init(word32 edi)
 {
 	_init();
-	if (0x000000000060069C - 0x000000000060069C >> 0x03 != 0x00)
+	if (0x0060069C - 0x0060069C >> 0x03 != 0x00)
 	{
 		do
 		{
 			word64 rsp_60;
-			uint64 rbp_61;
+			up64 rbp_61;
 			word64 r12_62;
 			word64 r13_63;
 			word64 r14_64;
 			word64 r15_65;
-			uint64 rbx_66;
+			up64 rbx_66;
 			byte SCZO_67;
 			word32 r13d_68;
 			word32 edi_69;
@@ -106,7 +102,7 @@ void __libc_csu_init(word32 edi)
 			byte Z_74;
 			word32 ebx_75;
 			word64 rdi_76;
-			(*(union Eq_132 *) 0x0060069C)();
+			(*(<anonymous> **) 0x0060069C)();
 		} while (rbx_66 + 0x01 < rbp_61);
 	}
 }
@@ -114,21 +110,20 @@ void __libc_csu_init(word32 edi)
 // 00000000004005A0: void __do_global_ctors_aux()
 void __do_global_ctors_aux()
 {
-	word64 rax_11 = globals->qw6006A0;
-	if (rax_11 != ~0x00)
+	<anonymous> * rax_11 = globals->ptr6006A0;
+	if (rax_11 != (<anonymous> *) ~0x00)
 	{
 		do
 		{
-			word64 rsp_32;
-			word64 rbp_33;
-			word64 * rbx_34;
-			byte SCZO_35;
-			word64 rax_36;
-			byte Z_37;
-			word32 ebx_38;
-			word32 eax_39;
-			eax();
-		} while (*rbx_34 != ~0x00);
+			word64 rsp_30;
+			word64 rbp_31;
+			word64 * rbx_32;
+			byte SCZO_33;
+			word64 rax_34;
+			byte Z_35;
+			word32 ebx_36;
+			rax_11();
+		} while (*rbx_32 != ~0x00);
 	}
 }
 

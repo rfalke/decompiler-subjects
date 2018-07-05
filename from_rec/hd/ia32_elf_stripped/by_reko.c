@@ -64,8 +64,8 @@ void fn08048620()
 	}
 }
 
-// 08048660: void fn08048660(Stack Eq_90 dwArg04, Stack uint32 dwArg08, Stack Eq_92 dwArg0C)
-void fn08048660(Eq_90 dwArg04, uint32 dwArg08, Eq_92 dwArg0C)
+// 08048660: void fn08048660(Stack Eq_90 dwArg04, Stack up32 dwArg08, Stack Eq_92 dwArg0C)
+void fn08048660(Eq_90 dwArg04, up32 dwArg08, Eq_92 dwArg0C)
 {
 	sprintf(fp - 0x54, "%08lX:", tLoc70);
 	size_t dwLoc58_172 = 0x00;
@@ -107,36 +107,6 @@ void fn08048660(Eq_90 dwArg04, uint32 dwArg08, Eq_92 dwArg0C)
 // 080487F0: Register word32 fn080487F0(Stack (ptr char) dwArg04)
 word32 fn080487F0(char * dwArg04)
 {
-	word32 eax_34;
-	if (fn08048950(dwArg04, fp - 0x5C) == 0x00)
-	{
-		perror(dwArg04);
-		eax_34 = 0x01;
-	}
-	else
-	{
-		FILE * eax_56 = fopen(dwArg04, "rb");
-		if (eax_56 == null)
-		{
-			perror(dwArg04);
-			eax_34 = 0x01;
-		}
-		else
-		{
-			uint32 dwLoc18_123 = 0x00;
-			while (dwLoc48 > dwLoc18_123)
-			{
-				Eq_92 eax_106 = fread(fp - 0x14, 0x01, 0x10, eax_56);
-				if (eax_106 == 0x00)
-					break;
-				fn08048660(fp - 0x14, dwLoc18_123, eax_106);
-				dwLoc18_123 = (word32) eax_106 + dwLoc18_123;
-			}
-			fclose(eax_56);
-			eax_34 = 0x00;
-		}
-	}
-	return eax_34;
 }
 
 // 080488E0: Register word32 fn080488E0(Stack int32 dwArg04, Stack (arr (ptr char)) dwArg08)

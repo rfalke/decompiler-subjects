@@ -6,7 +6,10 @@
 
 <anonymous> g_tFFFFFFFF;
 byte g_a0000[];
-Eq_2900 g_t0001;
+byte g_b0001;
+Eq_2678 g_t002A;
+Eq_2678 g_t002B;
+Eq_2678 g_t002C;
 Eq_36 g_t8049671 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
 Eq_40 g_t804FBE0 = Unexpected function type (fn void ())
@@ -18,8 +21,8 @@ char g_str80502A9[] = "6.10";
 char g_str80502AE[] = "GNU coreutils";
 char g_str80502BC[] = "cat";
 char g_str80502DB[] = "-";
-char g_str8050314[] = "%s (%s) %s\x0A";
-char g_str8050320[] = "%s %s\x0A";
+char g_str8050314[] = "%s (%s) %s\n";
+char g_str8050320[] = "%s %s\n";
 <anonymous> * g_a8050574[] = 
 	{
 	};
@@ -54,10 +57,10 @@ byte g_b80520D1 = 0x30;
 byte * g_ptr80520D4 = &g_b80520CC;
 byte * g_ptr80520D8 = &g_b80520D1;
 byte * g_ptr80520DC = &g_b80520D1;
-FILE * g_ptr80520E0 = &g_t0001;
+FILE * g_ptr80520E0 = &g_b0001;
 Eq_84 g_t80520E4 = 
 	{
-		&g_t0001
+		&g_b0001
 	};
 word32 g_dw80520E8 = 0x00000100;
 Eq_84 g_t80520EC = 
@@ -71,7 +74,7 @@ Eq_84 g_t80520F0 =
 FILE * g_ptr8052104 = null;
 FILE * g_ptr8052120 = null;
 byte g_b8052124 = 0x00;
-uint32 g_dw8052128 = 0x00000000;
+up32 g_dw8052128 = 0x00000000;
 int32 g_dw805212C = 0;
 Eq_84 g_t8052130 = 
 	{
@@ -86,6 +89,6 @@ Eq_84 g_t8052138 =
 		null
 	};
 word32 g_dw8052140 = 0x00000000;
-void g_v8052180 = ;
+void g_v8052180 = ??void??;
 word32 g_dw8052280 = 0x00000000;
 

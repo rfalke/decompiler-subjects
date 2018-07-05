@@ -125,68 +125,65 @@ Eq_2 * fn1676_0186()
 {
 	word16 ax_7 = (seg0800->*seg0800->ptrDB6A).wE055;
 	byte al_10 = (byte) ax_7;
-	if (al_10 != 0x00)
-	{
-		word16 bx_100;
-		if (al_10 == 0x20)
-			bx_100 = 0x0A00;
-		else if (al_10 == 0x30)
-			bx_100 = 0xD0;
-		else if (al_10 == 0x31)
-			bx_100 = 0xD8;
-		else if (al_10 == 0x32)
-			bx_100 = 0xE0;
-		else if (al_10 == 0x33)
-			bx_100 = 232;
-		else if (al_10 == 0x34)
-			bx_100 = 0xF0;
-		else if (al_10 == 0x35)
-			bx_100 = 0xF8;
-		else if (al_10 == 0x36)
-			bx_100 = 0x0100;
-		else if (al_10 == 55)
-			bx_100 = 0x0108;
-		else if (al_10 == 0x38)
-			bx_100 = 0x0110;
-		else if (al_10 == 0x39)
-			bx_100 = 0x0118;
-		else if (al_10 == 0x3F)
-			bx_100 = 288;
-		else if (al_10 == 33)
-			bx_100 = 0x0128;
-		else if (al_10 == 0x2E)
-			bx_100 = 0x0130;
-		else if (al_10 == 44)
-			bx_100 = 0x0138;
-		else
-			bx_100 = (word16) (DPB(ax_7 - 0x41, 0x00, 8) * 0x08);
-		struct Eq_232 Eq_2::* si_43 = seg0800->wDB60 + 0x99C0 + bx_100;
-		struct Eq_238 Eq_36::* di_47 = &Eq_36::tFFFFD97E;
-		byte al_48 = 0x00;
-		si_56 = si_43;
-		while (true)
-		{
-			struct Eq_232 Eq_2::* si_56;
-			byte ah_61 = 0x08;
-			do
-			{
-				(0xA000->*di_47).b0000 = (seg0800->*si_56).b0000;
-				si_56 = si_56 + 0x01;
-				di_47 = di_47 + 0x01;
-				ah_61 = ah_61 - 0x01;
-			} while (ah_61 != 0x00);
-			di_47 = &Eq_36::tFFFFD97F;
-			if (al_48 == 0x01)
-				break;
-			fn1676_0287();
-			si_56 = &si_43->b0000 + 0x01;
-			al_48 = al_48 + 0x01;
-		}
-		fn1676_0287();
-		return seg0800;
-	}
-	else
+	if (al_10 == 0x00)
 		return fn1676_0198(seg0800);
+	word16 bx_100;
+	if (al_10 == 0x20)
+		bx_100 = 0x0A00;
+	else if (al_10 == 0x30)
+		bx_100 = 0xD0;
+	else if (al_10 == 0x31)
+		bx_100 = 0xD8;
+	else if (al_10 == 0x32)
+		bx_100 = 0xE0;
+	else if (al_10 == 0x33)
+		bx_100 = 232;
+	else if (al_10 == 0x34)
+		bx_100 = 0xF0;
+	else if (al_10 == 0x35)
+		bx_100 = 0xF8;
+	else if (al_10 == 0x36)
+		bx_100 = 0x0100;
+	else if (al_10 == 55)
+		bx_100 = 0x0108;
+	else if (al_10 == 0x38)
+		bx_100 = 0x0110;
+	else if (al_10 == 0x39)
+		bx_100 = 0x0118;
+	else if (al_10 == 0x3F)
+		bx_100 = 288;
+	else if (al_10 == 33)
+		bx_100 = 0x0128;
+	else if (al_10 == 0x2E)
+		bx_100 = 0x0130;
+	else if (al_10 == 44)
+		bx_100 = 0x0138;
+	else
+		bx_100 = (word16) (DPB(ax_7 - 0x41, 0x00, 8) * 0x08);
+	struct Eq_232 Eq_2::* si_43 = seg0800->wDB60 + 0x99C0 + bx_100;
+	struct Eq_238 Eq_36::* di_47 = &Eq_36::tFFFFD97E;
+	byte al_48 = 0x00;
+	si_56 = si_43;
+	while (true)
+	{
+		struct Eq_232 Eq_2::* si_56;
+		byte ah_61 = 0x08;
+		do
+		{
+			(0xA000->*di_47).b0000 = (seg0800->*si_56).b0000;
+			si_56 = si_56 + 0x01;
+			di_47 = di_47 + 0x01;
+			ah_61 = ah_61 - 0x01;
+		} while (ah_61 != 0x00);
+		di_47 = &Eq_36::tFFFFD97F;
+		if (al_48 == 0x01)
+			break;
+		fn1676_0287();
+		si_56 = &si_43->b0000 + 0x01;
+		al_48 = al_48 + 0x01;
+	}
+	fn1676_0287();
+	return seg0800;
 }
 
 // 1676:0198: Register (ptr Eq_2) fn1676_0198(Register (ptr Eq_2) ds)
@@ -207,32 +204,6 @@ void fn1676_0287()
 // 1676:029E: void fn1676_029E(Register (ptr Eq_334) ds)
 void fn1676_029E(Eq_334 * ds)
 {
-	while (true)
-	{
-		while (ds->bDB5D != 0x01)
-		{
-			__outb(0x03C8, ~0x01);
-			byte al_18 = ds->bDB5C;
-			__outb(969, al_18);
-			__outb(969, al_18);
-			__outb(969, al_18);
-			if (ds->bDB5C != 0x3F)
-			{
-				ds->bDB5C = ds->bDB5C + 0x01;
-				return;
-			}
-			ds->bDB5D = 0x01;
-		}
-		__outb(0x03C8, ~0x01);
-		byte al_28 = ds->bDB5C;
-		__outb(969, al_28);
-		__outb(969, al_28);
-		__outb(969, al_28);
-		if (ds->bDB5C != 0x0F)
-			break;
-		ds->bDB5D = 0x00;
-	}
-	ds->bDB5C = ds->bDB5C - 0x01;
 }
 
 // 1676:02E7: void fn1676_02E7()
@@ -298,12 +269,9 @@ Eq_498 * fn1676_037C(Eq_498 * ds)
 	{
 		if (ds->bDB7C == 0x00)
 			return fn1676_03BF();
-		else
-		{
-			fn1676_036E(ds);
-			ds->bDB7C = ds->bDB7C - 0x01;
-			return ds;
-		}
+		fn1676_036E(ds);
+		ds->bDB7C = ds->bDB7C - 0x01;
+		return ds;
 	}
 	else if (ds->bDB7C == 0x3F)
 	{

@@ -4,16 +4,13 @@
 
 #include "subject.h"
 
-Eq_28 g_t50BBEB = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_27 g_t50BBEB = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_31 g_t50BCC0 = Unexpected function type (fn void ())
+Eq_30 g_t50BCC0 = Unexpected function type (fn void ())
 ;
-Eq_32 g_t50BD30 = Unexpected function type (fn void ())
+Eq_31 g_t50BD30 = Unexpected function type (fn void ())
 ;
-union Eq_502593 g_u710E08 = 
-	{
-		0x004004D0
-	};
+<anonymous> * g_ptr710E08 = frame_dummy;
 word64 g_qw710E18 = 0x0000000000000000;
 word64 g_qw710FF8 = 0x0000000000000000;
 byte g_b711030 = 0x00;
@@ -5528,64 +5525,64 @@ byte g_b719C3E = 0x00;
 byte g_b719C3F = 0x00;
 word32 g_dw719C40 = 0x00000000;
 word32 g_dw719C44 = 0x00000000;
-union Eq_224271 g_u719C48 = 
+union Eq_224268 g_u719C48 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C4C = 0x00000000;
-union Eq_224293 g_u719C50 = 
+union Eq_224290 g_u719C50 = 
 	{
 		0x0000000000000000
 	};
-union Eq_224305 g_u719C54 = 
+union Eq_224302 g_u719C54 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C58 = 0x00000000;
 word32 g_dw719C5C = 0x00000000;
-union Eq_224342 g_u719C60 = 
+union Eq_224339 g_u719C60 = 
 	{
 		0x0000000000000000
 	};
-union Eq_224354 g_u719C64 = 
+union Eq_224351 g_u719C64 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C68 = 0x00000000;
-union Eq_224380 g_u719C6C = 
+union Eq_224377 g_u719C6C = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C70 = 0x00000000;
 word32 g_dw719C74 = 0x00000000;
-union Eq_224420 g_u719C78 = 
+union Eq_224417 g_u719C78 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C7C = 0x00000000;
 word32 g_dw719C80 = 0x00000000;
-union Eq_224463 g_u719C84 = 
+union Eq_224460 g_u719C84 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C88 = 0x00000000;
-union Eq_224489 g_u719C8C = 
+union Eq_224486 g_u719C8C = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719C90 = 0x00000000;
 word32 g_dw719C94 = 0x00000000;
 word32 g_dw719C98 = 0x00000000;
-union Eq_224541 g_u719C9C = 
+union Eq_224538 g_u719C9C = 
 	{
 		0x0000000000000000
 	};
-union Eq_224555 g_u719CA0 = 
+union Eq_224552 g_u719CA0 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719CA4 = 0x00000000;
-union Eq_224580 g_u719CA8 = 
+union Eq_224577 g_u719CA8 = 
 	{
 		0x0000000000000000
 	};
@@ -5597,14 +5594,14 @@ word32 g_dw719CBC = 0x00000000;
 word32 g_dw719CC0 = 0x00000000;
 word32 g_dw719CC4 = 0x00000000;
 word32 g_dw719CC8 = 0x00000000;
-union Eq_224704 g_u719CCC = 
+union Eq_224701 g_u719CCC = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719CD0 = 0x00000000;
 word32 g_dw719CD4 = 0x00000000;
 word32 g_dw719CD8 = 0x00000000;
-union Eq_224755 g_u719CDC = 
+union Eq_224752 g_u719CDC = 
 	{
 		0x0000000000000000
 	};
@@ -5612,13 +5609,13 @@ word32 g_dw719CE0 = 0x00000000;
 word32 g_dw719CE4 = 0x00000000;
 word32 g_dw719CE8 = 0x00000000;
 word32 g_dw719CEC = 0x00000000;
-union Eq_224820 g_u719CF0 = 
+union Eq_224817 g_u719CF0 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw719CF4 = 0x00000000;
 word32 g_dw719CF8 = 0x00000000;
-union Eq_224857 g_u719CFC = 
+union Eq_224854 g_u719CFC = 
 	{
 		0x0000000000000000
 	};
@@ -5645,7 +5642,7 @@ word32 g_dw719D4C = 0x00000000;
 word32 g_dw719D50 = 0x00000000;
 word32 g_dw719D54 = 0x00000000;
 word32 g_dw719D58 = 0x00000000;
-union Eq_225170 g_u719D5C = 
+union Eq_225167 g_u719D5C = 
 	{
 		0x0000000000000000
 	};
@@ -5656,11 +5653,11 @@ word32 g_dw719D6C = 0x00000000;
 word32 g_dw719D70 = 0x00000000;
 word32 g_dw719D74 = 0x00000000;
 word32 g_dw719D78 = 0x00000000;
-union Eq_225272 g_u719D7C = 
+union Eq_225269 g_u719D7C = 
 	{
 		0x0000000000000000
 	};
-union Eq_225286 g_u719D80 = 
+union Eq_225283 g_u719D80 = 
 	{
 		0x0000000000000000
 	};
@@ -5678,7 +5675,7 @@ word32 g_dw719DAC = 0x00000000;
 word32 g_dw719DB0 = 0x00000000;
 word32 g_dw719DB4 = 0x00000000;
 word32 g_dw719DB8 = 0x00000000;
-union Eq_225473 g_u719DBC = 
+union Eq_225470 g_u719DBC = 
 	{
 		0x0000000000000000
 	};
@@ -5729,7 +5726,7 @@ word32 g_dw719E6C = 0x00000000;
 word32 g_dw719E70 = 0x00000000;
 word32 g_dw719E74 = 0x00000000;
 word32 g_dw719E78 = 0x00000000;
-union Eq_226086 g_u719E7C = 
+union Eq_226083 g_u719E7C = 
 	{
 		0x0000000000000000
 	};
@@ -5748,7 +5745,7 @@ word32 g_dw719EAC = 0x00000000;
 word32 g_dw719EB0 = 0x00000000;
 word32 g_dw719EB4 = 0x00000000;
 word32 g_dw719EB8 = 0x00000000;
-union Eq_226287 g_u719EBC = 
+union Eq_226284 g_u719EBC = 
 	{
 		0x0000000000000000
 	};
@@ -5783,7 +5780,7 @@ word32 g_dw719F2C = 0x00000000;
 word32 g_dw719F30 = 0x00000000;
 word32 g_dw719F34 = 0x00000000;
 word32 g_dw719F38 = 0x00000000;
-union Eq_226688 g_u719F3C = 
+union Eq_226685 g_u719F3C = 
 	{
 		0x0000000000000000
 	};
@@ -5882,7 +5879,7 @@ word32 g_dw71A0AC = 0x00000000;
 word32 g_dw71A0B0 = 0x00000000;
 word32 g_dw71A0B4 = 0x00000000;
 word32 g_dw71A0B8 = 0x00000000;
-union Eq_227901 g_u71A0BC = 
+union Eq_227898 g_u71A0BC = 
 	{
 		0x0000000000000000
 	};
@@ -5917,7 +5914,7 @@ word32 g_dw71A12C = 0x00000000;
 word32 g_dw71A130 = 0x00000000;
 word32 g_dw71A134 = 0x00000000;
 word32 g_dw71A138 = 0x00000000;
-union Eq_228302 g_u71A13C = 
+union Eq_228299 g_u71A13C = 
 	{
 		0x0000000000000000
 	};
@@ -5984,7 +5981,7 @@ word32 g_dw71A22C = 0x00000000;
 word32 g_dw71A230 = 0x00000000;
 word32 g_dw71A234 = 0x00000000;
 word32 g_dw71A238 = 0x00000000;
-union Eq_229103 g_u71A23C = 
+union Eq_229100 g_u71A23C = 
 	{
 		0x0000000000000000
 	};
@@ -6179,7 +6176,7 @@ word32 g_dw71A52C = 0x00000000;
 word32 g_dw71A530 = 0x00000000;
 word32 g_dw71A534 = 0x00000000;
 word32 g_dw71A538 = 0x00000000;
-union Eq_231516 g_u71A53C = 
+union Eq_231513 g_u71A53C = 
 	{
 		0x0000000000000000
 	};
@@ -6246,7 +6243,7 @@ word32 g_dw71A62C = 0x00000000;
 word32 g_dw71A630 = 0x00000000;
 word32 g_dw71A634 = 0x00000000;
 word32 g_dw71A638 = 0x00000000;
-union Eq_232317 g_u71A63C = 
+union Eq_232314 g_u71A63C = 
 	{
 		0x0000000000000000
 	};
@@ -6377,7 +6374,7 @@ word32 g_dw71A82C = 0x00000000;
 word32 g_dw71A830 = 0x00000000;
 word32 g_dw71A834 = 0x00000000;
 word32 g_dw71A838 = 0x00000000;
-union Eq_233918 g_u71A83C = 
+union Eq_233915 g_u71A83C = 
 	{
 		0x0000000000000000
 	};
@@ -8464,101 +8461,101 @@ byte g_b71E45C = 0x00;
 byte g_b71E45D = 0x00;
 byte g_b71E45E = 0x00;
 byte g_b71E45F = 0x00;
-byte g_b71E460 = 0x00;
-byte g_b71E461 = 0x00;
-byte g_b71E462 = 0x00;
-byte g_b71E463 = 0x00;
-byte g_b71E464 = 0x00;
-byte g_b71E465 = 0x00;
+int8 g_b71E460 = 0;
+int8 g_b71E461 = 0;
+int8 g_b71E462 = 0;
+int8 g_b71E463 = 0;
+int8 g_b71E464 = 0;
+int8 g_b71E465 = 0;
 uint8 g_b71E466 = 0x00;
-byte g_b71E467 = 0x00;
-byte g_b71E468 = 0x00;
-byte g_b71E469 = 0x00;
+int8 g_b71E467 = 0;
+int8 g_b71E468 = 0;
+int8 g_b71E469 = 0;
 byte g_b71E46A = 0x00;
-byte g_b71E46B = 0x00;
-byte g_b71E46C = 0x00;
-byte g_b71E46D = 0x00;
-byte g_b71E46E = 0x00;
-byte g_b71E46F = 0x00;
-byte g_b71E470 = 0x00;
-byte g_b71E471 = 0x00;
-byte g_b71E472 = 0x00;
-byte g_b71E473 = 0x00;
-byte g_b71E474 = 0x00;
-byte g_b71E475 = 0x00;
-byte g_b71E476 = 0x00;
+int8 g_b71E46B = 0;
+int8 g_b71E46C = 0;
+int8 g_b71E46D = 0;
+int8 g_b71E46E = 0;
+int8 g_b71E46F = 0;
+int8 g_b71E470 = 0;
+int8 g_b71E471 = 0;
+int8 g_b71E472 = 0;
+int8 g_b71E473 = 0;
+int8 g_b71E474 = 0;
+int8 g_b71E475 = 0;
+int8 g_b71E476 = 0;
 uint8 g_b71E477 = 0x00;
-byte g_b71E478 = 0x00;
-byte g_b71E479 = 0x00;
-byte g_b71E47A = 0x00;
+int8 g_b71E478 = 0;
+int8 g_b71E479 = 0;
+int8 g_b71E47A = 0;
 uint8 g_b71E47B = 0x00;
 uint8 g_b71E47C = 0x00;
 uint8 g_b71E47D = 0x00;
 uint8 g_b71E47E = 0x00;
-int8 g_b71E47F = 0;
-byte g_b71E480 = 0x00;
-byte g_b71E481 = 0x00;
-byte g_b71E482 = 0x00;
-byte g_b71E483 = 0x00;
-byte g_b71E484 = 0x00;
-byte g_b71E485 = 0x00;
-byte g_b71E486 = 0x00;
-byte g_b71E487 = 0x00;
-byte g_b71E488 = 0x00;
-byte g_b71E489 = 0x00;
-byte g_b71E48A = 0x00;
-byte g_b71E48B = 0x00;
-byte g_b71E48C = 0x00;
-byte g_b71E48D = 0x00;
-byte g_b71E48E = 0x00;
-byte g_b71E48F = 0x00;
-byte g_b71E490 = 0x00;
-byte g_b71E491 = 0x00;
-byte g_b71E492 = 0x00;
-byte g_b71E493 = 0x00;
-byte g_b71E494 = 0x00;
+byte g_b71E47F = 0x00;
+int8 g_b71E480 = 0;
+int8 g_b71E481 = 0;
+int8 g_b71E482 = 0;
+int8 g_b71E483 = 0;
+int8 g_b71E484 = 0;
+int8 g_b71E485 = 0;
+int8 g_b71E486 = 0;
+int8 g_b71E487 = 0;
+int8 g_b71E488 = 0;
+int8 g_b71E489 = 0;
+int8 g_b71E48A = 0;
+int8 g_b71E48B = 0;
+int8 g_b71E48C = 0;
+int8 g_b71E48D = 0;
+int8 g_b71E48E = 0;
+int8 g_b71E48F = 0;
+int8 g_b71E490 = 0;
+int8 g_b71E491 = 0;
+int8 g_b71E492 = 0;
+int8 g_b71E493 = 0;
+int8 g_b71E494 = 0;
 byte g_b71E495 = 0x00;
-byte g_b71E496 = 0x00;
-byte g_b71E497 = 0x00;
-byte g_b71E498 = 0x00;
-byte g_b71E499 = 0x00;
-byte g_b71E49A = 0x00;
-byte g_b71E49B = 0x00;
-byte g_b71E49C = 0x00;
-byte g_b71E49D = 0x00;
-byte g_b71E49E = 0x00;
-byte g_b71E49F = 0x00;
-byte g_b71E4A0 = 0x00;
-byte g_b71E4A1 = 0x00;
-byte g_b71E4A2 = 0x00;
-byte g_b71E4A3 = 0x00;
+int8 g_b71E496 = 0;
+int8 g_b71E497 = 0;
+int8 g_b71E498 = 0;
+int8 g_b71E499 = 0;
+int8 g_b71E49A = 0;
+int8 g_b71E49B = 0;
+int8 g_b71E49C = 0;
+int8 g_b71E49D = 0;
+int8 g_b71E49E = 0;
+int8 g_b71E49F = 0;
+int8 g_b71E4A0 = 0;
+int8 g_b71E4A1 = 0;
+int8 g_b71E4A2 = 0;
+int8 g_b71E4A3 = 0;
 uint8 g_b71E4A4 = 0x00;
-byte g_b71E4A5 = 0x00;
-byte g_b71E4A6 = 0x00;
-byte g_b71E4A7 = 0x00;
+int8 g_b71E4A5 = 0;
+int8 g_b71E4A6 = 0;
+int8 g_b71E4A7 = 0;
 uint8 g_b71E4A8 = 0x00;
-byte g_b71E4A9 = 0x00;
-byte g_b71E4AA = 0x00;
-byte g_b71E4AB = 0x00;
+int8 g_b71E4A9 = 0;
+int8 g_b71E4AA = 0;
+int8 g_b71E4AB = 0;
 uint8 g_b71E4AC = 0x00;
-byte g_b71E4AD = 0x00;
-byte g_b71E4AE = 0x00;
+int8 g_b71E4AD = 0;
+int8 g_b71E4AE = 0;
 uint8 g_b71E4AF = 0x00;
-byte g_b71E4B0 = 0x00;
-byte g_b71E4B1 = 0x00;
+int8 g_b71E4B0 = 0;
+int8 g_b71E4B1 = 0;
 uint8 g_b71E4B2 = 0x00;
-byte g_b71E4B3 = 0x00;
+int8 g_b71E4B3 = 0;
 uint8 g_b71E4B4 = 0x00;
-byte g_b71E4B5 = 0x00;
-byte g_b71E4B6 = 0x00;
+int8 g_b71E4B5 = 0;
+int8 g_b71E4B6 = 0;
 uint8 g_b71E4B7 = 0x00;
-byte g_b71E4B8 = 0x00;
+int8 g_b71E4B8 = 0;
 uint8 g_b71E4B9 = 0x00;
-byte g_b71E4BA = 0x00;
+int8 g_b71E4BA = 0;
 uint8 g_b71E4BB = 0x00;
-byte g_b71E4BC = 0x00;
+int8 g_b71E4BC = 0;
 uint8 g_b71E4BD = 0x00;
-byte g_b71E4BE = 0x00;
+int8 g_b71E4BE = 0;
 byte g_b71E4BF = 0x00;
 byte g_b71E4C0 = 0x00;
 byte g_b71E4C1 = 0x00;
@@ -10482,64 +10479,64 @@ word16 g_w71F03C = 0x0000;
 int16 g_w71F03E = 0;
 word32 g_dw71F040 = 0x00000000;
 word32 g_dw71F044 = 0x00000000;
-union Eq_303457 g_u71F048 = 
+union Eq_303454 g_u71F048 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F04C = 0x00000000;
-union Eq_303479 g_u71F050 = 
+union Eq_303476 g_u71F050 = 
 	{
 		0x0000000000000000
 	};
-union Eq_303491 g_u71F054 = 
+union Eq_303488 g_u71F054 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F058 = 0x00000000;
 word32 g_dw71F05C = 0x00000000;
-union Eq_303528 g_u71F060 = 
+union Eq_303525 g_u71F060 = 
 	{
 		0x0000000000000000
 	};
-union Eq_303540 g_u71F064 = 
+union Eq_303537 g_u71F064 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F068 = 0x00000000;
-union Eq_303566 g_u71F06C = 
+union Eq_303563 g_u71F06C = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F070 = 0x00000000;
 word32 g_dw71F074 = 0x00000000;
-union Eq_303606 g_u71F078 = 
+union Eq_303603 g_u71F078 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F07C = 0x00000000;
 word32 g_dw71F080 = 0x00000000;
-union Eq_303649 g_u71F084 = 
+union Eq_303646 g_u71F084 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F088 = 0x00000000;
-union Eq_303675 g_u71F08C = 
+union Eq_303672 g_u71F08C = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F090 = 0x00000000;
 word32 g_dw71F094 = 0x00000000;
 word32 g_dw71F098 = 0x00000000;
-union Eq_303727 g_u71F09C = 
+union Eq_303724 g_u71F09C = 
 	{
 		0x0000000000000000
 	};
-union Eq_303741 g_u71F0A0 = 
+union Eq_303738 g_u71F0A0 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F0A4 = 0x00000000;
-union Eq_303766 g_u71F0A8 = 
+union Eq_303763 g_u71F0A8 = 
 	{
 		0x0000000000000000
 	};
@@ -10551,14 +10548,14 @@ word32 g_dw71F0BC = 0x00000000;
 word32 g_dw71F0C0 = 0x00000000;
 word32 g_dw71F0C4 = 0x00000000;
 word32 g_dw71F0C8 = 0x00000000;
-union Eq_303890 g_u71F0CC = 
+union Eq_303887 g_u71F0CC = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F0D0 = 0x00000000;
 word32 g_dw71F0D4 = 0x00000000;
 word32 g_dw71F0D8 = 0x00000000;
-union Eq_303941 g_u71F0DC = 
+union Eq_303938 g_u71F0DC = 
 	{
 		0x0000000000000000
 	};
@@ -10566,13 +10563,13 @@ word32 g_dw71F0E0 = 0x00000000;
 word32 g_dw71F0E4 = 0x00000000;
 word32 g_dw71F0E8 = 0x00000000;
 word32 g_dw71F0EC = 0x00000000;
-union Eq_304006 g_u71F0F0 = 
+union Eq_304003 g_u71F0F0 = 
 	{
 		0x0000000000000000
 	};
 word32 g_dw71F0F4 = 0x00000000;
 word32 g_dw71F0F8 = 0x00000000;
-union Eq_304043 g_u71F0FC = 
+union Eq_304040 g_u71F0FC = 
 	{
 		0x0000000000000000
 	};
@@ -10599,7 +10596,7 @@ word32 g_dw71F14C = 0x00000000;
 word32 g_dw71F150 = 0x00000000;
 word32 g_dw71F154 = 0x00000000;
 word32 g_dw71F158 = 0x00000000;
-union Eq_304356 g_u71F15C = 
+union Eq_304353 g_u71F15C = 
 	{
 		0x0000000000000000
 	};
@@ -10610,11 +10607,11 @@ word32 g_dw71F16C = 0x00000000;
 word32 g_dw71F170 = 0x00000000;
 word32 g_dw71F174 = 0x00000000;
 word32 g_dw71F178 = 0x00000000;
-union Eq_304458 g_u71F17C = 
+union Eq_304455 g_u71F17C = 
 	{
 		0x0000000000000000
 	};
-union Eq_304472 g_u71F180 = 
+union Eq_304469 g_u71F180 = 
 	{
 		0x0000000000000000
 	};
@@ -10632,7 +10629,7 @@ word32 g_dw71F1AC = 0x00000000;
 word32 g_dw71F1B0 = 0x00000000;
 word32 g_dw71F1B4 = 0x00000000;
 word32 g_dw71F1B8 = 0x00000000;
-union Eq_304659 g_u71F1BC = 
+union Eq_304656 g_u71F1BC = 
 	{
 		0x0000000000000000
 	};
@@ -10683,7 +10680,7 @@ word32 g_dw71F26C = 0x00000000;
 word32 g_dw71F270 = 0x00000000;
 word32 g_dw71F274 = 0x00000000;
 word32 g_dw71F278 = 0x00000000;
-union Eq_305272 g_u71F27C = 
+union Eq_305269 g_u71F27C = 
 	{
 		0x0000000000000000
 	};
@@ -10702,7 +10699,7 @@ word32 g_dw71F2AC = 0x00000000;
 word32 g_dw71F2B0 = 0x00000000;
 word32 g_dw71F2B4 = 0x00000000;
 word32 g_dw71F2B8 = 0x00000000;
-union Eq_305473 g_u71F2BC = 
+union Eq_305470 g_u71F2BC = 
 	{
 		0x0000000000000000
 	};
@@ -10737,7 +10734,7 @@ word32 g_dw71F32C = 0x00000000;
 word32 g_dw71F330 = 0x00000000;
 word32 g_dw71F334 = 0x00000000;
 word32 g_dw71F338 = 0x00000000;
-union Eq_305874 g_u71F33C = 
+union Eq_305871 g_u71F33C = 
 	{
 		0x0000000000000000
 	};
@@ -10836,7 +10833,7 @@ word32 g_dw71F4AC = 0x00000000;
 word32 g_dw71F4B0 = 0x00000000;
 word32 g_dw71F4B4 = 0x00000000;
 word32 g_dw71F4B8 = 0x00000000;
-union Eq_307087 g_u71F4BC = 
+union Eq_307084 g_u71F4BC = 
 	{
 		0x0000000000000000
 	};
@@ -10871,7 +10868,7 @@ word32 g_dw71F52C = 0x00000000;
 word32 g_dw71F530 = 0x00000000;
 word32 g_dw71F534 = 0x00000000;
 word32 g_dw71F538 = 0x00000000;
-union Eq_307488 g_u71F53C = 
+union Eq_307485 g_u71F53C = 
 	{
 		0x0000000000000000
 	};
@@ -10938,7 +10935,7 @@ word32 g_dw71F62C = 0x00000000;
 word32 g_dw71F630 = 0x00000000;
 word32 g_dw71F634 = 0x00000000;
 word32 g_dw71F638 = 0x00000000;
-union Eq_308289 g_u71F63C = 
+union Eq_308286 g_u71F63C = 
 	{
 		0x0000000000000000
 	};
@@ -11133,7 +11130,7 @@ word32 g_dw71F92C = 0x00000000;
 word32 g_dw71F930 = 0x00000000;
 word32 g_dw71F934 = 0x00000000;
 word32 g_dw71F938 = 0x00000000;
-union Eq_310702 g_u71F93C = 
+union Eq_310699 g_u71F93C = 
 	{
 		0x0000000000000000
 	};
@@ -11200,7 +11197,7 @@ word32 g_dw71FA2C = 0x00000000;
 word32 g_dw71FA30 = 0x00000000;
 word32 g_dw71FA34 = 0x00000000;
 word32 g_dw71FA38 = 0x00000000;
-union Eq_311503 g_u71FA3C = 
+union Eq_311500 g_u71FA3C = 
 	{
 		0x0000000000000000
 	};
@@ -11331,7 +11328,7 @@ word32 g_dw71FC2C = 0x00000000;
 word32 g_dw71FC30 = 0x00000000;
 word32 g_dw71FC34 = 0x00000000;
 word32 g_dw71FC38 = 0x00000000;
-union Eq_313104 g_u71FC3C = 
+union Eq_313101 g_u71FC3C = 
 	{
 		0x0000000000000000
 	};

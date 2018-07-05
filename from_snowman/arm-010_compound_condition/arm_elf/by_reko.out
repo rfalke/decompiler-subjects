@@ -1,16 +1,11 @@
 Using options:
-0000829C: error: capstone.dll
-00008258: error: capstone.dll
-000082D8: error: capstone.dll
-0000838C: error: capstone.dll
-0000854C: error: capstone.dll
-00008548: error: capstone.dll
-000084E8: error: capstone.dll
-000084CC: error: capstone.dll
-00008404: error: capstone.dll
-000083E4: error: capstone.dll
-000083C4: error: capstone.dll
-00008364: error: capstone.dll
-0000832C: error: capstone.dll
-000082FC: error: capstone.dll
-0000829C: error: capstone.dll
+error: An error occurred during decompilation. System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.DllNotFoundException: ArmNative
+  at (wrapper managed-to-native) Reko.Arch.Arm.Arm32Architecture:CreateNativeArchitecture (string)
+  at Reko.Arch.Arm.Arm32Architecture..ctor (System.String archId) <0x41579000 + 0x0019f> in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) <0x414225e0 + 0x0003f> in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) <0x414225e0 + 0x00087> in <filename unknown>:0 
+  at System.Reflection.MonoCMethod.DoInvoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) <0x414a3930 + 0x000d3> in <filename unknown>:0 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) <0x414a38e0 + 0x00037> in <filename unknown>:0 
+  at System.RuntimeType.CreateInstanceImpl (BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes, System.Threading.StackCrawlMark& stackMark) <0x4147a5f0 + 0x006a2> in <filename unknown>:0 

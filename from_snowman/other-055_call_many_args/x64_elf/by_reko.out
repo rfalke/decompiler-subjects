@@ -1,9 +1,11 @@
 Using options:
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.LoadImportReferencesFromRelaPlt () <0x410110a0 + 0x00090> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate (Reko.Core.Program program) <0x41010c90 + 0x00063> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x4100f440 + 0x00044> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x4100f3f0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x40fee700 + 0x0034b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x40fed460 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40fed100 + 0x000dc> in <filename unknown>:0 
+error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at Reko.Core.Dfa.Automaton+<GetMatches>d__5.MoveNext () <0x403e1010 + 0x0008e> in <filename unknown>:0 
+  at System.Collections.Generic.List`1[T]..ctor (IEnumerable`1 collection) <0x403e0b60 + 0x0027a> in <filename unknown>:0 
+  at System.Linq.Enumerable.ToList[TSource] (IEnumerable`1 source) <0x403e0ae0 + 0x00037> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.FindMainFunction (Reko.Core.Program program, Reko.Core.Address addrEntry) <0x403d7890 + 0x00103> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x403d4df0 + 0x000f7> in <filename unknown>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x403d4da0 + 0x0002f> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x403b3680 + 0x0034b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x403b23e0 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x403b2080 + 0x000dc> in <filename unknown>:0 

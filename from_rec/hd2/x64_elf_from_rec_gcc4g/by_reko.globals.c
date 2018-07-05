@@ -4,6 +4,7 @@
 
 #include "subject.h"
 
+<anonymous> g_tFFFFFFFF;
 Eq_22 g_t400A34 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
 Eq_26 g_t400A80 = Unexpected function type (fn void ())
@@ -13,12 +14,12 @@ Eq_25 g_t400A90 = Unexpected function type (fn void ())
 char g_str400B7C[] = "%08lX:";
 char g_str400B83[] = " %02lX";
 char g_str400B8A[] = "   ";
-void g_v400B8E = ;
-void g_v400B92 = ;
+void g_v400B8E = ??void??;
+void g_v400B92 = ??void??;
 char g_str400B94[] = "rb";
-word64 g_qw600CB0 = 0xFFFFFFFFFFFFFFFF;
+<anonymous> * g_ptr600CB0 = &g_tFFFFFFFF;
 word64 g_qw600CD0 = 0x0000000000000000;
 word64 g_qw600E78 = 0x0000000000000000;
 byte g_b600F00 = 0x00;
-uint64 g_qw600F08 = 0x0000000000000000;
+up64 g_qw600F08 = 0x0000000000000000;
 

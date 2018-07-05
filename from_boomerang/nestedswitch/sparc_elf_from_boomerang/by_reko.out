@@ -1,1 +1,4 @@
 Using options:
+00010614: warning: Unable to resolve imported reference __register_frame_info.
+0001064C: warning: Unable to resolve imported reference _Jv_RegisterClasses.
+000105B0: warning: Unable to resolve imported reference __deregister_frame_info.

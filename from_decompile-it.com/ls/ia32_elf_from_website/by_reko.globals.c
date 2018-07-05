@@ -11,9 +11,12 @@ Eq_10323 g_t0003;
 Eq_10323 g_t0005;
 Eq_10323 g_t0006;
 Eq_10323 g_t0007;
-Eq_17292 g_t0008;
+Eq_17306 g_t0008;
 Eq_10323 g_t0009;
 Eq_2182 g_t0024;
+Eq_18966 g_t002A;
+Eq_18966 g_t002B;
+Eq_18966 g_t002C;
 <anonymous> g_t8049A9C = <code>;
 Eq_36 g_t804A04A = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
@@ -55,20 +58,20 @@ char g_str805F967[] = "sort_type != sort_version";
 	};
 char g_str805F998[] = "%*lu ";
 char g_str805F9A4[] = "%*s ";
-char g_str8061508[] = "%s (%s) %s\x0A";
-char g_str8061514[] = "%s %s\x0A";
+char g_str8061508[] = "%s (%s) %s\n";
+char g_str8061514[] = "%s %s\n";
 <anonymous> * g_a8061768[] = 
 	{
 	};
 char g_str80617A0[] = "Copyright %s %d Free Software Foundation, Inc.";
-char g_str8061830[] = "\x0A  - `%s'";
+char g_str8061830[] = "\n  - `%s'";
 char g_str806183A[] = ", `%s'";
 real32 g_r8061868 = 0.8F;
 byte g_b8061870 = 0x00;
-char g_str8061874[] = "# entries:         %lu\x0A";
-char g_str806188C[] = "# buckets:         %lu\x0A";
-char g_str80618A4[] = "# buckets used:    %lu (%.2f%%)\x0A";
-char g_str80618C5[] = "max bucket length: %lu\x0A";
+char g_str8061874[] = "# entries:         %lu\n";
+char g_str806188C[] = "# buckets:         %lu\n";
+char g_str80618A4[] = "# buckets used:    %lu (%.2f%%)\n";
+char g_str80618C5[] = "max bucket length: %lu\n";
 real32 g_r80618E8 = 4.294967e+09F;
 Eq_2182 g_t806191C = 
 	{
@@ -130,16 +133,16 @@ byte g_b80641CA = 0x01;
 byte g_b80641CB = 0x01;
 Eq_83 g_t80641D0 = 
 	{
-		true
+		'\x01'
 	};
 Eq_83 g_t80641D4 = 
 	{
-		false
+		'\x00'
 	};
-Eq_27944 g_a80641E0[] = 
+Eq_27984 g_a80641E0[] = 
 	{
 	};
-Eq_27945 g_a80641E4[] = 
+Eq_27985 g_a80641E4[] = 
 	{
 	};
 word32 g_dw80641E8 = 0x00000001;
@@ -149,17 +152,17 @@ word32 g_dw80641F8 = 0x00000001;
 word32 g_dw8064210 = 0x00000005;
 Eq_83 g_t8064214 = 
 	{
-		true
+		'A'
 	};
 word32 g_dw806423C = 0x00000000;
 word32 g_dw8064244 = 0x00000000;
 Eq_83 g_t8064280 = 
 	{
-		true
+		'z'
 	};
 Eq_83 g_t8064284 = 
 	{
-		true
+		'\x84'
 	};
 byte g_b8064288 = 0x01;
 <anonymous> * g_a80642A0[] = 
@@ -173,62 +176,62 @@ word32 g_dw80643C8 = 0x00000001;
 word32 g_dw80643CC = 0x08051A20;
 Eq_83 g_t80643D0 = 
 	{
-		true
+		'\x01'
 	};
 Eq_83 g_t80643D4 = 
 	{
-		true
+		'\x01'
 	};
 word32 g_dw80643D8 = 0x00000100;
 Eq_83 g_t80643DC = 
 	{
-		true
+		'`'
 	};
 Eq_83 g_t80643E0 = 
 	{
-		true
+		'Ø'
 	};
 word32 g_dw8064400 = 0x00000000;
 Eq_83 g_t8064404 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064420 = 
 	{
-		false
+		'\x00'
 	};
 byte g_b8064428 = 0x00;
-uint32 g_dw806442C = 0x00000000;
+up32 g_dw806442C = 0x00000000;
 struct Eq_3623 * g_ptr8064440 = null;
 Eq_83 g_t8064444 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064448 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t806444C = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064450 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064454 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064458 = 
 	{
-		false
+		'\x00'
 	};
 uint32 g_dw806445C = 0x00000000;
 byte g_b8064460 = 0x00;
 Eq_83 g_t8064464 = 
 	{
-		false
+		'\x00'
 	};
 byte g_b8064468 = 0x00;
 bool g_f8064469 = false;
@@ -255,58 +258,58 @@ int32 g_dw8064488 = 0;
 int32 g_dw806448C = 0;
 int32 g_dw8064490 = 0;
 uint32 g_dw8064494 = 0x00000000;
-uint32 g_dw8064498 = 0x00000000;
-ui32 g_dw806449C = 0x00000000;
+up32 g_dw8064498 = 0x00000000;
+word32 g_dw806449C = 0x00000000;
 byte g_b80644A0 = 0x00;
 byte g_b80644A1 = 0x00;
 byte g_b80644A2 = 0x00;
 byte g_b80644A3 = 0x00;
 Eq_83 g_t80644A4 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t80644A8 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t80644AC = 
 	{
-		false
+		'\x00'
 	};
 byte g_b80644B0 = 0x00;
-uint32 g_dw80644B4 = 0x00000000;
+up32 g_dw80644B4 = 0x00000000;
 byte g_b80644B8 = 0x00;
 Eq_83 g_t80644BC = 
 	{
-		false
+		'\x00'
 	};
 byte g_b80644C0 = 0x00;
 byte g_b80644C1 = 0x00;
-uint32 g_dw80644C4 = 0x00000000;
+up32 g_dw80644C4 = 0x00000000;
 byte g_b80644C8 = 0x00;
 byte g_b80644C9 = 0x00;
 byte g_b80644CA = 0x00;
 word32 g_dw80644CC = 0x00000000;
 Eq_83 g_t80644D0 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t80644D4 = 
 	{
-		false
+		'\x00'
 	};
 byte g_b80644D8 = 0x00;
 Eq_83 g_t80644DC = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t80644E0 = 
 	{
-		false
+		'\x00'
 	};
 uint32 g_dw80644E4 = 0x00000000;
 byte g_b80644E8 = 0x00;
-uint32 g_dw80644EC = 0x00000000;
+up32 g_dw80644EC = 0x00000000;
 byte g_b80644F0 = 0x00;
 byte g_b80644F1 = 0x00;
 int32 g_dw8064580 = 0;
@@ -314,38 +317,38 @@ ui32 g_dw8064584 = 0x00000000;
 word32 g_dw8064588 = 0x00000000;
 Eq_83 g_t806458C = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064590 = 
 	{
-		false
+		'\x00'
 	};
 Eq_1512 g_t8064594 = 0x00000000;
-uint32 g_dw8064628 = 0x00000000;
+up32 g_dw8064628 = 0x00000000;
 Eq_83 g_t806462C = 
 	{
-		false
+		'\x00'
 	};
 word32 g_dw8064630 = 0x00000000;
 Eq_83 g_t80646FC = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064700 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064704 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t8064708 = 
 	{
-		false
+		'\x00'
 	};
 Eq_83 g_t806470C = 
 	{
-		false
+		'\x00'
 	};
 word32 g_dw8064720 = 0x00000000;
 word32 g_dw8064868 = 0x00000000;

@@ -138,429 +138,1248 @@ Using options:
 08049084: warning: Unable to resolve imported reference !__ctype_b_loc.
 main: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 check_divide_by_zero: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 g_of_f: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 quad_solve: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 solve_sub: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 process_parse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 display_fraction: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 divide_cmd: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 sum_product: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 simp_constant_power: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 rationalize: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 elim_sign: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 simp_pp: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 compare_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 elim_k: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 const_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 integer_root_simp: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 ftimes_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 fplus_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 patch_root_div: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 sub_ufactor: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 smart_div: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 is_integer_expr: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 find_greatest_power: error: An error occurred during data flow analysis.
     Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x40382b30 + 0x00056> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037cbe0 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x41d89140 + 0x00044> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d83150 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 poly_div: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 pdiv_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 taylor_cmd: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 integrate_sub: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 integrate_cmd: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 complex_root_simp: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 roots_cmd: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 int_expr: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 list_code: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 flist_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 list_string_sub: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 gcd: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 gcd_verified: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 f_to_fraction: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 make_fractions: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 fc_recurse: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 try_factor: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 factor_one: error: An error occurred during data flow analysis.
     Case PE not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40383570 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40382f60 + 0x001eb> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40382e60 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4032d100 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x4037e130 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4037e100 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40382360 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4036e880 + 0x004a3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x41d89be0 + 0x002e7> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x41d895c0 + 0x00283> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x41d894c0 + 0x00097> in <filename unknown>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x41d33770 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) <0x41d84770 + 0x0002f> in <filename unknown>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41d84740 + 0x00020> in <filename unknown>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x41d889c0 + 0x00205> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x41d75000 + 0x004f3> in <filename unknown>:0 
 : error: Error when reconstructing types.
     Specified argument was out of the range of valid values.
 Parameter name: Linear address 00000000 is not in known segment.
-      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x4038d970 + 0x0017f> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x403b0e60 + 0x0002f> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x403a9480 + 0x002d5> in <filename unknown>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x403a21f0 + 0x00597> in <filename unknown>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () <0x403a1b80 + 0x0022f> in <filename unknown>:0 
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x41d941a0 + 0x0017f> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x41db6e70 + 0x0002f> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x41daf640 + 0x002d5> in <filename unknown>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x41da8410 + 0x00597> in <filename unknown>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () <0x41da7da0 + 0x0022f> in <filename unknown>:0 
+main: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+next_sign: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+no_vars: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+exp_is_numeric: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+exp_contains_nan: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+exp_contains_infinity: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+strcmp_tospace: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+skip_space: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+skip_param: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+get_string: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+get_yes_no: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+get_expr: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+alloc_next_espace: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+prompt_var: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+get_range: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+g_of_f: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuplquad_solve: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+solve_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+process_parse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+process: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+read_examples: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+help_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+my_strlcpy: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+remove_trailing_spaces: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+binary_parenthesize: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+parse_var: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+parse_section: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+fraction_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+unfactor_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+factor_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+copy_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+replace_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+approximate_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+e`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 typvariables_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+code_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+list_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+clear_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+divide_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+find_more: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+complex_func: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+set_options: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+push_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+opt_es: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+solve_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+plot_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+edit_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+display_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+eliminate_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simplify_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+calculate_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+e:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b7org_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+div_imaginary: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simp2_power: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simp_constant_power: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+rationalize: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+order_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+elim_sign: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simp_pp: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+compare_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+elim_k: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+const_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+integer_root_simp: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+factorv: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simp_ssub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simpb_side: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+simpa_side: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+fpower_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+7a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral,ftimes_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+fplus_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+sf_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+group_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+patch_root_div: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+unsimp_power: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+sub_ufactor: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+uf_times: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+get_term: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+term_value: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+poly_in_v: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+smart_div: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+is_integer_expr: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+remove_factors: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+find_greatest_power: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+find_highest_count: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+poly_div: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+ PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0do_gcd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+pdiv_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+mod_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+polydiv_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+pf_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+pf_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+d_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+taylor_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+extrema_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+derivative_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+nintegrate_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+make_powers: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+int_dispatch: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+laplace_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+inv_laplace_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+integrate_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+integrate_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorliget_constant: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+parse_complex: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+complex_root_simp: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+roots_cmd: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+trim_zeros: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+int_expr: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+list_var: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+list_code: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+flist_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+list_string_sub: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+list_equation: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+flist_equation: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+make_fractions: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+fc_recurse: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+try_factor: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+factor_int: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41dc00d0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41db8ca0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41db77e0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41db7300 + 0x00255> in <filename unknown>:0 
+b, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

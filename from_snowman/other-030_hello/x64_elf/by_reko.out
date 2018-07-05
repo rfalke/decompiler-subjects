@@ -6,7 +6,7 @@ Using options:
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
 0000000000402C10: warning: Unable to resolve imported reference msvcrt.dll!vfprintf.
 0000000000401A0F: warning: Unable to resolve imported reference KERNEL32.dll!RtlAddFunctionTable.
-00000000004023B9: warning: Procedure fn0000000000402390 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004023BA: warning: Procedure fn0000000000402390 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402BB0: warning: Unable to guess parameters of msvcrt.dll!_initterm.
 0000000000402BD0: warning: Unable to guess parameters of msvcrt.dll!_lock.
 0000000000402BD8: warning: Unable to guess parameters of msvcrt.dll!__dllonexit.
@@ -16,9 +16,10 @@ Using options:
 0000000000402BA0: warning: Unable to guess parameters of msvcrt.dll!_cexit.
 0000000000401408: warning: Procedure fn0000000000401180 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000402B80: warning: Unable to guess parameters of msvcrt.dll!__set_app_type.
+0000000000402BF0: warning: Unable to guess parameters of msvcrt.dll!__setusermatherr.
 0000000000402B80: warning: Unable to guess parameters of msvcrt.dll!__set_app_type.
 000000000040286D: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
-0000000000402720: warning: Procedure fn0000000000402710 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040272A: warning: Procedure fn0000000000402710 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
 0000000000402C00: warning: Unable to resolve imported reference msvcrt.dll!fprintf.
 0000000000402BE8: warning: Unable to resolve imported reference msvcrt.dll!signal.
@@ -36,16 +37,66 @@ Using options:
 00000000004015C0: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSt8ios_base4InitC1Ev.
 00000000004015B8: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSt8ios_base4InitD1Ev.
 0000000000402B78: warning: Unable to guess parameters of msvcrt.dll!__getmainargs.
-00000000004021A0: error: An error occurred while processing the statement Mem827[r13 - 0x0000000000000030 + 0x0000000000000000:word64] = (r8_703 | -65536) - rdx_524 + r9_534.
-    Pulling difference ui64 and (ptr (struct 000C (0 word16 w0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x40327c10 + 0x002f7> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x4030e550 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4028d700 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x4030e550 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4028d700 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x40323760 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x402c2360 + 0x0002a> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40322500 + 0x00289> in <filename unknown>:0 
+fn0000000000401180: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000401920: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000401DF0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000401F60: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn00000000004022A0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn00000000004022F0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000402400: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000402500: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn0000000000402590: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
+fn00000000004029F0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x4127fd40 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x412783d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x412775d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x412770f0 + 0x00255> in <filename unknown>:0 
 00400006: warning: Expected sizes of arrays to have been determined by now
 00400090: warning: Expected sizes of arrays to have been determined by now
 00404164: warning: Expected sizes of arrays to have been determined by now
@@ -54,3 +105,13 @@ Using options:
 00400090: warning: Expected sizes of arrays to have been determined by now
 00404164: warning: Expected sizes of arrays to have been determined by now
 00407244: warning: Expected sizes of arrays to have been determined by now
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

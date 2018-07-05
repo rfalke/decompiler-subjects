@@ -12,7 +12,7 @@ Eq_29 g_t80484D0 = Unexpected function type (fn void ())
 ;
 Eq_30 g_t8048540 = Unexpected function type (fn void ())
 ;
-char g_str80485F8[] = "%i\x0A";
+char g_str80485F8[] = "%i\n";
 <anonymous> * g_ptr8049600 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804960C = null;
 word32 g_dw8049610 = 0x00000000;

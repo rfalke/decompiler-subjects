@@ -4,14 +4,15 @@
 
 #include "subject.h"
 
-Eq_23 g_t804840B = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_29 g_t804840B = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_26 g_t8048480 = Unexpected function type (fn void ())
+Eq_32 g_t8048480 = Unexpected function type (fn void ())
 ;
-Eq_27 g_t80484E0 = Unexpected function type (fn void ())
+Eq_33 g_t80484E0 = Unexpected function type (fn void ())
 ;
 char g_str8048504[] = "Should be expressed as argv!=null && (argc==2 || argc==42)";
 char g_str804853F[] = "Also if order is different";
 word32 g_dw8049F10 = 0x00000000;
+<anonymous> * g_ptr8049FFC = null;
 byte g_b804A018 = 0x00;
 

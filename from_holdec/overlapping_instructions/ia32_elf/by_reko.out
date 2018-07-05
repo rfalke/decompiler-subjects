@@ -1,7 +1,3 @@
 Using options:
-08048314: error: Value cannot be null.
-Parameter name: key
-0804832D: error: Value cannot be null.
-Parameter name: key
 0804845B: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08048475: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08048476: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

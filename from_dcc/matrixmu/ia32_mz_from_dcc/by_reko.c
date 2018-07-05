@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 0800:01FA: void multMatrix(Register (ptr Eq_3) ds, Stack (memptr (ptr Eq_3) uint16) wArg02, Stack Eq_5 wArg04, Stack Eq_6 wArg06)
-void multMatrix(Eq_3 * ds, uint16 Eq_3::*wArg02, Eq_5 wArg04, Eq_6 wArg06)
+// 0800:01FA: void multMatrix(Register (ptr Eq_3) ds, Stack Eq_4 wArg02, Stack Eq_5 wArg04, Stack Eq_6 wArg06)
+void multMatrix(Eq_3 * ds, Eq_4 wArg02, Eq_5 wArg04, Eq_6 wArg06)
 {
 	Eq_7 si_13 = 0x00;
 	while (si_13 < 0x05)

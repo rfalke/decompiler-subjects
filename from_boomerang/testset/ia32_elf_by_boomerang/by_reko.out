@@ -1,9 +1,9 @@
 Using options:
 080483FC: error: An error occurred while processing the statement call Mem0[0x08049690 + 0x080495B0:word32] (retsize: 4; depth: 32)	uses: C_25,dwLoc04_4,dwLoc08_8,dwLoc0C_11,dwLoc10_14,ebp_5,ebx_17,ecx_20,edi_43,edx_23,esi_22,esp_15,None,SCZO_24,SZO	defs: C_54,ebp_46,ebx_49,ecx_52,edi_47,edx_51,esi_48,esp_45,None_55,SCZO_50,SZO_53.
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x40ea54f0 + 0x000e4> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x40ea54a0 + 0x00033> in <filename unknown>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x40ea5450 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitCallInstruction (Reko.Core.Code.CallInstruction call) <0x40ea6950 + 0x0010c> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept (InstructionVisitor v) <0x40e4ada0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x40ea1ad0 + 0x00289> in <filename unknown>:0 
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x411f42c0 + 0x000e4> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x411f4270 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411f4220 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitCallInstruction (Reko.Core.Code.CallInstruction call) <0x411f5720 + 0x0010c> in <filename unknown>:0 
+  at Reko.Core.Code.CallInstruction.Accept (InstructionVisitor v) <0x41199ab0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x411f0990 + 0x00289> in <filename unknown>:0 

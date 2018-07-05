@@ -55,7 +55,7 @@ Eq_39 g_t80564E0 = Unexpected function type (fn void ())
 word32 g_dw8057644 = 0x00000000;
 word32 g_dw8057718 = 0x00000000;
 byte g_b805772C = 0x00;
-uint32 g_dw8057730 = 0x00000000;
+up32 g_dw8057730 = 0x00000000;
 struct Eq_83 * g_ptr496E81C3;
 word16 g_w496E81CF;
 struct Eq_83 * g_ptr496E81E5;

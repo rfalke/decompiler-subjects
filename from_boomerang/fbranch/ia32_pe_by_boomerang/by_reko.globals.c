@@ -193,7 +193,7 @@ Eq_4 g_t40BA60 =
 	{
 		0x00
 	};
-word32 g_dw40BA64 = 0x00000000;
+ui32 g_dw40BA64 = 0x00000000;
 uint32 g_dw40BA68 = 0x00000000;
 word32 g_dw40BA6C = 0x00000000;
 word32 g_dw40BA70 = 0x00000000;

@@ -100,7 +100,7 @@ byte g_b80D2B39 = 0x10;
 byte g_b80D2B3E = 0x10;
 byte g_b80D2B43 = 0x80;
 byte g_b80D2B48 = 0x00;
-uint32 g_dw80D2B4C = 0x00000000;
+up32 g_dw80D2B4C = 0x00000000;
 Eq_95 g_t1E3F6CB2;
 Eq_95 g_a2F37A4A5[];
 Eq_95 g_t313EC0E8;

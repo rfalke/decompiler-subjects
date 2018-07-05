@@ -1,8 +1,38 @@
 Using options:
-080482D4: error: Value cannot be null.
-Parameter name: key
-080482ED: error: Value cannot be null.
-Parameter name: key
 0804842B: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08048445: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-test_6_blocks: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+08048446: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+test_2_blocks: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40ad2420 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40acab60 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40ac96f0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40ac9210 + 0x00255> in <filename unknown>:0 
+test_3_blocks: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40ad2420 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40acab60 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40ac96f0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40ac9210 + 0x00255> in <filename unknown>:0 
+test_4_blocks: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40ad2420 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40acab60 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40ac96f0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40ac9210 + 0x00255> in <filename unknown>:0 
+test_5_blocks: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40ad2420 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40acab60 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40ac96f0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40ac9210 + 0x00255> in <filename unknown>:0 
+test_6_blocks: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x40ad2420 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x40acab60 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x40ac96f0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x40ac9210 + 0x00255> in <filename unknown>:0 
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

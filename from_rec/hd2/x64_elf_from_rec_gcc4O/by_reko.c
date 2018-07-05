@@ -26,235 +26,54 @@ void call_gmon_start()
 	word64 rax_4 = globals->qw600D58;
 	if (rax_4 != 0x00)
 	{
-		word64 rsp_17;
-		byte SCZO_18;
-		word64 rax_19;
-		byte SZO_20;
-		byte C_21;
-		byte Z_22;
-		word32 eax_23;
-		eax();
+		word64 rsp_15;
+		byte SCZO_16;
+		word64 rax_17;
+		byte SZO_18;
+		byte C_19;
+		byte Z_20;
+		__gmon_start__();
 	}
 }
 
 // 0000000000400620: void __do_global_dtors_aux()
 void __do_global_dtors_aux()
 {
-	if (globals->b600DC8 == 0x00)
-	{
-		uint64 rax_24 = globals->qw600DD0;
-		if (rax_24 < 0x00)
-			globals->qw600DD0 = rax_24 + 0x01;
+	if (globals->b600DC8 != 0x00)
+		return;
+	up64 rax_24 = globals->qw600DD0;
+	if (rax_24 >= 0x00)
 		globals->b600DC8 = 0x01;
-	}
+	else
+		globals->qw600DD0 = rax_24 + 0x01;
 }
 
 // 0000000000400690: void frame_dummy()
 void frame_dummy()
 {
 	if (globals->qw600BB0 == 0x00 || 0x00 == 0x00)
-		;
-	else
-	{
-		word64 rsp_40;
-		word64 rbp_41;
-		byte SCZO_42;
-		byte Z_43;
-		word32 eax_44;
-		word64 rax_45;
-		byte SZO_46;
-		byte C_47;
-		word32 edi_48;
-		word64 rdi_49;
-		eax();
-	}
+		return;
+	word64 rsp_40;
+	word64 rbp_41;
+	byte SCZO_42;
+	byte Z_43;
+	word32 eax_44;
+	word64 rax_45;
+	byte SZO_46;
+	byte C_47;
+	word32 edi_48;
+	word64 rdi_49;
+	null();
 }
 
 // 00000000004006C0: void dumpline(Register word32 edx, Register (ptr byte) rdi)
 void dumpline(word32 edx, byte * rdi)
 {
-	sprintf(fp - 0x88, "%08lX:", tLoc90);
-	word32 r15d_23 = (word32) rdi;
-	int32 ebx_26 = (word32) (uint64) edx;
-	uint64 r12_101 = 0x10;
-	int32 r12d_107 = 0x10;
-	if (ebx_26 <= 0x10)
-	{
-		r12d_107 = ebx_26;
-		r12_101 = DPB(0x10, ebx_26, 0);
-	}
-	uint64 rbp_100;
-	word32 ebx_130;
-	int64 rax_129;
-	word32 ebp_119;
-	Eq_124 rdx_127 = 0x01;
-	Eq_126 edx_179 = 0x01;
-	if (r12d_107 > 0x00)
-	{
-		word32 r14d_268 = (word32) rdi;
-		byte * rbx_269 = rdi;
-		word32 ebp_272 = 0x00;
-		do
-		{
-			sprintf(fp - 0x7F + (int64) ebp_272, " %02lX", tLoc90);
-			rbx_269 = rbx_269 + 0x01;
-			ebp_272 = (word32) (uint64) (ebp_272 + 0x03);
-		} while (r12d_107 > (word32) ((uint64) ((word32) ((uint64) ((word32) rbx_269)) - r14d_268)));
-		if (r12d_107 > 0x0F)
-		{
-			byte * rdi_296 = fp - 0x88;
-			word64 rcx_300 = ~0x00;
-			while (rcx_300 != 0x00)
-			{
-				rdi_296 = rdi_334 + 0x01;
-				rcx_300 = rcx_300 - 0x01;
-				byte * rdi_334 = rdi_296;
-				if (0x00 != *rdi_334)
-					break;
-			}
-			ebx_130 = (word32) (~rcx_300 - 0x01);
-			rax_129 = (int64) ebx_130;
-			Mem320[fp - 0x88 + rax_129:word32] = 0x007C2020;
-			rbp_100 = (uint64) ((word32) (uint64) ebx_130 + 0x03);
-			ebp_119 = (word32) rbp_100;
-l00000000004007AF:
-			byte * rdi_136 = rdi + 0x01 + DPB(rax_129, r12_101 - 0x01, 0);
-			byte * rax_137 = rdi;
-			uint64 rbx_143 = (uint64) ((word32) (uint64) (ebx_130 - r15d_23) + 0x03);
-			do
-			{
-				word32 edx_153 = (word32) *rax_137;
-				rdx_127 = DPB(rdx_127, edx_153, 0);
-				Eq_272 dl_155 = (byte) edx_153;
-				if ((byte) (rdx_127 - 0x20) >= 0x5F)
-				{
-					rdx_127 = DPB(rdx_127, esi, 0);
-					dl_155 = (byte) esi;
-				}
-				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) (rax_137 + rbx_143)].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = dl_155;
-				rax_137 = rax_137 + 0x01;
-			} while (rax_137 != rdi_136);
-			if (r12d_107 > 0x0F)
-			{
-l0000000000400801:
-				Mem65[fp - 0x88 + ((int64) r12d_107 + (int64) ebp_119):word16] = 0x7C;
-				puts(fp - 0x88);
-				return;
-			}
-l00000000004007A9:
-			Eq_246 eax_104 = r12_101 + rbp_100;
-			do
-			{
-				Mem110[fp - 0x88 + (int64) eax_104:byte] = 0x20;
-				r12d_107 = (word32) (uint64) (r12d_107 + 0x01);
-				eax_104 = (word32) (uint64) ((word32) eax_104 + 0x01);
-			} while (r12d_107 <= 0x0F);
-			goto l0000000000400801;
-		}
-		edx_179 = r12_101 + 0x01;
-	}
-	do
-	{
-		word64 rcx_201 = ~0x00;
-		byte * rdi_204 = fp - 0x88;
-		while (rcx_201 != 0x00)
-		{
-			rdi_204 = rdi_332 + 0x01;
-			rcx_201 = rcx_201 - 0x01;
-			byte * rdi_332 = rdi_204;
-			if (0x00 != *rdi_332)
-				break;
-		}
-		fp - 0x89 + ~rcx_201 = (word32 *) 0x00202020;
-		rdx_127 = (uint64) ((word64) edx_179 + 0x01);
-		edx_179 = (word32) rdx_127;
-	} while (rdx_127 <= 0x10);
-	byte * rdi_223 = fp - 0x88;
-	word64 rcx_227 = ~0x00;
-	while (rcx_227 != 0x00)
-	{
-		rdi_223 = rdi_333 + 0x01;
-		rcx_227 = rcx_227 - 0x01;
-		byte * rdi_333 = rdi_223;
-		if (0x00 != *rdi_333)
-			break;
-	}
-	ebx_130 = (word32) (~rcx_227 - 0x01);
-	rax_129 = (int64) ebx_130;
-	Mem248[fp - 0x88 + rax_129:word32] = 0x007C2020;
-	rbp_100 = (uint64) ((word32) (uint64) ebx_130 + 0x03);
-	ebp_119 = (word32) rbp_100;
-	if (r12d_107 <= 0x00)
-	{
-		r12_101 = 0x00;
-		r12d_107 = 0x00;
-		goto l00000000004007A9;
-	}
-	goto l00000000004007AF;
 }
 
-// 0000000000400853: Register word32 hexdump(Register word32 eax, Register word64 rdi, Register out Eq_328 r12dOut)
-word32 hexdump(word32 eax, word64 rdi, Eq_328 & r12dOut)
+// 0000000000400853: Register word32 hexdump(Register word32 eax, Register word64 rdi, Register out Eq_327 r12dOut)
+word32 hexdump(word32 eax, word64 rdi, Eq_327 & r12dOut)
 {
-	word32 eax_104;
-	word64 rsp_22;
-	word64 r13_23;
-	word64 r12_24;
-	word64 rbp_25;
-	char * rbx_26;
-	byte SCZO_27;
-	word64 rdi_28;
-	word64 rdx_29;
-	word64 rsi_30;
-	word32 edi_31;
-	word32 eax_32;
-	byte SZO_33;
-	byte C_34;
-	byte Z_35;
-	word64 rax_36;
-	word32 esi_37;
-	word32 ebp_38;
-	word64 rcx_39;
-	word32 edx_40;
-	word32 ebx_41;
-	byte CZ_42;
-	word32 r12d_43;
-	__xstat();
-	if (eax_32 != 0x00)
-	{
-		perror(rbx_26);
-		eax_104 = 0x01;
-	}
-	else
-	{
-		FILE * rax_77 = fopen(rbx_26, "rb");
-		if (rax_77 != null)
-		{
-			Eq_376 rbp_109 = 0x00;
-			if (qwLoc98 != 0x00)
-			{
-				do
-				{
-					Eq_381 eax_115 = fread(fp - 0x38, 0x01, 0x10, rax_77);
-					word32 ebx_118 = (word32) (uint64) eax_115;
-					if (eax_115 == 0x00)
-						break;
-					dumpline((word32) (uint64) eax_115, fp - 0x38);
-					rbp_109 = (word64) rbp_109 + (int64) ebx_118;
-				} while (qwLoc98 > rbp_109);
-			}
-			fclose(rax_77);
-			eax_104 = 0x00;
-		}
-		else
-		{
-			perror(rbx_26);
-			eax_104 = 0x01;
-		}
-	}
-	word32 r12d_67;
-	*r12dOut = (word32) r12;
-	return eax_104;
 }
 
 // 0000000000400912: void main(Register word32 eax, Register word64 rsi, Register int32 edi)
@@ -284,17 +103,17 @@ void __libc_csu_fini()
 void __libc_csu_init(word32 edi)
 {
 	_init();
-	if (0x0000000000600B8C - 0x0000000000600B8C >> 0x03 != 0x00)
+	if (0x00600B8C - 0x00600B8C >> 0x03 != 0x00)
 	{
 		do
 		{
 			word64 rsp_60;
-			uint64 rbp_61;
+			up64 rbp_61;
 			word64 r12_62;
 			word64 r13_63;
 			word64 r14_64;
 			word64 r15_65;
-			uint64 rbx_66;
+			up64 rbx_66;
 			byte SCZO_67;
 			word32 r13d_68;
 			word32 edi_69;
@@ -305,7 +124,7 @@ void __libc_csu_init(word32 edi)
 			byte Z_74;
 			word32 ebx_75;
 			word64 rdi_76;
-			(*(union Eq_472 *) 0x00600B8C)();
+			(*(<anonymous> **) 0x00600B8C)();
 		} while (rbx_66 + 0x01 < rbp_61);
 	}
 }
@@ -313,21 +132,20 @@ void __libc_csu_init(word32 edi)
 // 0000000000400A00: void __do_global_ctors_aux()
 void __do_global_ctors_aux()
 {
-	word64 rax_11 = globals->qw600B90;
-	if (rax_11 != ~0x00)
+	<anonymous> * rax_11 = globals->ptr600B90;
+	if (rax_11 != (<anonymous> *) ~0x00)
 	{
 		do
 		{
-			word64 rsp_32;
-			word64 rbp_33;
-			word64 * rbx_34;
-			byte SCZO_35;
-			word64 rax_36;
-			byte Z_37;
-			word32 ebx_38;
-			word32 eax_39;
-			eax();
-		} while (*rbx_34 != ~0x00);
+			word64 rsp_30;
+			word64 rbp_31;
+			word64 * rbx_32;
+			byte SCZO_33;
+			word64 rax_34;
+			byte Z_35;
+			word32 ebx_36;
+			rax_11();
+		} while (*rbx_32 != ~0x00);
 	}
 }
 

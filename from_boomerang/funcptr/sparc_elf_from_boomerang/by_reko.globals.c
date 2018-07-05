@@ -7,5 +7,7 @@
 <anonymous> g_tFFFFFFFF;
 <anonymous> g_t106A0 = <code>;
 <anonymous> g_t106C0 = <code>;
+Eq_2 g_t107AC = Unexpected function type (fn void ())
+;
 ptr32 g_ptr20984 = 0x00000000;
 

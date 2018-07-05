@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_28 g_t400990 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_27 g_t400990 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_31 g_t400A20 = Unexpected function type (fn void ())
+Eq_30 g_t400A20 = Unexpected function type (fn void ())
 ;
-Eq_32 g_t400A90 = Unexpected function type (fn void ())
+Eq_31 g_t400A90 = Unexpected function type (fn void ())
 ;
 real64 g_r400AB0 = 12.345;
 real64 g_r400AB8 = 10.0;
@@ -17,12 +17,9 @@ real64 g_r400AC8 = 3.0;
 real64 g_r400AD0 = 2.0;
 char g_str400AD8[] = "%f";
 char g_str400ADB[] = "%d";
-char g_str400ADE[] = "%zu %zu %zu %zu %zu\x0A";
-char g_str400AE6[] = "%zu %zu %zu\x0A";
-union Eq_506 g_u601E08 = 
-	{
-		0x004004D0
-	};
+char g_str400ADE[] = "%zu %zu %zu %zu %zu\n";
+char g_str400AE6[] = "%zu %zu %zu\n";
+<anonymous> * g_ptr601E08 = frame_dummy;
 word64 g_qw601E18 = 0x0000000000000000;
 word64 g_qw601FF8 = 0x0000000000000000;
 byte g_b602030 = 0x01;

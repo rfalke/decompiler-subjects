@@ -48,40 +48,82 @@ Using options:
 000000014000100F: warning: Procedure fn000000014000100F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400023D0: error: An error occurred while processing the statement byte al_104 = (byte) (word32) Mem0[rcx_102 + 0x0000000140006CB8:byte].
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x411baed0 + 0x000e4> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x411bae80 + 0x00033> in <filename unknown>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bae30 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x411bcdc0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bcd70 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x411bcdc0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bcd70 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x411b96d0 + 0x00098> in <filename unknown>:0 
-  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x411ad5f0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x411b70b0 + 0x00289> in <filename unknown>:0 
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x408c9000 + 0x000e4> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x408c8b50 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408c8b00 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x408cadf0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408cada0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x408cadf0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408cada0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x408c7330 + 0x00098> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x408bb170 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x408c4d10 + 0x00289> in <filename unknown>:0 
 0000000140002730: error: An error occurred while processing the statement byte al_82 = (byte) (word32) Mem0[rcx_74 + 0x0000000140006CF0:byte].
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x411baed0 + 0x000e4> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x411bae80 + 0x00033> in <filename unknown>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bae30 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x411bcdc0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bcd70 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x411bcdc0 + 0x00057> in <filename unknown>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x411bcd70 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x411b96d0 + 0x00098> in <filename unknown>:0 
-  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x411ad5f0 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x411b70b0 + 0x00289> in <filename unknown>:0 
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x408c9000 + 0x000e4> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x408c8b50 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408c8b00 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x408cadf0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408cada0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) <0x408cadf0 + 0x00057> in <filename unknown>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x408cada0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x408c7330 + 0x00098> in <filename unknown>:0 
+  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x408bb170 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x408c4d10 + 0x00289> in <filename unknown>:0 
 000000014000320B: error: An error occurred while processing the statement return fn00000001400017A0(rax_5 ^ fp - 360, out r9d_30).
     Pulling difference ptr64 and (union (int32 u0) (ui64 u1))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x411a8db0 + 0x001ef> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x411a8520 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41120ee0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x411a8520 + 0x00065> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x41120ee0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x411a76e0 + 0x00064> in <filename unknown>:0 
-  at Reko.Core.Expressions.Application.Accept[T] (ExpressionVisitor`1 v) <0x411332c0 + 0x00033> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) <0x411b8260 + 0x00042> in <filename unknown>:0 
-  at Reko.Core.Code.ReturnInstruction.Accept (InstructionVisitor v) <0x41155830 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x411b70b0 + 0x00289> in <filename unknown>:0 
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x408b8c50 + 0x001ef> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x408b8310 + 0x000eb> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4082e710 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x408b8310 + 0x00065> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4082e710 + 0x00030> in <filename unknown>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) <0x408b73c0 + 0x00064> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (ExpressionVisitor`1 v) <0x40842cb0 + 0x00033> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) <0x408c5ec0 + 0x00042> in <filename unknown>:0 
+  at Reko.Core.Code.ReturnInstruction.Accept (InstructionVisitor v) <0x40864ad0 + 0x00027> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x408c4d10 + 0x00289> in <filename unknown>:0 
+fn00000001400012E0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
 fn00000001400017DB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn00000001400018BC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn0000000140001914: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140001B70: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
+fn0000000140002390: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
+fn00000001400026ED: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
+fn0000000140002C90: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
+fn0000000140002DF0: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x408c8ba0 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x408df5d0 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x408de7d0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x408de2f0 + 0x00255> in <filename unknown>:0 
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

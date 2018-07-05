@@ -12,13 +12,13 @@ ui32 g_a8048EA0[] =
 	};
 Eq_2 g_t8049440 = Unexpected function type (fn void ())
 ;
-char g_str8049458[] = "Two!\x0A";
-char g_str804945E[] = "Three!\x0A";
-char g_str8049466[] = "Four!\x0A";
-char g_str804946D[] = "Five!\x0A";
-char g_str8049474[] = "Six!\x0A";
-char g_str804947A[] = "Seven!\x0A";
-char g_str8049482[] = "Other!\x0A";
+char g_str8049458[] = "Two!\n";
+char g_str804945E[] = "Three!\n";
+char g_str8049466[] = "Four!\n";
+char g_str804946D[] = "Five!\n";
+char g_str8049474[] = "Six!\n";
+char g_str804947A[] = "Seven!\n";
+char g_str8049482[] = "Other!\n";
 byte g_b804948A = 0x00;
 byte g_b804948B = 0x65;
 struct Eq_48 g_t804A490 = 

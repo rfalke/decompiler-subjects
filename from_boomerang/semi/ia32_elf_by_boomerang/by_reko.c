@@ -87,29 +87,6 @@ void frame_dummy()
 // 08048328: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	__align(fp - 0x0C);
-	if (dwArg04 > 0x02)
-	{
-		do
-		{
-			if (dwArg04 > 0x02 || dwArg04 <= 0x03)
-			{
-				printf("9");
-				goto l0804836E;
-			}
-			if (dwArg04 > 0x04)
-			{
-l0804836E:
-				printf("5");
-			}
-		} while (dwArg04 <= 0x05);
-	}
-	else
-	{
-		do
-			;
-		while (dwArg04 != 11 && dwArg04 <= 11);
-	}
 }
 
 // 080483F0: void __libc_csu_init()
@@ -135,7 +112,7 @@ void __libc_csu_fini()
 			byte SZO_39;
 			byte C_40;
 			byte Z_41;
-			bcuiposr0 None_42;
+			bcuisposr0 None_42;
 			word32 edx_43;
 			((<anonymous> **) 0x080494A0)();
 		} while (ebx_36 != 0x00);

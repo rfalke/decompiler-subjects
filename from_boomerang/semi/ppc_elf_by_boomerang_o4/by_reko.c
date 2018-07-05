@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10010944();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000324: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t100109B8)))
+	if (Test(NE,cond(globals->t100109B8)))
+		return fp;
+	word32 * r11_34 = globals->ptr10010940;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr10010940;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr10010940 = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t100109B8.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr10010940 = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 1000039C: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -76,41 +77,9 @@ void call_frame_dummy(word32 dwArg04)
 {
 }
 
-// 10000418: void main(Register word32 r3, Register byte cr1, Stack word32 dwArg04)
-void main(word32 r3, byte cr1, word32 dwArg04)
+// 10000418: void main(Register word32 r3, Register byte cr1, Register word32 cr, Stack word32 dwArg04)
+void main(word32 r3, byte cr1, word32 cr, word32 dwArg04)
 {
-	byte cr2_5 = cond(r3 - 0x02);
-	byte cr7_12 = cond(r3 - 0x0B);
-	if (Test(GT,cr2_5))
-	{
-		byte cr3_25 = cond(r3 - 0x05);
-		byte cr4_26 = cond(r3 - 0x03);
-		word32 r31_27 = cr;
-		do
-		{
-			if (Test(LE,cr2_5) && Test(GT,cr4_26))
-			{
-				word32 r31_35 = __ror(r31_27, 0x04);
-				__mtcrf(0x40, r31_35);
-				r31_27 = __rol(r31_35, 0x04);
-				if (Test(GT,cr1))
-					goto l10000464;
-			}
-			else
-			{
-				putchar();
-l10000464:
-				putchar();
-			}
-		} while (Test(LE,cr3_25));
-	}
-	else
-	{
-		do
-			;
-		while (Test(NE,cr7_12) && Test(LE,cr7_12));
-	}
-	__mtcrf(0x38, cr);
 }
 
 // 100004B0: void __libc_csu_fini(Stack word32 dwArg04)
@@ -869,8 +838,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw10010850 - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 100007FC: void call___do_global_ctors_aux(Stack word32 dwArg04)

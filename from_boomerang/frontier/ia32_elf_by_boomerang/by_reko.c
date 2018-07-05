@@ -87,40 +87,6 @@ void frame_dummy()
 // 080482F4: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	__align(fp - 0x0C);
-	if (dwArg04 != 0x05)
-	{
-		if (dwArg04 <= 0x05)
-		{
-			if (dwArg04 == 0x02)
-			{
-				do
-					;
-				while (dwArg04 > 0x00);
-l08048347:
-			}
-		}
-		else if (dwArg04 == 0x09)
-		{
-l080483B2:
-		}
-	}
-	else
-	{
-		do
-		{
-			int32 v8_55 = dwArg04 - 0x01;
-			dwArg04 = v8_55;
-			if (dwArg04 > 0x01)
-			{
-				dwArg04 = v8_55 - 0x01;
-				if (v8_55 > 0x02)
-					goto l08048347;
-			}
-			else if (v8_55 == 0x0C)
-				goto l080483B2;
-		} while (dwArg04 > 0x00);
-	}
 }
 
 // 080483C8: void __libc_csu_init()
@@ -146,7 +112,7 @@ void __libc_csu_fini()
 			byte SZO_39;
 			byte C_40;
 			byte Z_41;
-			bcuiposr0 None_42;
+			bcuisposr0 None_42;
 			word32 edx_43;
 			((<anonymous> **) 0x08049474)();
 		} while (ebx_36 != 0x00);

@@ -11,10 +11,10 @@ Eq_25 g_t804840C = Unexpected function type (fn void ())
 ;
 Eq_26 g_t804845C = Unexpected function type (fn void ())
 ;
-char g_str80484B0[] = "Result for 4, 5, 6: %d\x0A";
-char g_str80484C8[] = "Result for 6, 5, 4: %d\x0A";
-char g_str80484E0[] = "Result for 4, 6, 5: %d\x0A";
-char g_str80484F8[] = "Result for 6, 4, 5: %d\x0A";
+char g_str80484B0[] = "Result for 4, 5, 6: %d\n";
+char g_str80484C8[] = "Result for 6, 5, 4: %d\n";
+char g_str80484E0[] = "Result for 4, 6, 5: %d\n";
+char g_str80484F8[] = "Result for 6, 4, 5: %d\n";
 <anonymous> * g_ptr8049514 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049520 = null;
 word32 g_dw8049524 = 0x00000000;

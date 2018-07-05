@@ -7,11 +7,18 @@
 // 080482A8: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw41D4B == 0x00)
-		;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw41D4B != 0x00)
+		fn08048300();
 }
 
-// 08048310: void _start(Register (ptr Eq_12) edx, Stack int32 dwArg00)
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	globals->ptr8089FFC();
+}
+
+// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);

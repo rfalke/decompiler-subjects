@@ -122,26 +122,25 @@ void main()
 void __libc_csu_init()
 {
 	_init();
-	word32 eax_21 = 0x0804988C - 0x0804988C;
-	if (eax_21 >> 0x02 != 0x00)
+	int32 eax_21 = 0x0804988C - 0x0804988C;
+	if (eax_21 >> 0x02 == 0x00)
+		return;
+	do
 	{
-		do
-		{
-			word32 esp_56;
-			word32 ebp_57;
-			uint32 edi_58;
-			word32 esi_59;
-			word32 ebx_60;
-			byte SCZO_61;
-			word32 eax_62;
-			word32 edx_63;
-			byte Z_64;
-			byte SZO_65;
-			byte C_66;
-			bcuiposr0 None_67;
-			(*(<anonymous> **) 0x0804988C)();
-		} while (edi_58 + 0x01 < eax_21 >> 0x02);
-	}
+		word32 esp_56;
+		word32 ebp_57;
+		up32 edi_58;
+		word32 esi_59;
+		word32 ebx_60;
+		byte SCZO_61;
+		word32 eax_62;
+		word32 edx_63;
+		byte Z_64;
+		byte SZO_65;
+		byte C_66;
+		bcuisposr0 None_67;
+		(*(<anonymous> **) 0x0804988C)();
+	} while (edi_58 + 0x01 < eax_21 >> 0x02);
 }
 
 // 08048648: void __libc_csu_fini()

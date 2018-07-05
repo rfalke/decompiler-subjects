@@ -7,8 +7,15 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (Mem0[__x86.get_pc_thunk.bx(dwLoc10) + 0x1D47:word32] == 0x00)
-		;
+	if (Mem0[__x86.get_pc_thunk.bx(dwLoc10) + 0x1D47:word32] != 0x00)
+		fn08048300();
+}
+
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	Mem0[0x08049FFC:word32]();
 }
 
 // 08048310: void main(Stack word32 dwArg00)

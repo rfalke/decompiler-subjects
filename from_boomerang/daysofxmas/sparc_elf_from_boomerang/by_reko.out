@@ -1,1 +1,5 @@
 Using options:
+0001064C: warning: Unable to resolve imported reference __register_frame_info.
+00010684: warning: Unable to resolve imported reference _Jv_RegisterClasses.
+00010848: warning: Unable to resolve imported reference __flsbuf.
+000105E0: warning: Unable to resolve imported reference __deregister_frame_info.

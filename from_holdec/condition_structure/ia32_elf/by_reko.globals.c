@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_23 g_t8084F62 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_29 g_t8084F62 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_26 g_t80880A0 = Unexpected function type (fn void ())
+Eq_32 g_t80880A0 = Unexpected function type (fn void ())
 ;
-Eq_27 g_t8088100 = Unexpected function type (fn void ())
+Eq_33 g_t8088100 = Unexpected function type (fn void ())
 ;
 char g_str8088124[] = "return block";
 char g_str8088167[] = "then/else block 3";
@@ -18,6 +18,7 @@ char g_str808819D[] = "then/else block 6";
 char g_str80881AF[] = "then/else block 7";
 char g_str80881C1[] = "then/else block 8";
 word32 g_dw8089F10 = 0x00000000;
+<anonymous> * g_ptr8089FFC = null;
 byte g_b808A020 = 0x00;
 ui32 g_a808A03C[] = 
 	{

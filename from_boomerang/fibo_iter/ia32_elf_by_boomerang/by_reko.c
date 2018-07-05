@@ -139,7 +139,7 @@ void __libc_csu_fini()
 			byte SZO_39;
 			byte C_40;
 			byte Z_41;
-			bcuiposr0 None_42;
+			bcuisposr0 None_42;
 			word32 edx_43;
 			((<anonymous> **) 0x080494A4)();
 		} while (ebx_36 != 0x00);

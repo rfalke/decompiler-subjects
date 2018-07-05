@@ -1,11 +1,11 @@
 Using options:
 error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at Reko.Core.ImageReader.ReadByte () <0x40c46ce0 + 0x00019> in <filename unknown>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadUtf8String (UInt32 rva, Int32 maxLength) <0x41b0e530 + 0x000e3> in <filename unknown>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadImportDescriptor (Reko.Core.EndianImageReader rdr, Reko.Core.Address addrLoad) <0x41b0e080 + 0x0006f> in <filename unknown>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadImportDescriptors (Reko.Core.Address addrLoad) <0x41b0e000 + 0x00057> in <filename unknown>:0 
-  at Reko.ImageLoaders.MzExe.PeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41ade090 + 0x00283> in <filename unknown>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41ade050 + 0x0002a> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x40c44700 + 0x0034b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x40c43460 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40c43100 + 0x000dc> in <filename unknown>:0 
+  at Reko.Core.ImageReader.ReadByte () <0x41512c60 + 0x00019> in <filename unknown>:0 
+  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadUtf8String (UInt32 rva, Int32 maxLength) <0x415515a0 + 0x000e3> in <filename unknown>:0 
+  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadImportDescriptor (Reko.Core.EndianImageReader rdr, Reko.Core.Address addrLoad) <0x415510f0 + 0x0006f> in <filename unknown>:0 
+  at Reko.ImageLoaders.MzExe.PeImageLoader.ReadImportDescriptors (Reko.Core.Address addrLoad) <0x41551070 + 0x00057> in <filename unknown>:0 
+  at Reko.ImageLoaders.MzExe.PeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41537a90 + 0x00283> in <filename unknown>:0 
+  at Reko.ImageLoaders.MzExe.ExeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41537a50 + 0x0002a> in <filename unknown>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41510680 + 0x0034b> in <filename unknown>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x4150f3e0 + 0x001c4> in <filename unknown>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x4150f080 + 0x000dc> in <filename unknown>:0 

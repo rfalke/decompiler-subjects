@@ -12,7 +12,7 @@ Eq_27 g_t80483CC = Unexpected function type (fn void ())
 ;
 Eq_28 g_t8048420 = Unexpected function type (fn void ())
 ;
-char g_str80484AC[] = "Sum is %d\x0A";
+char g_str80484AC[] = "Sum is %d\n";
 <anonymous> * g_ptr80494BC = &g_tFFFFFFFF;
 <anonymous> * g_ptr80494C8 = null;
 word32 g_dw80494CC = 0x00000000;

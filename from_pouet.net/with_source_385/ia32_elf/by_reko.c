@@ -115,8 +115,9 @@ void XPrint(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10, char
 	byte SCZO_64;
 	word32 eax_65;
 	word32 edx_66;
-	word16 ax_67;
-	byte ah_68;
+	real64 rLoc1_67;
+	word16 ax_68;
+	byte ah_69;
 	!XDrawString();
 }
 
@@ -248,11 +249,14 @@ real64 main(real64 rArg0)
 	word32 ebp_35;
 	byte SCZO_36;
 	word32 eax_37;
-	byte FPUF_38;
+	real64 rLoc1_38;
+	real64 rLoc2_39;
+	real64 rArg0_40;
+	byte FPUF_41;
 	!sin();
-	real64 rArg0_45 = rArg0 * globals->r8048E48 + globals->r8048E50;
-	real64 rArg0_54 = (real64) globals->r8048E5C - (real64) globals->r804A588 / (real64) globals->r8048E58;
-	XPrint((word32) rArg0_54, SLICE(rArg0_54, word32, 32), (word32) rArg0_45, SLICE(rArg0_45, word32, 32), &globals->b8049020);
+	real64 rArg0_47 = rArg0_40 * globals->r8048E48 + globals->r8048E50;
+	real64 rArg0_56 = (real64) globals->r8048E5C - (real64) globals->r804A588 / (real64) globals->r8048E58;
+	XPrint((word32) rArg0_56, SLICE(rArg0_56, word32, 32), (word32) rArg0_47, SLICE(rArg0_47, word32, 32), &globals->b8049020);
 	globals->r804A588 = (real32) ((real64) globals->r804A588 + globals->r8048E60);
 	globals->r804A584 = (real32) ((real64) globals->r804A584 + 1.0);
 }

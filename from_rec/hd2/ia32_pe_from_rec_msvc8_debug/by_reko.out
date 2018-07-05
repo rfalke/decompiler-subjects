@@ -12,11 +12,32 @@ Using options:
 0041179A: warning: Unable to resolve imported reference MSVCR90D.dll!fclose.
 00411447: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
 0041149A: warning: Unable to resolve imported reference MSVCR90D.dll!sprintf.
-004110AA: error: Specified cast is not valid.
-004110BE: error: Specified cast is not valid.
-004110C8: error: Specified cast is not valid.
 004115BE: warning: Unable to resolve imported reference MSVCR90D.dll!printf.
 00411F3E: warning: Unable to guess parameters of MSVCR90D.dll!_cexit.
+fn004110E1: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41754000 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41749f00 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41749100 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41748c20 + 0x00255> in <filename unknown>:0 
+fn00411163: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41754000 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41749f00 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41749100 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41748c20 + 0x00255> in <filename unknown>:0 
+fn00411190: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41754000 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41749f00 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41749100 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41748c20 + 0x00255> in <filename unknown>:0 
+fn00411D70: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x41754000 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x41749f00 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x41749100 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x41748c20 + 0x00255> in <filename unknown>:0 
 00415B64: warning: Expected sizes of arrays to have been determined by now
 00415B7C: warning: Expected sizes of arrays to have been determined by now
 00415B94: warning: Expected sizes of arrays to have been determined by now
@@ -25,3 +46,7 @@ Using options:
 00415B7C: warning: Expected sizes of arrays to have been determined by now
 00415B94: warning: Expected sizes of arrays to have been determined by now
 00417008: warning: Expected sizes of arrays to have been determined by now
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

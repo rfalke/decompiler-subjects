@@ -5,5 +5,10 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
+uint32 g_a10A7C[] = 
+	{
+	};
+Eq_2 g_t1162C = Unexpected function type (fn void ())
+;
 ptr32 g_ptr2199C = 0x00000000;
 

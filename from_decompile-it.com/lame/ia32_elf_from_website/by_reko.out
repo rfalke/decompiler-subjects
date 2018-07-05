@@ -251,223 +251,69 @@ Using options:
 0804A45C: warning: Unable to resolve imported reference !lame_init_bitstream.
 0804A3CC: warning: Unable to resolve imported reference !lame_set_nogap_total.
 0804A4FC: warning: Unable to resolve imported reference !lame_set_nogap_currentindex.
+08054531: error: An error occurred while processing the statement brhist_disp_line(gs_105, dwLoc10_125, (fp - 0x0000008C)[dwLoc10_125 * 0x00000004], Mem28[(dwLoc10_125 << 0x00000004) + (fp - 0x0000000C) - 0x000001A8 + 0x00000000:word32], dwLoc1C_106, dwLoc18_108).
+    Not handling (ptr (struct (0 T_16116 t0000))) and (union (ui32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x420c0f70 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x420bc2d0 + 0x001b3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x420bc220 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x420bab90 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x420bab40 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x420baaf0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitApplication (Reko.Core.Expressions.Application appl, Reko.Core.Types.TypeVariable tv) <0x420bd1e0 + 0x000ef> in <filename unknown>:0 
+  at Reko.Core.Expressions.Application.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x420bd190 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitSideEffect (Reko.Core.Code.SideEffect side) <0x420bd0d0 + 0x0007c> in <filename unknown>:0 
+  at Reko.Core.Code.SideEffect.Accept (InstructionVisitor v) <0x42057180 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x420b9420 + 0x00289> in <filename unknown>:0 
+lame_encoder: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+fskip: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+parse_wave_header: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+parse_aiff_header: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+lame_decode_initfile: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+lame_decode_fromfile: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+parse_args: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
+calculate_index: error: An error occurred while rewriting procedure to high-level language.
+    Failure has occurred while loading a type.
+      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x420dce90 + 0x00073> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Execute () <0x420d5e40 + 0x00443> in <filename unknown>:0 
+  at Reko.Structure.StructureAnalysis.Structure () <0x420d49c0 + 0x00137> in <filename unknown>:0 
+  at Reko.DecompilerDriver.StructureProgram () <0x420d44e0 + 0x00255> in <filename unknown>:0 
 08054A58: warning: Expected sizes of arrays to have been determined by now
-0805508B: error: Failed to write global variable g_v805508B.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055090: error: Failed to write global variable g_v8055090.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055099: error: Failed to write global variable g_v8055099.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805540A: error: Failed to write global variable g_v805540A.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 080554E0: warning: Expected sizes of arrays to have been determined by now
-080555B0: error: Failed to write global variable g_v80555B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080556B0: error: Failed to write global variable g_v80556B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055760: error: Failed to write global variable g_v8055760.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055800: error: Failed to write global variable g_v8055800.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080559E8: error: Failed to write global variable g_v80559E8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055A58: error: Failed to write global variable g_v8055A58.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055E80: error: Failed to write global variable g_v8055E80.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055FC4: error: Failed to write global variable g_v8055FC4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056020: error: Failed to write global variable g_v8056020.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080562C4: error: Failed to write global variable g_v80562C4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056470: error: Failed to write global variable g_v8056470.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080567A0: error: Failed to write global variable g_v80567A0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805690C: error: Failed to write global variable g_v805690C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080569F0: error: Failed to write global variable g_v80569F0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056B7C: error: Failed to write global variable g_v8056B7C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056CB0: error: Failed to write global variable g_v8056CB0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056EE0: error: Failed to write global variable g_v8056EE0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057051: error: Failed to write global variable g_v8057051.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057064: error: Failed to write global variable g_v8057064.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057234: error: Failed to write global variable g_v8057234.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805726C: error: Failed to write global variable g_v805726C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080572C8: error: Failed to write global variable g_v80572C8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080575A0: error: Failed to write global variable g_v80575A0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080575F4: error: Failed to write global variable g_v80575F4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805796C: error: Failed to write global variable g_v805796C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057B4C: error: Failed to write global variable g_v8057B4C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057C8C: error: Failed to write global variable g_v8057C8C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057D4C: error: Failed to write global variable g_v8057D4C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057D88: error: Failed to write global variable g_v8057D88.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057DD4: error: Failed to write global variable g_v8057DD4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057F18: error: Failed to write global variable g_v8057F18.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058018: error: Failed to write global variable g_v8058018.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058184: error: Failed to write global variable g_v8058184.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080582B0: error: Failed to write global variable g_v80582B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080583E8: error: Failed to write global variable g_v80583E8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058568: error: Failed to write global variable g_v8058568.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080585AC: error: Failed to write global variable g_v80585AC.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805874C: error: Failed to write global variable g_v805874C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805882C: error: Failed to write global variable g_v805882C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 08058DA8: warning: Expected sizes of arrays to have been determined by now
 080596E8: warning: Expected sizes of arrays to have been determined by now
 0805B2E0: warning: Expected sizes of arrays to have been determined by now
@@ -481,222 +327,7 @@ Using options:
 0805BAC7: warning: Expected sizes of arrays to have been determined by now
 0805C3C7: warning: Expected sizes of arrays to have been determined by now
 08054A58: warning: Expected sizes of arrays to have been determined by now
-0805508B: error: Failed to write global variable g_v805508B.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055090: error: Failed to write global variable g_v8055090.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055099: error: Failed to write global variable g_v8055099.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805540A: error: Failed to write global variable g_v805540A.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 080554E0: warning: Expected sizes of arrays to have been determined by now
-080555B0: error: Failed to write global variable g_v80555B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080556B0: error: Failed to write global variable g_v80556B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055760: error: Failed to write global variable g_v8055760.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055800: error: Failed to write global variable g_v8055800.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080559E8: error: Failed to write global variable g_v80559E8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055A58: error: Failed to write global variable g_v8055A58.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055E80: error: Failed to write global variable g_v8055E80.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08055FC4: error: Failed to write global variable g_v8055FC4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056020: error: Failed to write global variable g_v8056020.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080562C4: error: Failed to write global variable g_v80562C4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056470: error: Failed to write global variable g_v8056470.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080567A0: error: Failed to write global variable g_v80567A0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805690C: error: Failed to write global variable g_v805690C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080569F0: error: Failed to write global variable g_v80569F0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056B7C: error: Failed to write global variable g_v8056B7C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056CB0: error: Failed to write global variable g_v8056CB0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08056EE0: error: Failed to write global variable g_v8056EE0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057051: error: Failed to write global variable g_v8057051.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057064: error: Failed to write global variable g_v8057064.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057234: error: Failed to write global variable g_v8057234.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805726C: error: Failed to write global variable g_v805726C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080572C8: error: Failed to write global variable g_v80572C8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080575A0: error: Failed to write global variable g_v80575A0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080575F4: error: Failed to write global variable g_v80575F4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805796C: error: Failed to write global variable g_v805796C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057B4C: error: Failed to write global variable g_v8057B4C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057C8C: error: Failed to write global variable g_v8057C8C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057D4C: error: Failed to write global variable g_v8057D4C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057D88: error: Failed to write global variable g_v8057D88.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057DD4: error: Failed to write global variable g_v8057DD4.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08057F18: error: Failed to write global variable g_v8057F18.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058018: error: Failed to write global variable g_v8058018.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058184: error: Failed to write global variable g_v8058184.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080582B0: error: Failed to write global variable g_v80582B0.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080583E8: error: Failed to write global variable g_v80583E8.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-08058568: error: Failed to write global variable g_v8058568.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-080585AC: error: Failed to write global variable g_v80585AC.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805874C: error: Failed to write global variable g_v805874C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
-0805882C: error: Failed to write global variable g_v805882C.
-    The method or operation is not implemented.
-      at Reko.Core.Output.GlobalDataWriter.VisitVoidType (Reko.Core.Types.VoidType voidType) <0x406d69b0 + 0x0001f> in <filename unknown>:0 
-  at Reko.Core.Types.VoidType.Accept[T] (IDataTypeVisitor`1 v) <0x40644cd0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406d57a0 + 0x00225> in <filename unknown>:0 
 08058DA8: warning: Expected sizes of arrays to have been determined by now
 080596E8: warning: Expected sizes of arrays to have been determined by now
 0805B2E0: warning: Expected sizes of arrays to have been determined by now
@@ -709,3 +340,11 @@ Using options:
 0805C1C6: warning: Expected sizes of arrays to have been determined by now
 0805BAC7: warning: Expected sizes of arrays to have been determined by now
 0805C3C7: warning: Expected sizes of arrays to have been determined by now
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>

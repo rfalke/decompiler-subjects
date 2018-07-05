@@ -7,11 +7,18 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 == 0x00)
-		;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 != 0x00)
+		fn08048300();
 }
 
-// 08048310: void _start(Register (ptr Eq_12) edx, Stack int32 dwArg00)
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	globals->ptr8049FFC();
+}
+
+// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -89,8 +96,8 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 08048410: Register Eq_98 use(Register Eq_98 xmm0, Stack real64 rArg04)
-Eq_98 use(Eq_98 xmm0, real64 rArg04)
+// 08048410: Register Eq_104 use(Register Eq_104 xmm0, Stack real64 rArg04)
+Eq_104 use(Eq_104 xmm0, real64 rArg04)
 {
 	printf("%f", rArg04);
 	return DPB(xmm0, rArg04, 0);
@@ -102,9 +109,13 @@ void use_int(int32 dwArg04)
 	printf("%d", dwArg04);
 }
 
-// 08048480: void read_ints(Register word128 xmm0)
-void read_ints(word128 xmm0)
+// 08048480: void read_ints(Register word128 xmm0, Register Eq_120 xmm1)
+void read_ints(word128 xmm0, Eq_120 xmm1)
 {
+	real64 v7_12 = (real64) (int32) globals->b804A020;
+	Eq_126 xmm1_18 = __xorps(xmm1, xmm1);
+	real64 v19_41 = (real64) globals->t804A030 + ((((v7_12 + xmm1_18) + DPB(xmm1_18, (real64) ((int32) globals->w804A022), 0)) + DPB(xmm1_18, (real64) globals->dw804A024, 0)) + DPB(xmm1_18, (real64) globals->dw804A028, 0));
+	use(DPB(xmm0, v19_41, 0), v19_41);
 }
 
 // 08048520: void write_ints(Register word128 xmm0, Stack real64 rArg04)
@@ -119,7 +130,7 @@ void write_ints(word128 xmm0, real64 rArg04)
 	__fldcw(wLoc26_33);
 	int64 qwLoc24_37 = (int64) rArg04;
 	globals->dw804A034 = SLICE(qwLoc24_37, word32, 32);
-	globals->dw804A030 = (word32) qwLoc24_37;
+	globals->t804A030 = (word32) qwLoc24_37;
 }
 
 // 080485B0: void read_floats(Register word128 xmm0)
@@ -169,13 +180,14 @@ void converting_between_floats_l2()
 // 08048730: void basic_operations(Register word128 xmm0, Register word128 xmm1, Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(word128 xmm0, word128 xmm1, real64 rArg04, real64 rArg0C)
 {
-	Eq_98 xmm0_10 = DPB(xmm0, rArg0C, 0);
+	Eq_104 xmm0_10 = DPB(xmm0, rArg0C, 0);
 	real64 v9_24 = rArg04 - DPB(xmm1, rArg0C, 0);
 	real64 v10_31 = rArg0C - DPB(xmm1, rArg04, 0);
 	real64 v11_38 = rArg04 * DPB(xmm1, rArg0C, 0);
 	real64 v12_45 = rArg04 / DPB(xmm1, rArg0C, 0);
 	real64 v13_52 = rArg0C / DPB(xmm1, rArg04, 0);
-	use(DPB(use(DPB(use(DPB(use(DPB(use(DPB(use(xmm0_10, rArg04 + xmm0_10), v9_24, 0), v9_24), v10_31, 0), v10_31), v11_38, 0), v11_38), v12_45, 0), v12_45), v13_52, 0), v13_52);
+	Eq_104 xmm0_62 = __xorpd(DPB(use(DPB(use(DPB(use(DPB(use(DPB(use(DPB(use(xmm0_10, rArg04 + xmm0_10), v9_24, 0), v9_24), v10_31, 0), v10_31), v11_38, 0), v11_38), v12_45, 0), v12_45), v13_52, 0), v13_52), rArg04, 0), globals->t8048AC0);
+	use(xmm0_62, (real64) xmm0_62);
 }
 
 // 08048800: void compare_floats(Register word128 xmm0, Register word128 xmm1, Stack real64 rArg04, Stack real64 rArg0C)
@@ -288,9 +300,9 @@ void constants(word128 xmm0, word128 xmm1, real64 rArg04)
 // 08048970: void main()
 void main()
 {
-	Eq_432 tLoc48_21 = (<type-error>) 0x01;
+	Eq_487 tLoc48_21 = (<type-error>) 0x01;
 	printf("%zu %zu %zu %zu %zu\n", tLoc48_21, tLoc48_21, tLoc48_21, tLoc48_21, tLoc48_21);
-	Eq_444 tLoc48_37 = (<type-error>) 0x04;
+	Eq_499 tLoc48_37 = (<type-error>) 0x04;
 	printf("%zu %zu %zu\n", tLoc48_37, tLoc48_37, tLoc48_37);
 }
 

@@ -36,13 +36,13 @@ void _start( * edx, int32 dwArg00)
 // 08048340: void __do_global_dtors_aux(Register word32 esi)
 void __do_global_dtors_aux(word32 esi)
 {
-	if (globals->b80D2B48 == 0x00)
-	{
-		uint32 eax_23 = globals->dw80D2B4C;
-		if (eax_23 < 0x00)
-			globals->dw80D2B4C = eax_23 + 0x01;
+	if (globals->b80D2B48 != 0x00)
+		return;
+	up32 eax_23 = globals->dw80D2B4C;
+	if (eax_23 >= 0x00)
 		globals->b80D2B48 = 0x01;
-	}
+	else
+		globals->dw80D2B4C = eax_23 + 0x01;
 }
 
 // 080483A0: void frame_dummy()
@@ -61989,5702 +61989,601 @@ Eq_95 rep_stos2l_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 // 080AF4C6: void rep_cmps1b_plain(Register word32 ecx, Register (ptr byte) esi, Register (ptr byte) edi)
 void rep_cmps1b_plain(word32 ecx, byte * esi, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		byte * esi_24 = esi;
-		byte * edi_25 = edi;
-		if (*esi_24 != *edi_25)
-			return;
-	}
 }
 
 // 080AF4CE: void rep_cmps1b_allregs()
 void rep_cmps1b_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x01);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080AF5BF: void rep_cmps1b_constant_simple()
 void rep_cmps1b_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AF6A5: void rep_cmps1b_constant_complex1()
 void rep_cmps1b_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AF78B: Register Eq_95 rep_cmps1b_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps1b_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x01;
-		*ediOut = (char *) edi_95 + 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 == *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080AF872: void rep_cmps1w_mv_plain(Register word32 ecx, Register (ptr word16) esi, Register (ptr word16) edi)
 void rep_cmps1w_mv_plain(word32 ecx, word16 * esi, word16 * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		word16 * esi_24 = esi;
-		word16 * edi_25 = edi;
-		if (*esi_24 != *edi_25)
-			return;
-	}
 }
 
 // 080AF87B: void rep_cmps1w_mv_allregs()
 void rep_cmps1w_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x02);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x02);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080AF96D: void rep_cmps1w_mv_constant_simple()
 void rep_cmps1w_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x02);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x02);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AFA54: void rep_cmps1w_mv_constant_complex1()
 void rep_cmps1w_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x02);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x02);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AFB3B: Register Eq_95 rep_cmps1w_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps1w_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x02;
-		*ediOut = (char *) edi_95 + 0x02;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 == *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080AFC23: void rep_cmps1l_mv_plain(Register word32 ecx, Register (ptr word32) esi, Register (ptr word32) edi)
 void rep_cmps1l_mv_plain(word32 ecx, word32 * esi, word32 * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		word32 * esi_24 = esi;
-		word32 * edi_25 = edi;
-		if (*esi_24 != *edi_25)
-			return;
-	}
 }
 
 // 080AFC2B: void rep_cmps1l_mv_allregs()
 void rep_cmps1l_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x04);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x04);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080AFD1C: void rep_cmps1l_mv_constant_simple()
 void rep_cmps1l_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x04);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AFE02: void rep_cmps1l_mv_constant_complex1()
 void rep_cmps1l_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x04);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080AFEE8: Register Eq_95 rep_cmps1l_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps1l_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x04;
-		*ediOut = (char *) edi_95 + 0x04;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 == *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080AFFCF: void rep_cmps2b_plain(Register word32 ecx, Register (ptr byte) esi, Register (ptr byte) edi)
 void rep_cmps2b_plain(word32 ecx, byte * esi, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		byte * esi_24 = esi;
-		byte * edi_25 = edi;
-		if (*esi_24 == *edi_25)
-			return;
-	}
 }
 
 // 080AFFD7: void rep_cmps2b_allregs()
 void rep_cmps2b_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x01);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 == *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B00C8: void rep_cmps2b_constant_simple()
 void rep_cmps2b_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B01AE: void rep_cmps2b_constant_complex1()
 void rep_cmps2b_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B0294: Register Eq_95 rep_cmps2b_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps2b_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x01;
-		*ediOut = (char *) edi_95 + 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 != *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080B037B: void rep_cmps2w_mv_plain(Register word32 ecx, Register (ptr word16) esi, Register (ptr word16) edi)
 void rep_cmps2w_mv_plain(word32 ecx, word16 * esi, word16 * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		word16 * esi_24 = esi;
-		word16 * edi_25 = edi;
-		if (*esi_24 == *edi_25)
-			return;
-	}
 }
 
 // 080B0384: void rep_cmps2w_mv_allregs()
 void rep_cmps2w_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x02);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x02);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 == *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B0476: void rep_cmps2w_mv_constant_simple()
 void rep_cmps2w_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x02);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x02);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B055D: void rep_cmps2w_mv_constant_complex1()
 void rep_cmps2w_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x02);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x02);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B0644: Register Eq_95 rep_cmps2w_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps2w_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x02;
-		*ediOut = (char *) edi_95 + 0x02;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 != *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080B072C: void rep_cmps2l_mv_plain(Register word32 ecx, Register (ptr word32) esi, Register (ptr word32) edi)
 void rep_cmps2l_mv_plain(word32 ecx, word32 * esi, word32 * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		word32 * esi_24 = esi;
-		word32 * edi_25 = edi;
-		if (*esi_24 == *edi_25)
-			return;
-	}
 }
 
 // 080B0734: void rep_cmps2l_mv_allregs()
 void rep_cmps2l_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x04);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x04);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 == *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B0825: void rep_cmps2l_mv_constant_simple()
 void rep_cmps2l_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x04);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B090B: void rep_cmps2l_mv_constant_complex1()
 void rep_cmps2l_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x04);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B09F1: Register Eq_95 rep_cmps2l_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps2l_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x04;
-		*ediOut = (char *) edi_95 + 0x04;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 != *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080B0AD8: void rep_cmps_seg1_mv_plain(Register word32 ecx, Register (ptr byte) esi, Register (ptr byte) edi)
 void rep_cmps_seg1_mv_plain(word32 ecx, byte * esi, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_24 + 0x01;
-		edi = edi_25 + 0x01;
-		ecx = ecx - 0x01;
-		byte * esi_24 = esi;
-		byte * edi_25 = edi;
-		if (*esi_24 != *edi_25)
-			return;
-	}
 }
 
 // 080B0AE1: void rep_cmps_seg1_mv_allregs()
 void rep_cmps_seg1_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_23 - *edi_24);
-		SCZDOP_26 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_10 = SCZO_82;
-		O_11 = SCZO_82;
-		C_12 = SCZO_82;
-		CZ_13 = SCZO_82;
-		S_14 = SCZO_82;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x01);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B0BD3: void rep_cmps_seg1_mv_constant_simple()
 void rep_cmps_seg1_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B0CBA: void rep_cmps_seg1_mv_constant_complex1()
 void rep_cmps_seg1_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(*esi_21 - *edi_22);
-		SCZDOP_24 = SCZO_80;
-		Z_25 = SCZO_80;
-		SO_26 = SCZO_80;
-		SZO_27 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-	} while (*esi_21 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B0DA1: Register Eq_95 rep_cmps_seg1_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps_seg1_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(*esi_94 - *edi_95);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*esiOut = (char *) esi_94 + 0x01;
-		*ediOut = (char *) edi_95 + 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_94 = esi_21;
-		union Eq_117 * edi_95 = edi_22;
-	} while (*esi_94 == *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080B0E89: void rep_cmps_clear_mv_plain(Register word32 ecx, Register (ptr byte) esi, Register (ptr byte) edi)
 void rep_cmps_clear_mv_plain(word32 ecx, byte * esi, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_25 + 0x01;
-		edi = edi_26 + 0x01;
-		ecx = ecx - 0x01;
-		byte * esi_25 = esi;
-		byte * edi_26 = edi;
-		if (*esi_25 != *edi_26)
-			return;
-	}
 }
 
 // 080B0E93: void rep_cmps_clear_mv_allregs()
 void rep_cmps_clear_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 Z_29 = ax_3;
-	Eq_95 SO_30 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	Eq_95 SCZDOP_27 = false;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_84 = cond(*esi_23 - *edi_24);
-		SCZDOP_27 = SCZO_84;
-		Z_29 = SCZO_84;
-		SO_30 = SCZO_84;
-		SZO_10 = SCZO_84;
-		O_11 = SCZO_84;
-		C_12 = SCZO_84;
-		CZ_13 = SCZO_84;
-		S_14 = SCZO_84;
-		esi_23 = (union Eq_114 *) ((char *) esi_23 + 0x01);
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_29;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_29;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_30;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_30;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B0F86: void rep_cmps_clear_mv_constant_simple()
 void rep_cmps_clear_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	Eq_95 SCZDOP_25 = false;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_21 - *edi_22);
-		SCZDOP_25 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_29 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-		if (*esi_21 != *edi_22)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B106E: void rep_cmps_clear_mv_constant_complex1()
 void rep_cmps_clear_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	Eq_95 SCZDOP_25 = false;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_21 - *edi_22);
-		SCZDOP_25 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_29 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		esi_21 = (union Eq_114 *) ((char *) esi_21 + 0x01);
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x01);
-		ecx_18 = ecx_18 - 0x01;
-		if (*esi_21 != *edi_22)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B1156: Register Eq_95 rep_cmps_clear_mv_constant_complex2(Register out ptr32 esiOut, Register out ptr32 ediOut)
 Eq_95 rep_cmps_clear_mv_constant_complex2(ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 507473074;
-	union Eq_114 * esi_21;
-	*esiOut = 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	Eq_95 SCZDOP_25 = false;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_84 = cond(*esi_96 - *edi_97);
-		SCZDOP_25 = SCZO_84;
-		Z_27 = SCZO_84;
-		SO_28 = SCZO_84;
-		SZO_29 = SCZO_84;
-		O_10 = SCZO_84;
-		C_11 = SCZO_84;
-		CZ_12 = SCZO_84;
-		S_13 = SCZO_84;
-		*esiOut = (char *) esi_96 + 0x01;
-		*ediOut = (char *) edi_97 + 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		union Eq_114 * esi_96 = esi_21;
-		union Eq_117 * edi_97 = edi_22;
-		if (*esi_96 != *edi_97)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return ecx_18;
 }
 
 // 080B123F: void rep_cmps_set_mv_plain(Register word32 ecx, Register (ptr byte) esi, Register (ptr byte) edi)
 void rep_cmps_set_mv_plain(word32 ecx, byte * esi, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		esi = esi_25 - 0x01;
-		edi = edi_26 - 0x01;
-		ecx = ecx - 0x01;
-		byte * esi_25 = esi;
-		byte * edi_26 = edi;
-		if (*esi_25 != *edi_26)
-			return;
-	}
 }
 
 // 080B1249: void rep_cmps_set_mv_allregs()
 void rep_cmps_set_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 Z_29 = ax_3;
-	Eq_95 SO_30 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	Eq_95 SCZDOP_27 = true;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_84 = cond(*esi_23 - *edi_24);
-		SCZDOP_27 = SCZO_84;
-		Z_29 = SCZO_84;
-		SO_30 = SCZO_84;
-		SZO_10 = SCZO_84;
-		O_11 = SCZO_84;
-		C_12 = SCZO_84;
-		CZ_13 = SCZO_84;
-		S_14 = SCZO_84;
-		esi_23 = esi_23 - 0x01;
-		edi_24 = edi_24 - 0x01;
-		ecx_20 = ecx_20 - 0x01;
-		if (*esi_23 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_29;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_29;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_30;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_30;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B133C: void rep_cmps_set_mv_constant_simple()
 void rep_cmps_set_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_114 * esi_21 = (union Eq_114 *) 0x07;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	Eq_95 SCZDOP_25 = true;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_21 - *edi_22);
-		SCZDOP_25 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_29 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		esi_21 = esi_21 - 0x01;
-		edi_22 = edi_22 - 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		if (*esi_21 != *edi_22)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B1424: void rep_cmps_set_mv_constant_complex1()
 void rep_cmps_set_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_114 * esi_21 = (union Eq_114 *) 2906402168;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	Eq_95 SCZDOP_25 = true;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_82 = cond(*esi_21 - *edi_22);
-		SCZDOP_25 = SCZO_82;
-		Z_27 = SCZO_82;
-		SO_28 = SCZO_82;
-		SZO_29 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		esi_21 = esi_21 - 0x01;
-		edi_22 = edi_22 - 0x01;
-		ecx_18 = ecx_18 - 0x01;
-		if (*esi_21 != *edi_22)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B150C: Register byte rep_cmps_set_mv_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 byte rep_cmps_set_mv_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18;
-	*ecxOut = 507473074;
-	union Eq_114 * esi_21 = (union Eq_114 *) 792175781;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	Eq_95 SCZDOP_25 = true;
-	while (ecx_18 != 0x00)
-	{
-		Eq_95 SCZO_86 = cond(*esi_21 - *edi_99);
-		SCZDOP_25 = SCZO_86;
-		Z_27 = SCZO_86;
-		SO_28 = SCZO_86;
-		SZO_29 = SCZO_86;
-		O_10 = SCZO_86;
-		C_11 = SCZO_86;
-		CZ_12 = SCZO_86;
-		S_13 = SCZO_86;
-		esi_21 = esi_21 - 0x01;
-		*ediOut = edi_99 - 0x01;
-		*ecxOut = ecx_18 - 0x01;
-		union Eq_117 * edi_99 = edi_22;
-		if (*esi_21 != *edi_99)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_21;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B15F5: void rep_scas1b_plain(Register byte al, Register word32 ecx, Register (ptr byte) edi)
 void rep_scas1b_plain(byte al, word32 ecx, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		byte * edi_21 = edi;
-		if (al != *edi_21)
-			return;
-	}
 }
 
 // 080B15FD: void rep_scas1b_allregs()
 void rep_scas1b_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_20 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_21 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_22 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_23 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_24 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_25 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_27 = ax_3;
-	Eq_95 Z_28 = ax_3;
-	Eq_95 SO_29 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	byte al_19 = (byte) eax_17;
-	while (ecx_21 != 0x00)
-	{
-		Eq_95 SCZO_81 = cond(al_19 - *edi_25);
-		SCZDOP_27 = SCZO_81;
-		Z_28 = SCZO_81;
-		SO_29 = SCZO_81;
-		SZO_10 = SCZO_81;
-		O_11 = SCZO_81;
-		C_12 = SCZO_81;
-		CZ_13 = SCZO_81;
-		S_14 = SCZO_81;
-		edi_25 = (union Eq_117 *) ((char *) edi_25 + 0x01);
-		ecx_21 = ecx_21 - 0x01;
-		if (al_19 != *edi_25)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_20;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_21;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_22;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_23;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_24;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_25;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B16EE: void rep_scas1b_constant_simple()
 void rep_scas1b_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 0x04;
-	union Eq_117 * edi_24 = (union Eq_117 *) 0x08;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x02 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x02 == *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B17D4: void rep_scas1b_constant_complex1()
 void rep_scas1b_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 1181241928;
-	union Eq_117 * edi_24 = (union Eq_117 *) 3831882066;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x84 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x84 == *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B18BA: Register word16 rep_scas1b_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 word16 rep_scas1b_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_24;
-	*ediOut = 2443777972;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_84 = cond(232 - *edi_95);
-		SCZDOP_26 = SCZO_84;
-		Z_27 = SCZO_84;
-		SO_28 = SCZO_84;
-		SZO_29 = SCZO_84;
-		O_10 = SCZO_84;
-		C_11 = SCZO_84;
-		CZ_12 = SCZO_84;
-		S_13 = SCZO_84;
-		*ediOut = (char *) edi_95 + 0x01;
-		*ecxOut = ecx_20 - 0x01;
-		union Eq_117 * edi_95 = edi_24;
-	} while (232 == *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B19A1: void rep_scas1w_mv_plain(Register word16 ax, Register word32 ecx, Register (ptr word16) edi)
 void rep_scas1w_mv_plain(word16 ax, word32 ecx, word16 * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		word16 * edi_21 = edi;
-		if (ax != *edi_21)
-			return;
-	}
 }
 
 // 080B19AA: void rep_scas1w_mv_allregs()
 void rep_scas1w_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	word16 ax_18 = (word16) eax_17;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_80 = cond(ax_18 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_10 = SCZO_80;
-		O_11 = SCZO_80;
-		C_12 = SCZO_80;
-		CZ_13 = SCZO_80;
-		S_14 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x02);
-		ecx_20 = ecx_20 - 0x01;
-		if (ax_18 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B1A9C: void rep_scas1w_mv_constant_simple()
 void rep_scas1w_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19 = 0x04;
-	union Eq_117 * edi_23 = (union Eq_117 *) 0x08;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_79 = cond(0x02 - *edi_23);
-		SCZDOP_25 = SCZO_79;
-		Z_26 = SCZO_79;
-		SO_27 = SCZO_79;
-		SZO_28 = SCZO_79;
-		O_10 = SCZO_79;
-		C_11 = SCZO_79;
-		CZ_12 = SCZO_79;
-		S_13 = SCZO_79;
-		edi_23 = (union Eq_117 *) ((char *) edi_23 + 0x02);
-		ecx_19 = ecx_19 - 0x01;
-	} while (0x02 == *edi_23);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B1B83: void rep_scas1w_mv_constant_complex1()
 void rep_scas1w_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19 = 1181241928;
-	union Eq_117 * edi_23 = (union Eq_117 *) 3831882066;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_79 = cond(31108 - *edi_23);
-		SCZDOP_25 = SCZO_79;
-		Z_26 = SCZO_79;
-		SO_27 = SCZO_79;
-		SZO_28 = SCZO_79;
-		O_10 = SCZO_79;
-		C_11 = SCZO_79;
-		CZ_12 = SCZO_79;
-		S_13 = SCZO_79;
-		edi_23 = (union Eq_117 *) ((char *) edi_23 + 0x02);
-		ecx_19 = ecx_19 - 0x01;
-	} while (31108 == *edi_23);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B1C6A: Register word32 rep_scas1w_mv_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 word32 rep_scas1w_mv_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_23;
-	*ediOut = 2443777972;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(0xC0E8 - *edi_93);
-		SCZDOP_25 = SCZO_82;
-		Z_26 = SCZO_82;
-		SO_27 = SCZO_82;
-		SZO_28 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*ediOut = (char *) edi_93 + 0x02;
-		*ecxOut = ecx_19 - 0x01;
-		union Eq_117 * edi_93 = edi_23;
-	} while (0xC0E8 == *edi_93);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B1D52: void rep_scas1l_plain(Register word32 eax, Register word32 ecx, Register (ptr word32) edi)
 void rep_scas1l_plain(word32 eax, word32 ecx, word32 * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		word32 * edi_21 = edi;
-		if (eax != *edi_21)
-			return;
-	}
 }
 
 // 080B1D5A: void rep_scas1l_allregs()
 void rep_scas1l_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_80 = cond(eax_17 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_10 = SCZO_80;
-		O_11 = SCZO_80;
-		C_12 = SCZO_80;
-		CZ_13 = SCZO_80;
-		S_14 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x04);
-		ecx_20 = ecx_20 - 0x01;
-		if (eax_17 != *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B1E4B: void rep_scas1l_constant_simple()
 void rep_scas1l_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_78 = cond(0x02 - *edi_22);
-		SCZDOP_24 = SCZO_78;
-		Z_25 = SCZO_78;
-		SO_26 = SCZO_78;
-		SZO_27 = SCZO_78;
-		O_10 = SCZO_78;
-		C_11 = SCZO_78;
-		CZ_12 = SCZO_78;
-		S_13 = SCZO_78;
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (0x02 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B1F31: void rep_scas1l_constant_complex1()
 void rep_scas1l_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_78 = cond(2746317188 - *edi_22);
-		SCZDOP_24 = SCZO_78;
-		Z_25 = SCZO_78;
-		SO_26 = SCZO_78;
-		SZO_27 = SCZO_78;
-		O_10 = SCZO_78;
-		C_11 = SCZO_78;
-		CZ_12 = SCZO_78;
-		S_13 = SCZO_78;
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (2746317188 == *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2017: Register byte rep_scas1l_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 byte rep_scas1l_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(0x313EC0E8 - *edi_93);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*ediOut = (char *) edi_93 + 0x04;
-		*ecxOut = ecx_18 - 0x01;
-		union Eq_117 * edi_93 = edi_22;
-	} while (0x313EC0E8 == *edi_93);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B20FE: void rep_scas2b_plain(Register byte al, Register word32 ecx, Register (ptr byte) edi)
 void rep_scas2b_plain(byte al, word32 ecx, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		byte * edi_21 = edi;
-		if (al == *edi_21)
-			return;
-	}
 }
 
 // 080B2106: void rep_scas2b_allregs()
 void rep_scas2b_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_20 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_21 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_22 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_23 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_24 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_25 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_27 = ax_3;
-	Eq_95 Z_28 = ax_3;
-	Eq_95 SO_29 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	byte al_19 = (byte) eax_17;
-	while (ecx_21 != 0x00)
-	{
-		Eq_95 SCZO_81 = cond(al_19 - *edi_25);
-		SCZDOP_27 = SCZO_81;
-		Z_28 = SCZO_81;
-		SO_29 = SCZO_81;
-		SZO_10 = SCZO_81;
-		O_11 = SCZO_81;
-		C_12 = SCZO_81;
-		CZ_13 = SCZO_81;
-		S_14 = SCZO_81;
-		edi_25 = (union Eq_117 *) ((char *) edi_25 + 0x01);
-		ecx_21 = ecx_21 - 0x01;
-		if (al_19 == *edi_25)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_20;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_21;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_22;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_23;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_24;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_25;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B21F7: void rep_scas2b_constant_simple()
 void rep_scas2b_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 0x04;
-	union Eq_117 * edi_24 = (union Eq_117 *) 0x08;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x02 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x02 != *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B22DD: void rep_scas2b_constant_complex1()
 void rep_scas2b_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 1181241928;
-	union Eq_117 * edi_24 = (union Eq_117 *) 3831882066;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x84 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x84 != *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B23C3: Register word16 rep_scas2b_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 word16 rep_scas2b_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_24;
-	*ediOut = 2443777972;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_84 = cond(232 - *edi_95);
-		SCZDOP_26 = SCZO_84;
-		Z_27 = SCZO_84;
-		SO_28 = SCZO_84;
-		SZO_29 = SCZO_84;
-		O_10 = SCZO_84;
-		C_11 = SCZO_84;
-		CZ_12 = SCZO_84;
-		S_13 = SCZO_84;
-		*ediOut = (char *) edi_95 + 0x01;
-		*ecxOut = ecx_20 - 0x01;
-		union Eq_117 * edi_95 = edi_24;
-	} while (232 != *edi_95);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B24AA: void rep_scas2w_mv_plain(Register word16 ax, Register word32 ecx, Register (ptr word16) edi)
 void rep_scas2w_mv_plain(word16 ax, word32 ecx, word16 * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		word16 * edi_21 = edi;
-		if (ax == *edi_21)
-			return;
-	}
 }
 
 // 080B24B3: void rep_scas2w_mv_allregs()
 void rep_scas2w_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	word16 ax_18 = (word16) eax_17;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_80 = cond(ax_18 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_10 = SCZO_80;
-		O_11 = SCZO_80;
-		C_12 = SCZO_80;
-		CZ_13 = SCZO_80;
-		S_14 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x02);
-		ecx_20 = ecx_20 - 0x01;
-		if (ax_18 == *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B25A5: void rep_scas2w_mv_constant_simple()
 void rep_scas2w_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19 = 0x04;
-	union Eq_117 * edi_23 = (union Eq_117 *) 0x08;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_79 = cond(0x02 - *edi_23);
-		SCZDOP_25 = SCZO_79;
-		Z_26 = SCZO_79;
-		SO_27 = SCZO_79;
-		SZO_28 = SCZO_79;
-		O_10 = SCZO_79;
-		C_11 = SCZO_79;
-		CZ_12 = SCZO_79;
-		S_13 = SCZO_79;
-		edi_23 = (union Eq_117 *) ((char *) edi_23 + 0x02);
-		ecx_19 = ecx_19 - 0x01;
-	} while (0x02 != *edi_23);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B268C: void rep_scas2w_mv_constant_complex1()
 void rep_scas2w_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19 = 1181241928;
-	union Eq_117 * edi_23 = (union Eq_117 *) 3831882066;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_79 = cond(31108 - *edi_23);
-		SCZDOP_25 = SCZO_79;
-		Z_26 = SCZO_79;
-		SO_27 = SCZO_79;
-		SZO_28 = SCZO_79;
-		O_10 = SCZO_79;
-		C_11 = SCZO_79;
-		CZ_12 = SCZO_79;
-		S_13 = SCZO_79;
-		edi_23 = (union Eq_117 *) ((char *) edi_23 + 0x02);
-		ecx_19 = ecx_19 - 0x01;
-	} while (31108 != *edi_23);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2773: Register word32 rep_scas2w_mv_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 word32 rep_scas2w_mv_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_26 = SCZDOP_5;
-	Eq_95 SO_27 = SCZDOP_5;
-	Eq_95 SZO_28 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_19;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_23;
-	*ediOut = 2443777972;
-	SCZDOP_25 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_25;
-		if (ecx_19 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(0xC0E8 - *edi_93);
-		SCZDOP_25 = SCZO_82;
-		Z_26 = SCZO_82;
-		SO_27 = SCZO_82;
-		SZO_28 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*ediOut = (char *) edi_93 + 0x02;
-		*ecxOut = ecx_19 - 0x01;
-		union Eq_117 * edi_93 = edi_23;
-	} while (0xC0E8 != *edi_93);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_19;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_23;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_26;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_28;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_25;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B285B: void rep_scas2l_plain(Register word32 eax, Register word32 ecx, Register (ptr word32) edi)
 void rep_scas2l_plain(word32 eax, word32 ecx, word32 * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		word32 * edi_21 = edi;
-		if (eax == *edi_21)
-			return;
-	}
 }
 
 // 080B2863: void rep_scas2l_allregs()
 void rep_scas2l_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_20 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_23 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_24 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_26 = ax_3;
-	Eq_95 Z_27 = ax_3;
-	Eq_95 SO_28 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	while (ecx_20 != 0x00)
-	{
-		Eq_95 SCZO_80 = cond(eax_17 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_10 = SCZO_80;
-		O_11 = SCZO_80;
-		C_12 = SCZO_80;
-		CZ_13 = SCZO_80;
-		S_14 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x04);
-		ecx_20 = ecx_20 - 0x01;
-		if (eax_17 == *edi_24)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_23;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B2954: void rep_scas2l_constant_simple()
 void rep_scas2l_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 0x04;
-	union Eq_117 * edi_22 = (union Eq_117 *) 0x08;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_78 = cond(0x02 - *edi_22);
-		SCZDOP_24 = SCZO_78;
-		Z_25 = SCZO_78;
-		SO_26 = SCZO_78;
-		SZO_27 = SCZO_78;
-		O_10 = SCZO_78;
-		C_11 = SCZO_78;
-		CZ_12 = SCZO_78;
-		S_13 = SCZO_78;
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (0x02 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2A3A: void rep_scas2l_constant_complex1()
 void rep_scas2l_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18 = 1181241928;
-	union Eq_117 * edi_22 = (union Eq_117 *) 3831882066;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_78 = cond(2746317188 - *edi_22);
-		SCZDOP_24 = SCZO_78;
-		Z_25 = SCZO_78;
-		SO_26 = SCZO_78;
-		SZO_27 = SCZO_78;
-		O_10 = SCZO_78;
-		C_11 = SCZO_78;
-		CZ_12 = SCZO_78;
-		S_13 = SCZO_78;
-		edi_22 = (union Eq_117 *) ((char *) edi_22 + 0x04);
-		ecx_18 = ecx_18 - 0x01;
-	} while (2746317188 != *edi_22);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2B20: Register byte rep_scas2l_constant_complex2(Register out ptr32 ecxOut, Register out ptr32 ediOut)
 byte rep_scas2l_constant_complex2(ptr32 & ecxOut, ptr32 & ediOut)
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_25 = SCZDOP_5;
-	Eq_95 SO_26 = SCZDOP_5;
-	Eq_95 SZO_27 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_18;
-	*ecxOut = 507473074;
-	union Eq_117 * edi_22;
-	*ediOut = 2443777972;
-	SCZDOP_24 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_24;
-		if (ecx_18 == 0x00)
-			break;
-		Eq_95 SCZO_82 = cond(0x313EC0E8 - *edi_93);
-		SCZDOP_24 = SCZO_82;
-		Z_25 = SCZO_82;
-		SO_26 = SCZO_82;
-		SZO_27 = SCZO_82;
-		O_10 = SCZO_82;
-		C_11 = SCZO_82;
-		CZ_12 = SCZO_82;
-		S_13 = SCZO_82;
-		*ediOut = (char *) edi_93 + 0x04;
-		*ecxOut = ecx_18 - 0x01;
-		union Eq_117 * edi_93 = edi_22;
-	} while (0x313EC0E8 != *edi_93);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_18;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_22;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_25;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_26;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_24;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
-	return 0x00;
 }
 
 // 080B2C07: void rep_scas_seg_mv_plain(Register byte al, Register word32 ecx, Register (ptr byte) edi)
 void rep_scas_seg_mv_plain(byte al, word32 ecx, byte * edi)
 {
-	while (ecx != 0x00)
-	{
-		edi = edi_21 + 0x01;
-		ecx = ecx - 0x01;
-		byte * edi_21 = edi;
-		if (al != *edi_21)
-			return;
-	}
 }
 
 // 080B2C0F: void rep_scas_seg_mv_allregs()
 void rep_scas_seg_mv_allregs()
 {
-	Eq_95 ax_3 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_20 = (union Eq_95 *) 0x1004;
-	Eq_95 ecx_21 = (union Eq_95 *) 0x1008;
-	Eq_95 edx_22 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_23 = (struct Eq_111 **) 0x1010;
-	union Eq_114 * esi_24 = (union Eq_114 **) 0x1014;
-	union Eq_117 * edi_25 = (union Eq_117 **) 0x1018;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	Eq_95 SCZDOP_27 = ax_3;
-	Eq_95 Z_28 = ax_3;
-	Eq_95 SO_29 = ax_3;
-	Eq_95 SZO_10 = ax_3;
-	Eq_95 O_11 = ax_3;
-	Eq_95 C_12 = ax_3;
-	Eq_95 CZ_13 = ax_3;
-	Eq_95 S_14 = ax_3;
-	byte al_19 = (byte) eax_17;
-	while (ecx_21 != 0x00)
-	{
-		Eq_95 SCZO_81 = cond(al_19 - *edi_25);
-		SCZDOP_27 = SCZO_81;
-		Z_28 = SCZO_81;
-		SO_29 = SCZO_81;
-		SZO_10 = SCZO_81;
-		O_11 = SCZO_81;
-		C_12 = SCZO_81;
-		CZ_13 = SCZO_81;
-		S_14 = SCZO_81;
-		edi_25 = (union Eq_117 *) ((char *) edi_25 + 0x01);
-		ecx_21 = ecx_21 - 0x01;
-		if (al_19 != *edi_25)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_20;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_21;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_22;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_23;
-	(union Eq_114 **) 8212 = (union Eq_114 **) esi_24;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_25;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_11;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_12;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_28;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_13;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_14;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) ax_3;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_29;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_10;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B2D00: void rep_scas_seg_mv_constant_simple()
 void rep_scas_seg_mv_constant_simple()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 0x04;
-	union Eq_117 * edi_24 = (union Eq_117 *) 0x08;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x02 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x02 == *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 0x07;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2DE6: void rep_scas_seg_mv_constant_complex1()
 void rep_scas_seg_mv_constant_complex1()
 {
-	Eq_95 SCZDOP_5 = 0x00;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 1181241928;
-	union Eq_117 * edi_24 = (union Eq_117 *) 3831882066;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(0x84 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (0x84 == *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 2906402168;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2ECC: void rep_scas_seg_mv_constant_complex2()
 void rep_scas_seg_mv_constant_complex2()
 {
-	Eq_95 SCZDOP_5 = ~0x0100;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 Z_27 = SCZDOP_5;
-	Eq_95 SO_28 = SCZDOP_5;
-	Eq_95 SZO_29 = SCZDOP_5;
-	Eq_95 O_10 = SCZDOP_5;
-	Eq_95 C_11 = SCZDOP_5;
-	Eq_95 CZ_12 = SCZDOP_5;
-	Eq_95 S_13 = SCZDOP_5;
-	Eq_95 ecx_20 = 507473074;
-	union Eq_117 * edi_24 = (union Eq_117 *) 2443777972;
-	SCZDOP_26 = SCZDOP_5;
-	do
-	{
-		Eq_95 SCZDOP_26;
-		if (ecx_20 == 0x00)
-			break;
-		Eq_95 SCZO_80 = cond(232 - *edi_24);
-		SCZDOP_26 = SCZO_80;
-		Z_27 = SCZO_80;
-		SO_28 = SCZO_80;
-		SZO_29 = SCZO_80;
-		O_10 = SCZO_80;
-		C_11 = SCZO_80;
-		CZ_12 = SCZO_80;
-		S_13 = SCZO_80;
-		edi_24 = (union Eq_117 *) ((char *) edi_24 + 0x01);
-		ecx_20 = ecx_20 - 0x01;
-	} while (232 == *edi_24);
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_20;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (union Eq_114 *) 792175781;
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) edi_24;
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) O_10;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) C_11;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) Z_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) CZ_12;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) S_13;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_5;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SO_28;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SZO_29;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_26;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B2FB3: void rep_scas_memchr_mv_plain(Stack (ptr byte) dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void rep_scas_memchr_mv_plain(byte * dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	byte * edi_41 = dwArg04;
-	byte al_9 = (byte) dwArg08;
-	word32 ecx_11 = dwArg0C;
-	bool Z_13 = cond(dwArg0C);
-	if (dwArg0C != 0x00)
-	{
-		while (ecx_11 != 0x00)
-		{
-			Z_13 = cond(al_9 - *edi_58);
-			edi_41 = edi_58 + 0x01;
-			ecx_11 = ecx_11 - 0x01;
-			byte * edi_58 = edi_41;
-			if (al_9 != *edi_58)
-				break;
-		}
-		if (!Z_13)
-			;
-	}
 }
 
 // 080B2FD8: void rep_scas_memchr_mv_allregs(Stack (ptr byte) dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void rep_scas_memchr_mv_allregs(byte * dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_20 = dwArg04;
-	byte al_24 = (byte) dwArg08;
-	word32 ecx_26 = dwArg0C;
-	bool Z_28 = cond(dwArg0C);
-	if (dwArg0C != 0x00)
-	{
-		while (ecx_26 != 0x00)
-		{
-			Z_28 = cond(al_24 - *edi_78);
-			edi_20 = edi_78 + 0x01;
-			ecx_26 = ecx_26 - 0x01;
-			byte * edi_78 = edi_20;
-			if (al_24 != *edi_78)
-				break;
-		}
-		if (!Z_28)
-			;
-	}
 }
 
 // 080B30E6: void rep_scas_memchr_mv_constant_simple(Stack (ptr byte) dwArg02, Stack word32 dwArg06, Stack word32 dwArg0A)
 void rep_scas_memchr_mv_constant_simple(byte * dwArg02, word32 dwArg06, word32 dwArg0A)
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	byte * edi_17 = dwArg02;
-	byte al_20 = (byte) dwArg06;
-	word32 ecx_22 = dwArg0A;
-	bool Z_24 = cond(dwArg0A);
-	if (dwArg0A != 0x00)
-	{
-		while (ecx_22 != 0x00)
-		{
-			Z_24 = cond(al_20 - *edi_74);
-			edi_17 = edi_74 + 0x01;
-			ecx_22 = ecx_22 - 0x01;
-			byte * edi_74 = edi_17;
-			if (al_20 != *edi_74)
-				break;
-		}
-		if (!Z_24)
-			;
-	}
 }
 
 // 080B31E9: void rep_scas_memchr_mv_constant_complex1(Stack (ptr byte) dwArg02, Stack word32 dwArg06, Stack word32 dwArg0A)
 void rep_scas_memchr_mv_constant_complex1(byte * dwArg02, word32 dwArg06, word32 dwArg0A)
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	byte * edi_17 = dwArg02;
-	byte al_20 = (byte) dwArg06;
-	word32 ecx_22 = dwArg0A;
-	bool Z_24 = cond(dwArg0A);
-	if (dwArg0A != 0x00)
-	{
-		while (ecx_22 != 0x00)
-		{
-			Z_24 = cond(al_20 - *edi_74);
-			edi_17 = edi_74 + 0x01;
-			ecx_22 = ecx_22 - 0x01;
-			byte * edi_74 = edi_17;
-			if (al_20 != *edi_74)
-				break;
-		}
-		if (!Z_24)
-			;
-	}
 }
 
 // 080B32EC: void rep_scas_memchr_mv_constant_complex2(Stack (ptr byte) dwArg02, Stack word32 dwArg06, Stack word32 dwArg0A)
 void rep_scas_memchr_mv_constant_complex2(byte * dwArg02, word32 dwArg06, word32 dwArg0A)
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	byte * edi_17 = dwArg02;
-	byte al_20 = (byte) dwArg06;
-	word32 ecx_22 = dwArg0A;
-	bool Z_24 = cond(dwArg0A);
-	if (dwArg0A != 0x00)
-	{
-		while (ecx_22 != 0x00)
-		{
-			Z_24 = cond(al_20 - *edi_74);
-			edi_17 = edi_74 + 0x01;
-			ecx_22 = ecx_22 - 0x01;
-			byte * edi_74 = edi_17;
-			if (al_20 != *edi_74)
-				break;
-		}
-		if (!Z_24)
-			;
-	}
 }
 
 // 080B33F0: void rep_cmps1_test_with_count_0_mv_plain()
 void rep_cmps1_test_with_count_0_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B3E;
-	word32 ecx_30 = 0x00;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 != *edi_31)
-			return;
-	}
 }
 
 // 080B3415: void rep_cmps1_test_with_count_0_mv_allregs()
 void rep_cmps1_test_with_count_0_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B3E;
-	Eq_95 ecx_103 = 0x00;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 != *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B3523: void rep_cmps1_test_with_count_0_mv_constant_simple()
 void rep_cmps1_test_with_count_0_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3626: void rep_cmps1_test_with_count_0_mv_constant_complex1()
 void rep_cmps1_test_with_count_0_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3729: void rep_cmps1_test_with_count_0_mv_constant_complex2()
 void rep_cmps1_test_with_count_0_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B382D: void rep_cmps1_test_all_4bytes_differ_mv_plain()
 void rep_cmps1_test_all_4bytes_differ_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B43;
-	word32 ecx_30 = 0x04;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 != *edi_31)
-			return;
-	}
 }
 
 // 080B3852: void rep_cmps1_test_all_4bytes_differ_mv_allregs()
 void rep_cmps1_test_all_4bytes_differ_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B43;
-	Eq_95 ecx_103 = 0x04;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 != *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B3960: void rep_cmps1_test_all_4bytes_differ_mv_constant_simple()
 void rep_cmps1_test_all_4bytes_differ_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x04;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3A63: void rep_cmps1_test_all_4bytes_differ_mv_constant_complex1()
 void rep_cmps1_test_all_4bytes_differ_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x04;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3B66: void rep_cmps1_test_all_4bytes_differ_mv_constant_complex2()
 void rep_cmps1_test_all_4bytes_differ_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x04;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3C6A: void rep_cmps1_test_5th_byte_is_equal_mv_plain()
 void rep_cmps1_test_5th_byte_is_equal_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B43;
-	word32 ecx_30 = 0x05;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 != *edi_31)
-			return;
-	}
 }
 
 // 080B3C8F: void rep_cmps1_test_5th_byte_is_equal_mv_allregs()
 void rep_cmps1_test_5th_byte_is_equal_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B43;
-	Eq_95 ecx_103 = 0x05;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 != *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B3D9D: void rep_cmps1_test_5th_byte_is_equal_mv_constant_simple()
 void rep_cmps1_test_5th_byte_is_equal_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x05;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3EA0: void rep_cmps1_test_5th_byte_is_equal_mv_constant_complex1()
 void rep_cmps1_test_5th_byte_is_equal_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x05;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B3FA3: void rep_cmps1_test_5th_byte_is_equal_mv_constant_complex2()
 void rep_cmps1_test_5th_byte_is_equal_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B43;
-	Eq_95 ecx_23 = 0x05;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 != *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 135080771);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B40A7: void rep_cmps2_test_with_count_0_mv_plain()
 void rep_cmps2_test_with_count_0_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B3E;
-	word32 ecx_30 = 0x00;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 == *edi_31)
-			return;
-	}
 }
 
 // 080B40CC: void rep_cmps2_test_with_count_0_mv_allregs()
 void rep_cmps2_test_with_count_0_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B3E;
-	Eq_95 ecx_103 = 0x00;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 == *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B41DA: void rep_cmps2_test_with_count_0_mv_constant_simple()
 void rep_cmps2_test_with_count_0_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B42DD: void rep_cmps2_test_with_count_0_mv_constant_complex1()
 void rep_cmps2_test_with_count_0_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B43E0: void rep_cmps2_test_with_count_0_mv_constant_complex2()
 void rep_cmps2_test_with_count_0_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x00;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B44E4: void rep_cmps2_test_all_4_bytes_are_equal_mv_plain()
 void rep_cmps2_test_all_4_bytes_are_equal_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = globals->a80D2B34;
-	word32 ecx_30 = 0x08;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 == *edi_31)
-			return;
-	}
 }
 
 // 080B4509: void rep_cmps2_test_all_4_bytes_are_equal_mv_allregs()
 void rep_cmps2_test_all_4_bytes_are_equal_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = globals->a80D2B34;
-	Eq_95 ecx_103 = 0x08;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 == *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 0x080D2B34);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B4617: void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_simple()
 void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = globals->a80D2B34;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B34);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B471A: void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_complex1()
 void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = globals->a80D2B34;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B34);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B481D: void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_complex2()
 void rep_cmps2_test_all_4_bytes_are_equal_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = globals->a80D2B34;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B34);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B4921: void rep_cmps2_test_more_after_3_bytes_mv_plain()
 void rep_cmps2_test_more_after_3_bytes_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B39;
-	word32 ecx_30 = 0x08;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 == *edi_31)
-			return;
-	}
 }
 
 // 080B4946: void rep_cmps2_test_more_after_3_bytes_mv_allregs()
 void rep_cmps2_test_more_after_3_bytes_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B39;
-	Eq_95 ecx_103 = 0x08;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 == *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 0x080D2B39);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B4A54: void rep_cmps2_test_more_after_3_bytes_mv_constant_simple()
 void rep_cmps2_test_more_after_3_bytes_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B39;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B39);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B4B57: void rep_cmps2_test_more_after_3_bytes_mv_constant_complex1()
 void rep_cmps2_test_more_after_3_bytes_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B39;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B39);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B4C5A: void rep_cmps2_test_more_after_3_bytes_mv_constant_complex2()
 void rep_cmps2_test_more_after_3_bytes_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B39;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B39);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B4D5E: void rep_cmps2_test_less_after_3_bytes_mv_plain()
 void rep_cmps2_test_less_after_3_bytes_mv_plain()
 {
-	byte * edi_10 = globals->a80D2B34;
-	byte * esi_11 = &globals->b80D2B3E;
-	word32 ecx_30 = 0x08;
-	while (ecx_30 != 0x00)
-	{
-		esi_11 = esi_32 + 0x01;
-		edi_10 = edi_31 + 0x01;
-		ecx_30 = ecx_30 - 0x01;
-		byte * edi_31 = edi_10;
-		byte * esi_32 = esi_11;
-		if (*esi_32 == *edi_31)
-			return;
-	}
 }
 
 // 080B4D83: void rep_cmps2_test_less_after_3_bytes_mv_allregs()
 void rep_cmps2_test_less_after_3_bytes_mv_allregs()
 {
-	Eq_95 SCZDOP_32 = (union Eq_95 *) 0x1100;
-	Eq_95 eax_17 = (union Eq_95 *) 0x1000;
-	Eq_95 ebx_19 = (union Eq_95 *) 0x1004;
-	Eq_95 edx_21 = (union Eq_95 *) 0x100C;
-	struct Eq_111 * ebp_22 = (struct Eq_111 **) 0x1010;
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) fp;
-	byte * edi_102 = globals->a80D2B34;
-	byte * esi_101 = &globals->b80D2B3E;
-	Eq_95 ecx_103 = 0x08;
-	while (ecx_103 != 0x00)
-	{
-		SCZDOP_32 = cond(*esi_101 - *edi_102);
-		esi_101 = esi_101 + 0x01;
-		edi_102 = edi_102 + 0x01;
-		ecx_103 = ecx_103 - 0x01;
-		if (*esi_101 == *edi_102)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) eax_17;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) ebx_19;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_103;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) edx_21;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) ebp_22;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_101 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_102 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_32;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_32;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - fp;
 }
 
 // 080B4E91: void rep_cmps2_test_less_after_3_bytes_mv_constant_simple()
 void rep_cmps2_test_less_after_3_bytes_mv_constant_simple()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x02;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x03;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 0x05;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x06;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B4F94: void rep_cmps2_test_less_after_3_bytes_mv_constant_complex1()
 void rep_cmps2_test_less_after_3_bytes_mv_constant_complex1()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = 0x00;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 2746317188;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 0x06671AD7;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 958682820;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 3163119780;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B5097: void rep_cmps2_test_less_after_3_bytes_mv_constant_complex2()
 void rep_cmps2_test_less_after_3_bytes_mv_constant_complex2()
 {
-	(union Eq_120 *) 0x2050 = (union Eq_120 *) (fp - 0x02);
-	Eq_95 SCZDOP_27 = ~0x0100;
-	byte * edi_21 = globals->a80D2B34;
-	byte * esi_100 = &globals->b80D2B3E;
-	Eq_95 ecx_23 = 0x08;
-	while (ecx_23 != 0x00)
-	{
-		SCZDOP_27 = cond(*esi_100 - *edi_21);
-		esi_100 = esi_100 + 0x01;
-		edi_21 = edi_21 + 0x01;
-		ecx_23 = ecx_23 - 0x01;
-		if (*esi_100 == *edi_21)
-			break;
-	}
-	(union Eq_95 *) 0x2000 = (union Eq_95 *) 0x313EC0E8;
-	(union Eq_95 *) 0x2004 = (union Eq_95 *) 1231978947;
-	(union Eq_95 *) 0x2008 = (union Eq_95 *) ecx_23;
-	(union Eq_95 *) 0x200C = (union Eq_95 *) 1315513779;
-	(struct Eq_111 **) 0x2010 = (struct Eq_111 **) (struct Eq_111 *) 0x4F312610;
-	(union Eq_114 **) 8212 = (union Eq_114 **) (esi_100 - 0x080D2B3E);
-	(union Eq_117 **) 0x2018 = (union Eq_117 **) (edi_21 - 0x080D2B34);
-	(union Eq_95 *) 0x2200 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2201 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2202 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2203 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2204 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2205 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2206 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2207 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2208 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x2209 = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220A = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220B = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220C = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220D = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220E = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 0x220F = (union Eq_95 *) SCZDOP_27;
-	(union Eq_95 *) 8448 = (union Eq_95 *) SCZDOP_27;
-	(ui32 *) 0x2020 = (union Eq_120 *) 0x2050 - (fp - 0x02);
 }
 
 // 080B519B: void rep_lods_test_mv_plain()
@@ -84512,8 +79411,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 		{
 			word32 esp_60;
 			word32 ebp_61;
-			uint32 edi_62;
-			uint32 esi_63;
+			up32 edi_62;
+			up32 esi_63;
 			word32 ebx_64;
 			byte SCZO_65;
 			word32 eax_66;

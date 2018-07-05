@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10010D94();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000324: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t10010E08)))
+	if (Test(NE,cond(globals->t10010E08)))
+		return fp;
+	word32 * r11_34 = globals->ptr10010D90;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr10010D90;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr10010D90 = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t10010E08.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr10010D90 = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 1000039C: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -76,89 +77,96 @@ void call_frame_dummy(word32 dwArg04)
 {
 }
 
-// 10000418: Register int32 main(Register int32 r3, Register int32 r4, Register (ptr Eq_88) r5, Stack word32 dwArg04)
-int32 main(int32 r3, int32 r4, Eq_88 * r5, word32 dwArg04)
+// 10000418: Register int32 main(Register int32 r3, Register int32 r4, Register (ptr Eq_88) r5, Register uint32 cr, Stack word32 dwArg04)
+int32 main(int32 r3, int32 r4, Eq_88 * r5, uint32 cr, word32 dwArg04)
 {
-	int32 dwLoc1C_102;
-	if (Test(GT,cond(r3 - 0x01)))
+	int32 dwLoc1C_103;
+	if (Test(LE,cond(r3 - 0x01)))
+	{
+		if (Test(GE,cond(r3)))
+		{
+			if (Test(LE,cond(r3)))
+			{
+				dwLoc1C_103 = 0x00;
+				if (Test(NE,cond((r5->t0000 & 0xFF) - 0x002F)))
+				{
+					Eq_166 r0_165 = r5->t0000;
+					__crxor(0x06, 0x06, 0x06);
+					int32 r3_171 = main(-0x003D, r0_165 & 0xFF, &globals->t10000C5C, cr, dwLoc2C);
+					__crxor(0x06, 0x06, 0x06);
+					if (Test(EQ,cond(main(0x00, r3_171, (char *) &r5->t0000 + 0x01, cr, dwLoc2C))))
+						return dwLoc1C_103;
+				}
+				dwLoc1C_103 = 0x01;
+				return dwLoc1C_103;
+			}
+			else
+			{
+				__crxor(0x06, 0x06, 0x06);
+				dwLoc1C_103 = main(0x02, 0x02, &globals->t10000C58, cr, dwLoc2C);
+				return dwLoc1C_103;
+			}
+		}
+		else
+		{
+			if (Test(LT,cond(r3 - -0x0048)))
+			{
+				__crxor(0x06, 0x06, 0x06);
+				dwLoc1C_103 = main(r4, r3, &globals->t10000ABC, cr, dwLoc2C);
+			}
+			else if (Test(LT,cond(r3 - -0x0032)))
+			{
+				if (Test(EQ,cond(r4 - (r5->t0000 & 0xFF))))
+				{
+					Eq_215 r0_115 = r5->t001F;
+					putchar();
+					dwLoc1C_103 = r0_115 & 0xFF;
+				}
+				else
+				{
+					__crxor(0x06, 0x06, 0x06);
+					dwLoc1C_103 = main(-0x0041, r4, (char *) &r5->t0000 + 0x01, cr, dwLoc2C);
+				}
+			}
+			else
+			{
+				__crxor(0x06, 0x06, 0x06);
+				dwLoc1C_103 = main((cr >> 0x01 & 0x3FFFFFFF) + r3, r4, (char *) &r5->t0000 + 0x01, cr, dwLoc2C);
+			}
+			return dwLoc1C_103;
+		}
+	}
+	else
 	{
 		if (Test(LE,cond(r3 - 0x02)))
 		{
 			__crxor(0x06, 0x06, 0x06);
-			struct Eq_88 * r9_78 = r5 + main(-0x0056, 0x00, (char *) (&r5->t0000) + 0x01, dwLoc2C) / 0x0023;
+			struct Eq_88 * r9_79 = r5 + main(-0x0056, 0x00, (char *) (&r5->t0000) + 0x01, cr, dwLoc2C) / 0x0023;
 			__crxor(0x06, 0x06, 0x06);
-			struct Eq_88 * r0_87 = r5 + main(-0x0057, 0x01 - r4, r9_78, dwLoc2C) / 0x0023;
+			struct Eq_88 * r0_88 = r5 + main(-0x0057, 0x01 - r4, r9_79, cr, dwLoc2C) / 0x0023;
 			__crxor(0x06, 0x06, 0x06);
-			main(-0x004F, -0x0D, r0_87, dwLoc2C);
+			main(-0x004F, -0x0D, r0_88, cr, dwLoc2C);
 		}
 		if (Test(LT,cond(r3 - r4)))
 		{
 			__crxor(0x06, 0x06, 0x06);
-			main(r3 + 0x01, r4, r5, dwLoc2C);
+			main(r3 + 0x01, r4, r5, cr, dwLoc2C);
 		}
 		__crxor(0x06, 0x06, 0x06);
-		if (Test(NE,cond(main(-0x005E, r3 + -0x001B, r5, dwLoc2C))) && Test(EQ,cond(r3 - 0x02)))
+		if (Test(NE,cond(main(-0x005E, r3 + -0x001B, r5, cr, dwLoc2C))) && Test(EQ,cond(r3 - 0x02)))
 		{
 			if (Test(LE,cond(r4 - 0x0C)))
 			{
 				__crxor(0x06, 0x06, 0x06);
-				dwLoc1C_102 = main(0x02, r4 + 0x01, &globals->t10000AB0, dwLoc2C);
+				dwLoc1C_103 = main(0x02, r4 + 0x01, &globals->t10000AB0, cr, dwLoc2C);
 			}
 			else
-				dwLoc1C_102 = 0x09;
+				dwLoc1C_103 = 0x09;
 		}
 		else
-			dwLoc1C_102 = 0x0010;
+			dwLoc1C_103 = 0x0010;
+		return dwLoc1C_103;
 	}
-	else
-	{
-		if (Test(GE,cond(r3)))
-		{
-			if (Test(GT,cond(r3)))
-			{
-				__crxor(0x06, 0x06, 0x06);
-				dwLoc1C_102 = main(0x02, 0x02, &globals->t10000C58, dwLoc2C);
-				return dwLoc1C_102;
-			}
-			dwLoc1C_102 = 0x00;
-			if (Test(NE,cond((r5->t0000 & 0xFF) - 0x002F)))
-			{
-				Eq_165 r0_165 = r5->t0000;
-				__crxor(0x06, 0x06, 0x06);
-				int32 r3_171 = main(-0x003D, r0_165 & 0xFF, &globals->t10000C5C, dwLoc2C);
-				__crxor(0x06, 0x06, 0x06);
-				if (Test(EQ,cond(main(0x00, r3_171, (char *) &r5->t0000 + 0x01, dwLoc2C))))
-					return dwLoc1C_102;
-			}
-			dwLoc1C_102 = 0x01;
-			return dwLoc1C_102;
-		}
-		if (Test(LT,cond(r3 - -0x0048)))
-		{
-			__crxor(0x06, 0x06, 0x06);
-			dwLoc1C_102 = main(r4, r3, &globals->t10000ABC, dwLoc2C);
-		}
-		else if (Test(LT,cond(r3 - -0x0032)))
-		{
-			if (Test(EQ,cond(r4 - (r5->t0000 & 0xFF))))
-			{
-				Eq_215 r0_114 = r5->t001F;
-				putchar();
-				dwLoc1C_102 = r0_114 & 0xFF;
-			}
-			else
-			{
-				__crxor(0x06, 0x06, 0x06);
-				dwLoc1C_102 = main(-0x0041, r4, (char *) &r5->t0000 + 0x01, dwLoc2C);
-			}
-		}
-		else
-		{
-			__crxor(0x06, 0x06, 0x06);
-			dwLoc1C_102 = main((cr >> 0x01 & 0x3FFFFFFF) + r3, r4, (char *) &r5->t0000 + 0x01, dwLoc2C);
-		}
-	}
-	return dwLoc1C_102;
 }
 
 // 10000714: void __libc_csu_fini(Stack word32 dwArg04)
@@ -917,8 +925,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw10010CA0 - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 10000A60: void call___do_global_ctors_aux(Stack word32 dwArg04)

@@ -11,10 +11,7 @@ Eq_30 g_t400570 = Unexpected function type (fn void ())
 Eq_31 g_t4005E0 = Unexpected function type (fn void ())
 ;
 char g_str4005F4[] = "%d";
-union Eq_197 g_u600750 = 
-	{
-		0x004004D0
-	};
+<anonymous> * g_ptr600750 = frame_dummy;
 word64 g_qw600760 = 0x0000000000000000;
 word64 g_qw600938 = 0x0000000000000000;
 byte g_b600980 = 0x00;

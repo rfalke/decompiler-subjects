@@ -5,7 +5,9 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-word32 g_dw0010;
+Eq_2 g_t10A3C = Unexpected function type (fn void ())
+;
+char g_str11F28[] = "";
 int32 g_a220B4[] = 
 	{
 	};

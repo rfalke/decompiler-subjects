@@ -77,8 +77,9 @@ void fn000010BE()
 {
 	word32 d0_6 = OpenLibrary(0x1135, 0x00);
 	globals->ptr114A = d0_6;
-	if (d0_6 == 0x00)
-		fn00001092();
+	if (d0_6 != 0x00)
+		return;
+	fn00001092();
 }
 
 // 000010DA: Register word32 fn000010DA()
@@ -88,8 +89,7 @@ word32 fn000010DA()
 	globals->dw1146 = d0_6;
 	if (d0_6 == 0x00)
 		return fn00001092();
-	else
-		return d0_6;
+	return d0_6;
 }
 
 // 000012F4: Register word32 fn000012F4(Register word32 d0, Register word32 d1, Register word32 d2)

@@ -7,8 +7,15 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 == 0x00)
-		;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 != 0x00)
+		fn08048300();
+}
+
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	globals->ptr8049FFC();
 }
 
 // 08048310: void main(Stack word32 dwArg00, Stack ui32 dwArg04)
@@ -19,7 +26,7 @@ void main(word32 dwArg00, ui32 dwArg04)
 	with_array(fp - 0x08, dwArg04);
 }
 
-// 08048341: void _start(Register (ptr Eq_32) edx, Stack int32 dwArg00)
+// 08048341: void _start(Register (ptr Eq_38) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -127,16 +134,16 @@ void with_array(ptr32 ebp, ui32 dwArg04)
 // 080484D0: void with_alloca(Register ptr32 ebp, Stack ui32 dwArg04)
 void with_alloca(ptr32 ebp, ui32 dwArg04)
 {
-	union Eq_199 * esp_16 = fp - 0x1C - (dwArg04 * 0x04 + 0x1E & ~0x0F);
+	union Eq_205 * esp_16 = fp - 0x1C - (dwArg04 * 0x04 + 0x1E & ~0x0F);
 	*(esp_16 - 0x0C) = dwArg04;
 	word32 ebx_21 = esp_16 + 0x0F & ~0x0F;
-	*(esp_16 - (union Eq_199 *) 0x10) = (union Eq_199 *) ebx_21;
+	*(esp_16 - (union Eq_205 *) 0x10) = (union Eq_205 *) ebx_21;
 	fill(dwArg00, dwArg04);
-	*(esp_16 - (union Eq_199 *) 0x10) = (union Eq_199 *) (fp - 0x14);
+	*(esp_16 - (union Eq_205 *) 0x10) = (union Eq_205 *) (fp - 0x14);
 	use(dwArg00);
-	*(esp_16 - (union Eq_199 *) 0x10) = (union Eq_199 *) ebx_21;
+	*(esp_16 - (union Eq_205 *) 0x10) = (union Eq_205 *) ebx_21;
 	use(dwArg00);
-	*(esp_16 - (union Eq_199 *) 0x10) = (union Eq_199 *) (fp - 0x10);
+	*(esp_16 - (union Eq_205 *) 0x10) = (union Eq_205 *) (fp - 0x10);
 	use(dwArg00);
 }
 

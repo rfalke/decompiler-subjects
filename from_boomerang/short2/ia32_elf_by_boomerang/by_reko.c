@@ -87,8 +87,7 @@ word32 test(int32 dwArg04, int32 dwArg08, int32 dwArg0C)
 {
 	if (dwArg04 >= dwArg08 || dwArg08 >= dwArg0C)
 		return 0x00;
-	else
-		return 0x01;
+	return 0x01;
 }
 
 // 08048398: void main()
@@ -105,26 +104,25 @@ void main()
 void __libc_csu_init()
 {
 	_init();
-	word32 eax_21 = 0x080496D4 - 0x080496D4;
-	if (eax_21 >> 0x02 != 0x00)
+	int32 eax_21 = 134518484 - 134518484;
+	if (eax_21 >> 0x02 == 0x00)
+		return;
+	do
 	{
-		do
-		{
-			word32 esp_56;
-			word32 ebp_57;
-			uint32 edi_58;
-			word32 esi_59;
-			word32 ebx_60;
-			byte SCZO_61;
-			word32 eax_62;
-			word32 edx_63;
-			byte Z_64;
-			byte SZO_65;
-			byte C_66;
-			bcuiposr0 None_67;
-			(*(<anonymous> **) 134518484)();
-		} while (edi_58 + 0x01 < eax_21 >> 0x02);
-	}
+		word32 esp_56;
+		word32 ebp_57;
+		up32 edi_58;
+		word32 esi_59;
+		word32 ebx_60;
+		byte SCZO_61;
+		word32 eax_62;
+		word32 edx_63;
+		byte Z_64;
+		byte SZO_65;
+		byte C_66;
+		bcuisposr0 None_67;
+		(*(<anonymous> **) 134518484)();
+	} while (edi_58 + 0x01 < eax_21 >> 0x02);
 }
 
 // 0804845C: void __libc_csu_fini()

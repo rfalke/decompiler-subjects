@@ -11,9 +11,9 @@ Eq_27 g_t8048438 = Unexpected function type (fn void ())
 ;
 Eq_28 g_t804848C = Unexpected function type (fn void ())
 ;
-char g_str8048518[] = "Middle elment is %d\x0A";
-char g_str804852D[] = "First element is %d\x0A";
-char g_str8048542[] = "Sum is %d\x0A";
+char g_str8048518[] = "Middle elment is %d\n";
+char g_str804852D[] = "First element is %d\n";
+char g_str8048542[] = "Sum is %d\n";
 <anonymous> * g_ptr8049554 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049560 = null;
 word32 g_dw8049564 = 0x00000000;

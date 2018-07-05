@@ -7,23 +7,30 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 == 0x00)
-		;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 != 0x00)
+		fn08048300();
+}
+
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	globals->ptr8049FFC();
 }
 
 // 08048310: void main(Stack word32 dwArg00)
 void main(word32 dwArg00)
 {
 	__align(fp);
-	char * ebx_16 = null;
+	Eq_24 ebx_16 = 0x00;
 	do
 	{
-		f(tLoc24, ebx_16, ebx_16);
-		ebx_16 = ebx_16 + 0x01;
-	} while (ebx_16 != (char *) 0x0A);
+		f(ebx_16, ebx_16);
+		ebx_16 = (word32) ebx_16 + 0x01;
+	} while (ebx_16 != 0x0A);
 }
 
-// 0804833F: void _start(Register (ptr Eq_31) edx, Stack int32 dwArg00)
+// 0804833F: void _start(Register (ptr Eq_35) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -101,15 +108,14 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 0804843B: void f(Stack Eq_22 tArg00, Stack (ptr char) ptrArg04, Stack (ptr char) dwArg08)
-void f( tArg00, char * ptrArg04, char * dwArg08)
+// 0804843B: void f(Stack Eq_24 dwArg04, Stack Eq_24 dwArg08)
+void f(Eq_24 dwArg04, Eq_24 dwArg08)
 {
-	if (ptrArg04 <= (char *) 0x07)
-		printf("%d signed in range\n", ptrArg04);
-	if (dwArg08 > (char *) 0x07)
-		;
-	else
-		printf("%d unsigned in range\n", tArg00);
+	if (dwArg04 <= 0x07 && dwArg04 >= 0x02)
+		printf("%d signed in range\n", dwArg04);
+	if (dwArg08 > 0x07 || dwArg08 < 0x02)
+		return;
+	printf("%d unsigned in range\n", dwArg08);
 }
 
 // 08048480: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

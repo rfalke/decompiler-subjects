@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn100108EC();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 100002FC: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t10010954)))
+	if (Test(NE,cond(globals->t10010954)))
+		return fp;
+	word32 * r11_34 = globals->ptr100108E8;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr100108E8;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr100108E8 = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t10010954.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr100108E8 = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 10000374: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -79,37 +80,6 @@ void call_frame_dummy(word32 dwArg04)
 // 100003F0: void main(Register word32 r3)
 void main(word32 r3)
 {
-	byte cr7_3 = cond(r3 - 0x05);
-	if (Test(NE,cr7_3))
-	{
-		if (Test(LE,cr7_3) && Test(EQ,cond(r3 - 0x02)))
-		{
-			byte cr7_18 = cond(r3);
-			do
-				;
-			while (Test(GT,cr7_18));
-		}
-	}
-	else
-	{
-		do
-		{
-			r3 = r3 + -0x01;
-			byte cr0_23 = cond(r3);
-			byte cr1_24 = cond(r3 - 0x02);
-			byte cr6_25 = cond(r3 - 0x0C);
-			if (Test(GT,cond(r3 - 0x01)))
-			{
-				r3 = r3 + -0x01;
-				byte cr7_27 = cond(r3 + -0x01);
-				if (Test(GT,cr1_24))
-					return;
-				if (Test(GT,cr7_27))
-					continue;
-				return;
-			}
-		} while (Test(NE,cr6_25) && Test(GT,cr0_23));
-	}
 }
 
 // 10000458: void __libc_csu_fini(Stack word32 dwArg04)
@@ -868,8 +838,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw100107F8 - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 100007A4: void call___do_global_ctors_aux(Stack word32 dwArg04)

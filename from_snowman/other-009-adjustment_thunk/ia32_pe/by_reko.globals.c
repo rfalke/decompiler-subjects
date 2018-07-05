@@ -12,8 +12,8 @@ Eq_501 g_t400000 =
 	};
 <anonymous> g_t401005 = <code>;
 <anonymous> g_t401069 = <code>;
-<anonymous> * g_ptr40375C = &g_t401069;
-<anonymous> * g_ptr40376C = &g_t401005;
+Eq_35 g_t40375C = &g_t401069;
+Eq_35 g_t40376C = &g_t401005;
 ui32 g_dw405078 = 0xBB40E64E;
 ui32 g_dw40507C = 0x44BF19B1;
 word32 g_dw405190 = 0x00000000;

@@ -7,11 +7,18 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 == 0x00)
-		;
+	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 != 0x00)
+		fn08048300();
 }
 
-// 08048310: void _start(Register (ptr Eq_12) edx, Stack int32 dwArg00)
+// 08048300: void fn08048300()
+void fn08048300()
+{
+	word32 esp_3;
+	globals->ptr8049FFC();
+}
+
+// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -104,32 +111,32 @@ void fill(word32 * dwArg04, ui32 dwArg08)
 // 08048442: void with_array(Register ptr32 ebp, Stack ui32 dwArg04)
 void with_array(ptr32 ebp, ui32 dwArg04)
 {
-	union Eq_147 * esp_29 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x12)) /u 0x10) *s 0x10;
+	union Eq_153 * esp_29 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x12)) /u 0x10) *s 0x10;
 	*(esp_29 - 0x0C) = dwArg04;
 	word32 eax_32 = esp_29 + 0x03 >>u 0x02;
-	*(esp_29 - (union Eq_147 *) 0x10) = (union Eq_147 *) (eax_32 << 0x02);
+	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (eax_32 << 0x02);
 	fill(dwArg00, dwArg04);
-	*(esp_29 - (union Eq_147 *) 0x10) = (union Eq_147 *) (fp - 0x18);
+	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (fp - 0x18);
 	use(dwArg00);
-	*(esp_29 - (union Eq_147 *) 0x10) = (union Eq_147 *) (eax_32 << 0x02);
+	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (eax_32 << 0x02);
 	use(dwArg00);
-	*(esp_29 - (union Eq_147 *) 0x10) = (union Eq_147 *) (fp - 0x1C);
+	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (fp - 0x1C);
 	use(dwArg00);
 }
 
 // 080484DA: void with_alloca(Register ptr32 ebp, Stack ui32 dwArg04)
 void with_alloca(ptr32 ebp, ui32 dwArg04)
 {
-	union Eq_213 * esp_22 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x1E)) /u 0x10) *s 0x10;
+	union Eq_219 * esp_22 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x1E)) /u 0x10) *s 0x10;
 	*(esp_22 - 0x0C) = dwArg04;
 	word32 eax_25 = esp_22 + 0x0F >>u 0x04;
-	*(esp_22 - (union Eq_213 *) 0x10) = (union Eq_213 *) (eax_25 << 0x04);
+	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (eax_25 << 0x04);
 	fill(dwArg00, dwArg04);
-	*(esp_22 - (union Eq_213 *) 0x10) = (union Eq_213 *) (fp - 0x14);
+	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (fp - 0x14);
 	use(dwArg00);
-	*(esp_22 - (union Eq_213 *) 0x10) = (union Eq_213 *) (eax_25 << 0x04);
+	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (eax_25 << 0x04);
 	use(dwArg00);
-	*(esp_22 - (union Eq_213 *) 0x10) = (union Eq_213 *) (fp - 0x18);
+	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (fp - 0x18);
 	use(dwArg00);
 }
 

@@ -4,15 +4,15 @@
 
 #include "subject.h"
 
-Eq_5039 g_a0005[];
-Eq_5040 g_a000D[];
+Eq_5088 g_a0005[];
+Eq_5089 g_a000D[];
 word16 g_w40000000;
 word32 g_dw4000003C;
 struct Eq_232 g_t40006800;
 struct Eq_232 g_t400068A0;
 word64 g_a40006C70[];
-Eq_2476 g_a40006CD8[];
-Eq_3032 g_a40006D00[];
+Eq_2458 g_a40006CD8[];
+Eq_3014 g_a40006D00[];
 word64 g_qw400075C0;
 word64 g_qw400077D8;
 word64 g_qw400078F0;

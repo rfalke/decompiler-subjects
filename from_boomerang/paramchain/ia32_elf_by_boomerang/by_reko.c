@@ -34,12 +34,12 @@ void _mcount()
 // 08048880: void fn08048880()
 void fn08048880()
 {
-	if (0x00 != 0x00)
+	if (0x00 == 0x00)
+		return;
+	__wait();
+	uint16 wLoc10_39 = __fstcw();
+	if (!__bt(0x00, 0x0A))
 	{
-		__wait();
-		uint16 wLoc10_39 = __fstcw();
-		if (__bt(0x00, 0x0A))
-			;
 		cui16 v16_67 = wLoc10_39 & 0xF0C0 | 0x0300;
 		__fldcw(v16_67 | 0x02);
 		__fldcw(v16_67 | 0x02);
@@ -80,7 +80,7 @@ void _init()
 		word32 ecx_28;
 		word32 edx_29;
 		byte Z_30;
-		bcuiposr0 None_31;
+		bcuisposr0 None_31;
 		(*(ecx_8 - 0x08))();
 	}
 }
@@ -97,7 +97,7 @@ void _fini()
 		word32 ecx_29;
 		word32 edx_30;
 		byte Z_31;
-		bcuiposr0 None_32;
+		bcuisposr0 None_32;
 		(*(ecx_8 - 0x14))();
 	}
 }

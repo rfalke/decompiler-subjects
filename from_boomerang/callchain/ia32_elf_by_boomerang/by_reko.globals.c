@@ -12,7 +12,7 @@ ui32 g_a8048EF8[] =
 	};
 Eq_2 g_t80494A0 = Unexpected function type (fn void ())
 ;
-char g_str80494B8[] = "Fifty five is %d\x0A";
+char g_str80494B8[] = "Fifty five is %d\n";
 byte g_b80494CA = 0x00;
 byte g_b80494CB = 0x65;
 struct Eq_47 g_t804A4D0 = 

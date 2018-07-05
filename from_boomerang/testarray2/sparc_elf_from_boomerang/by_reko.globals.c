@@ -5,5 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
+Eq_2 g_t10884 = Unexpected function type (fn void ())
+;
 ptr32 g_ptr20A94 = 0x00000000;
 

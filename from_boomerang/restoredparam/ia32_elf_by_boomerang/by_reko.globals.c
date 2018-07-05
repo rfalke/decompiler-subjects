@@ -11,7 +11,7 @@ Eq_25 g_t80483A4 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t80483F4 = Unexpected function type (fn void ())
 ;
-char g_str8048448[] = "Result is %d\x0A";
+char g_str8048448[] = "Result is %d\n";
 <anonymous> * g_ptr804945C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049468 = null;
 word32 g_dw804946C = 0x00000000;

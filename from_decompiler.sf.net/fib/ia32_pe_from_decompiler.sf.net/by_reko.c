@@ -9,8 +9,7 @@ word32 fn00401000(int32 dwArg04)
 {
 	if (dwArg04 >= 0x01)
 		return fn00401000(dwArg04 - 0x01) + fn00401000(dwArg04 - 0x02);
-	else
-		return 0x01;
+	return 0x01;
 }
 
 // 00401050: Register uint32 fn00401050(Stack uint32 dwArg04, Stack (ptr byte) dwArg08, Stack uint32 dwArg0C)

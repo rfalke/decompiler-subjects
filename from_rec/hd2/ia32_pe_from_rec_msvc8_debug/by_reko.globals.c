@@ -7,14 +7,14 @@
 ui32 g_dw0002;
 ui32 g_dw0004;
 ui32 g_dw0005;
-Eq_3532 g_a000B[];
-Eq_731 g_t400000 = 
+Eq_3458 g_a000B[];
+Eq_656 g_t400000 = 
 	{
 		0x0000,
 		0,
 	};
 WCHAR g_t415844 = L'湕';
-Eq_552 g_a415B64[] = 
+Eq_477 g_a415B64[] = 
 	{
 	};
 word32 g_a415B7C[] = 
@@ -23,7 +23,7 @@ word32 g_a415B7C[] =
 byte g_a415B94[] = 
 	{
 	};
-Eq_657 g_t415BB0 = 
+Eq_582 g_t415BB0 = 
 	{
 		0x61772027
 	};
@@ -41,7 +41,7 @@ word32 g_a417008[] =
 	{
 	};
 word32 g_dw417010 = 0x00000001;
-Eq_1205 g_t417034 = &g_t416144;
+Eq_1131 g_t417034 = &g_t416144;
 word32 g_dw417144 = 0x00000000;
 int32 g_dw417148 = 0;
 word32 g_dw41714C = 0x00000000;
@@ -56,8 +56,8 @@ Eq_2 g_t4171C0 =
 		0
 	};
 word32 g_dw4171C8 = 0x00000000;
-struct Eq_2018 * g_ptr417254 = null;
-struct Eq_2015 * g_ptr417258 = null;
+struct Eq_1944 * g_ptr417254 = null;
+struct Eq_1941 * g_ptr417258 = null;
 struct Eq_9 * g_ptr41725C = null;
 struct Eq_10 * g_ptr417260 = null;
 Eq_2 g_t417264 = 
@@ -81,18 +81,15 @@ Eq_2 g_t417278 =
 	{
 		0
 	};
-Eq_2 g_t41727C = 
-	{
-		0
-	};
+ptr32 g_ptr41727C = 0x00000000;
 word32 g_dw417280 = 0x00000000;
-struct Eq_2008 * g_ptr417284 = null;
-Eq_2024 g_t417288 = 
+struct Eq_1934 * g_ptr417284 = null;
+Eq_1950 g_t417288 = 
 	{
 		0x00
 	};
 ptr32 g_ptr41728C = 0x00000000;
-struct Eq_2005 * g_ptr417290 = null;
+struct Eq_1931 * g_ptr417290 = null;
 word32 g_dw417538 = 0x00000000;
 word32 g_dw41753C = 0x00000000;
 Eq_2 g_t417554 = 

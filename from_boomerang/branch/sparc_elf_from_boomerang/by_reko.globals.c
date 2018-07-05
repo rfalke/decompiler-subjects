@@ -5,5 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
+Eq_2 g_t1170C = Unexpected function type (fn void ())
+;
 ptr32 g_ptr21B40 = 0x00000000;
 

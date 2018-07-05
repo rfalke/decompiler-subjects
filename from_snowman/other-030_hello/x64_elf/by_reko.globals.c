@@ -4,27 +4,28 @@
 
 #include "subject.h"
 
-Eq_1795 g_t0001;
-Eq_1795 g_t0002;
-Eq_1795 g_t0004;
-Eq_1795 g_t0008;
+<anonymous> g_t0001;
+Eq_1790 g_t0002;
+Eq_1790 g_t0004;
+Eq_1790 g_t0008;
+<anonymous> g_t000A;
 <anonymous> g_t853E;
 word64 g_qw8694;
 <anonymous> g_t86AE;
 byte * g_ptr86E4;
 word32 g_dw8706;
 word16 g_w400000 = 0x5A4D;
-Eq_2856 g_a400006[] = 
+Eq_2757 g_a400006[] = 
 	{
 	};
 word32 g_dw40003C = 0x00000080;
-Eq_3014 g_a400090[] = 
+Eq_2895 g_a400090[] = 
 	{
 	};
 word64 g_qw402D10 = 0xFFFFFFFFFFFFFFFF;
-word64 g_qw402D30 = 0x0000000000000000;
-word64 g_qw403000 = 0x0000000000401600;
-word64 * g_ptr403030 = &g_qw402D30;
+<anonymous> * g_ptr402D30 = null;
+<anonymous> * g_ptr403000 = fn0000000000401600;
+<anonymous> ** g_ptr403030 = &g_ptr402D30;
 word32 g_dw403050 = 0x00000002;
 word32 g_dw403060 = 0xFFFFFFFF;
 ui64 g_qw403070 = 0x00002B992DDFA232;
@@ -32,12 +33,23 @@ word64 g_qw403080 = 0xFFFFD466D2205DCD;
 word32 g_a404164[] = 
 	{
 	};
-word32 g_dw404288 = 0x00000000;
+struct Eq_2122 g_t404288 = 
+	{
+		0x00000000,
+		0x00000000,
+		0x00000001,
+	};
 word32 g_dw40428C = 0x00000000;
 word32 g_dw404290 = 0x00000001;
+struct Eq_2122 g_t404294 = 
+	{
+		0x00008420,
+		0x00001507,
+		0x00000020,
+	};
 word32 g_dw407000 = 0x00000000;
 word32 g_dw407004 = 0x00000000;
-Eq_619 (* g_ptr407008)[] = null;
+<anonymous> (* g_ptr407008)[] = null;
 word64 g_qw407010 = 0x0000000000000000;
 word32 g_dw407018 = 0x00000000;
 word32 g_dw40701C = 0x00000000;
@@ -54,10 +66,10 @@ word64 g_qw4070A0 = 0x0000000000000000;
 word32 g_dw4070A8 = 0x00000000;
 word64 g_qw4070C0 = 0x0000000000000000;
 word64 g_qw407240 = 0x0000000000000000;
-Eq_3747 g_a407244[] = 
+Eq_3595 g_a407244[] = 
 	{
 	};
-word64 g_qw407340 = 0x0000000000000000;
+<anonymous> * g_ptr407340 = null;
 word32 g_dw407350 = 0x00000000;
 word64 g_qw407358 = 0x0000000000000000;
 word32 g_dw407360 = 0x00000000;
@@ -70,7 +82,7 @@ word32 g_dw407880 = 0x00000000;
 word32 g_dw407884 = 0x00000000;
 word64 g_qw407890 = 0x0000000000000000;
 word32 g_dw407920 = 0x00000000;
-word64 g_qw407968 = 0x0000000000000000;
+struct Eq_3333 * g_ptr407968 = null;
 byte * g_ptr407990 = null;
 word32 g_dw407998 = 0x00000000;
 ptr64 g_ptr4079A0 = 0x0000000000000000;
@@ -81,15 +93,7 @@ word64 g_qw4079C0 = 0x0000000000000000;
 <anonymous> * g_ptr4082A8 = &g_t853E;
 word64 * g_ptr408338 = &g_qw8694;
 <anonymous> * g_ptr408348 = &g_t86AE;
-union Eq_1633 g_u408358 = 
-	{
-		0x000086D0
-	};
 byte ** g_ptr408360 = &g_ptr86E4;
 word32 * g_ptr408378 = &g_dw8706;
-union Eq_2077 g_u4083D8 = 
-	{
-		0x00008778
-	};
 word64 g_qw409060 = 0x0000000000000000;
 

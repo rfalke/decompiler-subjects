@@ -26,23 +26,19 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10010A04();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000320: void __do_global_dtors_aux(Stack word32 dwArg04)
 void __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t10010A78)))
-	{
-		word32 * r11_34 = globals->ptr10010A00;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr10010A00 = r11_34 + 0x01;
-			return;
-		}
+	if (Test(NE,cond(globals->t10010A78)))
+		return;
+	word32 * r11_34 = globals->ptr10010A00;
+	if (Test(NE,cond(*r11_34)))
+		globals->ptr10010A00 = r11_34 + 0x01;
+	else
 		globals->t10010A78.u0 = 0x01;
-	}
 }
 
 // 1000038C: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -822,8 +818,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 	word32 r0_13 = globals->dw10010910;
 	if (Test(NE,cond(r0_13 - -0x01)))
 		return fp + -0x0020;
-	else
-		return fp;
+	return fp;
 }
 
 // 10000864: void call___do_global_ctors_aux(Stack word32 dwArg04)

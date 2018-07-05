@@ -13,7 +13,7 @@ Eq_28 g_t80484B8 = Unexpected function type (fn void ())
 ;
 char g_str8048544[] = "Enter number: ";
 char g_str8048553[] = "%d";
-char g_str8048556[] = "Fibonacci of %d is %d\x0A";
+char g_str8048556[] = "Fibonacci of %d is %d\n";
 <anonymous> * g_ptr8049574 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049580 = null;
 word32 g_dw8049584 = 0x00000000;

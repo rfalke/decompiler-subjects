@@ -11,8 +11,8 @@ Eq_22 g_t8048CBE = Unexpected function type (fn int32 (int32, (ptr (ptr char)), 
 ;
 Eq_26 g_t8048DE8 = Unexpected function type (fn void ())
 ;
-char g_str8048E11[] = "MikMod: %s\x0A";
-char g_str8048E26[] = "MikMod Error: %s\x0A";
+char g_str8048E11[] = "MikMod: %s\n";
+char g_str8048E26[] = "MikMod Error: %s\n";
 real64 g_r8048E48 = 20.0;
 real64 g_r8048E50 = 60.0;
 real32 g_r8048E58 = 2.0F;

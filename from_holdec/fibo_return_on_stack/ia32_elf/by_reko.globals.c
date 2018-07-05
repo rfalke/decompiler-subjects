@@ -13,10 +13,10 @@ Eq_39 g_t8048530 = Unexpected function type (fn void ())
 ;
 char g_str80485E4[] = "Input number: ";
 char g_str80485F3[] = "%d";
-char g_str80485F6[] = "fibonacci(%d) = %d %d\x0A";
+char g_str80485F6[] = "fibonacci(%d) = %d %d\n";
 <anonymous> * g_ptr80496B0 = &g_tFFFFFFFF;
 word32 g_dw80496C0 = 0x00000000;
 word32 g_dw8049794 = 0x00000000;
 byte g_b80497B0 = 0x00;
-uint32 g_dw80497B4 = 0x00000000;
+up32 g_dw80497B4 = 0x00000000;
 

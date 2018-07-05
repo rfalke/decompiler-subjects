@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10012244();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000374: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t100122D0)))
+	if (Test(NE,cond(globals->t100122D0)))
+		return fp;
+	word32 * r11_34 = globals->ptr100120F0;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr100120F0;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr100120F0 = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t100122D0.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr100120F0 = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 100003EC: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -106,9 +107,9 @@ void main(Eq_86 xer, word32 dwArg04)
 				*((word32) fp - 0x0078) = 0x00;
 				while (Test(LE,cond(*((word32) fp - 0x0078) - 0x06)))
 				{
-					ui32 r0_133 = (word32) xer + (*((word32) fp - 112) >> 0x03);
+					int32 r0_133 = (word32) xer + (*((word32) fp - 112) >> 0x03);
 					Eq_147 r9_140 = *((word32) fp - 112);
-					Eq_239 r0_142 = (word32) (r9_140 >> 0x03) + cond(r0_133);
+					int32 r0_142 = (r9_140 >> 0x03) + cond(r0_133);
 					Mem152[(Mem105[fp + -0x007C:word32] << 0x03) + (fp + -0x0088) + Mem105[fp + -0x0078:word32] + 0x0028:byte] = Mem105[(r9_140 - (r0_142 << 0x03)) * 0x07 + Mem105[fp + -0x0078:word32] + 0x100120F4[(r0_133 * 0x07 + Mem105[fp + -0x0080:word32]) * 0x04]:byte];
 					*((word32) fp - 0x0078) = (word32) *((word32) fp - 0x0078) + 0x01;
 					xer = cond(r0_142);
@@ -886,8 +887,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw10012000 - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 10000A30: void call___do_global_ctors_aux(Stack word32 dwArg04)

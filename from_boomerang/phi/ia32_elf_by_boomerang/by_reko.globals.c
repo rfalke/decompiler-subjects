@@ -13,7 +13,7 @@ Eq_26 g_t804845C = Unexpected function type (fn void ())
 ;
 char g_str80484D8[] = "Input number: ";
 char g_str80484E7[] = "%d";
-char g_str80484EA[] = "fibonacci(%d) = %d\x0A";
+char g_str80484EA[] = "fibonacci(%d) = %d\n";
 <anonymous> * g_ptr8049500;
 <anonymous> ** g_ptr804950C = &g_ptr80495E4;
 <anonymous> * g_ptr80495D8 = &g_tFFFFFFFF;

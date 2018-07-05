@@ -302,12 +302,26 @@ byte g_b1832E = 0x00;
 word16 g_w18330 = 0x0000;
 word16 g_w18332 = 0x0000;
 word16 g_w18334 = 0x0000;
-word16 g_w18336 = 0x0000;
-word32 g_dw1895C = 0x00000000;
-word32 g_dw18960 = 0x00000000;
-int32 g_dw18964 = 0;
-word32 g_dw18968 = 0x00000000;
-word32 g_dw1896C = 0x00000000;
+struct Eq_17092 g_t18336 = 
+	{
+		
+		{
+		},
+	};
+int32 g_dw1895C = 0;
+int32 g_dw18960 = 0;
+union Eq_17100 g_u18964 = 
+	{
+		0
+	};
+union Eq_17151 g_u18968 = 
+	{
+		0
+	};
+union Eq_17158 g_u1896C = 
+	{
+		0
+	};
 word16 g_w1DA2A = 0x0000;
 word16 g_w1DA2C = 0x0000;
 word16 g_w1DA2E = 0x0000;
@@ -437,7 +451,7 @@ word16 g_w2E782 = 0x7000;
 byte g_b3A9F4 = 0xFF;
 byte g_b3A9F5 = 0x00;
 byte g_b3A9F6 = 0x00;
-Eq_17380 g_a3AAB4[] = 
+Eq_17384 g_a3AAB4[] = 
 	{
 	};
 byte g_b3AAB5 = 0x03;

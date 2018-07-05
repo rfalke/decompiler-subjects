@@ -11,8 +11,8 @@ Eq_25 g_t8048390 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t80483C0 = Unexpected function type (fn void ())
 ;
-char g_str804843C[] = "a = %i\x0A";
-char g_str8048444[] = "b = %i\x0A";
+char g_str804843C[] = "a = %i\n";
+char g_str8048444[] = "b = %i\n";
 <anonymous> * g_ptr804944C;
 <anonymous> ** g_ptr8049458 = &g_ptr8049538;
 int32 g_dw804945C = 5;

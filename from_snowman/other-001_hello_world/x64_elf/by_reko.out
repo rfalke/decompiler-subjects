@@ -1,2 +1,3 @@
 Using options:
 0000000000400450: error: The method or operation is not implemented.
+000000000040043C: warning: Unable to resolve imported reference __gmon_start__.

@@ -4,18 +4,19 @@
 
 #include "subject.h"
 
+<anonymous> g_tFFFFFFFF;
 Eq_22 g_t4004D4 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
 Eq_26 g_t4004F0 = Unexpected function type (fn void ())
 ;
 Eq_25 g_t400500 = Unexpected function type (fn void ())
 ;
-word64 g_qw600E18 = 0xFFFFFFFFFFFFFFFF;
+<anonymous> * g_ptr600E18 = &g_tFFFFFFFF;
 word64 g_qw600E38 = 0x0000000000000000;
 word64 g_qw600FE0 = 0x0000000000000000;
 byte g_b601020 = 0x00;
-uint64 g_qw601028 = 0x0000000000000000;
-Eq_99 g_t6010E0 = 
+up64 g_qw601028 = 0x0000000000000000;
+Eq_97 g_t6010E0 = 
 	{
 		0x00000000,
 		0x00,

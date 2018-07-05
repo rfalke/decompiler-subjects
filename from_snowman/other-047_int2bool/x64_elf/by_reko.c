@@ -31,43 +31,40 @@ void _start( * rdx, Eq_17 qwArg00)
 // 00000000004004B0: void deregister_tm_clones(Register word64 r8)
 void deregister_tm_clones(word64 r8)
 {
-	if (false && 0x00 != 0x00)
-	{
-		word64 rsp_42;
-		word32 eax_43;
-		word64 rax_44;
-		word64 rbp_45;
-		word64 r8_46;
-		byte SCZO_47;
-		byte CZ_48;
-		byte SZO_49;
-		byte C_50;
-		byte Z_51;
-		word32 edi_52;
-		word64 rdi_53;
-		eax();
-	}
+	if (true || 0x00 == 0x00)
+		return;
+	word64 rsp_42;
+	word32 eax_43;
+	word64 rax_44;
+	word64 rbp_45;
+	word64 r8_46;
+	byte SCZO_47;
+	byte CZ_48;
+	byte SZO_49;
+	byte C_50;
+	byte Z_51;
+	word32 edi_52;
+	word64 rdi_53;
+	null();
 }
 
 // 00000000004004E0: void register_tm_clones(Register word64 r8)
 void register_tm_clones(word64 r8)
 {
-	if (true && 0x00 != 0x00)
-	{
-		word64 rsp_47;
-		word64 rax_48;
-		word64 rbp_49;
-		word64 r8_50;
-		byte SCZO_51;
-		word64 rdx_52;
-		byte Z_53;
-		byte SZO_54;
-		byte C_55;
-		word64 rsi_56;
-		word64 rdi_57;
-		word32 edx_58;
-		edx();
-	}
+	if (false || 0x00 == 0x00)
+		return;
+	word64 rsp_45;
+	word64 rax_46;
+	word64 rbp_47;
+	word64 r8_48;
+	byte SCZO_49;
+	word64 rdx_50;
+	byte Z_51;
+	byte SZO_52;
+	byte C_53;
+	word64 rsi_54;
+	word64 rdi_55;
+	null();
 }
 
 // 0000000000400520: void __do_global_dtors_aux(Register word64 r8)
@@ -101,7 +98,7 @@ void frame_dummy(word64 r8)
 		word64 rdx_55;
 		word32 edx_56;
 		word64 rsi_57;
-		eax();
+		null();
 		register_tm_clones(r8_54);
 	}
 }
@@ -111,8 +108,8 @@ void f()
 {
 }
 
-// 0000000000400578: void g(Register Eq_123 rdi)
-void g(Eq_123 rdi)
+// 0000000000400578: void g(Register Eq_122 rdi)
+void g(Eq_122 rdi)
 {
 }
 
@@ -127,7 +124,7 @@ void main(word32 eax)
 void __libc_csu_init(word32 edi)
 {
 	_init();
-	if (0x00000000006007B8 - 0x00000000006007B0 >> 0x03 != 0x00)
+	if (0x006007B8 - 0x006007B0 >> 0x03 != 0x00)
 	{
 		do
 		{
@@ -148,7 +145,7 @@ void __libc_csu_init(word32 edi)
 			byte C_73;
 			byte Z_74;
 			word64 rdi_75;
-			globals->u6007B0();
+			globals->ptr6007B0();
 		} while (rbx_62 + 0x01 != rbp_60);
 	}
 }

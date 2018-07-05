@@ -21,5 +21,5 @@ Eq_39 g_t80487E0 = Unexpected function type (fn void ())
 word32 g_dw8049984 = 0x00000000;
 word32 g_dw8049A58 = 0x00000000;
 byte g_b8049A74 = 0x00;
-uint32 g_dw8049A78 = 0x00000000;
+up32 g_dw8049A78 = 0x00000000;
 

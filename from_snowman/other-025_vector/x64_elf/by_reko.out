@@ -1,4 +1,5 @@
 Using options:
 00000000004005E0: error: The method or operation is not implemented.
+00000000004005D0: warning: Unable to resolve imported reference __gmon_start__.
 000000000040073B: warning: Unable to resolve imported reference _Znwm.
 000000000040098B: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.

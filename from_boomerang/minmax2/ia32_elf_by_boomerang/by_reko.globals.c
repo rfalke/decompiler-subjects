@@ -11,7 +11,7 @@ Eq_25 g_t80483B8 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t80483E8 = Unexpected function type (fn void ())
 ;
-char g_str8048464[] = "MinMax result %d\x0A";
+char g_str8048464[] = "MinMax result %d\n";
 <anonymous> * g_ptr8049478;
 <anonymous> ** g_ptr8049484 = &g_ptr804955C;
 <anonymous> * g_ptr8049550 = &g_tFFFFFFFF;

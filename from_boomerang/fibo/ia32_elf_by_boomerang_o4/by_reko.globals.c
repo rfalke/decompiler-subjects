@@ -10,7 +10,7 @@ Eq_2 g_t80488A0 = Unexpected function type (fn void ())
 ;
 char g_str80488B8[] = "Input number: ";
 char g_str80488C7[] = "%d";
-char g_str80488CA[] = "fibonacci(%d) = %d\x0A";
+char g_str80488CA[] = "fibonacci(%d) = %d\n";
 word32 g_dw80499A4 = 0xFFFFFFFF;
 word32 g_dw80499A8 = 0x00000000;
 ptr32 g_ptr80499AC = 0x00000000;

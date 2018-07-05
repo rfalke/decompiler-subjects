@@ -36,13 +36,13 @@ void _start( * edx, int32 dwArg00)
 // 08048340: void __do_global_dtors_aux(Register word32 esi)
 void __do_global_dtors_aux(word32 esi)
 {
-	if (globals->b8049668 == 0x00)
-	{
-		uint32 eax_23 = globals->dw804966C;
-		if (eax_23 < 0x00)
-			globals->dw804966C = eax_23 + 0x01;
+	if (globals->b8049668 != 0x00)
+		return;
+	up32 eax_23 = globals->dw804966C;
+	if (eax_23 >= 0x00)
 		globals->b8049668 = 0x01;
-	}
+	else
+		globals->dw804966C = eax_23 + 0x01;
 }
 
 // 080483A0: void frame_dummy()
@@ -95,8 +95,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 		{
 			word32 esp_60;
 			word32 ebp_61;
-			uint32 edi_62;
-			uint32 esi_63;
+			up32 edi_62;
+			up32 esi_63;
 			word32 ebx_64;
 			byte SCZO_65;
 			word32 eax_66;

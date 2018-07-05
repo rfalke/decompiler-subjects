@@ -38,35 +38,33 @@ word32 __x86.get_pc_thunk.bx(word32 dwArg00)
 // 08048310: void deregister_tm_clones()
 void deregister_tm_clones()
 {
-	if (false && 0x00 != 0x00)
-	{
-		word32 esp_36;
-		word32 eax_37;
-		byte SCZO_38;
-		byte CZ_39;
-		byte SZO_40;
-		byte C_41;
-		byte Z_42;
-		word32 ebp_43;
-		null();
-	}
+	if (true || 0x00 == 0x00)
+		return;
+	word32 esp_36;
+	word32 eax_37;
+	byte SCZO_38;
+	byte CZ_39;
+	byte SZO_40;
+	byte C_41;
+	byte Z_42;
+	word32 ebp_43;
+	null();
 }
 
 // 08048340: void register_tm_clones()
 void register_tm_clones()
 {
-	if (false && 0x00 != 0x00)
-	{
-		word32 esp_43;
-		word32 eax_44;
-		byte SCZO_45;
-		word32 edx_46;
-		byte Z_47;
-		byte SZO_48;
-		byte C_49;
-		word32 ebp_50;
-		null();
-	}
+	if (true || 0x00 == 0x00)
+		return;
+	word32 esp_43;
+	word32 eax_44;
+	byte SCZO_45;
+	word32 edx_46;
+	byte Z_47;
+	byte SZO_48;
+	byte C_49;
+	word32 ebp_50;
+	null();
 }
 
 // 08048380: void __do_global_dtors_aux()
@@ -136,7 +134,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_70;
 			word32 eax_71;
 			byte Z_72;
-			bcuiposr0 None_73;
+			bcuisposr0 None_73;
 			ebx_18->ptr1189();
 		} while (edi_65 + 0x01 != esi_68);
 	}

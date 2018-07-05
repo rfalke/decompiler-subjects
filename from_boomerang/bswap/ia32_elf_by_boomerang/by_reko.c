@@ -102,21 +102,21 @@ void main()
 void __libc_csu_init(word32 esi)
 {
 	_init(esi);
-	if (0x00 <u 0x08049660 - 0x08049660 >> 0x02)
+	if (0x00 < 0x08049660 - 0x08049660 >> 0x02)
 	{
 		do
 		{
 			word32 esp_45;
 			word32 ebp_46;
-			uint32 edi_47;
-			uint32 esi_48;
+			up32 edi_47;
+			up32 esi_48;
 			word32 ebx_49;
 			byte SCZO_50;
 			word32 edx_51;
 			word32 ecx_52;
 			byte SZO_53;
 			byte C_54;
-			bcuiposr0 None_55;
+			bcuisposr0 None_55;
 			(0x08049660 + 0x08049580)();
 		} while (esi_48 + 0x01 < edi_47);
 	}
@@ -125,7 +125,7 @@ void __libc_csu_init(word32 esi)
 // 08048400: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	word32 ecx_16 = 0x08049660 - 0x08049660;
+	int32 ecx_16 = 0x08049660 - 0x08049660;
 	int32 esi_21 = (ecx_16 >> 0x02) - 0x01;
 	if (ecx_16 >> 0x02 != 0x00)
 	{

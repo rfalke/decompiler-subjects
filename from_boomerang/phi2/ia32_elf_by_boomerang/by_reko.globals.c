@@ -13,7 +13,7 @@ Eq_26 g_t804843C = Unexpected function type (fn void ())
 ;
 char g_str80484B8[] = "%d";
 char g_str80484BB[] = "%d, %d";
-char g_str80484C2[] = "%d\x0A";
+char g_str80484C2[] = "%d\n";
 <anonymous> * g_ptr80494C8;
 <anonymous> ** g_ptr80494D4 = &g_ptr80495AC;
 <anonymous> * g_ptr80495A0 = &g_tFFFFFFFF;

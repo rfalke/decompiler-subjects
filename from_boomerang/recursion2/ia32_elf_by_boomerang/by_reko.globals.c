@@ -11,8 +11,8 @@ Eq_25 g_t8048640 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t8048690 = Unexpected function type (fn void ())
 ;
-char g_str80486E4[] = "ecx is %d, edx is %d\x0A";
-char g_str80486FA[] = "res is %d\x0A";
+char g_str80486E4[] = "ecx is %d, edx is %d\n";
+char g_str80486FA[] = "res is %d\n";
 <anonymous> * g_ptr804970C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049718 = null;
 word32 g_dw804971C = 0x00000000;

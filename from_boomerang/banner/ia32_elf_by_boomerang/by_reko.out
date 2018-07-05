@@ -2,5 +2,16 @@ Using options:
 08048384: warning: Call target address 00000000 is invalid.
 0804856C: error: The method or operation is not implemented.
 080485C0: error: The address 0804AB0C is invalid.
+080484E4: error: An error occurred while processing the statement Mem233[eax_196 - 0x00000070 + 0x00000000:byte] = Mem17[(edx_223 << 0x00000003) - edx_223 + dwLoc20_173 + 0x0804AB40[edx_210 * 0x00000004]:byte].
+    Not handling (ptr (struct (0 T_239 t0000))) and (union (ui32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) <0x402cb5a0 + 0x0017b> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x402c7e60 + 0x001b3> in <filename unknown>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x402c7db0 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) <0x402c94e0 + 0x004a1> in <filename unknown>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) <0x402c9490 + 0x00033> in <filename unknown>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x402c9440 + 0x00031> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) <0x402cab40 + 0x000e8> in <filename unknown>:0 
+  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x4026cd50 + 0x0002a> in <filename unknown>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () <0x402c56a0 + 0x00289> in <filename unknown>:0 
 0804AB40: warning: Expected sizes of arrays to have been determined by now
 0804AB40: warning: Expected sizes of arrays to have been determined by now

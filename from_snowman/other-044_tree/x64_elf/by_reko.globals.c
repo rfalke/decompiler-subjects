@@ -10,11 +10,8 @@ Eq_30 g_t4006F0 = Unexpected function type (fn void ())
 ;
 Eq_31 g_t400780 = Unexpected function type (fn void ())
 ;
-char g_str400794[] = "%d\x0A";
-union Eq_286 g_u6008F8 = 
-	{
-		0x00400560
-	};
+char g_str400794[] = "%d\n";
+<anonymous> * g_ptr6008F8 = frame_dummy;
 word64 g_qw600908 = 0x0000000000000000;
 word64 g_qw600AE0 = 0x0000000000000000;
 byte g_b600B38 = 0x00;

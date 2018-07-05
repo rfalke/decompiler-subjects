@@ -10,14 +10,13 @@ void _init()
 	word64 rax_4 = Mem0[0x0000000000600FF8 + 0x00:word64];
 	if (rax_4 != 0x00)
 	{
-		word64 rsp_17;
-		byte SCZO_18;
-		word64 rax_19;
-		byte SZO_20;
-		byte C_21;
-		byte Z_22;
-		word32 eax_23;
-		eax();
+		word64 rsp_15;
+		byte SCZO_16;
+		word64 rax_17;
+		byte SZO_18;
+		byte C_19;
+		byte Z_20;
+		__gmon_start__();
 	}
 }
 
@@ -32,7 +31,7 @@ void main()
 void _start(word64 rdx, word64 qwArg00)
 {
 	__align(fp + 0x08);
-	__libc_start_main(0x00400400, qwArg00, fp + 0x08, 0x00400990, 0x00400A00, rdx, ptrLoc04);
+	__libc_start_main(0x00400400, qwArg00, fp + 0x08, 0x00400990, 0x00400A00, rdx, fp);
 	__hlt();
 }
 
@@ -40,44 +39,37 @@ void _start(word64 rdx, word64 qwArg00)
 void deregister_tm_clones(word64 r8)
 {
 	if (false || 0x00 == 0x00)
-		;
-	else
-	{
-		word64 rsp_42;
-		word32 eax_43;
-		word64 rax_44;
-		word64 rbp_45;
-		word64 r8_46;
-		byte SCZO_47;
-		byte CZ_48;
-		byte SZO_49;
-		byte C_50;
-		byte Z_51;
-		word32 edi_52;
-		word64 rdi_53;
-		eax();
-	}
+		return;
+	word64 rsp_42;
+	word32 eax_43;
+	word64 rax_44;
+	word64 rbp_45;
+	word64 r8_46;
+	byte SCZO_47;
+	byte CZ_48;
+	byte SZO_49;
+	byte C_50;
+	byte Z_51;
+	word32 edi_52;
+	word64 rdi_53;
+	0x00();
 }
 
 // 00000000004004C0: void register_tm_clones()
 void register_tm_clones()
 {
 	if (0x00 == 0x00 || 0x00 == 0x00)
-		;
-	else
-	{
-		word64 rsp_42;
-		word64 rsi_43;
-		word64 rbp_44;
-		byte SCZO_45;
-		word64 rax_46;
-		byte Z_47;
-		byte SZO_48;
-		byte C_49;
-		word64 rdi_50;
-		word32 eax_51;
-		eax();
-	}
+		return;
+	word64 rsp_40;
+	word64 rsi_41;
+	word64 rbp_42;
+	byte SCZO_43;
+	word64 rax_44;
+	byte Z_45;
+	byte SZO_46;
+	byte C_47;
+	word64 rdi_48;
+	0x00();
 }
 
 // 0000000000400500: void __do_global_dtors_aux(Register word64 r8)
@@ -107,7 +99,7 @@ void frame_dummy()
 		word64 rbp_48;
 		word32 esi_49;
 		word64 rsi_50;
-		eax();
+		0x00();
 		register_tm_clones();
 	}
 	else
@@ -193,13 +185,14 @@ void converting_between_floats_l2()
 void basic_operations(word128 xmm0, word128 xmm1, word128 xmm4)
 {
 	printf(0x00400A20, DPB(xmm0, (real64) xmm0 + xmm1, 0));
-	real64 rLoc18_6 = (real64) xmm0;
-	real64 rLoc10_10 = (real64) xmm1;
-	printf(0x00400A20, DPB(xmm0, rLoc18_6 - rLoc10_10, 0));
-	printf(0x00400A20, DPB(xmm4, rLoc10_10 - rLoc18_6, 0));
-	printf(0x00400A20, DPB(xmm4, rLoc18_6 * rLoc10_10, 0));
-	printf(0x00400A20, DPB(xmm4, rLoc18_6 / rLoc10_10, 0));
-	printf(0x00400A20, DPB(xmm4, rLoc10_10 / rLoc18_6, 0));
+	real64 rLoc18_5 = (real64) xmm0;
+	real64 rLoc10_9 = (real64) xmm1;
+	printf(0x00400A20, DPB(xmm0, rLoc18_5 - rLoc10_9, 0));
+	printf(0x00400A20, DPB(xmm4, rLoc10_9 - rLoc18_5, 0));
+	printf(0x00400A20, DPB(xmm4, rLoc18_5 * rLoc10_9, 0));
+	printf(0x00400A20, DPB(xmm4, rLoc18_5 / rLoc10_9, 0));
+	printf(0x00400A20, DPB(xmm4, rLoc10_9 / rLoc18_5, 0));
+	printf(0x00400A20, __xorpd(DPB(xmm4, rLoc18_5, 0), Mem0[0x0000000000400A70 + 0x00:word128]));
 }
 
 // 0000000000400810: void compare_floats(Register word128 xmm0, Register word128 xmm1, Register word128 xmm2, Register word128 xmm3)
@@ -334,7 +327,7 @@ void __libc_csu_init(word32 edi)
 			byte Z_86;
 			word32 ebx_87;
 			word64 rdi_88;
-			Mem0[0x0000000000600E08 + 0x00:word32]();
+			Mem0[0x0000000000600E08 + 0x00:word64]();
 		} while (rbp_79 != rbx_80 + 0x01);
 	}
 }

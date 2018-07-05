@@ -36,13 +36,13 @@ void _start( * edx, int32 dwArg00)
 // 080485B0: void __do_global_dtors_aux(Register word32 esi)
 void __do_global_dtors_aux(word32 esi)
 {
-	if (globals->b804A03C == 0x00)
-	{
-		uint32 eax_23 = globals->dw804A040;
-		if (eax_23 < 0x00)
-			globals->dw804A040 = eax_23 + 0x01;
+	if (globals->b804A03C != 0x00)
+		return;
+	up32 eax_23 = globals->dw804A040;
+	if (eax_23 >= 0x00)
 		globals->b804A03C = 0x01;
-	}
+	else
+		globals->dw804A040 = eax_23 + 0x01;
 }
 
 // 08048610: void frame_dummy()
@@ -61,8 +61,8 @@ void frame_dummy()
 	}
 }
 
-// 08048634: void dumpline(Register (ptr Eq_83) gs, Stack Eq_84 dwArg04, Stack uint32 dwArg08, Stack Eq_86 dwArg0C)
-void dumpline(Eq_83 * gs, size_t dwArg04, uint32 dwArg08, size_t dwArg0C)
+// 08048634: void dumpline(Register (ptr Eq_83) gs, Stack Eq_84 dwArg04, Stack up32 dwArg08, Stack Eq_86 dwArg0C)
+void dumpline(Eq_83 * gs, size_t dwArg04, up32 dwArg08, size_t dwArg0C)
 {
 	word32 eax_15 = gs->dw0014;
 	sprintf(fp - 0x60, "%08lX:", tLoc90);
@@ -100,46 +100,14 @@ void dumpline(Eq_83 * gs, size_t dwArg04, uint32 dwArg08, size_t dwArg0C)
 	}
 	memcpy(fp - 0x60 + ((eax_59 + 0x03) + dwLoc64_115), 134515254, 0x02);
 	puts(fp - 0x60);
-	if ((eax_15 ^ gs->dw0014) != 0x00)
-		__stack_chk_fail();
+	if ((eax_15 ^ gs->dw0014) == 0x00)
+		return;
+	__stack_chk_fail();
 }
 
 // 080487C6: Register word32 hexdump(Register (ptr Eq_83) gs, Stack (ptr char) dwArg04)
 word32 hexdump(Eq_83 * gs, char * dwArg04)
 {
-	word32 eax_34;
-	word32 eax_12 = gs->dw0014;
-	if (stat(dwArg04, fp - 0x84) != 0x00)
-	{
-		perror(dwArg04);
-		eax_34 = 0x01;
-	}
-	else
-	{
-		FILE * eax_57 = fopen(dwArg04, "rb");
-		if (eax_57 == null)
-		{
-			perror(dwArg04);
-			eax_34 = 0x01;
-		}
-		else
-		{
-			uint32 dwLoc24_104 = 0x00;
-			while (dwLoc58 > dwLoc24_104)
-			{
-				size_t eax_92 = fread(fp - 0x20, 0x01, 0x10, eax_57);
-				if (eax_92 == 0x00)
-					break;
-				dumpline(gs, fp - 0x20, dwLoc24_104, eax_92);
-				dwLoc24_104 = (word32) eax_92 + dwLoc24_104;
-			}
-			fclose(eax_57);
-			eax_34 = 0x00;
-		}
-	}
-	if ((eax_12 ^ gs->dw0014) != 0x00)
-		__stack_chk_fail();
-	return eax_34;
 }
 
 // 080488CA: void main(Register (ptr Eq_83) gs, Stack int32 dwArg04, Stack (arr (ptr char)) dwArg08)
@@ -170,8 +138,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 		{
 			word32 esp_60;
 			word32 ebp_61;
-			uint32 edi_62;
-			uint32 esi_63;
+			up32 edi_62;
+			up32 esi_63;
 			word32 ebx_64;
 			byte SCZO_65;
 			word32 eax_66;

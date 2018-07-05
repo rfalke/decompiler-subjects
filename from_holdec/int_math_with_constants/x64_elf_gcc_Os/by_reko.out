@@ -1,9 +1,26 @@
 Using options:
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.LoadImportReferencesFromRelaPlt () <0x41c2e650 + 0x00090> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate (Reko.Core.Program program) <0x41bedf50 + 0x00063> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41c2c810 + 0x00044> in <filename unknown>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) <0x41c2c7c0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x41c08700 + 0x0034b> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x41c07460 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x41c07100 + 0x000dc> in <filename unknown>:0 
+00000000004003A0: warning: Unable to resolve imported reference __gmon_start__.
+00000000004005AB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004005C1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+unsigned_short_div: error: An error occurred during data flow analysis.
+    Offset must be non-negative.
+Parameter name: bitOffset
+      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, Int32 bitOffset) <0x40bc0000 + 0x0019b> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) <0x40ba3a90 + 0x0038f> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x40ba38f0 + 0x000db> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x40ba3890 + 0x00023> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40b754a0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Transform () <0x40ba2f10 + 0x0010c> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40b9f6d0 + 0x000ef> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40b9e8e0 + 0x00203> in <filename unknown>:0 
+unsigned_short_modulo: error: An error occurred during data flow analysis.
+    Offset must be non-negative.
+Parameter name: bitOffset
+      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, Int32 bitOffset) <0x40bc0000 + 0x0019b> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) <0x40ba3a90 + 0x0038f> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x40ba38f0 + 0x000db> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x40ba3890 + 0x00023> in <filename unknown>:0 
+  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40b754a0 + 0x00027> in <filename unknown>:0 
+  at Reko.Analysis.Aliases.Transform () <0x40ba2f10 + 0x0010c> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40b9f6d0 + 0x000ef> in <filename unknown>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40b9e8e0 + 0x00203> in <filename unknown>:0 

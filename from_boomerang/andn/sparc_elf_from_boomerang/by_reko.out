@@ -1,2 +1,5 @@
 Using options:
-00010690: error: Rewriting SPARC opcode 'orn' is not supported yet.
+00010610: warning: Unable to resolve imported reference __register_frame_info.
+00010648: warning: Unable to resolve imported reference _Jv_RegisterClasses.
+0001066C: error: Varargs: invalid address: BADDCAFE
+000105A4: warning: Unable to resolve imported reference __deregister_frame_info.

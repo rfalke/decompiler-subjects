@@ -1,9 +1,7 @@
 Using options:
-000107E4: error: An error occurred while processing instruction at address 000107E4.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41139ef0 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x40f87bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41138fc0 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41138c50 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41131d60 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x411369c0 + 0x001c0> in <filename unknown>:0 
+00010670: warning: Unable to resolve imported reference __register_frame_info.
+000106A8: warning: Unable to resolve imported reference _Jv_RegisterClasses.
+000106CC: error: Varargs: invalid address: BADDCAFE
+00010708: error: Varargs: invalid address: BADDCAFE
+000107D8: error: Varargs: invalid address: BADDCAFE
+00010604: warning: Unable to resolve imported reference __deregister_frame_info.

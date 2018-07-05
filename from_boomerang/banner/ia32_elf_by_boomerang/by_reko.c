@@ -115,12 +115,12 @@ void main()
 				Eq_182 dwLoc20_173 = 0x00;
 				while (dwLoc20_173 <= 0x06)
 				{
-					ptr32 eax_196 = (word32) dwLoc20_173 + ((dwLoc1C_109 << 0x03) + (fp - 0x0C));
+					Eq_187 eax_196 = (word32) dwLoc20_173 + ((dwLoc1C_109 << 0x03) + (fp - 0x0C));
 					int32 dwLoc84_200 = dwLoc28_167;
 					if (dwLoc28_167 < 0x00)
 						dwLoc84_200 = dwLoc28_167 + 0x07;
 					int32 edx_205 = dwLoc84_200 >> 0x03;
-					ui32 edx_210 = dwLoc18_148 + ((edx_205 << 0x03) - edx_205);
+					int32 edx_210 = dwLoc18_148 + ((edx_205 << 0x03) - edx_205);
 					int32 dwLoc90_215 = dwLoc28_167;
 					if (dwLoc28_167 < 0x00)
 						dwLoc90_215 = dwLoc28_167 + 0x07;
@@ -132,9 +132,9 @@ void main()
 				dwLoc1C_109 = (word32) dwLoc1C_109 + 0x01;
 			}
 			int32 dwLoc1C_131 = (dwLoc24_245 << 0x03) - 0x01;
-			while (dwLoc1C_131 >= 0x00 && Mem17[(fp - 0x7C) + dwLoc1C_131:byte] == 0x20)
+			while (dwLoc1C_131 >= 0x00 && (&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((fp - 0x7C))[dwLoc1C_131].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000))[0x00].a0000)[0x00] == 0x20)
 			{
-				Mem157[fp - 0x7C + dwLoc1C_131:byte] = 0x00;
+				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x7C)[dwLoc1C_131].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (Eq_246) 0x00;
 				dwLoc1C_131 = dwLoc1C_131 - 0x01;
 			}
 			puts(fp - 0x7C);
@@ -156,9 +156,7 @@ void __libc_csu_init()
 // 0804859C: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	if (false)
-		;
-	else
+	if (true)
 		_fini();
 }
 

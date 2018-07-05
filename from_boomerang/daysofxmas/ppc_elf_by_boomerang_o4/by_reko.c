@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10010D00();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000350: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t10010D78)))
+	if (Test(NE,cond(globals->t10010D78)))
+		return fp;
+	word32 * r11_34 = globals->ptr10010CFC;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr10010CFC;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr10010CFC = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t10010D78.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr10010CFC = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 100003C8: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -76,8 +77,8 @@ void call_frame_dummy(word32 dwArg04)
 {
 }
 
-// 10000444: Register Eq_86 main(Register Eq_86 r3, Register Eq_86 r4, Register (ptr Eq_88) r5, Register Eq_89 xer, Stack word32 dwArg04, Register out Eq_91 cr4Out, Register out Eq_92 xerOut)
-Eq_86 main(Eq_86 r3, Eq_86 r4, Eq_88 * r5, Eq_89 xer, word32 dwArg04, Eq_91 & cr4Out, Eq_92 & xerOut)
+// 10000444: Register Eq_86 main(Register Eq_86 r3, Register Eq_86 r4, Register (ptr Eq_88) r5, Register Eq_89 xer, Register word32 cr, Stack word32 dwArg04, Register out Eq_92 cr4Out, Register out Eq_93 xerOut)
+Eq_86 main(Eq_86 r3, Eq_86 r4, Eq_88 * r5, Eq_89 xer, word32 cr, word32 dwArg04, Eq_92 & cr4Out, Eq_93 & xerOut)
 {
 	*xerOut = xer;
 	*cr4Out = cr4;
@@ -122,7 +123,7 @@ l10000564:
 			__crxor(0x06, 0x06, 0x06);
 			byte cr4_103;
 			word32 xer_104;
-			r3_105 = main(r3_100, r4, r5_123, xer, dwLoc1C, out cr4_103, out xer_104);
+			r3_105 = main(r3_100, r4, r5_123, xer, cr, dwLoc1C, out cr4_103, out xer_104);
 l1000056C:
 			__mtcrf(0x08, cr);
 			return r3_105;
@@ -141,11 +142,11 @@ l1000056C:
 			__crxor(0x06, 0x06, 0x06);
 			byte cr4_189;
 			Eq_89 xer_190;
-			Eq_86 r3_191 = main(-0x003D, r4_166, &globals->t10000A1C, xer, dwLoc1C, out cr4_189, out xer_190);
+			Eq_86 r3_191 = main(-0x003D, r4_166, &globals->t10000A1C, xer, cr, dwLoc1C, out cr4_189, out xer_190);
 			__crxor(0x06, 0x06, 0x06);
 			byte cr4_195;
 			word32 xer_196;
-			if (Test(EQ,cond(main(0x00, r3_191, (char *) &r5->dw0000 + 0x01, xer_190, dwLoc1C, out cr4_195, out xer_196))))
+			if (Test(EQ,cond(main(0x00, r3_191, (char *) &r5->dw0000 + 0x01, xer_190, cr, dwLoc1C, out cr4_195, out xer_196))))
 				goto l100004A4;
 		}
 		__mtcrf(0x08, cr);
@@ -161,24 +162,24 @@ l1000056C:
 		__crxor(0x06, 0x06, 0x06);
 		byte cr4_148;
 		Eq_89 xer_149;
-		word32 r5_152 = r5 + main(-0x0056, 0x00, (char *) (&r5->dw0000) + 0x01, xer, dwLoc1C, out cr4_148, out xer_149);
+		word32 r5_152 = r5 + main(-0x0056, 0x00, (char *) (&r5->dw0000) + 0x01, xer, cr, dwLoc1C, out cr4_148, out xer_149);
 		__crxor(0x06, 0x06, 0x06);
 		byte cr4_154;
 		Eq_89 xer_155;
-		word32 r5_158 = r5 + main(-0x0057, 0x01 - r4, r5_152, xer_149, dwLoc1C, out cr4_154, out xer_155);
+		word32 r5_158 = r5 + main(-0x0057, 0x01 - r4, r5_152, xer_149, cr, dwLoc1C, out cr4_154, out xer_155);
 		__crxor(0x06, 0x06, 0x06);
 		byte cr4_160;
-		main(-0x004F, -0x0D, r5_158, xer_155, dwLoc1C, out cr4_160, out xer);
+		main(-0x004F, -0x0D, r5_158, xer_155, cr, dwLoc1C, out cr4_160, out xer);
 		if (Test(GE,cond(r3 - r4)))
 			goto l100005DC;
 	}
 	__crxor(0x06, 0x06, 0x06);
 	byte cr4_138;
-	main((word32) r3 + 0x01, r4, r5, xer, dwLoc1C, out cr4_138, out xer);
+	main((word32) r3 + 0x01, r4, r5, xer, cr, dwLoc1C, out cr4_138, out xer);
 l1000048C:
 	__crxor(0x06, 0x06, 0x06);
 	byte cr4_113;
-	if (Test(EQ,cond(main(-0x005E, (word32) r3 - 0x001B, r5, xer, dwLoc1C, out cr4_113, out xer))) || Test(NE,cr4_113))
+	if (Test(EQ,cond(main(-0x005E, (word32) r3 - 0x001B, r5, xer, cr, dwLoc1C, out cr4_113, out xer))) || Test(NE,cr4_113))
 	{
 		r31_117.u0 = 0x0010;
 		goto l100004A4;
@@ -954,8 +955,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw10010C0C - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 100009CC: void call___do_global_ctors_aux(Stack word32 dwArg04)

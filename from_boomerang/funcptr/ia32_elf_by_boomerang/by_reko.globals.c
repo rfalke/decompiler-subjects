@@ -14,7 +14,7 @@ Eq_22 g_t8048358 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), 
 Eq_26 g_t80483AC = Unexpected function type (fn void ())
 ;
 char g_str80483D0[] = "Hello, ";
-char g_str80483D8[] = "world!\x0A";
+char g_str80483D8[] = "world!\n";
 <anonymous> ** g_ptr80493E8 = &g_ptr80494C4;
 <anonymous> * g_ptr80494B8 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80494C4 = null;

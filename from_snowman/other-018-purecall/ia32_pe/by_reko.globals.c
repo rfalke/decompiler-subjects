@@ -10,7 +10,7 @@ Eq_465 g_t400000 =
 		0x000000F0,
 	};
 <anonymous> g_t401005 = <code>;
-<anonymous> * g_ptr40374C = &g_t401005;
+Eq_12 g_t40374C = &g_t401005;
 ui32 g_dw405058 = 0xBB40E64E;
 ui32 g_dw40505C = 0x44BF19B1;
 word32 g_dw405170 = 0x00000000;

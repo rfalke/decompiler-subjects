@@ -5,6 +5,8 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
+Eq_2 g_t1078C = Unexpected function type (fn void ())
+;
 int8 g_b107A8 = 109;
 ptr32 g_ptr2097C = 0x00000000;
 

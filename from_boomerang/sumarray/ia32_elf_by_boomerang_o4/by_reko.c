@@ -109,9 +109,7 @@ void __libc_csu_init()
 // 08048388: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	if (false)
-		;
-	else
+	if (true)
 		_fini();
 }
 

@@ -11,10 +11,10 @@ Eq_40 g_t8048400 = Unexpected function type (fn void ())
 ;
 Eq_39 g_t8048410 = Unexpected function type (fn void ())
 ;
-char g_str80484C4[] = "i=%d\x0A";
+char g_str80484C4[] = "i=%d\n";
 <anonymous> * g_ptr804956C = &g_tFFFFFFFF;
 word32 g_dw804957C = 0x00000000;
 word32 g_dw8049650 = 0x00000000;
 byte g_b8049668 = 0x00;
-uint32 g_dw804966C = 0x00000000;
+up32 g_dw804966C = 0x00000000;
 

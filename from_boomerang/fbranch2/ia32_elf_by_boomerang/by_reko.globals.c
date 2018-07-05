@@ -12,7 +12,7 @@ Eq_25 g_t804851C = Unexpected function type (fn void ())
 Eq_26 g_t804856C = Unexpected function type (fn void ())
 ;
 char g_str80485C0[] = "%f";
-char g_str80485C3[] = "a is %f, b is %f\x0A";
+char g_str80485C3[] = "a is %f, b is %f\n";
 char g_str80485D5[] = "Equal";
 char g_str80485DB[] = "Not Equal";
 <anonymous> * g_ptr8049618 = &g_tFFFFFFFF;

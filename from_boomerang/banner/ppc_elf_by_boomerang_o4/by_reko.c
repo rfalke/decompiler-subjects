@@ -26,24 +26,25 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 	fn10011F58();
 	if (Test(EQ,cond(lr->dw000C)))
 		return r30;
-	else
-		return lr;
+	return lr;
 }
 
 // 10000374: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(EQ,cond(globals->t10011FE4)))
+	if (Test(NE,cond(globals->t10011FE4)))
+		return fp;
+	word32 * r11_34 = globals->ptr10011E04;
+	if (Test(EQ,cond(*r11_34)))
 	{
-		word32 * r11_34 = globals->ptr10011E04;
-		if (Test(NE,cond(*r11_34)))
-		{
-			globals->ptr10011E04 = r11_34 + 0x01;
-			return fp + -0x0020;
-		}
 		globals->t10011FE4.u0 = 0x01;
+		return fp;
 	}
-	return fp;
+	else
+	{
+		globals->ptr10011E04 = r11_34 + 0x01;
+		return fp + -0x0020;
+	}
 }
 
 // 100003EC: void call___do_global_dtors_aux(Stack word32 dwArg04)
@@ -79,69 +80,6 @@ void call_frame_dummy(word32 dwArg04)
 // 10000468: void main(Register Eq_86 xer, Stack word32 dwArg04)
 void main(Eq_86 xer, word32 dwArg04)
 {
-	__crxor(0x06, 0x06, 0x06);
-	malloc();
-	(word32 *) 0x0010 = 0x10000990;
-	int32 r26_11 = 0x01;
-	int32 * r30_113 = (int32 *) 0x0010;
-	do
-	{
-		int32 r3_62 = *r30_113;
-		strlen();
-		byte cr0_111 = cond(r3_62 - 0x0A);
-		int32 r31_178 = r3_62;
-		if (Test(GT,cr0_111))
-			r31_178 = 0x0A;
-		int32 r28_67 = r31_178 << 0x03;
-		do
-		{
-			Eq_147 r5_144 = 0x00;
-			if (Test(LT,cond(0x00 - r31_178)))
-			{
-				struct Eq_119 * r4_141 = fp + -0x0078 + 0x0F;
-				do
-				{
-					Eq_155 r7_149 = *((word32) r5_144 + *r30_113);
-					int32 r8_153 = (word32) r7_149 - 0x0020 & ~((word32) r7_149 - 0x0020) >> 0x1F;
-					int32 r7_155 = (word32) xer + (r8_153 >> 0x03);
-					int32 r10_147 = 0x00;
-					xer = cond(r7_155);
-					int32 r11_159 = r8_153 - (r7_155 << 0x03);
-					int32 ctr_162 = 0x07;
-					ptr32 r7_164 = globals->a10011E08[r7_155];
-					do
-					{
-						(r4_141 + r10_147 / 0x08)[0x01] = (struct Eq_119) (r7_164 + r10_147)[r11_159].b0000;
-						r10_147 = r10_147 + 0x01;
-						ctr_162 = ctr_162 - 0x01;
-					} while (ctr_162 != 0x00);
-					r4_141->b0000 = (byte) 0x0020;
-					r5_144 = (word32) r5_144 + 0x01;
-					r4_141 = r4_141 + 0x01;
-				} while (Test(LT,cond(r5_144 - r31_178)));
-			}
-			int32 r9_130 = r28_67 + -0x01;
-			xer = cond(r28_67 + -0x01);
-			if (Test(GE,cr0_111))
-			{
-				do
-				{
-					r9_130 = r9_130 + -0x01;
-					struct Eq_190 * r11_131 = fp + -0x0078 + r9_130;
-					xer = cond(r9_130);
-					if (Test(NE,cond(r11_131->t0008 - 0x0020)))
-						break;
-					r11_131->t0008.u0 = 0x00;
-				} while (Test(GE,cr0_111));
-			}
-			puts();
-			cr0_111 = cond(-0x05);
-		} while (Test(LE,cr0_111));
-		puts();
-		r26_11 = r26_11 + -0x01;
-		r30_113 = r30_113 + 0x01;
-		xer = cond(r26_11);
-	} while (Test(NE,cr0_111));
 }
 
 // 100005F4: void __libc_csu_fini(Stack word32 dwArg04)
@@ -900,8 +838,7 @@ ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
 	if (Test(EQ,cond(globals->dw10011D14 - -0x01)))
 		return fp;
-	else
-		return fp + -0x0020;
+	return fp + -0x0020;
 }
 
 // 10000940: void call___do_global_ctors_aux(Stack word32 dwArg04)

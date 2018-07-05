@@ -11,7 +11,7 @@ Eq_26 g_t80483CF = Unexpected function type (fn int32 (int32, (ptr (ptr char)), 
 ;
 Eq_30 g_t8048440 = Unexpected function type (fn void ())
 ;
-char g_str8048468[] = "%i\x0A";
+char g_str8048468[] = "%i\n";
 <anonymous> ** g_ptr8049474 = &g_ptr8049550;
 <anonymous> * g_ptr8049544 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049550 = null;

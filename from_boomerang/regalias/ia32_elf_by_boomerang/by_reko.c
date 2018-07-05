@@ -104,8 +104,8 @@ void __libc_csu_init(word32 edi)
 		{
 			word32 esp_47;
 			word32 ebp_48;
-			uint32 edi_49;
-			uint32 esi_50;
+			up32 edi_49;
+			up32 esi_50;
 			byte SZO_51;
 			byte C_52;
 			word32 ebx_53;

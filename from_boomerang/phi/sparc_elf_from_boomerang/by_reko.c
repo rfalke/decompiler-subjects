@@ -4,19 +4,19 @@
 
 #include "subject.h"
 
-// 000104F4: void _start(Register word32 g1, Register word32 o7, Stack word32 dwArg40)
-void _start(word32 g1, word32 o7, word32 dwArg40)
+// 000104F4: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+void _start( * g1, word32 o7, word32 dwArg40)
 {
-	if (g1 == 0x00)
+	if (g1 == null)
 	{
-		atexit();
-		globals->ptr20A34 = fp + 0x44 + ((_init(o7) << 0x02) + 0x04);
+		atexit(&globals->t10830);
+		int32 l0_18 = _init(o7);
+		globals->ptr20A34 = fp + 0x44 + ((l0_18 << 0x02) + 0x04);
 		main();
-		exit();
-		_exit();
+		exit(l0_18);
 	}
 	else
-		atexit();
+		atexit(g1);
 }
 
 // 00010568: Register word32 fn00010568(Register word32 o7, Register word32 l7)
@@ -28,49 +28,73 @@ word32 fn00010568(word32 o7, word32 l7)
 // 00010570: void __do_global_dtors_aux(Register word32 o7)
 void __do_global_dtors_aux(word32 o7)
 {
-	struct Eq_39 * l7_114 = fn00010568(o7, 0x00010300);
-	word32 o2_26 = (word32) *l7_114->ptr000C;
-	if (o2_26 == 0x00)
+	struct Eq_40 * l7_136 = fn00010568(o7, 0x00010300);
+	word32 o2_26 = (word32) *l7_136->ptr000C;
+	if (o2_26 != 0x00)
+		return;
+	<anonymous> *** o0_54 = l7_136->ptr0010;
+	<anonymous> * o1_56 = **o0_54;
+	if (o1_56 != null)
 	{
-		<anonymous> *** o0_54 = l7_114->ptr0010;
-		<anonymous> * o1_56 = **o0_54;
-		if (o1_56 != null)
+		<anonymous> *** l0_112 = o0_54;
+		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		while (true)
 		{
-			<anonymous> *** l0_118 = o0_54;
-			<anonymous> ** o0_126 = (char *) *o0_54 + 0x04;
-			while (true)
-			{
-				*l0_118 = (<anonymous> ***) o0_126;
-				word32 sp_97;
-				word32 i0_98;
-				word32 o0_99;
-				word32 i1_100;
-				word32 o1_101;
-				word32 i2_102;
-				word32 o2_103;
-				word32 i3_104;
-				word32 o3_105;
-				word32 i4_106;
-				word32 o4_107;
-				word32 i5_108;
-				word32 o5_109;
-				word32 i6_110;
-				word32 i7_111;
-				word32 o7_112;
-				word32 l1_113;
-				word32 g0_115;
-				byte NZVC_116;
-				bool Z_117;
-				o1_56();
-				<anonymous> ** o0_119 = *l0_118;
-				if (*o0_119 == null)
-					break;
-				o0_126 = (<anonymous> **) ((char *) o0_119 + 0x04);
-			}
+			*l0_112 = (<anonymous> ***) o0_114;
+			word32 sp_119;
+			word32 i0_120;
+			word32 o0_121;
+			word32 i1_122;
+			word32 o1_123;
+			word32 i2_124;
+			word32 o2_125;
+			word32 i3_126;
+			word32 o3_127;
+			word32 i4_128;
+			word32 o4_129;
+			word32 i5_130;
+			word32 o5_131;
+			word32 i6_132;
+			word32 i7_133;
+			word32 o7_134;
+			word32 l1_135;
+			word32 g0_137;
+			byte NZVC_138;
+			bool Z_139;
+			o1_56();
+			<anonymous> ** o0_141 = *l0_112;
+			if (*o0_141 == null)
+				break;
+			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
 		}
-		if (l7_114->dw0024 != 0x00)
-			fn000208F8();
-		*l7_114->ptr000C = 0x01;
+	}
+	if (l7_136->dw0024 == 0x00)
+		*l7_136->ptr000C = 0x01;
+	else
+	{
+		word32 sp_85;
+		word32 i0_86;
+		word32 o0_87;
+		word32 i1_88;
+		word32 o1_89;
+		word32 i2_90;
+		word32 o2_91;
+		word32 i3_92;
+		word32 o3_93;
+		word32 i4_94;
+		word32 o4_95;
+		word32 i5_96;
+		word32 o5_97;
+		word32 i6_98;
+		word32 i7_99;
+		word32 o7_100;
+		word32 l1_101;
+		word32 l7_102;
+		word32 g0_103;
+		byte NZVC_104;
+		bool Z_105;
+		word32 l0_106;
+		__deregister_frame_info();
 	}
 }
 
@@ -82,16 +106,58 @@ void call___do_global_dtors_aux()
 // 00010630: void frame_dummy(Register word32 o7)
 void frame_dummy(word32 o7)
 {
-	struct Eq_39 * l7_22 = fn00010568(o7, 66112);
+	struct Eq_40 * l7_22 = fn00010568(o7, 66112);
 	if (l7_22->dw0020 == 0x00)
 	{
-		if (*l7_22->ptr0014 == 0x00 || l7_22->dw001C == 0x00)
-			;
-		else
-			fn00020910();
+		word32 * i0_58 = l7_22->ptr0014;
+		if (*i0_58 == 0x00 || l7_22->dw001C == 0x00)
+			return;
+		word32 sp_88;
+		word32 i0_89;
+		word32 o0_90;
+		word32 i1_91;
+		word32 o1_92;
+		word32 i2_93;
+		word32 o2_94;
+		word32 i3_95;
+		word32 o3_96;
+		word32 i4_97;
+		word32 o4_98;
+		word32 i5_99;
+		word32 o5_100;
+		word32 i6_101;
+		word32 i7_102;
+		word32 o7_103;
+		word32 l7_104;
+		word32 g0_105;
+		byte NZVC_106;
+		bool Z_107;
+		_Jv_RegisterClasses();
 	}
 	else
-		fn00020904();
+	{
+		word32 sp_35;
+		word32 i0_36;
+		word32 o0_37;
+		word32 i1_38;
+		word32 o1_39;
+		word32 i2_40;
+		word32 o2_41;
+		word32 i3_42;
+		word32 o3_43;
+		word32 i4_44;
+		word32 o4_45;
+		word32 i5_46;
+		word32 o5_47;
+		word32 i6_48;
+		word32 i7_49;
+		word32 o7_50;
+		word32 l7_51;
+		word32 g0_52;
+		byte NZVC_53;
+		bool Z_54;
+		__register_frame_info();
+	}
 }
 
 // 000106B4: void call_frame_dummy()
@@ -103,12 +169,12 @@ void call_frame_dummy()
 int32 fib(int32 o0, int32 dwArg44, ptr32 & l0Out, ptr32 & i6Out)
 {
 	*l0Out = l0;
-	struct Eq_158 * i6_15;
+	struct Eq_216 * i6_15;
 	*i6Out = fp;
 	if (o0 > 0x01)
 	{
 		word32 l0_45;
-		struct Eq_166 * i6_46;
+		struct Eq_224 * i6_46;
 		fib(o0 + ~0x00, dwLoc34, out l0_45, out i6_46);
 		word32 l0_51;
 		word32 o0_53 = fib(i6_46->dw0044 + ~0x01, o0, out l0_51, out i6_15);
@@ -122,13 +188,6 @@ int32 fib(int32 o0, int32 dwArg44, ptr32 & l0Out, ptr32 & i6Out)
 // 00010748: void main()
 void main()
 {
-	printf();
-	scanf();
-	word32 l0_27;
-	struct Eq_202 * i6_28;
-	word32 o0_29 = fib(dwLoc14, dwLoc34, out l0_27, out i6_28);
-	i6_28->dwFFFFFFE8 = o0_29;
-	printf();
 }
 
 // 000107AC: Register word32 fn000107AC(Register word32 o7, Register word32 l7)
@@ -141,8 +200,8 @@ word32 fn000107AC(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_221 * l7_22 = fn000107AC(o7, 0x000100BC);
-	struct Eq_226 * o1_25 = l7_22->ptr0018;
+	struct Eq_259 * l7_22 = fn000107AC(o7, 0x000100BC);
+	struct Eq_264 * o1_25 = l7_22->ptr0018;
 	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
 	if (o0_26 != (<anonymous> *) ~0x00)
 	{
@@ -192,58 +251,5 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
-}
-
-// 000208A4: void _PROCEDURE_LINKAGE_TABLE_()
-void _PROCEDURE_LINKAGE_TABLE_()
-{
-}
-
-// 000208D4: void atexit()
-void atexit()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 000208E0: void exit()
-void exit()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 000208EC: void _exit()
-void _exit()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 000208F8: void fn000208F8()
-void fn000208F8()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 00020904: void fn00020904()
-void fn00020904()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 00020910: void fn00020910()
-void fn00020910()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 0002091C: void printf()
-void printf()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
-}
-
-// 00020928: void scanf()
-void scanf()
-{
-	_PROCEDURE_LINKAGE_TABLE_();
 }
 

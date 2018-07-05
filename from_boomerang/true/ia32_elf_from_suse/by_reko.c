@@ -102,82 +102,6 @@ void usage()
 // 08048B60: void main(Stack word32 dwArg04, Stack (ptr (ptr char)) dwArg08)
 void main(word32 dwArg04, char * * dwArg08)
 {
-	__align(fp - 44);
-	globals->ptr804B948 = (char *) *dwArg08;
-	word32 esp_23;
-	word32 ebp_24;
-	byte SCZO_25;
-	word32 ebx_26;
-	word32 esi_27;
-	word32 edi_28;
-	word32 eax_29;
-	byte Z_30;
-	byte SZO_31;
-	byte C_32;
-	byte D_33;
-	word32 ecx_34;
-	!setlocale();
-	word32 esp_38;
-	word32 ebp_39;
-	byte SCZO_40;
-	struct Eq_183 * ebx_41;
-	word32 esi_42;
-	word32 edi_43;
-	word32 eax_44;
-	byte Z_45;
-	byte SZO_46;
-	byte C_47;
-	byte D_48;
-	word32 ecx_49;
-	!bindtextdomain();
-	textdomain("coreutils");
-	atexit(0x08048C80);
-	if (dwArg04 == 0x02)
-	{
-		char * eax_79 = getenv("POSIXLY_CORRECT");
-		bool Z_114 = cond(eax_79);
-		if (eax_79 == null)
-		{
-			byte * eax_85 = ebx_41->ptr0004;
-			byte * edi_156 = &globals->b804A075;
-			byte * dwLoc14_105 = eax_85;
-			byte * esi_155 = eax_85;
-			word32 ecx_157 = 0x07;
-			while (ecx_157 != 0x00)
-			{
-				Z_114 = cond(*esi_159 - *edi_158);
-				esi_155 = esi_159 + 0x01;
-				edi_156 = edi_158 + 0x01;
-				ecx_157 = ecx_157 - 0x01;
-				byte * edi_158 = edi_156;
-				byte * esi_159 = esi_155;
-				if (*esi_159 == *edi_158)
-					break;
-			}
-			if (Z_114)
-			{
-				usage();
-				dwLoc14_105 = ebx_41->ptr0004;
-			}
-			byte * esi_109 = dwLoc14_105;
-			byte * edi_111 = &globals->b804A07C;
-			word32 ecx_112 = 0x0A;
-			while (ecx_112 != 0x00)
-			{
-				Z_114 = cond(*esi_161 - *edi_160);
-				esi_109 = esi_161 + 0x01;
-				edi_111 = edi_160 + 0x01;
-				ecx_112 = ecx_112 - 0x01;
-				byte * edi_160 = edi_111;
-				byte * esi_161 = esi_109;
-				if (*esi_161 == *edi_160)
-					break;
-			}
-			if (!Z_114)
-				version_etc(globals->ptr804B800, &globals->t804A0A7, "GNU coreutils", "5.2.1");
-		}
-	}
-	exit(0x00);
 }
 
 // 08048C70: void close_stdout_set_file_name(Stack Eq_303 dwArg04)
@@ -189,7 +113,7 @@ void close_stdout_set_file_name(size_t dwArg04)
 // 08048C80: void close_stdout(Register Eq_303 edi)
 void close_stdout(size_t edi)
 {
-	union Eq_132 * edx_14 = globals->ptr804B800;
+	FILE * edx_14 = globals->ptr804B800;
 	uint32 eax_17 = *edx_14 >> 0x05 & 0x01;
 	struct Eq_318 * esp_12 = fp - 44;
 	int32 ebx_149 = 0x00 - (eax_17 < 0x01);
@@ -212,28 +136,29 @@ void close_stdout(size_t edi)
 	}
 	if (fclose(edx_14) != 0x00)
 		ebx_149 = *__errno_location();
-	if (ebx_149 >= 0x00)
+	if (ebx_149 < 0x00)
+		return;
+	char * eax_91 = dcgettext(null, "write error", 0x05);
+	Eq_303 eax_93 = globals->t804B808;
+	if (eax_93 == null)
 	{
-		char * eax_91 = dcgettext(null, "write error", 0x05);
-		Eq_303 eax_93 = globals->t804B808;
-		if (eax_93 == null)
-		{
-			word32 esp_127;
-			word32 ebp_128;
-			word32 esi_129;
-			word32 ebx_130;
-			byte SCZO_131;
-			word32 edx_132;
-			word32 eax_133;
-			byte SZO_134;
-			byte C_135;
-			byte Z_136;
-			byte S_137;
-			word32 ecx_138;
-			word32 edi_139;
-			!error();
-			return;
-		}
+		word32 esp_127;
+		word32 ebp_128;
+		word32 esi_129;
+		word32 ebx_130;
+		byte SCZO_131;
+		word32 edx_132;
+		word32 eax_133;
+		byte SZO_134;
+		byte C_135;
+		byte Z_136;
+		byte S_137;
+		word32 ecx_138;
+		word32 edi_139;
+		!error();
+	}
+	else
+	{
 		word32 ebx_98;
 		esp_12->dw000C = quotearg_colon(edi, eax_93, out ebx_98);
 		word32 eax_101 = globals->dw804B7D4;
@@ -305,7 +230,7 @@ void clone_quoting_options(size_t edi, Eq_497 * dwArg04)
 	if (dwArg04 == null)
 		edx_22 = &globals->dw804B920;
 	*eax_20 = (Eq_303) edx_22->dw0000;
-	*((char *) eax_20 + 0x04) = (Eq_303) edx_22->t0004.dw0000;
+	*((char *) eax_20 + 0x04) = (Eq_303) edx_22->t0004;
 	*((char *) eax_20 + 0x08) = (Eq_303) edx_22->dw0008;
 	*((char *) eax_20 + 0x0C) = (Eq_303) edx_22->dw000C;
 	*((char *) eax_20 + 0x0010) = (Eq_303) edx_22->dw0010;
@@ -344,8 +269,8 @@ void gettext_quote(char * eax, word32 edx)
 	char * eax_19 = dcgettext(null, eax, 0x05);
 }
 
-// 08048F20: Register Eq_303 quotearg_buffer_restyled(Register Eq_303 eax, Register Eq_303 ecx, Register Eq_303 edx, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack uint32 dwArg08, Stack Eq_303 dwArg0C)
-size_t quotearg_buffer_restyled(size_t eax, size_t ecx, size_t edx, size_t edi, size_t dwArg04, uint32 dwArg08, size_t dwArg0C)
+// 08048F20: Register Eq_303 quotearg_buffer_restyled(Register Eq_303 eax, Register Eq_303 ecx, Register Eq_303 edx, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack up32 dwArg08, Stack Eq_303 dwArg0C)
+size_t quotearg_buffer_restyled(size_t eax, size_t ecx, size_t edx, size_t edi, size_t dwArg04, up32 dwArg08, size_t dwArg0C)
 {
 }
 
@@ -393,7 +318,7 @@ size_t quotearg_n_options(size_t eax, size_t ecx, size_t edx, size_t edi, size_t
 			Eq_303 eax_132 = xrealloc((char *) eax + 0x01, edi, ebx_125, ((char *) eax + 0x01) * 0x08);
 			globals->t804B7E4 = eax_132;
 			Eq_303 eax_135 = globals->t804B7D8;
-			Eq_1215 edx_137 = (char *) eax + 0x01 - eax_135;
+			Eq_1217 edx_137 = (char *) eax + 0x01 - eax_135;
 			word32 * edi_138 = (char *) eax_132 + eax_135 * 0x08;
 			uint32 eax_139 = edx_137 * 0x08;
 			if (edx_137 * 0x08 > 0x07 && (edi_138 & 0x04) != 0x00)
@@ -440,7 +365,7 @@ size_t quotearg_n_options(size_t eax, size_t ecx, size_t edx, size_t edi, size_t
 word32 quotearg_char(size_t edi, size_t dwArg04, byte bArg08, ptr32 & ebxOut, ptr32 & espOut, ptr32 & ebpOut)
 {
 	set_char_quoting(fp - 0x3C, (byte) (int32) bArg08, 0x01);
-	struct Eq_1362 * esp_46;
+	struct Eq_1364 * esp_46;
 	word32 eax_47 = quotearg_n_options(null, (void *) ~0x00, dwArg04, edi, fp - 0x3C, out esp_46);
 	word32 ebx_51;
 	*ebxOut = esp_46->dw0048;
@@ -472,7 +397,7 @@ void quotearg_n_style_mem(size_t edi, size_t dwArg04, word32 dwArg08, size_t dwA
 word32 quotearg_n_style(size_t edi, size_t dwArg04, word32 dwArg08, size_t dwArg0C)
 {
 	quoting_options_from_style(fp - 0x3C, dwArg08);
-	struct Eq_1421 * esp_22;
+	struct Eq_1423 * esp_22;
 	quotearg_n_options(dwArg04, (void *) ~0x00, dwArg0C, edi, fp - 0x3C, out esp_22);
 	return esp_22->dw004C;
 }
@@ -496,24 +421,24 @@ void quotearg(size_t edi, size_t dwArg04)
 	quotearg_n(edi, null, dwArg04);
 }
 
-// 080498D0: void version_etc_va(Stack (ptr Eq_132) ptrArg04, Stack (ptr Eq_294) ptrArg08, Stack (ptr char) dwArg0C, Stack (ptr char) dwArg10, Stack (ptr word32) dwArg14)
-void version_etc_va(Eq_132 * ptrArg04, Eq_294 * ptrArg08, char * dwArg0C, char * dwArg10, word32 * dwArg14)
+// 080498D0: void version_etc_va(Stack (ptr Eq_132) dwArg04, Stack (ptr char) dwArg08, Stack (ptr char) dwArg0C, Stack (ptr char) dwArg10, Stack (ptr word32) dwArg14)
+void version_etc_va(FILE * dwArg04, char * dwArg08, char * dwArg0C, char * dwArg10, word32 * dwArg14)
 {
-	uint32 ebx_16 = 0x00;
-	word32 * edx_176 = dwArg14 + 0x01;
+	up32 ebx_16 = 0x00;
+	word32 * edx_178 = dwArg14 + 0x01;
 	if (*dwArg14 != 0x00)
 	{
 		do
 		{
 			ebx_16 = ebx_16 + 0x01;
-			edx_176 = edx_185 + 0x01;
-			word32 * edx_185 = edx_176;
-		} while (*edx_185 != 0x00);
+			edx_178 = edx_187 + 0x01;
+			word32 * edx_187 = edx_178;
+		} while (*edx_187 != 0x00);
 	}
-	if (ptrArg08 != null)
-		fprintf(ptrArg04, "%s (%s) %s\n", ptrArg08, dwArg0C, dwArg10);
+	if (dwArg08 != null)
+		fprintf(dwArg04, "%s (%s) %s\n", dwArg08, dwArg0C, dwArg10);
 	else
-		fprintf(ptrArg04, "%s %s\n", dwArg0C, dwArg10);
+		fprintf(dwArg04, "%s %s\n", dwArg0C, dwArg10);
 	if (ebx_16 > 0x09)
 	{
 		char * eax_55 = dcgettext(null, "Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, %s, and others.\n", 0x05);
@@ -529,55 +454,54 @@ void version_etc_va(Eq_132 * ptrArg04, Eq_294 * ptrArg08, char * dwArg0C, char *
 		word32 edx_69;
 		byte Z_70;
 		byte CZ_71;
-		union Eq_132 * esi_127;
+		FILE * esi_129;
 		!vfprintf();
-		byte * eax_72 = *((char *) esi_127 + 0x0014);
-		if (eax_72 < *((char *) esi_127 + 0x0018))
+		byte * eax_72 = *((char *) esi_129 + 0x0014);
+		if (eax_72 < *((char *) esi_129 + 0x0018))
 		{
 			*eax_72 = 0x0A;
-			*((char *) esi_127 + 0x0014) = (union Eq_132 *) ((char *) *((char *) esi_127 + 0x0014) + 0x01);
+			*((char *) esi_129 + 0x0014) = (FILE *) ((char *) *((char *) esi_129 + 0x0014) + 0x01);
 		}
 		else
 		{
-			word32 esp_144;
-			word32 ebp_145;
-			word32 edi_146;
-			word32 ebx_148;
-			byte SCZO_149;
-			byte SZO_150;
-			byte C_151;
-			word32 eax_152;
-			word32 ecx_153;
-			word32 edx_154;
-			byte Z_155;
-			byte CZ_156;
+			word32 esp_146;
+			word32 ebp_147;
+			word32 edi_148;
+			word32 ebx_150;
+			byte SCZO_151;
+			byte SZO_152;
+			byte C_153;
+			word32 eax_154;
+			word32 ecx_155;
+			word32 edx_156;
+			byte Z_157;
+			byte CZ_158;
 			!__overflow();
 		}
-		fputs_unlocked(globals->ptr804B7E8, esi_127);
-		byte * eax_89 = *((char *) esi_127 + 0x0014);
-		if (eax_89 < *((char *) esi_127 + 0x0018))
+		fputs_unlocked(globals->ptr804B7E8, esi_129);
+		byte * eax_89 = *((char *) esi_129 + 0x0014);
+		if (eax_89 < *((char *) esi_129 + 0x0018))
 		{
 			*eax_89 = 0x0A;
-			*((char *) esi_127 + 0x0014) = (union Eq_132 *) ((char *) *((char *) esi_127 + 0x0014) + 0x01);
+			*((char *) esi_129 + 0x0014) = (FILE *) ((char *) *((char *) esi_129 + 0x0014) + 0x01);
 		}
 		else
 		{
-			word32 esp_124;
-			word32 ebp_125;
-			word32 edi_126;
-			word32 ebx_128;
-			byte SCZO_129;
-			byte SZO_130;
-			byte C_131;
-			word32 eax_132;
-			word32 ecx_133;
-			word32 edx_134;
-			byte Z_135;
-			byte CZ_136;
+			word32 esp_126;
+			word32 ebp_127;
+			word32 edi_128;
+			word32 ebx_130;
+			byte SCZO_131;
+			byte SZO_132;
+			byte C_133;
+			word32 eax_134;
+			word32 ecx_135;
+			word32 edx_136;
+			byte Z_137;
+			byte CZ_138;
 			!__overflow();
 		}
-		char * eax_104 = dcgettext(null, "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 0x05);
-		fputs_unlocked(eax_104, esi_127);
+		fputs_unlocked(dcgettext(null, "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 0x05), esi_129);
 	}
 	else
 	{
@@ -589,8 +513,8 @@ void version_etc_va(Eq_132 * ptrArg04, Eq_294 * ptrArg08, char * dwArg0C, char *
 	}
 }
 
-// 08049AF0: void version_etc(Stack (ptr Eq_132) dwArg04, Stack (ptr Eq_294) dwArg08, Stack (ptr char) dwArg0C, Stack (ptr char) dwArg10)
-void version_etc(Eq_132 * dwArg04, Eq_294 * dwArg08, char * dwArg0C, char * dwArg10)
+// 08049AF0: void version_etc(Stack (ptr Eq_132) dwArg04, Stack (ptr char) dwArg08, Stack (ptr char) dwArg0C, Stack (ptr char) dwArg10)
+void version_etc(FILE * dwArg04, char * dwArg08, char * dwArg0C, char * dwArg10)
 {
 	version_etc_va(dwArg04, dwArg08, dwArg0C, dwArg10, fp + 0x14);
 }
@@ -626,31 +550,27 @@ void xalloc_die()
 	abort();
 }
 
-// 08049B80: void xcalloc(Register Eq_1200 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
-void xcalloc(Eq_1200 esi, size_t edi, size_t dwArg04, size_t dwArg08)
+// 08049B80: void xcalloc(Register Eq_1202 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
+void xcalloc(Eq_1202 esi, size_t edi, size_t dwArg04, size_t dwArg08)
 {
-	if ((uint32) (~0x00 /u dwArg08) < dwArg04 || calloc(dwArg04, dwArg08) == null)
-	{
-		xalloc_die();
-		xrealloc(esi, edi, dwArg04, dwArg08);
-	}
+	if ((uint32) (~0x00 /u dwArg08) >= dwArg04 && calloc(dwArg04, dwArg08) != null)
+		return;
+	xalloc_die();
+	xrealloc(esi, edi, dwArg04, dwArg08);
 }
 
-// 08049BC0: Register Eq_303 xrealloc(Register Eq_1200 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
-size_t xrealloc(Eq_1200 esi, size_t edi, size_t dwArg04, size_t dwArg08)
+// 08049BC0: Register Eq_303 xrealloc(Register Eq_1202 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
+size_t xrealloc(Eq_1202 esi, size_t edi, size_t dwArg04, size_t dwArg08)
 {
 	Eq_303 eax_13 = realloc(dwArg04, dwArg08);
-	if (eax_13 == null)
-	{
-		xalloc_die();
-		return x2realloc(esi, edi, dwArg04, dwArg08);
-	}
-	else
+	if (eax_13 != null)
 		return eax_13;
+	xalloc_die();
+	return x2realloc(esi, edi, dwArg04, dwArg08);
 }
 
-// 08049BF0: Register Eq_303 x2realloc(Register Eq_1200 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
-size_t x2realloc(Eq_1200 esi, size_t edi, size_t dwArg04, size_t dwArg08)
+// 08049BF0: Register Eq_303 x2realloc(Register Eq_1202 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
+size_t x2realloc(Eq_1202 esi, size_t edi, size_t dwArg04, size_t dwArg08)
 {
 	esp = fp;
 	esp = fp - 0x04;
@@ -697,10 +617,10 @@ size_t x2realloc(Eq_1200 esi, size_t edi, size_t dwArg04, size_t dwArg08)
 	return eax;
 }
 
-// 08049C30: Register Eq_303 x2nrealloc(Register Eq_1200 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08, Stack Eq_501 dwArg0C)
-size_t x2nrealloc(Eq_1200 esi, size_t edi, size_t dwArg04, size_t dwArg08, Eq_501 dwArg0C)
+// 08049C30: Register Eq_303 x2nrealloc(Register Eq_1202 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08, Stack Eq_501 dwArg0C)
+size_t x2nrealloc(Eq_1202 esi, size_t edi, size_t dwArg04, size_t dwArg08, Eq_501 dwArg0C)
 {
-	Eq_1727 ecx_21 = *dwArg08;
+	Eq_1728 ecx_21 = *dwArg08;
 	if (dwArg04 != null)
 	{
 		if ((uint32) (0x7FFFFFFF /u dwArg0C) < ecx_21)
@@ -737,13 +657,10 @@ size_t xnrealloc(size_t edi, size_t dwArg04, size_t dwArg08, Eq_501 dwArg0C)
 void(Eq_501 esi, size_t edi, size_t dwArg04)
 {
 	void * eax_10 = malloc(dwArg04);
-	if (eax_10 == null)
-	{
-		xalloc_die();
-		return xclone(esi, edi, dwArg04, dwArg08);
-	}
-	else
+	if (eax_10 != null)
 		return eax_10;
+	xalloc_die();
+	return xclone(esi, edi, dwArg04, dwArg08);
 }
 
 // 08049D20: Register (ptr void) xclone(Register Eq_501 esi, Register Eq_303 edi, Stack Eq_303 dwArg04, Stack Eq_303 dwArg08)
@@ -758,20 +675,19 @@ void xzalloc(Eq_501 esi, size_t edi, size_t dwArg04)
 	memset(xmalloc(esi, edi, dwArg04), 0x00, dwArg04);
 }
 
-// 08049D80: void xnmalloc(Stack Eq_1819 dwArg04, Stack Eq_1820 dwArg08)
-void xnmalloc(Eq_1819 dwArg04, Eq_1820 dwArg08)
+// 08049D80: void xnmalloc(Stack Eq_1820 dwArg04, Stack Eq_1821 dwArg08)
+void xnmalloc(Eq_1820 dwArg04, Eq_1821 dwArg08)
 {
-	if ((uint32) (~0x00 /u dwArg08) < dwArg04 || malloc(dwArg04 *s dwArg08) == null)
-	{
-		xalloc_die();
-		__libc_csu_fini();
-	}
+	if ((uint32) (~0x00 /u dwArg08) >= dwArg04 && malloc(dwArg04 *s dwArg08) != null)
+		return;
+	xalloc_die();
+	__libc_csu_fini();
 }
 
 // 08049DC0: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	struct Eq_1835 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc20);
+	struct Eq_1836 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc20);
 	int32 eax_19 = ebx_11->a1892 - ebx_11->a1892;
 	int32 esi_24 = (eax_19 >> 0x02) - 0x01;
 	if (eax_19 >> 0x02 != 0x00)
@@ -799,7 +715,7 @@ void __libc_csu_fini()
 // 08049E30: void __libc_csu_init()
 void __libc_csu_init()
 {
-	struct Eq_1835 * ebx_15 = __i686.get_pc_thunk.bx(dwLoc20);
+	struct Eq_1836 * ebx_15 = __i686.get_pc_thunk.bx(dwLoc20);
 	_init();
 	if (0x00 < &ebx_15->ptr181D - &ebx_15->ptr181D >> 0x02)
 	{
@@ -809,10 +725,10 @@ void __libc_csu_init()
 			word32 ebp_44;
 			byte SCZO_45;
 			word32 ebx_46;
-			uint32 esi_47;
+			up32 esi_47;
 			byte SZO_48;
 			byte C_49;
-			uint32 edi_50;
+			up32 edi_50;
 			word32 edx_51;
 			word32 eax_52;
 			ebx_15->ptr181D();

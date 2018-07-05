@@ -5,27 +5,29 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_15 g_t10930 = 
+Eq_2 g_t10914 = Unexpected function type (fn void ())
+;
+Eq_17 g_t10930 = 
 	{
 		37,
-		105,
+		0x69,
 	};
-Eq_15 g_t10940 = 
+Eq_17 g_t10940 = 
 	{
 		37,
-		114,
+		0x72,
 	};
-Eq_15 g_t10948 = 
+Eq_17 g_t10948 = 
 	{
 		33,
-		10,
+		0x0A,
 	};
-Eq_15 g_t10988 = 
+Eq_17 g_t10988 = 
 	{
 		64,
-		43,
+		0x2B,
 	};
-struct Eq_15 * g_ptr20CD8 = null;
+struct Eq_17 * g_ptr20CD8 = null;
 int32 g_dw20CF0 = 0;
 byte * g_ptr20CF4 = null;
 

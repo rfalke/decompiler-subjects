@@ -4,29 +4,33 @@
 
 #include "subject.h"
 
-Eq_23 g_t8048890 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_29 g_t8048890 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
 ;
-Eq_26 g_t80488D0 = Unexpected function type (fn void ())
+Eq_32 g_t80488D0 = Unexpected function type (fn void ())
 ;
-Eq_27 g_t8048930 = Unexpected function type (fn void ())
+Eq_33 g_t8048930 = Unexpected function type (fn void ())
 ;
+Eq_187 g_t8048960 = 
+	{
+		;
 real64 g_r8048970 = 3.0;
 real64 g_r8048978 = 3.14159265358979;
 real64 g_r8048980 = 10.0;
 real64 g_r8048988 = 12.345;
 char g_str8048990[] = "%f";
 char g_str8048993[] = "%d";
-char g_str8048996[] = "%zu %zu %zu %zu %zu\x0A";
-char g_str804899E[] = "%zu %zu %zu\x0A";
+char g_str8048996[] = "%zu %zu %zu %zu %zu\n";
+char g_str804899E[] = "%zu %zu %zu\n";
 word32 g_dw8049F10 = 0x00000000;
+<anonymous> * g_ptr8049FFC = null;
 byte g_b804A020 = 0x01;
 word16 g_w804A022 = 0x0002;
 int32 g_dw804A024 = 3;
 int32 g_dw804A028 = 4;
-Eq_141 g_t804A030 = 
-	{
-		5
-	};
+Eq_147 g_t804A030 = 
+		{
+			5
+		};
 word32 g_dw804A034 = 0x00000000;
 real32 g_r804A038 = 10.0F;
 real64 g_r804A040 = 11.0;

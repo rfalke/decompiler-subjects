@@ -13,11 +13,11 @@ Eq_39 g_t80488F0 = Unexpected function type (fn void ())
 ;
 char g_str80489A0[] = "%08lX:";
 char g_str80489A7[] = " %02lX";
-char g_str80489B2[] = "%s\x0A";
+char g_str80489B2[] = "%s\n";
 char g_str80489B6[] = "rb";
 <anonymous> * g_ptr8049F0C = &g_tFFFFFFFF;
 word32 g_dw8049F1C = 0x00000000;
 word32 g_dw8049FF8 = 0x00000000;
 byte g_b804A034 = 0x00;
-uint32 g_dw804A038 = 0x00000000;
+up32 g_dw804A038 = 0x00000000;
 

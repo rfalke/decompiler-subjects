@@ -1,5 +1,5 @@
 Using options:
 00000000004006B6: warning: Unable to resolve imported reference rand.
 0000000000400428: warning: Unable to resolve imported reference __gmon_start__.
-000000000040057F: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000400580: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000400588: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

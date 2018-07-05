@@ -84,8 +84,8 @@ void frame_dummy()
 	}
 }
 
-// 08048328: void main(Stack uint32 dwArg04)
-void main(uint32 dwArg04)
+// 08048328: void main(Stack up32 dwArg04)
+void main(up32 dwArg04)
 {
 	__align(fp - 0x0C);
 	if (dwArg04 > 3999999999)
@@ -121,7 +121,7 @@ void __libc_csu_fini()
 			byte SZO_39;
 			byte C_40;
 			byte Z_41;
-			bcuiposr0 None_42;
+			bcuisposr0 None_42;
 			word32 edx_43;
 			((<anonymous> **) 0x080494B4)();
 		} while (ebx_36 != 0x00);

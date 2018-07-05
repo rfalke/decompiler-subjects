@@ -11,21 +11,21 @@ Eq_25 g_t8048608 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t8048658 = Unexpected function type (fn void ())
 ;
-char g_str80486AC[] = "a(%d)\x0A";
-char g_str80486B3[] = "b(%d)\x0A";
-char g_str80486BA[] = "c(%d)\x0A";
+char g_str80486AC[] = "a(%d)\n";
+char g_str80486B3[] = "b(%d)\n";
+char g_str80486BA[] = "c(%d)\n";
 <anonymous> * g_a80486C4[] = 
 	{
 	};
-char g_str80486E0[] = "d(%d)\x0A";
-char g_str80486E7[] = "e(%d)\x0A";
-char g_str80486EE[] = "f(%d)\x0A";
-char g_str80486F5[] = "g(%d)\x0A";
-char g_str80486FC[] = "h(%d)\x0A";
-char g_str8048703[] = "i(%d)\x0A";
-char g_str804870A[] = "j(%d)\x0A";
-char g_str8048711[] = "k(%d)\x0A";
-char g_str8048718[] = "l(%d)\x0A";
+char g_str80486E0[] = "d(%d)\n";
+char g_str80486E7[] = "e(%d)\n";
+char g_str80486EE[] = "f(%d)\n";
+char g_str80486F5[] = "g(%d)\n";
+char g_str80486FC[] = "h(%d)\n";
+char g_str8048703[] = "i(%d)\n";
+char g_str804870A[] = "j(%d)\n";
+char g_str8048711[] = "k(%d)\n";
+char g_str8048718[] = "l(%d)\n";
 <anonymous> * g_ptr8049724 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049730 = null;
 word32 g_dw8049734 = 0x00000000;
