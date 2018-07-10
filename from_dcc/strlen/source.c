@@ -10,4 +10,4 @@ strlen(char *s)
 	while (*s++)
 	  n++;
 	return (n);
-}
+}

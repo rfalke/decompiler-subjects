@@ -15,4 +15,3 @@ main()
 
 	multMatrix (a,b,c);
 }
-

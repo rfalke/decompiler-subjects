@@ -26,4 +26,3 @@ int x;
     else
 	return (1);
 }
-

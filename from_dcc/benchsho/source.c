@@ -34,4 +34,3 @@ main(int ac, char *av[])
 	}
         printf("a=%d\n", a);
   }
-

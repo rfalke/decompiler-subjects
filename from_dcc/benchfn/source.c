@@ -20,4 +20,4 @@ main(int ac, char *av[])
         for (d = 1; d <= major; ++d)
                 f0(); /* executes 1000 calls */
 	printf ("finished\n");
-}
+}

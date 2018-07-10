@@ -13,4 +13,4 @@ main()
 	a = a << 5;
 	b = b >> a;
 	printf ("a = %ld, b = %ld\n", a, b);
-}
+}

@@ -7,4 +7,4 @@ main()
 	scanf ("%d", &a);
 	scanf ("%d %d", &a, &d);
 	printf ("%ld %ld", a, d);
-}
+}

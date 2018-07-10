@@ -220,4 +220,3 @@ for (i = 0; i < LITTLE; ++i)
     }
 return (sum);
 }
-
