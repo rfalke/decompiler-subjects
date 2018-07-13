@@ -5,13 +5,17 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t400590 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t400590 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
 Eq_26 g_t4009A0 = Unexpected function type (fn void ())
 ;
 Eq_25 g_t4009B0 = Unexpected function type (fn void ())
 ;
+Eq_184 g_t400A8C = 'v';
 <anonymous> * g_ptr600BD0 = &g_tFFFFFFFF;
+<anonymous> * g_a600BE0[] = 
+	{
+	};
 word64 g_qw600BF0 = 0x0000000000000000;
 word64 g_qw600DC8 = 0x0000000000000000;
 byte g_b600E20 = 0x00;

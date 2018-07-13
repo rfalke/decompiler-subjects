@@ -7,6 +7,12 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10814 = Unexpected function type (fn void ())
 ;
-word32 g_dw209C0 = 0x00000007;
+char g_str10830[] = "a = %lld\n";
+char g_str10840[] = "b = %i\n";
+Eq_219 g_t209B8 = 
+	{
+		123456789012345
+	};
+int32 g_dw209C0 = 7;
 ptr32 g_ptr20A00 = 0x00000000;
 

@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 00000175: void fn00000175(Register (ptr word32) ebx)
+// 00000175: void fn00000175(Register (ptr32 word32) ebx)
 void fn00000175(word32 * ebx)
 {
 	*ebx = 0x11223366;

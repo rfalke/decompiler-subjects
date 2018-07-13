@@ -1,4 +1,11 @@
 Using options:
+error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenceException: Object reference not set to an instance of an object
+  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x0013e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Serialization.SerializedService.Build (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary library) [0x00181] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.LoadService (Reko.Core.Serialization.SerializedService ssvc) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00037] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
 0804831C: warning: Call target address 00000000 is invalid.
-08048350: error: The method or operation is not implemented.
-080483A4: warning: No valid entries could be found in jump vector.

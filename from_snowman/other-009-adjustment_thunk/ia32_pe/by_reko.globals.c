@@ -5,24 +5,31 @@
 #include "subject.h"
 
 <anonymous> ** g_ptr0010;
-Eq_501 g_t400000 = 
+Eq_445 g_t400000 = 
 	{
 		0x5A4D,
 		0x000000E0,
 	};
 <anonymous> g_t401005 = <code>;
 <anonymous> g_t401069 = <code>;
-Eq_35 g_t40375C = &g_t401069;
-Eq_35 g_t40376C = &g_t401005;
+Eq_271 g_t403208 = null;
+<anonymous> * g_ptr40375C = &g_t401069;
+<anonymous> * g_ptr40376C = &g_t401005;
 ui32 g_dw405078 = 0xBB40E64E;
 ui32 g_dw40507C = 0x44BF19B1;
 word32 g_dw405190 = 0x00000000;
-int32 g_dw405194 = 0;
+Eq_68 g_t405194 = 
+	{
+		0x00000000
+	};
 word32 g_dw405198 = 0x00000000;
-Eq_92 g_t40519C = null;
-int32 g_dw4051A8 = 0;
-Eq_92 g_t4051AC = null;
+word32 g_dw40519C = 0x00000000;
+Eq_68 g_t4051A8 = 
+	{
+		0x00000000
+	};
+word32 g_dw4051AC = 0x00000000;
 word32 g_dw4054E4 = 0x00000000;
 word32 g_dw40550C = 0x00000000;
-Eq_92 g_t405510 = null;
+<anonymous> * g_ptr405510 = null;
 

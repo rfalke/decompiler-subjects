@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_25 g_t8048454 = Unexpected function type (fn void ())
 ;
@@ -26,6 +26,7 @@ char g_str804855C[] = "atime: %i\n";
 char g_str8048567[] = "mtime: %i\n";
 char g_str8048572[] = "ctime: %i\n";
 <anonymous> * g_ptr8049580;
+<anonymous> * g_ptr8049584 = null;
 <anonymous> ** g_ptr804958C = &g_ptr8049664;
 <anonymous> * g_ptr8049658 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049664 = null;

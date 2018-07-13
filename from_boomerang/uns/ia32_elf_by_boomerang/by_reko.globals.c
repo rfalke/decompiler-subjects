@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_25 g_t80483B4 = Unexpected function type (fn void ())
 ;
@@ -16,6 +16,7 @@ char g_str8048477[] = "The mask is %x\n";
 char g_str8048487[] = "Arguments supplied\n";
 char g_str804849B[] = "Three or more arguments\n";
 <anonymous> * g_ptr80494B4;
+<anonymous> * g_ptr80494B8 = null;
 <anonymous> ** g_ptr80494C0 = &g_ptr8049598;
 <anonymous> * g_ptr804958C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049598 = null;

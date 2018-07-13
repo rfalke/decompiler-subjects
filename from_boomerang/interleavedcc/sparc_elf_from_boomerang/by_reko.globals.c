@@ -7,5 +7,9 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t116A8 = Unexpected function type (fn void ())
 ;
+char g_str116C8[] = "Call with  1, 2.0, 3.0: %d\n";
+char g_str116E8[] = "Call with -1, 2.0, 3.0: %d\n";
+char g_str11708[] = "Call with  1, 2.0, 2.0: %d\n";
+char g_str11728[] = "Call with -1, 2.0, 2.0: %d\n";
 ptr32 g_ptr21A64 = 0x00000000;
 

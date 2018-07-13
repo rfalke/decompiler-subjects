@@ -14,14 +14,14 @@ void _init()
 		byte SCZO_16;
 		word64 rax_17;
 		byte SZO_18;
-		byte C_19;
-		byte Z_20;
+		bool C_19;
+		bool Z_20;
 		__gmon_start__();
 	}
 }
 
-// 0000000000400400: void _start(Register (ptr Eq_16) rdx, Stack Eq_17 qwArg00)
-void _start( * rdx, Eq_17 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_17) rdx, Stack Eq_18 qwArg00)
+void _start( * rdx, Eq_18 qwArg00)
 {
 	__align((char *) fp + 0x08);
 	__libc_start_main(&globals->t40085D, qwArg00, (char *) fp + 0x08, &globals->t4008B0, &globals->t400920, rdx, fp);
@@ -41,8 +41,8 @@ void deregister_tm_clones(word64 r8)
 	byte SCZO_47;
 	byte CZ_48;
 	byte SZO_49;
-	byte C_50;
-	byte Z_51;
+	bool C_50;
+	bool Z_51;
 	word32 edi_52;
 	word64 rdi_53;
 	null();
@@ -58,9 +58,9 @@ void register_tm_clones()
 	word64 rbp_42;
 	byte SCZO_43;
 	word64 rax_44;
-	byte Z_45;
+	bool Z_45;
 	byte SZO_46;
-	byte C_47;
+	bool C_47;
 	word64 rdi_48;
 	null();
 }
@@ -84,23 +84,23 @@ void frame_dummy()
 		word32 edi_40;
 		word64 rdi_41;
 		byte SCZO_42;
-		byte Z_43;
+		bool Z_43;
 		word32 eax_44;
 		word64 rax_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word64 rbp_48;
 		word32 esi_49;
 		word64 rsi_50;
-		null();
+		fn0000000000000000();
 		register_tm_clones();
 	}
 	else
 		register_tm_clones();
 }
 
-// 00000000004004F8: void use(Register Eq_116 xmm0)
-void use(Eq_116 xmm0)
+// 00000000004004F8: void use(Register Eq_118 xmm0)
+void use(Eq_118 xmm0)
 {
 	printf("%f", xmm0);
 }
@@ -111,8 +111,8 @@ void use_int(word32 edi)
 	printf("%d", (uint64) (word32) (uint64) edi);
 }
 
-// 0000000000400514: void read_ints(Register word128 xmm0, Register word128 xmm1)
-void read_ints(word128 xmm0, word128 xmm1)
+// 0000000000400514: void read_ints()
+void read_ints()
 {
 	Eq_134 xmm0_9 = DPB(xmm0, (real64) (int32) globals->b601030, 0);
 	Eq_134 xmm1_15 = DPB(xmm1, (real64) (int32) globals->w601032 + xmm0_9, 0);
@@ -132,19 +132,24 @@ void write_ints(word128 xmm0)
 	globals->qw601040 = rax_11;
 }
 
-// 00000000004005A1: void read_floats()
-void read_floats()
+// 00000000004005A1: void read_floats(Register Eq_218 xmm1)
+void read_floats(Eq_218 xmm1)
 {
+	printf("%f", DPB(xmm0, (real64) globals->r601060 + (((real64) __xorpd(xmm1, xmm1) + DPB(xmm0, (real64) globals->r601048, 0)) + globals->r601050), 0));
 }
 
-// 00000000004005ED: void write_floats()
-void write_floats()
+// 00000000004005ED: void write_floats(Register word128 xmm0)
+void write_floats(word128 xmm0)
 {
+	globals->r601048 = (real32) xmm0;
+	globals->r601050 = (real64) xmm0;
+	globals->r601060 = (real80) (real64) xmm0;
 }
 
 // 0000000000400612: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
+	globals->r601048 = (real32) globals->r601050;
 }
 
 // 0000000000400623: void converting_between_floats_f2()
@@ -156,6 +161,7 @@ void converting_between_floats_f2()
 // 0000000000400630: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
+	globals->r601050 = (real64) globals->r601048;
 }
 
 // 0000000000400641: void converting_between_floats_d2()
@@ -176,8 +182,8 @@ void converting_between_floats_l2()
 	globals->r601060 = (real80) globals->r601050;
 }
 
-// 0000000000400668: void basic_operations(Register Eq_254 xmm0, Register Eq_255 xmm1)
-void basic_operations(Eq_254 xmm0, Eq_255 xmm1)
+// 0000000000400668: void basic_operations(Register Eq_218 xmm0, Register Eq_324 xmm1)
+void basic_operations(Eq_218 xmm0, Eq_324 xmm1)
 {
 	printf("%f", DPB(xmm0, (real64) xmm0 + xmm1, 0));
 	real64 rLoc20_4 = (real64) xmm1;
@@ -195,8 +201,8 @@ void compare_floats(word128 xmm0, word128 xmm1)
 {
 }
 
-// 00000000004007DC: void constants(Register Eq_322 xmm0)
-void constants(Eq_322 xmm0)
+// 00000000004007DC: void constants(Register Eq_388 xmm0)
+void constants(Eq_388 xmm0)
 {
 	printf("%f", DPB(xmm0, (real64) xmm0 + xmm0, 0));
 	real64 qwLoc08_6 = (real64) xmm0;
@@ -234,8 +240,8 @@ void __libc_csu_init(word32 edi)
 			word64 rdx_82;
 			byte SCZO_83;
 			byte SZO_84;
-			byte C_85;
-			byte Z_86;
+			bool C_85;
+			bool Z_86;
 			word32 ebx_87;
 			word64 rdi_88;
 			globals->ptr600E08();

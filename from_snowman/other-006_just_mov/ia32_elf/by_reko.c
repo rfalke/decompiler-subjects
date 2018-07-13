@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 08048098: void fn08048098(Register (ptr Eq_2) eax)
+// 08048098: void fn08048098(Register (ptr32 Eq_2) eax)
 void fn08048098(Eq_2 * eax)
 {
 	eax->dw0004 = 1000;

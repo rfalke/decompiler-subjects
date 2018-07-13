@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 00010534: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 00010534: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
@@ -59,7 +59,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 l1_135;
 			word32 g0_137;
 			byte NZVC_138;
-			bool Z_139;
+			byte Z_139;
 			o1_56();
 			<anonymous> ** o0_141 = *l0_112;
 			if (*o0_141 == null)
@@ -91,7 +91,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 l7_102;
 		word32 g0_103;
 		byte NZVC_104;
-		bool Z_105;
+		byte Z_105;
 		word32 l0_106;
 		__deregister_frame_info();
 	}
@@ -130,7 +130,7 @@ void frame_dummy(word32 o7)
 		word32 l7_104;
 		word32 g0_105;
 		byte NZVC_106;
-		bool Z_107;
+		byte Z_107;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -154,7 +154,7 @@ void frame_dummy(word32 o7)
 		word32 l7_51;
 		word32 g0_52;
 		byte NZVC_53;
-		bool Z_54;
+		byte Z_54;
 		__register_frame_info();
 	}
 }
@@ -167,7 +167,7 @@ void call_frame_dummy()
 // 00010704: void main()
 void main()
 {
-	struct Eq_210 * o0_20 = malloc(0x0C);
+	struct Eq_213 * o0_20 = malloc(0x0C);
 	o0_20->dw0004 = 0x00011F18;
 	word32 dwLoc14_30 = 0x02;
 	ptr32 * dwLoc18_104 = &o0_20->dw0004;
@@ -177,8 +177,8 @@ void main()
 		dwLoc14_30 = o0_56;
 		if (o0_56 == 0x00)
 			break;
-		Eq_213 o0_73 = strlen(*dwLoc18_104);
-		Eq_213 dwLoc28_227 = o0_73;
+		Eq_216 o0_73 = strlen(*dwLoc18_104);
+		Eq_216 dwLoc28_227 = o0_73;
 		if (o0_73 > 0x0A)
 			dwLoc28_227.u0 = 0x0A;
 		int32 dwLoc1C_138 = 0x00;
@@ -188,13 +188,13 @@ void main()
 			while (dwLoc20_105 - dwLoc28_227 < 0x00)
 			{
 				int32 o0_161 = (word32) (*dwLoc18_104 + dwLoc20_105) << 0x18 >> 0x18;
-				Eq_259 dwLoc2C_163 = o0_161 + ~0x1F;
+				Eq_262 dwLoc2C_163 = o0_161 + ~0x1F;
 				if (o0_161 < ~0x1F)
 					dwLoc2C_163.u0 = 0x00;
-				Eq_294 dwLoc24_168 = 0x00;
+				Eq_297 dwLoc24_168 = 0x00;
 				while (dwLoc24_168 <= 0x06)
 				{
-					Eq_299 o0_198 = (word32) dwLoc2C_163.u0 + ((dwLoc2C_163 >> 0x1F) >> 0x1D);
+					Eq_302 o0_198 = (word32) dwLoc2C_163.u0 + ((dwLoc2C_163 >> 0x1F) >> 0x1D);
 					word32 o1_212 = dwLoc2C_163 - ((dwLoc2C_163 + ((dwLoc2C_163 >> 0x1F) >>u 0x1D) >> 0x03) << 0x03);
 					Mem221[(dwLoc20_105 << 0x03) + (fp + ~0x0F) + dwLoc24_168 + -112:byte] = (byte) (word32) Mem28[(o1_212 << 0x03) - o1_212 + dwLoc24_168 + 139444[((((o0_198 >> 0x03) << 0x03) - (o0_198 >> 0x03)) + dwLoc1C_138) * 0x04]:byte];
 					dwLoc24_168 = (word32) dwLoc24_168 + 0x01;
@@ -222,12 +222,12 @@ word32 fn000109B8(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 000109C0: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 000109C0: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_379 * l7_22 = fn000109B8(o7, 0x00011560);
-	struct Eq_384 * o1_25 = l7_22->ptr0018;
+	struct Eq_382 * l7_22 = fn000109B8(o7, 0x00011560);
+	struct Eq_387 * o1_25 = l7_22->ptr0018;
 	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
 	if (o0_26 != (<anonymous> *) ~0x00)
 	{
@@ -252,7 +252,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_71;
 			word32 g0_72;
 			byte NZVC_73;
-			bool Z_74;
+			byte Z_74;
 			o0_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -277,5 +277,35 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00021F84: void atexit()
+void atexit()
+{
+}
+
+// 00021F90: void exit()
+void exit()
+{
+}
+
+// 00021F9C: void _exit()
+void _exit()
+{
+}
+
+// 00021FCC: void malloc()
+void malloc()
+{
+}
+
+// 00021FD8: void strlen()
+void strlen()
+{
+}
+
+// 00021FE4: void puts()
+void puts()
+{
 }
 

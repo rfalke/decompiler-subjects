@@ -1,4 +1,15 @@
 Using options:
+error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenceException: Object reference not set to an instance of an object
+  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x0013e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Serialization.SerializedService.Build (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary library) [0x00181] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.LoadService (Reko.Core.Serialization.SerializedService ssvc) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00037] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+08048400: warning: Call target address 00000000 is invalid.
+080483AD: warning: Call target address 00000000 is invalid.
 080489D0: warning: The format specifier '%z' passed to *printf is not known.
 080489D0: warning: The format specifier '%z' passed to *printf is not known.
 080489D0: warning: The format specifier '%z' passed to *printf is not known.
@@ -7,59 +18,42 @@ Using options:
 08048A11: warning: The format specifier '%z' passed to *printf is not known.
 08048A11: warning: The format specifier '%z' passed to *printf is not known.
 08048A11: warning: The format specifier '%z' passed to *printf is not known.
+08048373: warning: Call target address 00000000 is invalid.
 080483EB: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08048406: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 compare_floats: error: An error occurred during data flow analysis.
     Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x406a5fc0 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x406a59a0 + 0x00283> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x406a58a0 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x40655ce0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x406a5520 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x4065a1c0 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x406a4a10 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x406935d0 + 0x004f3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000ea] in <6a264ef1b92c4115b517d6a392a986a9>:0 
 08048AC0: error: Failed to write global variable g_t8048AC0.
     Primitive type word128 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x406383b0 + 0x002af> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x4063cb60 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x4063cac0 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x406e9940 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x406e9900 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x4066b2b0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) <0x406e95b0 + 0x001e0> in <filename unknown>:0 
-  at Reko.Core.Types.UnionType.Accept[T] (IDataTypeVisitor`1 v) <0x406cac60 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) <0x406e9350 + 0x00081> in <filename unknown>:0 
-  at Reko.Core.Types.EquivalenceClass.Accept[T] (IDataTypeVisitor`1 v) <0x406cbbc0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406e8fa0 + 0x00225> in <filename unknown>:0 
-0804A048: error: Failed to write global variable g_r804A048.
-    Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x406383b0 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x4063cb60 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x4063cac0 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x406e9940 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x406e9900 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x4066b2b0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406e8fa0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
 08048AC0: error: Failed to write global variable g_t8048AC0.
     Primitive type word128 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x406383b0 + 0x002af> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x4063cb60 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x4063cac0 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x406e9940 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x406e9900 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x4066b2b0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) <0x406e95b0 + 0x001e0> in <filename unknown>:0 
-  at Reko.Core.Types.UnionType.Accept[T] (IDataTypeVisitor`1 v) <0x406cac60 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) <0x406e9350 + 0x00081> in <filename unknown>:0 
-  at Reko.Core.Types.EquivalenceClass.Accept[T] (IDataTypeVisitor`1 v) <0x406cbbc0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406e8fa0 + 0x00225> in <filename unknown>:0 
-0804A048: error: Failed to write global variable g_r804A048.
-    Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x406383b0 + 0x0026f> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x4063cb60 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x4063cac0 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x406e9940 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x406e9900 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x4066b2b0 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x406e8fa0 + 0x00225> in <filename unknown>:0 
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 

@@ -7,14 +7,27 @@
 word32 g_dw10000590 = 0x00018454;
 struct Eq_3 g_t10000630 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw100109E0 = 0xFFFFFFFF;
-word32 g_dw100109EC = 0x00000000;
-word32 g_dw100109F0 = 0x00000000;
-word32 * g_ptr10010AD0 = &g_dw100109EC;
-Eq_43 g_t10010B54 = 
-	{
-		0
-	};
+Eq_43 g_t1000091C = Unexpected function type (fn void ())
+;
+char g_str10000930[] = "res: %i\n";
+char g_str1000093C[] = "dev: %i\n";
+char g_str10000948[] = "ino: %i\n";
+char g_str10000954[] = "mode: %i\n";
+char g_str10000960[] = "nlink: %i\n";
+char g_str1000096C[] = "uid: %i\n";
+char g_str10000978[] = "gid: %i\n";
+char g_str10000984[] = "rdev: %i\n";
+char g_str10000990[] = "size: %i\n";
+char g_str1000099C[] = "blksize: %i\n";
+char g_str100009AC[] = "blocks: %i\n";
+char g_str100009B8[] = "atime: %i\n";
+char g_str100009C4[] = "mtime: %i\n";
+char g_str100009D0[] = "ctime: %i\n";
+int32 g_dw100109E0 = -1;
+int32 g_dw100109EC = 0;
+int32 g_dw100109F0 = 0;
+int32 * g_ptr10010AD0 = &g_dw100109EC;
+byte g_b10010B54 = 0x00;
 

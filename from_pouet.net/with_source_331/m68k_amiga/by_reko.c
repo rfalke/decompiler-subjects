@@ -4,10 +4,10 @@
 
 #include "subject.h"
 
-// 00001000: void fn00001000(Register word32 d0, Register word32 d2, Register word32 d4, Register word32 d5)
-void fn00001000(word32 d0, word32 d2, word32 d4, word32 d5)
+// 00001000: void fn00001000()
+void fn00001000()
 {
-	struct Eq_6 * a6_3 = *(struct Eq_6 **) 0x04;
+	struct Eq_2 * a6_3 = *(struct Eq_2 **) 0x04;
 	word32 d0_5 = DPB(d0, 0xA8C0, 0);
 	uint32 d1_63 = 0x00010002;
 	Eq_65 d0_10[] = AllocMem(d0_5, 0x00010002);
@@ -26,7 +26,7 @@ void fn00001000(word32 d0, word32 d2, word32 d4, word32 d5)
 		{
 			uint32 d0_79 = DPB(d0_208, (word16) d4_100 - 0x01B0, 0) * (word16) d4_100;
 			d1_63 = DPB(d1_63, (word16) d5 - 448, 0) * (word16) d5;
-			cui16 v27_85 = (word16) d0_79 + (word16) d1_63;
+			cui16 v27_85 = (word16) (d0_79 + d1_63);
 			d0_208 = DPB(d0_79, v27_85 & 0x0800, 0);
 			if ((v27_85 & 0x0800) != 0x00)
 			{
@@ -42,7 +42,7 @@ void fn00001000(word32 d0, word32 d2, word32 d4, word32 d5)
 	} while (d4_100 != ~0x00);
 	globals->w1196 = (word16) (d0_10 + 21600)->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000;
 	globals->w1192 = (word16) __swap((d0_10 + 21600)->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000);
-	struct Eq_127 * a1_104 = (d0_10 + 21600)->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000;
+	struct Eq_126 * a1_104 = (d0_10 + 21600)->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000;
 	word32 * a0_110 = &globals->dw1058;
 	byte * a2_111 = &globals->dw1058;
 	int32 d6_112 = 0x04;
@@ -77,7 +77,7 @@ void fn00001000(word32 d0, word32 d2, word32 d4, word32 d5)
 		int32 d0_162 = (int32) globals->a1018[(int32) v48_157];
 		globals->b119B = -(byte) d0_162 - 0x01 << 0x04;
 		cui16 v57_178 = (word16) DPB(d5_140, (byte) d5_140 + 0x01, 0) & 0x7F;
-		word32 d2_186 = DPB(d0_10, (word16) d0_10 + (word16) (DPB(d0_162, (word16) d0_162 >> 0x03, 0) + (int32) (globals->a1018)[(int32) v57_178] * 0x36), 0);
+		word32 d2_186 = DPB(d0_10, (word16) (d0_10 + (DPB(d0_162, (word16) d0_162 >> 0x03, 0) + (int32) (globals->a1018)[(int32) v57_178] * 0x36))->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000->a0000, 0);
 		globals->w118E = (word16) (d2_186 + 0x02);
 		globals->w118A = (word16) __swap(d2_186 + 0x02);
 		d6_112 = DPB(d6_112, v48_157, 0);

@@ -5,26 +5,26 @@
 #include "subject.h"
 
 word32 g_dw804B030 = 0x00000000;
-Eq_125 g_t804B034 = 
+Eq_131 g_t804B034 = 
 	{
 		0x0000
 	};
-Eq_125 g_t804B038 = 
+Eq_131 g_t804B038 = 
 	{
 		0x0000
 	};
-Eq_125 g_t804B03C = 
+Eq_131 g_t804B03C = 
 	{
 		0x0000
 	};
 word32 g_dw804B040 = 0x00000000;
-Eq_125 g_t804B044 = 
+Eq_131 g_t804B044 = 
 	{
 		0x0000
 	};
 word32 g_dw804B050 = 0x00000000;
 word32 g_dw804B054 = 0x00000000;
-Eq_125 g_t804B058 = 
+Eq_131 g_t804B058 = 
 	{
 		0x0000
 	};
@@ -47,39 +47,39 @@ Eq_2 g_t81F3FD0 =
 		0x00
 	};
 byte g_b81F3FD1 = 0x00;
-Eq_134 g_t81F3FD2 = 
+Eq_140 g_t81F3FD2 = 
 	{
 		0x00
 	};
 byte g_b81F3FD3 = 0x00;
-Eq_93 g_t81F3FD4 = 
+Eq_99 g_t81F3FD4 = 
 	{
 		0x00
 	};
 byte g_b81F3FD5 = 0x00;
-Eq_140 g_t81F3FD6 = 
+Eq_146 g_t81F3FD6 = 
 	{
 		0x00
 	};
 byte g_b81F3FD7 = 0x00;
-Eq_125 g_t81F3FD8 = 
+Eq_131 g_t81F3FD8 = 
 	{
 		0x0000
 	};
 word16 g_w81F3FDA = 0x0000;
 word32 g_dw81F3FE0 = 0x00000000;
 word16 g_w81F3FE2 = 0x0000;
-Eq_125 g_t81F40E0 = 
+Eq_131 g_t81F40E0 = 
 	{
 		0x0000
 	};
-Eq_125 g_t81F40F0 = 
+Eq_131 g_t81F40F0 = 
 	{
 		0x0000
 	};
 word32 g_dw81F40F4 = 0x00000000;
 struct Eq_7 * g_ptr83F4110 = &g_t85F4160;
-Eq_125 g_t83F4114 = 
+Eq_131 g_t83F4114 = 
 	{
 		0x4160
 	};
@@ -92,7 +92,7 @@ word32 * g_a83F4130[] =
 	};
 ui32 g_dw83F4138 = 0x00000000;
 ui32 g_dw83F413C = 0x00000001;
-union Eq_125 * g_a83F4140[] = 
+union Eq_131 * g_a83F4140[] = 
 	{
 	};
 Eq_2 g_t83F4148 = 
@@ -105,16 +105,16 @@ struct Eq_10 **** g_a83F4150[] =
 struct Eq_7 * g_ptr83F4154 = null;
 Eq_5 g_t85F4150 = 
 	{
-		0x00000000,
-		0x00000000,
-		0x00000000,
+		0,
+		null,
+		null,
 	};
 Eq_16 g_t85F4154 = 
 	{
 		&g_t85F4150,
-		0x00000000,
-		0x00000000,
-		0x00000000,
+		0,
+		null,
+		null,
 	};
 Eq_13 g_t85F4158 = 
 	{
@@ -149,6 +149,12 @@ word32 g_dw85F4190 = 0x00000000;
 word32 g_dw85F4194 = 0x00000000;
 word32 g_dw85F41A4 = 0x00000000;
 word32 * g_a85F41A8[] = 
+	{
+	};
+Eq_24 g_t85F41B4 = 
+	{
+	};
+Eq_24 g_t85F4240 = 
 	{
 	};
 

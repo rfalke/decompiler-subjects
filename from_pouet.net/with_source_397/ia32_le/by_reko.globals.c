@@ -4,6 +4,8 @@
 
 #include "subject.h"
 
+Eq_2 g_tFFFFEBCC;
+struct Eq_2 * g_ptr8000 = &g_tFFFFEBCC;
 Eq_3 g_tA910 = 
 	{
 		0x01

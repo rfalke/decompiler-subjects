@@ -4,17 +4,27 @@
 
 #include "subject.h"
 
+Eq_107 g_t0001;
 ui32 g_dw0002;
 ui32 g_dw0004;
 ui32 g_dw0005;
-Eq_3458 g_a000B[];
-Eq_656 g_t400000 = 
+Eq_3267 g_a000B[];
+Eq_645 g_t400000 = 
 	{
 		0x0000,
 		0,
 	};
+Eq_1816 g_t41530C = null;
+Eq_1817 g_t415618 = null;
+char g_str415754[] = "%08lX:";
+char g_str41575C[] = "rb";
+Eq_1943 g_t415838 = 
+	{
+		&g_dw417170,
+		&g_dw4171C8,
+	};
 WCHAR g_t415844 = L'湕';
-Eq_477 g_a415B64[] = 
+Eq_466 g_a415B64[] = 
 	{
 	};
 word32 g_a415B7C[] = 
@@ -23,7 +33,7 @@ word32 g_a415B7C[] =
 byte g_a415B94[] = 
 	{
 	};
-Eq_582 g_t415BB0 = 
+Eq_571 g_t415BB0 = 
 	{
 		0x61772027
 	};
@@ -41,7 +51,7 @@ word32 g_a417008[] =
 	{
 	};
 word32 g_dw417010 = 0x00000001;
-Eq_1131 g_t417034 = &g_t416144;
+Eq_1092 g_t417034 = &g_t416144;
 word32 g_dw417144 = 0x00000000;
 int32 g_dw417148 = 0;
 word32 g_dw41714C = 0x00000000;
@@ -53,51 +63,58 @@ word32 g_dw417174 = 0x00000000;
 word32 g_dw41717C = 0x00000000;
 Eq_2 g_t4171C0 = 
 	{
-		0
+		0x0000
 	};
 word32 g_dw4171C8 = 0x00000000;
-struct Eq_1944 * g_ptr417254 = null;
-struct Eq_1941 * g_ptr417258 = null;
-struct Eq_9 * g_ptr41725C = null;
-struct Eq_10 * g_ptr417260 = null;
-Eq_2 g_t417264 = 
+struct Eq_1894 * g_ptr417254 = null;
+struct Eq_1891 * g_ptr417258 = null;
+Eq_2 g_t41725C = 
 	{
-		0
+		0x0000
 	};
+Eq_2 g_t417260 = 
+	{
+		0x0000
+	};
+char * g_ptr417264 = null;
 Eq_2 g_t417268 = 
 	{
-		0
+		0x0000
 	};
-Eq_2 g_t41726C = 
+Eq_5 g_t41726C = 
 	{
 		0
 	};
 Eq_2 g_t417270 = 
 	{
-		0
+		0x0000
 	};
 ui32 g_dw417274 = 0x00000000;
 Eq_2 g_t417278 = 
 	{
-		0
+		0x0000
 	};
-ptr32 g_ptr41727C = 0x00000000;
+Eq_2 g_t41727C = 
+	{
+		0x0000
+	};
 word32 g_dw417280 = 0x00000000;
-struct Eq_1934 * g_ptr417284 = null;
-Eq_1950 g_t417288 = 
+struct Eq_1884 * g_ptr417284 = null;
+Eq_1900 g_t417288 = 
 	{
 		0x00
 	};
 ptr32 g_ptr41728C = 0x00000000;
-struct Eq_1931 * g_ptr417290 = null;
+struct Eq_1881 * g_ptr417290 = null;
 word32 g_dw417538 = 0x00000000;
 word32 g_dw41753C = 0x00000000;
 Eq_2 g_t417554 = 
 	{
-		0
+		0x0000
 	};
 byte g_b417558 = 0x00;
 word32 g_dw41755C = 0x00000000;
 word32 g_dw417560 = 0x00000000;
+Eq_2127 g_t417570 = 0;
 <anonymous> * g_ptr417594 = null;
 

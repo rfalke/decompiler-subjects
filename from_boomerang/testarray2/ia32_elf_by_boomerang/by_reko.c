@@ -12,7 +12,7 @@ void _init(word32 esi)
 	__do_global_ctors_aux();
 }
 
-// 080482C0: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+// 080482C0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -33,8 +33,8 @@ void call_gmon_start()
 		word32 edx_35;
 		word32 eax_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		eax_15();
 	}
 }
@@ -54,11 +54,11 @@ void __do_global_dtors_aux()
 			word32 esp_35;
 			word32 ebp_36;
 			byte SCZO_37;
-			byte Z_38;
+			bool Z_38;
 			word32 eax_39;
 			word32 edx_40;
 			byte SZO_41;
-			byte C_42;
+			bool C_42;
 			edx_27();
 		}
 		globals->b804965C = 0x01;
@@ -75,21 +75,21 @@ void frame_dummy(word32 esi)
 		byte SCZO_35;
 		word32 eax_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 esi_40;
-		null();
+		fn00000000();
 	}
 }
 
-// 08048368: void mid(Stack (ptr Eq_99) dwArg04)
-void mid(Eq_99 * dwArg04)
+// 08048368: void mid(Stack (ptr32 Eq_100) dwArg04)
+void mid(Eq_100 * dwArg04)
 {
 	printf("Middle elment is %d\n", (int32) dwArg04->b0002);
 }
 
-// 0804838A: void fst(Stack (ptr Eq_110) dwArg04)
-void fst(Eq_110 * dwArg04)
+// 0804838A: void fst(Stack (ptr32 Eq_111) dwArg04)
+void fst(Eq_111 * dwArg04)
 {
 	printf("First element is %d\n", (int32) dwArg04->b000A);
 }
@@ -122,14 +122,14 @@ void __libc_csu_init(word32 esi)
 		{
 			word32 esp_47;
 			word32 ebp_48;
-			Eq_168 edi_49;
+			Eq_169 edi_49;
 			up32 esi_50;
 			word32 ebx_51;
 			byte SCZO_52;
 			word32 eax_53;
 			word32 edx_54;
 			byte SZO_55;
-			byte C_56;
+			bool C_56;
 			word32 ecx_57;
 			(*(<anonymous> **) 134518548)();
 		} while (esi_50 + 0x01 < 134518548 - edi_49 >> 0x02);
@@ -149,7 +149,7 @@ void __libc_csu_fini()
 		word32 ebx_49;
 		byte SCZO_50;
 		word32 eax_51;
-		byte Z_52;
+		bool Z_52;
 		byte SZO_53;
 		edi_18[esi_23]();
 		esi_23 = esi_48 - 0x01;
@@ -169,7 +169,7 @@ void __do_global_ctors_aux()
 		word32 edx_33;
 		word32 eax_34;
 		byte SCZO_35;
-		byte Z_36;
+		bool Z_36;
 		eax_14();
 		eax_14 = (<anonymous> *) *ebx_32;
 	}

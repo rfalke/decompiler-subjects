@@ -12,7 +12,27 @@ void _init()
 	__do_global_ctors_aux();
 }
 
-// 080482E0: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+// 080482A0: void puts()
+void puts()
+{
+}
+
+// 080482B0: void scanf()
+void scanf()
+{
+}
+
+// 080482C0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080482D0: void printf()
+void printf()
+{
+}
+
+// 080482E0: void _start(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -32,8 +52,8 @@ void call_gmon_start()
 		word32 eax_32;
 		byte SCZO_33;
 		byte SZO_34;
-		byte C_35;
-		byte Z_36;
+		bool C_35;
+		bool Z_36;
 		eax_15();
 	}
 }
@@ -54,11 +74,11 @@ void __do_global_dtors_aux()
 				word32 esp_45;
 				word32 ebp_46;
 				byte SCZO_47;
-				byte Z_48;
+				bool Z_48;
 				word32 eax_49;
 				word32 edx_50;
 				byte SZO_51;
-				byte C_52;
+				bool C_52;
 				word32 esi_53;
 				edx_26();
 				eax_25 = globals->ptr80495DC;
@@ -78,8 +98,8 @@ void frame_dummy()
 		byte SCZO_33;
 		word32 eax_34;
 		byte SZO_35;
-		byte C_36;
-		byte Z_37;
+		bool C_36;
+		bool Z_37;
 		fn00000000();
 	}
 }
@@ -90,14 +110,36 @@ void main()
 	__align(fp - 0x0C);
 	scanf("%f", tLoc20);
 	printf("a is %f, b is %f\n", DPB(rLoc28, 0x00, 0), (real64) rLoc08);
+	real64 rLoc1_29 = (real64) rLoc08;
+	real64 rLoc1_38 = rLoc1_29;
+	if (((byte) cond(rLoc1_29 - (real64) globals->r80485CC) & 0x45 ^ 0x40) == 0x00)
+	{
+		puts("Equal");
+		rLoc1_38 = (real64) rLoc08;
+	}
+	if (((byte) cond((real64) globals->r80485CC - rLoc1_38) & 0x45) != 0x40)
+		puts("Not Equal");
 }
 
 // 080484D4: void __libc_csu_init()
 void __libc_csu_init()
 {
 	_init();
-	if (true)
-		;
+	if (false)
+	{
+		do
+		{
+			word32 esp_31;
+			word32 ebp_32;
+			word32 esi_33;
+			up32 ebx_34;
+			word32 eax_35;
+			byte SCZO_36;
+			byte SZO_37;
+			bool C_38;
+			globals->ptr80495D4();
+		} while (ebx_34 < 0x01);
+	}
 }
 
 // 08048504: void __libc_csu_fini()
@@ -107,18 +149,17 @@ void __libc_csu_fini()
 	{
 		do
 		{
-			word32 esp_34;
-			word32 ebp_35;
-			word32 ebx_36;
-			word32 eax_37;
-			byte SCZO_38;
-			byte SZO_39;
-			byte C_40;
-			byte Z_41;
-			bcuisposr0 None_42;
-			word32 edx_43;
+			word32 esp_32;
+			word32 ebp_33;
+			word32 ebx_34;
+			word32 eax_35;
+			byte SCZO_36;
+			byte SZO_37;
+			bool C_38;
+			bool Z_39;
+			word32 edx_40;
 			((<anonymous> **) 0x080495D0)();
-		} while (ebx_36 != 0x00);
+		} while (ebx_34 != 0x00);
 	}
 	_fini();
 }
@@ -137,7 +178,7 @@ void __do_global_ctors_aux()
 			word32 edx_32;
 			word32 eax_33;
 			byte SCZO_34;
-			byte Z_35;
+			bool Z_35;
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}

@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 10000298: Register word32 _init(Register (ptr Eq_3) lr, Stack word32 dwArg04)
+// 10000298: Register word32 _init(Register (ptr32 Eq_3) lr, Stack word32 dwArg04)
 word32 _init(Eq_3 * lr, word32 dwArg04)
 {
 	word32 r30_8 = call_gmon_start(lr, dwLoc1C);
@@ -13,18 +13,19 @@ word32 _init(Eq_3 * lr, word32 dwArg04)
 	return r30_8;
 }
 
-// 100002C0: void _start()
-void _start()
+// 100002C0: void _start(Register (ptr32 Eq_20) r3, Register int32 r4, Register (ptr32 (ptr32 char)) r5, Register (ptr32 Eq_23) r6, Register (ptr32 Eq_24) r7)
+void _start( * r3, int32 r4, char * * r5,  * r6,  * r7)
 {
 	(fp & ~0x0F)->dwFFFFFFF0 = fp & ~0x0F;
 	(fp & ~0x0F)->dwFFFFFFF0 = 0x00;
+	__libc_start_main(r3, r4, r5, r6, r7, &globals->t10000808, fp);
 }
 
-// 100002E4: Register (ptr Eq_3) call_gmon_start(Register (ptr Eq_3) lr, Stack word32 dwArg04)
+// 100002E4: Register (ptr32 Eq_3) call_gmon_start(Register (ptr32 Eq_3) lr, Stack word32 dwArg04)
 Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 {
 	fn10010970();
-	if (Test(EQ,cond(lr->dw000C)))
+	if (lr->dw000C == 0x00)
 		return r30;
 	return lr;
 }
@@ -32,12 +33,12 @@ Eq_3 * call_gmon_start(Eq_3 * lr, word32 dwArg04)
 // 10000324: Register ptr32 __do_global_dtors_aux(Stack word32 dwArg04)
 ptr32 __do_global_dtors_aux(word32 dwArg04)
 {
-	if (Test(NE,cond(globals->t100109E4)))
+	if ((word32) globals->b100109E4 != 0x00)
 		return fp;
-	word32 * r11_34 = globals->ptr1001096C;
-	if (Test(EQ,cond(*r11_34)))
+	int32 * r11_34 = globals->ptr1001096C;
+	if (*r11_34 == 0x00)
 	{
-		globals->t100109E4.u0 = 0x01;
+		globals->b100109E4 = 0x01;
 		return fp;
 	}
 	else
@@ -52,13 +53,11 @@ void call___do_global_dtors_aux(word32 dwArg04)
 {
 }
 
-// 100003B8: void frame_dummy(Stack (ptr Eq_3) dwArg04)
+// 100003B8: void frame_dummy(Stack (ptr32 Eq_3) dwArg04)
 void frame_dummy(Eq_3 * dwArg04)
 {
-	word32 r0_13 = globals->dw1001088C;
-	byte cr6_11 = cond(0x00);
-	byte cr7_14 = cond(r0_13);
-	if (Test(NE,cr7_14) && Test(NE,cr6_11))
+	int32 r0_13 = globals->dw1001088C;
+	if (r0_13 != 0x00 && 0x00 != 0x00)
 	{
 		word32 r1_23;
 		word32 r0_24;
@@ -77,34 +76,37 @@ void call_frame_dummy(word32 dwArg04)
 {
 }
 
-// 10000418: void main(Stack word32 dwArg04)
-void main(word32 dwArg04)
+// 10000418: void main(Stack word32 dwArg00, Stack word32 dwArg04)
+void main(word32 dwArg00, word32 dwArg04)
 {
+	real64 f1_9 = globals->r10000858;
+	real64 f2_10 = globals->r10000860;
+	real64 f3_12 = globals->r10000868;
+	real64 f4_14 = globals->r10000870;
 	__creqv(0x06, 0x06, 0x06);
-	printf();
+	printf("Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n", 0x01, f1_9, 0x02, f2_10, 0x03, f3_12, 0x04, f4_14);
 }
 
 // 1000047C: void __libc_csu_fini(Stack word32 dwArg04)
 void __libc_csu_fini(word32 dwArg04)
 {
 	word32 r5_15 = globals->dw10000478;
-	struct Eq_105 * r30_17 = r5_15 + 0x10000488;
+	struct Eq_147 * r30_17 = r5_15 + 0x10000488;
 	int32 r11_18 = r30_17->dwFFFF8004;
 	word32 r4_19 = r30_17->dwFFFF8000;
 	int32 r0_20 = r4_19 - r11_18;
-	byte cr0_22 = cond(r0_20 >> 0x02);
 	int32 r31_23 = (r0_20 >> 0x02) + -0x01;
-	if (Test(NE,cr0_22))
+	if (r0_20 >> 0x02 != 0x00)
 	{
 		while (true)
 		{
-			Eq_127 r8_47 = r31_23 << 0x02;
+			Eq_168 r8_47 = r31_23 << 0x02;
 			<anonymous> * r7_50 = *((word32) r8_47 + r11_18);
 			word32 r1_53;
 			word32 r6_54;
 			word32 lr_55;
-			struct Eq_136 * r30_56;
-			word32 r29_58;
+			struct Eq_177 * r30_56;
+			int32 r29_58;
 			word32 r5_59;
 			word32 r11_60;
 			word32 r4_61;
@@ -116,7 +118,7 @@ void __libc_csu_fini(word32 dwArg04)
 			word32 ctr_67;
 			word32 r9_68;
 			r7_50();
-			if (Test(EQ,cond(r29_58)))
+			if (r29_58 == 0x00)
 				break;
 			r11_18 = r30_56->dwFFFF8004;
 		}
@@ -127,17 +129,16 @@ void __libc_csu_fini(word32 dwArg04)
 // 1000050C: void __libc_csu_init(Stack word32 dwArg04)
 void __libc_csu_init(word32 dwArg04)
 {
-	struct Eq_159 * r30_21 = _init(&globals->t10000518, dwLoc1C);
+	struct Eq_200 * r30_21 = _init(&globals->t10000518, dwLoc1C);
 	int32 r28_22 = r30_21->dwFFFF800C;
 	word32 r4_24 = r30_21->dwFFFF8008;
-	int32 r3_25 = r4_24 - r28_22;
 	int32 r31_23 = 0x00;
-	byte cr0_27 = cond(0x00 - (r3_25 >> 0x02));
-	if (Test(LT,cr0_27))
+	int32 r3_25 = r4_24 - r28_22;
+	if (0x00 < r3_25 >> 0x02)
 	{
 		do
 		{
-			Eq_184 r7_49 = r31_23 << 0x02;
+			Eq_222 r7_49 = r31_23 << 0x02;
 			<anonymous> * r0_51 = *((word32) r7_49 + r28_22);
 			word32 r1_54;
 			word32 r6_55;
@@ -153,256 +154,256 @@ void __libc_csu_init(word32 dwArg04)
 			word32 ctr_67;
 			word32 r8_68;
 			r0_51();
-		} while (Test(LT,cond(r31_23 - r29_61)));
+		} while (r31_23 < r29_61);
 	}
 }
 
-// 10000598: void _savefpr_14(Register (ptr Eq_206) r11, Register real64 f14, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_14(Eq_206 * r11, real64 f14, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 10000598: void _savefpr_14(Register (ptr32 Eq_242) r11, Register real64 f14, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_14(Eq_242 * r11, real64 f14, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF70 = f14;
 	_savefpr_15(r11, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 1000059C: void _savefpr_15(Register (ptr Eq_206) r11, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_15(Eq_206 * r11, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 1000059C: void _savefpr_15(Register (ptr32 Eq_242) r11, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_15(Eq_242 * r11, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF78 = f15;
 	_savefpr_16(r11, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005A0: void _savefpr_16(Register (ptr Eq_206) r11, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_16(Eq_206 * r11, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005A0: void _savefpr_16(Register (ptr32 Eq_242) r11, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_16(Eq_242 * r11, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF80 = f16;
 	_savefpr_17(r11, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005A4: void _savefpr_17(Register (ptr Eq_206) r11, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_17(Eq_206 * r11, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005A4: void _savefpr_17(Register (ptr32 Eq_242) r11, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_17(Eq_242 * r11, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF88 = f17;
 	_savefpr_18(r11, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005A8: void _savefpr_18(Register (ptr Eq_206) r11, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_18(Eq_206 * r11, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005A8: void _savefpr_18(Register (ptr32 Eq_242) r11, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_18(Eq_242 * r11, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF90 = f18;
 	_savefpr_19(r11, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005AC: void _savefpr_19(Register (ptr Eq_206) r11, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_19(Eq_206 * r11, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005AC: void _savefpr_19(Register (ptr32 Eq_242) r11, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_19(Eq_242 * r11, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF98 = f19;
 	_savefpr_20(r11, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005B0: void _savefpr_20(Register (ptr Eq_206) r11, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_20(Eq_206 * r11, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005B0: void _savefpr_20(Register (ptr32 Eq_242) r11, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_20(Eq_242 * r11, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFA0 = f20;
 	_savefpr_21(r11, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005B4: void _savefpr_21(Register (ptr Eq_206) r11, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_21(Eq_206 * r11, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005B4: void _savefpr_21(Register (ptr32 Eq_242) r11, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_21(Eq_242 * r11, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFA8 = f21;
 	_savefpr_22(r11, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005B8: void _savefpr_22(Register (ptr Eq_206) r11, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_22(Eq_206 * r11, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005B8: void _savefpr_22(Register (ptr32 Eq_242) r11, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_22(Eq_242 * r11, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFB0 = f22;
 	_savefpr_23(r11, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005BC: void _savefpr_23(Register (ptr Eq_206) r11, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_23(Eq_206 * r11, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005BC: void _savefpr_23(Register (ptr32 Eq_242) r11, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_23(Eq_242 * r11, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFB8 = f23;
 	_savefpr_24(r11, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005C0: void _savefpr_24(Register (ptr Eq_206) r11, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_24(Eq_206 * r11, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005C0: void _savefpr_24(Register (ptr32 Eq_242) r11, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_24(Eq_242 * r11, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFC0 = f24;
 	_savefpr_25(r11, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005C4: void _savefpr_25(Register (ptr Eq_206) r11, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_25(Eq_206 * r11, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005C4: void _savefpr_25(Register (ptr32 Eq_242) r11, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_25(Eq_242 * r11, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFC8 = f25;
 	_savefpr_26(r11, f26, f27, f28, f29, f30, f31);
 }
 
-// 100005C8: void _savefpr_26(Register (ptr Eq_206) r11, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_26(Eq_206 * r11, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005C8: void _savefpr_26(Register (ptr32 Eq_242) r11, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_26(Eq_242 * r11, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFD0 = f26;
 	_savefpr_27(r11, f27, f28, f29, f30, f31);
 }
 
-// 100005CC: void _savefpr_27(Register (ptr Eq_206) r11, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_27(Eq_206 * r11, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005CC: void _savefpr_27(Register (ptr32 Eq_242) r11, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_27(Eq_242 * r11, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFD8 = f27;
 	_savefpr_28(r11, f28, f29, f30, f31);
 }
 
-// 100005D0: void _savefpr_28(Register (ptr Eq_206) r11, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_28(Eq_206 * r11, real64 f28, real64 f29, real64 f30, real64 f31)
+// 100005D0: void _savefpr_28(Register (ptr32 Eq_242) r11, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_28(Eq_242 * r11, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFE0 = f28;
 	_savefpr_29(r11, f29, f30, f31);
 }
 
-// 100005D4: void _savefpr_29(Register (ptr Eq_206) r11, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_29(Eq_206 * r11, real64 f29, real64 f30, real64 f31)
+// 100005D4: void _savefpr_29(Register (ptr32 Eq_242) r11, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_29(Eq_242 * r11, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFE8 = f29;
 	_savefpr_30(r11, f30, f31);
 }
 
-// 100005D8: void _savefpr_30(Register (ptr Eq_206) r11, Register real64 f30, Register real64 f31)
-void _savefpr_30(Eq_206 * r11, real64 f30, real64 f31)
+// 100005D8: void _savefpr_30(Register (ptr32 Eq_242) r11, Register real64 f30, Register real64 f31)
+void _savefpr_30(Eq_242 * r11, real64 f30, real64 f31)
 {
 	r11->rFFFFFFF0 = f30;
 	_savefpr_31(r11, f31);
 }
 
-// 100005DC: void _savefpr_31(Register (ptr Eq_206) r11, Register real64 f31)
-void _savefpr_31(Eq_206 * r11, real64 f31)
+// 100005DC: void _savefpr_31(Register (ptr32 Eq_242) r11, Register real64 f31)
+void _savefpr_31(Eq_242 * r11, real64 f31)
 {
 	r11->rFFFFFFF8 = f31;
 }
 
-// 100005E4: void _savegpr_14(Register (ptr Eq_500) r11, Register word32 r14, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_14(Eq_500 * r11, word32 r14, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005E4: void _savegpr_14(Register (ptr32 Eq_536) r11, Register word32 r14, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_14(Eq_536 * r11, word32 r14, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFB8 = r14;
 	_savegpr_15(r11, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005E8: void _savegpr_15(Register (ptr Eq_500) r11, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_15(Eq_500 * r11, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005E8: void _savegpr_15(Register (ptr32 Eq_536) r11, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_15(Eq_536 * r11, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFBC = r15;
 	_savegpr_16(r11, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005EC: void _savegpr_16(Register (ptr Eq_500) r11, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_16(Eq_500 * r11, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005EC: void _savegpr_16(Register (ptr32 Eq_536) r11, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_16(Eq_536 * r11, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC0 = r16;
 	_savegpr_17(r11, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005F0: void _savegpr_17(Register (ptr Eq_500) r11, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_17(Eq_500 * r11, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005F0: void _savegpr_17(Register (ptr32 Eq_536) r11, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_17(Eq_536 * r11, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC4 = r17;
 	_savegpr_18(r11, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005F4: void _savegpr_18(Register (ptr Eq_500) r11, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_18(Eq_500 * r11, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005F4: void _savegpr_18(Register (ptr32 Eq_536) r11, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_18(Eq_536 * r11, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC8 = r18;
 	_savegpr_19(r11, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005F8: void _savegpr_19(Register (ptr Eq_500) r11, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_19(Eq_500 * r11, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005F8: void _savegpr_19(Register (ptr32 Eq_536) r11, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_19(Eq_536 * r11, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFCC = r19;
 	_savegpr_20(r11, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 100005FC: void _savegpr_20(Register (ptr Eq_500) r11, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_20(Eq_500 * r11, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 100005FC: void _savegpr_20(Register (ptr32 Eq_536) r11, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_20(Eq_536 * r11, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD0 = r20;
 	_savegpr_21(r11, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000600: void _savegpr_21(Register (ptr Eq_500) r11, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_21(Eq_500 * r11, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000600: void _savegpr_21(Register (ptr32 Eq_536) r11, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_21(Eq_536 * r11, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD4 = r21;
 	_savegpr_22(r11, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000604: void _savegpr_22(Register (ptr Eq_500) r11, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_22(Eq_500 * r11, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000604: void _savegpr_22(Register (ptr32 Eq_536) r11, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_22(Eq_536 * r11, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD8 = r22;
 	_savegpr_23(r11, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000608: void _savegpr_23(Register (ptr Eq_500) r11, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_23(Eq_500 * r11, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000608: void _savegpr_23(Register (ptr32 Eq_536) r11, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_23(Eq_536 * r11, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFDC = r23;
 	_savegpr_24(r11, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 1000060C: void _savegpr_24(Register (ptr Eq_500) r11, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_24(Eq_500 * r11, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 1000060C: void _savegpr_24(Register (ptr32 Eq_536) r11, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_24(Eq_536 * r11, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE0 = r24;
 	_savegpr_25(r11, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000610: void _savegpr_25(Register (ptr Eq_500) r11, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_25(Eq_500 * r11, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000610: void _savegpr_25(Register (ptr32 Eq_536) r11, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_25(Eq_536 * r11, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE4 = r25;
 	_savegpr_26(r11, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000614: void _savegpr_26(Register (ptr Eq_500) r11, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_26(Eq_500 * r11, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000614: void _savegpr_26(Register (ptr32 Eq_536) r11, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_26(Eq_536 * r11, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE8 = r26;
 	_savegpr_27(r11, r27, r28, r29, r30, r31);
 }
 
-// 10000618: void _savegpr_27(Register (ptr Eq_500) r11, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_27(Eq_500 * r11, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 10000618: void _savegpr_27(Register (ptr32 Eq_536) r11, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_27(Eq_536 * r11, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFEC = r27;
 	_savegpr_28(r11, r28, r29, r30, r31);
 }
 
-// 1000061C: void _savegpr_28(Register (ptr Eq_500) r11, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_28(Eq_500 * r11, word32 r28, word32 r29, word32 r30, word32 r31)
+// 1000061C: void _savegpr_28(Register (ptr32 Eq_536) r11, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_28(Eq_536 * r11, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF0 = r28;
 	_savegpr_29(r11, r29, r30, r31);
 }
 
-// 10000620: void _savegpr_29(Register (ptr Eq_500) r11, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_29(Eq_500 * r11, word32 r29, word32 r30, word32 r31)
+// 10000620: void _savegpr_29(Register (ptr32 Eq_536) r11, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_29(Eq_536 * r11, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF4 = r29;
 	_savegpr_30(r11, r30, r31);
 }
 
-// 10000624: void _savegpr_30(Register (ptr Eq_500) r11, Register word32 r30, Register word32 r31)
-void _savegpr_30(Eq_500 * r11, word32 r30, word32 r31)
+// 10000624: void _savegpr_30(Register (ptr32 Eq_536) r11, Register word32 r30, Register word32 r31)
+void _savegpr_30(Eq_536 * r11, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF8 = r30;
 	_savegpr_31(r11, r31);
 }
 
-// 10000628: void _savegpr_31(Register (ptr Eq_500) r11, Register word32 r31)
-void _savegpr_31(Eq_500 * r11, word32 r31)
+// 10000628: void _savegpr_31(Register (ptr32 Eq_536) r11, Register word32 r31)
+void _savegpr_31(Eq_536 * r11, word32 r31)
 {
 	r11->dwFFFFFFFC = r31;
 }
@@ -835,10 +836,10 @@ void _restgpr_31_x(word32 r11)
 {
 }
 
-// 10000778: Register ptr32 __do_global_ctors_aux(Stack (ptr Eq_3) dwArg04)
+// 10000778: Register ptr32 __do_global_ctors_aux(Stack (ptr32 Eq_3) dwArg04)
 ptr32 __do_global_ctors_aux(Eq_3 * dwArg04)
 {
-	if (Test(EQ,cond(globals->dw1001087C - -0x01)))
+	if (globals->dw1001087C == -0x01)
 		return fp;
 	return fp + -0x0020;
 }
@@ -856,6 +857,11 @@ void _fini(word32 dwArg04)
 
 // 10010970: void fn10010970()
 void fn10010970()
+{
+}
+
+// 100109CC: void __libc_start_main()
+void __libc_start_main()
 {
 }
 

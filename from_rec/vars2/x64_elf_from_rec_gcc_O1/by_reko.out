@@ -1,3 +1,4 @@
 Using options:
-0000000000400410: error: The method or operation is not implemented.
 00000000004003FC: warning: Unable to resolve imported reference __gmon_start__.
+00600E28: warning: Expected sizes of arrays to have been determined by now
+00600E28: warning: Expected sizes of arrays to have been determined by now

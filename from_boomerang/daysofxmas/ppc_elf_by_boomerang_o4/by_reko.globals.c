@@ -7,46 +7,34 @@
 word32 g_dw1000067C = 0x00018594;
 struct Eq_3 g_t1000071C = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-Eq_88 g_t10000A1C = 
+Eq_43 g_t10000A08 = Unexpected function type (fn void ())
+;
+Eq_104 g_t10000A1C = 
 	{
-		0x21656B3B,
-		
-		{
-			175470444
-		},
+		0x21,
+		0x0A,
 	};
-Eq_88 g_t10000A5C = 
+Eq_104 g_t10000A5C = 
 	{
-		0x25732025,
-		
-		{
-			593716334
-		},
+		0x25,
+		0x23,
 	};
-Eq_88 g_t10000A68 = 
+Eq_104 g_t10000A68 = 
 	{
-		0x25730000,
-		
-		{
-			711222653
-		},
+		0x25,
+		0x2A,
 	};
-Eq_88 g_t10000A6C = 
+Eq_104 g_t10000A6C = 
 	{
-		0x406E272B,
-		
-		{
-			724315946
-		},
+		0x40,
+		0x2B,
 	};
-word32 g_dw10010C0C = 0xFFFFFFFF;
-word32 g_dw10010C18 = 0x00000000;
-word32 g_dw10010C1C = 0x00000000;
-word32 * g_ptr10010CFC = &g_dw10010C18;
-Eq_43 g_t10010D78 = 
-	{
-		0
-	};
+int32 g_dw10010C0C = -1;
+int32 g_dw10010C18 = 0;
+int32 g_dw10010C1C = 0;
+int32 * g_ptr10010CFC = &g_dw10010C18;
+_IO_FILE * g_ptr10010D14 = null;
+byte g_b10010D78 = 0x00;
 

@@ -7,5 +7,17 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10BCC = Unexpected function type (fn void ())
 ;
+char g_str10BE8[] = "a(%d)\n";
+char g_str10BF0[] = "b(%d)\n";
+char g_str10BF8[] = "c(%d)\n";
+char g_str10C00[] = "d(%d)\n";
+char g_str10C08[] = "e(%d)\n";
+char g_str10C10[] = "f(%d)\n";
+char g_str10C18[] = "g(%d)\n";
+char g_str10C20[] = "h(%d)\n";
+char g_str10C28[] = "i(%d)\n";
+char g_str10C30[] = "j(%d)\n";
+char g_str10C38[] = "k(%d)\n";
+char g_str10C40[] = "l(%d)\n";
 ptr32 g_ptr20E04 = 0x00000000;
 

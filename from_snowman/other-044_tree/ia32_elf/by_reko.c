@@ -15,13 +15,13 @@ void _init()
 		byte SCZO_25;
 		word32 eax_26;
 		byte SZO_27;
-		byte C_28;
-		byte Z_29;
+		bool C_28;
+		bool Z_29;
 		!__gmon_start__();
 	}
 }
 
-// 08048360: void _start(Register (ptr Eq_21) edx, Stack int32 dwArg00)
+// 08048360: void _start(Register (ptr32 Eq_22) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -45,10 +45,10 @@ void deregister_tm_clones()
 	byte SCZO_38;
 	byte CZ_39;
 	byte SZO_40;
-	byte C_41;
-	byte Z_42;
+	bool C_41;
+	bool Z_42;
 	word32 ebp_43;
-	null();
+	fn00000000();
 }
 
 // 080483D0: void register_tm_clones()
@@ -60,11 +60,11 @@ void register_tm_clones()
 	word32 eax_44;
 	byte SCZO_45;
 	word32 edx_46;
-	byte Z_47;
+	bool Z_47;
 	byte SZO_48;
-	byte C_49;
+	bool C_49;
 	word32 ebp_50;
-	null();
+	fn00000000();
 }
 
 // 08048410: void __do_global_dtors_aux()
@@ -87,29 +87,29 @@ void frame_dummy()
 		word32 esp_36;
 		word32 eax_37;
 		byte SZO_38;
-		byte C_39;
-		byte Z_40;
+		bool C_39;
+		bool Z_40;
 		word32 ebp_41;
 		byte SCZO_42;
 		word32 edx_43;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 }
 
-// 0804845D: void insert(Stack (ptr (ptr Eq_106)) dwArg04, Stack (ptr Eq_106) dwArg08)
-void insert(Eq_106 * * dwArg04, Eq_106 * dwArg08)
+// 0804845D: void insert(Stack (ptr32 (ptr32 Eq_110)) dwArg04, Stack (ptr32 Eq_110) dwArg08)
+void insert(Eq_110 * * dwArg04, Eq_110 * dwArg08)
 {
 	if (*dwArg04 == null)
-		*dwArg04 = (struct Eq_106 **) dwArg08;
+		*dwArg04 = (struct Eq_110 **) dwArg08;
 	else if (dwArg08->dw0000 < *(*dwArg04))
 		insert((char *) *dwArg04 + 0x08, dwArg08);
 	else if (dwArg08->dw0000 > *(*dwArg04))
 		insert((char *) *dwArg04 + 0x04, dwArg08);
 }
 
-// 080484C8: void printout(Stack (ptr Eq_150) dwArg04)
-void printout(Eq_150 * dwArg04)
+// 080484C8: void printout(Stack (ptr32 Eq_154) dwArg04)
+void printout(Eq_154 * dwArg04)
 {
 	if (dwArg04->ptr0008 != null)
 		printout(dwArg04->ptr0008);
@@ -125,7 +125,7 @@ void main()
 	int32 dwLoc08_18 = 0x01;
 	while (dwLoc08_18 <= 0x0A)
 	{
-		struct Eq_106 * eax_31 = malloc(0x0C);
+		struct Eq_110 * eax_31 = malloc(0x0C);
 		eax_31->dw0004 = 0x00;
 		word32 edx_36 = eax_31->dw0004;
 		eax_31->dw0008 = edx_36;
@@ -152,19 +152,18 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	{
 		do
 		{
-			word32 esp_63;
-			word32 ebp_64;
-			word32 edi_65;
-			byte SZO_66;
-			byte C_67;
-			word32 esi_68;
-			word32 ebx_69;
-			byte SCZO_70;
-			word32 eax_71;
-			byte Z_72;
-			bcuisposr0 None_73;
+			word32 esp_61;
+			word32 ebp_62;
+			word32 edi_63;
+			byte SZO_64;
+			bool C_65;
+			word32 esi_66;
+			word32 ebx_67;
+			byte SCZO_68;
+			word32 eax_69;
+			bool Z_70;
 			ebx_18->ptr11B5();
-		} while (edi_65 + 0x01 != esi_68);
+		} while (edi_63 + 0x01 != esi_66);
 	}
 }
 

@@ -11,5 +11,11 @@ ptr32 g_ptr8049A20 = 0x08049B08;
 ptr32 g_ptr8049B10 = 0x00000000;
 ptr32 g_ptr8049B2C = 0x00000000;
 word32 g_dw8049B34 = 0x00000000;
+char g_b8049B58 = 'T';
+char g_b8049B64 = 'T';
+char g_b8049B70 = 'F';
+char g_b8049B7C = 'F';
+char g_b8049B88 = 'S';
+char g_b8049B94 = 'S';
 char g_b8049BA0 = 'O';
 

@@ -5,13 +5,14 @@
 #include "subject.h"
 
 struct HBRUSH__ g_t0002;
-Eq_88 g_t0400;
-Eq_145 g_t041D;
+Eq_92 g_t0400;
+Eq_149 g_t041D;
 LRESULT g_t401359(HWND tArg04, UINT tArg08, WPARAM tArg0C, LPARAM tArg10) = Unexpected function type (fn LRESULT (HWND, UINT, WPARAM, LPARAM))
 ;
 WCHAR g_t402000 = L'D';
 WCHAR g_t402012 = L'<';
-Eq_339 g_t40206C = 
+WCHAR g_t40204C = L'S';
+Eq_343 g_t40206C = 
 	{
 		
 		{
@@ -38,7 +39,7 @@ Eq_339 g_t40206C =
 			},
 		},
 	};
-Eq_472 g_t4020A4 = 
+Eq_430 g_t4020A4 = 
 	{
 		0x00000000,
 		&g_t401359,
@@ -51,16 +52,29 @@ Eq_472 g_t4020A4 =
 		null,
 		&g_t402000,
 	};
-Eq_446 g_t4020B4 = 
+Eq_406 g_t4020B4 = 
 	{
 		null
 	};
-Eq_455 g_t4020B8 = null;
-Eq_458 g_t4020BC = null;
-Eq_321 g_t4020CC = null;
-Eq_329 g_t4020D0 = null;
+Eq_415 g_t4020B8 = null;
+Eq_418 g_t4020BC = null;
+Eq_325 g_t4020CC = null;
+Eq_333 g_t4020D0 = null;
+Eq_517 g_t4020D4 = 
+	{
+		null,
+		0x00000000,
+		0x00000000,
+		0,
+		0x00000000,
+		
+		{
+			0,
+			0,
+		},
+	};
 word32 g_dw4020D8 = 0x00000000;
-word32 g_dw4020DC = 0x00000000;
+Eq_344 g_t4020DC = 0x00000000;
 struct tagRECT g_t4020F0 = 
 	{
 		0,
@@ -70,7 +84,7 @@ struct tagRECT g_t4020F0 =
 	};
 int32 g_dw4020F8 = 0;
 int32 g_dw4020FC = 0;
-Eq_286 g_t402100 = 
+Eq_290 g_t402100 = 
 	{
 		null
 	};

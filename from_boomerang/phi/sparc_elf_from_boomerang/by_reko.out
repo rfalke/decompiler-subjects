@@ -1,5 +1,4 @@
 Using options:
 00010668: warning: Unable to resolve imported reference __register_frame_info.
 000106A0: warning: Unable to resolve imported reference _Jv_RegisterClasses.
-00010748: error: Varargs: invalid address: BADDCAFE
 000105FC: warning: Unable to resolve imported reference __deregister_frame_info.

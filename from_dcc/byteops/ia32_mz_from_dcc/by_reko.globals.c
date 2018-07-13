@@ -4,4 +4,6 @@
 
 #include "subject.h"
 
+Eq_1086 g_t07BA;
+struct Eq_1086 * g_ptr8000 = &g_t07BA;
 

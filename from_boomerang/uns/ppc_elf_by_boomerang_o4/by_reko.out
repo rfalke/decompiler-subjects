@@ -1,18 +1,2 @@
 Using options:
 10000410: warning: Call target address 10000000 is invalid.
-10000498: error: An error occurred while processing instruction at address 10000498.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41eefda0 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41d34bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41eef2b0 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41eeef40 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41ee6550 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41eec7f0 + 0x001c0> in <filename unknown>:0 
-100004B0: error: An error occurred while processing instruction at address 100004B0.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41eefda0 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x41d34bb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41eef2b0 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41eeef40 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x41ee6550 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x41eec7f0 + 0x001c0> in <filename unknown>:0 

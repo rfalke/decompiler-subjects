@@ -30,7 +30,7 @@ void main(word32 dwArg00)
 	} while (ebx_16 != 0x0A);
 }
 
-// 0804833F: void _start(Register (ptr Eq_35) edx, Stack int32 dwArg00)
+// 0804833F: void _start(Register (ptr32 Eq_35) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -54,10 +54,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -70,11 +70,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		null();
+		fn00000000();
 	}
 }
 
@@ -97,11 +97,11 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
@@ -135,8 +135,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			ebx_15->ptr1A7F();
 		} while (esi_69 != edi_68 + 0x01);
 	}

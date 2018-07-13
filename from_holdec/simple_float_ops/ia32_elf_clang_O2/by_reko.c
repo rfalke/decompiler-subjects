@@ -18,7 +18,7 @@ void fn08048300()
 	globals->ptr8049FFC();
 }
 
-// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
+// 08048310: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -42,10 +42,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -58,11 +58,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		null();
+		fn00000000();
 	}
 }
 
@@ -85,19 +85,19 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
 		register_tm_clones();
 }
 
-// 08048410: void use(Register word128 xmm0, Stack real64 rArg04)
-void use(word128 xmm0, real64 rArg04)
+// 08048410: void use(Stack real64 rArg04)
+void use(real64 rArg04)
 {
 	printf("%f", rArg04);
 }
@@ -108,14 +108,14 @@ void use_int(int32 dwArg04)
 	printf("%d", dwArg04);
 }
 
-// 08048450: void read_ints(Register word128 xmm0, Register word128 xmm1, Register word128 xmm2, Register word128 xmm3)
-void read_ints(word128 xmm0, word128 xmm1, word128 xmm2, word128 xmm3)
+// 08048450: void read_ints()
+void read_ints()
 {
 	printf("%f", (real64) globals->dw804A028 + DPB(xmm3, (real64) globals->dw804A024 + DPB(xmm1, (real64) ((int32) globals->w804A022) + DPB(xmm0, (real64) ((int32) globals->b804A020), 0), 0), 0) + (real64) globals->t804A030);
 }
 
-// 080484B0: void write_ints(Register word128 xmm0, Stack real64 rArg04)
-void write_ints(word128 xmm0, real64 rArg04)
+// 080484B0: void write_ints(Stack real64 rArg04)
+void write_ints(real64 rArg04)
 {
 	int32 eax_6 = (int32) rArg04;
 	globals->b804A020 = (byte) eax_6;
@@ -130,20 +130,24 @@ void write_ints(word128 xmm0, real64 rArg04)
 	globals->t804A030 = (word32) qwLoc14_20;
 }
 
-// 08048520: void read_floats(Register word128 xmm0, Register Eq_187 xmm1)
-void read_floats(word128 xmm0, Eq_187 xmm1)
+// 08048520: void read_floats(Register Eq_186 xmm1)
+void read_floats(Eq_186 xmm1)
 {
-	__xorpd(xmm1, xmm1);
+	printf("%f", (real64) globals->r804A048 + (((real64) __xorpd(xmm1, xmm1) + DPB(xmm0, (real64) DPB(xmm0, globals->r804A038, 0), 0)) + globals->r804A040));
 }
 
-// 08048570: void write_floats(Register word128 xmm0, Stack real64 rArg04)
-void write_floats(word128 xmm0, real64 rArg04)
+// 08048570: void write_floats(Stack real64 rArg04)
+void write_floats(real64 rArg04)
 {
+	globals->r804A040 = rArg04;
+	globals->r804A038 = (real32) rArg04;
+	globals->r804A048 = (real80) rArg04;
 }
 
-// 080485A0: void converting_between_floats_f1(Register word128 xmm0)
-void converting_between_floats_f1(word128 xmm0)
+// 080485A0: void converting_between_floats_f1()
+void converting_between_floats_f1()
 {
+	globals->r804A038 = (real32) globals->r804A040;
 }
 
 // 080485C0: void converting_between_floats_f2()
@@ -152,9 +156,10 @@ void converting_between_floats_f2()
 	globals->r804A038 = (real32) (real64) globals->r804A048;
 }
 
-// 080485D0: void converting_between_floats_d1(Register word128 xmm0)
-void converting_between_floats_d1(word128 xmm0)
+// 080485D0: void converting_between_floats_d1()
+void converting_between_floats_d1()
 {
+	globals->r804A040 = (real64) DPB(xmm0, globals->r804A038, 0);
 }
 
 // 080485F0: void converting_between_floats_d2()
@@ -175,8 +180,8 @@ void converting_between_floats_l2()
 	globals->r804A048 = (real80) globals->r804A040;
 }
 
-// 08048620: void basic_operations(Register word128 xmm0, Register word128 xmm1, Stack real64 rArg04, Stack real64 rArg0C)
-void basic_operations(word128 xmm0, word128 xmm1, real64 rArg04, real64 rArg0C)
+// 08048620: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
+void basic_operations(real64 rArg04, real64 rArg0C)
 {
 	printf("%f", rArg04 + rArg0C);
 	printf("%f", rArg04 - rArg0C);
@@ -187,13 +192,13 @@ void basic_operations(word128 xmm0, word128 xmm1, real64 rArg04, real64 rArg0C)
 	__xorpd(DPB(xmm0, rArg04, 0), globals->t8048960);
 }
 
-// 08048710: void compare_floats(Register word128 xmm0, Stack real64 rArg04)
-void compare_floats(word128 xmm0, real64 rArg04)
+// 08048710: void compare_floats(Stack real64 rArg04)
+void compare_floats(real64 rArg04)
 {
 }
 
-// 080487E0: void constants(Register word128 xmm0, Stack real64 rArg04)
-void constants(word128 xmm0, real64 rArg04)
+// 080487E0: void constants(Stack real64 rArg04)
+void constants(real64 rArg04)
 {
 	printf("%f", rArg04 + DPB(xmm0, rArg04, 0));
 	printf("%f", globals->r8048970 * rArg04);
@@ -205,9 +210,9 @@ void constants(word128 xmm0, real64 rArg04)
 // 08048890: void main()
 void main()
 {
-	Eq_309 tLoc28_16 = SLICE(0x08048996, <unknown>, 32);
+	Eq_344 tLoc28_16 = SLICE(0x08048996, <unknown>, 32);
 	printf("%zu %zu %zu %zu %zu\n", tLoc28_16, tLoc28_16, tLoc28_16, tLoc28_16, tLoc28_16);
-	Eq_321 tLoc18_27 = SLICE(0x0804899E, <unknown>, 32);
+	Eq_356 tLoc18_27 = SLICE(0x0804899E, <unknown>, 32);
 	printf("%zu %zu %zu\n", tLoc18_27, tLoc18_27, tLoc18_27);
 }
 
@@ -228,8 +233,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			ebx_15->ptr162F();
 		} while (esi_69 != edi_68 + 0x01);
 	}

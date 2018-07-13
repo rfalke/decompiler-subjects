@@ -4,4 +4,6 @@
 
 #include "subject.h"
 
+Eq_1158 g_tFFFFDCBA;
+struct Eq_1158 * g_ptr8000 = &g_tFFFFDCBA;
 

@@ -4,19 +4,18 @@
 
 #include "subject.h"
 
-<anonymous> g_t10000418 = <code>;
-<anonymous> g_t10000450 = <code>;
 word32 g_dw100004EC = 0x000183B8;
 struct Eq_3 g_t1000058C = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw100108A0 = 0xFFFFFFFF;
-word32 g_dw100108AC = 0x00000000;
-word32 g_dw100108B0 = 0x00000000;
-word32 * g_ptr10010990 = &g_dw100108AC;
-Eq_43 g_t10010A08 = 
-	{
-		0
-	};
+Eq_43 g_t10000878 = Unexpected function type (fn void ())
+;
+char g_str1000088C[] = "Hello, ";
+char g_str10000894[] = "world!\n";
+int32 g_dw100108A0 = -1;
+int32 g_dw100108AC = 0;
+int32 g_dw100108B0 = 0;
+int32 * g_ptr10010990 = &g_dw100108AC;
+byte g_b10010A08 = 0x00;
 

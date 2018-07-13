@@ -5,11 +5,11 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_36 g_t804922C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_37 g_t804922C = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_40 g_t80493A0 = Unexpected function type (fn void ())
+Eq_41 g_t80493A0 = Unexpected function type (fn void ())
 ;
-Eq_39 g_t80493B0 = Unexpected function type (fn void ())
+Eq_40 g_t80493B0 = Unexpected function type (fn void ())
 ;
 <anonymous> * g_ptr804A000 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804A00C = null;

@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 0800:01FA: void multMatrix(Register (ptr Eq_3) ds, Stack Eq_4 wArg02, Stack Eq_5 wArg04, Stack Eq_6 wArg06)
+// 0800:01FA: void multMatrix(Register (ptr16 Eq_3) ds, Stack Eq_4 wArg02, Stack Eq_5 wArg04, Stack Eq_6 wArg06)
 void multMatrix(Eq_3 * ds, Eq_4 wArg02, Eq_5 wArg04, Eq_6 wArg06)
 {
 	Eq_7 si_13 = 0x00;
@@ -25,7 +25,7 @@ void multMatrix(Eq_3 * ds, Eq_4 wArg02, Eq_5 wArg04, Eq_6 wArg06)
 	}
 }
 
-// 0800:0283: void _main(Register (ptr Eq_3) ds)
+// 0800:0283: void _main(Register (ptr16 Eq_3) ds)
 void _main(Eq_3 * ds)
 {
 	multMatrix(ds, fp - 122, fp - 0x52, fp - 0x2A);

@@ -7,14 +7,17 @@
 word32 g_dw100004E4 = 0x00018400;
 struct Eq_3 g_t10000584 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw100108E0 = 0xFFFFFFFF;
-word32 g_dw100108EC = 0x00000000;
-word32 g_dw100108F0 = 0x00000000;
-word32 * g_ptr100109D0 = &g_dw100108EC;
-Eq_43 g_t10010A48 = 
-	{
-		0
-	};
+Eq_43 g_t10000870 = Unexpected function type (fn void ())
+;
+char g_str10000884[] = "Population exceeds %u\n";
+char g_str1000089C[] = "The mask is %x\n";
+char g_str100008AC[] = "Arguments supplied\n";
+char g_str100008C0[] = "Three or more arguments\n";
+int32 g_dw100108E0 = -1;
+int32 g_dw100108EC = 0;
+int32 g_dw100108F0 = 0;
+int32 * g_ptr100109D0 = &g_dw100108EC;
+byte g_b10010A48 = 0x00;
 

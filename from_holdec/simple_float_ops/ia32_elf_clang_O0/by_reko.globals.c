@@ -4,13 +4,13 @@
 
 #include "subject.h"
 
-Eq_29 g_t8048970 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_29 g_t8048970 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_32 g_t8048A30 = Unexpected function type (fn void ())
 ;
 Eq_33 g_t8048A90 = Unexpected function type (fn void ())
 ;
-Eq_245 g_t8048AC0 = 
+Eq_284 g_t8048AC0 = 
 	{
 		;
 real64 g_r8048AD0 = 12.345;
@@ -28,13 +28,13 @@ byte g_b804A020 = 0x01;
 word16 g_w804A022 = 0x0002;
 int32 g_dw804A024 = 3;
 int32 g_dw804A028 = 4;
-Eq_134 g_t804A030 = 
+Eq_135 g_t804A030 = 
 		{
 			5
 		};
 word32 g_dw804A034 = 0x00000000;
 real32 g_r804A038 = 10.0F;
 real64 g_r804A040 = 11.0;
-real80 g_r804A048 = ;
+real80 g_r804A048 = 12.0;
 byte g_b804A054 = 0x00;
 

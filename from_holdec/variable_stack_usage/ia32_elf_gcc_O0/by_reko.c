@@ -18,7 +18,7 @@ void fn08048300()
 	globals->ptr8049FFC();
 }
 
-// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
+// 08048310: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -42,10 +42,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -58,11 +58,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		null();
+		fn00000000();
 	}
 }
 
@@ -85,24 +85,24 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
 		register_tm_clones();
 }
 
-// 0804840B: void use(Stack (ptr word32) dwArg04)
+// 0804840B: void use(Stack (ptr32 word32) dwArg04)
 void use(word32 * dwArg04)
 {
 	globals->dw804A01C = globals->dw804A01C + *dwArg04;
 }
 
-// 08048422: void fill(Stack (ptr word32) dwArg04, Stack ui32 dwArg08)
+// 08048422: void fill(Stack (ptr32 word32) dwArg04, Stack ui32 dwArg08)
 void fill(word32 * dwArg04, ui32 dwArg08)
 {
 	memset(dwArg04, 0x78, dwArg08 << 0x02);
@@ -111,32 +111,32 @@ void fill(word32 * dwArg04, ui32 dwArg08)
 // 08048442: void with_array(Register ptr32 ebp, Stack ui32 dwArg04)
 void with_array(ptr32 ebp, ui32 dwArg04)
 {
-	union Eq_153 * esp_29 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x12)) /u 0x10) *s 0x10;
+	union Eq_156 * esp_29 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x12)) /u 0x10) *s 0x10;
 	*(esp_29 - 0x0C) = dwArg04;
 	word32 eax_32 = esp_29 + 0x03 >>u 0x02;
-	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (eax_32 << 0x02);
+	*(esp_29 - (union Eq_156 *) 0x10) = (union Eq_156 *) (eax_32 << 0x02);
 	fill(dwArg00, dwArg04);
-	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (fp - 0x18);
+	*(esp_29 - (union Eq_156 *) 0x10) = (union Eq_156 *) (fp - 0x18);
 	use(dwArg00);
-	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (eax_32 << 0x02);
+	*(esp_29 - (union Eq_156 *) 0x10) = (union Eq_156 *) (eax_32 << 0x02);
 	use(dwArg00);
-	*(esp_29 - (union Eq_153 *) 0x10) = (union Eq_153 *) (fp - 0x1C);
+	*(esp_29 - (union Eq_156 *) 0x10) = (union Eq_156 *) (fp - 0x1C);
 	use(dwArg00);
 }
 
 // 080484DA: void with_alloca(Register ptr32 ebp, Stack ui32 dwArg04)
 void with_alloca(ptr32 ebp, ui32 dwArg04)
 {
-	union Eq_219 * esp_22 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x1E)) /u 0x10) *s 0x10;
+	union Eq_222 * esp_22 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x1E)) /u 0x10) *s 0x10;
 	*(esp_22 - 0x0C) = dwArg04;
 	word32 eax_25 = esp_22 + 0x0F >>u 0x04;
-	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (eax_25 << 0x04);
+	*(esp_22 - (union Eq_222 *) 0x10) = (union Eq_222 *) (eax_25 << 0x04);
 	fill(dwArg00, dwArg04);
-	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (fp - 0x14);
+	*(esp_22 - (union Eq_222 *) 0x10) = (union Eq_222 *) (fp - 0x14);
 	use(dwArg00);
-	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (eax_25 << 0x04);
+	*(esp_22 - (union Eq_222 *) 0x10) = (union Eq_222 *) (eax_25 << 0x04);
 	use(dwArg00);
-	*(esp_22 - (union Eq_219 *) 0x10) = (union Eq_219 *) (fp - 0x18);
+	*(esp_22 - (union Eq_222 *) 0x10) = (union Eq_222 *) (fp - 0x18);
 	use(dwArg00);
 }
 
@@ -165,8 +165,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			ebx_15->ptr195F();
 		} while (esi_69 != edi_68 + 0x01);
 	}

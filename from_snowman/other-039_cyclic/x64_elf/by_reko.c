@@ -17,5 +17,66 @@ void h()
 // 0000000000400150: void f(Register word32 ecx, Register word32 edx, Register word32 esi, Register word32 edi)
 void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 {
+	word32 dwLoc0C_122 = edi;
+	word32 dwLoc10_11 = esi;
+	word32 dwLoc18_15 = ecx;
+	while (edi != 0x00)
+		dwLoc10_11 = dwLoc10_11 + 0x01;
+	do
+	{
+		if (edi == 0x00)
+		{
+			while (true)
+			{
+				h();
+				if (true)
+					break;
+				dwLoc0C_122 = dwLoc0C_122 + 0x01;
+			}
+			while (true)
+			{
+				g();
+				if (0x00 == 0x00)
+					break;
+				h();
+				if (true)
+					break;
+				dwLoc0C_122 = dwLoc0C_122 + 0x01;
+			}
+			do
+			{
+				f((word32) (uint64) edx, (word32) (uint64) dwLoc10_11, (word32) (uint64) dwLoc0C_122, (word32) (uint64) (word32) (uint64) ecx);
+				g();
+			} while (false);
+			do
+			{
+				if (dwLoc0C_122 != 0x00)
+				{
+					f((word32) (uint64) dwLoc0C_122, (word32) (uint64) dwLoc10_11, (word32) (uint64) edx, (word32) (uint64) (word32) (uint64) dwLoc18_15);
+					return;
+				}
+				g();
+				dwLoc18_15 = 0x00;
+				if (0x00 != 0x00)
+				{
+					h();
+					break;
+				}
+			} while (dwLoc0C_122 != 0x00);
+			do
+			{
+				g();
+				if ((word32) (uint64) (0x00 - dwLoc10_11) != 0x00)
+					return;
+				g();
+				if (0x00 == 0x00)
+					return;
+				h();
+			} while (false);
+			return;
+		}
+		word32 v11_127 = dwLoc10_11 + 0x01;
+		dwLoc10_11 = v11_127;
+	} while ((word32) (uint64) v11_127 != edx);
 }
 

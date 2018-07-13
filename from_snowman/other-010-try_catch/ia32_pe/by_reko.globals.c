@@ -4,23 +4,27 @@
 
 #include "subject.h"
 
-Eq_457 g_t400000 = 
+Eq_401 g_t400000 = 
 	{
 		0x5A4D,
 		0x000000F0,
 	};
+Eq_224 g_t404208 = null;
 ui32 g_dw406020 = 0xBB40E64E;
 ui32 g_dw406024 = 0x44BF19B1;
 word32 g_dw406168 = 0x00000000;
-Eq_340 g_t40616C = 
+Eq_279 g_t40616C = 
 	{
 		0
 	};
 word32 g_dw406170 = 0x00000000;
-Eq_45 g_t406174 = null;
-ptr32 g_ptr406180 = 0x00000000;
-Eq_45 g_t406184 = null;
+word32 g_dw406174 = 0x00000000;
+Eq_21 g_t406180 = 
+	{
+		0x00000000
+	};
+word32 g_dw406184 = 0x00000000;
 word32 g_dw4064BC = 0x00000000;
 word32 g_dw4064E4 = 0x00000000;
-Eq_45 g_t4064E8 = null;
+<anonymous> * g_ptr4064E8 = null;
 

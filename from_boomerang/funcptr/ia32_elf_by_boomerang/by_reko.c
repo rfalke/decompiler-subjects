@@ -12,7 +12,17 @@ void _init()
 	__do_global_ctors_aux();
 }
 
-// 08048278: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+// 08048258: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048268: void printf()
+void printf()
+{
+}
+
+// 08048278: void _start(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -32,8 +42,8 @@ void call_gmon_start()
 		word32 eax_32;
 		byte SCZO_33;
 		byte SZO_34;
-		byte C_35;
-		byte Z_36;
+		bool C_35;
+		bool Z_36;
 		eax_15();
 	}
 }
@@ -54,11 +64,11 @@ void __do_global_dtors_aux()
 				word32 esp_45;
 				word32 ebp_46;
 				byte SCZO_47;
-				byte Z_48;
+				bool Z_48;
 				word32 eax_49;
 				word32 edx_50;
 				byte SZO_51;
-				byte C_52;
+				bool C_52;
 				word32 esi_53;
 				edx_26();
 				eax_25 = globals->ptr80493E8;
@@ -78,8 +88,8 @@ void frame_dummy()
 		byte SCZO_33;
 		word32 eax_34;
 		byte SZO_35;
-		byte C_36;
-		byte Z_37;
+		bool C_36;
+		bool Z_37;
 		fn00000000();
 	}
 }
@@ -100,16 +110,8 @@ void world()
 void main()
 {
 	__align(fp - 0x0C);
-	word32 esp_12;
-	word32 ebp_13;
-	byte SCZO_14;
-	word32 eax_15;
-	globals->t8048328();
-	word32 esp_18;
-	word32 ebp_19;
-	byte SCZO_20;
-	word32 eax_21;
-	globals->t8048340();
+	hello();
+	world();
 }
 
 // 08048388: void __do_global_ctors_aux()
@@ -126,7 +128,7 @@ void __do_global_ctors_aux()
 			word32 edx_32;
 			word32 eax_33;
 			byte SCZO_34;
-			byte Z_35;
+			bool Z_35;
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}

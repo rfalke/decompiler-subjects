@@ -42,10 +42,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		0x00();
+		fn00000000();
 	}
 }
 
@@ -58,11 +58,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		0x00();
+		fn00000000();
 	}
 }
 
@@ -85,11 +85,11 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		0x00();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
@@ -213,99 +213,110 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	real64 rArg0C;
 	esp_1 = fp;
 	esp_2 = fp - 0x28;
-	SCZO_3 = cond(fp - 0x28);
-	rLoc1_5 = rArg04;
-	rLoc2_7 = rArg0C;
-	CZP_8 = cond(rLoc2_7 - rLoc1_5);
-	P_9 = CZP_8;
-	Z_10 = CZP_8;
-	v7_11 = rLoc2_7;
-	rLoc2_12 = rLoc1_5;
-	rLoc1_13 = v7_11;
-	al_14 = Test(PO,P_9);
-	eax_15 = (word32) al_14;
-	al_16 = (byte) eax_15;
-	rLoc1C_17 = rLoc2_12;
-	rLoc14_18 = rLoc1_13;
-	edx_19 = 0x00;
-	if (Test(NE,Z_10))
+	rLoc1_4 = rArg04;
+	rLoc2_6 = rArg0C;
+	CZP_7 = cond(rLoc2_6 - rLoc1_4);
+	P_8 = (bool) CZP_7;
+	Z_9 = (bool) CZP_7;
+	O_10 = false;
+	S_11 = false;
+	v9_12 = rLoc2_6;
+	rLoc2_13 = rLoc1_4;
+	rLoc1_14 = v9_12;
+	al_15 = Test(PO,P_8);
+	eax_16 = (word32) al_15;
+	al_17 = (byte) eax_16;
+	rLoc1C_18 = rLoc2_13;
+	rLoc14_19 = rLoc1_14;
+	edx_20 = 0x00;
+	if (Test(NE,Z_9))
 	{
-		eax_84 = 0x00;
-		al_85 = (byte) eax_84;
+		eax_95 = 0x00;
+		al_96 = (byte) eax_95;
 	}
-	eax_20 = ϕ(eax_15, eax_84);
-	esp_21 = fp - 44;
-	dwLoc2C_22 = eax_20;
-	use_int(dwLoc2C_22);
-	rLoc1_23 = rLoc1C_17;
-	rLoc2_24 = rLoc14_18;
-	CZP_25 = cond(rLoc2_24 - rLoc1_23);
-	P_26 = CZP_25;
-	Z_27 = CZP_25;
-	rLoc1_28 = rLoc1_23;
-	al_29 = Test(PE,P_26);
-	eax_30 = (word32) al_29;
-	al_31 = (byte) eax_30;
-	edx_32 = 0x01;
-	if (Test(NE,Z_27))
+	eax_21 = ϕ(eax_16, eax_95);
+	esp_22 = fp - 44;
+	dwLoc2C_23 = eax_21;
+	use_int(dwLoc2C_23);
+	rLoc1_24 = rLoc1C_18;
+	rLoc2_25 = rLoc14_19;
+	CZP_26 = cond(rLoc2_25 - rLoc1_24);
+	P_27 = (bool) CZP_26;
+	Z_28 = (bool) CZP_26;
+	O_29 = false;
+	S_30 = false;
+	rLoc1_31 = rLoc1_24;
+	al_32 = Test(PE,P_27);
+	eax_33 = (word32) al_32;
+	al_34 = (byte) eax_33;
+	edx_35 = 0x01;
+	if (Test(NE,Z_28))
 	{
-		eax_82 = 0x01;
-		al_83 = (byte) eax_82;
+		eax_93 = 0x01;
+		al_94 = (byte) eax_93;
 	}
-	eax_33 = ϕ(eax_30, eax_82);
-	dwLoc2C_34 = eax_33;
-	use_int(dwLoc2C_34);
-	rLoc1_35 = rLoc1C_17;
-	rLoc2_36 = rLoc14_18;
-	v13_37 = rLoc2_36;
-	rLoc2_38 = rLoc1_35;
-	rLoc1_39 = v13_37;
-	CZP_40 = cond(rLoc2_38 - rLoc1_39);
-	CZ_41 = CZP_40;
-	rLoc1_42 = rLoc1_39;
-	al_43 = Test(UGT,CZ_41);
-	eax_44 = (word32) al_43;
-	dwLoc2C_45 = eax_44;
-	use_int(dwLoc2C_45);
-	rLoc1_46 = rLoc1C_17;
-	rLoc2_47 = rLoc14_18;
-	v15_48 = rLoc2_47;
-	rLoc2_49 = rLoc1_46;
-	rLoc1_50 = v15_48;
-	CZP_51 = cond(rLoc2_49 - rLoc1_50);
-	C_52 = CZP_51;
-	rLoc1_53 = rLoc1_50;
-	al_54 = Test(UGE,C_52);
-	eax_55 = (word32) al_54;
-	dwLoc2C_56 = eax_55;
-	use_int(dwLoc2C_56);
-	rLoc1_57 = rLoc14_18;
-	rLoc2_58 = rLoc1C_17;
-	v17_59 = rLoc2_58;
-	rLoc2_60 = rLoc1_57;
-	rLoc1_61 = v17_59;
-	CZP_62 = cond(rLoc2_60 - rLoc1_61);
-	CZ_63 = CZP_62;
-	rLoc1_64 = rLoc1_61;
-	al_65 = Test(UGT,CZ_63);
-	eax_66 = (word32) al_65;
-	dwLoc2C_67 = eax_66;
-	use_int(dwLoc2C_67);
-	rLoc1_68 = rLoc14_18;
-	rLoc2_69 = rLoc1C_17;
-	v18_70 = rLoc2_69;
-	rLoc2_71 = rLoc1_68;
-	rLoc1_72 = v18_70;
-	CZP_73 = cond(rLoc2_71 - rLoc1_72);
-	C_74 = CZP_73;
-	rLoc1_75 = rLoc1_72;
-	al_76 = Test(UGE,C_74);
-	eax_77 = (word32) al_76;
-	dwLoc2C_78 = eax_77;
-	use_int(dwLoc2C_78);
-	eax_79 = 0x7C;
-	esp_80 = fp;
-	SCZO_81 = cond(fp);
+	eax_36 = ϕ(eax_33, eax_93);
+	dwLoc2C_37 = eax_36;
+	use_int(dwLoc2C_37);
+	rLoc1_38 = rLoc1C_18;
+	rLoc2_39 = rLoc14_19;
+	v15_40 = rLoc2_39;
+	rLoc2_41 = rLoc1_38;
+	rLoc1_42 = v15_40;
+	CZP_43 = cond(rLoc2_41 - rLoc1_42);
+	CZ_44 = CZP_43;
+	O_45 = false;
+	S_46 = false;
+	rLoc1_47 = rLoc1_42;
+	al_48 = Test(UGT,CZ_44);
+	eax_49 = (word32) al_48;
+	dwLoc2C_50 = eax_49;
+	use_int(dwLoc2C_50);
+	rLoc1_51 = rLoc1C_18;
+	rLoc2_52 = rLoc14_19;
+	v17_53 = rLoc2_52;
+	rLoc2_54 = rLoc1_51;
+	rLoc1_55 = v17_53;
+	CZP_56 = cond(rLoc2_54 - rLoc1_55);
+	C_57 = (bool) CZP_56;
+	O_58 = false;
+	S_59 = false;
+	rLoc1_60 = rLoc1_55;
+	al_61 = Test(UGE,C_57);
+	eax_62 = (word32) al_61;
+	dwLoc2C_63 = eax_62;
+	use_int(dwLoc2C_63);
+	rLoc1_64 = rLoc14_19;
+	rLoc2_65 = rLoc1C_18;
+	v19_66 = rLoc2_65;
+	rLoc2_67 = rLoc1_64;
+	rLoc1_68 = v19_66;
+	CZP_69 = cond(rLoc2_67 - rLoc1_68);
+	CZ_70 = CZP_69;
+	O_71 = false;
+	S_72 = false;
+	rLoc1_73 = rLoc1_68;
+	al_74 = Test(UGT,CZ_70);
+	eax_75 = (word32) al_74;
+	dwLoc2C_76 = eax_75;
+	use_int(dwLoc2C_76);
+	rLoc1_77 = rLoc14_19;
+	rLoc2_78 = rLoc1C_18;
+	v20_79 = rLoc2_78;
+	rLoc2_80 = rLoc1_77;
+	rLoc1_81 = v20_79;
+	CZP_82 = cond(rLoc2_80 - rLoc1_81);
+	C_83 = (bool) CZP_82;
+	O_84 = false;
+	S_85 = false;
+	rLoc1_86 = rLoc1_81;
+	al_87 = Test(UGE,C_83);
+	eax_88 = (word32) al_87;
+	dwLoc2C_89 = eax_88;
+	use_int(dwLoc2C_89);
+	eax_90 = 0x7C;
+	esp_91 = fp;
+	SCZO_92 = cond(fp);
 }
 
 // 080486E5: void constants(Stack real64 rArg04)
@@ -350,8 +361,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			Mem0[ebx_15 + 0x175F:word32]();
 		} while (esi_69 != edi_68 + 0x01);
 	}

@@ -7,5 +7,6 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10748 = Unexpected function type (fn void ())
 ;
+char g_str10768[] = "a andn b is %d\n";
 ptr32 g_ptr20944 = 0x00000000;
 

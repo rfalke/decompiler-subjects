@@ -4,15 +4,15 @@
 
 #include "subject.h"
 
-union Eq_26 g_u1196 = 
+union Eq_24 g_u1196 = 
 	{
 		0x416E2065
 	};
-union Eq_26 g_u11AE = 
+union Eq_24 g_u11AE = 
 	{
 		0x0A0A5072
 	};
-union Eq_26 g_u11C8 = 
+union Eq_24 g_u11C8 = 
 	{
 		0x00000000
 	};

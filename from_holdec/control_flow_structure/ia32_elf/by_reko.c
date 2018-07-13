@@ -18,7 +18,7 @@ void fn08048300()
 	globals->ptr8060FFC();
 }
 
-// 08048310: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
+// 08048310: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -42,10 +42,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -58,11 +58,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		null();
+		fn00000000();
 	}
 }
 
@@ -85,11 +85,11 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
@@ -202,11 +202,32 @@ void test_2_blocks_variant_6_edges_4()
 // 08048623: void test_2_blocks_variant_7_edges_5()
 void test_2_blocks_variant_7_edges_5()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 08048668: void test_2_blocks_variant_8_edges_5()
 void test_2_blocks_variant_8_edges_5()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 080486AD: void test_2_blocks_variant_9_edges_5()
@@ -265,6 +286,15 @@ void test_2_blocks_variant_12_edges_5()
 // 080487C1: void test_2_blocks_variant_13_edges_5()
 void test_2_blocks_variant_13_edges_5()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080487C3;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+l080487C3:
+	puts("exit block");
 }
 
 // 08048806: void test_2_blocks_variant_14_edges_5()
@@ -284,26 +314,87 @@ void test_2_blocks_variant_14_edges_5()
 // 0804884B: void test_2_blocks_variant_15_edges_5()
 void test_2_blocks_variant_15_edges_5()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 08048890: void test_2_blocks_variant_16_edges_6()
 void test_2_blocks_variant_16_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08048892;
+		} while (globals->dw80610AC != 0x00);
+	}
+l08048892:
+	puts("exit block");
 }
 
 // 080488DE: void test_2_blocks_variant_17_edges_6()
 void test_2_blocks_variant_17_edges_6()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804892C: void test_2_blocks_variant_18_edges_6()
 void test_2_blocks_variant_18_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804897A: void test_2_blocks_variant_19_edges_6()
 void test_2_blocks_variant_19_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804897C;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l0804897C:
+	puts("exit block");
 }
 
 // 080489C8: void test_2_blocks_variant_20_edges_6()
@@ -327,6 +418,23 @@ void test_2_blocks_variant_20_edges_6()
 // 08048A16: void test_2_blocks_variant_21_edges_7()
 void test_2_blocks_variant_21_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08048A18;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l08048A18:
+	puts("exit block");
 }
 
 // 08048A6D: void test_3_blocks_variant_0_edges_4()
@@ -569,26 +677,86 @@ void test_3_blocks_variant_18_edges_5()
 // 08048FF5: void test_3_blocks_variant_19_edges_6()
 void test_3_blocks_variant_19_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			puts("block 4");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 08049049: void test_3_blocks_variant_20_edges_6()
 void test_3_blocks_variant_20_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 0804909D: void test_3_blocks_variant_21_edges_6()
 void test_3_blocks_variant_21_edges_6()
 {
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 080490F1: void test_3_blocks_variant_22_edges_6()
 void test_3_blocks_variant_22_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 08049145: void test_3_blocks_variant_23_edges_6()
 void test_3_blocks_variant_23_edges_6()
 {
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 08049199: void test_3_blocks_variant_24_edges_6()
@@ -608,6 +776,20 @@ void test_3_blocks_variant_24_edges_6()
 // 080491ED: void test_3_blocks_variant_25_edges_6()
 void test_3_blocks_variant_25_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			puts("block 4");
+		} while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 08049241: void test_3_blocks_variant_26_edges_6()
@@ -660,6 +842,16 @@ void test_3_blocks_variant_28_edges_6()
 // 0804933D: void test_3_blocks_variant_29_edges_6()
 void test_3_blocks_variant_29_edges_6()
 {
+l08049352:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l08049352;
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 08049391: void test_3_blocks_variant_30_edges_6()
@@ -720,6 +912,16 @@ void test_3_blocks_variant_33_edges_6()
 // 080494E1: void test_3_blocks_variant_34_edges_6()
 void test_3_blocks_variant_34_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l080494E3;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 4");
+l080494E3:
+	puts("exit block");
 }
 
 // 08049535: void test_3_blocks_variant_35_edges_6()
@@ -740,21 +942,69 @@ void test_3_blocks_variant_35_edges_6()
 // 08049589: void test_3_blocks_variant_36_edges_6()
 void test_3_blocks_variant_36_edges_6()
 {
+l0804959E:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804959E;
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 080495DD: void test_3_blocks_variant_37_edges_6()
 void test_3_blocks_variant_37_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08049631: void test_3_blocks_variant_38_edges_6()
 void test_3_blocks_variant_38_edges_6()
 {
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l08049633;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 4");
+l08049633:
+	puts("exit block");
 }
 
 // 08049685: void test_3_blocks_variant_39_edges_6()
 void test_3_blocks_variant_39_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		puts("block 4");
+	}
 }
 
 // 080496D9: void test_3_blocks_variant_40_edges_6()
@@ -775,16 +1025,47 @@ void test_3_blocks_variant_40_edges_6()
 // 0804972D: void test_3_blocks_variant_41_edges_6()
 void test_3_blocks_variant_41_edges_6()
 {
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08049781: void test_3_blocks_variant_42_edges_6()
 void test_3_blocks_variant_42_edges_6()
 {
+l08049796:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l08049796;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 4");
+	puts("exit block");
 }
 
 // 080497D5: void test_3_blocks_variant_43_edges_6()
 void test_3_blocks_variant_43_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 08049829: void test_3_blocks_variant_44_edges_6()
@@ -883,6 +1164,17 @@ void test_3_blocks_variant_49_edges_6()
 // 08049A21: void test_3_blocks_variant_50_edges_6()
 void test_3_blocks_variant_50_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 08049A75: void test_3_blocks_variant_51_edges_6()
@@ -921,6 +1213,16 @@ void test_3_blocks_variant_52_edges_6()
 // 08049B1D: void test_3_blocks_variant_53_edges_6()
 void test_3_blocks_variant_53_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08049B1F;
+		puts("block 3");
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 4");
+l08049B1F:
+	puts("exit block");
 }
 
 // 08049B71: void test_3_blocks_variant_54_edges_6()
@@ -960,6 +1262,18 @@ void test_3_blocks_variant_55_edges_6()
 // 08049C19: void test_3_blocks_variant_56_edges_6()
 void test_3_blocks_variant_56_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08049C6D: void test_3_blocks_variant_57_edges_6()
@@ -1156,6 +1470,17 @@ void test_3_blocks_variant_69_edges_6()
 // 0804A0B1: void test_3_blocks_variant_70_edges_6()
 void test_3_blocks_variant_70_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804A105: void test_3_blocks_variant_71_edges_6()
@@ -1194,6 +1519,15 @@ void test_3_blocks_variant_72_edges_6()
 // 0804A1AD: void test_3_blocks_variant_73_edges_6()
 void test_3_blocks_variant_73_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	puts("exit block");
 }
 
 // 0804A201: void test_3_blocks_variant_74_edges_6()
@@ -1246,6 +1580,20 @@ void test_3_blocks_variant_76_edges_6()
 // 0804A2FD: void test_3_blocks_variant_77_edges_6()
 void test_3_blocks_variant_77_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		}
+		puts("block 3");
+	}
 }
 
 // 0804A351: void test_3_blocks_variant_78_edges_6()
@@ -1267,6 +1615,17 @@ void test_3_blocks_variant_78_edges_6()
 // 0804A3A5: void test_3_blocks_variant_79_edges_6()
 void test_3_blocks_variant_79_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		puts("block 4");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804A3F9: void test_3_blocks_variant_80_edges_6()
@@ -1350,6 +1709,16 @@ void test_3_blocks_variant_84_edges_6()
 // 0804A59D: void test_3_blocks_variant_85_edges_6()
 void test_3_blocks_variant_85_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804A59F;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	puts("block 4");
+l0804A59F:
+	puts("exit block");
 }
 
 // 0804A5F1: void test_3_blocks_variant_86_edges_6()
@@ -1372,11 +1741,37 @@ void test_3_blocks_variant_86_edges_6()
 // 0804A645: void test_3_blocks_variant_87_edges_6()
 void test_3_blocks_variant_87_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		puts("block 4");
+	}
 }
 
 // 0804A699: void test_3_blocks_variant_88_edges_6()
 void test_3_blocks_variant_88_edges_6()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	while (true)
+		puts("block 4");
 }
 
 // 0804A6ED: void test_3_blocks_variant_89_edges_6()
@@ -1396,6 +1791,19 @@ void test_3_blocks_variant_89_edges_6()
 // 0804A741: void test_3_blocks_variant_90_edges_6()
 void test_3_blocks_variant_90_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804A795: void test_3_blocks_variant_91_edges_6()
@@ -1461,6 +1869,19 @@ void test_3_blocks_variant_94_edges_6()
 // 0804A8E5: void test_3_blocks_variant_95_edges_6()
 void test_3_blocks_variant_95_edges_6()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+				puts("block 4");
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804A939: void test_3_blocks_variant_96_edges_6()
@@ -1576,76 +1997,306 @@ void test_3_blocks_variant_102_edges_6()
 // 0804AB85: void test_3_blocks_variant_103_edges_7()
 void test_3_blocks_variant_103_edges_7()
 {
+l0804AB9A:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				goto l0804AB9A;
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804ABE2: void test_3_blocks_variant_104_edges_7()
 void test_3_blocks_variant_104_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0804ABE4:
+				puts("exit block");
+				return;
+			}
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804ABE4;
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804AC3F: void test_3_blocks_variant_105_edges_7()
 void test_3_blocks_variant_105_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804AC41;
+		} while (globals->dw80610AC != 0x00);
+	}
+l0804AC41:
+	puts("exit block");
 }
 
 // 0804AC9C: void test_3_blocks_variant_106_edges_7()
 void test_3_blocks_variant_106_edges_7()
 {
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804AC9E;
+		} while (globals->dw80610AC != 0x00);
+	}
+l0804AC9E:
+	puts("exit block");
 }
 
 // 0804ACF9: void test_3_blocks_variant_107_edges_7()
 void test_3_blocks_variant_107_edges_7()
 {
+l0804AD0E:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804AD0E;
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804AD56: void test_3_blocks_variant_108_edges_7()
 void test_3_blocks_variant_108_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804ADB3: void test_3_blocks_variant_109_edges_7()
 void test_3_blocks_variant_109_edges_7()
 {
+	while (true)
+	{
+		do
+		{
+			puts("block 2");
+			puts("block 3");
+		} while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804AE10: void test_3_blocks_variant_110_edges_7()
 void test_3_blocks_variant_110_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610AC != 0x00);
+		}
+	}
 }
 
 // 0804AE6D: void test_3_blocks_variant_111_edges_7()
 void test_3_blocks_variant_111_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A4 == 0x00);
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804AECA: void test_3_blocks_variant_112_edges_7()
 void test_3_blocks_variant_112_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+			puts("block 3");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804AF27: void test_3_blocks_variant_113_edges_7()
 void test_3_blocks_variant_113_edges_7()
 {
+	puts("block 2");
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804AF84: void test_3_blocks_variant_114_edges_7()
 void test_3_blocks_variant_114_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804AFE1: void test_3_blocks_variant_115_edges_7()
 void test_3_blocks_variant_115_edges_7()
 {
+l0804AFF6:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804AFF6;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B03E: void test_3_blocks_variant_116_edges_7()
 void test_3_blocks_variant_116_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804B040;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610AC != 0x00);
+l0804B040:
+	puts("exit block");
 }
 
 // 0804B09B: void test_3_blocks_variant_117_edges_7()
 void test_3_blocks_variant_117_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804B0F8: void test_3_blocks_variant_118_edges_7()
@@ -1670,31 +2321,113 @@ void test_3_blocks_variant_118_edges_7()
 // 0804B155: void test_3_blocks_variant_119_edges_7()
 void test_3_blocks_variant_119_edges_7()
 {
+l0804B16A:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804B16A;
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804B1B2: void test_3_blocks_variant_120_edges_7()
 void test_3_blocks_variant_120_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				goto l0804B1B4;
+		} while (globals->dw80610A8 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+l0804B1B4:
+	puts("exit block");
 }
 
 // 0804B20F: void test_3_blocks_variant_121_edges_7()
 void test_3_blocks_variant_121_edges_7()
 {
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B26C: void test_3_blocks_variant_122_edges_7()
 void test_3_blocks_variant_122_edges_7()
 {
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804B26E;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610AC != 0x00);
+l0804B26E:
+	puts("exit block");
 }
 
 // 0804B2C9: void test_3_blocks_variant_123_edges_7()
 void test_3_blocks_variant_123_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804B326: void test_3_blocks_variant_124_edges_7()
 void test_3_blocks_variant_124_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804B383: void test_3_blocks_variant_125_edges_7()
@@ -1719,66 +2452,250 @@ void test_3_blocks_variant_125_edges_7()
 // 0804B3E0: void test_3_blocks_variant_126_edges_7()
 void test_3_blocks_variant_126_edges_7()
 {
+	do
+	{
+l0804B3F5:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				goto l0804B3F5;
+		} while (globals->dw80610A8 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B43D: void test_3_blocks_variant_127_edges_7()
 void test_3_blocks_variant_127_edges_7()
 {
+l0804B452:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804B452;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B49A: void test_3_blocks_variant_128_edges_7()
 void test_3_blocks_variant_128_edges_7()
 {
+l0804B4AF:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804B4AF;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B4F7: void test_3_blocks_variant_129_edges_7()
 void test_3_blocks_variant_129_edges_7()
 {
+l0804B50C:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804B4F9;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804B50C;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804B4F9:
+	puts("exit block");
 }
 
 // 0804B554: void test_3_blocks_variant_130_edges_7()
 void test_3_blocks_variant_130_edges_7()
 {
+	while (true)
+	{
+l0804B569:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				goto l0804B569;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
 }
 
 // 0804B5B1: void test_3_blocks_variant_131_edges_7()
 void test_3_blocks_variant_131_edges_7()
 {
+l0804B5C6:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804B5C6;
+		if (globals->dw80610AC != 0x00)
+			puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804B60E: void test_3_blocks_variant_132_edges_7()
 void test_3_blocks_variant_132_edges_7()
 {
+l0804B623:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			goto l0804B623;
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804B66B: void test_3_blocks_variant_133_edges_7()
 void test_3_blocks_variant_133_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804B66D;
+		} while (globals->dw80610AC != 0x00);
+	}
+l0804B66D:
+	puts("exit block");
 }
 
 // 0804B6C8: void test_3_blocks_variant_134_edges_7()
 void test_3_blocks_variant_134_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804B6CA;
+		} while (globals->dw80610AC != 0x00);
+	}
+l0804B6CA:
+	puts("exit block");
 }
 
 // 0804B725: void test_3_blocks_variant_135_edges_7()
 void test_3_blocks_variant_135_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0804B727:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+		{
+			puts("block 3");
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+					goto l0804B727;
+			} while (globals->dw80610AC != 0x00);
+		}
+	}
 }
 
 // 0804B782: void test_3_blocks_variant_136_edges_7()
 void test_3_blocks_variant_136_edges_7()
 {
+l0804B797:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+		puts("exit block");
+	else
+	{
+		while (true)
+		{
+			puts("block 3");
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+					goto l0804B797;
+			} while (globals->dw80610AC != 0x00);
+		}
+	}
 }
 
 // 0804B7DF: void test_3_blocks_variant_137_edges_7()
 void test_3_blocks_variant_137_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804B83C: void test_3_blocks_variant_138_edges_7()
 void test_3_blocks_variant_138_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804B899: void test_3_blocks_variant_139_edges_7()
@@ -1801,11 +2718,39 @@ void test_3_blocks_variant_139_edges_7()
 // 0804B8F6: void test_3_blocks_variant_140_edges_7()
 void test_3_blocks_variant_140_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804B8F8;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
+l0804B8F8:
+	puts("exit block");
 }
 
 // 0804B953: void test_3_blocks_variant_141_edges_7()
 void test_3_blocks_variant_141_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804B9B0: void test_3_blocks_variant_142_edges_7()
@@ -1830,21 +2775,71 @@ void test_3_blocks_variant_142_edges_7()
 // 0804BA0D: void test_3_blocks_variant_143_edges_7()
 void test_3_blocks_variant_143_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804BA6A: void test_3_blocks_variant_144_edges_7()
 void test_3_blocks_variant_144_edges_7()
 {
+l0804BA7F:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804BA7F;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804BAC7: void test_3_blocks_variant_145_edges_7()
 void test_3_blocks_variant_145_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804BAC9;
+		puts("block 3");
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610AC != 0x00);
+l0804BAC9:
+	puts("exit block");
 }
 
 // 0804BB24: void test_3_blocks_variant_146_edges_7()
 void test_3_blocks_variant_146_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804BB81: void test_3_blocks_variant_147_edges_7()
@@ -1890,6 +2885,17 @@ void test_3_blocks_variant_148_edges_7()
 // 0804BC3B: void test_3_blocks_variant_149_edges_7()
 void test_3_blocks_variant_149_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+			puts("block 3");
+		while (globals->dw80610A8 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804BC98: void test_3_blocks_variant_150_edges_7()
@@ -1986,31 +2992,113 @@ void test_3_blocks_variant_154_edges_7()
 // 0804BE69: void test_3_blocks_variant_155_edges_7()
 void test_3_blocks_variant_155_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804BE6B;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804BE6B;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804BE6B:
+	puts("exit block");
 }
 
 // 0804BEC6: void test_3_blocks_variant_156_edges_7()
 void test_3_blocks_variant_156_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+			puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804BF23: void test_3_blocks_variant_157_edges_7()
 void test_3_blocks_variant_157_edges_7()
 {
+l0804BF38:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0804BF38;
+			puts("block 4");
+		}
+	}
+	puts("exit block");
 }
 
 // 0804BF80: void test_3_blocks_variant_158_edges_7()
 void test_3_blocks_variant_158_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0804BF82:
+			puts("exit block");
+			return;
+		}
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804BF82;
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804BFDD: void test_3_blocks_variant_159_edges_7()
 void test_3_blocks_variant_159_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804BFDF;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
+l0804BFDF:
+	puts("exit block");
 }
 
 // 0804C03A: void test_3_blocks_variant_160_edges_7()
 void test_3_blocks_variant_160_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804C03C;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
+l0804C03C:
+	puts("exit block");
 }
 
 // 0804C097: void test_3_blocks_variant_161_edges_7()
@@ -2034,16 +3122,61 @@ void test_3_blocks_variant_161_edges_7()
 // 0804C0F4: void test_3_blocks_variant_162_edges_7()
 void test_3_blocks_variant_162_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0804C0F6:
+		puts("exit block");
+	}
+	else
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804C0F6;
+		} while (globals->dw80610AC == 0x00);
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 0804C151: void test_3_blocks_variant_163_edges_7()
 void test_3_blocks_variant_163_edges_7()
 {
+l0804C166:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804C166;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804C1AE: void test_3_blocks_variant_164_edges_7()
 void test_3_blocks_variant_164_edges_7()
 {
+	while (true)
+	{
+l0804C1C3:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804C1C3;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804C20B: void test_3_blocks_variant_165_edges_7()
@@ -2069,31 +3202,116 @@ void test_3_blocks_variant_165_edges_7()
 // 0804C268: void test_3_blocks_variant_166_edges_7()
 void test_3_blocks_variant_166_edges_7()
 {
+l0804C27D:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+		puts("exit block");
+	else
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804C27D;
+		} while (globals->dw80610AC == 0x00);
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 0804C2C5: void test_3_blocks_variant_167_edges_7()
 void test_3_blocks_variant_167_edges_7()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804C322: void test_3_blocks_variant_168_edges_7()
 void test_3_blocks_variant_168_edges_7()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804C37F: void test_3_blocks_variant_169_edges_7()
 void test_3_blocks_variant_169_edges_7()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804C3DC: void test_3_blocks_variant_170_edges_7()
 void test_3_blocks_variant_170_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804C439: void test_3_blocks_variant_171_edges_7()
 void test_3_blocks_variant_171_edges_7()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804C496: void test_3_blocks_variant_172_edges_7()
@@ -2115,6 +3333,22 @@ void test_3_blocks_variant_172_edges_7()
 // 0804C4F3: void test_3_blocks_variant_173_edges_7()
 void test_3_blocks_variant_173_edges_7()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			puts("block 4");
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804C550: void test_3_blocks_variant_174_edges_7()
@@ -2173,6 +3407,18 @@ void test_3_blocks_variant_176_edges_7()
 // 0804C667: void test_3_blocks_variant_177_edges_7()
 void test_3_blocks_variant_177_edges_7()
 {
+l0804C67C:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804C67C;
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804C6C4: void test_3_blocks_variant_178_edges_7()
@@ -2241,6 +3487,18 @@ void test_3_blocks_variant_181_edges_7()
 // 0804C838: void test_3_blocks_variant_182_edges_7()
 void test_3_blocks_variant_182_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804C83A;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804C83A:
+	puts("exit block");
 }
 
 // 0804C895: void test_3_blocks_variant_183_edges_7()
@@ -2263,21 +3521,77 @@ void test_3_blocks_variant_183_edges_7()
 // 0804C8F2: void test_3_blocks_variant_184_edges_7()
 void test_3_blocks_variant_184_edges_7()
 {
+l0804C907:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0804C907;
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804C94F: void test_3_blocks_variant_185_edges_7()
 void test_3_blocks_variant_185_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804C9AC: void test_3_blocks_variant_186_edges_7()
 void test_3_blocks_variant_186_edges_7()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804C9AE;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804C9AE:
+	puts("exit block");
 }
 
 // 0804CA09: void test_3_blocks_variant_187_edges_7()
 void test_3_blocks_variant_187_edges_7()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	}
 }
 
 // 0804CA66: void test_3_blocks_variant_188_edges_7()
@@ -2300,96 +3614,368 @@ void test_3_blocks_variant_188_edges_7()
 // 0804CAC3: void test_3_blocks_variant_189_edges_7()
 void test_3_blocks_variant_189_edges_7()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804CB20: void test_3_blocks_variant_190_edges_7()
 void test_3_blocks_variant_190_edges_7()
 {
+l0804CB35:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804CB35;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+	puts("exit block");
 }
 
 // 0804CB7D: void test_3_blocks_variant_191_edges_7()
 void test_3_blocks_variant_191_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804CB7F;
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+l0804CB7F:
+	puts("exit block");
 }
 
 // 0804CBDA: void test_3_blocks_variant_192_edges_7()
 void test_3_blocks_variant_192_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804CBDC;
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("block 3");
+l0804CBDC:
+	puts("exit block");
 }
 
 // 0804CC37: void test_3_blocks_variant_193_edges_7()
 void test_3_blocks_variant_193_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804CC39;
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("block 3");
+l0804CC39:
+	puts("exit block");
 }
 
 // 0804CC94: void test_3_blocks_variant_194_edges_7()
 void test_3_blocks_variant_194_edges_7()
 {
+l0804CCA9:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804CCA9;
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("block 3");
+	puts("exit block");
 }
 
 // 0804CCF1: void test_3_blocks_variant_195_edges_7()
 void test_3_blocks_variant_195_edges_7()
 {
+	do
+	{
+l0804CD06:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+	goto l0804CD06;
 }
 
 // 0804CD4E: void test_3_blocks_variant_196_edges_7()
 void test_3_blocks_variant_196_edges_7()
 {
+	while (true)
+	{
+		while (true)
+		{
+			puts("block 2");
+			if (globals->dw80610A4 != 0x00)
+				break;
+			puts("block 3");
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804CDAB: void test_3_blocks_variant_197_edges_7()
 void test_3_blocks_variant_197_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610AC != 0x00);
+		}
+		puts("block 3");
+	}
 }
 
 // 0804CE08: void test_3_blocks_variant_198_edges_7()
 void test_3_blocks_variant_198_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 0804CE65: void test_3_blocks_variant_199_edges_7()
 void test_3_blocks_variant_199_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 0804CEC2: void test_3_blocks_variant_200_edges_7()
 void test_3_blocks_variant_200_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 0804CF1F: void test_3_blocks_variant_201_edges_7()
 void test_3_blocks_variant_201_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l0804CF5B:
+		puts("block 4");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+	goto l0804CF5B;
 }
 
 // 0804CF7C: void test_3_blocks_variant_202_edges_7()
 void test_3_blocks_variant_202_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804CFD9: void test_3_blocks_variant_203_edges_7()
 void test_3_blocks_variant_203_edges_7()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0804D015:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
+	puts("block 3");
+	goto l0804D015;
 }
 
 // 0804D036: void test_3_blocks_variant_204_edges_7()
 void test_3_blocks_variant_204_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804D093: void test_3_blocks_variant_205_edges_7()
 void test_3_blocks_variant_205_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				break;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804D0F0: void test_3_blocks_variant_206_edges_7()
 void test_3_blocks_variant_206_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610AC != 0x00);
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804D14D: void test_3_blocks_variant_207_edges_7()
 void test_3_blocks_variant_207_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804D1AA: void test_3_blocks_variant_208_edges_7()
@@ -2470,6 +4056,17 @@ void test_3_blocks_variant_211_edges_7()
 // 0804D31E: void test_3_blocks_variant_212_edges_7()
 void test_3_blocks_variant_212_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0804D37B: void test_3_blocks_variant_213_edges_7()
@@ -2530,11 +4127,42 @@ l0804D437:
 // 0804D492: void test_3_blocks_variant_216_edges_7()
 void test_3_blocks_variant_216_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l0804D4D7:
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	goto l0804D4D7;
 }
 
 // 0804D4EF: void test_3_blocks_variant_217_edges_7()
 void test_3_blocks_variant_217_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804D54C: void test_3_blocks_variant_218_edges_7()
@@ -2560,16 +4188,52 @@ l0804D591:
 // 0804D5A9: void test_3_blocks_variant_219_edges_7()
 void test_3_blocks_variant_219_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804D606: void test_3_blocks_variant_220_edges_7()
 void test_3_blocks_variant_220_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D608;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+l0804D608:
+	puts("exit block");
 }
 
 // 0804D663: void test_3_blocks_variant_221_edges_7()
 void test_3_blocks_variant_221_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D665;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	do
+		puts("block 4");
+	while (globals->dw80610AC != 0x00);
+l0804D665:
+	puts("exit block");
 }
 
 // 0804D6C0: void test_3_blocks_variant_222_edges_7()
@@ -2614,31 +4278,115 @@ void test_3_blocks_variant_223_edges_7()
 // 0804D77A: void test_3_blocks_variant_224_edges_7()
 void test_3_blocks_variant_224_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0804D7D7: void test_3_blocks_variant_225_edges_7()
 void test_3_blocks_variant_225_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D7D9;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC != 0x00)
+		puts("block 4");
+l0804D7D9:
+	puts("exit block");
 }
 
 // 0804D834: void test_3_blocks_variant_226_edges_7()
 void test_3_blocks_variant_226_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804D891: void test_3_blocks_variant_227_edges_7()
 void test_3_blocks_variant_227_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D893;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	}
+l0804D893:
+	puts("exit block");
 }
 
 // 0804D8EE: void test_3_blocks_variant_228_edges_7()
 void test_3_blocks_variant_228_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D8F0;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+l0804D8F0:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 0804D94B: void test_3_blocks_variant_229_edges_7()
 void test_3_blocks_variant_229_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804D94D;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+	} while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804D94D:
+	puts("exit block");
 }
 
 // 0804D9A8: void test_3_blocks_variant_230_edges_7()
@@ -2684,11 +4432,37 @@ void test_3_blocks_variant_231_edges_7()
 // 0804DA62: void test_3_blocks_variant_232_edges_7()
 void test_3_blocks_variant_232_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804DABF: void test_3_blocks_variant_233_edges_7()
 void test_3_blocks_variant_233_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804DAC1;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	puts("block 4");
+l0804DAC1:
+	puts("exit block");
 }
 
 // 0804DB1C: void test_3_blocks_variant_234_edges_7()
@@ -2713,16 +4487,58 @@ void test_3_blocks_variant_234_edges_7()
 // 0804DB79: void test_3_blocks_variant_235_edges_7()
 void test_3_blocks_variant_235_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			puts("block 4");
+	}
 }
 
 // 0804DBD6: void test_3_blocks_variant_236_edges_7()
 void test_3_blocks_variant_236_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 0804DC33: void test_3_blocks_variant_237_edges_7()
 void test_3_blocks_variant_237_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804DC90: void test_3_blocks_variant_238_edges_7()
@@ -2766,11 +4582,38 @@ void test_3_blocks_variant_239_edges_7()
 // 0804DD4A: void test_3_blocks_variant_240_edges_7()
 void test_3_blocks_variant_240_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804DD4C;
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+l0804DD4C:
+	puts("exit block");
 }
 
 // 0804DDA7: void test_3_blocks_variant_241_edges_7()
 void test_3_blocks_variant_241_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804DE04: void test_3_blocks_variant_242_edges_7()
@@ -2793,21 +4636,79 @@ void test_3_blocks_variant_242_edges_7()
 // 0804DE61: void test_3_blocks_variant_243_edges_7()
 void test_3_blocks_variant_243_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804DEBE: void test_3_blocks_variant_244_edges_7()
 void test_3_blocks_variant_244_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804DF1B: void test_3_blocks_variant_245_edges_7()
 void test_3_blocks_variant_245_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610AC != 0x00);
+			break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804DF78: void test_3_blocks_variant_246_edges_7()
 void test_3_blocks_variant_246_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				continue;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804DFD5: void test_3_blocks_variant_247_edges_7()
@@ -2852,6 +4753,19 @@ void test_3_blocks_variant_248_edges_7()
 // 0804E08F: void test_3_blocks_variant_249_edges_7()
 void test_3_blocks_variant_249_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804E0EC: void test_3_blocks_variant_250_edges_7()
@@ -2894,11 +4808,40 @@ void test_3_blocks_variant_251_edges_7()
 // 0804E1A6: void test_3_blocks_variant_252_edges_7()
 void test_3_blocks_variant_252_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 0804E203: void test_3_blocks_variant_253_edges_7()
 void test_3_blocks_variant_253_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804E260: void test_3_blocks_variant_254_edges_7()
@@ -2923,6 +4866,16 @@ void test_3_blocks_variant_254_edges_7()
 // 0804E2BD: void test_3_blocks_variant_255_edges_7()
 void test_3_blocks_variant_255_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			puts("block 3");
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804E31A: void test_3_blocks_variant_256_edges_7()
@@ -2963,6 +4916,21 @@ void test_3_blocks_variant_257_edges_7()
 // 0804E3D4: void test_3_blocks_variant_258_edges_7()
 void test_3_blocks_variant_258_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l0804E419:
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+	goto l0804E419;
 }
 
 // 0804E431: void test_3_blocks_variant_259_edges_7()
@@ -3005,6 +4973,19 @@ l0804E4D3:
 // 0804E4EB: void test_3_blocks_variant_261_edges_7()
 void test_3_blocks_variant_261_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804E548: void test_3_blocks_variant_262_edges_7()
@@ -3047,6 +5028,17 @@ void test_3_blocks_variant_263_edges_7()
 // 0804E602: void test_3_blocks_variant_264_edges_7()
 void test_3_blocks_variant_264_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610AC == 0x00);
+	puts("block 3");
+	puts("exit block");
 }
 
 // 0804E65F: void test_3_blocks_variant_265_edges_7()
@@ -3105,6 +5097,22 @@ void test_3_blocks_variant_267_edges_7()
 // 0804E776: void test_3_blocks_variant_268_edges_7()
 void test_3_blocks_variant_268_edges_7()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		}
+		puts("block 3");
+	}
 }
 
 // 0804E7D3: void test_3_blocks_variant_269_edges_7()
@@ -3128,6 +5136,19 @@ void test_3_blocks_variant_269_edges_7()
 // 0804E830: void test_3_blocks_variant_270_edges_7()
 void test_3_blocks_variant_270_edges_7()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		puts("block 4");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0804E88D: void test_3_blocks_variant_271_edges_7()
@@ -3221,21 +5242,76 @@ void test_3_blocks_variant_275_edges_7()
 // 0804EA5E: void test_3_blocks_variant_276_edges_7()
 void test_3_blocks_variant_276_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804EA60;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+		puts("block 4");
+	else
+		puts("block 3");
+l0804EA60:
+	puts("exit block");
 }
 
 // 0804EABB: void test_3_blocks_variant_277_edges_7()
 void test_3_blocks_variant_277_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 0804EB18: void test_3_blocks_variant_278_edges_7()
 void test_3_blocks_variant_278_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804EB1A;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+		puts("block 4");
+	puts("block 3");
+l0804EB1A:
+	puts("exit block");
 }
 
 // 0804EB75: void test_3_blocks_variant_279_edges_7()
 void test_3_blocks_variant_279_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804EB77;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC == 0x00)
+	{
+		puts("block 3");
+l0804EB77:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 0804EBD2: void test_3_blocks_variant_280_edges_7()
@@ -3278,241 +5354,1080 @@ void test_3_blocks_variant_281_edges_7()
 // 0804EC8C: void test_3_blocks_variant_282_edges_7()
 void test_3_blocks_variant_282_edges_7()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			while (true)
+				puts("block 4");
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0804ECE9: void test_3_blocks_variant_283_edges_7()
 void test_3_blocks_variant_283_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+		puts("block 4");
+	while (true)
+		puts("block 3");
 }
 
 // 0804ED46: void test_3_blocks_variant_284_edges_7()
 void test_3_blocks_variant_284_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC == 0x00)
+	{
+		while (true)
+			puts("block 3");
+	}
+	else
+	{
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 0804EDA3: void test_3_blocks_variant_285_edges_7()
 void test_3_blocks_variant_285_edges_7()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0804EDF1:
+		puts("block 4");
+	}
+	puts("block 3");
+	goto l0804EDF1;
 }
 
 // 0804EE00: void test_3_blocks_variant_286_edges_8()
 void test_3_blocks_variant_286_edges_8()
 {
+l0804EE15:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804EE02;
+			if (globals->dw80610AC == 0x00)
+				goto l0804EE15;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804EE02:
+	puts("exit block");
 }
 
 // 0804EE66: void test_3_blocks_variant_287_edges_8()
 void test_3_blocks_variant_287_edges_8()
 {
+	while (true)
+	{
+l0804EE7B:
+		puts("block 2");
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610AC == 0x00)
+					goto l0804EE7B;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 0804EECC: void test_3_blocks_variant_288_edges_8()
 void test_3_blocks_variant_288_edges_8()
 {
+l0804EEE1:
+	puts("block 2");
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l0804EEE1;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804EF32: void test_3_blocks_variant_289_edges_8()
 void test_3_blocks_variant_289_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0804EF34:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804EF34;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804EF98: void test_3_blocks_variant_290_edges_8()
 void test_3_blocks_variant_290_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804EF9A;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0804EF9A:
+	puts("exit block");
 }
 
 // 0804EFFE: void test_3_blocks_variant_291_edges_8()
 void test_3_blocks_variant_291_edges_8()
 {
+l0804F013:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804F013;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F000;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F000:
+	puts("exit block");
 }
 
 // 0804F064: void test_3_blocks_variant_292_edges_8()
 void test_3_blocks_variant_292_edges_8()
 {
+l0804F079:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804F079;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F079;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804F0CA: void test_3_blocks_variant_293_edges_8()
 void test_3_blocks_variant_293_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0804F0CC:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F0CC;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F130: void test_3_blocks_variant_294_edges_8()
 void test_3_blocks_variant_294_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0804F132:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F132;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F196: void test_3_blocks_variant_295_edges_8()
 void test_3_blocks_variant_295_edges_8()
 {
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F198;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0804F198:
+	puts("exit block");
 }
 
 // 0804F1FC: void test_3_blocks_variant_296_edges_8()
 void test_3_blocks_variant_296_edges_8()
 {
+l0804F211:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F211;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804F262: void test_3_blocks_variant_297_edges_8()
 void test_3_blocks_variant_297_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			if (globals->dw80610A8 == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F2C8: void test_3_blocks_variant_298_edges_8()
 void test_3_blocks_variant_298_edges_8()
 {
+	while (true)
+	{
+l0804F2DD:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				goto l0804F2DD;
+		} while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F32E: void test_3_blocks_variant_299_edges_8()
 void test_3_blocks_variant_299_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			if (globals->dw80610A8 != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610AC == 0x00)
+					{
+						puts("exit block");
+						return;
+					}
+				} while (globals->dw80610B0 != 0x00);
+			}
+		}
+	}
 }
 
 // 0804F394: void test_3_blocks_variant_300_edges_8()
 void test_3_blocks_variant_300_edges_8()
 {
+	do
+	{
+l0804F3A9:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				goto l0804F396;
+			if (globals->dw80610A8 == 0x00)
+				goto l0804F3A9;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l0804F396:
+	puts("exit block");
 }
 
 // 0804F3FA: void test_3_blocks_variant_301_edges_8()
 void test_3_blocks_variant_301_edges_8()
 {
+l0804F40F:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804F40F;
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0804F460: void test_3_blocks_variant_302_edges_8()
 void test_3_blocks_variant_302_edges_8()
 {
+l0804F475:
+	puts("block 2");
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804F462;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804F475;
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l0804F462:
+	puts("exit block");
 }
 
 // 0804F4C6: void test_3_blocks_variant_303_edges_8()
 void test_3_blocks_variant_303_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F52C: void test_3_blocks_variant_304_edges_8()
 void test_3_blocks_variant_304_edges_8()
 {
+	while (true)
+	{
+l0804F541:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				goto l0804F541;
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0804F592: void test_3_blocks_variant_305_edges_8()
 void test_3_blocks_variant_305_edges_8()
 {
+l0804F5A7:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l0804F5A7;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804F5F8: void test_3_blocks_variant_306_edges_8()
 void test_3_blocks_variant_306_edges_8()
 {
+l0804F60D:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0804F5FA:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+		{
+			puts("block 3");
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+					goto l0804F5FA;
+				if (globals->dw80610AC == 0x00)
+					goto l0804F60D;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 0804F65E: void test_3_blocks_variant_307_edges_8()
 void test_3_blocks_variant_307_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804F660;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F660;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F660:
+	puts("exit block");
 }
 
 // 0804F6C4: void test_3_blocks_variant_308_edges_8()
 void test_3_blocks_variant_308_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F6C6;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F6C6:
+	puts("exit block");
 }
 
 // 0804F72A: void test_3_blocks_variant_309_edges_8()
 void test_3_blocks_variant_309_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F72C;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0804F72C:
+	puts("exit block");
 }
 
 // 0804F790: void test_3_blocks_variant_310_edges_8()
 void test_3_blocks_variant_310_edges_8()
 {
+l0804F7A5:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F7A5;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804F7F6: void test_3_blocks_variant_311_edges_8()
 void test_3_blocks_variant_311_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F7F8;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F7F8:
+	puts("exit block");
 }
 
 // 0804F85C: void test_3_blocks_variant_312_edges_8()
 void test_3_blocks_variant_312_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F85E;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0804F85E:
+	puts("exit block");
 }
 
 // 0804F8C2: void test_3_blocks_variant_313_edges_8()
 void test_3_blocks_variant_313_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F8C4;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0804F8C4:
+	puts("exit block");
 }
 
 // 0804F928: void test_3_blocks_variant_314_edges_8()
 void test_3_blocks_variant_314_edges_8()
 {
+	while (true)
+	{
+l0804F93D:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804F93D;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804F98E: void test_3_blocks_variant_315_edges_8()
 void test_3_blocks_variant_315_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F990;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F990:
+	puts("exit block");
 }
 
 // 0804F9F4: void test_3_blocks_variant_316_edges_8()
 void test_3_blocks_variant_316_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+			puts("block 3");
+		while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0804F9F6;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804F9F6:
+	puts("exit block");
 }
 
 // 0804FA5A: void test_3_blocks_variant_317_edges_8()
 void test_3_blocks_variant_317_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0804FA5C:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804FA5C;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 0804FAC0: void test_3_blocks_variant_318_edges_8()
 void test_3_blocks_variant_318_edges_8()
 {
+l0804FAD5:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+		puts("exit block");
+	else
+	{
+		while (true)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0804FAD5;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 0804FB26: void test_3_blocks_variant_319_edges_8()
 void test_3_blocks_variant_319_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0804FB8C: void test_3_blocks_variant_320_edges_8()
 void test_3_blocks_variant_320_edges_8()
 {
+l0804FBA1:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0804FBA1;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804FBF2: void test_3_blocks_variant_321_edges_8()
 void test_3_blocks_variant_321_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0804FBF4;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0804FBF4;
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l0804FBF4:
+	puts("exit block");
 }
 
 // 0804FC58: void test_3_blocks_variant_322_edges_8()
 void test_3_blocks_variant_322_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804FC5A;
+			if (globals->dw80610AC == 0x00)
+				break;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804FC5A:
+	puts("exit block");
 }
 
 // 0804FCBE: void test_3_blocks_variant_323_edges_8()
 void test_3_blocks_variant_323_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804FD24: void test_3_blocks_variant_324_edges_8()
 void test_3_blocks_variant_324_edges_8()
 {
+l0804FD39:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0804FD39;
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0804FD8A: void test_3_blocks_variant_325_edges_8()
 void test_3_blocks_variant_325_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804FD8C;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l0804FD8C:
+	puts("exit block");
 }
 
 // 0804FDF0: void test_3_blocks_variant_326_edges_8()
 void test_3_blocks_variant_326_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0804FE56: void test_3_blocks_variant_327_edges_8()
 void test_3_blocks_variant_327_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804FE58;
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+l0804FE58:
+	puts("exit block");
 }
 
 // 0804FEBC: void test_3_blocks_variant_328_edges_8()
 void test_3_blocks_variant_328_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804FEBE;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0804FEBE:
+	puts("exit block");
 }
 
 // 0804FF22: void test_3_blocks_variant_329_edges_8()
 void test_3_blocks_variant_329_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0804FF24;
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+l0804FF24:
+	puts("exit block");
 }
 
 // 0804FF88: void test_3_blocks_variant_330_edges_8()
@@ -3540,26 +6455,104 @@ void test_3_blocks_variant_330_edges_8()
 // 0804FFEE: void test_3_blocks_variant_331_edges_8()
 void test_3_blocks_variant_331_edges_8()
 {
+	do
+	{
+l08050003:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050003;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050054: void test_3_blocks_variant_332_edges_8()
 void test_3_blocks_variant_332_edges_8()
 {
+l08050069:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050069;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 080500BA: void test_3_blocks_variant_333_edges_8()
 void test_3_blocks_variant_333_edges_8()
 {
+l080500CF:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l080500CF;
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08050120: void test_3_blocks_variant_334_edges_8()
 void test_3_blocks_variant_334_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08050186: void test_3_blocks_variant_335_edges_8()
 void test_3_blocks_variant_335_edges_8()
 {
+	while (true)
+	{
+l0805019B:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0805019B;
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 080501EC: void test_3_blocks_variant_336_edges_8()
@@ -3589,96 +6582,426 @@ void test_3_blocks_variant_336_edges_8()
 // 08050252: void test_3_blocks_variant_337_edges_8()
 void test_3_blocks_variant_337_edges_8()
 {
+l08050267:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050254;
+			if (globals->dw80610AC == 0x00)
+				goto l08050267;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	}
+l08050254:
+	puts("exit block");
 }
 
 // 080502B8: void test_3_blocks_variant_338_edges_8()
 void test_3_blocks_variant_338_edges_8()
 {
+	while (true)
+	{
+l080502CD:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l080502BA;
+			if (globals->dw80610AC == 0x00)
+				goto l080502CD;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	}
+l080502BA:
+	puts("exit block");
 }
 
 // 0805031E: void test_3_blocks_variant_339_edges_8()
 void test_3_blocks_variant_339_edges_8()
 {
+l08050333:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l08050333;
+			if (globals->dw80610B0 != 0x00)
+				puts("block 4");
+		}
+	}
+	puts("exit block");
 }
 
 // 08050384: void test_3_blocks_variant_340_edges_8()
 void test_3_blocks_variant_340_edges_8()
 {
+l08050399:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08050386:
+		puts("exit block");
+	}
+	else
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050386;
+			if (globals->dw80610AC == 0x00)
+				goto l08050399;
+		} while (globals->dw80610B0 == 0x00);
+		while (true)
+			puts("block 4");
+	}
 }
 
 // 080503EA: void test_3_blocks_variant_341_edges_8()
 void test_3_blocks_variant_341_edges_8()
 {
+l080503FF:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l080503FF;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08050450: void test_3_blocks_variant_342_edges_8()
 void test_3_blocks_variant_342_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l08050452:
+				puts("exit block");
+				return;
+			}
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08050452;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 080504B6: void test_3_blocks_variant_343_edges_8()
 void test_3_blocks_variant_343_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080504B8;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l080504B8:
+	puts("exit block");
 }
 
 // 0805051C: void test_3_blocks_variant_344_edges_8()
 void test_3_blocks_variant_344_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0805051E;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0805051E:
+	puts("exit block");
 }
 
 // 08050582: void test_3_blocks_variant_345_edges_8()
 void test_3_blocks_variant_345_edges_8()
 {
+l08050597:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08050597;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 080505E8: void test_3_blocks_variant_346_edges_8()
 void test_3_blocks_variant_346_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805064E: void test_3_blocks_variant_347_edges_8()
 void test_3_blocks_variant_347_edges_8()
 {
+	while (true)
+	{
+		do
+		{
+			do
+				puts("block 2");
+			while (globals->dw80610A4 == 0x00);
+			puts("block 3");
+		} while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 080506B4: void test_3_blocks_variant_348_edges_8()
 void test_3_blocks_variant_348_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 0805071A: void test_3_blocks_variant_349_edges_8()
 void test_3_blocks_variant_349_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08050780: void test_3_blocks_variant_350_edges_8()
 void test_3_blocks_variant_350_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+			puts("block 3");
+		while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 080507E6: void test_3_blocks_variant_351_edges_8()
 void test_3_blocks_variant_351_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805084C: void test_3_blocks_variant_352_edges_8()
 void test_3_blocks_variant_352_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080508B2: void test_3_blocks_variant_353_edges_8()
 void test_3_blocks_variant_353_edges_8()
 {
+l080508C7:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l080508C7;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050918: void test_3_blocks_variant_354_edges_8()
 void test_3_blocks_variant_354_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0805091A;
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l0805091A:
+	puts("exit block");
 }
 
 // 0805097E: void test_3_blocks_variant_355_edges_8()
 void test_3_blocks_variant_355_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				break;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 080509E4: void test_3_blocks_variant_356_edges_8()
@@ -3705,31 +7028,125 @@ void test_3_blocks_variant_356_edges_8()
 // 08050A4A: void test_3_blocks_variant_357_edges_8()
 void test_3_blocks_variant_357_edges_8()
 {
+l08050A5F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l08050A5F;
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08050AB0: void test_3_blocks_variant_358_edges_8()
 void test_3_blocks_variant_358_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050AB2;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l08050AB2:
+	puts("exit block");
 }
 
 // 08050B16: void test_3_blocks_variant_359_edges_8()
 void test_3_blocks_variant_359_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050B7C: void test_3_blocks_variant_360_edges_8()
 void test_3_blocks_variant_360_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08050B7E;
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l08050B7E:
+	puts("exit block");
 }
 
 // 08050BE2: void test_3_blocks_variant_361_edges_8()
 void test_3_blocks_variant_361_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08050C48: void test_3_blocks_variant_362_edges_8()
 void test_3_blocks_variant_362_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08050CAE: void test_3_blocks_variant_363_edges_8()
@@ -3756,231 +7173,1010 @@ void test_3_blocks_variant_363_edges_8()
 // 08050D14: void test_3_blocks_variant_364_edges_8()
 void test_3_blocks_variant_364_edges_8()
 {
+	do
+	{
+l08050D29:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050D29;
+		} while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050D7A: void test_3_blocks_variant_365_edges_8()
 void test_3_blocks_variant_365_edges_8()
 {
+l08050D8F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08050D8F;
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050DE0: void test_3_blocks_variant_366_edges_8()
 void test_3_blocks_variant_366_edges_8()
 {
+l08050DF5:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08050DF5;
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08050E46: void test_3_blocks_variant_367_edges_8()
 void test_3_blocks_variant_367_edges_8()
 {
+l08050E5B:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08050E48;
+		if (globals->dw80610AC == 0x00)
+			goto l08050E5B;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 4");
+l08050E48:
+	puts("exit block");
 }
 
 // 08050EAC: void test_3_blocks_variant_368_edges_8()
 void test_3_blocks_variant_368_edges_8()
 {
+	while (true)
+	{
+l08050EC1:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l08050EC1;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	}
 }
 
 // 08050F12: void test_3_blocks_variant_369_edges_8()
 void test_3_blocks_variant_369_edges_8()
 {
+l08050F27:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l08050F27;
+		if (globals->dw80610B0 != 0x00)
+			puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 08050F78: void test_3_blocks_variant_370_edges_8()
 void test_3_blocks_variant_370_edges_8()
 {
+l08050F8D:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610AC == 0x00)
+			goto l08050F8D;
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08050FDE: void test_3_blocks_variant_371_edges_8()
 void test_3_blocks_variant_371_edges_8()
 {
+l08050FF3:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+				goto l08050FE0;
+			if (globals->dw80610AC == 0x00)
+				goto l08050FF3;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+l08050FE0:
+	puts("exit block");
 }
 
 // 08051044: void test_3_blocks_variant_372_edges_8()
 void test_3_blocks_variant_372_edges_8()
 {
+	while (true)
+	{
+l08051059:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610A8 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610AC == 0x00)
+					goto l08051059;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
 }
 
 // 080510AA: void test_3_blocks_variant_373_edges_8()
 void test_3_blocks_variant_373_edges_8()
 {
+l080510BF:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l080510BF;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 08051110: void test_3_blocks_variant_374_edges_8()
 void test_3_blocks_variant_374_edges_8()
 {
+l08051125:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0805114C:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l08051125;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	goto l0805114C;
 }
 
 // 08051176: void test_3_blocks_variant_375_edges_8()
 void test_3_blocks_variant_375_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 080511DC: void test_3_blocks_variant_376_edges_8()
 void test_3_blocks_variant_376_edges_8()
 {
+	do
+	{
+		while (true)
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080511DE;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+l080511DE:
+	puts("exit block");
 }
 
 // 08051242: void test_3_blocks_variant_377_edges_8()
 void test_3_blocks_variant_377_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08051244;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+l08051244:
+	puts("exit block");
 }
 
 // 080512A8: void test_3_blocks_variant_378_edges_8()
 void test_3_blocks_variant_378_edges_8()
 {
+	do
+	{
+l080512BD:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080512BD;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 0805130E: void test_3_blocks_variant_379_edges_8()
 void test_3_blocks_variant_379_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+			goto l08051310;
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+l08051310:
+	puts("exit block");
 }
 
 // 08051374: void test_3_blocks_variant_380_edges_8()
 void test_3_blocks_variant_380_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08051376;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+l08051376:
+	puts("exit block");
 }
 
 // 080513DA: void test_3_blocks_variant_381_edges_8()
 void test_3_blocks_variant_381_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080513DC;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+l080513DC:
+	puts("exit block");
 }
 
 // 08051440: void test_3_blocks_variant_382_edges_8()
 void test_3_blocks_variant_382_edges_8()
 {
+l08051455:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08051455;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+	puts("exit block");
 }
 
 // 080514A6: void test_3_blocks_variant_383_edges_8()
 void test_3_blocks_variant_383_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l080514EB:
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+l080514A8:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+		goto l080514A8;
+	goto l080514EB;
 }
 
 // 0805150C: void test_3_blocks_variant_384_edges_8()
 void test_3_blocks_variant_384_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l0805150E:
+				puts("exit block");
+				return;
+			}
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0805150E;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08051572: void test_3_blocks_variant_385_edges_8()
 void test_3_blocks_variant_385_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l080515B7:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08051574;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+	{
+l08051574:
+		puts("exit block");
+		return;
+	}
+	goto l080515B7;
 }
 
 // 080515D8: void test_3_blocks_variant_386_edges_8()
 void test_3_blocks_variant_386_edges_8()
 {
+l080515ED:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0805161D:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080515ED;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	goto l0805161D;
 }
 
 // 0805163E: void test_3_blocks_variant_387_edges_8()
 void test_3_blocks_variant_387_edges_8()
 {
+	do
+	{
+l08051653:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+	goto l08051653;
 }
 
 // 080516A4: void test_3_blocks_variant_388_edges_8()
 void test_3_blocks_variant_388_edges_8()
 {
+	while (true)
+	{
+		while (true)
+		{
+			puts("block 2");
+			if (globals->dw80610A4 != 0x00)
+				break;
+			do
+				puts("block 3");
+			while (globals->dw80610A8 != 0x00);
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805170A: void test_3_blocks_variant_389_edges_8()
 void test_3_blocks_variant_389_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B0 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 08051770: void test_3_blocks_variant_390_edges_8()
 void test_3_blocks_variant_390_edges_8()
 {
+	do
+	{
+l08051785:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l080517B5:
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	if (globals->dw80610A8 != 0x00)
+		goto l080517B5;
+	goto l08051785;
 }
 
 // 080517D6: void test_3_blocks_variant_391_edges_8()
 void test_3_blocks_variant_391_edges_8()
 {
+	do
+	{
+l080517EB:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+			break;
+		puts("block 3");
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 != 0x00);
+	goto l080517EB;
 }
 
 // 0805183C: void test_3_blocks_variant_392_edges_8()
 void test_3_blocks_variant_392_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+l08051881:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610A8 != 0x00)
+			goto l08051881;
+	}
 }
 
 // 080518A2: void test_3_blocks_variant_393_edges_8()
 void test_3_blocks_variant_393_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l080518E7:
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610A8 == 0x00);
+	goto l080518E7;
 }
 
 // 08051908: void test_3_blocks_variant_394_edges_8()
 void test_3_blocks_variant_394_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805196E: void test_3_blocks_variant_395_edges_8()
 void test_3_blocks_variant_395_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l080519B3:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 == 0x00);
+	goto l080519B3;
 }
 
 // 080519D4: void test_3_blocks_variant_396_edges_8()
 void test_3_blocks_variant_396_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080519D6;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l080519D6:
+	puts("exit block");
 }
 
 // 08051A3A: void test_3_blocks_variant_397_edges_8()
 void test_3_blocks_variant_397_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 3");
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08051A3C;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l08051A3C:
+	puts("exit block");
 }
 
 // 08051AA0: void test_3_blocks_variant_398_edges_8()
 void test_3_blocks_variant_398_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08051AA2:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08051AA2;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08051B06: void test_3_blocks_variant_399_edges_8()
 void test_3_blocks_variant_399_edges_8()
 {
+	do
+	{
+l08051B1B:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08051B1B;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08051B6C: void test_3_blocks_variant_400_edges_8()
 void test_3_blocks_variant_400_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08051BD2: void test_3_blocks_variant_401_edges_8()
 void test_3_blocks_variant_401_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08051BD4;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l08051BD4:
+	puts("exit block");
 }
 
 // 08051C38: void test_3_blocks_variant_402_edges_8()
 void test_3_blocks_variant_402_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08051C3A;
+	} while (globals->dw80610A8 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+l08051C3A:
+	puts("exit block");
 }
 
 // 08051C9E: void test_3_blocks_variant_403_edges_8()
 void test_3_blocks_variant_403_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08051CA0;
+				puts("block 4");
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l08051CA0:
+	puts("exit block");
 }
 
 // 08051D04: void test_3_blocks_variant_404_edges_8()
 void test_3_blocks_variant_404_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08051D6A: void test_3_blocks_variant_405_edges_8()
 void test_3_blocks_variant_405_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08051D6C;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+l08051D6C:
+	puts("exit block");
 }
 
 // 08051DD0: void test_3_blocks_variant_406_edges_8()
 void test_3_blocks_variant_406_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08051E36: void test_3_blocks_variant_407_edges_8()
 void test_3_blocks_variant_407_edges_8()
 {
+	do
+	{
+l08051E4B:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08051E38;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08051E4B;
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l08051E38:
+	puts("exit block");
 }
 
 // 08051E9C: void test_3_blocks_variant_408_edges_8()
 void test_3_blocks_variant_408_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08051E9E;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+	} while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l08051E9E:
+	puts("exit block");
 }
 
 // 08051F02: void test_3_blocks_variant_409_edges_8()
 void test_3_blocks_variant_409_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				puts("block 4");
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08051F68: void test_3_blocks_variant_410_edges_8()
@@ -4032,16 +8228,58 @@ void test_3_blocks_variant_411_edges_8()
 // 08052034: void test_3_blocks_variant_412_edges_8()
 void test_3_blocks_variant_412_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		do
+			puts("block 3");
+		while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0805209A: void test_3_blocks_variant_413_edges_8()
 void test_3_blocks_variant_413_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805209C;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610AC == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+l0805209C:
+	puts("exit block");
 }
 
 // 08052100: void test_3_blocks_variant_414_edges_8()
 void test_3_blocks_variant_414_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08052102;
+	} while (globals->dw80610A8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l08052102:
+	puts("exit block");
 }
 
 // 08052166: void test_3_blocks_variant_415_edges_8()
@@ -4090,56 +8328,239 @@ void test_3_blocks_variant_416_edges_8()
 // 08052232: void test_3_blocks_variant_417_edges_8()
 void test_3_blocks_variant_417_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
 }
 
 // 08052298: void test_3_blocks_variant_418_edges_8()
 void test_3_blocks_variant_418_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805229A;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805229A;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 4");
+l0805229A:
+	puts("exit block");
 }
 
 // 080522FE: void test_3_blocks_variant_419_edges_8()
 void test_3_blocks_variant_419_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			puts("block 4");
+	}
+	puts("exit block");
 }
 
 // 08052364: void test_3_blocks_variant_420_edges_8()
 void test_3_blocks_variant_420_edges_8()
 {
+	do
+	{
+l08052379:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08052366;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l08052379;
+		puts("block 4");
+	}
+l08052366:
+	puts("exit block");
 }
 
 // 080523CA: void test_3_blocks_variant_421_edges_8()
 void test_3_blocks_variant_421_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l080523CC:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l080523CC;
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08052430: void test_3_blocks_variant_422_edges_8()
 void test_3_blocks_variant_422_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08052432;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08052432;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 4");
+l08052432:
+	puts("exit block");
 }
 
 // 08052496: void test_3_blocks_variant_423_edges_8()
 void test_3_blocks_variant_423_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08052498;
+			} while (globals->dw80610B0 == 0x00);
+			puts("block 4");
+		}
+	}
+l08052498:
+	puts("exit block");
 }
 
 // 080524FC: void test_3_blocks_variant_424_edges_8()
 void test_3_blocks_variant_424_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080524FE;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			puts("block 4");
+	}
+l080524FE:
+	puts("exit block");
 }
 
 // 08052562: void test_3_blocks_variant_425_edges_8()
 void test_3_blocks_variant_425_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08052564:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08052564;
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 080525C8: void test_3_blocks_variant_426_edges_8()
 void test_3_blocks_variant_426_edges_8()
 {
+	do
+	{
+l080525DD:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080525CA;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l080525DD;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 4");
+l080525CA:
+	puts("exit block");
 }
 
 // 0805262E: void test_3_blocks_variant_427_edges_8()
 void test_3_blocks_variant_427_edges_8()
 {
+	while (true)
+	{
+l08052643:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08052643;
+			} while (globals->dw80610B0 == 0x00);
+			puts("block 4");
+		}
+	}
+	puts("exit block");
 }
 
 // 08052694: void test_3_blocks_variant_428_edges_8()
@@ -4168,116 +8589,505 @@ void test_3_blocks_variant_428_edges_8()
 // 080526FA: void test_3_blocks_variant_429_edges_8()
 void test_3_blocks_variant_429_edges_8()
 {
+	do
+	{
+l0805270F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805270F;
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08052760: void test_3_blocks_variant_430_edges_8()
 void test_3_blocks_variant_430_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08052762;
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+			goto l08052762;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+l08052762:
+	puts("exit block");
 }
 
 // 080527C6: void test_3_blocks_variant_431_edges_8()
 void test_3_blocks_variant_431_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080527C8;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l080527C8:
+	puts("exit block");
 }
 
 // 0805282C: void test_3_blocks_variant_432_edges_8()
 void test_3_blocks_variant_432_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l0805282E;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
+l0805282E:
+	puts("exit block");
 }
 
 // 08052892: void test_3_blocks_variant_433_edges_8()
 void test_3_blocks_variant_433_edges_8()
 {
+l080528A7:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080528A7;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 080528F8: void test_3_blocks_variant_434_edges_8()
 void test_3_blocks_variant_434_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 0805295E: void test_3_blocks_variant_435_edges_8()
 void test_3_blocks_variant_435_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08052960;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		else
+			puts("block 3");
+	}
+l08052960:
+	puts("exit block");
 }
 
 // 080529C4: void test_3_blocks_variant_436_edges_8()
 void test_3_blocks_variant_436_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080529C6;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
+l080529C6:
+	puts("exit block");
 }
 
 // 08052A2A: void test_3_blocks_variant_437_edges_8()
 void test_3_blocks_variant_437_edges_8()
 {
+	while (true)
+	{
+l08052A3F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08052A3F;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 08052A90: void test_3_blocks_variant_438_edges_8()
 void test_3_blocks_variant_438_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08052A92:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+			goto l08052A92;
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 08052AF6: void test_3_blocks_variant_439_edges_8()
 void test_3_blocks_variant_439_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08052AF8;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l08052AF8:
+	puts("exit block");
 }
 
 // 08052B5C: void test_3_blocks_variant_440_edges_8()
 void test_3_blocks_variant_440_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08052B5E:
+		puts("exit block");
+	}
+	else
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08052B5E;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		while (true)
+			puts("block 3");
+	}
 }
 
 // 08052BC2: void test_3_blocks_variant_441_edges_8()
 void test_3_blocks_variant_441_edges_8()
 {
+l08052BD7:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+		puts("exit block");
+	else
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08052BD7;
+			} while (globals->dw80610B0 != 0x00);
+		}
+		while (true)
+			puts("block 3");
+	}
 }
 
 // 08052C28: void test_3_blocks_variant_442_edges_8()
 void test_3_blocks_variant_442_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08052C2A:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08052C6D:
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+			goto l08052C2A;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	goto l08052C6D;
 }
 
 // 08052C8E: void test_3_blocks_variant_443_edges_8()
 void test_3_blocks_variant_443_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08052C90;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l08052C90:
+	puts("exit block");
 }
 
 // 08052CF4: void test_3_blocks_variant_444_edges_8()
 void test_3_blocks_variant_444_edges_8()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08052CF6:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l08052D39:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08052CF6;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	goto l08052D39;
 }
 
 // 08052D5A: void test_3_blocks_variant_445_edges_8()
 void test_3_blocks_variant_445_edges_8()
 {
+l08052D6F:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l08052D9F:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08052D6F;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	goto l08052D9F;
 }
 
 // 08052DC0: void test_3_blocks_variant_446_edges_8()
 void test_3_blocks_variant_446_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08052E26: void test_3_blocks_variant_447_edges_8()
 void test_3_blocks_variant_447_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08052E8C: void test_3_blocks_variant_448_edges_8()
 void test_3_blocks_variant_448_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08052EF2: void test_3_blocks_variant_449_edges_8()
 void test_3_blocks_variant_449_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08052F58: void test_3_blocks_variant_450_edges_8()
 void test_3_blocks_variant_450_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC != 0x00)
+				continue;
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08052FBE: void test_3_blocks_variant_451_edges_8()
 void test_3_blocks_variant_451_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053024: void test_3_blocks_variant_452_edges_8()
@@ -4327,11 +9137,42 @@ void test_3_blocks_variant_453_edges_8()
 // 080530F0: void test_3_blocks_variant_454_edges_8()
 void test_3_blocks_variant_454_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080530F2;
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l080530F2:
+	puts("exit block");
 }
 
 // 08053156: void test_3_blocks_variant_455_edges_8()
 void test_3_blocks_variant_455_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC != 0x00);
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 080531BC: void test_3_blocks_variant_456_edges_8()
@@ -4379,11 +9220,45 @@ l08053224:
 // 08053288: void test_3_blocks_variant_458_edges_8()
 void test_3_blocks_variant_458_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805328A:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l080532D6:
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l0805328A;
+	goto l080532D6;
 }
 
 // 080532EE: void test_3_blocks_variant_459_edges_8()
 void test_3_blocks_variant_459_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08053354: void test_3_blocks_variant_460_edges_8()
@@ -4412,6 +9287,22 @@ l080533A2:
 // 080533BA: void test_3_blocks_variant_461_edges_8()
 void test_3_blocks_variant_461_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08053420: void test_3_blocks_variant_462_edges_8()
@@ -4462,11 +9353,48 @@ void test_3_blocks_variant_463_edges_8()
 // 080534EC: void test_3_blocks_variant_464_edges_8()
 void test_3_blocks_variant_464_edges_8()
 {
+	do
+	{
+l08053501:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l0805353A:
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC != 0x00)
+		goto l0805353A;
+	goto l08053501;
 }
 
 // 08053552: void test_3_blocks_variant_465_edges_8()
 void test_3_blocks_variant_465_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 != 0x00)
+		{
+l080535A0:
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l080535A0;
+	}
 }
 
 // 080535B8: void test_3_blocks_variant_466_edges_8()
@@ -4494,86 +9422,366 @@ l08053606:
 // 0805361E: void test_3_blocks_variant_467_edges_8()
 void test_3_blocks_variant_467_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+			goto l08053620;
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+l08053620:
+	puts("exit block");
 }
 
 // 08053684: void test_3_blocks_variant_468_edges_8()
 void test_3_blocks_variant_468_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08053686;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+l08053686:
+	puts("exit block");
 }
 
 // 080536EA: void test_3_blocks_variant_469_edges_8()
 void test_3_blocks_variant_469_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080536EC;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+l080536EC:
+	puts("exit block");
 }
 
 // 08053750: void test_3_blocks_variant_470_edges_8()
 void test_3_blocks_variant_470_edges_8()
 {
+l08053765:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08053765;
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	puts("exit block");
 }
 
 // 080537B6: void test_3_blocks_variant_471_edges_8()
 void test_3_blocks_variant_471_edges_8()
 {
+	do
+	{
+l080537CB:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	goto l080537CB;
 }
 
 // 0805381C: void test_3_blocks_variant_472_edges_8()
 void test_3_blocks_variant_472_edges_8()
 {
+	while (true)
+	{
+		while (true)
+		{
+			do
+				puts("block 2");
+			while (globals->dw80610A4 == 0x00);
+			if (globals->dw80610A8 != 0x00)
+				break;
+			puts("block 3");
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08053882: void test_3_blocks_variant_473_edges_8()
 void test_3_blocks_variant_473_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B0 != 0x00);
+		}
+		puts("block 3");
+	}
 }
 
 // 080538E8: void test_3_blocks_variant_474_edges_8()
 void test_3_blocks_variant_474_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 0805394E: void test_3_blocks_variant_475_edges_8()
 void test_3_blocks_variant_475_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 080539B4: void test_3_blocks_variant_476_edges_8()
 void test_3_blocks_variant_476_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 08053A1A: void test_3_blocks_variant_477_edges_8()
 void test_3_blocks_variant_477_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08053A5F:
+		puts("block 4");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	goto l08053A5F;
 }
 
 // 08053A80: void test_3_blocks_variant_478_edges_8()
 void test_3_blocks_variant_478_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 08053AE6: void test_3_blocks_variant_479_edges_8()
 void test_3_blocks_variant_479_edges_8()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l08053B2B:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	goto l08053B2B;
 }
 
 // 08053B4C: void test_3_blocks_variant_480_edges_8()
 void test_3_blocks_variant_480_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053BB2: void test_3_blocks_variant_481_edges_8()
 void test_3_blocks_variant_481_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053C18: void test_3_blocks_variant_482_edges_8()
 void test_3_blocks_variant_482_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053C7E: void test_3_blocks_variant_483_edges_8()
 void test_3_blocks_variant_483_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053CE4: void test_3_blocks_variant_484_edges_8()
@@ -4662,6 +9870,19 @@ void test_3_blocks_variant_487_edges_8()
 // 08053E7C: void test_3_blocks_variant_488_edges_8()
 void test_3_blocks_variant_488_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 08053EE2: void test_3_blocks_variant_489_edges_8()
@@ -4728,11 +9949,46 @@ l08053FB0:
 // 08054014: void test_3_blocks_variant_492_edges_8()
 void test_3_blocks_variant_492_edges_8()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08054062:
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	goto l08054062;
 }
 
 // 0805407A: void test_3_blocks_variant_493_edges_8()
 void test_3_blocks_variant_493_edges_8()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 080540E0: void test_3_blocks_variant_494_edges_8()
@@ -4760,51 +10016,212 @@ l0805412E:
 // 08054146: void test_3_blocks_variant_495_edges_8()
 void test_3_blocks_variant_495_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080541AC: void test_3_blocks_variant_496_edges_8()
 void test_3_blocks_variant_496_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080541AE;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+l080541AE:
+			puts("exit block");
+			return;
+		}
+	}
+	puts("block 3");
+	goto l080541AE;
 }
 
 // 08054212: void test_3_blocks_variant_497_edges_8()
 void test_3_blocks_variant_497_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08054214;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	else
+		puts("block 3");
+l08054214:
+	puts("exit block");
 }
 
 // 08054278: void test_3_blocks_variant_498_edges_8()
 void test_3_blocks_variant_498_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805427A;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+l0805427A:
+	puts("exit block");
 }
 
 // 080542DE: void test_3_blocks_variant_499_edges_8()
 void test_3_blocks_variant_499_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08054344: void test_3_blocks_variant_500_edges_8()
 void test_3_blocks_variant_500_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08054346;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+l08054346:
+	puts("exit block");
 }
 
 // 080543AA: void test_3_blocks_variant_501_edges_8()
 void test_3_blocks_variant_501_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 08054410: void test_3_blocks_variant_502_edges_8()
 void test_3_blocks_variant_502_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 08054476: void test_3_blocks_variant_503_edges_8()
 void test_3_blocks_variant_503_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B0 != 0x00);
+			break;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 080544DC: void test_3_blocks_variant_504_edges_8()
 void test_3_blocks_variant_504_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 08054542: void test_3_blocks_variant_505_edges_8()
@@ -4855,51 +10272,215 @@ void test_3_blocks_variant_506_edges_8()
 // 0805460E: void test_3_blocks_variant_507_edges_8()
 void test_3_blocks_variant_507_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 08054674: void test_3_blocks_variant_508_edges_8()
 void test_3_blocks_variant_508_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08054676;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+l08054676:
+			puts("exit block");
+			return;
+		}
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 080546DA: void test_3_blocks_variant_509_edges_8()
 void test_3_blocks_variant_509_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080546DC;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC == 0x00)
+	{
+		while (true)
+			puts("block 3");
+	}
+	else
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+l080546DC:
+		puts("exit block");
+	}
 }
 
 // 08054740: void test_3_blocks_variant_510_edges_8()
 void test_3_blocks_variant_510_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 080547A6: void test_3_blocks_variant_511_edges_8()
 void test_3_blocks_variant_511_edges_8()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0805480C: void test_3_blocks_variant_512_edges_8()
 void test_3_blocks_variant_512_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 08054872: void test_3_blocks_variant_513_edges_8()
 void test_3_blocks_variant_513_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			puts("block 3");
+		puts("block 4");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080548D8: void test_3_blocks_variant_514_edges_8()
 void test_3_blocks_variant_514_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080548DA;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l08054926:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+l080548DA:
+			puts("exit block");
+			return;
+		}
+	}
+	puts("block 3");
+	goto l08054926;
 }
 
 // 0805493E: void test_3_blocks_variant_515_edges_8()
 void test_3_blocks_variant_515_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08054940;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC == 0x00)
+		puts("block 3");
+	do
+		puts("block 4");
+	while (globals->dw80610B0 != 0x00);
+l08054940:
+	puts("exit block");
 }
 
 // 080549A4: void test_3_blocks_variant_516_edges_8()
 void test_3_blocks_variant_516_edges_8()
 {
+	do
+	{
+		do
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC == 0x00)
+			break;
+l080549F2:
+		puts("block 4");
+	} while (globals->dw80610B0 == 0x00);
+	puts("block 3");
+	goto l080549F2;
 }
 
 // 08054A0A: void test_3_blocks_variant_517_edges_8()
@@ -4925,471 +10506,2386 @@ void test_3_blocks_variant_517_edges_8()
 // 08054A70: void test_3_blocks_variant_518_edges_8()
 void test_3_blocks_variant_518_edges_8()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l08054ABE:
+		do
+			puts("block 4");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("block 3");
+	goto l08054ABE;
 }
 
 // 08054AD6: void test_3_blocks_variant_519_edges_9()
 void test_3_blocks_variant_519_edges_9()
 {
+l08054AEB:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l08054AEB;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08054AD8;
+			if (globals->dw80610B0 == 0x00)
+				goto l08054AEB;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08054AD8:
+	puts("exit block");
 }
 
 // 08054B45: void test_3_blocks_variant_520_edges_9()
 void test_3_blocks_variant_520_edges_9()
 {
+l08054B5A:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08054B47;
+				if (globals->dw80610B0 == 0x00)
+					goto l08054B5A;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08054B47:
+	puts("exit block");
 }
 
 // 08054BB4: void test_3_blocks_variant_521_edges_9()
 void test_3_blocks_variant_521_edges_9()
 {
+	while (true)
+	{
+l08054BC9:
+		puts("block 2");
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			if (globals->dw80610A8 != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610AC == 0x00)
+					{
+						puts("exit block");
+						return;
+					}
+					if (globals->dw80610B0 == 0x00)
+						goto l08054BC9;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
 }
 
 // 08054C23: void test_3_blocks_variant_522_edges_9()
 void test_3_blocks_variant_522_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l08054C25:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08054C25;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08054C92: void test_3_blocks_variant_523_edges_9()
 void test_3_blocks_variant_523_edges_9()
 {
+	while (true)
+	{
+l08054CA7:
+		puts("block 2");
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A4 == 0x00)
+			{
+l08054C94:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610A8 == 0x00)
+				goto l08054CA7;
+		} while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08054C94;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08054D01: void test_3_blocks_variant_524_edges_9()
 void test_3_blocks_variant_524_edges_9()
 {
+l08054D16:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l08054D16;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08054D03;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08054D03:
+	puts("exit block");
 }
 
 // 08054D70: void test_3_blocks_variant_525_edges_9()
 void test_3_blocks_variant_525_edges_9()
 {
+l08054D85:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l08054D85;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08054D85;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08054DDF: void test_3_blocks_variant_526_edges_9()
 void test_3_blocks_variant_526_edges_9()
 {
+l08054DF4:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08054DE1;
+				if (globals->dw80610B0 == 0x00)
+					goto l08054DF4;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08054DE1:
+	puts("exit block");
 }
 
 // 08054E4E: void test_3_blocks_variant_527_edges_9()
 void test_3_blocks_variant_527_edges_9()
 {
+	while (true)
+	{
+l08054E63:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08054E50;
+				if (globals->dw80610B0 == 0x00)
+					goto l08054E63;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08054E50:
+	puts("exit block");
 }
 
 // 08054EBD: void test_3_blocks_variant_528_edges_9()
 void test_3_blocks_variant_528_edges_9()
 {
+l08054ED2:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08054EBF:
+		puts("exit block");
+	}
+	else
+	{
+		while (true)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610A8 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08054EBF;
+				if (globals->dw80610B0 == 0x00)
+					goto l08054ED2;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
 }
 
 // 08054F2C: void test_3_blocks_variant_529_edges_9()
 void test_3_blocks_variant_529_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08054F2E;
+			if (globals->dw80610AC == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08054F2E;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08054F2E:
+	puts("exit block");
 }
 
 // 08054F9B: void test_3_blocks_variant_530_edges_9()
 void test_3_blocks_variant_530_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08054F9D;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08054F9D:
+	puts("exit block");
 }
 
 // 0805500A: void test_3_blocks_variant_531_edges_9()
 void test_3_blocks_variant_531_edges_9()
 {
+l0805501F:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0805501F;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805500C;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l0805500C:
+	puts("exit block");
 }
 
 // 08055079: void test_3_blocks_variant_532_edges_9()
 void test_3_blocks_variant_532_edges_9()
 {
+l0805508E:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0805508E;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805508E;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 080550E8: void test_3_blocks_variant_533_edges_9()
 void test_3_blocks_variant_533_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l080550EA;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080550EA;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l080550EA:
+	puts("exit block");
 }
 
 // 08055157: void test_3_blocks_variant_534_edges_9()
 void test_3_blocks_variant_534_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055159;
+		} while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055159;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08055159:
+	puts("exit block");
 }
 
 // 080551C6: void test_3_blocks_variant_535_edges_9()
 void test_3_blocks_variant_535_edges_9()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l080551C8;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+l080551C8:
+	puts("exit block");
 }
 
 // 08055235: void test_3_blocks_variant_536_edges_9()
 void test_3_blocks_variant_536_edges_9()
 {
+l0805524A:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l0805524A;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 080552A4: void test_3_blocks_variant_537_edges_9()
 void test_3_blocks_variant_537_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080552A6;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l080552A6:
+	puts("exit block");
 }
 
 // 08055313: void test_3_blocks_variant_538_edges_9()
 void test_3_blocks_variant_538_edges_9()
 {
+	while (true)
+	{
+l08055328:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055328;
+		} while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055315;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08055315:
+	puts("exit block");
 }
 
 // 08055382: void test_3_blocks_variant_539_edges_9()
 void test_3_blocks_variant_539_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08055384;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+l08055384:
+	puts("exit block");
 }
 
 // 080553F1: void test_3_blocks_variant_540_edges_9()
 void test_3_blocks_variant_540_edges_9()
 {
+	while (true)
+	{
+l08055406:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08055406;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 08055460: void test_3_blocks_variant_541_edges_9()
 void test_3_blocks_variant_541_edges_9()
 {
+	do
+	{
+l08055475:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055462;
+			if (globals->dw80610AC == 0x00)
+				goto l08055475;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l08055462:
+	puts("exit block");
 }
 
 // 080554CF: void test_3_blocks_variant_542_edges_9()
 void test_3_blocks_variant_542_edges_9()
 {
+l080554E4:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l080554E4;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0805553E: void test_3_blocks_variant_543_edges_9()
 void test_3_blocks_variant_543_edges_9()
 {
+l08055553:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055540;
+			if (globals->dw80610AC == 0x00)
+				goto l08055553;
+		} while (globals->dw80610B0 == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+l08055540:
+	puts("exit block");
 }
 
 // 080555AD: void test_3_blocks_variant_544_edges_9()
 void test_3_blocks_variant_544_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l080555AF;
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B4 != 0x00);
+	}
+l080555AF:
+	puts("exit block");
 }
 
 // 0805561C: void test_3_blocks_variant_545_edges_9()
 void test_3_blocks_variant_545_edges_9()
 {
+	while (true)
+	{
+l08055631:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0805561E;
+			if (globals->dw80610AC == 0x00)
+				goto l08055631;
+		} while (globals->dw80610B0 == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+l0805561E:
+	puts("exit block");
 }
 
 // 0805568B: void test_3_blocks_variant_546_edges_9()
 void test_3_blocks_variant_546_edges_9()
 {
+l080556A0:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l080556A0;
+			if (globals->dw80610B0 != 0x00)
+			{
+				do
+					puts("block 4");
+				while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 080556FA: void test_3_blocks_variant_547_edges_9()
 void test_3_blocks_variant_547_edges_9()
 {
+l0805570F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080556FC;
+			if (globals->dw80610B0 == 0x00)
+				goto l0805570F;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l080556FC:
+	puts("exit block");
 }
 
 // 08055769: void test_3_blocks_variant_548_edges_9()
 void test_3_blocks_variant_548_edges_9()
 {
+	while (true)
+	{
+l0805577E:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B0 == 0x00)
+					goto l0805577E;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
 }
 
 // 080557D8: void test_3_blocks_variant_549_edges_9()
 void test_3_blocks_variant_549_edges_9()
 {
+l080557ED:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610A8 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B0 == 0x00)
+				goto l080557ED;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055847: void test_3_blocks_variant_550_edges_9()
 void test_3_blocks_variant_550_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l08055849:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				break;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055849;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 080558B6: void test_3_blocks_variant_551_edges_9()
 void test_3_blocks_variant_551_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080558B8;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l080558B8:
+	puts("exit block");
 }
 
 // 08055925: void test_3_blocks_variant_552_edges_9()
 void test_3_blocks_variant_552_edges_9()
 {
+l0805593A:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0805593A;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055927;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08055927:
+	puts("exit block");
 }
 
 // 08055994: void test_3_blocks_variant_553_edges_9()
 void test_3_blocks_variant_553_edges_9()
 {
+l080559A9:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l080559A9;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080559A9;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08055A03: void test_3_blocks_variant_554_edges_9()
 void test_3_blocks_variant_554_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l08055A05:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055A05;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055A72: void test_3_blocks_variant_555_edges_9()
 void test_3_blocks_variant_555_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l08055A74:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08055A74;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055AE1: void test_3_blocks_variant_556_edges_9()
 void test_3_blocks_variant_556_edges_9()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08055AE3;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08055AE3:
+	puts("exit block");
 }
 
 // 08055B50: void test_3_blocks_variant_557_edges_9()
 void test_3_blocks_variant_557_edges_9()
 {
+l08055B65:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08055B65;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08055BBF: void test_3_blocks_variant_558_edges_9()
 void test_3_blocks_variant_558_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055C2E: void test_3_blocks_variant_559_edges_9()
 void test_3_blocks_variant_559_edges_9()
 {
+	while (true)
+	{
+l08055C43:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055C43;
+		} while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055C9D: void test_3_blocks_variant_560_edges_9()
 void test_3_blocks_variant_560_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+					{
+						puts("exit block");
+						return;
+					}
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
 }
 
 // 08055D0C: void test_3_blocks_variant_561_edges_9()
 void test_3_blocks_variant_561_edges_9()
 {
+	do
+	{
+l08055D21:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08055D0E;
+			if (globals->dw80610AC == 0x00)
+				goto l08055D21;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l08055D0E:
+	puts("exit block");
 }
 
 // 08055D7B: void test_3_blocks_variant_562_edges_9()
 void test_3_blocks_variant_562_edges_9()
 {
+l08055D90:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l08055D90;
+		if (globals->dw80610B0 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+	puts("exit block");
 }
 
 // 08055DEA: void test_3_blocks_variant_563_edges_9()
 void test_3_blocks_variant_563_edges_9()
 {
+l08055DFF:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08055DEC;
+		if (globals->dw80610AC == 0x00)
+			goto l08055DFF;
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B4 != 0x00);
+l08055DEC:
+	puts("exit block");
 }
 
 // 08055E59: void test_3_blocks_variant_564_edges_9()
 void test_3_blocks_variant_564_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+			puts("block 4");
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055EC8: void test_3_blocks_variant_565_edges_9()
 void test_3_blocks_variant_565_edges_9()
 {
+	while (true)
+	{
+l08055EDD:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l08055EDD;
+		} while (globals->dw80610B0 == 0x00);
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08055F37: void test_3_blocks_variant_566_edges_9()
 void test_3_blocks_variant_566_edges_9()
 {
+l08055F4C:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l08055F4C;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08055FA6: void test_3_blocks_variant_567_edges_9()
 void test_3_blocks_variant_567_edges_9()
 {
+	do
+	{
+l08055FBB:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08055FA8;
+				if (globals->dw80610B0 == 0x00)
+					goto l08055FBB;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610A8 != 0x00);
+l08055FA8:
+	puts("exit block");
 }
 
 // 08056015: void test_3_blocks_variant_568_edges_9()
 void test_3_blocks_variant_568_edges_9()
 {
+l0805602A:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08056017;
+			if (globals->dw80610B0 == 0x00)
+				goto l0805602A;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 != 0x00);
+l08056017:
+	puts("exit block");
 }
 
 // 08056084: void test_3_blocks_variant_569_edges_9()
 void test_3_blocks_variant_569_edges_9()
 {
+l08056099:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l080560C9:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08056086;
+			if (globals->dw80610B0 == 0x00)
+				goto l08056099;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+	{
+l08056086:
+		puts("exit block");
+		return;
+	}
+	goto l080560C9;
 }
 
 // 080560F3: void test_3_blocks_variant_570_edges_9()
 void test_3_blocks_variant_570_edges_9()
 {
+	while (true)
+	{
+l08056108:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B0 == 0x00)
+					goto l08056108;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610A8 != 0x00);
+	}
 }
 
 // 08056162: void test_3_blocks_variant_571_edges_9()
 void test_3_blocks_variant_571_edges_9()
 {
+	while (true)
+	{
+l08056177:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+l080561A7:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B0 == 0x00)
+					goto l08056177;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610A8 != 0x00)
+			goto l080561A7;
+	}
 }
 
 // 080561D1: void test_3_blocks_variant_572_edges_9()
 void test_3_blocks_variant_572_edges_9()
 {
+l080561E6:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l08056216:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B0 == 0x00)
+				goto l080561E6;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610A8 == 0x00);
+	goto l08056216;
 }
 
 // 08056240: void test_3_blocks_variant_573_edges_9()
 void test_3_blocks_variant_573_edges_9()
 {
+	do
+	{
+l08056255:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+l08056242:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l08056242;
+	} while (globals->dw80610AC != 0x00);
+	goto l08056255;
 }
 
 // 080562AF: void test_3_blocks_variant_574_edges_9()
 void test_3_blocks_variant_574_edges_9()
 {
+	while (true)
+	{
+		while (true)
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080562B1;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l080562B1:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0805631E: void test_3_blocks_variant_575_edges_9()
 void test_3_blocks_variant_575_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+l08056320:
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08056320;
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0805638D: void test_3_blocks_variant_576_edges_9()
 void test_3_blocks_variant_576_edges_9()
 {
+	while (true)
+	{
+l080563A2:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080563A2;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 080563FC: void test_3_blocks_variant_577_edges_9()
 void test_3_blocks_variant_577_edges_9()
 {
+	do
+	{
+l08056411:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+l0805644A:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l080563FE;
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610A8 == 0x00)
+	{
+l080563FE:
+		puts("exit block");
+	}
+	else
+	{
+		if (globals->dw80610AC != 0x00)
+			goto l0805644A;
+		goto l08056411;
+	}
 }
 
 // 0805646B: void test_3_blocks_variant_578_edges_9()
 void test_3_blocks_variant_578_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+l080564B9:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805646D;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+l0805646D:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610AC != 0x00)
+			goto l080564B9;
+	}
 }
 
 // 080564DA: void test_3_blocks_variant_579_edges_9()
 void test_3_blocks_variant_579_edges_9()
 {
+	while (true)
+	{
+l080564EF:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+l08056528:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080564EF;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610AC != 0x00)
+			goto l08056528;
+	}
 }
 
 // 08056549: void test_3_blocks_variant_580_edges_9()
 void test_3_blocks_variant_580_edges_9()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l08056597:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+l0805654B:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0805654B;
+	} while (globals->dw80610AC == 0x00);
+	goto l08056597;
 }
 
 // 080565B8: void test_3_blocks_variant_581_edges_9()
 void test_3_blocks_variant_581_edges_9()
 {
+l080565CD:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l08056606:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080565CD;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610AC == 0x00);
+	goto l08056606;
 }
 
 // 08056627: void test_3_blocks_variant_582_edges_9()
 void test_3_blocks_variant_582_edges_9()
 {
+	do
+	{
+l0805663C:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08056629:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l08056629;
+			if (globals->dw80610B0 == 0x00)
+				goto l0805663C;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08056696: void test_3_blocks_variant_583_edges_9()
 void test_3_blocks_variant_583_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08056698;
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08056698;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056698:
+	puts("exit block");
 }
 
 // 08056705: void test_3_blocks_variant_584_edges_9()
 void test_3_blocks_variant_584_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08056707;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08056707:
+	puts("exit block");
 }
 
 // 08056774: void test_3_blocks_variant_585_edges_9()
 void test_3_blocks_variant_585_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056776;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08056776;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08056776:
+	puts("exit block");
 }
 
 // 080567E3: void test_3_blocks_variant_586_edges_9()
 void test_3_blocks_variant_586_edges_9()
 {
+	do
+	{
+l080567F8:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080567E5;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080567F8;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l080567E5:
+	puts("exit block");
 }
 
 // 08056852: void test_3_blocks_variant_587_edges_9()
 void test_3_blocks_variant_587_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08056854;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056854:
+	puts("exit block");
 }
 
 // 080568C1: void test_3_blocks_variant_588_edges_9()
 void test_3_blocks_variant_588_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l080568C3;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+l080568C3:
+	puts("exit block");
 }
 
 // 08056930: void test_3_blocks_variant_589_edges_9()
 void test_3_blocks_variant_589_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08056932;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+l08056932:
+	puts("exit block");
 }
 
 // 0805699F: void test_3_blocks_variant_590_edges_9()
 void test_3_blocks_variant_590_edges_9()
 {
+	while (true)
+	{
+l080569B4:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l080569B4;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 08056A0E: void test_3_blocks_variant_591_edges_9()
 void test_3_blocks_variant_591_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				do
+					puts("block 3");
+				while (globals->dw80610AC == 0x00);
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08056A10;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056A10:
+	puts("exit block");
 }
 
 // 08056A7D: void test_3_blocks_variant_592_edges_9()
 void test_3_blocks_variant_592_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08056A7F;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056A7F:
+	puts("exit block");
 }
 
 // 08056AEC: void test_3_blocks_variant_593_edges_9()
 void test_3_blocks_variant_593_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08056AEE:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08056AEE;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08056B5B: void test_3_blocks_variant_594_edges_9()
 void test_3_blocks_variant_594_edges_9()
 {
+	do
+	{
+l08056B70:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08056B70;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08056BCA: void test_3_blocks_variant_595_edges_9()
 void test_3_blocks_variant_595_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+	puts("exit block");
 }
 
 // 08056C39: void test_3_blocks_variant_596_edges_9()
 void test_3_blocks_variant_596_edges_9()
 {
+	do
+	{
+l08056C4E:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056C3B;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l08056C4E;
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l08056C3B:
+	puts("exit block");
 }
 
 // 08056CA8: void test_3_blocks_variant_597_edges_9()
 void test_3_blocks_variant_597_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056CAA;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08056CAA;
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B4 != 0x00);
+l08056CAA:
+	puts("exit block");
 }
 
 // 08056D17: void test_3_blocks_variant_598_edges_9()
 void test_3_blocks_variant_598_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08056D19;
+				if (globals->dw80610B0 == 0x00)
+					break;
+				puts("block 4");
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056D19:
+	puts("exit block");
 }
 
 // 08056D86: void test_3_blocks_variant_599_edges_9()
 void test_3_blocks_variant_599_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08056DF5: void test_3_blocks_variant_600_edges_9()
 void test_3_blocks_variant_600_edges_9()
 {
+	do
+	{
+l08056E0A:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056DF7;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l08056E0A;
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+l08056DF7:
+	puts("exit block");
 }
 
 // 08056E64: void test_3_blocks_variant_601_edges_9()
 void test_3_blocks_variant_601_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l08056E66;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l08056E66:
+	puts("exit block");
 }
 
 // 08056ED3: void test_3_blocks_variant_602_edges_9()
 void test_3_blocks_variant_602_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056ED5;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l08056ED5:
+	puts("exit block");
 }
 
 // 08056F42: void test_3_blocks_variant_603_edges_9()
 void test_3_blocks_variant_603_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08056F44;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08056F44;
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B4 != 0x00);
+l08056F44:
+	puts("exit block");
 }
 
 // 08056FB1: void test_3_blocks_variant_604_edges_9()
 void test_3_blocks_variant_604_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08056FB3;
+				if (globals->dw80610B0 == 0x00)
+					continue;
+				puts("block 4");
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08056FB3:
+	puts("exit block");
 }
 
 // 08057020: void test_3_blocks_variant_605_edges_9()
 void test_3_blocks_variant_605_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08057022;
+			} while (globals->dw80610B0 == 0x00);
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08057022:
+	puts("exit block");
 }
 
 // 0805708F: void test_3_blocks_variant_606_edges_9()
 void test_3_blocks_variant_606_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08057091;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+	}
+l08057091:
+	puts("exit block");
 }
 
 // 080570FE: void test_3_blocks_variant_607_edges_9()
 void test_3_blocks_variant_607_edges_9()
 {
+	do
+	{
+l08057113:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l08057113;
+		} while (globals->dw80610B0 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+	puts("exit block");
 }
 
 // 0805716D: void test_3_blocks_variant_608_edges_9()
 void test_3_blocks_variant_608_edges_9()
 {
+	do
+	{
+l08057182:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805716F;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l08057182;
+		if (globals->dw80610B0 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B4 != 0x00);
+l0805716F:
+	puts("exit block");
 }
 
 // 080571DC: void test_3_blocks_variant_609_edges_9()
 void test_3_blocks_variant_609_edges_9()
 {
+	do
+	{
+l080571F1:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080571DE;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l080571F1;
+	} while (globals->dw80610B0 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B4 != 0x00);
+l080571DE:
+	puts("exit block");
 }
 
 // 0805724B: void test_3_blocks_variant_610_edges_9()
 void test_3_blocks_variant_610_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				if (globals->dw80610B0 == 0x00)
+					continue;
+				puts("block 4");
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 080572BA: void test_3_blocks_variant_611_edges_9()
 void test_3_blocks_variant_611_edges_9()
 {
+	while (true)
+	{
+l080572CF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l080572CF;
+			} while (globals->dw80610B0 == 0x00);
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 08057329: void test_3_blocks_variant_612_edges_9()
@@ -5422,446 +12918,2191 @@ void test_3_blocks_variant_612_edges_9()
 // 08057398: void test_3_blocks_variant_613_edges_9()
 void test_3_blocks_variant_613_edges_9()
 {
+	do
+	{
+l080573AD:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805739A;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805739A;
+		if (globals->dw80610B0 == 0x00)
+			goto l080573AD;
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 4");
+l0805739A:
+	puts("exit block");
 }
 
 // 08057407: void test_3_blocks_variant_614_edges_9()
 void test_3_blocks_variant_614_edges_9()
 {
+	while (true)
+	{
+l0805741C:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l08057409;
+				if (globals->dw80610B0 == 0x00)
+					goto l0805741C;
+			} while (globals->dw80610B4 == 0x00);
+			puts("block 4");
+		}
+	}
+l08057409:
+	puts("exit block");
 }
 
 // 08057476: void test_3_blocks_variant_615_edges_9()
 void test_3_blocks_variant_615_edges_9()
 {
+	do
+	{
+l0805748B:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08057478;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805748B;
+		if (globals->dw80610B4 != 0x00)
+			puts("block 4");
+	}
+l08057478:
+	puts("exit block");
 }
 
 // 080574E5: void test_3_blocks_variant_616_edges_9()
 void test_3_blocks_variant_616_edges_9()
 {
+	do
+	{
+l080574FA:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l080574E7:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l080574E7;
+		if (globals->dw80610B0 == 0x00)
+			goto l080574FA;
+	} while (globals->dw80610B4 == 0x00);
+	while (true)
+		puts("block 4");
 }
 
 // 08057554: void test_3_blocks_variant_617_edges_9()
 void test_3_blocks_variant_617_edges_9()
 {
+l08057569:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08057556;
+				if (globals->dw80610B0 == 0x00)
+					goto l08057569;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	}
+l08057556:
+	puts("exit block");
 }
 
 // 080575C3: void test_3_blocks_variant_618_edges_9()
 void test_3_blocks_variant_618_edges_9()
 {
+	while (true)
+	{
+l080575D8:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l080575C5;
+				if (globals->dw80610B0 == 0x00)
+					goto l080575D8;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	}
+l080575C5:
+	puts("exit block");
 }
 
 // 08057632: void test_3_blocks_variant_619_edges_9()
 void test_3_blocks_variant_619_edges_9()
 {
+l08057647:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08057634:
+		puts("exit block");
+	}
+	else
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+					goto l08057634;
+				if (globals->dw80610B0 == 0x00)
+					goto l08057647;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		while (true)
+			puts("block 3");
+	}
 }
 
 // 080576A1: void test_3_blocks_variant_620_edges_9()
 void test_3_blocks_variant_620_edges_9()
 {
+l080576B6:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l080576A3:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l080576E6:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l080576A3;
+			if (globals->dw80610B0 == 0x00)
+				goto l080576B6;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	goto l080576E6;
 }
 
 // 08057710: void test_3_blocks_variant_621_edges_9()
 void test_3_blocks_variant_621_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 0805777F: void test_3_blocks_variant_622_edges_9()
 void test_3_blocks_variant_622_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC != 0x00)
+				continue;
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08057781;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08057781:
+	puts("exit block");
 }
 
 // 080577EE: void test_3_blocks_variant_623_edges_9()
 void test_3_blocks_variant_623_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080577F0;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+l080577F0:
+	puts("exit block");
 }
 
 // 0805785D: void test_3_blocks_variant_624_edges_9()
 void test_3_blocks_variant_624_edges_9()
 {
+	do
+	{
+l08057872:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057872;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 080578CC: void test_3_blocks_variant_625_edges_9()
 void test_3_blocks_variant_625_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080578CE;
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l080578CE;
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l080578CE:
+	puts("exit block");
 }
 
 // 0805793B: void test_3_blocks_variant_626_edges_9()
 void test_3_blocks_variant_626_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC != 0x00);
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805793D;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l0805793D:
+	puts("exit block");
 }
 
 // 080579AA: void test_3_blocks_variant_627_edges_9()
 void test_3_blocks_variant_627_edges_9()
 {
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080579AC;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+l080579AC:
+	puts("exit block");
 }
 
 // 08057A19: void test_3_blocks_variant_628_edges_9()
 void test_3_blocks_variant_628_edges_9()
 {
+l08057A2E:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057A2E;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08057A88: void test_3_blocks_variant_629_edges_9()
 void test_3_blocks_variant_629_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08057A8A:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08057AD6:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l08057A8A;
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l08057A8A;
+	goto l08057AD6;
 }
 
 // 08057AF7: void test_3_blocks_variant_630_edges_9()
 void test_3_blocks_variant_630_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08057AF9;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08057AF9:
+	puts("exit block");
 }
 
 // 08057B66: void test_3_blocks_variant_631_edges_9()
 void test_3_blocks_variant_631_edges_9()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08057B68:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l08057BB4:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08057B68;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l08057B68;
+	goto l08057BB4;
 }
 
 // 08057BD5: void test_3_blocks_variant_632_edges_9()
 void test_3_blocks_variant_632_edges_9()
 {
+l08057BEA:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l08057BD7:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l08057C23:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08057BEA;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l08057BD7;
+	goto l08057C23;
 }
 
 // 08057C44: void test_3_blocks_variant_633_edges_9()
 void test_3_blocks_variant_633_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08057CB3: void test_3_blocks_variant_634_edges_9()
 void test_3_blocks_variant_634_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057CB5;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		else
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC != 0x00);
+		}
+	}
+l08057CB5:
+	puts("exit block");
 }
 
 // 08057D22: void test_3_blocks_variant_635_edges_9()
 void test_3_blocks_variant_635_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057D24;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+l08057D24:
+	puts("exit block");
 }
 
 // 08057D91: void test_3_blocks_variant_636_edges_9()
 void test_3_blocks_variant_636_edges_9()
 {
+	while (true)
+	{
+l08057DA6:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057DA6;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08057E00: void test_3_blocks_variant_637_edges_9()
 void test_3_blocks_variant_637_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+l08057E4E:
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l08057E4E;
+	}
+	puts("exit block");
 }
 
 // 08057E6F: void test_3_blocks_variant_638_edges_9()
 void test_3_blocks_variant_638_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				continue;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08057E71;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08057E71:
+	puts("exit block");
 }
 
 // 08057EDE: void test_3_blocks_variant_639_edges_9()
 void test_3_blocks_variant_639_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08057EE0:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 != 0x00)
+		{
+l08057F2C:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057EE0;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l08057F2C;
+	}
 }
 
 // 08057F4D: void test_3_blocks_variant_640_edges_9()
 void test_3_blocks_variant_640_edges_9()
 {
+	while (true)
+	{
+l08057F62:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 != 0x00)
+		{
+l08057F9B:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08057F62;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l08057F9B;
+	}
 }
 
 // 08057FBC: void test_3_blocks_variant_641_edges_9()
 void test_3_blocks_variant_641_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08057FBE:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			break;
+l0805800A:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l08057FBE;
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l0805800A;
 }
 
 // 0805802B: void test_3_blocks_variant_642_edges_9()
 void test_3_blocks_variant_642_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC == 0x00);
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805802D;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l0805802D:
+	puts("exit block");
 }
 
 // 0805809A: void test_3_blocks_variant_643_edges_9()
 void test_3_blocks_variant_643_edges_9()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805809C:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l080580E8:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805809C;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l080580E8;
 }
 
 // 08058109: void test_3_blocks_variant_644_edges_9()
 void test_3_blocks_variant_644_edges_9()
 {
+l0805811E:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l08058157:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805811E;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l08058157;
 }
 
 // 08058178: void test_3_blocks_variant_645_edges_9()
 void test_3_blocks_variant_645_edges_9()
 {
+l0805818D:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+				goto l0805817A;
+			if (globals->dw80610B0 == 0x00)
+				goto l0805818D;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+l0805817A:
+	puts("exit block");
 }
 
 // 080581E7: void test_3_blocks_variant_646_edges_9()
 void test_3_blocks_variant_646_edges_9()
 {
+	while (true)
+	{
+l080581FC:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610AC == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B0 == 0x00)
+					goto l080581FC;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	}
 }
 
 // 08058256: void test_3_blocks_variant_647_edges_9()
 void test_3_blocks_variant_647_edges_9()
 {
+l0805826B:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B0 == 0x00)
+				goto l0805826B;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 080582C5: void test_3_blocks_variant_648_edges_9()
 void test_3_blocks_variant_648_edges_9()
 {
+l080582DA:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805830A:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B0 == 0x00)
+				goto l080582DA;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	goto l0805830A;
 }
 
 // 08058334: void test_3_blocks_variant_649_edges_9()
 void test_3_blocks_variant_649_edges_9()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 080583A3: void test_3_blocks_variant_650_edges_9()
 void test_3_blocks_variant_650_edges_9()
 {
+	do
+	{
+		while (true)
+		{
+			do
+				puts("block 2");
+			while (globals->dw80610A4 == 0x00);
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080583A5;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+l080583A5:
+	puts("exit block");
 }
 
 // 08058412: void test_3_blocks_variant_651_edges_9()
 void test_3_blocks_variant_651_edges_9()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08058414;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+l08058414:
+	puts("exit block");
 }
 
 // 08058481: void test_3_blocks_variant_652_edges_9()
 void test_3_blocks_variant_652_edges_9()
 {
+	do
+	{
+l08058496:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08058496;
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 080584F0: void test_3_blocks_variant_653_edges_9()
 void test_3_blocks_variant_653_edges_9()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l080584F2;
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l080584F2:
+	puts("exit block");
 }
 
 // 0805855F: void test_3_blocks_variant_654_edges_9()
 void test_3_blocks_variant_654_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08058561;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l08058561:
+	puts("exit block");
 }
 
 // 080585CE: void test_3_blocks_variant_655_edges_9()
 void test_3_blocks_variant_655_edges_9()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080585D0;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l080585D0:
+	puts("exit block");
 }
 
 // 0805863D: void test_3_blocks_variant_656_edges_9()
 void test_3_blocks_variant_656_edges_9()
 {
+l08058652:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08058652;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+	puts("exit block");
 }
 
 // 080586AC: void test_3_blocks_variant_657_edges_9()
 void test_3_blocks_variant_657_edges_9()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l080586FA:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+l080586AE:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l080586AE;
+	goto l080586FA;
 }
 
 // 0805871B: void test_3_blocks_variant_658_edges_9()
 void test_3_blocks_variant_658_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+			{
+l0805871D:
+				puts("exit block");
+				return;
+			}
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805871D;
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 0805878A: void test_3_blocks_variant_659_edges_9()
 void test_3_blocks_variant_659_edges_9()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l080587D8:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805878C;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+l0805878C:
+		puts("exit block");
+		return;
+	}
+	goto l080587D8;
 }
 
 // 080587F9: void test_3_blocks_variant_660_edges_9()
 void test_3_blocks_variant_660_edges_9()
 {
+l0805880E:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l08058847:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805880E;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	goto l08058847;
 }
 
 // 08058868: void test_3_blocks_variant_661_edges_9()
 void test_3_blocks_variant_661_edges_9()
 {
+	do
+	{
+l0805887D:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+	goto l0805887D;
 }
 
 // 080588D7: void test_3_blocks_variant_662_edges_9()
 void test_3_blocks_variant_662_edges_9()
 {
+	while (true)
+	{
+		while (true)
+		{
+			do
+				puts("block 2");
+			while (globals->dw80610A4 == 0x00);
+			if (globals->dw80610A8 != 0x00)
+				break;
+			do
+				puts("block 3");
+			while (globals->dw80610AC != 0x00);
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08058946: void test_3_blocks_variant_663_edges_9()
 void test_3_blocks_variant_663_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B4 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 080589B5: void test_3_blocks_variant_664_edges_9()
 void test_3_blocks_variant_664_edges_9()
 {
+	do
+	{
+l080589CA:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08058A03:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC != 0x00)
+		goto l08058A03;
+	goto l080589CA;
 }
 
 // 08058A24: void test_3_blocks_variant_665_edges_9()
 void test_3_blocks_variant_665_edges_9()
 {
+	do
+	{
+l08058A39:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+			break;
+		puts("block 3");
+	} while (globals->dw80610AC == 0x00);
+	do
+	{
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 != 0x00);
+	goto l08058A39;
 }
 
 // 08058A93: void test_3_blocks_variant_666_edges_9()
 void test_3_blocks_variant_666_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+l08058AE1:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l08058AE1;
+	}
 }
 
 // 08058B02: void test_3_blocks_variant_667_edges_9()
 void test_3_blocks_variant_667_edges_9()
 {
+	do
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l08058B50:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l08058B50;
 }
 
 // 08058B71: void test_3_blocks_variant_668_edges_9()
 void test_3_blocks_variant_668_edges_9()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610AC == 0x00);
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
 }
 
 // 08058BE0: void test_3_blocks_variant_669_edges_9()
 void test_3_blocks_variant_669_edges_9()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l08058C2E:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l08058C2E;
 }
 
 // 08058C4F: void test_3_blocks_variant_670_edges_9()
 void test_3_blocks_variant_670_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08058C51;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l08058C51;
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+l08058C51:
+	puts("exit block");
 }
 
 // 08058CBE: void test_3_blocks_variant_671_edges_9()
 void test_3_blocks_variant_671_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08058CC0;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08058CC0:
+	puts("exit block");
 }
 
 // 08058D2D: void test_3_blocks_variant_672_edges_9()
 void test_3_blocks_variant_672_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08058D2F;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08058D2F;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+l08058D2F:
+	puts("exit block");
 }
 
 // 08058D9C: void test_3_blocks_variant_673_edges_9()
 void test_3_blocks_variant_673_edges_9()
 {
+	do
+	{
+l08058DB1:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08058D9E;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08058DB1;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+l08058D9E:
+	puts("exit block");
 }
 
 // 08058E0B: void test_3_blocks_variant_674_edges_9()
 void test_3_blocks_variant_674_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				break;
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	}
+	puts("exit block");
 }
 
 // 08058E7A: void test_3_blocks_variant_675_edges_9()
 void test_3_blocks_variant_675_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08058E7C;
+				} while (globals->dw80610B4 != 0x00);
+			}
+			else
+				puts("block 3");
+		}
+	}
+l08058E7C:
+	puts("exit block");
 }
 
 // 08058EE9: void test_3_blocks_variant_676_edges_9()
 void test_3_blocks_variant_676_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08058EEB;
+				} while (globals->dw80610B4 != 0x00);
+			}
+			puts("block 3");
+		}
+	}
+l08058EEB:
+	puts("exit block");
 }
 
 // 08058F58: void test_3_blocks_variant_677_edges_9()
 void test_3_blocks_variant_677_edges_9()
 {
+	while (true)
+	{
+l08058F6D:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08058F6D;
+				} while (globals->dw80610B4 != 0x00);
+			}
+			puts("block 3");
+		}
+	}
+	puts("exit block");
 }
 
 // 08058FC7: void test_3_blocks_variant_678_edges_9()
 void test_3_blocks_variant_678_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08058FC9:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l08058FC9;
+	} while (globals->dw80610B4 == 0x00);
+	while (true)
+		puts("block 3");
 }
 
 // 08059036: void test_3_blocks_variant_679_edges_9()
 void test_3_blocks_variant_679_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			while (true)
+				puts("block 3");
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08059038;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l08059038:
+	puts("exit block");
 }
 
 // 080590A5: void test_3_blocks_variant_680_edges_9()
 void test_3_blocks_variant_680_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l080590A7:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080590A7;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 08059114: void test_3_blocks_variant_681_edges_9()
 void test_3_blocks_variant_681_edges_9()
 {
+	do
+	{
+l08059129:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08059129;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 08059183: void test_3_blocks_variant_682_edges_9()
 void test_3_blocks_variant_682_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08059185:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+l080591D1:
+		puts("block 4");
+		if (globals->dw80610B0 == 0x00)
+			goto l08059185;
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	goto l080591D1;
 }
 
 // 080591F2: void test_3_blocks_variant_683_edges_9()
 void test_3_blocks_variant_683_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC == 0x00)
+				puts("block 3");
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l080591F4;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l080591F4:
+	puts("exit block");
 }
 
 // 08059261: void test_3_blocks_variant_684_edges_9()
 void test_3_blocks_variant_684_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l08059263:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l080592AF:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l08059263;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	goto l080592AF;
 }
 
 // 080592D0: void test_3_blocks_variant_685_edges_9()
 void test_3_blocks_variant_685_edges_9()
 {
+	do
+	{
+l080592E5:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805931E:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l080592E5;
+		} while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	goto l0805931E;
 }
 
 // 0805933F: void test_3_blocks_variant_686_edges_9()
 void test_3_blocks_variant_686_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 != 0x00)
+				continue;
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080593AE: void test_3_blocks_variant_687_edges_9()
 void test_3_blocks_variant_687_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0805941D: void test_3_blocks_variant_688_edges_9()
 void test_3_blocks_variant_688_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+			break;
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0805948C: void test_3_blocks_variant_689_edges_9()
 void test_3_blocks_variant_689_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080594FB: void test_3_blocks_variant_690_edges_9()
 void test_3_blocks_variant_690_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610B0 != 0x00)
+				continue;
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0805956A: void test_3_blocks_variant_691_edges_9()
 void test_3_blocks_variant_691_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 080595D9: void test_3_blocks_variant_692_edges_9()
 void test_3_blocks_variant_692_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080595DB;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+		{
+l080595DB:
+			puts("exit block");
+			return;
+		}
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+	goto l080595DB;
 }
 
 // 08059648: void test_3_blocks_variant_693_edges_9()
 void test_3_blocks_variant_693_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805964A;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	else
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610B0 != 0x00);
+	}
+l0805964A:
+	puts("exit block");
 }
 
 // 080596B7: void test_3_blocks_variant_694_edges_9()
 void test_3_blocks_variant_694_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l080596B9;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l080596B9:
+	puts("exit block");
 }
 
 // 08059726: void test_3_blocks_variant_695_edges_9()
 void test_3_blocks_variant_695_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610B0 != 0x00);
+			break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08059795: void test_3_blocks_variant_696_edges_9()
 void test_3_blocks_variant_696_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08059797;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l08059797:
+	puts("exit block");
 }
 
 // 08059804: void test_3_blocks_variant_697_edges_9()
 void test_3_blocks_variant_697_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08059806;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805985B:
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+		{
+l08059806:
+			puts("exit block");
+			return;
+		}
+	}
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+		goto l08059806;
+	goto l0805985B;
 }
 
 // 08059873: void test_3_blocks_variant_698_edges_9()
 void test_3_blocks_variant_698_edges_9()
 {
+	do
+	{
+		do
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+l08059875:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC == 0x00)
+			break;
+l080598CA:
+		puts("block 4");
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+		goto l08059875;
+	goto l080598CA;
 }
 
 // 080598E2: void test_3_blocks_variant_699_edges_9()
 void test_3_blocks_variant_699_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610B0 == 0x00)
+				break;
+		}
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08059951: void test_3_blocks_variant_700_edges_9()
 void test_3_blocks_variant_700_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l08059953;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l080599A8:
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+	{
+l08059953:
+		puts("exit block");
+		return;
+	}
+	goto l080599A8;
 }
 
 // 080599C0: void test_3_blocks_variant_701_edges_9()
 void test_3_blocks_variant_701_edges_9()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				continue;
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 08059A2F: void test_3_blocks_variant_702_edges_9()
@@ -5918,721 +15159,4209 @@ void test_3_blocks_variant_703_edges_9()
 // 08059B0D: void test_3_blocks_variant_704_edges_9()
 void test_3_blocks_variant_704_edges_9()
 {
+	do
+	{
+l08059B22:
+		do
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC == 0x00)
+			break;
+l08059B64:
+		puts("block 4");
+	} while (globals->dw80610B4 == 0x00);
+	puts("block 3");
+	if (globals->dw80610B0 != 0x00)
+		goto l08059B64;
+	goto l08059B22;
 }
 
 // 08059B7C: void test_3_blocks_variant_705_edges_9()
 void test_3_blocks_variant_705_edges_9()
 {
+	while (true)
+	{
+		do
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC != 0x00)
+		{
+l08059BD3:
+			do
+				puts("block 4");
+			while (globals->dw80610B4 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 != 0x00)
+			goto l08059BD3;
+	}
 }
 
 // 08059BEB: void test_3_blocks_variant_706_edges_9()
 void test_3_blocks_variant_706_edges_9()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l08059C42:
+		do
+			puts("block 4");
+		while (globals->dw80610B4 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 == 0x00);
+	goto l08059C42;
 }
 
 // 08059C5A: void test_3_blocks_variant_707_edges_10()
 void test_3_blocks_variant_707_edges_10()
 {
+l08059C6F:
+	puts("block 2");
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			goto l08059C6F;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08059C5C;
+				if (globals->dw80610B4 == 0x00)
+					goto l08059C6F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l08059C5C:
+	puts("exit block");
 }
 
 // 08059CD2: void test_3_blocks_variant_708_edges_10()
 void test_3_blocks_variant_708_edges_10()
 {
+l08059CE7:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l08059CE7;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l08059CD4;
+				if (globals->dw80610B4 == 0x00)
+					goto l08059CE7;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l08059CD4:
+	puts("exit block");
 }
 
 // 08059D4A: void test_3_blocks_variant_709_edges_10()
 void test_3_blocks_variant_709_edges_10()
 {
+l08059D5F:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08059D4C;
+					if (globals->dw80610B4 == 0x00)
+						goto l08059D5F;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
+l08059D4C:
+	puts("exit block");
 }
 
 // 08059DC2: void test_3_blocks_variant_710_edges_10()
 void test_3_blocks_variant_710_edges_10()
 {
+	while (true)
+	{
+l08059DD7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l08059DC4;
+					if (globals->dw80610B4 == 0x00)
+						goto l08059DD7;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
+l08059DC4:
+	puts("exit block");
 }
 
 // 08059E3A: void test_3_blocks_variant_711_edges_10()
 void test_3_blocks_variant_711_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08059E3C;
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l08059E3C;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l08059E3C:
+	puts("exit block");
 }
 
 // 08059EB2: void test_3_blocks_variant_712_edges_10()
 void test_3_blocks_variant_712_edges_10()
 {
+	while (true)
+	{
+l08059EC7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l08059EB4;
+			if (globals->dw80610AC == 0x00)
+				goto l08059EC7;
+		} while (globals->dw80610B0 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l08059EB4;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l08059EB4:
+	puts("exit block");
 }
 
 // 08059F2A: void test_3_blocks_variant_713_edges_10()
 void test_3_blocks_variant_713_edges_10()
 {
+l08059F3F:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l08059F3F;
+			if (globals->dw80610B0 != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l08059F2C;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
+l08059F2C:
+	puts("exit block");
 }
 
 // 08059FA2: void test_3_blocks_variant_714_edges_10()
 void test_3_blocks_variant_714_edges_10()
 {
+l08059FB7:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l08059FB7;
+			if (globals->dw80610B0 != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l08059FB7;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 0805A01A: void test_3_blocks_variant_715_edges_10()
 void test_3_blocks_variant_715_edges_10()
 {
+l0805A02F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0805A02F;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805A01C;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A02F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805A01C:
+	puts("exit block");
 }
 
 // 0805A092: void test_3_blocks_variant_716_edges_10()
 void test_3_blocks_variant_716_edges_10()
 {
+l0805A0A7:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805A094;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A0A7;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A094:
+	puts("exit block");
 }
 
 // 0805A10A: void test_3_blocks_variant_717_edges_10()
 void test_3_blocks_variant_717_edges_10()
 {
+	while (true)
+	{
+l0805A11F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+					{
+						puts("exit block");
+						return;
+					}
+					if (globals->dw80610B4 == 0x00)
+						goto l0805A11F;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
 }
 
 // 0805A182: void test_3_blocks_variant_718_edges_10()
 void test_3_blocks_variant_718_edges_10()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l0805A184:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				break;
+			if (globals->dw80610B0 == 0x00)
+				continue;
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A184;
+		} while (globals->dw80610B8 != 0x00);
+	}
 }
 
 // 0805A1FA: void test_3_blocks_variant_719_edges_10()
 void test_3_blocks_variant_719_edges_10()
 {
+	while (true)
+	{
+l0805A20F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+			{
+l0805A1FC:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610AC == 0x00)
+				goto l0805A20F;
+		} while (globals->dw80610B0 == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A1FC;
+		} while (globals->dw80610B8 != 0x00);
+	}
 }
 
 // 0805A272: void test_3_blocks_variant_720_edges_10()
 void test_3_blocks_variant_720_edges_10()
 {
+l0805A287:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0805A287;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A274;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A274:
+	puts("exit block");
 }
 
 // 0805A2EA: void test_3_blocks_variant_721_edges_10()
 void test_3_blocks_variant_721_edges_10()
 {
+l0805A2FF:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0805A2FF;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A2FF;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0805A362: void test_3_blocks_variant_722_edges_10()
 void test_3_blocks_variant_722_edges_10()
 {
+	while (true)
+	{
+l0805A377:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+l0805A364:
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A377;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				goto l0805A364;
+		} while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0805A3DA: void test_3_blocks_variant_723_edges_10()
 void test_3_blocks_variant_723_edges_10()
 {
+	while (true)
+	{
+l0805A3EF:
+		puts("block 2");
+		if (globals->dw80610A4 != 0x00)
+		{
+l0805A428:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805A3DC;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A3EF;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+		{
+l0805A3DC:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610AC != 0x00)
+			goto l0805A428;
+	}
 }
 
 // 0805A452: void test_3_blocks_variant_724_edges_10()
 void test_3_blocks_variant_724_edges_10()
 {
+l0805A467:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0805A4A0:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+l0805A454:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A467;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0805A454;
+	} while (globals->dw80610AC == 0x00);
+	goto l0805A4A0;
 }
 
 // 0805A4CA: void test_3_blocks_variant_725_edges_10()
 void test_3_blocks_variant_725_edges_10()
 {
+l0805A4DF:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0805A518:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A4DF;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0805A4DF;
+	} while (globals->dw80610AC == 0x00);
+	goto l0805A518;
 }
 
 // 0805A542: void test_3_blocks_variant_726_edges_10()
 void test_3_blocks_variant_726_edges_10()
 {
+	do
+	{
+l0805A557:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805A544;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805A544;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A557;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805A544:
+	puts("exit block");
 }
 
 // 0805A5BA: void test_3_blocks_variant_727_edges_10()
 void test_3_blocks_variant_727_edges_10()
 {
+	while (true)
+	{
+l0805A5CF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l0805A5BC;
+					if (globals->dw80610B4 == 0x00)
+						goto l0805A5CF;
+				} while (globals->dw80610B8 != 0x00);
+			}
+		}
+	}
+l0805A5BC:
+	puts("exit block");
 }
 
 // 0805A632: void test_3_blocks_variant_728_edges_10()
 void test_3_blocks_variant_728_edges_10()
 {
+	do
+	{
+l0805A647:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805A634:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		do
+			puts("block 3");
+		while (globals->dw80610AC == 0x00);
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805A634;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A647;
+		} while (globals->dw80610B8 != 0x00);
+	}
 }
 
 // 0805A6AA: void test_3_blocks_variant_729_edges_10()
 void test_3_blocks_variant_729_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805A6AC;
+				if (globals->dw80610B0 == 0x00)
+					break;
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A6AC;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A6AC:
+	puts("exit block");
 }
 
 // 0805A722: void test_3_blocks_variant_730_edges_10()
 void test_3_blocks_variant_730_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A724;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A724:
+	puts("exit block");
 }
 
 // 0805A79A: void test_3_blocks_variant_731_edges_10()
 void test_3_blocks_variant_731_edges_10()
 {
+	do
+	{
+l0805A7AF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805A79C;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805A7AF;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A79C;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805A79C:
+	puts("exit block");
 }
 
 // 0805A812: void test_3_blocks_variant_732_edges_10()
 void test_3_blocks_variant_732_edges_10()
 {
+	do
+	{
+l0805A827:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805A814;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805A827;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805A827;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805A814:
+	puts("exit block");
 }
 
 // 0805A88A: void test_3_blocks_variant_733_edges_10()
 void test_3_blocks_variant_733_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805A88C;
+				if (globals->dw80610B0 == 0x00)
+					continue;
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A88C;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A88C:
+	puts("exit block");
 }
 
 // 0805A902: void test_3_blocks_variant_734_edges_10()
 void test_3_blocks_variant_734_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805A904;
+			} while (globals->dw80610B0 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A904;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A904:
+	puts("exit block");
 }
 
 // 0805A97A: void test_3_blocks_variant_735_edges_10()
 void test_3_blocks_variant_735_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805A97C;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805A97C;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A97C:
+	puts("exit block");
 }
 
 // 0805A9F2: void test_3_blocks_variant_736_edges_10()
 void test_3_blocks_variant_736_edges_10()
 {
+	do
+	{
+l0805AA07:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805A9F4;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805AA07;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805A9F4:
+	puts("exit block");
 }
 
 // 0805AA6A: void test_3_blocks_variant_737_edges_10()
 void test_3_blocks_variant_737_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				if (globals->dw80610B0 == 0x00)
+					continue;
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805AA6C;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805AA6C:
+	puts("exit block");
 }
 
 // 0805AAE2: void test_3_blocks_variant_738_edges_10()
 void test_3_blocks_variant_738_edges_10()
 {
+	while (true)
+	{
+l0805AAF7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805AAF7;
+			} while (globals->dw80610B0 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805AAE4;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805AAE4:
+	puts("exit block");
 }
 
 // 0805AB5A: void test_3_blocks_variant_739_edges_10()
 void test_3_blocks_variant_739_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				if (globals->dw80610B0 != 0x00)
+				{
+					do
+					{
+						puts("block 4");
+						if (globals->dw80610B4 == 0x00)
+							goto l0805AB5C;
+					} while (globals->dw80610B8 != 0x00);
+				}
+			}
+		}
+	}
+l0805AB5C:
+	puts("exit block");
 }
 
 // 0805ABD2: void test_3_blocks_variant_740_edges_10()
 void test_3_blocks_variant_740_edges_10()
 {
+	while (true)
+	{
+l0805ABE7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				if (globals->dw80610B0 != 0x00)
+				{
+					do
+					{
+						puts("block 4");
+						if (globals->dw80610B4 == 0x00)
+							goto l0805ABE7;
+					} while (globals->dw80610B8 != 0x00);
+				}
+			}
+		}
+	}
+	puts("exit block");
 }
 
 // 0805AC4A: void test_3_blocks_variant_741_edges_10()
 void test_3_blocks_variant_741_edges_10()
 {
+	do
+	{
+l0805AC5F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805AC4C;
+			if (globals->dw80610B0 == 0x00)
+				goto l0805AC5F;
+		} while (globals->dw80610B4 == 0x00);
+		puts("block 4");
+	} while (globals->dw80610B8 != 0x00);
+l0805AC4C:
+	puts("exit block");
 }
 
 // 0805ACC2: void test_3_blocks_variant_742_edges_10()
 void test_3_blocks_variant_742_edges_10()
 {
+	do
+	{
+l0805ACD7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805ACC4;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805ACD7;
+		if (globals->dw80610B4 == 0x00)
+			continue;
+		puts("block 4");
+	} while (globals->dw80610B8 != 0x00);
+l0805ACC4:
+	puts("exit block");
 }
 
 // 0805AD3A: void test_3_blocks_variant_743_edges_10()
 void test_3_blocks_variant_743_edges_10()
 {
+	do
+	{
+l0805AD4F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805AD3C;
+	} while (globals->dw80610A8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805AD3C;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805AD4F;
+	} while (globals->dw80610B4 == 0x00);
+	do
+		puts("block 4");
+	while (globals->dw80610B8 != 0x00);
+l0805AD3C:
+	puts("exit block");
 }
 
 // 0805ADB2: void test_3_blocks_variant_744_edges_10()
 void test_3_blocks_variant_744_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805ADB4;
+				if (globals->dw80610B0 == 0x00)
+					break;
+				if (globals->dw80610B4 == 0x00)
+					continue;
+				puts("block 4");
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805ADB4:
+	puts("exit block");
 }
 
 // 0805AE2A: void test_3_blocks_variant_745_edges_10()
 void test_3_blocks_variant_745_edges_10()
 {
+	while (true)
+	{
+l0805AE3F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805AE2C;
+				if (globals->dw80610B0 == 0x00)
+					goto l0805AE3F;
+			} while (globals->dw80610B4 == 0x00);
+			do
+				puts("block 4");
+			while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805AE2C:
+	puts("exit block");
 }
 
 // 0805AEA2: void test_3_blocks_variant_746_edges_10()
 void test_3_blocks_variant_746_edges_10()
 {
+	do
+	{
+l0805AEB7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805AEA4;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805AEB7;
+		if (globals->dw80610B4 != 0x00)
+		{
+			do
+				puts("block 4");
+			while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805AEA4:
+	puts("exit block");
 }
 
 // 0805AF1A: void test_3_blocks_variant_747_edges_10()
 void test_3_blocks_variant_747_edges_10()
 {
+	do
+	{
+l0805AF2F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805AF1C;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805AF2F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+l0805AF1C:
+	puts("exit block");
 }
 
 // 0805AF92: void test_3_blocks_variant_748_edges_10()
 void test_3_blocks_variant_748_edges_10()
 {
+l0805AFA7:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805AF94;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805AFA7;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+l0805AF94:
+	puts("exit block");
 }
 
 // 0805B00A: void test_3_blocks_variant_749_edges_10()
 void test_3_blocks_variant_749_edges_10()
 {
+l0805B01F:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805B00C:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B058:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805B00C;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B01F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+		goto l0805B00C;
+	goto l0805B058;
 }
 
 // 0805B082: void test_3_blocks_variant_750_edges_10()
 void test_3_blocks_variant_750_edges_10()
 {
+	while (true)
+	{
+l0805B097:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805B084;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B097;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
+l0805B084:
+	puts("exit block");
 }
 
 // 0805B0FA: void test_3_blocks_variant_751_edges_10()
 void test_3_blocks_variant_751_edges_10()
 {
+	while (true)
+	{
+l0805B10F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805B0FC:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805B148:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805B0FC;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B10F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l0805B148;
+	}
 }
 
 // 0805B172: void test_3_blocks_variant_752_edges_10()
 void test_3_blocks_variant_752_edges_10()
 {
+l0805B187:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805B174:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B1C0:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805B174;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B187;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l0805B1C0;
 }
 
 // 0805B1EA: void test_3_blocks_variant_753_edges_10()
 void test_3_blocks_variant_753_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+			if (globals->dw80610B8 == 0x00)
+				continue;
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805B1EC;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0805B1EC:
+	puts("exit block");
 }
 
 // 0805B262: void test_3_blocks_variant_754_edges_10()
 void test_3_blocks_variant_754_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B264;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		else
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805B264;
+			} while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0805B264:
+	puts("exit block");
 }
 
 // 0805B2DA: void test_3_blocks_variant_755_edges_10()
 void test_3_blocks_variant_755_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B2DC;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805B2DC;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0805B2DC:
+	puts("exit block");
 }
 
 // 0805B352: void test_3_blocks_variant_756_edges_10()
 void test_3_blocks_variant_756_edges_10()
 {
+	while (true)
+	{
+l0805B367:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B367;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805B354;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0805B354:
+	puts("exit block");
 }
 
 // 0805B3CA: void test_3_blocks_variant_757_edges_10()
 void test_3_blocks_variant_757_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805B421:
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+			if (globals->dw80610B8 == 0x00)
+				continue;
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			goto l0805B421;
+	}
+	puts("exit block");
 }
 
 // 0805B442: void test_3_blocks_variant_758_edges_10()
 void test_3_blocks_variant_758_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805B499:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B444;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			goto l0805B499;
+	}
+l0805B444:
+	puts("exit block");
 }
 
 // 0805B4BA: void test_3_blocks_variant_759_edges_10()
 void test_3_blocks_variant_759_edges_10()
 {
+	while (true)
+	{
+l0805B4CF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805B511:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B4CF;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			goto l0805B511;
+	}
+	puts("exit block");
 }
 
 // 0805B532: void test_3_blocks_variant_760_edges_10()
 void test_3_blocks_variant_760_edges_10()
 {
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805B534:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B589:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B534;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805B534;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805B589;
 }
 
 // 0805B5AA: void test_3_blocks_variant_761_edges_10()
 void test_3_blocks_variant_761_edges_10()
 {
+l0805B5BF:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805B5AC:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B601:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B5BF;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805B5AC;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805B601;
 }
 
 // 0805B622: void test_3_blocks_variant_762_edges_10()
 void test_3_blocks_variant_762_edges_10()
 {
+l0805B637:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B679:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B637;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805B637;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805B679;
 }
 
 // 0805B69A: void test_3_blocks_variant_763_edges_10()
 void test_3_blocks_variant_763_edges_10()
 {
+	do
+	{
+l0805B6AF:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805B69C;
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B6AF;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610AC != 0x00);
+l0805B69C:
+	puts("exit block");
 }
 
 // 0805B712: void test_3_blocks_variant_764_edges_10()
 void test_3_blocks_variant_764_edges_10()
 {
+l0805B727:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805B714;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B727;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC != 0x00);
+l0805B714:
+	puts("exit block");
 }
 
 // 0805B78A: void test_3_blocks_variant_765_edges_10()
 void test_3_blocks_variant_765_edges_10()
 {
+l0805B79F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B7D8:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805B78C;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B79F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+l0805B78C:
+		puts("exit block");
+		return;
+	}
+	goto l0805B7D8;
 }
 
 // 0805B802: void test_3_blocks_variant_766_edges_10()
 void test_3_blocks_variant_766_edges_10()
 {
+	while (true)
+	{
+l0805B817:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B817;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610AC != 0x00);
+	}
 }
 
 // 0805B87A: void test_3_blocks_variant_767_edges_10()
 void test_3_blocks_variant_767_edges_10()
 {
+	while (true)
+	{
+l0805B88F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805B8C8:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B0 == 0x00)
+				{
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B88F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC != 0x00)
+			goto l0805B8C8;
+	}
 }
 
 // 0805B8F2: void test_3_blocks_variant_768_edges_10()
 void test_3_blocks_variant_768_edges_10()
 {
+l0805B907:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805B940:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B4 == 0x00)
+				goto l0805B907;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610AC == 0x00);
+	goto l0805B940;
 }
 
 // 0805B96A: void test_3_blocks_variant_769_edges_10()
 void test_3_blocks_variant_769_edges_10()
 {
+	do
+	{
+l0805B97F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+		{
+l0805B96C:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B8 == 0x00);
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805B96C;
+	} while (globals->dw80610B0 != 0x00);
+	goto l0805B97F;
 }
 
 // 0805B9E2: void test_3_blocks_variant_770_edges_10()
 void test_3_blocks_variant_770_edges_10()
 {
+	while (true)
+	{
+		while (true)
+		{
+			do
+				puts("block 2");
+			while (globals->dw80610A4 == 0x00);
+			if (globals->dw80610A8 == 0x00)
+				break;
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805B9E4;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+			{
+l0805B9E4:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805BA5A: void test_3_blocks_variant_771_edges_10()
 void test_3_blocks_variant_771_edges_10()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+				{
+l0805BA5C:
+					puts("exit block");
+					return;
+				}
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805BA5C;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805BAD2: void test_3_blocks_variant_772_edges_10()
 void test_3_blocks_variant_772_edges_10()
 {
+	while (true)
+	{
+l0805BAE7:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805BAE7;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805BB4A: void test_3_blocks_variant_773_edges_10()
 void test_3_blocks_variant_773_edges_10()
 {
+	do
+	{
+l0805BB5F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 == 0x00)
+			break;
+l0805BBA1:
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+			goto l0805BB4C;
+	} while (globals->dw80610B8 == 0x00);
+	puts("block 3");
+	if (globals->dw80610AC == 0x00)
+	{
+l0805BB4C:
+		puts("exit block");
+	}
+	else
+	{
+		if (globals->dw80610B0 != 0x00)
+			goto l0805BBA1;
+		goto l0805BB5F;
+	}
 }
 
 // 0805BBC2: void test_3_blocks_variant_774_edges_10()
 void test_3_blocks_variant_774_edges_10()
 {
+	while (true)
+	{
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805BC19:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805BBC4;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+		{
+l0805BBC4:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610B0 != 0x00)
+			goto l0805BC19;
+	}
 }
 
 // 0805BC3A: void test_3_blocks_variant_775_edges_10()
 void test_3_blocks_variant_775_edges_10()
 {
+	while (true)
+	{
+l0805BC4F:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805BC91:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805BC4F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610B0 != 0x00)
+			goto l0805BC91;
+	}
 }
 
 // 0805BCB2: void test_3_blocks_variant_776_edges_10()
 void test_3_blocks_variant_776_edges_10()
 {
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805BD09:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+			{
+l0805BCB4:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805BCB4;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805BD09;
 }
 
 // 0805BD2A: void test_3_blocks_variant_777_edges_10()
 void test_3_blocks_variant_777_edges_10()
 {
+l0805BD3F:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805BD81:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805BD3F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805BD81;
 }
 
 // 0805BDA2: void test_3_blocks_variant_778_edges_10()
 void test_3_blocks_variant_778_edges_10()
 {
+	do
+	{
+l0805BDB7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805BDA4;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805BDA4;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805BDB7;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+l0805BDA4:
+	puts("exit block");
 }
 
 // 0805BE1A: void test_3_blocks_variant_779_edges_10()
 void test_3_blocks_variant_779_edges_10()
 {
+	while (true)
+	{
+l0805BE2F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B0 == 0x00)
+						goto l0805BE1C;
+					if (globals->dw80610B4 == 0x00)
+						goto l0805BE2F;
+				} while (globals->dw80610B8 != 0x00);
+			}
+			puts("block 3");
+		}
+	}
+l0805BE1C:
+	puts("exit block");
 }
 
 // 0805BE92: void test_3_blocks_variant_780_edges_10()
 void test_3_blocks_variant_780_edges_10()
 {
+	do
+	{
+l0805BEA7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805BE94:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805BE94;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805BEA7;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	while (true)
+		puts("block 3");
 }
 
 // 0805BF0A: void test_3_blocks_variant_781_edges_10()
 void test_3_blocks_variant_781_edges_10()
 {
+	do
+	{
+l0805BF1F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805BF0C:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805BF58:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805BF0C;
+			if (globals->dw80610B4 == 0x00)
+				goto l0805BF1F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+	goto l0805BF58;
 }
 
 // 0805BF82: void test_3_blocks_variant_782_edges_10()
 void test_3_blocks_variant_782_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+			if (globals->dw80610B8 == 0x00)
+				continue;
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0805BFFA: void test_3_blocks_variant_783_edges_10()
 void test_3_blocks_variant_783_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610B0 != 0x00)
+				continue;
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805BFFC;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805BFFC:
+	puts("exit block");
 }
 
 // 0805C072: void test_3_blocks_variant_784_edges_10()
 void test_3_blocks_variant_784_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805C074;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+l0805C074:
+	puts("exit block");
 }
 
 // 0805C0EA: void test_3_blocks_variant_785_edges_10()
 void test_3_blocks_variant_785_edges_10()
 {
+	do
+	{
+l0805C0FF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805C0FF;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+	puts("exit block");
 }
 
 // 0805C162: void test_3_blocks_variant_786_edges_10()
 void test_3_blocks_variant_786_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805C164;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+			goto l0805C164;
+	} while (globals->dw80610B8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l0805C164:
+	puts("exit block");
 }
 
 // 0805C1DA: void test_3_blocks_variant_787_edges_10()
 void test_3_blocks_variant_787_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			do
+				puts("block 3");
+			while (globals->dw80610B0 != 0x00);
+			break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C1DC;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805C1DC:
+	puts("exit block");
 }
 
 // 0805C252: void test_3_blocks_variant_788_edges_10()
 void test_3_blocks_variant_788_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805C254;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C254;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l0805C254:
+	puts("exit block");
 }
 
 // 0805C2CA: void test_3_blocks_variant_789_edges_10()
 void test_3_blocks_variant_789_edges_10()
 {
+	do
+	{
+l0805C2DF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805C2CC;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C2DF;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l0805C2CC:
+	puts("exit block");
 }
 
 // 0805C342: void test_3_blocks_variant_790_edges_10()
 void test_3_blocks_variant_790_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805C344:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+l0805C399:
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+			goto l0805C344;
+	} while (globals->dw80610B8 == 0x00);
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+		goto l0805C344;
+	goto l0805C399;
 }
 
 // 0805C3BA: void test_3_blocks_variant_791_edges_10()
 void test_3_blocks_variant_791_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610B0 == 0x00)
+				break;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C3BC;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805C3BC:
+	puts("exit block");
 }
 
 // 0805C432: void test_3_blocks_variant_792_edges_10()
 void test_3_blocks_variant_792_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805C434;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805C489:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C434;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+	{
+l0805C434:
+		puts("exit block");
+		return;
+	}
+	goto l0805C489;
 }
 
 // 0805C4AA: void test_3_blocks_variant_793_edges_10()
 void test_3_blocks_variant_793_edges_10()
 {
+	do
+	{
+l0805C4BF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805C4AC;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805C501:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C4BF;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+	{
+l0805C4AC:
+		puts("exit block");
+		return;
+	}
+	goto l0805C501;
 }
 
 // 0805C522: void test_3_blocks_variant_794_edges_10()
 void test_3_blocks_variant_794_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+			if (globals->dw80610B8 == 0x00)
+				continue;
+		}
+		do
+			puts("block 3");
+		while (globals->dw80610B0 != 0x00);
+	}
+	puts("exit block");
 }
 
 // 0805C59A: void test_3_blocks_variant_795_edges_10()
 void test_3_blocks_variant_795_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l0805C59C;
+				} while (globals->dw80610B8 != 0x00);
+			}
+			else
+			{
+				do
+					puts("block 3");
+				while (globals->dw80610B0 != 0x00);
+			}
+		}
+	}
+l0805C59C:
+	puts("exit block");
 }
 
 // 0805C612: void test_3_blocks_variant_796_edges_10()
 void test_3_blocks_variant_796_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l0805C614;
+				} while (globals->dw80610B8 != 0x00);
+			}
+			do
+				puts("block 3");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0805C614:
+	puts("exit block");
 }
 
 // 0805C68A: void test_3_blocks_variant_797_edges_10()
 void test_3_blocks_variant_797_edges_10()
 {
+	while (true)
+	{
+l0805C69F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l0805C69F;
+				} while (globals->dw80610B8 != 0x00);
+			}
+			do
+				puts("block 3");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+	puts("exit block");
 }
 
 // 0805C702: void test_3_blocks_variant_798_edges_10()
 void test_3_blocks_variant_798_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+l0805C759:
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				break;
+			if (globals->dw80610B8 == 0x00)
+				continue;
+		}
+		puts("block 3");
+		if (globals->dw80610B0 != 0x00)
+			goto l0805C759;
+	}
+	puts("exit block");
 }
 
 // 0805C77A: void test_3_blocks_variant_799_edges_10()
 void test_3_blocks_variant_799_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+		{
+			puts("block 3");
+			if (globals->dw80610B0 == 0x00)
+				continue;
+		}
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C77C;
+		} while (globals->dw80610B8 != 0x00);
+	}
+l0805C77C:
+	puts("exit block");
 }
 
 // 0805C7F2: void test_3_blocks_variant_800_edges_10()
 void test_3_blocks_variant_800_edges_10()
 {
+	while (true)
+	{
+		do
+		{
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0805C7F4:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC != 0x00)
+		{
+l0805C849:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805C7F4;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 != 0x00)
+			goto l0805C849;
+	}
 }
 
 // 0805C86A: void test_3_blocks_variant_801_edges_10()
 void test_3_blocks_variant_801_edges_10()
 {
+	while (true)
+	{
+		do
+		{
+l0805C87F:
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC != 0x00)
+		{
+l0805C8C1:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805C87F;
+			} while (globals->dw80610B8 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 != 0x00)
+			goto l0805C8C1;
+	}
 }
 
 // 0805C8E2: void test_3_blocks_variant_802_edges_10()
 void test_3_blocks_variant_802_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805C8E4:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC == 0x00)
+			break;
+l0805C939:
+		puts("block 4");
+		if (globals->dw80610B4 == 0x00)
+			goto l0805C8E4;
+	} while (globals->dw80610B8 == 0x00);
+	do
+		puts("block 3");
+	while (globals->dw80610B0 == 0x00);
+	goto l0805C939;
 }
 
 // 0805C95A: void test_3_blocks_variant_803_edges_10()
 void test_3_blocks_variant_803_edges_10()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC == 0x00)
+			{
+				do
+					puts("block 3");
+				while (globals->dw80610B0 == 0x00);
+			}
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805C95C;
+			} while (globals->dw80610B8 != 0x00);
+		}
+	}
+l0805C95C:
+	puts("exit block");
 }
 
 // 0805C9D2: void test_3_blocks_variant_804_edges_10()
 void test_3_blocks_variant_804_edges_10()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805C9D4:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805CA29:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805C9D4;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 == 0x00);
+	goto l0805CA29;
 }
 
 // 0805CA4A: void test_3_blocks_variant_805_edges_10()
 void test_3_blocks_variant_805_edges_10()
 {
+	do
+	{
+l0805CA5F:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805CAA1:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805CA5F;
+		} while (globals->dw80610B8 != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 == 0x00);
+	goto l0805CAA1;
 }
 
 // 0805CAC2: void test_3_blocks_variant_806_edges_11()
 void test_3_blocks_variant_806_edges_11()
 {
+l0805CAD7:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+		while (true)
+		{
+			puts("block 3");
+			if (globals->dw80610A8 == 0x00)
+				break;
+			if (globals->dw80610AC == 0x00)
+				goto l0805CAD7;
+			if (globals->dw80610B0 != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l0805CAC4;
+					if (globals->dw80610B8 == 0x00)
+						goto l0805CAD7;
+				} while (globals->dw80610BC != 0x00);
+			}
+		}
+	}
+l0805CAC4:
+	puts("exit block");
 }
 
 // 0805CB43: void test_3_blocks_variant_807_edges_11()
 void test_3_blocks_variant_807_edges_11()
 {
+l0805CB58:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			break;
+		if (globals->dw80610AC == 0x00)
+			goto l0805CB58;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805CB45;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CB58;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CB45:
+	puts("exit block");
 }
 
 // 0805CBC4: void test_3_blocks_variant_808_edges_11()
 void test_3_blocks_variant_808_edges_11()
 {
+l0805CBD9:
+	puts("block 2");
+	if (globals->dw80610A4 != 0x00)
+	{
+l0805CC1B:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+			{
+l0805CBC6:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B8 == 0x00)
+				goto l0805CBD9;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610A8 == 0x00)
+			goto l0805CBC6;
+		if (globals->dw80610AC == 0x00)
+			goto l0805CBD9;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805CC1B;
 }
 
 // 0805CC45: void test_3_blocks_variant_809_edges_11()
 void test_3_blocks_variant_809_edges_11()
 {
+	do
+	{
+l0805CC5A:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805CC47;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805CC5A;
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805CC47;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805CC5A;
+		} while (globals->dw80610BC != 0x00);
+	}
+l0805CC47:
+	puts("exit block");
 }
 
 // 0805CCC6: void test_3_blocks_variant_810_edges_11()
 void test_3_blocks_variant_810_edges_11()
 {
+	do
+	{
+l0805CCDB:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805CCC8;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805CCC8;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CCDB;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CCC8:
+	puts("exit block");
 }
 
 // 0805CD47: void test_3_blocks_variant_811_edges_11()
 void test_3_blocks_variant_811_edges_11()
 {
+	while (true)
+	{
+l0805CD5C:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			while (true)
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					break;
+				if (globals->dw80610B0 != 0x00)
+				{
+					do
+					{
+						puts("block 4");
+						if (globals->dw80610B4 == 0x00)
+							goto l0805CD49;
+						if (globals->dw80610B8 == 0x00)
+							goto l0805CD5C;
+					} while (globals->dw80610BC != 0x00);
+				}
+			}
+		}
+	}
+l0805CD49:
+	puts("exit block");
 }
 
 // 0805CDC8: void test_3_blocks_variant_812_edges_11()
 void test_3_blocks_variant_812_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805CDCA;
+				if (globals->dw80610B0 == 0x00)
+					break;
+				if (globals->dw80610B4 == 0x00)
+					continue;
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CDCA;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CDCA:
+	puts("exit block");
 }
 
 // 0805CE49: void test_3_blocks_variant_813_edges_11()
 void test_3_blocks_variant_813_edges_11()
 {
+	while (true)
+	{
+l0805CE5E:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610AC == 0x00)
+					goto l0805CE4B;
+				if (globals->dw80610B0 == 0x00)
+					goto l0805CE5E;
+			} while (globals->dw80610B4 == 0x00);
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CE4B;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CE4B:
+	puts("exit block");
 }
 
 // 0805CECA: void test_3_blocks_variant_814_edges_11()
 void test_3_blocks_variant_814_edges_11()
 {
+	do
+	{
+l0805CEDF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805CECC;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805CEDF;
+		if (globals->dw80610B4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CECC;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CECC:
+	puts("exit block");
 }
 
 // 0805CF4B: void test_3_blocks_variant_815_edges_11()
 void test_3_blocks_variant_815_edges_11()
 {
+	do
+	{
+l0805CF60:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805CF4D;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805CF60;
+		if (globals->dw80610B4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CF60;
+			} while (globals->dw80610BC != 0x00);
+		}
+	}
+l0805CF4D:
+	puts("exit block");
 }
 
 // 0805CFCC: void test_3_blocks_variant_816_edges_11()
 void test_3_blocks_variant_816_edges_11()
 {
+	while (true)
+	{
+l0805CFE1:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805CFCE;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805CFE1;
+			} while (globals->dw80610BC != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805CFCE;
+		} while (globals->dw80610B0 != 0x00);
+	}
+l0805CFCE:
+	puts("exit block");
 }
 
 // 0805D04D: void test_3_blocks_variant_817_edges_11()
 void test_3_blocks_variant_817_edges_11()
 {
+	while (true)
+	{
+l0805D062:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805D0A4:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805D04F;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D062;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 != 0x00)
+			goto l0805D0A4;
+	}
+l0805D04F:
+	puts("exit block");
 }
 
 // 0805D0CE: void test_3_blocks_variant_818_edges_11()
 void test_3_blocks_variant_818_edges_11()
 {
+l0805D0E3:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805D0D0:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805D125:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805D0D0;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D0E3;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805D0D0;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805D125;
 }
 
 // 0805D14F: void test_3_blocks_variant_819_edges_11()
 void test_3_blocks_variant_819_edges_11()
 {
+l0805D164:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805D151:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805D1A6:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805D151;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D164;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805D164;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805D1A6;
 }
 
 // 0805D1D0: void test_3_blocks_variant_820_edges_11()
 void test_3_blocks_variant_820_edges_11()
 {
+	while (true)
+	{
+l0805D1E5:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+				{
+l0805D1D2:
+					puts("exit block");
+					return;
+				}
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D1E5;
+			} while (globals->dw80610BC != 0x00);
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610AC == 0x00)
+				goto l0805D1D2;
+		} while (globals->dw80610B0 != 0x00);
+	}
 }
 
 // 0805D251: void test_3_blocks_variant_821_edges_11()
 void test_3_blocks_variant_821_edges_11()
 {
+	while (true)
+	{
+l0805D266:
+		do
+			puts("block 2");
+		while (globals->dw80610A4 == 0x00);
+		if (globals->dw80610A8 != 0x00)
+		{
+l0805D2A8:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805D253;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D266;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+		{
+l0805D253:
+			puts("exit block");
+			return;
+		}
+		if (globals->dw80610B0 != 0x00)
+			goto l0805D2A8;
+	}
 }
 
 // 0805D2D2: void test_3_blocks_variant_822_edges_11()
 void test_3_blocks_variant_822_edges_11()
 {
+l0805D2E7:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805D329:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+			{
+l0805D2D4:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D2E7;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805D2D4;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805D329;
 }
 
 // 0805D353: void test_3_blocks_variant_823_edges_11()
 void test_3_blocks_variant_823_edges_11()
 {
+l0805D368:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805D3AA:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+			{
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D368;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805D368;
+	} while (globals->dw80610B0 == 0x00);
+	goto l0805D3AA;
 }
 
 // 0805D3D4: void test_3_blocks_variant_824_edges_11()
 void test_3_blocks_variant_824_edges_11()
 {
+	do
+	{
+l0805D3E9:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805D3D6;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D3E9;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+	} while (globals->dw80610B0 != 0x00);
+l0805D3D6:
+	puts("exit block");
 }
 
 // 0805D455: void test_3_blocks_variant_825_edges_11()
 void test_3_blocks_variant_825_edges_11()
 {
+	do
+	{
+l0805D46A:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805D457;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805D457;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D46A;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 != 0x00);
+l0805D457:
+	puts("exit block");
 }
 
 // 0805D4D6: void test_3_blocks_variant_826_edges_11()
 void test_3_blocks_variant_826_edges_11()
 {
+	do
+	{
+l0805D4EB:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805D4D8;
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805D52D:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805D4D8;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D4EB;
+		} while (globals->dw80610BC != 0x00);
+	}
+	puts("block 3");
+	if (globals->dw80610B0 == 0x00)
+	{
+l0805D4D8:
+		puts("exit block");
+		return;
+	}
+	goto l0805D52D;
 }
 
 // 0805D557: void test_3_blocks_variant_827_edges_11()
 void test_3_blocks_variant_827_edges_11()
 {
+	while (true)
+	{
+l0805D56C:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B4 == 0x00)
+						goto l0805D559;
+					if (globals->dw80610B8 == 0x00)
+						goto l0805D56C;
+				} while (globals->dw80610BC != 0x00);
+			}
+			do
+				puts("block 3");
+			while (globals->dw80610B0 != 0x00);
+		}
+	}
+l0805D559:
+	puts("exit block");
 }
 
 // 0805D5D8: void test_3_blocks_variant_828_edges_11()
 void test_3_blocks_variant_828_edges_11()
 {
+	while (true)
+	{
+		do
+		{
+l0805D5ED:
+			puts("block 2");
+			if (globals->dw80610A4 == 0x00)
+			{
+l0805D5DA:
+				puts("exit block");
+				return;
+			}
+		} while (globals->dw80610A8 == 0x00);
+		if (globals->dw80610AC != 0x00)
+		{
+l0805D62F:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B4 == 0x00)
+					goto l0805D5DA;
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D5ED;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 != 0x00)
+			goto l0805D62F;
+	}
 }
 
 // 0805D659: void test_3_blocks_variant_829_edges_11()
 void test_3_blocks_variant_829_edges_11()
 {
+	do
+	{
+l0805D66E:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805D65B:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805D6B0:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B4 == 0x00)
+				goto l0805D65B;
+			if (globals->dw80610B8 == 0x00)
+				goto l0805D66E;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+		puts("block 3");
+	while (globals->dw80610B0 == 0x00);
+	goto l0805D6B0;
 }
 
 // 0805D6DA: void test_3_blocks_variant_830_edges_11()
 void test_3_blocks_variant_830_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				break;
+			if (globals->dw80610BC == 0x00)
+				continue;
+		}
+		do
+		{
+			puts("block 3");
+			if (globals->dw80610B0 == 0x00)
+				goto l0805D6DC;
+		} while (globals->dw80610B4 != 0x00);
+	}
+l0805D6DC:
+	puts("exit block");
 }
 
 // 0805D75B: void test_3_blocks_variant_831_edges_11()
 void test_3_blocks_variant_831_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B8 == 0x00)
+						goto l0805D75D;
+				} while (globals->dw80610BC != 0x00);
+			}
+			else
+			{
+				do
+				{
+					puts("block 3");
+					if (globals->dw80610B0 == 0x00)
+						goto l0805D75D;
+				} while (globals->dw80610B4 != 0x00);
+			}
+		}
+	}
+l0805D75D:
+	puts("exit block");
 }
 
 // 0805D7DC: void test_3_blocks_variant_832_edges_11()
 void test_3_blocks_variant_832_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B8 == 0x00)
+						goto l0805D7DE;
+				} while (globals->dw80610BC != 0x00);
+			}
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805D7DE;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l0805D7DE:
+	puts("exit block");
 }
 
 // 0805D85D: void test_3_blocks_variant_833_edges_11()
 void test_3_blocks_variant_833_edges_11()
 {
+	while (true)
+	{
+l0805D872:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B8 == 0x00)
+						goto l0805D872;
+				} while (globals->dw80610BC != 0x00);
+			}
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805D85F;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l0805D85F:
+	puts("exit block");
 }
 
 // 0805D8DE: void test_3_blocks_variant_834_edges_11()
 void test_3_blocks_variant_834_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+l0805D93E:
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				break;
+			if (globals->dw80610BC == 0x00)
+				continue;
+		}
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			break;
+		if (globals->dw80610B4 != 0x00)
+			goto l0805D93E;
+	}
+	puts("exit block");
 }
 
 // 0805D95F: void test_3_blocks_variant_835_edges_11()
 void test_3_blocks_variant_835_edges_11()
 {
+	while (true)
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+l0805D9BF:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D961;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			break;
+		if (globals->dw80610B4 != 0x00)
+			goto l0805D9BF;
+	}
+l0805D961:
+	puts("exit block");
 }
 
 // 0805D9E0: void test_3_blocks_variant_836_edges_11()
 void test_3_blocks_variant_836_edges_11()
 {
+	while (true)
+	{
+l0805D9F5:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+l0805DA40:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805D9F5;
+			} while (globals->dw80610BC != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			break;
+		if (globals->dw80610B4 != 0x00)
+			goto l0805DA40;
+	}
+	puts("exit block");
 }
 
 // 0805DA61: void test_3_blocks_variant_837_edges_11()
 void test_3_blocks_variant_837_edges_11()
 {
+	do
+	{
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805DA63:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805DAC1:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DA63;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DA63;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DAC1;
 }
 
 // 0805DAE2: void test_3_blocks_variant_838_edges_11()
 void test_3_blocks_variant_838_edges_11()
 {
+	do
+	{
+l0805DAF7:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805DAE4:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805DB42:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DAF7;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DAE4;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DB42;
 }
 
 // 0805DB63: void test_3_blocks_variant_839_edges_11()
 void test_3_blocks_variant_839_edges_11()
 {
+	do
+	{
+l0805DB78:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805DBC3:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DB78;
+		} while (globals->dw80610BC != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DB78;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DBC3;
 }
 
 // 0805DBE4: void test_3_blocks_variant_840_edges_12()
 void test_3_blocks_variant_840_edges_12()
 {
+	do
+	{
+l0805DBF9:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			goto l0805DBE6;
+	} while (globals->dw80610A8 == 0x00);
+	while (true)
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			break;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DBF9;
+		if (globals->dw80610B4 != 0x00)
+		{
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805DBE6;
+				if (globals->dw80610BC == 0x00)
+					goto l0805DBF9;
+			} while (globals->dw80610C0 != 0x00);
+		}
+	}
+l0805DBE6:
+	puts("exit block");
 }
 
 // 0805DC6E: void test_3_blocks_variant_841_edges_12()
 void test_3_blocks_variant_841_edges_12()
 {
+l0805DC83:
+	puts("block 2");
+	if (globals->dw80610A4 == 0x00)
+	{
+l0805DC70:
+		puts("exit block");
+		return;
+	}
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805DCCE:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DC70;
+			if (globals->dw80610BC == 0x00)
+				goto l0805DC83;
+		} while (globals->dw80610C0 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805DC70;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DC83;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DCCE;
 }
 
 // 0805DCF8: void test_3_blocks_variant_842_edges_12()
 void test_3_blocks_variant_842_edges_12()
 {
+l0805DD0D:
+	do
+		puts("block 2");
+	while (globals->dw80610A4 == 0x00);
+	if (globals->dw80610A8 != 0x00)
+	{
+l0805DD58:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+			{
+l0805DCFA:
+				puts("exit block");
+				return;
+			}
+			if (globals->dw80610BC == 0x00)
+				goto l0805DD0D;
+		} while (globals->dw80610C0 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610AC == 0x00)
+			goto l0805DCFA;
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DD0D;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DD58;
 }
 
 // 0805DD82: void test_3_blocks_variant_843_edges_12()
 void test_3_blocks_variant_843_edges_12()
 {
+	while (true)
+	{
+l0805DD97:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 != 0x00)
+		{
+			if (globals->dw80610AC != 0x00)
+			{
+				do
+				{
+					puts("block 4");
+					if (globals->dw80610B8 == 0x00)
+						goto l0805DD84;
+					if (globals->dw80610BC == 0x00)
+						goto l0805DD97;
+				} while (globals->dw80610C0 != 0x00);
+			}
+			do
+			{
+				puts("block 3");
+				if (globals->dw80610B0 == 0x00)
+					goto l0805DD84;
+			} while (globals->dw80610B4 != 0x00);
+		}
+	}
+l0805DD84:
+	puts("exit block");
 }
 
 // 0805DE0C: void test_3_blocks_variant_844_edges_12()
 void test_3_blocks_variant_844_edges_12()
 {
+	while (true)
+	{
+l0805DE21:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+			break;
+		if (globals->dw80610A8 == 0x00)
+			continue;
+		if (globals->dw80610AC != 0x00)
+		{
+l0805DE6C:
+			do
+			{
+				puts("block 4");
+				if (globals->dw80610B8 == 0x00)
+					goto l0805DE0E;
+				if (globals->dw80610BC == 0x00)
+					goto l0805DE21;
+			} while (globals->dw80610C0 != 0x00);
+		}
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			break;
+		if (globals->dw80610B4 != 0x00)
+			goto l0805DE6C;
+	}
+l0805DE0E:
+	puts("exit block");
 }
 
 // 0805DE96: void test_3_blocks_variant_845_edges_12()
 void test_3_blocks_variant_845_edges_12()
 {
+	do
+	{
+l0805DEAB:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805DE98:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805DEF6:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DE98;
+			if (globals->dw80610BC == 0x00)
+				goto l0805DEAB;
+		} while (globals->dw80610C0 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DE98;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DEF6;
 }
 
 // 0805DF20: void test_3_blocks_variant_846_edges_12()
 void test_3_blocks_variant_846_edges_12()
 {
+	do
+	{
+l0805DF35:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805DF22:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805DF80:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610B8 == 0x00)
+				goto l0805DF22;
+			if (globals->dw80610BC == 0x00)
+				goto l0805DF35;
+		} while (globals->dw80610C0 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DF35;
+	} while (globals->dw80610B4 == 0x00);
+	goto l0805DF80;
 }
 
 // 0805DFAA: void test_3_blocks_variant_847_edges_13()
 void test_3_blocks_variant_847_edges_13()
 {
+	do
+	{
+l0805DFBF:
+		puts("block 2");
+		if (globals->dw80610A4 == 0x00)
+		{
+l0805DFAC:
+			puts("exit block");
+			return;
+		}
+	} while (globals->dw80610A8 == 0x00);
+	if (globals->dw80610AC != 0x00)
+	{
+l0805E013:
+		do
+		{
+			puts("block 4");
+			if (globals->dw80610BC == 0x00)
+				goto l0805DFAC;
+			if (globals->dw80610C0 == 0x00)
+				goto l0805DFBF;
+		} while (globals->dw80610C4 != 0x00);
+	}
+	do
+	{
+		puts("block 3");
+		if (globals->dw80610B0 == 0x00)
+			goto l0805DFAC;
+		if (globals->dw80610B4 == 0x00)
+			goto l0805DFBF;
+	} while (globals->dw80610B8 == 0x00);
+	goto l0805E013;
 }
 
 // 0805E03D: void main(Stack word32 dwArg00, Stack ui32 dwArg04)
@@ -7531,8 +20260,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			ebx_15->ptr1D8F();
 		} while (esi_69 != edi_68 + 0x01);
 	}

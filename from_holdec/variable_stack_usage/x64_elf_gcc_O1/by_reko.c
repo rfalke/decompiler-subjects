@@ -14,14 +14,14 @@ void _init()
 		byte SCZO_16;
 		word64 rax_17;
 		byte SZO_18;
-		byte C_19;
-		byte Z_20;
+		bool C_19;
+		bool Z_20;
 		__gmon_start__();
 	}
 }
 
-// 0000000000400400: void _start(Register (ptr Eq_16) rdx, Stack Eq_17 qwArg00)
-void _start( * rdx, Eq_17 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_17) rdx, Stack Eq_18 qwArg00)
+void _start( * rdx, Eq_18 qwArg00)
 {
 	__align((char *) fp + 0x08);
 	__libc_start_main(&globals->t4005C8, qwArg00, (char *) fp + 0x08, &globals->t4005E0, &globals->t400650, rdx, fp);
@@ -41,8 +41,8 @@ void deregister_tm_clones(word64 r8)
 	byte SCZO_47;
 	byte CZ_48;
 	byte SZO_49;
-	byte C_50;
-	byte Z_51;
+	bool C_50;
+	bool Z_51;
 	word32 edi_52;
 	word64 rdi_53;
 	null();
@@ -58,9 +58,9 @@ void register_tm_clones()
 	word64 rbp_42;
 	byte SCZO_43;
 	word64 rax_44;
-	byte Z_45;
+	bool Z_45;
 	byte SZO_46;
-	byte C_47;
+	bool C_47;
 	word64 rdi_48;
 	null();
 }
@@ -84,28 +84,28 @@ void frame_dummy()
 		word32 edi_40;
 		word64 rdi_41;
 		byte SCZO_42;
-		byte Z_43;
+		bool Z_43;
 		word32 eax_44;
 		word64 rax_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word64 rbp_48;
 		word32 esi_49;
 		word64 rsi_50;
-		null();
+		fn0000000000000000();
 		register_tm_clones();
 	}
 	else
 		register_tm_clones();
 }
 
-// 00000000004004F6: void use(Register (ptr word32) rdi)
+// 00000000004004F6: void use(Register (ptr64 word32) rdi)
 void use(word32 * rdi)
 {
 	globals->dw601028 = globals->dw601028 + (word32) ((uint64) (*rdi));
 }
 
-// 00000000004004FF: void fill(Register word32 esi, Register (ptr word32) rdi)
+// 00000000004004FF: void fill(Register word32 esi, Register (ptr64 word32) rdi)
 void fill(word32 esi, word32 * rdi)
 {
 	memset(rdi, 0x78, (int64) esi << 0x02);
@@ -159,8 +159,8 @@ void __libc_csu_init(word32 edi)
 			word64 rdx_82;
 			byte SCZO_83;
 			byte SZO_84;
-			byte C_85;
-			byte Z_86;
+			bool C_85;
+			bool Z_86;
 			word32 ebx_87;
 			word64 rdi_88;
 			globals->ptr600E08();

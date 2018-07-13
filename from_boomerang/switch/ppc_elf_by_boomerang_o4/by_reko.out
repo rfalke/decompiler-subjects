@@ -1,3 +1,4 @@
 Using options:
 100003E4: warning: Call target address 10000000 is invalid.
-10000414: error: Object reference not set to an instance of an object
+100008FC: warning: Expected sizes of arrays to have been determined by now
+100008FC: warning: Expected sizes of arrays to have been determined by now

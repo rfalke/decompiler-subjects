@@ -4,50 +4,64 @@
 
 #include "subject.h"
 
-Eq_1127 g_t400000 = 
+Eq_948 g_t400000 = 
 	{
 		0x5A4D,
 		0x000000E8,
 	};
-Eq_680 g_t4020FC = 
+Eq_820 g_t4020C4 = null;
+Eq_821 g_t4020CC = null;
+Eq_779 g_t4020D0 = null;
+Eq_780 g_t4020DC = null;
+Eq_631 g_t4020FC = 
 	{
 		&g_dw403038,
 		&g_dw403090,
 	};
+char g_str402104[] = "%08lX:";
 word32 g_dw402114 = 0x00202020;
-char g_str40211C[] = "rb";
+FILE g_t40211C = 
+	{
+	};
 ui32 g_dw403000 = 0xBB40E64E;
 ui32 g_dw403004 = 0x44BF19B1;
 word32 g_dw403018 = 0x00000000;
-int32 g_dw40301C = 0;
+Eq_695 g_t40301C = 
+	{
+		0
+	};
 word32 g_dw403020 = 0x00000000;
-Eq_677 g_t403024 = null;
-int32 g_dw403030 = 0;
-Eq_677 g_t403034 = null;
+word32 g_dw403024 = 0x00000000;
+Eq_695 g_t403030 = 
+	{
+		0
+	};
+word32 g_dw403034 = 0x00000000;
 word32 g_dw403038 = 0x00000000;
 word32 g_dw40303C = 0x00000000;
 ui32 g_dw403044 = 0x00000000;
-Eq_644 g_t403088 = 0;
+Eq_235 g_t403088 = 0;
 word32 g_dw403090 = 0x00000000;
-struct Eq_613 * g_ptr40311C = null;
-struct Eq_610 * g_ptr403120 = null;
-struct Eq_266 * g_ptr403124 = null;
-struct Eq_267 * g_ptr403128 = null;
-word32 g_dw40312C = 0x00000000;
-word32 g_dw403130 = 0x00000000;
-word32 g_dw403134 = 0x00000000;
-word32 g_dw403138 = 0x00000000;
+struct Eq_567 * g_ptr40311C = null;
+struct Eq_564 * g_ptr403120 = null;
+struct Eq_4 * g_ptr403124 = null;
+struct Eq_5 * g_ptr403128 = null;
+Eq_3 g_t40312C = null;
+Eq_3 g_t403130 = null;
+Eq_3 g_t403134 = null;
+Eq_193 (* g_ptr403138)[] = null;
 ui32 g_dw40313C = 0x00000000;
-word32 g_dw403140 = 0x00000000;
-word32 g_dw403144 = 0x00000000;
+Eq_235 g_t403140 = 0;
+Eq_3 g_t403144 = null;
 ui32 g_dw403148 = 0x00000000;
-struct Eq_603 * g_ptr40314C = null;
-Eq_616 g_t403150 = 
+struct Eq_557 * g_ptr40314C = null;
+Eq_570 g_t403150 = 
 	{
 		0x00
 	};
 ptr32 g_ptr403154 = 0x00000000;
-struct Eq_600 * g_ptr403158 = null;
+struct Eq_554 * g_ptr403158 = null;
 word32 g_dw403370 = 0x00000000;
-Eq_677 g_t403380 = null;
+Eq_763 g_t403374 = 0;
+<anonymous> * g_ptr403380 = null;
 

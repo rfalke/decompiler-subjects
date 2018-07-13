@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t8048328 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_25 g_t8048364 = Unexpected function type (fn void ())
 ;
@@ -14,6 +14,7 @@ Eq_26 g_t8048394 = Unexpected function type (fn void ())
 char g_str8048410[] = "%d ";
 char g_str8048414[] = "a is %d, x is %d\n";
 <anonymous> * g_ptr8049428;
+<anonymous> * g_ptr804942C = null;
 <anonymous> ** g_ptr8049434 = &g_ptr804950C;
 <anonymous> * g_ptr8049500 = &g_tFFFFFFFF;
 <anonymous> * g_ptr804950C = null;

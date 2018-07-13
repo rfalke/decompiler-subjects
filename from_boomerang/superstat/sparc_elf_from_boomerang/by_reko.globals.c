@@ -7,5 +7,19 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10824 = Unexpected function type (fn void ())
 ;
+char g_str10840[] = "res: %i\n";
+char g_str10850[] = "dev: %i\n";
+char g_str10860[] = "ino: %i\n";
+char g_str10870[] = "mode: %i\n";
+char g_str10880[] = "nlink: %i\n";
+char g_str10890[] = "uid: %i\n";
+char g_str108A0[] = "gid: %i\n";
+char g_str108B0[] = "rdev: %i\n";
+char g_str108C0[] = "size: %i\n";
+char g_str108D0[] = "blksize: %i\n";
+char g_str108E0[] = "blocks: %i\n";
+char g_str108F0[] = "atime: %i\n";
+char g_str10900[] = "mtime: %i\n";
+char g_str10910[] = "ctime: %i\n";
 ptr32 g_ptr20AD4 = 0x00000000;
 

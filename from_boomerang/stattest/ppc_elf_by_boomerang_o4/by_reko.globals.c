@@ -7,14 +7,15 @@
 word32 g_dw10000498 = 0x000183E8;
 struct Eq_3 g_t10000538 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw1001087C = 0xFFFFFFFF;
-word32 g_dw10010888 = 0x00000000;
-word32 g_dw1001088C = 0x00000000;
-word32 * g_ptr1001096C = &g_dw10010888;
-Eq_43 g_t100109F0 = 
-	{
-		0
-	};
+Eq_43 g_t10000824 = Unexpected function type (fn void ())
+;
+char g_str10000838[] = "test/source/stattest.c";
+char g_str10000850[] = "Stat returns %d; size of file is %d\n";
+int32 g_dw1001087C = -1;
+int32 g_dw10010888 = 0;
+int32 g_dw1001088C = 0;
+int32 * g_ptr1001096C = &g_dw10010888;
+byte g_b100109F0 = 0x00;
 

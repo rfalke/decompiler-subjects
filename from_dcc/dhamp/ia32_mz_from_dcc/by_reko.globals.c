@@ -5,8 +5,6 @@
 #include "subject.h"
 
 Eq_2 g_tFFFFB6BA;
-Eq_106 g_t0000;
-Eq_3 g_t2EFF;
+Eq_104 g_t0000;
 struct Eq_2 * g_ptr8000 = &g_tFFFFB6BA;
-struct Eq_3 * g_ptr87B0 = &g_t2EFF;
 

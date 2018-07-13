@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 000105CC: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 000105CC: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
@@ -12,8 +12,8 @@ void _start( * g1, word32 o7, word32 dwArg40)
 		atexit(&globals->t10BCC);
 		int32 l0_18 = _init(o7);
 		globals->ptr20E04 = fp + 0x44 + ((l0_18 << 0x02) + 0x04);
-		main(dwArg44);
-		exit(l0_18);
+		main(l0_18, dwArg44);
+		exit(0x00);
 	}
 	else
 		atexit(g1);
@@ -28,7 +28,7 @@ word32 fn00010640(word32 o7, word32 l7)
 // 00010648: void __do_global_dtors_aux(Register word32 o7)
 void __do_global_dtors_aux(word32 o7)
 {
-	struct Eq_42 * l7_139 = fn00010640(o7, 67060);
+	struct Eq_44 * l7_139 = fn00010640(o7, 67060);
 	word32 o4_26 = (word32) *l7_139->ptr0010;
 	if (o4_26 != 0x00)
 		return;
@@ -61,7 +61,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g1_140;
 			word32 g0_141;
 			byte NZVC_142;
-			bool Z_143;
+			byte Z_143;
 			o5_57();
 			<anonymous> ** g1_145 = *l0_115;
 			if (*g1_145 == null)
@@ -95,7 +95,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 g1_105;
 		word32 g0_106;
 		byte NZVC_107;
-		bool Z_108;
+		byte Z_108;
 		word32 l0_109;
 		__deregister_frame_info();
 	}
@@ -109,7 +109,7 @@ void call___do_global_dtors_aux()
 // 00010700: void frame_dummy(Register word32 o7)
 void frame_dummy(word32 o7)
 {
-	struct Eq_42 * l7_22 = fn00010640(o7, 66876);
+	struct Eq_44 * l7_22 = fn00010640(o7, 66876);
 	word32 o5_27 = l7_22->dw0020;
 	if (o5_27 == 0x00)
 	{
@@ -139,7 +139,7 @@ void frame_dummy(word32 o7)
 		word32 l7_107;
 		word32 g0_108;
 		byte NZVC_109;
-		bool Z_110;
+		byte Z_110;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -164,7 +164,7 @@ void frame_dummy(word32 o7)
 		word32 l7_52;
 		word32 g0_53;
 		byte NZVC_54;
-		bool Z_55;
+		byte Z_55;
 		__register_frame_info();
 	}
 }
@@ -174,64 +174,102 @@ void call_frame_dummy()
 {
 }
 
-// 000107AC: void main(Stack word32 dwArg44)
-void main(word32 dwArg44)
+// 000107AC: void main(Register int32 o0, Stack word32 dwArg44)
+void main(int32 o0, word32 dwArg44)
 {
+	printf("a(%d)\n", o0);
+	b(o0 * 0x03, dwLoc30);
 }
 
-// 000107F4: void b(Stack word32 dwArg44)
-void b(word32 dwArg44)
+// 000107F4: void b(Register int32 o0, Stack word32 dwArg44)
+void b(int32 o0, word32 dwArg44)
 {
+	printf("b(%d)\n", o0);
+	c(o0 + ~0x00, dwLoc30);
 }
 
-// 00010830: void c(Stack word32 dwArg44)
-void c(word32 dwArg44)
+// 00010830: void c(Register Eq_245 o0, Stack word32 dwArg44)
+void c(Eq_245 o0, word32 dwArg44)
 {
+	printf("c(%d)\n", o0);
+	if (o0 >= 0x06)
+		;
 }
 
-// 000108E0: void d(Stack word32 dwArg44)
-void d(word32 dwArg44)
+// 000108E0: void d(Register int32 o0, Stack word32 dwArg44)
+void d(int32 o0, word32 dwArg44)
 {
+	printf("d(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	e(o0 + ~0x00, dwLoc30);
 }
 
-// 0001092C: void e(Stack word32 dwArg44)
-void e(word32 dwArg44)
+// 0001092C: void e(Register int32 o0, Stack word32 dwArg44)
+void e(int32 o0, word32 dwArg44)
 {
+	printf("e(%d)\n", o0);
+	c(o0 >> 0x01, dwLoc30);
 }
 
-// 00010968: void f(Stack word32 dwArg44)
-void f(word32 dwArg44)
+// 00010968: void f(Register int32 o0, Stack word32 dwArg44)
+void f(int32 o0, word32 dwArg44)
 {
+	printf("f(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	g(o0 + ~0x00, dwLoc30);
 }
 
-// 000109B4: void g(Stack word32 dwArg44)
-void g(word32 dwArg44)
+// 000109B4: void g(Register int32 o0, Stack word32 dwArg44)
+void g(int32 o0, word32 dwArg44)
 {
+	printf("g(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	f(o0 + ~0x00, dwLoc30);
 }
 
-// 00010A00: void h(Stack word32 dwArg44)
-void h(word32 dwArg44)
+// 00010A00: void h(Register int32 o0, Stack word32 dwArg44)
+void h(int32 o0, word32 dwArg44)
 {
+	printf("h(%d)\n", o0);
+	if (o0 <= 0x00)
+		return;
+	i(o0 + ~0x00, dwLoc30);
 }
 
-// 00010A4C: void i(Stack word32 dwArg44)
-void i(word32 dwArg44)
+// 00010A4C: void i(Register int32 o0, Stack word32 dwArg44)
+void i(int32 o0, word32 dwArg44)
 {
+	printf("i(%d)\n", o0);
 }
 
-// 00010A74: void j(Stack word32 dwArg44)
-void j(word32 dwArg44)
+// 00010A74: void j(Register int32 o0, Stack word32 dwArg44)
+void j(int32 o0, word32 dwArg44)
 {
+	printf("j(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	k(o0, dwLoc30);
 }
 
-// 00010AB8: void k(Stack word32 dwArg44)
-void k(word32 dwArg44)
+// 00010AB8: void k(Register int32 o0, Stack word32 dwArg44)
+void k(int32 o0, word32 dwArg44)
 {
+	printf("k(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	e(o0 + ~0x00, dwLoc30);
 }
 
-// 00010B04: void l(Stack word32 dwArg44)
-void l(word32 dwArg44)
+// 00010B04: void l(Register int32 o0, Stack word32 dwArg44)
+void l(int32 o0, word32 dwArg44)
 {
+	printf("l(%d)\n", o0);
+	if (o0 <= 0x01)
+		return;
+	b(o0 + 0x02, dwLoc30);
 }
 
 // 00010B50: Register word32 fn00010B50(Register word32 o7, Register word32 l7)
@@ -240,12 +278,12 @@ word32 fn00010B50(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 00010B58: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 00010B58: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_236 * l7_22 = fn00010B50(o7, 0x000100E4);
-	struct Eq_241 * o5_25 = l7_22->ptr0018;
+	struct Eq_384 * l7_22 = fn00010B50(o7, 0x000100E4);
+	struct Eq_389 * o5_25 = l7_22->ptr0018;
 	<anonymous> * g1_26 = o5_25->ptrFFFFFFFC;
 	if (g1_26 != (<anonymous> *) ~0x00)
 	{
@@ -271,7 +309,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_73;
 			word32 g0_74;
 			byte NZVC_75;
-			bool Z_76;
+			byte Z_76;
 			g1_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -296,5 +334,25 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00020CA0: void atexit()
+void atexit()
+{
+}
+
+// 00020CAC: void exit()
+void exit()
+{
+}
+
+// 00020CB8: void _exit()
+void _exit()
+{
+}
+
+// 00020CE8: void printf()
+void printf()
+{
 }
 

@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t804837C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t804837C = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_25 g_t80485F8 = Unexpected function type (fn void ())
 ;
@@ -20,7 +20,7 @@ int16 g_w80486C4 = 5;
 word32 g_dw80496DC = 0x00000000;
 word32 g_dw80497B0 = 0x00000000;
 <anonymous> ** g_ptr80497CC = &g_ptr80496D8;
-Eq_114 g_t80497D0 = 
+Eq_116 g_t80497D0 = 
 	{
 		0.0
 	};

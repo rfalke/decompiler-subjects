@@ -7,14 +7,14 @@
 word32 g_dw10000480 = 0x000183D0;
 struct Eq_3 g_t10000520 = 
 	{
-		0x93810010,
+		-1820262384,
 	};
-word32 g_dw1001084C = 0xFFFFFFFF;
-word32 g_dw10010858 = 0x00000000;
-word32 g_dw1001085C = 0x00000000;
-word32 * g_ptr1001093C = &g_dw10010858;
-Eq_42 g_t100109B4 = 
-	{
-		0
-	};
+Eq_43 g_t10000808 = Unexpected function type (fn void ())
+;
+char g_str1000081C[] = "MinMax adjusted number of arguments is %d\n";
+int32 g_dw1001084C = -1;
+int32 g_dw10010858 = 0;
+int32 g_dw1001085C = 0;
+int32 * g_ptr1001093C = &g_dw10010858;
+byte g_b100109B4 = 0x00;
 

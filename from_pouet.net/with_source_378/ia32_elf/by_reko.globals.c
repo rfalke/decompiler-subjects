@@ -4,10 +4,10 @@
 
 #include "subject.h"
 
-Eq_1525 g_t0001;
-Eq_1525 g_t0009;
-Eq_1518 g_t000F;
-Eq_111 g_t804A200 = 
+Eq_694 g_t0001;
+Eq_694 g_t0009;
+Eq_688 g_t000F;
+Eq_109 g_t804A200 = 
 	{
 		0x00000001,
 		0x00000001,
@@ -40,78 +40,40 @@ real64 g_r804A726 = 32767.0;
 word32 g_dw804A72E = 0x00000000;
 byte g_b804A74C = 0x00;
 int32 g_dw804A8B4 = 1000;
-Eq_667 g_t804A8C8 = 
+Eq_598 g_t804A8C8 = 
 	{
 		6.103516e-06F
 	};
-Eq_688 g_t804A8CC = 
+Eq_611 g_t804A8CC = 
 	{
 		1.068115e-05F
 	};
 real32 g_r804A8D0 = 0.65F;
-Eq_827 g_t804A8D4 = 
-	{
-		3.0F
-	};
-Eq_831 g_t804A8D8 = 
-	{
-		-2.0F
-	};
-Eq_773 g_t804A8DC = 
-	{
-		0.5F
-	};
-real32 g_r804A8E0 = 0.0625F;
-real32 g_r804A8E4 = 1.0F;
-real32 g_r804A8E8 = 0.04908739F;
-Eq_894 g_t804A8EC = 
-	{
-		0.07F
-	};
-real32 g_r804A8F0 = 0.006F;
-Eq_1011 g_t804A8F4 = 
-	{
-		0.6F
-	};
-Eq_1029 g_t804A8F8 = 
-	{
-		0.05F
-	};
-Eq_1032 g_t804A8FC = 
-	{
-		0.002F
-	};
-Eq_1044 g_t804A900 = 
-	{
-		0.001F
-	};
 real32 g_r804A914 = 4.724112e-05F;
-Eq_1473 g_t804A918 = 
+Eq_643 g_t804A918 = 
 	{
 		0.3F
 	};
-Eq_1476 g_t804A91C = 
+Eq_646 g_t804A91C = 
 	{
 		0.25F
 	};
 real32 g_r804A920 = 0.075F;
 real32 g_r804A924 = 0.97F;
-Eq_1544 g_t804A928 = 
+Eq_713 g_t804A928 = 
 	{
 		0.001171875F
 	};
-real32 g_r804A930 = 1.5F;
-Eq_1906 g_t804A934 = 
+char g_b804A93C = 'l';
+char * g_a804A945[] = 
 	{
-		0.003067962F
 	};
-word32 g_dw804A945 = 0x0804A989;
 uint32 g_dw804AB40 = 0x00000000;
 word32 g_dw804AB44 = 0x00000000;
 ui32 g_dw804AB48 = 0x00000000;
 up32 g_dw804AB4C = 0x00000000;
 int32 g_dw804AB50 = 0;
-Eq_215 g_t804AB54 = 
+Eq_207 g_t804AB54 = 
 	{
 		0
 	};
@@ -138,70 +100,10 @@ byte g_b87CABEC = 0x00;
 real32 g_a87D4840[] = 
 	{
 	};
-Eq_743 g_t87D4844 = 
-	{
-		0.0F
-	};
-Eq_723 g_t87D4848 = 
-	{
-		0.0F
-	};
-Eq_735 g_t87D484C = 
-	{
-		0.0F
-	};
-Eq_1740 g_t87D485C = 
-	{
-		0.0F
-	};
-real32 g_a87D4864[] = 
+void * g_a87D5564[] = 
 	{
 	};
-Eq_2108 g_a87D4870[] = 
-	{
-	};
-real32 g_r87D487C = 0.0F;
-real32 g_r87D4880 = 0.0F;
-real32 g_r87D4884 = 0.0F;
-real32 g_a87D48A0[] = 
-	{
-	};
-Eq_2117 g_a87D48A4[] = 
-	{
-	};
-real32 g_a87D48A8[] = 
-	{
-	};
-Eq_2115 g_a87D48AC[] = 
-	{
-	};
-real32 g_a87D48B0[] = 
-	{
-	};
-real32 g_a87D48B4[] = 
-	{
-	};
-Eq_1743 g_t87D5560 = 
-	{
-		0.0F
-	};
-<anonymous> * g_ptr87D5564 = null;
-<anonymous> * g_ptr87D5568 = null;
-<anonymous> * g_ptr87D556C = null;
-<anonymous> * g_ptr87D5570 = null;
-<anonymous> * g_ptr87D5574 = null;
-<anonymous> * g_ptr87D5578 = null;
-<anonymous> * g_ptr87D557C = null;
-<anonymous> * g_ptr87D5580 = null;
-<anonymous> * g_ptr87D5584 = null;
-<anonymous> * g_ptr87D5588 = null;
-<anonymous> * g_ptr87D558C = null;
-<anonymous> * g_ptr87D5590 = null;
-<anonymous> * g_ptr87D5594 = null;
-<anonymous> * g_ptr87D5598 = null;
-<anonymous> * g_ptr87D559C = null;
-<anonymous> * g_ptr87D55A0 = null;
-Eq_694 g_t87D55C0 = 
+Eq_617 g_t87D55C0 = 
 	{
 		0.0F
 	};

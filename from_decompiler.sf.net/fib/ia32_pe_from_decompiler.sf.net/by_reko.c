@@ -12,7 +12,7 @@ word32 fn00401000(int32 dwArg04)
 	return 0x01;
 }
 
-// 00401050: Register uint32 fn00401050(Stack uint32 dwArg04, Stack (ptr byte) dwArg08, Stack uint32 dwArg0C)
+// 00401050: Register uint32 fn00401050(Stack uint32 dwArg04, Stack (ptr32 byte) dwArg08, Stack uint32 dwArg0C)
 uint32 fn00401050(uint32 dwArg04, byte * dwArg08, uint32 dwArg0C)
 {
 	byte * ecx_25 = dwArg08;

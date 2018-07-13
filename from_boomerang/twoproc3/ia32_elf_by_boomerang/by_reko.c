@@ -12,7 +12,7 @@ void _init(word32 esi, word32 edi)
 	__do_global_ctors_aux(esi, edi);
 }
 
-// 080483D0: void _start(Register (ptr Eq_15) edx, Stack int32 dwArg00)
+// 080483D0: void _start(Register (ptr32 Eq_15) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -33,8 +33,8 @@ void call_gmon_start()
 		byte SCZO_37;
 		word32 edx_38;
 		byte SZO_39;
-		byte C_40;
-		byte Z_41;
+		bool C_40;
+		bool Z_41;
 		word32 eax_42;
 		!__gmon_start__();
 	}
@@ -55,11 +55,11 @@ void __do_global_dtors_aux()
 			word32 esp_35;
 			word32 ebp_36;
 			byte SCZO_37;
-			byte Z_38;
+			bool Z_38;
 			word32 eax_39;
 			word32 edx_40;
 			byte SZO_41;
-			byte C_42;
+			bool C_42;
 			edx_27();
 		}
 		globals->b8049710 = 0x01;
@@ -76,14 +76,14 @@ void frame_dummy()
 		byte SCZO_30;
 		word32 eax_31;
 		byte SZO_32;
-		byte C_33;
-		byte Z_34;
-		null();
+		bool C_33;
+		bool Z_34;
+		fn00000000();
 	}
 }
 
-// 08048474: Register word32 getDevice(Stack (ptr Eq_103) dwArg04)
-word32 getDevice(Eq_103 * dwArg04)
+// 08048474: Register word32 getDevice(Stack (ptr32 Eq_105) dwArg04)
+word32 getDevice(Eq_105 * dwArg04)
 {
 	return dwArg04->dw0018;
 }
@@ -97,7 +97,7 @@ void main()
 	byte SCZO_16;
 	word32 eax_17;
 	!xf86GetPciVideoInfo();
-	printf("%i\n", getDevice((struct Eq_103 **) 0x10));
+	printf("%i\n", getDevice((struct Eq_105 **) 0x10));
 }
 
 // 080484D0: void __libc_csu_init(Register word32 esi, Register word32 edi)
@@ -109,20 +109,19 @@ void __libc_csu_init(word32 esi, word32 edi)
 		return;
 	do
 	{
-		word32 esp_58;
-		word32 ebp_59;
-		up32 edi_60;
-		word32 esi_61;
-		word32 ebx_62;
-		byte SCZO_63;
-		word32 eax_64;
-		word32 edx_65;
-		byte Z_66;
-		byte SZO_67;
-		byte C_68;
-		bcuisposr0 None_69;
+		word32 esp_56;
+		word32 ebp_57;
+		up32 edi_58;
+		word32 esi_59;
+		word32 ebx_60;
+		byte SCZO_61;
+		word32 eax_62;
+		word32 edx_63;
+		bool Z_64;
+		byte SZO_65;
+		bool C_66;
 		(*(<anonymous> **) 0x080497D0)();
-	} while (edi_60 + 0x01 < eax_21 >> 0x02);
+	} while (edi_58 + 0x01 < eax_21 >> 0x02);
 }
 
 // 08048540: void __libc_csu_fini()
@@ -144,8 +143,8 @@ void __libc_csu_fini()
 			word32 eax_56;
 			word32 edx_57;
 			byte SZO_58;
-			byte Z_59;
-			byte C_60;
+			bool Z_59;
+			bool C_60;
 			(*esi_43)();
 		} while (eax_20 >> 0x02 != edi_52 + 0x01);
 	}
@@ -165,7 +164,7 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			ptr32 ebx_32;
 			byte SCZO_33;
 			word32 eax_34;
-			byte Z_35;
+			bool Z_35;
 			word32 esi_36;
 			word32 edi_37;
 			eax_11();

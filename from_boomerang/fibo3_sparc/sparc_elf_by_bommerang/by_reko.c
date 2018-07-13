@@ -4,16 +4,15 @@
 
 #include "subject.h"
 
-// 000104E8: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 000104E8: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
 	{
 		atexit(&globals->t107F4);
-		int32 l0_18 = _init(o7);
-		globals->ptr20A08 = fp + 0x44 + ((l0_18 << 0x02) + 0x04);
+		globals->ptr20A08 = fp + 0x44 + ((_init(o7) << 0x02) + 0x04);
 		main();
-		exit(l0_18);
+		exit(0x00);
 	}
 	else
 		atexit(g1);
@@ -61,7 +60,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g1_140;
 			word32 g0_141;
 			byte NZVC_142;
-			bool Z_143;
+			byte Z_143;
 			o5_57();
 			<anonymous> ** g1_145 = *l0_115;
 			if (*g1_145 == null)
@@ -95,7 +94,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 g1_105;
 		word32 g0_106;
 		byte NZVC_107;
-		bool Z_108;
+		byte Z_108;
 		word32 l0_109;
 		__deregister_frame_info();
 	}
@@ -139,7 +138,7 @@ void frame_dummy(word32 o7)
 		word32 l7_107;
 		word32 g0_108;
 		byte NZVC_109;
-		bool Z_110;
+		byte Z_110;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -164,7 +163,7 @@ void frame_dummy(word32 o7)
 		word32 l7_52;
 		word32 g0_53;
 		byte NZVC_54;
-		bool Z_55;
+		byte Z_55;
 		__register_frame_info();
 	}
 }
@@ -177,14 +176,14 @@ void call_frame_dummy()
 // 000106AC: Register int32 fib(Register int32 o0, Stack int32 dwArg44, Stack word32 dwArg48, Register out ptr32 i6Out)
 int32 fib(int32 o0, int32 dwArg44, word32 dwArg48, ptr32 & i6Out)
 {
-	struct Eq_221 * i6_15;
+	struct Eq_224 * i6_15;
 	*i6Out = fp;
 	if (o0 > 0x01)
 	{
-		struct Eq_226 * i6_48;
-		word32 o0_49 = fib(o0 + ~0x00, dwLoc34, dwLoc30, out i6_48);
+		struct Eq_229 * i6_48;
+		int32 o0_49 = fib(o0 + ~0x00, dwLoc34, dwLoc30, out i6_48);
 		i6_48->dwFFFFFFF0 = o0_49;
-		word32 o0_54 = fib(i6_48->dw0044 + ~0x01, o0, o5, out i6_15);
+		int32 o0_54 = fib(i6_48->dw0044 + ~0x01, o0, o5, out i6_15);
 		i6_15->dwFFFFFFEC = i6_15->dwFFFFFFF0 + o0_54;
 	}
 	return i6_15->dwFFFFFFEC;
@@ -193,6 +192,12 @@ int32 fib(int32 o0, int32 dwArg44, word32 dwArg48, ptr32 & i6Out)
 // 0001071C: void main()
 void main()
 {
+	printf("Input number: ");
+	scanf("%d", tLoc7C);
+	struct Eq_274 * i6_33;
+	int32 o0_34 = fib(dwLoc14, dwLoc3C, dwLoc38, out i6_33);
+	i6_33->dwFFFFFFE8 = o0_34;
+	printf("fibonacci(%d) = %d\n", i6_33->dwFFFFFFEC, i6_33->dwFFFFFFE8);
 }
 
 // 00010778: Register word32 fn00010778(Register word32 o7, Register word32 l7)
@@ -201,12 +206,12 @@ word32 fn00010778(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 00010780: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 00010780: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_265 * l7_22 = fn00010778(o7, 0x000100B4);
-	struct Eq_270 * o5_25 = l7_22->ptr0018;
+	struct Eq_303 * l7_22 = fn00010778(o7, 0x000100B4);
+	struct Eq_308 * o5_25 = l7_22->ptr0018;
 	<anonymous> * g1_26 = o5_25->ptrFFFFFFFC;
 	if (g1_26 != (<anonymous> *) ~0x00)
 	{
@@ -232,7 +237,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_73;
 			word32 g0_74;
 			byte NZVC_75;
-			bool Z_76;
+			byte Z_76;
 			g1_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -257,5 +262,30 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00020898: void atexit()
+void atexit()
+{
+}
+
+// 000208A4: void exit()
+void exit()
+{
+}
+
+// 000208B0: void _exit()
+void _exit()
+{
+}
+
+// 000208E0: void printf()
+void printf()
+{
+}
+
+// 000208EC: void scanf()
+void scanf()
+{
 }
 

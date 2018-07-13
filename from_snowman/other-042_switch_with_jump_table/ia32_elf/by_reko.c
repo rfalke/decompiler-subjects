@@ -12,14 +12,2073 @@ void printf( ...)
 // 080480DD: void do_switch(Stack Eq_3 dwArg04)
 void do_switch(Eq_3 dwArg04)
 {
-	if (dwArg04 > 999)
-		return;
-	<anonymous> * eax_22 = *((char *) globals->a804B6EC + dwArg04 * 0x04);
-	word32 esp_23;
-	word32 ebp_24;
-	byte SCZO_25;
-	byte CZ_26;
-	word32 eax_27;
-	eax_22();
+	if (dwArg04 <= 999)
+	{
+		switch (dwArg04)
+		{
+		case 0x00:
+			printf(tLoc0C);
+			goto l0804810B;
+		case 0x01:
+l0804810B:
+			break;
+		case 0x02:
+			break;
+		case 0x03:
+			break;
+		case 0x04:
+			break;
+		case 0x05:
+			break;
+		case 0x06:
+			break;
+		case 0x07:
+			break;
+		case 0x08:
+			break;
+		case 0x09:
+			break;
+		case 0x0A:
+			break;
+		case 11:
+			break;
+		case 0x0C:
+			break;
+		case 0x0D:
+			break;
+		case 0x0E:
+			break;
+		case 0x0F:
+			break;
+		case 0x10:
+			break;
+		case 0x11:
+			break;
+		case 0x12:
+			break;
+		case 0x13:
+			break;
+		case 0x14:
+			break;
+		case 0x15:
+			break;
+		case 22:
+			break;
+		case 0x17:
+			break;
+		case 0x18:
+			break;
+		case 0x19:
+			break;
+		case 0x1A:
+			break;
+		case 0x1B:
+			break;
+		case 0x1C:
+			break;
+		case 0x1D:
+			break;
+		case 0x1E:
+			break;
+		case 0x1F:
+			break;
+		case 0x20:
+			break;
+		case 33:
+			printf(tLoc0C);
+			goto l08048257;
+		case 0x22:
+l08048257:
+			break;
+		case 0x23:
+			break;
+		case 0x24:
+			break;
+		case 0x25:
+			break;
+		case 0x26:
+			break;
+		case 0x27:
+			break;
+		case 0x28:
+			break;
+		case 0x29:
+			break;
+		case 0x2A:
+			break;
+		case 0x2B:
+			break;
+		case 44:
+			break;
+		case 0x2D:
+			break;
+		case 0x2E:
+			break;
+		case 0x2F:
+			break;
+		case 0x30:
+			break;
+		case 0x31:
+			break;
+		case 0x32:
+			break;
+		case 0x33:
+			break;
+		case 0x34:
+			break;
+		case 0x35:
+			break;
+		case 0x36:
+			break;
+		case 55:
+			break;
+		case 0x38:
+			break;
+		case 0x39:
+			break;
+		case 0x3A:
+			break;
+		case 0x3B:
+			break;
+		case 0x3C:
+			break;
+		case 0x3D:
+			break;
+		case 0x3E:
+			break;
+		case 0x3F:
+			break;
+		case 0x40:
+			break;
+		case 0x41:
+			break;
+		case 66:
+			printf(tLoc0C);
+			goto l080483A3;
+		case 0x43:
+l080483A3:
+			break;
+		case 0x44:
+			break;
+		case 0x45:
+			break;
+		case 0x46:
+			break;
+		case 0x47:
+			break;
+		case 0x48:
+			break;
+		case 0x49:
+			break;
+		case 0x4A:
+			break;
+		case 0x4B:
+			break;
+		case 0x4C:
+			break;
+		case 77:
+			break;
+		case 0x4E:
+			break;
+		case 0x4F:
+			break;
+		case 0x50:
+			break;
+		case 0x51:
+			break;
+		case 0x52:
+			break;
+		case 0x53:
+			break;
+		case 0x54:
+			break;
+		case 0x55:
+			break;
+		case 0x56:
+			break;
+		case 0x57:
+			break;
+		case 88:
+			break;
+		case 0x59:
+			break;
+		case 0x5A:
+			break;
+		case 0x5B:
+			break;
+		case 0x5C:
+			break;
+		case 0x5D:
+			break;
+		case 0x5E:
+			break;
+		case 0x5F:
+			break;
+		case 0x60:
+			break;
+		case 0x61:
+			break;
+		case 0x62:
+			break;
+		case 99:
+			printf(tLoc0C);
+			goto l080484EF;
+		case 100:
+l080484EF:
+			break;
+		case 101:
+			break;
+		case 0x66:
+			break;
+		case 0x67:
+			break;
+		case 0x68:
+			break;
+		case 0x69:
+			break;
+		case 0x6A:
+			break;
+		case 0x6B:
+			break;
+		case 0x6C:
+			break;
+		case 0x6D:
+			break;
+		case 110:
+			break;
+		case 111:
+			break;
+		case 0x70:
+			break;
+		case 113:
+			break;
+		case 114:
+			break;
+		case 115:
+			break;
+		case 116:
+			break;
+		case 117:
+			break;
+		case 118:
+			break;
+		case 0x77:
+			break;
+		case 0x78:
+			break;
+		case 121:
+			break;
+		case 122:
+			break;
+		case 0x7B:
+			break;
+		case 0x7C:
+			break;
+		case 0x7D:
+			break;
+		case 0x7E:
+			break;
+		case 0x7F:
+			break;
+		case 0x80:
+			break;
+		case 0x81:
+			break;
+		case 0x82:
+			break;
+		case 131:
+			break;
+		case 0x84:
+			printf(tLoc0C);
+			goto l0804863B;
+		case 133:
+l0804863B:
+			break;
+		case 0x86:
+			break;
+		case 0x87:
+			break;
+		case 0x88:
+			break;
+		case 0x89:
+			break;
+		case 0x8A:
+			break;
+		case 0x8B:
+			break;
+		case 0x8C:
+			break;
+		case 141:
+			break;
+		case 0x8E:
+			break;
+		case 0x8F:
+			break;
+		case 0x90:
+			break;
+		case 0x91:
+			break;
+		case 0x92:
+			break;
+		case 0x93:
+			break;
+		case 0x94:
+			break;
+		case 0x95:
+			break;
+		case 0x96:
+			break;
+		case 151:
+			break;
+		case 0x98:
+			break;
+		case 0x99:
+			break;
+		case 0x9A:
+			break;
+		case 155:
+			break;
+		case 0x9C:
+			break;
+		case 0x9D:
+			break;
+		case 0x9E:
+			break;
+		case 0x9F:
+			break;
+		case 0xA0:
+			break;
+		case 161:
+			break;
+		case 0xA2:
+			break;
+		case 0xA3:
+			break;
+		case 0xA4:
+			break;
+		case 0xA5:
+			printf(tLoc0C);
+			goto l08048787;
+		case 166:
+l08048787:
+			break;
+		case 0xA7:
+			break;
+		case 0xA8:
+			break;
+		case 0xA9:
+			break;
+		case 0xAA:
+			break;
+		case 171:
+			break;
+		case 0xAC:
+			break;
+		case 0xAD:
+			break;
+		case 0xAE:
+			break;
+		case 0xAF:
+			break;
+		case 0xB0:
+			break;
+		case 177:
+			break;
+		case 0xB2:
+			break;
+		case 0xB3:
+			break;
+		case 0xB4:
+			break;
+		case 181:
+			break;
+		case 0xB6:
+			break;
+		case 0xB7:
+			break;
+		case 0xB8:
+			break;
+		case 0xB9:
+			break;
+		case 0xBA:
+			break;
+		case 0xBB:
+			break;
+		case 188:
+			break;
+		case 0xBD:
+			break;
+		case 0xBE:
+			break;
+		case 191:
+			break;
+		case 0xC0:
+			break;
+		case 0xC1:
+			break;
+		case 0xC2:
+			break;
+		case 0xC3:
+			break;
+		case 0xC4:
+			break;
+		case 0xC5:
+			break;
+		case 0xC6:
+			printf(tLoc0C);
+			goto l080488D3;
+		case 199:
+l080488D3:
+			break;
+		case 200:
+			break;
+		case 0xC9:
+			break;
+		case 202:
+			break;
+		case 0xCB:
+			break;
+		case 0xCC:
+			break;
+		case 0xCD:
+			break;
+		case 0xCE:
+			break;
+		case 0xCF:
+			break;
+		case 0xD0:
+			break;
+		case 0xD1:
+			break;
+		case 0xD2:
+			break;
+		case 211:
+			break;
+		case 212:
+			break;
+		case 0xD5:
+			break;
+		case 0xD6:
+			break;
+		case 0xD7:
+			break;
+		case 0xD8:
+			break;
+		case 0xD9:
+			break;
+		case 0xDA:
+			break;
+		case 0xDB:
+			break;
+		case 220:
+			break;
+		case 0xDD:
+			break;
+		case 222:
+			break;
+		case 223:
+			break;
+		case 0xE0:
+			break;
+		case 225:
+			break;
+		case 226:
+			break;
+		case 227:
+			break;
+		case 228:
+			break;
+		case 229:
+			break;
+		case 0xE6:
+			break;
+		case 0xE7:
+			printf(tLoc0C);
+			goto l08048A1F;
+		case 232:
+l08048A1F:
+			break;
+		case 233:
+			break;
+		case 0xEA:
+			break;
+		case 0xEB:
+			break;
+		case 0xEC:
+			break;
+		case 0xED:
+			break;
+		case 0xEE:
+			break;
+		case 0xEF:
+			break;
+		case 0xF0:
+			break;
+		case 0xF1:
+			break;
+		case 242:
+			break;
+		case 0xF3:
+			break;
+		case 244:
+			break;
+		case 0xF5:
+			break;
+		case 0xF6:
+			break;
+		case 0xF7:
+			break;
+		case 0xF8:
+			break;
+		case 0xF9:
+			break;
+		case 0xFA:
+			break;
+		case 0xFB:
+			break;
+		case 252:
+			break;
+		case 0xFD:
+			break;
+		case 0xFE:
+			break;
+		case 0xFF:
+			break;
+		case 0x0100:
+			break;
+		case 0x0101:
+			break;
+		case 0x0102:
+			break;
+		case 0x0103:
+			break;
+		case 0x0104:
+			break;
+		case 0x0105:
+			break;
+		case 262:
+			break;
+		case 0x0107:
+			break;
+		case 0x0108:
+			printf(tLoc0C);
+			goto l08048B6B;
+		case 0x0109:
+l08048B6B:
+			break;
+		case 266:
+			break;
+		case 0x010B:
+			break;
+		case 0x010C:
+			break;
+		case 0x010D:
+			break;
+		case 0x010E:
+			break;
+		case 0x010F:
+			break;
+		case 0x0110:
+			break;
+		case 0x0111:
+			break;
+		case 0x0112:
+			break;
+		case 0x0113:
+			break;
+		case 0x0114:
+			break;
+		case 0x0115:
+			break;
+		case 0x0116:
+			break;
+		case 0x0117:
+			break;
+		case 0x0118:
+			break;
+		case 0x0119:
+			break;
+		case 0x011A:
+			break;
+		case 0x011B:
+			break;
+		case 0x011C:
+			break;
+		case 0x011D:
+			break;
+		case 0x011E:
+			break;
+		case 0x011F:
+			break;
+		case 288:
+			break;
+		case 0x0121:
+			break;
+		case 0x0122:
+			break;
+		case 0x0123:
+			break;
+		case 292:
+			break;
+		case 0x0125:
+			break;
+		case 0x0126:
+			break;
+		case 0x0127:
+			break;
+		case 0x0128:
+			break;
+		case 0x0129:
+			printf(tLoc0C);
+			goto l08048CB7;
+		case 0x012A:
+l08048CB7:
+			break;
+		case 299:
+			break;
+		case 300:
+			break;
+		case 0x012D:
+			break;
+		case 0x012E:
+			break;
+		case 303:
+			break;
+		case 0x0130:
+			break;
+		case 0x0131:
+			break;
+		case 0x0132:
+			break;
+		case 0x0133:
+			break;
+		case 0x0134:
+			break;
+		case 0x0135:
+			break;
+		case 0x0136:
+			break;
+		case 311:
+			break;
+		case 0x0138:
+			break;
+		case 313:
+			break;
+		case 0x013A:
+			break;
+		case 0x013B:
+			break;
+		case 0x013C:
+			break;
+		case 0x013D:
+			break;
+		case 0x013E:
+			break;
+		case 0x013F:
+			break;
+		case 0x0140:
+			break;
+		case 0x0141:
+			break;
+		case 322:
+			break;
+		case 323:
+			break;
+		case 0x0144:
+			break;
+		case 0x0145:
+			break;
+		case 0x0146:
+			break;
+		case 0x0147:
+			break;
+		case 0x0148:
+			break;
+		case 0x0149:
+			break;
+		case 330:
+			printf(tLoc0C);
+			goto l08048E03;
+		case 331:
+l08048E03:
+			break;
+		case 332:
+			break;
+		case 333:
+			break;
+		case 334:
+			break;
+		case 335:
+			break;
+		case 336:
+			break;
+		case 0x0151:
+			break;
+		case 338:
+			break;
+		case 339:
+			break;
+		case 0x0154:
+			break;
+		case 0x0155:
+			break;
+		case 0x0156:
+			break;
+		case 343:
+			break;
+		case 344:
+			break;
+		case 0x0159:
+			break;
+		case 0x015A:
+			break;
+		case 0x015B:
+			break;
+		case 0x015C:
+			break;
+		case 0x015D:
+			break;
+		case 0x015E:
+			break;
+		case 0x015F:
+			break;
+		case 0x0160:
+			break;
+		case 0x0161:
+			break;
+		case 0x0162:
+			break;
+		case 355:
+			break;
+		case 0x0164:
+			break;
+		case 0x0165:
+			break;
+		case 0x0166:
+			break;
+		case 0x0167:
+			break;
+		case 0x0168:
+			break;
+		case 0x0169:
+			break;
+		case 0x016A:
+			break;
+		case 363:
+			printf(tLoc0C);
+			goto l08048F4F;
+		case 0x016C:
+l08048F4F:
+			break;
+		case 0x016D:
+			break;
+		case 366:
+			break;
+		case 0x016F:
+			break;
+		case 0x0170:
+			break;
+		case 0x0171:
+			break;
+		case 0x0172:
+			break;
+		case 0x0173:
+			break;
+		case 0x0174:
+			break;
+		case 373:
+			break;
+		case 0x0176:
+			break;
+		case 0x0177:
+			break;
+		case 0x0178:
+			break;
+		case 377:
+			break;
+		case 0x017A:
+			break;
+		case 0x017B:
+			break;
+		case 0x017C:
+			break;
+		case 0x017D:
+			break;
+		case 0x017E:
+			break;
+		case 383:
+			break;
+		case 0x0180:
+			break;
+		case 0x0181:
+			break;
+		case 0x0182:
+			break;
+		case 0x0183:
+			break;
+		case 388:
+			break;
+		case 0x0185:
+			break;
+		case 0x0186:
+			break;
+		case 0x0187:
+			break;
+		case 0x0188:
+			break;
+		case 393:
+			break;
+		case 0x018A:
+			break;
+		case 0x018B:
+			break;
+		case 0x018C:
+			printf(tLoc0C);
+			goto l0804909B;
+		case 0x018D:
+l0804909B:
+			break;
+		case 0x018E:
+			break;
+		case 399:
+			break;
+		case 400:
+			break;
+		case 0x0191:
+			break;
+		case 0x0192:
+			break;
+		case 0x0193:
+			break;
+		case 404:
+			break;
+		case 0x0195:
+			break;
+		case 0x0196:
+			break;
+		case 0x0197:
+			break;
+		case 0x0198:
+			break;
+		case 0x0199:
+			break;
+		case 0x019A:
+			break;
+		case 411:
+			break;
+		case 0x019C:
+			break;
+		case 0x019D:
+			break;
+		case 414:
+			break;
+		case 0x019F:
+			break;
+		case 0x01A0:
+			break;
+		case 0x01A1:
+			break;
+		case 0x01A2:
+			break;
+		case 0x01A3:
+			break;
+		case 0x01A4:
+			break;
+		case 0x01A5:
+			break;
+		case 422:
+			break;
+		case 0x01A7:
+			break;
+		case 424:
+			break;
+		case 0x01A9:
+			break;
+		case 0x01AA:
+			break;
+		case 0x01AB:
+			break;
+		case 0x01AC:
+			break;
+		case 0x01AD:
+			printf(tLoc0C);
+			goto l080491E7;
+		case 0x01AE:
+l080491E7:
+			break;
+		case 0x01AF:
+			break;
+		case 0x01B0:
+			break;
+		case 0x01B1:
+			break;
+		case 434:
+			break;
+		case 0x01B3:
+			break;
+		case 0x01B4:
+			break;
+		case 0x01B5:
+			break;
+		case 0x01B6:
+			break;
+		case 0x01B7:
+			break;
+		case 440:
+			break;
+		case 441:
+			break;
+		case 442:
+			break;
+		case 0x01BB:
+			break;
+		case 444:
+			break;
+		case 445:
+			break;
+		case 446:
+			break;
+		case 447:
+			break;
+		case 448:
+			break;
+		case 0x01C1:
+			break;
+		case 0x01C2:
+			break;
+		case 0x01C3:
+			break;
+		case 0x01C4:
+			break;
+		case 0x01C5:
+			break;
+		case 454:
+			break;
+		case 455:
+			break;
+		case 0x01C8:
+			break;
+		case 0x01C9:
+			break;
+		case 0x01CA:
+			break;
+		case 0x01CB:
+			break;
+		case 0x01CC:
+			break;
+		case 0x01CD:
+			break;
+		case 0x01CE:
+			printf(tLoc0C);
+			goto l08049333;
+		case 0x01CF:
+l08049333:
+			break;
+		case 464:
+			break;
+		case 0x01D1:
+			break;
+		case 466:
+			break;
+		case 0x01D3:
+			break;
+		case 0x01D4:
+			break;
+		case 0x01D5:
+			break;
+		case 0x01D6:
+			break;
+		case 0x01D7:
+			break;
+		case 0x01D8:
+			break;
+		case 0x01D9:
+			break;
+		case 474:
+			break;
+		case 0x01DB:
+			break;
+		case 0x01DC:
+			break;
+		case 0x01DD:
+			break;
+		case 0x01DE:
+			break;
+		case 0x01DF:
+			break;
+		case 0x01E0:
+			break;
+		case 0x01E1:
+			break;
+		case 0x01E2:
+			break;
+		case 0x01E3:
+			break;
+		case 484:
+			break;
+		case 0x01E5:
+			break;
+		case 0x01E6:
+			break;
+		case 0x01E7:
+			break;
+		case 488:
+			break;
+		case 0x01E9:
+			break;
+		case 0x01EA:
+			break;
+		case 0x01EB:
+			break;
+		case 0x01EC:
+			break;
+		case 0x01ED:
+			break;
+		case 0x01EE:
+			break;
+		case 0x01EF:
+			printf(tLoc0C);
+			goto l0804947F;
+		case 0x01F0:
+l0804947F:
+			break;
+		case 0x01F1:
+			break;
+		case 0x01F2:
+			break;
+		case 499:
+			break;
+		case 500:
+			break;
+		case 0x01F5:
+			break;
+		case 0x01F6:
+			break;
+		case 0x01F7:
+			break;
+		case 0x01F8:
+			break;
+		case 505:
+			break;
+		case 0x01FA:
+			break;
+		case 0x01FB:
+			break;
+		case 0x01FC:
+			break;
+		case 0x01FD:
+			break;
+		case 0x01FE:
+			break;
+		case 0x01FF:
+			break;
+		case 0x0200:
+			break;
+		case 0x0201:
+			break;
+		case 0x0202:
+			break;
+		case 515:
+			break;
+		case 0x0204:
+			break;
+		case 0x0205:
+			break;
+		case 0x0206:
+			break;
+		case 0x0207:
+			break;
+		case 0x0208:
+			break;
+		case 0x0209:
+			break;
+		case 522:
+			break;
+		case 0x020B:
+			break;
+		case 0x020C:
+			break;
+		case 525:
+			break;
+		case 0x020E:
+			break;
+		case 0x020F:
+			break;
+		case 0x0210:
+			printf(tLoc0C);
+			goto l080495CB;
+		case 0x0211:
+l080495CB:
+			break;
+		case 0x0212:
+			break;
+		case 0x0213:
+			break;
+		case 0x0214:
+			break;
+		case 533:
+			break;
+		case 0x0216:
+			break;
+		case 535:
+			break;
+		case 0x0218:
+			break;
+		case 0x0219:
+			break;
+		case 0x021A:
+			break;
+		case 0x021B:
+			break;
+		case 0x021C:
+			break;
+		case 0x021D:
+			break;
+		case 0x021E:
+			break;
+		case 0x021F:
+			break;
+		case 0x0220:
+			break;
+		case 0x0221:
+			break;
+		case 0x0222:
+			break;
+		case 0x0223:
+			break;
+		case 0x0224:
+			break;
+		case 0x0225:
+			break;
+		case 0x0226:
+			break;
+		case 0x0227:
+			break;
+		case 0x0228:
+			break;
+		case 0x0229:
+			break;
+		case 0x022A:
+			break;
+		case 555:
+			break;
+		case 0x022C:
+			break;
+		case 0x022D:
+			break;
+		case 0x022E:
+			break;
+		case 0x022F:
+			break;
+		case 0x0230:
+			break;
+		case 0x0231:
+			printf(tLoc0C);
+			goto l08049717;
+		case 0x0232:
+l08049717:
+			break;
+		case 0x0233:
+			break;
+		case 0x0234:
+			break;
+		case 565:
+			break;
+		case 566:
+			break;
+		case 0x0237:
+			break;
+		case 0x0238:
+			break;
+		case 0x0239:
+			break;
+		case 0x023A:
+			break;
+		case 0x023B:
+			break;
+		case 0x023C:
+			break;
+		case 0x023D:
+			break;
+		case 0x023E:
+			break;
+		case 575:
+			break;
+		case 0x0240:
+			break;
+		case 577:
+			break;
+		case 0x0242:
+			break;
+		case 0x0243:
+			break;
+		case 0x0244:
+			break;
+		case 0x0245:
+			break;
+		case 0x0246:
+			break;
+		case 0x0247:
+			break;
+		case 0x0248:
+			break;
+		case 585:
+			break;
+		case 0x024A:
+			break;
+		case 0x024B:
+			break;
+		case 588:
+			break;
+		case 0x024D:
+			break;
+		case 0x024E:
+			break;
+		case 0x024F:
+			break;
+		case 0x0250:
+			break;
+		case 0x0251:
+			break;
+		case 0x0252:
+			printf(tLoc0C);
+			goto l08049863;
+		case 595:
+l08049863:
+			break;
+		case 0x0254:
+			break;
+		case 0x0255:
+			break;
+		case 0x0256:
+			break;
+		case 599:
+			break;
+		case 600:
+			break;
+		case 0x0259:
+			break;
+		case 0x025A:
+			break;
+		case 0x025B:
+			break;
+		case 0x025C:
+			break;
+		case 0x025D:
+			break;
+		case 606:
+			break;
+		case 0x025F:
+			break;
+		case 0x0260:
+			break;
+		case 0x0261:
+			break;
+		case 0x0262:
+			break;
+		case 611:
+			break;
+		case 0x0264:
+			break;
+		case 0x0265:
+			break;
+		case 0x0266:
+			break;
+		case 0x0267:
+			break;
+		case 616:
+			break;
+		case 0x0269:
+			break;
+		case 0x026A:
+			break;
+		case 0x026B:
+			break;
+		case 0x026C:
+			break;
+		case 0x026D:
+			break;
+		case 622:
+			break;
+		case 0x026F:
+			break;
+		case 0x0270:
+			break;
+		case 0x0271:
+			break;
+		case 0x0272:
+			break;
+		case 0x0273:
+			printf(tLoc0C);
+			goto l080499AF;
+		case 0x0274:
+l080499AF:
+			break;
+		case 0x0275:
+			break;
+		case 0x0276:
+			break;
+		case 0x0277:
+			break;
+		case 0x0278:
+			break;
+		case 633:
+			break;
+		case 0x027A:
+			break;
+		case 0x027B:
+			break;
+		case 636:
+			break;
+		case 0x027D:
+			break;
+		case 0x027E:
+			break;
+		case 0x027F:
+			break;
+		case 0x0280:
+			break;
+		case 0x0281:
+			break;
+		case 0x0282:
+			break;
+		case 0x0283:
+			break;
+		case 644:
+			break;
+		case 0x0285:
+			break;
+		case 646:
+			break;
+		case 0x0287:
+			break;
+		case 0x0288:
+			break;
+		case 0x0289:
+			break;
+		case 0x028A:
+			break;
+		case 0x028B:
+			break;
+		case 0x028C:
+			break;
+		case 0x028D:
+			break;
+		case 0x028E:
+			break;
+		case 655:
+			break;
+		case 656:
+			break;
+		case 0x0291:
+			break;
+		case 0x0292:
+			break;
+		case 0x0293:
+			break;
+		case 660:
+			printf(tLoc0C);
+			goto l08049AFB;
+		case 661:
+l08049AFB:
+			break;
+		case 662:
+			break;
+		case 663:
+			break;
+		case 664:
+			break;
+		case 0x0299:
+			break;
+		case 666:
+			break;
+		case 667:
+			break;
+		case 668:
+			break;
+		case 669:
+			break;
+		case 0x029E:
+			break;
+		case 0x029F:
+			break;
+		case 0x02A0:
+			break;
+		case 0x02A1:
+			break;
+		case 0x02A2:
+			break;
+		case 0x02A3:
+			break;
+		case 676:
+			break;
+		case 677:
+			break;
+		case 0x02A6:
+			break;
+		case 0x02A7:
+			break;
+		case 0x02A8:
+			break;
+		case 0x02A9:
+			break;
+		case 0x02AA:
+			break;
+		case 0x02AB:
+			break;
+		case 0x02AC:
+			break;
+		case 0x02AD:
+			break;
+		case 686:
+			break;
+		case 0x02AF:
+			break;
+		case 688:
+			break;
+		case 0x02B1:
+			break;
+		case 0x02B2:
+			break;
+		case 0x02B3:
+			break;
+		case 0x02B4:
+			break;
+		case 0x02B5:
+			printf(tLoc0C);
+			goto l08049C47;
+		case 0x02B6:
+l08049C47:
+			break;
+		case 0x02B7:
+			break;
+		case 696:
+			break;
+		case 0x02B9:
+			break;
+		case 0x02BA:
+			break;
+		case 0x02BB:
+			break;
+		case 700:
+			break;
+		case 0x02BD:
+			break;
+		case 0x02BE:
+			break;
+		case 0x02BF:
+			break;
+		case 0x02C0:
+			break;
+		case 0x02C1:
+			break;
+		case 0x02C2:
+			break;
+		case 707:
+			break;
+		case 0x02C4:
+			break;
+		case 0x02C5:
+			break;
+		case 0x02C6:
+			break;
+		case 711:
+			break;
+		case 0x02C8:
+			break;
+		case 0x02C9:
+			break;
+		case 0x02CA:
+			break;
+		case 0x02CB:
+			break;
+		case 0x02CC:
+			break;
+		case 717:
+			break;
+		case 0x02CE:
+			break;
+		case 0x02CF:
+			break;
+		case 0x02D0:
+			break;
+		case 0x02D1:
+			break;
+		case 0x02D2:
+			break;
+		case 0x02D3:
+			break;
+		case 0x02D4:
+			break;
+		case 0x02D5:
+			break;
+		case 0x02D6:
+			printf(tLoc0C);
+			goto l08049D93;
+		case 727:
+l08049D93:
+			break;
+		case 0x02D8:
+			break;
+		case 0x02D9:
+			break;
+		case 0x02DA:
+			break;
+		case 0x02DB:
+			break;
+		case 0x02DC:
+			break;
+		case 0x02DD:
+			break;
+		case 0x02DE:
+			break;
+		case 0x02DF:
+			break;
+		case 0x02E0:
+			break;
+		case 737:
+			break;
+		case 0x02E2:
+			break;
+		case 0x02E3:
+			break;
+		case 0x02E4:
+			break;
+		case 0x02E5:
+			break;
+		case 0x02E6:
+			break;
+		case 0x02E7:
+			break;
+		case 744:
+			break;
+		case 0x02E9:
+			break;
+		case 0x02EA:
+			break;
+		case 747:
+			break;
+		case 0x02EC:
+			break;
+		case 0x02ED:
+			break;
+		case 0x02EE:
+			break;
+		case 0x02EF:
+			break;
+		case 0x02F0:
+			break;
+		case 0x02F1:
+			break;
+		case 0x02F2:
+			break;
+		case 755:
+			break;
+		case 0x02F4:
+			break;
+		case 757:
+			break;
+		case 0x02F6:
+			break;
+		case 0x02F7:
+			printf(tLoc0C);
+			goto l08049EDF;
+		case 0x02F8:
+l08049EDF:
+			break;
+		case 0x02F9:
+			break;
+		case 0x02FA:
+			break;
+		case 0x02FB:
+			break;
+		case 0x02FC:
+			break;
+		case 0x02FD:
+			break;
+		case 766:
+			break;
+		case 0x02FF:
+			break;
+		case 0x0300:
+			break;
+		case 0x0301:
+			break;
+		case 770:
+			break;
+		case 0x0303:
+			break;
+		case 772:
+			break;
+		case 773:
+			break;
+		case 774:
+			break;
+		case 775:
+			break;
+		case 776:
+			break;
+		case 777:
+			break;
+		case 778:
+			break;
+		case 779:
+			break;
+		case 0x030C:
+			break;
+		case 0x030D:
+			break;
+		case 0x030E:
+			break;
+		case 0x030F:
+			break;
+		case 0x0310:
+			break;
+		case 0x0311:
+			break;
+		case 0x0312:
+			break;
+		case 0x0313:
+			break;
+		case 788:
+			break;
+		case 0x0315:
+			break;
+		case 0x0316:
+			break;
+		case 0x0317:
+			break;
+		case 0x0318:
+			printf(tLoc0C);
+			goto l0804A02B;
+		case 0x0319:
+l0804A02B:
+			break;
+		case 0x031A:
+			break;
+		case 0x031B:
+			break;
+		case 0x031C:
+			break;
+		case 797:
+			break;
+		case 0x031E:
+			break;
+		case 799:
+			break;
+		case 800:
+			break;
+		case 0x0321:
+			break;
+		case 0x0322:
+			break;
+		case 0x0323:
+			break;
+		case 0x0324:
+			break;
+		case 0x0325:
+			break;
+		case 0x0326:
+			break;
+		case 0x0327:
+			break;
+		case 808:
+			break;
+		case 0x0329:
+			break;
+		case 0x032A:
+			break;
+		case 811:
+			break;
+		case 0x032C:
+			break;
+		case 0x032D:
+			break;
+		case 0x032E:
+			break;
+		case 0x032F:
+			break;
+		case 0x0330:
+			break;
+		case 0x0331:
+			break;
+		case 0x0332:
+			break;
+		case 0x0333:
+			break;
+		case 0x0334:
+			break;
+		case 0x0335:
+			break;
+		case 0x0336:
+			break;
+		case 0x0337:
+			break;
+		case 0x0338:
+			break;
+		case 0x0339:
+			printf(tLoc0C);
+			goto l0804A177;
+		case 0x033A:
+l0804A177:
+			break;
+		case 0x033B:
+			break;
+		case 0x033C:
+			break;
+		case 0x033D:
+			break;
+		case 0x033E:
+			break;
+		case 0x033F:
+			break;
+		case 0x0340:
+			break;
+		case 833:
+			break;
+		case 0x0342:
+			break;
+		case 0x0343:
+			break;
+		case 0x0344:
+			break;
+		case 0x0345:
+			break;
+		case 838:
+			break;
+		case 0x0347:
+			break;
+		case 0x0348:
+			break;
+		case 0x0349:
+			break;
+		case 0x034A:
+			break;
+		case 0x034B:
+			break;
+		case 844:
+			break;
+		case 0x034D:
+			break;
+		case 0x034E:
+			break;
+		case 0x034F:
+			break;
+		case 848:
+			break;
+		case 0x0351:
+			break;
+		case 0x0352:
+			break;
+		case 0x0353:
+			break;
+		case 0x0354:
+			break;
+		case 0x0355:
+			break;
+		case 0x0356:
+			break;
+		case 855:
+			break;
+		case 0x0358:
+			break;
+		case 0x0359:
+			break;
+		case 858:
+			printf(tLoc0C);
+			goto l0804A2C3;
+		case 0x035B:
+l0804A2C3:
+			break;
+		case 0x035C:
+			break;
+		case 0x035D:
+			break;
+		case 0x035E:
+			break;
+		case 0x035F:
+			break;
+		case 0x0360:
+			break;
+		case 0x0361:
+			break;
+		case 866:
+			break;
+		case 0x0363:
+			break;
+		case 868:
+			break;
+		case 0x0365:
+			break;
+		case 0x0366:
+			break;
+		case 0x0367:
+			break;
+		case 0x0368:
+			break;
+		case 0x0369:
+			break;
+		case 0x036A:
+			break;
+		case 0x036B:
+			break;
+		case 0x036C:
+			break;
+		case 877:
+			break;
+		case 878:
+			break;
+		case 0x036F:
+			break;
+		case 880:
+			break;
+		case 881:
+			break;
+		case 882:
+			break;
+		case 0x0373:
+			break;
+		case 884:
+			break;
+		case 885:
+			break;
+		case 886:
+			break;
+		case 0x0377:
+			break;
+		case 888:
+			break;
+		case 889:
+			break;
+		case 0x037A:
+			break;
+		case 0x037B:
+			printf(tLoc0C);
+			goto l0804A40F;
+		case 0x037C:
+l0804A40F:
+			break;
+		case 0x037D:
+			break;
+		case 0x037E:
+			break;
+		case 0x037F:
+			break;
+		case 0x0380:
+			break;
+		case 0x0381:
+			break;
+		case 898:
+			break;
+		case 0x0383:
+			break;
+		case 900:
+			break;
+		case 0x0385:
+			break;
+		case 0x0386:
+			break;
+		case 0x0387:
+			break;
+		case 0x0388:
+			break;
+		case 0x0389:
+			break;
+		case 0x038A:
+			break;
+		case 0x038B:
+			break;
+		case 0x038C:
+			break;
+		case 909:
+			break;
+		case 0x038E:
+			break;
+		case 911:
+			break;
+		case 0x0390:
+			break;
+		case 0x0391:
+			break;
+		case 0x0392:
+			break;
+		case 0x0393:
+			break;
+		case 0x0394:
+			break;
+		case 0x0395:
+			break;
+		case 0x0396:
+			break;
+		case 919:
+			break;
+		case 0x0398:
+			break;
+		case 0x0399:
+			break;
+		case 922:
+			break;
+		case 0x039B:
+			break;
+		case 0x039C:
+			printf(tLoc0C);
+			goto l0804A55B;
+		case 0x039D:
+l0804A55B:
+			break;
+		case 0x039E:
+			break;
+		case 0x039F:
+			break;
+		case 0x03A0:
+			break;
+		case 929:
+			break;
+		case 0x03A2:
+			break;
+		case 0x03A3:
+			break;
+		case 0x03A4:
+			break;
+		case 933:
+			break;
+		case 0x03A6:
+			break;
+		case 0x03A7:
+			break;
+		case 0x03A8:
+			break;
+		case 0x03A9:
+			break;
+		case 0x03AA:
+			break;
+		case 939:
+			break;
+		case 0x03AC:
+			break;
+		case 0x03AD:
+			break;
+		case 0x03AE:
+			break;
+		case 0x03AF:
+			break;
+		case 944:
+			break;
+		case 0x03B1:
+			break;
+		case 0x03B2:
+			break;
+		case 0x03B3:
+			break;
+		case 0x03B4:
+			break;
+		case 949:
+			break;
+		case 0x03B6:
+			break;
+		case 0x03B7:
+			break;
+		case 0x03B8:
+			break;
+		case 0x03B9:
+			break;
+		case 0x03BA:
+			break;
+		case 0x03BB:
+			break;
+		case 0x03BC:
+			break;
+		case 0x03BD:
+			printf(tLoc0C);
+			goto l0804A6A7;
+		case 0x03BE:
+l0804A6A7:
+			break;
+		case 959:
+			break;
+		case 0x03C0:
+			break;
+		case 0x03C1:
+			break;
+		case 0x03C2:
+			break;
+		case 0x03C3:
+			break;
+		case 0x03C4:
+			break;
+		case 0x03C5:
+			break;
+		case 966:
+			break;
+		case 0x03C7:
+			break;
+		case 0x03C8:
+			break;
+		case 969:
+			break;
+		case 0x03CA:
+			break;
+		case 0x03CB:
+			break;
+		case 0x03CC:
+			break;
+		case 0x03CD:
+			break;
+		case 0x03CE:
+			break;
+		case 0x03CF:
+			break;
+		case 0x03D0:
+			break;
+		case 977:
+			break;
+		case 0x03D2:
+			break;
+		case 0x03D3:
+			break;
+		case 0x03D4:
+			break;
+		case 0x03D5:
+			break;
+		case 0x03D6:
+			break;
+		case 0x03D7:
+			break;
+		case 0x03D8:
+			break;
+		case 0x03D9:
+			break;
+		case 0x03DA:
+			break;
+		case 0x03DB:
+			break;
+		case 988:
+			break;
+		case 0x03DD:
+			break;
+		case 990:
+			printf(tLoc0C);
+			goto l0804A7DE;
+		case 991:
+l0804A7DE:
+			break;
+		case 992:
+			break;
+		case 993:
+			break;
+		case 994:
+			break;
+		case 0x03E3:
+			break;
+		case 996:
+			break;
+		case 997:
+			break;
+		case 998:
+			break;
+		case 999:
+			break;
+		}
+	}
 }
 

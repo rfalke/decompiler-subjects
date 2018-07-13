@@ -7,14 +7,23 @@
 word32 g_dw10000518 = 0x000183FC;
 struct Eq_3 g_t100005B8 = 
 	{
-		0x93810010,
+		-1820262384,
 	};
-word32 g_dw10010910 = 0xFFFFFFFF;
-word32 g_dw1001091C = 0x00000000;
-word32 g_dw10010920 = 0x00000000;
-word32 * g_ptr10010A00 = &g_dw1001091C;
-Eq_42 g_t10010A78 = 
+Eq_43 g_t100008A0 = Unexpected function type (fn void ())
+;
+char g_str100008B4[] = "Other!";
+char g_str100008BC[] = "Seven!";
+char g_str100008C4[] = "Two!";
+char g_str100008CC[] = "Three!";
+char g_str100008D4[] = "Four!";
+char g_str100008DC[] = "Five!";
+char g_str100008E4[] = "Six!";
+word32 g_a100008EC[] = 
 	{
-		0
 	};
+int32 g_dw10010910 = -1;
+int32 g_dw1001091C = 0;
+int32 g_dw10010920 = 0;
+int32 * g_ptr10010A00 = &g_dw1001091C;
+byte g_b10010A78 = 0x00;
 

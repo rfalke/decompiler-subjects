@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 00001000: void fn00001000(Register word32 d3, Register word32 d4)
-void fn00001000(word32 d3, word32 d4)
+// 00001000: void fn00001000()
+void fn00001000()
 {
 	SuperState();
 	do
@@ -37,13 +37,13 @@ void fn00001000(word32 d3, word32 d4)
 	word32 d2_51;
 	word32 d3_52;
 	word32 a5_53;
-	byte Z_54;
+	bool Z_54;
 	word32 d4_55;
 	word32 a0_56;
 	word32 a2_57;
 	word32 a1_58;
 	word32 a3_59;
-	byte C_60;
+	bool C_60;
 	((<anonymous> *) 1202)();
 }
 

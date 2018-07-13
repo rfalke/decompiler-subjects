@@ -7,5 +7,8 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t11668 = Unexpected function type (fn void ())
 ;
+char g_str11688[] = "Input number: ";
+char g_str11698[] = "%d";
+char g_str116A0[] = "fibonacci(%d) = %d\n";
 ptr32 g_ptr219E0 = 0x00000000;
 

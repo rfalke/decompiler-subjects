@@ -18,7 +18,7 @@ void fn08048340()
 	globals->ptr8089FFC();
 }
 
-// 08048350: void _start(Register (ptr Eq_18) edx, Stack int32 dwArg00)
+// 08048350: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -42,10 +42,10 @@ void deregister_tm_clones()
 		byte SCZO_35;
 		byte CZ_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 ebp_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -58,11 +58,11 @@ void register_tm_clones()
 		word32 eax_42;
 		byte SCZO_43;
 		word32 edx_44;
-		byte Z_45;
+		bool Z_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word32 ebp_48;
-		null();
+		fn00000000();
 	}
 }
 
@@ -85,11 +85,11 @@ void frame_dummy()
 		word32 eax_38;
 		word32 edx_39;
 		byte SZO_40;
-		byte C_41;
-		byte Z_42;
+		bool C_41;
+		bool Z_42;
 		word32 ebp_43;
 		byte SCZO_44;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 	else
@@ -121,6 +121,17 @@ word32 test_2_blocks_variant_0(int32 dwArg04)
 // 08048479: void test_2_blocks()
 void test_2_blocks()
 {
+	int32 dwLoc10_15 = 0x00;
+	while (dwLoc10_15 <= 0x01)
+	{
+		int32 eax_27 = test_2_blocks_base(dwLoc10_15);
+		if (test_2_blocks_variant_0(dwLoc10_15) != eax_27)
+		{
+			printf("test_2_blocks_variant_0: expected %d but got %d\n", eax_27, test_2_blocks_variant_0(dwLoc10_15));
+			__assert_fail("0", "source.c", 0x17, "test_2_blocks");
+		}
+		dwLoc10_15 = dwLoc10_15 + 0x01;
+	}
 }
 
 // 080484E8: Register word32 test_3_blocks_base(Stack int32 dwArg04, Stack int32 dwArg08)
@@ -204,6 +215,42 @@ word32 test_3_blocks_variant_4(int32 dwArg04, int32 dwArg08)
 // 080485DE: void test_3_blocks()
 void test_3_blocks()
 {
+	int32 dwLoc10_25 = 0x00;
+	while (dwLoc10_25 <= 0x01)
+	{
+		int32 dwLoc14_259 = 0x00;
+		while (dwLoc14_259 <= 0x01)
+		{
+			int32 eax_53 = test_3_blocks_base(dwLoc10_25, dwLoc14_259);
+			if (test_3_blocks_variant_0(dwLoc10_25, dwLoc14_259) != eax_53)
+			{
+				printf("test_3_blocks_variant_0: expected %d but got %d\n", eax_53, test_3_blocks_variant_0(dwLoc10_25, dwLoc14_259));
+				__assert_fail("0", "source.c", 0x4E, "test_3_blocks");
+			}
+			if (test_3_blocks_variant_1(dwLoc10_25, dwLoc14_259) != eax_53)
+			{
+				printf("test_3_blocks_variant_1: expected %d but got %d\n", eax_53, test_3_blocks_variant_1(dwLoc10_25, dwLoc14_259));
+				__assert_fail("0", "source.c", 0x52, "test_3_blocks");
+			}
+			if (test_3_blocks_variant_2(dwLoc10_25, dwLoc14_259) != eax_53)
+			{
+				printf("test_3_blocks_variant_2: expected %d but got %d\n", eax_53, test_3_blocks_variant_2(dwLoc10_25, dwLoc14_259));
+				__assert_fail("0", "source.c", 0x56, "test_3_blocks");
+			}
+			if (test_3_blocks_variant_3(dwLoc10_25, dwLoc14_259) != eax_53)
+			{
+				printf("test_3_blocks_variant_3: expected %d but got %d\n", eax_53, test_3_blocks_variant_3(dwLoc10_25, dwLoc14_259));
+				__assert_fail("0", "source.c", 0x5A, "test_3_blocks");
+			}
+			if (test_3_blocks_variant_4(dwLoc10_25, dwLoc14_259) != eax_53)
+			{
+				printf("test_3_blocks_variant_4: expected %d but got %d\n", eax_53, test_3_blocks_variant_4(dwLoc10_25, dwLoc14_259));
+				__assert_fail("0", "source.c", 0x5E, "test_3_blocks");
+			}
+			dwLoc14_259 = dwLoc14_259 + 0x01;
+		}
+		dwLoc10_25 = dwLoc10_25 + 0x01;
+	}
 }
 
 // 080487BB: Register word32 test_4_blocks_base(Stack int32 dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C)
@@ -569,6 +616,137 @@ word32 test_4_blocks_variant_22(int32 dwArg04, int32 dwArg08, int32 dwArg0C)
 // 08048D97: void test_4_blocks()
 void test_4_blocks()
 {
+	int32 dwLoc10_27 = 0x00;
+	while (dwLoc10_27 <= 0x01)
+	{
+		int32 dwLoc14_34 = 0x00;
+		while (dwLoc14_34 <= 0x01)
+		{
+			int32 dwLoc18_1156 = 0x00;
+			while (dwLoc18_1156 <= 0x01)
+			{
+				int32 eax_74 = test_4_blocks_base(dwLoc10_27, dwLoc14_34, dwLoc18_1156);
+				if (test_4_blocks_variant_0(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_0: expected %d but got %d\n", eax_74, test_4_blocks_variant_0(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x012E, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_1(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_1: expected %d but got %d\n", eax_74, test_4_blocks_variant_1(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0132, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_2(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_2: expected %d but got %d\n", eax_74, test_4_blocks_variant_2(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0136, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_3(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_3: expected %d but got %d\n", eax_74, test_4_blocks_variant_3(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x013A, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_4(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_4: expected %d but got %d\n", eax_74, test_4_blocks_variant_4(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x013E, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_5(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_5: expected %d but got %d\n", eax_74, test_4_blocks_variant_5(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 322, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_6(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_6: expected %d but got %d\n", eax_74, test_4_blocks_variant_6(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0146, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_7(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_7: expected %d but got %d\n", eax_74, test_4_blocks_variant_7(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 330, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_8(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_8: expected %d but got %d\n", eax_74, test_4_blocks_variant_8(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 334, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_9(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_9: expected %d but got %d\n", eax_74, test_4_blocks_variant_9(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 338, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_10(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_10: expected %d but got %d\n", eax_74, test_4_blocks_variant_10(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0156, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_11(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_11: expected %d but got %d\n", eax_74, test_4_blocks_variant_11(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x015A, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_12(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_12: expected %d but got %d\n", eax_74, test_4_blocks_variant_12(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x015E, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_13(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_13: expected %d but got %d\n", eax_74, test_4_blocks_variant_13(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0162, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_14(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_14: expected %d but got %d\n", eax_74, test_4_blocks_variant_14(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0166, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_15(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_15: expected %d but got %d\n", eax_74, test_4_blocks_variant_15(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x016A, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_16(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_16: expected %d but got %d\n", eax_74, test_4_blocks_variant_16(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 366, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_17(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_17: expected %d but got %d\n", eax_74, test_4_blocks_variant_17(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0172, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_18(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_18: expected %d but got %d\n", eax_74, test_4_blocks_variant_18(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0176, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_19(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_19: expected %d but got %d\n", eax_74, test_4_blocks_variant_19(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x017A, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_20(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_20: expected %d but got %d\n", eax_74, test_4_blocks_variant_20(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x017E, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_21(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_21: expected %d but got %d\n", eax_74, test_4_blocks_variant_21(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0182, "test_4_blocks");
+				}
+				if (test_4_blocks_variant_22(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
+				{
+					printf("test_4_blocks_variant_22: expected %d but got %d\n", eax_74, test_4_blocks_variant_22(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
+					__assert_fail("0", "source.c", 0x0186, "test_4_blocks");
+				}
+				dwLoc18_1156 = dwLoc18_1156 + 0x01;
+			}
+			dwLoc14_34 = dwLoc14_34 + 0x01;
+		}
+		dwLoc10_27 = dwLoc10_27 + 0x01;
+	}
 }
 
 // 08049612: Register word32 test_5_blocks_base(Stack int32 dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C, Stack int32 dwArg10)
@@ -2614,6 +2792,622 @@ word32 test_5_blocks_variant_118(int32 dwArg04, int32 dwArg08, int32 dwArg0C, in
 // 0804BEF2: void test_5_blocks()
 void test_5_blocks()
 {
+	int32 dwLoc10_29 = 0x00;
+	while (dwLoc10_29 <= 0x01)
+	{
+		int32 dwLoc14_36 = 0x00;
+		while (dwLoc14_36 <= 0x01)
+		{
+			int32 dwLoc18_53 = 0x00;
+			while (dwLoc18_53 <= 0x01)
+			{
+				int32 dwLoc1C_5932 = 0x00;
+				while (dwLoc1C_5932 <= 0x01)
+				{
+					int32 eax_96 = test_5_blocks_base(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932);
+					if (test_5_blocks_variant_0(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_0: expected %d but got %d\n", eax_96, test_5_blocks_variant_0(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05D1, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_1(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_1: expected %d but got %d\n", eax_96, test_5_blocks_variant_1(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05D5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_2(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_2: expected %d but got %d\n", eax_96, test_5_blocks_variant_2(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05D9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_3(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_3: expected %d but got %d\n", eax_96, test_5_blocks_variant_3(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05DD, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_4(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_4: expected %d but got %d\n", eax_96, test_5_blocks_variant_4(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1505, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_5(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_5: expected %d but got %d\n", eax_96, test_5_blocks_variant_5(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05E5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_6(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_6: expected %d but got %d\n", eax_96, test_5_blocks_variant_6(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1513, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_7(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_7: expected %d but got %d\n", eax_96, test_5_blocks_variant_7(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1517, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_8(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_8: expected %d but got %d\n", eax_96, test_5_blocks_variant_8(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1521, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_9(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_9: expected %d but got %d\n", eax_96, test_5_blocks_variant_9(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05F5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_10(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_10: expected %d but got %d\n", eax_96, test_5_blocks_variant_10(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x05F9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_11(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_11: expected %d but got %d\n", eax_96, test_5_blocks_variant_11(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1533, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_12(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_12: expected %d but got %d\n", eax_96, test_5_blocks_variant_12(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0601, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_13(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_13: expected %d but got %d\n", eax_96, test_5_blocks_variant_13(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0605, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_14(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_14: expected %d but got %d\n", eax_96, test_5_blocks_variant_14(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0609, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_15(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_15: expected %d but got %d\n", eax_96, test_5_blocks_variant_15(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x060D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_16(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_16: expected %d but got %d\n", eax_96, test_5_blocks_variant_16(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0611, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_17(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_17: expected %d but got %d\n", eax_96, test_5_blocks_variant_17(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1557, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_18(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_18: expected %d but got %d\n", eax_96, test_5_blocks_variant_18(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1561, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_19(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_19: expected %d but got %d\n", eax_96, test_5_blocks_variant_19(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1565, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_20(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_20: expected %d but got %d\n", eax_96, test_5_blocks_variant_20(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0621, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_21(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_21: expected %d but got %d\n", eax_96, test_5_blocks_variant_21(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0625, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_22(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_22: expected %d but got %d\n", eax_96, test_5_blocks_variant_22(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1577, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_23(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_23: expected %d but got %d\n", eax_96, test_5_blocks_variant_23(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1581, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_24(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_24: expected %d but got %d\n", eax_96, test_5_blocks_variant_24(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1585, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_25(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_25: expected %d but got %d\n", eax_96, test_5_blocks_variant_25(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0635, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_26(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_26: expected %d but got %d\n", eax_96, test_5_blocks_variant_26(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0639, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_27(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_27: expected %d but got %d\n", eax_96, test_5_blocks_variant_27(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x063D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_28(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_28: expected %d but got %d\n", eax_96, test_5_blocks_variant_28(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1601, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_29(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_29: expected %d but got %d\n", eax_96, test_5_blocks_variant_29(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0645, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_30(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_30: expected %d but got %d\n", eax_96, test_5_blocks_variant_30(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0649, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_31(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_31: expected %d but got %d\n", eax_96, test_5_blocks_variant_31(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1613, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_32(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_32: expected %d but got %d\n", eax_96, test_5_blocks_variant_32(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1617, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_33(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_33: expected %d but got %d\n", eax_96, test_5_blocks_variant_33(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0655, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_34(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_34: expected %d but got %d\n", eax_96, test_5_blocks_variant_34(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0659, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_35(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_35: expected %d but got %d\n", eax_96, test_5_blocks_variant_35(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x065D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_36(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_36: expected %d but got %d\n", eax_96, test_5_blocks_variant_36(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0661, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_37(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_37: expected %d but got %d\n", eax_96, test_5_blocks_variant_37(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0665, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_38(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_38: expected %d but got %d\n", eax_96, test_5_blocks_variant_38(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0669, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_39(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_39: expected %d but got %d\n", eax_96, test_5_blocks_variant_39(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x066D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_40(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_40: expected %d but got %d\n", eax_96, test_5_blocks_variant_40(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0671, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_41(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_41: expected %d but got %d\n", eax_96, test_5_blocks_variant_41(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0675, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_42(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_42: expected %d but got %d\n", eax_96, test_5_blocks_variant_42(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0679, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_43(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_43: expected %d but got %d\n", eax_96, test_5_blocks_variant_43(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1661, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_44(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_44: expected %d but got %d\n", eax_96, test_5_blocks_variant_44(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1665, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_45(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_45: expected %d but got %d\n", eax_96, test_5_blocks_variant_45(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1669, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_46(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_46: expected %d but got %d\n", eax_96, test_5_blocks_variant_46(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0689, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_47(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_47: expected %d but got %d\n", eax_96, test_5_blocks_variant_47(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1677, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_48(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_48: expected %d but got %d\n", eax_96, test_5_blocks_variant_48(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1681, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_49(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_49: expected %d but got %d\n", eax_96, test_5_blocks_variant_49(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0695, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_50(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_50: expected %d but got %d\n", eax_96, test_5_blocks_variant_50(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0699, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_51(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_51: expected %d but got %d\n", eax_96, test_5_blocks_variant_51(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x069D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_52(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_52: expected %d but got %d\n", eax_96, test_5_blocks_variant_52(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06A1, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_53(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_53: expected %d but got %d\n", eax_96, test_5_blocks_variant_53(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1701, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_54(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_54: expected %d but got %d\n", eax_96, test_5_blocks_variant_54(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06A9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_55(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_55: expected %d but got %d\n", eax_96, test_5_blocks_variant_55(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06AD, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_56(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_56: expected %d but got %d\n", eax_96, test_5_blocks_variant_56(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1713, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_57(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_57: expected %d but got %d\n", eax_96, test_5_blocks_variant_57(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1717, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_58(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_58: expected %d but got %d\n", eax_96, test_5_blocks_variant_58(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1721, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_59(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_59: expected %d but got %d\n", eax_96, test_5_blocks_variant_59(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06BD, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_60(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_60: expected %d but got %d\n", eax_96, test_5_blocks_variant_60(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06C1, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_61(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_61: expected %d but got %d\n", eax_96, test_5_blocks_variant_61(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1733, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_62(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_62: expected %d but got %d\n", eax_96, test_5_blocks_variant_62(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1737, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_63(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_63: expected %d but got %d\n", eax_96, test_5_blocks_variant_63(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1741, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_64(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_64: expected %d but got %d\n", eax_96, test_5_blocks_variant_64(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06D1, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_65(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_65: expected %d but got %d\n", eax_96, test_5_blocks_variant_65(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06D5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_66(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_66: expected %d but got %d\n", eax_96, test_5_blocks_variant_66(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06D9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_67(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_67: expected %d but got %d\n", eax_96, test_5_blocks_variant_67(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06DD, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_68(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_68: expected %d but got %d\n", eax_96, test_5_blocks_variant_68(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1761, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_69(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_69: expected %d but got %d\n", eax_96, test_5_blocks_variant_69(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06E5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_70(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_70: expected %d but got %d\n", eax_96, test_5_blocks_variant_70(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06E9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_71(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_71: expected %d but got %d\n", eax_96, test_5_blocks_variant_71(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1773, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_72(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_72: expected %d but got %d\n", eax_96, test_5_blocks_variant_72(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1777, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_73(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_73: expected %d but got %d\n", eax_96, test_5_blocks_variant_73(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1781, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_74(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_74: expected %d but got %d\n", eax_96, test_5_blocks_variant_74(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06F9, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_75(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_75: expected %d but got %d\n", eax_96, test_5_blocks_variant_75(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x06FD, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_76(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_76: expected %d but got %d\n", eax_96, test_5_blocks_variant_76(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0701, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_77(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_77: expected %d but got %d\n", eax_96, test_5_blocks_variant_77(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0705, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_78(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_78: expected %d but got %d\n", eax_96, test_5_blocks_variant_78(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0709, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_79(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_79: expected %d but got %d\n", eax_96, test_5_blocks_variant_79(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x070D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_80(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_80: expected %d but got %d\n", eax_96, test_5_blocks_variant_80(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0711, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_81(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_81: expected %d but got %d\n", eax_96, test_5_blocks_variant_81(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1813, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_82(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_82: expected %d but got %d\n", eax_96, test_5_blocks_variant_82(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1817, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_83(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_83: expected %d but got %d\n", eax_96, test_5_blocks_variant_83(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1821, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_84(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_84: expected %d but got %d\n", eax_96, test_5_blocks_variant_84(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0721, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_85(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_85: expected %d but got %d\n", eax_96, test_5_blocks_variant_85(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0725, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_86(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_86: expected %d but got %d\n", eax_96, test_5_blocks_variant_86(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1833, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_87(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_87: expected %d but got %d\n", eax_96, test_5_blocks_variant_87(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x072D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_88(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_88: expected %d but got %d\n", eax_96, test_5_blocks_variant_88(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1841, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_89(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_89: expected %d but got %d\n", eax_96, test_5_blocks_variant_89(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0735, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_90(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_90: expected %d but got %d\n", eax_96, test_5_blocks_variant_90(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0739, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_91(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_91: expected %d but got %d\n", eax_96, test_5_blocks_variant_91(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x073D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_92(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_92: expected %d but got %d\n", eax_96, test_5_blocks_variant_92(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0741, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_93(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_93: expected %d but got %d\n", eax_96, test_5_blocks_variant_93(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1861, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_94(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_94: expected %d but got %d\n", eax_96, test_5_blocks_variant_94(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0749, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_95(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_95: expected %d but got %d\n", eax_96, test_5_blocks_variant_95(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x074D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_96(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_96: expected %d but got %d\n", eax_96, test_5_blocks_variant_96(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0751, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_97(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_97: expected %d but got %d\n", eax_96, test_5_blocks_variant_97(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0755, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_98(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_98: expected %d but got %d\n", eax_96, test_5_blocks_variant_98(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1881, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_99(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_99: expected %d but got %d\n", eax_96, test_5_blocks_variant_99(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1885, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_100(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_100: expected %d but got %d\n", eax_96, test_5_blocks_variant_100(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1889, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_101(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_101: expected %d but got %d\n", eax_96, test_5_blocks_variant_101(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0765, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_102(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_102: expected %d but got %d\n", eax_96, test_5_blocks_variant_102(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0769, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_103(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_103: expected %d but got %d\n", eax_96, test_5_blocks_variant_103(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1901, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_104(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_104: expected %d but got %d\n", eax_96, test_5_blocks_variant_104(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0771, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_105(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_105: expected %d but got %d\n", eax_96, test_5_blocks_variant_105(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0775, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_106(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_106: expected %d but got %d\n", eax_96, test_5_blocks_variant_106(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0779, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_107(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_107: expected %d but got %d\n", eax_96, test_5_blocks_variant_107(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x077D, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_108(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_108: expected %d but got %d\n", eax_96, test_5_blocks_variant_108(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1921, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_109(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_109: expected %d but got %d\n", eax_96, test_5_blocks_variant_109(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0785, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_110(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_110: expected %d but got %d\n", eax_96, test_5_blocks_variant_110(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1929, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_111(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_111: expected %d but got %d\n", eax_96, test_5_blocks_variant_111(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1933, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_112(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_112: expected %d but got %d\n", eax_96, test_5_blocks_variant_112(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0791, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_113(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_113: expected %d but got %d\n", eax_96, test_5_blocks_variant_113(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1941, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_114(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_114: expected %d but got %d\n", eax_96, test_5_blocks_variant_114(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x0799, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_115(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_115: expected %d but got %d\n", eax_96, test_5_blocks_variant_115(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1949, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_116(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_116: expected %d but got %d\n", eax_96, test_5_blocks_variant_116(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x07A1, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_117(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_117: expected %d but got %d\n", eax_96, test_5_blocks_variant_117(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 0x07A5, "test_5_blocks");
+					}
+					if (test_5_blocks_variant_118(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
+					{
+						printf("test_5_blocks_variant_118: expected %d but got %d\n", eax_96, test_5_blocks_variant_118(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
+						__assert_fail("0", "source.c", 1961, "test_5_blocks");
+					}
+					dwLoc1C_5932 = dwLoc1C_5932 + 0x01;
+				}
+				dwLoc18_53 = dwLoc18_53 + 0x01;
+			}
+			dwLoc14_36 = dwLoc14_36 + 0x01;
+		}
+		dwLoc10_29 = dwLoc10_29 + 0x01;
+	}
 }
 
 // 0804E950: Register word32 test_6_blocks_base(Stack int32 dwArg04, Stack int32 dwArg08, Stack int32 dwArg0C, Stack int32 dwArg10, Stack int32 dwArg14)
@@ -16299,6 +17093,7 @@ word32 test_6_blocks_variant_718(int32 dwArg04, int32 dwArg08, int32 dwArg0C, in
 // 08062CC0: void test_6_blocks()
 void test_6_blocks()
 {
+	int32 dwLoc10_39 = 0x00;
 }
 
 // 08074BD9: void main(Stack word32 dwArg00)
@@ -16329,8 +17124,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_71;
 			word32 eax_72;
 			byte SZO_73;
-			byte C_74;
-			byte Z_75;
+			bool C_74;
+			bool Z_75;
 			ebx_15->ptr152DF();
 		} while (esi_69 != edi_68 + 0x01);
 	}

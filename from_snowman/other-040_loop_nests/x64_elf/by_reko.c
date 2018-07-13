@@ -17,5 +17,60 @@ void h()
 // 0000000000400150: void f(Register word32 ecx, Register word32 edx, Register word32 esi, Register word32 edi)
 void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 {
+	word32 dwLoc0C_100 = edi;
+	word32 dwLoc10_11 = esi;
+	word32 dwLoc18_109 = ecx;
+l000000000040018B:
+	if (edi == 0x00)
+	{
+		while ((word32) (uint64) (word32) (uint64) (dwLoc10_11 + dwLoc0C_100) != edx)
+		{
+			while (true)
+			{
+				h();
+				if (true)
+					break;
+				do
+				{
+					if (dwLoc0C_100 != 0x00)
+						dwLoc18_109 = (word32) (uint64) edx;
+					g();
+					if (0x00 == 0x00)
+						break;
+					h();
+				} while (false);
+				dwLoc0C_100 = dwLoc0C_100 - 0x01;
+			}
+			while (true)
+			{
+				g();
+				if (0x00 == 0x00)
+					break;
+				h();
+				if (true)
+					break;
+				word32 v18_74 = dwLoc0C_100 + 0x01;
+				dwLoc0C_100 = v18_74;
+				if (dwLoc18_109 == 0x00)
+					break;
+				if (v18_74 == 0x00)
+					dwLoc18_109 = 0x14;
+			}
+		}
+	}
+	else
+	{
+		do
+		{
+			h();
+			if (true)
+			{
+				dwLoc10_11 = dwLoc10_11 + 0x01;
+				goto l000000000040018B;
+			}
+			word32 v16_120 = dwLoc10_11 + 0x01;
+			dwLoc10_11 = v16_120;
+		} while ((word32) (uint64) v16_120 != edx);
+	}
 }
 

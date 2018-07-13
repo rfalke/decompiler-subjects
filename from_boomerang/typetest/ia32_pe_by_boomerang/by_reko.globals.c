@@ -4,8 +4,14 @@
 
 #include "subject.h"
 
+int32 g_t401BD0(struct _exception * ptrArg04) = Unexpected function type (fn int32 ((ptr32 (struct "_exception"))))
+;
+Eq_55 g_t403000 = null;
+Eq_56 g_t40300C = null;
+Eq_55 g_t403010 = null;
+Eq_56 g_t403014 = null;
 word32 g_dw403040 = 0x00000001;
-word32 g_dw403114 = 0x00000000;
+int32 g_dw403114 = 0;
 word32 g_dw40311C = 0x00000000;
 word32 g_dw403120 = 0x00000000;
 word32 g_dw403128 = 0x00000000;

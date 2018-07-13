@@ -10,5 +10,6 @@ uint32 g_a10A7C[] =
 	};
 Eq_2 g_t1162C = Unexpected function type (fn void ())
 ;
+char g_str11678[] = "Other!\n";
 ptr32 g_ptr2199C = 0x00000000;
 

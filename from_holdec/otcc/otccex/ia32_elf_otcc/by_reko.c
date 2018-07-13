@@ -30,7 +30,7 @@ void fn080481D1()
 	fn0804823B();
 }
 
-// 080481E0: void fn080481E0(Register (ptr Eq_23) ebp)
+// 080481E0: void fn080481E0(Register (ptr32 Eq_23) ebp)
 void fn080481E0(Eq_23 * ebp)
 {
 	esp = v3;
@@ -76,7 +76,7 @@ void fn0804823B()
 {
 }
 
-// 08048450: void fn08048450(Stack word32 dwArg04, Stack (ptr Eq_6) dwArg08)
+// 08048450: void fn08048450(Stack word32 dwArg04, Stack (ptr32 Eq_6) dwArg08)
 void fn08048450(word32 dwArg04, Eq_6 * dwArg08)
 {
 	word32 eax_27;
@@ -102,7 +102,7 @@ void fn08048503()
 {
 }
 
-// 08048507: void fn08048507(Register word32 eax, Register (ptr Eq_167) ebp, Stack word32 dwArg00)
+// 08048507: void fn08048507(Register word32 eax, Register (ptr32 Eq_167) ebp, Stack word32 dwArg00)
 void fn08048507(word32 eax, Eq_167 * ebp, word32 dwArg00)
 {
 	*(ebp - 0x08) = eax;

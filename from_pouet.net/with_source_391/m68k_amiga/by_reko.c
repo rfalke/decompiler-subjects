@@ -7,9 +7,8 @@
 // 00001000: void fn00001000(Register word32 d0, Register word32 a1, Register word32 a6)
 void fn00001000(word32 d0, word32 a1, word32 a6)
 {
-	Eq_5 a3_53 = *(ui32 *) 0x0FFC * 0x02 * 0x02;
 	word32 a7_54;
-	struct Eq_15 * a6_55;
+	struct Eq_6 * a6_55;
 	word32 a5_56;
 	uint32 * a3_58;
 	word32 a2_59;
@@ -24,14 +23,14 @@ void fn00001000(word32 d0, word32 a1, word32 a6)
 	word32 d1_68;
 	word32 d0_69;
 	byte ZN_70;
-	byte C_71;
-	byte V_72;
-	byte Z_73;
+	bool C_71;
+	bool V_72;
+	bool Z_73;
 	byte CVZN_74;
-	byte N_75;
+	bool N_75;
 	byte CVZNX_76;
 	word32 * a4_126;
-	(*((word32) a3_53 + 0x04))();
+	(*((word32) (*(ui32 *) 0x0FFC * 0x04) + 0x04))();
 	if (d0_69 != 0x00)
 	{
 		word32 d2_116 = *(a1_60 - 0x04);

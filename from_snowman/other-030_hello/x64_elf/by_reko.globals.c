@@ -4,24 +4,25 @@
 
 #include "subject.h"
 
-<anonymous> g_t0001;
-Eq_1790 g_t0002;
-Eq_1790 g_t0004;
-Eq_1790 g_t0008;
-<anonymous> g_t000A;
+Eq_951 g_t0001;
+Eq_1434 g_t0002;
+Eq_1434 g_t0004;
+Eq_1434 g_t0008;
 <anonymous> g_t853E;
 word64 g_qw8694;
 <anonymous> g_t86AE;
 byte * g_ptr86E4;
 word32 g_dw8706;
 word16 g_w400000 = 0x5A4D;
-Eq_2757 g_a400006[] = 
+Eq_2393 g_a400006[] = 
 	{
 	};
 word32 g_dw40003C = 0x00000080;
-Eq_2895 g_a400090[] = 
+Eq_2529 g_a400090[] = 
 	{
 	};
+int32 g_t401C90(struct _exception * rcx) = Unexpected function type (fn int32 ((ptr64 (struct "_exception"))))
+;
 word64 g_qw402D10 = 0xFFFFFFFFFFFFFFFF;
 <anonymous> * g_ptr402D30 = null;
 <anonymous> * g_ptr403000 = fn0000000000401600;
@@ -30,10 +31,8 @@ word32 g_dw403050 = 0x00000002;
 word32 g_dw403060 = 0xFFFFFFFF;
 ui64 g_qw403070 = 0x00002B992DDFA232;
 word64 g_qw403080 = 0xFFFFD466D2205DCD;
-word32 g_a404164[] = 
-	{
-	};
-struct Eq_2122 g_t404288 = 
+void g_v404180 = ??void??;
+struct Eq_1762 g_t404288 = 
 	{
 		0x00000000,
 		0x00000000,
@@ -41,21 +40,22 @@ struct Eq_2122 g_t404288 =
 	};
 word32 g_dw40428C = 0x00000000;
 word32 g_dw404290 = 0x00000001;
-struct Eq_2122 g_t404294 = 
+struct Eq_1762 g_t404294 = 
 	{
 		0x00008420,
 		0x00001507,
 		0x00000020,
 	};
 word32 g_dw407000 = 0x00000000;
-word32 g_dw407004 = 0x00000000;
-<anonymous> (* g_ptr407008)[] = null;
-word64 g_qw407010 = 0x0000000000000000;
+int32 g_dw407004 = 0;
+char ** g_ptr407008 = null;
+char ** g_ptr407010 = null;
 word32 g_dw407018 = 0x00000000;
 word32 g_dw40701C = 0x00000000;
 word32 g_dw407020 = 0x00000000;
-word32 g_dw407024 = 0x00000000;
+int32 g_dw407024 = 0;
 word32 g_dw407040 = 0x00000000;
+word32 g_dw407050 = 0x00000000;
 word32 g_dw407060 = 0x00000000;
 word32 g_dw407064 = 0x00000000;
 word32 g_dw407068 = 0x00000000;
@@ -66,7 +66,7 @@ word64 g_qw4070A0 = 0x0000000000000000;
 word32 g_dw4070A8 = 0x00000000;
 word64 g_qw4070C0 = 0x0000000000000000;
 word64 g_qw407240 = 0x0000000000000000;
-Eq_3595 g_a407244[] = 
+Eq_3226 g_a407244[] = 
 	{
 	};
 <anonymous> * g_ptr407340 = null;
@@ -82,7 +82,7 @@ word32 g_dw407880 = 0x00000000;
 word32 g_dw407884 = 0x00000000;
 word64 g_qw407890 = 0x0000000000000000;
 word32 g_dw407920 = 0x00000000;
-struct Eq_3333 * g_ptr407968 = null;
+struct Eq_2966 * g_ptr407968 = null;
 byte * g_ptr407990 = null;
 word32 g_dw407998 = 0x00000000;
 ptr64 g_ptr4079A0 = 0x0000000000000000;
@@ -95,5 +95,9 @@ word64 * g_ptr408338 = &g_qw8694;
 <anonymous> * g_ptr408348 = &g_t86AE;
 byte ** g_ptr408360 = &g_ptr86E4;
 word32 * g_ptr408378 = &g_dw8706;
+PVFV g_t409000 = null;
+PVFV g_t409010 = null;
+PVFV g_t409018 = null;
+PVFV g_t409030 = null;
 word64 g_qw409060 = 0x0000000000000000;
 

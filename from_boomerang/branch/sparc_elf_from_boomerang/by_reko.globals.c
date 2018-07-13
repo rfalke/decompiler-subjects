@@ -7,5 +7,18 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t1170C = Unexpected function type (fn void ())
 ;
+char g_str11728[] = "%d";
+char g_str11730[] = "Equal\n";
+char g_str11738[] = "Not Equal\n";
+char g_str11748[] = "Greater\n";
+char g_str11758[] = "Less or Equal\n";
+char g_str11768[] = "Greater or Equal\n";
+char g_str11780[] = "Less\n";
+char g_str11788[] = "Greater Unsigned\n";
+char g_str117A0[] = "Less or Equal Unsigned\n";
+char g_str117B8[] = "Carry Clear\n";
+char g_str117C8[] = "Carry Set\n";
+char g_str117D8[] = "Minus\n";
+char g_str117E0[] = "Plus\n";
 ptr32 g_ptr21B40 = 0x00000000;
 

@@ -4,24 +4,31 @@
 
 #include "subject.h"
 
-Eq_1043 g_t400000 = 
+Eq_1270 g_t400000 = 
 	{
 		0x5A4D,
 		0x000000D8,
 	};
-Eq_248 g_t405830 = Unexpected function type (fn (ptr basic_ostream) ((ptr (struct "std::basic_ostream")), (ptr basic_ostream)))
+Eq_1098 g_t405208 = null;
+Eq_176 g_t405830 = Unexpected function type (fn (ptr32 basic_ostream) ((ptr32 (struct "std::basic_ostream")), (ptr32 basic_ostream)))
 ;
-Eq_7 g_t405848 = Unexpected function type (fn (ptr basic_ostream) ((ptr (struct "std::basic_ostream")), (ptr basic_ostream)))
+Eq_12 g_t405848 = Unexpected function type (fn (ptr32 basic_ostream) ((ptr32 (struct "std::basic_ostream")), (ptr32 basic_ostream)))
 ;
 ui32 g_dw407000 = 0xBB40E64E;
 ui32 g_dw407004 = 0x44BF19B1;
 word32 g_dw407120 = 0x00000000;
-int32 g_dw407124 = 0;
+Eq_893 g_t407124 = 
+	{
+		0x00000000
+	};
 word32 g_dw407128 = 0x00000000;
 word32 g_dw40712C = 0x00000000;
-int32 g_dw407138 = 0;
+Eq_893 g_t407138 = 
+	{
+		0x00000000
+	};
 word32 g_dw40713C = 0x00000000;
 word32 g_dw407474 = 0x00000000;
 word32 g_dw40749C = 0x00000000;
-Eq_631 g_t4074A0 = null;
+<anonymous> * g_ptr4074A0 = null;
 

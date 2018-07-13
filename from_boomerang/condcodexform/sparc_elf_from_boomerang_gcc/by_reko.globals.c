@@ -7,5 +7,7 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t1187C = Unexpected function type (fn void ())
 ;
+char g_str11898[] = "Pass\n";
+char g_str118A0[] = "Failed!\n";
 ptr32 g_ptr21BCC = 0x00000000;
 

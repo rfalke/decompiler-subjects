@@ -34,6 +34,9 @@
 <anonymous> g_t80488B2 = <code>;
 <anonymous> g_t80488C2 = <code>;
 <anonymous> g_t80488D2 = <code>;
+<anonymous> * g_a8049ED0[] = 
+	{
+	};
 real32 g_r8049F30 = -90.0F;
 real32 g_r8049F34 = 90.0F;
 <anonymous> * g_ptr804A0C4 = &g_t8048702;

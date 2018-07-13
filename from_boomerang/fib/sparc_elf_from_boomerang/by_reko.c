@@ -4,16 +4,15 @@
 
 #include "subject.h"
 
-// 000104CC: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 000104CC: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
 	{
 		atexit(&globals->t10778);
-		int32 l0_18 = _init(o7);
-		globals->ptr20948 = fp + 0x44 + ((l0_18 << 0x02) + 0x04);
+		globals->ptr20948 = fp + 0x44 + ((_init(o7) << 0x02) + 0x04);
 		main();
-		exit(l0_18);
+		exit(0x00);
 	}
 	else
 		atexit(g1);
@@ -60,7 +59,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 l1_135;
 			word32 g0_137;
 			byte NZVC_138;
-			bool Z_139;
+			byte Z_139;
 			o1_56();
 			<anonymous> ** o0_141 = *l0_112;
 			if (*o0_141 == null)
@@ -92,7 +91,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 l7_102;
 		word32 g0_103;
 		byte NZVC_104;
-		bool Z_105;
+		byte Z_105;
 		word32 l0_106;
 		__deregister_frame_info();
 	}
@@ -131,7 +130,7 @@ void frame_dummy(word32 o7)
 		word32 l7_104;
 		word32 g0_105;
 		byte NZVC_106;
-		bool Z_107;
+		byte Z_107;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -155,7 +154,7 @@ void frame_dummy(word32 o7)
 		word32 l7_51;
 		word32 g0_52;
 		byte NZVC_53;
-		bool Z_54;
+		byte Z_54;
 		__register_frame_info();
 	}
 }
@@ -170,7 +169,7 @@ void main()
 {
 	word32 l0_20;
 	word32 i0_21;
-	fib(0x0A, out l0_20, out i0_21);
+	printf("%i\n", fib(0x0A, out l0_20, out i0_21));
 }
 
 // 000106C0: Register int32 fib(Register int32 o0, Register out ptr32 l0Out, Register out ptr32 i0Out)
@@ -186,7 +185,7 @@ int32 fib(int32 o0, ptr32 & l0Out, ptr32 & i0Out)
 		fib(o0 + ~0x00, out l0_35, out i0_36);
 		word32 l0_40;
 		word32 i0_41;
-		word32 o0_42 = fib(i0_36 + ~0x01, out l0_40, out i0_41);
+		int32 o0_42 = fib(i0_36 + ~0x01, out l0_40, out i0_41);
 		*i0Out = l0_40 + o0_42;
 	}
 	return i0_23;
@@ -198,12 +197,12 @@ word32 fn000106F4(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 000106FC: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 000106FC: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_252 * l7_22 = fn000106F4(o7, 0x00010094);
-	struct Eq_257 * o1_25 = l7_22->ptr0018;
+	struct Eq_261 * l7_22 = fn000106F4(o7, 0x00010094);
+	struct Eq_266 * o1_25 = l7_22->ptr0018;
 	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
 	if (o0_26 != (<anonymous> *) ~0x00)
 	{
@@ -228,7 +227,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_71;
 			word32 g0_72;
 			byte NZVC_73;
-			bool Z_74;
+			byte Z_74;
 			o0_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -253,5 +252,25 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 000207F4: void atexit()
+void atexit()
+{
+}
+
+// 00020800: void exit()
+void exit()
+{
+}
+
+// 0002080C: void _exit()
+void _exit()
+{
+}
+
+// 0002083C: void printf()
+void printf()
+{
 }
 

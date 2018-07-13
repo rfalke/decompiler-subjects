@@ -16,8 +16,8 @@ void _init()
 		byte SCZO_34;
 		word32 edx_35;
 		byte SZO_36;
-		byte C_37;
-		byte Z_38;
+		bool C_37;
+		bool Z_38;
 		word32 eax_39;
 		!__gmon_start__();
 	}
@@ -25,7 +25,7 @@ void _init()
 	__do_global_ctors_aux();
 }
 
-// 08048310: void _start(Register (ptr Eq_25) edx, Stack int32 dwArg00)
+// 08048310: void _start(Register (ptr32 Eq_26) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -36,13 +36,29 @@ void _start( * edx, int32 dwArg00)
 // 08048340: void __do_global_dtors_aux(Register word32 esi)
 void __do_global_dtors_aux(word32 esi)
 {
-	if (globals->b8049990 != 0x00)
-		return;
-	up32 eax_23 = globals->dw8049994;
-	if (eax_23 >= 0x00)
+	if (globals->b8049990 == 0x00)
+	{
+		uint32 eax_26 = globals->dw8049994;
+		if (eax_26 < 0x00)
+		{
+			do
+			{
+				uint32 eax_44 = eax_26 + 0x01;
+				globals->dw8049994 = eax_44;
+				word32 esp_47;
+				word32 ebp_48;
+				word32 ebx_49;
+				byte SCZO_50;
+				bool Z_51;
+				word32 eax_52;
+				bool C_53;
+				word32 esi_54;
+				(*((char *) globals->a804989C + eax_44 * 0x04))();
+				eax_26 = globals->dw8049994;
+			} while (eax_26 < 0x00);
+		}
 		globals->b8049990 = 0x01;
-	else
-		globals->dw8049994 = eax_23 + 0x01;
+	}
 }
 
 // 080483A0: void frame_dummy()
@@ -55,13 +71,13 @@ void frame_dummy()
 		byte SCZO_30;
 		word32 eax_31;
 		byte SZO_32;
-		byte C_33;
-		byte Z_34;
-		null();
+		bool C_33;
+		bool Z_34;
+		fn00000000();
 	}
 }
 
-// 080483D0: void copy1_four_times(Stack (ptr word16) dwArg04, Stack (ptr word16) dwArg08, Stack int32 dwArg0C)
+// 080483D0: void copy1_four_times(Stack (ptr32 word16) dwArg04, Stack (ptr32 word16) dwArg08, Stack int32 dwArg0C)
 void copy1_four_times(word16 * dwArg04, word16 * dwArg08, int32 dwArg0C)
 {
 	word16 * ecx_104 = dwArg04;
@@ -109,7 +125,7 @@ l08048443:
 	goto l08048424;
 }
 
-// 08048470: void copy1_eight_times(Stack (ptr word16) dwArg04, Stack (ptr word16) dwArg08, Stack int32 dwArg0C)
+// 08048470: void copy1_eight_times(Stack (ptr32 word16) dwArg04, Stack (ptr32 word16) dwArg08, Stack int32 dwArg0C)
 void copy1_eight_times(word16 * dwArg04, word16 * dwArg08, int32 dwArg0C)
 {
 	word16 * edx_106 = dwArg04 + 0x01;
@@ -178,78 +194,112 @@ l080484B0:
 	}
 }
 
-// 08048520: void copy2_four_times(Stack (ptr word16) dwArg04, Stack (ptr word16) dwArg08, Stack int32 dwArg0C)
+// 08048520: void copy2_four_times(Stack (ptr32 word16) dwArg04, Stack (ptr32 word16) dwArg08, Stack int32 dwArg0C)
 void copy2_four_times(word16 * dwArg04, word16 * dwArg08, int32 dwArg0C)
 {
+	word16 * eax_10 = dwArg04;
+	word16 * edx_18 = dwArg08;
+	if (dwArg0C <= 0x00)
+		return;
+	word32 ecx_39 = 0x04 - dwArg0C;
+	word32 esi_42 = 0x08 - dwArg0C + (dwArg0C - 0x04 & ~0x03);
+l08048556:
+	if (ecx_39 != 0x02)
+	{
+		if (ecx_39 == 0x03)
+		{
+l08048589:
+			*eax_10 = (word16) (word32) *edx_18;
+			ecx_39 = ecx_39 + 0x04;
+			if (ecx_39 == esi_42)
+				return;
+			eax_10 = eax_10 + 0x01;
+			edx_18 = edx_18 + 0x01;
+			goto l08048556;
+		}
+		if (ecx_39 != 0x01)
+		{
+			*eax_10 = (word16) (word32) *edx_18;
+			edx_18 = edx_18 + 0x01;
+			eax_10 = eax_10 + 0x01;
+		}
+		*eax_10 = (word16) (word32) *edx_18;
+		edx_18 = edx_18 + 0x01;
+		eax_10 = eax_10 + 0x01;
+	}
+	*eax_10 = (word16) (word32) *edx_18;
+	edx_18 = edx_18 + 0x01;
+	eax_10 = eax_10 + 0x01;
+	goto l08048589;
 }
 
-// 080485A0: FlagGroup bool copy2_eight_times(Stack (ptr word16) dwArg04, Stack (ptr word16) dwArg08, Stack int32 dwArg0C)
-bool copy2_eight_times(word16 * dwArg04, word16 * dwArg08, int32 dwArg0C)
+// 080485A0: FlagGroup byte copy2_eight_times(Stack (ptr32 word16) dwArg04, Stack (ptr32 word16) dwArg08, Stack int32 dwArg0C)
+byte copy2_eight_times(word16 * dwArg04, word16 * dwArg08, int32 dwArg0C)
 {
 	word16 * eax_10 = dwArg04;
-	word16 * edx_101 = dwArg08;
-	bool CZ_23 = false;
+	word16 * edx_100 = dwArg08;
+	byte CZ_25 = DPB(CZ, false, 0);
 	if (dwArg0C <= 0x00)
-		return CZ_23;
-	up32 ecx_43 = 0x08 - dwArg0C;
-	up32 esi_46 = 0x10 - dwArg0C + (dwArg0C - 0x08 & ~0x07);
+		return CZ_25;
+	up32 ecx_45 = 0x08 - dwArg0C;
+	up32 esi_48 = 0x10 - dwArg0C + (dwArg0C - 0x08 & ~0x07);
 	while (true)
 	{
-		if (ecx_43 > 0x07)
+		if (ecx_45 > 0x07)
 			goto l080485D0;
-		switch (ecx_43)
+		switch (ecx_45)
 		{
 		case 0x00:
 l080485D0:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l080485DC;
 		case 0x01:
 l080485DC:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l080485E8;
 		case 0x02:
 l080485E8:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l080485F4;
 		case 0x03:
 l080485F4:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l08048600;
 		case 0x04:
 l08048600:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l0804860C;
 		case 0x05:
 l0804860C:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l08048618;
 		case 0x06:
 l08048618:
-			*eax_10 = (word16) (word32) *edx_101;
-			edx_101 = edx_101 + 0x01;
+			*eax_10 = (word16) (word32) *edx_100;
+			edx_100 = edx_100 + 0x01;
 			eax_10 = eax_10 + 0x01;
 			goto l08048624;
 		case 0x07:
 l08048624:
-			*eax_10 = (word16) (word32) *edx_101;
-			ecx_43 = ecx_43 + 0x08;
-			CZ_23 = cond(ecx_43 - esi_46);
-			if (ecx_43 == esi_46)
-				return CZ_23;
+			*eax_10 = (word16) (word32) *edx_100;
+			ecx_45 = ecx_45 + 0x08;
+			CZ_25 = cond(ecx_45 - esi_48);
+			if (ecx_45 == esi_48)
+				return CZ_25;
 			eax_10 = eax_10 + 0x01;
-			edx_101 = edx_101 + 0x01;
+			edx_100 = edx_100 + 0x01;
 			break;
 		}
 	}
@@ -258,6 +308,26 @@ l08048624:
 // 08048650: void main()
 void main()
 {
+	__align(fp - 0x04);
+	word16 * eax_15 = malloc(200);
+	word16 * eax_18 = malloc(200);
+	copy1_four_times(eax_18, eax_15, 100);
+	copy1_eight_times(eax_18, eax_15, 100);
+	copy2_four_times(eax_18, eax_15, 100);
+	copy2_eight_times(eax_18, eax_15, 100);
+	word16 * esi_17 = eax_15;
+	word16 * edi_21 = eax_18;
+	word32 ecx_36 = 200;
+	while (ecx_36 != 0x00)
+	{
+		esi_17 = (word16 *) ((char *) esi_68 + 0x01);
+		edi_21 = (word16 *) ((char *) edi_69 + 0x01);
+		ecx_36 = ecx_36 - 0x01;
+		word16 * esi_68 = esi_17;
+		word16 * edi_69 = edi_21;
+		if (*esi_68 == *edi_69)
+			return;
+	}
 }
 
 // 080486F0: void __libc_csu_fini()
@@ -268,7 +338,7 @@ void __libc_csu_fini()
 // 08048700: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_568 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
+	struct Eq_588 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
 	_init();
 	if (&ebx_16->ptr1189 - &ebx_16->ptr1189 >> 0x02 != 0x00)
 	{
@@ -282,8 +352,8 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 			byte SCZO_65;
 			word32 eax_66;
 			byte SZO_67;
-			byte C_68;
-			byte Z_69;
+			bool C_68;
+			bool Z_69;
 			ebx_16->ptr1189();
 		} while (esi_63 + 0x01 < edi_62);
 	}
@@ -308,7 +378,7 @@ void __do_global_ctors_aux()
 			word32 * ebx_28;
 			byte SCZO_29;
 			word32 eax_30;
-			byte Z_31;
+			bool Z_31;
 			eax_11();
 		} while (*ebx_28 != ~0x00);
 	}

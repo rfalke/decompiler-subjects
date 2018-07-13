@@ -7,9 +7,7 @@
 <anonymous> g_tFFFFFFFF;
 Eq_25 g_t8048230 = Unexpected function type (fn void ())
 ;
-<anonymous> g_t8048328 = <code>;
-<anonymous> g_t8048340 = <code>;
-Eq_22 g_t8048358 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t8048358 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_26 g_t80483AC = Unexpected function type (fn void ())
 ;

@@ -14,8 +14,8 @@ void _init()
 		byte SCZO_16;
 		word64 rax_17;
 		byte SZO_18;
-		byte C_19;
-		byte Z_20;
+		bool C_19;
+		bool Z_20;
 		__gmon_start__();
 	}
 }
@@ -48,8 +48,8 @@ void deregister_tm_clones(word64 r8)
 	byte SCZO_47;
 	byte CZ_48;
 	byte SZO_49;
-	byte C_50;
-	byte Z_51;
+	bool C_50;
+	bool Z_51;
 	word32 edi_52;
 	word64 rdi_53;
 	0x00();
@@ -65,9 +65,9 @@ void register_tm_clones()
 	word64 rbp_42;
 	byte SCZO_43;
 	word64 rax_44;
-	byte Z_45;
+	bool Z_45;
 	byte SZO_46;
-	byte C_47;
+	bool C_47;
 	word64 rdi_48;
 	0x00();
 }
@@ -91,15 +91,15 @@ void frame_dummy()
 		word32 edi_40;
 		word64 rdi_41;
 		byte SCZO_42;
-		byte Z_43;
+		bool Z_43;
 		word32 eax_44;
 		word64 rax_45;
 		byte SZO_46;
-		byte C_47;
+		bool C_47;
 		word64 rbp_48;
 		word32 esi_49;
 		word64 rsi_50;
-		0x00();
+		fn0000000000000000();
 		register_tm_clones();
 	}
 	else
@@ -118,8 +118,8 @@ void use_int(word32 edi)
 	printf(0x004008D3, (uint64) edi);
 }
 
-// 0000000000400560: void read_ints(Register word128 xmm0, Register word128 xmm1)
-void read_ints(word128 xmm0, word128 xmm1)
+// 0000000000400560: void read_ints(Register word128 xmm1)
+void read_ints(word128 xmm1)
 {
 	word32 eax_5 = (int32) Mem0[0x0000000000601066 + 0x00:byte];
 	word128 xmm1_9 = __xorps(xmm1, xmm1);
@@ -141,17 +141,21 @@ void write_ints(word128 xmm0)
 // 00000000004005E7: void read_floats(Register word128 xmm1)
 void read_floats(word128 xmm1)
 {
-	__xorps(xmm1, xmm1);
+	use(DPB(xmm0, (real64) Mem0[0x0000000000601030 + 0x00:real80] + (((real64) Mem0[0x0000000000601048 + 0x00:real32] + __xorps(xmm1, xmm1)) + Mem0[0x0000000000601040 + 0x00:real64]), 0));
 }
 
 // 0000000000400629: void write_floats(Register word128 xmm0)
 void write_floats(word128 xmm0)
 {
+	Mem7[0x0000000000601040 + 0x00:real64] = (real64) xmm0;
+	Mem9[0x0000000000601048 + 0x00:real32] = (real32) xmm0;
+	Mem10[0x0000000000601030 + 0x00:real80] = (real80) (real64) xmm0;
 }
 
 // 000000000040064E: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
+	Mem6[0x0000000000601048 + 0x00:real32] = (real32) Mem0[0x0000000000601040 + 0x00:real64];
 }
 
 // 000000000040065F: void converting_between_floats_f2()
@@ -163,6 +167,7 @@ void converting_between_floats_f2()
 // 000000000040066C: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
+	Mem6[0x0000000000601040 + 0x00:real64] = (real64) Mem0[0x0000000000601048 + 0x00:real32];
 }
 
 // 000000000040067D: void converting_between_floats_d2()
@@ -197,91 +202,97 @@ void basic_operations(word128 xmm0, word128 xmm1)
 	use(__xorps(DPB(xmm0, rLoc18_5, 0), Mem0[0x00000000004008F0 + 0x00:word128]));
 }
 
-// 0000000000400727: void compare_floats(Register word128 xmm0, Register word128 xmm1, Register word128 xmm2, Register word128 xmm4, Register word128 xmm6)
-void compare_floats(word128 xmm0, word128 xmm1, word128 xmm2, word128 xmm4, word128 xmm6)
+// 0000000000400727: void compare_floats(Register word128 xmm0, Register word128 xmm1)
+void compare_floats(word128 xmm0, word128 xmm1)
 {
 	ptr64 fp;
 	word128 xmm0;
 	word128 xmm1;
+	word32 edi;
 	word128 xmm6;
 	word128 xmm2;
 	word128 xmm4;
 	rsp_1 = fp;
 	rsp_2 = fp - 0x18;
 	rdi_3 = 0x00;
-	edi_4 = (word32) rdi_3;
-	SZO_5 = cond(edi_4);
-	rax_6 = 0x00;
-	eax_7 = (word32) rax_6;
-	CZP_10 = cond((real64) xmm0 - xmm1);
-	P_11 = CZP_10;
-	Z_12 = CZP_10;
+	rax_4 = 0x00;
+	eax_5 = (word32) rax_4;
+	CZP_8 = cond((real64) xmm0 - xmm1);
+	P_9 = (bool) CZP_8;
+	Z_10 = (bool) CZP_8;
+	O_11 = false;
+	S_12 = false;
 	rLoc18_13 = (real64) xmm0;
 	rLoc10_14 = (real64) xmm1;
-	dil_15 = Test(PO,P_11);
-	edi_16 = DPB(edi_4, dil_15, 0);
-	rdi_17 = DPB(rdi_3, dil_15, 0);
-	if (Test(NE,Z_12))
+	dil_15 = Test(PO,P_9);
+	edi_17 = DPB(edi, dil_15, 0);
+	rdi_18 = DPB(rdi_3, dil_15, 0);
+	if (Test(NE,Z_10))
 	{
-		edi_67 = eax_7;
-		rdi_68 = DPB(rdi_17, edi_67, 0);
-		dil_69 = (byte) edi_67;
+		edi_73 = eax_5;
+		rdi_74 = DPB(rdi_18, edi_73, 0);
+		dil_75 = (byte) edi_73;
 	}
-	edi_18 = ϕ(edi_16, edi_67);
-	use_int(edi_18);
-	xmm6_20 = DPB(xmm6, rLoc18_13, 0);
-	rdi_21 = 0x00;
-	SZO_22 = cond(0x00);
+	edi_19 = ϕ(edi_17, edi_73);
+	use_int(edi_19);
+	xmm6_21 = DPB(xmm6, rLoc18_13, 0);
+	rdi_22 = 0x00;
 	rax_23 = 0x01;
-	CZP_24 = cond((real64) xmm6_20 - rLoc10_14);
-	P_25 = CZP_24;
-	Z_26 = CZP_24;
-	dil_27 = Test(PE,P_25);
-	edi_28 = DPB(edi_18, dil_27, 0);
-	rdi_29 = DPB(rdi_21, dil_27, 0);
+	CZP_24 = cond((real64) xmm6_21 - rLoc10_14);
+	P_25 = (bool) CZP_24;
+	Z_26 = (bool) CZP_24;
+	O_27 = false;
+	S_28 = false;
+	dil_29 = Test(PE,P_25);
+	edi_30 = DPB(edi_19, dil_29, 0);
+	rdi_31 = DPB(rdi_22, dil_29, 0);
 	if (Test(NE,Z_26))
 	{
-		edi_64 = 0x01;
-		rdi_65 = DPB(rdi_29, edi_64, 0);
-		dil_66 = (byte) edi_64;
+		edi_70 = 0x01;
+		rdi_71 = DPB(rdi_31, edi_70, 0);
+		dil_72 = (byte) edi_70;
 	}
-	edi_30 = ϕ(edi_28, edi_64);
-	use_int(edi_30);
-	xmm2_32 = DPB(xmm2, rLoc18_13, 0);
-	rdi_33 = 0x00;
-	SZO_34 = cond(0x00);
-	CZP_35 = cond((real64) xmm2_32 - rLoc10_14);
-	CZ_36 = CZP_35;
-	dil_37 = Test(UGT,CZ_36);
-	edi_38 = DPB(edi_30, dil_37, 0);
-	use_int(edi_38);
-	xmm4_40 = DPB(xmm4, rLoc18_13, 0);
-	rdi_41 = 0x00;
-	SZO_42 = cond(0x00);
-	CZP_43 = cond((real64) xmm4_40 - rLoc10_14);
-	C_44 = CZP_43;
-	dil_45 = Test(UGE,C_44);
-	edi_46 = DPB(edi_38, dil_45, 0);
-	use_int(edi_46);
-	xmm6_47 = DPB(xmm6_20, rLoc10_14, 0);
-	rdi_48 = 0x00;
-	SZO_49 = cond(0x00);
-	CZP_50 = cond((real64) xmm6_47 - rLoc18_13);
-	CZ_51 = CZP_50;
-	dil_52 = Test(UGT,CZ_51);
-	edi_53 = DPB(edi_46, dil_52, 0);
-	use_int(edi_53);
-	xmm0_54 = DPB(xmm0, rLoc10_14, 0);
-	rdi_55 = 0x00;
-	SZO_56 = cond(0x00);
-	CZP_57 = cond((real64) xmm0_54 - rLoc18_13);
-	C_58 = CZP_57;
-	dil_59 = Test(UGE,C_58);
-	edi_60 = DPB(edi_53, dil_59, 0);
-	use_int(edi_60);
-	rax_61 = 0x7C;
-	rsp_62 = fp;
-	SCZO_63 = cond(fp);
+	edi_32 = ϕ(edi_30, edi_70);
+	use_int(edi_32);
+	xmm2_34 = DPB(xmm2, rLoc18_13, 0);
+	rdi_35 = 0x00;
+	CZP_36 = cond((real64) xmm2_34 - rLoc10_14);
+	CZ_37 = CZP_36;
+	O_38 = false;
+	S_39 = false;
+	dil_40 = Test(UGT,CZ_37);
+	edi_41 = DPB(edi_32, dil_40, 0);
+	use_int(edi_41);
+	xmm4_43 = DPB(xmm4, rLoc18_13, 0);
+	rdi_44 = 0x00;
+	CZP_45 = cond((real64) xmm4_43 - rLoc10_14);
+	C_46 = (bool) CZP_45;
+	O_47 = false;
+	S_48 = false;
+	dil_49 = Test(UGE,C_46);
+	edi_50 = DPB(edi_41, dil_49, 0);
+	use_int(edi_50);
+	xmm6_51 = DPB(xmm6_21, rLoc10_14, 0);
+	rdi_52 = 0x00;
+	CZP_53 = cond((real64) xmm6_51 - rLoc18_13);
+	CZ_54 = CZP_53;
+	O_55 = false;
+	S_56 = false;
+	dil_57 = Test(UGT,CZ_54);
+	edi_58 = DPB(edi_50, dil_57, 0);
+	use_int(edi_58);
+	xmm0_59 = DPB(xmm0, rLoc10_14, 0);
+	rdi_60 = 0x00;
+	CZP_61 = cond((real64) xmm0_59 - rLoc18_13);
+	C_62 = (bool) CZP_61;
+	O_63 = false;
+	S_64 = false;
+	dil_65 = Test(UGE,C_62);
+	edi_66 = DPB(edi_58, dil_65, 0);
+	use_int(edi_66);
+	rax_67 = 0x7C;
+	rsp_68 = fp;
+	SCZO_69 = cond(fp);
 }
 
 // 00000000004007CD: void constants(Register word128 xmm0)
@@ -316,8 +327,8 @@ void __libc_csu_init(word32 edi)
 			word64 rdx_82;
 			byte SCZO_83;
 			byte SZO_84;
-			byte C_85;
-			byte Z_86;
+			bool C_85;
+			bool Z_86;
 			word32 ebx_87;
 			word64 rdi_88;
 			Mem0[0x0000000000600E08 + 0x00:word64]();

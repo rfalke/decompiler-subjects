@@ -1,11 +1,17 @@
 Using options:
-error: An error occurred during decompilation. System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.DllNotFoundException: ArmNative
-  at (wrapper managed-to-native) Reko.Arch.Arm.Arm32Architecture:CreateNativeArchitecture (string)
-  at Reko.Arch.Arm.Arm32Architecture..ctor (System.String archId) <0x419ad000 + 0x0019f> in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&)
-  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) <0x418565e0 + 0x0003f> in <filename unknown>:0 
-  --- End of inner exception stack trace ---
-  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) <0x418565e0 + 0x00087> in <filename unknown>:0 
-  at System.Reflection.MonoCMethod.DoInvoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) <0x418d7930 + 0x000d3> in <filename unknown>:0 
-  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) <0x418d78e0 + 0x00037> in <filename unknown>:0 
-  at System.RuntimeType.CreateInstanceImpl (BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes, System.Threading.StackCrawlMark& stackMark) <0x418ae5f0 + 0x006a2> in <filename unknown>:0 
+00008618: warning: Unable to resolve imported reference __cxa_end_cleanup.
+00009B6C: warning: Unable to resolve imported reference _Znwj.
+0000878C: warning: Call target address 00000000 is invalid.
+00008660: warning: Unable to resolve imported reference __gxx_personality_v0.
+00008654: warning: Unable to resolve imported reference __cxa_begin_catch.
+0000863C: warning: Unable to resolve imported reference __cxa_end_catch.
+00008624: warning: Unable to resolve imported reference _Znwj.
+0000860C: warning: Unable to resolve imported reference __cxa_rethrow.
+error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) [0x000e2] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) [0x00083] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (Reko.Core.Services.DecompilerEventListener listener) [0x00033] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x0001b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.DecompilerDriver.AnalyzeDataFlow () [0x00097] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x000aa] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 

@@ -1,7 +1,7 @@
 Using options:
 error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
-  at Reko.Core.ImageMapItem..ctor (UInt32 size) <0x40dbfe90 + 0x000a7> in <filename unknown>:0 
-  at Reko.Core.SegmentMap.CreateImageMap () <0x40dbf5f0 + 0x000df> in <filename unknown>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) <0x40d9c680 + 0x004ab> in <filename unknown>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) <0x40d9b3e0 + 0x001c4> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2 pArgs) <0x40d9b080 + 0x000dc> in <filename unknown>:0 
+  at Reko.Core.ImageMapItem..ctor (System.UInt32 size) [0x00019] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.SegmentMap.CreateImageMap () [0x00033] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x00180] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 

@@ -5,8 +5,8 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-struct Eq_103 * g_ptr0010;
-Eq_26 g_t804847F = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+struct Eq_105 * g_ptr0010;
+Eq_26 g_t804847F = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_29 g_t80484D0 = Unexpected function type (fn void ())
 ;

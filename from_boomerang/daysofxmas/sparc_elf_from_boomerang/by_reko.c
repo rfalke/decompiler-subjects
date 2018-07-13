@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 000104D8: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 000104D8: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
@@ -63,7 +63,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 l1_135;
 			word32 g0_137;
 			byte NZVC_138;
-			bool Z_139;
+			byte Z_139;
 			o1_56();
 			<anonymous> ** o0_141 = *l0_112;
 			if (*o0_141 == null)
@@ -95,7 +95,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 l7_102;
 		word32 g0_103;
 		byte NZVC_104;
-		bool Z_105;
+		byte Z_105;
 		word32 l0_106;
 		__deregister_frame_info();
 	}
@@ -134,7 +134,7 @@ void frame_dummy(word32 o7)
 		word32 l7_104;
 		word32 g0_105;
 		byte NZVC_106;
-		bool Z_107;
+		byte Z_107;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -158,7 +158,7 @@ void frame_dummy(word32 o7)
 		word32 l7_51;
 		word32 g0_52;
 		byte NZVC_53;
-		bool Z_54;
+		byte Z_54;
 		__register_frame_info();
 	}
 }
@@ -168,7 +168,7 @@ void call_frame_dummy()
 {
 }
 
-// 000106A8: Register Eq_12 main(Register Eq_12 o0, Register Eq_12 o1, Register (ptr Eq_17) o2, Register out ptr32 i0Out, Register out Eq_40 i1Out, Register out ptr32 i2Out)
+// 000106A8: Register Eq_12 main(Register Eq_12 o0, Register Eq_12 o1, Register (ptr32 Eq_17) o2, Register out ptr32 i0Out, Register out Eq_40 i1Out, Register out ptr32 i2Out)
 Eq_12 main(Eq_12 o0, Eq_12 o1, Eq_17 * o2, ptr32 & i0Out, Eq_40 & i1Out, ptr32 & i2Out)
 {
 	struct Eq_17 * o2_100;
@@ -184,7 +184,7 @@ Eq_12 main(Eq_12 o0, Eq_12 o1, Eq_17 * o2, ptr32 & i0Out, Eq_40 & i1Out, ptr32 &
 	{
 		bool NZV_118;
 		if (o0 > 0x02)
-			NZV_118 = cond(o0 - o1);
+			NZV_118 = (bool) cond(o0 - o1);
 		else
 		{
 			word32 i0_124;
@@ -196,7 +196,7 @@ Eq_12 main(Eq_12 o0, Eq_12 o1, Eq_17 * o2, ptr32 & i0Out, Eq_40 & i1Out, ptr32 &
 			word32 i2_135;
 			Eq_12 o0_136 = main(~0x56, 0x01 - i1_125, (word32) o0_127 + i2_126, out i0_133, out i1_134, out i2_135);
 			main(~0x4E, ~0x0C, (word32) o0_136 + i2_135, out i0_141, out i1_142, out i2_111);
-			NZV_118 = cond(i0_141 - i1_142);
+			NZV_118 = (bool) cond(i0_141 - i1_142);
 		}
 		Eq_12 o1_105;
 		if (!NZV_118)
@@ -292,9 +292,9 @@ Eq_12 main(Eq_12 o0, Eq_12 o1, Eq_17 * o2, ptr32 & i0Out, Eq_40 & i1Out, ptr32 &
 					word32 o7_252;
 					word32 g0_253;
 					byte NZVC_254;
-					byte NZV_255;
-					bool Z_256;
-					byte NV_257;
+					bool NZV_255;
+					byte Z_256;
+					bool NV_257;
 					bool C_258;
 					__flsbuf();
 					*i0Out = o0_239;
@@ -332,12 +332,12 @@ word32 fn00010890(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 00010898: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 00010898: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_455 * l7_22 = fn00010890(o7, 66176);
-	struct Eq_460 * o1_25 = l7_22->ptr0018;
+	struct Eq_461 * l7_22 = fn00010890(o7, 66176);
+	struct Eq_466 * o1_25 = l7_22->ptr0018;
 	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
 	if (o0_26 != (<anonymous> *) ~0x00)
 	{
@@ -362,7 +362,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_71;
 			word32 g0_72;
 			byte NZVC_73;
-			bool Z_74;
+			byte Z_74;
 			o0_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -387,5 +387,25 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00020B7C: void atexit()
+void atexit()
+{
+}
+
+// 00020B88: void exit()
+void exit()
+{
+}
+
+// 00020B94: void _exit()
+void _exit()
+{
+}
+
+// 00020BC4: void __flsbuf()
+void __flsbuf()
+{
 }
 

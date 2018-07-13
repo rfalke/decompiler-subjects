@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 000104D0: void _start(Register (ptr Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
+// 000104D0: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
 void _start( * g1, word32 o7, word32 dwArg40)
 {
 	if (g1 == null)
@@ -61,7 +61,7 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g1_140;
 			word32 g0_141;
 			byte NZVC_142;
-			bool Z_143;
+			byte Z_143;
 			o5_57();
 			<anonymous> ** g1_145 = *l0_115;
 			if (*g1_145 == null)
@@ -95,7 +95,7 @@ void __do_global_dtors_aux(word32 o7)
 		word32 g1_105;
 		word32 g0_106;
 		byte NZVC_107;
-		bool Z_108;
+		byte Z_108;
 		word32 l0_109;
 		__deregister_frame_info();
 	}
@@ -139,7 +139,7 @@ void frame_dummy(word32 o7)
 		word32 l7_107;
 		word32 g0_108;
 		byte NZVC_109;
-		bool Z_110;
+		byte Z_110;
 		_Jv_RegisterClasses();
 	}
 	else
@@ -164,7 +164,7 @@ void frame_dummy(word32 o7)
 		word32 l7_52;
 		word32 g0_53;
 		byte NZVC_54;
-		bool Z_55;
+		byte Z_55;
 		__register_frame_info();
 	}
 }
@@ -177,6 +177,7 @@ void call_frame_dummy()
 // 00010694: void main()
 void main()
 {
+	scanf("%f", tLoc78);
 }
 
 // 00010830: Register word32 fn00010830(Register word32 o7, Register word32 l7)
@@ -185,12 +186,12 @@ word32 fn00010830(word32 o7, word32 l7)
 	return o7 + l7;
 }
 
-// 00010838: Register (ptr word32) __do_global_ctors_aux(Register word32 o7)
+// 00010838: Register (ptr32 word32) __do_global_ctors_aux(Register word32 o7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_223 * l7_22 = fn00010830(o7, 0x00010104);
-	struct Eq_228 * o5_25 = l7_22->ptr0018;
+	struct Eq_233 * l7_22 = fn00010830(o7, 0x00010104);
+	struct Eq_238 * o5_25 = l7_22->ptr0018;
 	<anonymous> * g1_26 = o5_25->ptrFFFFFFFC;
 	if (g1_26 != (<anonymous> *) ~0x00)
 	{
@@ -216,7 +217,7 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 l7_73;
 			word32 g0_74;
 			byte NZVC_75;
-			bool Z_76;
+			byte Z_76;
 			g1_26();
 		} while (*l0_30 != ~0x00);
 	}
@@ -241,5 +242,30 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 000209A0: void atexit()
+void atexit()
+{
+}
+
+// 000209AC: void exit()
+void exit()
+{
+}
+
+// 000209B8: void _exit()
+void _exit()
+{
+}
+
+// 000209E8: void scanf()
+void scanf()
+{
+}
+
+// 000209F4: void printf()
+void printf()
+{
 }
 

@@ -4,21 +4,20 @@
 
 #include "subject.h"
 
-word32 g_a0010[];
 word32 g_dw100005F0 = 0x00019728;
 struct Eq_3 g_t10000690 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw10011D14 = 0xFFFFFFFF;
-word32 g_dw10011D20 = 0x00000000;
-word32 g_dw10011D24 = 0x00000000;
-word32 * g_ptr10011E04 = &g_dw10011D20;
-Eq_1220 g_a10011E08[] = 
+Eq_43 g_t1000097C = Unexpected function type (fn void ())
+;
+char g_str10001898[] = "";
+int32 g_dw10011D14 = -1;
+int32 g_dw10011D20 = 0;
+int32 g_dw10011D24 = 0;
+int32 * g_ptr10011E04 = &g_dw10011D20;
+ptr32 g_a10011E08[] = 
 	{
 	};
-Eq_43 g_t10011FE4 = 
-	{
-		0
-	};
+byte g_b10011FE4 = 0x00;
 

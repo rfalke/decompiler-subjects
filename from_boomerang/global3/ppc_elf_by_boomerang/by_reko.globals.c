@@ -7,15 +7,18 @@
 word32 g_dw100004F0 = 0x000183BC;
 struct Eq_3 g_t10000590 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw100108A8 = 0xFFFFFFFF;
-word32 g_dw100108B4 = 0x00000000;
-word32 g_dw100108B8 = 0x00000000;
-word32 * g_ptr10010998 = &g_dw100108B4;
+Eq_43 g_t1000087C = Unexpected function type (fn void ())
+;
+char g_str10000890[] = "a = %lld\n";
+char g_str1000089C[] = "b = %i\n";
+int32 g_dw100108A8 = -1;
+int32 g_dw100108B4 = 0;
+int32 g_dw100108B8 = 0;
+int32 * g_ptr10010998 = &g_dw100108B4;
+word32 g_dw100109B0 = 0x00007048;
+word32 g_dw100109B4 = 0x860DDF79;
 int32 g_dw100109B8 = 7;
-Eq_43 g_t10010A20 = 
-	{
-		0
-	};
+byte g_b10010A20 = 0x00;
 

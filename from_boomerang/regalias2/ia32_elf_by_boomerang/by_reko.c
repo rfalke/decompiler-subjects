@@ -12,7 +12,7 @@ void _init(word32 esi)
 	__do_global_ctors_aux();
 }
 
-// 080482C0: void _start(Register (ptr Eq_13) edx, Stack int32 dwArg00)
+// 080482C0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -32,8 +32,8 @@ void call_gmon_start()
 		byte SCZO_32;
 		word32 eax_33;
 		byte SZO_34;
-		byte C_35;
-		byte Z_36;
+		bool C_35;
+		bool Z_36;
 		eax_15();
 	}
 }
@@ -54,11 +54,11 @@ void __do_global_dtors_aux()
 				word32 esp_45;
 				word32 ebp_46;
 				byte SCZO_47;
-				byte Z_48;
+				bool Z_48;
 				word32 eax_49;
 				word32 edx_50;
 				byte SZO_51;
-				byte C_52;
+				bool C_52;
 				word32 esi_53;
 				edx_26();
 				eax_25 = globals->ptr8049580;
@@ -78,10 +78,10 @@ void frame_dummy(word32 esi)
 		byte SCZO_35;
 		word32 eax_36;
 		byte SZO_37;
-		byte C_38;
-		byte Z_39;
+		bool C_38;
+		bool Z_39;
 		word32 esi_40;
-		null();
+		fn00000000();
 	}
 }
 
@@ -100,19 +100,18 @@ void __libc_csu_init(word32 esi)
 	{
 		do
 		{
-			word32 esp_45;
-			word32 ebp_46;
-			up32 edi_47;
-			up32 esi_48;
-			word32 ebx_49;
-			byte SCZO_50;
-			word32 edx_51;
-			word32 ecx_52;
-			byte SZO_53;
-			byte C_54;
-			bcuisposr0 None_55;
+			word32 esp_43;
+			word32 ebp_44;
+			up32 edi_45;
+			up32 esi_46;
+			word32 ebx_47;
+			byte SCZO_48;
+			word32 edx_49;
+			word32 ecx_50;
+			byte SZO_51;
+			bool C_52;
 			(0x08049644 + 134518116)();
-		} while (esi_48 + 0x01 < edi_47);
+		} while (esi_46 + 0x01 < edi_45);
 	}
 }
 
@@ -133,8 +132,8 @@ void __libc_csu_fini()
 			word32 ecx_43;
 			word32 eax_44;
 			byte SZO_45;
-			byte C_46;
-			byte Z_47;
+			bool C_46;
+			bool Z_47;
 			word32 edx_48;
 			((<anonymous> *[]) 0x08049644)[esi_21]();
 		} while (esi_40 != 0x00);
@@ -156,7 +155,7 @@ void __do_global_ctors_aux()
 			word32 edx_32;
 			word32 eax_33;
 			byte SCZO_34;
-			byte Z_35;
+			bool Z_35;
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}

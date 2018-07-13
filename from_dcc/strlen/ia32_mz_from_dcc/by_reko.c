@@ -4,13 +4,13 @@
 
 #include "subject.h"
 
-// 0800:01FA: void main(Register (ptr Eq_3) ds)
+// 0800:01FA: void main(Register (ptr16 Eq_3) ds)
 void main(Eq_3 * ds)
 {
 	fn0800_0205(ds, &Eq_3::b0194);
 }
 
-// 0800:0205: void fn0800_0205(Register (ptr Eq_3) ds, Stack (memptr (ptr Eq_3) byte) wArg02)
+// 0800:0205: void fn0800_0205(Register (ptr16 Eq_3) ds, Stack (memptr (ptr16 Eq_3) byte) wArg02)
 void fn0800_0205(Eq_3 * ds, byte Eq_3::*wArg02)
 {
 	do

@@ -4,7 +4,27 @@
 
 #include "subject.h"
 
-// 08048818: void _start(Register (ptr Eq_2) edx, Stack ui32 dwArg00)
+// 080487D8: void atexit()
+void atexit()
+{
+}
+
+// 080487E8: void __fpstart()
+void __fpstart()
+{
+}
+
+// 080487F8: void exit()
+void exit()
+{
+}
+
+// 08048808: void printf()
+void printf()
+{
+}
+
+// 08048818: void _start(Register (ptr32 Eq_2) edx, Stack ui32 dwArg00)
 void _start( * edx, ui32 dwArg00)
 {
 	if (0x080499F8 != 0x00)
@@ -17,10 +37,10 @@ void _start( * edx, ui32 dwArg00)
 	word32 edx_30;
 	word32 eax_31;
 	byte SZO_32;
-	byte C_33;
-	byte Z_34;
+	bool C_33;
+	bool Z_34;
 	byte SCZO_35;
-	!__fpstart();
+	__fpstart();
 	fn08048880();
 	_init();
 	exit(main());
@@ -34,27 +54,30 @@ void _mcount()
 // 08048880: void fn08048880()
 void fn08048880()
 {
-	if (0x00 == 0x00)
-		return;
-	__wait();
-	uint16 wLoc10_39 = __fstcw();
-	if (!__bt(0x00, 0x0A))
+	if (0x00 != 0x00)
 	{
-		cui16 v16_67 = wLoc10_39 & 0xF0C0 | 0x0300;
-		__fldcw(v16_67 | 0x02);
-		__fldcw(v16_67 | 0x02);
+		__wait();
+		uint16 wLoc10_39 = __fstcw();
+		if (__bt(0x00, 0x0A))
+		{
+			word32 edx_84;
+			__btc(0x00, 11, out edx_84);
+		}
+		cui16 v16_65 = wLoc10_39 & 0xF0C0 | 0x0300;
+		__fldcw(v16_65 | 0x02);
+		__fldcw(v16_65 | 0x02);
 		if (false)
 			globals->dw8049B08 = 0x01;
 	}
 }
 
-// 08048924: void addem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr word32) dwArg10)
+// 08048924: void addem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr32 word32) dwArg10)
 void addem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 * dwArg10)
 {
 	*dwArg10 = dwArg04 + dwArg08 + dwArg0C;
 }
 
-// 08048938: void passem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr word32) dwArg10)
+// 08048938: void passem(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack (ptr32 word32) dwArg10)
 void passem(word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 * dwArg10)
 {
 	addem(dwArg04, dwArg08, dwArg0C, dwArg10);
@@ -74,13 +97,12 @@ void _init()
 	ptr32 ecx_8 = globals->ptr80499F0;
 	if (*(ecx_8 - 0x08) != 0x00)
 	{
-		word32 esp_25;
-		word32 ebx_26;
-		byte SCZO_27;
-		word32 ecx_28;
-		word32 edx_29;
-		byte Z_30;
-		bcuisposr0 None_31;
+		word32 esp_23;
+		word32 ebx_24;
+		byte SCZO_25;
+		word32 ecx_26;
+		word32 edx_27;
+		bool Z_28;
 		(*(ecx_8 - 0x08))();
 	}
 }
@@ -91,13 +113,12 @@ void _fini()
 	ptr32 ecx_8 = globals->ptr80499F4;
 	if (*(ecx_8 - 0x14) != 0x00)
 	{
-		word32 esp_26;
-		word32 ebx_27;
-		byte SCZO_28;
-		word32 ecx_29;
-		word32 edx_30;
-		byte Z_31;
-		bcuisposr0 None_32;
+		word32 esp_24;
+		word32 ebx_25;
+		byte SCZO_26;
+		word32 ecx_27;
+		word32 edx_28;
+		bool Z_29;
 		(*(ecx_8 - 0x14))();
 	}
 }

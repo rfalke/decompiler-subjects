@@ -12,7 +12,7 @@ void _init()
 	__do_global_ctors_aux();
 }
 
-// 00000000004003C0: void _start(Register (ptr Eq_11) rdx, Stack Eq_12 qwArg00)
+// 00000000004003C0: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
 void _start( * rdx, Eq_12 qwArg00)
 {
 	__align((char *) fp + 0x08);
@@ -30,8 +30,8 @@ void call_gmon_start()
 		byte SCZO_16;
 		word64 rax_17;
 		byte SZO_18;
-		byte C_19;
-		byte Z_20;
+		bool C_19;
+		bool Z_20;
 		__gmon_start__();
 	}
 }
@@ -39,13 +39,31 @@ void call_gmon_start()
 // 0000000000400410: void __do_global_dtors_aux(Register word64 r8)
 void __do_global_dtors_aux(word64 r8)
 {
-	if (globals->b601020 != 0x00)
-		return;
-	up64 rdx_28 = globals->qw601028;
-	if (rdx_28 >= 786885)
+	if (globals->b601020 == 0x00)
+	{
+		up64 rdx_31 = globals->qw601028;
+		if (rdx_31 < 786885)
+		{
+			do
+			{
+				uint64 rax_49 = rdx_31 + 0x01;
+				globals->qw601028 = rax_49;
+				word64 rsp_51;
+				word64 rbp_52;
+				word64 rbx_53;
+				byte SCZO_54;
+				bool Z_55;
+				word32 eax_56;
+				word64 rax_57;
+				word64 rdx_58;
+				word64 r8_59;
+				bool C_60;
+				(*((char *) globals->a600E28 + rax_49 * 0x08))();
+				rdx_31 = globals->qw601028;
+			} while (rdx_31 < 786885);
+		}
 		globals->b601020 = 0x01;
-	else
-		globals->qw601028 = rdx_28 + 0x01;
+	}
 }
 
 // 0000000000400480: void frame_dummy()
@@ -56,19 +74,19 @@ void frame_dummy()
 	word64 rsp_43;
 	word64 rbp_44;
 	byte SCZO_45;
-	byte Z_46;
+	bool Z_46;
 	word32 eax_47;
 	word64 rax_48;
 	byte SZO_49;
-	byte C_50;
+	bool C_50;
 	word32 edi_51;
 	word64 rdi_52;
 	word64 r11_53;
 	null();
 }
 
-// 00000000004004AC: void func(Register (ptr Eq_97) rdi)
-void func(Eq_97 * rdi)
+// 00000000004004AC: void func(Register (ptr64 Eq_119) rdi)
+void func(Eq_119 * rdi)
 {
 	rdi->dw0000 = 0x01;
 	rdi->b0008 = 0x6B;
@@ -107,8 +125,8 @@ void __libc_csu_init(word32 edi)
 			word64 rsi_70;
 			word64 rdx_71;
 			byte SZO_72;
-			byte C_73;
-			byte Z_74;
+			bool C_73;
+			bool Z_74;
 			word32 ebx_75;
 			word64 rdi_76;
 			(*(<anonymous> **) 0x00600E14)();
@@ -129,7 +147,7 @@ void __do_global_ctors_aux()
 			word64 * rbx_32;
 			byte SCZO_33;
 			word64 rax_34;
-			byte Z_35;
+			bool Z_35;
 			word32 ebx_36;
 			rax_11();
 		} while (*rbx_32 != ~0x00);

@@ -8,23 +8,24 @@ Using options:
 00000000004009A2: warning: The format specifier '%z' passed to *printf is not known.
 00000000004009A2: warning: The format specifier '%z' passed to *printf is not known.
 00000000004009A2: warning: The format specifier '%z' passed to *printf is not known.
+00000000004004EE: warning: Call target address 0000000000000000 is invalid.
 00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 compare_floats: error: An error occurred during data flow analysis.
     Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x4166f2e0 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x4166ecc0 + 0x00283> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x4166ebc0 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x4161f8f0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x4166e840 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x41623390 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x4166e0c0 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x4165b000 + 0x004f3> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000ea] in <6a264ef1b92c4115b517d6a392a986a9>:0 
 : error: Error when reconstructing types.
     Specified argument was out of the range of valid values.
 Parameter name: Linear address 00000000 is not in known segment.
-      at Reko.Core.SegmentMap.MapLinearAddressToAddress (UInt64 linearAddress) <0x416795a0 + 0x0017f> in <filename unknown>:0 
-  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) <0x416930f0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x41689610 + 0x002d5> in <filename unknown>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) <0x41682b50 + 0x00597> in <filename unknown>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () <0x416824e0 + 0x0022f> in <filename unknown>:0 
+      at Reko.Core.SegmentMap.MapLinearAddressToAddress (System.UInt64 linearAddress) [0x00064] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) [0x0000c] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000da] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) [0x000cd] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.DecompilerDriver.ReconstructTypes () [0x0004a] in <6a264ef1b92c4115b517d6a392a986a9>:0 

@@ -4,35 +4,49 @@
 
 #include "subject.h"
 
-Eq_1097 g_tFFFFFFC7;
-Eq_1097 g_tFFFFFFFF;
-Eq_8481 g_t0000;
-Eq_1097 g_t0001;
-Eq_2282 g_t000A;
-Eq_4424 g_t0020;
-Eq_2282 g_t0022;
-Eq_2282 g_t0027;
-Eq_1097 g_t0028;
-Eq_1754 g_t0029;
-Eq_463 g_t002B;
-Eq_1560 g_t002C;
-Eq_463 g_t002D;
-Eq_2188 g_t002F;
-Eq_463 g_t0030;
-Eq_1097 g_t0046;
+Eq_988 g_tFFFFFFC7;
+Eq_988 g_tFFFFFFFF;
+Eq_7357 g_t0000;
+Eq_7968 g_t0001;
+Eq_1480 g_t000A;
+Eq_7051 g_t0020;
+Eq_1480 g_t0022;
+Eq_1480 g_t0027;
+Eq_988 g_t0028;
+Eq_439 g_t002B;
+Eq_7051 g_t002C;
+Eq_439 g_t002D;
+Eq_988 g_t002E;
+Eq_1388 g_t002F;
+Eq_439 g_t0030;
+Eq_988 g_t0046;
 <anonymous> g_t0050;
-Eq_182 g_t0065;
-Eq_182 g_t0066;
-Eq_182 g_t0067;
-<anonymous> g_t11C64 = <code>;
-<anonymous> g_t131D0 = <code>;
-<anonymous> g_t13A1C = <code>;
-<anonymous> g_t1428C = <code>;
-Eq_4424 g_t14324 = 
+int32 g_dw0064;
+Eq_184 g_t0065;
+Eq_184 g_t0066;
+Eq_184 g_t0067;
+Eq_7051 g_t0073;
+Eq_439 g_t11C64 = 
 	{
 		<code>,
 		;
-<anonymous> g_t143FC = <code>;
+<anonymous> g_t131D0 = <code>;
+<anonymous> g_t13A1C = <code>;
+int8 g_b13EC8 = 64;
+Eq_2490 g_t1413C = 
+		{
+			0x00013E48,
+			0x00013D80,
+			0x00013EC8,
+			
+			{
+				81608
+			},
+			81608,
+			&g_b13EC8,
+		};
+<anonymous> g_t1428C = <code>;
+<anonymous> g_t14324 = <code>;
 void g_t14A54(int32 o0) = Unexpected function type (fn void (int32))
 ;
 void g_t14A70(int32 o0) = Unexpected function type (fn void (int32))
@@ -55,42 +69,93 @@ up32 g_a16518[] =
 int32 g_dw169F0 = 92116;
 <anonymous> g_t17090 = <code>;
 <anonymous> g_t192D4 = <code>;
-<anonymous> g_t19308 = <code>;
 Eq_2 g_t19F78 = Unexpected function type (fn void ())
 ;
 char g_str19FE8[] = "bad repetition count";
 char g_str1A000[] = "invalid integer";
 char g_str1A010[] = "exponent field";
+char g_str1A020[] = "e%ld";
 char g_str1A028[] = "invalid number";
 char g_str1A038[] = "complex format";
 char g_str1A048[] = "lread";
 char g_str1A050[] = "no star";
-char g_str1A058[] = "no real part";
-char g_str1A068[] = "no comma";
-char g_str1A078[] = "no imaginary part";
-char g_str1A090[] = "no )";
 char g_str1A098[] = "logical";
 char g_str1A0A0[] = "no space";
 char g_str1A0B0[] = "undelimited character string";
-int8 g_b1A0D0 = 108;
+Eq_1746 g_t1A0D0 = 
+		{
+			'l'
+		};
 char g_str1A0D8[] = "stler";
 char g_str1A0E0[] = "lio";
 char g_str1A0E8[] = "list in";
 char g_str1A0F0[] = "read start";
 char g_str1A100[] = "r";
+char g_str1A110[] = "w";
 char g_str1A118[] = "malloc failure";
 char g_str1A128[] = "open";
+char g_str1A130[] = "fort.%ld";
 char g_str1A140[] = "no space";
 char g_str1A170[] = "startio";
 char g_str1A178[] = "read start";
 char g_str1A188[] = "startio";
 char g_str1A190[] = "sfe";
 char g_str1A198[] = "list output start";
+Eq_1746 g_t1A1B0 = 
+		{
+			'F'
+		};
+Eq_1746 g_t1A1C8 = 
+		{
+			'I'
+		};
+Eq_1746 g_t1A1D8 = 
+		{
+			'Q'
+		};
+Eq_1746 g_t1A1E8 = 
+		{
+			'I'
+		};
+Eq_1746 g_t1A1F8 = 
+		{
+			'K'
+		};
+Eq_1746 g_t1A200 = 
+		{
+			'T'
+		};
 char g_str1A210[] = "I/O recursion";
 char g_str1A220[] = "I/O recursion";
 char g_str1A230[] = "endfile";
+char g_str1A238[] = "fort.%ld";
+char g_str1A590[] = "%s: illegal error number %d\n";
+char g_str1A5B0[] = "%s: end of file\n";
+char g_str1A5C8[] = "%s: %s\n";
+char g_str1A5D0[] = "(libf2c f__fatal already called, aborting.)";
+char g_str1A600[] = "apparent state: unit %d ";
+char g_str1A620[] = "named %s\n";
+char g_str1A630[] = "(unnamed)\n";
+char g_str1A640[] = "apparent state: internal I/O\n";
+char g_str1A660[] = "last format: %.*s\n";
+char g_str1A678[] = "lately %s %s %s %s";
+char g_str1A690[] = "reading";
+char g_str1A698[] = "writing";
+char g_str1A6A0[] = "sequential";
+char g_str1A6B0[] = "direct";
+char g_str1A6B8[] = "formatted";
+char g_str1A6C8[] = "unformatted";
+char g_str1A6D8[] = "external";
+char g_str1A6E8[] = "internal";
+Eq_1746 g_t1A6F8 = 
+		{
+			' '
+		};
 char g_str1A700[] = "I/O recursion";
 char g_str1A710[] = "bad string";
+char g_str1A720[] = "format too complicated:\n";
+char g_str1A740[] = "unknown code in do_fio: %d\n%.*s\n";
+char g_str1A768[] = "do_fio";
 char g_str1A788[] = "unknown type in lio";
 int8 g_b1A7A0 = 48;
 int8 g_a1A7A1[] = 
@@ -100,40 +165,50 @@ int8 g_b1A7B0 = 65;
 int8 g_a1A7B1[] = 
 		{
 		};
+char g_str1A7B8[] = "e%ld";
 char g_str1A7C0[] = "fmt";
+char g_str1A7C8[] = "rd_ed, unexpected code: %d\n";
+char g_str1A7E8[] = "rd_ned, unexpected code: %d\n";
 char g_str1A808[] = "left off";
 char g_str1A818[] = "recend";
+char g_str1A840[] = "w_ed, unexpected code: %d\n";
+char g_str1A860[] = "w_ned, unexpected code: %d\n";
 char g_str1A880[] = "startio";
 char g_str1A888[] = "write start";
+char g_str1A898[] = "%s\n";
 <anonymous> g_t2A9CC = <code>;
-Eq_182 g_t2AC00 = 
+Eq_184 g_t2AC00 = 
 		{
-			0x00000000,
+			
+			{
+				0
+			},
 			0x00000006,
 			0x00000000,
 			null,
 		};
-Eq_182 g_t2AC14 = 
+Eq_184 g_t2AC14 = 
 		{
-			0x00000000,
+			
+			{
+				0
+			},
 			0x00000005,
 			0x00000000,
 			null,
 		};
 char g_b2AD00 = 'r';
 char * g_ptr2AD10 = &g_str1A100;
-char * g_a2AD18[] = 
-		{
-		};
+char * g_ptr2AD18 = &g_str1A110;
 char * g_ptr2AD28 = &g_b2AE18;
-Eq_2174 g_t2AD2C = 
+Eq_1374 g_t2AD2C = 
 		{
 			400
 		};
 word32 g_dw2ADB4 = 0x00000000;
 int8 g_b2ADB8 = 0;
 int8 g_b2ADC0 = 0;
-Eq_447 g_t2AE08 = 
+Eq_424 g_t2AE08 = 
 		{
 			0x0000000000000000
 		};
@@ -141,46 +216,48 @@ char g_b2AE18 = '\x00';
 word32 g_dw2AFA8 = 0x00000000;
 word32 g_dw2AFAC = 0x00000000;
 word32 g_dw2AFB0 = 0x00000000;
-Eq_11096 g_a2AFB4[] = 
+Eq_9680 g_a2AFB4[] = 
 		{
 		};
-Eq_11098 g_a2AFB8[] = 
+Eq_9682 g_a2AFB8[] = 
 		{
 		};
-Eq_11099 g_a2AFBC[] = 
+Eq_9683 g_a2AFBC[] = 
 		{
 		};
-Eq_11097 g_a2AFC0[] = 
+Eq_9681 g_a2AFC0[] = 
 		{
 		};
 byte g_b2C000 = 0x00;
 int8 g_b2C2A8 = 0;
 byte g_b2C38E = 0x00;
 <anonymous> * g_ptr2C390 = null;
-Eq_283 g_t2C4D8 = 
+Eq_4790 g_t2C3B8 = 
+		{
+		};
+Eq_285 g_t2C4D8 = 
 		{
 			false
 		};
 word32 g_dw2C4DC = 0x00000000;
-Eq_947 g_t2C4E0 = 
-		{
-			0x0000000000000000
-		};
-Eq_1778 g_t2C4E8 = 
+Eq_826 g_t2C4E0 = 
 		{
 			0x0000000000000000
 		};
 int32 g_dw2C4F0 = 0;
 word32 g_dw2C4F4 = 0x00000000;
-up32 g_dw2C4F8 = 0x00000000;
+Eq_454 g_t2C4F8 = 
+		{
+			0
+		};
 word32 g_dw2C4FC = 0x00000000;
 <anonymous> * g_ptr2C500 = null;
 word32 g_dw2C504 = 0x00000000;
 int32 g_dw2C508 = 0;
 word32 g_dw2C50C = 0x00000000;
-<anonymous> * g_ptr2C71C = null;
+word32 g_dw2C71C = 0x00000000;
 word32 g_dw2C720 = 0x00000000;
-struct Eq_182 * g_ptr2C724 = null;
+struct Eq_184 * g_ptr2C724 = null;
 word32 g_dw2C728 = 0x00000000;
 char * g_ptr2C72C = null;
 word32 g_dw2C730 = 0x00000000;
@@ -189,10 +266,10 @@ int32 g_dw2C738 = 0;
 word32 g_dw2C73C = 0x00000000;
 word32 g_dw2C750 = 0x00000000;
 word32 g_dw2C754 = 0x00000000;
-Eq_5763 g_a2C764[] = 
+Eq_4966 g_a2C764[] = 
 		{
 		};
-Eq_11090 g_a2C768[] = 
+Eq_9674 g_a2C768[] = 
 		{
 		};
 word32 g_dw2C82C = 0x00000000;
@@ -203,22 +280,22 @@ word32 g_dw2C85C = 0x00000000;
 word32 g_dw2C870 = 0x00000000;
 word32 g_dw2C874 = 0x00000000;
 word32 g_dw2C884 = 0x00000000;
-Eq_3381 g_t2D800 = 
+Eq_1765 g_t2D800 = 
 		{
-			0,
+			0x00000000,
 		};
 int32 g_dw2D9FC = 0;
 ptr32 g_ptr2DA00 = 0x00000000;
 word32 g_dw2DA04 = 0x00000000;
 int32 g_dw2DA08 = 0;
-int8 * g_ptr2DA0C = null;
+union Eq_1746 * g_ptr2DA0C = null;
 int32 g_dw2DA10 = 0;
 <anonymous> * g_ptr2DA14 = null;
-Eq_456 g_t2DA18 = 
+Eq_433 g_t2DA18 = 
 		{
 			0
 		};
-Eq_2174 g_t2DA1C = 
+Eq_1374 g_t2DA1C = 
 		{
 			0
 		};
@@ -228,22 +305,23 @@ word32 g_dw2DA28 = 0x00000000;
 word32 g_dw2DA50 = 0x00000000;
 word32 g_dw2DA78 = 0x00000000;
 word32 g_dw2DA7C = 0x00000000;
-<anonymous> * g_ptr2DA80 = null;
+struct Eq_439 * g_ptr2DA80 = null;
 word32 g_dw2DA84 = 0x00000000;
 word32 g_dw2DA88 = 0x00000000;
 word32 g_dw2DA8C = 0x00000000;
-struct Eq_275 * g_ptr2DA90 = null;
+struct Eq_277 * g_ptr2DA90 = null;
 word32 g_dw2DA94 = 0x00000000;
-struct Eq_4424 * g_ptr2DA98 = null;
+<anonymous> * g_ptr2DA98 = null;
 ui32 g_dw2DA9C = 0x00000000;
 word32 g_dw2DAA0 = 0x00000000;
 <anonymous> * g_ptr2DAA4 = null;
-struct Eq_9661 * g_ptr2DAA8 = null;
+struct Eq_8453 * g_ptr2DAA8 = null;
 ptr32 g_ptr2DAAC = 0x00000000;
-Eq_2174 g_t2DAB0 = 
+Eq_1374 g_t2DAB0 = 
 		{
 			0
 		};
 word32 g_dw2DAB4 = 0x00000000;
 word32 g_dw2DAB8 = 0x00000000;
+char * g_ptrDABA0;
 

@@ -4,12 +4,12 @@
 
 #include "subject.h"
 
-// 00401005: Register word32 fn00401005(Stack word32 dwArg04, Register out ptr32 ebxOut)
-word32 fn00401005(word32 dwArg04, ptr32 & ebxOut)
+// 00401005: Register word32 fn00401005(Stack ui32 dwArg04, Register out ptr32 ebxOut)
+word32 fn00401005(ui32 dwArg04, ptr32 & ebxOut)
 {
-	word32 eax_12 = Mem0[fs:0x00:word32];
-	Mem33[fs:0x00:word32] = fp - 0x10;
-	word32 esp_111 = fp - 44;
+	ptr32 eax_12 = fs->ptr0000;
+	fs->ptr0000 = fp - 0x10;
+	struct Eq_14 * esp_111 = fp - 44;
 	if (dwArg04 == ~0x08)
 	{
 		word32 ebp_133;
@@ -20,16 +20,16 @@ word32 fn00401005(word32 dwArg04, ptr32 & ebxOut)
 		word32 esi_139;
 		word32 edi_140;
 		byte SZO_141;
-		byte C_142;
-		byte Z_143;
+		bool C_142;
+		bool Z_143;
 		word32 edx_144;
 		CxxThrowException();
 	}
 	if (dwArg04 == 0x00)
 	{
-		word32 esp_106 = esp_111 - 0x04;
-		Mem107[esp_106 + 0x00:word32] = 0x00405070;
-		Mem110[esp_106 - 0x04 + 0x00:word32] = fp - 0x1C;
+		word32 * esp_106 = esp_111 - 0x04;
+		*esp_106 = 0x00405070;
+		*(esp_106 - 0x04) = fp - 0x1C;
 		word32 ebp_112;
 		word32 eax_113;
 		word32 ecx_115;
@@ -38,97 +38,233 @@ word32 fn00401005(word32 dwArg04, ptr32 & ebxOut)
 		word32 esi_118;
 		word32 edi_119;
 		byte SZO_120;
-		byte C_121;
-		byte Z_122;
+		bool C_121;
+		bool Z_122;
 		word32 edx_123;
 		CxxThrowException();
 	}
-	Mem93[fs:0x00:word32] = eax_12;
+	fs->ptr0000 = eax_12;
 	word32 ebx_100;
-	*ebxOut = Mem93[esp_111 + 0x0C:word32];
+	*ebxOut = esp_111->dw000C;
 	return dwArg04 + 0x0A;
 }
 
-// 004014A8: Register DWORD Win32CrtStartup()
-DWORD Win32CrtStartup()
+// 004014A8: Register Eq_70 Win32CrtStartup()
+Eq_70 Win32CrtStartup()
 {
-}
-
-// 00401810: Register word32 fn00401810(Stack word32 dwArg04)
-word32 fn00401810(word32 dwArg04)
-{
-	if (Mem0[dwArg04 + 0x00:word16] != 23117)
-		return 0x00;
-	word32 eax_39 = Mem0[dwArg04 + 0x3C:word32] + dwArg04;
-	if (Mem0[eax_39 + 0x00:word32] != 0x4550)
-		return 0x00;
-	return (word32) (Mem0[eax_39 + 0x18:word16] == 0x010B);
-}
-
-// 00401850: Register word32 fn00401850(Stack word32 dwArg04, Stack word32 dwArg08)
-word32 fn00401850(word32 dwArg04, word32 dwArg08)
-{
-}
-
-// 004018A0: Register word32 fn004018A0(Stack word32 dwArg04)
-word32 fn004018A0(word32 dwArg04)
-{
-	word32 eax_16 = Mem0[fs:0x00:word32];
-	Mem38[fs:0x00:word32] = fp - 0x14;
-	if (fn00401810(0x00400000) != 0x00)
+	fn00401A50();
+	ptr32 esp_221 = fp - 0x08;
+	word32 * ebp_10 = fn00401970(ebx, esi, edi, dwLoc0C, 4215192, 0x10);
+	if (globals->dw4064E4 == 0x00)
 	{
-		word32 eax_92 = fn00401850(0x00400000, dwArg04 - 0x00400000);
-		if (eax_92 != 0x00)
+		HeapSetInformation(null, SLICE(0x00, HEAP_INFORMATION_CLASS, 32), (void *) 0x01, 0x00);
+		esp_221 = fp - 0x0C;
+	}
+	*(ebp_10 - 0x04) = 0x00;
+	Eq_70 esi_28 = fs->ptr0018->t0004;
+	*(ebp_10 - 0x1C) = 0x00;
+	while (true)
+	{
+		union Eq_70 * esp_32 = esp_221 - 0x04;
+		*esp_32 = 0x00;
+		*(esp_32 - 0x04) = (union Eq_70 *) esi_28;
+		*(esp_32 - 0x08) = 0x004064CC;
+		Eq_70 eax_38 = InterlockedCompareExchange(*(esp_32 - 0x08), *(esp_32 - 0x04), *esp_32);
+		if (eax_38 == 0x00)
+			break;
+		if (eax_38 == esi_28)
 		{
-			word32 eax_99 = ~(Mem38[eax_92 + 0x24:word32] >>u 0x1F);
-			Mem105[fs:0x00:word32] = eax_16;
+			*(ebp_10 - 0x1C) = 0x01;
+			break;
+		}
+		*esp_32 = 1000;
+		Sleep(*esp_32);
+	}
+	if (globals->dw4064BC == 0x01)
+	{
+		*esp_32 = 0x1F;
+		_amsg_exit(*esp_32);
+	}
+	Eq_70 eax_126;
+	if (globals->dw4064BC == 0x00)
+	{
+		globals->dw4064BC = 0x01;
+		*esp_32 = 4212248;
+		*(esp_32 - 0x04) = 0x0040430C;
+		if (_initterm_e(*(esp_32 - 0x04), *esp_32) != 0x00)
+		{
+			*(ebp_10 - 0x04) = ~0x01;
+			eax_126.u0 = 0xFF;
+			goto l004013A1;
+		}
+	}
+	else
+		globals->dw406184 = 0x01;
+	if (globals->dw4064BC == 0x01)
+	{
+		PVFV ** esp_171 = esp_221 - 0x04;
+		*esp_171 = (PVFV **) &globals->t404208;
+		*(esp_171 - 0x04) = 0x00404000;
+		_initterm(*(esp_171 - 0x04), *esp_171);
+		globals->dw4064BC = 0x02;
+	}
+	if (*(ebp_10 - 0x1C) == 0x00)
+	{
+		union Eq_70 * esp_165 = esp_221 - 0x04;
+		*esp_165 = 0x00;
+		*(esp_165 - 0x04) = 0x004064CC;
+		InterlockedExchange(*(esp_165 - 0x04), *esp_165);
+	}
+	ptr32 esp_143 = esp_221;
+	if (globals->ptr4064E8 != null)
+	{
+		word32 * esp_139 = esp_221 - 0x04;
+		*esp_139 = 0x004064E8;
+		word32 eax_141 = fn004018A0(dwArg00);
+		esp_143 = esp_139 + 0x01;
+		if (eax_141 != 0x00)
+		{
+			*esp_139 = 0x00;
+			*(esp_139 - 0x04) = 0x02;
+			*(esp_139 - 0x08) = 0x00;
+			word32 ebx_154;
+			byte SZO_155;
+			bool C_156;
+			byte SCZO_157;
+			bool Z_158;
+			word32 eax_159;
+			struct Eq_406 * fs_161;
+			word32 esi_162;
+			word32 edi_163;
+			word32 ecx_164;
+			globals->ptr4064E8();
+		}
+	}
+	*_initenv = (union Eq_70 *) globals->t40616C;
+	union Eq_70 * esp_96 = esp_143 - 0x04;
+	*esp_96 = (union Eq_70 *) globals->t40616C;
+	*(esp_96 - 0x04) = globals->dw406170;
+	*(esp_96 - 0x08) = globals->dw406168;
+	word32 ebx_104;
+	Eq_70 eax_105 = fn00401005(dwArg00, out ebx_104);
+	globals->t406180 = eax_105;
+	if (globals->dw406174 == ebx_104)
+	{
+		*esp_96 = (union Eq_70 *) eax_105;
+		exit(*esp_96);
+	}
+	if (globals->dw406184 == ebx_104)
+	{
+		word32 esp_127;
+		word32 ebx_128;
+		byte SZO_129;
+		bool C_130;
+		byte SCZO_131;
+		bool Z_132;
+		word32 eax_133;
+		struct Eq_440 * fs_135;
+		word32 esi_136;
+		word32 edi_137;
+		word32 ecx_138;
+		cexit();
+	}
+	*(ebp_10 - 0x04) = ~0x01;
+	eax_126 = globals->t406180;
+l004013A1:
+	fn004019B5(ebp_10, 0x10, dwArg00, dwArg04, dwArg08, dwArg0C);
+	return eax_126;
+}
+
+// 00401810: Register word32 fn00401810(Stack (ptr32 Eq_447) dwArg04)
+word32 fn00401810(Eq_447 * dwArg04)
+{
+	if (dwArg04->w0000 != 23117)
+		return 0x00;
+	struct Eq_453 * eax_39 = dwArg04 + dwArg04->dw003C / 0x0040;
+	if (eax_39->dw0000 != 0x4550)
+		return 0x00;
+	return (word32) (eax_39->w0018 == 0x010B);
+}
+
+// 00401850: Register (ptr32 Eq_470) fn00401850(Stack (ptr32 Eq_471) dwArg04, Stack uint32 dwArg08)
+Eq_470 * fn00401850(Eq_471 * dwArg04, uint32 dwArg08)
+{
+	struct Eq_473 * ecx_12 = dwArg04 + dwArg04->dw003C / 0x0040;
+	up32 esi_20 = (word32) ecx_12->w0006;
+	up32 edx_21 = 0x00;
+	struct Eq_470 * eax_24 = &(ecx_12 + ((word32) ecx_12->w0014 + 0x18) / 22)->w0006 + 0x03;
+	if (esi_20 != 0x00)
+	{
+		do
+		{
+			uint32 ecx_56 = eax_24->dw0000;
+			if (dwArg08 >= ecx_56 && dwArg08 < eax_24->dw0008 + ecx_56)
+				return eax_24;
+			edx_21 = edx_21 + 0x01;
+			eax_24 = eax_24 + 0x01;
+		} while (edx_21 < esi_20);
+	}
+	eax_24 = null;
+	return eax_24;
+}
+
+// 004018A0: Register ui32 fn004018A0(Stack ui32 dwArg04)
+ui32 fn004018A0(ui32 dwArg04)
+{
+	ptr32 eax_16 = fs->ptr0000;
+	fs->ptr0000 = fp - 0x14;
+	if (fn00401810(&globals->t400000) != 0x00)
+	{
+		struct Eq_532 * eax_92 = fn00401850(&globals->t400000, dwArg04 - 0x00400000);
+		if (eax_92 != null)
+		{
+			uint32 eax_99 = ~(eax_92->dw0024 >> 0x1F);
+			fs->ptr0000 = eax_16;
 			return eax_99 & 0x01;
 		}
 	}
-	Mem73[fs:0x00:word32] = eax_16;
+	fs->ptr0000 = eax_16;
 	return 0x00;
 }
 
-// 00401970: Register word32 fn00401970(Register word32 ebx, Register word32 esi, Register word32 edi, Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08)
-word32 fn00401970(word32 ebx, word32 esi, word32 edi, word32 dwArg00, word32 dwArg04, word32 dwArg08)
+// 00401970: Register ptr32 fn00401970(Register word32 ebx, Register word32 esi, Register word32 edi, Stack word32 dwArg00, Stack word32 dwArg04, Stack ui32 dwArg08)
+ptr32 fn00401970(word32 ebx, word32 esi, word32 edi, word32 dwArg00, word32 dwArg04, ui32 dwArg08)
 {
-	word32 esp_14 = fp - 0x08 - dwArg08;
-	Mem17[esp_14 - 0x04 + 0x00:word32] = ebx;
-	Mem20[esp_14 - 0x08 + 0x00:word32] = esi;
-	Mem23[esp_14 - 0x0C + 0x00:word32] = edi;
-	Mem33[esp_14 - 0x10 + 0x00:word32] = Mem23[0x00406020:word32] ^ fp + 0x08;
-	Mem38[esp_14 - 0x14 + 0x00:word32] = dwArg00;
-	Mem43[fs:0x00:word32] = fp - 0x08;
+	ptr32 esp_14 = fp - 0x08 - dwArg08;
+	*(esp_14 - 0x04) = ebx;
+	*(esp_14 - 0x08) = esi;
+	*(esp_14 - 0x0C) = edi;
+	*(esp_14 - 0x10) = globals->dw406020 ^ fp + 0x08;
+	*(esp_14 - 0x14) = dwArg00;
+	fs->ptr0000 = fp - 0x08;
 	return fp + 0x08;
 }
 
-// 004019B5: void fn004019B5(Register word32 ebp, Stack word32 dwArg00, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
-void fn004019B5(word32 ebp, word32 dwArg00, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
+// 004019B5: void fn004019B5(Register (ptr32 word32) ebp, Stack word32 dwArg00, Stack ui32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
+void fn004019B5(word32 * ebp, word32 dwArg00, ui32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
 {
-	Mem5[fs:0x00:word32] = Mem0[ebp - 0x10 + 0x00:word32];
-	Mem25[ebp + 0x00:word32] = dwArg00;
+	fs->dw0000 = *(ebp - 0x10);
+	*ebp = dwArg00;
 }
 
-// 00401A50: Register word32 fn00401A50()
-word32 fn00401A50()
+// 00401A50: void fn00401A50()
+void fn00401A50()
 {
-	word32 eax_10 = Mem0[0x00406020:word32];
+	ui32 eax_10 = globals->dw406020;
 	if (eax_10 != 0xBB40E64E && (eax_10 & 0xFFFF0000) != 0x00)
-		Mem96[0x00406024:word32] = ~eax_10;
+		globals->dw406024 = ~eax_10;
 	else
 	{
 		GetSystemTimeAsFileTime(fp - 0x0C);
-		word32 esi_60 = dwLoc08 & 0x00 ^ dwLoc0C & 0x00 ^ GetCurrentProcessId() ^ GetCurrentThreadId() ^ GetTickCount();
+		ui32 esi_59 = dwLoc08 & 0x00 ^ dwLoc0C & 0x00 ^ GetCurrentProcessId() ^ GetCurrentThreadId() ^ GetTickCount();
 		QueryPerformanceCounter(fp - 0x14);
-		word32 esi_69 = esi_60 ^ (dwLoc10 ^ dwLoc14);
+		ui32 esi_69 = esi_59 ^ (dwLoc10 ^ dwLoc14);
 		if (esi_69 == 0xBB40E64E)
 			esi_69 = ~0x44BF19B0;
 		else if ((esi_69 & 0xFFFF0000) == 0x00)
 			esi_69 = esi_69 | (esi_69 | 0x4711) << 0x10;
-		Mem77[0x00406020:word32] = esi_69;
-		Mem79[0x00406024:word32] = ~esi_69;
-		esi = fp - 0x14;
+		globals->dw406020 = esi_69;
+		globals->dw406024 = ~esi_69;
 	}
-	return esi;
 }
 

@@ -4,7 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> * g_a804B6EC[] = 
-	{
-	};
 

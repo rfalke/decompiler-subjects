@@ -6,7 +6,7 @@
 
 byte g_bF7FB6A48;
 <anonymous> g_tFFFFFFFF;
-Eq_24 g_t8048368 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_24 g_t8048368 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_27 g_t80483CC = Unexpected function type (fn void ())
 ;

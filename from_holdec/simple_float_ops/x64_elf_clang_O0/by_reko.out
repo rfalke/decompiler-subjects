@@ -8,33 +8,16 @@ Using options:
 00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
 00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
 00000000004009FF: warning: The format specifier '%z' passed to *printf is not known.
+00000000004004EE: warning: Call target address 0000000000000000 is invalid.
 00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 compare_floats: error: An error occurred during data flow analysis.
     Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, Boolean isNegated) <0x40b8cb40 + 0x002e7> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, ConditionCode cc) <0x40b8c520 + 0x00283> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) <0x40b8c420 + 0x00097> in <filename unknown>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (ExpressionVisitor`1 visitor) <0x40b3d6e0 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) <0x40b8c0a0 + 0x00044> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) <0x40b40620 + 0x00020> in <filename unknown>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () <0x40b8b920 + 0x00205> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40b78d90 + 0x004f3> in <filename unknown>:0 
-00602060: error: Failed to write global variable g_r602060.
-    Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40acf350 + 0x001cf> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40acf0c0 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40acf010 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40acefe0 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40bd0910 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40b52430 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40bd03f0 + 0x00225> in <filename unknown>:0 
-00602060: error: Failed to write global variable g_r602060.
-    Real type real80 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40acf350 + 0x001cf> in <filename unknown>:0 
-  at Reko.Core.MemoryArea.ReadLe (Int64 imageOffset, Reko.Core.Types.PrimitiveType type) <0x40acf0c0 + 0x0008b> in <filename unknown>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) <0x40acf010 + 0x00037> in <filename unknown>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) <0x40acefe0 + 0x00013> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) <0x40bd0910 + 0x00021> in <filename unknown>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (IDataTypeVisitor`1 v) <0x40b52430 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) <0x40bd03f0 + 0x00225> in <filename unknown>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000ea] in <6a264ef1b92c4115b517d6a392a986a9>:0 

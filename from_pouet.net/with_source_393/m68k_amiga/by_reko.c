@@ -4,13 +4,126 @@
 
 #include "subject.h"
 
-// 00001000: void fn00001000(Register word32 d2, Register int32 d3, Register int32 d4)
-void fn00001000(word32 d2, int32 d3, int32 d4)
+// 00001000: void fn00001000()
+void fn00001000()
 {
+	ptr32 a0_15 = 4340 + globals->dw10E8;
+	uint32 d0_152 = *(a0_15 - 0x04);
+	union Eq_15 * a2_16 = 0x00050000 + globals->dw10EC;
+	word32 * a0_148 = a0_15 - 0x04;
+	ui32 d5_144 = globals->dw10F0 ^ d0_152;
+	do
+	{
+		uint32 d0_322 = d0_152 >> 0x01;
+		bool C_327 = (bool) cond(d0_322);
+		if (d0_322 == 0x00)
+			C_327 = (bool) fn000010C2(d5_144, a0_148, out d0_322, out d5_144, out a0_148);
+		uint32 d0_147;
+		int32 d1_233;
+		int32 d1_145;
+		if (!C_327)
+		{
+			d0_147 = d0_322 >> 0x01;
+			d1_233 = 0x08;
+			d3 = 0x01;
+			bool C_253 = (bool) cond(d0_147);
+			if (d0_147 == 0x00)
+				C_253 = (bool) fn000010C2(d5_144, a0_148, out d0_147, out d5_144, out a0_148);
+			if (C_253)
+				goto l0000108C;
+			d1_145 = 0x03;
+			d4 = DPB(d4, 0x00, 0);
+			goto l00001036;
+		}
+		word32 d2_290;
+		d0_147 = fn000010CE(d0_322, 0x02, d5_144, a0_148, out d2_290, out d5_144, out a0_148);
+		if ((byte) d2_290 >= 0x02)
+		{
+			if ((byte) d2_290 != 0x03)
+			{
+				word32 d2_302;
+				d0_147 = fn000010CE(d0_147, 0x08, d5_144, a0_148, out d2_302, out d5_144, out a0_148);
+				d3 = DPB(d3, (word16) d2_302, 0);
+				d1_233 = 0x0C;
+				goto l0000108C;
+			}
+			d1_145 = 0x08;
+			d4 = 0x08;
+l00001036:
+			word32 d2_149;
+			d0_152 = fn000010CE(d0_147, d1_145, d5_144, a0_148, out d2_149, out d5_144, out a0_148);
+			d3 = DPB(d3, (word16) (DPB(d3, (word16) d2_149, 0) + d4), 0);
+			do
+			{
+				int32 d1_174 = 0x07;
+				do
+				{
+					d0_152 = d0_152 >> 0x01;
+					bool X_190 = (bool) cond(d0_152);
+					if (d0_152 == 0x00)
+						X_190 = (bool) fn000010C2(d5_144, a0_148, out d0_152, out d5_144, out a0_148);
+					d2_149 = __rcl(d2_149, 0x01, X_190);
+					d1_174 = d1_174 - 0x01;
+				} while (d1_174 != ~0x00);
+				a2_16 = a2_16 - (union Eq_196 *) 0x01;
+				*a2_16 = (union Eq_15 *) (byte) d2_149;
+				d3 = d3 - 0x01;
+			} while (d3 != ~0x00);
+		}
+		else
+		{
+			d1_233 = DPB(0x09, (word16) (d2_290 + 0x09), 0);
+			d3 = DPB(d3, (word16) d2_290 + 0x02, 0);
+l0000108C:
+			word32 d2_237;
+			d0_152 = fn000010CE(d0_147, d1_233, d5_144, a0_148, out d2_237, out d5_144, out a0_148);
+			do
+			{
+				a2_16 = a2_16 - 0x01;
+				*a2_16 = *((char *) a2_16 + (int32) ((int16) d2_237));
+				d3 = d3 - 0x01;
+			} while (d3 != ~0x00);
+		}
+		*(word32 **) 0x00DFF180 = a0_148;
+	} while ((union Eq_152 *) 0x00050000 - a2_16 < 0x00);
+	if (d5_144 != 0x00)
+	{
+		uint32 d0_124 = DPB(d0_152, ~0x00, 0);
+		do
+		{
+			*(word16 *) 0x00DFF180 = (word16) d0_124;
+			d0_124 = d0_124 - 0x01;
+		} while (d0_124 != ~0x00);
+	}
+	else
+	{
+		word32 a7_103;
+		word32 a0_104;
+		word32 a1_105;
+		word32 d0_106;
+		byte CVZN_107;
+		word32 d1_108;
+		word32 d5_109;
+		word32 a2_110;
+		byte ZN_111;
+		bool C_112;
+		bool V_113;
+		byte CVZNX_114;
+		bool Z_115;
+		word32 d3_116;
+		word32 d2_117;
+		byte CZ_118;
+		word32 d4_119;
+		bool N_120;
+		bool X_121;
+		byte CZNX_122;
+		byte CX_123;
+		fn00050000();
+	}
 }
 
-// 000010C2: FlagGroup byte fn000010C2(Register ui32 d5, Register (ptr word32) a0, Register out Eq_41 d0Out, Register out Eq_42 d5Out, Register out ptr32 a0Out)
-byte fn000010C2(ui32 d5, word32 * a0, Eq_41 & d0Out, Eq_42 & d5Out, ptr32 & a0Out)
+// 000010C2: FlagGroup byte fn000010C2(Register ui32 d5, Register (ptr32 word32) a0, Register out Eq_38 d0Out, Register out Eq_39 d5Out, Register out ptr32 a0Out)
+byte fn000010C2(ui32 d5, word32 * a0, Eq_38 & d0Out, Eq_39 & d5Out, ptr32 & a0Out)
 {
 	word32 d0_5 = *(a0 - 0x04);
 	uint32 d0_10 = __rcr(d0_5, 0x01, X);
@@ -22,8 +135,8 @@ byte fn000010C2(ui32 d5, word32 * a0, Eq_41 & d0Out, Eq_42 & d5Out, ptr32 & a0Ou
 	return cond(d0_10);
 }
 
-// 000010CE: Register uint32 fn000010CE(Register uint32 d0, Register int32 d1, Register word32 d2, Register ui32 d5, Register (ptr word32) a0, Register out ptr32 d1Out, Register out ptr32 d2Out, Register out Eq_59 d5Out, Register out ptr32 a0Out)
-uint32 fn000010CE(uint32 d0, int32 d1, word32 d2, ui32 d5, word32 * a0, ptr32 & d1Out, ptr32 & d2Out, Eq_59 & d5Out, ptr32 & a0Out)
+// 000010CE: Register uint32 fn000010CE(Register uint32 d0, Register int32 d1, Register ui32 d5, Register (ptr32 word32) a0, Register out ptr32 d2Out, Register out Eq_55 d5Out, Register out ptr32 a0Out)
+uint32 fn000010CE(uint32 d0, int32 d1, ui32 d5, word32 * a0, ptr32 & d2Out, Eq_55 & d5Out, ptr32 & a0Out)
 {
 	*a0Out = a0;
 	*d5Out = d5;
@@ -32,21 +145,19 @@ uint32 fn000010CE(uint32 d0, int32 d1, word32 d2, ui32 d5, word32 * a0, ptr32 & 
 	do
 	{
 		d0 = d0 >> 0x01;
-		bool CVZNX_23 = cond(d0);
-		bool X_28 = CVZNX_23;
+		bool X_28 = (bool) cond(d0);
 		if (d0 == 0x00)
 		{
 			a0 = a0 - 0x04;
 			*a0Out = a0;
-			word32 d0_53 = *a0;
-			d0 = __rcr(d0_53, 0x01, CVZNX_23);
-			*d5Out = d5 ^ d0_53;
-			X_28 = cond(d0);
+			word32 d0_52 = *a0;
+			d0 = __rcr(d0_52, 0x01, X_28);
+			*d5Out = d5 ^ d0_52;
+			X_28 = (bool) cond(d0);
 		}
 		d2_20 = __rcl(d2_20, 0x01, X_28);
 		*d2Out = d2_20;
 		d1_21 = d1_21 - 0x01;
-		*d1Out = d1_21;
 	} while (d1_21 != ~0x00);
 	return d0;
 }

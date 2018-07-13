@@ -7,14 +7,17 @@
 word32 g_dw10000474 = 0x000183B4;
 struct Eq_3 g_t10000514 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw10010824 = 0xFFFFFFFF;
-word32 g_dw10010830 = 0x00000000;
-word32 g_dw10010834 = 0x00000000;
-word32 * g_ptr10010914 = &g_dw10010830;
-Eq_43 g_t100109B4 = 
+Eq_43 g_t10000800 = Unexpected function type (fn void ())
+;
+char g_str10000814[] = "Sum is %d\n";
+int32 g_dw10010824 = -1;
+int32 g_dw10010830 = 0;
+int32 g_dw10010834 = 0;
+int32 * g_ptr10010914 = &g_dw10010830;
+word32 g_a10010918[] = 
 	{
-		0
 	};
+byte g_b100109B4 = 0x00;
 

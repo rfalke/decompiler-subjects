@@ -5,19 +5,22 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_36 g_t80488A0 = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_37 g_t80488A0 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_40 g_t80488E0 = Unexpected function type (fn void ())
+Eq_41 g_t80488E0 = Unexpected function type (fn void ())
 ;
-Eq_39 g_t80488F0 = Unexpected function type (fn void ())
+Eq_40 g_t80488F0 = Unexpected function type (fn void ())
 ;
 char g_str80489A0[] = "%08lX:";
 char g_str80489A7[] = " %02lX";
 char g_str80489B2[] = "%s\n";
 char g_str80489B6[] = "rb";
 <anonymous> * g_ptr8049F0C = &g_tFFFFFFFF;
+<anonymous> * g_a8049F14[] = 
+	{
+	};
 word32 g_dw8049F1C = 0x00000000;
 word32 g_dw8049FF8 = 0x00000000;
 byte g_b804A034 = 0x00;
-up32 g_dw804A038 = 0x00000000;
+uint32 g_dw804A038 = 0x00000000;
 

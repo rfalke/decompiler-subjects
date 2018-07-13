@@ -23,7 +23,7 @@ void fn1676_006F()
 	bios_video_set_block_of_DAC_registers(0x00, 0xFF, seg0800, 0xD5C0);
 }
 
-// 1676:0084: Register (ptr Eq_2) fn1676_0084()
+// 1676:0084: Register (ptr16 Eq_2) fn1676_0084()
 Eq_2 * fn1676_0084()
 {
 	byte Eq_2::* si_10 = Eq_2::a08C0;
@@ -39,7 +39,7 @@ Eq_2 * fn1676_0084()
 	return seg0800;
 }
 
-// 1676:009B: Register (ptr Eq_2) fn1676_009B()
+// 1676:009B: Register (ptr16 Eq_2) fn1676_009B()
 Eq_2 * fn1676_009B()
 {
 	byte Eq_2::* bx_12 = seg0800->wDB62 + 0x08C0 + (word16) ((seg0800->wDB64 - 0x28) * 0x0140);
@@ -97,7 +97,7 @@ void fn1676_0104()
 	seg0800->wDB5E = 0x00;
 }
 
-// 1676:0165: Register (ptr Eq_2) fn1676_0165()
+// 1676:0165: Register (ptr16 Eq_2) fn1676_0165()
 Eq_2 * fn1676_0165()
 {
 	byte Eq_36::* di_21 = &Eq_36::bFFFFD840;
@@ -120,7 +120,7 @@ Eq_2 * fn1676_0165()
 	return fn1676_0186();
 }
 
-// 1676:0186: Register (ptr Eq_2) fn1676_0186()
+// 1676:0186: Register (ptr16 Eq_2) fn1676_0186()
 Eq_2 * fn1676_0186()
 {
 	word16 ax_7 = (seg0800->*seg0800->ptrDB6A).wE055;
@@ -186,7 +186,7 @@ Eq_2 * fn1676_0186()
 	return seg0800;
 }
 
-// 1676:0198: Register (ptr Eq_2) fn1676_0198(Register (ptr Eq_2) ds)
+// 1676:0198: Register (ptr16 Eq_2) fn1676_0198(Register (ptr16 Eq_2) ds)
 Eq_2 * fn1676_0198(Eq_2 * ds)
 {
 	sp = fp;
@@ -201,9 +201,35 @@ void fn1676_0287()
 {
 }
 
-// 1676:029E: void fn1676_029E(Register (ptr Eq_334) ds)
+// 1676:029E: void fn1676_029E(Register (ptr16 Eq_334) ds)
 void fn1676_029E(Eq_334 * ds)
 {
+	while (true)
+	{
+		while (ds->bDB5D != 0x01)
+		{
+			__outb(0x03C8, ~0x01);
+			byte al_18 = ds->bDB5C;
+			__outb(969, al_18);
+			__outb(969, al_18);
+			__outb(969, al_18);
+			if (ds->bDB5C != 0x3F)
+			{
+				ds->bDB5C = ds->bDB5C + 0x01;
+				return;
+			}
+			ds->bDB5D = 0x01;
+		}
+		__outb(0x03C8, ~0x01);
+		byte al_28 = ds->bDB5C;
+		__outb(969, al_28);
+		__outb(969, al_28);
+		__outb(969, al_28);
+		if (ds->bDB5C != 0x0F)
+			break;
+		ds->bDB5D = 0x00;
+	}
+	ds->bDB5C = ds->bDB5C - 0x01;
 }
 
 // 1676:02E7: void fn1676_02E7()
@@ -252,7 +278,7 @@ byte fn1676_0365()
 	return al_3;
 }
 
-// 1676:036E: void fn1676_036E(Register (ptr Eq_498) ds)
+// 1676:036E: void fn1676_036E(Register (ptr16 Eq_498) ds)
 void fn1676_036E(Eq_498 * ds)
 {
 	__outb(0x03C8, ~0x02);
@@ -262,7 +288,7 @@ void fn1676_036E(Eq_498 * ds)
 	__outb(969, al_8);
 }
 
-// 1676:037C: Register (ptr Eq_498) fn1676_037C(Register (ptr Eq_498) ds)
+// 1676:037C: Register (ptr16 Eq_498) fn1676_037C(Register (ptr16 Eq_498) ds)
 Eq_498 * fn1676_037C(Eq_498 * ds)
 {
 	if (ds->bDB77 == 0x01)
@@ -295,7 +321,7 @@ Eq_498 * fn1676_037C(Eq_498 * ds)
 	}
 }
 
-// 1676:03BF: Register (ptr Eq_2) fn1676_03BF()
+// 1676:03BF: Register (ptr16 Eq_2) fn1676_03BF()
 Eq_2 * fn1676_03BF()
 {
 	word16 bx_15;
@@ -344,7 +370,7 @@ Eq_2 * fn1676_03BF()
 	}
 }
 
-// 1676:0442: void fn1676_0442(Register byte al, Register (ptr Eq_649) es)
+// 1676:0442: void fn1676_0442(Register byte al, Register (ptr16 Eq_649) es)
 void fn1676_0442(byte al, Eq_649 * es)
 {
 	word16 bx_5;

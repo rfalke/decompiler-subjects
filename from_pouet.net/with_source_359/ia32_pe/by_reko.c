@@ -23,6 +23,75 @@ void fn00401000()
 // 0040101B: FpuStack real64 fn0040101B(FpuStack out Eq_28 rLoc1Out)
 real64 fn0040101B(Eq_28 & rLoc1Out)
 {
+	__wait();
+	__fninit();
+	Eq_35 edi_27 = globals->t4020D6;
+	globals->w4020EE = globals->w4020EE + 0x02;
+	real64 rLoc1_35 = (real64) globals->w4020EE / (real64) globals->w4020F0;
+	real64 rLoc1_37 = cos(rLoc1_35);
+	ptr32 edi_103 = (word32) edi_27 + 0x0003E300;
+	word16 di_199 = (word16) ((word32) edi_27 + 0x0003E300);
+	real64 rLoc2_38 = sin(rLoc1_35);
+	word16 ax_102 = 0x0140;
+	word32 eax_106 = DPB(eax, 0x0140, 0);
+	word16 dx_214 = 65336;
+	do
+	{
+		ax_102 = -ax_102;
+		eax_106 = DPB(eax_106, ax_102, 0);
+		do
+		{
+			real64 rLoc3_110 = (real64) ax_102;
+			real64 rLoc4_112 = fn0040114A((real64) 0x0140, rLoc3_110, rLoc2_38, rLoc1_37);
+			real64 rLoc5_120 = fn0040114A((real64) dx_214, rLoc3_110, rLoc1_37, rLoc2_38);
+			globals->w4020F4 = (int16) -fabs(fn0040114A(rLoc4_112, rLoc3_110, rLoc1_37, rLoc2_38));
+			globals->w4020F6 = (int16) rLoc3_110;
+			globals->w4020F8 = (int16) rLoc5_120;
+			word16 bx_139 = globals->w4020ED;
+			globals->w4020F4 = globals->w4020F4 - 0x01;
+			byte al_134 = 0x7F;
+			ui32 eax_135 = DPB(eax_106, 0x7F, 0);
+			word16 bp_140 = bx_139;
+			cui16 cx_142 = 0x00;
+			word16 di_145 = bx_139;
+			ptr32 edi_146 = DPB(edi_103, bx_139, 0);
+			do
+			{
+				di_145 = di_145 + globals->w4020F8;
+				cx_142 = cx_142 + globals->w4020F4;
+				bp_140 = bp_140 + globals->w4020F6;
+				byte dl_167;
+				byte dh_168;
+				fn0040115F(228, cx_142, bp_140, di_145, out dl_167, out dh_168);
+				byte ah_174 = globals->b4020EF + 0x27 & ~0x07;
+				byte dl_179;
+				byte dh_180;
+				Eq_136 C_181 = fn0040115F(ah_174, cx_142, bp_140, di_145, out dl_179, out dh_180);
+				edi_146 = DPB(edi_281, di_145, 0);
+				eax_135 = DPB(eax_135, ah_174, 8);
+				if ((byte) C_181 + (dh_180 + SLICE(dx_214, byte, 8)) == 0x00)
+					break;
+				al_134 = al_134 - 0x01;
+				eax_135 = DPB(eax_135, al_134, 0);
+				ptr32 edi_281 = edi_146;
+			} while (al_134 != 0x00);
+			word32 * edi_191 = DPB(edi_281, di_199, 0);
+			word32 eax_196 = *((word32) globals->t4020DA + (eax_135 & 0xFF) * 0x08);
+			*edi_191 = eax_196;
+			word16 ax_202 = ax_102 + 0x01;
+			edi_103 = edi_191 + 0x01;
+			di_199 = (word16) (edi_191 + 0x01);
+			ax_102 = ax_202 + 0x01;
+			eax_106 = DPB(eax_196, ax_202 + 0x01, 0);
+		} while (ax_202 != ~0x013E);
+		word16 dx_213 = dx_214 + 0x01;
+		edi_103 = edi_191 - 2556;
+		di_199 = (word16) (edi_191 - 2556);
+		dx_214 = dx_213 + 0x01;
+	} while (dx_213 != ~0xC6);
+	GetClientRect(globals->t4020A2, &globals->t4020C6);
+	StretchDIBits(globals->t4020A6, 0x00, 0x00, globals->dw4020CE, globals->dw4020D2, 0x00, 0x00, 0x0140, 200, globals->t4020D6, &globals->t402042, 0x00, 0x00CC0020);
+	return rLoc2_38;
 }
 
 // 0040114A: FpuStack real64 fn0040114A(FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3)
@@ -45,71 +114,45 @@ bool fn0040115F(byte ah, cui16 cx, word16 bp, word16 di, Eq_131 & dlOut, Eq_132 
 // 00401172: Register Eq_238 Win32CrtStartup()
 DWORD Win32CrtStartup()
 {
-	ptr32 esp_182;
-	ptr32 esp_128 = fp - 0x08;
 	Eq_2 eax_6 = GlobalAlloc(0x00, 500000);
 	if (eax_6 != 0x00)
 	{
 		globals->t4020E2 = eax_6;
 		globals->t4020DA = eax_6;
-		Mem111[0x004020D6:word32] = eax_6 + 2000;
+		Mem86[0x004020D6:word32] = eax_6 + 2000;
 		globals->t40208A = GetModuleHandleW(null);
 		globals->t40208E = LoadIconW(0x00, (WCHAR *) 0x7F00);
-		Eq_368 eax_126 = LoadCursorW(0x00, (WCHAR *) 0x7F00);
-		globals->t402092 = eax_126;
-		esp_128 = fp - 0x20;
-		if (DPB(eax_126, RegisterClassW(&globals->t40207A), 0) != null)
+		Eq_324 eax_103 = LoadCursorW(0x00, (WCHAR *) 0x7F00);
+		globals->t402092 = eax_103;
+		if (DPB(eax_103, RegisterClassW(&globals->t40207A), 0) != null)
 		{
-			esp_128 = fp - 0x50;
-			Eq_218 eax_159 = CreateWindowExW(0x00, &globals->t402000, &globals->t402012, 0x10CF0000, 0x8000, 0x8000, 0x0280, 500, null, null, globals->t40208A, null);
-			if (eax_159 != null)
+			Eq_218 eax_139 = CreateWindowExW(0x00, &globals->t402000, &globals->t402012, 0x10CF0000, 0x8000, 0x8000, 0x0280, 500, null, null, globals->t40208A, null);
+			if (eax_139 != null)
 			{
-				globals->t4020A2 = eax_159;
-				globals->t4020A6 = GetDC(eax_159);
+				globals->t4020A2 = eax_139;
+				globals->t4020A6 = GetDC(eax_139);
 				fn00401000();
-				real64 rLoc1_168;
-				fn0040101B(out rLoc1_168);
-				ptr32 esp_164 = fp - 0x54;
+				real64 rLoc1_151;
+				fn0040101B(out rLoc1_151);
 				while (true)
 				{
-					UINT * esp_174 = esp_164 - 0x04;
-					*esp_174 = (uint32) 0x01;
-					*(esp_174 - 0x04) = 0x00;
-					*(esp_174 - 0x08) = 0x00;
-					*(esp_174 - 0x0C) = 0x00;
-					*(esp_174 - 0x10) = 0x004020AA;
-					PeekMessageW(*(esp_174 - 0x10), *(esp_174 - 0x0C), *(esp_174 - 0x08), *(esp_174 - 0x04), *esp_174);
-					esp_182 = esp_174 - 0x10;
+					PeekMessageW(&globals->t4020AA, null, 0x00, 0x00, 0x01);
 					if (globals->dw4020AE == 0x12)
 						break;
-					*(esp_174 - 0x14) = 0x004020AA;
-					TranslateMessage(*(esp_174 - 0x14));
-					*(esp_174 - 0x18) = 0x004020AA;
-					DispatchMessageW(*(esp_174 - 0x18));
-					real64 rLoc3_193;
-					fn0040101B(out rLoc3_193);
+					TranslateMessage(&globals->t4020AA);
+					DispatchMessageW(&globals->t4020AA);
+					real64 rLoc3_178;
+					fn0040101B(out rLoc3_178);
 					globals->dw4020DE = globals->dw4020DE + 0x01;
-					esp_164 = esp_174 - 0x18;
 				}
 l00401285:
-				HDC * esp_58 = esp_182 - 0x04;
-				*esp_58 = (HDC *) globals->t4020A6;
-				*(esp_58 - 0x04) = (HWND *) globals->t4020A2;
-				ReleaseDC(*(esp_58 - 0x04), *esp_58);
-				*(esp_58 - 0x08) = (union Eq_2 *) globals->t4020E2;
-				GlobalFree(*(esp_58 - 0x08));
-				*(esp_58 - 0x0C) = globals->dw4020B2;
-				ExitProcess(*(esp_58 - 0x0C));
+				ReleaseDC(globals->t4020A2, globals->t4020A6);
+				GlobalFree(globals->t4020E2);
+				ExitProcess(globals->t4020B2);
 			}
 		}
 	}
-	UINT * esp_93 = esp_128 - 0x04;
-	*esp_93 = (uint32) 0x10;
-	*(esp_93 - 0x04) = 0x00;
-	*(esp_93 - 0x08) = 0x00402022;
-	*(esp_93 - 0x0C) = 0x00;
-	MessageBoxW(*(esp_93 - 0x0C), *(esp_93 - 0x08), *(esp_93 - 0x04), *esp_93);
-	esp_182 = esp_93 - 0x0C;
+	MessageBoxW(null, &globals->t402022, null, 0x10);
 	goto l00401285;
 }
 

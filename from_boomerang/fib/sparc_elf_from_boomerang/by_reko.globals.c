@@ -7,5 +7,6 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10778 = Unexpected function type (fn void ())
 ;
+char g_str10798[] = "%i\n";
 ptr32 g_ptr20948 = 0x00000000;
 

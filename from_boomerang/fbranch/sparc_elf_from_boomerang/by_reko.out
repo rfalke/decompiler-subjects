@@ -1,5 +1,5 @@
 Using options:
 00010674: warning: Unable to resolve imported reference __register_frame_info.
 000106AC: warning: Unable to resolve imported reference _Jv_RegisterClasses.
-000106D0: error: The method or operation is not implemented.
+000106EC: error: Rewriting SPARC opcode 'fstod' is not supported yet.
 00010608: warning: Unable to resolve imported reference __deregister_frame_info.

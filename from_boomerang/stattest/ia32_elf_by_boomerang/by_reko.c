@@ -12,7 +12,22 @@ void _init()
 	__do_global_ctors_aux();
 }
 
-// 080482AC: void _start(Register (ptr Eq_11) edx, Stack int32 dwArg00)
+// 0804827C: void __xstat()
+void __xstat()
+{
+}
+
+// 0804828C: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 0804829C: void printf()
+void printf()
+{
+}
+
+// 080482AC: void _start(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -32,8 +47,8 @@ void call_gmon_start()
 		word32 eax_32;
 		byte SCZO_33;
 		byte SZO_34;
-		byte C_35;
-		byte Z_36;
+		bool C_35;
+		bool Z_36;
 		eax_15();
 	}
 }
@@ -54,11 +69,11 @@ void __do_global_dtors_aux()
 				word32 esp_45;
 				word32 ebp_46;
 				byte SCZO_47;
-				byte Z_48;
+				bool Z_48;
 				word32 eax_49;
 				word32 edx_50;
 				byte SZO_51;
-				byte C_52;
+				bool C_52;
 				word32 esi_53;
 				edx_26();
 				eax_25 = globals->ptr8049494;
@@ -78,33 +93,38 @@ void frame_dummy()
 		byte SCZO_33;
 		word32 eax_34;
 		byte SZO_35;
-		byte C_36;
-		byte Z_37;
+		bool C_36;
+		bool Z_37;
 		fn00000000();
 	}
 }
 
-// 0804835C: void main(Register word32 eax)
-void main(word32 eax)
+// 0804835C: void main()
+void main()
 {
 	__align(fp - 0x6C);
-	word32 esp_21;
-	word32 ebp_22;
-	word32 ebx_23;
-	byte SCZO_24;
-	word32 edx_25;
-	word32 ecx_26;
-	int32 eax_27;
-	!__xstat();
-	printf("Stat returns %d; size of file is %d\n", eax_27, dwLoc40);
+	printf("Stat returns %d; size of file is %d\n", __xstat(0x03, "test/source/stattest.c", fp - 0x6C), dwLoc40);
 }
 
 // 08048394: void __libc_csu_init()
 void __libc_csu_init()
 {
 	_init();
-	if (true)
-		;
+	if (false)
+	{
+		do
+		{
+			word32 esp_31;
+			word32 ebp_32;
+			word32 esi_33;
+			up32 ebx_34;
+			word32 eax_35;
+			byte SCZO_36;
+			byte SZO_37;
+			bool C_38;
+			globals->ptr804948C();
+		} while (ebx_34 < 0x01);
+	}
 }
 
 // 080483C4: void __libc_csu_fini()
@@ -114,18 +134,17 @@ void __libc_csu_fini()
 	{
 		do
 		{
-			word32 esp_34;
-			word32 ebp_35;
-			word32 ebx_36;
-			word32 eax_37;
-			byte SCZO_38;
-			byte SZO_39;
-			byte C_40;
-			byte Z_41;
-			bcuisposr0 None_42;
-			word32 edx_43;
+			word32 esp_32;
+			word32 ebp_33;
+			word32 ebx_34;
+			word32 eax_35;
+			byte SCZO_36;
+			byte SZO_37;
+			bool C_38;
+			bool Z_39;
+			word32 edx_40;
 			((<anonymous> **) 0x08049488)();
-		} while (ebx_36 != 0x00);
+		} while (ebx_34 != 0x00);
 	}
 	_fini();
 }
@@ -144,7 +163,7 @@ void __do_global_ctors_aux()
 			word32 edx_32;
 			word32 eax_33;
 			byte SCZO_34;
-			byte Z_35;
+			bool Z_35;
 			eax_13();
 		} while (*ebx_31 != ~0x00);
 	}

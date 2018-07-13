@@ -5,12 +5,13 @@
 #include "subject.h"
 
 CHAR g_t403000 = 'k';
-Eq_4 g_t403009 = null;
+Eq_3 g_t403009 = null;
 CHAR g_t40300D = 'W';
-Eq_68 g_t403015 = null;
+Eq_24 g_t403015 = null;
 CHAR g_t403019 = 'X';
 CHAR g_t403028 = 'D';
+CHAR g_t403034 = 'E';
 CHAR g_t403041 = 'X';
-Eq_83 g_t40304E = null;
+Eq_37 g_t40304E = null;
 DWORD g_t403052 = 0x00000000;
 

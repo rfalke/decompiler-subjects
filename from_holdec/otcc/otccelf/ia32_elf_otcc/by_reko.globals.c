@@ -6,7 +6,7 @@
 
 word32 g_a0008[];
 Eq_14 g_a000C[];
-Eq_947 g_t1869F;
+Eq_905 g_t1869F;
 Eq_14 g_t80480FC = 
 	{
 		0x00
@@ -20,7 +20,7 @@ Eq_14 g_t8048108 =
 	{
 		0x00
 	};
-struct Eq_947 * g_ptr804810C = null;
+struct Eq_905 * g_ptr804810C = null;
 Eq_14 g_t8048110 = 
 	{
 		0x00

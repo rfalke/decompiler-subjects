@@ -7,36 +7,49 @@
 <anonymous> g_t0001;
 <anonymous> g_t0018;
 byte g_b4000;
-LONG g_t401110(struct _EXCEPTION_POINTERS * ExceptionInfo) = Unexpected function type (fn LONG ((ptr (struct "_EXCEPTION_POINTERS"))))
+LONG g_t401110(struct _EXCEPTION_POINTERS * ExceptionInfo) = Unexpected function type (fn LONG ((ptr32 (struct "_EXCEPTION_POINTERS"))))
 ;
-<anonymous> g_t40148C = <code>;
 ui32 g_dw401C60 = 0xFFFFFFFF;
-Eq_698 g_t401C74 = 
+Eq_676 g_t401C74 = 
 	{
 		null,
 		null,
 	};
-word32 g_dw402000 = 0xFFFFFFFF;
+int32 g_dw402000 = -1;
 byte * g_ptr402004 = &g_b4000;
-struct Eq_698 * g_ptr402008 = &g_t401C74;
-<anonymous> * g_ptr403074 = &g_t40148C;
+struct Eq_676 * g_ptr402008 = &g_t401C74;
+word32 g_dw403074 = 0x0040148C;
+void g_v403078 = ??void??;
 word32 g_dw403128 = 0x00000000;
 word32 g_dw40312C = 0x00000000;
-Eq_173 g_t403130 = 
+Eq_20 g_t403130 = 
 	{
 		0x0001
 	};
-Eq_620 g_t403134 = 
+Eq_598 g_t403134 = 
 	{
 		0x0000618C,
 		0x000013AD,
 		0x00000020,
 	};
-Eq_620 g_t403140;
+Eq_598 g_t403140;
 word32 g_dw405000 = 0x00000000;
 word32 g_dw405004 = 0x00000000;
 byte * g_ptr405034 = null;
 ui32 g_dw405038 = 0x00000000;
 <anonymous> * g_ptr40503C = null;
 word32 g_dw405040 = 0x00000000;
+word32 g_dw405044 = 0x00000000;
+Eq_184 g_t405048 = 0x00000000;
+struct _RTL_CRITICAL_SECTION g_t40504C = 
+	{
+		null,
+		0,
+		0,
+		null,
+		null,
+		0x00000000,
+	};
+struct Eq_932 * g_ptr405064 = null;
+word32 g_dw407014 = 0x00000000;
 

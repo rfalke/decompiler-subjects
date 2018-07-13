@@ -44,25 +44,25 @@ ui32 (* g_a80540B0[])[] =
 ui32 g_a8054300[] = 
 	{
 	};
-Eq_96 g_a8054510[] = 
+Eq_102 g_a8054510[] = 
 	{
 	};
-Eq_96 g_a8054920[] = 
+Eq_102 g_a8054920[] = 
 	{
 	};
-Eq_96 g_a8054D30[] = 
+Eq_102 g_a8054D30[] = 
 	{
 	};
-Eq_96 g_a8055140[] = 
+Eq_102 g_a8055140[] = 
 	{
 	};
-Eq_96 g_a8055550[] = 
+Eq_102 g_a8055550[] = 
 	{
 	};
-Eq_96 g_a8055960[] = 
+Eq_102 g_a8055960[] = 
 	{
 	};
-Eq_96 g_a8055D70[] = 
+Eq_102 g_a8055D70[] = 
 	{
 	};
 word32 g_a8056180[] = 
@@ -83,10 +83,10 @@ ptr32 g_a81D2CE0[] =
 ptr32 g_a81DAD00[] = 
 	{
 	};
-Eq_14875 (* g_a81EB210[])[] = 
+Eq_14881 (* g_a81EB210[])[] = 
 	{
 	};
-struct Eq_3218 * g_a81FC750[] = 
+struct Eq_3224 * g_a81FC750[] = 
 	{
 	};
 word32 * (* (* g_a81FCF70[])[])[] = 
@@ -101,7 +101,7 @@ Eq_2 g_t81FCFE0 =
 		0x00
 	};
 byte g_b81FCFE1 = 0x00;
-Eq_134 g_t81FCFE2 = 
+Eq_140 g_t81FCFE2 = 
 	{
 		0x00
 	};
@@ -111,7 +111,7 @@ Eq_2 g_t81FCFE4 =
 		0x00
 	};
 byte g_b81FCFE5 = 0x00;
-Eq_140 g_t81FCFE6 = 
+Eq_146 g_t81FCFE6 = 
 	{
 		0x00
 	};
@@ -121,18 +121,18 @@ Eq_2 g_t81FCFE8 =
 		0x00
 	};
 byte g_b81FCFE9 = 0x00;
-Eq_154 g_t81FCFEA = 
+Eq_160 g_t81FCFEA = 
 	{
 		0x00
 	};
 byte g_b81FCFEB = 0x00;
 word32 g_dw81FCFEE = 0x00000000;
-Eq_96 g_t81FCFF0 = 
+Eq_102 g_t81FCFF0 = 
 	{
 		0x00000000
 	};
 word16 g_w81FCFF2 = 0x0000;
-Eq_14838 g_t81FD060 = 
+Eq_14844 g_t81FD060 = 
 	{
 		0x00
 	};
@@ -176,7 +176,7 @@ word16 g_w81FD082 = 0x0000;
 ui32 g_dw81FD084 = 0x00000000;
 ui32 g_dw81FD088 = 0x00000000;
 ui32 g_dw81FD090 = 0x00000000;
-Eq_3505 g_t81FD09C = 
+Eq_3511 g_t81FD09C = 
 	{
 		0x00
 	};
@@ -191,20 +191,20 @@ word16 g_w81FD0A2 = 0x0000;
 union Eq_2 * g_a81FD0A4[] = 
 	{
 	};
-union Eq_3505 * g_a81FD0B4[] = 
+union Eq_3511 * g_a81FD0B4[] = 
 	{
 	};
 union Eq_2 * g_ptr81FD0C4 = null;
-union Eq_3505 * g_ptr81FD0CC = null;
-Eq_1355 g_t81FD0E0 = 
+union Eq_3511 * g_ptr81FD0CC = null;
+Eq_1361 g_t81FD0E0 = 
 	{
 		0x00000000
 	};
-Eq_1317 g_t81FD0E4 = 
+Eq_1323 g_t81FD0E4 = 
 	{
 		0x00000000
 	};
-Eq_1394 g_t81FD0E8 = 
+Eq_1400 g_t81FD0E8 = 
 	{
 		0x00000000
 	};
@@ -261,6 +261,12 @@ word32 g_dw85FD1A0 = 0x00000000;
 word32 g_dw85FD1A4 = 0x00000000;
 word32 g_dw85FD1B4 = 0x00000000;
 union Eq_2 * g_a85FD1B8[] = 
+	{
+	};
+Eq_24 g_t85FD1C4 = 
+	{
+	};
+Eq_24 g_t85FD250 = 
 	{
 	};
 

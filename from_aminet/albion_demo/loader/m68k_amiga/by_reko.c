@@ -4,12 +4,11 @@
 
 #include "subject.h"
 
-// 00001000: void fn00001000(Register word32 a6)
-void fn00001000(word32 a6)
+// 00001000: void fn00001000()
+void fn00001000()
 {
 	int32 d0_127;
 	ui32 d0_10 = OpenLibrary(0x1164, 0x0027);
-	word32 a6_13 = a6;
 	if (d0_10 == 0x00)
 		d0_127 = 0x0C;
 	else
@@ -17,7 +16,6 @@ void fn00001000(word32 a6)
 		int32 d0_153;
 		globals->dw15E8 = d0_10;
 		SuperState();
-		a6_13 = a6;
 		if (d0_10 == 0x00)
 			d0_153 = -0x01;
 		else
@@ -29,19 +27,18 @@ void fn00001000(word32 a6)
 			word32 a1_185;
 			word32 a6_186;
 			byte ZN_187;
-			byte C_188;
-			byte V_189;
-			byte Z_190;
+			bool C_188;
+			bool V_189;
+			bool Z_190;
 			word32 d1_191;
 			word32 a0_192;
-			byte N_193;
+			bool N_193;
 			byte CVZNX_194;
 			word32 a5_195;
 			word32 d2_196;
 			word32 d7_197;
 			d1_174();
 			UserState(d0_183);
-			a6_13 = a6_186;
 			d0_153 = d0_183;
 		}
 		if (d0_153 == 0x00)
@@ -57,56 +54,56 @@ l000010EC:
 		}
 		d0_127 = -(d0_153 + 0x01);
 	}
-	union Eq_26 * a0_116 = &globals->u11C8;
+	union Eq_24 * a0_116 = &globals->u11C8;
 	while (true)
 	{
 		int32 v18_78 = *a0_116;
-		a0_116 = (union Eq_26 *) ((char *) a0_116 + 0x04 + 0x01);
+		a0_116 = (union Eq_24 *) ((char *) a0_116 + 0x04 + 0x01);
 		if (v18_78 < 0x00 || v18_78 - d0_127 == 0x00)
 			break;
 		do
 		{
 			a0_116 = a0_211;
-			union Eq_26 * a0_211 = a0_116;
+			union Eq_24 * a0_211 = a0_116;
 		} while (*a0_211 != 0x00);
 		if (!__btst((byte) a0_116, 0x00))
-			a0_116 = (union Eq_26 *) ((char *) a0_116 + 0x01);
+			a0_116 = (union Eq_24 *) ((char *) a0_116 + 0x01);
 	}
 	Supervisor(a0_116);
 	if (d0_127 != 0x00)
 	{
 		globals->dw15EC = d0_127;
-		fn0000112A(&globals->u1196, a6_13);
-		fn0000112A(a0_116, a6_13);
-		fn0000112A(&globals->u11AE, a6_13);
-		fn0000110C(a6_13);
+		fn0000112A(&globals->u1196);
+		fn0000112A(a0_116);
+		fn0000112A(&globals->u11AE);
+		fn0000110C();
 		execPrivate1();
 	}
 	goto l000010EC;
 }
 
-// 0000110C: void fn0000110C(Register word32 a6)
-void fn0000110C(word32 a6)
+// 0000110C: void fn0000110C()
+void fn0000110C()
 {
 	execPrivate2();
 }
 
-// 0000112A: void fn0000112A(Register (ptr Eq_26) a0, Register word32 a6)
-void fn0000112A(Eq_26 * a0, word32 a6)
+// 0000112A: void fn0000112A(Register (ptr32 Eq_24) a0)
+void fn0000112A(Eq_24 * a0)
 {
 	if (fn00001156(a0) != 0x00)
 		execPrivate3();
 }
 
-// 00001156: Register int32 fn00001156(Register (ptr Eq_26) a0)
-int32 fn00001156(Eq_26 * a0)
+// 00001156: Register int32 fn00001156(Register (ptr32 Eq_24) a0)
+int32 fn00001156(Eq_24 * a0)
 {
 	int32 d0_10 = -0x01;
 	do
 	{
 		d0_10 = d0_10 + 0x01;
-		a0 = (union Eq_26 *) ((char *) a0_22 + 0x01);
-		union Eq_26 * a0_22 = a0;
+		a0 = (union Eq_24 *) ((char *) a0_22 + 0x01);
+		union Eq_24 * a0_22 = a0;
 	} while (*a0_22 != 0x00);
 	return d0_10;
 }

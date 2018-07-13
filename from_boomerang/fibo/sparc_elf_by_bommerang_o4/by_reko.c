@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-// 0001095C: void _start(Register (ptr Eq_2) g1, Register int32 o7, Stack int32 dwArg40)
-void _start( * g1, int32 o7, int32 dwArg40)
+// 0001095C: void _start(Register (ptr32 Eq_2) g1, Register int32 o7, Stack ui32 dwArg40)
+void _start( * g1, int32 o7, ui32 dwArg40)
 {
 	if (g1 == null)
 	{
@@ -13,7 +13,7 @@ void _start( * g1, int32 o7, int32 dwArg40)
 		_init(o7);
 		globals->ptr219E0 = fp + 0x44 + ((dwArg40 << 0x02) + 0x04);
 		main();
-		exit(dwArg40);
+		exit(0x00);
 	}
 	else
 		atexit(g1);
@@ -28,7 +28,7 @@ void __do_global_dtors_aux(int32 o7)
 // 000109DC: void fn000109DC(Register int32 o7, Register ui32 l7)
 void fn000109DC(int32 o7, ui32 l7)
 {
-	struct Eq_42 * l7_24 = (l7 | 0xF0) + o7;
+	struct Eq_43 * l7_24 = (l7 | 0xF0) + o7;
 	word32 ** o1_9 = l7_24->ptr000C;
 	if (**o1_9 != 0x00)
 	{
@@ -36,7 +36,7 @@ void fn000109DC(int32 o7, ui32 l7)
 		word32 * o0_41 = *o1_9;
 		while (true)
 		{
-			struct Eq_71 * o0_44 = o0_41 + 0x01;
+			struct Eq_72 * o0_44 = o0_41 + 0x01;
 			*l0_40 = (word32 **) o0_44;
 			<anonymous> * o0_46 = o0_44->ptrFFFFFFFC;
 			word32 sp_60;
@@ -44,7 +44,7 @@ void fn000109DC(int32 o7, ui32 l7)
 			word32 o1_64;
 			word32 g0_65;
 			byte NZVC_66;
-			bool Z_67;
+			byte Z_67;
 			word32 i7_69;
 			word32 i0_70;
 			word32 i1_71;
@@ -80,7 +80,7 @@ void frame_dummy(int32 o7)
 // 00010A64: void fn00010A64(Register int32 o7, Register ui32 l7)
 void fn00010A64(int32 o7, ui32 l7)
 {
-	struct Eq_117 * l7_5 = (l7 | 0x68) + o7;
+	struct Eq_118 * l7_5 = (l7 | 0x68) + o7;
 	__register_frame_info(l7_5->dw0004, l7_5->ptr0008, o7);
 }
 
@@ -89,32 +89,54 @@ void init_dummy()
 {
 }
 
-// 00010A9C: Register int32 fib(Register int32 o0, Register out ptr32 l0Out, Register out ptr32 i0Out)
-int32 fib(int32 o0, ptr32 & l0Out, ptr32 & i0Out)
+// 00010A9C: Register int32 fib(Register int32 o0, Register out ptr32 l0Out, Register out ptr32 i0Out, Register out (ptr32 Eq_137) i6Out)
+int32 fib(int32 o0, ptr32 & l0Out, ptr32 & i0Out, Eq_137 * & i6Out)
 {
-	int32 i0_24;
+	int32 i0_25;
 	*i0Out = o0;
+	word32 i6_15;
+	*i6Out = fp;
 	word32 l0_19;
 	*l0Out = o0;
 	if (o0 > 0x01)
 	{
-		word32 l0_36;
-		word32 i0_37;
-		fib(o0 + ~0x00, out l0_36, out i0_37);
-		word32 l0_41;
-		word32 i0_42;
-		word32 o0_43 = fib(l0_36 + ~0x01, out l0_41, out i0_42);
-		*i0Out = i0_42 + o0_43;
+		word32 l0_38;
+		word32 i0_39;
+		word32 i6_40;
+		fib(o0 + ~0x00, out l0_38, out i0_39, out i6_40);
+		word32 l0_44;
+		word32 i0_45;
+		word32 i6_46;
+		word32 o0_47 = fib(l0_38 + ~0x01, out l0_44, out i0_45, out i6_46);
+		*i0Out = i0_45 + o0_47;
 	}
-	return i0_24;
+	return i0_25;
 }
 
 // 00010AD0: void main()
 void main()
 {
+	int32 o2_35;
+	printf("Input number: ");
+	scanf("%d", tLoc7C);
+	struct Eq_184 * i6_13 = fp;
+	if (dwLoc14 > 0x01)
+	{
+		word32 l0_52;
+		word32 i0_53;
+		word32 i6_54;
+		fib(dwLoc14 + ~0x00, out l0_52, out i0_53, out i6_54);
+		word32 l0_58;
+		word32 i0_59;
+		word32 o0_61 = fib(i0_53 + ~0x01, out l0_58, out i0_59, out i6_13);
+		o2_35 = l0_58 + o0_61;
+	}
+	else
+		o2_35 = dwLoc14;
+	printf("fibonacci(%d) = %d\n", i6_13->dwFFFFFFEC, o2_35);
 }
 
-// 00010B30: Register (ptr byte) decode_uleb128(Register (ptr byte) o0, Register (ptr ui32) o1)
+// 00010B30: Register (ptr32 byte) decode_uleb128(Register (ptr32 byte) o0, Register (ptr32 ui32) o1)
 byte * decode_uleb128(byte * o0, ui32 * o1)
 {
 	word32 o2_17 = 0x00;
@@ -134,7 +156,7 @@ byte * decode_uleb128(byte * o0, ui32 * o1)
 	return o0;
 }
 
-// 00010B64: Register (ptr byte) decode_sleb128(Register (ptr byte) o0, Register (ptr ui32) o1)
+// 00010B64: Register (ptr32 byte) decode_sleb128(Register (ptr32 byte) o0, Register (ptr32 ui32) o1)
 byte * decode_sleb128(byte * o0, ui32 * o1)
 {
 	word32 g3_2 = 0x07;
@@ -155,15 +177,35 @@ byte * decode_sleb128(byte * o0, ui32 * o1)
 	return o0;
 }
 
-// 00010BB0: void fde_insert(Register (arr (ptr Eq_231)) o0, Register ui32 o1, Register (ptr Eq_231) o2)
-void fde_insert(Eq_231 * o0[], ui32 o1, Eq_231 * o2)
+// 00010BB0: void fde_insert(Register (arr (ptr32 Eq_288)) o0, Register ui32 o1, Register (ptr32 Eq_288) o2)
+void fde_insert(Eq_288 * o0[], ui32 o1, Eq_288 * o2)
 {
+	if (o1 != 0x00)
+	{
+		o0[o1].dw0000 = o2;
+		struct Eq_291 * o0_20 = o0 + (o1 << 0x02) / 0x04;
+		while (true)
+		{
+			struct Eq_305 * o3_24 = o0_20->dw0000;
+			struct Eq_301 * o2_25 = o0_20->dwFFFFFFFC;
+			if (o3_24->dw0008 - o2_25->dw0008 >= 0x00)
+				break;
+			o1 = o1 + ~0x00;
+			o0_20->dw0000 = o2_25;
+			o0_20->dwFFFFFFFC = o3_24;
+			if (o1 == 0x00)
+				return;
+			o0_20 = &o0_20->dwFFFFFFFC;
+		}
+	}
+	else
+		o0[o1].dw0000 = o2;
 }
 
-// 00010BF8: Register (ptr Eq_231) count_fdes(Register (ptr Eq_231) o0)
-Eq_231 * count_fdes(Eq_231 * o0)
+// 00010BF8: Register (ptr32 Eq_288) count_fdes(Register (ptr32 Eq_288) o0)
+Eq_288 * count_fdes(Eq_288 * o0)
 {
-	struct Eq_231 * o1_17 = null;
+	struct Eq_288 * o1_17 = null;
 	if (o0->dw0000 != 0x00)
 	{
 		while (true)
@@ -172,25 +214,25 @@ Eq_231 * count_fdes(Eq_231 * o0)
 			if (o0[0x01] != 0x00)
 			{
 				if (o0[0x02] != 0x00)
-					o1_17 = (struct Eq_231 *) ((char *) &o1_17->dw0000 + 0x01);
+					o1_17 = (struct Eq_288 *) ((char *) &o1_17->dw0000 + 0x01);
 				g2_25 = o0->dw0000;
 			}
 			else
 				g2_25 = o0->dw0000;
-			struct Eq_287 * g2_26 = o0 + g2_25 / 0x04;
+			struct Eq_344 * g2_26 = o0 + g2_25 / 0x04;
 			if (g2_26->dw0004 == 0x00)
 				break;
-			o0 = (struct Eq_231 *) &g2_26->dw0004;
+			o0 = (struct Eq_288 *) &g2_26->dw0004;
 		}
 	}
 	return o1_17;
 }
 
-// 00010C4C: Register ui32 add_fdes(Register (ptr Eq_231) o0, Register (ptr (arr (ptr Eq_231))) o1, Register (ptr ui32) o2, Register (ptr word32) o3, Register (ptr word32) o4, Register out ptr32 l1Out, Register out (ptr Eq_316) i0Out, Register out (ptr Eq_317) i6Out)
-ui32 add_fdes(Eq_231 * o0, Eq_231 * * o1[], ui32 * o2, word32 * o3, word32 * o4, ptr32 & l1Out, Eq_316 * & i0Out, Eq_317 * & i6Out)
+// 00010C4C: Register ui32 add_fdes(Register (ptr32 Eq_288) o0, Register (ptr32 (arr (ptr32 Eq_288))) o1, Register (ptr32 ui32) o2, Register (ptr32 word32) o3, Register (ptr32 word32) o4, Register out ptr32 l1Out, Register out (ptr32 Eq_373) i0Out, Register out (ptr32 Eq_374) i6Out)
+ui32 add_fdes(Eq_288 * o0, Eq_288 * * o1[], ui32 * o2, word32 * o3, word32 * o4, ptr32 & l1Out, Eq_373 * & i0Out, Eq_374 * & i6Out)
 {
 	up32 l1_106;
-	struct Eq_231 * i0_4 = o0;
+	struct Eq_288 * i0_4 = o0;
 	*i0Out = i0_4;
 	word32 i6_15;
 	*i6Out = fp;
@@ -223,10 +265,10 @@ ui32 add_fdes(Eq_231 * o0, Eq_231 * * o1[], ui32 * o2, word32 * o3, word32 * o4,
 			}
 			else
 				o0_111 = i0_4->dw0000;
-			struct Eq_360 * o0_71 = i0_4 + o0_111 / 0x04;
+			struct Eq_417 * o0_71 = i0_4 + o0_111 / 0x04;
 			if (o0_71->dw0004 == 0x00)
 				break;
-			i0_4 = (struct Eq_231 *) &o0_71->dw0004;
+			i0_4 = (struct Eq_288 *) &o0_71->dw0004;
 		}
 		word32 i0_76;
 		*i0Out = (word32 *) &o0_71->dw0004;
@@ -239,16 +281,16 @@ ui32 add_fdes(Eq_231 * o0, Eq_231 * * o1[], ui32 * o2, word32 * o3, word32 * o4,
 	return l0_107;
 }
 
-// 00010CE8: Register (ptr Eq_405) frame_init(Register (ptr Eq_406) o0, Register out ptr32 l1Out)
-Eq_405 * frame_init(Eq_406 * o0, ptr32 & l1Out)
+// 00010CE8: Register (ptr32 Eq_462) frame_init(Register (ptr32 Eq_463) o0, Register out ptr32 l1Out)
+Eq_462 * frame_init(Eq_463 * o0, ptr32 & l1Out)
 {
 	uint32 o0_102;
-	struct Eq_406 * i0_38 = o0;
-	struct Eq_410 * i6_15 = fp;
-	struct Eq_405 * o0_20 = o0[0x03];
+	struct Eq_463 * i0_38 = o0;
+	struct Eq_467 * i6_15 = fp;
+	struct Eq_462 * o0_20 = o0[0x03];
 	if (o0_20 != null)
 	{
-		struct Eq_405 * l0_104 = o0_20;
+		struct Eq_462 * l0_104 = o0_20;
 		uint32 dwLoc14_105 = 0x00;
 		if (o0_20->dw0000 != 0x00)
 		{
@@ -259,23 +301,23 @@ Eq_405 * frame_init(Eq_406 * o0, ptr32 & l1Out)
 				dwLoc14_105 = o1_117;
 			} while (l0_104->dw0000 != 0x00);
 			o0_102 = o1_117;
-			o0[0x04] = (struct Eq_406) o1_117;
+			o0[0x04] = (struct Eq_463) o1_117;
 l00010D54:
-			struct Eq_405 * l0_40;
+			struct Eq_462 * l0_40;
 			word32 o1_44;
-			struct Eq_231 * (* l1_37)[];
-			struct Eq_231 * (* o0_27)[] = malloc(o0_102 << 0x02);
-			struct Eq_405 * o1_33 = o0[0x03];
+			struct Eq_288 * (* l1_37)[];
+			struct Eq_288 * (* o0_27)[] = malloc(o0_102 << 0x02);
+			struct Eq_462 * o1_33 = o0[0x03];
 			if (o1_33 != null)
 			{
 				*l1Out = o0_27;
 				l0_40 = o1_33;
 				if (o1_33->dw0000 != 0x00)
 				{
-					struct Eq_231 * (* o1_65)[] = o0_27;
+					struct Eq_288 * (* o1_65)[] = o0_27;
 					while (true)
 					{
-						struct Eq_405 * l0_76 = add_fdes(l0_40->dw0000, o1_65, &i6_15->dwFFFFFFE8 + 0x01, &i6_15->dwFFFFFFE8, &i6_15->dwFFFFFFE4, out l1_37, out i0_38, out i6_15);
+						struct Eq_462 * l0_76 = add_fdes(l0_40->dw0000, o1_65, &i6_15->dwFFFFFFE8 + 0x01, &i6_15->dwFFFFFFE8, &i6_15->dwFFFFFFE4, out l1_37, out i0_38, out i6_15);
 						l0_40 = l0_76 + 0x01;
 						if (l0_76[0x01] == 0x00)
 							break;
@@ -291,47 +333,111 @@ l00010D54:
 				l0_40 = add_fdes(o0[0x02], o0_27, &fp->dwFFFFFFE8 + 0x01, &fp->dwFFFFFFE8, &fp->dwFFFFFFE4, out l1_37, out i0_38, out i6_15);
 				o1_44 = i6_15->dwFFFFFFE8;
 			}
-			i0_38[0x03] = (struct Eq_406) l1_37;
+			i0_38[0x03] = (struct Eq_463) l1_37;
 			word32 o0_46 = i6_15->dwFFFFFFE4;
 			i0_38->dw0000 = o1_44;
-			i0_38[0x01] = (struct Eq_406) o0_46;
+			i0_38[0x01] = (struct Eq_463) o0_46;
 			return l0_40;
 		}
 		o0_102 = 0x00;
 	}
 	else
 		o0_102 = count_fdes(o0[0x02]);
-	o0[0x04] = (struct Eq_406) o0_102;
+	o0[0x04] = (struct Eq_463) o0_102;
 	goto l00010D54;
 }
 
-// 00010DF8: void find_fde(Register (ptr Eq_531) o0, Register int32 o7)
-void find_fde(Eq_531 * o0, int32 o7)
+// 00010DF8: void find_fde(Register (ptr32 Eq_588) o0, Register int32 o7)
+void find_fde(Eq_588 * o0, int32 o7)
 {
 	fn00010E04(o7, 0x00010800, o0);
 }
 
-// 00010E04: void fn00010E04(Register int32 o7, Register ui32 l7, Register (ptr Eq_531) i0)
-void fn00010E04(int32 o7, ui32 l7, Eq_531 * i0)
+// 00010E04: void fn00010E04(Register int32 o7, Register ui32 l7, Register (ptr32 Eq_588) i0)
+void fn00010E04(int32 o7, ui32 l7, Eq_588 * i0)
 {
+	struct Eq_588 * l1_130;
+	struct Eq_463 * l0_10 = (word32) (l7 | 200) + o7 + 0x18 + 0x00;
+	Eq_608 Z_110 = cond(l0_10);
+	if (l0_10 == null)
+	{
+		l1_130 = i0;
+		goto l00010E74;
+	}
+	l1_130 = i0;
+	word32 o0_113 = l0_10->dw0000;
+	while (true)
+	{
+		Eq_616 C_100;
+		if (o0_113 == 0x00)
+		{
+			l0_10 = frame_init(l0_10, out l1_130);
+			C_100 = cond(l1_130 - l0_10->dw0000);
+		}
+		else
+			C_100 = cond(l1_130 - o0_113);
+		if (!C_100)
+		{
+			if (l1_130 - l0_10[0x01] < 0x00)
+			{
+				Z_110 = cond(l0_10);
+				goto l00010E74;
+			}
+			l0_10 = (struct Eq_463 *) l0_10[0x05];
+		}
+		else
+			l0_10 = (struct Eq_463 *) l0_10[0x05];
+		if (l0_10 == null)
+		{
+			Z_110 = cond(l0_10);
+l00010E74:
+			if (Z_110)
+				return;
+			uint32 o4_45 = l0_10[0x04];
+			uint32 o3_46 = 0x00;
+			if (0x00 - o4_45 >= 0x00)
+				return;
+			uint32 o0_50 = o4_45;
+			struct Eq_650 * o5_51[] = l0_10[0x03];
+			while (true)
+			{
+				uint32 o2_56 = o0_50 >> 0x01;
+				struct Eq_650 * i0_58 = o5_51[o2_56];
+				up32 o1_59 = i0_58->dw0008;
+				if (l1_130 - o1_59 < 0x00)
+					o4_45 = o2_56;
+				else
+				{
+					up32 o0_74 = i0_58->dw000C;
+					if (l1_130 - (o1_59 + o0_74) <= 0x00)
+						return;
+					o3_46 = o2_56 + 0x01;
+				}
+				if (o3_46 - o4_45 >= 0x00)
+					return;
+				o0_50 = o3_46 + o4_45;
+			}
+		}
+		o0_113 = l0_10->dw0000;
+	}
 }
 
-// 00010EE0: void extract_cie_info(Register (ptr Eq_531) o0, Register (ptr Eq_636) o1, Register int32 o7)
-void extract_cie_info(Eq_531 * o0, Eq_636 * o1, int32 o7)
+// 00010EE0: void extract_cie_info(Register (ptr32 Eq_588) o0, Register (ptr32 Eq_693) o1, Register int32 o7)
+void extract_cie_info(Eq_588 * o0, Eq_693 * o1, int32 o7)
 {
 	fn00010EEC(o7, 0x00010400, o0, o1, fp);
 }
 
-// 00010EEC: void fn00010EEC(Register int32 o7, Register ui32 l7, Register (ptr Eq_531) i0, Register (ptr Eq_636) i1, Register ptr32 i6)
-void fn00010EEC(int32 o7, ui32 l7, Eq_531 * i0, Eq_636 * i1, ptr32 i6)
+// 00010EEC: void fn00010EEC(Register int32 o7, Register ui32 l7, Register (ptr32 Eq_588) i0, Register (ptr32 Eq_693) i1, Register ptr32 i6)
+void fn00010EEC(int32 o7, ui32 l7, Eq_588 * i0, Eq_693 * i1, ptr32 i6)
 {
-	struct Eq_648 * l7_5 = (l7 | 992) + o7;
+	struct Eq_705 * l7_5 = (l7 | 992) + o7;
 	char * o1_9 = l7_5->ptr0010;
 	word32 o0_13 = i0 - i0->dw0004;
 	i1->ptr0000 = o0_13 + 0x0D;
 	if (strcmp(o0_13 + 0x0D, o1_9) == 0x00 || (strcmp(i1->ptr0000, l7_5->ptr0014) == 0x00 || (int32) (*i1->ptr0000) == 122))
 	{
-		Eq_458 o0_43 = strlen(i1->ptr0000);
+		Eq_515 o0_43 = strlen(i1->ptr0000);
 		char * o2_46 = i1->ptr0000;
 		word32 l0_49 = o2_46 + o0_43;
 		byte * i0_50 = &l0_49->b0001;
@@ -350,10 +456,10 @@ void fn00010EEC(int32 o7, ui32 l7, Eq_531 * i0, Eq_636 * i1, ptr32 i6)
 	}
 }
 
-// 00011008: Register (ptr Eq_531) execute_cfa_insn(Register (ptr Eq_531) o0, Register ptr32 o1, Register (ptr word32) o2, Register (ptr word32) o3, Register int32 o7, Register out ptr32 i0Out, Register out (ptr void) i1Out, Register out (ptr Eq_792) i6Out)
-Eq_531 * execute_cfa_insn(Eq_531 * o0, ptr32 o1, word32 * o2, word32 * o3, int32 o7, ptr32 & i0Out, void, Eq_792 * & i6Out)
+// 00011008: Register (ptr32 Eq_588) execute_cfa_insn(Register (ptr32 Eq_588) o0, Register ptr32 o1, Register (ptr32 word32) o2, Register (ptr32 word32) o3, Register int32 o7, Register out ptr32 i0Out, Register out (ptr32 void) i1Out, Register out (ptr32 Eq_849) i6Out)
+Eq_588 * execute_cfa_insn(Eq_588 * o0, ptr32 o1, word32 * o2, word32 * o3, int32 o7, ptr32 & i0Out, void, Eq_849 * & i6Out)
 {
-	struct Eq_531 * i0_38;
+	struct Eq_588 * i0_38;
 	ptr32 i1_6 = o1;
 	*i1Out = i1_6;
 	ptr32 i6_15 = fp;
@@ -397,10 +503,10 @@ Eq_531 * execute_cfa_insn(Eq_531 * o0, ptr32 o1, word32 * o2, word32 * o3, int32
 			word32 o7_108;
 			word32 g0_109;
 			byte NZVC_110;
-			bool Z_111;
-			byte ZC_112;
+			byte Z_111;
+			bool ZC_112;
 			.umul();
-			struct Eq_871 * o1_117 = i1_96 + (o2_20 & 0x3F);
+			struct Eq_930 * o1_117 = i1_96 + (o2_20 & 0x3F);
 			o1_117->b01AC = 0x01;
 			(i1_96 + (DPB(qwLoc18, o0_95, 32) << 0x02))->ptr0010 = o1_117;
 			return i0_38;
@@ -425,8 +531,8 @@ Eq_531 * execute_cfa_insn(Eq_531 * o0, ptr32 o1, word32 * o2, word32 * o3, int32
 		word32 o7_72;
 		word32 g0_73;
 		byte NZVC_74;
-		bool Z_75;
-		byte ZC_76;
+		byte Z_75;
+		bool ZC_76;
 		.umul();
 		*i3_64 = *i3_64 + o0_59;
 		return i0_38;
@@ -438,44 +544,44 @@ void fn0001107C(word32 o0, ui32 o1)
 {
 }
 
-// 000113B4: void __register_frame_info(Register word32 o0, Register (ptr Eq_124) o1, Register int32 o7)
-void __register_frame_info(word32 o0, Eq_124 * o1, int32 o7)
+// 000113B4: void __register_frame_info(Register word32 o0, Register (ptr32 Eq_125) o1, Register int32 o7)
+void __register_frame_info(word32 o0, Eq_125 * o1, int32 o7)
 {
 	fn000113C0(o7, 0x00010000, o0, o1);
 }
 
-// 000113C0: void fn000113C0(Register int32 o7, Register ui32 l7, Register word32 i0, Register (ptr Eq_124) i1)
-void fn000113C0(int32 o7, ui32 l7, word32 i0, Eq_124 * i1)
+// 000113C0: void fn000113C0(Register int32 o7, Register ui32 l7, Register word32 i0, Register (ptr32 Eq_125) i1)
+void fn000113C0(int32 o7, ui32 l7, word32 i0, Eq_125 * i1)
 {
 	i1->dw0008 = i0;
 	i1->dw0004 = 0x00;
 	i1->dw0000 = 0x00;
-	struct Eq_124 ** o1_11 = (word32) (l7 | 0x030C) + o7 + 0x18;
+	struct Eq_125 ** o1_11 = (word32) (l7 | 0x030C) + o7 + 0x18;
 	i1->dw000C = 0x00;
-	struct Eq_124 * o0_13 = *o1_11;
+	struct Eq_125 * o0_13 = *o1_11;
 	i1->dw0010 = 0x00;
 	i1->ptr0014 = o0_13;
-	*o1_11 = (struct Eq_124 **) i1;
+	*o1_11 = (struct Eq_125 **) i1;
 }
 
-// 000113FC: void __register_frame_info_table(Register word32 o0, Register (ptr Eq_952) o1, Register int32 o7)
-void __register_frame_info_table(word32 o0, Eq_952 * o1, int32 o7)
+// 000113FC: void __register_frame_info_table(Register word32 o0, Register (ptr32 Eq_1011) o1, Register int32 o7)
+void __register_frame_info_table(word32 o0, Eq_1011 * o1, int32 o7)
 {
 	fn00011408(o7, 0x00010000, o0, o1);
 }
 
-// 00011408: void fn00011408(Register int32 o7, Register ui32 l7, Register word32 i0, Register (ptr Eq_952) i1)
-void fn00011408(int32 o7, ui32 l7, word32 i0, Eq_952 * i1)
+// 00011408: void fn00011408(Register int32 o7, Register ui32 l7, Register word32 i0, Register (ptr32 Eq_1011) i1)
+void fn00011408(int32 o7, ui32 l7, word32 i0, Eq_1011 * i1)
 {
 	i1->dw0008 = i0;
 	i1->dw000C = i0;
 	i1->dw0004 = 0x00;
-	struct Eq_952 ** o1_11 = (word32) (l7 | 0x02C4) + o7 + 0x18;
+	struct Eq_1011 ** o1_11 = (word32) (l7 | 0x02C4) + o7 + 0x18;
 	i1->dw0000 = 0x00;
-	struct Eq_952 * o0_13 = *o1_11;
+	struct Eq_1011 * o0_13 = *o1_11;
 	i1->dw0010 = 0x00;
 	i1->ptr0014 = o0_13;
-	*o1_11 = (struct Eq_952 **) i1;
+	*o1_11 = (struct Eq_1011 **) i1;
 }
 
 // 00011444: void __deregister_frame_info(Register word32 o0, Register int32 o7)
@@ -487,25 +593,78 @@ void __deregister_frame_info(word32 o0, int32 o7)
 // 00011450: void fn00011450(Register int32 o7, Register ui32 l7, Register word32 i0)
 void fn00011450(int32 o7, ui32 l7, word32 i0)
 {
-	struct Eq_1013 ** o2_9 = (word32) (l7 | 636) + o7 + 0x18;
+	struct Eq_1072 ** o2_9 = (word32) (l7 | 636) + o7 + 0x18;
 	if (*o2_9 == null)
 		abort();
 	else
 	{
-		struct Eq_1013 * o1_14 = *o2_9;
+		struct Eq_1072 * o1_14 = *o2_9;
 		if (o1_14->dw0008 - i0 == 0x00)
 		{
-			struct Eq_1013 * o0_20 = o1_14->ptr0014;
-			*o2_9 = (struct Eq_1013 **) o0_20;
+			struct Eq_1072 * o0_20 = o1_14->ptr0014;
+			*o2_9 = (struct Eq_1072 **) o0_20;
 			if (o1_14->dw0000 != 0x00)
 				free(o1_14->ptr000C);
 		}
 	}
 }
 
-// 000114C4: void __frame_state_for(Register (ptr Eq_531) o0, Register (ptr void) o1, Register int32 o7)
-void __frame_state_for(Eq_531 * o0, void, int32 o7)
+// 000114C4: void __frame_state_for(Register (ptr32 Eq_588) o0, Register (ptr32 void) o1, Register int32 o7)
+void __frame_state_for(Eq_588 * o0, void, int32 o7)
 {
+	find_fde(o0, o7);
+	struct Eq_588 * i0_117 = o0;
+	void * i1_113 = o1;
+	struct Eq_1114 * i6_114 = fp;
+	if (o0 == null)
+		return;
+	extract_cie_info(o0, &fp->ptrFFFFFFD8, o7);
+	if (o0 == null)
+		return;
+	int8 * o0_164;
+	memset(&fp->dwFFFFFDBC + 0x01, 0x00, 0x0218);
+	word32 o1_64 = fp->dwFFFFFFDC;
+	fp->wFFFFFF6A = (word16) (word32) fp->wFFFFFFEA;
+	fp->dwFFFFFDC4 = o1_64;
+	word32 * o0_69 = o0 - (o0->dw0004 + ~0x03);
+	up32 o0_71 = o0_69 + *o0_69;
+	if (o0 - (o0_71 + 0x04) < 0x00)
+	{
+		struct Eq_588 * o0_149 = o0;
+		while (true)
+		{
+			struct Eq_588 * o0_158 = execute_cfa_insn(o0_149, &i6_114->dwFFFFFDBC + 0x01, &i6_114->ptrFFFFFFD8, null, o7, out i0_117, out i1_113, out i6_114);
+			if (o0_158 - (o0_71 + 0x04) >= 0x00)
+				break;
+			o0_149 = o0_158;
+		}
+		o0_164 = i6_114->ptrFFFFFFD8;
+	}
+	else
+		o0_164 = fp->ptrFFFFFFD8;
+	struct Eq_588 * l0_115;
+	if ((int32) *o0_164 == 122)
+		l0_115 = (struct Eq_588 *) (decode_uleb128(&o0->dw0008 + 0x02, &i6_114->dwFFFFFDBC) + i6_114->dwFFFFFDBC);
+	else
+		l0_115 = &o0->dw0008 + 0x02;
+	word32 o0_92 = o0 + Mem66[o0 + 0x00:word32];
+	up32 o1_91 = o0->dw0008;
+	if (l0_115 - ((word32) o0_92 + 0x04) < 0x00)
+	{
+		i6_114->dwFFFFFDB8 = o1_91;
+		up32 o0_112 = i6_114->dwFFFFFDB8;
+		while (o0_112 - i0_117 < 0x00)
+		{
+			struct Eq_588 * o0_132 = execute_cfa_insn(l0_115, &i6_114->dwFFFFFDBC + 0x01, &i6_114->ptrFFFFFFD8, &i6_114->dwFFFFFDB8, o7, out i0_117, out i1_113, out i6_114);
+			l0_115 = o0_132;
+			if (o0_132 - ((word32) o0_92 + 0x04) >= 0x00)
+				break;
+			o0_112 = i6_114->dwFFFFFDB8;
+		}
+	}
+	else
+		i6_114->dwFFFFFDB8 = o1_91;
+	memcpy(i1_113, &i6_114->dwFFFFFDBC + 0x01, 0x0214);
 }
 
 // 000115EC: void __do_global_ctors_aux(Register int32 o7)
@@ -517,8 +676,8 @@ void __do_global_ctors_aux(int32 o7)
 // 000115F8: void fn000115F8(Register int32 o7, Register ui32 l7)
 void fn000115F8(int32 o7, ui32 l7)
 {
-	struct Eq_1211 * l7_5 = (l7 | 212) + o7;
-	struct Eq_1215 * o0_9 = l7_5->ptr001C;
+	struct Eq_1270 * l7_5 = (l7 | 212) + o7;
+	struct Eq_1274 * o0_9 = l7_5->ptr001C;
 	word32 o1_10 = o0_9->dwFFFFFFFC;
 	if (o1_10 != ~0x00)
 	{
@@ -533,7 +692,7 @@ void fn000115F8(int32 o7, ui32 l7)
 			word32 o1_56;
 			word32 g0_57;
 			byte NZVC_58;
-			bool Z_59;
+			byte Z_59;
 			word32 i7_61;
 			word32 i0_62;
 			word32 i1_63;
@@ -567,5 +726,70 @@ void _init(int32 o7)
 void _fini(int32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00021714: void atexit()
+void atexit()
+{
+}
+
+// 00021720: void exit()
+void exit()
+{
+}
+
+// 0002172C: void _exit()
+void _exit()
+{
+}
+
+// 00021738: void printf()
+void printf()
+{
+}
+
+// 00021744: void scanf()
+void scanf()
+{
+}
+
+// 00021750: void malloc()
+void malloc()
+{
+}
+
+// 0002175C: void strcmp()
+void strcmp()
+{
+}
+
+// 00021768: void strlen()
+void strlen()
+{
+}
+
+// 00021774: void .umul()
+void .umul()
+{
+}
+
+// 00021780: void memcpy()
+void memcpy()
+{
+}
+
+// 0002178C: void free()
+void free()
+{
+}
+
+// 00021798: void abort()
+void abort()
+{
+}
+
+// 000217A4: void memset()
+void memset()
+{
 }
 

@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-// 080480B8: void f(Stack (ptr Eq_2) dwArg04)
+// 080480B8: void f(Stack (ptr32 Eq_2) dwArg04)
 void f(Eq_2 * dwArg04)
 {
 	dwArg04->dw0000 = 0x0A;

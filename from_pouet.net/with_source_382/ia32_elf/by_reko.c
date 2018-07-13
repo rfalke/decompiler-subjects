@@ -74,13 +74,13 @@ void fn08048428()
 	globals->ptr804A0E0();
 }
 
-// 08048438: FpuStack real64 fn08048438(Register (ptr Eq_33) eax, Register (ptr Eq_33) edx)
+// 08048438: FpuStack real64 fn08048438(Register (ptr32 Eq_33) eax, Register (ptr32 Eq_33) edx)
 real64 fn08048438(Eq_33 * eax, Eq_33 * edx)
 {
 	return (real64) eax->r0000 * edx->r0000 + (real64) eax->t0004 * edx->t0004 + (real64) eax->t0008 * edx->t0008;
 }
 
-// 0804844D: void fn0804844D(Register (ptr Eq_33) eax, Register (ptr Eq_62) ecx, Register (ptr Eq_63) edx)
+// 0804844D: void fn0804844D(Register (ptr32 Eq_33) eax, Register (ptr32 Eq_62) ecx, Register (ptr32 Eq_63) edx)
 void fn0804844D(Eq_33 * eax, Eq_62 * ecx, Eq_63 * edx)
 {
 	real64 rLoc2_7 = (real64) eax->t0008;
@@ -90,7 +90,7 @@ void fn0804844D(Eq_33 * eax, Eq_62 * ecx, Eq_63 * edx)
 	ecx->r0008 = (real32) (rLoc2_17 * edx->t0004 - (real64) eax->t0004 * edx->r0000);
 }
 
-// 0804847F: void fn0804847F(Register (ptr Eq_33) eax, Register (ptr Eq_33) ecx, Register (ptr Eq_33) edx)
+// 0804847F: void fn0804847F(Register (ptr32 Eq_33) eax, Register (ptr32 Eq_33) ecx, Register (ptr32 Eq_33) edx)
 void fn0804847F(Eq_33 * eax, Eq_33 * ecx, Eq_33 * edx)
 {
 	ecx->r0000 = (real32) (real32) ((real64) eax->r0000 - edx->r0000);
@@ -98,13 +98,13 @@ void fn0804847F(Eq_33 * eax, Eq_33 * ecx, Eq_33 * edx)
 	ecx->t0008 = (real32) ((real64) eax->t0008 - edx->t0008);
 }
 
-// 08048498: FpuStack Eq_162 fn08048498(Register (ptr Eq_33) eax)
+// 08048498: FpuStack Eq_162 fn08048498(Register (ptr32 Eq_33) eax)
 Eq_162 fn08048498(Eq_33 * eax)
 {
 	return sqrt(fn08048438(eax, eax));
 }
 
-// 080484A2: void fn080484A2(Register (ptr Eq_33) eax)
+// 080484A2: void fn080484A2(Register (ptr32 Eq_33) eax)
 void fn080484A2(Eq_33 * eax)
 {
 	Eq_172 rLoc1_11 = globals->r8049A00 / sqrt(fn08048438(eax, eax));
@@ -113,9 +113,90 @@ void fn080484A2(Eq_33 * eax)
 	eax->t0008 = (real32) (rLoc1_11 * eax->t0008);
 }
 
-// 080484CA: void fn080484CA(Register (ptr Eq_206) eax, Register int32 edx)
+// 080484CA: void fn080484CA(Register (ptr32 Eq_206) eax, Register int32 edx)
 void fn080484CA(Eq_206 * eax, int32 edx)
 {
+	fn08048398();
+	ui32 edi_10 = 0x00;
+	do
+	{
+		word32 ebx_44 = 100;
+		int32 edx_46 = (int32) ((int64) edi_10 % 0x14);
+		do
+		{
+			int32 eax_196;
+			int32 eax_185;
+			int32 * esi_65 = eax + (((edi_10 << 0x08) + ebx_44) * 0x04) / 0x0040;
+			*esi_65 = 0x00FFFFFF;
+			if ((byte) edx == 0x00)
+			{
+				eax_196 = ebx_44 + 0x00 ^ edi_10;
+				goto l0804855E;
+			}
+			if ((byte) edx == 0x01)
+			{
+				if ((int32) ((int64) ebx_44 % 0x14) <= 0x09)
+				{
+					eax_185 = 0x00FF0000;
+					if (edx_46 > 0x09)
+						goto l0804852F;
+				}
+				else
+				{
+l0804852F:
+					eax_185 = 0x00FF00FF;
+				}
+				goto l08048564;
+			}
+			if ((byte) (edx - 0x02) <= 0x01)
+			{
+				fn08048418();
+				int32 edx_243 = (int32) ((int64) (edx - 0x02) % 0x40);
+				eax_196 = edx_243 + 0xC0;
+				if ((byte) edx == 0x02)
+					eax_185 = edx_243 + 0xC0 << 0x08;
+				else
+				{
+l0804855E:
+					eax_185 = eax_196 *s 0x00010101;
+				}
+l08048564:
+				*esi_65 = eax_185;
+			}
+			ebx_44 = ebx_44 + 0x01;
+		} while (ebx_44 != 0x9C);
+		edi_10 = edi_10 + 0x01;
+	} while (edi_10 != 0x0100);
+	if ((byte) edx == 0x04)
+	{
+		ui32 ebp_108 = 0x00;
+		do
+		{
+			word32 edi_123 = 0x00;
+			do
+			{
+				ui32 ebx_136 = ebp_108;
+				word32 esi_137 = 0x00;
+				do
+				{
+					word32 edx_147 = edi_123;
+					word32 dwLoc20_150 = 0x00;
+					do
+					{
+						eax[((ebx_136 << 0x08) + edx_147) * 0x04 / 0x0040] = (struct Eq_206) 0x00FF0000;
+						eax->a0040[(ebx_136 << 0x08) + 0x1000 + edx_147] = 0x00FF0000;
+						word32 v22_157 = dwLoc20_150 + 0x01;
+						dwLoc20_150 = v22_157;
+						edx_147 = edx_147 + 0x01;
+					} while (v22_157 != 0x10);
+					esi_137 = esi_137 + 0x01;
+					ebx_136 = ebx_136 + 0x01;
+				} while (esi_137 != 0x10);
+				edi_123 = edi_123 + 0x20;
+			} while (edi_123 != 0x0100);
+			ebp_108 = ebp_108 + 0x20;
+		} while (ebp_108 != 0x0100);
+	}
 }
 
 // 08048613: Register word32 fn08048613(Register byte dl, Stack real32 rArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10, Stack word32 dwArg14, Stack word32 dwArg18, Stack word32 dwArg1C)
@@ -209,8 +290,8 @@ l08048A30:
 	goto l08048A84;
 }
 
-// 08048C66: FlagGroup bool fn08048C66(Register (ptr Eq_33) eax, Register (ptr Eq_33) ecx, Register int32 edx, Stack (ptr Eq_33) dwArg04, Stack word32 dwArg08, FpuStack out Eq_638 rLoc1Out)
-bool fn08048C66(Eq_33 * eax, Eq_33 * ecx, int32 edx, Eq_33 * dwArg04, word32 dwArg08, Eq_638 & rLoc1Out)
+// 08048C66: FlagGroup Eq_632 fn08048C66(Register (ptr32 Eq_33) eax, Register (ptr32 Eq_33) ecx, Register int32 edx, Stack (ptr32 Eq_33) dwArg04, Stack word32 dwArg08, FpuStack out Eq_638 rLoc1Out)
+Eq_632 fn08048C66(Eq_33 * eax, Eq_33 * ecx, int32 edx, Eq_33 * dwArg04, word32 dwArg08, Eq_638 & rLoc1Out)
 {
 	struct Eq_33 * edi_19 = eax + edx;
 	byte al_22 = edi_19->b007C;
@@ -300,12 +381,184 @@ bool fn08048C66(Eq_33 * eax, Eq_33 * ecx, int32 edx, Eq_33 * dwArg04, word32 dwA
 	}
 }
 
-// 08048EBE: FlagGroup bool fn08048EBE(Register (ptr Eq_890) eax, Register int32 ecx, Register (ptr Eq_33) edx, Register (ptr Eq_33) esi, Stack (ptr Eq_33) dwArg04, Stack (ptr Eq_33) dwArg08, Stack int32 dwArg0C, Stack word32 dwArg10, FpuStack Eq_898 rArg0, FpuStack Eq_898 rArg1, FpuStack out Eq_900 rArg0Out)
-bool fn08048EBE(Eq_890 * eax, int32 ecx, Eq_33 * edx, Eq_33 * esi, Eq_33 * dwArg04, Eq_33 * dwArg08, int32 dwArg0C, word32 dwArg10, Eq_898 rArg0, Eq_898 rArg1, Eq_900 & rArg0Out)
+// 08048EBE: FlagGroup Eq_889 fn08048EBE(Register (ptr32 Eq_890) eax, Register int32 ecx, Register (ptr32 Eq_33) edx, Register (ptr32 Eq_33) esi, Stack (ptr32 Eq_33) dwArg04, Stack (ptr32 Eq_33) dwArg08, Stack int32 dwArg0C, Stack word32 dwArg10, FpuStack Eq_898 rArg0, FpuStack Eq_898 rArg1, FpuStack out Eq_900 rArg0Out)
+Eq_889 fn08048EBE(Eq_890 * eax, int32 ecx, Eq_33 * edx, Eq_33 * esi, Eq_33 * dwArg04, Eq_33 * dwArg08, int32 dwArg0C, word32 dwArg10, Eq_898 rArg0, Eq_898 rArg1, Eq_900 & rArg0Out)
 {
+	int32 esi_11 = esi | ~0x00;
+	int32 ebx_15 = 0x00;
+	Eq_906 rLoc1_23 = (real64) globals->r8049A0C;
+	while (ebx_15 < ecx)
+	{
+		Eq_906 rLoc1_620;
+		FPUF = fn08048C66(edx, dwArg04, ebx_15, dwArg08, dwArg10, out rLoc1_620);
+		rLoc1_23 = (real64) (real32) rLoc1_23;
+		if (!FPUF)
+		{
+			FPUF = cond(rLoc1_620 - rLoc1_620);
+			if (rLoc1_620 >= rLoc1_620)
+				goto l08048F27;
+			rLoc1_23 = rLoc1_620;
+			esi_11 = ebx_15;
+		}
+		else
+		{
+l08048F27:
+		}
+		rLoc2 = rLoc1_620;
+		ebx_15 = ebx_15 + 0x01;
+	}
+	if (esi_11 == ~0x00)
+	{
+		eax->r0000 = 0.0F;
+		eax->r0004 = 0.0F;
+		eax->r0008 = 0.0F;
+	}
+	else
+	{
+		struct Eq_33 * edi_145 = edx + esi_11;
+		real64 rLoc2_151 = rLoc2 * dwArg08->r0000 + dwArg04->r0000;
+		edi_145->r000C = (real32) rLoc2_151;
+		real64 rLoc3_155 = (real64) dwArg08->t0004 * rLoc1_23 + dwArg04->t0004;
+		edi_145->r0010 = (real32) rLoc3_155;
+		real64 rLoc3_161 = rLoc1_23 * dwArg08->t0008 + dwArg04->t0008;
+		edi_145->r0014 = (real32) rLoc3_161;
+		if (edi_145->b007C == 0x00)
+		{
+			edi_145->r0018 = (real32) ((rLoc2_151 - edi_145->r0000) / edi_145->r0060);
+			edi_145->r001C = (real32) ((rLoc3_155 - edi_145->t0004) / edi_145->r0060);
+			edi_145->r0020 = (real32) ((rLoc3_161 - edi_145->t0008) / edi_145->r0060);
+		}
+		if (edi_145->b007C == 0x02)
+		{
+			fn0804847F(&edi_145->r000C, &edi_145->r0018, edi_145);
+			fn080484A2(&edi_145->r0018);
+		}
+		Eq_166 rLoc1_203;
+		fn0804847F(&globals->r824A500, fp - 0x40, &edi_145->r000C);
+		Eq_1037 rLoc70_177 = (real32) fn08048498(fp - 0x40);
+		fn080484A2(fp - 0x40);
+		int32 ebx_180 = fp - 0x40 ^ fp - 0x40;
+		real32 rLoc6C_184 = (real32) fn08048438(&edi_145->r0018, fp - 0x40);
+		if (!((word16) FPUF << 0x08))
+		{
+l0804904A:
+			rLoc1_203.u2 = 0.0;
+		}
+		else
+		{
+			while (ebx_180 < ecx)
+			{
+				Eq_1037 rLoc1_568;
+				fn08048C66(edx, &edi_145->r000C, ebx_180, fp - 0x40, 0x01, out rLoc1_568);
+				FPUF = cond(rLoc1_568 - globals->t8049A10);
+				if (rLoc1_568 > globals->t8049A10)
+				{
+					FPUF = cond(rLoc1_568 - rLoc70_177);
+					if (rLoc1_568 < rLoc70_177)
+						goto l0804904A;
+				}
+				ebx_180 = ebx_180 + 0x01;
+			}
+			fn0804847F(dwArg08, fp - 0x4C, fp - 0x40);
+			fn08048498(fp - 0x4C);
+			Eq_1094 rLoc68_543 = (real32) ((real64) rLoc6C_184 * edi_145->t0070);
+			rLoc1_203 = fn08048438(&edi_145->r0018, fp - 0x40);
+			fn08048428();
+			rArg0 = rArg0 * edi_145->t0074 + rLoc68_543;
+		}
+		struct Eq_33 * esi_228;
+		int32 ebx_227;
+		real32 rLoc68_210 = (real32) rLoc1_203;
+		if (edi_145->b007C == 0x00)
+		{
+			real64 rLoc1_373 = -fn08048438(&edi_145->r0018, (char *) &edi_145->t002C + 0x0010);
+			uint16 wLoc4E_377 = __fstcw();
+			real64 rLoc2_394 = atan(sqrt(1.0 - rLoc1_373 * 1.0), rLoc1_373);
+			real64 rLoc3_396 = (real64) globals->r8049A14 * rLoc2_394;
+			__fldcw(DPB(wLoc4E_377, SLICE(wLoc4E_377, byte, 8) | 0x0C, 8));
+			__fldcw(wLoc4E_377);
+			Eq_166 rLoc1_404 = fn08048438((char *) &edi_145->t002C + 0x001C, &edi_145->r0018);
+			real64 rLoc2_407 = sin((real64) (real32) rLoc2_394);
+			uint16 wLoc4E_408 = __fstcw();
+			real64 rLoc1_417 = rLoc1_404 / rLoc2_407;
+			real64 rLoc1_427 = atan(sqrt(1.0 - rLoc2_407 * rLoc1_417), rLoc1_417) * globals->t8049A18;
+			__fldcw(DPB(wLoc4E_408, SLICE(wLoc4E_408, byte, 8) | 0x0C, 8));
+			__fldcw(wLoc4E_408);
+			fn08048438(edi_145, &edi_145->r0018);
+			struct Eq_33 * dwLoc54_428 = (int32) rLoc1_427;
+			ebx_227 = (int32) rLoc3_396;
+			esi_228 = dwLoc54_428;
+			if (!((word16) FPUF << 0x08))
+				esi_228 = 0x0100 - dwLoc54_428;
+		}
+		else
+		{
+			Eq_166 rLoc1_441 = fn08048438(&edi_145->r000C, (char *) &edi_145->t002C + 0x0010);
+			Eq_1119 rLoc1_445 = (real64) globals->r8049A1C;
+			do
+				rLoc1_445 = rLoc1_441 % rLoc1_445;
+			while (P);
+			uint16 wLoc4E_451 = __fstcw();
+			__fldcw(DPB(wLoc4E_451, SLICE(wLoc4E_451, byte, 8) | 0x0C, 8));
+			__fldcw(wLoc4E_451);
+			int64 edx_eax_459 = (int64) (int32) rLoc1_445;
+			ui32 edx_461 = SLICE(edx_eax_459, word32, 32);
+			Eq_166 rArg0_468 = fn08048438(&edi_145->r000C, (char *) &edi_145->t002C + 0x001C);
+			esi_228 = (edx_461 ^ (word32) edx_eax_459) - edx_461;
+			rArg0 = (real64) globals->r8049A1C;
+			do
+				rArg0 = rArg0_468 % rArg0;
+			while (P);
+			uint16 wLoc4E_477 = __fstcw();
+			__fldcw(DPB(wLoc4E_477, SLICE(wLoc4E_477, byte, 8) | 0x0C, 8));
+			__fldcw(wLoc4E_477);
+			int64 edx_eax_485 = (int64) (int32) rArg0;
+			ui32 edx_487 = SLICE(edx_eax_485, word32, 32);
+			rArg1 = rArg0;
+			ebx_227 = (edx_487 ^ (word32) edx_eax_485) - edx_487;
+		}
+		ui32 edx_230 = esi_228 + (ebx_227 << 0x08) / 262272;
+		real64 rLoc1_235 = (real64) (word32) edi_145->a0080[edx_230].b0002;
+		real64 rLoc2_238 = (real64) (word32) edi_145->a0080[edx_230].b0001;
+		edi_145->t002C = (real32) (real64) (word32) edi_145->a0080[edx_230].b0000;
+		real64 rLoc3_248 = ((real64) rLoc68_210 + globals->t8049A20) * rLoc1_235;
+		edi_145->r0024 = (real32) rLoc1_235;
+		real64 rLoc3_256 = rLoc2_238 * rLoc3_248;
+		edi_145->r0028 = (real32) rLoc3_256;
+		real64 rLoc3_261 = rLoc3_248 * edi_145->t002C;
+		edi_145->t002C = (real32) rLoc3_261;
+		Eq_1265 rLoc5C_262 = (real32) rLoc3_261;
+		Eq_1267 rLoc60_264 = (real32) rLoc1_235;
+		Eq_1269 rLoc58_265 = (real32) rLoc3_256;
+		if (dwArg0C > 0x00 && edi_145->b007D == 0x01)
+		{
+			fn08048438(&edi_145->r0018, dwArg08);
+			fn080484A2(fp - 0x34);
+			real64 rArg0_351;
+			fn08048EBE(fp - 0x28, ecx, edx, esi_228, &edi_145->r000C, fp - 0x34, dwArg0C - 0x01, 0x01, rArg0, rArg1, out rArg0_351);
+			real64 rLoc1_353 = (real64) globals->r8049A24;
+			rLoc60_264 = (real32) ((real64) rLoc28 * rLoc1_353 + rLoc60_264);
+			rLoc58_265 = (real32) ((real64) rLoc24 * rLoc1_353 + rLoc58_265);
+			rLoc5C_262 = (real32) (rLoc1_353 * rLoc20 + rLoc5C_262);
+		}
+		Eq_1281 rLoc1_286 = (real64) rLoc60_264;
+		if (rLoc1_286 > globals->t8049A28)
+			rLoc1_286 = (real64) globals->t8049A28;
+		eax->r0000 = (real32) rLoc1_286;
+		Eq_1281 rLoc1_293 = (real64) rLoc58_265;
+		if (rLoc1_293 > globals->t8049A28)
+			rLoc1_293 = (real64) globals->t8049A28;
+		eax->r0004 = (real32) rLoc1_293;
+		Eq_1281 rLoc1_300 = (real64) rLoc5C_262;
+		FPUF = cond(rLoc1_300 - globals->t8049A28);
+		if (rLoc1_300 > globals->t8049A28)
+			rLoc1_300 = (real64) globals->t8049A28;
+		eax->r0008 = (real32) rLoc1_300;
+	}
+	return FPUF;
 }
 
-// 0804938F: void fn0804938F(Register (ptr Eq_33) eax, Register (ptr Eq_1418) ecx, Register int32 edx)
+// 0804938F: void fn0804938F(Register (ptr32 Eq_33) eax, Register (ptr32 Eq_1418) ecx, Register int32 edx)
 void fn0804938F(Eq_33 * eax, Eq_1418 * ecx, int32 edx)
 {
 	int32 ebp_122 = 0x00;
@@ -349,7 +602,7 @@ void fn0804938F(Eq_33 * eax, Eq_1418 * ecx, int32 edx)
 	} while (ebx_41 != 0x00030000);
 }
 
-// 080494A7: void fn080494A7(Register (ptr Eq_1539) eax)
+// 080494A7: void fn080494A7(Register (ptr32 Eq_1539) eax)
 void fn080494A7(Eq_1539 * eax)
 {
 	fn080483D8();

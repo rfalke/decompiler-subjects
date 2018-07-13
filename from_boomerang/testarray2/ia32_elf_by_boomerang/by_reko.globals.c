@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_24 g_t80483AC = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_24 g_t80483AC = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_27 g_t8048438 = Unexpected function type (fn void ())
 ;
@@ -18,7 +18,7 @@ char g_str8048542[] = "Sum is %d\n";
 <anonymous> * g_ptr8049560 = null;
 word32 g_dw8049564 = 0x00000000;
 <anonymous> * g_ptr8049638 = null;
-Eq_110 g_t804964A = 
+Eq_111 g_t804964A = 
 	{
 		0x02,
 	};

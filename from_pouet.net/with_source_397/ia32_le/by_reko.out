@@ -5,203 +5,53 @@ Using options:
 0800:1829: warning: Procedure fn0800_17A3 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1836: warning: Procedure fn0800_17A3 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:0599: error: An error occurred while processing instruction at address 0800:0599.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41696590 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x414adbb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () <0x41694ca0 + 0x00073> in <filename unknown>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) <0x41694930 + 0x0005f> in <filename unknown>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (InstructionVisitor`1 visitor) <0x4168c180 + 0x00030> in <filename unknown>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) <0x416927a0 + 0x001c0> in <filename unknown>:0 
+    The given key 'sp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
 fn0800_05E5: error: An error occurred during data flow analysis.
-    The given key was not present in the dictionary.
-      at System.ThrowHelper.ThrowKeyNotFoundException () <0x41696590 + 0x0001f> in <filename unknown>:0 
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (System.Collections.Generic.TKey key) <0x414adbb0 + 0x0004b> in <filename unknown>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) <0x416b4cf0 + 0x00023> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) <0x416ba5b0 + 0x0002f> in <filename unknown>:0 
-  at Reko.Core.Expressions.Identifier.Accept (IExpressionVisitor v) <0x41679d40 + 0x00027> in <filename unknown>:0 
-  at Reko.Core.Code.InstructionVisitorBase.VisitSegmentedAccess (Reko.Core.Expressions.SegmentedAccess access) <0x416858b0 + 0x00026> in <filename unknown>:0 
-  at Reko.Core.Expressions.SegmentedAccess.Accept (IExpressionVisitor visit) <0x4167b1f0 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) <0x416ba7f0 + 0x00026> in <filename unknown>:0 
-  at Reko.Core.Code.Store.Accept (InstructionVisitor v) <0x4167b070 + 0x0002a> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.Eliminate () <0x416b9f30 + 0x00188> in <filename unknown>:0 
-  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) <0x416b9d70 + 0x00047> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x416a5d00 + 0x00507> in <filename unknown>:0 
-0800:01A6: error: An error occurred while processing the statement word16 cx_139 = di_109 - si_137.
+    The given key 'Mem0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitSegmentedAccess (Reko.Core.Expressions.SegmentedAccess access) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.SegmentedAccess.Accept (Reko.Core.Expressions.IExpressionVisitor visit) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000ef] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+0800:01D6: error: An error occurred while processing the statement branch (FPUF & 0x40) == 0x00 l0800_01DC.
+    An item with the same key has already been added. Key: bool
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x000ad] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Core.Types.PrimitiveType.Create (Reko.Core.Types.Domain dom, System.Int32 bitSize, System.String name) [0x0005c] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0004a] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00085] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+0800:01A6: error: An error occurred while processing the statement word16 cx_138 = di_108 - si_136.
     Not handling (memptr T_44 (struct 0001 (0 byte b0000))) and (memptr T_44 (struct 0001 (0 byte b0000))) yet
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) <0x416e8080 + 0x001fb> in <filename unknown>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) <0x416e46c0 + 0x00167> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (ExpressionVisitor`2 v, Reko.Core.Expressions.C context) <0x416e4610 + 0x00031> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) <0x416e2fc0 + 0x00098> in <filename unknown>:0 
-  at Reko.Core.Code.Declaration.Accept (InstructionVisitor v) <0x416d5b00 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x416e17d0 + 0x00289> in <filename unknown>:0 
-0800:048E: error: An error occurred while processing the statement branch bx_16 >>u 0x0004 <u cx_221 - 0x0A91 l0800_049B.
-    Pulling difference ui16 and (ptr (segment (226 T_673 t0226) (22A T_692 t022A) (22C T_671 t022C) (22E T_684 t022E)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) <0x416e7d20 + 0x002f7> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x416ced90 + 0x000eb> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4160af20 + 0x00030> in <filename unknown>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) <0x416ced90 + 0x00065> in <filename unknown>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (ExpressionVisitor`1 v) <0x4160af20 + 0x00030> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) <0x416e4540 + 0x00031> in <filename unknown>:0 
-  at Reko.Core.Code.Branch.Accept (InstructionVisitor v) <0x4167c250 + 0x00027> in <filename unknown>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () <0x416e17d0 + 0x00289> in <filename unknown>:0 
-fn0800_0008: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_00BA: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_0140: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_01EC: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_039E: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_059C: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_05FE: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_0674: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_06F2: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_070B: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_074A: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_07A6: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_08B4: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_0D39: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_1087: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_1285: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuplfn0800_131B: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_144E: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_14F2: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_17E5: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_19D8: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_1B47: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-fn0800_1E9E: error: An error occurred while rewriting procedure to high-level language.
-    Failure has occurred while loading a type.
-      at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () <0x417047f0 + 0x00073> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Execute () <0x416fd000 + 0x00443> in <filename unknown>:0 
-  at Reko.Structure.StructureAnalysis.Structure () <0x416fba40 + 0x00137> in <filename unknown>:0 
-  at Reko.DecompilerDriver.StructureProgram () <0x416fb560 + 0x00255> in <filename unknown>:0 
-e`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
-Could not load signature of Reko.Structure.StructureAnalysis:DetermineFollowLatch due to: Failed for unknown reasons. assembly:mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 type:System.ValueTuple`2 member:<none>
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+0800:048E: error: An error occurred while processing the statement branch bx_16 >>u 0x0004 <u cx_220 - 0x0A91 l0800_049B.
+    Pulling difference ui16 and (ptr16 (segment (226 T_673 t0226) (22A T_692 t022A) (22C T_671 t022C) (22E T_684 t022E)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00013] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 

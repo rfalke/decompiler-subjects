@@ -12,7 +12,37 @@ void _init(word32 esi, word32 edi)
 	__do_global_ctors_aux(esi, edi);
 }
 
-// 08048380: void _start(Register (ptr Eq_17) edx, Stack int32 dwArg00)
+// 08048320: void strchr()
+void strchr()
+{
+}
+
+// 08048330: void puts()
+void puts()
+{
+}
+
+// 08048340: void fgets()
+void fgets()
+{
+}
+
+// 08048350: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048360: void fclose()
+void fclose()
+{
+}
+
+// 08048370: void fopen()
+void fopen()
+{
+}
+
+// 08048380: void _start(Register (ptr32 Eq_17) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -32,8 +62,8 @@ void call_gmon_start()
 		byte SCZO_32;
 		word32 eax_33;
 		byte SZO_34;
-		byte C_35;
-		byte Z_36;
+		bool C_35;
+		bool Z_36;
 		eax_15();
 	}
 }
@@ -54,11 +84,11 @@ void __do_global_dtors_aux(int32 esi)
 				word32 esp_45;
 				word32 ebp_46;
 				byte SCZO_47;
-				byte Z_48;
+				bool Z_48;
 				word32 eax_49;
 				word32 edx_50;
 				byte SZO_51;
-				byte C_52;
+				bool C_52;
 				word32 esi_53;
 				edx_26();
 				eax_25 = globals->ptr8049660;
@@ -78,15 +108,15 @@ void frame_dummy(word32 esi, word32 edi)
 		byte SCZO_34;
 		word32 eax_35;
 		byte SZO_36;
-		byte C_37;
-		byte Z_38;
+		bool C_37;
+		bool Z_38;
 		word32 esi_39;
 		word32 edi_40;
 		fn00000000();
 	}
 }
 
-// 08048450: void main(Stack int32 dwArg04, Stack (ptr Eq_115) dwArg08)
+// 08048450: void main(Stack int32 dwArg04, Stack (ptr32 Eq_115) dwArg08)
 void main(int32 dwArg04, Eq_115 * dwArg08)
 {
 	__align(fp - 0x041C);
@@ -108,7 +138,7 @@ void main(int32 dwArg04, Eq_115 * dwArg08)
 	}
 }
 
-// 080484F0: void chomp(Stack (ptr char) dwArg04, Stack int32 dwArg08, Stack (ptr Eq_123) dwArg0C)
+// 080484F0: void chomp(Stack (ptr32 char) dwArg04, Stack int32 dwArg08, Stack (ptr32 Eq_123) dwArg0C)
 void chomp(char * dwArg04, int32 dwArg08, FILE * dwArg0C)
 {
 	char * eax_18 = fgets(dwArg04, dwArg08, dwArg0C);
@@ -134,7 +164,7 @@ void __libc_csu_init(word32 edi)
 			up32 edi_49;
 			up32 esi_50;
 			byte SZO_51;
-			byte C_52;
+			bool C_52;
 			word32 ebx_53;
 			byte SCZO_54;
 			word32 edx_55;
@@ -162,8 +192,8 @@ void __libc_csu_fini()
 			word32 eax_41;
 			word32 edx_42;
 			byte SZO_43;
-			byte C_44;
-			byte Z_45;
+			bool C_44;
+			bool Z_45;
 			ebx_11->a10AA[esi_22]();
 			esi_22 = esi_40 - 0x01;
 		} while (esi_40 != 0x00);
@@ -190,7 +220,7 @@ void __do_global_ctors_aux(word32 esi, word32 edi)
 			word32 * ebx_35;
 			byte SCZO_36;
 			word32 eax_37;
-			byte Z_38;
+			bool Z_38;
 			word32 esi_39;
 			word32 edi_40;
 			eax_12();

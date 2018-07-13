@@ -1,26 +1,27 @@
 Using options:
 00000000004003A0: warning: Unable to resolve imported reference __gmon_start__.
+00000000004005BE: warning: Call target address 0000000000000000 is invalid.
 00000000004005AB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004005C1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 unsigned_short_div: error: An error occurred during data flow analysis.
     Offset must be non-negative.
 Parameter name: bitOffset
-      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, Int32 bitOffset) <0x40bc0000 + 0x0019b> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) <0x40ba3a90 + 0x0038f> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x40ba38f0 + 0x000db> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x40ba3890 + 0x00023> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40b754a0 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.Transform () <0x40ba2f10 + 0x0010c> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40b9f6d0 + 0x000ef> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40b9e8e0 + 0x00203> in <filename unknown>:0 
+      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, System.Int32 bitOffset) [0x00023] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) [0x0010f] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00059] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <6a264ef1b92c4115b517d6a392a986a9>:0 
 unsigned_short_modulo: error: An error occurred during data flow analysis.
     Offset must be non-negative.
 Parameter name: bitOffset
-      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, Int32 bitOffset) <0x40bc0000 + 0x0019b> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) <0x40ba3a90 + 0x0038f> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) <0x40ba38f0 + 0x000db> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) <0x40ba3890 + 0x00023> in <filename unknown>:0 
-  at Reko.Core.Code.Assignment.Accept (InstructionVisitor v) <0x40b754a0 + 0x00027> in <filename unknown>:0 
-  at Reko.Analysis.Aliases.Transform () <0x40ba2f10 + 0x0010c> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) <0x40b9f6d0 + 0x000ef> in <filename unknown>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () <0x40b9e8e0 + 0x00203> in <filename unknown>:0 
+      at Reko.Core.Expressions.Slice..ctor (Reko.Core.Types.DataType dt, Reko.Core.Expressions.Expression i, System.Int32 bitOffset) [0x00023] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.Aliases.CreateAliasInstruction (Reko.Core.Expressions.Identifier varFrom, Reko.Core.Expressions.Identifier varTo) [0x0010f] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00059] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <6a264ef1b92c4115b517d6a392a986a9>:0 

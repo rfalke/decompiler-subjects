@@ -7,5 +7,9 @@
 <anonymous> g_tFFFFFFFF;
 Eq_2 g_t10828 = Unexpected function type (fn void ())
 ;
+char g_str10848[] = "Result for 4, 5, 6: %d\n";
+char g_str10860[] = "Result for 6, 5, 4: %d\n";
+char g_str10878[] = "Result for 4, 6, 5: %d\n";
+char g_str10890[] = "Result for 6, 4, 5: %d\n";
 ptr32 g_ptr20A64 = 0x00000000;
 

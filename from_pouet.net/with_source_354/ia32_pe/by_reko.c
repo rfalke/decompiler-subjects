@@ -7,43 +7,29 @@
 // 00401000: Register Eq_2 Win32CrtStartup()
 DWORD Win32CrtStartup()
 {
-	ptr32 esp_149;
-	Eq_4 eax_4 = LoadLibraryA(&globals->t403000);
+	Eq_3 eax_4 = LoadLibraryA(&globals->t403000);
 	globals->t403009 = eax_4;
-	ptr32 esp_109 = fp - 0x04;
 	if (eax_4 != null)
 	{
-		Eq_68 eax_92 = GetProcAddress(globals->t403009, &globals->t40300D);
-		globals->t403015 = eax_92;
-		esp_109 = fp - 0x0C;
-		if (eax_92 != null)
+		Eq_24 eax_50 = GetProcAddress(globals->t403009, &globals->t40300D);
+		globals->t403015 = eax_50;
+		if (eax_50 != null)
 		{
-			Eq_83 eax_111 = CreateFileA(&globals->t403041, 0x40000000, 0x00, null, 0x03, 0x80, null);
-			globals->t40304E = eax_111;
-			esp_109 = fp - 0x28;
-			if (eax_111 != (void *) 0x01)
+			Eq_37 eax_70 = CreateFileA(&globals->t403041, 0x40000000, 0x00, null, 0x03, 0x80, null);
+			globals->t40304E = eax_70;
+			if (eax_70 != (void *) 0x01)
 			{
 				SetFilePointer(globals->t40304E, 0x31, null, 0x00);
 				WriteFile(globals->t40304E, &globals->t403015, 0x04, &globals->t403052, null);
 				CloseHandle(globals->t40304E);
 				MessageBoxA(null, &globals->t403028, &globals->t403019, 0x00);
-				esp_149 = fp - 0x60;
 l004010B1:
-				HMODULE * esp_46 = esp_149 - 0x04;
-				*esp_46 = (HMODULE *) globals->t403009;
-				FreeLibrary(*esp_46);
-				*(esp_46 - 0x04) = 0x00;
-				ExitProcess(*(esp_46 - 0x04));
+				FreeLibrary(globals->t403009);
+				ExitProcess(0x00);
 			}
 		}
 	}
-	UINT * esp_64 = esp_109 - 0x04;
-	*esp_64 = (uint32) 0x00;
-	*(esp_64 - 0x04) = 0x00403019;
-	*(esp_64 - 0x08) = 0x00403034;
-	*(esp_64 - 0x0C) = 0x00;
-	MessageBoxA(*(esp_64 - 0x0C), *(esp_64 - 0x08), *(esp_64 - 0x04), *esp_64);
-	esp_149 = esp_64 - 0x0C;
+	MessageBoxA(null, &globals->t403034, &globals->t403019, 0x00);
 	goto l004010B1;
 }
 

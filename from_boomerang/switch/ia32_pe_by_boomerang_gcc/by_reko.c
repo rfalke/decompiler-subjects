@@ -15,7 +15,7 @@ DWORD Win32CrtStartup()
 	return eax_17 | 0x033F;
 }
 
-// 00401470: void fn00401470(Register ptr32 ebp, Register word32 edi, Stack (ptr Eq_27) dwArg04)
+// 00401470: void fn00401470(Register ptr32 ebp, Register word32 edi, Stack (ptr32 Eq_27) dwArg04)
 void fn00401470(ptr32 ebp, word32 edi, Eq_27 * dwArg04)
 {
 	ptr32 esp_30;
@@ -37,8 +37,8 @@ l0040149D:
 		word32 ebx_48;
 		word32 eax_49;
 		byte SZO_50;
-		byte C_51;
-		byte Z_52;
+		bool C_51;
+		bool Z_52;
 		cygwin1.dll!dll_crt0__FP11per_process();
 	}
 	struct Eq_62 * esp_31 = esp_30 - 0xB0;
@@ -50,30 +50,30 @@ l0040149D:
 	goto l0040149D;
 }
 
-// 00401530: Register word32 fn00401530(Register ptr32 ebp, Register word32 edi, Stack (ptr Eq_27) dwArg04, Stack (ptr Eq_27) dwArg08)
+// 00401530: Register word32 fn00401530(Register ptr32 ebp, Register word32 edi, Stack (ptr32 Eq_27) dwArg04, Stack (ptr32 Eq_27) dwArg08)
 word32 fn00401530(ptr32 ebp, word32 edi, Eq_27 * dwArg04, Eq_27 * dwArg08)
 {
 	word32 eax_27;
-	word32 eax_35 = 0x00;
+	word32 eax_100 = 0x00;
 	LPCSTR * esp_10 = fp - 0x0C;
 	struct Eq_27 * ebx_12 = dwArg08;
 	if (dwArg08 == null)
 	{
-		word32 ebp_84;
-		word32 eax_85;
-		byte SZO_86;
-		byte C_87;
-		word32 ebx_88;
-		byte SCZO_89;
-		byte Z_90;
-		word32 ecx_91;
-		word32 edx_92;
+		word32 ebp_85;
+		word32 eax_86;
+		byte SZO_87;
+		bool C_88;
+		word32 ebx_89;
+		byte SCZO_90;
+		bool Z_91;
+		word32 ecx_92;
+		word32 edx_93;
 		cygwin1.dll!cygwin_internal();
 		eax_27 = 0x00;
 		if (0x01 == 0x00)
 			return eax_27;
 		ebx_12 = null;
-		eax_35 = 0x01;
+		eax_100 = 0x01;
 	}
 	ebx_12->dw0004 = 0xA8;
 	ebx_12->dw0008 = 1005;
@@ -83,7 +83,7 @@ word32 fn00401530(ptr32 ebp, word32 edi, Eq_27 * dwArg04, Eq_27 * dwArg08)
 	ebx_12->dw002C = 0x004017A0;
 	ebx_12->dw0030 = 4200364;
 	ebx_12->dw0014 = 0x00403020;
-	if (eax_35 != 0x00)
+	if (eax_100 != 0x00)
 		globals->dw403024 = ebx_12->dw00A4;
 	else
 		ebx_12->dw0010 = 0x00403024;
@@ -110,10 +110,10 @@ word32 fn00401530(ptr32 ebp, word32 edi, Eq_27 * dwArg04, Eq_27 * dwArg08)
 	return eax_27;
 }
 
-// 00401670: void fn00401670(Register word32 edi, Stack (ptr Eq_243) dwArg04, Stack (ptr Eq_243) dwArg08, Stack word32 dwArg0C)
-void fn00401670(word32 edi, Eq_243 * dwArg04, Eq_243 * dwArg08, word32 dwArg0C)
+// 00401670: void fn00401670(Register word32 edi, Stack (ptr32 Eq_245) dwArg04, Stack (ptr32 Eq_245) dwArg08, Stack word32 dwArg0C)
+void fn00401670(word32 edi, Eq_245 * dwArg04, Eq_245 * dwArg08, word32 dwArg0C)
 {
-	struct Eq_243 * ecx_37 = &dwArg04->dw0000 + 0x01;
+	struct Eq_245 * ecx_37 = &dwArg04->dw0000 + 0x01;
 	if (dwArg04 < dwArg08)
 	{
 		do

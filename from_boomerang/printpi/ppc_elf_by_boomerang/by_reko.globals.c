@@ -7,14 +7,15 @@
 word32 g_dw10000470 = 0x000183C0;
 struct Eq_3 g_t10000510 = 
 	{
-		0x93E1001C,
+		-1813970916,
 	};
-word32 g_dw1001082C = 0xFFFFFFFF;
-word32 g_dw10010838 = 0x00000000;
-word32 g_dw1001083C = 0x00000000;
-word32 * g_ptr1001091C = &g_dw10010838;
-Eq_43 g_t10010994 = 
-	{
-		0
-	};
+Eq_43 g_t100007FC = Unexpected function type (fn void ())
+;
+char g_str10000810[] = "Pi is about %.5f\n";
+real32 g_r10000824 = 3.141593F;
+int32 g_dw1001082C = -1;
+int32 g_dw10010838 = 0;
+int32 g_dw1001083C = 0;
+int32 * g_ptr1001091C = &g_dw10010838;
+byte g_b10010994 = 0x00;
 

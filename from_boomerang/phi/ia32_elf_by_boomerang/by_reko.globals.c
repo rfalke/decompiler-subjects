@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr (ptr char)), (ptr (ptr char))))
+Eq_22 g_t804835C = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_25 g_t804842C = Unexpected function type (fn void ())
 ;
@@ -15,6 +15,7 @@ char g_str80484D8[] = "Input number: ";
 char g_str80484E7[] = "%d";
 char g_str80484EA[] = "fibonacci(%d) = %d\n";
 <anonymous> * g_ptr8049500;
+<anonymous> * g_ptr8049504 = null;
 <anonymous> ** g_ptr804950C = &g_ptr80495E4;
 <anonymous> * g_ptr80495D8 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80495E4 = null;

@@ -8,5 +8,6 @@
 Eq_2 g_t1078C = Unexpected function type (fn void ())
 ;
 int8 g_b107A8 = 109;
+char g_str107B0[] = "elf_hash(\"main\") is %x\n";
 ptr32 g_ptr2097C = 0x00000000;
 

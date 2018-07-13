@@ -15,13 +15,13 @@ void _init()
 		byte SCZO_25;
 		word32 eax_26;
 		byte SZO_27;
-		byte C_28;
-		byte Z_29;
+		bool C_28;
+		bool Z_29;
 		!__gmon_start__();
 	}
 }
 
-// 08048330: void _start(Register (ptr Eq_21) edx, Stack int32 dwArg00)
+// 08048330: void _start(Register (ptr32 Eq_22) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -45,10 +45,10 @@ void deregister_tm_clones()
 	byte SCZO_38;
 	byte CZ_39;
 	byte SZO_40;
-	byte C_41;
-	byte Z_42;
+	bool C_41;
+	bool Z_42;
 	word32 ebp_43;
-	null();
+	fn00000000();
 }
 
 // 080483A0: void register_tm_clones()
@@ -60,11 +60,11 @@ void register_tm_clones()
 	word32 eax_44;
 	byte SCZO_45;
 	word32 edx_46;
-	byte Z_47;
+	bool Z_47;
 	byte SZO_48;
-	byte C_49;
+	bool C_49;
 	word32 ebp_50;
-	null();
+	fn00000000();
 }
 
 // 080483E0: void __do_global_dtors_aux()
@@ -87,12 +87,12 @@ void frame_dummy()
 		word32 esp_36;
 		word32 eax_37;
 		byte SZO_38;
-		byte C_39;
-		byte Z_40;
+		bool C_39;
+		bool Z_40;
 		word32 ebp_41;
 		byte SCZO_42;
 		word32 edx_43;
-		null();
+		fn00000000();
 		register_tm_clones();
 	}
 }
@@ -101,12 +101,12 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x04);
-	Eq_110 eax_11 = strlen("Hello, World!");
-	Eq_110 dwLoc08_13 = globals->str8048530;
+	Eq_114 eax_11 = strlen("Hello, World!");
+	Eq_114 dwLoc08_13 = globals->str8048530;
 	while (dwLoc08_13 < eax_11)
 	{
 		putchar((int32) (byte) (word32) dwLoc08_13->b0000);
-		dwLoc08_13 = (Eq_110) (dwLoc08_13 + 0x01);
+		dwLoc08_13 = (Eq_114) (dwLoc08_13 + 0x01);
 	}
 	putchar(0x0A);
 }
@@ -120,19 +120,18 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	{
 		do
 		{
-			word32 esp_63;
-			word32 ebp_64;
-			word32 edi_65;
-			byte SZO_66;
-			byte C_67;
-			word32 esi_68;
-			word32 ebx_69;
-			byte SCZO_70;
-			word32 eax_71;
-			byte Z_72;
-			bcuisposr0 None_73;
+			word32 esp_61;
+			word32 ebp_62;
+			word32 edi_63;
+			byte SZO_64;
+			bool C_65;
+			word32 esi_66;
+			word32 ebx_67;
+			byte SCZO_68;
+			word32 eax_69;
+			bool Z_70;
 			ebx_18->ptr1171();
-		} while (edi_65 + 0x01 != esi_68);
+		} while (edi_63 + 0x01 != esi_66);
 	}
 }
 

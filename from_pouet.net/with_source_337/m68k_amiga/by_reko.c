@@ -25,26 +25,27 @@ void fn00001000()
 		word32 a6_46;
 		word32 d0_47;
 		byte ZN_48;
-		byte C_49;
-		byte V_50;
-		byte Z_51;
-		byte N_55;
-		byte CZ_56;
+		bool C_49;
+		bool V_50;
+		bool Z_51;
 		word32 d1_52;
 		word32 d2_53;
 		word32 d3_54;
+		bool N_55;
+		byte CZ_56;
 		(a6_38 + -0x0396)();
 		globals->dw1158 = d0_47;
 		if (d0_47 == 0x00)
 			fn00001092();
 		else
 		{
-			word32 d0_64 = AllocMem(d0_47, 0x01);
+			AllocMem(d0_47, 0x01);
 			globals->dw1160 = globals->dw1158;
 			globals->w1156 = 0x00;
 			do
 			{
-				d0_64 = fn00001316(fn000012F4(d0_64, d1_52, d2_53), d3_54, out d1_52, out d2_53, out d3_54);
+				fn000012F4();
+				fn00001316();
 				globals->w1156 = globals->w1156 + 0x01;
 			} while (globals->w1156 < 0x0A);
 			fn00001092();
@@ -65,7 +66,7 @@ int32 fn00001092()
 		word32 a0_21;
 		word32 d0_22;
 		byte CVZN_23;
-		byte Z_24;
+		bool Z_24;
 		word32 a6_25;
 		(a6_19 + -0x039C)();
 	}
@@ -92,11 +93,11 @@ word32 fn000010DA()
 	return d0_6;
 }
 
-// 000012F4: Register word32 fn000012F4(Register word32 d0, Register word32 d1, Register word32 d2)
-word32 fn000012F4(word32 d0, word32 d1, word32 d2)
+// 000012F4: void fn000012F4()
+void fn000012F4()
 {
 	cui16 v5_4 = globals->w1156;
-	byte * a0_16 = DPB(0x1340, (word16) 0x1340 + (v5_4 + 0x01 << 0x05), 0);
+	byte * a0_16 = DPB(0x1340, (word16) (0x1340 + DPB(d0, v5_4 + 0x01 << 0x05, 0)), 0);
 	word32 d2_18 = DPB(d2, 0x01DF, 0);
 	do
 	{
@@ -104,19 +105,11 @@ word32 fn000012F4(word32 d0, word32 d1, word32 d2)
 		a0_16 = DPB(a0_16, (word16) a0_16 + 0x0280, 0);
 		d2_18 = d2_18 - 0x01;
 	} while (d2_18 != ~0x00);
-	return d2_18;
 }
 
-// 00001316: Register int32 fn00001316(Register word32 d2, Register word32 d3, Register out ptr32 d1Out, Register out ptr32 d2Out, Register out ptr32 d3Out)
-int32 fn00001316(word32 d2, word32 d3, ptr32 & d1Out, ptr32 & d2Out, ptr32 & d3Out)
+// 00001316: void fn00001316()
+void fn00001316()
 {
 	execPrivate12();
-	word32 d1_8;
-	*d1Out = 0x00;
-	word32 d2_10;
-	*d2Out = DPB(d2, 0x027F, 0);
-	word32 d3_12;
-	*d3Out = DPB(d3, 0x01DF, 0);
-	return 0x00;
 }
 

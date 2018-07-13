@@ -17,5 +17,66 @@ void h()
 // 080480E2: Register word32 f(Register word32 eax, Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C, Stack word32 dwArg10)
 word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
 {
+	while (dwArg04 != 0x00)
+		dwArg08 = dwArg08 + 0x01;
+	do
+	{
+		if (dwArg04 == 0x00)
+		{
+			while (true)
+			{
+				h();
+				if (eax == 0x00)
+					break;
+				dwArg04 = dwArg04 + 0x01;
+			}
+			while (true)
+			{
+				g();
+				if (eax == 0x00)
+					break;
+				h();
+				if (eax == 0x00)
+					break;
+				dwArg04 = dwArg04 + 0x01;
+			}
+			do
+			{
+				eax = f(dwArg10, dwArg10, dwArg04, dwArg08, dwArg0C);
+				g();
+			} while (eax != 0x00);
+			do
+			{
+				if (dwArg04 != 0x00)
+				{
+					eax = f(dwArg10, dwArg10, dwArg0C, dwArg08, dwArg04);
+					return eax;
+				}
+				g();
+				dwArg10 = eax;
+				if (eax != 0x00)
+				{
+					h();
+					break;
+				}
+			} while (dwArg04 != 0x00);
+			do
+			{
+				g();
+				eax = eax - dwArg08;
+				if (eax != 0x00)
+					return eax;
+				g();
+				if (eax == 0x00)
+					return eax;
+				h();
+			} while (eax != 0x00);
+			return eax;
+		}
+		word32 v7_96 = dwArg08 + 0x01;
+		dwArg08 = v7_96;
+		eax = v7_96;
+	} while (v7_96 != dwArg0C);
+	return eax;
 }
 
