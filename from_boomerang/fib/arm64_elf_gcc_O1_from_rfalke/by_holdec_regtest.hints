@@ -1,0 +1,6 @@
+[activeFunctions]
+main
+fib
+
+[func:fib]
+signature: u4 fib(u4 n)
