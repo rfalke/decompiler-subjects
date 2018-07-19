@@ -14,7 +14,7 @@ int bfxil2(int dest, int src) {
 int bfi(int dest, int src) {
     // bfi 5,9
     int bitsToInsert = src & 0x1ff;
-    // 0xfffffe00 rotated right 5 bits
+    // 0xfffffe00 rotated left 5 bits
     int rotatedMask = 0xffffc01f;
     return (bitsToInsert<<5) | (dest & rotatedMask);
 }
