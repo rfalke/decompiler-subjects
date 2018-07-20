@@ -1,0 +1,41 @@
+[activeFunctions]
+bfxil1
+bfxil2
+bfi
+ubfx
+ubfiz
+cbz
+tbnz
+bic
+eon
+orn
+
+[func:bfxil1]
+signature: d4 bfxil1(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
+
+[func:bfxil2]
+signature: d4 bfxil2(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
+
+[func:bfi]
+signature: d4 bfi(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
+
+[func:ubfx]
+signature: d4 ubfx(d4 ARG_1 <w0>)
+
+[func:ubfiz]
+signature: d4 ubfiz(d4 ARG_1 <w0>)
+
+[func:cbz]
+signature: d4 cbz(d4 ARG_1 <w0>)
+
+[func:tbnz]
+signature: d4 tbnz(d4 ARG_1 <w0>)
+
+[func:bic]
+signature: d4 bic(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
+
+[func:eon]
+signature: d4 eon(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
+
+[func:orn]
+signature: d4 orn(d4 ARG_1 <w0>, d4 ARG_2 <w1>)
