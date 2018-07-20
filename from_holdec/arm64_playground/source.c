@@ -19,9 +19,52 @@ int bfi(int dest, int src) {
     return (bitsToInsert<<5) | (dest & rotatedMask);
 }
 
+unsigned int ubfx(unsigned int src) {
+    // ubfx 5,9
+    return (src>>5) & 0x1ff;
+}
+
+int ubfiz(int x) {
+    // ubfiz 5,9
+    return (x&0x1ff)<<5;
+}
+
+void cbz(int x) {
+    if(x) {
+        printf("not null but %d\n", x);
+    } else {
+        puts("is zero");
+    }
+}
+
+void tbnz(int x) {
+    if(x & 0x200) {
+        printf("bit set in %d\n", x);
+    } else {
+        puts("bit is zero");
+    }
+}
+
+int bic(int x, int y) {
+    return x & (~y);
+}
+
+int eon(int x, int y) {
+    return x ^ (~y);
+}
+
+int orn(int x, int y) {
+    return x | (~y);
+}
+
+
 int main(int argc, char *argv[]){
     printf("bfxil1: 0x%08x 0x%08x\n", bfxil1(0,-1), bfxil1(-1,0));
     printf("bfxil2: 0x%08x 0x%08x\n", bfxil2(0,-1), bfxil2(-1,0));
     printf("bfi:    0x%08x 0x%08x\n", bfi(0,-1), bfi(-1,0));
+    cbz(0);
+    cbz(-1);
+    tbnz(0);
+    tbnz(-1);
     return 0;
 }
