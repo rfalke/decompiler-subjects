@@ -29,20 +29,22 @@ int ubfiz(int x) {
     return (x&0x1ff)<<5;
 }
 
-void cbz(int x) {
+int cbz(int x) {
     if(x) {
         printf("not null but %d\n", x);
     } else {
         puts("is zero");
     }
+    return 0;
 }
 
-void tbnz(int x) {
+int tbnz(int x) {
     if(x & 0x200) {
         printf("bit set in %d\n", x);
     } else {
         puts("bit is zero");
     }
+    return 0;
 }
 
 int bic(int x, int y) {
