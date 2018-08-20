@@ -265,16 +265,13 @@ L30:
     reg_var13 = reg_cm;
     reg_var12 = reg_cm + reg_var11 * 4;
     reg_var2 = reg_cm + reg_var2 * 4;
-    while(1) {
+    do {
       reg_ct = LOAD(reg_var13);
       (void) STORE(reg_var13, LOAD(reg_var12 + -4));
       reg_var13 += 4;
       (void) STORE(reg_var12 + -4, reg_ct);
       reg_var12 += -4;
-      if(reg_var13 == reg_var2) {
-        break;
-      }
-    }
+    } while(reg_var13 != reg_var2);
   }
   (void) fputws(reg_cm, LOAD(reg_bf));
   goto L205;
