@@ -256,6 +256,44 @@ int intermediate_20_nested_loops(int arg)
 	return 0;
 }
 
+int intermediate_30_switch_case(int arg)
+{
+	switch (arg) {
+	case 0:
+		puts("0");
+		break;
+	case 1:
+		puts("1");
+		break;
+	case 2:
+	case 3:
+		puts("2 or 3");
+		break;
+	case 4:
+		puts("4");
+		break;
+	case 5:
+		puts("5");
+		break;
+	case 6:
+		puts("6");
+		break;
+	case 7:
+		puts("7 with fall through");
+	case 8:
+		puts("8");
+		break;
+	case 9:
+		puts("9");
+		break;
+	default:
+		puts("some other value");
+		break;
+	}
+	puts("common exit");
+	return 0;
+}
+
 int advanced_1_loop_with_multiple_entries(int arg)
 {
 	if (arg == 42) {
@@ -371,6 +409,64 @@ int advanced_12_nested_if_in_loop(int arg)
 	return 0;
 }
 
+int advanced_20_jump_table_on_stack(int arg)
+{
+	void *jump_table[] = { &&b0, &&b1, &&b2, &&b3, &&b4, &&b5 };
+	if (arg >= 0 && arg <= 5) {
+		goto *jump_table[arg];
+	} else {
+		puts("is something else");
+	}
+ exit:
+	return 0;
+ b0:
+	puts("is 0");
+	goto exit;
+ b1:
+	puts("is 1");
+	goto exit;
+ b2:
+	puts("is 2");
+	goto exit;
+ b3:
+	puts("is 3");
+	goto exit;
+ b4:
+	puts("is 4");
+	goto exit;
+ b5:
+	puts("is 5");
+	goto exit;
+}
+
+int advanced_21_computed_jumps(int arg)
+{
+	puts("start");
+	if (arg >= 0 && arg <= 2) {
+		int offset = 0;
+		if (arg >= 1) {
+			offset += &&b1 - &&b0;
+		}
+		if (arg >= 2) {
+			offset += &&b2 - &&b1;
+		}
+		goto *(&&b0 + offset);
+	} else {
+		puts("is something else");
+	}
+ exit:
+	return 0;
+ b0:
+	puts("is 0");
+	goto exit;
+ b1:
+	puts("is 1");
+	goto exit;
+ b2:
+	puts("is 2");
+	goto exit;
+}
+
 int main(int argc, char *argv[])
 {
 	basic_1_if(argc);
@@ -396,12 +492,17 @@ int main(int argc, char *argv[])
 
 	intermediate_20_nested_loops(argc);
 
+	intermediate_30_switch_case(argc);
+
 	advanced_1_loop_with_multiple_entries(argc);
 	advanced_2_loop_with_multiple_exits(argc);
 
 	advanced_10_irreducible(argc);
 	advanced_11_nested_loops_complex_condition(argc);
 	advanced_12_nested_if_in_loop(argc);
+
+	advanced_20_jump_table_on_stack(argc);
+	advanced_21_computed_jumps(argc);
 
 	return 0 + argv[0][0];
 }
