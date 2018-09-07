@@ -68,6 +68,14 @@ int basic_3_string_literals_high_chars()
 	return 0;
 }
 
+char a_modifiable_string[]="a modifiable string";
+
+int basic_4_readonly_vs_modifiable() {
+	puts("a read only string");
+	puts(a_modifiable_string);
+	return 0;
+}
+
 int basic_10_result_var_name(int arg)
 {
 	int x;
@@ -185,6 +193,7 @@ int main(int argc, char *argv[])
 	basic_1_string_literals_quoting();
 	basic_2_string_literals_low_chars();
 	basic_3_string_literals_high_chars();
+	basic_4_readonly_vs_modifiable();
 
 	basic_10_result_var_name(argc);
 
