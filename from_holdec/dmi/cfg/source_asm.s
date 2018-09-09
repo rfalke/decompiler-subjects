@@ -126,3 +126,21 @@ basic_9_dead_block:
 	ret
 .LFE7:
 	.size	basic_9_dead_block, .-basic_9_dead_block
+
+        .section        .rodata
+.LC14:
+        .string "unreached"
+        .text
+        .globl  intermediate_17_forever_loop_with_extra_statement
+        .type   intermediate_17_forever_loop_with_extra_statement, @function
+intermediate_17_forever_loop_with_extra_statement:
+        pushl   %ebp
+        movl    %esp, %ebp
+.L87:
+        jmp      .L87
+        pushl   $.LC14
+        call    puts
+		popl	%eax
+        movl    $0, %eax
+        ret
+        .size   intermediate_17_forever_loop_with_extra_statement, .-intermediate_17_forever_loop_with_extra_statement

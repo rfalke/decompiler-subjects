@@ -243,6 +243,15 @@ int intermediate_16_loop_with_breaks_and_continues(int arg)
 	return 0;
 }
 
+int intermediate_17_forever_loop_with_extra_statement();
+
+/*{
+	while (time(0)==0) {
+	}
+	puts("unreached");
+	return 0;
+}*/
+
 int intermediate_20_nested_loops(int arg)
 {
 	puts("before");
@@ -489,6 +498,7 @@ int main(int argc, char *argv[])
 	intermediate_14_loop_with_two_continues(argc);
 	intermediate_15_loop_with_continue_and_block(argc);
 	intermediate_16_loop_with_breaks_and_continues(argc);
+	intermediate_17_forever_loop_with_extra_statement();
 
 	intermediate_20_nested_loops(argc);
 
