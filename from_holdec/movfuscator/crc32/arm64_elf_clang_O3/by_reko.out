@@ -1,0 +1,4 @@
+Using options:
+00000000004005E0: error: An AArch64 decoder for the instruction 4F000421 (AdvancedSimdModifiedImm cmode) has not been implemented yet.
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now

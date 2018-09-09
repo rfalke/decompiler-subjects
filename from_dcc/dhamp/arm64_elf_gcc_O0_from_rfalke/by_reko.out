@@ -1,0 +1,6 @@
+Using options:
+0000000000000D34: warning: AArch64 instruction fcmpe	d0,#0.0 is not supported yet.
+0000000000000D0C: warning: AArch64 instruction fcmpe	d1,d0 is not supported yet.
+00000000000009D8: error: Cannot chop image map item of type word32.
+00011DA0: warning: Expected sizes of arrays to have been determined by now
+00011DA0: warning: Expected sizes of arrays to have been determined by now

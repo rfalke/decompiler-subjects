@@ -1,0 +1,68 @@
+Using options:
+0000000000000CF0: warning: AArch64 instruction fcmpe	d0,#0.0 is not supported yet.
+0000000000000CF0: warning: AArch64 instruction fcmpe	d0,#0.0 is not supported yet.
+0000000000000CAC: warning: AArch64 instruction fcmpe	d0,d2 is not supported yet.
+0000000000000FFC: error: An error occurred while processing the statement word32 w3_22 = (word32) Mem0[x2_18 + 0x0000000000001230:byte].
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000001010: error: An error occurred while processing the statement word32 w3_29 = (word32) Mem23[x2_26 + 0x0000000000001248:byte].
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000000010FC: error: An error occurred while processing the statement word32 w2_31 = (word32) Mem0[x0_10 + 0x0000000000001260:byte].
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00001224: warning: Expected sizes of arrays to have been determined by now
+00011DA0: warning: Expected sizes of arrays to have been determined by now
+00012068: error: Failed to write global variable g_t12068.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt64 (System.Byte[] image, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt64 (System.Byte[] img, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000a8] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+00001224: warning: Expected sizes of arrays to have been determined by now
+00011DA0: warning: Expected sizes of arrays to have been determined by now
+00012068: error: Failed to write global variable g_t12068.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt64 (System.Byte[] image, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt64 (System.Byte[] img, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000a8] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 

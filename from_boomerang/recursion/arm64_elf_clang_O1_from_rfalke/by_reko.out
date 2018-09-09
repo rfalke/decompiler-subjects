@@ -1,0 +1,33 @@
+Using options:
+l: error: An error occurred during data flow analysis.
+    The given key 'l00000000004006D0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x0007c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00034] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00035] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+e: error: An error occurred during data flow analysis.
+    The given key 'l0000000000400708' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x0007c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00034] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00035] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+g: error: An error occurred during data flow analysis.
+    The given key 'l000000000040074C' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x0007c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00034] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00035] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+k: error: An error occurred during data flow analysis.
+    The given key 'l00000000004007D0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x0007c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00034] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00035] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00400998: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00400998: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now

@@ -1,0 +1,38 @@
+Using options:
+0000000000400744: error: An AArch64 decoder for the instruction 9EAE0001 (ConversionBetweenFpAndInt sf:S=0b10 type=10) has not been implemented yet.
+0000000000401EA0: error: An AArch64 decoder for the instruction D53B4421 (System L:op0 = 0b111) has not been implemented yet.
+0000000000401EB0: error: An AArch64 decoder for the instruction D53B4421 (System L:op0 = 0b111) has not been implemented yet.
+0000000000401EC4: error: An AArch64 decoder for the instruction D53B4421 (System L:op0 = 0b111) has not been implemented yet.
+0000000000401ED8: error: An AArch64 decoder for the instruction D53B4421 (System L:op0 = 0b111) has not been implemented yet.
+0000000000401EE8: error: An AArch64 decoder for the instruction D53B4420 (System L:op0 = 0b111) has not been implemented yet.
+0000000000401B30: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+0000000000401818: error: An AArch64 decoder for the instruction 9EAE0001 (ConversionBetweenFpAndInt sf:S=0b10 type=10) has not been implemented yet.
+0000000000401700: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+0000000000401610: error: An AArch64 decoder for the instruction D53B4401 (System L:op0 = 0b111) has not been implemented yet.
+0000000000400968: error: An AArch64 decoder for the instruction 9E660022 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+00000000004007C8: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+0000000000400780: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+00000000004006FC: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+00000000004006A0: error: An AArch64 decoder for the instruction 9E660000 (ConversionBetweenFpAndInt sf:S=0b10 type=01) has not been implemented yet.
+0000000000400668: error: An AArch64 decoder for the instruction 1E780009 (ConversionBetweenFpAndInt sf:S=0b00 type=01) has not been implemented yet.
+0000000000400600: error: An AArch64 decoder for the instruction F20A400 (DataProcessingScalarFpAdvancedSimd - op0=0000 op1=10 op2=0100) has not been implemented yet.
+00412DE0: warning: Expected sizes of arrays to have been determined by now
+00413060: error: Failed to write global variable g_ow413060.
+    Primitive type word128 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+00412DE0: warning: Expected sizes of arrays to have been determined by now
+00413060: error: Failed to write global variable g_ow413060.
+    Primitive type word128 not supported.
+      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 

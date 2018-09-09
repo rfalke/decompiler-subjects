@@ -1,0 +1,5 @@
+Using options:
+00000000000007D8: warning: AArch64 instruction fcmpe	s0,s1 is not supported yet.
+00000000000007F0: warning: AArch64 instruction fcmpe	s0,s1 is not supported yet.
+00010DA8: warning: Expected sizes of arrays to have been determined by now
+00010DA8: warning: Expected sizes of arrays to have been determined by now

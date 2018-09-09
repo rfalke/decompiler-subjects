@@ -1,0 +1,9 @@
+Using options:
+08048400: warning: Call target address 00000000 is invalid.
+080483AD: warning: Call target address 00000000 is invalid.
+08048373: warning: Call target address 00000000 is invalid.
+080483EB: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08048406: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+l08048423: warning: Non-integral switch expression
+08048568: warning: Expected sizes of arrays to have been determined by now
+08048568: warning: Expected sizes of arrays to have been determined by now

@@ -1,0 +1,4 @@
+Using options:
+0000000000000870: error: An AArch64 decoder for the instruction 4F000486 (AdvancedSimdModifiedImm cmode) has not been implemented yet.
+00010DA8: warning: Expected sizes of arrays to have been determined by now
+00010DA8: warning: Expected sizes of arrays to have been determined by now

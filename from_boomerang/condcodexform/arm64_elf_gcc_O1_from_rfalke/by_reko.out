@@ -1,0 +1,5 @@
+Using options:
+0000000000000848: error: An AArch64 decoder for the instruction FA400020 (ConditionalCompareReg sf:op:S=111) has not been implemented yet.
+0000000000000904: error: An AArch64 decoder for the instruction FA400060 (ConditionalCompareReg sf:op:S=111) has not been implemented yet.
+00010DA8: warning: Expected sizes of arrays to have been determined by now
+00010DA8: warning: Expected sizes of arrays to have been determined by now

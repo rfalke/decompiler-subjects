@@ -1,0 +1,26 @@
+Using options:
+copy1_four_times: error: An error occurred during data flow analysis.
+    Specified cast is not valid.
+      at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x0000c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionTransformer.VisitConditionalExpression (Reko.Core.Expressions.ConditionalExpression cond) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ConditionalExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+copy1_eight_times: error: An error occurred during data flow analysis.
+    Specified cast is not valid.
+      at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x0000c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionTransformer.VisitConditionalExpression (Reko.Core.Expressions.ConditionalExpression cond) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ConditionalExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+copy1_four_times_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+00400D38: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00400D38: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now

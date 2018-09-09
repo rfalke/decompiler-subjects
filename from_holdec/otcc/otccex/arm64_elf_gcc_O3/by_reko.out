@@ -1,0 +1,13 @@
+Using options:
+0000000000000C40: error: An AArch64 decoder for the instruction 4F000420 (AdvancedSimdModifiedImm cmode) has not been implemented yet.
+0000000000000C6C: error: An AArch64 decoder for the instruction 4F000420 (AdvancedSimdModifiedImm cmode) has not been implemented yet.
+0000000000001068: error: An error occurred while processing the statement word64 x20_84 = x19_39 - 0x0000000000000002 - DPB(x0_32, ~0x00000100 + w0_33, 0).
+    Pulling difference int64 and (ptr64 (struct 0001 (0 byte b0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00011D88: warning: Expected sizes of arrays to have been determined by now
+00011D88: warning: Expected sizes of arrays to have been determined by now

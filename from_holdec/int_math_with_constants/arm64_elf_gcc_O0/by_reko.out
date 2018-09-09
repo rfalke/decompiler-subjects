@@ -1,0 +1,389 @@
+Using options:
+0000000000198018: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+000000000013C020: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+00000000001B0020: warning: AArch64 instruction smulh	x0,w1,w0 is not supported yet.
+000000000019A014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000141018: warning: AArch64 instruction smulh	x0,w2,w0 is not supported yet.
+0000000000195020: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+00000000001AB018: warning: AArch64 instruction smulh	x0,w1,w0 is not supported yet.
+00000000001E17EC: error: The method or operation is not implemented.
+0000000000136014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000140034: warning: AArch64 instruction smulh	x1,w2,w0 is not supported yet.
+0000000000194014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+000000000013B014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000135014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000197014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000131CDC: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+0000000000191EF4: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
+00000000001A024C: warning: AArch64 instruction smulh	x1,w2,w0 is not supported yet.
+00000000000FC004: error: An error occurred while processing instruction at address 00000000000FC004.
+    The given key 'sp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000157004: error: An error occurred while processing instruction at address 0000000000157004.
+    The given key 'sp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000187000: error: An error occurred while processing instruction at address 0000000000187000.
+    The given key 'sp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn00000000000FA008: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000103004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000104008: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000118004: error: An error occurred during data flow analysis.
+    The given key 'x1' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000155008: error: An error occurred during data flow analysis.
+    The given key 'Mem0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x0000c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn000000000017D004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000185004: error: An error occurred during data flow analysis.
+    The given key 'Mem0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x0000c] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000187004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn00000000001B8004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn00000000001BF004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn00000000001CB004: error: An error occurred during data flow analysis.
+    The given key 'x0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+fn0000000000103004_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0000000000172F0C: error: An error occurred while processing the statement Mem1072[Mem1051[0x00000000001F2FD8 + 0x0000000000000000:word64] + 1336:word64] = x2_1054 - SLICE((word32) (x2_1054 >>u 3) *u 0x30C30C31, uint64, 64) * 0x00000000000000A8.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000175CE4: error: An error occurred while processing the statement Mem4341[Mem4320[0x00000000001F2FD8 + 0x0000000000000000:word64] + 2680:word64] = x2_4323 - SLICE((word32) (x2_4323 >>u 4) *u 0x30C30C31, uint64, 64) * 0x0000000000000150.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000176DE4: error: An error occurred while processing the statement Mem5557[Mem5536[0x00000000001F2FD8 + 0x0000000000000000:word64] + 3192:word64] = x2_5539 - SLICE((word32) (x2_5539 >>u 4) *u 0xD70A3D71, uint64, 64) * 0x0000000000000190.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017B650: error: An error occurred while processing the statement Mem2750[Mem2729[0x00000000001F2FD8 + 0x0000000000000000:word64] + 5368:word64] = x2_2732 - SLICE((word32) (x2_2732 >>u 5) *u 0x30C30C32, uint64, 64) * 0x00000000000002A0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D0C0: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference uint64 and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_331526 t1838)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D0F0: error: An error occurred while processing the statement x2 = x1 - x0.
+    Pulling difference (union ((ptr64 (struct (FD8 T_331516 t0FD8) (1830 T_331519 t1830))) u0) (ptr64 u1)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_331561 t1840)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D108: error: An error occurred while processing the statement x0 = x1 - x0.
+    Pulling difference (union ((ptr64 (struct (FD8 T_331516 t0FD8) (1830 T_331519 t1830))) u0) (ptr64 u1)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_331561 t1840)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D148: error: An error occurred while processing the statement x0 = x1 - x0.
+    Pulling difference (union ((ptr64 (struct (FD8 T_319230 t0FD8) (1830 T_331519 t1830) (1840 T_331586 t1840))) u0) (ptr64 u1)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_331561 t1840) (1848 T_331593 t1848)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D184: error: An error occurred while processing the statement x0 = x1 - x0.
+    Pulling difference (union ((ptr64 (struct (FD8 T_319230 t0FD8) (1830 T_331519 t1830) (1840 T_331586 t1840) (1848 T_331616 t1848))) u0) (ptr64 u1)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_331561 t1840) (1848 T_331593 t1848) (1850 T_331623 t1850)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D2F0: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_331778 t1878)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D500: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_332019 t18B8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017D710: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_332262 t18F8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017DB08: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_332731 t1978)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017DEF8: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_333198 t19F8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017E0F8: error: An error occurred while processing the statement x1 = x2 - x1.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_333434 t1A38)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017E734: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_334161 t1AF8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017E854: error: An error occurred while processing the statement x1 = x2 - x1.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_334288 t1B18)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017EB50: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_334637 t1B78)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017EBDC: error: An error occurred while processing the statement x1 = x2 - x1.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_319230 t1B78) (1B80 T_319230 t1B80) (1B88 T_334700 t1B88)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017ED74: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_319230 t1B78) (1B80 T_319230 t1B80) (1B88 T_319230 t1B88) (1B90 T_319230 t1B90) (1B98 T_319230 t1B98) (1BA0 T_319230 t1BA0) (1BA8 T_319230 t1BA8) (1BB0 T_319230 t1BB0) (1BB8 T_334883 t1BB8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017EDA4: error: An error occurred while processing the statement x1 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_319230 t1B78) (1B80 T_319230 t1B80) (1B88 T_319230 t1B88) (1B90 T_319230 t1B90) (1B98 T_319230 t1B98) (1BA0 T_319230 t1BA0) (1BA8 T_319230 t1BA8) (1BB0 T_319230 t1BB0) (1BB8 T_319230 t1BB8) (1BC0 T_334918 t1BC0)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017EDC8: error: An error occurred while processing the statement x1 = x2 - x1.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_319230 t1B78) (1B80 T_319230 t1B80) (1B88 T_319230 t1B88) (1B90 T_319230 t1B90) (1B98 T_319230 t1B98) (1BA0 T_319230 t1BA0) (1BA8 T_319230 t1BA8) (1BB0 T_319230 t1BB0) (1BB8 T_319230 t1BB8) (1BC0 T_334918 t1BC0)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+000000000017EE0C: error: An error occurred while processing the statement x2 = x2 - x0.
+    Pulling difference (union (int64 u1) (uint64 u0)) and (ptr64 (struct (F30 T_319230 t0F30) (FD8 T_319230 t0FD8) (1828 T_331491 t1828) (1830 T_319230 t1830) (1838 T_319230 t1838) (1840 T_319230 t1840) (1848 T_319230 t1848) (1850 T_319230 t1850) (1858 T_319230 t1858) (1860 T_319230 t1860) (1868 T_319230 t1868) (1870 T_319230 t1870) (1878 T_319230 t1878) (1880 T_319230 t1880) (1888 T_319230 t1888) (1890 T_319230 t1890) (1898 T_319230 t1898) (18A0 T_319230 t18A0) (18A8 T_319230 t18A8) (18B0 T_319230 t18B0) (18B8 T_319230 t18B8) (18C0 T_319230 t18C0) (18C8 T_319230 t18C8) (18D0 T_319230 t18D0) (18D8 T_319230 t18D8) (18E0 T_319230 t18E0) (18E8 T_319230 t18E8) (18F0 T_319230 t18F0) (18F8 T_319230 t18F8) (1900 T_319230 t1900) (1908 T_319230 t1908) (1910 T_319230 t1910) (1918 T_319230 t1918) (1920 T_319230 t1920) (1928 T_319230 t1928) (1930 T_319230 t1930) (1938 T_319230 t1938) (1940 T_319230 t1940) (1948 T_319230 t1948) (1950 T_319230 t1950) (1958 T_319230 t1958) (1960 T_319230 t1960) (1968 T_319230 t1968) (1970 T_319230 t1970) (1978 T_319230 t1978) (1980 T_319230 t1980) (1988 T_319230 t1988) (1990 T_319230 t1990) (1998 T_319230 t1998) (19A0 T_319230 t19A0) (19A8 T_319230 t19A8) (19B0 T_319230 t19B0) (19B8 T_319230 t19B8) (19C0 T_319230 t19C0) (19C8 T_319230 t19C8) (19D0 T_319230 t19D0) (19D8 T_319230 t19D8) (19E0 T_319230 t19E0) (19E8 T_319230 t19E8) (19F0 T_319230 t19F0) (19F8 T_319230 t19F8) (1A00 T_319230 t1A00) (1A08 T_319230 t1A08) (1A10 T_319230 t1A10) (1A18 T_319230 t1A18) (1A20 T_319230 t1A20) (1A28 T_319230 t1A28) (1A30 T_319230 t1A30) (1A38 T_319230 t1A38) (1A40 T_319230 t1A40) (1A48 T_319230 t1A48) (1A50 T_319230 t1A50) (1A58 T_319230 t1A58) (1A60 T_319230 t1A60) (1A68 T_319230 t1A68) (1A70 T_319230 t1A70) (1A78 T_319230 t1A78) (1A80 T_319230 t1A80) (1A88 T_319230 t1A88) (1A90 T_319230 t1A90) (1A98 T_319230 t1A98) (1AA0 T_319230 t1AA0) (1AA8 T_319230 t1AA8) (1AB0 T_319230 t1AB0) (1AB8 T_319230 t1AB8) (1AC0 T_319230 t1AC0) (1AC8 T_319230 t1AC8) (1AD0 T_319230 t1AD0) (1AD8 T_319230 t1AD8) (1AE0 T_319230 t1AE0) (1AE8 T_319230 t1AE8) (1AF0 T_319230 t1AF0) (1AF8 T_319230 t1AF8) (1B00 T_319230 t1B00) (1B08 T_319230 t1B08) (1B10 T_319230 t1B10) (1B18 T_319230 t1B18) (1B20 T_319230 t1B20) (1B28 T_319230 t1B28) (1B30 T_319230 t1B30) (1B38 T_319230 t1B38) (1B40 T_319230 t1B40) (1B48 T_319230 t1B48) (1B50 T_319230 t1B50) (1B58 T_319230 t1B58) (1B60 T_319230 t1B60) (1B68 T_319230 t1B68) (1B70 T_319230 t1B70) (1B78 T_319230 t1B78) (1B80 T_319230 t1B80) (1B88 T_319230 t1B88) (1B90 T_319230 t1B90) (1B98 T_319230 t1B98) (1BA0 T_319230 t1BA0) (1BA8 T_319230 t1BA8) (1BB0 T_319230 t1BB0) (1BB8 T_319230 t1BB8) (1BC0 T_319230 t1BC0) (1BC8 T_334953 t1BC8)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 

@@ -1,0 +1,29 @@
+Using options:
+0000000000001A50: error: An AArch64 decoder for the instruction 3A410804 (ccmn - * 32=bit) has not been implemented yet.
+0000000000001D7C: error: An error occurred while processing instruction at address 0000000000001D7C.
+    The given key 'sp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+T: error: An error occurred during data flow analysis.
+    The given key 'w0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+O: error: An error occurred during data flow analysis.
+    The given key 'x24' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00012D10: warning: Expected sizes of arrays to have been determined by now
+00012D10: warning: Expected sizes of arrays to have been determined by now

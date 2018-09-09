@@ -1,0 +1,31 @@
+Using options:
+00400C5A: error: Failed to write global variable g_t400C5A.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt64 (System.Byte[] image, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt64 (System.Byte[] img, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000a8] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPointer (Reko.Core.Types.Pointer ptr) [0x00013] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.Pointer.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00411068: warning: Expected sizes of arrays to have been determined by now
+00400C5A: error: Failed to write global variable g_t400C5A.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt64 (System.Byte[] image, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLeUInt64 (System.Byte[] img, System.Int64 off) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000a8] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPointer (Reko.Core.Types.Pointer ptr) [0x00013] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.Pointer.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x0006a] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00411068: warning: Expected sizes of arrays to have been determined by now

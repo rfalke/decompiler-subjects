@@ -1,0 +1,10 @@
+Using options:
+0000000000400910: error: An AArch64 decoder for the instruction 4C9F0560 (AdvancedSimdLdStMultiplePostIdx L:opcode=0:0000) has not been implemented yet.
+00400A10: warning: Expected sizes of arrays to have been determined by now
+00400A30: warning: Expected sizes of arrays to have been determined by now
+00400A70: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now
+00400A10: warning: Expected sizes of arrays to have been determined by now
+00400A30: warning: Expected sizes of arrays to have been determined by now
+00400A70: warning: Expected sizes of arrays to have been determined by now
+00410DE0: warning: Expected sizes of arrays to have been determined by now

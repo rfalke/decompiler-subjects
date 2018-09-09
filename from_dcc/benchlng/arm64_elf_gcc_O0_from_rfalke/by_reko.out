@@ -1,0 +1,4 @@
+Using options:
+0000000000000920: warning: AArch64 instruction smulh	x0,w2,w0 is not supported yet.
+00010DA8: warning: Expected sizes of arrays to have been determined by now
+00010DA8: warning: Expected sizes of arrays to have been determined by now

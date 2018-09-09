@@ -1,0 +1,295 @@
+Using options:
+00000000004B19FC: warning: AArch64 instruction smulh	x10,w22,w10 is not supported yet.
+00000000004BD4EC: warning: AArch64 instruction smulh	x7,w5,w9 is not supported yet.
+00000000004F14F8: warning: AArch64 instruction smulh	x10,w22,w10 is not supported yet.
+00000000004FCFE8: warning: AArch64 instruction smulh	x7,w5,w9 is not supported yet.
+00000000004E66BC: error: An error occurred while processing the statement Mem12684[0x000000000054D1F0 + 0x0000000000000000:word64] = x12_387 - SLICE((word32) (x12_387 >>u 3) *u 0x92492493, uint64, 64) * 0x2492492400000038.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E67D8: error: An error occurred while processing the statement Mem12755[0x000000000054D3B0 + 0x0000000000000000:word64] = x8_744 - SLICE((word32) (x8_744 >>u 4) *u 0x92492493, uint64, 64) * DPB(x11_684, 0x00000070, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E692C: error: An error occurred while processing the statement Mem12841[0x000000000054D570 + 0x0000000000000000:word64] = x12_1210 - SLICE((word32) (x12_1210 >>u 3) *u 0x30C30C31, uint64, 64) * 0x0C30C30C000000A8.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E6A2C: error: An error occurred while processing the statement Mem12905[0x000000000054D730 + 0x0000000000000000:word64] = x11_1593 - SLICE((word32) (x11_1593 >>u 5) *u 0x92492493, uint64, 64) * 0x24924924000000E0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E6A5C: error: An error occurred while processing the statement Mem12917[0x000000000054D770 + 0x0000000000000000:word64] = x12_1667 - SLICE((word32) (x12_1667 >>u 3) *u 0x8D3DCB09, uint64, 64) * 0x08D3DCB0000000E8.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E6EF0: error: An error occurred while processing the statement Mem13212[0x000000000054DAB0 + 0x0000000000000000:word64] = x8_2536 - SLICE((word32) (x8_2536 >>u 4) *u 0x30C30C31, uint64, 64) * DPB(x30_2520, 0x00000150, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7140: error: An error occurred while processing the statement Mem13360[0x000000000054DCB0 + 0x0000000000000000:word64] = x25_2999 - SLICE((word32) (x25_2999 >>u 4) *u 0xD70A3D71, uint64, 64) * DPB(x27_2992, 0x00000190, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7300: error: An error occurred while processing the statement Mem13472[0x000000000054DE30 + 0x0000000000000000:word64] = x8_3363 - SLICE((word32) (x8_3363 >>u 6) *u 0x92492493, uint64, 64) * DPB(x30_3347, 0x000001C0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7380: error: An error occurred while processing the statement Mem13504[0x000000000054DEB0 + 0x0000000000000000:word64] = x8_3465 - SLICE((word32) (x8_3465 >>u 4) *u 0x8D3DCB09, uint64, 64) * DPB(x30_3347, 0x000001D0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7420: error: An error occurred while processing the statement Mem13544[0x000000000054DFB0 + 0x0000000000000000:word64] = x27_3585 - SLICE((word32) (x27_3585 >>u 4) *u 0x21084211, uint64, 64) * DPB(x25_3586 >>u 8, 0x000001F0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E78C4: error: An error occurred while processing the statement Mem13841[0x000000000054E530 + 0x0000000000000000:word64] = x9_5158 - SLICE((word32) (x9_5158 >>u 5) *u 0x30C30C31, uint64, 64) * 0xF74E3FC2000002A0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7A2C: error: An error occurred while processing the statement Mem13931[0x000000000054E730 + 0x0000000000000000:word64] = x12_5700 - SLICE((word32) (x12_5700 >>u 5) *u 0x8590B217, uint64, 64) * DPB(x12_5700 >>u 5, 0x000002E0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7B4C: error: An error occurred while processing the statement Mem14003[0x000000000054E930 + 0x0000000000000000:word64] = x11_6127 - SLICE((word32) (x11_6127 >>u 5) *u 0xD70A3D71, uint64, 64) * DPB(x12_5700, 0x00000320, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7CFC: error: An error occurred while processing the statement Mem14111[0x000000000054EC30 + 0x0000000000000000:word64] = x11_6773 - SLICE((word32) (x11_6773 >>u 7) *u 0x92492493, uint64, 64) * DPB(x12_5700, 0x00000380, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7D94: error: An error occurred while processing the statement Mem14149[0x000000000054ED30 + 0x0000000000000000:word64] = x9_7000 - SLICE((word32) (x9_7000 >>u 5) *u 0x8D3DCB09, uint64, 64) * 0x08D3DCB0000003A0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000004E7E44: error: An error occurred while processing the statement Mem14193[0x000000000054EF30 + 0x0000000000000000:word64] = x9_7262 - SLICE((word32) (x9_7262 >>u 5) *u 0x21084211, uint64, 64) * 0x08421084000003E0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000005261B8: error: An error occurred while processing the statement Mem12676[0x00000000005395F0 + 0x0000000000000000:word64] = x12_387 - SLICE((word32) (x12_387 >>u 3) *u 0x92492493, uint64, 64) * 0x2492492400000038.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000005262D4: error: An error occurred while processing the statement Mem12747[0x00000000005397B0 + 0x0000000000000000:word64] = x8_744 - SLICE((word32) (x8_744 >>u 4) *u 0x92492493, uint64, 64) * DPB(x11_684, 0x00000070, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526428: error: An error occurred while processing the statement Mem12833[0x0000000000539970 + 0x0000000000000000:word64] = x12_1210 - SLICE((word32) (x12_1210 >>u 3) *u 0x30C30C31, uint64, 64) * 0x0C30C30C000000A8.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526528: error: An error occurred while processing the statement Mem12897[0x0000000000539B30 + 0x0000000000000000:word64] = x11_1593 - SLICE((word32) (x11_1593 >>u 5) *u 0x92492493, uint64, 64) * 0x24924924000000E0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526558: error: An error occurred while processing the statement Mem12909[0x0000000000539B70 + 0x0000000000000000:word64] = x12_1667 - SLICE((word32) (x12_1667 >>u 3) *u 0x8D3DCB09, uint64, 64) * 0x08D3DCB0000000E8.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000005269EC: error: An error occurred while processing the statement Mem13204[0x0000000000539EB0 + 0x0000000000000000:word64] = x8_2536 - SLICE((word32) (x8_2536 >>u 4) *u 0x30C30C31, uint64, 64) * DPB(x30_2520, 0x00000150, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526C3C: error: An error occurred while processing the statement Mem13352[0x000000000053A0B0 + 0x0000000000000000:word64] = x25_2999 - SLICE((word32) (x25_2999 >>u 4) *u 0xD70A3D71, uint64, 64) * DPB(x27_2992, 0x00000190, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526DFC: error: An error occurred while processing the statement Mem13464[0x000000000053A230 + 0x0000000000000000:word64] = x8_3363 - SLICE((word32) (x8_3363 >>u 6) *u 0x92492493, uint64, 64) * DPB(x30_3347, 0x000001C0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526E7C: error: An error occurred while processing the statement Mem13496[0x000000000053A2B0 + 0x0000000000000000:word64] = x8_3465 - SLICE((word32) (x8_3465 >>u 4) *u 0x8D3DCB09, uint64, 64) * DPB(x30_3347, 0x000001D0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000526F1C: error: An error occurred while processing the statement Mem13536[0x000000000053A3B0 + 0x0000000000000000:word64] = x27_3585 - SLICE((word32) (x27_3585 >>u 4) *u 0x21084211, uint64, 64) * DPB(x25_3586 >>u 8, 0x000001F0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000005273C0: error: An error occurred while processing the statement Mem13833[0x000000000053A930 + 0x0000000000000000:word64] = x9_5158 - SLICE((word32) (x9_5158 >>u 5) *u 0x30C30C31, uint64, 64) * 0xF74E3FC2000002A0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000527528: error: An error occurred while processing the statement Mem13923[0x000000000053AB30 + 0x0000000000000000:word64] = x12_5700 - SLICE((word32) (x12_5700 >>u 5) *u 0x8590B217, uint64, 64) * DPB(x12_5700 >>u 5, 0x000002E0, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000527648: error: An error occurred while processing the statement Mem13995[0x000000000053AD30 + 0x0000000000000000:word64] = x11_6127 - SLICE((word32) (x11_6127 >>u 5) *u 0xD70A3D71, uint64, 64) * DPB(x12_5700, 0x00000320, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00000000005277F8: error: An error occurred while processing the statement Mem14103[0x000000000053B030 + 0x0000000000000000:word64] = x11_6773 - SLICE((word32) (x11_6773 >>u 7) *u 0x92492493, uint64, 64) * DPB(x12_5700, 0x00000380, 0).
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000527890: error: An error occurred while processing the statement Mem14141[0x000000000053B130 + 0x0000000000000000:word64] = x9_7000 - SLICE((word32) (x9_7000 >>u 5) *u 0x8D3DCB09, uint64, 64) * 0x08D3DCB0000003A0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+0000000000527940: error: An error occurred while processing the statement Mem14185[0x000000000053B330 + 0x0000000000000000:word64] = x9_7262 - SLICE((word32) (x9_7262 >>u 5) *u 0x21084211, uint64, 64) * 0x08421084000003E0.
+    Object reference not set to an instance of an object
+      at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00140] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00517] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00538DE0: warning: Expected sizes of arrays to have been determined by now
+00538DE0: warning: Expected sizes of arrays to have been determined by now

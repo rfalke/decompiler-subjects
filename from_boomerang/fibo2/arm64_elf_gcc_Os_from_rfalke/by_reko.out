@@ -1,0 +1,12 @@
+Using options:
+fib2: error: An error occurred during data flow analysis.
+    The given key 'w20' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <2667e8a193974a868cfa5b2b3d3216ec>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55e7ee594e954b05a5ca2d64f4a5b7e7>:0 
+00010DA8: warning: Expected sizes of arrays to have been determined by now
+00010DA8: warning: Expected sizes of arrays to have been determined by now

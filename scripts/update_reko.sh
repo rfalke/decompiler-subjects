@@ -7,9 +7,13 @@ ulimit -c 0
 ulimit -t 600
 ulimit -v 4000000
 
-if test -z "$REKODIR"; then
-    echo "\$REKODIR not set. The executable \$REKODIR/decompile.exe will be used by mono."
+if test -z "$REKODIR" -a -z "$REKOSRCDIR"; then
+    echo "Neither \$REKODIR nor \$REKOSRCDIR is set. Either the executable \$REKODIR/decompile.exe or \$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease/decompile.exe will be used by mono."
     exit 1
+fi
+
+if test -z "$REKODIR"; then
+	REKODIR="$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease"
 fi
 
 root=$(pwd)
@@ -24,7 +28,7 @@ function cleanup {
 
 cd "$REKODIR"
 
-find $root -name subject.exe | grep -v ppc_macho | grep -v arm64 | sort | while read line
+find $root -name subject.exe | grep -v ppc_macho | sort | while read line
 do
   dir=$(dirname $line)
   if test -f $dir/by_reko.out

@@ -1,0 +1,4 @@
+Using options:
+0000000000000B40: error: An AArch64 decoder for the instruction 4F07E402 (AdvancedSimdModifiedImm cmode=1110 Q:op:op2=100) has not been implemented yet.
+00011DA8: warning: Expected sizes of arrays to have been determined by now
+00011DA8: warning: Expected sizes of arrays to have been determined by now
