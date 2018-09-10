@@ -1,0 +1,29 @@
+##### Checking if file is a Mach-O Universal static library...
+
+##### Checking if file is an archive...
+RUN: RETDECDIR/bin/retdec-ar-extractor from_holdec/dmi/dmic-a6/ia32_elf/subject.exe --arch-magic
+Not an archive, going to the next step.
+
+##### Gathering file information...
+RUN: RETDECDIR/bin/retdec-fileinfo -c from_holdec/dmi/dmic-a6/ia32_elf/subject.c.json --similarity from_holdec/dmi/dmic-a6/ia32_elf/subject.exe --no-hashes=all --crypto RETDECDIR/bin/../share/retdec/support/generic/yara_patterns/signsrch/signsrch.yara
+Input file               : from_holdec/dmi/dmic-a6/ia32_elf/subject.exe
+File format              : ELF
+File class               : 64-bit
+File type                : Executable file
+Architecture             : x86-64
+Endianness               : Little endian
+Entry point address      : 0x4003b0
+Entry point offset       : 0x3b0
+Entry point section name : .text
+Entry point section index: 11
+Bytes on entry point     : 31ed4989d15e4889e24883e4f0505449c7c03005400048c7c1c004400048c7c7a6044000ff15160c2000f40f1f440000b827
+Detected tool            : GCC (6.4.1) (compiler), .comment section heuristic
+Detected tool            : GCC (4.6.3) Ubuntu (compiler), 61 from 80 significant nibbles (76.25%)
+
+##### Trying to unpack from_holdec/dmi/dmic-a6/ia32_elf/subject.exe into from_holdec/dmi/dmic-a6/ia32_elf/subject-unpacked.tmp by using generic unpacker...
+RUN: RETDECDIR/bin/retdec-unpacker from_holdec/dmi/dmic-a6/ia32_elf/subject.exe -o from_holdec/dmi/dmic-a6/ia32_elf/subject-unpacked.tmp
+No matching plugins found for 'GCC 6.4.1'
+No matching plugins found for 'GCC 4.6.3'
+##### Unpacking by using generic unpacker: nothing to do
+##### 'upx' not available: nothing to do
+Error: Unsupported target architecture 'x86-64'. Supported architectures: Intel x86, ARM, ARM + Thumb, MIPS, PIC32, PowerPC.
