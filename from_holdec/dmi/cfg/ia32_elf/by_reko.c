@@ -11,6 +11,31 @@ void _init()
 		fn08048390();
 }
 
+// 08048340: void time()
+void time()
+{
+}
+
+// 08048350: void puts()
+void puts()
+{
+}
+
+// 08048360: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048370: void putchar()
+void putchar()
+{
+}
+
+// 08048380: void rand()
+void rand()
+{
+}
+
 // 08048390: void fn08048390()
 void fn08048390()
 {
@@ -33,8 +58,8 @@ void main(up32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
 	basic_8_forever_loop(dwArg04);
 	basic_9_dead_block();
 	word32 eax_51 = (word32) (dwArg04 > 0x04);
-	intermediate_1_short_circuit_and(eax_51, eax_51, esi_32 & 0x01);
-	intermediate_2_short_circuit_or(esi_32 & 0x01, eax_51, esi_32 & 0x01);
+	intermediate_1_short_circuit_and(eax_51, esi_32 & 0x01);
+	intermediate_2_short_circuit_or(eax_51, esi_32 & 0x01);
 	intermediate_10_loop_with_one_break(dwArg04);
 	intermediate_11_loop_with_two_breaks(dwArg04);
 	intermediate_12_loop_with_break_and_block(dwArg04);
@@ -54,7 +79,7 @@ void main(up32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
 	advanced_21_computed_jumps(dwArg00);
 }
 
-// 080484BB: void _start(Register (ptr32 Eq_164) edx, Stack int32 dwArg00)
+// 080484BB: void _start(Register (ptr32 Eq_161) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -184,33 +209,19 @@ void basic_7_for_loop(ui32 esi)
 	} while (ebx_10 != 0x3A);
 }
 
-// 08048720: void intermediate_1_short_circuit_and(Register word32 eax, Stack word32 dwArg04, Stack ui32 dwArg08)
-void intermediate_1_short_circuit_and(word32 eax, word32 dwArg04, ui32 dwArg08)
+// 08048720: void intermediate_1_short_circuit_and(Stack word32 dwArg04, Stack Eq_19 dwArg08)
+void intermediate_1_short_circuit_and(word32 dwArg04, Eq_19 dwArg08)
 {
-	word32 esp_4;
-	byte SCZO_5;
-	word32 edx_6;
-	byte SZO_7;
-	bool C_8;
-	bool Z_9;
-	ui32 eax_10;
-	rand();
-	if (dwArg04 != 0x00 && eax_10 == dwArg08)
+	Eq_19 eax_3 = rand();
+	if (dwArg04 != 0x00 && eax_3 == dwArg08)
 		puts("both true");
 }
 
-// 08048750: void intermediate_2_short_circuit_or(Register ui32 eax, Stack word32 dwArg04, Stack ui32 dwArg08)
-void intermediate_2_short_circuit_or(ui32 eax, word32 dwArg04, ui32 dwArg08)
+// 08048750: void intermediate_2_short_circuit_or(Stack word32 dwArg04, Stack Eq_19 dwArg08)
+void intermediate_2_short_circuit_or(word32 dwArg04, Eq_19 dwArg08)
 {
-	word32 esp_4;
-	byte SCZO_5;
-	word32 edx_6;
-	byte SZO_7;
-	bool C_8;
-	bool Z_9;
-	ui32 eax_10;
-	rand();
-	if (dwArg04 == 0x00 && eax_10 != dwArg08)
+	Eq_19 eax_3 = rand();
+	if (dwArg04 == 0x00 && eax_3 != dwArg08)
 		return;
 	puts("at least one is true");
 }
@@ -247,21 +258,13 @@ void intermediate_11_loop_with_two_breaks(Eq_19 dwArg04)
 // 08048830: void intermediate_12_loop_with_break_and_block(Stack Eq_19 dwArg04)
 void intermediate_12_loop_with_break_and_block(Eq_19 dwArg04)
 {
-	Eq_19 ebx_13 = dwArg04;
 	while (true)
 	{
 		puts("head");
-		if (time(null) == ebx_13)
+		if (time(null) == dwArg04)
 			break;
-		int32 eax_42 = puts("barrier");
-		word32 esp_43;
-		byte SCZO_45;
-		Eq_19 eax_46;
-		bool Z_47;
-		byte SZO_48;
-		bool C_49;
-		rand();
-		if (ebx_13 == eax_46)
+		puts("barrier");
+		if (dwArg04 == rand())
 			return;
 		puts("tail");
 	}
@@ -284,24 +287,15 @@ void intermediate_13_loop_with_one_continue(ui32 esi, Eq_19 dwArg04)
 // 080488F0: void intermediate_14_loop_with_two_continues(Register ui32 esi, Stack Eq_19 dwArg04)
 void intermediate_14_loop_with_two_continues(ui32 esi, Eq_19 dwArg04)
 {
-	Eq_19 ebx_16 = dwArg04;
 	if (dwArg04 <= 0x7B)
 		return;
 	while (true)
 	{
 		puts("head");
-		if (ebx_16 != time(null))
+		if (dwArg04 != time(null))
 		{
-			int32 eax_30 = puts("barrier");
-			word32 esp_31;
-			byte SCZO_33;
-			byte SZO_34;
-			word32 esi_35;
-			Eq_19 eax_36;
-			bool Z_37;
-			bool C_38;
-			rand();
-			if (ebx_16 != eax_36)
+			puts("barrier");
+			if (dwArg04 != rand())
 				puts("tail");
 		}
 	}
@@ -310,24 +304,15 @@ void intermediate_14_loop_with_two_continues(ui32 esi, Eq_19 dwArg04)
 // 08048960: void intermediate_15_loop_with_continue_and_block(Register ui32 esi, Stack Eq_19 dwArg04)
 void intermediate_15_loop_with_continue_and_block(ui32 esi, Eq_19 dwArg04)
 {
-	Eq_19 ebx_16 = dwArg04;
 	if (dwArg04 <= 0x7B)
 		return;
 	while (true)
 	{
 		puts("head");
-		if (ebx_16 != time(null))
+		if (dwArg04 != time(null))
 		{
-			int32 eax_30 = puts("barrier");
-			word32 esp_31;
-			byte SCZO_33;
-			byte SZO_34;
-			word32 esi_35;
-			Eq_19 eax_36;
-			bool Z_37;
-			bool C_38;
-			rand();
-			if (ebx_16 != eax_36)
+			puts("barrier");
+			if (dwArg04 != rand())
 				puts("tail");
 		}
 		else
@@ -360,24 +345,13 @@ void intermediate_16_loop_with_breaks_and_continues(ui32 esi, Eq_19 dwArg04)
 void intermediate_20_nested_loops(ui32 esi, Eq_19 dwArg04)
 {
 	puts("before");
-	Eq_19 ebx_22 = dwArg04;
 	do
 	{
 		puts("outer loop");
 		do
-		{
 			puts("inner loop");
-			Eq_19 eax_35 = time(null);
-		} while (eax_35 != ebx_22);
-		word32 esp_39;
-		byte SCZO_41;
-		Eq_19 eax_42;
-		word32 esi_43;
-		bool Z_44;
-		byte SZO_45;
-		bool C_46;
-		rand();
-	} while (ebx_22 != eax_42);
+		while (time(null) != dwArg04);
+	} while (dwArg04 != rand());
 	puts("after");
 }
 

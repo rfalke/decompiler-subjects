@@ -11,6 +11,36 @@ void _init()
 		fn080483C0();
 }
 
+// 08048360: void abs()
+void abs()
+{
+}
+
+// 08048370: void puts()
+void puts()
+{
+}
+
+// 08048380: void exit()
+void exit()
+{
+}
+
+// 08048390: void strlen()
+void strlen()
+{
+}
+
+// 080483A0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080483B0: void putchar()
+void putchar()
+{
+}
+
 // 080483C0: void fn080483C0()
 void fn080483C0()
 {

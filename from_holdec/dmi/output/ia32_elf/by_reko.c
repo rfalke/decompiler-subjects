@@ -11,6 +11,61 @@ void _init()
 		fn080484D0();
 }
 
+// 08048420: void printf()
+void printf()
+{
+}
+
+// 08048430: void time()
+void time()
+{
+}
+
+// 08048440: void memcmp()
+void memcmp()
+{
+}
+
+// 08048450: void fseek()
+void fseek()
+{
+}
+
+// 08048460: void fwrite()
+void fwrite()
+{
+}
+
+// 08048470: void puts()
+void puts()
+{
+}
+
+// 08048480: void strchr()
+void strchr()
+{
+}
+
+// 08048490: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080484A0: void fopen()
+void fopen()
+{
+}
+
+// 080484B0: void putchar()
+void putchar()
+{
+}
+
+// 080484C0: void chmod()
+void chmod()
+{
+}
+
 // 080484D0: void fn080484D0()
 void fn080484D0()
 {

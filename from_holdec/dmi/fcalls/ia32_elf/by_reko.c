@@ -11,6 +11,41 @@ void _init()
 		fn08048410();
 }
 
+// 080483A0: void time()
+void time()
+{
+}
+
+// 080483B0: void puts()
+void puts()
+{
+}
+
+// 080483C0: void exit()
+void exit()
+{
+}
+
+// 080483D0: void strlen()
+void strlen()
+{
+}
+
+// 080483E0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080483F0: void putchar()
+void putchar()
+{
+}
+
+// 08048400: void fputs()
+void fputs()
+{
+}
+
 // 08048410: void fn08048410()
 void fn08048410()
 {
@@ -27,21 +62,21 @@ void main(word32 dwArg00, word32 dwArg04, word32 dwArg08)
 	word32 edx_34;
 	word32 eax_35 = basic_2_calling_varargs(out edx_34);
 	basic_3_accessing_all_registers(eax_35, ecx_30, edx_34, eax_31 + eax_35, fp - 0x08, dwArg04, dwArg08);
-	basic_4_tail_call(dwArg04);
+	basic_4_tail_call(ptrLoc34, dwArg04);
 	intermediate_1_accessing_varargs();
-	word32 ebx_49;
-	word32 esi_50;
-	word32 edi_51;
-	word32 eax_52 = intermediate_2_use_uncommon_registers_for_parameters(fp + 0x04, out ebx_49, out esi_50, out edi_51);
+	word32 ebx_50;
+	word32 esi_51;
+	word32 edi_52;
+	word32 eax_53 = intermediate_2_use_uncommon_registers_for_parameters(fp + 0x04, out ebx_50, out esi_51, out edi_52);
 	intermediate_3_calling_noreturn();
-	intermediate_4_asm_instr_with_multiple_results(dwLoc2C, ebx_49 + eax_52 + eax_52, 0x01, 0x01);
+	intermediate_4_asm_instr_with_multiple_results(dwLoc2C, ebx_50 + eax_53 + eax_53, 0x01, 0x01);
 	intermediate_5_pushs_in_different_blocks(dwLoc24);
-	advanced_1_pass_in_flags_reg(esi_50);
+	advanced_1_pass_in_flags_reg(esi_51);
 	advanced_2_return_in_flags_reg();
 	advanced_3_uneven_stack(dwLoc28);
 }
 
-// 080484BF: void _start(Register (ptr32 Eq_109) edx, Stack int32 dwArg00)
+// 080484BF: void _start(Register (ptr32 Eq_111) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -119,37 +154,37 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080485C0: Register word32 sum3_cdecl(Stack word32 dwArg04, Stack Eq_198 dwArg08, Stack ui32 dwArg0C)
+// 080485C0: Register word32 sum3_cdecl(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_cdecl(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x01 + dwArg0C * 0x03;
 }
 
-// 080485E0: Register word32 sum3_fastcall(Register word32 ecx, Register Eq_198 edx, Stack ui32 dwArg04)
+// 080485E0: Register word32 sum3_fastcall(Register word32 ecx, Register Eq_200 edx, Stack ui32 dwArg04)
 word32 sum3_fastcall(word32 ecx, time_t edx, ui32 dwArg04)
 {
 	return ecx + edx * 0x02 + 0x02 + dwArg04 * 0x03;
 }
 
-// 08048600: Register word32 sum3_thiscall(Register word32 ecx, Stack Eq_198 dwArg04, Stack ui32 dwArg08)
+// 08048600: Register word32 sum3_thiscall(Register word32 ecx, Stack Eq_200 dwArg04, Stack ui32 dwArg08)
 word32 sum3_thiscall(word32 ecx, time_t dwArg04, ui32 dwArg08)
 {
 	return ecx + dwArg04 * 0x02 + 0x03 + dwArg08 * 0x03;
 }
 
-// 08048620: Register word32 sum3_ms_abi(Stack word32 dwArg04, Stack Eq_198 dwArg08, Stack ui32 dwArg0C)
+// 08048620: Register word32 sum3_ms_abi(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_ms_abi(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x04 + dwArg0C * 0x03;
 }
 
-// 08048640: Register word32 sum3_sysv_abi(Stack word32 dwArg04, Stack Eq_198 dwArg08, Stack ui32 dwArg0C)
+// 08048640: Register word32 sum3_sysv_abi(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_sysv_abi(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x05 + dwArg0C * 0x03;
 }
 
-// 08048660: Register word32 sum3_stdcall(Stack word32 dwArg04, Stack Eq_198 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
+// 08048660: Register word32 sum3_stdcall(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
 word32 sum3_stdcall(word32 dwArg04, time_t dwArg08, ui32 dwArg0C, ptr32 & ecxOut)
 {
 	word32 ecx_7;
@@ -160,7 +195,7 @@ word32 sum3_stdcall(word32 dwArg04, time_t dwArg08, ui32 dwArg0C, ptr32 & ecxOut
 // 08048680: Register word32 basic_1_multiple_calling_conventions_3_ints(Stack word32 dwArg04, Register out ptr32 ecxOut)
 word32 basic_1_multiple_calling_conventions_3_ints(word32 dwArg04, ptr32 & ecxOut)
 {
-	Eq_198 eax_13 = time(null);
+	Eq_200 eax_13 = time(null);
 	if (sum3_cdecl(dwArg04, eax_13, 0x2A) > 0x7B)
 		puts("cdecl");
 	if (sum3_fastcall(dwArg04, eax_13, 0x2A) > 0x7B)
@@ -196,29 +231,29 @@ word32 basic_2_calling_varargs(ptr32 & edxOut)
 	return 0x00;
 }
 
-// 08048810: Register Eq_198 basic_4_tail_call(Stack word32 dwArg04)
-time_t basic_4_tail_call(word32 dwArg04)
+// 08048810: Register Eq_200 basic_4_tail_call(Stack (ptr32 Eq_56) ptrArg00, Stack word32 dwArg04)
+time_t basic_4_tail_call(time_t * ptrArg00, word32 dwArg04)
 {
-	return time(null);
+	return time(ptrArg00);
 }
 
-// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_361) dwArg04)
-word32 crude_printf(Eq_361 * dwArg04)
+// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_362) dwArg04)
+word32 crude_printf(Eq_362 * dwArg04)
 {
 	word32 ebx_113;
 	int32 eax_18 = (int32) dwArg04->b0000;
-	struct Eq_361 * ebp_16 = dwArg04;
+	struct Eq_362 * ebp_16 = dwArg04;
 	byte al_19 = (byte) eax_18;
 	if (al_19 != 0x00)
 	{
-		struct Eq_374 * esi_102 = fp + 0x08;
+		struct Eq_375 * esi_102 = fp + 0x08;
 		ebx_113 = 0x00;
 		do
 		{
 			if (al_19 == 0x25)
 			{
 				byte al_74 = (byte) (word32) ebp_16[0x01];
-				struct Eq_387 * edi_75 = ebp_16 + 0x01;
+				struct Eq_388 * edi_75 = ebp_16 + 0x01;
 				if (al_74 != 0x25)
 				{
 					if (al_74 != 99)
@@ -227,7 +262,7 @@ word32 crude_printf(Eq_361 * dwArg04)
 							puts("Not implemented");
 						else
 						{
-							Eq_426 ebp_103 = esi_102->b0000;
+							Eq_427 ebp_103 = esi_102->b0000;
 							fputs(ebp_103, globals->ptr804B02C);
 							esi_102 = esi_102 + 0x01;
 							ebx_113 = (word32) strlen(ebp_103) + ebx_113;
@@ -247,7 +282,7 @@ word32 crude_printf(Eq_361 * dwArg04)
 				}
 				eax_18 = (int32) edi_75->b0001;
 				al_19 = (byte) eax_18;
-				ebp_16 = (struct Eq_361 *) &edi_75->b0001;
+				ebp_16 = (struct Eq_362 *) &edi_75->b0001;
 				if (al_19 != 0x00)
 					continue;
 				return ebx_113;
@@ -264,8 +299,8 @@ word32 crude_printf(Eq_361 * dwArg04)
 	return ebx_113;
 }
 
-// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_426 dwArg0C)
-void even_more_crude(byte bArg08, Eq_426 dwArg0C)
+// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_427 dwArg0C)
+void even_more_crude(byte bArg08, Eq_427 dwArg0C)
 {
 	putchar((int32) bArg08);
 	fputs(dwArg0C, globals->ptr804B02C);
@@ -305,7 +340,7 @@ word32 sum3_uncommon(word32 ebp, ptr32 esi, time_t edi)
 // 080489D0: Register word32 intermediate_2_use_uncommon_registers_for_parameters(Stack ptr32 dwArg1C, Register out ptr32 ebxOut, Register out ptr32 esiOut, Register out ptr32 ediOut)
 word32 intermediate_2_use_uncommon_registers_for_parameters(ptr32 dwArg1C, ptr32 & ebxOut, ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_198 eax_4 = time(null);
+	Eq_200 eax_4 = time(null);
 	word32 esi_6;
 	*esiOut = dwArg1C;
 	word32 ebx_7;

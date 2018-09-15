@@ -11,6 +11,16 @@ void _init()
 		fn08048300();
 }
 
+// 080482E0: void puts()
+void puts()
+{
+}
+
+// 080482F0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
 // 08048300: void fn08048300()
 void fn08048300()
 {

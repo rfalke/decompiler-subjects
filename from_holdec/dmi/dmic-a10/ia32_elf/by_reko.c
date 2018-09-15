@@ -11,6 +11,11 @@ void _init()
 		fn080482D0();
 }
 
+// 080482C0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
 // 080482D0: void fn080482D0()
 void fn080482D0()
 {
