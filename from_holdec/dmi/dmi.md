@@ -49,3 +49,14 @@
 * decompilers should output for loop: https://github.com/uxmal/reko/issues/680 https://github.com/yegord/snowman/issues/182 https://github.com/avast-tl/retdec/issues/390
 * reko has extra cast in output: https://github.com/uxmal/reko/issues/681
 * decompilers like multiple returns but they make the output larger (TODO: create some issues)
+
+## Expression
+
+| Test             | Hex-Rays  | Reko | Retdec | Snowman | Holdec |
+| -------------    | -----     | -----| -----  | -----   | ------ |
+| inter1: constant false cond  | 0         | 0  | 0    | 0    | + |
+| inter2: extra constant cmp  | +         | 0 | 2/3 (one missing)  | 0   | + |
+| inter3: div by mult  | +         | 0 | 0  | 0   | + |
+| inter4: swap with xor  | 0         | 0 | 0  | 0   | + |
+| advan1: table minization | 0 | 0 | 0  | 0 | + |
+| **Sum all** | 2  | 0  | 2/3 | 0 | 5 |

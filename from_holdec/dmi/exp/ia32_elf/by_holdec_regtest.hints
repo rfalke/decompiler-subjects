@@ -1,0 +1,9 @@
+[activeFunctions]
+main
+
+intermediate_1_cmp_with_are_constant
+intermediate_2_cmp_with_extra
+intermediate_3_division_by_multiplication
+intermediate_4_swap_with_xor
+
+advanced_1_boolean_minization
