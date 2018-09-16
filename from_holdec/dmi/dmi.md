@@ -30,7 +30,7 @@
 | inter17: stmt after forever  | +  | +  | + | + | + |
 | inter20: nested loops | +  | +  | 0 (not tail, noise) | + | + |
 | inter30: switch-case |  1/4 (goto, extra func, jump) | 1/2 (goto)  | 1/2 (noise, block duplicated) | + | 1/2 (cond could be better) |
-| **Sum inter** | 10  | 12  | 3.5 | 8 | 12 |
+| **Sum inter** | 10  | 12  | 3.5 | 8-3 | 12 |
 | advan1: multiple entry | + | 0 (loop with goto)  | 0 (noise, loop with goto) | + | 0 |
 | advan2: multiple exit |  0 (goto) | +  | 1/4 (noise) | 0 (goto) |  + |
 | advan10: irreducible |  + | +  | + (block duplicated) | + | + |
@@ -60,3 +60,18 @@
 | inter4: swap with xor  | 0         | 0 | 0  | 0   | + |
 | advan1: table minization | 0 | 0 | 0  | 0 | + |
 | **Sum all** | 2  | 0  | 2/3 | 0 | 5 |
+
+## Transformation
+
+| Test             | Hex-Rays  | Reko | Retdec | Snowman | Holdec |
+| -------------    | -----     | -----| -----  | -----   | ------ |
+| basic1: simple ternary  | + | +  | + | 3/4 (noise) | + |
+| basic2: ternary  | 0 (if) | 0 (if) | + | 0 (if) | + |
+| inter1: simple ternary cfg  | + | 0 (if) | + | 0 (if) | + |
+| inter2: ternary cfg  | 0 (if) | 0 (if) | + | 0 (if) | + |
+| inter10: 64bit math | 1/2 (parts) | 0 | 0 | 0 | 0 |
+| advan1: unrolled loop | 0 | - (2nd call in 2nd loop) | - (c isn't updated) | 0 | 0 |
+| **Sum all** | 2.5  | 1-1 | 4-1 | 0.75 | 4 |
+
+### Remarks
+* Reko doesn't pass the correct value: https://github.com/uxmal/reko/issues/685

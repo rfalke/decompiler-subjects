@@ -1,0 +1,11 @@
+[activeFunctions]
+main
+
+basic_1_ternary_simple
+basic_2_ternary_other
+intermediate_1_ternary_blocks
+intermediate_2_other_in_blocks
+intermediate_10_double_word_signed_math
+intermediate_10_double_word_unsigned_math
+
+advanced_1_unrolled_loop
