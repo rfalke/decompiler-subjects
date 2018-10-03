@@ -1,0 +1,65 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x080498b9
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__fprintf_chk', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'rl_initialize', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'using_history', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'stifle_history', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tigetnum', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'read_history', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__printf_chk', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08049d6e: 0x0F 0x44 0xD0 0x83
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_setjmp', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08049d5d is incomplete
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ioctl', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__stack_chk_fail', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804970e: 0x0F 0x44 0xF2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'signal', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080497c1: 0x0F 0x44 0xD8 0xC7
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__finite', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fmod', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804984a: 0x0F 0x45 0xC3 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'write_history', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strpbrk', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'chdir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'unlink', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'modf', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070369: 0xDB 0xD2 0xDD 0x55
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fflush', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__longjmp_chk', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getcwd', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strtol', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080503ab: 0x0F 0x4E 0xDE 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804a4be: 0x0F 0x4C 0xDE 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804a4be: 0x0F 0x4C 0xDE 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804f478: 0x0F 0x45 0xC2 0x89
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08049d5d is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08049707 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080497b9 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08049841 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08070365 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804a4b7 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804f467 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

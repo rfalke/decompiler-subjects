@@ -1,0 +1,187 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_decompile-it.com/w3m/ia32_elf_from_website/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x0804b07e
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GC_malloc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getpid', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'isatty', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GC_set_warn_proc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'dup', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'dup2', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fputs', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804d260: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804d260: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'alarm', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'atof', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804d253 is incomplete
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GC_malloc_atomic', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getcwd', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'mkdir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sigemptyset', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sigaction', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'feof', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070513: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070513: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__sigsetjmp', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e3ac: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e3ac: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e8e6: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e8e6: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e4ea: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805e4ea: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f1b0: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f1b0: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f2e0: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f2e0: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805eb27: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805eb27: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f77d: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805f77d: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805ec5a: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805ec5a: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'chmod', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806ef79: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806ef79: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08074d08: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08074d08: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08074d60: 0x0F 0x48 0xC1 0x39
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08074d60: 0x0F 0x48 0xC1 0x39
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__stack_chk_fail', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'vsprintf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fgetc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ferror', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'unlink', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fork', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'symlink', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0809e358: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'Gpm_Wgetch', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GC_free', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'nl_langinfo', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tolower', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'atol', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fflush', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806d8c3: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806d8c3: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080703d8: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080703d8: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806fcb2: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806fcb2: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08071244: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08071244: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GC_realloc', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080a7eda: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080a7eda: 0x0F 0x48 0xC2 0x89
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'inet_ntop', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgoto', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'opendir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'readdir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'readlink', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805baed: 0x0F 0x48 0xC2 0x83
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805baed: 0x0F 0x48 0xC2 0x83
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strtoll', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strcasestr', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sleep', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getpass', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'execlp', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0807c455: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0807c455: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'Gpm_Close', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080792ee: 0x0F 0x4C 0xC2 0xA3
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070b13: 0x0F 0x48 0xC2 0x83
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070b13: 0x0F 0x48 0xC2 0x83
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'putchar', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'Gpm_Open', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ioctl', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetnum', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'popen', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fscanf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'pclose', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0809acc9: 0x0F 0x4F 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0809ad40: 0x0F 0x4E 0x45 0xE4
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0809ad9c: 0x0F 0x4E 0x45 0xE0
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08099ece: 0x0F 0x48 0xC2 0x98
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08099ece: 0x0F 0x48 0xC2 0x98
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'setpgrp', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'setenv', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ttyname', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetent', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetstr', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetflag', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tputs', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fputc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fileno', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'execl', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__isoc99_sscanf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'memchr', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0807893e: 0x0F 0x4C 0xC2 0xA3
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080789e8: 0x0F 0x4C 0xC2 0xA3
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'pipe', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'utime', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'floor', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'memcmp', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080975f0: 0x0F 0x49 0x45 0xE0
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806c5e3: 0x0F 0x4F 0xC2 0x98
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strdup', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'closedir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ungetc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'bsearch', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08080eaf: 0x0F 0x4D 0x45 0xEC
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08080eaf: 0x0F 0x4D 0x45 0xEC
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0808442c: 0x0F 0x49 0xD0 0x8B
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0808080f: 0x0F 0x4D 0xC2 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08089f5c: 0x0F 0x4D 0xC2 0x98
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0808a085: 0x0F 0x4D 0xC2 0x98
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ceil', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080840aa: 0x0F 0x4C 0xC2 0x66
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0808410b: 0x0F 0x4D 0xC2 0x66
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08080f98: 0x0F 0x4D 0x45 0xF8
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'log', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804d253 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08070506 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0805e39f is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806ef6c is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08074cfb is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0809e324 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806d8b6 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080703cb is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806fca5 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08071237 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080a7ecd is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0805bae0 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0807c442 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080792de is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08070b06 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0809acbc is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08099e92 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0807892e is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080975e4 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806c5d3 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08080ea9 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08084416 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080807ff is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08089f3b is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0808409c is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08080f92 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

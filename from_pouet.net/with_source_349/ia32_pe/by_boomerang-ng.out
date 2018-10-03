@@ -1,0 +1,15 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_pouet.net/with_source_349/ia32_pe/subject.exe'
+Error | src/boomerang-cli/CommandlineDriver.cpp |  424 | Loading 'from_pouet.net/with_source_349/ia32_pe/subject.exe' failed.

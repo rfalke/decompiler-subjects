@@ -1,0 +1,54 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_decompile-it.com/optic/ia32_elf_from_website/subject.exe'
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x080707e0
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_store_exe_path', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_set_args', please update signatures!
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_set_options', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_write', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_transfer_character', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_write_done', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_read', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_read_done', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_string_trim', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_open', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_rewind', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08049963: 0x0F 0x49 0xD0 0x8B
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_compare_string', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_date_and_time', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_transfer_integer', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_string_index', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806fa50: 0x0F 0x49 0xD8 0x81
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_concat_string', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08070444: 0x0F 0x49 0xC3 0x83
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_transfer_array', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_transfer_real', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806324a: 0x0F 0x48 0xC2 0xC7
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_backspace', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805ed5b: 0x0F 0x49 0xD0 0x8B
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805ed5b: 0x0F 0x49 0xD0 0x8B
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_internal_pack', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_inquire', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_st_close', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_gfortran_exit_i4', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806d2d5: 0x0F 0x48 0xC2 0xBA
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806d2d5: 0x0F 0x48 0xC2 0xBA
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804991a is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806fa41 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0805ed24 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806d2c0 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

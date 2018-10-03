@@ -1,0 +1,50 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x08048918
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Msg   | src/boomerang/core/Project.cpp          |  184 | Found 1 procs
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  450 | Decompiling...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   38 | Decompiling entry point 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  548 | Restarting decompilation of 'main' because indirect jumps or calls have been analyzed
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Re-visiting procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'main'
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
+Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 4]
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
+Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 4]
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
+Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 4]
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  198 | Transforming from SSA form...
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  127 | Removing unused global variables...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   92 | Decompilation finished.
+Msg   | src/boomerang/core/Project.cpp          |  227 | Generating code...
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  460 | Output written to '_output'
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  468 | Completed in some time

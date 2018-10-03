@@ -1,0 +1,639 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_pouet.net/with_source_354/ia32_pe/subject.exe'
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__debugbreak', please update signatures!
+Warn  | src/boomerang/db/binary/BinaryImage.cpp |   44 | Invalid read at address 0x004010fa: Address is not mapped to a section
+Error | src/boomerang/frontend/DefaultFrontEnd. |  777 | Attempted to decode outside any known section at address 0x004010fa
+Warn  | src/boomerang/frontend/pentium/PentiumF |  505 | main function not found, falling back to entry point
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x00401000
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'CreateFileA', please update signatures!
+Warn  | src/boomerang/db/binary/BinaryImage.cpp |   44 | Invalid read at address 0x004010fa: Address is not mapped to a section
+Error | src/boomerang/frontend/DefaultFrontEnd. |  777 | Attempted to decode outside any known section at address 0x004010fa
+Warn  | src/boomerang/frontend/pentium/PentiumF |  505 | main function not found, falling back to entry point
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Msg   | src/boomerang/core/Project.cpp          |  184 | Found 10 procs
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  450 | Decompiling...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   38 | Decompiling entry point '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '_start'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_LoadLibraryA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_LoadLibraryA'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_LoadLibraryA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_GetProcAddress'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_GetProcAddress'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_GetProcAddress'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_CreateFileA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_CreateFileA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_CreateFileA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_SetFilePointer'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_SetFilePointer'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_SetFilePointer'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_WriteFile'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_WriteFile'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_WriteFile'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_CloseHandle'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_CloseHandle'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_CloseHandle'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_MessageBoxA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_MessageBoxA'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_MessageBoxA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_FreeLibrary'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_FreeLibrary'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_FreeLibrary'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_ExitProcess'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_ExitProcess'
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_ExitProcess'
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Warn  | src/boomerang/ssl/type/NamedType.cpp    |   41 | Unknown size for named type LPDWORD
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  198 | Transforming from SSA form...
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'HMODULE' to '__size32' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'DWORD' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'DWORD' to 'BOOL' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'BOOL' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from 'void' to 'void *' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from 'void *' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to '__size32' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 12]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 16]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 20]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 24]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 28]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 52]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for tmp1{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %flags{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  127 | Removing unused global variables...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   92 | Decompilation finished.
+Msg   | src/boomerang/core/Project.cpp          |  227 | Generating code...
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  460 | Output written to '_output'
+Msg   | src/boomerang-cli/CommandlineDriver.cpp |  468 | Completed in some time

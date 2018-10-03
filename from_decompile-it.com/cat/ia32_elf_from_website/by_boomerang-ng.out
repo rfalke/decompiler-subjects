@@ -1,0 +1,40 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_decompile-it.com/cat/ia32_elf_from_website/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x08049671
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getpagesize', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'error', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'open64', please update signatures!
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__cxa_atexit', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__fxstat64', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ioctl', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'stpcpy', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__stack_chk_fail', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__signbitl', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804c20e: 0x0F 0x9B 0xC2 0x21
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804b529: 0x0F 0x9B 0xC2 0x21
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__ctype_get_mb_cur_max', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'memcmp', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'mbrtowc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'iswprint', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'mbsinit', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804c1f6 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804b517 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

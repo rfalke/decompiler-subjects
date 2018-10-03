@@ -1,0 +1,57 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_shootout/except_ocaml/ia32_elf/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad |  521 | Skipping symbol environ with unknown location
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad |  521 | Skipping symbol _environ with unknown location
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad |  521 | Skipping symbol __environ with unknown location
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad |  521 | Skipping symbol environ with unknown location
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad |  521 | Skipping symbol __environ with unknown location
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x0806196c
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806189b: 0x0F 0x47 0xD8 0x8B
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080618d2: 0x0F 0x44 0xD8 0xC7
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fputs', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sigemptyset', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sigaltstack', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'sigaction', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806c65b: 0x0F 0x46 0xC2 0x5D
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806c66d: 0x0F 0x4E 0xC2 0x3D
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806c63a: 0x0F 0x44 0xC2 0x5D
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fflush', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806381d: 0x0F 0x46 0xC2 0x05
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08063327: 0x0F 0x46 0xDF 0x8D
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08064683: 0x0F 0x42 0xD0 0xA1
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08064683: 0x0F 0x42 0xD0 0xA1
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08064167: 0xDA 0xD1 0xDD 0xD9
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08064167: 0xDA 0xD1 0xDD 0xD9
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08061f8f: 0x0F 0x45 0xC2 0x83
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08061f8f: 0x0F 0x45 0xC2 0x83
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080700ae: 0x0F 0x45 0xC7 0x8B
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x080634e5: 0x0F 0x45 0xCA 0xEB
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08063501: 0x0F 0x44 0xC8 0x89
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08063940: 0x0F 0x43 0xC3 0xE8
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0806decc: 0x0F 0x42 0xDF 0x85
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08062f7e: 0x0F 0x44 0xF9 0x89
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08061884 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0806331c is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08064672 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08064160 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08061f7b is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080700a5 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x080634c8 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x08062f64 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

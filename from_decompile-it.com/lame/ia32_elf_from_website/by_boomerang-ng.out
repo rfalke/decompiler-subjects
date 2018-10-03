@@ -1,0 +1,157 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_decompile-it.com/lame/ia32_elf_from_website/subject.exe'
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Warn  | src/boomerang-loaders/elf/ElfBinaryLoad | 1055 | Unhandled x86 relocation type 5
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x0804bfa5
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_init', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_errorf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_debugf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_msgf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_close', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__stack_chk_fail', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_write_id3tag_automatic', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_init_params', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_decode_only', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_init_bitstream', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_nogap_total', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_nogap_currentindex', please update signatures!
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_init', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0805271c: 0x0F 0x4E 0xC2 0xA3
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'atof', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_out_samplerate', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_findReplayGain', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_bWriteVbrTag', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_bWriteVbrTag', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_VBR', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_num_channels', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_mode', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_free_format', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_brate', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_VBR_mean_bitrate_kbps', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR_mean_bitrate_kbps', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_preset', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_decode_only', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_disable_reservoir', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_strict_ISO', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_scale', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_scale_left', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_scale_right', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_asm_optimizations', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_free_format', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_decode_on_the_fly', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_add_v2', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_v1_only', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_v2_only', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_space_v1', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_pad_v2', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x08051339: 0x0F 0x4E 0x45 0xB4
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_genre_list', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_lowpassfreq', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_highpassfreq', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_lowpasswidth', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_highpasswidth', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_useTemporal', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_compression_ratio', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_interChRatio', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_exp_nspsytune', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_exp_nspsytune', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_msfix', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'popen', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'pclose', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_athaa_sensitivity', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fputc', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fflush', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_num_channels', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_in_samplerate', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_num_samples', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804b250: 0x0F 0x4E 0x45 0xF4
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804b250: 0x0F 0x4E 0x45 0xF4
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR_max_bitrate_kbps', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR_min_bitrate_kbps', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_id3v2_tag', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_encode_buffer_int', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_encode_flush_nogap', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_encode_flush', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_id3v1_tag', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'setvbuf', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'get_lame_os_bitness', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'get_lame_version', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'get_lame_url', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tolower', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_VBR_q', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_mode', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'strdup', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fopen64', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'id3tag_set_albumart', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR_q', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804d466: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_bitrate_kbps', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_print_config', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_out_samplerate', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_quality', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_VBR_quality', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_compression_ratio', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_version', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_force_ms', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_print_internals', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_frameNum', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_lametag_frame', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_findReplayGain', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_RadioGain', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_decode_on_the_fly', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_noclipGainChange', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_noclipScale', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetent', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetnum', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'tgetstr', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'getchar', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_num_samples', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_set_in_samplerate', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_framesize', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804d082: 0x0F 0x46 0xC2 0x8B
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_get_totalframes', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_bitrate_stereo_mode_hist', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_bitrate_hist', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_stereo_mode_hist', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'lame_block_type_hist', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'gettimeofday', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'hip_decode_exit', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'hip_decode_init', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'hip_decode1_headersB', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804da2d: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ferror', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804da2d: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fputs', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'clock', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'memcmp', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'fileno', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0804dd99: 0x0F 0x48 0xC2 0xC1
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__xstat64', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'hip_decode1_headers', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__fxstat64', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'feof', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ldexp', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0805132a is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804b24a is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804d077 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804da23 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0804dd7c is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure

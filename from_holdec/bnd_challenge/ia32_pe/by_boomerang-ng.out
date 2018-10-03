@@ -1,0 +1,69 @@
+Level | File                                    | Line | Message
+====================================================================================================
+Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
+Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_holdec/bnd_challenge/ia32_pe/subject.exe'
+Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x00401a00
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00401acd: 0xF3 0x0F 0x6F 0x05
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x00401acd is incomplete
+Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetCurrentThreadId', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ReadFile', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x004077d9: 0xF0 0x0F 0xC1 0x08
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'DecodePointer', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__debugbreak', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00404f4f: 0xF3 0xC3 0xE9 0x63
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'IsProcessorFeaturePresent', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00409ef5: 0x66 0x8C 0x15 0xE0
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00409ef5: 0x66 0x8C 0x15 0xE0
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'InitializeCriticalSectionAndSpinCount', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'SetFilePointerEx', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetProcessHeap', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00402b93: 0x66 0x8C 0x95 0xF8
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetCurrentProcess', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'TerminateProcess', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'EncodePointer', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetConsoleMode', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetConsoleCP', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'WideCharToMultiByte', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'IsDebuggerPresent', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'OutputDebugStringW', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetModuleHandleExW', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0040be0a: 0x0F 0x44 0xD8 0x42
+Error | src/boomerang/ssl/RTLInstDict.cpp       |  238 | No entry for 'BTiod' in RTL dictionary
+Error | src/boomerang/frontend/DefaultFrontEnd. |  795 | Disassembled instruction 'BTiod' has 2 arguments, but the instruction has 0 parameters in the RTL dictionary
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x004073a1: 0x0F 0xBA 0x25 0xEC
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'WriteConsoleW', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'AreFileApisANSI', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0040be0a: 0x0F 0x44 0xD8 0x42
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetFileType', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x004088aa: 0xF0 0x0F 0xC1 0x06
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x004088d3: 0xF0 0x0F 0xC1 0x06
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'CreateFileW', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'ReadConsoleW', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'SetEndOfFile', please update signatures!
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00408248: 0xF0 0x0F 0xC1 0x02
+Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x0040843f: 0xF0 0x0F 0xC1 0x02
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetStringTypeW', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'LCMapStringW', please update signatures!
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x00401acd is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x004077cf is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x00404f4f is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x00402b54 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0040be08 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0040739c is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x0040be08 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x004088a7 is incomplete
+Error | src/boomerang/db/proc/ProcCFG.cpp       |  331 | CFG is not well formed: BB at address 0x00408437 is incomplete
+Error | src/boomerang/core/Project.cpp          |  310 | Aborting load due to decode failure
