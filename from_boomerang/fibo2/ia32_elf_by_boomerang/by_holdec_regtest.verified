@@ -4,14 +4,7 @@
 // full-signature: func(fib1, return=[<int(unsigned, 4),null,unknown>], parameter=[<int(unsigned, 4),n,unknown>], varargs=false)
 u4 fib1(u4 n)
 {
-  reg_aa = n;
-  if(n > 1) {
-    reg_ad = fib1(n + -1);
-    reg_ae = fib1(reg_aa + -2);
-    reg_result = reg_ad + reg_ae;
-  } else {
-    reg_result = n;
-  }
+  reg_result = fib2(n);
   return reg_result;
 }
 

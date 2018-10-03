@@ -4,42 +4,14 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  (void) STORE(local + 52, &argc);
-  (void) STORE(local + 56, InitValue(initial_value_of_ebx));
-  (void) STORE(local + 60, InitValue(initial_value_of_esi));
-  (void) STORE(local + 64, InitValue(initial_value_of_edi));
-  (void) STORE(local + 68, InitValue(initial_value_of_ebp));
-  (void) STORE(local + 72, LOAD(InitStackPointer));
-  reg_aa = argc;
-  reg_ab = argv;
-  (void) STORE(local + 28, argc);
-  reg_ac = intermediate_1_cmp_with_are_constant();
-  (void) STORE(local + 28, reg_aa);
-  reg_ad = intermediate_2_cmp_with_extra();
-  (void) STORE(local + 28, reg_aa);
-  reg_ae = intermediate_3_division_by_multiplication();
-  (void) STORE(local + 28, 48);
-  (void) STORE(local + 32, 97);
-  reg_af = intermediate_4_swap_with_xor();
-  (void) STORE(local + 28, BIT_TO_INT(reg_aa == 0));
-  (void) STORE(local + 32, ~reg_aa & 0x1);
-  (void) STORE(local + 36, BIT_TO_INT(reg_aa == BIT_TO_INT(reg_aa < 0) * 3 + NARROW(SIGNED_EXTEND(reg_aa) * 1431655766 / 4294967296) * 3));
-  reg_ag = advanced_1_boolean_minization();
-  reg_ah = SIGNED_EXTEND(LOAD(LOAD(reg_ab)));
-  (void) STORE(local + 28, reg_ac + reg_ad + reg_ae + reg_af + reg_ag + SIGNED_EXTEND(LOAD(LOAD(reg_ab))));
-  (void) exit(reg_ac + reg_ad + reg_ae + reg_af + reg_ag + reg_ah);
-  reg_ai = LOAD(local + 28);
-  (void) STORE(local + 12, 134514272);
-  (void) STORE(local + 16, 134514368);
-  (void) STORE(local + 20, reg_ah);
-  (void) STORE(local + 24, local + 24);
-  (void) STORE(local + 28, reg_ag);
-  (void) STORE(local + 4, reg_ai);
-  (void) STORE(local + 8, local + 32);
-  (void) STORE(local, 134513520);
-  reg_result = __libc_start_main();
-  asm("l.hlt");
-  return reg_result;
+  reg_aa = argv;
+  reg_ab = intermediate_1_cmp_with_are_constant();
+  reg_ac = intermediate_2_cmp_with_extra();
+  reg_ad = intermediate_3_division_by_multiplication();
+  reg_ae = intermediate_4_swap_with_xor();
+  reg_af = advanced_1_boolean_minization();
+  (void) exit(reg_ab + reg_ac + reg_ad + reg_ae + reg_af + SIGNED_EXTEND(LOAD(LOAD(reg_aa))));
+  // not reached
 }
 
 // address: 080484eb.0
