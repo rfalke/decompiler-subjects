@@ -50,6 +50,13 @@
 * reko has extra cast in output: https://github.com/uxmal/reko/issues/681
 * decompilers like multiple returns but they make the output larger (TODO: create some issues)
 
+### TODO
+* conditional tail calls
+* shared tail blocks
+* running into the next function
+* reflects: call foo; foo: jmp bar; bar: real methodx
+
+
 ## Expression
 
 | Test             | Hex-Rays  | Reko | Retdec | Snowman | Holdec |
@@ -60,6 +67,10 @@
 | inter4: swap with xor  | 0         | 0 | 0  | 0   | + |
 | advan1: table minization | 0 | 0 | 0  | 0 | + |
 | **Sum all** | 2  | 0  | 2/3 | 0 | 5 |
+
+### TODO
+* Test wraping: -(-128) => -128
+* Test wraping: 2*x == 10 => (x==5 || x==133)
 
 ## Value propagation
 
