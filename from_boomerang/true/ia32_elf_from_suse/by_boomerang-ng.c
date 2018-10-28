@@ -1,5 +1,5 @@
 int main(int argc, char *argv[]);
-void atexit();
+void atexit(union { atexitfunc; __size32; } param1);
 void version_etc(__size32 param1, __size32 param2, __size32 param3, __size32 param4);
 void usage(int param1);
 __size32 __i686.get_pc_thunk.bx();
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     setlocale(6, "");
     bindtextdomain("coreutils", "/usr/share/locale");
     textdomain("coreutils");
-    atexit();
+    atexit(0x8048c80);
     if (argc == 2) {
         eax = getenv("POSIXLY_CORRECT");
         flags = LOGICALFLAGS32(eax);
@@ -58,16 +58,19 @@ int main(int argc, char *argv[])
 }
 
 /** address: 0x08049e90 */
-void atexit()
+void atexit(union { atexitfunc; __size32; } param1)
 {
+    int eax; 		// r24
     int ebx; 		// r27
     int edx; 		// r26
 
+    eax = 0;
     __i686.get_pc_thunk.bx();
     edx = *(ebx + 0x189e);
     if (edx != 0) {
+        eax = *edx;
     }
-    __cxa_atexit();
+    __cxa_atexit(param1, 0, eax);
     return;
 }
 
@@ -84,7 +87,7 @@ void version_etc(__size32 param1, __size32 param2, __size32 param3, __size32 par
 void usage(int param1)
 {
     __size32 eax; 		// r24
-    char *eax_1; 		// r24{0}
+    char *eax_1; 		// r24{3}
     int edx; 		// r26
 
     eax_1 = dcgettext(0, "Usage: %s [ignored command line arguments]\n  or:  %s OPTION\nExit with a status code indicating success.\n\nThese option names may not be abbreviated.\n\n", 5);
@@ -113,49 +116,49 @@ __size32 __i686.get_pc_thunk.bx()
 void version_etc_va(union { FILE *; __size32; } param1, union { char[] *; __size32; } param2, union { char[] *; __size32; } param3, union { char[] *; __size32; } param4, union { __size32 *; __size32; } param5)
 {
     __size32 eax; 		// r24
-    __size32 ebx_1; 		// r27{0}
-    unsigned int ebx_10; 		// r27{0}
-    unsigned int ebx_13; 		// r27{0}
-    unsigned int ebx_2; 		// r27{0}
-    unsigned int ebx_3; 		// r27{0}
+    unsigned int ebx_1; 		// r27{17}
+    __size32 ebx_2; 		// r27{0}
+    unsigned int ebx_5; 		// r27{7}
+    unsigned int ebx_8; 		// r27{12}
+    unsigned int ebx_9; 		// r27{13}
     int edx; 		// r26
     char *local1; 		// m[esp - 40]
-    unsigned int local11; 		// ebx_3{0}
-    unsigned int local12; 		// ebx_2{0}
-    union { char *; int; } local13; 		// local1{0}
+    unsigned int local11; 		// ebx_8{12}
+    unsigned int local12; 		// ebx_1{17}
+    union { char *; int; } local13; 		// local1{25}
     int local5; 		// m[esp - 40]
 
-    ebx_13 = 0;
+    ebx_5 = 0;
     edx = param5 + 4;
     eax = *param5;
-    local11 = ebx_13;
-    local12 = ebx_13;
+    local11 = ebx_5;
+    local12 = ebx_5;
     if (eax != 0) {
         do {
-            ebx_3 = local11;
-            ebx_10 = ebx_3 + 1;
+            ebx_8 = local11;
+            ebx_9 = ebx_8 + 1;
             eax = *edx;
             edx += 4;
-            local11 = ebx_10;
-            local12 = ebx_10;
+            local11 = ebx_9;
+            local12 = ebx_9;
         } while (eax != 0);
     }
-    ebx_2 = local12;
+    ebx_1 = local12;
     if (param2 == 0) {
         fprintf(param1, "%s %s\n", param3, param4);
     }
     else {
         fprintf(param1, "%s (%s) %s\n", param2, param3, param4);
     }
-    if (ebx_2 > 9) {
+    if (ebx_1 > 9) {
         eax = 0x804a3f8;
 bb0x8049951:
         local5 = eax;
         local13 = local5;
-        goto bb0x8049955;
+        break;
     }
     else {
-        switch(ebx_1) {
+        switch(ebx_2) {
         case 0:
             abort();
         case 1:
@@ -164,7 +167,7 @@ bb0x8049951:
         case 2:
             local1 = 0x804a5f0;
             local13 = local1;
-            goto bb0x8049955;
+            break;
         case 3:
             eax = 0x804a5d4;
             goto bb0x8049951;
@@ -177,11 +180,11 @@ bb0x8049951:
         case 6:
             local1 = 0x804a55c;
             local13 = local1;
-            goto bb0x8049955;
+            break;
         case 7:
             local1 = 0x804a530;
             local13 = local1;
-            goto bb0x8049955;
+            break;
         case 8:
             eax = 0x804a500;
             goto bb0x8049951;
@@ -190,7 +193,6 @@ bb0x8049951:
             goto bb0x8049951;
         }
     }
-bb0x8049955:
     local1 = local13;
     %eax = dcgettext(0, local1, 5);
     vfprintf(param1, %eax, param5);

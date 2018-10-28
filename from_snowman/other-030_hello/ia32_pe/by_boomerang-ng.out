@@ -1,171 +1,173 @@
-Level | File                                    | Line | Message
+Level | File                                    | Message
 ====================================================================================================
-Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
-Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
-Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
-Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_snowman/other-030_hello/ia32_pe/subject.exe'
-Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
-Warn  | src/boomerang/frontend/pentium/PentiumF |  505 | main function not found, falling back to entry point
-Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x0040126c
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__set_app_type', please update signatures!
-Warn  | src/boomerang/frontend/pentium/PentiumF |  505 | main function not found, falling back to entry point
-Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
-Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'SetUnhandledExceptionFilter', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__getmainargs', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__p__fmode', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '__p__environ', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_cexit', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function '_setmode', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'GetModuleHandleA', please update signatures!
-Warn  | src/boomerang/frontend/DefaultFrontEnd. |  257 | Encountered invalid or unrecognized instruction at address 0x00401518: 0x9C 0x9C 0x58 0x89
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'VirtualQuery', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'VirtualProtect', please update signatures!
-Msg   | src/boomerang/core/Project.cpp          |  184 | Found 12 procs
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  450 | Decompiling...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   38 | Decompiling entry point '_start'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '_start'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x00401000'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x00401514'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x00401514'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x00401514'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x004015f4'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x004015f4'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x004015f4'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x0040172c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x00401648'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x004015fc'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x004015fc'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x004015fc'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  667 | Performing recursion group analysis for 1 recursive procedures: 
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  669 |     proc_0x00401648
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x00401648'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x0040172c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x0040172c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x00401974'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x0040129c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x0040129c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x0040129c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x00401974'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x00401974'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'proc_0x0040138c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x0040138c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x0040138c'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'proc_0x00401000'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'proc_0x00401000'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '_start'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '_start'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_GetModuleHandleA'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_GetModuleHandleA'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_GetModuleHandleA'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure '__imp_GetProcAddress'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure '__imp_GetProcAddress'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of '__imp_GetProcAddress'
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  198 | Transforming from SSA form...
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 4]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 8]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 52]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 56]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 60]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 64]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %flags{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 4]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 8]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 52]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 56]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 60]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp_6 - 64]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'ecx' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'edx' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %flags{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %flags{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from 'union { __size32; __size32 *; }' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'ecx' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'edx' from 'union { __size8 *; __size32; }' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from 'unsigned int' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  127 | Removing unused global variables...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   92 | Decompilation finished.
-Msg   | src/boomerang/core/Project.cpp          |  227 | Generating code...
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 1950 | Declaring type void as int for param2
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x00401038, in proc proc_0x00401000
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x0040194a, in proc proc_0x00401974
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x0040127f, in proc _start
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x004018e7, in proc proc_0x0040172c
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x0040181c, in proc proc_0x0040172c
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x0040129c, in proc proc_0x0040129c
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x00401714, in proc proc_0x00401648
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 1950 | Declaring type void as int for param2
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  460 | Output written to '_output'
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  468 | Completed in some time
+Msg   | src/boomerang/util/log/Log.cpp          | This is Boomerang v0.3.99-alpha-1914-ged7a3e1
+Msg   | src/boomerang/util/log/Log.cpp          | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |   DOS4GW loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   ELF32 loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   DOS Exe loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   HP SOM loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Mach-O executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Palm OS executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Win32 PE loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          | Loading binary file 'from_snowman/other-030_hello/ia32_pe/subject.exe'
+Msg   | src/boomerang/ssl/RTLInstDict.cpp       | Loading machine specifications from 'BOOMERANGSRCDIR/build/out/share/boomerang/ssl/pentium.ssl'...
+Msg   | src/boomerang/db/Prog.cpp               | Reading library signatures...
+Msg   | src/boomerang/core/Project.cpp          | Decoding entry point...
+Warn  | src/boomerang/frontend/pentium/PentiumF | main function not found, falling back to entry point
+Msg   | src/boomerang/frontend/DefaultFrontEnd. | Starting decode at address 0x0040126c
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '__set_app_type', please update signatures!
+Warn  | src/boomerang/frontend/pentium/PentiumF | main function not found, falling back to entry point
+Msg   | src/boomerang/core/Project.cpp          | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. | Looking for undecoded procedures to decode...
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function 'SetUnhandledExceptionFilter', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '__getmainargs', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '__p__fmode', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '__p__environ', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '_cexit', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function '_setmode', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function 'GetModuleHandleA', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function 'VirtualQuery', please update signatures!
+Warn  | src/boomerang/db/Prog.cpp               | Unknown library function 'VirtualProtect', please update signatures!
+Msg   | src/boomerang/core/Project.cpp          | Found 12 procs
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Decompiling...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Decompiling entry point '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x00401000'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x00401514'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x00401514'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x00401514'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x004015f4'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x004015f4'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x004015f4'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x0040172c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x00401648'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x004015fc'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x004015fc'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x004015fc'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Performing recursion group analysis for 1 recursive procedures: 
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp |     proc_0x00401648
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x00401648'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x0040172c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x0040172c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x00401974'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x0040129c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x0040129c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x0040129c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x00401974'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x00401974'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'proc_0x0040138c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x0040138c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x0040138c'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'proc_0x00401000'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'proc_0x00401000'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of '_start'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure '__imp_GetModuleHandleA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure '__imp_GetModuleHandleA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of '__imp_GetModuleHandleA'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure '__imp_GetProcAddress'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure '__imp_GetProcAddress'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of '__imp_GetProcAddress'
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Transforming from SSA form...
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 4]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 8]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 52]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 56]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 60]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 64]{6}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %flags{11}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 4]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 8]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 52]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 56]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 60]{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp_8 - 64]{6}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'ecx' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'edx' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %flags{17}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{19}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %flags{31}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{32}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{33}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r28{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{2}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{2}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from 'union { __size32; __size32 *; }' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp]{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'ecx' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'edx' from 'union { __size8 *; __size32; }' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from 'unsigned int' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused global variables...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Decompilation finished.
+Msg   | src/boomerang/core/Project.cpp          | Generating code...
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | Declaring type void as int for param2
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x00401038, in proc proc_0x00401000
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x0040194a, in proc proc_0x00401974
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x0040127f, in proc _start
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x00401514, in proc proc_0x00401514
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x004018e7, in proc proc_0x0040172c
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x0040181c, in proc proc_0x0040172c
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x0040129c, in proc proc_0x0040129c
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x00401714, in proc proc_0x00401648
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | Declaring type void as int for param2
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Output written to '_output'
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Completed in some time

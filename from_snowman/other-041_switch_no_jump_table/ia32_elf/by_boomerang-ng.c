@@ -19,9 +19,6 @@ void _Z9do_switchi(int param1)
                         else {
                             if (param1 == 0x18894) {
                             }
-                            else {
-bb0x8048189:
-                            }
                         }
                     }
                 }
@@ -30,9 +27,6 @@ bb0x8048189:
                     }
                     else {
                         if (param1 == 7) {
-                        }
-                        else {
-                            goto bb0x8048189;
                         }
                     }
                 }
@@ -48,9 +42,6 @@ bb0x8048189:
                     else {
                         if (param1 == 4) {
                         }
-                        else {
-                            goto bb0x8048189;
-                        }
                     }
                 }
                 else {
@@ -58,9 +49,6 @@ bb0x8048189:
                     }
                     else {
                         if (param1 == 1) {
-                        }
-                        else {
-                            goto bb0x8048189;
                         }
                     }
                 }

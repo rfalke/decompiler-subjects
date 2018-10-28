@@ -14,23 +14,23 @@ void proc_0x004017d5(union { __size32; __size32 *; } param1);
 void proc_0x00401497(__size32 param3, __size32 param4, __size32 param3, __size32 param4);
 void proc_0x004013ee(__size32 param1, __size32 param2, __size32 param3);
 void _start();
-__size32 proc_0x004016c0(unsigned int param1, unsigned char param2, int param3, unsigned int param4);
+__size32 proc_0x004016c0(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4);
 void proc_0x00401060();
-__size32 proc_0x00401630(union { __size16 *; __size32; } param1, unsigned char param2, int param3);
+__size32 proc_0x00401630(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3);
 __size32 proc_0x00401670(__size32 param1, unsigned int param2, unsigned int param3);
 
 /** address: 0x00401870 */
 void proc_0x00401870(int param1, int param2)
 {
     __size32 eax; 		// r24
-    int eax_1; 		// r24{0}
-    int eax_2; 		// r24{0}
+    int eax_1; 		// r24{7}
+    int eax_2; 		// r24{8}
     int esi; 		// r30
-    int esi_1; 		// r30{0}
-    int esi_4; 		// r30{0}
-    int local2; 		// esi{0}
+    int esi_1; 		// r30{10}
+    int esi_4; 		// r30{13}
+    int local2; 		// esi{19}
 
-    if (global_0x00405058 == 0xbb40e64e) {
+    if (global_0x00405058 == 0xbb40e64e || (global_0x00405058 & ~0xffff) == 0) {
         GetSystemTimeAsFileTime();
         eax_1 = GetCurrentProcessId();
         eax_2 = GetCurrentThreadId();
@@ -42,8 +42,7 @@ void proc_0x00401870(int param1, int param2)
         local2 = esi_4;
         if ((esi_1 ^ eax) != 0xbb40e64e) {
             if (((esi_1 ^ eax) & ~0xffff) == 0) {
-                eax = (esi_1 ^ eax | 0x4711) * 0x10000;
-                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) * 0x10000;
+                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) << 16;
                 local2 = esi;
             }
         }
@@ -110,18 +109,18 @@ void proc_0x004013ee(__size32 param1, __size32 param2, __size32 param3)
     __size32 eax; 		// r24
     __size32 ebp; 		// r29
     __size32 ebx; 		// r27
-    unsigned int ecx_1; 		// r25{0}
-    int ecx_4; 		// r25{0}
+    unsigned int ecx_1; 		// r25{14}
+    int ecx_4; 		// r25{15}
     __size32 edi; 		// r31
     __size32 esi; 		// r30
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
-    __size32 esp_3; 		// r28{0}
-    __size32 esp_6; 		// r28{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// esp_3{0}
-    __size32 local5; 		// param2{0}
-    __size32 local6; 		// param3{0}
+    __size32 esp_1; 		// r28{4}
+    __size32 esp_2; 		// r28{18}
+    __size32 esp_3; 		// r28{8}
+    __size32 esp_4; 		// r28{0}
+    __size32 local3; 		// param1{7}
+    __size32 local4; 		// esp_3{8}
+    __size32 local5; 		// param2{10}
+    __size32 local6; 		// param3{11}
 
     eax = proc_0x00401790(20, param1, param2, param3); /* Warning: also results in esp_1, ebp */
     local3 = param1;
@@ -138,7 +137,7 @@ void proc_0x004013ee(__size32 param1, __size32 param2, __size32 param3)
         ecx_1 = *(ebp + 8);
         ecx_4 = ecx_1 - *(ebp + 12);
         *(int*)(ebp + 8) = ecx_4;
-        (**(ebp + 20))(eax, ecx_4, param1, ebp, param2, param3, SUBFLAGS32(ecx_1, *(ebp + 12), ecx_4), ecx_4 == 0, ecx_1 < *(ebp + 12), *(esp_6 - 4), *(esp_6 - 8), *(esp_6 - 12));
+        (**(ebp + 20))(eax, ecx_4, param1, ebp, param2, param3, SUBFLAGS32(ecx_1, *(ebp + 12), ecx_4), ecx_4 == 0, ecx_1 < *(ebp + 12), *(esp_4 - 4), *(esp_4 - 8), *(esp_4 - 12));
         local3 = ebx;
         local4 = esp_2;
         local5 = esi;
@@ -167,31 +166,31 @@ void _start()
     __size32 edi; 		// r31
     int edx; 		// r26
     __size32 esi; 		// r30
-    void *esp_1; 		// r28{0}
-    __size32 esp_12; 		// r28{0}
-    __size32 esp_13; 		// r28{0}
+    void *esp_1; 		// r28{1}
+    __size32 esp_12; 		// r28{60}
+    __size32 esp_13; 		// r28{80}
     __size32 esp_16; 		// r28{0}
-    union { void *; __size32; } esp_4; 		// r28{0}
-    __size32 esp_5; 		// r28{0}
-    __size32 esp_6; 		// r28{0}
-    __size32 esp_7; 		// r28{0}
-    __size32 esp_8; 		// r28{0}
-    union { void *; __size32; } esp_9; 		// r28{0}
-    int local10; 		// %ZF{0}
-    int local11; 		// %CF{0}
-    int local13; 		// %CF{0}
-    int local14; 		// %CF{0}
-    union { __size32; void *; } local15; 		// esp_9{0}
-    __size32 local16; 		// esp_6{0}
-    __size32 local17; 		// esp_13{0}
-    int local18; 		// %flags{0}
-    int local19; 		// %ZF{0}
-    int local20; 		// %CF{0}
-    int local3; 		// %flags{0}
-    int local5; 		// %flags{0}
-    int local6; 		// %flags{0}
-    int local7; 		// %ZF{0}
-    int local9; 		// %ZF{0}
+    union { void *; __size32; } esp_4; 		// r28{9}
+    __size32 esp_5; 		// r28{28}
+    __size32 esp_6; 		// r28{16}
+    __size32 esp_7; 		// r28{67}
+    __size32 esp_8; 		// r28{74}
+    union { void *; __size32; } esp_9; 		// r28{10}
+    int local10; 		// %ZF{74}
+    int local11; 		// %CF{61}
+    int local13; 		// %CF{68}
+    int local14; 		// %CF{74}
+    union { __size32; void *; } local15; 		// esp_9{10}
+    __size32 local16; 		// esp_6{16}
+    __size32 local17; 		// esp_13{80}
+    int local18; 		// %flags{84}
+    int local19; 		// %ZF{85}
+    int local20; 		// %CF{86}
+    int local3; 		// %flags{61}
+    int local5; 		// %flags{68}
+    int local6; 		// %flags{74}
+    int local7; 		// %ZF{61}
+    int local9; 		// %ZF{68}
 
     proc_0x00401870(*(%esp - 20), *(%esp - 16));
     esp_1 = proc_0x00401790(16, ebx, esi, edi); /* Warning: also results in ebp */
@@ -218,17 +217,13 @@ void _start()
         *(__size32*)(esp_6 - 8) = esi;
         *(__size32*)(esp_6 - 12) = 0x4054d4;
         eax = InterlockedCompareExchange(); /* Warning: also results in edx */
-        if (eax == 0) {
-        }
-        else {
-            if (eax != esi) {
-                *(__size32*)(esp_6 - 16) = 1000;
-                esp_5 = Sleep(*(esp_6 - 16));
-                local16 = esp_5;
+        if (eax != 0) {
+            if (eax == esi) {
+                break;
             }
-            else {
-                goto bb0x401188;
-            }
+            *(__size32*)(esp_6 - 16) = 1000;
+            esp_5 = Sleep(*(esp_6 - 16));
+            local16 = esp_5;
         }
 bb0x4011a0:
         esi = 1;
@@ -300,27 +295,26 @@ bb0x4011ee:
         proc_0x004017d5(%ebp);
         return;
     }
-bb0x401188:
     *(__size32*)(ebp - 28) = 1;
     goto bb0x4011a0;
 }
 
 /** address: 0x004016c0 */
-__size32 proc_0x004016c0(unsigned int param1, unsigned char param2, int param3, unsigned int param4)
+__size32 proc_0x004016c0(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4)
 {
     __size16 ax; 		// r0
     __size16 cx; 		// r1
     unsigned char dl; 		// r10
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    int eax_10; 		// r24{0}
-    int eax_11; 		// r24{0}
-    int eax_12; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
-    int edx; 		// r26
+    __size32 eax_1; 		// r24{6}
+    int eax_10; 		// r24{12}
+    int eax_11; 		// r24{13}
+    int eax_12; 		// r24{19}
+    __size32 eax_4; 		// r24{8}
+    __size32 eax_7; 		// r24{10}
+    unsigned int edx; 		// r26
     int esp; 		// r28
-    int local3; 		// eax{0}
+    int local3; 		// eax{15}
 
     eax_1 = *0;
     *(int*)0 = (esp - 20);
@@ -363,15 +357,15 @@ bb0x401078:
 }
 
 /** address: 0x00401630 */
-__size32 proc_0x00401630(union { __size16 *; __size32; } param1, unsigned char param2, int param3)
+__size32 proc_0x00401630(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3)
 {
     short ax; 		// r0
     short cx; 		// r1
     unsigned char dl; 		// r10
-    int eax; 		// r24
-    int edx; 		// r26
-    unsigned char local0; 		// param2{0}
-    int local1; 		// param3{0}
+    unsigned int eax; 		// r24
+    unsigned int edx; 		// r26
+    unsigned char local0; 		// param2{11}
+    unsigned int local1; 		// param3{13}
 
     cx = (unsigned short) param1;
     local0 = param2;
@@ -386,9 +380,9 @@ bb0x401642:
         else {
             cx = 267;
             dl =  (*(eax + param1 + 24) == 267) ? 1 : 0;
-            edx = 0 >> 8 & 0xffffff | (dl);
-            eax = edx;
-            ax = (unsigned short) edx;
+            edx = (dl);
+            eax = (dl);
+            ax = (unsigned short) (dl);
             local0 = dl;
             local1 = edx;
         }
@@ -406,18 +400,18 @@ __size32 proc_0x00401670(__size32 param1, unsigned int param2, unsigned int para
 {
     unsigned int eax; 		// r24
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_4; 		// r27{0}
+    unsigned int ebx_1; 		// r27{16}
+    unsigned int ebx_4; 		// r27{17}
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 edx_2; 		// r26{0}
+    __size32 edx_1; 		// r26{12}
+    __size32 edx_2; 		// r26{20}
     unsigned int esi; 		// r30
-    __size32 local0; 		// edx_1{0}
-    unsigned int local1; 		// param3{0}
-    unsigned int local2; 		// ebx{0}
-    __size32 local3; 		// edx{0}
-    __size32 local4; 		// edx{0}
+    __size32 local0; 		// edx_1{12}
+    unsigned int local1; 		// param3{13}
+    unsigned int local2; 		// ebx{19}
+    __size32 local3; 		// edx{23}
+    __size32 local4; 		// edx{26}
 
     ecx = *(param1 + 60);
     eax = *(unsigned short*)(ecx + param1 + 20);

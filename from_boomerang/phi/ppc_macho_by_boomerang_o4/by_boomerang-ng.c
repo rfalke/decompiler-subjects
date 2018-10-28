@@ -20,9 +20,7 @@ int main(int argc, char *argv[])
     printf(/* machine specific */ (int) LR + 888);
     g5 = scanf(/* machine specific */ (int) LR + 904); /* Warning: also results in g6, g7, g8, g9, g10, g11, g12 */
     if (local0 <= 1) {
-        if (local0 != 1) {
-        }
-        else {
+        if (local0 == 1) {
         }
     }
     else {
@@ -42,22 +40,22 @@ __size32 fib(int param2, __size32 param3, __size32 param4, __size32 param5, __si
     __size32 g12; 		// r12
     int g3; 		// r3
     int g30; 		// r30
-    int g30_1; 		// r30{0}
+    int g30_1; 		// r30{30}
     __size32 g31; 		// r31
     __size32 g5; 		// r5
     __size32 g6; 		// r6
     __size32 g7; 		// r7
     __size32 g8; 		// r8
     __size32 g9; 		// r9
-    __size32 local10; 		// param9{0}
-    __size32 local11; 		// param9{0}
-    int local12; 		// g30{0}
-    __size32 local4; 		// param3{0}
-    __size32 local5; 		// param4{0}
-    __size32 local6; 		// param5{0}
-    __size32 local7; 		// param6{0}
-    __size32 local8; 		// param7{0}
-    __size32 local9; 		// param8{0}
+    __size32 local10; 		// param9{26}
+    __size32 local11; 		// param9{27}
+    int local12; 		// g30{41}
+    __size32 local4; 		// param3{20}
+    __size32 local5; 		// param4{21}
+    __size32 local6; 		// param5{22}
+    __size32 local7; 		// param6{23}
+    __size32 local8; 		// param7{24}
+    __size32 local9; 		// param8{25}
 
     g30 = param2;
     g31 = /* machine specific */ (int) LR;

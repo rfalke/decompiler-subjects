@@ -6,9 +6,9 @@ __size32 test_3(unsigned int param1);
 /** address: 0x08048310 */
 int main(int argc, char *argv[])
 {
-    long long eax_2; 		// r24{0}
-    unsigned int eax_5; 		// r24{0}
-    long long eax_8; 		// r24{0}
+    long long eax_2; 		// r24{29}
+    unsigned int eax_5; 		// r24{30}
+    long long eax_8; 		// r24{31}
     unsigned long long ebx; 		// r27
     unsigned long long edi; 		// r31
     int local0; 		// m[esp - 64]
@@ -49,7 +49,7 @@ bb0x8048366:
 /** address: 0x08048490 */
 __size32 test_1(unsigned long long param1)
 {
-    unsigned long long edx_1; 		// r26{0}
+    unsigned long long edx_1; 		// r26{3}
 
     edx_1 = (param1) * 0x24924925 >> 32;
     return ((unsigned int)(param1 - edx_1) >> 1) + edx_1 >> 2;
@@ -58,7 +58,7 @@ __size32 test_1(unsigned long long param1)
 /** address: 0x080484b0 */
 __size32 test_2(unsigned long long param1)
 {
-    unsigned long long edx_1; 		// r26{0}
+    unsigned long long edx_1; 		// r26{3}
 
     edx_1 = (param1) * 0x24924925 >> 32;
     return (unsigned int)(edx_1 + ((unsigned int)(param1 - edx_1) >> 1)) >> 2;

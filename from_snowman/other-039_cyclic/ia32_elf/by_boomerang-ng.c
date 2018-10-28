@@ -20,19 +20,19 @@ __size32 f(__size32 param1, __size32 param2, __size32 param3, __size32 param4, _
     __size32 eax; 		// r24
     __size32 ebp; 		// r29
     __size32 esp; 		// r28
-    __size32 *esp_1; 		// r28{0}
-    __size32 *esp_2; 		// r28{0}
-    __size32 *esp_3; 		// r28{0}
-    __size32 *esp_4; 		// r28{0}
+    __size32 *esp_1; 		// r28{28}
+    __size32 *esp_2; 		// r28{30}
+    __size32 *esp_3; 		// r28{28}
+    __size32 *esp_4; 		// r28{28}
     int local0; 		// m[esp - 4]
-    __size32 *local10; 		// esp_3{0}
+    __size32 *local10; 		// esp_3{32}
     __size32 local3; 		// m[esp + 8]
     __size32 local4; 		// m[esp + 4]
-    __size32 local5; 		// param2{0}
-    __size32 local6; 		// param4{0}
-    __size32 local7; 		// local3{0}
-    __size32 local8; 		// param1{0}
-    __size32 local9; 		// local4{0}
+    __size32 local5; 		// param2{11}
+    __size32 local6; 		// param4{17}
+    __size32 local7; 		// local3{18}
+    __size32 local8; 		// param1{22}
+    __size32 local9; 		// local4{27}
 
     local0 = param5;
     ebp = esp - 4;
@@ -124,10 +124,7 @@ bb0x804819f:
                 g();
                 eax -= *(ebp + 12);
                 *(__size32*)(ebp + 8) = eax;
-                if (*(ebp + 8) != 0) {
-                    return eax;
-                }
-                else {
+                if (*(ebp + 8) == 0) {
                     g();
                     if (eax != 0) {
                         esp = h();

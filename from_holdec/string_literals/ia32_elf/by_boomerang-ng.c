@@ -3,14 +3,14 @@ int main(int argc, char *argv[]);
 /** address: 0x08048420 */
 int main(int argc, char *argv[])
 {
-    FILE *eax_780; 		// r24{0}
+    FILE *eax_780; 		// r24{9}
     char *local0[]; 		// m[esp - 32]
 
     local0 = *argv;
-    strchr(local0, '\'');
+    strchr(local0, 39);
     printf("with single ' quote %p\n");
     local0 = *argv;
-    strchr(local0, '\"');
+    strchr(local0, 34);
     printf("with double \" quote %p\n");
     eax_780 = fopen("with-null-byte", "w");
     fwrite("with null byte ", 17, 1, eax_780);

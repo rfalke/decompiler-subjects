@@ -1,7 +1,7 @@
 int main(int argc, char *argv[]);
-__size32 hexdump(char param1[], unsigned int param2, char param3, union { unsigned int; char *; } param4, unsigned char param5, __size32 param6);
+__size32 hexdump(char param1[], unsigned int param2, int param3, union { unsigned int; char *; } param4, unsigned char param5, __size32 param6);
 __size32 stat();
-__size8 dumpline(char param1[], __size32 param2, int param3, unsigned char param4, __size32 param5);
+__size8 dumpline(char param1[], int param2, unsigned int param3, int param4, unsigned char param5, __size32 param6);
 
 /** address: 0x080488e0 */
 int main(int argc, char *argv[])
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     __size32 ebx; 		// r27
     char local0[]; 		// m[esp - 216]
     unsigned int local1; 		// m[esp - 92]
-    char local2; 		// m[esp - 40]
+    int local2; 		// m[esp - 40]
     __size32 local3; 		// m[esp - 12]
     int local4; 		// m[esp - 8]
 
@@ -27,14 +27,14 @@ int main(int argc, char *argv[])
 }
 
 /** address: 0x080487f0 */
-__size32 hexdump(char param1[], unsigned int param2, char param3, union { unsigned int; char *; } param4, unsigned char param5, __size32 param6)
+__size32 hexdump(char param1[], unsigned int param2, int param3, union { unsigned int; char *; } param4, unsigned char param5, __size32 param6)
 {
     unsigned char cl; 		// r9
     int eax; 		// r24
-    FILE *eax_1; 		// r24{0}
-    union { int; FILE *; } eax_4; 		// r24{0}
+    FILE *eax_1; 		// r24{13}
+    union { int; FILE *; } eax_4; 		// r24{23}
     int esp; 		// r28
-    unsigned char local11; 		// param5{0}
+    unsigned char local11; 		// param5{19}
     int local2; 		// m[esp - 24]
 
     eax = stat();
@@ -47,19 +47,14 @@ __size32 hexdump(char param1[], unsigned int param2, char param3, union { unsign
             while (param2 > local2) {
                 eax_4 = fread(&param3, 1, 16, eax_1);
                 if (eax_4 != 0) {
-                    cl = dumpline(param1, esp - 20, eax_4, param5, param6);
+                    cl = dumpline(param1, esp - 20, local2, eax_4, param5, param6);
                     local11 = cl;
                     local2 += eax_4;
                 }
-                else {
-                }
-bb0x80488c0:
-                fclose(eax_1);
-                eax = 0;
-                return eax; /* WARNING: Also returning: cl := param5 */
                 param5 = local11;
             }
-            goto bb0x80488c0;
+            fclose(eax_1);
+            eax = 0;
         }
         else {
             perror(param4);
@@ -83,83 +78,85 @@ __size32 stat()
 }
 
 /** address: 0x08048660 */
-__size8 dumpline(char param1[], __size32 param2, int param3, unsigned char param4, __size32 param5)
+__size8 dumpline(char param1[], int param2, unsigned int param3, int param4, unsigned char param5, __size32 param6)
 {
     unsigned char cl; 		// r9
-    int eax_2; 		// r24{0}
+    int eax; 		// r24
     __size32 ebx; 		// r27
+    int edx; 		// r26
     int esp; 		// r28
-    int local11; 		// param3{0}
-    unsigned char local12; 		// param4{0}
-    int local13; 		// local5{0}
-    unsigned char local14; 		// cl{0}
-    __size32 local15; 		// param5{0}
-    __size32 local16; 		// ebx{0}
-    int local2; 		// m[esp + 12]
-    int local3; 		// m[esp - 88]
-    int local5; 		// m[esp - 88]{0}
-    int local6; 		// m[esp - 88]{0}
+    int local12; 		// param4{11}
+    unsigned char local13; 		// param5{13}
+    int local14; 		// local6{22}
+    unsigned char local15; 		// cl{31}
+    __size32 local16; 		// param6{32}
+    __size32 local17; 		// ebx{42}
+    int local3; 		// m[esp + 12]
+    int local4; 		// m[esp - 88]
+    int local6; 		// m[esp - 88]{22}
+    int local7; 		// m[esp - 88]{23}
 
-    sprintf(&param1, 0x80489c8);
-    local11 = param3;
+    sprintf(&param1, "%08lX:", param3);
     local12 = param4;
-    local15 = param5;
-    if (param3 > 16) {
-        local2 = 16;
-        local11 = local2;
+    local13 = param5;
+    local16 = param6;
+    if (param4 > 16) {
+        local3 = 16;
+        local12 = local3;
     }
-    param3 = local11;
-    local3 = 0;
     param4 = local12;
-    local13 = local3;
-    local14 = param4;
-    while (param3 > local3) {
-        cl = (unsigned char) local3;
-        sprintf(esp + local3 + local3 + local3 - 75, 0x80489cf);
-        local12 = cl;
-        local3++;
-        param4 = local12;
-        local13 = local3;
-        local14 = param4;
+    local4 = 0;
+    param5 = local13;
+    local14 = local4;
+    local15 = param5;
+    while (param4 > local4) {
+        edx = *(unsigned char*)(param2 + local4);
+        cl = (unsigned char) local4;
+        sprintf(esp + local4 + local4 + local4 - 75, " %02lX", edx);
+        local13 = cl;
+        local4++;
+        param5 = local13;
+        local14 = local4;
+        local15 = param5;
     }
-    local5 = local13;
-    local6 = local5 + 1;
-    local13 = local6;
-    while (local5 <= 15) {
-        strcat(&param1, 0x80489d6);
-        local5 = local13;
-        local6 = local5 + 1;
-        local13 = local6;
+    local6 = local14;
+    local7 = local6 + 1;
+    local14 = local7;
+    while (local6 <= 15) {
+        strcat(&param1, "   ");
+        local6 = local14;
+        local7 = local6 + 1;
+        local14 = local7;
     }
-    eax_2 = strlen(&param1);
-    strcpy(esp + eax_2 - 84, 0x80489da);
-    local3 = 0;
-    cl = local14;
-    param5 = local15;
-    local16 = param5;
-    while (param3 > local3) {
-        if (*(param2 + local3) <= 31 || *(param2 + local3) > 126) {
+    eax = strlen(&param1);
+    strcpy(esp + eax - 84, "  |");
+    local4 = 0;
+    cl = local15;
+    param6 = local16;
+    local17 = param6;
+    while (param4 > local4) {
+        if (*(param2 + local4) <= 31 || *(param2 + local4) > 126) {
             cl = 46;
         }
         else {
-            ebx = param2 + local3;
+            ebx = param2 + local4;
             cl = *ebx;
-            local16 = ebx;
+            local17 = ebx;
         }
-        ebx = local16;
-        *(unsigned char*)(eax_2 + local3 + esp - 84) = cl;
-        local3++;
-        local14 = cl;
-        local15 = ebx;
-        cl = local14;
-        param5 = local15;
-        local16 = param5;
+        ebx = local17;
+        *(unsigned char*)(eax + local4 + esp - 84) = cl;
+        local4++;
+        local15 = cl;
+        local16 = ebx;
+        cl = local15;
+        param6 = local16;
+        local17 = param6;
     }
-    while (local3 <= 15) {
-        *(__size8*)(eax_2 + local3 + esp - 84) = 32;
-        local3++;
+    while (local4 <= 15) {
+        *(__size8*)(eax + local4 + esp - 84) = 32;
+        local4++;
     }
-    strcpy(esp + eax_2 + local3 - 84, 0x80489de);
+    strcpy(esp + eax + local4 - 84, "|");
     printf("%s\n", &param1);
     return cl;
 }

@@ -44,19 +44,19 @@ __size32 c(unsigned int param1)
         case 1:
         case 2:
             g1 = d(2);
-            return g1;
+            break;
         case 3:
             g1 = f(3);
-            return g1;
+            break;
         case 4:
             g1 = h(4);
-            return g1;
+            break;
         case 5:
             g1 = j(5);
-            return g1;
+            break;
         case 6:
             g1 = l(6);
-            return g1;
+            break;
         }
     }
     return g1;

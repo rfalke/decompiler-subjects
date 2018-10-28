@@ -1,6 +1,6 @@
 int main(int argc, char *argv[]);
 __size32 proc_0x08048d64();
-void proc_0x0804a0a0();
+void proc_0x0804a0a0(union { atexitfunc; __size32; } param1);
 void proc_0x08049ccd(__size32 param1, __size32 param2);
 void proc_0x08048b68(int param1);
 void proc_0x08049ac0(union { FILE *; __size32; } param1, __size32 param2, union { va_list; __size32; } param3);
@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     setlocale(6, ebx + 0x15d7);
     bindtextdomain(ebx + 0x1638, ebx + 0x15ee);
     textdomain(ebx + 0x1638);
-    proc_0x0804a0a0();
+    eax = *(ebx + 0x2cd7);
+    proc_0x0804a0a0(eax);
     if (argc == 2) {
         eax = getenv(ebx + 0x1600);
         flags = LOGICALFLAGS32(eax);
@@ -30,8 +31,8 @@ int main(int argc, char *argv[])
             ecx = *(argv + 4);
             edi = ebx + 0x1610;
             esi = ecx;
-            ecx = eax >> 8 & 0xffffff | 7;
-            if ((eax >> 8 & 0xffffff | 7) != 0) {
+            ecx = eax & ~0xff | 7;
+            if ((eax & ~0xff | 7) != 0) {
                 do {
                     tmpb = *esi - *edi;
                     flags = SUBFLAGS8(*esi, *edi, tmpb);
@@ -72,13 +73,16 @@ __size32 proc_0x08048d64()
 }
 
 /** address: 0x0804a0a0 */
-void proc_0x0804a0a0()
+void proc_0x0804a0a0(union { atexitfunc; __size32; } param1)
 {
+    int eax; 		// r24
     int edx; 		// r26
 
+    eax = 0;
     if (edx != 0) {
+        eax = *edx;
     }
-    __cxa_atexit();
+    __cxa_atexit(param1, 0, eax);
     return;
 }
 
@@ -96,7 +100,7 @@ void proc_0x08049ccd(__size32 param1, __size32 param2)
 void proc_0x08048b68(int param1)
 {
     __size32 eax; 		// r24
-    char *eax_1; 		// r24{0}
+    char *eax_1; 		// r24{4}
     __size32 ebx; 		// r27
     int edx; 		// r26
     union { __size32; __size32 *; } esi; 		// r30

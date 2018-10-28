@@ -1,4 +1,3 @@
-__size32 stdout;// 4 bytes
 int main(int argc, char *argv[]);
 __size32 basic_1_multiple_calling_conventions_3_ints(__size32 param1);
 __size32 basic_2_calling_varargs();
@@ -20,7 +19,7 @@ __size32 sum3_ms_abi(__size32 param1, unsigned int param2, unsigned int param3);
 __size32 sum3_sysv_abi(__size32 param1, unsigned int param2, unsigned int param3);
 __size32 sum3_stdcall(__size32 param1, unsigned int param2, unsigned int param3);
 __size32 a_vararg();
-void even_more_crude(union { char[] *; __size32; } param1);
+void even_more_crude(char param1, union { char *; __size32; } param2);
 void crude_printf(__size32 param1, union { char *; __size32; } param2);
 __size32 sum3_uncommon(__size32 param1, __size32 param2, __size32 param3);
 void advanced_1_pass_in_flags_reg_helper();
@@ -29,8 +28,8 @@ void advanced_1_pass_in_flags_reg_helper();
 int main(int argc, char *argv[])
 {
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    __size32 eax_2; 		// r24{0}
+    __size32 eax_1; 		// r24{5}
+    __size32 eax_2; 		// r24{6}
     union { __size32 *; unsigned int; } ebp; 		// r29
     __size32 ebx; 		// r27
     unsigned int ecx; 		// r25
@@ -56,12 +55,12 @@ int main(int argc, char *argv[])
 __size32 basic_1_multiple_calling_conventions_3_ints(__size32 param1)
 {
     int eax; 		// r24
-    time_t eax_1; 		// r24{0}
-    int eax_10; 		// r24{0}
-    int eax_13; 		// r24{0}
-    int eax_16; 		// r24{0}
-    int eax_4; 		// r24{0}
-    int eax_7; 		// r24{0}
+    time_t eax_1; 		// r24{3}
+    int eax_10; 		// r24{8}
+    int eax_13; 		// r24{10}
+    int eax_16; 		// r24{12}
+    int eax_4; 		// r24{4}
+    int eax_7; 		// r24{6}
 
     eax_1 = time(0);
     eax_4 = sum3_cdecl(param1, eax_1, 42);
@@ -121,7 +120,7 @@ void basic_4_tail_call()
 /** address: 0x08048940 */
 void intermediate_1_accessing_varargs(__size32 param1)
 {
-    even_more_crude(0x8048ba4);
+    even_more_crude('0', 0x8048ba4);
     crude_printf(param1, 0x8048bbc);
     return;
 }
@@ -194,25 +193,23 @@ void advanced_2_return_in_flags_reg_helper()
 /** address: 0x08048a9a */
 void advanced_3_uneven_stack(__size32 param1)
 {
-    int esp; 		// r28
-    union { __size32; char **; } esp_1; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
-    __size32 esp_6; 		// r28{0}
-    union { char **; __size32; } local2; 		// esp_1{0}
+    union { __size32; char **; } esp_1; 		// r28{7}
+    __size32 esp_4; 		// r28{4}
+    __size32 esp_5; 		// r28{6}
+    __size32 esp_6; 		// r28{1}
+    union { char **; __size32; } local2; 		// esp_1{7}
 
     if (param1 == 42) {
-        esp = (esp_4 - 12);
-        local2 = esp;
+        esp_5 = (esp_6 - 12);
+        local2 = esp_5;
     }
     else {
-        esp_6 = (esp_4 - 8);
-        local2 = esp_6;
+        esp_4 = (esp_6 - 8);
+        local2 = esp_4;
     }
     esp_1 = local2;
     puts(*esp_1);
-    if (param1 == 42) {
-    }
-    else {
+    if (param1 != 42) {
     }
     return;
 }
@@ -264,11 +261,14 @@ __size32 a_vararg()
 }
 
 /** address: 0x08048900 */
-void even_more_crude(union { char[] *; __size32; } param1)
+void even_more_crude(char param1, union { char *; __size32; } param2)
 {
-    putchar();
-    fputs();
-    strlen(param1);
+    union { __size32; FILE *; } local1; 		// m[esp - 24]
+
+    putchar((int) param1);
+    local1 = *0x804b02c;
+    fputs(param2, local1);
+    strlen(param2);
     return;
 }
 
@@ -276,68 +276,70 @@ void even_more_crude(union { char[] *; __size32; } param1)
 void crude_printf(__size32 param1, union { char *; __size32; } param2)
 {
     char al; 		// r8
-    __size32 eax; 		// r24
+    int eax; 		// r24
     __size32 ebp; 		// r29
-    __size32 ebp_1; 		// r29{0}
-    __size32 ebp_2; 		// r29{0}
-    union { char[] *; int; } ebp_5; 		// r29{0}
+    __size32 ebp_1; 		// r29{26}
+    __size32 ebp_2; 		// r29{31}
+    union { char *; int; } ebp_5; 		// r29{38}
     __size32 ebx; 		// r27
     __size32 esi; 		// r30
-    union { __size32 *; char *; __size32; } esi_1; 		// r30{0}
-    __size32 esi_2; 		// r30{0}
+    union { __size32 *; char *; __size32; } esi_1; 		// r30{27}
+    __size32 esi_2; 		// r30{47}
+    __size32 esi_5; 		// r30{37}
     int esp; 		// r28
     __size32 local1; 		// m[esp - 40]
-    __size32 local2; 		// esi{0}
-    __size32 local3; 		// local1{0}
-    __size32 local4; 		// ebp_1{0}
-    union { __size32; char *; __size32 *; } local5; 		// esi_1{0}
-    __size32 local6; 		// param1{0}
+    __size32 local3; 		// esi{17}
+    __size32 local4; 		// local1{18}
+    __size32 local5; 		// ebp_1{26}
+    union { __size32; char *; __size32 *; } local6; 		// esi_1{27}
+    __size32 local7; 		// param1{28}
 
     ebp = param2;
     eax = (int) *param2;
     al = (unsigned char) eax;
-    local4 = ebp;
-    local6 = param1;
+    local5 = ebp;
+    local7 = param1;
     if ((unsigned char) eax == 0) {
     }
     else {
         esi = (esp + 8);
         ebx = 0;
-        local5 = esi;
+        local6 = esi;
         do {
 bb0x8048872:
-            ebp_1 = local4;
-            esi_1 = local5;
-            param1 = local6;
-            local2 = esi_1;
-            local2 = esi_1;
-            local3 = param1;
-            local3 = param1;
-            local3 = param1;
-            local5 = esi_1;
-            local6 = param1;
+            ebp_1 = local5;
+            esi_1 = local6;
+            param1 = local7;
+            local3 = esi_1;
+            local3 = esi_1;
+            local4 = param1;
+            local4 = param1;
+            local4 = param1;
+            local6 = esi_1;
+            local7 = param1;
             if (al == 37) {
                 eax = *(unsigned char*)(ebp_1 + 1);
                 if ((unsigned char) eax == 37) {
                     ebx++;
-                    putchar();
+                    putchar('%');
                 }
                 else {
                     if ((unsigned char) eax == 99) {
-                        esi = esi_1 + 4;
+                        esi_2 = esi_1 + 4;
+                        eax = (int) *esi_1;
                         ebx++;
-                        putchar();
-                        local2 = esi;
+                        putchar(eax);
+                        local3 = esi_2;
                         goto bb0x8048867;
                     }
                     else {
                         if ((unsigned char) eax == 115) {
-                            esi_2 = esi_1 + 4;
+                            esi_5 = esi_1 + 4;
                             ebp_5 = *esi_1;
-                            local1 = stdout;
-                            fputs();
-                            local2 = esi_2;
-                            local3 = local1;
+                            local1 = *0x804b02c;
+                            fputs(ebp_5, local1);
+                            local3 = esi_5;
+                            local4 = local1;
                             eax = strlen(ebp_5);
                             ebx += eax;
                             goto bb0x8048867;
@@ -348,20 +350,20 @@ bb0x8048872:
                     }
                 }
 bb0x8048867:
-                esi = local2;
-                local1 = local3;
+                esi = local3;
+                local1 = local4;
                 eax = (int) *(ebp_1 + 2);
                 al = (unsigned char) eax;
                 ebp = ebp_1 + 2;
-                local4 = ebp;
-                local5 = esi;
-                local6 = local1;
+                local5 = ebp;
+                local6 = esi;
+                local7 = local1;
             }
             else {
                 ebx++;
                 ebp_2 = ebp_1 + 1;
-                putchar();
-                local4 = ebp_2;
+                putchar(eax);
+                local5 = ebp_2;
                 eax = (int) *(ebp_1 + 1);
                 al = (unsigned char) eax;
                 if ((unsigned char) eax != 0) {

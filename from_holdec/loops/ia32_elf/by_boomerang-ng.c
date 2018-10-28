@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 void forever()
 {
     int local0; 		// m[esp - 16]
-    int local3; 		// m[esp - 16]{0}
-    int local4; 		// m[esp - 16]{0}
-    int local8; 		// local3{0}
+    int local3; 		// m[esp - 16]{3}
+    int local4; 		// m[esp - 16]{4}
+    int local8; 		// local3{3}
 
     local0 = 0;
     local8 = local0;

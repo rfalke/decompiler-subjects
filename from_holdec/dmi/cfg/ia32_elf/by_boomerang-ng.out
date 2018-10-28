@@ -1,575 +1,552 @@
-Level | File                                    | Line | Message
+Level | File                                    | Message
 ====================================================================================================
-Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
-Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
-Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
-Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_holdec/dmi/cfg/ia32_elf/subject.exe'
-Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
-Msg   | src/boomerang/frontend/DefaultFrontEnd. |  133 | Starting decode at address 0x080483a0
-Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
-Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'putchar', please update signatures!
-Warn  | src/boomerang/db/Prog.cpp               |  391 | Unknown library function 'rand', please update signatures!
-Msg   | src/boomerang/core/Project.cpp          |  184 | Found 29 procs
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  450 | Decompiling...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   38 | Decompiling entry point 'main'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'main'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_1_if'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_1_if'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_1_if'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_2_if_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_2_if_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_2_if_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_3_if_elseif'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_3_if_elseif'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_3_if_elseif'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_4_if_elseif_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_4_if_elseif_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_4_if_elseif_else'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_5_head_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_5_head_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_5_head_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_6_tail_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_6_tail_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_6_tail_controlled_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_7_for_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_7_for_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_7_for_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_8_forever_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_8_forever_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_8_forever_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'basic_9_dead_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'basic_9_dead_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'basic_9_dead_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_1_short_circuit_and'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_1_short_circuit_and'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_1_short_circuit_and'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_2_short_circuit_or'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_2_short_circuit_or'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_2_short_circuit_or'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_10_loop_with_one_break'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_10_loop_with_one_break'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_10_loop_with_one_break'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_11_loop_with_two_breaks'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_11_loop_with_two_breaks'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_11_loop_with_two_breaks'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_12_loop_with_break_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_12_loop_with_break_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_12_loop_with_break_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_13_loop_with_one_continue'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_13_loop_with_one_continue'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_13_loop_with_one_continue'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_14_loop_with_two_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_14_loop_with_two_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_14_loop_with_two_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_15_loop_with_continue_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_15_loop_with_continue_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_15_loop_with_continue_and_block'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_16_loop_with_breaks_and_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_16_loop_with_breaks_and_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_16_loop_with_breaks_and_continues'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_17_forever_loop_with_extra_statement'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_17_forever_loop_with_extra_statement'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_17_forever_loop_with_extra_statement'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_20_nested_loops'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_20_nested_loops'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_20_nested_loops'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  548 | Restarting decompilation of 'intermediate_30_switch_case' because indirect jumps or calls have been analyzed
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Re-visiting procedure 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'intermediate_30_switch_case'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_1_loop_with_multiple_entries'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_1_loop_with_multiple_entries'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_1_loop_with_multiple_entries'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_2_loop_with_multiple_exits'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_2_loop_with_multiple_exits'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_2_loop_with_multiple_exits'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_10_irreducible'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_10_irreducible'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_10_irreducible'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_11_nested_loops_complex_condition'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_11_nested_loops_complex_condition'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_11_nested_loops_complex_condition'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_12_nested_if_in_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_12_nested_if_in_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_12_nested_if_in_loop'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_20_jump_table_on_stack'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_20_jump_table_on_stack'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_20_jump_table_on_stack'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |   94 | Visiting procedure 'advanced_21_computed_jumps'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'advanced_21_computed_jumps'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'advanced_21_computed_jumps'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  205 | Decompiling procedure 'main'
-Msg   | src/boomerang/decomp/ProcDecompiler.cpp |  242 | Finished decompile of 'main'
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 4]
-Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 8]
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 4]
-Warn  | src/boomerang/db/signature/Signature.cp |  244 | Could not set type for unknown parameter expression m[r28{0} + 8]
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  198 | Transforming from SSA form...
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r28{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r29{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '/*signed?*/int' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp + 4]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp + 8]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to '__size32' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to '__size32' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to '__size32' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for m[esp - 32]{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to '__size32' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '/*signed?*/int' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r31{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r31{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r31{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r31{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r30{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r24{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Warn  | src/boomerang/visitor/stmtmodifier/Stmt |  131 | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r25{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r26{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for r27{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %ZF{0}!!
-Error | src/boomerang/visitor/expmodifier/ExpSS |   33 | Could not find local or parameter for %CF{0}!!
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  127 | Removing unused global variables...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   92 | Decompilation finished.
-Msg   | src/boomerang/core/Project.cpp          |  227 | Generating code...
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x08048457, in proc main
-Error | src/boomerang/codegen/CCodeGenerator.cp | 1894 | case opTrue not implemented
-Msg   | src/boomerang/codegen/CCodeGenerator.cp | 2413 | Found seq with more than one outedge!
-Msg   | src/boomerang/codegen/CCodeGenerator.cp | 2418 | Taken branch is first out edge
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x08048f6c, in proc advanced_20_jump_table_on_stack
-Warn  | src/boomerang/codegen/CCodeGenerator.cp | 2391 | No out edge for BB at address 0x0804908b, in proc advanced_21_computed_jumps
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  460 | Output written to '_output'
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  468 | Completed in some time
+Msg   | src/boomerang/util/log/Log.cpp          | This is Boomerang v0.3.99-alpha-1914-ged7a3e1
+Msg   | src/boomerang/util/log/Log.cpp          | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |   DOS4GW loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   ELF32 loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   DOS Exe loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   HP SOM loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Mach-O executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Palm OS executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Win32 PE loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          | Loading binary file 'from_holdec/dmi/cfg/ia32_elf/subject.exe'
+Msg   | src/boomerang/ssl/RTLInstDict.cpp       | Loading machine specifications from 'BOOMERANGSRCDIR/build/out/share/boomerang/ssl/pentium.ssl'...
+Msg   | src/boomerang/db/Prog.cpp               | Reading library signatures...
+Msg   | src/boomerang/core/Project.cpp          | Decoding entry point...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. | Starting decode at address 0x080483a0
+Msg   | src/boomerang/core/Project.cpp          | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. | Looking for undecoded procedures to decode...
+Msg   | src/boomerang/core/Project.cpp          | Found 29 procs
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Decompiling...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Decompiling entry point 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_1_if'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_1_if'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_1_if'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_2_if_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_2_if_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_2_if_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_3_if_elseif'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_3_if_elseif'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_3_if_elseif'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_4_if_elseif_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_4_if_elseif_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_4_if_elseif_else'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_5_head_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_5_head_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_5_head_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_6_tail_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_6_tail_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_6_tail_controlled_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_7_for_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_7_for_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_7_for_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_8_forever_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_8_forever_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_8_forever_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'basic_9_dead_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'basic_9_dead_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'basic_9_dead_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_1_short_circuit_and'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_1_short_circuit_and'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_1_short_circuit_and'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_2_short_circuit_or'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_2_short_circuit_or'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_2_short_circuit_or'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_10_loop_with_one_break'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_10_loop_with_one_break'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_10_loop_with_one_break'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_11_loop_with_two_breaks'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_11_loop_with_two_breaks'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_11_loop_with_two_breaks'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_12_loop_with_break_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_12_loop_with_break_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_12_loop_with_break_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_13_loop_with_one_continue'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_13_loop_with_one_continue'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_13_loop_with_one_continue'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_14_loop_with_two_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_14_loop_with_two_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_14_loop_with_two_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_15_loop_with_continue_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_15_loop_with_continue_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_15_loop_with_continue_and_block'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_16_loop_with_breaks_and_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_16_loop_with_breaks_and_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_16_loop_with_breaks_and_continues'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_17_forever_loop_with_extra_statement'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_17_forever_loop_with_extra_statement'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_17_forever_loop_with_extra_statement'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_20_nested_loops'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_20_nested_loops'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_20_nested_loops'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Restarting decompilation of 'intermediate_30_switch_case' because indirect jumps or calls have been analyzed
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Re-visiting procedure 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'intermediate_30_switch_case'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_1_loop_with_multiple_entries'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_1_loop_with_multiple_entries'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_1_loop_with_multiple_entries'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_2_loop_with_multiple_exits'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_2_loop_with_multiple_exits'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_2_loop_with_multiple_exits'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_10_irreducible'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_10_irreducible'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_10_irreducible'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_11_nested_loops_complex_condition'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_11_nested_loops_complex_condition'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_11_nested_loops_complex_condition'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_12_nested_if_in_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_12_nested_if_in_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_12_nested_if_in_loop'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_20_jump_table_on_stack'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_20_jump_table_on_stack'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_20_jump_table_on_stack'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Visiting procedure 'advanced_21_computed_jumps'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'advanced_21_computed_jumps'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'advanced_21_computed_jumps'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Decompiling procedure 'main'
+Msg   | src/boomerang/decomp/ProcDecompiler.cpp | Finished decompile of 'main'
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Transforming from SSA form...
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{1}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{1}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r29{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '/*signed?*/int' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{9}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for m[esp - 32]{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{14}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{14}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{14}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{20}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{20}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{20}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{22}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{22}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{22}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{11}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{11}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{14}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{14}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{18}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{18}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{9}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '/*signed?*/int' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{6}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r31{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r31{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{15}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{15}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{16}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{16}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{4}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{4}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{7}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{7}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{8}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{8}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'time_t' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{10}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r31{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r31{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r30{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{12}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{12}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from 'int' to 'time_t' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r24{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{5}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{5}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'eax' from '__size32' to 'int' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{3}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{3}!!
+Warn  | src/boomerang/visitor/stmtmodifier/Stmt | Forcing type of local 'esp' from '__size32' to 'void' due to library constraints
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{11}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{11}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{13}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r25{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r26{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for r27{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %ZF{0}!!
+Error | src/boomerang/visitor/expmodifier/ExpSS | Could not find local or parameter for %CF{0}!!
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused global variables...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Decompilation finished.
+Msg   | src/boomerang/core/Project.cpp          | Generating code...
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x08048457, in proc main
+Msg   | src/boomerang/codegen/CCodeGenerator.cp | Found seq with more than one outedge!
+Msg   | src/boomerang/codegen/CCodeGenerator.cp | Taken branch is first out edge
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x08048f6c, in proc advanced_20_jump_table_on_stack
+Warn  | src/boomerang/codegen/CCodeGenerator.cp | No out edge for BB at address 0x0804908b, in proc advanced_21_computed_jumps
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Output written to '_output'
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Completed in some time

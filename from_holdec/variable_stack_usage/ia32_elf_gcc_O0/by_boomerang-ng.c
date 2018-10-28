@@ -16,18 +16,18 @@ int main(int argc, char *argv[])
 /** address: 0x080484da */
 void with_alloca(unsigned int param1)
 {
-    unsigned int eax; 		// r24
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
+    int eax; 		// r24
+    __size32 esp_1; 		// r28{3}
+    __size32 esp_4; 		// r28{1}
 
     esp_1 = esp_4 - (param1 * 4 + 30) / 16 * 16 - 28;
-    eax = (esp_1 + 15 >> 4) * 16;
+    eax = esp_1 + 15 >> 4 << 4;
     *(unsigned int*)(esp_1 - 12) = param1;
-    *(unsigned int*)(esp_1 - 16) = eax;
+    *(int*)(esp_1 - 16) = eax;
     fill(*(esp_1 - 16), *(esp_1 - 12));
     *(__size32*)(esp_1 - 16) = (esp_4 - 20);
     use(*(esp_1 - 16));
-    *(unsigned int*)(esp_1 - 16) = eax;
+    *(int*)(esp_1 - 16) = eax;
     use(*(esp_1 - 16));
     *(__size32*)(esp_1 - 16) = (esp_4 - 24);
     use(*(esp_1 - 16));
@@ -38,8 +38,8 @@ void with_alloca(unsigned int param1)
 void with_array(unsigned int param1)
 {
     unsigned int eax; 		// r24
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
+    __size32 esp_1; 		// r28{3}
+    __size32 esp_4; 		// r28{1}
 
     esp_1 = esp_4 - (param1 * 4 + 18) / 16 * 16 - 28;
     eax = (esp_1 + 3 >> 2) * 4;

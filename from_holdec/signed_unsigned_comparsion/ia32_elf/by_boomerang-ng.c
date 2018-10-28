@@ -5,11 +5,11 @@ __size32 f(unsigned int param1, unsigned int param2, __size32 param3);
 int main(int argc, char *argv[])
 {
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_2; 		// r27{0}
+    unsigned int ebx_1; 		// r27{5}
+    unsigned int ebx_2; 		// r27{6}
     __size32 ecx; 		// r25
     union { __size32; __size32 *; } esp; 		// r28
-    unsigned int local2; 		// ebx_1{0}
+    unsigned int local2; 		// ebx_1{5}
 
     ecx = (esp + 4);
     ebx = 0;
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 __size32 f(unsigned int param1, unsigned int param2, __size32 param3)
 {
     int ecx; 		// r25
-    __size32 local4; 		// param3{0}
+    __size32 local4; 		// param3{7}
 
     local4 = param3;
     if ((unsigned int)(param1 - 2) <= 5) {

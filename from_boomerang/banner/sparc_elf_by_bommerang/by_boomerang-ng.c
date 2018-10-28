@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     __size32 local5; 		// m[o6 - 24]
     int local6; 		// m[o6 - 40]
     int local7; 		// m[o6 - 28]
-    __size32 local8; 		// m[o6 - 20]{0}
+    __size32 local8; 		// m[o6 - 20]{10}
     int o0; 		// r8
     int o1; 		// r9
     int o2; 		// r10
@@ -39,7 +39,7 @@ bb0x10794:
             while (local0 < local6) {
                 o1 = *local5;
                 o0 = *(unsigned char*)(o1 + local0);
-                o0 = ((int)(o0 * 0x1000000) >> 24) - 32;
+                o0 = (o0 << 24 >> 24) - 32;
                 local2 = o0;
                 if (o0 < 0) {
                     local2 = 0;
@@ -63,13 +63,12 @@ bb0x10804:
             local0 = local6 * 8 - 1;
             while (local0 >= 0) {
                 o0 = *(unsigned char*)(o6 + local0 - 128);
-                if ((int)(o0 * 0x1000000) >> 24 != 32) {
-                    goto bb0x10960;
+                if (o0 << 24 >> 24 != 32) {
+                    break;
                 }
                 *(__size8*)(o6 + local0 - 128) = 0;
                 local0--;
             }
-bb0x10960:
             o2 = puts(&local3); /* Warning: also results in o3, o4 */
             local7++;
             goto bb0x10794;

@@ -14,9 +14,9 @@ void proc_0x004018a5(union { __size32; __size32 *; } param1);
 void proc_0x0040156f(__size32 param3, __size32 param4, __size32 param3, __size32 param4);
 void proc_0x004014c6(__size32 param1, __size32 param2, __size32 param3);
 void _start();
-__size32 proc_0x00401790(unsigned int param1, unsigned char param2, int param3, unsigned int param4);
+__size32 proc_0x00401790(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4);
 __size32 proc_0x004010a0();
-__size32 proc_0x00401700(union { __size16 *; __size32; } param1, unsigned char param2, int param3);
+__size32 proc_0x00401700(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3);
 __size32 proc_0x00401740(__size32 param1, unsigned int param2, unsigned int param3);
 __size32 proc_0x00401070(union { __size32; __size32 *; } param1);
 __size32 proc_0x00401040(union { __size32; __size32 *; } param1);
@@ -25,14 +25,14 @@ __size32 proc_0x00401040(union { __size32; __size32 *; } param1);
 void proc_0x00401940(int param1, int param2)
 {
     __size32 eax; 		// r24
-    int eax_1; 		// r24{0}
-    int eax_2; 		// r24{0}
+    int eax_1; 		// r24{7}
+    int eax_2; 		// r24{8}
     int esi; 		// r30
-    int esi_1; 		// r30{0}
-    int esi_4; 		// r30{0}
-    int local2; 		// esi{0}
+    int esi_1; 		// r30{10}
+    int esi_4; 		// r30{13}
+    int local2; 		// esi{19}
 
-    if (global_0x00405058 == 0xbb40e64e) {
+    if (global_0x00405058 == 0xbb40e64e || (global_0x00405058 & ~0xffff) == 0) {
         GetSystemTimeAsFileTime();
         eax_1 = GetCurrentProcessId();
         eax_2 = GetCurrentThreadId();
@@ -44,8 +44,7 @@ void proc_0x00401940(int param1, int param2)
         local2 = esi_4;
         if ((esi_1 ^ eax) != 0xbb40e64e) {
             if (((esi_1 ^ eax) & ~0xffff) == 0) {
-                eax = (esi_1 ^ eax | 0x4711) * 0x10000;
-                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) * 0x10000;
+                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) << 16;
                 local2 = esi;
             }
         }
@@ -112,18 +111,18 @@ void proc_0x004014c6(__size32 param1, __size32 param2, __size32 param3)
     __size32 eax; 		// r24
     __size32 ebp; 		// r29
     __size32 ebx; 		// r27
-    unsigned int ecx_1; 		// r25{0}
-    int ecx_4; 		// r25{0}
+    unsigned int ecx_1; 		// r25{14}
+    int ecx_4; 		// r25{15}
     __size32 edi; 		// r31
     __size32 esi; 		// r30
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
-    __size32 esp_3; 		// r28{0}
+    __size32 esp_1; 		// r28{4}
+    __size32 esp_2; 		// r28{18}
+    __size32 esp_3; 		// r28{8}
     __size32 esp_6; 		// r28{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// esp_3{0}
-    __size32 local5; 		// param2{0}
-    __size32 local6; 		// param3{0}
+    __size32 local3; 		// param1{7}
+    __size32 local4; 		// esp_3{8}
+    __size32 local5; 		// param2{10}
+    __size32 local6; 		// param3{11}
 
     eax = proc_0x00401860(20, param1, param2, param3); /* Warning: also results in esp_1, ebp */
     local3 = param1;
@@ -170,12 +169,12 @@ void _start()
     int edx; 		// r26
     __size32 esi; 		// r30
     int esp; 		// r28
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
+    __size32 esp_1; 		// r28{14}
+    __size32 esp_2; 		// r28{64}
     __size32 local0; 		// m[esp - 4]
     int local1; 		// m[esp - 8]
     unsigned int local2; 		// m[esp - 12]
-    __size32 local3; 		// esp{0}
+    __size32 local3; 		// esp{71}
 
     proc_0x00401940(*(%esp - 20), *(%esp - 16));
     esp = proc_0x00401860(16, ebx, esi, edi); /* Warning: also results in ebp */
@@ -196,16 +195,12 @@ void _start()
         *(__size32*)(esp_1 - 8) = esi;
         *(__size32*)(esp_1 - 12) = 0x4054d4;
         eax = InterlockedCompareExchange(); /* Warning: also results in edx */
-        if (eax == 0) {
-        }
-        else {
-            if (eax != esi) {
-                *(__size32*)(esp_1 - 16) = 1000;
-                esp = Sleep(*(esp_1 - 16));
+        if (eax != 0) {
+            if (eax == esi) {
+                break;
             }
-            else {
-                goto bb0x401260;
-            }
+            *(__size32*)(esp_1 - 16) = 1000;
+            esp = Sleep(*(esp_1 - 16));
         }
 bb0x401278:
         if (global_0x004054c4 != 1) {
@@ -279,27 +274,26 @@ bb0x4012c6:
         proc_0x004018a5(ebp);
         return;
     }
-bb0x401260:
     *(__size32*)(ebp - 28) = 1;
     goto bb0x401278;
 }
 
 /** address: 0x00401790 */
-__size32 proc_0x00401790(unsigned int param1, unsigned char param2, int param3, unsigned int param4)
+__size32 proc_0x00401790(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4)
 {
     __size16 ax; 		// r0
     __size16 cx; 		// r1
     unsigned char dl; 		// r10
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    int eax_10; 		// r24{0}
-    int eax_11; 		// r24{0}
-    int eax_12; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
-    int edx; 		// r26
+    __size32 eax_1; 		// r24{6}
+    int eax_10; 		// r24{12}
+    int eax_11; 		// r24{13}
+    int eax_12; 		// r24{19}
+    __size32 eax_4; 		// r24{8}
+    __size32 eax_7; 		// r24{10}
+    unsigned int edx; 		// r26
     int esp; 		// r28
-    int local3; 		// eax{0}
+    int local3; 		// eax{15}
 
     eax_1 = *0;
     *(int*)0 = (esp - 20);
@@ -330,96 +324,96 @@ bb0x401831:
 __size32 proc_0x004010a0()
 {
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    union { __size32; __size32 *; } eax_10; 		// r24{0}
-    __size32 eax_11; 		// r24{0}
-    __size32 eax_12; 		// r24{0}
-    __size32 eax_13; 		// r24{0}
-    union { __size32; __size32 *; } eax_14; 		// r24{0}
-    union { __size32; __size32 *; } eax_15; 		// r24{0}
-    __size32 eax_2; 		// r24{0}
-    __size32 eax_3; 		// r24{0}
-    union { __size32; __size32 *; } eax_4; 		// r24{0}
-    union { __size32; __size32 *; } eax_5; 		// r24{0}
-    __size32 eax_6; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
-    __size32 eax_8; 		// r24{0}
-    union { __size32; __size32 *; } eax_9; 		// r24{0}
+    __size32 eax_1; 		// r24{36}
+    union { __size32; __size32 *; } eax_10; 		// r24{41}
+    __size32 eax_11; 		// r24{44}
+    __size32 eax_12; 		// r24{44}
+    __size32 eax_13; 		// r24{44}
+    union { __size32; __size32 *; } eax_14; 		// r24{45}
+    union { __size32; __size32 *; } eax_15; 		// r24{45}
+    __size32 eax_2; 		// r24{36}
+    __size32 eax_3; 		// r24{36}
+    union { __size32; __size32 *; } eax_4; 		// r24{37}
+    union { __size32; __size32 *; } eax_5; 		// r24{37}
+    __size32 eax_6; 		// r24{40}
+    __size32 eax_7; 		// r24{40}
+    __size32 eax_8; 		// r24{40}
+    union { __size32; __size32 *; } eax_9; 		// r24{41}
     __size32 ebp; 		// r29
-    __size32 ebp_1; 		// r29{0}
-    __size32 ebp_2; 		// r29{0}
-    __size32 ebp_3; 		// r29{0}
+    __size32 ebp_1; 		// r29{4}
+    __size32 ebp_2; 		// r29{6}
+    __size32 ebp_3; 		// r29{7}
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
-    __size32 ebx_2; 		// r27{0}
-    union { __size32; __size32 *; } ebx_3; 		// r27{0}
-    union { __size32; __size32 *; } ebx_4; 		// r27{0}
-    union { __size32; __size32 *; } ebx_5; 		// r27{0}
+    __size32 ebx_1; 		// r27{11}
+    __size32 ebx_2; 		// r27{13}
+    union { __size32; __size32 *; } ebx_3; 		// r27{14}
+    union { __size32; __size32 *; } ebx_4; 		// r27{14}
+    union { __size32; __size32 *; } ebx_5; 		// r27{14}
     __size32 ebx_6; 		// r27{0}
     __size32 ebx_7; 		// r27{0}
     int ecx; 		// r25
     __size32 edi; 		// r31
-    __size32 edi_1; 		// r31{0}
-    __size32 edi_2; 		// r31{0}
-    __size32 edi_3; 		// r31{0}
+    __size32 edi_1; 		// r31{18}
+    __size32 edi_2; 		// r31{20}
+    __size32 edi_3; 		// r31{21}
     int edx; 		// r26
     __size32 esi; 		// r30
-    __size32 esi_1; 		// r30{0}
-    __size32 esi_2; 		// r30{0}
-    __size32 esi_3; 		// r30{0}
+    __size32 esi_1; 		// r30{26}
+    __size32 esi_2; 		// r30{28}
+    __size32 esi_3; 		// r30{30}
     int esp; 		// r28
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
-    __size32 esp_3; 		// r28{0}
+    __size32 esp_1; 		// r28{36}
+    __size32 esp_2; 		// r28{40}
+    __size32 esp_3; 		// r28{44}
     __size32 local0; 		// m[esp - 4]
     __size32 local1; 		// m[esp - 8]
-    int local10; 		// m[esp - 12]{0}
-    int local11; 		// m[esp - 12]{0}
-    int local12; 		// m[esp - 16]{0}
-    int local13; 		// m[esp - 16]{0}
-    int local14; 		// m[esp - 20]{0}
-    int local15; 		// m[esp - 20]{0}
-    int local16; 		// m[esp - 24]{0}
-    int local17; 		// m[esp - 24]{0}
-    int local18; 		// %flags{0}
-    int local19; 		// %flags{0}
+    int local10; 		// m[esp - 12]{36}
+    int local11; 		// m[esp - 12]{40}
+    int local12; 		// m[esp - 16]{36}
+    int local13; 		// m[esp - 16]{40}
+    int local14; 		// m[esp - 20]{36}
+    int local15; 		// m[esp - 20]{40}
+    int local16; 		// m[esp - 24]{36}
+    int local17; 		// m[esp - 24]{40}
+    int local18; 		// %flags{23}
+    int local19; 		// %flags{23}
     __size32 local2; 		// m[esp - 12]
-    int local20; 		// %flags{0}
-    int local21; 		// %flags{0}
-    int local22; 		// %flags{0}
-    int local23; 		// %flags{0}
-    int local24; 		// %flags{0}
-    int local25; 		// %flags{0}
-    int local26; 		// %ZF{0}
-    int local27; 		// %ZF{0}
-    int local28; 		// %ZF{0}
-    int local29; 		// %ZF{0}
+    int local20; 		// %flags{31}
+    int local21; 		// %flags{23}
+    int local22; 		// %flags{29}
+    int local23; 		// %flags{29}
+    int local24; 		// %flags{36}
+    int local25; 		// %flags{40}
+    int local26; 		// %ZF{23}
+    int local27; 		// %ZF{23}
+    int local28; 		// %ZF{32}
+    int local29; 		// %ZF{23}
     __size32 local3; 		// m[esp - 16]
-    int local30; 		// %ZF{0}
-    int local31; 		// %ZF{0}
-    int local32; 		// %ZF{0}
-    int local33; 		// %ZF{0}
-    int local34; 		// %CF{0}
-    int local35; 		// %CF{0}
-    int local36; 		// %CF{0}
-    int local37; 		// %CF{0}
-    int local38; 		// %CF{0}
-    int local39; 		// %CF{0}
+    int local30; 		// %ZF{29}
+    int local31; 		// %ZF{29}
+    int local32; 		// %ZF{36}
+    int local33; 		// %ZF{40}
+    int local34; 		// %CF{23}
+    int local35; 		// %CF{23}
+    int local36; 		// %CF{33}
+    int local37; 		// %CF{23}
+    int local38; 		// %CF{29}
+    int local39; 		// %CF{29}
     unsigned int local4; 		// m[esp - 20]
-    int local40; 		// %CF{0}
-    int local41; 		// %CF{0}
-    __size32 local42; 		// ebp_3{0}
-    union { __size32 *; __size32; } local43; 		// ebx_3{0}
-    __size32 local44; 		// edi_3{0}
-    __size32 local45; 		// esi_3{0}
-    int local46; 		// local20{0}
-    int local47; 		// local28{0}
-    int local48; 		// local36{0}
+    int local40; 		// %CF{36}
+    int local41; 		// %CF{40}
+    __size32 local42; 		// ebp_3{7}
+    union { __size32 *; __size32; } local43; 		// ebx_3{14}
+    __size32 local44; 		// edi_3{21}
+    __size32 local45; 		// esi_3{30}
+    int local46; 		// local20{31}
+    int local47; 		// local28{32}
+    int local48; 		// local36{33}
     unsigned int local5; 		// m[esp - 24]
-    int local6; 		// m[esp - 4]{0}
-    int local7; 		// m[esp - 4]{0}
-    int local8; 		// m[esp - 8]{0}
-    int local9; 		// m[esp - 8]{0}
+    int local6; 		// m[esp - 4]{36}
+    int local7; 		// m[esp - 4]{40}
+    int local8; 		// m[esp - 8]{36}
+    int local9; 		// m[esp - 8]{40}
 
     eax = ??2@YAPAXI@Z();
     if (eax == 0) {
@@ -494,15 +488,15 @@ __size32 proc_0x004010a0()
 }
 
 /** address: 0x00401700 */
-__size32 proc_0x00401700(union { __size16 *; __size32; } param1, unsigned char param2, int param3)
+__size32 proc_0x00401700(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3)
 {
     short ax; 		// r0
     short cx; 		// r1
     unsigned char dl; 		// r10
-    int eax; 		// r24
-    int edx; 		// r26
-    unsigned char local0; 		// param2{0}
-    int local1; 		// param3{0}
+    unsigned int eax; 		// r24
+    unsigned int edx; 		// r26
+    unsigned char local0; 		// param2{11}
+    unsigned int local1; 		// param3{13}
 
     cx = (unsigned short) param1;
     local0 = param2;
@@ -517,9 +511,9 @@ bb0x401712:
         else {
             cx = 267;
             dl =  (*(eax + param1 + 24) == 267) ? 1 : 0;
-            edx = 0 >> 8 & 0xffffff | (dl);
-            eax = edx;
-            ax = (unsigned short) edx;
+            edx = (dl);
+            eax = (dl);
+            ax = (unsigned short) (dl);
             local0 = dl;
             local1 = edx;
         }
@@ -537,18 +531,18 @@ __size32 proc_0x00401740(__size32 param1, unsigned int param2, unsigned int para
 {
     unsigned int eax; 		// r24
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_4; 		// r27{0}
+    unsigned int ebx_1; 		// r27{16}
+    unsigned int ebx_4; 		// r27{17}
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 edx_2; 		// r26{0}
+    __size32 edx_1; 		// r26{12}
+    __size32 edx_2; 		// r26{20}
     unsigned int esi; 		// r30
-    __size32 local0; 		// edx_1{0}
-    unsigned int local1; 		// param3{0}
-    unsigned int local2; 		// ebx{0}
-    __size32 local3; 		// edx{0}
-    __size32 local4; 		// edx{0}
+    __size32 local0; 		// edx_1{12}
+    unsigned int local1; 		// param3{13}
+    unsigned int local2; 		// ebx{19}
+    __size32 local3; 		// edx{23}
+    __size32 local4; 		// edx{26}
 
     ecx = *(param1 + 60);
     eax = *(unsigned short*)(ecx + param1 + 20);

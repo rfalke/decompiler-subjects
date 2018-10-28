@@ -6,9 +6,9 @@ int main(int argc, char *argv[])
 {
     unsigned char al; 		// r8
     void *eax; 		// r24
-    int eax_2; 		// r24{0}
-    int eax_4; 		// r24{0}
-    int eax_5; 		// r24{0}
+    int eax_2; 		// r24{31}
+    int eax_4; 		// r24{61}
+    int eax_5; 		// r24{75}
     int edx; 		// r26
     int esp; 		// r28
     int local0; 		// m[esp - 28]
@@ -78,12 +78,11 @@ bb0x8048448:
                 eax = esp + local0 - 124;
                 tmpb = *eax - 32;
                 if (*eax != 32) {
-                    goto bb0x8048531;
+                    break;
                 }
                 *(__size8*)(esp + local0 - 124) = 0;
                 local0--;
             }
-bb0x8048531:
             puts(&local8);
             local14++;
             goto bb0x8048403;

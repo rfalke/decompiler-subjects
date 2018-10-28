@@ -15,21 +15,21 @@ void _start()
 {
     __size32 eax; 		// r24
     FARPROC eax_1; 		// r24
-    FARPROC eax_2; 		// r24{0}
-    FARPROC eax_3; 		// r24{0}
-    FARPROC eax_4; 		// r24{0}
+    FARPROC eax_2; 		// r24{12}
+    FARPROC eax_3; 		// r24{16}
+    FARPROC eax_4; 		// r24{20}
     int esp; 		// r28
-    void *esp_1; 		// r28{0}
-    void *esp_2; 		// r28{0}
-    void *esp_3; 		// r28{0}
-    void *esp_4; 		// r28{0}
-    void *esp_5; 		// r28{0}
-    void *esp_6; 		// r28{0}
-    void *esp_7; 		// r28{0}
-    void *esp_8; 		// r28{0}
+    void *esp_1; 		// r28{2}
+    void *esp_2; 		// r28{5}
+    void *esp_3; 		// r28{8}
+    void *esp_4; 		// r28{12}
+    void *esp_5; 		// r28{16}
+    void *esp_6; 		// r28{20}
+    void *esp_7; 		// r28{24}
+    void *esp_8; 		// r28{27}
     LPCSTR local0; 		// m[esp - 4]
     union { __size32; HANDLE; } local1; 		// m[esp - 8]
-    void *local12; 		// esp{0}
+    void *local12; 		// esp{49}
     union { __size32; HANDLE; } local2; 		// m[esp - 44]
     DWORD local5; 		// m[esp - 32]
     union { __size32; HANDLE; } local6; 		// m[esp - 48]

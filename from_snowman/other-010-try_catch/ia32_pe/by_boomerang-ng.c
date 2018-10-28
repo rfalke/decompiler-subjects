@@ -10,37 +10,36 @@ void global_0x004064e8;
 void proc_0x004019a0(int param1, int param2);
 void _start();
 __size32 proc_0x004018c0(__size32 param1, __size32 param2, __size32 param3, __size32 param4);
-__size32 proc_0x004017f0(unsigned int param1, unsigned char param2, int param3, unsigned int param4);
+__size32 proc_0x004017f0(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4);
 __size32 proc_0x00401010();
 void proc_0x00401905(union { __size32; __size32 *; } param1);
-__size32 proc_0x00401760(union { __size16 *; __size32; } param1, unsigned char param2, int param3);
+__size32 proc_0x00401760(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3);
 __size32 proc_0x004017a0(__size32 param1, unsigned int param2, unsigned int param3);
 
 /** address: 0x004019a0 */
 void proc_0x004019a0(int param1, int param2)
 {
     __size32 eax; 		// r24
-    int eax_1; 		// r24{0}
-    int eax_2; 		// r24{0}
+    int eax_1; 		// r24{7}
+    int eax_2; 		// r24{8}
     int esi; 		// r30
-    int esi_1; 		// r30{0}
-    int esi_4; 		// r30{0}
-    int local2; 		// esi{0}
+    int esi_1; 		// r30{10}
+    int esi_4; 		// r30{13}
+    int local2; 		// esi{19}
 
-    if (global_0x00406020 == 0xbb40e64e) {
+    if (global_0x00406020 == 0xbb40e64e || (global_0x00406020 & ~0xffff) == 0) {
         GetSystemTimeAsFileTime();
-        eax_2 = GetCurrentProcessId();
-        eax = GetCurrentThreadId();
-        eax_1 = GetTickCount();
-        esi_1 = 0 ^ eax_2 ^ eax ^ eax_1;
+        eax_1 = GetCurrentProcessId();
+        eax_2 = GetCurrentThreadId();
+        eax = GetTickCount();
+        esi_1 = 0 ^ eax_1 ^ eax_2 ^ eax;
         QueryPerformanceCounter();
         eax = param2 ^ param1;
         esi_4 = esi_1 ^ eax;
         local2 = esi_4;
         if ((esi_1 ^ eax) != 0xbb40e64e) {
             if (((esi_1 ^ eax) & ~0xffff) == 0) {
-                eax = (esi_1 ^ eax | 0x4711) * 0x10000;
-                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) * 0x10000;
+                esi = esi_1 ^ eax | (esi_1 ^ eax | 0x4711) << 16;
                 local2 = esi;
             }
         }
@@ -72,12 +71,12 @@ void _start()
     int edx; 		// r26
     __size32 esi; 		// r30
     int esp; 		// r28
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
+    __size32 esp_1; 		// r28{15}
+    __size32 esp_2; 		// r28{65}
     __size32 local0; 		// m[esp - 4]
     int local1; 		// m[esp - 8]
     unsigned int local2; 		// m[esp - 12]
-    __size32 local3; 		// esp{0}
+    __size32 local3; 		// esp{73}
 
     proc_0x004019a0(*(%esp - 20), *(%esp - 16));
     esp = proc_0x004018c0(16, ebx, esi, edi); /* Warning: also results in ebp */
@@ -99,16 +98,12 @@ void _start()
         *(__size32*)(esp_1 - 8) = esi;
         *(__size32*)(esp_1 - 12) = 0x4064cc;
         eax = InterlockedCompareExchange(); /* Warning: also results in edx */
-        if (eax == 0) {
-        }
-        else {
-            if (eax != esi) {
-                *(__size32*)(esp_1 - 16) = 1000;
-                esp = Sleep(*(esp_1 - 16));
+        if (eax != 0) {
+            if (eax == esi) {
+                break;
             }
-            else {
-                goto bb0x4011b2;
-            }
+            *(__size32*)(esp_1 - 16) = 1000;
+            esp = Sleep(*(esp_1 - 16));
         }
 bb0x4011ca:
         if (global_0x004064bc != 1) {
@@ -182,7 +177,6 @@ bb0x401218:
         proc_0x00401905(ebp);
         return;
     }
-bb0x4011b2:
     *(__size32*)(ebp - 28) = 1;
     goto bb0x4011ca;
 }
@@ -203,21 +197,21 @@ __size32 proc_0x004018c0(__size32 param1, __size32 param2, __size32 param3, __si
 }
 
 /** address: 0x004017f0 */
-__size32 proc_0x004017f0(unsigned int param1, unsigned char param2, int param3, unsigned int param4)
+__size32 proc_0x004017f0(unsigned int param1, unsigned char param2, unsigned int param3, unsigned int param4)
 {
     __size16 ax; 		// r0
     __size16 cx; 		// r1
     unsigned char dl; 		// r10
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    int eax_10; 		// r24{0}
-    int eax_11; 		// r24{0}
-    int eax_12; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
-    int edx; 		// r26
+    __size32 eax_1; 		// r24{6}
+    int eax_10; 		// r24{12}
+    int eax_11; 		// r24{13}
+    int eax_12; 		// r24{19}
+    __size32 eax_4; 		// r24{8}
+    __size32 eax_7; 		// r24{10}
+    unsigned int edx; 		// r26
     int esp; 		// r28
-    int local3; 		// eax{0}
+    int local3; 		// eax{15}
 
     eax_1 = *0;
     *(int*)0 = (esp - 20);
@@ -267,15 +261,15 @@ void proc_0x00401905(union { __size32; __size32 *; } param1)
 }
 
 /** address: 0x00401760 */
-__size32 proc_0x00401760(union { __size16 *; __size32; } param1, unsigned char param2, int param3)
+__size32 proc_0x00401760(union { __size16 *; __size32; } param1, unsigned char param2, unsigned int param3)
 {
     short ax; 		// r0
     short cx; 		// r1
     unsigned char dl; 		// r10
-    int eax; 		// r24
-    int edx; 		// r26
-    unsigned char local0; 		// param2{0}
-    int local1; 		// param3{0}
+    unsigned int eax; 		// r24
+    unsigned int edx; 		// r26
+    unsigned char local0; 		// param2{11}
+    unsigned int local1; 		// param3{13}
 
     cx = (unsigned short) param1;
     local0 = param2;
@@ -290,9 +284,9 @@ bb0x401772:
         else {
             cx = 267;
             dl =  (*(eax + param1 + 24) == 267) ? 1 : 0;
-            edx = 0 >> 8 & 0xffffff | (dl);
-            eax = edx;
-            ax = (unsigned short) edx;
+            edx = (dl);
+            eax = (dl);
+            ax = (unsigned short) (dl);
             local0 = dl;
             local1 = edx;
         }
@@ -310,18 +304,18 @@ __size32 proc_0x004017a0(__size32 param1, unsigned int param2, unsigned int para
 {
     unsigned int eax; 		// r24
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_4; 		// r27{0}
+    unsigned int ebx_1; 		// r27{16}
+    unsigned int ebx_4; 		// r27{17}
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 edx_2; 		// r26{0}
+    __size32 edx_1; 		// r26{12}
+    __size32 edx_2; 		// r26{20}
     unsigned int esi; 		// r30
-    __size32 local0; 		// edx_1{0}
-    unsigned int local1; 		// param3{0}
-    unsigned int local2; 		// ebx{0}
-    __size32 local3; 		// edx{0}
-    __size32 local4; 		// edx{0}
+    __size32 local0; 		// edx_1{12}
+    unsigned int local1; 		// param3{13}
+    unsigned int local2; 		// ebx{19}
+    __size32 local3; 		// edx{23}
+    __size32 local4; 		// edx{26}
 
     ecx = *(param1 + 60);
     eax = *(unsigned short*)(ecx + param1 + 20);

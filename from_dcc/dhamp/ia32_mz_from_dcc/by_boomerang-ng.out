@@ -1,175 +1,177 @@
-Level | File                                    | Line | Message
+Level | File                                    | Message
 ====================================================================================================
-Msg   | src/boomerang/util/log/Log.cpp          |  150 | This is Boomerang v0.3.99-alpha-1757-gd6a5867
-Msg   | src/boomerang/util/log/Log.cpp          |  151 | Log initialized.
-Msg   | src/boomerang/core/Project.cpp          |  321 | Loading plugins...
-Msg   | src/boomerang/core/Project.cpp          |  350 | Loaded plugins:
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS4GW loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   ELF32 loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   DOS Exe loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   HP SOM loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Mach-O executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Palm OS executable loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |  353 |   Win32 PE loader plugin v0.3.99-alpha-1757-gd6a5867 (by 'Boomerang developers')
-Msg   | src/boomerang/core/Project.cpp          |   98 | Loading binary file 'from_dcc/dhamp/ia32_mz_from_dcc/subject.exe'
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 1: Offset 1 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 7: Offset 8061954 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 8: Offset 8061934 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 9: Offset 8061915 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 10: Offset 8061553 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 11: Offset 8061370 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 12: Offset 8061340 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 13: Offset 8061323 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 14: Offset 8061313 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 15: Offset 8061282 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 16: Offset 8061258 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 17: Offset 8061222 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 18: Offset 8061182 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 19: Offset 8061163 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 20: Offset 8061137 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 21: Offset 8061115 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 22: Offset 8061088 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 23: Offset 8061070 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 24: Offset 8061055 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 25: Offset 8061038 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 26: Offset 8061027 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 27: Offset 8061007 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 28: Offset 8060954 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 29: Offset 8062224 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 30: Offset 8062194 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 31: Offset 8062139 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 32: Offset 8062128 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 33: Offset 8062105 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 43: Offset 95814087 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 44: Offset 95814184 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 45: Offset 95814178 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 46: Offset 95814172 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 47: Offset 95814166 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 48: Offset 95814160 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 49: Offset 95814154 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 50: Offset 57999543 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 51: Offset 57999534 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 52: Offset 57999526 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 53: Offset 58720273 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 54: Offset 59572365 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 55: Offset 102105094 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 56: Offset 61341943 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 57: Offset 61341973 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 58: Offset 61342018 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 59: Offset 95814516 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 60: Offset 95814512 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 61: Offset 95814508 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 62: Offset 63569968 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 66: Offset 63963899 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 67: Offset 63963752 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 68: Offset 63963713 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 69: Offset 63963566 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 70: Offset 63963456 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 71: Offset 63963401 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 72: Offset 63963369 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 73: Offset 63963306 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 74: Offset 63963194 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 75: Offset 63963153 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 76: Offset 67174709 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 77: Offset 67174688 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 78: Offset 67174663 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 79: Offset 67174589 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 80: Offset 67174568 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 81: Offset 67174482 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 82: Offset 68616229 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 83: Offset 68747896 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 84: Offset 68747700 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 85: Offset 68747682 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 86: Offset 68747630 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 87: Offset 68747579 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 88: Offset 68747483 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 89: Offset 71696414 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 90: Offset 71696497 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 91: Offset 71696511 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 92: Offset 71696556 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 93: Offset 71696600 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 94: Offset 71696650 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 95: Offset 71696670 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 96: Offset 71696713 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 97: Offset 71696759 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 98: Offset 73400397 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 99: Offset 73728267 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 100: Offset 73728239 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 101: Offset 73728199 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 102: Offset 73728094 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 103: Offset 75038766 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 104: Offset 75301106 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 105: Offset 75301086 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 106: Offset 75301020 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 107: Offset 75300990 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 108: Offset 76611780 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 109: Offset 76611773 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 110: Offset 76611710 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 111: Offset 76611684 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 112: Offset 76611646 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 113: Offset 77463601 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 114: Offset 77463583 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 115: Offset 77660200 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 116: Offset 77791287 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 117: Offset 78053423 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 118: Offset 78315837 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 119: Offset 78315738 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 120: Offset 78315572 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 121: Offset 79757349 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 122: Offset 79757389 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 123: Offset 80085011 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 124: Offset 80347176 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 125: Offset 81526952 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 126: Offset 81526882 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 127: Offset 81526864 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 128: Offset 81526835 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 129: Offset 82247713 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 130: Offset 82640932 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 132: Offset 102105098 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 133: Offset 102105102 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 134: Offset 102105106 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 135: Offset 102105110 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 136: Offset 82772169 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 137: Offset 83755040 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 138: Offset 83755014 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 139: Offset 83886618 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 140: Offset 83886586 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 141: Offset 83886398 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 142: Offset 83886367 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 143: Offset 83886289 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 144: Offset 83886187 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 145: Offset 83886109 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 146: Offset 86508240 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 147: Offset 86508528 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 148: Offset 92209939 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 149: Offset 92209914 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 150: Offset 92209778 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 151: Offset 92209719 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 152: Offset 92209663 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 153: Offset 92209646 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 154: Offset 92209590 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 155: Offset 92209569 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 156: Offset 92209492 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 157: Offset 92209477 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 158: Offset 92209445 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 159: Offset 92209411 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 160: Offset 92209375 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 161: Offset 92209194 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 162: Offset 92209168 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 163: Offset 95485994 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 164: Offset 95485967 is not valid
-Warn  | src/boomerang-loaders/exe/dos/ExeBinary |  177 | Cannot read Exe relocation entry 165: Offset 95682577 is not valid
-Msg   | src/boomerang/core/Project.cpp          |  292 | Decoding entry point...
-Msg   | src/boomerang/core/Project.cpp          |  308 | Decoding anything undecoded...
-Msg   | src/boomerang/frontend/DefaultFrontEnd. |  156 | Looking for undecoded procedures to decode...
-Msg   | src/boomerang/core/Project.cpp          |  184 | Found 0 procs
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  450 | Decompiling...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  191 | Removing unused returns...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   98 | Performing global type analysis...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  198 | Transforming from SSA form...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |  127 | Removing unused global variables...
-Msg   | src/boomerang/decomp/ProgDecompiler.cpp |   92 | Decompilation finished.
-Msg   | src/boomerang/core/Project.cpp          |  227 | Generating code...
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  460 | Output written to '_output'
-Msg   | src/boomerang-cli/CommandlineDriver.cpp |  468 | Completed in some time
+Msg   | src/boomerang/util/log/Log.cpp          | This is Boomerang v0.3.99-alpha-1914-ged7a3e1
+Msg   | src/boomerang/util/log/Log.cpp          | Log initialized.
+Msg   | src/boomerang/core/Project.cpp          | Loading plugins...
+Msg   | src/boomerang/core/Project.cpp          | Loaded plugins:
+Msg   | src/boomerang/core/Project.cpp          |   DOS4GW loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   ELF32 loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   DOS Exe loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   HP SOM loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Mach-O executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Palm OS executable loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          |   Win32 PE loader plugin v0.3.99-alpha-1914-ged7a3e1 (by 'Boomerang developers')
+Msg   | src/boomerang/core/Project.cpp          | Loading binary file 'from_dcc/dhamp/ia32_mz_from_dcc/subject.exe'
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 1: Offset 1 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 7: Offset 8061954 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 8: Offset 8061934 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 9: Offset 8061915 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 10: Offset 8061553 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 11: Offset 8061370 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 12: Offset 8061340 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 13: Offset 8061323 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 14: Offset 8061313 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 15: Offset 8061282 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 16: Offset 8061258 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 17: Offset 8061222 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 18: Offset 8061182 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 19: Offset 8061163 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 20: Offset 8061137 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 21: Offset 8061115 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 22: Offset 8061088 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 23: Offset 8061070 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 24: Offset 8061055 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 25: Offset 8061038 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 26: Offset 8061027 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 27: Offset 8061007 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 28: Offset 8060954 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 29: Offset 8062224 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 30: Offset 8062194 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 31: Offset 8062139 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 32: Offset 8062128 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 33: Offset 8062105 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 43: Offset 95814087 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 44: Offset 95814184 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 45: Offset 95814178 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 46: Offset 95814172 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 47: Offset 95814166 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 48: Offset 95814160 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 49: Offset 95814154 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 50: Offset 57999543 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 51: Offset 57999534 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 52: Offset 57999526 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 53: Offset 58720273 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 54: Offset 59572365 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 55: Offset 102105094 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 56: Offset 61341943 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 57: Offset 61341973 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 58: Offset 61342018 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 59: Offset 95814516 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 60: Offset 95814512 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 61: Offset 95814508 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 62: Offset 63569968 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 66: Offset 63963899 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 67: Offset 63963752 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 68: Offset 63963713 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 69: Offset 63963566 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 70: Offset 63963456 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 71: Offset 63963401 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 72: Offset 63963369 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 73: Offset 63963306 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 74: Offset 63963194 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 75: Offset 63963153 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 76: Offset 67174709 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 77: Offset 67174688 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 78: Offset 67174663 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 79: Offset 67174589 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 80: Offset 67174568 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 81: Offset 67174482 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 82: Offset 68616229 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 83: Offset 68747896 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 84: Offset 68747700 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 85: Offset 68747682 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 86: Offset 68747630 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 87: Offset 68747579 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 88: Offset 68747483 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 89: Offset 71696414 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 90: Offset 71696497 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 91: Offset 71696511 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 92: Offset 71696556 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 93: Offset 71696600 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 94: Offset 71696650 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 95: Offset 71696670 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 96: Offset 71696713 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 97: Offset 71696759 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 98: Offset 73400397 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 99: Offset 73728267 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 100: Offset 73728239 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 101: Offset 73728199 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 102: Offset 73728094 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 103: Offset 75038766 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 104: Offset 75301106 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 105: Offset 75301086 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 106: Offset 75301020 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 107: Offset 75300990 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 108: Offset 76611780 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 109: Offset 76611773 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 110: Offset 76611710 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 111: Offset 76611684 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 112: Offset 76611646 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 113: Offset 77463601 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 114: Offset 77463583 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 115: Offset 77660200 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 116: Offset 77791287 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 117: Offset 78053423 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 118: Offset 78315837 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 119: Offset 78315738 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 120: Offset 78315572 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 121: Offset 79757349 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 122: Offset 79757389 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 123: Offset 80085011 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 124: Offset 80347176 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 125: Offset 81526952 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 126: Offset 81526882 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 127: Offset 81526864 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 128: Offset 81526835 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 129: Offset 82247713 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 130: Offset 82640932 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 132: Offset 102105098 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 133: Offset 102105102 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 134: Offset 102105106 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 135: Offset 102105110 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 136: Offset 82772169 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 137: Offset 83755040 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 138: Offset 83755014 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 139: Offset 83886618 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 140: Offset 83886586 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 141: Offset 83886398 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 142: Offset 83886367 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 143: Offset 83886289 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 144: Offset 83886187 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 145: Offset 83886109 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 146: Offset 86508240 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 147: Offset 86508528 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 148: Offset 92209939 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 149: Offset 92209914 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 150: Offset 92209778 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 151: Offset 92209719 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 152: Offset 92209663 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 153: Offset 92209646 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 154: Offset 92209590 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 155: Offset 92209569 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 156: Offset 92209492 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 157: Offset 92209477 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 158: Offset 92209445 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 159: Offset 92209411 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 160: Offset 92209375 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 161: Offset 92209194 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 162: Offset 92209168 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 163: Offset 95485994 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 164: Offset 95485967 is not valid
+Warn  | src/boomerang-loaders/exe/dos/ExeBinary | Cannot read Exe relocation entry 165: Offset 95682577 is not valid
+Msg   | src/boomerang/ssl/RTLInstDict.cpp       | Loading machine specifications from 'BOOMERANGSRCDIR/build/out/share/boomerang/ssl/pentium.ssl'...
+Msg   | src/boomerang/db/Prog.cpp               | Reading library signatures...
+Msg   | src/boomerang/core/Project.cpp          | Decoding entry point...
+Msg   | src/boomerang/core/Project.cpp          | Decoding anything undecoded...
+Msg   | src/boomerang/frontend/DefaultFrontEnd. | Looking for undecoded procedures to decode...
+Msg   | src/boomerang/core/Project.cpp          | Found 0 procs
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Decompiling...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused returns...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Performing global type analysis...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Transforming from SSA form...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Removing unused global variables...
+Msg   | src/boomerang/decomp/ProgDecompiler.cpp | Decompilation finished.
+Msg   | src/boomerang/core/Project.cpp          | Generating code...
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Output written to '_output'
+Msg   | src/boomerang-cli/CommandlineDriver.cpp | Completed in some time

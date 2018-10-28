@@ -16,11 +16,11 @@ void _start();
 __size8 proc_0x00401000()
 {
     char bl; 		// r11
-    char bl_1; 		// r11{0}
-    char bl_4; 		// r11{0}
+    char bl_1; 		// r11{3}
+    char bl_4; 		// r11{9}
     __size32 edx; 		// r26
-    union { __size32; char *; } edx_1; 		// r26{0}
-    char local0; 		// bl_1{0}
+    union { __size32; char *; } edx_1; 		// r26{4}
+    char local0; 		// bl_1{3}
 
     edx = global_0x004020da;
     bl = 0;
@@ -38,6 +38,10 @@ __size8 proc_0x00401000()
     return (unsigned char)bl_1 >> 1; /* WARNING: Also returning: bl := bl_1 + 1, edx := edx_1 + 4 */
 }
 
+/** address: 0x0040101b */
+void proc_0x0040101b()
+{
+}
 
 /** address: 0x00401172 */
 void _start()
@@ -45,8 +49,8 @@ void _start()
     __size8 al; 		// r8
     __size8 bl; 		// r11
     __size32 eax; 		// r24
-    HWND eax_1; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
+    HWND eax_1; 		// r24{15}
+    __size32 eax_4; 		// r24{18}
     int ecx; 		// r25
     int edx; 		// r26
     int esp; 		// r28

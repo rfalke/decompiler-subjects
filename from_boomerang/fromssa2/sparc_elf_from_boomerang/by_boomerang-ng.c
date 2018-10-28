@@ -3,10 +3,10 @@ int main(int argc, char *argv[]);
 /** address: 0x00010684 */
 int main(int argc, char *argv[])
 {
-    __size32 local0; 		// o0_1{0}
+    __size32 local0; 		// o0_1{2}
     int o0; 		// r8
-    __size32 o0_1; 		// r8{0}
-    __size32 o0_2; 		// r8{0}
+    __size32 o0_1; 		// r8{2}
+    __size32 o0_2; 		// r8{4}
 
     o0 = 0;
     local0 = o0;

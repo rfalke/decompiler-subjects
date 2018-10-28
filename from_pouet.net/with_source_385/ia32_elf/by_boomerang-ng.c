@@ -8,7 +8,7 @@ int main(int argc, char *argv[]);
 void init();
 void FontInit();
 void MikmodInit();
-void XPrint(union { char[] *; __size32; } param1);
+void XPrint(union { char *; __size32; } param1);
 
 /** address: 0x08048cbe */
 int main(int argc, char *argv[])
@@ -91,7 +91,7 @@ void MikmodInit()
 }
 
 /** address: 0x08048a98 */
-void XPrint(union { char[] *; __size32; } param1)
+void XPrint(union { char *; __size32; } param1)
 {
     strlen(param1);
     XDrawString();

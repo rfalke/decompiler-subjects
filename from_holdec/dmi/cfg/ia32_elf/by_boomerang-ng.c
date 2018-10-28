@@ -9,7 +9,7 @@ void basic_7_for_loop();
 void basic_8_forever_loop(__size32 param1);
 void basic_9_dead_block();
 void intermediate_1_short_circuit_and(int param1, int param2);
-void intermediate_2_short_circuit_or();
+void intermediate_2_short_circuit_or(int param1, int param2);
 void intermediate_10_loop_with_one_break(__size32 param1);
 void intermediate_11_loop_with_two_breaks(int param1);
 void intermediate_12_loop_with_break_and_block(__size32 param1);
@@ -36,8 +36,7 @@ int main(int argc, char *argv[])
     __size32 ebp; 		// r29
     int ebx; 		// r27
     __size32 ecx; 		// r25
-    int edi_1; 		// r31{0}
-    __size32 edi_4; 		// r31{0}
+    unsigned int edi; 		// r31
     __size32 edx; 		// r26
     int esi; 		// r30
     union { __size32; __size32 *; } esp; 		// r28
@@ -53,9 +52,8 @@ int main(int argc, char *argv[])
     basic_8_forever_loop(argc);
     basic_9_dead_block();
     al =  (argc > 4) ? 1 : 0;
-    edi_1 = 0 >> 8 & 0xffffff | (al);
-    intermediate_1_short_circuit_and(edi_1,  ~argc & 0x1);
-    intermediate_2_short_circuit_or();
+    intermediate_1_short_circuit_and((al),  ~argc & 0x1);
+    intermediate_2_short_circuit_or((al),  ~argc & 0x1);
     intermediate_10_loop_with_one_break(argc);
     intermediate_11_loop_with_two_breaks(argc);
     intermediate_12_loop_with_break_and_block(argc);
@@ -63,7 +61,7 @@ int main(int argc, char *argv[])
     intermediate_14_loop_with_two_continues(argc);
     intermediate_15_loop_with_continue_and_block(argc);
     eax = intermediate_16_loop_with_breaks_and_continues(argc); /* Warning: also results in ecx, edx */
-    intermediate_17_forever_loop_with_extra_statement(al, eax, ecx, edx, argc, esp - 8,  ~argc & 0x1, edi_1, SUBFLAGS32(argc, 4, argc - 4), argc == 4, (unsigned int)argc < 4, argc, argv, local5, ebp, edi_4, esi, ebx, esp + 4, argv,  ~argc & 0x1, argc, pc);
+    intermediate_17_forever_loop_with_extra_statement(al, eax, ecx, edx, argc, esp - 8,  ~argc & 0x1, (al), SUBFLAGS32(argc, 4, argc - 4), argc == 4, (unsigned int)argc < 4, argc, argv, local5, ebp, edi, esi, ebx, esp + 4, argv,  ~argc & 0x1, argc, pc);
 }
 
 /** address: 0x080485b0 */
@@ -71,8 +69,6 @@ void basic_1_if(__size32 param1)
 {
     if (param1 == 42) {
         puts("if block");
-    }
-    else {
     }
     return;
 }
@@ -94,14 +90,10 @@ void basic_3_if_elseif(int param1)
 {
     if (param1 == 42) {
         puts("if block");
-bb0x8048631:
     }
     else {
         if (param1 == 43) {
             puts("else-if block");
-        }
-        else {
-            goto bb0x8048631;
         }
     }
     return;
@@ -112,7 +104,6 @@ void basic_4_if_elseif_else(__size32 param1)
 {
     if (param1 == 42) {
         puts("if block");
-bb0x80486a1:
     }
     else {
         if (param1 == 43) {
@@ -120,7 +111,6 @@ bb0x80486a1:
         }
         else {
             puts("else block");
-            goto bb0x80486a1;
         }
     }
     return;
@@ -145,7 +135,7 @@ void basic_5_head_controlled_loop(__size32 param1)
 void basic_6_tail_controlled_loop(__size32 param1)
 {
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
+    __size32 ebx_1; 		// r27{5}
 
     ebx = param1;
     puts("before");
@@ -162,13 +152,17 @@ void basic_6_tail_controlled_loop(__size32 param1)
 void basic_7_for_loop()
 {
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
+    __size32 ebx_1; 		// r27{2}
+    __size32 ebx_2; 		// r27{3}
+    __size32 local1; 		// ebx_1{2}
 
     ebx = 48;
+    local1 = ebx;
     do {
-        ebx_1 = ebx;
-        ebx = ebx_1 + 1;
-        putchar();
+        ebx_1 = local1;
+        ebx_2 = ebx_1 + 1;
+        putchar(ebx_1);
+        local1 = ebx_2;
     } while (ebx_1 + 1 != 58);
     return;
 }
@@ -205,13 +199,13 @@ void intermediate_1_short_circuit_and(int param1, int param2)
 }
 
 /** address: 0x08048750 */
-void intermediate_2_short_circuit_or()
+void intermediate_2_short_circuit_or(int param1, int param2)
 {
-    rand();
-    if () {
+    int eax; 		// r24
+
+    eax = rand();
+    if (param1 != 0 || eax == param2) {
         puts("at least one is true");
-    }
-    else {
     }
     return;
 }
@@ -224,9 +218,10 @@ void intermediate_10_loop_with_one_break(__size32 param1)
     for(;;) {
         puts("head");
         eax = time(0);
-        if (eax != param1) {
-            puts("tail");
+        if (eax == param1) {
+            break;
         }
+        puts("tail");
     }
     return;
 }
@@ -236,7 +231,7 @@ void intermediate_11_loop_with_two_breaks(int param1)
 {
     time_t eax; 		// r24
     int ebx; 		// r27
-    int ebx_1; 		// r27{0}
+    int ebx_1; 		// r27{8}
 
     ebx = param1;
     if (param1 > 0) {
@@ -249,8 +244,6 @@ void intermediate_11_loop_with_two_breaks(int param1)
                 ebx = ebx_1 - 1;
             }
         } while (ebx_1 == 1);
-    }
-    else {
     }
     return;
 }
@@ -266,9 +259,10 @@ void intermediate_12_loop_with_break_and_block(__size32 param1)
         if (eax != param1) {
             puts("barrier");
             eax = rand();
-            if (param1 != eax) {
-                puts("tail");
+            if (param1 == eax) {
+                return;
             }
+            puts("tail");
         }
         else {
             goto bb0x8048889;
@@ -412,36 +406,35 @@ void intermediate_30_switch_case(unsigned int param1)
         switch(param1) {
         case 0:
             puts("0");
-            goto bb0x8048b50;
+            break;
         case 1:
             puts("1");
-            goto bb0x8048b50;
+            break;
         case 2:
 bb0x8048bb0:
             puts("2 or 3");
-            goto bb0x8048b50;
+            break;
         case 3:
             goto bb0x8048bb0;
         case 4:
             puts("4");
-            goto bb0x8048b50;
+            break;
         case 5:
             puts("5");
-            goto bb0x8048b50;
+            break;
         case 6:
             puts("6");
-            goto bb0x8048b50;
+            break;
         case 7:
             puts("7 with fall through");
         case 8:
             puts("8");
-            goto bb0x8048b50;
+            break;
         case 9:
             puts("9");
-            goto bb0x8048b50;
+            break;
         }
     }
-bb0x8048b50:
     puts("common exit");
     return;
 }
@@ -451,10 +444,10 @@ void advanced_1_loop_with_multiple_entries(int param1)
 {
     int ebx; 		// r27
     int esp; 		// r28
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
-    __size32 local1; 		// esp{0}
-    __size32 local2; 		// esp{0}
+    __size32 esp_1; 		// r28{3}
+    __size32 esp_4; 		// r28{1}
+    __size32 local1; 		// esp{8}
+    __size32 local2; 		// esp{15}
 
     esp_1 = (esp_4 - 12);
     ebx = param1;
@@ -493,7 +486,7 @@ void advanced_2_loop_with_multiple_exits(int param1)
 {
     int eax; 		// r24
     int ebx; 		// r27
-    int ebx_1; 		// r27{0}
+    int ebx_1; 		// r27{10}
 
     ebx = param1;
     if (param1 > 0) {
@@ -553,9 +546,9 @@ bb0x8048d78:
 void advanced_11_nested_loops_complex_condition(int param1)
 {
     int eax; 		// r24
-    time_t eax_1; 		// r24{0}
-    time_t eax_4; 		// r24{0}
-    time_t eax_7; 		// r24{0}
+    time_t eax_1; 		// r24{4}
+    time_t eax_4; 		// r24{13}
+    time_t eax_7; 		// r24{16}
 
     puts("b0");
     eax_1 = time(0);
@@ -575,10 +568,8 @@ bb0x8048e31:
                 puts("b1");
                 eax_7 = time(0);
             }
-            goto bb0x8048de5;
         } while (eax_7 == eax_1 + 1);
     }
-bb0x8048de5:
     puts("b9");
     return;
 }
@@ -604,11 +595,9 @@ bb0x8048ea0:
                 goto bb0x8048ea0;
             }
         }
-bb0x8048ee0:
-        puts("b4");
-        return;
     } while (eax == param1 + 1);
-    goto bb0x8048ee0;
+    puts("b4");
+    return;
 }
 
 /** address: 0x08048f30 */

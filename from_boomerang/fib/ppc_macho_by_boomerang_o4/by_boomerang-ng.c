@@ -17,7 +17,7 @@ __size32 fib(int param1)
     __size32 g29; 		// r29
     int g3; 		// r3
     int g30; 		// r30
-    int local5; 		// param1{0}
+    int local5; 		// param1{8}
 
     g30 = param1;
     local5 = param1;

@@ -4,9 +4,9 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
     int local0; 		// m[g1 + 24]
-    int local1; 		// m[g1 + 24]{0}
-    int local2; 		// m[g1 + 24]{0}
-    int local3; 		// local0{0}
+    int local1; 		// m[g1 + 24]{13}
+    int local2; 		// m[g1 + 24]{12}
+    int local3; 		// local0{20}
 
     local0 = argc;
     if (argc == 5) {
@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
             local3 = local1;
             if (local2 <= 1) {
                 if (local1 == 12) {
-bb0x1db4:
-                    return 13;
+                    break;
                 }
 bb0x1d74:
                 local0 = local3;
@@ -31,21 +30,13 @@ bb0x1d08:
                 }
                 goto bb0x1d74;
             }
-            return 13;
         } while (local0 > 0);
     }
     else {
         if (argc > 5) {
             if (argc == 9) {
-                if (argc != 10) {
-                    goto bb0x1db4;
+                if (argc == 10) {
                 }
-                else {
-                    goto bb0x1db4;
-                }
-                goto bb0x1db4;
-            }
-            else {
             }
         }
         else {
@@ -53,8 +44,6 @@ bb0x1d08:
                 do {
                 } while (argc > 0);
                 goto bb0x1d08;
-            }
-            else {
             }
         }
     }

@@ -20,11 +20,11 @@ void _start();
 __size8 proc_0x00401000()
 {
     unsigned char bl; 		// r11
-    unsigned char bl_1; 		// r11{0}
-    unsigned char bl_2; 		// r11{0}
+    unsigned char bl_1; 		// r11{3}
+    unsigned char bl_4; 		// r11{10}
     __size32 edx; 		// r26
-    union { __size32; unsigned char *; } edx_1; 		// r26{0}
-    unsigned char local0; 		// bl_1{0}
+    union { __size32; unsigned char *; } edx_1; 		// r26{4}
+    unsigned char local0; 		// bl_1{3}
 
     edx = global_0x00402104;
     bl = 0;
@@ -38,13 +38,21 @@ __size8 proc_0x00401000()
         *(unsigned char*)(edx_1 + 1) = bl_1 * 2;
         *(unsigned char*)(edx_1 + 2) = bl_1 * 2;
         edx = edx_1 + 4;
-        bl_2 = bl_1 + 1;
-        local0 = bl_2;
+        bl_4 = bl_1 + 1;
+        local0 = bl_4;
     } while (bl_1 != -1);
     return bl_1 * 2; /* WARNING: Also returning: bl := bl_1 + 1, edx := edx_1 + 4 */
 }
 
+/** address: 0x00401020 */
+void proc_0x00401020()
+{
+}
 
+/** address: 0x00401052 */
+void proc_0x00401052()
+{
+}
 
 /** address: 0x00401230 */
 void _start()
@@ -52,11 +60,11 @@ void _start()
     __size8 al; 		// r8
     __size8 bl; 		// r11
     __size32 eax; 		// r24
-    HWND eax_1; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
+    HWND eax_1; 		// r24{24}
+    __size32 eax_4; 		// r24{27}
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
-    __size32 ebx_2; 		// r27{0}
+    __size32 ebx_1; 		// r27{11}
+    __size32 ebx_2; 		// r27{14}
     int ecx; 		// r25
     union { __size32; __size16 *; } edi; 		// r31
     int edx; 		// r26
@@ -66,7 +74,7 @@ void _start()
     HINSTANCE local12; 		// m[esp - 20]
     int local14; 		// m[esp - 4]
     int local15; 		// m[esp - 8]
-    __size32 local17; 		// ebx_1{0}
+    __size32 local17; 		// ebx_1{11}
 
     eax = GlobalAlloc(); /* Warning: also results in esp */
     if (eax != 0) {

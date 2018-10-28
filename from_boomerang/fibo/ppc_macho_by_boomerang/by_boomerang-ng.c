@@ -21,15 +21,13 @@ __size32 fib(int param1)
 {
     __size32 g1; 		// r1
     __size32 g29; 		// r29
-    __size32 g29_1; 		// r29{0}
+    __size32 g29_1; 		// r29{7}
     int g3; 		// r3
     __size32 g30; 		// r30
     __size32 g9; 		// r9
 
     g30 = g1 - 96;
-    if (param1 <= 1) {
-    }
-    else {
+    if (param1 > 1) {
         fib(param1 - 1);
         g3 = fib(g9 - 2); /* Warning: also results in g9, g29_1, g30 */
         g29 = g29_1 + g3;

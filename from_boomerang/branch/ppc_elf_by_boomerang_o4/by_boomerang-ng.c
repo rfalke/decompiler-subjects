@@ -56,8 +56,6 @@ bb0x10000498:
     if (5 < local0) {
         g3 = puts("Plus");
     }
-    else {
-    }
     return g3;
 }
 

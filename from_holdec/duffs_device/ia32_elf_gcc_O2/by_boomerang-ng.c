@@ -8,7 +8,7 @@ void copy2_eight_times(__size32 param1, __size32 param2, int param3);
 int main(int argc, char *argv[])
 {
     void *eax; 		// r24
-    void *eax_1; 		// r24{0}
+    void *eax_1; 		// r24{2}
     int ebp; 		// r29
     int ecx; 		// r25
     union { void *; __size32; } edi; 		// r31
@@ -21,7 +21,15 @@ int main(int argc, char *argv[])
     copy1_four_times(eax, ecx, edx, esp - 4, eax_1, eax, SUBFLAGS32(esp - 12, 24, esp - 36), esp == 36, (unsigned int)(esp - 12) < 24, ebp, edi, esi, 100, eax_1, eax, pc, argc, argv);
 }
 
+/** address: 0x080483d0 */
+void copy1_four_times()
+{
+}
 
+/** address: 0x08048470 */
+void copy1_eight_times()
+{
+}
 
 /** address: 0x08048520 */
 void copy2_four_times(__size32 param1, __size32 param2, int param3)
@@ -29,7 +37,7 @@ void copy2_four_times(__size32 param1, __size32 param2, int param3)
     __size32 eax; 		// r24
     unsigned int ebx; 		// r27
     __size32 ecx; 		// r25
-    __size32 ecx_1; 		// r25{0}
+    __size32 ecx_1; 		// r25{13}
     __size32 edx; 		// r26
 
     eax = param1;
@@ -77,12 +85,12 @@ void copy2_eight_times(__size32 param1, __size32 param2, int param3)
 {
     __size32 eax; 		// r24
     unsigned int ebx; 		// r27
-    unsigned int ecx_1; 		// r25{0}
+    unsigned int ecx_1; 		// r25{59}
     int ecx_2; 		// r25{0}
-    unsigned int ecx_5; 		// r25{0}
-    unsigned int ecx_8; 		// r25{0}
+    unsigned int ecx_5; 		// r25{8}
+    unsigned int ecx_8; 		// r25{53}
     __size32 edx; 		// r26
-    unsigned int local0; 		// ecx_1{0}
+    unsigned int local0; 		// ecx_1{59}
 
     eax = param1;
     edx = param2;
@@ -128,10 +136,9 @@ bb0x80485dc:
                     edx += 2;
                     *(__size16*)eax = (unsigned short) ebx;
                     eax += 2;
-                    goto bb0x8048624;
+                    break;
                 case 7:
                 }
-bb0x8048624:
                 ebx = *(unsigned short*)edx;
                 ecx_8 = ecx_1 + 8;
                 *(__size16*)eax = (unsigned short) ebx;

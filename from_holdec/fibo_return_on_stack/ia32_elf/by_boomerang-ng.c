@@ -6,7 +6,7 @@ __size32 fibo_return_on_stack(int param1);
 int main(int argc, char *argv[])
 {
     int eax; 		// r24
-    int eax_1; 		// r24{0}
+    int eax_1; 		// r24{5}
     int local0; 		// m[esp - 16]
 
     printf("Input number: ");
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 __size32 fibo_normal(int param1)
 {
     int eax; 		// r24
-    __size32 eax_1; 		// r24{0}
+    __size32 eax_1; 		// r24{3}
 
     if (param1 <= 1) {
         eax = param1;

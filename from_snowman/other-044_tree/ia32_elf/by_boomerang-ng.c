@@ -5,21 +5,22 @@ __size32 insert(union { int; __size32 *; } param1, union { int *; int; } param2)
 /** address: 0x08048515 */
 int main(int argc, char *argv[])
 {
-    __size32 eax; 		// r24
-    __size32 *eax_1; 		// r24{0}
+    int *eax; 		// r24
+    int *eax_2; 		// r24{4}
+    int eax_4; 		// r24{8}
     int edx; 		// r26
     int esp; 		// r28
     int local0; 		// m[esp - 8]
 
     local0 = 1;
     while (local0 <= 10) {
-        eax_1 = malloc(12);
-        *(__size32*)(eax_1 + 4) = 0;
-        edx = *(eax_1 + 4);
-        *(__size32*)(eax_1 + 8) = edx;
-        eax = rand();
-        *(__size32*)eax_1 = eax;
-        insert((esp - 16), eax_1);
+        eax_2 = malloc(12);
+        *(__size32*)(eax_2 + 4) = 0;
+        edx = *(eax_2 + 4);
+        *(__size32*)(eax_2 + 8) = edx;
+        eax_4 = rand();
+        *(int*)eax_2 = eax_4;
+        insert((esp - 16), eax_2);
         local0++;
     }
     eax = printout(0);
@@ -30,14 +31,14 @@ int main(int argc, char *argv[])
 __size32 printout(union { int *; __size32; } param1)
 {
     int eax; 		// r24
-    __size32 eax_1; 		// r24{0}
+    __size32 eax_1; 		// r24{2}
     __size32 eax_2; 		// r24{0}
-    int eax_3; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
+    int eax_3; 		// r24{5}
+    __size32 eax_4; 		// r24{7}
     __size32 eax_7; 		// r24{0}
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 local5; 		// eax{0}
+    __size32 local5; 		// eax{10}
 
     eax_1 = *(param1 + 8);
     if (eax_1 != 0) {
@@ -59,14 +60,14 @@ __size32 printout(union { int *; __size32; } param1)
 __size32 insert(union { int; __size32 *; } param1, union { int *; int; } param2)
 {
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    union { __size32; int *; } eax_2; 		// r24{0}
-    int eax_3; 		// r24{0}
-    union { __size32; int *; } eax_4; 		// r24{0}
-    int eax_5; 		// r24{0}
+    __size32 eax_1; 		// r24{4}
+    union { __size32; int *; } eax_2; 		// r24{11}
+    int eax_3; 		// r24{12}
+    union { __size32; int *; } eax_4; 		// r24{17}
+    int eax_5; 		// r24{18}
     __size32 eax_8; 		// r24{0}
     union { __size32 *; int; } edx; 		// r26
-    int local4; 		// eax{0}
+    int local4; 		// eax{21}
 
     eax_1 = *param1;
     if (eax_1 != 0) {

@@ -17,12 +17,12 @@ void _start()
     __size32 eax; 		// r24
     FARPROC eax_1; 		// r24
     int esp; 		// r28
-    void *esp_1; 		// r28{0}
-    void *esp_2; 		// r28{0}
-    void *esp_3; 		// r28{0}
+    void *esp_1; 		// r28{2}
+    void *esp_2; 		// r28{6}
+    void *esp_3; 		// r28{9}
     LPCSTR local0; 		// m[esp - 4]
     union { __size32; HANDLE; } local1; 		// m[esp - 8]
-    void *local12; 		// esp{0}
+    void *local12; 		// esp{19}
     union { __size32; HANDLE; } local2; 		// m[esp - 44]
     DWORD local5; 		// m[esp - 32]
     union { __size32; HANDLE; } local6; 		// m[esp - 48]

@@ -23,25 +23,25 @@ void proc_0x00401000(__size32 param1)
     int ecx; 		// r25
     int edx; 		// r26
     int esp; 		// r28
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
-    union { __size32; __size32 *; } esp_5; 		// r28{0}
-    __size32 esp_6; 		// r28{0}
-    union { __size32 *; __size32; } local6; 		// esp_5{0}
+    __size32 esp_1; 		// r28{7}
+    __size32 esp_2; 		// r28{6}
+    union { __size32; __size32 *; } esp_5; 		// r28{9}
+    __size32 esp_8; 		// r28{1}
+    union { __size32 *; __size32; } local6; 		// esp_5{9}
 
-    ebp = esp_6 - 4;
-    esp = esp_6 - 60;
+    ebp = esp_8 - 4;
+    esp = esp_8 - 60;
     flags = LOGICALFLAGS32(0x40148c);
     local6 = esp;
-    (*0x40148c)(0x40148c, esp_6 - 4, LOGICALFLAGS32(0x40148c), LOGICALFLAGS32(0x40148c), LOGICALFLAGS32(0x40148c), ecx, edx, param1, ebp, param1, 0, 2, 0, pc);
-    esp_4 = esp_1 - 12;
-    flags = SUBFLAGS32(esp_1, 12, esp_1 - 12);
-    local6 = esp_4;
+    (*0x40148c)(0x40148c, esp_8 - 4, LOGICALFLAGS32(0x40148c), LOGICALFLAGS32(0x40148c), LOGICALFLAGS32(0x40148c), ecx, edx, param1, ebp, param1, 0, 2, 0, pc);
+    esp_1 = esp_2 - 12;
+    flags = SUBFLAGS32(esp_2, 12, esp_2 - 12);
+    local6 = esp_1;
     esp_5 = local6;
     *(__size32*)esp_5 = 0x401110;
     eax = SetUnhandledExceptionFilter(); /* Warning: also results in ecx, edx */
     *(__size32*)(esp_5 - 4) = eax;
-    proc_0x00401514(eax, ecx, edx, param1, ebp, flags, ZF, CF, *(esp_6 - 4), *(esp_6 - 8), *(esp_6 - 52), *(esp_6 - 56), *(esp_6 - 60), *(esp_6 - 64));
+    proc_0x00401514(eax, ecx, edx, param1, ebp, flags, ZF, CF, *(esp_8 - 4), *(esp_8 - 8), *(esp_8 - 52), *(esp_8 - 56), *(esp_8 - 60), *(esp_8 - 64));
 }
 
 /** address: 0x00401bf4 */
@@ -65,20 +65,20 @@ void proc_0x00401974()
     __size16 eax_1; 		// r24
     __size32 ebp; 		// r29
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
-    __size32 ebx_4; 		// r27{0}
+    __size32 ebx_1; 		// r27{21}
+    __size32 ebx_4; 		// r27{22}
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_10; 		// r28{0}
-    __size32 esp_13; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
-    union { __size32; __size32 *; } esp_7; 		// r28{0}
-    __size32 local13; 		// eax{0}
-    __size32 local14; 		// ebx{0}
-    __size32 local15; 		// esp_10{0}
-    __size32 local16; 		// ebx{0}
-    union { __size32 *; __size32; } local17; 		// esp_7{0}
+    __size32 esp_1; 		// r28{2}
+    union { __size32; __size32 *; } esp_10; 		// r28{29}
+    __size32 esp_13; 		// r28{46}
+    __size32 esp_4; 		// r28{21}
+    __size32 esp_7; 		// r28{15}
+    __size32 local13; 		// eax{11}
+    __size32 local14; 		// ebx{14}
+    __size32 local15; 		// esp_7{15}
+    __size32 local16; 		// ebx{28}
+    union { __size32 *; __size32; } local17; 		// esp_10{29}
     __size32 local2; 		// m[esp_13 - 4]{0}
     __size32 local3; 		// m[esp_13 - 4]{0}
     __size32 local7; 		// m[esp_13 - 8]{0}
@@ -106,7 +106,7 @@ void proc_0x00401974()
                     do {
                         eax = local13;
                         ebx = local14;
-                        esp_10 = local15;
+                        esp_7 = local15;
                         (*global_0x00401c60[ebx])(eax, ecx, edx, ebx, ebp, flags, ZF, CF, local2, local8);
                         local13 = eax;
                         local15 = esp_4;
@@ -118,8 +118,8 @@ void proc_0x00401974()
                     } while (ebx_1 != 1);
                 }
                 ebx = local16;
-                esp_7 = local17;
-                *(__size32*)esp_7 = 0x4018f8;
+                esp_10 = local17;
+                *(__size32*)esp_10 = 0x4018f8;
                 proc_0x0040129c(eax, ecx, edx, ebx, ebp, flags, ZF, CF, local3, local7);
             }
             ebx++;
@@ -135,6 +135,10 @@ void _start(__size32 param1)
     proc_0x00401000(param1);
 }
 
+/** address: 0x00401514 */
+void proc_0x00401514()
+{
+}
 
 /** address: 0x004015f4 */
 void proc_0x004015f4()
@@ -147,15 +151,15 @@ void proc_0x0040172c()
 {
     __size32 eax; 		// r24
     __size32 ebx; 		// r27
-    union { unsigned int; __size32 *; } ebx_1; 		// r27{0}
-    __size32 ebx_2; 		// r27{0}
+    union { unsigned int; __size32 *; } ebx_1; 		// r27{10}
+    __size32 ebx_2; 		// r27{16}
     union { __size8 *; __size32; } edx; 		// r26
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_2; 		// r28{0}
-    __size32 esp_3; 		// r28{0}
-    __size32 esp_8; 		// r28{0}
-    union { __size32 *; unsigned int; } local3; 		// ebx_1{0}
-    __size32 local4; 		// esp_2{0}
+    __size32 esp_1; 		// r28{2}
+    __size32 esp_2; 		// r28{11}
+    __size32 esp_3; 		// r28{13}
+    __size32 esp_8; 		// r28{1}
+    union { __size32 *; unsigned int; } local3; 		// ebx_1{10}
+    __size32 local4; 		// esp_2{11}
 
     esp_1 = esp_8 - 60;
     local4 = esp_1;
@@ -244,7 +248,7 @@ void proc_0x00401648(__size32 param1, union { __size8 *; int; } param2, __size32
         if (eax == 0) {
             proc_0x004015fc(0x403090, 28);
         }
-        if (param1 == 64) {
+        if (param1 == 64 || param1 == 4) {
             if (param3 != 0) {
                 *(__size8*)param2 = *param4;
             }
@@ -254,16 +258,10 @@ void proc_0x00401648(__size32 param1, union { __size8 *; int; } param2, __size32
             if (param3 != 0) {
                 *(__size8*)param2 = *param4;
             }
-            if (param1 == 64) {
-bb0x401659:
-            }
-            else {
+            if ( ~(param1 == 64 || param1 == 4)) {
                 VirtualProtect();
             }
         }
-    }
-    else {
-        goto bb0x401659;
     }
     return;
 }

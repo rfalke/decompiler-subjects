@@ -1,5 +1,5 @@
 int main(int argc, char *argv[]);
-__size32 hexdump(int param1, struct stat param2, unsigned int param3, char param4, union { int; char *; } param5, __size16 param6, __size8 param7, __size8 param8, __size8 param9);
+__size32 hexdump(int param1, struct stat param2, unsigned int param3, int param4, union { int; char *; } param5, __size16 param6, __size8 param7, __size8 param8, __size8 param9);
 __size16 dumpline(int param1, int param2, unsigned int param3, int param4, __size16 param5);
 
 /** address: 0x080488a0 */
@@ -11,14 +11,14 @@ int main(int argc, char *argv[])
     __size16 di; 		// r7
     __size32 eax; 		// r24
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_2; 		// r27{0}
+    unsigned int ebx_1; 		// r27{19}
+    unsigned int ebx_2; 		// r27{24}
     __size32 edi; 		// r31
     int local0; 		// m[esp - 344]
     struct stat local1; 		// m[esp - 176]
     unsigned int local2; 		// m[esp - 132]
-    char local3; 		// m[esp - 88]
-    unsigned int local5; 		// ebx_1{0}
+    int local3; 		// m[esp - 88]
+    unsigned int local5; 		// ebx_1{19}
 
     ebx = 1;
     edi = 0;
@@ -37,36 +37,36 @@ int main(int argc, char *argv[])
 }
 
 /** address: 0x080487af */
-__size32 hexdump(int param1, struct stat param2, unsigned int param3, char param4, union { int; char *; } param5, __size16 param6, __size8 param7, __size8 param8, __size8 param9)
+__size32 hexdump(int param1, struct stat param2, unsigned int param3, int param4, union { int; char *; } param5, __size16 param6, __size8 param7, __size8 param8, __size8 param9)
 {
     __size8 al; 		// r8
     __size8 bl; 		// r11
     __size8 cl; 		// r9
     __size16 di; 		// r7
     __size32 eax; 		// r24
-    __size32 eax_10; 		// r24{0}
-    int eax_11; 		// r24{0}
-    __size32 eax_2; 		// r24{0}
-    int eax_3; 		// r24{0}
-    int eax_6; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
-    FILE *eax_8; 		// r24{0}
+    __size32 eax_10; 		// r24{23}
+    int eax_11; 		// r24{30}
+    __size32 eax_2; 		// r24{45}
+    int eax_3; 		// r24{11}
+    int eax_6; 		// r24{12}
+    __size32 eax_7; 		// r24{15}
+    FILE *eax_8; 		// r24{17}
     int edx; 		// r26
     int esi; 		// r30
-    unsigned int esi_1; 		// r30{0}
-    int esi_2; 		// r30{0}
+    unsigned int esi_1; 		// r30{29}
+    int esi_2; 		// r30{33}
     int esp; 		// r28
-    __size16 local12; 		// param6{0}
-    __size8 local13; 		// param7{0}
-    __size8 local14; 		// param8{0}
-    __size8 local15; 		// param9{0}
-    unsigned int local16; 		// esi_1{0}
-    __size16 local17; 		// param6{0}
-    __size8 local18; 		// param7{0}
-    __size8 local19; 		// param8{0}
-    __size8 local20; 		// param9{0}
-    __size32 local21; 		// eax_2{0}
-    __size32 local22; 		// eax{0}
+    __size16 local12; 		// param6{25}
+    __size8 local13; 		// param7{26}
+    __size8 local14; 		// param8{27}
+    __size8 local15; 		// param9{28}
+    unsigned int local16; 		// esi_1{29}
+    __size16 local17; 		// param6{35}
+    __size8 local18; 		// param7{36}
+    __size8 local19; 		// param8{37}
+    __size8 local20; 		// param9{38}
+    __size32 local21; 		// eax_2{45}
+    __size32 local22; 		// eax{49}
 
     eax_3 = *20;
     eax_6 = stat(3, param5, &param2);
@@ -115,8 +115,6 @@ __size32 hexdump(int param1, struct stat param2, unsigned int param3, char param
                     }
                 } while (param3 > (unsigned int)(esi_1 + eax_11));
             }
-            else {
-            }
             param6 = local17;
             param7 = local18;
             param8 = local19;
@@ -148,55 +146,55 @@ __size16 dumpline(int param1, int param2, unsigned int param3, int param4, __siz
     char cl; 		// r9
     __size16 di; 		// r7
     __size32 eax; 		// r24
-    int eax_1; 		// r24{0}
-    union { int; __size8 *; } eax_10; 		// r24{0}
-    __size32 eax_11; 		// r24{0}
-    __size32 eax_12; 		// r24{0}
-    unsigned int eax_4; 		// r24{0}
-    int eax_5; 		// r24{0}
-    __size32 eax_6; 		// r24{0}
-    __size32 eax_7; 		// r24{0}
+    int eax_1; 		// r24{7}
+    union { int; __size8 *; } eax_10; 		// r24{91}
+    __size32 eax_11; 		// r24{78}
+    __size32 eax_12; 		// r24{95}
+    unsigned int eax_4; 		// r24{25}
+    int eax_5; 		// r24{70}
+    __size32 eax_6; 		// r24{77}
+    __size32 eax_7; 		// r24{86}
     int ebx; 		// r27
     int ecx; 		// r25
     int edi; 		// r31
-    int edi_1; 		// r31{0}
-    int edi_2; 		// r31{0}
-    int edi_4; 		// r31{0}
-    int edi_5; 		// r31{0}
+    int edi_1; 		// r31{24}
+    int edi_2; 		// r31{31}
+    int edi_4; 		// r31{38}
+    int edi_5; 		// r31{49}
     int edx; 		// r26
     int esi; 		// r30
-    int esi_1; 		// r30{0}
-    int esi_2; 		// r30{0}
-    int esi_4; 		// r30{0}
-    int esi_7; 		// r30{0}
-    int *esp_10; 		// r28{0}
-    int *esp_11; 		// r28{0}
-    union { int *; __size32; } esp_19; 		// r28{0}
-    int *esp_2; 		// r28{0}
-    int esp_22; 		// r28{0}
-    int *esp_5; 		// r28{0}
-    int *esp_6; 		// r28{0}
-    int *esp_9; 		// r28{0}
+    int esi_1; 		// r30{74}
+    int esi_2; 		// r30{94}
+    int esi_4; 		// r30{16}
+    int esi_7; 		// r30{94}
+    int *esp_10; 		// r28{73}
+    int *esp_11; 		// r28{48}
+    union { int *; __size32; } esp_19; 		// r28{99}
+    int *esp_2; 		// r28{12}
+    int esp_22; 		// r28{1}
+    int *esp_5; 		// r28{37}
+    int *esp_6; 		// r28{30}
+    int *esp_9; 		// r28{67}
     unsigned int local0; 		// m[esp - 156]
     __size32 local1; 		// m[esp - 160]
-    int local10; 		// edi_4{0}
-    int local11; 		// param1{0}
-    __size16 local12; 		// di{0}
-    int *local13; 		// esp_9{0}
-    int local14; 		// esi{0}
-    __size16 local15; 		// di{0}
-    int *local16; 		// esp_10{0}
-    __size32 local17; 		// eax_11{0}
-    union { __size8 *; int; } local18; 		// eax_10{0}
-    int local19; 		// esi_1{0}
+    int local10; 		// edi_4{38}
+    int local11; 		// param1{39}
+    __size16 local12; 		// di{65}
+    int *local13; 		// esp_9{67}
+    int local14; 		// esi{68}
+    __size16 local15; 		// di{72}
+    int *local16; 		// esp_10{73}
+    __size32 local17; 		// eax_11{78}
+    union { __size8 *; int; } local18; 		// eax_10{91}
+    int local19; 		// esi_1{92}
     __size32 local2; 		// m[esp - 164]
-    union { __size32; int *; } local20; 		// esp_19{0}
-    int local21; 		// esi{0}
+    union { __size32; int *; } local20; 		// esp_19{99}
+    int local21; 		// esi{100}
     int local3; 		// m[esp - 172]
     int local4; 		// m[esp - 128]
-    int local7; 		// edi_1{0}
-    __size16 local8; 		// param5{0}
-    int *local9; 		// esp_5{0}
+    int local7; 		// edi_1{24}
+    __size16 local8; 		// param5{36}
+    int *local9; 		// esp_5{37}
 
     eax_1 = *20;
     local0 = param3;
@@ -290,8 +288,6 @@ bb0x80486fc:
                     local21 = esi_2;
                 } while (esi_1 + 1 <= 15);
             }
-            else {
-            }
         }
         else {
             esi = 0;
@@ -301,7 +297,7 @@ bb0x80486fc:
     }
     else {
         di = 0;
-        edi = 1 >> 16 & 0xffff;
+        edi = (1 >> 16 & 0xffff) << 8;
         local4 = esi_4;
         ebx = (esp_22 - 103);
         local7 = edi;

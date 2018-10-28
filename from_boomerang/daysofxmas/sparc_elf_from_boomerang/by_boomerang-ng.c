@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     int i1; 		// r25
     union { __size32; char *; } i2; 		// r26
     int o0; 		// r8
-    int o0_1; 		// r8{0}
+    int o0_1; 		// r8{45}
     int o1_1; 		// r9
 
     *(__size32*)%o6 = %l0;

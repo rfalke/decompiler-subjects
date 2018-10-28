@@ -7,19 +7,27 @@ void copy2_eight_times(__size32 param1, __size32 param2, int param3);
 /** address: 0x08048704 */
 int main(int argc, char *argv[])
 {
-    __size32 eax; 		// r24
-    void *eax_1; 		// r24{0}
+    void *eax_1; 		// r24{2}
+    void *eax_2; 		// r24{3}
     int ebp; 		// r29
     int ecx; 		// r25
     int edx; 		// r26
     int esp; 		// r28
 
     eax_1 = malloc(200);
-    eax = malloc(200); /* Warning: also results in ecx, edx */
-    copy1_four_times(eax, ecx, edx, esp - 4, SUBFLAGS32(esp - 4, 32, esp - 36), esp == 36, (unsigned int)(esp - 4) < 32, ebp, eax, eax_1, 200, 100, eax_1, eax, pc, argc, argv);
+    eax_2 = malloc(200); /* Warning: also results in ecx, edx */
+    copy1_four_times(eax_2, ecx, edx, esp - 4, SUBFLAGS32(esp - 4, 32, esp - 36), esp == 36, (unsigned int)(esp - 4) < 32, ebp, eax_2, eax_1, 200, 100, eax_1, eax_2, pc, argc, argv);
 }
 
+/** address: 0x080483f4 */
+void copy1_four_times()
+{
+}
 
+/** address: 0x08048498 */
+void copy1_eight_times()
+{
+}
 
 /** address: 0x08048586 */
 void copy2_four_times(__size32 param1, __size32 param2, int param3)
@@ -28,16 +36,16 @@ void copy2_four_times(__size32 param1, __size32 param2, int param3)
     unsigned int edx; 		// r26
     union { __size32; __size16 *; } local0; 		// m[esp + 4]
     union { __size32; unsigned short *; } local1; 		// m[esp + 8]
-    union { __size16 *; __size32; } local10; 		// local0{0}
-    union { unsigned short *; __size32; } local11; 		// local1{0}
+    union { __size16 *; __size32; } local10; 		// local0{33}
+    union { unsigned short *; __size32; } local11; 		// local1{34}
     int local2; 		// m[esp + 12]
-    union { __size16 *; __size32; } local3; 		// param1{0}
-    union { unsigned short *; __size32; } local4; 		// param2{0}
-    int local5; 		// param3{0}
-    union { __size16 *; __size32; } local6; 		// local0{0}
-    union { unsigned short *; __size32; } local7; 		// local1{0}
-    union { __size16 *; __size32; } local8; 		// local0{0}
-    union { unsigned short *; __size32; } local9; 		// local1{0}
+    union { __size16 *; __size32; } local3; 		// param1{6}
+    union { unsigned short *; __size32; } local4; 		// param2{7}
+    int local5; 		// param3{8}
+    union { __size16 *; __size32; } local6; 		// local0{19}
+    union { unsigned short *; __size32; } local7; 		// local1{20}
+    union { __size16 *; __size32; } local8; 		// local0{26}
+    union { unsigned short *; __size32; } local9; 		// local1{27}
 
     local3 = param1;
     local4 = param2;
@@ -68,14 +76,8 @@ bb0x80485da:
                 local11 = local1;
             }
             else {
-                if (eax == 3) {
-                    goto bb0x80485f1;
-                }
-                else {
-                    if (eax == 1) {
-                        goto bb0x80485c3;
-                    }
-                    else {
+                if (eax != 3) {
+                    if (eax != 1) {
                         edx = *(unsigned short*)param2;
                         *(__size16*)param1 = (unsigned short) edx;
                         local0 = param1 + 2;
@@ -83,7 +85,6 @@ bb0x80485da:
                         local6 = local0;
                         local7 = local1;
                     }
-bb0x80485c3:
                     local0 = local6;
                     local1 = local7;
                     edx = *(unsigned short*)local1;
@@ -95,7 +96,6 @@ bb0x80485c3:
                     goto bb0x80485da;
                 }
             }
-bb0x80485f1:
             local0 = local10;
             local1 = local11;
             edx = *(unsigned short*)local1;
@@ -126,25 +126,25 @@ void copy2_eight_times(__size32 param1, __size32 param2, int param3)
     unsigned int edx; 		// r26
     union { __size16 *; unsigned int; } local0; 		// m[esp + 4]
     union { unsigned short *; int; } local1; 		// m[esp + 8]
-    union { unsigned int; __size16 *; } local10; 		// param1{0}
-    union { int; unsigned short *; } local11; 		// param2{0}
-    int local12; 		// local3{0}
-    union { unsigned int; __size16 *; } local13; 		// local0{0}
-    union { int; unsigned short *; } local14; 		// local1{0}
-    union { unsigned int; __size16 *; } local15; 		// local0{0}
-    union { int; unsigned short *; } local16; 		// local1{0}
-    union { unsigned int; __size16 *; } local17; 		// local0{0}
-    union { int; unsigned short *; } local18; 		// local1{0}
-    union { unsigned int; __size16 *; } local19; 		// local0{0}
+    union { unsigned int; __size16 *; } local10; 		// param1{6}
+    union { int; unsigned short *; } local11; 		// param2{7}
+    int local12; 		// local3{8}
+    union { unsigned int; __size16 *; } local13; 		// local0{17}
+    union { int; unsigned short *; } local14; 		// local1{18}
+    union { unsigned int; __size16 *; } local15; 		// local0{24}
+    union { int; unsigned short *; } local16; 		// local1{25}
+    union { unsigned int; __size16 *; } local17; 		// local0{31}
+    union { int; unsigned short *; } local18; 		// local1{32}
+    union { unsigned int; __size16 *; } local19; 		// local0{38}
     int local2; 		// m[esp + 12]
-    union { int; unsigned short *; } local20; 		// local1{0}
-    union { unsigned int; __size16 *; } local21; 		// local0{0}
-    union { int; unsigned short *; } local22; 		// local1{0}
-    union { unsigned int; __size16 *; } local23; 		// local0{0}
-    union { int; unsigned short *; } local24; 		// local1{0}
-    union { __size16 *; __size32; } local25; 		// local0{0}
-    union { unsigned short *; __size32; } local26; 		// local1{0}
-    int local3; 		// m[esp + 12]{0}
+    union { int; unsigned short *; } local20; 		// local1{39}
+    union { unsigned int; __size16 *; } local21; 		// local0{45}
+    union { int; unsigned short *; } local22; 		// local1{46}
+    union { unsigned int; __size16 *; } local23; 		// local0{52}
+    union { int; unsigned short *; } local24; 		// local1{53}
+    union { __size16 *; __size32; } local25; 		// local0{59}
+    union { unsigned short *; __size32; } local26; 		// local1{60}
+    int local3; 		// m[esp + 12]{8}
     int local4; 		// m[esp + 12]{0}
 
     local10 = param1;
@@ -179,7 +179,11 @@ bb0x804863f:
                 local1 = param2 + 2;
                 local13 = local0;
                 local14 = local1;
-bb0x8048656:
+            }
+            switch(8 - local4) {
+            case 0:
+                goto bb0x804863f;
+            case 1:
                 local0 = local13;
                 local1 = local14;
                 edx = *(unsigned short*)local1;
@@ -188,7 +192,7 @@ bb0x8048656:
                 local1 += 2;
                 local15 = local0;
                 local16 = local1;
-bb0x804866d:
+            case 2:
                 local0 = local15;
                 local1 = local16;
                 edx = *(unsigned short*)local1;
@@ -197,7 +201,7 @@ bb0x804866d:
                 local1 += 2;
                 local17 = local0;
                 local18 = local1;
-bb0x8048684:
+            case 3:
                 local0 = local17;
                 local1 = local18;
                 edx = *(unsigned short*)local1;
@@ -206,7 +210,7 @@ bb0x8048684:
                 local1 += 2;
                 local19 = local0;
                 local20 = local1;
-bb0x804869b:
+            case 4:
                 local0 = local19;
                 local1 = local20;
                 edx = *(unsigned short*)local1;
@@ -215,7 +219,7 @@ bb0x804869b:
                 local1 += 2;
                 local21 = local0;
                 local22 = local1;
-bb0x80486b2:
+            case 5:
                 local0 = local21;
                 local1 = local22;
                 edx = *(unsigned short*)local1;
@@ -224,7 +228,7 @@ bb0x80486b2:
                 local1 += 2;
                 local23 = local0;
                 local24 = local1;
-bb0x80486c9:
+            case 6:
                 local0 = local23;
                 local1 = local24;
                 edx = *(unsigned short*)local1;
@@ -233,27 +237,9 @@ bb0x80486c9:
                 local1 += 2;
                 local25 = local0;
                 local26 = local1;
-                goto bb0x80486e0;
-            }
-            switch(8 - local4) {
-            case 0:
-                goto bb0x804863f;
-            case 1:
-                goto bb0x8048656;
-            case 2:
-                goto bb0x804866d;
-            case 3:
-                goto bb0x8048684;
-            case 4:
-                goto bb0x804869b;
-            case 5:
-                goto bb0x80486b2;
-            case 6:
-                goto bb0x80486c9;
+                break;
             case 7:
-                goto bb0x80486e0;
             }
-bb0x80486e0:
             local0 = local25;
             local1 = local26;
             edx = *(unsigned short*)local1;

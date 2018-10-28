@@ -33,16 +33,18 @@ __size32 basic_1_ternary_simple(__size32 param1)
     unsigned char al; 		// r8
 
     al =  (param1 != 42) ? 1 : 0;
-    return 0 >> 8 & 0xffffff | (al); /* WARNING: Also returning: al := al */
+    return (al); /* WARNING: Also returning: al := al */
 }
 
+/** address: 0x080484d0 */
+void basic_2_ternary_other()
+{
+}
 
 /** address: 0x08048904 */
 void intermediate_1_ternary_blocks(__size32 param1)
 {
-    if (param1 != 42) {
-    }
-    else {
+    if (param1 == 42) {
     }
     return;
 }
@@ -50,9 +52,7 @@ void intermediate_1_ternary_blocks(__size32 param1)
 /** address: 0x0804891b */
 void intermediate_2_other_in_blocks(__size32 param1)
 {
-    if (param1 != 42) {
-    }
-    else {
+    if (param1 == 42) {
     }
     return;
 }
@@ -113,8 +113,6 @@ bb0x80485bc:
     if ((param6 ^ edx | param5 ^ eax) == 0) {
         puts("modulo");
     }
-    else {
-    }
     return;
 }
 
@@ -174,8 +172,6 @@ bb0x804874c:
     if ((param6 ^ edx | param5 ^ eax) == 0) {
         puts("modulo");
     }
-    else {
-    }
     return;
 }
 
@@ -183,35 +179,43 @@ bb0x804874c:
 void advanced_1_unrolled_loop()
 {
     __size32 ebx; 		// r27
-    __size32 ebx_1; 		// r27{0}
-    __size32 ebx_2; 		// r27{0}
+    __size32 ebx_1; 		// r27{3}
+    __size32 ebx_2; 		// r27{4}
+    __size32 ebx_4; 		// r27{9}
+    __size32 ebx_5; 		// r27{11}
+    __size32 local2; 		// ebx_1{3}
+    __size32 local3; 		// ebx_4{9}
 
     ebx = 48;
     puts("basic");
+    local2 = ebx;
     do {
-        ebx_1 = ebx;
-        ebx = ebx_1 + 1;
-        putchar();
+        ebx_1 = local2;
+        ebx_2 = ebx_1 + 1;
+        putchar(ebx_1);
+        local2 = ebx_2;
     } while (ebx_1 + 1 != 58);
     ebx = 48;
     puts("partial unrolled");
+    local3 = ebx;
     do {
-        ebx_2 = ebx;
-        putchar();
-        ebx = ebx_2 + 2;
-        putchar();
-    } while (ebx_2 + 2 != 58);
+        ebx_4 = local3;
+        putchar(ebx_4);
+        ebx_5 = ebx_4 + 2;
+        putchar(ebx_4 + 1);
+        local3 = ebx_5;
+    } while (ebx_4 + 2 != 58);
     puts("fully unrolled");
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
-    putchar();
+    putchar('0');
+    putchar('1');
+    putchar('2');
+    putchar('3');
+    putchar('4');
+    putchar('5');
+    putchar('6');
+    putchar('7');
+    putchar('8');
+    putchar('9');
     return;
 }
 
@@ -220,24 +224,24 @@ __size32 __divdi3(unsigned long long param1, long long param2, unsigned long lon
 {
     unsigned long long eax; 		// r24
     unsigned long long ebp; 		// r29
-    unsigned long long ebp_1; 		// r29{0}
-    unsigned long long ebp_2; 		// r29{0}
-    unsigned long long ebp_4; 		// r29{0}
-    unsigned long long ebp_5; 		// r29{0}
+    unsigned long long ebp_1; 		// r29{44}
+    unsigned long long ebp_2; 		// r29{42}
+    unsigned long long ebp_4; 		// r29{42}
+    unsigned long long ebp_5; 		// r29{45}
     unsigned long long ecx; 		// r25
-    unsigned long long ecx_1; 		// r25{0}
+    unsigned long long ecx_1; 		// r25{20}
     long long edx; 		// r26
-    unsigned long long edx_2; 		// r26{0}
-    unsigned long long edx_3; 		// r26{0}
+    unsigned long long edx_2; 		// r26{13}
+    unsigned long long edx_3; 		// r26{66}
     __size32 local0; 		// m[esp - 36]
     long long local1; 		// m[esp - 40]
-    unsigned long long local10; 		// ebp_1{0}
-    unsigned long long local11; 		// ebp_4{0}
-    unsigned long long local12; 		// ecx{0}
+    unsigned long long local10; 		// ebp_1{41}
+    unsigned long long local11; 		// ebp_4{44}
+    unsigned long long local12; 		// ecx{54}
     unsigned long long local2; 		// m[esp - 44]
-    unsigned long long local3; 		// tmpl{0}
-    unsigned long long local6; 		// tmpl{0}
-    unsigned long long local9; 		// ebp{0}
+    unsigned long long local3; 		// tmpl{67}
+    unsigned long long local6; 		// tmpl{68}
+    unsigned long long local9; 		// ebp{30}
 
     edx = param2;
     eax = param1;
@@ -340,42 +344,42 @@ bb0x80489dc:
 __size32 __moddi3(unsigned long long param1, long long param2, unsigned long long param3, long long param4)
 {
     unsigned long long eax; 		// r24
-    unsigned long long eax_2; 		// r24{0}
+    unsigned long long eax_2; 		// r24{31}
     unsigned long long ebx; 		// r27
     unsigned long long ecx; 		// r25
-    unsigned long long ecx_1; 		// r25{0}
-    long long ecx_10; 		// r25{0}
-    long long ecx_3; 		// r25{0}
-    unsigned long long ecx_4; 		// r25{0}
-    long long ecx_7; 		// r25{0}
+    unsigned long long ecx_1; 		// r25{19}
+    long long ecx_10; 		// r25{70}
+    long long ecx_3; 		// r25{72}
+    unsigned long long ecx_4; 		// r25{64}
+    long long ecx_7; 		// r25{68}
     long long edi; 		// r31
-    unsigned long long edi_1; 		// r31{0}
-    unsigned long long edi_2; 		// r31{0}
-    unsigned long long edi_3; 		// r31{0}
-    unsigned long long edi_6; 		// r31{0}
-    unsigned long long edi_7; 		// r31{0}
+    unsigned long long edi_1; 		// r31{13}
+    unsigned long long edi_2; 		// r31{44}
+    unsigned long long edi_3; 		// r31{40}
+    unsigned long long edi_6; 		// r31{41}
+    unsigned long long edi_7; 		// r31{42}
     unsigned long long edx; 		// r26
     unsigned long long esi; 		// r30
-    unsigned long long esi_1; 		// r30{0}
-    unsigned long long esi_2; 		// r30{0}
-    unsigned long long esi_3; 		// r30{0}
-    unsigned long long esi_6; 		// r30{0}
+    unsigned long long esi_1; 		// r30{12}
+    unsigned long long esi_2; 		// r30{73}
+    unsigned long long esi_3; 		// r30{67}
+    unsigned long long esi_6; 		// r30{71}
     __size32 local0; 		// m[esp - 48]
     unsigned long long local1; 		// m[esp - 60]
-    unsigned long long local12; 		// tmpl{0}
-    unsigned long long local15; 		// tmpl{0}
-    unsigned long long local18; 		// eax{0}
-    unsigned long long local19; 		// edi_6{0}
+    unsigned long long local12; 		// tmpl{65}
+    unsigned long long local15; 		// tmpl{66}
+    unsigned long long local18; 		// eax{36}
+    unsigned long long local19; 		// edi_6{41}
     long long local2; 		// m[esp - 56]
-    unsigned long long local20; 		// edi_2{0}
-    unsigned long long local21; 		// local1{0}
-    unsigned long long local22; 		// ecx{0}
-    long long local23; 		// ecx_3{0}
-    unsigned long long local24; 		// esi_2{0}
+    unsigned long long local20; 		// edi_2{44}
+    unsigned long long local21; 		// local1{48}
+    unsigned long long local22; 		// ecx{54}
+    long long local23; 		// ecx_3{72}
+    unsigned long long local24; 		// esi_2{73}
     unsigned long long local3; 		// m[esp - 40]
-    unsigned long long local4; 		// m[esp - 60]{0}
-    unsigned long long local5; 		// m[esp - 60]{0}
-    unsigned long long local8; 		// m[esp - 60]{0}
+    unsigned long long local4; 		// m[esp - 60]{17}
+    unsigned long long local5; 		// m[esp - 60]{20}
+    unsigned long long local8; 		// m[esp - 60]{78}
 
     edi = param2;
     esi = param1;
@@ -410,7 +414,7 @@ __size32 __moddi3(unsigned long long param1, long long param2, unsigned long lon
                     edi_7 = edi_6 - 1;
                     local19 = edi_7;
                     local20 = edi_7;
-                } while ((local2 >> edi_6 - 1 & 1) == 0);
+                } while ((local2 >> edi_6 - 1 & 0x1ffff) == 0);
             }
             edi_2 = local20;
             if ((edi_2 ^ 31) != 0) {
@@ -482,15 +486,15 @@ __size32 __udivdi3(unsigned long long param1, unsigned long long param2, unsigne
     unsigned long long ebp; 		// r29
     unsigned long long ebx; 		// r27
     unsigned long long edi; 		// r31
-    unsigned long long edi_1; 		// r31{0}
-    unsigned long long edi_2; 		// r31{0}
-    unsigned long long edi_4; 		// r31{0}
+    unsigned long long edi_1; 		// r31{28}
+    unsigned long long edi_2; 		// r31{26}
+    unsigned long long edi_4; 		// r31{26}
     unsigned long long edx; 		// r26
     unsigned long long esi; 		// r30
-    unsigned long long local0; 		// tmpl{0}
-    unsigned long long local1; 		// tmpl{0}
-    unsigned long long local2; 		// edi_1{0}
-    unsigned long long local3; 		// edi_4{0}
+    unsigned long long local0; 		// tmpl{32}
+    unsigned long long local1; 		// tmpl{34}
+    unsigned long long local2; 		// edi_1{25}
+    unsigned long long local3; 		// edi_4{28}
 
     edi = param3;
     local3 = edi;
@@ -563,21 +567,21 @@ __size32 __umoddi3(unsigned long long param1, unsigned long long param2, unsigne
 {
     unsigned long long eax; 		// r24
     unsigned long long ebp; 		// r29
-    unsigned long long ebp_1; 		// r29{0}
-    unsigned long long ebp_2; 		// r29{0}
+    unsigned long long ebp_1; 		// r29{21}
+    unsigned long long ebp_2; 		// r29{22}
     unsigned long long ebx; 		// r27
     long long ecx; 		// r25
-    long long ecx_2; 		// r25{0}
-    long long ecx_3; 		// r25{0}
+    long long ecx_2; 		// r25{45}
+    long long ecx_3; 		// r25{50}
     unsigned long long edx; 		// r26
     long long esi; 		// r30
     unsigned long long local0; 		// m[esp - 40]
     unsigned long long local1; 		// m[esp - 36]
-    long long local10; 		// ecx_3{0}
-    unsigned long long local2; 		// tmpl{0}
-    unsigned long long local5; 		// tmpl{0}
-    unsigned long long local8; 		// ebp_1{0}
-    unsigned long long local9; 		// param5{0}
+    long long local10; 		// ecx_3{50}
+    unsigned long long local2; 		// tmpl{42}
+    unsigned long long local5; 		// tmpl{43}
+    unsigned long long local8; 		// ebp_1{21}
+    unsigned long long local9; 		// param5{24}
 
     local0 = param1;
     edx = param2;
@@ -596,7 +600,7 @@ __size32 __umoddi3(unsigned long long param1, unsigned long long param2, unsigne
                     ebp_2 = ebp_1 - 1;
                     local8 = ebp_2;
                     local9 = ebp_2;
-                } while ((param4 >> ebp_1 - 1 & 1) == 0);
+                } while ((param4 >> ebp_1 - 1 & 0x1ffff) == 0);
             }
             param5 = local9;
             if ((param5 ^ 31) != 0) {

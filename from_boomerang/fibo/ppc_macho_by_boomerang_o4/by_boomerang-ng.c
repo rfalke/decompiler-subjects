@@ -11,9 +11,7 @@ int main(int argc, char *argv[])
     g31 = /* machine specific */ (int) LR;
     printf(/* machine specific */ (int) LR + 824);
     scanf(/* machine specific */ (int) LR + 840);
-    if (local0 <= 1) {
-    }
-    else {
+    if (local0 > 1) {
         g30 = fib(local0 - 1); /* Warning: also results in g31 */
         g31 = fib(g30 - 2);
     }
@@ -27,7 +25,7 @@ __size32 fib(int param1)
     __size32 g29; 		// r29
     int g3; 		// r3
     int g30; 		// r30
-    int local5; 		// param1{0}
+    int local5; 		// param1{8}
 
     g30 = param1;
     local5 = param1;

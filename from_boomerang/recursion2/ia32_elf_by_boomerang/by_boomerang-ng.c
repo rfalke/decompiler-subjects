@@ -43,9 +43,9 @@ __size32 b(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     b_c--;
     local3 = param1;
@@ -68,13 +68,13 @@ __size32 c(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 edx_2; 		// r26{0}
-    __size32 edx_3; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
-    __size32 local5; 		// ecx{0}
-    __size32 local6; 		// edx{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 edx_2; 		// r26{18}
+    __size32 edx_3; 		// r26{25}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
+    __size32 local5; 		// ecx{21}
+    __size32 local6; 		// edx{22}
 
     c_d--;
     local3 = param1;
@@ -123,9 +123,9 @@ __size32 d(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     d_e--;
     local3 = param1;
@@ -170,9 +170,9 @@ __size32 j(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     j_k--;
     local3 = param1;
@@ -195,9 +195,9 @@ __size32 l(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     l_b--;
     local3 = param1;
@@ -220,9 +220,9 @@ __size32 e(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
     __size32 edx; 		// r26
-    __size32 edx_1; 		// r26{0}
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 edx_1; 		// r26{5}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     e_c--;
     local3 = param1;
@@ -262,10 +262,10 @@ void i()
 __size32 k(__size32 param1, __size32 param2)
 {
     __size32 ecx; 		// r25
-    __size32 ecx_1; 		// r25{0}
+    __size32 ecx_1; 		// r25{5}
     __size32 edx; 		// r26
-    __size32 local3; 		// param1{0}
-    __size32 local4; 		// param2{0}
+    __size32 local3; 		// param1{8}
+    __size32 local4; 		// param2{9}
 
     k_e--;
     local3 = param1;

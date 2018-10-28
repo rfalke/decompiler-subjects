@@ -3,7 +3,7 @@ int main(int argc, char *argv[]);
 /** address: 0x08048410 */
 int main(int argc, char *argv[])
 {
-    int eax; 		// r24
+    size_t eax; 		// r24
     int local0; 		// m[esp - 12]
     unsigned int local1; 		// m[esp - 16]
 
@@ -16,8 +16,6 @@ int main(int argc, char *argv[])
 bb0x804844e:
             eax = *0x8049854;
             fwrite("Not Equal\n", 1, 10, eax);
-        }
-        else {
         }
     }
     else {

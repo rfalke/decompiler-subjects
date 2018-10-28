@@ -23,9 +23,15 @@ do
     rm -rf _output
     mkdir _output
     if $BOOMERANGSRCDIR/build/out/bin/boomerang-cli -o _output "$line" >out 2>&1 ; then
-      echo "  ok"
-      mv _output/subject/subject.c $dir/by_boomerang-ng.c
-      cat _output/subject/*.c >>$dir/by_boomerang-ng.c 2>/dev/null || true
+      if test "$(cat _output/subject/subject.c)" = ""; then
+      	# empty or single newline
+      	echo "  failed"
+        touch $dir/by_boomerang-ng.failed
+      else
+        echo "  ok"
+        mv _output/subject/subject.c $dir/by_boomerang-ng.c
+        cat _output/subject/*.c >>$dir/by_boomerang-ng.c 2>/dev/null || true
+      fi
     else
       echo "  failed"
       touch $dir/by_boomerang-ng.failed
@@ -33,6 +39,11 @@ do
     if test -s _output/log; then
       mv _output/log $dir/by_boomerang-ng.log
     fi
-    sed <out -e 's/Completed in .*/Completed in some time/g' -e "s,$root/,," >$dir/by_boomerang-ng.out
+    sed <out -e 's/Completed in .*/Completed in some time/g' -e "s,$root/,," -e "s;$BOOMERANGSRCDIR;BOOMERANGSRCDIR;" | \
+    	cut -d'|' -f1,2,4- | \
+    	grep -v 'Error.* Disassembled instruction.*but the instruction has' | \
+    	grep -v 'Error.*No entry for.*in RTL dictionary' | \
+    	grep -v 'Warn.*Encountered invalid or unrecognized instruction' | \
+    	grep -v 'Warn.*Unknown size for named typ' >$dir/by_boomerang-ng.out
   fi
 done

@@ -48,7 +48,7 @@ void f_setsig();
 __size32 f_init(__size32 param1);
 void MAIN__(__size32 param1, __size32 param2, __size32 param3);
 __size32 f__fatal();
-__size32 f__canseek(int param1, int param2);
+__size32 f__canseek(union { FILE *; unsigned int; } param1, int param2, int param3, struct stat param4);
 void s_wsle();
 __size32 do_lio(union { __size32; __size32 *; } param1, __size32 param2, __size32 param3, __size32 param4, __size32 param5, __size32 param6, __size32 param7);
 __size32 e_wsle();
@@ -61,7 +61,7 @@ __size32 f__putbuf(int param1);
 void f__nowreading();
 void t_getc();
 void f_exit();
-__size32 fk_open(int param1, __size32 param2, char param3[]);
+__size32 fk_open(int param1, __size32 param2, int param3, char param4);
 __size32 Letext(int param1, unsigned int param2);
 void f_clos();
 void f_open();
@@ -75,39 +75,39 @@ __size32 copy(union { __size32; FILE *; } param1, int param2, union { __size32; 
 int main(int argc, union { __size32; char *[] *; } argv)
 {
     __size32 fp; 		// r30
-    __size32 fp_1; 		// r30{0}
+    __size32 fp_1; 		// r30{5}
     __size32 g0; 		// r0
     __size32 g2; 		// r2
     __size32 g3; 		// r3
     __size32 i0; 		// r24
-    __size32 i0_1; 		// r24{0}
+    __size32 i0_1; 		// r24{5}
     __size32 i1; 		// r25
-    __size32 i1_1; 		// r25{0}
+    __size32 i1_1; 		// r25{5}
     __size32 i2; 		// r26
-    __size32 i2_1; 		// r26{0}
+    __size32 i2_1; 		// r26{5}
     __size32 i3; 		// r27
-    __size32 i3_1; 		// r27{0}
+    __size32 i3_1; 		// r27{5}
     __size32 i4; 		// r28
-    __size32 i4_1; 		// r28{0}
+    __size32 i4_1; 		// r28{5}
     __size32 i5; 		// r29
-    __size32 i5_1; 		// r29{0}
+    __size32 i5_1; 		// r29{5}
     __size32 i7; 		// r31
-    __size32 i7_1; 		// r31{0}
+    __size32 i7_1; 		// r31{5}
     __size32 l0; 		// r16
     __size32 l1; 		// r17
-    __size32 l1_1; 		// r17{0}
+    __size32 l1_1; 		// r17{5}
     __size32 l2; 		// r18
-    __size32 l2_1; 		// r18{0}
+    __size32 l2_1; 		// r18{5}
     __size32 l3; 		// r19
-    __size32 l3_1; 		// r19{0}
+    __size32 l3_1; 		// r19{5}
     __size32 l4; 		// r20
-    __size32 l4_1; 		// r20{0}
+    __size32 l4_1; 		// r20{5}
     __size32 l5; 		// r21
-    __size32 l5_1; 		// r21{0}
+    __size32 l5_1; 		// r21{5}
     __size32 l6; 		// r22
-    __size32 l6_1; 		// r22{0}
+    __size32 l6_1; 		// r22{5}
     __size32 l7; 		// r23
-    __size32 l7_1; 		// r23{0}
+    __size32 l7_1; 		// r23{5}
     int o0; 		// r8
     int o1; 		// r9
     int o2; 		// r10
@@ -136,18 +136,18 @@ void f_setsig()
 {
     int o0; 		// r8
 
-    signal();
-    signal();
-    signal();
-    o0 = signal();
+    signal(8, 0x14a54);
+    signal(6, 0x14a70);
+    signal(5, 0x14ae0);
+    o0 = signal(3, 0x14a8c);
     if (o0 == 1) {
-        signal();
+        signal(3, 1);
     }
-    o0 = signal();
+    o0 = signal(2, 0x14aa8);
     if (o0 == 1) {
-        signal();
+        signal(2, 1);
     }
-    signal();
+    signal(15, 0x14ac4);
     return;
 }
 
@@ -155,7 +155,7 @@ void f_setsig()
 __size32 f_init(__size32 param1)
 {
     __size32 fp; 		// r30
-    union { __size32; __size32 *; } fp_1; 		// r30{0}
+    union { __size32; __size32 *; } fp_1; 		// r30{11}
     __size32 g2; 		// r2
     __size32 i0; 		// r24
     __size32 i1; 		// r25
@@ -172,8 +172,8 @@ __size32 f_init(__size32 param1)
     __size32 l5; 		// r21
     __size32 l6; 		// r22
     __size32 l7; 		// r23
-    __size32 local0; 		// param1{0}
-    __size32 o0; 		// r8
+    __size32 local0; 		// param1{8}
+    union { unsigned int; FILE *; } o0; 		// r8
     __size32 o6; 		// r14
 
     fp = o6;
@@ -188,17 +188,17 @@ __size32 f_init(__size32 param1)
     fp_1 = fp;
     f__units = 0x2c3b8;
     *(__size32*)(l3 + 668) = 1;
-    o0 = f__canseek(*(o6 - 128), *(o6 - 132));
+    o0 = f__canseek(0x2c3b8, *(o6 - 128), *(o6 - 132), *(o6 - 152));
     global_0x0002c750 = o0;
     global_0x0002c754 = 1;
     global_0x0002c764 = 1;
     global_0x0002c82c = 0x2c398;
-    o0 = f__canseek(*(o6 - 128), *(o6 - 132));
+    o0 = f__canseek(0x2c398, *(o6 - 128), *(o6 - 132), *(o6 - 152));
     global_0x0002c840 = o0;
     global_0x0002c844 = 1;
     global_0x0002c854 = 0;
     global_0x0002c85c = 0x2c3a8;
-    o0 = f__canseek(*(o6 - 128), *(o6 - 132));
+    o0 = f__canseek(0x2c3a8, *(o6 - 128), *(o6 - 132), *(o6 - 152));
     global_0x0002c884 = 1;
     global_0x0002c870 = o0;
     global_0x0002c874 = 1;
@@ -317,7 +317,8 @@ __size32 f__fatal()
         }
         else {
             o2 = (f__curunit - 0x2c73c) * 4 + f__curunit - 0x2c73c;
-            fprintf(0x2c3b8, "apparent state: unit %d ", 0 - (o2 * 17 + o2 * 0x1100) * 0x10001 >> 4);
+            o2 += (o2 << 4) + (o2 + (o2 << 4) << 8);
+            fprintf(0x2c3b8, "apparent state: unit %d ", 0 - o2 + (o2 << 16) >> 4);
             o0 = *(f__curunit + 4);
             if (o0 == 0) {
                 o3 = 0x1a630;
@@ -369,38 +370,40 @@ __size32 f__fatal()
 }
 
 /** address: 0x000150bc */
-__size32 f__canseek(int param1, int param2)
+__size32 f__canseek(union { FILE *; unsigned int; } param1, int param2, int param3, struct stat param4)
 {
     unsigned int i0; 		// r24
     int o0; 		// r8
+    int o0_1; 		// r8
+    int o0_2; 		// r8{6}
 
-    fileno();
-    o0 = fstat();
-    if (o0 < 0) {
+    o0_2 = fileno(param1);
+    o0_1 = fstat(o0_2, &param4);
+    if (o0_1 < 0) {
 bb0x15160:
         i0 = 0;
     }
     else {
-        if ((param2 & 0xf000) == 0x4000) {
+        if ((param3 & 0xf000) == 0x4000) {
 bb0x15130:
-            i0 = (param1 != 0);
+            i0 = (param2 != 0);
         }
         else {
-            if ((unsigned int)(param2 & 0xf000) > 0x4000) {
-                if ((param2 & 0xf000) == 0x6000) {
+            if ((unsigned int)(param3 & 0xf000) > 0x4000) {
+                if ((param3 & 0xf000) == 0x6000) {
                     i0 = 1;
                 }
                 else {
                     i0 = 0;
-                    if ((param2 & 0xf000) == 0x8000) {
+                    if ((param3 & 0xf000) == 0x8000) {
                         goto bb0x15130;
                     }
                 }
             }
             else {
-                if ((param2 & 0xf000) == 0x2000) {
-                    fileno();
-                    o0 = isatty();
+                if ((param3 & 0xf000) == 0x2000) {
+                    o0_1 = fileno(param1);
+                    o0 = isatty(o0_1);
                     i0 = 1 - (o0 != 0);
                 }
                 else {
@@ -445,15 +448,9 @@ void s_wsle()
         f__donewrec = 0x192d4;
         f__reading = 0;
         f__external = 1;
-        if (l3 == 1) {
-bb0x149d0:
-        }
-        else {
+        if (l3 != 1) {
             f__nowwriting();
-            if (f__curunit == 0) {
-                goto bb0x149d0;
-            }
-            else {
+            if (f__curunit != 0) {
                 o0 = *i0;
                 if (o0 == 0) {
                     f__fatal();
@@ -594,8 +591,8 @@ void e_rsle()
     __size32 l0; 		// r16
     __size32 l2; 		// r18
     unsigned int o0; 		// r8
-    __size32 o0_1; 		// r8{0}
-    unsigned int o0_4; 		// r8{0}
+    __size32 o0_1; 		// r8{26}
+    unsigned int o0_4; 		// r8{2}
     unsigned int o1; 		// r9
 
     *(__size32*)%o6 = %l0;
@@ -615,17 +612,11 @@ void e_rsle()
     *(__size32*)(%o6 + 56) = %fp;
     *(__size32*)(%o6 + 60) = %i7;
     *(__size32*)(%o2 + 668) = %o0;
-    if (flags) {
-bb0x11d6c:
-    }
-    else {
+    if ( ~flags) {
         do {
             t_getc();
             if (flags) {
                 o0_1 = *(l0 + 216);
-            }
-            else {
-                goto bb0x11d6c;
             }
             return;
         } while (o0_4 != -1);
@@ -660,10 +651,10 @@ void sig_die()
     *(__size32*)(%o6 + 60) = %i7;
     fprintf(%o0, %o1);
     if ( ~flags) {
-        fflush();
+        fflush(%o0);
         f_exit();
-        fflush();
-        signal();
+        fflush(%o0);
+        signal(%o0, %o1);
         abort();
     }
     exit(%o0);
@@ -675,10 +666,10 @@ void c_le(__size32 param1, __size32 param2)
     __size32 i0; 		// r24
     __size32 l0; 		// r16
     __size32 o0; 		// r8
-    __size32 o0_1; 		// r8{0}
-    __size32 o0_2; 		// r8{0}
+    __size32 o0_1; 		// r8{34}
+    __size32 o0_2; 		// r8{47}
     __size32 o1; 		// r9
-    __size32 o2; 		// r10
+    int o2; 		// r10
     __size32 o3; 		// r11
     unsigned int o5; 		// r13
     __size32 o6; 		// r14
@@ -693,7 +684,7 @@ void c_le(__size32 param1, __size32 param2)
     f__fmtbuf = 0x1a0d0;
     f__fmtlen = 7;
     *(__size32*)(l0 + 668) = 3;
-    f__curunit = o5 * 48 + 0x2c73c;
+    f__curunit = (o5 * 3 << 4) + 0x2c73c;
     if (o5 <= 99) {
         o0 = *0x2da90;
         o3 = *o0;
@@ -706,9 +697,7 @@ bb0x1316c:
             o1 = *(o0 + 24);
             o2 = *o0;
             f__cf = o2;
-            if (o1 != 0) {
-            }
-            else {
+            if (o1 == 0) {
                 o0_2 = *i0;
                 o0 = *(l0 + 668);
                 if (o0_2 == 0) {
@@ -721,7 +710,8 @@ bb0x1316c:
             }
         }
         else {
-            o0 = fk_open(3, 5, *(o6 - 32));
+            o2 = *(i0 + 4);
+            o0 = fk_open(3, 5, o2, *(o6 - 32));
             if (o0 == 0) {
                 goto bb0x1316c;
             }
@@ -757,9 +747,9 @@ void f__nowwriting()
     union { __size32; union { FILE *; unsigned int; } *; } i0; 		// r24
     int l0; 		// r16
     int o0; 		// r8
-    int o0_1; 		// r8{0}
-    union { __size32; char *; } o0_4; 		// r8{0}
-    unsigned int o0_5; 		// r8{0}
+    int o0_1; 		// r8{31}
+    union { __size32; char *; } o0_4; 		// r8{32}
+    unsigned int o0_5; 		// r8{34}
     int o2; 		// r10
 
     *(__size32*)%o6 = %l0;
@@ -788,7 +778,7 @@ bb0x15630:
             *(__size32*)(%o1 + 248) = %o0;
         }
         else {
-            if ( ~flags) {
+            if (flags) {
             }
             if (flags) {
                 o0 = *i0;
@@ -801,12 +791,10 @@ bb0x15630:
                 if (o0_5 != 0) {
                     *(__size32*)(i0 + 28) = 3;
                     fseek(o0_5, o0_1, 0);
-bb0x15658:
                     goto bb0x1565c;
                 }
                 else {
                     *(__size32*)i0 = 0;
-bb0x1562c:
                     goto bb0x15630;
                 }
             }
@@ -815,11 +803,11 @@ bb0x1562c:
                 *(__size32*)%i0 = %o0;
                 *(__size32*)(%l0 + 216) = %o0;
                 if (flags) {
-                    goto bb0x1562c;
+                    goto bb0x15630;
                 }
                 else {
                     *(__size32*)(%i0 + 28) = %o0;
-                    goto bb0x15658;
+                    goto bb0x1565c;
                 }
             }
         }
@@ -831,7 +819,7 @@ bb0x1562c:
 __size32 f__putbuf(int param1)
 {
     __size32 fp; 		// r30
-    union { __size32; __size32 *; } fp_1; 		// r30{0}
+    union { __size32; __size32 *; } fp_1; 		// r30{12}
     int i0; 		// r24
     __size32 i4; 		// r28
     __size32 i5; 		// r29
@@ -839,8 +827,8 @@ __size32 f__putbuf(int param1)
     __size32 l0; 		// r16
     __size32 l1; 		// r17
     int o0; 		// r8
-    union { char[] *; __size32; } o0_2; 		// r8{0}
-    int o0_5; 		// r8{0}
+    union { char *; __size32; } o0_2; 		// r8{36}
+    int o0_5; 		// r8{22}
     int o1; 		// r9
     int o2; 		// r10
     int o6; 		// r14
@@ -865,7 +853,8 @@ __size32 f__putbuf(int param1)
     *(__size8*)l1 = 0;
     for(;;) {
 bb0x139f0:
-        fputs();
+        o1 = *0x2c4d8;
+        fputs(l0, o1);
         o0_2 = strlen(l0);
         o2 = *0x2c4d8;
         if (l0 + o0_2 < l1) {
@@ -919,7 +908,7 @@ bb0x15534:
             *(__size32*)(%o1 + 248) = %o0;
         }
         else {
-            if ( ~flags) {
+            if (flags) {
             }
             ftell(%o0);
             freopen(%o0, %o1, %o2);
@@ -952,10 +941,7 @@ void t_getc()
     int o2; 		// r10
 
     o2 = *(f__curunit + 36);
-    if (o2 != 0) {
-bb0x11cec:
-    }
-    else {
+    if (o2 == 0) {
         o1 = *0x2c4d8;
         o0 = *o1;
         *(int*)o1 = o0 - 1;
@@ -973,9 +959,7 @@ bb0x11cec:
             if ((o1 & 0x10) != 0) {
                 l_eof = 1;
                 *(__size32*)(f__curunit + 36) = 1;
-                goto bb0x11cec;
             }
-            goto bb0x11cec;
         }
     }
     return;
@@ -985,7 +969,7 @@ bb0x11cec:
 void f_exit()
 {
     int l0; 		// r16
-    int l0_1; 		// r16{0}
+    int l0_1; 		// r16{7}
 
     if ((f__init & 0x1) != 0) {
         f__init = f__init & ~0x2;
@@ -1005,19 +989,15 @@ void f_exit()
 }
 
 /** address: 0x000141d4 */
-__size32 fk_open(int param1, __size32 param2, char param3[])
+__size32 fk_open(int param1, __size32 param2, int param3, char param4)
 {
     int o6; 		// r14
 
-    sprintf(&param3, 0x1a130);
-    strlen(&param3);
-    if (param1 != 3) {
+    sprintf(&param4, "fort.%ld", param3);
+    strlen(&param4);
+    if (param1 == 3) {
     }
-    else {
-    }
-    if (param2 != 5) {
-    }
-    else {
+    if (param2 == 5) {
     }
     f__init = f__init & ~0x2;
     f_open();
@@ -1033,16 +1013,16 @@ __size32 Letext(int param1, unsigned int param2)
     unsigned int i1; 		// r25
     __size32 l0; 		// r16
     int l1; 		// r17
-    int local0; 		// o0_5{0}
-    union { unsigned char *; unsigned int; } local1; 		// o1_2{0}
+    int local0; 		// o0_5{12}
+    union { unsigned char *; unsigned int; } local1; 		// o1_2{30}
     int o0; 		// r8
-    int o0_2; 		// r8{0}
-    int o0_5; 		// r8{0}
-    int o0_6; 		// r8{0}
+    int o0_2; 		// r8{10}
+    int o0_5; 		// r8{12}
+    int o0_6; 		// r8{13}
     int o1; 		// r9
-    unsigned int o1_1; 		// r9{0}
-    union { unsigned int; unsigned char *; } o1_2; 		// r9{0}
-    unsigned int o1_3; 		// r9{0}
+    unsigned int o1_1; 		// r9{22}
+    union { unsigned int; unsigned char *; } o1_2; 		// r9{30}
+    unsigned int o1_3; 		// r9{33}
     int o2; 		// r10
     int o6; 		// r14
 
@@ -1122,7 +1102,7 @@ void f_clos()
 bb0x14c70:
                 fclose(%o0);
                 if ( ~flags) {
-                    unlink();
+                    unlink(%o0);
                     free(%o0);
                 }
             }
@@ -1139,8 +1119,6 @@ bb0x14c30:
                 }
                 else {
                     if (flags) {
-                    }
-                    else {
                     }
                     if (flags) {
                         goto bb0x14c70;
@@ -1190,11 +1168,9 @@ bb0x13c24:
             *(__size32*)(%l1 + 16) = %o0;
             if ( ~flags) {
                 if (flags) {
-bb0x13c54:
                 }
                 else {
-                    if ( ~flags) {
-                        goto bb0x13c54;
+                    if (flags) {
                     }
                 }
             }
@@ -1229,7 +1205,7 @@ bb0x13d30:
                 *(__size32*)(%l1 + 36) = 0;
                 *(__size32*)(%l1 + 40) = 0;
                 *(__size32*)%l1 = 0;
-                if ( ~flags) {
+                if (flags) {
                 }
                 if ( ~flags) {
 /* goto r10 */
@@ -1242,34 +1218,23 @@ bb0x13d30:
                     if ( ~flags) {
                         if (flags) {
                         }
-                        else {
-                        }
                     }
                     fopen(%o0, %o1);
                     if (flags) {
 bb0x14010:
                         *(__size32*)%l1 = %o2;
-                        f__canseek(*(%o6 - 128), *(%o6 - 132));
+                        f__canseek(%o0, *(%o6 - 128), *(%o6 - 132), *(%o6 - 152));
                         *(__size32*)(%l1 + 20) = %o0;
                         f__inode(%o0, %o1, *(%o6 - 152));
                         *(__size32*)(%l1 + 8) = %o0;
                         if (flags) {
-                            if (flags) {
-bb0x14130:
-                            }
-                            else {
+                            if ( ~flags) {
                                 if (flags) {
-                                    if (flags) {
-                                        goto bb0x14130;
-                                    }
-                                    else {
+                                    if ( ~flags) {
                                         if (flags) {
 bb0x140d0:
                                             fseek(%o0, %o1, %o2);
-                                            if (flags) {
-                                                goto bb0x14130;
-                                            }
-                                            else {
+                                            if ( ~flags) {
                                                 if (flags) {
                                                     opn_err(%o2);
                                                 }
@@ -1280,18 +1245,14 @@ bb0x140d0:
                                             }
                                         }
                                         else {
-                                            if (flags) {
-                                                goto bb0x14130;
-                                            }
-                                            else {
+                                            if ( ~flags) {
                                                 goto bb0x140d0;
                                             }
                                         }
                                     }
                                 }
                                 else {
-                                    rewind();
-                                    goto bb0x14130;
+                                    rewind(%o0);
                                 }
                             }
                         }
@@ -1364,15 +1325,11 @@ bb0x13b84:
                     if ( ~flags) {
                         if ( ~flags && flags) {
                             *(__size32*)(l1 + 32) = o1;
-                            goto bb0x14130;
                         }
                         else {
                             *(__size32*)(%l1 + 32) = %o1;
-                            goto bb0x14130;
                         }
-                        goto bb0x14130;
                     }
-                    goto bb0x14130;
                 }
                 else {
                     *(__size32*)(%fp - 280) = 0;
@@ -1410,12 +1367,12 @@ void t_runc()
     int l3; 		// r19
     char local0; 		// m[o6 - 0x410]
     int o0; 		// r8
-    union { __size32; char *; } o0_12; 		// r8{0}
-    __size32 o0_13; 		// r8{0}
-    union { FILE *; __size32; } o0_2; 		// r8{0}
-    union { FILE *; __size32; } o0_5; 		// r8{0}
-    __size32 o0_8; 		// r8{0}
-    union { FILE *; __size32; } o0_9; 		// r8{0}
+    union { __size32; char *; } o0_12; 		// r8{48}
+    __size32 o0_13; 		// r8{52}
+    union { FILE *; __size32; } o0_2; 		// r8{39}
+    union { FILE *; __size32; } o0_5; 		// r8{41}
+    __size32 o0_8; 		// r8{44}
+    union { FILE *; __size32; } o0_9; 		// r8{49}
     int o1; 		// r9
 
     *(__size32*)%o6 = %l0;
@@ -1434,17 +1391,11 @@ void t_runc()
     *(__size32*)(%o6 + 52) = %i5;
     *(__size32*)(%o6 + 56) = %fp;
     *(__size32*)(%o6 + 60) = %i7;
-    if (flags) {
-bb0x150b0:
-    }
-    else {
+    if ( ~flags) {
         ftell(%o0);
         fseek(%o0, %o1, %o2);
         ftell(%o0);
-        if (flags) {
-            goto bb0x150b0;
-        }
-        else {
+        if ( ~flags) {
             fclose(%o0);
             if (flags) {
                 o1 = *0x2ad10;
@@ -1463,7 +1414,7 @@ bb0x150b0:
                             if (o0_9 == 0) {
                             }
                             else {
-                                rewind();
+                                rewind(o0_5);
                                 o0_13 = copy(o0_5, l3, o0_9, local0);
                                 if (o0_13 != 0) {
                                 }
@@ -1490,10 +1441,7 @@ bb0x150b0:
             }
             *(__size32*)(%o0 + 216) = %l0;
             *(__size32*)%l1 = %l0;
-            if (flags) {
-                goto bb0x150b0;
-            }
-            else {
+            if ( ~flags) {
                 if (flags) {
                     f__fatal();
                 }
@@ -1529,9 +1477,7 @@ void f__inode(union { __size32; char *; } param1, union { __size32; union { __si
     int o0_1; 		// r8
 
     o0_1 = stat(param1, &param3);
-    if (o0_1 < 0) {
-    }
-    else {
+    if (o0_1 >= 0) {
         *(union { struct stat; __size32; }*)param2 = param3;
     }
     return;
@@ -1560,12 +1506,12 @@ __size32 copy(union { __size32; FILE *; } param1, int param2, union { __size32; 
 {
     __size32 i0; 		// r24
     int i1; 		// r25
-    int i1_1; 		// r25{0}
-    int i1_2; 		// r25{0}
+    int i1_1; 		// r25{7}
+    int i1_2; 		// r25{15}
     int l0; 		// r16
-    int local0; 		// i1_1{0}
+    int local0; 		// i1_1{7}
     int o0; 		// r8
-    int o0_1; 		// r8{0}
+    int o0_1; 		// r8{12}
 
     i1 = param2;
     local0 = i1;
@@ -1585,10 +1531,8 @@ __size32 copy(union { __size32; FILE *; } param1, int param2, union { __size32; 
                 return i0;
             }
         }
-bb0x14ed0:
-        i0 = 0;
-        return i0;
     } while (i1_1 > l0);
-    goto bb0x14ed0;
+    i0 = 0;
+    return i0;
 }
 

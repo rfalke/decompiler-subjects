@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     __size32 local5; 		// m[g1 - 132]
     int local6; 		// m[g1 - 116]
     int local7; 		// m[g1 - 128]
-    __size32 local8; 		// m[g1 - 136]{0}
+    __size32 local8; 		// m[g1 - 136]{14}
 
     g3 = malloc(12);
     *(__size32*)(g3 + 4) = 0x10001df4;
@@ -62,12 +62,11 @@ bb0x10000564:
             while (local2 >= 0) {
                 g0 = *(unsigned char*)(g1 + local2 - 96);
                 if ((ROTL(g0) & 0xff) != 32) {
-                    goto bb0x10000688;
+                    break;
                 }
                 *(__size8*)(g1 + local2 - 96) = 0;
                 local2--;
             }
-bb0x10000688:
             g10 = puts(&local3); /* Warning: also results in g11 */
             local7++;
             goto bb0x10000500;

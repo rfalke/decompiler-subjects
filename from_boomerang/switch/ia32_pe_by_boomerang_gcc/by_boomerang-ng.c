@@ -10,15 +10,15 @@ void proc_0x00401670(unsigned int param1, unsigned int param2, __size32 param3);
 void proc_0x00401470(__size32 param1)
 {
     __size32 eax; 		// r24
-    __size32 esp_1; 		// r28{0}
-    __size32 esp_11; 		// r28{0}
-    __size32 esp_12; 		// r28{0}
-    __size32 esp_4; 		// r28{0}
-    __size32 esp_5; 		// r28{0}
-    __size32 esp_6; 		// r28{0}
+    __size32 esp_1; 		// r28{5}
+    __size32 esp_11; 		// r28{8}
+    __size32 esp_12; 		// r28{1}
+    __size32 esp_4; 		// r28{11}
+    __size32 esp_5; 		// r28{12}
+    __size32 esp_6; 		// r28{19}
     __size32 local0; 		// m[esp - 28]
-    __size32 local3; 		// esp_11{0}
-    __size32 local4; 		// esp_5{0}
+    __size32 local3; 		// esp_11{8}
+    __size32 local4; 		// esp_5{12}
 
     local0 = param1;
     eax = proc_0x00401530(param1, 0, (esp_12 - 4));
@@ -64,10 +64,10 @@ void _start(unsigned short param1)
 __size32 proc_0x00401530(__size32 param1, __size32 param2, __size32 param3)
 {
     __size32 eax; 		// r24
-    __size32 eax_1; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
+    __size32 eax_1; 		// r24{44}
+    __size32 eax_4; 		// r24{45}
     __size32 ebx; 		// r27
-    __size32 local0; 		// eax{0}
+    __size32 local0; 		// eax{40}
 
     eax = 0;
     ebx = param2;
@@ -134,12 +134,12 @@ void proc_0x004016b0()
 /** address: 0x00401670 */
 void proc_0x00401670(unsigned int param1, unsigned int param2, __size32 param3)
 {
-    __size32 eax_1; 		// r24{0}
-    __size32 eax_4; 		// r24{0}
+    __size32 eax_1; 		// r24{8}
+    __size32 eax_4; 		// r24{9}
     unsigned int ecx; 		// r25
-    union { unsigned int; __size32 *; } ecx_1; 		// r25{0}
-    unsigned int ecx_2; 		// r25{0}
-    union { __size32 *; unsigned int; } local0; 		// ecx_1{0}
+    union { unsigned int; __size32 *; } ecx_1; 		// r25{7}
+    unsigned int ecx_2; 		// r25{10}
+    union { __size32 *; unsigned int; } local0; 		// ecx_1{7}
 
     ecx = param1;
     local0 = ecx;

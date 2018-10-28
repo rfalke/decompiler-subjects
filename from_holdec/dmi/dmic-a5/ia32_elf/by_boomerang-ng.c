@@ -4,10 +4,10 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
     unsigned int ebx; 		// r27
-    unsigned int ebx_1; 		// r27{0}
-    unsigned int ebx_2; 		// r27{0}
+    unsigned int ebx_1; 		// r27{6}
+    unsigned int ebx_2; 		// r27{8}
     union { __size32; char *; } local0; 		// m[esp - 48]
-    unsigned int local1; 		// ebx_1{0}
+    unsigned int local1; 		// ebx_1{6}
 
     if (argc > 0) {
         ebx = 0;
