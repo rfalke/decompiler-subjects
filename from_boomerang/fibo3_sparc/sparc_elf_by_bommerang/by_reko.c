@@ -31,15 +31,15 @@ void __do_global_dtors_aux(word32 o7)
 	word32 o4_26 = (word32) *l7_139->ptr0010;
 	if (o4_26 != 0x00)
 		return;
-	<anonymous> *** g1_55 = l7_139->ptr000C;
-	<anonymous> * o5_57 = **g1_55;
-	if (o5_57 != null)
+	word32 ** g1_55 = l7_139->ptr000C;
+	word32 o5_57 = **g1_55;
+	if (o5_57 != 0x00)
 	{
-		<anonymous> *** l0_115 = g1_55;
-		<anonymous> ** g1_117 = (char *) *g1_55 + 0x04;
+		word32 ** l0_115 = g1_55;
+		word32 * g1_117 = (char *) *g1_55 + 0x04;
 		while (true)
 		{
-			*l0_115 = (<anonymous> ***) g1_117;
+			*l0_115 = g1_117;
 			word32 sp_122;
 			word32 i0_123;
 			word32 o0_124;
@@ -61,11 +61,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_141;
 			byte NZVC_142;
 			byte Z_143;
-			o5_57();
-			<anonymous> ** g1_145 = *l0_115;
-			if (*g1_145 == null)
+			fn9DE3BFA0();
+			word32 * g1_145 = *l0_115;
+			if (*g1_145 == 0x00)
 				break;
-			g1_117 = (<anonymous> **) ((char *) g1_145 + 0x04);
+			g1_117 = g1_145 + 0x01;
 		}
 	}
 	word32 o5_80 = l7_139->dw0024;
@@ -176,11 +176,11 @@ void call_frame_dummy()
 // 000106AC: Register int32 fib(Register int32 o0, Stack int32 dwArg44, Stack word32 dwArg48, Register out ptr32 i6Out)
 int32 fib(int32 o0, int32 dwArg44, word32 dwArg48, ptr32 & i6Out)
 {
-	struct Eq_224 * i6_15;
+	struct Eq_226 * i6_15;
 	*i6Out = fp;
 	if (o0 > 0x01)
 	{
-		struct Eq_229 * i6_48;
+		struct Eq_231 * i6_48;
 		int32 o0_49 = fib(o0 + ~0x00, dwLoc34, dwLoc30, out i6_48);
 		i6_48->dwFFFFFFF0 = o0_49;
 		int32 o0_54 = fib(i6_48->dw0044 + ~0x01, o0, o5, out i6_15);
@@ -194,7 +194,7 @@ void main()
 {
 	printf("Input number: ");
 	scanf("%d", tLoc7C);
-	struct Eq_274 * i6_33;
+	struct Eq_276 * i6_33;
 	int32 o0_34 = fib(dwLoc14, dwLoc3C, dwLoc38, out i6_33);
 	i6_33->dwFFFFFFE8 = o0_34;
 	printf("fibonacci(%d) = %d\n", i6_33->dwFFFFFFEC, i6_33->dwFFFFFFE8);
@@ -210,10 +210,10 @@ word32 fn00010778(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_303 * l7_22 = fn00010778(o7, 0x000100B4);
-	struct Eq_308 * o5_25 = l7_22->ptr0018;
-	<anonymous> * g1_26 = o5_25->ptrFFFFFFFC;
-	if (g1_26 != (<anonymous> *) ~0x00)
+	struct Eq_305 * l7_22 = fn00010778(o7, 0x000100B4);
+	struct Eq_310 * o5_25 = l7_22->ptr0018;
+	word32 g1_26 = o5_25->dwFFFFFFFC;
+	if (g1_26 != ~0x00)
 	{
 		do
 		{
@@ -238,11 +238,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_74;
 			byte NZVC_75;
 			byte Z_76;
-			g1_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o5_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o5_25->dwFFFFFFFC;
 	return l0_30;
 }
 

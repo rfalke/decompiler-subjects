@@ -168,16 +168,16 @@ Eq_432 * fn00401670(Eq_433 * dwArg04, uint32 dwArg08)
 	struct Eq_435 * ecx_12 = dwArg04 + dwArg04->dw003C / 0x0040;
 	up32 esi_20 = (word32) ecx_12->w0006;
 	up32 edx_21 = 0x00;
-	struct Eq_432 * eax_24 = &(ecx_12 + ((word32) ecx_12->w0014 + 0x18) / 22)->w0006 + 0x03;
+	struct Eq_432 * eax_24 = ecx_12 + ((word32) ecx_12->w0014 + 0x18) / 22;
 	if (esi_20 != 0x00)
 	{
 		do
 		{
-			uint32 ecx_56 = eax_24->dw0000;
+			uint32 ecx_56 = eax_24->dw000C;
 			if (dwArg08 >= ecx_56 && dwArg08 < eax_24->dw0008 + ecx_56)
 				return eax_24;
-			edx_21 = edx_21 + 0x01;
-			eax_24 = eax_24 + 0x01;
+			++edx_21;
+			++eax_24;
 		} while (edx_21 < esi_20);
 	}
 	eax_24 = null;
@@ -191,7 +191,7 @@ ui32 fn004016C0(ui32 dwArg04)
 	fs->ptr0000 = fp - 0x14;
 	if (fn00401630(&globals->t400000) != 0x00)
 	{
-		struct Eq_494 * eax_92 = fn00401670(&globals->t400000, dwArg04 - 0x00400000);
+		struct Eq_492 * eax_92 = fn00401670(&globals->t400000, dwArg04 - 0x00400000);
 		if (eax_92 != null)
 		{
 			uint32 eax_99 = ~(eax_92->dw0024 >> 0x1F);
@@ -210,8 +210,8 @@ ptr32 fn00401790(word32 ebx, word32 esi, word32 edi, word32 dwArg00, word32 dwAr
 	*(esp_14 - 0x04) = ebx;
 	*(esp_14 - 0x08) = esi;
 	*(esp_14 - 0x0C) = edi;
-	*(esp_14 - 0x10) = globals->dw405058 ^ fp + 0x08;
-	*(esp_14 - 0x14) = dwArg00;
+	*(esp_14 - 0x0010) = globals->dw405058 ^ fp + 0x08;
+	*(esp_14 - 0x0014) = dwArg00;
 	fs->ptr0000 = fp - 0x08;
 	return fp + 0x08;
 }
@@ -238,7 +238,7 @@ void fn00401870()
 		if (esi_69 == 0xBB40E64E)
 			esi_69 = ~0x44BF19B0;
 		else if ((esi_69 & 0xFFFF0000) == 0x00)
-			esi_69 = esi_69 | (esi_69 | 0x4711) << 0x10;
+			esi_69 |= (esi_69 | 0x4711) << 0x10;
 		globals->dw405058 = esi_69;
 		globals->dw40505C = ~esi_69;
 	}

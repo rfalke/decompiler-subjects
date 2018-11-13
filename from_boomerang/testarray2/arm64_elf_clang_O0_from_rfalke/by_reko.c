@@ -153,8 +153,8 @@ void main(word32 w0)
 	{
 		byte * x8_37 = sp_21->ptr0008;
 		sp_21->ptr0008 = x8_37 + 0x01;
-		x29_22->dwFFFFFFF4 = x29_22->dwFFFFFFF4 + (word32) (*x8_37);
-		x29_22->dwFFFFFFF8 = x29_22->dwFFFFFFF8 + 0x01;
+		x29_22->dwFFFFFFF4 += (word32) *x8_37;
+		++x29_22->dwFFFFFFF8;
 	}
 	fn0000000000400480();
 	sp_21->dw0004 = (word32) 0x004007AA;

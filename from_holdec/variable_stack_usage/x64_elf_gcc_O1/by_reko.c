@@ -102,7 +102,7 @@ void frame_dummy()
 // 00000000004004F6: void use(Register (ptr64 word32) rdi)
 void use(word32 * rdi)
 {
-	globals->dw601028 = globals->dw601028 + (word32) ((uint64) (*rdi));
+	globals->dw601028 += (word32) (uint64) *rdi;
 }
 
 // 00000000004004FF: void fill(Register word32 esi, Register (ptr64 word32) rdi)

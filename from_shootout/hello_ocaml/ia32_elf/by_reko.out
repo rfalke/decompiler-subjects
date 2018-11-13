@@ -1,12 +1,942 @@
 Using options:
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry (Reko.Core.Program program, Reko.ImageLoaders.Elf.ElfSymbol sym, Reko.ImageLoaders.Elf.ElfSection referringSection, Reko.ImageLoaders.Elf.ElfRelocation rela) [0x00056] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator+RelocationTable.RelocateEntries (Reko.Core.Program program, System.UInt64 offStrtab, System.UInt64 offSymtab, System.UInt64 symEntrySize) [0x00060] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols (Reko.Core.Program program) [0x001c1] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x0001a] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x000ce] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+08049F14: warning: Unable to resolve imported reference __gmon_start__.
+0804A9BF: warning: Call target address 00000000 is invalid.
+08049E94: warning: Unable to resolve imported reference getsockname.
+08049FA4: warning: Unable to resolve imported reference socketpair.
+0804A5A4: warning: Unable to resolve imported reference execve.
+0805D5EA: warning: Unable to determine format string for call to 'fprintf'.
+0805CFF7: warning: Unable to resolve imported reference sigdelset.
+0806A3A9: warning: Unable to resolve imported reference __xstat64.
+0806A1C5: warning: Unable to resolve imported reference readdir64.
+0806A0E5: warning: Unable to resolve imported reference __xstat64.
+080664E2: warning: Unable to resolve imported reference __xstat64.
+08066481: warning: Unable to resolve imported reference rename.
+08066452: warning: Unable to resolve imported reference chdir.
+080663B2: warning: Unable to resolve imported reference system.
+0806615C: warning: Unable to resolve imported reference __xstat64.
+080660F0: warning: Unable to resolve imported reference getrusage.
+080660B2: warning: Unable to resolve imported reference getppid.
+08063BE8: warning: Unable to resolve imported reference lseek64.
+08063A76: warning: Unable to resolve imported reference lseek64.
+08062E62: warning: Unable to resolve imported reference lseek64.
+08062E8B: warning: Unable to resolve imported reference lseek64.
+08062CE2: warning: Unable to resolve imported reference lseek64.
+08061F11: warning: Unable to resolve imported reference strtod.
+08061E44: warning: Unable to resolve imported reference strtod.
+08061D2B: warning: Unable to resolve imported reference exp.
+08061D0E: warning: Unable to resolve imported reference floor.
+08061CEB: warning: Unable to resolve imported reference fmod.
+08061C7A: warning: Unable to resolve imported reference frexp.
+08061C02: warning: Unable to resolve imported reference ldexp.
+08061BDC: warning: Unable to resolve imported reference log.
+08061BBF: warning: Unable to resolve imported reference log10.
+08061B67: warning: Unable to resolve imported reference modf.
+08061ADE: warning: Unable to resolve imported reference sqrt.
+08061AB1: warning: Unable to resolve imported reference pow.
+08061A8B: warning: Unable to resolve imported reference sin.
+08061A6E: warning: Unable to resolve imported reference sinh.
+08061A51: warning: Unable to resolve imported reference cos.
+08061A34: warning: Unable to resolve imported reference cosh.
+08061A17: warning: Unable to resolve imported reference tan.
+080619FA: warning: Unable to resolve imported reference tanh.
+080619DD: warning: Unable to resolve imported reference asin.
+080619C0: warning: Unable to resolve imported reference acos.
+080619A3: warning: Unable to resolve imported reference atan.
+08061986: warning: Unable to resolve imported reference atan2.
+08061960: warning: Unable to resolve imported reference ceil.
+080617A3: warning: Unable to resolve imported reference expm1.
+08061790: warning: Unable to resolve imported reference log1p.
+0806176A: warning: Unable to resolve imported reference __fpclassify.
+0805D588: warning: Unable to determine format string for call to 'fprintf'.
+0805D540: warning: Unable to determine format string for call to 'fprintf'.
+0805D55B: warning: Unable to determine format string for call to 'fprintf'.
+0805D35F: warning: Unable to resolve imported reference getrlimit64.
+0805D268: warning: Unable to resolve imported reference sigaltstack.
+0805BFDA: warning: Unable to resolve imported reference __sigsetjmp.
+0805BCF1: warning: Unable to resolve imported reference __isoc99_sscanf.
+0805BD09: warning: Unable to resolve imported reference __isoc99_sscanf.
+0805B951: warning: Unable to resolve imported reference waitpid.
+0805B592: warning: Unable to resolve imported reference umask.
+0805B54C: warning: Unable to resolve imported reference truncate64.
+0805B4F2: warning: Unable to resolve imported reference truncate64.
+0805B45E: warning: Unable to resolve imported reference getrusage.
+0805B48D: warning: Unable to resolve imported reference getrusage.
+0805B257: warning: Unable to resolve imported reference tcgetattr.
+0805B378: warning: Unable to resolve imported reference cfgetospeed.
+0805B385: warning: Unable to resolve imported reference cfgetispeed.
+0805B029: warning: Unable to resolve imported reference tcgetattr.
+0805B15E: warning: Unable to resolve imported reference cfsetospeed.
+0805B178: warning: Unable to resolve imported reference cfsetispeed.
+0805AFD2: warning: Unable to resolve imported reference tcsendbreak.
+0805AF84: warning: Unable to resolve imported reference tcdrain.
+0805AF3F: warning: Unable to resolve imported reference tcflush.
+0805AEEA: warning: Unable to resolve imported reference tcflow.
+0805AE88: warning: Unable to resolve imported reference symlink.
+0805AD69: warning: Unable to resolve imported reference __xstat64.
+0805ACD3: warning: Unable to resolve imported reference __lxstat64.
+0805AC36: warning: Unable to resolve imported reference __fxstat64.
+0805ABDA: warning: Unable to resolve imported reference __xstat64.
+0805AB7B: warning: Unable to resolve imported reference __lxstat64.
+0805AB1C: warning: Unable to resolve imported reference __fxstat64.
+0805A7E3: warning: Unable to resolve imported reference getsockopt.
+0805A6C5: warning: Unable to resolve imported reference setsockopt.
+0805A599: warning: Unable to resolve imported reference socketpair.
+0805A0B2: warning: Unable to resolve imported reference sigpending.
+08059FAF: warning: Unable to resolve imported reference sigsuspend.
+08059EF6: warning: Unable to resolve imported reference shutdown.
+08059E9E: warning: Unable to resolve imported reference setuid.
+08059E72: warning: Unable to resolve imported reference setsid.
+08059E25: warning: Unable to resolve imported reference setgroups.
+08059DA6: warning: Unable to resolve imported reference setgid.
+08059D2A: warning: Unable to resolve imported reference recv.
+08059BF0: warning: Unable to resolve imported reference recvfrom.
+08059AF1: warning: Unable to resolve imported reference send.
+080599EB: warning: Unable to resolve imported reference sendto.
+08059899: warning: Unable to resolve imported reference select.
+08059601: warning: Unable to resolve imported reference rmdir.
+080595D4: warning: Unable to resolve imported reference rewinddir.
+0805956C: warning: Unable to resolve imported reference rename.
+080594B8: warning: Unable to resolve imported reference readdir64.
+08059373: warning: Unable to resolve imported reference putenv.
+08059110: warning: Unable to resolve imported reference nice.
+080590B6: warning: Unable to resolve imported reference mkfifo.
+08058FCF: warning: Unable to resolve imported reference lseek64.
+08058F40: warning: Unable to resolve imported reference lseek64.
+08058D0F: warning: Unable to resolve imported reference listen.
+08058C6F: warning: Unable to resolve imported reference kill.
+08058B4C: warning: Unable to resolve imported reference modf.
+08058B78: warning: Unable to resolve imported reference ceil.
+08058C0D: warning: Unable to resolve imported reference setitimer.
+08058AF5: warning: Unable to resolve imported reference getitimer.
+08058A19: warning: Unable to resolve imported reference initgroups.
+080589C6: warning: Unable to resolve imported reference gmtime.
+08058726: warning: Unable to resolve imported reference getsockname.
+080586DA: warning: Unable to resolve imported reference getservbyname.
+0805869F: warning: Unable to resolve imported reference getservbyport.
+080583C5: warning: Unable to resolve imported reference getprotobyname.
+08058394: warning: Unable to resolve imported reference getprotobynumber.
+080582B6: warning: Unable to resolve imported reference getppid.
+0805823A: warning: Unable to resolve imported reference getpeername.
+0805808A: warning: Unable to resolve imported reference getlogin.
+0805805D: warning: Unable to resolve imported reference gethostname.
+08058002: warning: Unable to resolve imported reference gethostbyaddr_r.
+08057EC9: warning: Unable to resolve imported reference __h_errno_location.
+08057EF5: warning: Unable to resolve imported reference gethostbyname_r.
+08057D1C: warning: Unable to resolve imported reference getgroups.
+08057B6A: warning: Unable to resolve imported reference getegid.
+080576B6: warning: Unable to resolve imported reference ftruncate64.
+0805765F: warning: Unable to resolve imported reference ftruncate64.
+080575D7: warning: Unable to resolve imported reference fork.
+080573A0: warning: Unable to resolve imported reference fchown.
+08057347: warning: Unable to resolve imported reference fchmod.
+0805722E: warning: Unable to resolve imported reference execve.
+08057107: warning: Unable to resolve imported reference dup2.
+08056F51: warning: Unable to resolve imported reference chroot.
+08056F07: warning: Unable to resolve imported reference chown.
+08056E59: warning: Unable to resolve imported reference chdir.
+08056DB2: warning: Unable to resolve imported reference alarm.
+08056677: warning: Procedure fn08056610 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080551CA: warning: Procedure camlHashtbl__insert_bucket_1068 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055FB3: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080565F8: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055FC8: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056609: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056672: warning: Procedure fn08056610 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080564A9: warning: Procedure camlHashtbl__find_all_1105 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080560B8: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080560CD: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055C97: warning: Procedure fn08055C30 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055C18: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055C29: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055C92: warning: Procedure fn08055C30 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080559D9: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055921: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055739: warning: Procedure camlHashtbl__remove_1185 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055628: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805563D: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08056714: warning: Procedure camlHashtbl__mem_1122 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08055D5E: warning: Procedure camlHashtbl__mem_1227 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054C4F: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054C6A: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080549EA: warning: Procedure camlList__stable_sort_1248 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054798: warning: Procedure camlList__combine_1226 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053147: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053135: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054218: warning: Procedure camlList__exists2_1153 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080541A8: warning: Procedure camlList__for_all2_1145 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805408A: warning: Procedure camlList__fold_right2_1128 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08054038: warning: Procedure camlList__fold_left2_1119 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053FD8: warning: Procedure camlList__iter2_1111 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053F18: warning: Procedure camlList__map2_1090 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053E85: warning: Procedure camlList__fold_right_1084 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08053CEF: warning: Procedure camlList__flatten_1058 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052D7F: warning: Procedure camlList__nth_1042 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08053C45: warning: Procedure camlList__tl_1039 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053C25: warning: Procedure camlList__hd_1036 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080536C2: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08054674: warning: Procedure camlList__partition_1212 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053DBD: warning: Procedure camlList__rev_map_1067 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08051CD4: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051DA9: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08052C35: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805131D: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080505D7: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080506DE: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080506C9: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805096D: warning: Procedure camlArray__trickledown_1160 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050A6C: warning: Procedure camlArray__trickle_1165 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08050E3D: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050DDE: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051B6B: warning: Procedure camlArray__fill_1087 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051980: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08051AA0: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08050296: warning: Procedure camlArray__find_init_1077 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052B38: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804EB2A: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F858: warning: Procedure camlPervasives__read_line_1288 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F510: warning: Procedure camlPervasives__really_input_1235 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F4F5: warning: Procedure camlPervasives__input_1224 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F49C: warning: Procedure camlPervasives__open_in_bin_1220 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F375: warning: Procedure camlPervasives__output_1194 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F2CC: warning: Procedure camlPervasives__open_out_bin_1181 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F213: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804F175: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F165: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804F0F5: warning: Procedure camlPervasives__char_of_int_1120 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08052E98: warning: Procedure camlList__rmap2_f_1103 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E194: warning: Procedure fn0804E15A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E194: warning: Procedure fn0804E15A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804E155: warning: Procedure camlUnix__entry previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804E17E: warning: Procedure fn0804E15A previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D355: warning: Procedure camlUnix__open_proc_full_1975 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804CF61: warning: Procedure camlUnix__open_proc_1949 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804C959: warning: Procedure fn0804C921 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0804C9F0: warning: Procedure fn0804C960 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C8A3: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804CAA4: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C536: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C584: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C5BD: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C5D9: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C669: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C79C: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C198: warning: Procedure camlUnix__sendto_1576 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C135: warning: Procedure camlUnix__send_1570 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C0E5: warning: Procedure camlUnix__recvfrom_1564 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C095: warning: Procedure camlUnix__recv_1558 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BED5: warning: Procedure camlUnix__single_write_1247 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BE85: warning: Procedure camlUnix__write_1242 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BE35: warning: Procedure camlUnix__read_1237 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804A8E4: warning: Unable to resolve imported reference ceil.
+0804A8C4: warning: Unable to resolve imported reference sigsuspend.
+0804A8B4: warning: Unable to resolve imported reference fchmod.
+0804A8A4: warning: Unable to resolve imported reference cfsetispeed.
+0804A884: warning: Unable to resolve imported reference getservbyname.
+0804A874: warning: Unable to resolve imported reference __sigsetjmp.
+0804A854: warning: Unable to resolve imported reference getitimer.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A824: warning: Unable to resolve imported reference recvfrom.
+0804A814: warning: Unable to resolve imported reference tcsendbreak.
+0804A804: warning: Unable to resolve imported reference getpeername.
+0804A7F4: warning: Unable to resolve imported reference sin.
+0804A7E4: warning: Unable to resolve imported reference kill.
+0804A7D4: warning: Unable to resolve imported reference cosh.
+0804A7C4: warning: Unable to resolve imported reference setgid.
+0804A7B4: warning: Unable to resolve imported reference getsockopt.
+0804A7A4: warning: Unable to resolve imported reference tan.
+0804A774: warning: Unable to resolve imported reference getgroups.
+0804A764: warning: Unable to resolve imported reference gmtime.
+0804A754: warning: Unable to resolve imported reference getrlimit64.
+0804A724: warning: Unable to resolve imported reference setsockopt.
+0804A714: warning: Unable to resolve imported reference __fxstat64.
+0804A704: warning: Unable to resolve imported reference fork.
+0804A6F4: warning: Unable to resolve imported reference gethostbyname_r.
+0804A6E4: warning: Unable to resolve imported reference log.
+0804A6C4: warning: Unable to resolve imported reference send.
+0804A694: warning: Unable to resolve imported reference cfgetospeed.
+0804A624: warning: Unable to resolve imported reference rmdir.
+0804A604: warning: Unable to resolve imported reference atan2.
+0804A5F4: warning: Unable to resolve imported reference gethostname.
+0804A5E4: warning: Unable to resolve imported reference chown.
+0804A5B4: warning: Unable to resolve imported reference ftruncate64.
+0804A594: warning: Unable to resolve imported reference log10.
+0804A564: warning: Unable to resolve imported reference initgroups.
+0804A554: warning: Unable to resolve imported reference frexp.
+0804A544: warning: Unable to resolve imported reference rewinddir.
+0804A504: warning: Unable to resolve imported reference select.
+0804A4F4: warning: Unable to resolve imported reference sigpending.
+0804A4E4: warning: Unable to resolve imported reference putenv.
+0804A4B4: warning: Unable to resolve imported reference chdir.
+0804A4A4: warning: Unable to resolve imported reference mkfifo.
+0804A484: warning: Unable to resolve imported reference getegid.
+0804A474: warning: Unable to resolve imported reference chroot.
+0804A454: warning: Unable to resolve imported reference __h_errno_location.
+0804A444: warning: Unable to resolve imported reference sigdelset.
+0804A434: warning: Unable to resolve imported reference waitpid.
+0804A414: warning: Unable to resolve imported reference getppid.
+0804A404: warning: Unable to resolve imported reference nice.
+0804A3D4: warning: Unable to resolve imported reference alarm.
+0804A3C4: warning: Unable to resolve imported reference cos.
+0804A384: warning: Unable to resolve imported reference cfsetospeed.
+0804A364: warning: Unable to resolve imported reference acos.
+0804A354: warning: Unable to resolve imported reference readdir64.
+0804A324: warning: Unable to resolve imported reference setuid.
+0804A314: warning: Unable to resolve imported reference tanh.
+0804A304: warning: Unable to resolve imported reference umask.
+0804A2C4: warning: Unable to resolve imported reference dup2.
+0804A2A4: warning: Unable to resolve imported reference symlink.
+0804A294: warning: Unable to resolve imported reference tcflush.
+0804A274: warning: Unable to resolve imported reference gethostbyaddr_r.
+0804A254: warning: Unable to resolve imported reference sqrt.
+0804A224: warning: Unable to resolve imported reference truncate64.
+0804A1F4: warning: Unable to resolve imported reference getprotobynumber.
+0804A1E4: warning: Unable to resolve imported reference __fpclassify.
+0804A1D4: warning: Unable to resolve imported reference atan.
+0804A1C4: warning: Unable to resolve imported reference __lxstat64.
+0804A194: warning: Unable to resolve imported reference getservbyport.
+0804A174: warning: Unable to resolve imported reference expm1.
+0804A154: warning: Unable to resolve imported reference getrusage.
+0804A144: warning: Unable to resolve imported reference exp.
+0804A134: warning: Unable to resolve imported reference sigaltstack.
+0804A124: warning: Unable to resolve imported reference tcdrain.
+0804A0F4: warning: Unable to resolve imported reference tcgetattr.
+0804A0E4: warning: Unable to resolve imported reference modf.
+0804A0D4: warning: Unable to resolve imported reference floor.
+0804A0A4: warning: Unable to resolve imported reference getprotobyname.
+0804A094: warning: Unable to resolve imported reference setsid.
+0804A084: warning: Unable to resolve imported reference setitimer.
+0804A064: warning: Unable to resolve imported reference getlogin.
+0804A054: warning: Unable to resolve imported reference rename.
+0804A034: warning: Unable to resolve imported reference listen.
+0804A024: warning: Unable to resolve imported reference pow.
+0804A014: warning: Unable to resolve imported reference sendto.
+08049FF4: warning: Unable to resolve imported reference fchown.
+08049FE4: warning: Unable to resolve imported reference system.
+08049FB4: warning: Unable to resolve imported reference recv.
+08049F94: warning: Unable to resolve imported reference strtod.
+08049F74: warning: Unable to resolve imported reference cfgetispeed.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+08049F44: warning: Unable to resolve imported reference __isoc99_sscanf.
+08049F34: warning: Unable to resolve imported reference sinh.
+08049EE4: warning: Unable to resolve imported reference shutdown.
+08049ED4: warning: Unable to resolve imported reference asin.
+08049EB4: warning: Unable to resolve imported reference log1p.
+08049E54: warning: Unable to resolve imported reference setgroups.
+08049E34: warning: Unable to resolve imported reference tcflow.
+08049DE4: warning: Unable to resolve imported reference fmod.
+08049DC4: warning: Unable to resolve imported reference ldexp.
+0804C838: error: An error occurred while processing instruction at address 0804C838.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804C86B: error: An error occurred while processing instruction at address 0804C86B.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804CA70: error: An error occurred while processing instruction at address 0804CA70.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804C890: error: An error occurred while processing instruction at address 0804C890.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804E186: error: An error occurred while processing instruction at address 0804E186.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804E194: error: An error occurred while processing instruction at address 0804E194.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804E194: error: An error occurred while processing instruction at address 0804E194.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804EB2A: error: An error occurred while processing instruction at address 0804EB2A.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804EB36: error: An error occurred while processing instruction at address 0804EB36.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804EB36: error: An error occurred while processing instruction at address 0804EB36.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804EB76: error: An error occurred while processing instruction at address 0804EB76.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08050099: error: An error occurred while processing instruction at address 08050099.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+080551CA: error: An error occurred while processing instruction at address 080551CA.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08055C97: error: An error occurred while processing instruction at address 08055C97.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08055C97: error: An error occurred while processing instruction at address 08055C97.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08055FD9: error: An error occurred while processing instruction at address 08055FD9.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08056677: error: An error occurred while processing instruction at address 08056677.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+08056677: error: An error occurred while processing instruction at address 08056677.
+    The given key 'esp' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804C8B0: error: An error occurred during data flow analysis.
+    The given key 'eax' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00016] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.Application.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804C8CB: error: An error occurred during data flow analysis.
+    Index was outside the bounds of the array.
+      at Reko.Analysis.SsaTransform+LocateDefinedVariables.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x00017] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.TestCondition.Accept (Reko.Core.Expressions.IExpressionVisitor visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBranch (Reko.Core.Code.Branch b) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.SsaTransform+LocateDefinedVariables.LocateDefs (Reko.Core.Block b) [0x0003e] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.SsaTransform.LocateAllDefinedVariables (System.Collections.Generic.Dictionary`2[Reko.Core.Expressions.Expression,System.Byte][] defOrig) [0x0002d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.SsaTransform.PlacePhiFunctions () [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.SsaTransform.Transform () [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.SsaTransform..ctor (Reko.Analysis.ProgramDataFlow programFlow, Reko.Core.Procedure proc, Reko.Core.IImportResolver importResolver, Reko.Core.Lib.DominatorGraph`1[T] gr, System.Collections.Generic.HashSet`1[T] implicitRegs) [0x0003d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x0004e] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804E181: error: An error occurred during data flow analysis.
+    The given key 'Mem0' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x0000c] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.VisitStore (Reko.Core.Code.Store store) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804EB33: error: An error occurred during data flow analysis.
+    The given key 'Z' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.TestCondition.Accept (Reko.Core.Expressions.IExpressionVisitor visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitBranch (Reko.Core.Code.Branch b) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804EB73: error: An error occurred during data flow analysis.
+    The given key 'eax' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00016] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.Application.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+camlPervasives__$40_1143: error: An error occurred during data flow analysis.
+    The given key 'ecx' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55635f0d4b464606be1dcd97c7688665>:0 
+camlList__sort_1271: error: An error occurred during data flow analysis.
+    The given key 'SCZO' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55635f0d4b464606be1dcd97c7688665>:0 
+camlHashtbl__find_in_bucket_1213: error: An error occurred during data flow analysis.
+    The given key 'ecx' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.Aliases.Transform () [0x0005d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn08055C97: error: An error occurred during data flow analysis.
+    The given key 'dwArg00' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00016] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.Application.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn08056677: error: An error occurred during data flow analysis.
+    The given key 'dwArg00' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.VisitIdentifier (Reko.Core.Expressions.Identifier id) [0x0000b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Identifier.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionVisitorBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00016] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.Application.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.VisitAssignment (Reko.Core.Code.Assignment a) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.DeadCode.Eliminate () [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DeadCode.Eliminate (Reko.Core.Procedure proc, Reko.Analysis.SsaState ssa) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f5] in <55635f0d4b464606be1dcd97c7688665>:0 
+caml_eq_float: error: An error occurred during data flow analysis.
+    Case PO not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+caml_neq_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+caml_float_compare: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) [0x00007] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+caml_sqrt_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) [0x00007] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+caml_fmod_float: error: An error occurred during data flow analysis.
+    Case PE not handled.
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformBranch (Reko.Core.Code.Branch b) [0x00007] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+0804B220: error: An error occurred while processing the statement word32 ecx_34 = (word32) Mem0[eax - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_1487 t0000))) and (union (ui32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804E181_exit: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0804F575: error: An error occurred while processing the statement edx = edx - eax_54 + 0x00000001.
+    Pulling difference int32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000d0] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00057] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00006] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+08057814: error: An error occurred while processing the statement byte dl_321 = (byte) (word32) Mem79[eax_300 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_25446 t0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805E1EF: error: An error occurred while processing the statement word32 edx_217 = Mem136[eax_183 - 0x00000004 + 0x00000000:word32].
+    Not handling (ptr32 (struct (0 T_38484 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805E22C: error: An error occurred while processing the statement byte cl_283 = (byte) (word32) Mem136[ecx_255 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_38531 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805E415: error: An error occurred while processing the statement branch Mem0[eax_440 - 0x00000004 + 0x00000000:byte] != 0xFA l0805E490.
+    Not handling (ptr32 (struct (0 T_38789 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00509] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805E5AD: error: An error occurred while processing the statement word32 edx_48 = Mem0[dwArg04 - 0x00000004 + 0x00000000:word32].
+    Not handling (ptr32 (struct (0 T_38943 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805EB86: error: An error occurred while processing the statement branch Mem74[ebx_108 - 0x00000004 + 0x00000000:word32] != 0x00000000 l0805EB8D.
+    Not handling (ptr32 (struct (0 T_39651 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00509] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805FD99: error: An error occurred while processing the statement byte al_243 = (byte) (word32) Mem0[ecx_223 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_41790 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0805FD05: error: An error occurred while processing the statement byte al_175 = (byte) (word32) Mem0[ecx_155 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_41831 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0806234C: error: An error occurred while processing the statement branch Mem25[edx_68 - 0x00000004 + 0x00000000:byte] == 0xFD l08062356.
+    Not handling (ptr32 (struct (0 T_46635 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00509] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+080624AF: error: An error occurred while processing the statement branch Mem22[dwArg08 - 0x00000004 + 0x00000000:byte] != 0xFD l080624F9.
+    Not handling (ptr32 (struct (0 T_46770 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00509] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+08066729: error: An error occurred while processing the statement Mem685[dwArg08 + 0x00000018:word32] = Mem0[dwArg04 + 0x00000008:word32][(word32) Mem0[dwArg10 - 0x00000004 + 0x00000000:byte] * 0x00000004].
+    Not handling (ptr32 (struct (0 T_54488 t0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00509] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x0015d] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+08066B9A: error: An error occurred while processing the statement word32 edx_174 = (Mem170[dwArg08 + 0x00000000:word32] - 0x00000004)[edi_123 * 0x00000004].
+    Not handling (ptr32 (struct (0 (arr T_63741) a0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00145] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+08068E8D: error: An error occurred while processing the statement Mem126[esp_15 + 0x00000004:word32] = (word32) Mem34[eax_56 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_59187 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+080691CE: error: An error occurred while processing the statement word32 edi_51 = Mem0[ecx_15 - 0x00000004 + 0x00000000:word32].
+    Not handling (ptr32 (struct (0 T_59714 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+08069DF2: error: An error occurred while processing the statement byte cl_228 = (byte) (word32) Mem99[eax_211 - 0x00000004 + 0x00000000:byte].
+    Not handling (ptr32 (struct (0 T_61214 t0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00191] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+0806B034: error: An error occurred while processing the statement call Mem0[0x0806D810 + 0x0806D6C4:word32] (retsize: 4; depth: 48)	uses: C_48,dwLoc04_4,dwLoc08_8,dwLoc0C_11,dwLoc10_14,dwLoc24_51,dwLoc28_54,dwLoc2C_57,eax_56,ebp_5,ebx_16,edi_22,esi_46,esp_17,SCZO_18,SZO_47,Z_24	defs: C_67,eax_65,ebp_60,ebx_63,edi_61,esi_62,esp_59,SCZO_64,SZO_66,Z_68.
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitCallInstruction (Reko.Core.Code.CallInstruction call) [0x0005a] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
+fn0804C8CB: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l0804C8DE_thunk_fn0804C8E4' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.Structure.StructureAnalysis.BuildRegionGraph (Reko.Core.Procedure proc) [0x000e3] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Structure.StructureAnalysis.Execute () [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <55635f0d4b464606be1dcd97c7688665>:0 
+08058DB0: warning: Expected sizes of arrays to have been determined by now
+0805A778: warning: Expected sizes of arrays to have been determined by now
+080617AA: warning: Expected sizes of arrays to have been determined by now
+08062267: warning: Expected sizes of arrays to have been determined by now
+0806B5C8: warning: Expected sizes of arrays to have been determined by now
+0806B6A0: warning: Expected sizes of arrays to have been determined by now
+0806B6F0: warning: Expected sizes of arrays to have been determined by now
+0806BA0C: warning: Expected sizes of arrays to have been determined by now
+0806BA30: warning: Expected sizes of arrays to have been determined by now
+0806BEC4: warning: Expected sizes of arrays to have been determined by now
+0806BF14: warning: Expected sizes of arrays to have been determined by now
+0806D580: warning: Expected sizes of arrays to have been determined by now
+0806D6C4: error: Failed to write global variable g_t806D6C4.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt32 (System.Byte[] abImage, System.Int64 off) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00020] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x00075] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+0806D7D4: warning: Expected sizes of arrays to have been determined by now
+0806D7E8: warning: Expected sizes of arrays to have been determined by now
+0806DD7C: warning: Expected sizes of arrays to have been determined by now
+08070DEC: warning: Expected sizes of arrays to have been determined by now
+08070F18: warning: Expected sizes of arrays to have been determined by now
+0807655C: warning: Expected sizes of arrays to have been determined by now
+08076564: warning: Expected sizes of arrays to have been determined by now
+08077D80: warning: Expected sizes of arrays to have been determined by now
+0807AA80: warning: Expected sizes of arrays to have been determined by now
+0807ABC0: warning: Expected sizes of arrays to have been determined by now
+0807AFE0: warning: Expected sizes of arrays to have been determined by now
+0807B120: warning: Expected sizes of arrays to have been determined by now
+08058DB0: warning: Expected sizes of arrays to have been determined by now
+0805A778: warning: Expected sizes of arrays to have been determined by now
+080617AA: warning: Expected sizes of arrays to have been determined by now
+08062267: warning: Expected sizes of arrays to have been determined by now
+0806B5C8: warning: Expected sizes of arrays to have been determined by now
+0806B6A0: warning: Expected sizes of arrays to have been determined by now
+0806B6F0: warning: Expected sizes of arrays to have been determined by now
+0806BA0C: warning: Expected sizes of arrays to have been determined by now
+0806BA30: warning: Expected sizes of arrays to have been determined by now
+0806BEC4: warning: Expected sizes of arrays to have been determined by now
+0806BF14: warning: Expected sizes of arrays to have been determined by now
+0806D580: warning: Expected sizes of arrays to have been determined by now
+0806D6C4: error: Failed to write global variable g_t806D6C4.
+    Index was outside the bounds of the array.
+      at Reko.Core.MemoryArea.ReadLeInt32 (System.Byte[] abImage, System.Int64 off) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00020] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitEquivalenceClass (Reko.Core.Types.EquivalenceClass eq) [0x00042] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.EquivalenceClass.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.VisitStructure (Reko.Core.Types.StructureType str) [0x00082] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Types.StructureType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x00075] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+0806D7D4: warning: Expected sizes of arrays to have been determined by now
+0806D7E8: warning: Expected sizes of arrays to have been determined by now
+0806DD7C: warning: Expected sizes of arrays to have been determined by now
+08070DEC: warning: Expected sizes of arrays to have been determined by now
+08070F18: warning: Expected sizes of arrays to have been determined by now
+0807655C: warning: Expected sizes of arrays to have been determined by now
+08076564: warning: Expected sizes of arrays to have been determined by now
+08077D80: warning: Expected sizes of arrays to have been determined by now
+0807AA80: warning: Expected sizes of arrays to have been determined by now
+0807ABC0: warning: Expected sizes of arrays to have been determined by now
+0807AFE0: warning: Expected sizes of arrays to have been determined by now
+0807B120: warning: Expected sizes of arrays to have been determined by now

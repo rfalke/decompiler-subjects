@@ -7,7 +7,7 @@
 // 08048308: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw2CEB != 0x00)
+	if (globals->dw804B004 != 0x00)
 		fn08048390();
 }
 
@@ -43,8 +43,8 @@ void fn08048390()
 	globals->ptr804AFFC();
 }
 
-// 080483A0: void main(Stack up32 dwArg00, Stack Eq_19 dwArg04, Stack word32 dwArg08)
-void main(up32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
+// 080483A0: void main(Stack up32 dwArg00, Stack Eq_15 dwArg04, Stack word32 dwArg08)
+void main(up32 dwArg00, Eq_15 dwArg04, word32 dwArg08)
 {
 	__align(fp);
 	basic_1_if(dwArg04);
@@ -75,11 +75,11 @@ void main(up32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
 	advanced_10_irreducible(dwArg04);
 	advanced_11_nested_loops_complex_condition(dwArg04);
 	advanced_12_nested_if_in_loop(dwArg04);
-	*advanced_20_jump_table_on_stack(dwArg04) = (union Eq_19 *) dwArg04;
+	*advanced_20_jump_table_on_stack(dwArg04) = (union Eq_15 *) dwArg04;
 	advanced_21_computed_jumps(dwArg00);
 }
 
-// 080484BB: void _start(Register (ptr32 Eq_161) edx, Stack int32 dwArg00)
+// 080484BB: void _start(Register (ptr32 Eq_157) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -87,10 +87,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 080484E0: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 080484E0: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 080484F0: void deregister_tm_clones()
@@ -157,16 +156,16 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080485B0: void basic_1_if(Stack Eq_19 dwArg04)
-void basic_1_if(Eq_19 dwArg04)
+// 080485B0: void basic_1_if(Stack Eq_15 dwArg04)
+void basic_1_if(Eq_15 dwArg04)
 {
 	if (dwArg04 != 0x2A)
 		return;
 	puts("if block");
 }
 
-// 080485E0: void basic_2_if_else(Stack Eq_19 dwArg04)
-void basic_2_if_else(Eq_19 dwArg04)
+// 080485E0: void basic_2_if_else(Stack Eq_15 dwArg04)
+void basic_2_if_else(Eq_15 dwArg04)
 {
 	if (dwArg04 == 0x2A)
 		puts("if block");
@@ -174,8 +173,8 @@ void basic_2_if_else(Eq_19 dwArg04)
 		puts("else block");
 }
 
-// 08048620: void basic_3_if_elseif(Stack Eq_19 dwArg04)
-void basic_3_if_elseif(Eq_19 dwArg04)
+// 08048620: void basic_3_if_elseif(Stack Eq_15 dwArg04)
+void basic_3_if_elseif(Eq_15 dwArg04)
 {
 	if (dwArg04 == 0x2A)
 		puts("if block");
@@ -187,8 +186,8 @@ void basic_3_if_elseif(Eq_19 dwArg04)
 	}
 }
 
-// 08048680: void basic_4_if_elseif_else(Stack Eq_19 dwArg04)
-void basic_4_if_elseif_else(Eq_19 dwArg04)
+// 08048680: void basic_4_if_elseif_else(Stack Eq_15 dwArg04)
+void basic_4_if_elseif_else(Eq_15 dwArg04)
 {
 	if (dwArg04 == 0x2A)
 		puts("if block");
@@ -201,33 +200,30 @@ void basic_4_if_elseif_else(Eq_19 dwArg04)
 // 080486F0: void basic_7_for_loop(Register ui32 esi)
 void basic_7_for_loop(ui32 esi)
 {
-	int32 ebx_10 = 0x30;
-	do
-	{
+	int32 ebx_10;
+	for (ebx_10 = 0x30; ebx_10 != 0x3A; ++ebx_10)
 		putchar(ebx_10);
-		ebx_10 = ebx_10 + 0x01;
-	} while (ebx_10 != 0x3A);
 }
 
-// 08048720: void intermediate_1_short_circuit_and(Stack word32 dwArg04, Stack Eq_19 dwArg08)
-void intermediate_1_short_circuit_and(word32 dwArg04, Eq_19 dwArg08)
+// 08048720: void intermediate_1_short_circuit_and(Stack word32 dwArg04, Stack Eq_15 dwArg08)
+void intermediate_1_short_circuit_and(word32 dwArg04, Eq_15 dwArg08)
 {
-	Eq_19 eax_3 = rand();
+	Eq_15 eax_3 = rand();
 	if (dwArg04 != 0x00 && eax_3 == dwArg08)
 		puts("both true");
 }
 
-// 08048750: void intermediate_2_short_circuit_or(Stack word32 dwArg04, Stack Eq_19 dwArg08)
-void intermediate_2_short_circuit_or(word32 dwArg04, Eq_19 dwArg08)
+// 08048750: void intermediate_2_short_circuit_or(Stack word32 dwArg04, Stack Eq_15 dwArg08)
+void intermediate_2_short_circuit_or(word32 dwArg04, Eq_15 dwArg08)
 {
-	Eq_19 eax_3 = rand();
+	Eq_15 eax_3 = rand();
 	if (dwArg04 == 0x00 && eax_3 != dwArg08)
 		return;
 	puts("at least one is true");
 }
 
-// 08048790: void intermediate_10_loop_with_one_break(Stack Eq_19 dwArg04)
-void intermediate_10_loop_with_one_break(Eq_19 dwArg04)
+// 08048790: void intermediate_10_loop_with_one_break(Stack Eq_15 dwArg04)
+void intermediate_10_loop_with_one_break(Eq_15 dwArg04)
 {
 	while (true)
 	{
@@ -238,10 +234,10 @@ void intermediate_10_loop_with_one_break(Eq_19 dwArg04)
 	}
 }
 
-// 080487E0: void intermediate_11_loop_with_two_breaks(Stack Eq_19 dwArg04)
-void intermediate_11_loop_with_two_breaks(Eq_19 dwArg04)
+// 080487E0: void intermediate_11_loop_with_two_breaks(Stack Eq_15 dwArg04)
+void intermediate_11_loop_with_two_breaks(Eq_15 dwArg04)
 {
-	Eq_19 ebx_22 = dwArg04;
+	Eq_15 ebx_22 = dwArg04;
 	if (dwArg04 > 0x00)
 	{
 		do
@@ -250,13 +246,13 @@ void intermediate_11_loop_with_two_breaks(Eq_19 dwArg04)
 			if (time(null) == ebx_22)
 				return;
 			puts("tail");
-			ebx_22 = ebx_22 - 0x01;
+			--ebx_22;
 		} while (ebx_22 != 0x00);
 	}
 }
 
-// 08048830: void intermediate_12_loop_with_break_and_block(Stack Eq_19 dwArg04)
-void intermediate_12_loop_with_break_and_block(Eq_19 dwArg04)
+// 08048830: void intermediate_12_loop_with_break_and_block(Stack Eq_15 dwArg04)
+void intermediate_12_loop_with_break_and_block(Eq_15 dwArg04)
 {
 	while (true)
 	{
@@ -271,8 +267,8 @@ void intermediate_12_loop_with_break_and_block(Eq_19 dwArg04)
 	puts("will break");
 }
 
-// 080488A0: void intermediate_13_loop_with_one_continue(Register ui32 esi, Stack Eq_19 dwArg04)
-void intermediate_13_loop_with_one_continue(ui32 esi, Eq_19 dwArg04)
+// 080488A0: void intermediate_13_loop_with_one_continue(Register ui32 esi, Stack Eq_15 dwArg04)
+void intermediate_13_loop_with_one_continue(ui32 esi, Eq_15 dwArg04)
 {
 	if (dwArg04 <= 0x7B)
 		return;
@@ -284,8 +280,8 @@ void intermediate_13_loop_with_one_continue(ui32 esi, Eq_19 dwArg04)
 	}
 }
 
-// 080488F0: void intermediate_14_loop_with_two_continues(Register ui32 esi, Stack Eq_19 dwArg04)
-void intermediate_14_loop_with_two_continues(ui32 esi, Eq_19 dwArg04)
+// 080488F0: void intermediate_14_loop_with_two_continues(Register ui32 esi, Stack Eq_15 dwArg04)
+void intermediate_14_loop_with_two_continues(ui32 esi, Eq_15 dwArg04)
 {
 	if (dwArg04 <= 0x7B)
 		return;
@@ -301,8 +297,8 @@ void intermediate_14_loop_with_two_continues(ui32 esi, Eq_19 dwArg04)
 	}
 }
 
-// 08048960: void intermediate_15_loop_with_continue_and_block(Register ui32 esi, Stack Eq_19 dwArg04)
-void intermediate_15_loop_with_continue_and_block(ui32 esi, Eq_19 dwArg04)
+// 08048960: void intermediate_15_loop_with_continue_and_block(Register ui32 esi, Stack Eq_15 dwArg04)
+void intermediate_15_loop_with_continue_and_block(ui32 esi, Eq_15 dwArg04)
 {
 	if (dwArg04 <= 0x7B)
 		return;
@@ -320,8 +316,8 @@ void intermediate_15_loop_with_continue_and_block(ui32 esi, Eq_19 dwArg04)
 	}
 }
 
-// 080489E0: void intermediate_16_loop_with_breaks_and_continues(Register ui32 esi, Stack Eq_19 dwArg04)
-void intermediate_16_loop_with_breaks_and_continues(ui32 esi, Eq_19 dwArg04)
+// 080489E0: void intermediate_16_loop_with_breaks_and_continues(Register ui32 esi, Stack Eq_15 dwArg04)
+void intermediate_16_loop_with_breaks_and_continues(ui32 esi, Eq_15 dwArg04)
 {
 	while (true)
 	{
@@ -341,8 +337,8 @@ void intermediate_16_loop_with_breaks_and_continues(ui32 esi, Eq_19 dwArg04)
 	}
 }
 
-// 08048AA0: void intermediate_20_nested_loops(Register ui32 esi, Stack Eq_19 dwArg04)
-void intermediate_20_nested_loops(ui32 esi, Eq_19 dwArg04)
+// 08048AA0: void intermediate_20_nested_loops(Register ui32 esi, Stack Eq_15 dwArg04)
+void intermediate_20_nested_loops(ui32 esi, Eq_15 dwArg04)
 {
 	puts("before");
 	do
@@ -355,8 +351,8 @@ void intermediate_20_nested_loops(ui32 esi, Eq_19 dwArg04)
 	puts("after");
 }
 
-// 08048B10: void intermediate_30_switch_case(Stack Eq_19 dwArg04)
-void intermediate_30_switch_case(Eq_19 dwArg04)
+// 08048B10: void intermediate_30_switch_case(Stack Eq_15 dwArg04)
+void intermediate_30_switch_case(Eq_15 dwArg04)
 {
 	if (dwArg04 <= 0x09)
 	{
@@ -398,17 +394,17 @@ l08048B40:
 	puts("common exit");
 }
 
-// 08048C30: void advanced_1_loop_with_multiple_entries(Stack Eq_19 dwArg04)
-void advanced_1_loop_with_multiple_entries(Eq_19 dwArg04)
+// 08048C30: void advanced_1_loop_with_multiple_entries(Stack Eq_15 dwArg04)
+void advanced_1_loop_with_multiple_entries(Eq_15 dwArg04)
 {
-	Eq_19 ebx_19 = dwArg04;
+	Eq_15 ebx_19 = dwArg04;
 	if (dwArg04 != 0x2A)
 	{
 		if (dwArg04 <= 0x00)
 			return;
 l08048C41:
 		puts("body 1");
-		ebx_19 = ebx_19 - 0x01;
+		--ebx_19;
 	}
 	else
 		ebx_19.u0 = 0x29;
@@ -418,10 +414,10 @@ l08048C41:
 	goto l08048C41;
 }
 
-// 08048C80: void advanced_2_loop_with_multiple_exits(Stack Eq_19 dwArg04)
-void advanced_2_loop_with_multiple_exits(Eq_19 dwArg04)
+// 08048C80: void advanced_2_loop_with_multiple_exits(Stack Eq_15 dwArg04)
+void advanced_2_loop_with_multiple_exits(Eq_15 dwArg04)
 {
-	Eq_19 ebx_28 = dwArg04;
+	Eq_15 ebx_28 = dwArg04;
 	if (dwArg04 > 0x00)
 	{
 		do
@@ -438,14 +434,14 @@ void advanced_2_loop_with_multiple_exits(Eq_19 dwArg04)
 				puts("took exit 2");
 				return;
 			}
-			ebx_28 = ebx_28 - 0x01;
+			--ebx_28;
 		} while (ebx_28 != 0x00);
 	}
 	puts("normal exit");
 }
 
-// 08048D30: void advanced_10_irreducible(Stack Eq_19 dwArg04)
-void advanced_10_irreducible(Eq_19 dwArg04)
+// 08048D30: void advanced_10_irreducible(Stack Eq_15 dwArg04)
+void advanced_10_irreducible(Eq_15 dwArg04)
 {
 	puts("b1");
 	if (time(null) != dwArg04)
@@ -463,11 +459,11 @@ l08048D88:
 	goto l08048D88;
 }
 
-// 08048DC0: void advanced_11_nested_loops_complex_condition(Stack Eq_19 dwArg04)
-void advanced_11_nested_loops_complex_condition(Eq_19 dwArg04)
+// 08048DC0: void advanced_11_nested_loops_complex_condition(Stack Eq_15 dwArg04)
+void advanced_11_nested_loops_complex_condition(Eq_15 dwArg04)
 {
 	puts("b0");
-	Eq_19 eax_16 = time(null);
+	Eq_15 eax_16 = time(null);
 	if (eax_16 == dwArg04)
 	{
 l08048E08:
@@ -487,8 +483,8 @@ l08048E08:
 	puts("b9");
 }
 
-// 08048E80: void advanced_12_nested_if_in_loop(Stack Eq_19 dwArg04)
-void advanced_12_nested_if_in_loop(Eq_19 dwArg04)
+// 08048E80: void advanced_12_nested_if_in_loop(Stack Eq_15 dwArg04)
+void advanced_12_nested_if_in_loop(Eq_15 dwArg04)
 {
 	puts("b0");
 	do
@@ -506,8 +502,8 @@ void advanced_12_nested_if_in_loop(Eq_19 dwArg04)
 	puts("b4");
 }
 
-// 08048F30: Register ptr32 advanced_20_jump_table_on_stack(Stack Eq_19 dwArg04)
-ptr32 advanced_20_jump_table_on_stack(Eq_19 dwArg04)
+// 08048F30: Register ptr32 advanced_20_jump_table_on_stack(Stack Eq_15 dwArg04)
+ptr32 advanced_20_jump_table_on_stack(Eq_15 dwArg04)
 {
 	if (dwArg04 > 0x05)
 	{
@@ -553,11 +549,11 @@ void advanced_21_computed_jumps(up32 dwArg04)
 	}
 }
 
-// 08049110: void basic_5_head_controlled_loop(Stack Eq_19 dwArg04)
-void basic_5_head_controlled_loop(Eq_19 dwArg04)
+// 08049110: void basic_5_head_controlled_loop(Stack Eq_15 dwArg04)
+void basic_5_head_controlled_loop(Eq_15 dwArg04)
 {
 	puts("before");
-	Eq_19 ebx_13 = dwArg04;
+	Eq_15 ebx_13 = dwArg04;
 	while (ebx_13 != 0x2A)
 	{
 		puts("body");
@@ -566,11 +562,11 @@ void basic_5_head_controlled_loop(Eq_19 dwArg04)
 	puts("after");
 }
 
-// 08049160: void basic_6_tail_controlled_loop(Stack Eq_19 dwArg04)
-void basic_6_tail_controlled_loop(Eq_19 dwArg04)
+// 08049160: void basic_6_tail_controlled_loop(Stack Eq_15 dwArg04)
+void basic_6_tail_controlled_loop(Eq_15 dwArg04)
 {
 	puts("before");
-	Eq_19 ebx_13 = dwArg04;
+	Eq_15 ebx_13 = dwArg04;
 	do
 	{
 		puts("body");
@@ -579,8 +575,8 @@ void basic_6_tail_controlled_loop(Eq_19 dwArg04)
 	puts("after");
 }
 
-// 080491B0: void basic_8_forever_loop(Stack Eq_19 dwArg04)
-void basic_8_forever_loop(Eq_19 dwArg04)
+// 080491B0: void basic_8_forever_loop(Stack Eq_15 dwArg04)
+void basic_8_forever_loop(Eq_15 dwArg04)
 {
 	if (dwArg04 != 0x2A)
 		return;
@@ -605,24 +601,23 @@ void intermediate_17_forever_loop_with_extra_statement()
 // 08049230: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr1CCF + 0x04 - &ebx_15->ptr1CCF >> 0x02 != 0x00)
+	if (0x0804B0F4 - 0x0804B0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr1CCF();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804B0F8 + 0x0804B000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -634,6 +629,5 @@ void __libc_csu_fini()
 // 08049294: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

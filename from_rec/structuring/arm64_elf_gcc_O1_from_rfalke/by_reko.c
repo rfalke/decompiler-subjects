@@ -153,7 +153,7 @@ void loop1(word32 w0)
 	do
 	{
 		x1_6[x0_11] = w0_12;
-		x0_11 = x0_11 + 0x01;
+		++x0_11;
 		w0_12 = (word32) x0_11;
 	} while (x0_11 != 100);
 	*globals->ptr10FC0 = 100;

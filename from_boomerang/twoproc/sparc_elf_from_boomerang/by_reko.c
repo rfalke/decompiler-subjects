@@ -12,13 +12,13 @@ void _start( * g1, Eq_3 * o7, ui32 fsr, int32 dwArg40)
 	if (0x00 != 0x00)
 	{
 		globals->dw2084C = fsr;
-		globals->dw2084C = globals->dw2084C & ~0x00;
+		globals->dw2084C &= ~0x00;
 	}
 	if (g1 == null)
 	{
 		atexit(&globals->t10690);
 		_init(o7);
-		main(tLoc24);
+		main();
 		exit(dwArg40);
 	}
 	else
@@ -31,11 +31,11 @@ word32 proc1(word32 o0, word32 o1)
 	return o0 - o1;
 }
 
-// 00010620: void main(Stack Eq_44 tArg00)
-void main( tArg00)
+// 00010620: void main()
+void main()
 {
 	proc1(11, 0x04);
-	printf(&globals->b20858, tArg00);
+	printf(&globals->b20858);
 }
 
 // 00010640: void _init(Register (ptr32 Eq_3) o7)
@@ -47,12 +47,12 @@ void _init(Eq_3 * o7)
 // 00010650: void fn00010650(Register (ptr32 Eq_3) o7)
 void fn00010650(Eq_3 * o7)
 {
-	struct Eq_71 * o0_5 = o7 + o7->dw0008 / 0x0C;
-	<anonymous> * l0_6 = o0_5->ptrFFFFFFF8;
-	<anonymous> * l1_7 = o0_5->ptrFFFFFFF0;
-	if (l0_6 == null)
+	struct Eq_68 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	word32 l0_6 = o0_5->dwFFFFFFF8;
+	word32 l1_7 = o0_5->dwFFFFFFF0;
+	if (l0_6 == 0x00)
 	{
-		if (l1_7 == null)
+		if (l1_7 == 0x00)
 			return;
 		word32 sp_50;
 		word32 o0_51;
@@ -75,7 +75,7 @@ void fn00010650(Eq_3 * o7)
 		word32 o5_68;
 		word32 i5_69;
 		word32 i6_70;
-		l1_7();
+		fn9FC44000();
 	}
 	else
 	{
@@ -100,20 +100,20 @@ void fn00010650(Eq_3 * o7)
 		word32 o5_30;
 		word32 i5_31;
 		word32 i6_32;
-		l0_6();
+		fn81C7E008();
 	}
 }
 
-// 00010690: void _fini(Register (ptr32 Eq_130) o7)
-void _fini(Eq_130 * o7)
+// 00010690: void _fini(Register (ptr32 Eq_131) o7)
+void _fini(Eq_131 * o7)
 {
 	fn000106A0(o7);
 }
 
-// 000106A0: void fn000106A0(Register (ptr32 Eq_130) o7)
-void fn000106A0(Eq_130 * o7)
+// 000106A0: void fn000106A0(Register (ptr32 Eq_131) o7)
+void fn000106A0(Eq_131 * o7)
 {
-	struct Eq_135 * o0_5 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_136 * o0_5 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_6 = o0_5->ptrFFFFFFFC;
 	<anonymous> * l1_7 = o0_5->ptrFFFFFFF4;
 	if (l0_6 == null)

@@ -113,14 +113,14 @@ word32 fn00401530(ptr32 ebp, word32 edi, Eq_27 * dwArg04, Eq_27 * dwArg08)
 // 00401670: void fn00401670(Register word32 edi, Stack (ptr32 Eq_245) dwArg04, Stack (ptr32 Eq_245) dwArg08, Stack word32 dwArg0C)
 void fn00401670(word32 edi, Eq_245 * dwArg04, Eq_245 * dwArg08, word32 dwArg0C)
 {
-	struct Eq_245 * ecx_37 = &dwArg04->dw0000 + 0x01;
+	struct Eq_245 * ecx_37 = dwArg04;
 	if (dwArg04 < dwArg08)
 	{
 		do
 		{
-			word32 * edx_41 = dwArg0C + ecx_37->dw0000;
-			*edx_41 = *edx_41 + ecx_37->dw0000;
-			ecx_37 = ecx_37 + 0x01;
+			word32 * edx_41 = dwArg0C + ecx_37->dw0004;
+			*edx_41 += ecx_37->dw0000;
+			++ecx_37;
 		} while (ecx_37 < dwArg08);
 	}
 }

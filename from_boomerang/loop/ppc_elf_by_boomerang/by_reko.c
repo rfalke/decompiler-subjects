@@ -79,9 +79,9 @@ void call_frame_dummy(word32 dwArg04)
 // 10000418: void main(Stack word32 dwArg04)
 void main(word32 dwArg04)
 {
-	int32 dwLoc18_11 = 0x00;
-	while (dwLoc18_11 <= 0x09)
-		dwLoc18_11 = dwLoc18_11 + 0x01;
+	int32 dwLoc18_11;
+	for (dwLoc18_11 = 0x00; dwLoc18_11 <= 0x09; ++dwLoc18_11)
+		;
 	__crxor(0x06, 0x06, 0x06);
 	printf("%i\n", dwLoc18_11);
 }

@@ -233,9 +233,9 @@ int32 fib(int32 w0, word64 x30, int32 dwArg04, Eq_209 & w19Out, ptr64 & x29Out, 
 // 0000000000000AB8: void fact(Register int32 w0)
 void fact(int32 w0)
 {
-	int32 dwLoc04_10 = 0x02;
-	while (dwLoc04_10 <= w0)
-		dwLoc04_10 = dwLoc04_10 + 0x01;
+	int32 dwLoc04_10;
+	for (dwLoc04_10 = 0x02; dwLoc04_10 <= w0; ++dwLoc04_10)
+		;
 }
 
 // 0000000000000B0C: Register word64 print_num(Register int32 w0, Register int32 w1, Stack int32 dwArg00, Stack word32 dwArg04, Register out ptr64 spOut)
@@ -254,14 +254,11 @@ word64 print_num(int32 w0, int32 w1, int32 dwArg00, word32 dwArg04, ptr64 & spOu
 			dwArg00_33 = w0_28 + 0x30;
 		*(word64) dwLoc12 = (byte) (uint32) (uint8) dwArg00_33;
 		int32 w0_45 = dwLoc0C_10 / w1;
-		dwArg04_17 = dwArg04_17 + 0x01;
+		++dwArg04_17;
 		dwLoc0C_10 = w0_45;
 	} while (w0_45 != 0x00);
-	while (dwArg04_17 != 0x0100)
-	{
+	for (; dwArg04_17 != 0x0100; --dwArg04_17)
 		fn0000000000000910();
-		dwArg04_17 = dwArg04_17 - 0x01;
-	}
 	fn00000000000008E0();
 	word64 sp_64;
 	*spOut = fp + 0x08;

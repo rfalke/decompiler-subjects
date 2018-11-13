@@ -56,13 +56,13 @@ void main(word64 qwArg00)
 {
 	real32 s9_24 = globals->r0804;
 	real32 s11_33 = globals->r0818;
-	word32 w19_41 = 33;
+	word32 w19_41;
 	real32 s13_43 = globals->r0810;
 	real32 s12_51 = globals->r0814;
 	real32 s15_53 = globals->r0808;
 	real32 s14_55 = globals->r080C;
 	real32 s10_57 = globals->r081C;
-	do
+	for (w19_41 = 33; w19_41 != 0x00; --w19_41)
 	{
 		real32 s1_63 = s9_24 * s9_24;
 		real32 s6_68 = s1_63 * s1_63;
@@ -70,9 +70,8 @@ void main(word64 qwArg00)
 		real32 s17_73 = s6_68 * s16_72;
 		__fmaddf(1.0F - s1_63 / 6.0F, s9_24, (1.0F - s1_63 / s11_33) * s16_72 / s10_57 + (((1.0F - s1_63 / s15_53) * (s6_68 * s17_73)) / s14_55 + ((1.0F - s1_63 / s13_43) * s17_73) / s12_51));
 		fn0000000000000710();
-		w19_41 = w19_41 - 0x01;
-		s9_24 = s9_24 + globals->r0820;
-	} while (w19_41 != 0x00);
+		s9_24 += globals->r0820;
+	}
 }
 
 // 0000000000000824: void _start(Stack word64 qwArg00)

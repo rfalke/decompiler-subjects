@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 uint32 g_a10A7C[] = 
 	{
 	};

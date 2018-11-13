@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10828 = Unexpected function type (fn void ())
 ;
 char g_str10848[] = "Result for 4, 5, 6: %d\n";

@@ -14,7 +14,7 @@ void main(Eq_3 * ds)
 void fn0800_0205(Eq_3 * ds, byte Eq_3::*wArg02)
 {
 	do
-		wArg02 = wArg02 + 0x01;
+		++wArg02;
 	while (ds->*wArg02 != 0x00);
 }
 

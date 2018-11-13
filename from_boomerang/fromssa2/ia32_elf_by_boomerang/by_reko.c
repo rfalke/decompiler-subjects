@@ -101,7 +101,7 @@ void main()
 	int32 ebx_12 = 0x00;
 	do
 	{
-		ebx_12 = ebx_12 + 0x01;
+		++ebx_12;
 		printf("%d ", ebx_12);
 	} while (ebx_12 <= 0x09);
 	printf("a is %d, x is %d\n", 0x0A, 0x0A);

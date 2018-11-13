@@ -58,12 +58,12 @@ l000010EC:
 	while (true)
 	{
 		int32 v18_78 = *a0_116;
-		a0_116 = (union Eq_24 *) ((char *) a0_116 + 0x04 + 0x01);
+		a0_116 = (union Eq_24 *) ((char *) a0_116 + 0x04);
 		if (v18_78 < 0x00 || v18_78 - d0_127 == 0x00)
 			break;
 		do
 		{
-			a0_116 = a0_211;
+			a0_116 = (union Eq_24 *) ((char *) a0_211 + 0x01);
 			union Eq_24 * a0_211 = a0_116;
 		} while (*a0_211 != 0x00);
 		if (!__btst((byte) a0_116, 0x00))
@@ -101,7 +101,7 @@ int32 fn00001156(Eq_24 * a0)
 	int32 d0_10 = -0x01;
 	do
 	{
-		d0_10 = d0_10 + 0x01;
+		++d0_10;
 		a0 = (union Eq_24 *) ((char *) a0_22 + 0x01);
 		union Eq_24 * a0_22 = a0;
 	} while (*a0_22 != 0x00);

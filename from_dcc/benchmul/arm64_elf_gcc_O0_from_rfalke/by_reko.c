@@ -170,10 +170,10 @@ void main(word32 dwArg04)
 	int64 qwLoc08_29 = 0x01;
 	while (qwLoc08_29 - qwLoc18 <= 0x00)
 	{
-		int32 dwArg04_119 = 0x01;
-		while (dwArg04_119 <= 0x28)
-			dwArg04_119 = dwArg04_119 + 0x01;
-		qwLoc08_29 = qwLoc08_29 + 0x01;
+		int32 dwArg04_119;
+		for (dwArg04_119 = 0x01; dwArg04_119 <= 0x28; ++dwArg04_119)
+			;
+		++qwLoc08_29;
 	}
 	fn0000000000000770();
 }

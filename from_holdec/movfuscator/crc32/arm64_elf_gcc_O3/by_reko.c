@@ -155,7 +155,7 @@ void rc_crc32(word64 x0, ptr64 x1, word64 x2)
 		if (x1 - x5_12 < 0x00)
 		{
 			do
-				x1 = x1 + 0x01;
+				++x1;
 			while (x5_12 - x1 != 0x00);
 		}
 	}

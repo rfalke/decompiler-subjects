@@ -191,7 +191,7 @@ ptr64 text(word32 w0, int32 w1, int32 w2, word64 qwArg00, ptr64 & spOut)
 		do
 		{
 			fn0000000000400650();
-			w20_26 = w20_26 - 0x01;
+			--w20_26;
 		} while (w20_26 != 0x00);
 	}
 	word64 sp_58;
@@ -305,24 +305,19 @@ void main(int32 w0, Eq_438 * x1, word32 w12, word64 qwArg00)
 		{
 l00000000004009D8:
 			globals->dw411080 = w19_101;
-			int64 x21_39 = 0x00;
-			do
+			int64 x21_39;
+			for (x21_39 = 0x00; x21_39 != 0x18; x21_39 += 0x08)
 			{
 				x0_104 = DPB(x0_104, w19_101, 0);
 				word64 x30_52;
 				word64 x8_100 = new_tower(x0_104, x30, out x30_52);
 				w19_101 = globals->dw411080;
 				4264040 + x21_39 = x0_104;
-				x21_39 = x21_39 + 0x08;
-			} while (x21_39 != 0x18);
-			if (w19_101 != 0x00)
+			}
+			for (; w19_101 != 0x00; --w19_101)
 			{
-				do
-				{
-					word64 sp_99;
-					x8_100 = add_disk(0x00, w19_101, x8_100, w12, x30_52, out x30_52, out sp_99);
-					w19_101 = w19_101 - 0x01;
-				} while (w19_101 != 0x00);
+				word64 sp_99;
+				x8_100 = add_disk(0x00, w19_101, x8_100, w12, x30_52, out x30_52, out sp_99);
 			}
 			word32 w20_67;
 			word32 w21_68;

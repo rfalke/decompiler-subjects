@@ -99,12 +99,9 @@ void main()
 {
 	__align(fp - 0x0C);
 	int32 dwLoc08_10 = 0x00;
-	int32 dwLoc0C_11 = 0x00;
-	while (dwLoc0C_11 <= 0x09)
-	{
-		dwLoc08_10 = dwLoc08_10 + (globals->a8049460)[dwLoc0C_11 * 0x04];
-		dwLoc0C_11 = dwLoc0C_11 + 0x01;
-	}
+	int32 dwLoc0C_11;
+	for (dwLoc0C_11 = 0x00; dwLoc0C_11 <= 0x09; ++dwLoc0C_11)
+		dwLoc08_10 += globals->a8049460[dwLoc0C_11 * 0x04];
 	printf("Sum is %d\n", dwLoc08_10);
 }
 

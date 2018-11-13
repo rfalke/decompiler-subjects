@@ -9,7 +9,7 @@ Using options:
 000059F6: warning: Procedure fn00005954 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000056B6: warning: Procedure fn00005640 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 0000584A: warning: Procedure fn000057E2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0000794C: error: The address FFFFFBF8 is invalid.
+00007984: warning: Procedure fn00007848 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000049E8: warning: Procedure fn000049AC previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000551A: warning: Procedure fn000054DE previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 00004788: warning: Procedure fn00004764 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.

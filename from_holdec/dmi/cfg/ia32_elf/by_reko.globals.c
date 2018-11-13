@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_170 g_t80483A0 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
+Eq_166 g_t80483A0 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_173 g_t8049230 = Unexpected function type (fn void ())
+Eq_169 g_t8049230 = Unexpected function type (fn void ())
 ;
-Eq_174 g_t8049290 = Unexpected function type (fn void ())
+Eq_170 g_t8049290 = Unexpected function type (fn void ())
 ;
 char g_str80492B4[] = "else block";
 char g_str80492BF[] = "else-if block";
@@ -62,5 +62,6 @@ char g_str8049488[] = "entry";
 char g_str804948E[] = "exit";
 word32 g_dw804AF10 = 0x00000000;
 <anonymous> * g_ptr804AFFC = null;
+word32 g_dw804B004 = 0x00000000;
 byte g_b804B024 = 0x00;
 

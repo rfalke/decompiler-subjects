@@ -42,25 +42,22 @@ void __do_global_dtors_aux(word64 r8)
 	if (globals->b601020 == 0x00)
 	{
 		up64 rdx_31 = globals->qw601028;
-		if (rdx_31 < 786885)
+		while (rdx_31 < 786885)
 		{
-			do
-			{
-				uint64 rax_49 = rdx_31 + 0x01;
-				globals->qw601028 = rax_49;
-				word64 rsp_51;
-				word64 rbp_52;
-				word64 rbx_53;
-				byte SCZO_54;
-				bool Z_55;
-				word32 eax_56;
-				word64 rax_57;
-				word64 rdx_58;
-				word64 r8_59;
-				bool C_60;
-				(*((char *) globals->a600E28 + rax_49 * 0x08))();
-				rdx_31 = globals->qw601028;
-			} while (rdx_31 < 786885);
+			uint64 rax_49 = rdx_31 + 0x01;
+			globals->qw601028 = rax_49;
+			word64 rsp_51;
+			word64 rbp_52;
+			word64 rbx_53;
+			byte SCZO_54;
+			bool Z_55;
+			word32 eax_56;
+			word64 rax_57;
+			word64 rdx_58;
+			word64 r8_59;
+			bool C_60;
+			(*((char *) globals->a600E28 + rax_49 * 0x08))();
+			rdx_31 = globals->qw601028;
 		}
 		globals->b601020 = 0x01;
 	}

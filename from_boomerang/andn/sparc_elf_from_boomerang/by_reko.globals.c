@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10748 = Unexpected function type (fn void ())
 ;
 char g_str10768[] = "a andn b is %d\n";

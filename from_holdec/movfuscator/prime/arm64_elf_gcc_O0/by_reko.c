@@ -177,7 +177,7 @@ int32 is_prime(int32 w0)
 				w0_14 = 0x00;
 				return w0_14;
 			}
-			dwLoc04_26 = dwLoc04_26 + 0x01;
+			++dwLoc04_26;
 		}
 		w0_14 = 0x01;
 	}
@@ -188,12 +188,11 @@ int32 is_prime(int32 w0)
 void main(word32 dwArg04)
 {
 	fn0000000000000750();
-	int32 dwArg04_12 = 0x01;
-	while (dwArg04_12 <= 9999)
+	int32 dwArg04_12;
+	for (dwArg04_12 = 0x01; dwArg04_12 <= 9999; ++dwArg04_12)
 	{
 		if (is_prime(dwArg04_12) != 0x00)
 			fn0000000000000760();
-		dwArg04_12 = dwArg04_12 + 0x01;
 	}
 	fn0000000000000770();
 }

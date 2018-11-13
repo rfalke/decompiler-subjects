@@ -129,12 +129,11 @@ void frame_dummy(word64 qwArg00)
 // 00000000004006C0: void main(Stack word64 qwArg00)
 void main(word64 qwArg00)
 {
-	Eq_140 dwLoc10_14 = globals->u400920;
-	while (dwLoc10_14 <= globals->u400924)
+	Eq_140 dwLoc10_14;
+	for (dwLoc10_14 = globals->u400920; dwLoc10_14 <= globals->u400924; dwLoc10_14 += globals->r400928)
 	{
 		sin(dwLoc10_14);
 		fn0000000000400560();
-		dwLoc10_14 = dwLoc10_14 + globals->r400928;
 	}
 }
 

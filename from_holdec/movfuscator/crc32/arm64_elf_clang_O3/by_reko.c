@@ -135,7 +135,7 @@ void rc_crc32(word32 w0, ptr64 x1, int64 x2)
 		{
 			up64 x10_38 = x1 + x2;
 			do
-				x1 = x1 + 0x01;
+				++x1;
 			while (x1 - x10_38 < 0x00);
 		}
 	}

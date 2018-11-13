@@ -177,39 +177,36 @@ void main(word32 dwArg04)
 		int32 dwLoc18_226 = w0_67;
 		if (w0_67 > 0x0A)
 			dwLoc18_226 = 0x0A;
-		int32 dwLoc0C_130 = 0x00;
-		while (dwLoc0C_130 <= 0x06)
+		int32 dwLoc0C_130;
+		for (dwLoc0C_130 = 0x00; dwLoc0C_130 <= 0x06; ++dwLoc0C_130)
 		{
-			int32 dwLoc10_107 = 0x00;
-			while (dwLoc10_107 < dwLoc18_226)
+			int32 dwLoc10_107;
+			for (dwLoc10_107 = 0x00; dwLoc10_107 < dwLoc18_226; ++dwLoc10_107)
 			{
 				int32 w0_152 = (word32) (*qwLoc08_20 + (word64) dwLoc4C);
 				int32 dwLoc1C_154 = w0_152 - 0x20;
 				if (w0_152 < 0x20)
 					dwLoc1C_154 = 0x00;
-				int32 dwLoc14_159 = 0x00;
-				while (dwLoc14_159 <= 0x06)
+				int32 dwLoc14_159;
+				for (dwLoc14_159 = 0x00; dwLoc14_159 <= 0x06; ++dwLoc14_159)
 				{
 					int32 w1_203 = 0x00 - dwLoc1C_154;
 					int32 w0_190 = dwLoc1C_154 < 0x00 ? dwLoc1C_154 + 0x07 : dwLoc1C_154;
 					ui32 w1_208 = w1_203 < 0x00 ? dwLoc1C_154 & 0x07 : -(w1_203 & 0x07);
 					fp->aFFFFFF90[(int64) (int32) ((dwLoc10_107 << 0x03) + dwLoc14_159)] = (byte) (word32) *((char *) *((char *) globals->a13048 + (int64) ((int32) ((((w0_190 >> 0x03) << 0x03) - (w0_190 >> 0x03)) + dwLoc0C_130)) * 0x08) + (int64) ((int32) (((w1_208 << 0x03) - w1_208) + dwLoc14_159)));
-					dwLoc14_159 = dwLoc14_159 + 0x01;
 				}
 				fp->aFFFFFF90[(int64) (int32) ((dwLoc10_107 << 0x03) + 0x07)] = 0x20;
-				dwLoc10_107 = dwLoc10_107 + 0x01;
 			}
 			int32 dwLoc10_116 = (dwLoc18_226 << 0x03) - 0x01;
 			while (dwLoc10_116 >= 0x00 && (word32) (fp->aFFFFFF90)[(word64) dwLoc4C] == 0x20)
 			{
 				fp->aFFFFFF90[(word64) dwLoc4C] = 0x00;
-				dwLoc10_116 = dwLoc10_116 - 0x01;
+				--dwLoc10_116;
 			}
 			fn0000000000000F50();
-			dwLoc0C_130 = dwLoc0C_130 + 0x01;
 		}
 		fn0000000000000F50();
-		qwLoc08_20 = qwLoc08_20 + 0x01;
+		++qwLoc08_20;
 	}
 }
 

@@ -7,8 +7,13 @@
 // 0804828C: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D67 != 0x00)
+	if (globals->dw804A004 != 0x00)
 		fn080482D0();
+}
+
+// 080482C0: void __libc_start_main()
+void __libc_start_main()
+{
 }
 
 // 080482D0: void fn080482D0()
@@ -26,7 +31,7 @@ void main(word32 dwArg00, ui32 dwArg04)
 	with_array(fp - 0x08, dwArg04);
 }
 
-// 0804830E: void _start(Register (ptr32 Eq_38) edx, Stack int32 dwArg00)
+// 0804830E: void _start(Register (ptr32 Eq_34) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -34,10 +39,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048330: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048330: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048340: void deregister_tm_clones()
@@ -107,19 +111,18 @@ void frame_dummy()
 // 080483FB: void use(Stack (ptr32 byte) dwArg04)
 void use(byte * dwArg04)
 {
-	globals->dw804A018 = globals->dw804A018 + *dwArg04;
+	globals->dw804A018 += *dwArg04;
 }
 
 // 0804840B: void fill(Stack (ptr32 byte) dwArg04, Stack ui32 dwArg08)
 void fill(byte * dwArg04, ui32 dwArg08)
 {
 	byte * edi_12 = dwArg04;
-	ui32 ecx_13 = dwArg08 * 0x04;
-	while (ecx_13 != 0x00)
+	ui32 ecx_13;
+	for (ecx_13 = dwArg08 * 0x04; ecx_13 != 0x00; --ecx_13)
 	{
 		*edi_12 = 0x78;
-		edi_12 = edi_12 + 0x01;
-		ecx_13 = ecx_13 - 0x01;
+		++edi_12;
 	}
 }
 
@@ -131,13 +134,13 @@ void with_array(ptr32 ebp, ui32 dwArg04)
 	*(esp_13 - 0x04) = eax_11 & ~0x0F;
 	*(esp_13 - 0x08) = eax_11 & ~0x0F;
 	*(esp_13 - 0x0C) = dwArg04;
-	*(esp_13 - 0x10) = esp_13;
+	*(esp_13 - 0x0010) = esp_13;
 	fill(dwArg00, dwArg04);
-	*(esp_13 - 0x10) = fp - 0x14;
+	*(esp_13 - 0x0010) = fp - 0x14;
 	use(dwArg00);
-	*(esp_13 - 0x10) = esp_13;
+	*(esp_13 - 0x0010) = esp_13;
 	use(dwArg00);
-	*(esp_13 - 0x10) = fp - 0x10;
+	*(esp_13 - 0x0010) = fp - 0x10;
 	use(dwArg00);
 }
 
@@ -145,42 +148,41 @@ void with_array(ptr32 ebp, ui32 dwArg04)
 void with_alloca(ptr32 ebp, ui32 dwArg04)
 {
 	ui32 eax_11 = dwArg04 * 0x04 + 0x1E;
-	union Eq_239 * esp_13 = fp - 0x1C - (eax_11 & ~0x0F);
+	union Eq_235 * esp_13 = fp - 0x1C - (eax_11 & ~0x0F);
 	*(esp_13 - 0x04) = eax_11 & ~0x0F;
 	*(esp_13 - 0x08) = eax_11 & ~0x0F;
 	*(esp_13 - 0x0C) = dwArg04;
 	word32 edx_21 = esp_13 + 0x0F & ~0x0F;
-	*(esp_13 - (union Eq_239 *) 0x10) = (union Eq_239 *) edx_21;
+	*(esp_13 - (union Eq_235 *) 0x0010) = (union Eq_235 *) edx_21;
 	fill(dwArg00, dwArg04);
-	*(esp_13 - (union Eq_239 *) 0x10) = (union Eq_239 *) (fp - 0x14);
+	*(esp_13 - (union Eq_235 *) 0x0010) = (union Eq_235 *) (fp - 0x14);
 	use(dwArg00);
-	*(esp_13 - (union Eq_239 *) 0x10) = (union Eq_239 *) edx_21;
+	*(esp_13 - (union Eq_235 *) 0x0010) = (union Eq_235 *) edx_21;
 	use(dwArg00);
-	*(esp_13 - (union Eq_239 *) 0x10) = (union Eq_239 *) (fp - 0x10);
+	*(esp_13 - (union Eq_235 *) 0x0010) = (union Eq_235 *) (fp - 0x10);
 	use(dwArg00);
 }
 
 // 080484D0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr1A2F + 0x04 - &ebx_15->ptr1A2F >> 0x02 != 0x00)
+	if (0x0804A0F4 - 0x0804A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr1A2F();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804A0F8 + 0x0804A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -192,6 +194,5 @@ void __libc_csu_fini()
 // 08048534: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

@@ -132,21 +132,16 @@ void frame_dummy(word64 qwArg00)
 // 00000000000007E8: void multMatrix(Register ptr64 x0, Register ptr64 x1, Register ptr64 x2)
 void multMatrix(ptr64 x0, ptr64 x1, ptr64 x2)
 {
-	int32 dwLoc04_21 = 0x00;
-	while (dwLoc04_21 <= 0x04)
+	int32 dwLoc04_21;
+	for (dwLoc04_21 = 0x00; dwLoc04_21 <= 0x04; ++dwLoc04_21)
 	{
-		int32 dwLoc08_26 = 0x00;
-		while (dwLoc08_26 <= 0x03)
+		int32 dwLoc08_26;
+		for (dwLoc08_26 = 0x00; dwLoc08_26 <= 0x03; ++dwLoc08_26)
 		{
-			int32 dwLoc0C_105 = 0x00;
-			while (dwLoc0C_105 <= 0x03)
-			{
+			int32 dwLoc0C_105;
+			for (dwLoc0C_105 = 0x00; dwLoc0C_105 <= 0x03; ++dwLoc0C_105)
 				(x2 + (word64) dwLoc1A * 0x14)[(word64) dwLoc1C] = (x0 + ((word64) dwLoc1A << 0x04))[(word64) dwLoc1E] * (x1 + (word64) dwLoc1E * 0x14)[(word64) dwLoc1C] + (x2 + (word64) dwLoc1A * 0x14)[(word64) dwLoc1C];
-				dwLoc0C_105 = dwLoc0C_105 + 0x01;
-			}
-			dwLoc08_26 = dwLoc08_26 + 0x01;
 		}
-		dwLoc04_21 = dwLoc04_21 + 0x01;
 	}
 }
 

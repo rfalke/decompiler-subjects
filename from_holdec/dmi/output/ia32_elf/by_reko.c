@@ -7,7 +7,7 @@
 // 080483E8: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw2C0B != 0x00)
+	if (globals->dw804B004 != 0x00)
 		fn080484D0();
 }
 
@@ -92,7 +92,7 @@ void main(word32 dwArg00, int32 dwArg04, char * * dwArg08)
 	advanced_11_printf_type_related();
 }
 
-// 0804856D: void _start(Register (ptr32 Eq_78) edx, Stack int32 dwArg00)
+// 0804856D: void _start(Register (ptr32 Eq_74) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -100,10 +100,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048590: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048590: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 080485A0: void deregister_tm_clones()
@@ -254,11 +253,11 @@ void intermediate_1_for_loop_name(int32 dwArg04)
 {
 	if (dwArg04 > 0x00)
 	{
-		int32 ebx_28 = 0x30;
+		int32 ebx_28;
 		do
 		{
 			putchar(ebx_28);
-			ebx_28 = ebx_28 + 0x01;
+			++ebx_28;
 		} while (ebx_28 != dwArg04 + 0x30);
 	}
 }
@@ -307,7 +306,7 @@ void intermediate_11_int_literal_in_arithm_context(int32 dwArg04)
 	putchar(dwArg04 *s 1234321);
 }
 
-// 08048AA0: void advanced_1_null_bytes_with_fixed_length(Stack (ptr32 Eq_60) dwArg04)
+// 08048AA0: void advanced_1_null_bytes_with_fixed_length(Stack (ptr32 Eq_56) dwArg04)
 void advanced_1_null_bytes_with_fixed_length(FILE * dwArg04)
 {
 	fwrite(&globals->v8049271, 0x11, 0x01, dwArg04);
@@ -315,7 +314,7 @@ void advanced_1_null_bytes_with_fixed_length(FILE * dwArg04)
 	memcmp(dwArg04, &globals->v8049271, 0x11);
 }
 
-// 08048AE0: void advanced_2_naming_enums(Stack (ptr32 Eq_65) dwArg04)
+// 08048AE0: void advanced_2_naming_enums(Stack (ptr32 Eq_61) dwArg04)
 void advanced_2_naming_enums(FILE * dwArg04)
 {
 	if (chmod("/some/path", 0x24) + ((fseek(dwArg04, 0x00, 0x00) + fseek(dwArg04, 0x00, 0x01)) + fseek(dwArg04, 0x00, 0x02)) > 0x04)
@@ -346,24 +345,23 @@ void advanced_11_printf_type_related()
 // 08048C10: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr22EF + 0x04 - &ebx_15->ptr22EF >> 0x02 != 0x00)
+	if (0x0804B0F4 - 0x0804B0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr22EF();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804B0F8 + 0x0804B000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -375,6 +373,5 @@ void __libc_csu_fini()
 // 08048C74: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

@@ -150,54 +150,54 @@ void main(word64 x30, word32 dwArg04)
 // 0000000000000880: Register ptr64 b(Register word64 x30, Stack word64 qwArg00)
 ptr64 b(word64 x30, word64 qwArg00)
 {
-	globals->dw12038 = globals->dw12038 - 0x01;
+	--globals->dw12038;
 	if (globals->dw12038 >= 0x00)
 		c(x30);
-	globals->dw12074 = globals->dw12074 + 0x02;
+	globals->dw12074 += 0x02;
 	return fp + 0x08;
 }
 
 // 00000000000008E4: void c(Register word64 x30)
 void c(word64 x30)
 {
-	globals->dw1203C = globals->dw1203C - 0x01;
+	--globals->dw1203C;
 	if (globals->dw1203C >= 0x00)
 	{
 		word64 sp_99;
 		x30 = d(x30, out sp_99);
 	}
-	globals->dw12048 = globals->dw12048 - 0x01;
+	--globals->dw12048;
 	if (globals->dw12048 >= 0x00)
 	{
 		word64 sp_97;
 		x30 = f(out sp_97);
 	}
-	globals->dw12054 = globals->dw12054 - 0x01;
+	--globals->dw12054;
 	if (globals->dw12054 >= 0x00)
 	{
 		word64 sp_95;
 		x30 = h(qwArg00, out sp_95);
 	}
-	globals->dw1205C = globals->dw1205C - 0x01;
+	--globals->dw1205C;
 	if (globals->dw1205C >= 0x00)
 	{
 		word64 sp_92;
 		x30 = j(x30, out sp_92);
 	}
-	globals->dw12068 = globals->dw12068 - 0x01;
+	--globals->dw12068;
 	if (globals->dw12068 >= 0x00)
 		l(x30);
-	globals->dw12074 = globals->dw12074 + 0x03;
+	globals->dw12074 += 0x03;
 }
 
 // 0000000000000A18: Register word64 d(Register word64 x30, Register out ptr64 spOut)
 word64 d(word64 x30, ptr64 & spOut)
 {
-	globals->dw12040 = globals->dw12040 - 0x01;
+	--globals->dw12040;
 	struct Eq_336 * sp_22 = fp + -0x08;
 	if (globals->dw12040 >= 0x00)
 		sp_22 = e(x30, x30);
-	globals->dw12074 = globals->dw12074 + 0x05;
+	globals->dw12074 += 0x05;
 	word64 sp_34;
 	*spOut = &sp_22->qw0008 + 0x01;
 	return sp_22->qw0008;
@@ -206,21 +206,21 @@ word64 d(word64 x30, ptr64 & spOut)
 // 0000000000000A7C: Register ptr64 e(Register word64 x30, Stack word64 qwArg00)
 ptr64 e(word64 x30, word64 qwArg00)
 {
-	globals->dw12044 = globals->dw12044 - 0x01;
+	--globals->dw12044;
 	if (globals->dw12044 >= 0x00)
 		c(x30);
-	globals->dw12074 = globals->dw12074 + 0x07;
+	globals->dw12074 += 0x07;
 	return fp + 0x08;
 }
 
 // 0000000000000AE0: Register word64 f(Register out ptr64 spOut)
 word64 f(ptr64 & spOut)
 {
-	globals->dw1204C = globals->dw1204C - 0x01;
+	--globals->dw1204C;
 	struct Eq_411 * sp_22 = fp + -0x08;
 	if (globals->dw1204C >= 0x00)
 		sp_22 = g();
-	globals->dw12074 = globals->dw12074 + 11;
+	globals->dw12074 += 11;
 	word64 sp_34;
 	*spOut = &sp_22->qw0008 + 0x01;
 	return sp_22->qw0008;
@@ -229,21 +229,21 @@ word64 f(ptr64 & spOut)
 // 0000000000000B44: Register ptr64 g()
 ptr64 g()
 {
-	globals->dw12050 = globals->dw12050 - 0x01;
+	--globals->dw12050;
 	ptr64 sp_22 = fp + -0x08;
 	if (globals->dw12050 >= 0x00)
 		f(out sp_22);
-	globals->dw12074 = globals->dw12074 + 0x0D;
+	globals->dw12074 += 0x0D;
 	return sp_22 + 0x0010;
 }
 
 // 0000000000000BA8: Register word64 h(Stack word64 qwArg00, Register out ptr64 spOut)
 word64 h(word64 qwArg00, ptr64 & spOut)
 {
-	globals->dw12058 = globals->dw12058 - 0x01;
+	--globals->dw12058;
 	if (globals->dw12058 >= 0x00)
 		i();
-	globals->dw12074 = globals->dw12074 + 0x11;
+	globals->dw12074 += 0x11;
 	word64 sp_34;
 	*spOut = fp + 0x08;
 	return qwArg00;
@@ -252,17 +252,17 @@ word64 h(word64 qwArg00, ptr64 & spOut)
 // 0000000000000C0C: void i()
 void i()
 {
-	globals->dw12074 = globals->dw12074 + 0x13;
+	globals->dw12074 += 0x13;
 }
 
 // 0000000000000C30: Register word64 j(Register word64 x30, Register out ptr64 spOut)
 word64 j(word64 x30, ptr64 & spOut)
 {
-	globals->dw12060 = globals->dw12060 - 0x01;
+	--globals->dw12060;
 	struct Eq_532 * sp_22 = fp + -0x08;
 	if (globals->dw12060 >= 0x00)
 		sp_22 = k(x30);
-	globals->dw12074 = globals->dw12074 + 0x17;
+	globals->dw12074 += 0x17;
 	word64 sp_34;
 	*spOut = &sp_22->qw0008 + 0x01;
 	return sp_22->qw0008;
@@ -271,22 +271,22 @@ word64 j(word64 x30, ptr64 & spOut)
 // 0000000000000C94: Register ptr64 k(Register word64 x30)
 ptr64 k(word64 x30)
 {
-	globals->dw12064 = globals->dw12064 - 0x01;
+	--globals->dw12064;
 	struct Eq_336 * sp_22 = fp + -0x08;
 	if (globals->dw12064 >= 0x00)
 		sp_22 = e(x30, x30);
-	globals->dw12074 = globals->dw12074 + 0x1B;
+	globals->dw12074 += 0x1B;
 	return &sp_22->qw0008 + 0x01;
 }
 
 // 0000000000000CF8: Register ptr64 l(Register word64 x30)
 ptr64 l(word64 x30)
 {
-	globals->dw1206C = globals->dw1206C - 0x01;
+	--globals->dw1206C;
 	ptr64 sp_22 = fp + -0x08;
 	if (globals->dw1206C >= 0x00)
 		sp_22 = b(x30, x30);
-	globals->dw12074 = globals->dw12074 + 0x1D;
+	globals->dw12074 += 0x1D;
 	return sp_22 + 0x0010;
 }
 

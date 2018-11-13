@@ -4,12 +4,11 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10814 = Unexpected function type (fn void ())
 ;
 char g_str10830[] = "a = %f\n";
 char g_str10838[] = "b = %i\n";
-Eq_219 g_t209B0 = 
+Eq_221 g_t209B0 = 
 	{
 		5.2
 	};

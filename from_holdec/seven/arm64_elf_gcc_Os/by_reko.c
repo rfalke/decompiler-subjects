@@ -76,7 +76,7 @@ void main(word32 w4, word32 w5, word32 w6, word64 x31, word64 qwArg00)
 		if (ZC_108)
 			break;
 		w20_34 = w19_32;
-		w19_32 = w19_32 + 1000000;
+		w19_32 += 1000000;
 	}
 }
 

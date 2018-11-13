@@ -147,7 +147,7 @@ void main(int32 w0, word64 x1[], word32 w3, word32 w21, word64 x25)
 						fn00000000000008C0();
 						word32 w3_193 = (word32) (fp + ~0x87);
 						int32 w0_189 = (word32) (fp + ~0x87);
-						x19_163 = x19_163 + (int64) ((int32) w3_193);
+						x19_163 += (int64) (int32) w3_193;
 						if (w3_193 == 0x00)
 							break;
 						word32 w3_200;
@@ -163,7 +163,7 @@ void main(int32 w0, word64 x1[], word32 w3, word32 w21, word64 x25)
 l00000000000009E0:
 				fn0000000000000830();
 			}
-			x22_116 = x22_116 + 0x01;
+			++x22_116;
 		} while (x25_85 + 0x02 - x22_116 != 0x00);
 	}
 }
@@ -270,7 +270,7 @@ word32 dumpline(Eq_163 * x0, int32 w2, word32 w21, Eq_166 & w3Out, Eq_167 & w21O
 		do
 		{
 			fn0000000000000850();
-			x21_719 = x21_719 + 0x01;
+			++x21_719;
 		} while (w20_42 > (word32) x21_719);
 		w21_676 = (word32) w20_42 + 0x01;
 		if (w20_42 == 0x10)
@@ -292,7 +292,7 @@ word32 dumpline(Eq_163 * x0, int32 w2, word32 w21, Eq_166 & w3Out, Eq_167 & w21O
 	{
 		fn0000000000000820();
 		Mem690[fp + ~0x47 + (fp + ~0x47):word32] = w23_682;
-		w21_676 = w21_676 + 0x01;
+		++w21_676;
 	} while (w21_676 <= 0x10);
 	word32 w0_696 = (word32) &(fp->aFFFFFFB8 + 0x03)->t0000;
 	int64 x3_700 = (int64) (int32) w0_696;
@@ -648,7 +648,7 @@ void hexdump(word64 x0, word32 w3, word32 w21)
 					fn00000000000008C0();
 					word32 w3_127 = (word32) (fp + ~0x87);
 					int32 w0_123 = (word32) (fp + ~0x87);
-					x19_118 = x19_118 + (int64) ((int32) w3_127);
+					x19_118 += (int64) (int32) w3_127;
 					if (w3_127 == 0x00)
 						break;
 					word32 w3_134;

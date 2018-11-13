@@ -146,10 +146,10 @@ void main(up32 w0, word32 w1, word32 w19, word32 w21, word64 x30)
 		word32 w2_163 = 0x00;
 		do
 		{
-			w1_161 = w1_161 - 0x02;
+			w1_161 -= 0x02;
 			word32 w19_172;
 			word32 w20_173;
-			w2_163 = w2_163 + fib(w1_161 - 0x01, qwArg00, out w19_172, out w20_173);
+			w2_163 += fib(w1_161 - 0x01, qwArg00, out w19_172, out w20_173);
 		} while (w1_161 > 0x02);
 		word64 sp_182;
 		int32 w22_183 = print_num(w2_163 + 0x01, *globals->ptr11FA0, w19_172, w21_81, qwArg00, out sp_182);
@@ -296,9 +296,9 @@ void fact(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	int32 w1_11 = 0x02;
+	int32 w1_11;
 	do
-		w1_11 = w1_11 + 0x01;
+		++w1_11;
 	while (w1_11 != w0 + 0x01);
 }
 
@@ -328,16 +328,16 @@ word32 print_num(int32 w0, int32 w1, word32 w19, word32 w21, word64 qwArg00, ptr
 {
 	fn0000000000000890();
 	int32 w20_16 = w0;
-	byte * x0_32 = (byte *) 0x0100;
+	struct Eq_435 * x0_32 = (struct Eq_435 *) 0x0101;
 	word32 w0_33 = 0x0101;
 	while (true)
 	{
 		int32 w2_38 = w20_16 / w1;
 		int32 w3_42 = w20_16 - w2_38 * w1;
-		*x0_32 = (byte) (w3_42 < 0x0A ? w3_42 + 0x30 : w3_42 + 0x57);
+		x0_32->bFFFFFFFF = (byte) (w3_42 < 0x0A ? w3_42 + 0x30 : w3_42 + 0x57);
 		int64 x19_39 = (int64) (int32) w0_33;
 		word32 w19_40 = (word32) x19_39;
-		byte * x4_41 = x0_32 + 0x01;
+		struct Eq_435 * x4_41 = x0_32 + 0x01;
 		w20_16 = w2_38;
 		if (w2_38 == 0x00)
 			break;
@@ -351,7 +351,7 @@ word32 print_num(int32 w0, int32 w1, word32 w19, word32 w21, word64 qwArg00, ptr
 		do
 		{
 			fn0000000000000910();
-			x19_83 = x19_83 + -0x01;
+			x19_83 += -0x01;
 		} while (x19_83 - x20_85 != 0x00);
 	}
 	fn00000000000008E0();

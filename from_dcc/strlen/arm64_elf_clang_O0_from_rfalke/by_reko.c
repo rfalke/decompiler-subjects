@@ -127,7 +127,7 @@ void strlen(byte * x0)
 {
 	byte * qwLoc08_12 = x0;
 	do
-		qwLoc08_12 = qwLoc08_12 + 0x01;
+		++qwLoc08_12;
 	while ((uint32) (uint8) (word32) *qwLoc08_12 != 0x00);
 }
 

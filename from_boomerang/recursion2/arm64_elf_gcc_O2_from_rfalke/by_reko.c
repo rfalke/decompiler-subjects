@@ -155,14 +155,14 @@ ptr64 g()
 	globals->dw11038 = w0_4 - 0x01;
 	if ((w0_4 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return fp;
 	}
 	else
 	{
 		word64 sp_21;
 		f(out sp_21);
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return sp_21 + 0x0010;
 	}
 }
@@ -176,14 +176,14 @@ word64 f(ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		return x30;
 	}
 	else
 	{
 		struct Eq_248 * sp_23 = g();
 		word64 x30_28 = sp_23->qw0008;
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		word64 sp_29;
 		*spOut = &sp_23->qw0008 + 0x01;
 		return x30_28;
@@ -196,15 +196,15 @@ void h()
 	ui32 w0_5 = globals->dw11040;
 	globals->dw11040 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
-		globals->dw11074 = globals->dw11074 + 0x11;
+		globals->dw11074 += 0x11;
 	else
-		globals->dw11074 = globals->dw11074 + 0x24;
+		globals->dw11074 += 0x24;
 }
 
 // 0000000000000960: void i()
 void i()
 {
-	globals->dw11074 = globals->dw11074 + 0x13;
+	globals->dw11074 += 0x13;
 }
 
 // 0000000000000978: Register word64 l(Register word64 x30, Register out ptr64 spOut)
@@ -216,14 +216,14 @@ word64 l(word64 x30, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		return x20;
 	}
 	else
 	{
 		word64 sp_24;
 		word64 x20_25 = b(x30, x30, out sp_24);
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		word64 sp_31;
 		*spOut = sp_24 + 0x0010;
 		return x20_25;
@@ -269,7 +269,7 @@ word64 c(word64 x30, word64 qwArg00, ptr64 & x20Out)
 	x19_44->dw0020 = w0_45 - 0x01;
 	if ((w0_45 - 0x01 & 0x00) != 0x00)
 		x20_35 = l(x30, out sp_23);
-	x20_35->dw0074 = x20_35->dw0074 + 0x03;
+	x20_35->dw0074 += 0x03;
 	struct Eq_523 * v10_53 = sp_23 + 0x0010;
 	word64 x20_56;
 	*x20Out = v10_53->qw0008;
@@ -285,14 +285,14 @@ word64 b(word64 x30, word64 qwArg00, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		return x20;
 	}
 	else
 	{
 		word64 x20_25;
 		c(x30, x30, out x20_25);
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		word64 sp_33;
 		*spOut = fp + 0x08;
 		return x20_25;
@@ -309,14 +309,14 @@ word64 e(word64 x30, word64 qwArg00, ptr64 & x20Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		return x19;
 	}
 	else
 	{
 		word64 x20_26;
 		word64 x19_27 = c(x30, x30, out x20_26);
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		word64 sp_34;
 		*spOut = fp + 0x08;
 		return x19_27;
@@ -333,7 +333,7 @@ word64 d(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		return x19;
 	}
 	else
@@ -343,7 +343,7 @@ word64 d(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 		word64 x19_28 = e(x30, x30, out x20_26, out sp_27);
 		word64 x30_33;
 		*x30Out = sp_27->qw0008;
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		word64 sp_34;
 		*spOut = &sp_27->qw0008 + 0x01;
 		return x19_28;
@@ -360,7 +360,7 @@ word64 k(word64 x30, ptr64 & x20Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		return x19;
 	}
 	else
@@ -368,7 +368,7 @@ word64 k(word64 x30, ptr64 & x20Out, ptr64 & spOut)
 		word64 x20_26;
 		word64 sp_27;
 		word64 x19_28 = e(x30, x30, out x20_26, out sp_27);
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		word64 sp_34;
 		*spOut = sp_27 + 0x0010;
 		return x19_28;
@@ -386,7 +386,7 @@ word64 j(word64 x30, ptr64 & x20Out, ptr64 & x30Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		return x19;
 	}
 	else
@@ -396,7 +396,7 @@ word64 j(word64 x30, ptr64 & x20Out, ptr64 & x30Out, ptr64 & spOut)
 		word64 x19_29 = k(x30, out x20_27, out sp_28);
 		word64 x30_34;
 		*x30Out = sp_28->qw0008;
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		word64 sp_35;
 		*spOut = &sp_28->qw0008 + 0x01;
 		return x19_29;

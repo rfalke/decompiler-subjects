@@ -1,21 +1,20 @@
 Using options:
-error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x0013e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Serialization.SerializedService.Build (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary library) [0x00181] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadService (Reko.Core.Serialization.SerializedService ssvc) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00037] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
 080486C0: warning: Call target address 00000000 is invalid.
-08048614: warning: Unable to resolve imported reference !s_wsle.
-08048564: warning: Unable to resolve imported reference !do_lio.
-08048574: warning: Unable to resolve imported reference !e_wsle.
-08048594: warning: Unable to resolve imported reference !s_rsle.
-08048564: warning: Unable to resolve imported reference !do_lio.
-080485B4: warning: Unable to resolve imported reference !e_rsle.
-08048604: warning: Unable to resolve imported reference !f_setarg.
-080485E4: warning: Unable to resolve imported reference !f_setsig.
-080485D4: warning: Unable to resolve imported reference !f_init.
-08048584: warning: Unable to resolve imported reference !f_exit.
+08048574: warning: Unable to resolve imported reference e_wsle.
+080485B4: warning: Unable to resolve imported reference e_rsle.
+0804883D: warning: Unable to resolve imported reference f_setarg.
+08048842: warning: Unable to resolve imported reference f_setsig.
+08048847: warning: Unable to resolve imported reference f_init.
+080486DA: warning: Unable to resolve imported reference s_wsle.
+080486F3: warning: Unable to resolve imported reference do_lio.
+080486FB: warning: Unable to resolve imported reference e_wsle.
+08048708: warning: Unable to resolve imported reference s_rsle.
+08048720: warning: Unable to resolve imported reference do_lio.
+08048728: warning: Unable to resolve imported reference e_rsle.
+08048614: warning: Unable to resolve imported reference s_wsle.
+08048604: warning: Unable to resolve imported reference f_setarg.
+080485E4: warning: Unable to resolve imported reference f_setsig.
+080485D4: warning: Unable to resolve imported reference f_init.
+08048594: warning: Unable to resolve imported reference s_rsle.
+08048584: warning: Unable to resolve imported reference f_exit.
+08048564: warning: Unable to resolve imported reference do_lio.

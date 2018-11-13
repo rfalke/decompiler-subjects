@@ -1,13 +1,4 @@
 Using options:
-error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x0013e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Serialization.SerializedService.Build (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary library) [0x00181] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadService (Reko.Core.Serialization.SerializedService ssvc) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00037] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
 080483B3: warning: Call target address 00000000 is invalid.
 08048440: warning: Call target address 00000000 is invalid.
 080483ED: warning: Call target address 00000000 is invalid.
@@ -23,19 +14,20 @@ error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenc
 08048343: warning: The format specifier '%z' passed to *printf is not known.
 compare_floats: error: An error occurred during data flow analysis.
     Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000ea] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-: error: Error when reconstructing types.
-    Specified argument was out of the range of valid values.
-Parameter name: Linear address 00000000 is not in known segment.
-      at Reko.Core.SegmentMap.MapLinearAddressToAddress (System.UInt64 linearAddress) [0x00064] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.CmdLine.CmdLineListener.CreateStatementNavigator (Reko.Core.Program program, Reko.Core.Statement stm) [0x0000c] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000da] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) [0x000cd] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () [0x0004a] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
+l0804866A: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+080487A4: error: An error occurred while processing the statement call Mem0[0x0804A0F8 + 0x0804A000:word32] (retsize: 4; depth: 48)	uses: C_49,dwLoc04_4,dwLoc08_7,dwLoc0C_10,dwLoc10_13,dwLoc24_57,dwLoc28_61,dwLoc2C_63,eax_21,ebp_51,ebx_15,edi_47,esi_50,esp_62,SCZO_53,SZO_48,Z_25	defs: C_73,eax_71,ebp_66,ebx_69,edi_67,esi_68,esp_65,SCZO_70,SZO_72,Z_74.
+    Specified cast is not valid.
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitCallInstruction (Reko.Core.Code.CallInstruction call) [0x0005a] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.CallInstruction.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 

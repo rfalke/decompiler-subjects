@@ -99,12 +99,9 @@ void main()
 {
 	__align(fp - 0x0C);
 	int32 edx_14 = 0x00;
-	int32 eax_15 = 0x00;
-	do
-	{
-		edx_14 = edx_14 + (globals->a8049440)[eax_15 * 0x04];
-		eax_15 = eax_15 + 0x01;
-	} while (eax_15 <= 0x09);
+	int32 eax_15;
+	for (eax_15 = 0x00; eax_15 <= 0x09; ++eax_15)
+		edx_14 += globals->a8049440[eax_15 * 0x04];
 	printf("Sum is %d\n", edx_14);
 }
 

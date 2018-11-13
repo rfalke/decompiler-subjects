@@ -42,23 +42,20 @@ void __do_global_dtors_aux()
 	if (globals->b600F00 == 0x00)
 	{
 		up64 rax_27 = globals->qw600F08;
-		if (rax_27 < 0x00)
+		while (rax_27 < 0x00)
 		{
-			do
-			{
-				uint64 rax_43 = rax_27 + 0x01;
-				globals->qw600F08 = rax_43;
-				word64 rsp_46;
-				word64 rbp_47;
-				word64 rbx_48;
-				byte SCZO_49;
-				bool Z_50;
-				word32 ebx_51;
-				word64 rax_52;
-				bool C_53;
-				(*((char *) globals->a600CC0 + rax_43 * 0x08))();
-				rax_27 = globals->qw600F08;
-			} while (rax_27 < 0x00);
+			uint64 rax_43 = rax_27 + 0x01;
+			globals->qw600F08 = rax_43;
+			word64 rsp_46;
+			word64 rbp_47;
+			word64 rbx_48;
+			byte SCZO_49;
+			bool Z_50;
+			word32 ebx_51;
+			word64 rax_52;
+			bool C_53;
+			(*((char *) globals->a600CC0 + rax_43 * 0x08))();
+			rax_27 = globals->qw600F08;
 		}
 		globals->b600F00 = 0x01;
 	}
@@ -95,11 +92,11 @@ void dumpline(int32 edx, Eq_116 rdi)
 		word32 edx_194 = (word32) (uint64) dwLoc20_212;
 		uint64 rax_199 = (uint64) ((word32) (uint64) ((word32) (uint64) edx_194 * 0x02) + edx_194);
 		sprintf((word64) (DPB(rax_199, (int16) (byte) rax_199, 0) + 0x09) + (fp - 0x78), " %02lX", tLocA0);
-		dwLoc20_212 = dwLoc20_212 + 0x01;
+		++dwLoc20_212;
 	}
 	while (true)
 	{
-		dwLoc20_212 = dwLoc20_212 + 0x01;
+		++dwLoc20_212;
 		if (dwLoc20_212 <= 0x0F == 0x00)
 			break;
 		strcat(fp - 0x78, "   ");
@@ -158,15 +155,14 @@ word32 hexdump(char * rdi)
 		}
 		else
 		{
-			up64 qwLoc20_114 = 0x00;
-			while (qwLoc98 > qwLoc20_114)
+			up64 qwLoc20_114;
+			for (qwLoc20_114 = 0x00; qwLoc98 > qwLoc20_114; qwLoc20_114 += DPB(rax_109, (int16) (byte) rax_109, 0))
 			{
 				Eq_176 eax_99 = fread(fp - 0x38, 0x01, 0x10, rax_52);
 				if (eax_99 == 0x00)
 					break;
 				dumpline((word32) (uint64) eax_99, fp - 0x38);
 				uint64 rax_109 = (uint64) eax_99;
-				qwLoc20_114 = qwLoc20_114 + DPB(rax_109, (int16) ((byte) rax_109), 0);
 			}
 			fclose(rax_52);
 			eax_30 = 0x00;
@@ -183,7 +179,7 @@ void main(char * rsi[], int32 edi)
 	{
 		uint64 rax_30 = (uint64) dwLoc10_13;
 		hexdump(rsi[DPB(rax_30, (int16) (byte) rax_30, 0)]);
-		dwLoc10_13 = dwLoc10_13 + 0x01;
+		++dwLoc10_13;
 	}
 }
 

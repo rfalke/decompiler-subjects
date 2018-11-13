@@ -18,7 +18,7 @@ Eq_2393 g_a400006[] =
 	{
 	};
 word32 g_dw40003C = 0x00000080;
-Eq_2529 g_a400090[] = 
+Eq_2527 g_a400090[] = 
 	{
 	};
 int32 g_t401C90(struct _exception * rcx) = Unexpected function type (fn int32 ((ptr64 (struct "_exception"))))
@@ -66,7 +66,7 @@ word64 g_qw4070A0 = 0x0000000000000000;
 word32 g_dw4070A8 = 0x00000000;
 word64 g_qw4070C0 = 0x0000000000000000;
 word64 g_qw407240 = 0x0000000000000000;
-Eq_3226 g_a407244[] = 
+Eq_3224 g_a407244[] = 
 	{
 	};
 <anonymous> * g_ptr407340 = null;
@@ -82,7 +82,7 @@ word32 g_dw407880 = 0x00000000;
 word32 g_dw407884 = 0x00000000;
 word64 g_qw407890 = 0x0000000000000000;
 word32 g_dw407920 = 0x00000000;
-struct Eq_2966 * g_ptr407968 = null;
+struct Eq_2964 * g_ptr407968 = null;
 byte * g_ptr407990 = null;
 word32 g_dw407998 = 0x00000000;
 ptr64 g_ptr4079A0 = 0x0000000000000000;

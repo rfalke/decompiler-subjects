@@ -145,7 +145,7 @@ void fib(int32 w0)
 	if (w0 < 0x03)
 		return;
 	do
-		w8_24 = w8_24 - 0x01;
+		--w8_24;
 	while (w8_24 != 0x00);
 }
 
@@ -159,7 +159,7 @@ void main(word64 qwArg00)
 	if (dwLoc0C_5 >= 0x02 && dwLoc0C_5 >= 0x03)
 	{
 		do
-			w8_18 = w8_18 - 0x01;
+			--w8_18;
 		while (w8_18 != 0x00);
 	}
 	fn00000000004004E0();

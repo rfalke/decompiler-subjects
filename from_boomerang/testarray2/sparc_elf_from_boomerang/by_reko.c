@@ -31,15 +31,15 @@ void __do_global_dtors_aux(word32 o7)
 	word32 o2_26 = (word32) *l7_136->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_54 = l7_136->ptr0010;
+	word32 o1_56 = **o0_54;
+	if (o1_56 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 ** l0_112 = o0_54;
+		word32 * o0_114 = (char *) *o0_54 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
+			*l0_112 = o0_114;
 			word32 sp_119;
 			word32 i0_120;
 			word32 o0_121;
@@ -60,11 +60,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_137;
 			byte NZVC_138;
 			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			fn69726F6E();
+			word32 * o0_141 = *l0_112;
+			if (*o0_141 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_114 = o0_141 + 0x01;
 		}
 	}
 	if (l7_136->dw001C == 0x00)
@@ -164,14 +164,14 @@ void call_frame_dummy()
 {
 }
 
-// 000106CC: void mid(Register (ptr32 Eq_213) o0, Stack word32 dwArg44)
-void mid(Eq_213 * o0, word32 dwArg44)
+// 000106CC: void mid(Register (ptr32 Eq_215) o0, Stack word32 dwArg44)
+void mid(Eq_215 * o0, word32 dwArg44)
 {
 	printf("Middle elment is %d\n", (word32) o0->b0002 << 0x18 >> 0x18);
 }
 
-// 00010708: Register ptr32 fst(Register (ptr32 Eq_230) o0, Stack word32 dwArg44)
-ptr32 fst(Eq_230 * o0, word32 dwArg44)
+// 00010708: Register ptr32 fst(Register (ptr32 Eq_232) o0, Stack word32 dwArg44)
+ptr32 fst(Eq_232 * o0, word32 dwArg44)
 {
 	printf("First element is %d\n", (word32) o0->b000A << 0x18 >> 0x18);
 	return fp;
@@ -181,15 +181,15 @@ ptr32 fst(Eq_230 * o0, word32 dwArg44)
 void main()
 {
 	mid(&globals->t20A50, dwLoc3C);
-	struct Eq_251 * i6_26 = fst((struct Eq_230 *) 0x00020A46, dwLoc3C);
+	struct Eq_253 * i6_26 = fst((struct Eq_232 *) 0x00020A46, dwLoc3C);
 	i6_26->ptrFFFFFFE4 = &globals->t20A50;
 	i6_26->dwFFFFFFEC = 0x00;
 	while (i6_26->dwFFFFFFEC <= 0x04)
 	{
 		byte * o1_53 = i6_26->ptrFFFFFFE4;
-		i6_26->dwFFFFFFE8 = i6_26->dwFFFFFFE8 + (((word32) (*o1_53) << 0x18) >> 0x18);
+		i6_26->dwFFFFFFE8 += (word32) *o1_53 << 0x18 >> 0x18;
 		i6_26->ptrFFFFFFE4 = o1_53 + 0x01;
-		i6_26->dwFFFFFFEC = i6_26->dwFFFFFFEC + 0x01;
+		++i6_26->dwFFFFFFEC;
 	}
 	printf("Sum is %d\n", i6_26->dwFFFFFFE8);
 }
@@ -204,10 +204,10 @@ word32 fn00010800(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_314 * l7_22 = fn00010800(o7, 0x000100C8);
-	struct Eq_319 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_316 * l7_22 = fn00010800(o7, 0x000100C8);
+	struct Eq_321 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -231,11 +231,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

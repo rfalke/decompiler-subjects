@@ -7,7 +7,7 @@
 // 080482EC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D07 != 0x00)
+	if (globals->dw804A004 != 0x00)
 		fn08048360();
 }
 
@@ -49,7 +49,7 @@ void main(word32 dwArg00, int32 dwArg04, byte * * dwArg08)
 	exit(eax_35 + advanced_1_boolean_minization((word32) (dwArg04 == 0x00), ~dwArg04 & 0x01, (word32) (dwArg04 == (0x55555556 - (dwArg04 >> 0x1F)) * 0x03)) + (int32) (*(*dwArg08)));
 }
 
-// 080483F7: void _start(Register (ptr32 Eq_79) edx, Stack int32 dwArg00)
+// 080483F7: void _start(Register (ptr32 Eq_75) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -57,10 +57,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048420: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048420: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048430: void deregister_tm_clones()
@@ -179,24 +178,23 @@ word32 advanced_1_boolean_minization(word32 dwArg04, ui32 dwArg08, word32 dwArg0
 // 08048660: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr189F + 0x04 - &ebx_15->ptr189F >> 0x02 != 0x00)
+	if (0x0804A0F4 - 0x0804A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr189F();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804A0F8 + 0x0804A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -208,6 +206,5 @@ void __libc_csu_fini()
 // 080486C4: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

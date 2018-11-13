@@ -127,27 +127,14 @@ void printout(Eq_177 * rdi)
 // 0000000000400673: void main()
 void main()
 {
-	int32 dwLoc0C_22 = 0x01;
-	while (dwLoc0C_22 <= 0x0A)
+	int32 dwLoc0C_20;
+	for (dwLoc0C_20 = 0x01; dwLoc0C_20 <= 0x0A; ++dwLoc0C_20)
 	{
-		struct Eq_124 * rax_35 = malloc(0x18);
-		rax_35->qw0008 = 0x00;
-		word64 rdx_40 = rax_35->qw0008;
-		rax_35->qw0010 = rdx_40;
-		word64 rsp_44;
-		word64 rbp_45;
-		byte SCZO_46;
-		byte SZO_47;
-		word64 rax_48;
-		word64 rdi_49;
-		word32 edi_50;
-		word64 rdx_51;
-		word32 eax_52;
-		word64 rsi_53;
-		rand();
-		rax_35->dw0000 = eax_52;
-		insert(rax_35, fp - 0x20);
-		dwLoc0C_22 = dwLoc0C_22 + 0x01;
+		struct Eq_124 * rax_31 = malloc(0x18);
+		rax_31->qw0008 = 0x00;
+		rax_31->qw0010 = rax_31->qw0008;
+		rax_31->dw0000 = rand();
+		insert(rax_31, fp - 0x20);
 	}
 	printout(null);
 }

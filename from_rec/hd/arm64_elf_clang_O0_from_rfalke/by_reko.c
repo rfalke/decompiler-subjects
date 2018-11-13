@@ -213,15 +213,12 @@ word32 dumpline(ptr64 x0, int32 w2, word64 qwArg00, Eq_207 * & x29Out, Eq_208 * 
 	int32 dwLoc1C_16 = w2;
 	if (w2 > 0x10)
 		dwLoc1C_16 = 0x10;
-	int32 dwLoc70_29 = 0x00;
-	while (dwLoc70_29 < dwLoc1C_16)
-	{
+	int32 dwLoc70_29;
+	for (dwLoc70_29 = 0x00; dwLoc70_29 < dwLoc1C_16; ++dwLoc70_29)
 		fn00000000004006C0();
-		dwLoc70_29 = dwLoc70_29 + 0x01;
-	}
 	while (true)
 	{
-		dwLoc70_29 = dwLoc70_29 + 0x01;
+		++dwLoc70_29;
 		if (dwLoc70_29 >= 0x10)
 			break;
 		fn0000000000400700();
@@ -229,8 +226,8 @@ word32 dumpline(ptr64 x0, int32 w2, word64 qwArg00, Eq_207 * & x29Out, Eq_208 * 
 	fn00000000004006A0();
 	fn0000000000400740();
 	word32 w0_91 = (word32) (fp - 0x6C);
-	int32 dwLoc70_103 = 0x00;
-	while (dwLoc70_103 < dwLoc1C_16)
+	int32 dwLoc70_103;
+	for (dwLoc70_103 = 0x00; dwLoc70_103 < dwLoc1C_16; ++dwLoc70_103)
 	{
 		word32 dwLoc9C_131;
 		if ((word32) (x0 + (word64) dwLoc94) >= 0x20 && (word32) (x0 + (word64) dwLoc94) <= 0x7E)
@@ -238,13 +235,9 @@ word32 dumpline(ptr64 x0, int32 w2, word64 qwArg00, Eq_207 * & x29Out, Eq_208 * 
 		else
 			dwLoc9C_131 = 0x2E;
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (int32) (w0_91 + dwLoc70_103)].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (byte) dwLoc9C_131;
-		dwLoc70_103 = dwLoc70_103 + 0x01;
 	}
-	while (dwLoc70_103 < 0x10)
-	{
+	for (; dwLoc70_103 < 0x10; ++dwLoc70_103)
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (int32) (w0_91 + dwLoc70_103)].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (Eq_289) 0x20;
-		dwLoc70_103 = dwLoc70_103 + 0x01;
-	}
 	fn0000000000400740();
 	fn0000000000400750();
 	word64 x29_211;
@@ -277,7 +270,7 @@ word32 hexdump(word64 x0, ptr64 & x29Out, ptr64 & spOut)
 					break;
 				dumpline(x29_112 - 0x20, sp_113->dw001C, qwArg00, out x29_112, out sp_113);
 				struct Eq_339 * x0_117 = sp_113->ptr0010;
-				x0_117->qw0008 = x0_117->qw0008 + (word64) sp_113->dw000E;
+				x0_117->qw0008 += (word64) sp_113->dw000E;
 			}
 			word32 w0_94 = (word32) sp_113->ptr0010->qw0000;
 			fn00000000004006D0();
@@ -300,8 +293,8 @@ void main()
 	while (sp_28->dw000C < x29_27->dwFFFFFFF8)
 	{
 		word32 w0_45 = hexdump(sp_28->ptr0010[(word64) sp_28->dw0006 * 0x00], out x29_27, out sp_28);
-		sp_28->dw0008 = sp_28->dw0008 + w0_45;
-		sp_28->dw000C = sp_28->dw000C + 0x01;
+		sp_28->dw0008 += w0_45;
+		++sp_28->dw000C;
 	}
 }
 

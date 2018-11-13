@@ -19,10 +19,25 @@ void _init()
 		bool C_37;
 		bool Z_38;
 		word32 eax_39;
-		!__gmon_start__();
+		__gmon_start__();
 	}
 	frame_dummy();
 	__do_global_ctors_aux();
+}
+
+// 08048328: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048338: void printf()
+void printf()
+{
+}
+
+// 08048348: void __isoc99_scanf()
+void __isoc99_scanf()
+{
 }
 
 // 08048360: void _start(Register (ptr32 Eq_26) edx, Stack int32 dwArg00)
@@ -39,23 +54,20 @@ void __do_global_dtors_aux(word32 esi)
 	if (globals->b80497B0 == 0x00)
 	{
 		uint32 eax_26 = globals->dw80497B4;
-		if (eax_26 < 0x00)
+		while (eax_26 < 0x00)
 		{
-			do
-			{
-				uint32 eax_44 = eax_26 + 0x01;
-				globals->dw80497B4 = eax_44;
-				word32 esp_47;
-				word32 ebp_48;
-				word32 ebx_49;
-				byte SCZO_50;
-				bool Z_51;
-				word32 eax_52;
-				bool C_53;
-				word32 esi_54;
-				(*((char *) globals->a80496B8 + eax_44 * 0x04))();
-				eax_26 = globals->dw80497B4;
-			} while (eax_26 < 0x00);
+			uint32 eax_44 = eax_26 + 0x01;
+			globals->dw80497B4 = eax_44;
+			word32 esp_47;
+			word32 ebp_48;
+			word32 ebx_49;
+			byte SCZO_50;
+			bool Z_51;
+			word32 eax_52;
+			bool C_53;
+			word32 esi_54;
+			(*((char *) globals->a80496B8 + eax_44 * 0x04))();
+			eax_26 = globals->dw80497B4;
 		}
 		globals->b80497B0 = 0x01;
 	}
@@ -123,31 +135,29 @@ void __libc_csu_fini()
 // 08048530: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_168 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if (&ebx_16->ptr1175 - &ebx_16->ptr1175 >> 0x02 != 0x00)
+	if (0x08049870 - 0x08049870 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_60;
-			word32 ebp_61;
-			up32 edi_62;
-			up32 esi_63;
-			word32 ebx_64;
-			byte SCZO_65;
-			word32 eax_66;
-			byte SZO_67;
-			bool C_68;
-			bool Z_69;
-			ebx_16->ptr1175();
-		} while (esi_63 + 0x01 < edi_62);
+			word32 esp_59;
+			word32 ebp_60;
+			up32 edi_61;
+			up32 esi_62;
+			word32 ebx_63;
+			byte SCZO_64;
+			word32 eax_65;
+			byte SZO_66;
+			bool C_67;
+			bool Z_68;
+			(0x08049870 + 0x08049790)();
+		} while (esi_62 + 0x01 < edi_61);
 	}
 }
 
-// 0804858A: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __i686.get_pc_thunk.bx(word32 dwArg00)
+// 0804858A: void __i686.get_pc_thunk.bx(Stack word32 dwArg00)
+void __i686.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048590: void __do_global_ctors_aux()

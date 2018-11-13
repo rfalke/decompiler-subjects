@@ -139,7 +139,7 @@ void loop1(word64 qwArg00)
 	while (globals->dw411030 < 100)
 	{
 		globals->a411034[(word64) globals->dw411030 * 0x00] = globals->dw411030;
-		globals->dw411030 = globals->dw411030 + 0x01;
+		++globals->dw411030;
 	}
 	leave();
 }

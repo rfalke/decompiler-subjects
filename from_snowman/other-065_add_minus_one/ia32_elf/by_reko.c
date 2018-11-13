@@ -7,7 +7,7 @@
 // 08048098: void fn08048098(Register (ptr32 word32) eax)
 void fn08048098(word32 * eax)
 {
-	*eax = *eax + ~0x00;
-	*eax = *eax - ~0x00;
+	*eax += ~0x00;
+	*eax -= ~0x00;
 }
 

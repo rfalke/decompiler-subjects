@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10914 = Unexpected function type (fn void ())
 ;
 Eq_17 g_t10930 = 

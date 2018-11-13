@@ -12,6 +12,21 @@ void _init(word32 esi, word32 edi)
 	__do_global_ctors_aux(esi, edi);
 }
 
+// 08048384: void xf86GetPciVideoInfo()
+void xf86GetPciVideoInfo()
+{
+}
+
+// 08048394: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080483A4: void printf()
+void printf()
+{
+}
+
 // 080483D0: void _start(Register (ptr32 Eq_15) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
@@ -36,7 +51,7 @@ void call_gmon_start()
 		bool C_40;
 		bool Z_41;
 		word32 eax_42;
-		!__gmon_start__();
+		__gmon_start__();
 	}
 }
 
@@ -96,7 +111,7 @@ void main()
 	word32 ebp_15;
 	byte SCZO_16;
 	word32 eax_17;
-	!xf86GetPciVideoInfo();
+	xf86GetPciVideoInfo();
 	printf("%i\n", getDevice((struct Eq_105 **) 0x10));
 }
 

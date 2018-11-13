@@ -140,29 +140,29 @@ void copy1_four_times(word16 * x0, word16 * x1, int32 w2, word64 x9)
 		case 0x00:
 l000000000040067C:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l0000000000400684;
 		case 0x01:
 l0000000000400694:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			w8_34 = w8_34 - 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			--w8_34;
+			++x0;
 			if (w8_34 > 0x00)
 				goto l000000000040067C;
 			break;
 		case 0x02:
 l000000000040068C:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l0000000000400694;
 		case 0x03:
 l0000000000400684:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l000000000040068C;
 		}
 	}
@@ -176,59 +176,59 @@ int32 copy1_eight_times(Eq_224 * x0, Eq_225 * x1, int32 w2, word64 x9)
 	ui64 x9_14 = DPB(x9, w9_12, 0);
 	if (w9_12 <= 0x07)
 	{
-		w8_107 = w8_107 >> 0x03;
+		w8_107 >>= 0x03;
 		switch ((word32) globals->a4009A8[x9_14 * 0x08])
 		{
 		case 0x00:
 l00000000004006E4:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l00000000004006EC;
 		case 0x01:
 l000000000040071C:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			w8_107 = w8_107 - 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			--w8_107;
+			++x0;
 			if (w8_107 > 0x00)
 				goto l00000000004006E4;
 			break;
 		case 0x02:
 l0000000000400714:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l000000000040071C;
 		case 0x03:
 l000000000040070C:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l0000000000400714;
 		case 0x04:
 l0000000000400704:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l000000000040070C;
 		case 0x05:
 l00000000004006FC:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l0000000000400704;
 		case 0x06:
 l00000000004006F4:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l00000000004006FC;
 		case 0x07:
 l00000000004006EC:
 			x0->w0000 = (word16) (word32) x1->w0000;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 			goto l00000000004006F4;
 		}
 	}
@@ -240,7 +240,7 @@ void copy2_four_times(word16 * x0, word16 * x1, int32 w2)
 {
 	if (w2 >= 0x01)
 	{
-		word32 w8_17 = 0x04 - w2;
+		word32 w8_17;
 		do
 		{
 			if (w8_17 != 0x01)
@@ -250,21 +250,21 @@ void copy2_four_times(word16 * x0, word16 * x1, int32 w2)
 				if (w8_17 == 0x03)
 					goto l0000000000400770;
 				*x0 = (word16) (word32) *x1;
-				x1 = x1 + 0x01;
-				x0 = x0 + 0x01;
+				++x1;
+				++x0;
 			}
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 l0000000000400768:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			x0 = x0 + 0x01;
+			++x1;
+			++x0;
 l0000000000400770:
 			*x0 = (word16) (word32) *x1;
-			x1 = x1 + 0x01;
-			w8_17 = w8_17 + 0x04;
-			x0 = x0 + 0x01;
+			++x1;
+			w8_17 += 0x04;
+			++x0;
 		} while (w8_17 != 0x04);
 	}
 }
@@ -274,7 +274,7 @@ void copy2_eight_times(Eq_224 * x0, Eq_225 * x1, int32 w2, Eq_424 * x10)
 {
 	if (w2 >= 0x01)
 	{
-		word32 w8_100 = 0x08 - w2;
+		word32 w8_100;
 		do
 		{
 			up32 w10_43 = w8_100 - 0x01;
@@ -310,7 +310,7 @@ void copy2_eight_times(Eq_224 * x0, Eq_225 * x1, int32 w2, Eq_424 * x10)
 			x0_65->w000C = (word16) w10_97;
 			x10 = DPB(x10, w10_97, 0);
 			x1 = (struct Eq_225 *) (&x1_63->w000C + 0x01);
-			w8_100 = w8_100 + 0x08;
+			w8_100 += 0x08;
 			x0 = (struct Eq_224 *) (&x0_65->w000C + 0x01);
 		} while (w8_100 != 0x08);
 	}
@@ -342,9 +342,9 @@ void main(word64 x0, word64 x9, word64 qwArg00)
 		x11_51->w000A = (word16) w13_44;
 		x11_51->w000C = (word16) w14_46;
 		x11_51->w000E = (word16) w10_48;
-		w9_32 = w9_32 - 0x01;
+		--w9_32;
 		x9_34 = DPB(x9_34, w9_32, 0);
-		x8_29 = x8_29 + 0x08;
+		x8_29 += 0x08;
 	} while (w9_32 > 0x01);
 	copy1_eight_times(x0_20, x0_17, 100, x9_34);
 	int64 x8_64 = 0x00;
@@ -360,7 +360,7 @@ void main(word64 x0, word64 x9, word64 qwArg00)
 		x10_76->w0002 = (word16) w12_71;
 		x10_76->w0004 = (word16) w13_73;
 		x10_76->w0006 = (word16) w9_75;
-		x8_64 = x8_64 + 0x08;
+		x8_64 += 0x08;
 		word32 w8_79 = (word32) x8_64;
 	} while (w8_79 != 200);
 	copy2_eight_times(x0_20, x0_17, 100, x10_76);

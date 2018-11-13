@@ -42,23 +42,20 @@ void __do_global_dtors_aux()
 	if (globals->b600DC8 == 0x00)
 	{
 		up64 rax_27 = globals->qw600DD0;
-		if (rax_27 < 0x00)
+		while (rax_27 < 0x00)
 		{
-			do
-			{
-				uint64 rax_43 = rax_27 + 0x01;
-				globals->qw600DD0 = rax_43;
-				word64 rsp_46;
-				word64 rbp_47;
-				word64 rbx_48;
-				byte SCZO_49;
-				bool Z_50;
-				word32 ebx_51;
-				word64 rax_52;
-				bool C_53;
-				(*((char *) globals->a600BA0 + rax_43 * 0x08))();
-				rax_27 = globals->qw600DD0;
-			} while (rax_27 < 0x00);
+			uint64 rax_43 = rax_27 + 0x01;
+			globals->qw600DD0 = rax_43;
+			word64 rsp_46;
+			word64 rbp_47;
+			word64 rbx_48;
+			byte SCZO_49;
+			bool Z_50;
+			word32 ebx_51;
+			word64 rax_52;
+			bool C_53;
+			(*((char *) globals->a600BA0 + rax_43 * 0x08))();
+			rax_27 = globals->qw600DD0;
 		}
 		globals->b600DC8 = 0x01;
 	}
@@ -109,7 +106,7 @@ void dumpline(word32 edx, byte * rdi)
 		do
 		{
 			sprintf(fp - 0x7F + (int64) ebp_272, " %02lX", tLoc90);
-			rbx_269 = rbx_269 + 0x01;
+			++rbx_269;
 			ebp_272 = (word32) (uint64) (ebp_272 + 0x03);
 		} while (r12d_107 > (word32) ((uint64) ((word32) ((uint64) ((word32) rbx_269)) - r14d_268)));
 		if (r12d_107 > 0x0F)
@@ -119,7 +116,7 @@ void dumpline(word32 edx, byte * rdi)
 			while (rcx_300 != 0x00)
 			{
 				rdi_296 = rdi_334 + 0x01;
-				rcx_300 = rcx_300 - 0x01;
+				--rcx_300;
 				byte * rdi_334 = rdi_296;
 				if (0x00 != *rdi_334)
 					break;
@@ -131,7 +128,7 @@ void dumpline(word32 edx, byte * rdi)
 			ebp_119 = (word32) rbp_100;
 l00000000004007AF:
 			byte * rdi_136 = rdi + 0x01 + DPB(rax_129, r12_101 - 0x01, 0);
-			byte * rax_137 = rdi;
+			byte * rax_137;
 			uint64 rbx_143 = (uint64) ((word32) (uint64) (ebx_130 - r15d_23) + 0x03);
 			do
 			{
@@ -144,7 +141,7 @@ l00000000004007AF:
 					dl_155 = (byte) esi;
 				}
 				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) (rax_137 + rbx_143)].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = dl_155;
-				rax_137 = rax_137 + 0x01;
+				++rax_137;
 			} while (rax_137 != rdi_136);
 			if (r12d_107 > 0x0F)
 			{
@@ -172,7 +169,7 @@ l00000000004007A9:
 		while (rcx_201 != 0x00)
 		{
 			rdi_204 = rdi_332 + 0x01;
-			rcx_201 = rcx_201 - 0x01;
+			--rcx_201;
 			byte * rdi_332 = rdi_204;
 			if (0x00 != *rdi_332)
 				break;
@@ -186,7 +183,7 @@ l00000000004007A9:
 	while (rcx_227 != 0x00)
 	{
 		rdi_223 = rdi_333 + 0x01;
-		rcx_227 = rcx_227 - 0x01;
+		--rcx_227;
 		byte * rdi_333 = rdi_223;
 		if (0x00 != *rdi_333)
 			break;
@@ -219,18 +216,14 @@ word32 hexdump(char * rdi, Eq_346 & r12dOut)
 		FILE * rax_58 = fopen(rdi, "rb");
 		if (rax_58 != null)
 		{
-			uint64 rbp_108 = 0x00;
-			if (qwLoc98 != 0x00)
+			uint64 rbp_108;
+			for (rbp_108 = 0x00; rbp_108 < qwLoc98; rbp_108 += (int64) ebx_99)
 			{
-				do
-				{
-					Eq_386 eax_96 = fread(fp - 0x38, 0x01, 0x10, rax_58);
-					word32 ebx_99 = (word32) (uint64) eax_96;
-					if (eax_96 == 0x00)
-						break;
-					dumpline((word32) (uint64) eax_96, fp - 0x38);
-					rbp_108 = rbp_108 + (int64) ebx_99;
-				} while (qwLoc98 > rbp_108);
+				Eq_386 eax_96 = fread(fp - 0x38, 0x01, 0x10, rax_58);
+				word32 ebx_99 = (word32) (uint64) eax_96;
+				if (eax_96 == 0x00)
+					break;
+				dumpline((word32) (uint64) eax_96, fp - 0x38);
 			}
 			fclose(rax_58);
 			eax_114 = 0x00;
@@ -259,7 +252,7 @@ void main(word64 rsi, int32 edi)
 			word32 r12d_49;
 			hexdump(*rbx_42, out r12d_49);
 			ebp_44 = (word32) (uint64) (ebp_44 + 0x01);
-			rbx_42 = rbx_42 + 0x01;
+			++rbx_42;
 		} while (r13d_17 > ebp_44);
 	}
 }

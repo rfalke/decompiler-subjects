@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10730 = Unexpected function type (fn void ())
 ;
 char g_str10750[] = "Hello, world!\n";

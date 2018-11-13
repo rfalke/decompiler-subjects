@@ -164,36 +164,31 @@ void main(word32 w0, word64 qwArg00)
 		int32 dwLoc28_277 = w0_86;
 		if (w0_86 > 0x0A)
 			dwLoc28_277 = 0x0A;
-		int32 dwLoc1C_252 = 0x00;
-		while (dwLoc1C_252 < 0x07)
+		int32 dwLoc1C_252;
+		for (dwLoc1C_252 = 0x00; dwLoc1C_252 < 0x07; ++dwLoc1C_252)
 		{
-			int32 dwLoc20_122 = 0x00;
-			while (dwLoc20_122 < dwLoc28_277)
+			int32 dwLoc20_122;
+			for (dwLoc20_122 = 0x00; dwLoc20_122 < dwLoc28_277; ++dwLoc20_122)
 			{
 				ui32 w10_151 = (word32) (*qwLoc18_22 + (word64) dwLoc20_122);
 				int32 dwLoc2C_153 = w10_151 - 0x20;
 				if ((w10_151 - 0x20 & 0x00) != 0x00)
 					dwLoc2C_153 = 0x00;
-				int32 dwLoc24_155 = 0x00;
-				while (dwLoc24_155 < 0x07)
-				{
+				int32 dwLoc24_155;
+				for (dwLoc24_155 = 0x00; dwLoc24_155 < 0x07; ++dwLoc24_155)
 					(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x7C)[(int64) (int32) (dwLoc24_155 + (dwLoc20_122 << 0x03))].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (byte) (word32) *((char *) *((char *) globals->a412040 + (int64) ((int32) (((dwLoc2C_153 < 0x00 ? dwLoc2C_153 + 0x07 : dwLoc2C_153) >> 0x03) * 0x07 + dwLoc1C_252)) * 0x00) + (int64) ((int32) ((dwLoc2C_153 - (dwLoc2C_153 / 0x08) * 0x08) * 0x07 + dwLoc24_155)));
-					dwLoc24_155 = dwLoc24_155 + 0x01;
-				}
 				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x7C)[(int64) (int32) ((dwLoc20_122 << 0x03) + 0x07)].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (Eq_217) 0x20;
-				dwLoc20_122 = dwLoc20_122 + 0x01;
 			}
 			ui32 dwLoc20_234 = (dwLoc28_277 << 0x03) - 0x01;
 			while ((dwLoc20_234 & 0x00) != 0x00 && (word32) ((fp - 0x7C) + (word64) dwLoc20_234) == 0x20)
 			{
 				fp - 0x7C + (word64) dwLoc20_234 = (byte *) 0x00;
-				dwLoc20_234 = dwLoc20_234 - 0x01;
+				--dwLoc20_234;
 			}
 			fn0000000000400520();
-			dwLoc1C_252 = dwLoc1C_252 + 0x01;
 		}
 		fn0000000000400520();
-		qwLoc18_22 = qwLoc18_22 + 0x01;
+		++qwLoc18_22;
 	}
 }
 

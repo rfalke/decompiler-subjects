@@ -11,6 +11,19 @@ struct Eq_3 g_t10000690 =
 	};
 Eq_43 g_t1000097C = Unexpected function type (fn void ())
 ;
+char g_str10000990[] = "%d";
+char g_str10000994[] = "Not Equal";
+char g_str100009A0[] = "Less or Equal";
+char g_str100009A8[] = "Equal";
+char g_str100009B0[] = "Greater or Equal";
+char g_str100009C4[] = "Less";
+char g_str100009CC[] = "Minus";
+char g_str100009D4[] = "Carry Set";
+char g_str100009E0[] = "Carry Clear";
+char g_str100009EC[] = "Less or Equal Unsigned";
+char g_str10000A04[] = "Greater Unsigned";
+char g_str10000A18[] = "Greater";
+char g_str10000A20[] = "Plus";
 int32 g_dw10010A2C = -1;
 int32 g_dw10010A38 = 0;
 int32 g_dw10010A3C = 0;

@@ -206,15 +206,12 @@ word32 dumpline(ptr64 x0, int32 w2, word32 dwArg00, word32 dwArg04, Eq_211 * & x
 	int32 dwLoc6C_14 = w2;
 	if (w2 > 0x10)
 		dwLoc6C_14 = 0x10;
-	int32 dwArg04_186 = 0x00;
-	while (dwArg04_186 < dwLoc6C_14)
-	{
+	int32 dwArg04_186;
+	for (dwArg04_186 = 0x00; dwArg04_186 < dwLoc6C_14; ++dwArg04_186)
 		fn0000000000000850();
-		dwArg04_186 = dwArg04_186 + 0x01;
-	}
 	while (true)
 	{
-		dwArg04_186 = dwArg04_186 + 0x01;
+		++dwArg04_186;
 		if (dwArg04_186 > 0x0F)
 			break;
 		fn0000000000000820();
@@ -223,8 +220,8 @@ word32 dumpline(ptr64 x0, int32 w2, word32 dwArg00, word32 dwArg04, Eq_211 * & x
 	fn0000000000000820();
 	Mem56[fp + ~0x4F + (word64) dwLoc44:word32] = Mem0[0x0000000000000E48 + 0x00:word32];
 	word32 w0_45 = (word32) (fp + ~0x4F);
-	int32 dwArg04_106 = 0x00;
-	while (dwArg04_106 < dwLoc6C_14)
+	int32 dwArg04_106;
+	for (dwArg04_106 = 0x00; dwArg04_106 < dwLoc6C_14; ++dwArg04_106)
 	{
 		word32 w0_128;
 		word32 w2_115 = w0_45 + 0x03 + dwArg04_106;
@@ -233,13 +230,9 @@ word32 dumpline(ptr64 x0, int32 w2, word32 dwArg00, word32 dwArg04, Eq_211 * & x
 		else
 			w0_128 = 0x2E;
 		Mem131[fp + ~0x4F + (int64) ((int32) w2_115):byte] = (byte) w0_128;
-		dwArg04_106 = dwArg04_106 + 0x01;
 	}
-	while (dwArg04_106 <= 0x0F)
-	{
+	for (; dwArg04_106 <= 0x0F; ++dwArg04_106)
 		Mem112[fp + ~0x4F + (int64) ((int32) (dwArg04_106 + (w0_45 + 0x03))):byte] = 0x20;
-		dwArg04_106 = dwArg04_106 + 0x01;
-	}
 	Mem93[fp + ~0x4F + (word64) (dwLoc44 + dwLoc42):word16] = (word16) (word32) globals->w0E50;
 	fn00000000000008B0();
 	word64 x29_97;
@@ -278,7 +271,7 @@ word32 hexdump(word64 x0, word64 qwArg00, Eq_337 * & x29Out, ptr64 & spOut)
 				if (x29_66->dw00BC == 0x00)
 					break;
 				dumpline((char *) &x29_66->qw005E + 0x004A, x29_66->dw00BC, dwArg00, dwArg04, out x29_66, out sp_30);
-				x29_66->qw00C8 = x29_66->qw00C8 + (word64) x29_66->qw005E;
+				x29_66->qw00C8 += (word64) x29_66->qw005E;
 			}
 			fn0000000000000860();
 			w0_28 = 0x00;
@@ -299,8 +292,8 @@ void main(word32 dwArg00, word32 dwArg04)
 	{
 		word64 sp_40;
 		word32 w0_41 = hexdump(x29_19->ptr0010[(word64) x29_19->dw0016], qwArg00, out x29_19, out sp_40);
-		x29_19->dw0028 = x29_19->dw0028 + w0_41;
-		x29_19->dw002C = x29_19->dw002C + 0x01;
+		x29_19->dw0028 += w0_41;
+		++x29_19->dw002C;
 	}
 }
 

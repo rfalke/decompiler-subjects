@@ -256,7 +256,7 @@ void copy2_four_times(word16 * x0, word16 * x1, int32 w2)
 	int32 dwLoc14_49 = w2;
 	if (w2 > 0x00)
 	{
-		while (dwLoc14_49 != 0x00)
+		for (; dwLoc14_49 != 0x00; dwLoc14_49 -= 0x04)
 		{
 			word32 w8_53 = 0x04 - dwLoc14_49;
 			if (w8_53 != 0x01)
@@ -266,21 +266,20 @@ void copy2_four_times(word16 * x0, word16 * x1, int32 w2)
 				if (w8_53 == 0x03)
 					goto l00000000004009D0;
 				*qwLoc08_105 = (word16) (word32) *qwLoc10_104;
-				qwLoc10_104 = qwLoc10_104 + 0x01;
-				qwLoc08_105 = qwLoc08_105 + 0x01;
+				++qwLoc10_104;
+				++qwLoc08_105;
 			}
 			*qwLoc08_105 = (word16) (word32) *qwLoc10_104;
-			qwLoc10_104 = qwLoc10_104 + 0x01;
-			qwLoc08_105 = qwLoc08_105 + 0x01;
+			++qwLoc10_104;
+			++qwLoc08_105;
 l00000000004009B0:
 			*qwLoc08_105 = (word16) (word32) *qwLoc10_104;
-			qwLoc10_104 = qwLoc10_104 + 0x01;
-			qwLoc08_105 = qwLoc08_105 + 0x01;
+			++qwLoc10_104;
+			++qwLoc08_105;
 l00000000004009D0:
 			*qwLoc08_105 = (word16) (word32) *qwLoc10_104;
-			qwLoc10_104 = qwLoc10_104 + 0x01;
-			qwLoc08_105 = qwLoc08_105 + 0x01;
-			dwLoc14_49 = dwLoc14_49 - 0x04;
+			++qwLoc10_104;
+			++qwLoc08_105;
 		}
 	}
 }

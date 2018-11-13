@@ -157,7 +157,7 @@ void copy1_four_times(word16 * x0, int16 * x1, int32 w2)
 	up32 w2_14 = w4_9 < 0x00 ? w2 & 0x03 : -(w4_9 & 0x03);
 	if (w2_14 > 0x03)
 		return;
-	word16 * x4_41 = 2232 + 0x02;
+	word16 * x4_41 = &globals->w08B8;
 	word32 w2_44 = (word32) (0x00000000000008B8 + (int64) ((int8) ((word32) Mem0[0x0000000000000C98 + (uint64) ((uint32) w2_14):byte])));
 	switch (w2_44)
 	{
@@ -165,12 +165,12 @@ void copy1_four_times(word16 * x0, int16 * x1, int32 w2)
 	case 0x01:
 l00000000000008CC:
 		*x0 = (word16) (word32) *x1;
-		struct Eq_217 * x2_79 = x1 + 0x01;
+		struct Eq_215 * x2_79 = x1 + 0x01;
 		*x4_41 = (word16) (word32) x2_79->w0000;
-		w3_45 = w3_45 - 0x01;
+		--w3_45;
 		if (w3_45 <= 0x00)
 			return;
-		word16 * x0_90 = x4_41;
+		word16 * x0_90 = x4_41 + 0x01;
 		*x0_90 = (word16) (word32) x2_79->w0002;
 		x1 = (int16 *) (&x2_79->w0002 + 0x01);
 		x0 = x0_90 + 0x01;
@@ -178,8 +178,8 @@ l00000000000008CC:
 	case 0x02:
 l00000000000008BC:
 		*x0 = (word16) w2_44;
-		x1 = x1 + 0x01;
-		x0 = x0 + 0x01;
+		++x1;
+		++x0;
 		x4_41 = x0 + 0x01;
 		goto l00000000000008CC;
 	case 0x03:
@@ -197,7 +197,7 @@ void copy1_eight_times(word16 * x0, int16 * x1, int32 w2)
 	up32 w2_14 = w4_9 < 0x00 ? w2 & 0x07 : -(w4_9 & 0x07);
 	if (w2_14 > 0x07)
 		return;
-	word64 x2_136 = 0x0000000000000958 + (int64) ((int8) ((word32) Mem0[0x0000000000000C9C + (uint64) ((uint32) w2_14):byte])) + 0x02;
+	word64 x2_136 = 0x0000000000000958 + (int64) ((int8) ((word32) Mem0[0x0000000000000C9C + (uint64) ((uint32) w2_14):byte]));
 	int16 * x4_138 = &globals->w0958;
 	word32 w2_44 = (word32) x2_136;
 	switch (w2_44)
@@ -208,25 +208,25 @@ void copy1_eight_times(word16 * x0, int16 * x1, int32 w2)
 l000000000000096C:
 		*x0 = (word16) (word32) *x1;
 		x4_138 = x1 + 0x01;
-		x0 = x2_136;
+		x0 = x2_136 + 0x01;
 		goto l000000000000097C;
 	case 0x03:
 	case 0x04:
 l0000000000000964:
-		x0 = x0 + 0x01;
+		++x0;
 		x2_136 = x0 + 0x01;
 		goto l000000000000096C;
 	case 0x05:
 l000000000000097C:
-		struct Eq_319 * x1_92 = x4_138 + 0x01;
+		struct Eq_315 * x1_92 = x4_138 + 0x01;
 		word32 w4_95 = (word32) *x4_138;
 		*x2_136 = (word16) w4_95;
 		*x0 = (word16) (word32) x1_92->w0000;
-		struct Eq_349 * x2_98 = x0 + 0x01;
+		struct Eq_345 * x2_98 = x0 + 0x01;
 		x2_98->w0000 = (word16) (word32) x1_92->w0002;
 		x2_98->w0002 = (word16) (word32) x1_92->w0004;
 		x2_98->w0004 = (word16) (word32) x1_92->w0006;
-		w3_118 = w3_118 - 0x01;
+		--w3_118;
 		if (w3_118 <= 0x00)
 			return;
 		x2_98->w0006 = (word16) (word32) x1_92->w0008;
@@ -236,7 +236,7 @@ l000000000000097C:
 	case 0x06:
 l000000000000095C:
 		*x0 = (word16) w2_44;
-		x1 = x1 + 0x01;
+		++x1;
 		goto l0000000000000964;
 	case 0x07:
 l0000000000000958:
@@ -262,12 +262,12 @@ void copy2_four_times(word16 * x0, int16 * x1, int32 w2)
 					if (w3_26 != 0x01)
 					{
 						*x0 = (word16) (word32) *x1;
-						x1 = x1 + 0x01;
-						x0 = x0 + 0x01;
+						++x1;
+						++x0;
 					}
 					*x0 = (word16) (word32) *x1;
-					x1 = x1 + 0x01;
-					x0 = x0 + 0x01;
+					++x1;
+					++x0;
 					goto l0000000000000A34;
 				}
 				x5_40 = x1;
@@ -283,8 +283,8 @@ l0000000000000A34:
 			*x4_38 = (word16) (word32) *x5_40;
 			x0 = x4_38 + 0x01;
 			x1 = x5_40 + 0x01;
-			w3_26 = w3_26 + 0x04;
-			w2 = w2 - 0x04;
+			w3_26 += 0x04;
+			w2 -= 0x04;
 		} while (w2 != 0x00);
 	}
 }
@@ -321,8 +321,8 @@ void copy2_eight_times(word16 * x0, int16 * x1, int32 w2)
 				return;
 			}
 			*x0 = (word16) (word32) *x1;
-			struct Eq_485 * x1_84 = x1 + 0x01;
-			struct Eq_488 * x0_85 = x0 + 0x01;
+			struct Eq_481 * x1_84 = x1 + 0x01;
+			struct Eq_484 * x0_85 = x0 + 0x01;
 			x0_85->w0000 = (word16) (word32) x1_84->w0000;
 			x0_85->w0002 = (word16) (word32) x1_84->w0002;
 			x0_85->w0004 = (word16) (word32) x1_84->w0004;
@@ -332,8 +332,8 @@ void copy2_eight_times(word16 * x0, int16 * x1, int32 w2)
 			x0_85->w000C = (word16) (word32) x1_84->w000C;
 			x0 = (word16 *) (&x0_85->w000C + 0x01);
 			x1 = (int16 *) (&x1_84->w000C + 0x01);
-			w3_122 = w3_122 + 0x08;
-			w2 = w2 - 0x08;
+			w3_122 += 0x08;
+			w2 -= 0x08;
 		} while (w2 != 0x00);
 	}
 }

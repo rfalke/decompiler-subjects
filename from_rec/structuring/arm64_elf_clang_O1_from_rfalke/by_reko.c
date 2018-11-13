@@ -140,7 +140,7 @@ void loop1(word32 w9)
 	do
 	{
 		globals->a411034[x9_11 * 0x04] = w9_12;
-		x9_11 = x9_11 + 0x01;
+		++x9_11;
 		w9_12 = (word32) x9_11;
 	} while (x9_11 != 100);
 	globals->dw411030 = 100;

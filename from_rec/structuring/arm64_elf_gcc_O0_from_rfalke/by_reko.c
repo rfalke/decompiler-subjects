@@ -152,7 +152,7 @@ void loop1(word64 qwArg00)
 	while (*globals->ptr10FC0 <= 99)
 	{
 		globals->ptr10FD8[(int64) (int32) *globals->ptr10FC0] = *globals->ptr10FC0;
-		*globals->ptr10FC0 = *globals->ptr10FC0 + 0x01;
+		++*globals->ptr10FC0;
 	}
 	leave();
 }

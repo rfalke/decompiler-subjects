@@ -1,11 +1,2 @@
 Using options:
 000083BC: warning: Call target address 00000000 is invalid.
-: error: Error when reconstructing types.
-    Parameter count must match.
-      at Reko.Typing.EquivalenceClassBuilder.VisitApplication (Reko.Core.Expressions.Application appl) [0x00036] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Expressions.Application.Accept (Reko.Core.Expressions.IExpressionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.EquivalenceClassBuilder.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x0001a] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.EquivalenceClassBuilder.Build (Reko.Core.Program program) [0x000c2] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) [0x000c1] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () [0x0004a] in <6a264ef1b92c4115b517d6a392a986a9>:0 

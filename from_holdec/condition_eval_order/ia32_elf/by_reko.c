@@ -7,8 +7,23 @@
 // 080482D4: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw41D1F != 0x00)
+	if (globals->dw808A004 != 0x00)
 		fn08048340();
+}
+
+// 08048310: void printf()
+void printf()
+{
+}
+
+// 08048320: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048330: void __assert_fail()
+void __assert_fail()
+{
 }
 
 // 08048340: void fn08048340()
@@ -18,7 +33,7 @@ void fn08048340()
 	globals->ptr8089FFC();
 }
 
-// 08048350: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
+// 08048350: void _start(Register (ptr32 Eq_14) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -26,10 +41,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048380: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048380: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048390: void deregister_tm_clones()
@@ -121,8 +135,8 @@ word32 test_2_blocks_variant_0(int32 dwArg04)
 // 08048479: void test_2_blocks()
 void test_2_blocks()
 {
-	int32 dwLoc10_15 = 0x00;
-	while (dwLoc10_15 <= 0x01)
+	int32 dwLoc10_15;
+	for (dwLoc10_15 = 0x00; dwLoc10_15 <= 0x01; ++dwLoc10_15)
 	{
 		int32 eax_27 = test_2_blocks_base(dwLoc10_15);
 		if (test_2_blocks_variant_0(dwLoc10_15) != eax_27)
@@ -130,7 +144,6 @@ void test_2_blocks()
 			printf("test_2_blocks_variant_0: expected %d but got %d\n", eax_27, test_2_blocks_variant_0(dwLoc10_15));
 			__assert_fail("0", "source.c", 0x17, "test_2_blocks");
 		}
-		dwLoc10_15 = dwLoc10_15 + 0x01;
 	}
 }
 
@@ -215,11 +228,11 @@ word32 test_3_blocks_variant_4(int32 dwArg04, int32 dwArg08)
 // 080485DE: void test_3_blocks()
 void test_3_blocks()
 {
-	int32 dwLoc10_25 = 0x00;
-	while (dwLoc10_25 <= 0x01)
+	int32 dwLoc10_25;
+	for (dwLoc10_25 = 0x00; dwLoc10_25 <= 0x01; ++dwLoc10_25)
 	{
-		int32 dwLoc14_259 = 0x00;
-		while (dwLoc14_259 <= 0x01)
+		int32 dwLoc14_259;
+		for (dwLoc14_259 = 0x00; dwLoc14_259 <= 0x01; ++dwLoc14_259)
 		{
 			int32 eax_53 = test_3_blocks_base(dwLoc10_25, dwLoc14_259);
 			if (test_3_blocks_variant_0(dwLoc10_25, dwLoc14_259) != eax_53)
@@ -247,9 +260,7 @@ void test_3_blocks()
 				printf("test_3_blocks_variant_4: expected %d but got %d\n", eax_53, test_3_blocks_variant_4(dwLoc10_25, dwLoc14_259));
 				__assert_fail("0", "source.c", 0x5E, "test_3_blocks");
 			}
-			dwLoc14_259 = dwLoc14_259 + 0x01;
 		}
-		dwLoc10_25 = dwLoc10_25 + 0x01;
 	}
 }
 
@@ -616,14 +627,14 @@ word32 test_4_blocks_variant_22(int32 dwArg04, int32 dwArg08, int32 dwArg0C)
 // 08048D97: void test_4_blocks()
 void test_4_blocks()
 {
-	int32 dwLoc10_27 = 0x00;
-	while (dwLoc10_27 <= 0x01)
+	int32 dwLoc10_27;
+	for (dwLoc10_27 = 0x00; dwLoc10_27 <= 0x01; ++dwLoc10_27)
 	{
-		int32 dwLoc14_34 = 0x00;
-		while (dwLoc14_34 <= 0x01)
+		int32 dwLoc14_34;
+		for (dwLoc14_34 = 0x00; dwLoc14_34 <= 0x01; ++dwLoc14_34)
 		{
-			int32 dwLoc18_1156 = 0x00;
-			while (dwLoc18_1156 <= 0x01)
+			int32 dwLoc18_1156;
+			for (dwLoc18_1156 = 0x00; dwLoc18_1156 <= 0x01; ++dwLoc18_1156)
 			{
 				int32 eax_74 = test_4_blocks_base(dwLoc10_27, dwLoc14_34, dwLoc18_1156);
 				if (test_4_blocks_variant_0(dwLoc10_27, dwLoc14_34, dwLoc18_1156) != eax_74)
@@ -741,11 +752,8 @@ void test_4_blocks()
 					printf("test_4_blocks_variant_22: expected %d but got %d\n", eax_74, test_4_blocks_variant_22(dwLoc10_27, dwLoc14_34, dwLoc18_1156));
 					__assert_fail("0", "source.c", 0x0186, "test_4_blocks");
 				}
-				dwLoc18_1156 = dwLoc18_1156 + 0x01;
 			}
-			dwLoc14_34 = dwLoc14_34 + 0x01;
 		}
-		dwLoc10_27 = dwLoc10_27 + 0x01;
 	}
 }
 
@@ -2792,17 +2800,17 @@ word32 test_5_blocks_variant_118(int32 dwArg04, int32 dwArg08, int32 dwArg0C, in
 // 0804BEF2: void test_5_blocks()
 void test_5_blocks()
 {
-	int32 dwLoc10_29 = 0x00;
-	while (dwLoc10_29 <= 0x01)
+	int32 dwLoc10_29;
+	for (dwLoc10_29 = 0x00; dwLoc10_29 <= 0x01; ++dwLoc10_29)
 	{
-		int32 dwLoc14_36 = 0x00;
-		while (dwLoc14_36 <= 0x01)
+		int32 dwLoc14_36;
+		for (dwLoc14_36 = 0x00; dwLoc14_36 <= 0x01; ++dwLoc14_36)
 		{
-			int32 dwLoc18_53 = 0x00;
-			while (dwLoc18_53 <= 0x01)
+			int32 dwLoc18_53;
+			for (dwLoc18_53 = 0x00; dwLoc18_53 <= 0x01; ++dwLoc18_53)
 			{
-				int32 dwLoc1C_5932 = 0x00;
-				while (dwLoc1C_5932 <= 0x01)
+				int32 dwLoc1C_5932;
+				for (dwLoc1C_5932 = 0x00; dwLoc1C_5932 <= 0x01; ++dwLoc1C_5932)
 				{
 					int32 eax_96 = test_5_blocks_base(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932);
 					if (test_5_blocks_variant_0(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932) != eax_96)
@@ -3400,13 +3408,9 @@ void test_5_blocks()
 						printf("test_5_blocks_variant_118: expected %d but got %d\n", eax_96, test_5_blocks_variant_118(dwLoc10_29, dwLoc14_36, dwLoc18_53, dwLoc1C_5932));
 						__assert_fail("0", "source.c", 1961, "test_5_blocks");
 					}
-					dwLoc1C_5932 = dwLoc1C_5932 + 0x01;
 				}
-				dwLoc18_53 = dwLoc18_53 + 0x01;
 			}
-			dwLoc14_36 = dwLoc14_36 + 0x01;
 		}
-		dwLoc10_29 = dwLoc10_29 + 0x01;
 	}
 }
 
@@ -17110,24 +17114,23 @@ void main(word32 dwArg00)
 // 08074C20: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr152DF + 0x04 - &ebx_15->ptr152DF >> 0x02 != 0x00)
+	if (0x0808A0F4 - 0x0808A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr152DF();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0808A0F8 + 0x0808A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -17139,6 +17142,5 @@ void __libc_csu_fini()
 // 08074C84: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

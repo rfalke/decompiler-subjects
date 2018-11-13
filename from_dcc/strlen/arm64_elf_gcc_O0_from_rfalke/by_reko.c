@@ -139,7 +139,7 @@ void strlen(byte * x0)
 {
 	byte * qwLoc18_10 = x0;
 	do
-		qwLoc18_10 = qwLoc18_10 + 0x01;
+		++qwLoc18_10;
 	while ((word32) *qwLoc18_10 != 0x00);
 }
 

@@ -1,10 +1,11 @@
 Using options:
 error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
-  at Reko.ImageLoaders.Elf.ElfLoader32.GetSectionNameOffset (System.UInt32 idxString) [0x0001f] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.ReadSectionName (System.UInt32 idxString) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader32.LoadSectionHeaders () [0x00122] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x00050] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0006f] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+  at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader32.GetSectionNameOffset (System.UInt32 idxString) [0x0000c] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.ReadSectionName (System.UInt32 idxString) [0x00000] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader32.LoadSectionHeaders () [0x00122] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x0004c] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0006f] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <d6ad61555b7f4116a6906ac874c0208a>:0 

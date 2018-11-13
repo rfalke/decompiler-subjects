@@ -1,62 +1,11 @@
 Using options:
-error: Unable to load metadata file linux-syscalls-i386.xml. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x0013e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Serialization.SerializedService.Build (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary library) [0x00181] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadService (Reko.Core.Serialization.SerializedService ssvc) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00037] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-08054070: warning: Expected sizes of arrays to have been determined by now
-08054090: warning: Expected sizes of arrays to have been determined by now
-080540B0: warning: Expected sizes of arrays to have been determined by now
-08054300: warning: Expected sizes of arrays to have been determined by now
-08054510: warning: Expected sizes of arrays to have been determined by now
-08054920: warning: Expected sizes of arrays to have been determined by now
-08054D30: warning: Expected sizes of arrays to have been determined by now
-08055140: warning: Expected sizes of arrays to have been determined by now
-08055550: warning: Expected sizes of arrays to have been determined by now
-08055960: warning: Expected sizes of arrays to have been determined by now
-08055D70: warning: Expected sizes of arrays to have been determined by now
-08056180: warning: Expected sizes of arrays to have been determined by now
-080575F0: warning: Expected sizes of arrays to have been determined by now
-08067F20: warning: Expected sizes of arrays to have been determined by now
-08168040: warning: Expected sizes of arrays to have been determined by now
-081D2CE0: warning: Expected sizes of arrays to have been determined by now
-081DAD00: warning: Expected sizes of arrays to have been determined by now
-081EB210: warning: Expected sizes of arrays to have been determined by now
-081FC750: warning: Expected sizes of arrays to have been determined by now
-081FCF70: warning: Expected sizes of arrays to have been determined by now
-081FD0A4: warning: Expected sizes of arrays to have been determined by now
-081FD0B4: warning: Expected sizes of arrays to have been determined by now
-083FD140: warning: Expected sizes of arrays to have been determined by now
-083FD150: warning: Expected sizes of arrays to have been determined by now
-083FD160: warning: Expected sizes of arrays to have been determined by now
-085FD1B8: warning: Expected sizes of arrays to have been determined by now
-08054070: warning: Expected sizes of arrays to have been determined by now
-08054090: warning: Expected sizes of arrays to have been determined by now
-080540B0: warning: Expected sizes of arrays to have been determined by now
-08054300: warning: Expected sizes of arrays to have been determined by now
-08054510: warning: Expected sizes of arrays to have been determined by now
-08054920: warning: Expected sizes of arrays to have been determined by now
-08054D30: warning: Expected sizes of arrays to have been determined by now
-08055140: warning: Expected sizes of arrays to have been determined by now
-08055550: warning: Expected sizes of arrays to have been determined by now
-08055960: warning: Expected sizes of arrays to have been determined by now
-08055D70: warning: Expected sizes of arrays to have been determined by now
-08056180: warning: Expected sizes of arrays to have been determined by now
-080575F0: warning: Expected sizes of arrays to have been determined by now
-08067F20: warning: Expected sizes of arrays to have been determined by now
-08168040: warning: Expected sizes of arrays to have been determined by now
-081D2CE0: warning: Expected sizes of arrays to have been determined by now
-081DAD00: warning: Expected sizes of arrays to have been determined by now
-081EB210: warning: Expected sizes of arrays to have been determined by now
-081FC750: warning: Expected sizes of arrays to have been determined by now
-081FCF70: warning: Expected sizes of arrays to have been determined by now
-081FD0A4: warning: Expected sizes of arrays to have been determined by now
-081FD0B4: warning: Expected sizes of arrays to have been determined by now
-083FD140: warning: Expected sizes of arrays to have been determined by now
-083FD150: warning: Expected sizes of arrays to have been determined by now
-083FD160: warning: Expected sizes of arrays to have been determined by now
-085FD1B8: warning: Expected sizes of arrays to have been determined by now
+error: An error occurred during decompilation. System.ArgumentException: The address 100A800C is invalid.
+  at Reko.Core.Program.CreateImageReader (Reko.Core.IProcessorArchitecture arch, Reko.Core.Address addr) [0x0001b] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry (Reko.Core.Program program, Reko.ImageLoaders.Elf.ElfSymbol sym, Reko.ImageLoaders.Elf.ElfSection referringSection, Reko.ImageLoaders.Elf.ElfRelocation rela) [0x0006a] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate (Reko.Core.Program program) [0x00091] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) [0x00000] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x0001b] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x000ce] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <d6ad61555b7f4116a6906ac874c0208a>:0 

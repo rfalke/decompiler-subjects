@@ -54,12 +54,9 @@ void fn00000000000006E0()
 // 00000000000006F0: void main(Stack word64 qwArg00)
 void main(word64 qwArg00)
 {
-	word32 w19_17 = 0x00;
-	do
-	{
+	word32 w19_17;
+	for (w19_17 = 0x00; w19_17 != 0x0A; ++w19_17)
 		fn00000000000006E0();
-		w19_17 = w19_17 + 0x01;
-	} while (w19_17 != 0x0A);
 	fn00000000000006E0();
 }
 

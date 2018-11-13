@@ -156,25 +156,24 @@ void rc_crc32(word64 x0, ptr64 x1, word64 x2, word64 x4)
 		do
 		{
 			uint32 w5_66 = w4_59;
-			word32 w6_67 = 0x08;
-			do
+			word32 w6_67;
+			for (w6_67 = 0x08; w6_67 != 0x00; --w6_67)
 			{
 				uint32 w8_72 = w5_66 >> 0x01;
 				if ((w5_66 & 0x01) != 0x00)
 					w5_66 = w8_72 ^ 3988292384;
 				else
 					w5_66 = w8_72;
-				w6_67 = w6_67 - 0x01;
-			} while (w6_67 != 0x00);
+			}
 			globals->a11048[x4_58 * 0x04] = w5_66;
-			x4_58 = x4_58 + 0x01;
+			++x4_58;
 			w4_59 = (word32) x4_58;
 		} while (x4_58 != 0x0100);
 		globals->dw11040 = 0x01;
 	}
 	up64 x2_32 = x1 + x2;
 	while (x1 - x2_32 < 0x00)
-		x1 = x1 + 0x01;
+		++x1;
 }
 
 // 0000000000000908: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

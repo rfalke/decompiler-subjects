@@ -164,7 +164,7 @@ void main(word32 w0)
 		x29_27->dwFFFFFFEC = w0_52;
 		fn0000000000400530();
 		sp_28->dw0008 = (word32) 0x0040086F;
-		x29_27->dwFFFFFFF8 = x29_27->dwFFFFFFF8 + 0x01;
+		++x29_27->dwFFFFFFF8;
 	}
 	fn00000000004004E0();
 	word64 x29_66;

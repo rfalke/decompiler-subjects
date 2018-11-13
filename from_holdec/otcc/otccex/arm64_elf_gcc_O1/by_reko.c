@@ -204,9 +204,9 @@ void fact(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	int32 w1_11 = 0x02;
+	int32 w1_11;
 	do
-		w1_11 = w1_11 + 0x01;
+		++w1_11;
 	while (w0 >= w1_11);
 }
 
@@ -245,23 +245,17 @@ int32 fib(int32 w0, word64 x30, word64 qwArg00, Eq_217 & w19Out, Eq_218 & w20Out
 word32 print_num(int32 w0, int32 w1, word32 w23, ptr64 & spOut)
 {
 	fn0000000000000890();
-	int32 w20_24 = w0;
+	int32 w20_24;
 	word32 w19_35 = 0x0100;
 	do
 	{
 		int32 w0_42 = w20_24 - (w20_24 / w1) * w1;
 		*(int64) (int32) w19_35 = (byte) (w0_42 < 0x0A ? w0_42 + 0x30 : w0_42 + 0x57);
-		w19_35 = w19_35 + 0x01;
-		w20_24 = w20_24 / w1;
+		++w19_35;
+		w20_24 /= w1;
 	} while (w20_24 != 0x00);
-	if (0x0100 != w19_35)
-	{
-		do
-		{
-			fn0000000000000910();
-			w19_35 = w19_35 - 0x01;
-		} while (0x0100 != w19_35);
-	}
+	for (; 0x0100 != w19_35; --w19_35)
+		fn0000000000000910();
 	fn00000000000008E0();
 	word64 sp_77;
 	*spOut = fp + 0x08;

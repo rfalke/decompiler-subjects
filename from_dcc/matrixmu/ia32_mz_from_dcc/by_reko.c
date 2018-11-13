@@ -10,8 +10,8 @@ void multMatrix(Eq_3 * ds, Eq_4 wArg02, Eq_5 wArg04, Eq_6 wArg06)
 	Eq_7 si_13 = 0x00;
 	while (si_13 < 0x05)
 	{
-		int16 di_41 = 0x00;
-		while (di_41 < 0x04)
+		int16 di_41;
+		for (di_41 = 0x00; di_41 < 0x04; ++di_41)
 		{
 			Eq_15 wLoc04_129 = 0x00;
 			while (wLoc04_129 < 0x04)
@@ -19,7 +19,6 @@ void multMatrix(Eq_3 * ds, Eq_4 wArg02, Eq_5 wArg04, Eq_6 wArg06)
 				SEQ(ds, (word16) (si_13 *u 0x0A) + wArg06)[di_41 * 0x02] = (word16) (SEQ(ds, (word16) (wLoc04_129 * 0x0A) + wArg04)[di_41 * 0x02] *u SEQ(ds, (si_13 << 0x03) + wArg02)[wLoc04_129 * 0x02]) + SEQ(ds, (word16) (si_13 *u 0x0A) + wArg06)[di_41 * 0x02];
 				wLoc04_129 = (word16) wLoc04_129 + 0x01;
 			}
-			di_41 = di_41 + 0x01;
 		}
 		si_13 = (word16) si_13 + 0x01;
 	}

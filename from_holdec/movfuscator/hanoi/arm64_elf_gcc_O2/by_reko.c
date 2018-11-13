@@ -105,16 +105,15 @@ void main(int32 w0, Eq_75 * x1)
 	}
 	*globals->ptr11FD0 = 0x08;
 l0000000000000954:
-	ptr64 x20_44 = 0x00;
+	ptr64 x20_44;
 	int64 x23_46 = globals->qw11FA8;
 	Eq_113 w19_101 = *globals->ptr11FD0;
-	do
+	for (x20_44 = 0x00; x20_44 != 0x18; x20_44 += 0x08)
 	{
 		fn0000000000000880();
 		x20_44 + x23_46 = 0x01;
 		(word64 *) 0x01 = 0x11;
-		x20_44 = x20_44 + 0x08;
-	} while (x20_44 != 0x18);
+	}
 	if (w19_101 != 0x00)
 	{
 		do
@@ -235,7 +234,7 @@ word32 text(word32 w0, word32 w1, Eq_113 w2, ptr64 & spOut)
 		do
 		{
 			fn00000000000008F0();
-			w19_22 = w19_22 - 0x01;
+			--w19_22;
 		} while (w19_22 != 0x00);
 	}
 	word64 sp_54;

@@ -133,7 +133,7 @@ void main(word64 x30, word64 qwArg00)
 	globals->dw411030 = w9_17 - 0x01;
 	if (w9_17 >= 0x01)
 		c(x30);
-	globals->dw41106C = globals->dw41106C + 0x02;
+	globals->dw41106C += 0x02;
 	fn0000000000400480();
 	fn0000000000400480();
 }
@@ -145,7 +145,7 @@ void b(word64 x30)
 	globals->dw411030 = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		c(x30);
-	globals->dw41106C = globals->dw41106C + 0x02;
+	globals->dw41106C += 0x02;
 }
 
 // 0000000000400680: Register ptr64 c(Register word64 x30)
@@ -172,7 +172,7 @@ ptr64 c(word64 x30)
 		if (w11_104 >= 0x01)
 		{
 			globals->dw41106C = w9_107 + 0x13;
-			w9_107 = w9_107 + 0x13;
+			w9_107 += 0x13;
 		}
 		globals->dw41106C = w9_107 + 0x11;
 	}
@@ -238,7 +238,7 @@ void e(word64 x30)
 	globals->dw41103C = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		c(x30);
-	globals->dw41106C = globals->dw41106C + 0x07;
+	globals->dw41106C += 0x07;
 }
 
 // 0000000000400840: Register word64 f(Register word64 x30, Stack word64 qwArg00)
@@ -273,7 +273,7 @@ void g(word64 x30, word64 qwArg00)
 	globals->dw411048 = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		f(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x0D;
+	globals->dw41106C += 0x0D;
 }
 
 // 00000000004008E0: void h()
@@ -285,7 +285,7 @@ void h()
 	if (w11_4 >= 0x01)
 	{
 		globals->dw41106C = w9_11 + 0x13;
-		w9_11 = w9_11 + 0x13;
+		w9_11 += 0x13;
 	}
 	globals->dw41106C = w9_11 + 0x11;
 }
@@ -293,7 +293,7 @@ void h()
 // 0000000000400910: void i()
 void i()
 {
-	globals->dw41106C = globals->dw41106C + 0x13;
+	globals->dw41106C += 0x13;
 }
 
 // 0000000000400924: Register word64 j(Register word64 x30)

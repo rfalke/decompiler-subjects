@@ -141,9 +141,9 @@ void fib(int32 w0)
 {
 	if (w0 > 0x01)
 	{
-		int32 dwLoc0C_28 = 0x02;
-		while (dwLoc0C_28 < w0)
-			dwLoc0C_28 = dwLoc0C_28 + 0x01;
+		int32 dwLoc0C_28;
+		for (dwLoc0C_28 = 0x02; dwLoc0C_28 < w0; ++dwLoc0C_28)
+			;
 	}
 }
 

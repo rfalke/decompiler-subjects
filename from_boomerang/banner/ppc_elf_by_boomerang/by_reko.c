@@ -94,8 +94,8 @@ void main(Eq_101 xer, word32 dwArg04)
 		Eq_115 dwLoc74_192 = r3_57;
 		if (r3_57 > 0x0A)
 			dwLoc74_192.u0 = 0x0A;
-		int32 dwLoc80_111 = 0x00;
-		while (dwLoc80_111 <= 0x06)
+		int32 dwLoc80_111;
+		for (dwLoc80_111 = 0x00; dwLoc80_111 <= 0x06; ++dwLoc80_111)
 		{
 			Eq_115 dwLoc7C_154 = 0x00;
 			while (dwLoc7C_154 < dwLoc74_192)
@@ -120,10 +120,9 @@ void main(Eq_101 xer, word32 dwArg04)
 			while (dwLoc7C_100 >= 0x00 && ((word32) (fp->aFFFFFFA0)[dwLoc7C_100] & 0xFF) == 0x0020)
 			{
 				fp->aFFFFFFA0[dwLoc7C_100] = 0x00;
-				dwLoc7C_100 = dwLoc7C_100 + -0x01;
+				dwLoc7C_100 += -0x01;
 			}
 			puts(fp->aFFFFFFA0);
-			dwLoc80_111 = dwLoc80_111 + 0x01;
 		}
 		puts("");
 		dwLoc84_24 = (Eq_155 (**)[]) ((char *) dwLoc84_24 + 0x04);

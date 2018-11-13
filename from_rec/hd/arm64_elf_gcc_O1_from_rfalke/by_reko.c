@@ -220,11 +220,11 @@ word32 dumpline(ptr64 x0, int32 w2, word64 x5, ptr64 & x5Out, ptr64 & x29Out, pt
 	int32 w19_118 = w2 <= 0x10 ? w2 : 0x10;
 	if (w19_118 > 0x00)
 	{
-		ui32 w21_245 = 0x00;
+		ui32 w21_245;
 		do
 		{
 			fn0000000000000850();
-			w21_245 = w21_245 + 0x03;
+			w21_245 += 0x03;
 		} while (w21_245 != w19_118 * 0x03);
 		w21_192 = w19_118 + 0x01;
 		if (w19_118 > 0x0F)
@@ -243,7 +243,7 @@ word32 dumpline(ptr64 x0, int32 w2, word64 x5, ptr64 & x5Out, ptr64 & x29Out, pt
 	{
 		fn0000000000000820();
 		Mem212[fp + ~0x47 + (fp + ~0x47):word32] = w23_207;
-		w21_192 = w21_192 + 0x01;
+		++w21_192;
 	} while (w21_192 <= 0x10);
 	fn0000000000000820();
 	w0_122 = (word32) &fp->aFFFFFFB8->t0000;
@@ -264,7 +264,7 @@ l0000000000000B10:
 	{
 		word32 w2_175 = (word32) (x0 + x1_167);
 		(&fp->aFFFFFFB8->t0000)[(int64) (int32) (w1_168 + w0_122)] = (struct Eq_252) (byte) ((uint32) (uint8) (w2_175 - 0x20) <= 0x5E ? w2_175 : 0x2E);
-		x1_167 = x1_167 + 0x01;
+		++x1_167;
 		w1_168 = (word32) x1_167;
 	} while (x1_167 - (x5_164 + 0x01) != 0x00);
 	if (w19_118 > 0x0F)
@@ -281,7 +281,7 @@ l0000000000000B74:
 l0000000000000B54:
 	do
 	{
-		w19_118 = w19_118 + 0x01;
+		++w19_118;
 		(&fp->aFFFFFFB8->t0000)[(int64) (int32) (w19_118 - 0x01 + w0_122)] = (struct Eq_252) 0x20;
 	} while (w19_118 <= 0x0F);
 	goto l0000000000000B74;
@@ -311,7 +311,7 @@ word32 hexdump(word64 x0, word64 x5, word32 w20, ptr64 & x5Out, ptr64 & spOut)
 						break;
 					struct Eq_417 * x29_122;
 					dumpline(fp + ~0x07, w0_115, x5, out x5, out x29_122, out sp_110);
-					x19_108 = x19_108 + (int64) ((int32) w20_117);
+					x19_108 += (int64) (int32) w20_117;
 				} while (x29_122->qw0070 - x19_108 > 0x00);
 			}
 			fn0000000000000860();
@@ -343,9 +343,9 @@ void main(int32 w0, word64 x1, word64 x5, word64 x21)
 		word32 w20_46 = 0x00;
 		do
 		{
-			x19_41 = x19_41 + 0x01;
+			++x19_41;
 			word64 sp_56;
-			w20_46 = w20_46 + hexdump(*x19_41, x5, w20_46, out x5, out sp_56);
+			w20_46 += hexdump(*x19_41, x5, w20_46, out x5, out sp_56);
 		} while (x19_41 - x21_45 != 0x00);
 	}
 }

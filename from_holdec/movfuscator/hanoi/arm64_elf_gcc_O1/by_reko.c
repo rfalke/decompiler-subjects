@@ -207,7 +207,7 @@ word32 text(word32 w0, word32 w1, Eq_210 w2, ptr64 & spOut)
 		do
 		{
 			fn00000000000008F0();
-			w19_18 = w19_18 - 0x01;
+			--w19_18;
 		} while (w19_18 != 0x00);
 	}
 	word64 sp_54;
@@ -282,15 +282,14 @@ void main(int32 w0, Eq_384 * x1)
 		if (w0_110 > 0x00)
 		{
 l0000000000000C88:
-			int64 x19_36 = 0x00;
+			int64 x19_36;
 			word32 * x21_40 = globals->ptr11FD0;
 			ptr64 x20_43 = globals->ptr11FA8;
-			do
+			for (x19_36 = 0x00; x19_36 != 0x18; x19_36 += 0x08)
 			{
 				word64 x30_48 = new_tower(*x21_40, qwArg00);
 				x20_43 + x19_36 = 0x01;
-				x19_36 = x19_36 + 0x08;
-			} while (x19_36 != 0x18);
+			}
 			Eq_210 w19_56 = *globals->ptr11FD0;
 			if (w19_56 != 0x00)
 			{

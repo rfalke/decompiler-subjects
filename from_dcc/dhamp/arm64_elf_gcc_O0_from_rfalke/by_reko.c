@@ -198,21 +198,15 @@ void sq(word64 x0)
 {
 	if (x0 == 0x00)
 	{
-		int32 dwLoc04_17 = 0x00;
-		while (dwLoc04_17 <= 8999)
-		{
-			globals->qw12058 = globals->qw12058 + 0x02;
-			dwLoc04_17 = dwLoc04_17 + 0x01;
-		}
+		int32 dwLoc04_17;
+		for (dwLoc04_17 = 0x00; dwLoc04_17 <= 8999; ++dwLoc04_17)
+			globals->qw12058 += 0x02;
 	}
 	else
 	{
-		int32 dwLoc04_44 = 0x00;
-		while (dwLoc04_44 <= 8999)
-		{
-			globals->qw12058 = globals->qw12058 - 0x02;
-			dwLoc04_44 = dwLoc04_44 + 0x01;
-		}
+		int32 dwLoc04_44;
+		for (dwLoc04_44 = 0x00; dwLoc04_44 <= 8999; ++dwLoc04_44)
+			globals->qw12058 -= 0x02;
 	}
 }
 
@@ -229,10 +223,9 @@ void abs()
 // 0000000000000D54: void dply(Register word64 d0)
 void dply(word64 d0)
 {
-	word32 dwLoc04_15 = 100;
-	do
-		dwLoc04_15 = dwLoc04_15 - 0x01;
-	while (dwLoc04_15 != 0x00);
+	word32 dwLoc04_15;
+	for (dwLoc04_15 = 100; dwLoc04_15 != 0x00; --dwLoc04_15)
+		;
 }
 
 // 0000000000000E68: Register int32 fib(Register int32 w0, Register word64 x30, Stack int32 dwArg04, Register out Eq_251 w19Out, Register out ptr64 x29Out, Register out ptr64 x30Out, Register out ptr64 spOut)
@@ -269,13 +262,12 @@ int32 fib(int32 w0, word64 x30, int32 dwArg04, Eq_251 & w19Out, ptr64 & x29Out, 
 // 0000000000000EB8: void stest(Register (ptr64 byte) x0, Register (ptr64 byte) x1, Stack word32 dwArg00, Stack word32 dwArg04)
 void stest(byte * x0, byte * x1, word32 dwArg00, word32 dwArg04)
 {
-	int32 dwArg04_13 = 0x00;
-	while (dwArg04_13 <= 8999)
+	int32 dwArg04_13;
+	for (dwArg04_13 = 0x00; dwArg04_13 <= 8999; ++dwArg04_13)
 	{
 		mstrcpy(x0, &globals->b1288);
 		mstrcpy(x1, &globals->b12A0);
 		mstrcmp(x0, x1);
-		dwArg04_13 = dwArg04_13 + 0x01;
 	}
 }
 
@@ -294,8 +286,8 @@ word32 mstrcmp(byte * x0, byte * x1)
 			w0_21 = 0x00;
 			return w0_21;
 		}
-		qwLoc08_4 = qwLoc08_4 + 0x01;
-		qwLoc10_45 = qwLoc10_45 + 0x01;
+		++qwLoc08_4;
+		++qwLoc10_45;
 	}
 	w0_21 = (word32) (*qwLoc08_4 - *qwLoc10_45);
 	return w0_21;
@@ -310,7 +302,7 @@ void mstrcpy(byte * x0, byte * x1)
 	{
 		*qwLoc08_24 = (byte) (word32) *qwLoc10_14;
 		qwLoc08_11 = qwLoc08_24 + 0x01;
-		qwLoc10_14 = qwLoc10_14 + 0x01;
+		++qwLoc10_14;
 		byte * qwLoc08_24 = qwLoc08_11;
 	} while ((word32) *qwLoc08_24 != 0x00);
 }
@@ -341,13 +333,12 @@ void mcopy(word32 dwArg00, word32 dwArg04)
 // 00000000000010C0: void intest()
 void intest()
 {
-	int32 dwLoc04_12 = 0x00;
-	while (dwLoc04_12 <= 999)
+	int32 dwLoc04_12;
+	for (dwLoc04_12 = 0x00; dwLoc04_12 <= 999; ++dwLoc04_12)
 	{
-		int32 dwLoc08_19 = 0x00;
-		while (dwLoc08_19 <= 0xB2)
-			dwLoc08_19 = dwLoc08_19 + 0x01;
-		dwLoc04_12 = dwLoc04_12 + 0x01;
+		int32 dwLoc08_19;
+		for (dwLoc08_19 = 0x00; dwLoc08_19 <= 0xB2; ++dwLoc08_19)
+			;
 	}
 }
 

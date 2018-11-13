@@ -19,10 +19,70 @@ void _init()
 		bool C_37;
 		bool Z_38;
 		word32 eax_39;
-		!__gmon_start__();
+		__gmon_start__();
 	}
 	frame_dummy();
 	__do_global_ctors_aux();
+}
+
+// 080484A8: void sprintf()
+void sprintf()
+{
+}
+
+// 080484B8: void __xstat()
+void __xstat()
+{
+}
+
+// 080484D8: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080484E8: void perror()
+void perror()
+{
+}
+
+// 080484F8: void fclose()
+void fclose()
+{
+}
+
+// 08048508: void memcpy()
+void memcpy()
+{
+}
+
+// 08048518: void strlen()
+void strlen()
+{
+}
+
+// 08048528: void fopen()
+void fopen()
+{
+}
+
+// 08048538: void __stack_chk_fail()
+void __stack_chk_fail()
+{
+}
+
+// 08048548: void strcat()
+void strcat()
+{
+}
+
+// 08048558: void puts()
+void puts()
+{
+}
+
+// 08048568: void fread()
+void fread()
+{
 }
 
 // 08048580: void _start(Register (ptr32 Eq_26) edx, Stack int32 dwArg00)
@@ -39,23 +99,20 @@ void __do_global_dtors_aux(word32 esi)
 	if (globals->b804A03C == 0x00)
 	{
 		uint32 eax_26 = globals->dw804A040;
-		if (eax_26 < 0x00)
+		while (eax_26 < 0x00)
 		{
-			do
-			{
-				uint32 eax_44 = eax_26 + 0x01;
-				globals->dw804A040 = eax_44;
-				word32 esp_47;
-				word32 ebp_48;
-				word32 ebx_49;
-				byte SCZO_50;
-				bool Z_51;
-				word32 eax_52;
-				bool C_53;
-				word32 esi_54;
-				(*((char *) globals->a8049F14 + eax_44 * 0x04))();
-				eax_26 = globals->dw804A040;
-			} while (eax_26 < 0x00);
+			uint32 eax_44 = eax_26 + 0x01;
+			globals->dw804A040 = eax_44;
+			word32 esp_47;
+			word32 ebp_48;
+			word32 ebx_49;
+			byte SCZO_50;
+			bool Z_51;
+			word32 eax_52;
+			bool C_53;
+			word32 esi_54;
+			(*((char *) globals->a8049F14 + eax_44 * 0x04))();
+			eax_26 = globals->dw804A040;
 		}
 		globals->b804A03C = 0x01;
 	}
@@ -97,8 +154,8 @@ void dumpline(Eq_102 * gs, size_t dwArg04, up32 dwArg08, size_t dwArg0C)
 	}
 	Eq_105 eax_59 = strlen(fp - 0x60);
 	memcpy(fp - 0x60 + eax_59, 0x08048A32, 0x04);
-	Eq_122 dwLoc64_115 = null;
-	while (dwLoc64_115 < (struct <anonymous> *) 0x10)
+	Eq_122 dwLoc64_115;
+	for (dwLoc64_115 = null; dwLoc64_115 < (struct <anonymous> *) 0x10; ++dwLoc64_115)
 	{
 		byte al_127;
 		word32 edx_119 = eax_59 + 0x03 + dwLoc64_115;
@@ -107,13 +164,9 @@ void dumpline(Eq_102 * gs, size_t dwArg04, up32 dwArg08, size_t dwArg0C)
 		else
 			al_127 = 0x2E;
 		Mem129[fp - 0x60 + edx_119:byte] = al_127;
-		dwLoc64_115 = dwLoc64_115 + 0x01;
 	}
-	while (dwLoc64_115 <= (struct <anonymous> *) 0x0F)
-	{
+	for (; dwLoc64_115 <= (struct <anonymous> *) 0x0F; ++dwLoc64_115)
 		Mem113[fp - 0x60 + (dwLoc64_115 + (eax_59 + 0x03)):byte] = 0x20;
-		dwLoc64_115 = dwLoc64_115 + 0x01;
-	}
 	memcpy(fp - 0x60 + ((eax_59 + 0x03) + dwLoc64_115), 134515254, 0x02);
 	puts(fp - 0x60);
 	if ((eax_15 ^ gs->dw0014) == 0x00)
@@ -163,12 +216,9 @@ word32 hexdump(Eq_102 * gs, char * dwArg04)
 void main(Eq_102 * gs, int32 dwArg04, char * dwArg08[])
 {
 	__align(fp - 0x04);
-	int32 dwLoc08_13 = 0x01;
-	while (dwLoc08_13 < dwArg04)
-	{
+	int32 dwLoc08_13;
+	for (dwLoc08_13 = 0x01; dwLoc08_13 < dwArg04; ++dwLoc08_13)
 		hexdump(gs, dwArg08[dwLoc08_13]);
-		dwLoc08_13 = dwLoc08_13 + 0x01;
-	}
 }
 
 // 08048920: void __libc_csu_fini()
@@ -179,37 +229,34 @@ void __libc_csu_fini()
 // 08048930: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_327 * ebx_16 = __i686.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if (&ebx_16->ptr15D1 - &ebx_16->ptr15D1 >> 0x02 != 0x00)
+	if (0x0804A0DC - 0x0804A0DC >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_60;
-			word32 ebp_61;
-			up32 edi_62;
-			up32 esi_63;
-			word32 ebx_64;
-			byte SCZO_65;
-			word32 eax_66;
-			byte SZO_67;
-			bool C_68;
-			bool Z_69;
-			ebx_16->ptr15D1();
-		} while (esi_63 + 0x01 < edi_62);
+			word32 esp_59;
+			word32 ebp_60;
+			up32 edi_61;
+			up32 esi_62;
+			word32 ebx_63;
+			byte SCZO_64;
+			word32 eax_65;
+			byte SZO_66;
+			bool C_67;
+			bool Z_68;
+			(0x0804A0DC + 0x08049FF4)();
+		} while (esi_62 + 0x01 < edi_61);
 	}
 }
 
-// 0804898A: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __i686.get_pc_thunk.bx(word32 dwArg00)
+// 0804898A: void __i686.get_pc_thunk.bx(Stack word32 dwArg00)
+void __i686.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048990: Register int32 stat(Stack (ptr32 char) dwArg04, Stack (ptr32 Eq_245) dwArg08)
 int32 stat(char * dwArg04, stat * dwArg08)
 {
-	__i686.get_pc_thunk.bx(dwLoc18);
 	return __xstat(0x03, dwArg04, dwArg08);
 }
 

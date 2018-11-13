@@ -440,7 +440,7 @@ void ae()
 		word32 w0_33 = *globals->ptr12FC8;
 		*globals->ptr12FC8 = w0_33 + 0x01;
 		*(int64) (int32) w0_33 = (byte) (uint32) (uint8) sp_15->dw000C;
-		sp_15->dw000C = sp_15->dw000C >> 0x08;
+		sp_15->dw000C >>= 0x08;
 	}
 }
 
@@ -462,7 +462,7 @@ word32 s(int32 w1, word32 dwArg00, int32 dwArg04, Eq_1221 * & x29Out, ptr64 & x3
 	ae();
 	*(int64) (int32) *globals->ptr12FC8 = w1;
 	word32 w0_24 = *globals->ptr12FC8;
-	*globals->ptr12FC8 = *globals->ptr12FC8 + 0x04;
+	*globals->ptr12FC8 += 0x04;
 	word64 x29_36;
 	*x29Out = x30;
 	word64 x30_39;
@@ -645,7 +645,7 @@ void T(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 					ae();
 				else
 					ae();
-				*globals->ptr12FC8 = *globals->ptr12FC8 + 0x01;
+				++*globals->ptr12FC8;
 			}
 		}
 		else if (w0_218 == 0x26)
@@ -709,14 +709,14 @@ void T(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 			s(w(x30_140, out x30_133, out sp_134)->dw002C, dwArg00, dwArg04_14, out x29_139, out x30_140, out sp_141);
 			if (*globals->ptr12F50 == 44)
 				ad();
-			x29_139->dw002C = x29_139->dw002C + 0x04;
+			x29_139->dw002C += 0x04;
 		}
 		struct Eq_1696 * x29_103;
 		*(word64) x29_139->dw0018 = x29_139->dw002C;
 		ad();
 		if (x29_139->dw003C == 0x00)
 		{
-			x29_139->dw0038 = x29_139->dw0038 + 0x04;
+			x29_139->dw0038 += 0x04;
 			word64 x30_104;
 			word64 sp_105;
 			*(word64) x29_139->dw001C = s(*(word64) x29_139->dw001C, dwArg00, dwArg04_14, out x29_103, out x30_104, out sp_105);
@@ -726,7 +726,7 @@ void T(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 			word64 x30_115;
 			word64 sp_116;
 			s(x29_139->dw002C, dwArg00, dwArg04_14, out x29_103, out x30_115, out sp_116);
-			x29_103->dw002C = x29_103->dw002C + 0x04;
+			x29_103->dw002C += 0x04;
 		}
 		else
 		{
@@ -979,13 +979,13 @@ void ab()
 			{
 				if (x29_14->dw001C != 0x00)
 				{
-					*globals->ptr12FA0 = *globals->ptr12FA0 + 0x04;
+					*globals->ptr12FA0 += 0x04;
 					*(int64) (int32) *globals->ptr12F50 = 0x00 - *globals->ptr12FA0;
 				}
 				else
 				{
 					*(int64) (int32) *globals->ptr12F50 = *globals->ptr12F60;
-					*globals->ptr12F60 = *globals->ptr12F60 + 0x04;
+					*globals->ptr12F60 += 0x04;
 				}
 				ad();
 				if (*globals->ptr12F50 == 44)
@@ -1003,7 +1003,7 @@ void ab()
 			while (*globals->ptr12F50 != 0x29)
 			{
 				*(int64) (int32) *globals->ptr12F50 = x29_14->dw002C;
-				x29_14->dw002C = x29_14->dw002C + 0x04;
+				x29_14->dw002C += 0x04;
 				ad();
 				if (*globals->ptr12F50 == 44)
 					ad();

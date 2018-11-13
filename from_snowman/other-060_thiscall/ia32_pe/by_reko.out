@@ -1,4 +1,3 @@
 Using options:
 0040192F: warning: Unable to guess parameters of MSVCR100.dll!__initenv.
-00401580: error: An item with the same key has already been added. Key: bool
 0040199D: warning: Unable to guess parameters of MSVCR100.dll!_cexit.

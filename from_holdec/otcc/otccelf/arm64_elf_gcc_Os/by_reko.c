@@ -178,7 +178,7 @@ void main(int32 w0, word32 w1, word32 w5, word32 w16, word32 w18, word64 qwArg00
 		fn0000000000000DB0();
 		*globals->ptr12F70 = w0_104;
 		*globals->ptr12FC0 = 0x08048000 - *x22_77;
-		*x21_76 = *x21_76 + 252;
+		*x21_76 += 252;
 		word32 w0_118 = *x20_84;
 		*x20_84 = w0_118 + 0x11;
 		word64 x29_121;
@@ -570,7 +570,7 @@ l0000000000001454:
 			{
 				ui32 w1_421 = (word32) *x5_410;
 				*x23_92 = w1_421 - 0x62;
-				x5_410 = x5_410 + 0x01;
+				++x5_410;
 				w0_156 = w5_411;
 				w5_411 = (word32) x5_410;
 				if ((w1_421 - 0x62 & 0x00) != 0x00)
@@ -622,12 +622,11 @@ l0000000000001308:
 void aw(Eq_257 w0)
 {
 	word32 * x1_4 = globals->ptr12F60;
-	while (w0 > 0x00)
+	for (; w0 > 0x00; w0 >>= 0x08)
 	{
 		word32 w2_14 = *x1_4;
 		*x1_4 = w2_14 + 0x01;
 		*(int64) (int32) w2_14 = (byte) w0;
-		w0 = w0 >> 0x08;
 	}
 }
 
@@ -865,7 +864,7 @@ word32 ab(Eq_257 w0, word32 w5, word32 w16, word32 w18, ptr64 qwArg00, Eq_1643 &
 		x1->t0000.u1 = 0x00;
 		w1 = x0->t0000;
 		w1 = (word32) w1.u0 + 0x04;
-		w1 = w1 & ~0x03;
+		w1 &= ~0x03;
 		x0->t0000 = w1;
 		w0 = w(w0, out x29, out x30, out sp);
 l00000000000018A0:
@@ -1075,13 +1074,13 @@ l0000000000001974:
 				x24 = (struct Eq_1654 *) *v34;
 				v35 = sp + 0x08;
 				x25 = *v35;
-				v35 = v35 + 0x01;
+				++v35;
 				x26 = *v35;
 				v36 = sp;
 				x29 = *v36;
-				v36 = v36 + 0x01;
+				++v36;
 				x30 = *v36;
-				sp = sp + 0x0A;
+				sp += 0x0A;
 				w0 = x(w0, w1, qwArg00, out w5, out x29, out x30, out sp);
 				return w5;
 			}
@@ -1114,13 +1113,13 @@ l0000000000001974:
 		v40 = sp + 0x08;
 		x25 = *v40;
 		w25 = (word32) x25;
-		v40 = v40 + 0x01;
+		++v40;
 		x26 = *v40;
 		v41 = sp;
 		x29 = *v41;
-		v41 = v41 + 0x01;
+		++v41;
 		x30 = *v41;
-		sp = sp + 0x0A;
+		sp += 0x0A;
 		return w5;
 	}
 	else
@@ -1230,11 +1229,11 @@ word32 X(Eq_257 w0, word32 w5, word32 w16, word32 w18, Eq_1620 & w19Out, Eq_1621
 		{
 			v39 = (word64 *) (&sp->ptr0000 + 0x02);
 			x19 = *v39;
-			v39 = v39 + 0x01;
+			++v39;
 			x20 = *v39;
 			v40 = (ptr64 *) (&sp->ptr0000 + 0x04);
 			x21 = *v40;
-			v40 = v40 + 0x01;
+			++v40;
 			x22 = *v40;
 			v41 = (union Eq_257 **) (&sp->ptr0000 + 0x06);
 			x23 = (union Eq_257 *) *v41;
@@ -1264,11 +1263,11 @@ word32 X(Eq_257 w0, word32 w5, word32 w16, word32 w18, Eq_1620 & w19Out, Eq_1621
 			w0 = w20;
 			v33 = (ptr64 *) (&sp->ptr0000 + 0x04);
 			x21 = *v33;
-			v33 = v33 + 0x01;
+			++v33;
 			x22 = *v33;
 			v34 = (word64 *) (&sp->ptr0000 + 0x02);
 			x19 = *v34;
-			v34 = v34 + 0x01;
+			++v34;
 			x20 = *v34;
 			v35 = (union Eq_257 **) (&sp->ptr0000 + 0x06);
 			x23 = (union Eq_257 *) *v35;
@@ -1659,7 +1658,7 @@ word32 ae(word32 w0, Eq_3457 & w22Out, Eq_3458 & w26Out, ptr64 & x29Out)
 			w20_102 = w0_252;
 			if ((word32) *x0_251 == 0x20 || w0_252 >= w2_91)
 				break;
-			x0_251 = x0_251 + 0x01;
+			++x0_251;
 			w0_252 = (word32) x0_251;
 		}
 		if (w0_252 == w2_91)
@@ -1702,7 +1701,7 @@ word32 ae(word32 w0, Eq_3457 & w22Out, Eq_3458 & w26Out, ptr64 & x29Out)
 				}
 				else
 				{
-					w19_199 = w19_199 + 0x01;
+					++w19_199;
 					word32 * x8_207 = globals->ptr12F90;
 					word32 * x7_208 = globals->ptr12F48;
 					word32 * x6_210 = globals->ptr12FC0;

@@ -146,14 +146,14 @@ ptr64 g()
 	globals->dw11038 = w0_4 - 0x01;
 	if ((w0_4 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return fp;
 	}
 	else
 	{
 		word64 sp_21;
 		f(out sp_21);
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return sp_21 + 0x0010;
 	}
 }
@@ -167,13 +167,13 @@ word64 f(ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		return x30;
 	}
 	else
 	{
 		struct Eq_234 * sp_23 = g();
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		word64 sp_32;
 		*spOut = &sp_23->qw0008 + 0x01;
 		return sp_23->qw0008;
@@ -183,7 +183,7 @@ word64 f(ptr64 & spOut)
 // 00000000000008D4: void i()
 void i()
 {
-	globals->dw11074 = globals->dw11074 + 0x13;
+	globals->dw11074 += 0x13;
 }
 
 // 00000000000008E8: Register word64 h(Stack word64 qwArg00, Register out ptr64 spOut)
@@ -195,13 +195,13 @@ word64 h(word64 qwArg00, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x11;
+		globals->dw11074 += 0x11;
 		return x30;
 	}
 	else
 	{
 		i();
-		globals->dw11074 = globals->dw11074 + 0x11;
+		globals->dw11074 += 0x11;
 		word64 sp_32;
 		*spOut = fp + 0x08;
 		return qwArg00;
@@ -215,13 +215,13 @@ ptr64 l(word64 x30)
 	globals->dw11044 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		return fp;
 	}
 	else
 	{
 		word64 sp_22 = b(x30, x30);
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		return sp_22 + 0x0010;
 	}
 }
@@ -261,7 +261,7 @@ void c(word64 x30)
 	globals->dw11058 = w0_40 - 0x01;
 	if ((w0_40 - 0x01 & 0x00) != 0x00)
 		l(x30);
-	globals->dw11074 = globals->dw11074 + 0x03;
+	globals->dw11074 += 0x03;
 }
 
 // 0000000000000A34: Register ptr64 b(Register word64 x30, Stack word64 qwArg00)
@@ -271,13 +271,13 @@ ptr64 b(word64 x30, word64 qwArg00)
 	globals->dw1105C = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		return fp;
 	}
 	else
 	{
 		c(x30);
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		return fp + 0x08;
 	}
 }
@@ -297,13 +297,13 @@ ptr64 e(word64 x30, word64 qwArg00)
 	globals->dw11060 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		return fp;
 	}
 	else
 	{
 		c(x30);
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		return fp + 0x08;
 	}
 }
@@ -317,13 +317,13 @@ word64 d(word64 x30, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		return x30;
 	}
 	else
 	{
 		struct Eq_603 * sp_23 = e(x30, x30);
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		word64 sp_32;
 		*spOut = &sp_23->qw0008 + 0x01;
 		return sp_23->qw0008;
@@ -337,13 +337,13 @@ ptr64 k(word64 x30)
 	globals->dw11068 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		return fp;
 	}
 	else
 	{
 		struct Eq_603 * sp_22 = e(x30, x30);
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		return &sp_22->qw0008 + 0x01;
 	}
 }
@@ -357,13 +357,13 @@ word64 j(word64 x30, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		return x30;
 	}
 	else
 	{
 		struct Eq_697 * sp_23 = k(x30);
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		word64 sp_32;
 		*spOut = &sp_23->qw0008 + 0x01;
 		return sp_23->qw0008;

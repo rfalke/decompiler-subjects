@@ -109,18 +109,17 @@ void frame_dummy()
 // 00000000004004C6: void use(Register (ptr64 byte) rdi)
 void use(byte * rdi)
 {
-	globals->dw601020 = globals->dw601020 + (word32) ((uint64) (*rdi));
+	globals->dw601020 += (word32) (uint64) *rdi;
 }
 
 // 00000000004004CF: void fill(Register word32 esi, Register (ptr64 byte) rdi)
 void fill(word32 esi, byte * rdi)
 {
-	ui64 rcx_12 = (int64) esi << 0x02;
-	while (rcx_12 != 0x00)
+	ui64 rcx_12;
+	for (rcx_12 = (int64) esi << 0x02; rcx_12 != 0x00; --rcx_12)
 	{
 		*rdi = 0x78;
-		rdi = rdi + 0x01;
-		rcx_12 = rcx_12 - 0x01;
+		++rdi;
 	}
 }
 

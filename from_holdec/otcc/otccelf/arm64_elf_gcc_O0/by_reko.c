@@ -483,7 +483,7 @@ void aw()
 		word32 w0_33 = *globals->ptr14F60;
 		*globals->ptr14F60 = w0_33 + 0x01;
 		*(int64) (int32) w0_33 = (byte) (uint32) (uint8) sp_15->dw000C;
-		sp_15->dw000C = sp_15->dw000C >> 0x08;
+		sp_15->dw000C >>= 0x08;
 	}
 }
 
@@ -543,7 +543,7 @@ word32 x(int32 w1, word32 dwArg00, int32 dwArg04, Eq_1452 * & x29Out, ptr64 & x3
 	aw();
 	E(*globals->ptr14F60, w1);
 	word32 w0_21 = *globals->ptr14F60;
-	*globals->ptr14F60 = *globals->ptr14F60 + 0x04;
+	*globals->ptr14F60 += 0x04;
 	word64 x29_33;
 	*x29Out = x30;
 	word64 x30_36;
@@ -734,7 +734,7 @@ void ab(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 					aw();
 				else
 					aw();
-				*globals->ptr14F60 = *globals->ptr14F60 + 0x01;
+				++*globals->ptr14F60;
 			}
 		}
 		else if (w0_202 == 0x26)
@@ -784,7 +784,7 @@ void ab(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 			x(B(x30_121, out x30_114, out sp_115)->dw002C, dwArg00, dwArg04_14, out x29_120, out x30_121, out sp_122);
 			if (*globals->ptr14FA8 == 44)
 				av();
-			x29_120->dw002C = x29_120->dw002C + 0x04;
+			x29_120->dw002C += 0x04;
 		}
 		struct Eq_1942 * x29_109;
 		E(x29_120->dw0030, x29_120->dw002C);
@@ -794,11 +794,11 @@ void ab(ui32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 			word64 x30_92;
 			word64 sp_93;
 			x(x29_120->dw002C, dwArg00, dwArg04_14, out x29_109, out x30_92, out sp_93);
-			x29_109->dw002C = x29_109->dw002C + 0x04;
+			x29_109->dw002C += 0x04;
 		}
 		else
 		{
-			x29_120->dw0038 = x29_120->dw0038 + 0x04;
+			x29_120->dw0038 += 0x04;
 			word64 x30_110;
 			word64 sp_111;
 			*(word64) x29_120->dw001C = x(*(word64) x29_120->dw001C, dwArg00, dwArg04_14, out x29_109, out x30_110, out sp_111);
@@ -1058,13 +1058,13 @@ void ar()
 			{
 				if (x29_14->dw001C != 0x00)
 				{
-					*globals->ptr14F38 = *globals->ptr14F38 + 0x04;
+					*globals->ptr14F38 += 0x04;
 					*(int64) (int32) *globals->ptr14FA8 = 0x00 - *globals->ptr14F38;
 				}
 				else
 				{
 					*(int64) (int32) *globals->ptr14FA8 = *globals->ptr14FB0;
-					*globals->ptr14FB0 = *globals->ptr14FB0 + 0x04;
+					*globals->ptr14FB0 += 0x04;
 				}
 				av();
 				if (*globals->ptr14FA8 == 44)
@@ -1081,7 +1081,7 @@ void ar()
 			while (*globals->ptr14FA8 != 0x29)
 			{
 				*(int64) (int32) *globals->ptr14FA8 = x29_14->dw002C;
-				x29_14->dw002C = x29_14->dw002C + 0x04;
+				x29_14->dw002C += 0x04;
 				av();
 				if (*globals->ptr14FA8 == 44)
 					av();
@@ -1127,7 +1127,7 @@ void ad(int32 w0, word64 x30, word32 dwArg00, int32 dwArg04)
 	word64 x30_16;
 	word64 sp_17;
 	ax(w0, SLICE(x30, word32, 32), out x29_15, out x30_16, out sp_17);
-	x29_15->dw001C = x29_15->dw001C + 0x08048000;
+	x29_15->dw001C += 0x08048000;
 	struct Eq_3255 * x29_26;
 	word64 x30_27;
 	word64 sp_28;
@@ -1154,10 +1154,10 @@ word64 ae(int32 dwArg04)
 	int32 w0_15 = *globals->ptr14FA0;
 	while (true)
 	{
-		x29_142->dw003C = x29_142->dw003C + 0x01;
+		++x29_142->dw003C;
 		x29_142->dw0030 = x29_142->dw003C;
 		while ((word32) *(word64) x29_142->dw001E != 0x20 && x29_142->dw003C < *globals->ptr14F20)
-			x29_142->dw003C = x29_142->dw003C + 0x01;
+			++x29_142->dw003C;
 		if (x29_142->dw003C == *globals->ptr14F20)
 			break;
 		*globals->ptr14FA8 = (x29_142->dw0030 - *globals->ptr14FA0 << 0x03) + *globals->ptr14F30 + 0xF8;
@@ -1192,7 +1192,7 @@ word64 ae(int32 dwArg04)
 				}
 				else
 				{
-					x29_142->dw0034 = x29_142->dw0034 + 0x01;
+					++x29_142->dw0034;
 					while (x29_142->dw0038 != 0x00)
 					{
 						x29_142->dw0030 = ao(x29_142->dw0038);
@@ -1232,9 +1232,9 @@ word64 au(word64 x30, word32 dwArg00, int32 dwArg04)
 	word64 sp_58;
 	struct Eq_443 * x29_59 = M(0x01, x30_52, w0_41, out x30_57, out sp_58);
 	aw();
-	*globals->ptr14FB0 = *globals->ptr14FB0 + x29_59->dw0048;
+	*globals->ptr14FB0 += x29_59->dw0048;
 	x29_59->dw0044 = *globals->ptr14FB0;
-	*globals->ptr14FB0 = *globals->ptr14FB0 + 0x01;
+	++*globals->ptr14FB0;
 	struct Eq_3805 * x0_83 = (int64) (int32) *globals->ptr14FB0;
 	x0_83->qw0000 = globals->qw42A0;
 	x0_83->w0008 = (word16) (word32) globals->w42A8;
@@ -1523,14 +1523,14 @@ void main(int32 w0, word32 w1, word32 dwArg00, word32 dwArg04)
 		fn0000000000000D70();
 		*globals->ptr14F70 = w0_133;
 		*globals->ptr14FC0 = 0x08048000 - *globals->ptr14F88;
-		*globals->ptr14FB0 = *globals->ptr14FB0 + 252;
-		*globals->ptr14F60 = *globals->ptr14F60 + 0x11;
+		*globals->ptr14FB0 += 252;
+		*globals->ptr14F60 += 0x11;
 		word64 x30_161;
 		word64 sp_162;
 		struct Eq_443 * x29_163 = w(out x30_161, out sp_162);
 		av();
 		ar();
-		x29_163->dw0018 = x29_163->dw0018 + 0x04;
+		x29_163->dw0018 += 0x04;
 		au(x30_161, w1 + 0x04, w0);
 	}
 }

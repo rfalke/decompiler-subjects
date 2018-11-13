@@ -4,8 +4,12 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10758 = Unexpected function type (fn void ())
 ;
+char g_str10778[] = "Pi is about %.5f\n";
+Eq_220 g_t1078C = 
+	{
+		3.141593F
+	};
 ptr32 g_ptr2093C = 0x00000000;
 

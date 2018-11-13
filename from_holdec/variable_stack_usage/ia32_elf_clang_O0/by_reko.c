@@ -7,8 +7,18 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1D47 != 0x00)
+	if (globals->dw804A004 != 0x00)
 		fn08048300();
+}
+
+// 080482E0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080482F0: void memset()
+void memset()
+{
 }
 
 // 08048300: void fn08048300()
@@ -18,7 +28,7 @@ void fn08048300()
 	globals->ptr8049FFC();
 }
 
-// 08048310: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
+// 08048310: void _start(Register (ptr32 Eq_14) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -26,10 +36,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048340: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048340: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048350: void deregister_tm_clones()
@@ -148,24 +157,23 @@ void main(ui32 dwArg04, word32 dwArg08)
 // 080485B0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr194F + 0x04 - &ebx_15->ptr194F >> 0x02 != 0x00)
+	if (0x0804A0F4 - 0x0804A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr194F();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804A0F8 + 0x0804A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -177,6 +185,5 @@ void __libc_csu_fini()
 // 08048614: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

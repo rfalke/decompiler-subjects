@@ -186,7 +186,7 @@ void text(word32 w0, word32 w1, word32 w2, word64 qwArg00)
 		do
 		{
 			fn0000000000400660();
-			w20_26 = w20_26 - 0x01;
+			--w20_26;
 		} while (w20_26 != 0x00);
 	}
 }
@@ -207,7 +207,7 @@ word32 add_disk(word32 w0, int32 w1, word32 w9, word64 qwArg00, Eq_218 & w19Out,
 		do
 		{
 			fn0000000000400660();
-			w19_102 = w19_102 - 0x01;
+			--w19_102;
 		} while (w19_102 != 0x00);
 	}
 	fn0000000000400650();
@@ -250,11 +250,11 @@ void remove_disk(word32 w0, word32 w9, word64 qwArg00)
 	fn0000000000400660();
 	if (w19_34 != 0x00)
 	{
-		word32 w22_67 = w19_34;
+		word32 w22_67;
 		do
 		{
 			fn0000000000400660();
-			w22_67 = w22_67 - 0x01;
+			--w22_67;
 		} while (w22_67 != 0x00);
 	}
 }
@@ -288,7 +288,7 @@ word32 move(word32 w0, word64 qwArg00, Eq_338 & w19Out, Eq_339 & w20Out, Eq_340 
 				do
 				{
 					fn0000000000400660();
-					w26_161 = w26_161 - 0x01;
+					--w26_161;
 				} while (w26_161 != 0x00);
 			}
 			word32 w19_169;

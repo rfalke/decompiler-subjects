@@ -7,7 +7,7 @@
 // 0804836C: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw2C87 != 0x00)
+	if (globals->dw804B004 != 0x00)
 		fn08048410();
 }
 
@@ -76,7 +76,7 @@ void main(word32 dwArg00, word32 dwArg04, word32 dwArg08)
 	advanced_3_uneven_stack(dwLoc28);
 }
 
-// 080484BF: void _start(Register (ptr32 Eq_111) edx, Stack int32 dwArg00)
+// 080484BF: void _start(Register (ptr32 Eq_107) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -84,10 +84,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 080484F0: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 080484F0: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048500: void deregister_tm_clones()
@@ -154,37 +153,37 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080485C0: Register word32 sum3_cdecl(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
+// 080485C0: Register word32 sum3_cdecl(Stack word32 dwArg04, Stack Eq_196 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_cdecl(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x01 + dwArg0C * 0x03;
 }
 
-// 080485E0: Register word32 sum3_fastcall(Register word32 ecx, Register Eq_200 edx, Stack ui32 dwArg04)
+// 080485E0: Register word32 sum3_fastcall(Register word32 ecx, Register Eq_196 edx, Stack ui32 dwArg04)
 word32 sum3_fastcall(word32 ecx, time_t edx, ui32 dwArg04)
 {
 	return ecx + edx * 0x02 + 0x02 + dwArg04 * 0x03;
 }
 
-// 08048600: Register word32 sum3_thiscall(Register word32 ecx, Stack Eq_200 dwArg04, Stack ui32 dwArg08)
+// 08048600: Register word32 sum3_thiscall(Register word32 ecx, Stack Eq_196 dwArg04, Stack ui32 dwArg08)
 word32 sum3_thiscall(word32 ecx, time_t dwArg04, ui32 dwArg08)
 {
 	return ecx + dwArg04 * 0x02 + 0x03 + dwArg08 * 0x03;
 }
 
-// 08048620: Register word32 sum3_ms_abi(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
+// 08048620: Register word32 sum3_ms_abi(Stack word32 dwArg04, Stack Eq_196 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_ms_abi(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x04 + dwArg0C * 0x03;
 }
 
-// 08048640: Register word32 sum3_sysv_abi(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C)
+// 08048640: Register word32 sum3_sysv_abi(Stack word32 dwArg04, Stack Eq_196 dwArg08, Stack ui32 dwArg0C)
 word32 sum3_sysv_abi(word32 dwArg04, time_t dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x05 + dwArg0C * 0x03;
 }
 
-// 08048660: Register word32 sum3_stdcall(Stack word32 dwArg04, Stack Eq_200 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
+// 08048660: Register word32 sum3_stdcall(Stack word32 dwArg04, Stack Eq_196 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
 word32 sum3_stdcall(word32 dwArg04, time_t dwArg08, ui32 dwArg0C, ptr32 & ecxOut)
 {
 	word32 ecx_7;
@@ -195,7 +194,7 @@ word32 sum3_stdcall(word32 dwArg04, time_t dwArg08, ui32 dwArg0C, ptr32 & ecxOut
 // 08048680: Register word32 basic_1_multiple_calling_conventions_3_ints(Stack word32 dwArg04, Register out ptr32 ecxOut)
 word32 basic_1_multiple_calling_conventions_3_ints(word32 dwArg04, ptr32 & ecxOut)
 {
-	Eq_200 eax_13 = time(null);
+	Eq_196 eax_13 = time(null);
 	if (sum3_cdecl(dwArg04, eax_13, 0x2A) > 0x7B)
 		puts("cdecl");
 	if (sum3_fastcall(dwArg04, eax_13, 0x2A) > 0x7B)
@@ -231,29 +230,29 @@ word32 basic_2_calling_varargs(ptr32 & edxOut)
 	return 0x00;
 }
 
-// 08048810: Register Eq_200 basic_4_tail_call(Stack (ptr32 Eq_56) ptrArg00, Stack word32 dwArg04)
+// 08048810: Register Eq_196 basic_4_tail_call(Stack (ptr32 Eq_52) ptrArg00, Stack word32 dwArg04)
 time_t basic_4_tail_call(time_t * ptrArg00, word32 dwArg04)
 {
 	return time(ptrArg00);
 }
 
-// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_362) dwArg04)
-word32 crude_printf(Eq_362 * dwArg04)
+// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_358) dwArg04)
+word32 crude_printf(Eq_358 * dwArg04)
 {
 	word32 ebx_113;
 	int32 eax_18 = (int32) dwArg04->b0000;
-	struct Eq_362 * ebp_16 = dwArg04;
+	struct Eq_358 * ebp_16 = dwArg04;
 	byte al_19 = (byte) eax_18;
 	if (al_19 != 0x00)
 	{
-		struct Eq_375 * esi_102 = fp + 0x08;
+		struct Eq_371 * esi_102 = fp + 0x08;
 		ebx_113 = 0x00;
 		do
 		{
 			if (al_19 == 0x25)
 			{
 				byte al_74 = (byte) (word32) ebp_16[0x01];
-				struct Eq_388 * edi_75 = ebp_16 + 0x01;
+				struct Eq_384 * edi_75 = ebp_16 + 0x01;
 				if (al_74 != 0x25)
 				{
 					if (al_74 != 99)
@@ -262,35 +261,35 @@ word32 crude_printf(Eq_362 * dwArg04)
 							puts("Not implemented");
 						else
 						{
-							Eq_427 ebp_103 = esi_102->b0000;
+							Eq_423 ebp_103 = esi_102->b0000;
 							fputs(ebp_103, globals->ptr804B02C);
-							esi_102 = esi_102 + 0x01;
+							++esi_102;
 							ebx_113 = (word32) strlen(ebp_103) + ebx_113;
 						}
 					}
 					else
 					{
 						putchar((int32) esi_102->b0000);
-						esi_102 = esi_102 + 0x01;
-						ebx_113 = ebx_113 + 0x01;
+						++esi_102;
+						++ebx_113;
 					}
 				}
 				else
 				{
 					putchar(0x25);
-					ebx_113 = ebx_113 + 0x01;
+					++ebx_113;
 				}
 				eax_18 = (int32) edi_75->b0001;
 				al_19 = (byte) eax_18;
-				ebp_16 = (struct Eq_362 *) &edi_75->b0001;
+				ebp_16 = (struct Eq_358 *) &edi_75->b0001;
 				if (al_19 != 0x00)
 					continue;
 				return ebx_113;
 			}
 			putchar(eax_18);
 			eax_18 = (int32) ebp_16[0x01];
-			ebx_113 = ebx_113 + 0x01;
-			ebp_16 = ebp_16 + 0x01;
+			++ebx_113;
+			++ebp_16;
 			al_19 = (byte) eax_18;
 		} while (al_19 != 0x00);
 	}
@@ -299,8 +298,8 @@ word32 crude_printf(Eq_362 * dwArg04)
 	return ebx_113;
 }
 
-// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_427 dwArg0C)
-void even_more_crude(byte bArg08, Eq_427 dwArg0C)
+// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_423 dwArg0C)
+void even_more_crude(byte bArg08, Eq_423 dwArg0C)
 {
 	putchar((int32) bArg08);
 	fputs(dwArg0C, globals->ptr804B02C);
@@ -325,8 +324,8 @@ word32 intermediate_4_asm_instr_with_multiple_results(word32 edx, word32 ebx, wo
 	return eax_9 + (ecx_11 * 0x03 + ebx_10 * 0x02) + edx_12 * 0x04;
 }
 
-// 08048990: Register word32 basic_3_accessing_all_registers(Register word32 eax, Register word32 ecx, Register word32 edx, Register word32 ebx, Register Eq_47 ebp, Register word32 esi, Register word32 edi)
-word32 basic_3_accessing_all_registers(word32 eax, word32 ecx, word32 edx, word32 ebx, Eq_47 ebp, word32 esi, word32 edi)
+// 08048990: Register word32 basic_3_accessing_all_registers(Register word32 eax, Register word32 ecx, Register word32 edx, Register word32 ebx, Register Eq_43 ebp, Register word32 esi, Register word32 edi)
+word32 basic_3_accessing_all_registers(word32 eax, word32 ecx, word32 edx, word32 ebx, Eq_43 ebp, word32 esi, word32 edi)
 {
 	return ecx + ebp * 0x08;
 }
@@ -340,7 +339,7 @@ word32 sum3_uncommon(word32 ebp, ptr32 esi, time_t edi)
 // 080489D0: Register word32 intermediate_2_use_uncommon_registers_for_parameters(Stack ptr32 dwArg1C, Register out ptr32 ebxOut, Register out ptr32 esiOut, Register out ptr32 ediOut)
 word32 intermediate_2_use_uncommon_registers_for_parameters(ptr32 dwArg1C, ptr32 & ebxOut, ptr32 & esiOut, ptr32 & ediOut)
 {
-	Eq_200 eax_4 = time(null);
+	Eq_196 eax_4 = time(null);
 	word32 esi_6;
 	*esiOut = dwArg1C;
 	word32 ebx_7;
@@ -418,24 +417,23 @@ word32 advanced_3_uneven_stack(word32 dwArg0C)
 // 08048AD0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr242F + 0x04 - &ebx_15->ptr242F >> 0x02 != 0x00)
+	if (0x0804B0F4 - 0x0804B0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr242F();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804B0F8 + 0x0804B000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -447,6 +445,5 @@ void __libc_csu_fini()
 // 08048B34: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

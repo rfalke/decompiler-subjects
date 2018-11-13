@@ -129,7 +129,7 @@ void frame_dummy(word64 qwArg00)
 // 00000000004005E0: void use(Register (ptr64 word32) x0)
 void use(word32 * x0)
 {
-	globals->dw411034 = globals->dw411034 + *x0;
+	globals->dw411034 += *x0;
 }
 
 // 000000000040060C: Register word64 fill(Stack word64 qwArg00, Register out ptr64 x29Out)

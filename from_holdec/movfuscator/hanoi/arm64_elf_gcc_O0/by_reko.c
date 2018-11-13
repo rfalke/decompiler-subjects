@@ -206,7 +206,7 @@ word64 text(word32 w0, word32 w1, int32 w2, word32 dwArg00, word32 dwArg04, ptr6
 	int32 dwLoc04_14 = w2;
 	while (true)
 	{
-		dwLoc04_14 = dwLoc04_14 - 0x01;
+		--dwLoc04_14;
 		if (dwLoc04_14 == 0x00)
 			break;
 		fn00000000000008F0();
@@ -240,7 +240,7 @@ word32 remove_disk(word32 w0, word64 x30, word32 dwArg04, ptr64 & x29Out, ptr64 
 {
 	struct Eq_319 * x0_25 = globals->ptr11FA8[(word64) dwLoc1A];
 	int32 x1_20[] = *globals->ptr11FA8[(word64) dwLoc1A];
-	x0_25->dw0008 = x0_25->dw0008 - 0x01;
+	--x0_25->dw0008;
 	struct Eq_349 * sp_48;
 	word32 w0_50 = text(globals->ptr11FA8[(word64) dwLoc1A]->dw0008 + 0x01, w0, x1_20[(int64) (int32) x0_25->dw0008], (word32) x30, SLICE(x30, word32, 32), out sp_48)->dw002C;
 	word64 x29_53;
@@ -283,14 +283,14 @@ l0000000000000D50:
 			{
 				x29_30 = new_tower(qwArg00, out x30);
 				globals->ptr11FA8[(word64) x29_30->dw000E] = 0x01;
-				x29_30->dw001C = x29_30->dw001C + 0x01;
+				++x29_30->dw001C;
 			}
 			x29_30->dw001C = *globals->ptr11FD0;
 			while (x29_30->dw001C != 0x00)
 			{
 				word64 sp_71;
 				x29_30 = add_disk(0x00, x29_30->dw001C, x30, dwArg00, 0x00, out x30, out sp_71);
-				x29_30->dw001C = x29_30->dw001C - 0x01;
+				--x29_30->dw001C;
 			}
 			move(*globals->ptr11FD0, 0x00, x30, dwArg00, 0x00);
 			word64 sp_60;

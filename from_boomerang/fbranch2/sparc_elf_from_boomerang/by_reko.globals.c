@@ -4,9 +4,9 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t108AC = Unexpected function type (fn void ())
 ;
 char g_str108C8[] = "%f";
+char g_str108D0[] = "a is %f, b is %f\n";
 ptr32 g_ptr20B10 = 0x00000000;
 

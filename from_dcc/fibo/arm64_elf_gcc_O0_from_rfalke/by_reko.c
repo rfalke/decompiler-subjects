@@ -174,7 +174,7 @@ void main(word64 x30, word32 dwArg04)
 		word32 w0_47 = fib(x29_22->dw0010, x30, 0x01, out w19_43, out x29_22, out x30, out sp_46);
 		x29_22->dw0018 = w0_47;
 		fn0000000000000770();
-		x29_22->dw001C = x29_22->dw001C + 0x01;
+		++x29_22->dw001C;
 	}
 	fn0000000000000710();
 	word32 w19_32;

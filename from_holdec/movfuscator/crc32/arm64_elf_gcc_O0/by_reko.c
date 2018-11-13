@@ -158,14 +158,13 @@ void rc_crc32(word32 w0, ptr64 x1, ptr64 x2)
 		while (dwLoc08_113 <= 0xFF)
 		{
 			Eq_178 dwLoc04_118 = dwLoc08_113;
-			int32 dwLoc0C_122 = 0x00;
-			while (dwLoc0C_122 <= 0x07)
+			int32 dwLoc0C_122;
+			for (dwLoc0C_122 = 0x00; dwLoc0C_122 <= 0x07; ++dwLoc0C_122)
 			{
 				if ((dwLoc04_118 & 0x01) != 0x00)
 					dwLoc04_118 = dwLoc04_118 >> 0x01 ^ 3988292384;
 				else
-					dwLoc04_118 = dwLoc04_118 >> 0x01;
-				dwLoc0C_122 = dwLoc0C_122 + 0x01;
+					dwLoc04_118 >>= 0x01;
 			}
 			*((char *) globals->a11050 + (word64) dwLoc2C * 0x04) = (union Eq_178 *) dwLoc04_118;
 			dwLoc08_113 = (word32) dwLoc08_113.u0 + 0x01;
@@ -175,7 +174,7 @@ void rc_crc32(word32 w0, ptr64 x1, ptr64 x2)
 	up64 x0_35 = x1 + x2;
 	ptr64 qwLoc18_38 = x1;
 	while (qwLoc18_38 - x0_35 < 0x00)
-		qwLoc18_38 = qwLoc18_38 + 0x01;
+		++qwLoc18_38;
 }
 
 // 00000000000009D8: void main(Stack word64 qwArg00)

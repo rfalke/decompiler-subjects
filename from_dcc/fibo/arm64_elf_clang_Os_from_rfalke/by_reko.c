@@ -154,7 +154,7 @@ void main(word64 qwArg00)
 	struct Eq_162 * sp_28 = fp + ~0x47;
 	if (SLICE(x24, word32, 32) >= 0x01)
 	{
-		int32 w23_68 = 0x00;
+		int32 w23_68;
 		do
 		{
 			fn0000000000400530();
@@ -163,7 +163,7 @@ void main(word64 qwArg00)
 			word32 w20_83;
 			fib(sp_28->dw0008, x30, out w19_82, out w20_83, out sp_28);
 			fn0000000000400530();
-			w23_68 = w23_68 + 0x01;
+			++w23_68;
 		} while (w23_68 < sp_28->dw000C);
 	}
 	fn00000000004004E0();

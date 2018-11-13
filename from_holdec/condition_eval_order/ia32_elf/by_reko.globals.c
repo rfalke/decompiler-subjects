@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_29 g_t8074BD9 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
+Eq_25 g_t8074BD9 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_32 g_t8074C20 = Unexpected function type (fn void ())
+Eq_28 g_t8074C20 = Unexpected function type (fn void ())
 ;
-Eq_33 g_t8074C80 = Unexpected function type (fn void ())
+Eq_29 g_t8074C80 = Unexpected function type (fn void ())
 ;
 char g_str8074CA4[] = "test_2_blocks_variant_0: expected %d but got %d\n";
 char g_str8074CD5[] = "source.c";
@@ -886,5 +886,6 @@ char g_str807FCF8[] = "test_5_blocks";
 char g_str807FD08[] = "test_6_blocks";
 word32 g_dw8089F10 = 0x00000000;
 <anonymous> * g_ptr8089FFC = null;
+word32 g_dw808A004 = 0x00000000;
 byte g_b808A01C = 0x00;
 

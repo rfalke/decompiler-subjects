@@ -7,39 +7,48 @@
 // 080482AC: void _init()
 void _init()
 {
-	if (Mem0[__x86.get_pc_thunk.bx(dwLoc10) + 0x1D47:word32] != 0x00)
+	if (globals->dw804A004 != 0x00)
 		fn08048300();
+}
+
+// 080482E0: void printf()
+void printf()
+{
+}
+
+// 080482F0: void __libc_start_main()
+void __libc_start_main()
+{
 }
 
 // 08048300: void fn08048300()
 void fn08048300()
 {
 	word32 esp_3;
-	Mem0[0x08049FFC:word32]();
+	globals->ptr8049FFC();
 }
 
 // 08048310: void main(Stack word32 dwArg00)
 void main(word32 dwArg00)
 {
 	__align(fp);
-	<type-error> tLoc2C_26 = SLICE(0x0804891A, <unknown>, 32);
-	printf(0x0804891A, tLoc2C_26, tLoc2C_26, tLoc2C_26, tLoc2C_26, tLoc2C_26);
-	<type-error> tLoc1C_37 = SLICE(0x08048922, <unknown>, 32);
-	printf(0x08048922, tLoc1C_37, tLoc1C_37, tLoc1C_37);
+	Eq_20 tLoc2C_26 = SLICE(0x0804891A, <unknown>, 32);
+	printf("%zu %zu %zu %zu %zu\n", tLoc2C_26, tLoc2C_26, tLoc2C_26, tLoc2C_26, tLoc2C_26);
+	Eq_33 tLoc1C_37 = SLICE(0x08048922, <unknown>, 32);
+	printf("%zu %zu %zu\n", tLoc1C_37, tLoc1C_37, tLoc1C_37);
 }
 
-// 08048355: void _start(Register word32 edx, Stack word32 dwArg00)
-void _start(word32 edx, word32 dwArg00)
+// 08048355: void _start(Register (ptr32 Eq_43) edx, Stack int32 dwArg00)
+void _start( * edx, int32 dwArg00)
 {
-	__align(fp + 0x04);
-	__libc_start_main(0x08048310, dwArg00, fp + 0x04, 0x08048890, 0x080488F0, edx, fp);
+	__align((char *) fp + 0x04);
+	__libc_start_main(&globals->t8048310, dwArg00, (char *) fp + 0x04, &globals->t8048890, &globals->t80488F0, edx, fp);
 	__hlt();
 }
 
-// 08048380: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048380: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048390: void deregister_tm_clones()
@@ -79,17 +88,17 @@ void register_tm_clones()
 // 08048400: void __do_global_dtors_aux()
 void __do_global_dtors_aux()
 {
-	if (Mem0[0x0804A063:byte] == 0x00)
+	if (globals->b804A063 == 0x00)
 	{
 		deregister_tm_clones();
-		Mem16[0x0804A063:byte] = 0x01;
+		globals->b804A063 = 0x01;
 	}
 }
 
 // 08048420: void frame_dummy()
 void frame_dummy()
 {
-	if (Mem0[0x08049F10:word32] != 0x00 && 0x00 != 0x00)
+	if (globals->dw8049F10 != 0x00 && 0x00 != 0x00)
 	{
 		word32 esp_37;
 		word32 eax_38;
@@ -109,109 +118,109 @@ void frame_dummy()
 // 08048450: void use(Stack word32 dwArg04, Stack word32 dwArg08)
 void use(word32 dwArg04, word32 dwArg08)
 {
-	printf(0x08048914, DPB(rLoc18, dwArg04, 0));
+	printf("%f", DPB(rLoc18, dwArg04, 0));
 }
 
-// 08048470: void use_int(Stack word32 dwArg04)
-void use_int(word32 dwArg04)
+// 08048470: void use_int(Stack int32 dwArg04)
+void use_int(int32 dwArg04)
 {
-	printf(0x08048917, dwArg04);
+	printf("%d", dwArg04);
 }
 
 // 08048490: void read_ints()
 void read_ints()
 {
-	printf(0x08048914, (real64) (int16) Mem0[0x0804A062:byte] + Mem0[0x08048930:real32] + (real64) Mem0[0x0804A060:int16] + (real64) Mem0[0x0804A05C:int32] + (real64) Mem0[0x0804A058:int32] + (real64) Mem0[0x0804A050:int64]);
+	printf("%f", (real64) (int16) globals->b804A062 + globals->t8048930 + (real64) globals->w804A060 + (real64) globals->dw804A05C + (real64) globals->dw804A058 + (real64) globals->qw804A050);
 }
 
 // 080484E0: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	word16 wLoc06_3 = __fstcw();
-	word16 ax_9 = DPB(ax, 0x0C, 8);
+	uint16 wLoc06_3 = __fstcw();
+	uint16 ax_9 = DPB(ax, 0x0C, 8);
 	__fldcw(ax_9);
 	__fldcw(wLoc06_3);
 	__fldcw(ax_9);
 	__fldcw(wLoc06_3);
 	word32 eax_12 = (word32) (int16) rArg04;
-	Mem16[0x0804A062:byte] = (byte) eax_12;
-	Mem17[0x0804A060:word16] = (word16) eax_12;
+	globals->b804A062 = (byte) eax_12;
+	globals->w804A060 = (word16) eax_12;
 	__fldcw(ax_9);
-	Mem19[0x0804A050:int64] = (int64) rArg04;
+	globals->qw804A050 = (int64) rArg04;
 	__fldcw(wLoc06_3);
 	int32 dwLoc10_15 = (int32) rArg04;
-	Mem20[0x0804A05C:word32] = dwLoc10_15;
-	Mem21[0x0804A058:word32] = dwLoc10_15;
+	globals->dw804A05C = dwLoc10_15;
+	globals->dw804A058 = dwLoc10_15;
 }
 
 // 08048550: void read_floats()
 void read_floats()
 {
-	printf(0x08048914, Mem0[0x0804A048:real32] + 0.0 + Mem0[0x0804A040:real64] + (real64) Mem0[0x0804A030:real80]);
+	printf("%f", globals->r804A048 + 0.0 + globals->t804A040 + (real64) globals->r804A030);
 }
 
-// 08048590: void write_floats(Stack real64 rArg04)
-void write_floats(real64 rArg04)
+// 08048590: void write_floats(Stack Eq_223 rArg04)
+void write_floats(Eq_223 rArg04)
 {
-	Mem5[0x0804A048:real32] = (real32) rArg04;
-	Mem6[0x0804A040:real64] = rArg04;
-	Mem7[0x0804A030:real80] = (real80) rArg04;
+	globals->r804A048 = (real32) rArg04;
+	globals->t804A040 = rArg04;
+	globals->r804A030 = (real80) rArg04;
 }
 
 // 080485B0: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	Mem5[0x0804A048:real32] = (real32) Mem0[0x0804A040:real64];
+	globals->r804A048 = (real32) globals->t804A040;
 }
 
 // 080485D0: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	Mem5[0x0804A048:real32] = (real32) (real64) Mem0[0x0804A030:real80];
+	globals->r804A048 = (real32) (real64) globals->r804A030;
 }
 
 // 080485F0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	Mem4[0x0804A040:real64] = (real64) Mem0[0x0804A048:real32];
+	globals->t804A040 = (real64) globals->r804A048;
 }
 
 // 08048600: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	Mem5[0x0804A040:real64] = (real64) Mem0[0x0804A030:real80];
+	globals->t804A040 = (real64) globals->r804A030;
 }
 
 // 08048620: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	Mem4[0x0804A030:real80] = (real80) (real64) Mem0[0x0804A048:real32];
+	globals->r804A030 = (real80) (real64) globals->r804A048;
 }
 
 // 08048630: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	Mem4[0x0804A030:real80] = (real80) Mem0[0x0804A040:real64];
+	globals->r804A030 = (real80) globals->t804A040;
 }
 
 // 08048640: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(real64 rArg04, real64 rArg0C)
 {
-	printf(0x08048914, rArg04 + rArg0C);
-	printf(0x08048914, rArg04 - rArg0C);
-	printf(0x08048914, rArg0C - rArg04);
-	printf(0x08048914, rArg04 * rArg0C);
-	printf(0x08048914, rArg04 / rArg0C);
-	printf(0x08048914, rArg0C / rArg04);
-	printf(0x08048914, -rArg04);
+	printf("%f", rArg04 + rArg0C);
+	printf("%f", rArg04 - rArg0C);
+	printf("%f", rArg0C - rArg04);
+	printf("%f", rArg04 * rArg0C);
+	printf("%f", rArg04 / rArg0C);
+	printf("%f", rArg0C / rArg04);
+	printf("%f", -rArg04);
 }
 
-// 08048700: void compare_floats(Stack real64 rArg04, Stack real64 rArg0C)
-void compare_floats(real64 rArg04, real64 rArg0C)
+// 08048700: void compare_floats(Stack Eq_315 rArg04, Stack Eq_316 rArg0C)
+void compare_floats(Eq_315 rArg04, Eq_316 rArg0C)
 {
 	ptr32 fp;
-	real64 rArg04;
-	real64 rArg0C;
+	Eq_315 rArg04;
+	Eq_316 rArg0C;
 	esp_1 = fp;
 	esp_2 = fp - 0x24;
 	eax_3 = 0x00;
@@ -236,9 +245,9 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_19 = fp - 0x28;
 	dwLoc28_20 = eax_17;
 	esp_21 = fp - 44;
-	dwLoc2C_22 = 0x08048917;
-	eax_23 = printf(0x08048917, dwLoc28_20);
-	eax_24 = 0x08048917;
+	dwLoc2C_22 = (char *) "%d";
+	eax_23 = printf("%d", dwLoc28_20);
+	eax_24 = (char *) "%d";
 	esp_25 = fp - 0x28;
 	edx_26 = dwLoc28_20;
 	esp_27 = fp - 0x24;
@@ -263,9 +272,9 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_41 = fp - 0x28;
 	dwLoc28_42 = eax_40;
 	esp_43 = fp - 44;
-	dwLoc2C_44 = 0x08048917;
-	eax_45 = printf(0x08048917, dwLoc28_42);
-	ecx_46 = 0x08048917;
+	dwLoc2C_44 = (char *) "%d";
+	eax_45 = printf("%d", dwLoc28_42);
+	ecx_46 = (char *) "%d";
 	esp_47 = fp - 0x28;
 	eax_48 = dwLoc28_42;
 	esp_49 = fp - 0x24;
@@ -283,9 +292,9 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_61 = fp - 0x28;
 	dwLoc28_62 = eax_60;
 	esp_63 = fp - 44;
-	dwLoc2C_64 = 0x08048917;
-	eax_65 = printf(0x08048917, dwLoc28_62);
-	eax_66 = 0x08048917;
+	dwLoc2C_64 = (char *) "%d";
+	eax_65 = printf("%d", dwLoc28_62);
+	eax_66 = (char *) "%d";
 	esp_67 = fp - 0x28;
 	edx_68 = dwLoc28_62;
 	esp_69 = fp - 0x24;
@@ -303,9 +312,9 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_81 = fp - 0x28;
 	dwLoc28_82 = eax_80;
 	esp_83 = fp - 44;
-	dwLoc2C_84 = 0x08048917;
-	eax_85 = printf(0x08048917, dwLoc28_82);
-	ecx_86 = 0x08048917;
+	dwLoc2C_84 = (char *) "%d";
+	eax_85 = printf("%d", dwLoc28_82);
+	ecx_86 = (char *) "%d";
 	esp_87 = fp - 0x28;
 	eax_88 = dwLoc28_82;
 	esp_89 = fp - 0x24;
@@ -323,9 +332,9 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_101 = fp - 0x28;
 	dwLoc28_102 = eax_99;
 	esp_103 = fp - 44;
-	dwLoc2C_104 = 0x08048917;
-	eax_105 = printf(0x08048917, dwLoc28_102);
-	eax_106 = 0x08048917;
+	dwLoc2C_104 = (char *) "%d";
+	eax_105 = printf("%d", dwLoc28_102);
+	eax_106 = (char *) "%d";
 	esp_107 = fp - 0x28;
 	edx_108 = dwLoc28_102;
 	esp_109 = fp - 0x24;
@@ -343,8 +352,8 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 	esp_121 = fp - 0x28;
 	dwLoc28_122 = eax_120;
 	esp_123 = fp - 44;
-	dwLoc2C_124 = 0x08048917;
-	eax_125 = printf(0x08048917, dwLoc28_122);
+	dwLoc2C_124 = (char *) "%d";
+	eax_125 = printf("%d", dwLoc28_122);
 	eax_126 = 0x7C;
 	esp_127 = fp;
 	SCZO_128 = cond(fp);
@@ -353,34 +362,33 @@ void compare_floats(real64 rArg04, real64 rArg0C)
 // 080487F0: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {
-	printf(0x08048914, rLoc2 + rArg04);
-	printf(0x08048914, rArg04 * Mem0[0x08048934:real32]);
-	printf(0x08048914, rArg04 * Mem0[0x08048940:real64]);
-	printf(0x08048914, rArg04 * Mem0[0x08048938:real32]);
-	printf(0x08048914, rArg04 * Mem0[0x08048948:real64]);
+	printf("%f", rLoc2 + rArg04);
+	printf("%f", rArg04 * globals->t8048934);
+	printf("%f", rArg04 * globals->r8048940);
+	printf("%f", rArg04 * globals->t8048938);
+	printf("%f", rArg04 * globals->r8048948);
 }
 
 // 08048890: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	word32 ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if (ebx_15 + 5747 - (ebx_15 + 0x166F) >> 0x02 != 0x00)
+	if (0x0804A0F4 - 0x0804A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			Mem0[ebx_15 + 0x166F:word32]();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804A0F8 + 0x0804A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -392,6 +400,5 @@ void __libc_csu_fini()
 // 080488F4: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

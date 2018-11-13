@@ -107,7 +107,7 @@ void main()
 				fn0000000000000860();
 				return;
 			}
-			w20_25 = w20_25 + 0x01;
+			++w20_25;
 		} while (w20_25 > 0x06 || w20_25 < 0x02);
 	}
 	switch ((word32) 2332)
@@ -212,9 +212,9 @@ void frame_dummy(word64 qwArg00)
 void sq(word64 x0)
 {
 	if (x0 != 0x00)
-		globals->qw12058 = globals->qw12058 + ~0x464F;
+		globals->qw12058 += ~0x464F;
 	else
-		globals->qw12058 = globals->qw12058 + 18000;
+		globals->qw12058 += 18000;
 }
 
 // 0000000000000C98: void sroot(Register word64 d0)
@@ -256,23 +256,23 @@ int32 fib(int32 w0, word64 qwArg00, Eq_255 & w19Out, Eq_256 & w20Out)
 // 0000000000000DD0: Register word32 stest(Register (ptr64 byte) x0, Register (arr Eq_335) x1)
 word32 stest(byte * x0, Eq_335 x1[])
 {
-	word32 w7_14 = 9000;
+	word32 w7_14;
 	word32 w8_17 = 0x00;
-	do
+	for (w7_14 = 9000; w7_14 != 0x00; --w7_14)
 	{
 		int64 x2_18 = 0x00;
 		do
 		{
 			word32 w3_22 = (word32) (x2_18 + 0x1020);
 			x0[x2_18] = (byte) w3_22;
-			x2_18 = x2_18 + 0x01;
+			++x2_18;
 		} while (w3_22 != 0x00);
 		int64 x2_26 = 0x00;
 		do
 		{
 			word32 w3_29 = (word32) (x2_26 + 0x1038);
 			x1[x2_26].t0000.u0 = (byte) w3_29;
-			x2_26 = x2_26 + 0x01;
+			++x2_26;
 		} while (w3_29 != 0x00);
 		word32 w3_41;
 		word32 w3_34 = (word32) *x0;
@@ -286,7 +286,7 @@ word32 stest(byte * x0, Eq_335 x1[])
 				{
 					w3_34 = (word32) x0[x2_59];
 					w4_36 = (word32) x1[x2_59].t0000;
-					x2_59 = x2_59 + 0x01;
+					++x2_59;
 					if (w3_34 != w4_36)
 						goto l0000000000000E48;
 				} while (w3_34 != 0x00);
@@ -298,9 +298,8 @@ word32 stest(byte * x0, Eq_335 x1[])
 l0000000000000E48:
 			w3_41 = w3_34 - w4_36;
 		}
-		w7_14 = w7_14 - 0x01;
-		w8_17 = w8_17 + w3_41;
-	} while (w7_14 != 0x00);
+		w8_17 += w3_41;
+	}
 	return w8_17;
 }
 
@@ -316,7 +315,7 @@ void mstrcmp(byte * x0, Eq_366 x1[])
 		do
 		{
 			word32 w3_33 = (word32) x0[x2_30];
-			x2_30 = x2_30 + 0x01;
+			++x2_30;
 			if (w3_33 != (word32) (x1)[x2_30].t0000)
 				return;
 		} while (w3_33 != 0x00);
@@ -331,7 +330,7 @@ void mstrcpy(Eq_397 x0[], ptr64 x1)
 	{
 		word32 w3_7 = (word32) (x1 + x2_10);
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0[x2_10].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (byte) w3_7;
-		x2_10 = x2_10 + 0x01;
+		++x2_10;
 	} while (w3_7 != 0x00);
 }
 
@@ -343,7 +342,7 @@ void mcopy()
 	{
 		word32 w2_31 = (word32) (x0_10 + 0x1050);
 		fp + ~0x5F + x0_10 = (byte *) (byte) w2_31;
-		x0_10 = x0_10 + 0x01;
+		++x0_10;
 	} while (w2_31 != 0x00);
 	fn0000000000000810();
 	if (4200 == 0x00)
@@ -355,8 +354,8 @@ void mcopy()
 	else
 	{
 		word32 w22_57 = (word32) bLoc60;
-		word32 w21_59 = 999;
-		do
+		word32 w21_59;
+		for (w21_59 = 999; w21_59 != 0x00; --w21_59)
 		{
 			byte * x19_68 = fp + ~0x5E;
 			if (w22_57 != 0x00)
@@ -368,8 +367,7 @@ void mcopy()
 					byte * x19_104 = x19_68;
 				} while ((word32) *x19_104 != 0x00);
 			}
-			w21_59 = w21_59 - 0x01;
-		} while (w21_59 != 0x00);
+		}
 		fn0000000000000800();
 	}
 }

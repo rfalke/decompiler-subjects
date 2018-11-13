@@ -18,7 +18,7 @@ void h()
 word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwArg10)
 {
 	while (dwArg04 != 0x00)
-		dwArg08 = dwArg08 + 0x01;
+		++dwArg08;
 	do
 	{
 		if (dwArg04 == 0x00)
@@ -28,7 +28,7 @@ word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwAr
 				h();
 				if (eax == 0x00)
 					break;
-				dwArg04 = dwArg04 + 0x01;
+				++dwArg04;
 			}
 			while (true)
 			{
@@ -38,7 +38,7 @@ word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwAr
 				h();
 				if (eax == 0x00)
 					break;
-				dwArg04 = dwArg04 + 0x01;
+				++dwArg04;
 			}
 			do
 			{
@@ -63,7 +63,7 @@ word32 f(word32 eax, word32 dwArg04, word32 dwArg08, word32 dwArg0C, word32 dwAr
 			do
 			{
 				g();
-				eax = eax - dwArg08;
+				eax -= dwArg08;
 				if (eax != 0x00)
 					return eax;
 				g();

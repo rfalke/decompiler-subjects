@@ -152,16 +152,15 @@ real32 sin(real32 s0)
 // 0000000000000900: void main(Stack word64 qwArg00)
 void main(word64 qwArg00)
 {
-	word32 w19_21 = 33;
+	word32 w19_21;
 	real32 s8_24 = globals->r095C;
 	real32 s9_28 = globals->r0960;
-	do
+	for (w19_21 = 33; w19_21 != 0x00; --w19_21)
 	{
 		sin(s8_24);
 		fn0000000000000710();
-		s8_24 = s8_24 + s9_28;
-		w19_21 = w19_21 - 0x01;
-	} while (w19_21 != 0x00);
+		s8_24 += s9_28;
+	}
 }
 
 // 0000000000000968: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

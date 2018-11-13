@@ -1,5 +1,6 @@
 Using options:
-00000000004003D8: warning: Unable to resolve imported reference __gmon_start__.
-00000000004004EE: warning: Call target address 0000000000000000 is invalid.
-00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
+  at Reko.Core.Program.BuildImageMap () [0x0008d] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.DecompilerDriver.BuildImageMaps () [0x00019] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x000a9] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <d6ad61555b7f4116a6906ac874c0208a>:0 

@@ -7,7 +7,7 @@
 // 080482CC: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw2D27 != 0x00)
+	if (globals->dw804B004 != 0x00)
 		fn08048330();
 }
 
@@ -33,8 +33,8 @@ void fn08048330()
 	globals->ptr804AFFC();
 }
 
-// 08048340: void main(Stack word32 dwArg00, Stack Eq_19 dwArg04, Stack word32 dwArg08)
-void main(word32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
+// 08048340: void main(Stack word32 dwArg00, Stack Eq_15 dwArg04, Stack word32 dwArg08)
+void main(word32 dwArg00, Eq_15 dwArg04, word32 dwArg08)
 {
 	__align(fp);
 	basic_1_ternary_simple(dwArg04);
@@ -46,7 +46,7 @@ void main(word32 dwArg00, Eq_19 dwArg04, word32 dwArg08)
 	advanced_1_unrolled_loop(dwArg04, dwArg04 >> 0x1F);
 }
 
-// 080483C8: void _start(Register (ptr32 Eq_73) edx, Stack int32 dwArg00)
+// 080483C8: void _start(Register (ptr32 Eq_69) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -54,10 +54,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 080483F0: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 080483F0: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048400: void deregister_tm_clones()
@@ -124,14 +123,14 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080484C0: Register word32 basic_1_ternary_simple(Stack Eq_19 dwArg04)
-word32 basic_1_ternary_simple(Eq_19 dwArg04)
+// 080484C0: Register word32 basic_1_ternary_simple(Stack Eq_15 dwArg04)
+word32 basic_1_ternary_simple(Eq_15 dwArg04)
 {
 	return (word32) (dwArg04 != 0x2A);
 }
 
-// 080484D0: Register word32 basic_2_ternary_other(Stack Eq_19 dwArg04)
-word32 basic_2_ternary_other(Eq_19 dwArg04)
+// 080484D0: Register word32 basic_2_ternary_other(Stack Eq_15 dwArg04)
+word32 basic_2_ternary_other(Eq_15 dwArg04)
 {
 	word32 eax_6 = 100;
 	if (dwArg04 != 0x2A)
@@ -139,11 +138,11 @@ word32 basic_2_ternary_other(Eq_19 dwArg04)
 	return eax_6;
 }
 
-// 080484F0: Register word32 intermediate_10_double_word_signed_math(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Stack Eq_19 dwArg14, Stack int32 dwArg18)
-word32 intermediate_10_double_word_signed_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, Eq_19 dwArg14, int32 dwArg18)
+// 080484F0: Register word32 intermediate_10_double_word_signed_math(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Stack Eq_15 dwArg14, Stack int32 dwArg18)
+word32 intermediate_10_double_word_signed_math(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, Eq_15 dwArg14, int32 dwArg18)
 {
 	word64 edx_eax_33 = SEQ(dwArg10, dwArg0C + dwArg04) + SEQ(dwArg08, dwArg04);
-	Eq_19 eax_34 = (word32) edx_eax_33;
+	Eq_15 eax_34 = (word32) edx_eax_33;
 	int32 edx_35 = SLICE(edx_eax_33, word32, 32);
 	if (edx_35 >= dwArg18)
 	{
@@ -153,7 +152,7 @@ word32 intermediate_10_double_word_signed_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_
 			puts("add");
 	}
 	ui64 edx_eax_53 = SEQ(dwArg08, dwArg04 - dwArg0C) - _;
-	Eq_19 eax_54 = (word32) edx_eax_53;
+	Eq_15 eax_54 = (word32) edx_eax_53;
 	int32 edx_55 = SLICE(edx_eax_53, word32, 32);
 	if (dwArg18 <= edx_55)
 	{
@@ -163,7 +162,7 @@ word32 intermediate_10_double_word_signed_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_
 			puts("sub");
 	}
 	uint64 edx_eax_72 = dwArg04 * dwArg0C;
-	Eq_19 eax_73 = (word32) edx_eax_72;
+	Eq_15 eax_73 = (word32) edx_eax_72;
 	int32 edx_75 = SLICE(edx_eax_72, word32, 32) + (dwArg0C *s dwArg08 + dwArg10 *s dwArg04);
 	if (dwArg18 <= edx_75)
 	{
@@ -173,7 +172,7 @@ word32 intermediate_10_double_word_signed_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_
 			puts("mult");
 	}
 	int32 edx_96;
-	Eq_19 eax_97 = __divdi3(dwArg04, dwArg08, dwArg0C, dwArg10, out edx_96);
+	Eq_15 eax_97 = __divdi3(dwArg04, dwArg08, dwArg0C, dwArg10, out edx_96);
 	if (dwArg18 <= edx_96 && (dwArg18 < edx_96 || dwArg14 < eax_97))
 		puts("diff");
 	word32 edx_117;
@@ -183,12 +182,12 @@ word32 intermediate_10_double_word_signed_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_
 	return 0x00;
 }
 
-// 08048680: Register word32 intermediate_10_double_word_unsigned_math(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Stack Eq_19 dwArg14, Stack Eq_62 dwArg18)
-word32 intermediate_10_double_word_unsigned_math(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, Eq_19 dwArg14, Eq_62 dwArg18)
+// 08048680: Register word32 intermediate_10_double_word_unsigned_math(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Stack Eq_15 dwArg14, Stack Eq_58 dwArg18)
+word32 intermediate_10_double_word_unsigned_math(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, Eq_15 dwArg14, Eq_58 dwArg18)
 {
 	word64 edx_eax_33 = SEQ(dwArg10, dwArg0C + dwArg04) + SEQ(dwArg08, dwArg04);
-	Eq_19 eax_34 = (word32) edx_eax_33;
-	Eq_62 edx_35 = SLICE(edx_eax_33, word32, 32);
+	Eq_15 eax_34 = (word32) edx_eax_33;
+	Eq_58 edx_35 = SLICE(edx_eax_33, word32, 32);
 	if (edx_35 >= dwArg18)
 	{
 		if (edx_35 > dwArg18)
@@ -197,8 +196,8 @@ word32 intermediate_10_double_word_unsigned_math(Eq_19 dwArg04, Eq_19 dwArg08, E
 			puts("add");
 	}
 	ui64 edx_eax_52 = SEQ(dwArg08, dwArg04 - dwArg0C) - _;
-	Eq_19 eax_53 = (word32) edx_eax_52;
-	Eq_62 edx_54 = SLICE(edx_eax_52, word32, 32);
+	Eq_15 eax_53 = (word32) edx_eax_52;
+	Eq_58 edx_54 = SLICE(edx_eax_52, word32, 32);
 	if (dwArg18 <= edx_54)
 	{
 		if (dwArg18 < edx_54)
@@ -207,8 +206,8 @@ word32 intermediate_10_double_word_unsigned_math(Eq_19 dwArg04, Eq_19 dwArg08, E
 			puts("sub");
 	}
 	uint64 edx_eax_70 = dwArg04 * dwArg0C;
-	Eq_19 eax_71 = (word32) edx_eax_70;
-	Eq_62 edx_73 = SLICE(edx_eax_70, word32, 32) + (dwArg0C *s dwArg08 + dwArg10 *s dwArg04);
+	Eq_15 eax_71 = (word32) edx_eax_70;
+	Eq_58 edx_73 = SLICE(edx_eax_70, word32, 32) + (dwArg0C *s dwArg08 + dwArg10 *s dwArg04);
 	if (dwArg18 <= edx_73)
 	{
 		if (dwArg18 < edx_73)
@@ -216,8 +215,8 @@ word32 intermediate_10_double_word_unsigned_math(Eq_19 dwArg04, Eq_19 dwArg08, E
 		else if (dwArg14 < eax_71)
 			puts("mult");
 	}
-	Eq_62 edx_93;
-	Eq_19 eax_94 = __udivdi3(dwArg04, dwArg08, dwArg0C, dwArg10, out edx_93);
+	Eq_58 edx_93;
+	Eq_15 eax_94 = __udivdi3(dwArg04, dwArg08, dwArg0C, dwArg10, out edx_93);
 	if (dwArg18 <= edx_93 && (dwArg18 < edx_93 || dwArg14 < eax_94))
 		puts("diff");
 	word32 edx_113;
@@ -227,24 +226,20 @@ word32 intermediate_10_double_word_unsigned_math(Eq_19 dwArg04, Eq_19 dwArg08, E
 	return 0x00;
 }
 
-// 08048810: Register word32 advanced_1_unrolled_loop(Register Eq_19 esi, Register int32 edi)
-word32 advanced_1_unrolled_loop(Eq_19 esi, int32 edi)
+// 08048810: Register word32 advanced_1_unrolled_loop(Register Eq_15 esi, Register int32 edi)
+word32 advanced_1_unrolled_loop(Eq_15 esi, int32 edi)
 {
 	puts("basic");
-	int32 ebx_16 = 0x30;
-	do
-	{
+	int32 ebx_16;
+	for (ebx_16 = 0x30; ebx_16 != 0x3A; ++ebx_16)
 		putchar(ebx_16);
-		ebx_16 = ebx_16 + 0x01;
-	} while (ebx_16 != 0x3A);
 	puts("partial unrolled");
-	int32 ebx_26 = 0x31;
-	do
+	int32 ebx_26;
+	for (ebx_26 = 0x30; ebx_26 != 0x3A; ebx_26 += 0x02)
 	{
 		putchar(ebx_26);
-		putchar(ebx_26 + 0x00);
-		ebx_26 = ebx_26 + 0x02;
-	} while (ebx_26 != 0x39);
+		putchar(ebx_26 + 0x01);
+	}
 	puts("fully unrolled");
 	putchar(0x30);
 	putchar(0x31);
@@ -259,8 +254,8 @@ word32 advanced_1_unrolled_loop(Eq_19 esi, int32 edi)
 	return 0x00;
 }
 
-// 08048904: Register word32 intermediate_1_ternary_blocks(Stack Eq_19 dwArg04)
-word32 intermediate_1_ternary_blocks(Eq_19 dwArg04)
+// 08048904: Register word32 intermediate_1_ternary_blocks(Stack Eq_15 dwArg04)
+word32 intermediate_1_ternary_blocks(Eq_15 dwArg04)
 {
 	word32 eax_12;
 	if (dwArg04 == 0x2A)
@@ -270,8 +265,8 @@ word32 intermediate_1_ternary_blocks(Eq_19 dwArg04)
 	return eax_12;
 }
 
-// 0804891B: Register word32 intermediate_2_other_in_blocks(Stack Eq_19 dwArg04)
-word32 intermediate_2_other_in_blocks(Eq_19 dwArg04)
+// 0804891B: Register word32 intermediate_2_other_in_blocks(Stack Eq_15 dwArg04)
+word32 intermediate_2_other_in_blocks(Eq_15 dwArg04)
 {
 	word32 eax_12;
 	if (dwArg04 == 0x2A)
@@ -281,15 +276,15 @@ word32 intermediate_2_other_in_blocks(Eq_19 dwArg04)
 	return eax_12;
 }
 
-// 08048940: Register uint32 __divdi3(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Register out ptr32 edxOut)
-uint32 __divdi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32 & edxOut)
+// 08048940: Register uint32 __divdi3(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Register out ptr32 edxOut)
+uint32 __divdi3(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, ptr32 & edxOut)
 {
-	Eq_19 edx_16 = dwArg08;
-	Eq_19 eax_22 = dwArg04;
-	Eq_436 edx_eax_23 = SEQ(dwArg08, dwArg04);
+	Eq_15 edx_16 = dwArg08;
+	Eq_15 eax_22 = dwArg04;
+	Eq_432 edx_eax_23 = SEQ(dwArg08, dwArg04);
 	word32 dwLoc24_221 = 0x00;
-	Eq_19 dwLoc28_225 = dwArg10;
-	Eq_19 dwLoc2C_218 = dwArg0C;
+	Eq_15 dwLoc28_225 = dwArg10;
+	Eq_15 dwLoc2C_218 = dwArg0C;
 	if (dwArg08 < 0x00)
 	{
 		eax_22 = -dwArg04;
@@ -305,7 +300,7 @@ uint32 __divdi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr3
 	}
 	uint32 ebp_116;
 	uint32 ecx_101;
-	Eq_19 ecx_106 = dwLoc2C_218;
+	Eq_15 ecx_106 = dwLoc2C_218;
 	if (dwLoc28_225 == 0x00)
 	{
 		if (dwLoc2C_218 > edx_16)
@@ -375,14 +370,14 @@ l080489A8:
 	return eax_64;
 }
 
-// 08048AB0: Register Eq_19 __moddi3(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Register out ptr32 edxOut)
-Eq_19 __moddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32 & edxOut)
+// 08048AB0: Register Eq_15 __moddi3(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Register out ptr32 edxOut)
+Eq_15 __moddi3(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, ptr32 & edxOut)
 {
-	Eq_19 edi_16 = dwArg08;
-	Eq_19 esi_22 = dwArg04;
+	Eq_15 edi_16 = dwArg08;
+	Eq_15 esi_22 = dwArg04;
 	word32 dwLoc30_25 = 0x00;
-	Eq_19 dwLoc3C_29 = dwArg0C;
-	Eq_19 dwLoc38_31 = dwArg10;
+	Eq_15 dwLoc3C_29 = dwArg0C;
+	Eq_15 dwLoc38_31 = dwArg10;
 	if (dwArg08 < 0x00)
 	{
 		esi_22 = -dwArg04;
@@ -394,16 +389,16 @@ Eq_19 __moddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32
 		dwLoc3C_29 = -*(fp - 0x3C);
 		dwLoc38_31 = -*(fp - 0x38);
 	}
-	Eq_19 eax_105;
+	Eq_15 eax_105;
 	word32 edx_124;
 	int64 edx_eax_53 = SEQ(edi_16, esi_22);
-	Eq_19 dwLoc28_180 = esi_22;
-	Eq_19 ecx_140 = dwLoc3C_29;
+	Eq_15 dwLoc28_180 = esi_22;
+	Eq_15 ecx_140 = dwLoc3C_29;
 	ui64 ebx_ecx_64 = SEQ(dwLoc38_31, dwLoc3C_29);
-	Eq_19 dwLoc3C_182 = edi_16;
+	Eq_15 dwLoc3C_182 = edi_16;
 	if (dwLoc38_31 == 0x00)
 	{
-		Eq_19 dwLoc3C_118;
+		Eq_15 dwLoc3C_118;
 		if (dwLoc3C_29 > edi_16)
 			dwLoc3C_118 = (uint32) (edx_eax_53 % dwLoc3C_29);
 		else
@@ -470,8 +465,8 @@ Eq_19 __moddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32
 	return eax_105;
 }
 
-// 08048C90: Register uint32 __udivdi3(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Register out ptr32 edxOut)
-uint32 __udivdi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32 & edxOut)
+// 08048C90: Register uint32 __udivdi3(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Register out ptr32 edxOut)
+uint32 __udivdi3(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, ptr32 & edxOut)
 {
 	uint32 edi_121;
 	uint32 ebx_202;
@@ -519,7 +514,7 @@ uint32 __udivdi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr
 			*edxOut = 0x00;
 			return (uint32) (SEQ(dwArg08, dwArg04) /u dwArg0C);
 		}
-		Eq_19 ebp_74 = dwArg0C;
+		Eq_15 ebp_74 = dwArg0C;
 		if (dwArg0C == 0x00)
 			ebp_74 = (uint32) (0x01 /u dwArg0C);
 		uint64 edx_eax_78 = (uint64) (uint32) dwArg08;
@@ -532,11 +527,11 @@ l08048CDC:
 	}
 }
 
-// 08048DC0: Register Eq_19 __umoddi3(Stack Eq_19 dwArg04, Stack Eq_19 dwArg08, Stack Eq_19 dwArg0C, Stack Eq_19 dwArg10, Register out ptr32 edxOut)
-Eq_19 __umoddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr32 & edxOut)
+// 08048DC0: Register Eq_15 __umoddi3(Stack Eq_15 dwArg04, Stack Eq_15 dwArg08, Stack Eq_15 dwArg0C, Stack Eq_15 dwArg10, Register out ptr32 edxOut)
+Eq_15 __umoddi3(Eq_15 dwArg04, Eq_15 dwArg08, Eq_15 dwArg0C, Eq_15 dwArg10, ptr32 & edxOut)
 {
 	uint64 _edi_29 = SEQ(dwArg10, dwArg0C);
-	Eq_19 dwLoc28_131 = dwArg04;
+	Eq_15 dwLoc28_131 = dwArg04;
 	word32 edx_33;
 	*edxOut = dwArg08;
 	if (dwArg10 != 0x00)
@@ -591,12 +586,12 @@ Eq_19 __umoddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr3
 	}
 	else
 	{
-		Eq_19 edx_103;
+		Eq_15 edx_103;
 		if (dwArg0C > dwArg08)
 			edx_103 = (uint32) (SEQ(dwArg08, dwArg04) % dwArg0C);
 		else
 		{
-			Eq_19 ebp_118 = dwArg0C;
+			Eq_15 ebp_118 = dwArg0C;
 			if (dwArg0C == 0x00)
 				ebp_118 = (uint32) (0x01 /u dwArg0C);
 			edx_103 = (uint32) (SEQ((uint32) ((uint64) (uint32) dwArg08 % ebp_118), dwArg04) % ebp_118);
@@ -610,24 +605,23 @@ Eq_19 __umoddi3(Eq_19 dwArg04, Eq_19 dwArg08, Eq_19 dwArg0C, Eq_19 dwArg10, ptr3
 // 08048F10: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr1FEF + 0x04 - &ebx_15->ptr1FEF >> 0x02 != 0x00)
+	if (0x0804B0F4 - 0x0804B0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr1FEF();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804B0F8 + 0x0804B000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -639,6 +633,5 @@ void __libc_csu_fini()
 // 08048F74: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

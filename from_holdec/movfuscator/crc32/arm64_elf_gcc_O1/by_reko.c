@@ -149,17 +149,16 @@ void rc_crc32(word64 x0, ptr64 x1, word64 x2, word32 w5)
 		do
 		{
 			uint32 w3_102 = w5_64;
-			word32 w4_80 = 0x08;
-			do
+			word32 w4_80;
+			for (w4_80 = 0x08; w4_80 != 0x00; --w4_80)
 			{
 				if ((w3_102 & 0x01) != 0x00)
 					w3_102 = w3_102 >> 0x01 ^ 3988292384;
 				else
-					w3_102 = w3_102 >> 0x01;
-				w4_80 = w4_80 - 0x01;
-			} while (w4_80 != 0x00);
+					w3_102 >>= 0x01;
+			}
 			globals->a11048[x5_63 * 0x04] = w3_102;
-			x5_63 = x5_63 + 0x01;
+			++x5_63;
 			w5_64 = (word32) x5_63;
 		} while (x5_63 != 0x0100);
 		globals->dw11040 = 0x01;
@@ -168,7 +167,7 @@ void rc_crc32(word64 x0, ptr64 x1, word64 x2, word32 w5)
 	if (x1 - x4_23 < 0x00)
 	{
 		do
-			x1 = x1 + 0x01;
+			++x1;
 		while (x4_23 - x1 != 0x00);
 	}
 }

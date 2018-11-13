@@ -83,10 +83,10 @@ void main(int32 r3)
 	{
 		do
 		{
-			r3 = r3 + -0x01;
+			r3 += -0x01;
 			if (r3 > 0x01)
 			{
-				r3 = r3 + -0x01;
+				r3 += -0x01;
 				if (r3 > 0x02)
 					return;
 				if (r3 > -0x01)

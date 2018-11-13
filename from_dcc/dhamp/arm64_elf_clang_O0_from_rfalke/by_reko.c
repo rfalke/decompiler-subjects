@@ -170,8 +170,8 @@ void frame_dummy(word64 qwArg00)
 void main(ui64 x9, word64 qwArg00)
 {
 	fn00000000004005F0();
-	int32 dwLocE8_17 = 0x00;
-	while (dwLocE8_17 < 0x06)
+	int32 dwLocE8_17;
+	for (dwLocE8_17 = 0x00; dwLocE8_17 < 0x06; ++dwLocE8_17)
 	{
 		x9 = DPB(x9, dwLocE8_17, 0);
 		up32 w8_59 = dwLocE8_17 - 0x05;
@@ -196,7 +196,6 @@ void main(ui64 x9, word64 qwArg00)
 			x8_68();
 			return;
 		}
-		dwLocE8_17 = dwLocE8_17 + 0x01;
 	}
 	fn00000000004005F0();
 }
@@ -206,21 +205,15 @@ void sq(word64 x0)
 {
 	if (x0 == 0x00)
 	{
-		int32 dwLoc0C_17 = 0x00;
-		while (dwLoc0C_17 < 9000)
-		{
-			globals->qw412050 = globals->qw412050 + 0x02;
-			dwLoc0C_17 = dwLoc0C_17 + 0x01;
-		}
+		int32 dwLoc0C_17;
+		for (dwLoc0C_17 = 0x00; dwLoc0C_17 < 9000; ++dwLoc0C_17)
+			globals->qw412050 += 0x02;
 	}
 	else
 	{
-		int32 dwLoc0C_43 = 0x00;
-		while (dwLoc0C_43 < 9000)
-		{
-			globals->qw412050 = globals->qw412050 - 0x02;
-			dwLoc0C_43 = dwLoc0C_43 + 0x01;
-		}
+		int32 dwLoc0C_43;
+		for (dwLoc0C_43 = 0x00; dwLoc0C_43 < 9000; ++dwLoc0C_43)
+			globals->qw412050 -= 0x02;
 	}
 }
 
@@ -250,10 +243,9 @@ real64 abs(real64 d0)
 // 0000000000400AE8: void dply(Register word64 d0)
 void dply(word64 d0)
 {
-	word32 dwLoc0C_15 = 100;
-	do
-		dwLoc0C_15 = dwLoc0C_15 - 0x01;
-	while (dwLoc0C_15 != 0x00);
+	word32 dwLoc0C_15;
+	for (dwLoc0C_15 = 100; dwLoc0C_15 != 0x00; --dwLoc0C_15)
+		;
 }
 
 // 0000000000400BF8: Register int32 fib(Register int32 w0, Register out ptr64 x29Out, Register out ptr64 spOut)
@@ -281,13 +273,12 @@ int32 fib(int32 w0, ptr64 & x29Out, ptr64 & spOut)
 // 0000000000400C5C: void stest(Register (ptr64 byte) x0, Register (ptr64 byte) x1, Stack word64 qwArg00)
 void stest(byte * x0, byte * x1, word64 qwArg00)
 {
-	int32 dwLoc1C_14 = 0x00;
-	while (dwLoc1C_14 < 9000)
+	int32 dwLoc1C_14;
+	for (dwLoc1C_14 = 0x00; dwLoc1C_14 < 9000; ++dwLoc1C_14)
 	{
 		mstrcpy(x0, &globals->b40104F);
 		mstrcpy(x1, &globals->b401060);
 		mstrcmp(x0, x1);
-		dwLoc1C_14 = dwLoc1C_14 + 0x01;
 	}
 }
 
@@ -306,8 +297,8 @@ word32 mstrcmp(byte * x0, byte * x1)
 			dwLoc04_21 = 0x00;
 			return dwLoc04_21;
 		}
-		qwLoc10_32 = qwLoc10_32 + 0x01;
-		qwLoc18_35 = qwLoc18_35 + 0x01;
+		++qwLoc10_32;
+		++qwLoc18_35;
 	}
 	dwLoc04_21 = (word32) (*qwLoc10_32 - *qwLoc18_35);
 	return dwLoc04_21;
@@ -322,8 +313,8 @@ void mstrcpy(byte * x0, byte * x1)
 	{
 		word32 w10_14 = (word32) *qwLoc10_11;
 		*qwLoc08_17 = (byte) w10_14;
-		qwLoc10_11 = qwLoc10_11 + 0x01;
-		qwLoc08_17 = qwLoc08_17 + 0x01;
+		++qwLoc10_11;
+		++qwLoc08_17;
 	} while ((uint32) (uint8) w10_14 != 0x00);
 }
 
@@ -353,13 +344,12 @@ void mcopy(word64 qwArg00)
 // 0000000000400E74: void intest()
 void intest()
 {
-	int32 dwLoc04_3 = 0x00;
-	while (dwLoc04_3 < 1000)
+	int32 dwLoc04_3;
+	for (dwLoc04_3 = 0x00; dwLoc04_3 < 1000; ++dwLoc04_3)
 	{
-		int32 dwLoc08_18 = 0x00;
-		while (dwLoc08_18 < 0xB3)
-			dwLoc08_18 = dwLoc08_18 + 0x01;
-		dwLoc04_3 = dwLoc04_3 + 0x01;
+		int32 dwLoc08_18;
+		for (dwLoc08_18 = 0x00; dwLoc08_18 < 0xB3; ++dwLoc08_18)
+			;
 	}
 }
 

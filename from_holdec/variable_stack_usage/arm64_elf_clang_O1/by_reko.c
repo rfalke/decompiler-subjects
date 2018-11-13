@@ -119,7 +119,7 @@ void frame_dummy(word64 qwArg00)
 // 00000000004005E0: Register ptr64 use(Register (ptr64 word32) x0)
 ptr64 use(word32 * x0)
 {
-	globals->dw411034 = globals->dw411034 + *x0;
+	globals->dw411034 += *x0;
 	return 0x00411000;
 }
 

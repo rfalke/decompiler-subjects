@@ -257,9 +257,9 @@ void frame_dummy(word64 qwArg00)
 // 0000000000000B80: void fact(Register int32 w0)
 void fact(int32 w0)
 {
-	int32 w1_11 = 0x02;
-	while (w1_11 <= w0)
-		w1_11 = w1_11 + 0x01;
+	int32 w1_11;
+	for (w1_11 = 0x02; w1_11 <= w0; ++w1_11)
+		;
 }
 
 // 0000000000000BA4: Register int32 fib(Register int32 w0, Stack word64 qwArg00, Register out Eq_130 w19Out, Register out Eq_131 w20Out, Register out ptr64 spOut)
@@ -309,7 +309,7 @@ word32 print_num(int32 w0, int32 w1, word64 qwArg00, ptr64 & spOut)
 	while (x20_54 - x22_56 != 0x00)
 	{
 		fn0000000000000900();
-		x20_54 = x20_54 + -0x01;
+		x20_54 += -0x01;
 	}
 	fn00000000000008E0();
 	word64 sp_79;

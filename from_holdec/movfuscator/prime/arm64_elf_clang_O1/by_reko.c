@@ -158,7 +158,7 @@ int32 is_prime(int32 w0)
 	{
 		if (w0 - (w0 / w8_30) * w8_30 == 0x00)
 			return 0x00;
-		w8_30 = w8_30 + 0x01;
+		++w8_30;
 	} while (w8_30 * w8_30 <= w0);
 	return 0x01;
 }
@@ -170,7 +170,7 @@ void main(word64 qwArg00)
 	int32 w19_24 = 0x00;
 	do
 	{
-		w19_24 = w19_24 + 0x01;
+		++w19_24;
 		if (is_prime(w19_24) != 0x00)
 			fn0000000000400510();
 	} while (w19_24 != 9999);

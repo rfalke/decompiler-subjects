@@ -75,7 +75,7 @@ void main(int32 dwArg04)
 			word32 w21_48;
 			word64 sp_49;
 			fib(w3_20 - 0x01, out w20_47, out w21_48, out sp_49);
-			w3_20 = w3_20 - 0x02;
+			w3_20 -= 0x02;
 		} while (w3_20 > 0x01);
 	}
 	fn0000000000000730();

@@ -4,14 +4,13 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10884 = Unexpected function type (fn void ())
 ;
 char g_str108A0[] = "Middle elment is %d\n";
 char g_str108B8[] = "First element is %d\n";
 char g_str108D0[] = "Sum is %d\n";
-Eq_230 g_t20A46;
-Eq_213 g_t20A50 = 
+Eq_232 g_t20A46;
+Eq_215 g_t20A50 = 
 	{
 		0x06,
 	};

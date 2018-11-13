@@ -7,7 +7,7 @@
 // 00000000004003C8: void _init()
 void _init()
 {
-	word64 rax_4 = Mem0[0x0000000000601FF8 + 0x00:word64];
+	word64 rax_4 = globals->qw601FF8;
 	if (rax_4 != 0x00)
 	{
 		word64 rsp_15;
@@ -20,11 +20,11 @@ void _init()
 	}
 }
 
-// 0000000000400400: void _start(Register word64 rdx, Stack word64 qwArg00)
-void _start(word64 rdx, word64 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_17) rdx, Stack Eq_18 qwArg00)
+void _start( * rdx, Eq_18 qwArg00)
 {
-	__align(fp + 0x08);
-	__libc_start_main(4196699, qwArg00, fp + 0x08, 0x004009B0, 0x00400A20, rdx, fp);
+	__align((char *) fp + 0x08);
+	__libc_start_main(&globals->t40095B, qwArg00, (char *) fp + 0x08, &globals->t4009B0, &globals->t400A20, rdx, fp);
 	__hlt();
 }
 
@@ -45,7 +45,7 @@ void deregister_tm_clones(word64 r8)
 	bool Z_51;
 	word32 edi_52;
 	word64 rdi_53;
-	0x00();
+	null();
 }
 
 // 0000000000400470: void register_tm_clones()
@@ -62,23 +62,23 @@ void register_tm_clones()
 	byte SZO_46;
 	bool C_47;
 	word64 rdi_48;
-	0x00();
+	null();
 }
 
 // 00000000004004B0: void __do_global_dtors_aux(Register word64 r8)
 void __do_global_dtors_aux(word64 r8)
 {
-	if (Mem0[0x0000000000602070 + 0x00:byte] == 0x00)
+	if (globals->b602070 == 0x00)
 	{
 		deregister_tm_clones(r8);
-		Mem16[0x0000000000602070 + 0x00:byte] = 0x01;
+		globals->b602070 = 0x01;
 	}
 }
 
 // 00000000004004D0: void frame_dummy()
 void frame_dummy()
 {
-	if (Mem0[0x00601E18:word64] != 0x00 && 0x00 != 0x00)
+	if (globals->qw601E18 != 0x00 && 0x00 != 0x00)
 	{
 		word64 rsp_39;
 		word32 edi_40;
@@ -99,86 +99,86 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 00000000004004F6: void use(Register word128 xmm0)
-void use(word128 xmm0)
+// 00000000004004F6: void use(Register Eq_118 xmm0)
+void use(Eq_118 xmm0)
 {
-	printf(0x00400A40, xmm0);
+	printf("%f", xmm0);
 }
 
 // 0000000000400522: void use_int(Register word32 edi)
 void use_int(word32 edi)
 {
-	printf(0x00400A43, (uint64) (word32) (uint64) edi);
+	printf("%d", (uint64) (word32) (uint64) edi);
 }
 
 // 0000000000400544: void read_ints()
 void read_ints()
 {
-	real64 v19_51 = (real64) Mem0[0x0000000000602040 + 0x00:word64];
-	use(DPB(DPB(0x00, v19_51, 0), v19_51 + DPB(xmm1, (real64) Mem0[0x0000000000602038 + 0x00:word64] + DPB(xmm1, (real64) ((word32) ((uint64) Mem0[0x0000000000602034 + 0x00:word32])) + DPB(xmm1, (real64) ((int32) ((word16) ((word32) Mem0[0x0000000000602032 + 0x00:word16]))) + DPB(xmm1, (real64) ((int32) ((byte) ((word32) Mem0[0x0000000000602030 + 0x00:byte]))) + DPB(xmm1, (real64) 0x00, 0), 0), 0), 0), 0), 0));
+	real64 v19_51 = (real64) globals->qw602040;
+	use(DPB(DPB(0x00, v19_51, 0), v19_51 + DPB(xmm1, (real64) globals->qw602038 + DPB(xmm1, (real64) ((word32) ((uint64) globals->dw602034)) + DPB(xmm1, (real64) ((int32) ((word16) ((word32) globals->w602032))) + DPB(xmm1, (real64) ((int32) ((byte) ((word32) globals->b602030))) + DPB(xmm1, (real64) 0x00, 0), 0), 0), 0), 0), 0));
 }
 
 // 0000000000400604: void write_ints(Register word128 xmm0)
 void write_ints(word128 xmm0)
 {
 	real64 rLoc10_7 = (real64) xmm0;
-	Mem11[0x0000000000602030 + 0x00:byte] = (byte) (int32) rLoc10_7;
-	Mem15[0x0000000000602032 + 0x00:word16] = (word16) (int32) rLoc10_7;
-	Mem18[0x0000000000602034 + 0x00:word32] = (int32) rLoc10_7;
-	Mem23[0x0000000000602038 + 0x00:word64] = DPB(rax, (int32) rLoc10_7, 0);
-	Mem27[0x0000000000602040 + 0x00:word64] = DPB(rax, (int32) rLoc10_7, 0);
+	globals->b602030 = (byte) (int32) rLoc10_7;
+	globals->w602032 = (word16) (int32) rLoc10_7;
+	globals->dw602034 = (int32) rLoc10_7;
+	globals->qw602038 = DPB(rax, (int32) rLoc10_7, 0);
+	globals->qw602040 = DPB(rax, (int32) rLoc10_7, 0);
 }
 
 // 0000000000400664: void read_floats()
 void read_floats()
 {
-	word128 xmm0_11 = DPB(0x00, Mem0[0x0000000000602048 + 0x00:real32], 0);
-	use(DPB(xmm0_11, Mem0[0x0000000000602050 + 0x00:real64] + DPB(xmm1, (real64) xmm0_11 + DPB(xmm1, (real64) 0x00, 0), 0) + (real64) Mem0[0x0000000000602060 + 0x00:real80], 0));
+	word128 xmm0_11 = DPB(0x00, globals->r602048, 0);
+	use(DPB(xmm0_11, globals->r602050 + DPB(xmm1, (real64) xmm0_11 + DPB(xmm1, (real64) 0x00, 0), 0) + (real64) globals->r602060, 0));
 }
 
 // 00000000004006CC: void write_floats(Register word128 xmm0)
 void write_floats(word128 xmm0)
 {
 	real64 rLoc10_7 = (real64) xmm0;
-	Mem10[0x0000000000602048 + 0x00:real32] = (real32) rLoc10_7;
-	Mem12[0x0000000000602050 + 0x00:real64] = rLoc10_7;
-	Mem14[0x0000000000602060 + 0x00:real80] = (real80) rLoc10_7;
+	globals->r602048 = (real32) rLoc10_7;
+	globals->r602050 = rLoc10_7;
+	globals->r602060 = (real80) rLoc10_7;
 }
 
 // 00000000004006FB: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	Mem10[0x0000000000602048 + 0x00:real32] = (real32) Mem0[0x0000000000602050 + 0x00:real64];
+	globals->r602048 = (real32) globals->r602050;
 }
 
 // 0000000000400716: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	Mem11[0x0000000000602048 + 0x00:real32] = (real32) (real64) Mem0[0x0000000000602060 + 0x00:real80];
+	globals->r602048 = (real32) (real64) globals->r602060;
 }
 
 // 0000000000400733: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	Mem10[0x0000000000602050 + 0x00:real64] = (real64) DPB(xmm0, Mem0[0x0000000000602048 + 0x00:real32], 0);
+	globals->r602050 = (real64) DPB(xmm0, globals->r602048, 0);
 }
 
 // 000000000040074E: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	Mem11[0x0000000000602050 + 0x00:real64] = (real64) Mem0[0x0000000000602060 + 0x00:real80];
+	globals->r602050 = (real64) globals->r602060;
 }
 
 // 000000000040076B: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	Mem7[0x0000000000602060 + 0x00:real80] = (real80) (real64) Mem0[0x0000000000602048 + 0x00:real32];
+	globals->r602060 = (real80) (real64) globals->r602048;
 }
 
 // 000000000040077E: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	Mem7[0x0000000000602060 + 0x00:real80] = (real80) Mem0[0x0000000000602050 + 0x00:real64];
+	globals->r602060 = (real80) globals->r602050;
 }
 
 // 0000000000400791: void basic_operations(Register word128 xmm0, Register word128 xmm1)
@@ -192,7 +192,7 @@ void basic_operations(word128 xmm0, word128 xmm1)
 	use(DPB(xmm0, rLoc10_9 * rLoc18_11, 0));
 	use(DPB(xmm0, rLoc10_9 / rLoc18_11, 0));
 	use(DPB(xmm0, rLoc18_11 / rLoc10_9, 0));
-	use(__xorpd(DPB(xmm0, Mem0[0x0000000000400A70 + 0x00:real64], 0), DPB(xmm1, rLoc10_9, 0)));
+	use(__xorpd(DPB(xmm0, globals->r400A70, 0), DPB(xmm1, rLoc10_9, 0)));
 }
 
 // 000000000040081A: void compare_floats(Register word128 xmm0, Register word128 xmm1)
@@ -310,24 +310,24 @@ void constants(word128 xmm0)
 {
 	real64 rLoc10_9 = (real64) xmm0;
 	use(DPB(xmm0, rLoc10_9 + DPB(xmm0, rLoc10_9, 0), 0));
-	use(DPB(xmm0, Mem0[0x0000000000400A80 + 0x00:real64] * DPB(xmm1, rLoc10_9, 0), 0));
-	use(DPB(xmm0, Mem0[0x0000000000400A88 + 0x00:real64] * DPB(xmm1, rLoc10_9, 0), 0));
-	use(DPB(xmm0, Mem0[0x0000000000400A90 + 0x00:real64] * DPB(xmm1, rLoc10_9, 0), 0));
-	use(DPB(xmm0, Mem0[0x0000000000400A98 + 0x00:real64] * DPB(xmm1, rLoc10_9, 0), 0));
+	use(DPB(xmm0, globals->r400A80 * DPB(xmm1, rLoc10_9, 0), 0));
+	use(DPB(xmm0, globals->r400A88 * DPB(xmm1, rLoc10_9, 0), 0));
+	use(DPB(xmm0, globals->r400A90 * DPB(xmm1, rLoc10_9, 0), 0));
+	use(DPB(xmm0, globals->r400A98 * DPB(xmm1, rLoc10_9, 0), 0));
 }
 
 // 000000000040095B: void main()
 void main()
 {
-	printf(0x00400A46, 0x01, 0x02, 0x04, 0x08, 0x08);
-	printf(0x00400A5B, 0x04, 0x08, 0x10);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x08, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x10);
 }
 
 // 00000000004009B0: void __libc_csu_init(Register word32 edi)
 void __libc_csu_init(word32 edi)
 {
 	_init();
-	if (0x0000000000601E10 - 0x0000000000601E08 >> 0x03 != 0x00)
+	if (0x00601E10 - 0x00601E08 >> 0x03 != 0x00)
 	{
 		do
 		{
@@ -348,7 +348,7 @@ void __libc_csu_init(word32 edi)
 			bool Z_86;
 			word32 ebx_87;
 			word64 rdi_88;
-			Mem0[0x0000000000601E08 + 0x00:word64]();
+			globals->ptr601E08();
 		} while (rbp_79 != rbx_80 + 0x01);
 	}
 }

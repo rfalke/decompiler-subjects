@@ -229,7 +229,7 @@ void main(word64 x30, word64 qwArg00)
 	{
 		word64 sp_42;
 		x29_24 = f0(x30, out x30, out sp_42);
-		x29_24->qw0028 = x29_24->qw0028 + 0x01;
+		++x29_24->qw0028;
 	}
 	fn0000000000000750();
 }

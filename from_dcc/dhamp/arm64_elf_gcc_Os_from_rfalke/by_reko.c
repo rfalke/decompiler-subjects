@@ -119,7 +119,7 @@ l00000000000008E8:
 		case 0x02:
 l00000000000008F0:
 			fn0000000000000860();
-			w20_38 = w20_38 + 0x01;
+			++w20_38;
 			if (w20_38 != 0x06)
 				goto l00000000000008B4;
 			fn0000000000000860();
@@ -243,10 +243,9 @@ void abs(word64 d0)
 // 0000000000000C20: void dply(Register word64 d0)
 void dply(word64 d0)
 {
-	word32 w0_10 = 101;
-	do
-		w0_10 = w0_10 - 0x01;
-	while (w0_10 != 0x00);
+	word32 w0_10;
+	for (w0_10 = 101; w0_10 != 0x00; --w0_10)
+		;
 }
 
 // 0000000000000C9C: Register int32 fib(Register int32 w0, Stack word64 qwArg00, Register out Eq_272 w19Out, Register out Eq_273 w20Out, Register out ptr64 spOut)
@@ -281,7 +280,7 @@ word32 mstrcmp(Eq_333 x0[], Eq_333 x1[])
 		word32 w4_10 = (word32) (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x1[x3_18].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00];
 		if (w2_7 != w4_10)
 			return w2_7 - w4_10;
-		x3_18 = x3_18 + 0x01;
+		++x3_18;
 	} while (w2_7 != 0x00);
 	return 0x00;
 }
@@ -294,21 +293,20 @@ void mstrcpy(Eq_333 x0[], ptr64 x1)
 	{
 		word32 w3_7 = (word32) (x1 + x2_10);
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0[x2_10].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (byte) w3_7;
-		x2_10 = x2_10 + 0x01;
+		++x2_10;
 	} while (w3_7 != 0x00);
 }
 
 // 0000000000000D20: Register ptr64 stest(Register (ptr64 (arr Eq_333)) x0, Register (ptr64 (arr Eq_333)) x1, Stack word64 qwArg00)
 ptr64 stest(Eq_333 * x0[], Eq_333 * x1[], word64 qwArg00)
 {
-	word32 w6_16 = 9000;
-	do
+	word32 w6_16;
+	for (w6_16 = 9000; w6_16 != 0x00; --w6_16)
 	{
 		mstrcpy(x0, 0x0EC5);
 		mstrcpy(x1, 0x0ED6);
 		mstrcmp(x0, x1);
-		w6_16 = w6_16 - 0x01;
-	} while (w6_16 != 0x00);
+	}
 	return fp + 0x08;
 }
 
@@ -325,12 +323,12 @@ void mcopy(int64 x20, word32 w21)
 		{
 			fn0000000000000850();
 l0000000000000DDC:
-			x20 = x20 + 0x01;
+			++x20;
 		} while ((word32) (fp + ~0x5F + x20)->bFFFFFFFF != 0x00);
 	}
 	else
 		w21 = 1000;
-	w21 = w21 - 0x01;
+	--w21;
 	if (w21 == 0x00)
 	{
 		fn0000000000000800();

@@ -29,7 +29,7 @@ word32 * g_ptr12F40 = &g_dw1307C;
 word64 g_qw12F48 = 0x0000000000000000;
 ui32 * g_ptr12F50 = &g_dw13080;
 word32 * g_ptr12F58 = &g_dw13084;
-union Eq_1079 * g_ptr12F60 = &g_t13088;
+union Eq_1077 * g_ptr12F60 = &g_t13088;
 word32 * g_ptr12F68 = &g_dw1308C;
 word32 * g_ptr12F70 = &g_dw13090;
 word64 * g_ptr12F78 = null;
@@ -37,7 +37,7 @@ word32 * g_ptr12F80 = &g_dw13094;
 word64 g_qw12F88 = 0x0000000000000000;
 word32 * g_ptr12F98 = &g_dw13098;
 word32 * g_ptr12FA8 = &g_dw130A0;
-union Eq_1079 * g_ptr12FB0 = &g_t130A4;
+union Eq_1077 * g_ptr12FB0 = &g_t130A4;
 word32 * g_ptr12FB8 = &g_dw130A8;
 int32 * g_ptr12FC0 = &g_dw130AC;
 word32 * g_ptr12FC8 = &g_dw130B0;
@@ -61,7 +61,7 @@ word32 g_dw13078 = 0x00000000;
 word32 g_dw1307C = 0x00000000;
 ui32 g_dw13080 = 0x00000000;
 word32 g_dw13084 = 0x00000000;
-Eq_1079 g_t13088 = 
+Eq_1077 g_t13088 = 
 	{
 		0
 	};
@@ -70,7 +70,7 @@ word32 g_dw13090 = 0x00000000;
 word32 g_dw13094 = 0x00000000;
 word32 g_dw13098 = 0x00000000;
 word32 g_dw130A0 = 0x00000000;
-Eq_1079 g_t130A4 = 
+Eq_1077 g_t130A4 = 
 	{
 		0
 	};

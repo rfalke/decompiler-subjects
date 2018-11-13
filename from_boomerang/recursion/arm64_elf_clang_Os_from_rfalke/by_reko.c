@@ -241,7 +241,7 @@ void g(int32 w0, word64 qwArg00)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00400000;
-	x0 = x0 + 0x0B0A;
+	x0 += 0x0B0A;
 	w1 = w19;
 	fn0000000000400480();
 	NZCV = cond(w19 - 0x02);

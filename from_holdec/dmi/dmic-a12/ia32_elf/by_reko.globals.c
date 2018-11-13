@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_29 g_t804840B = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
+Eq_25 g_t804840B = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_32 g_t80484C0 = Unexpected function type (fn void ())
+Eq_28 g_t80484C0 = Unexpected function type (fn void ())
 ;
-Eq_33 g_t8048520 = Unexpected function type (fn void ())
+Eq_29 g_t8048520 = Unexpected function type (fn void ())
 ;
 char g_str8048544[] = "0 or 1";
 char g_str804854B[] = "2";
@@ -22,5 +22,6 @@ word32 * g_a8048568[] =
 	};
 word32 g_dw8049F10 = 0x00000000;
 <anonymous> * g_ptr8049FFC = null;
+word32 g_dw804A004 = 0x00000000;
 byte g_b804A018 = 0x00;
 

@@ -31,15 +31,15 @@ void __do_global_dtors_aux(word32 o7)
 	word32 o2_26 = (word32) *l7_136->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_54 = l7_136->ptr0010;
+	word32 o1_56 = **o0_54;
+	if (o1_56 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 ** l0_112 = o0_54;
+		word32 * o0_114 = (char *) *o0_54 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
+			*l0_112 = o0_114;
 			word32 sp_119;
 			word32 i0_120;
 			word32 o0_121;
@@ -60,11 +60,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_137;
 			byte NZVC_138;
 			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			fn6974005F();
+			word32 * o0_141 = *l0_112;
+			if (*o0_141 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_114 = o0_141 + 0x01;
 		}
 	}
 	if (l7_136->dw0024 == 0x00)
@@ -164,28 +164,10 @@ void call_frame_dummy()
 {
 }
 
-// 000106A8: void main(Register ptr32 o1)
-void main(ptr32 o1)
+// 000106A8: void main(Register (ptr32 Eq_28) o1)
+void main(Eq_28 * o1)
 {
-	word32 sp_22;
-	word32 i0_23;
-	int32 o0_24;
-	word32 i1_25;
-	word32 o1_26;
-	word32 i2_27;
-	word32 o2_28;
-	word32 i3_29;
-	word32 o3_30;
-	word32 i4_31;
-	word32 o4_32;
-	word32 i5_33;
-	word32 o5_34;
-	word32 i6_35;
-	word32 i7_36;
-	word32 o7_37;
-	word32 g1_38;
-	stat();
-	printf("res: %i\n", o0_24);
+	printf("res: %i\n", stat(o1->ptr0004, fp + ~0x97));
 	printf("dev: %i\n", dwLoc98);
 	printf("ino: %i\n", dwLoc88);
 	printf("mode: %i\n", dwLoc84);
@@ -211,10 +193,10 @@ word32 fn000107A0(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_324 * l7_22 = fn000107A0(o7, 0x00010168);
-	struct Eq_329 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_318 * l7_22 = fn000107A0(o7, 0x00010168);
+	struct Eq_323 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -238,11 +220,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

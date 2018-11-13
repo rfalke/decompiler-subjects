@@ -152,8 +152,8 @@ void main(word64 x0, word64 qwArg00)
 	fn00000000004004D0();
 	struct Eq_160 * x0_30 = DPB(x0, 0x0C, 0);
 	x0_30->ptr0008 = 4201116;
-	word32 w20_114 = 0x00;
-	do
+	word32 w20_114;
+	for (w20_114 = 0x00; w20_114 != 0x07; ++w20_114)
 	{
 		ptr64 x8_62 = x0_30->ptr0008;
 		int64 x9_64 = 0x00;
@@ -170,8 +170,8 @@ void main(word64 x0, word64 qwArg00)
 			word32 w11_95 = x11_86->dw0000;
 			x10_65->b0007 = 0x20;
 			x10_65->dw0000 = w11_95;
-			x9_64 = x9_64 + 0x01;
-			x10_65 = x10_65 + 0x01;
+			++x9_64;
+			++x10_65;
 			struct Eq_241 * x11_100 = DPB(x11_86, 0x4F, 0);
 		} while (x9_64 < 0x0A);
 		while ((word32) x11_145[(fp - 0x88) / 0x07] == 0x20)
@@ -183,8 +183,7 @@ void main(word64 x0, word64 qwArg00)
 				break;
 		}
 		fn0000000000400510();
-		w20_114 = w20_114 + 0x01;
-	} while (w20_114 != 0x07);
+	}
 	fn0000000000400520();
 }
 

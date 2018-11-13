@@ -80,12 +80,9 @@ void call_frame_dummy(word32 dwArg04)
 void main(word32 dwArg04)
 {
 	int32 dwLoc18_11 = 0x00;
-	int32 dwLoc14_13 = 0x00;
-	while (dwLoc14_13 <= 0x09)
-	{
-		dwLoc18_11 = dwLoc18_11 + (globals->a10010958)[dwLoc14_13 * 0x04];
-		dwLoc14_13 = dwLoc14_13 + 0x01;
-	}
+	int32 dwLoc14_13;
+	for (dwLoc14_13 = 0x00; dwLoc14_13 <= 0x09; ++dwLoc14_13)
+		dwLoc18_11 += globals->a10010958[dwLoc14_13 * 0x04];
 	__crxor(0x06, 0x06, 0x06);
 	printf("Sum is %d\n", dwLoc18_11);
 }

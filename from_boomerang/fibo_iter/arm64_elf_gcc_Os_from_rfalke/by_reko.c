@@ -163,9 +163,9 @@ void fib(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	int32 w2_13 = 0x02;
-	while (w2_13 != w0)
-		w2_13 = w2_13 + 0x01;
+	int32 w2_13;
+	for (w2_13 = 0x02; w2_13 != w0; ++w2_13)
+		;
 }
 
 // 0000000000000918: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

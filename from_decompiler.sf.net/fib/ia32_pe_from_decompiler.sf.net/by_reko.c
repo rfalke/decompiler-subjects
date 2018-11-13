@@ -28,7 +28,7 @@ uint32 fn00401050(uint32 dwArg04, byte * dwArg08, uint32 dwArg0C)
 			byte al_50 = (byte) eax_49;
 			*ecx_25 = al_50 + 0x30;
 			eax_23 = DPB(eax_49, al_50 + 0x30, 0);
-			ecx_25 = ecx_25 + 0x01;
+			++ecx_25;
 			esi_38 = edx_43 >> 0x03;
 		} while (ecx_25 < edi_12);
 	}

@@ -139,14 +139,14 @@ void frame_dummy(word64 qwArg00)
 // 0000000000400730: void main(Register word32 s0, Stack word64 qwArg00)
 void main(word32 s0, word64 qwArg00)
 {
-	Eq_149 s8_31 = globals->u4008D0;
+	Eq_149 s8_31;
 	real32 s10_35 = globals->r4008D4;
 	Eq_149 s11_37 = globals->u4008D8;
 	do
 	{
 		fn00000000004005C0();
 		fn00000000004005D0();
-		s8_31 = s8_31 + s10_35;
+		s8_31 += s10_35;
 	} while (s8_31 <= s11_37);
 }
 

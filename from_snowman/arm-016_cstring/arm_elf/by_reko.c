@@ -4,10 +4,10 @@
 
 #include "subject.h"
 
-// 000082A4: FlagGroup Eq_2 _init()
-Eq_2 _init()
+// 000082A4: void _init()
+void _init()
 {
-	return call_weak_fn();
+	call_weak_fn();
 }
 
 // 000082C4: void __libc_start_main()
@@ -39,24 +39,20 @@ void abort()
 {
 }
 
-// 00008300: void _start(Stack int32 dwArg00, Stack (ptr32 void) ptrArg04)
-void _start(int32 dwArg00, void)
+// 00008300: void _start(Stack int32 dwArg00, Stack (ptr32 Eq_13) ptrArg08, Stack (ptr32 Eq_14) ptrArg0C, Stack (ptr32 void) ptrArg10)
+void _start(int32 dwArg00,  * ptrArg08,  * ptrArg0C, void)
 {
-	__libc_start_main(globals->ptr8334, dwArg00, fp + 0x04, globals->ptr8338, ptrLoc04, fp + 0x04, ptrArg04);
+	__libc_start_main(globals->ptr8334, dwArg00, fp + 0x04, globals->ptr8338, ptrArg08, ptrArg0C, ptrArg10);
 	abort();
 }
 
-// 0000833C: FlagGroup byte call_weak_fn()
-byte call_weak_fn()
+// 0000833C: void call_weak_fn()
+void call_weak_fn()
 {
-	word32 * r3_5 = 33612 + globals->dw8358;
-	word32 r2_6 = *r3_5;
-	byte NZCV_7 = cond(r2_6);
+	ptr32 r3_5 = 33612 + globals->dw8358;
+	word32 r2_6 = r3_5 + globals->dw835C;
 	if (r2_6 != 0x00)
-	{
 		fn000082D0();
-		return NZCV_7;
-	}
 	else
 	{
 		word32 sp_18;
@@ -67,7 +63,6 @@ byte call_weak_fn()
 		word32 lr_23;
 		byte Z_24;
 		lr();
-		return Z_24;
 	}
 }
 
@@ -119,40 +114,43 @@ void deregister_tm_clones()
 // 00008390: void register_tm_clones()
 void register_tm_clones()
 {
-	if (Z)
+	if (false)
 	{
 		if (false)
 		{
-			word32 sp_38;
-			word32 r3_39;
-			word32 r0_40;
-			word32 r1_41;
-			byte Z_42;
-			word32 lr_43;
-			byte NZCV_44;
+			word32 sp_42;
+			word32 r3_43;
+			word32 r0_44;
+			word32 r1_45;
+			byte NZC_46;
+			byte Z_47;
+			word32 lr_48;
+			byte NZCV_49;
 			null();
 		}
 		else
 		{
-			word32 sp_31;
-			word32 r3_32;
-			word32 r0_33;
-			word32 r1_34;
-			byte Z_35;
-			word32 lr_36;
-			byte NZCV_37;
+			word32 sp_34;
+			word32 r3_35;
+			word32 r0_36;
+			word32 r1_37;
+			byte NZC_38;
+			byte Z_39;
+			word32 lr_40;
+			byte NZCV_41;
 			lr();
 		}
 	}
 	else
 	{
-		word32 sp_20;
-		word32 r3_21;
-		word32 r0_22;
-		word32 r1_23;
-		byte Z_24;
-		word32 lr_25;
-		byte NZCV_26;
+		word32 sp_22;
+		word32 r3_23;
+		word32 r0_24;
+		word32 r1_25;
+		byte NZC_26;
+		byte Z_27;
+		word32 lr_28;
+		byte NZCV_29;
 		lr();
 	}
 }
@@ -171,13 +169,14 @@ void frame_dummy()
 {
 	if (globals->dw10538 != 0x00 && 0x00 != 0x00)
 	{
-		word32 sp_25;
-		word32 r0_26;
-		word32 r3_27;
-		word32 lr_28;
-		byte NZCV_29;
-		byte Z_30;
-		word32 r1_31;
+		word32 sp_27;
+		word32 r0_28;
+		word32 r3_29;
+		word32 lr_30;
+		byte NZCV_31;
+		byte Z_32;
+		word32 r1_33;
+		byte NZC_34;
 		fn00000000();
 	}
 	register_tm_clones();
@@ -186,12 +185,12 @@ void frame_dummy()
 // 00008428: void main()
 void main()
 {
-	Eq_160 r0_13 = strlen("Hello, World!");
-	Eq_160 dwLoc0C_17 = globals->str8514;
+	Eq_163 r0_13 = strlen("Hello, World!");
+	Eq_163 dwLoc0C_17 = globals->str8514;
 	while (dwLoc0C_17 < r0_13)
 	{
 		putchar((word32) dwLoc0C_17->b0000);
-		dwLoc0C_17 = (Eq_160) (dwLoc0C_17 + 0x01);
+		dwLoc0C_17 = (Eq_163) (dwLoc0C_17 + 0x01);
 	}
 	putchar(0x0A);
 }
@@ -200,37 +199,36 @@ void main()
 void __libc_csu_init()
 {
 	int32 r9_27 = globals->dw8500;
-	Eq_187 Z_29 = _init();
-	<anonymous> ** r9_30 = 33996 + r9_27;
-	if (!Z_29)
+	Eq_190 r5_28 = 33988 + globals->dw84FC;
+	_init();
+	<anonymous> * r9_29[] = 33996 + r9_27;
+	if (r5_28 - r9_29 >> 0x02 == 0x00)
 		return;
+	ui32 r4_60 = 0x00;
 	do
 	{
-		<anonymous> * r3_64 = *r9_30;
-		word32 sp_69;
-		word32 r3_70;
-		word32 r4_71;
-		word32 r5_72;
-		word32 r6_73;
-		word32 r7_74;
-		word32 r8_75;
-		word32 lr_77;
-		word32 r0_78;
-		word32 pc_79;
-		word32 r1_80;
-		word32 r2_81;
-		byte Z_82;
-		byte NZCV_83;
-		r3_64();
-	} while (r4_71 != r5_72);
+		<anonymous> * r3_66 = r9_29[r4_60];
+		word32 sp_71;
+		word32 r3_72;
+		ui32 r5_74;
+		word32 r6_75;
+		word32 r7_76;
+		word32 r8_77;
+		word32 lr_79;
+		word32 r0_80;
+		word32 pc_81;
+		word32 r1_82;
+		word32 r2_83;
+		byte NZC_84;
+		byte Z_85;
+		byte NZCV_86;
+		r3_66();
+	} while (r4_60 != r5_74);
 }
 
 // 00008504: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	word32 sp_3;
-	word32 lr_4;
-	lr();
 }
 
 // 00008508: void _fini()

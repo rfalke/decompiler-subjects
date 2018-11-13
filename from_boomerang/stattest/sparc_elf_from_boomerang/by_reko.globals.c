@@ -4,9 +4,9 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10764 = Unexpected function type (fn void ())
 ;
+char g_str10780[] = "test/source/stattest.c";
 char g_str10798[] = "Stat returns %d; size of file is %d\n";
 ptr32 g_ptr20978 = 0x00000000;
 

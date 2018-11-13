@@ -8,7 +8,9 @@
 int32 (* g_ptr8300)(int32 r0, char ** r1, char ** r2) = main;
 void (* g_ptr8304)() = __libc_csu_init;
 int32 g_dw8324 = 33440;
+int32 g_dw8328 = 28;
 up32 g_dw8358 = 0x000105E3;
+int32 g_dw8498 = 32872;
 int32 g_dw849C = 32860;
 char g_str84B0[] = "Hello!\n";
 word32 g_dw104CC = 0x00000000;

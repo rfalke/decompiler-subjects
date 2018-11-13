@@ -141,7 +141,7 @@ void b(word64 x30)
 	globals->dw411030 = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		c(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x02;
+	globals->dw41106C += 0x02;
 }
 
 // 0000000000400658: Register ptr64 c(Register word64 x30, Stack word64 qwArg00)
@@ -169,7 +169,7 @@ ptr64 c(word64 x30, word64 qwArg00)
 	globals->dw411060 = w9_39 - 0x01;
 	if (w9_39 >= 0x01)
 		l(x30_16, x30);
-	globals->dw41106C = globals->dw41106C + 0x03;
+	globals->dw41106C += 0x03;
 	return fp + 0x08;
 }
 
@@ -183,7 +183,7 @@ word64 d(word64 x30, word64 qwArg00)
 		e(x30);
 		x30 = qwArg00;
 	}
-	globals->dw41106C = globals->dw41106C + 0x05;
+	globals->dw41106C += 0x05;
 	return x30;
 }
 
@@ -194,7 +194,7 @@ void e(word64 x30)
 	globals->dw41103C = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		c(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x07;
+	globals->dw41106C += 0x07;
 }
 
 // 0000000000400760: Register word64 f(Register word64 x30, Stack word64 qwArg00)
@@ -207,7 +207,7 @@ word64 f(word64 x30, word64 qwArg00)
 		g(x30, x30);
 		x30 = qwArg00;
 	}
-	globals->dw41106C = globals->dw41106C + 11;
+	globals->dw41106C += 11;
 	return x30;
 }
 
@@ -218,7 +218,7 @@ void g(word64 x30, word64 qwArg00)
 	globals->dw411048 = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		f(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x0D;
+	globals->dw41106C += 0x0D;
 }
 
 // 00000000004007D0: Register word64 h(Stack word64 qwArg00)
@@ -231,14 +231,14 @@ word64 h(word64 qwArg00)
 		i();
 		x30 = qwArg00;
 	}
-	globals->dw41106C = globals->dw41106C + 0x11;
+	globals->dw41106C += 0x11;
 	return x30;
 }
 
 // 0000000000400808: void i()
 void i()
 {
-	globals->dw41106C = globals->dw41106C + 0x13;
+	globals->dw41106C += 0x13;
 }
 
 // 000000000040081C: Register word64 j(Register word64 x30, Stack word64 qwArg00)
@@ -251,7 +251,7 @@ word64 j(word64 x30, word64 qwArg00)
 		k(x30, x30);
 		x30 = qwArg00;
 	}
-	globals->dw41106C = globals->dw41106C + 0x17;
+	globals->dw41106C += 0x17;
 	return x30;
 }
 
@@ -262,7 +262,7 @@ void k(word64 x30, word64 qwArg00)
 	globals->dw41105C = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		e(x30);
-	globals->dw41106C = globals->dw41106C + 0x1B;
+	globals->dw41106C += 0x1B;
 }
 
 // 000000000040088C: void l(Register word64 x30, Stack word64 qwArg00)
@@ -272,7 +272,7 @@ void l(word64 x30, word64 qwArg00)
 	globals->dw411064 = w9_4 - 0x01;
 	if (w9_4 >= 0x01)
 		b(x30);
-	globals->dw41106C = globals->dw41106C + 0x1D;
+	globals->dw41106C += 0x1D;
 }
 
 // 00000000004008C8: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

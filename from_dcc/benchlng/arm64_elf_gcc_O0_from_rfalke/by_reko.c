@@ -161,7 +161,7 @@ void main(word64 qwArg00)
 	{
 		if (true)
 			;
-		qwLoc08_27 = qwLoc08_27 + 0x01;
+		++qwLoc08_27;
 	}
 	fn0000000000000730();
 }

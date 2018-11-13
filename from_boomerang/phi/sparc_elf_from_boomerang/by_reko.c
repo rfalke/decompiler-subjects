@@ -31,15 +31,15 @@ void __do_global_dtors_aux(word32 o7)
 	word32 o2_26 = (word32) *l7_136->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_54 = l7_136->ptr0010;
+	word32 o1_56 = **o0_54;
+	if (o1_56 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 ** l0_112 = o0_54;
+		word32 * o0_114 = (char *) *o0_54 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
+			*l0_112 = o0_114;
 			word32 sp_119;
 			word32 i0_120;
 			word32 o0_121;
@@ -60,11 +60,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_137;
 			byte NZVC_138;
 			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			fn000000D8();
+			word32 * o0_141 = *l0_112;
+			if (*o0_141 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_114 = o0_141 + 0x01;
 		}
 	}
 	if (l7_136->dw0024 == 0x00)
@@ -168,12 +168,12 @@ void call_frame_dummy()
 int32 fib(int32 o0, int32 dwArg44, ptr32 & l0Out, ptr32 & i6Out)
 {
 	*l0Out = l0;
-	struct Eq_219 * i6_15;
+	struct Eq_221 * i6_15;
 	*i6Out = fp;
 	if (o0 > 0x01)
 	{
 		word32 l0_45;
-		struct Eq_227 * i6_46;
+		struct Eq_229 * i6_46;
 		fib(o0 + ~0x00, dwLoc34, out l0_45, out i6_46);
 		word32 l0_51;
 		int32 o0_53 = fib(i6_46->dw0044 + ~0x01, o0, out l0_51, out i6_15);
@@ -190,7 +190,7 @@ void main()
 	printf("Input number: ");
 	scanf("%d", tLoc7C);
 	word32 l0_32;
-	struct Eq_269 * i6_33;
+	struct Eq_271 * i6_33;
 	int32 o0_34 = fib(dwLoc14, dwLoc3C, out l0_32, out i6_33);
 	i6_33->dwFFFFFFE8 = o0_34;
 	printf("fibonacci(%d) = %d\n", i6_33->dwFFFFFFEC, i6_33->dwFFFFFFE8);
@@ -206,10 +206,10 @@ word32 fn000107AC(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_298 * l7_22 = fn000107AC(o7, 0x000100BC);
-	struct Eq_303 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_300 * l7_22 = fn000107AC(o7, 0x000100BC);
+	struct Eq_305 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -233,11 +233,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

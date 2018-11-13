@@ -102,7 +102,7 @@ void frame_dummy()
 // 0000000000400500: void use(Register (ptr64 word32) rdi)
 void use(word32 * rdi)
 {
-	globals->dw601028 = globals->dw601028 + (word32) ((uint64) (*rdi));
+	globals->dw601028 += (word32) (uint64) *rdi;
 }
 
 // 0000000000400510: void fill(Register word32 esi, Register (ptr64 word32) rdi)
@@ -126,7 +126,7 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	int64 rsi_14 = (int64) edi;
-	word32 * rbx_19 = fp - 0x18 - (rsi_14 * 0x04 + 0x0F & ~0x0F);
+	word32 * rbx_19 = fp - 0x0018 - (rsi_14 * 0x04 + 0x0F & ~0x0F);
 	fill((word32) rsi_14, rbx_19);
 	use(fp - 0x18);
 	use(rbx_19);

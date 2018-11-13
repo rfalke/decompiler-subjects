@@ -39,7 +39,7 @@ l000000000040018B:
 						break;
 					h();
 				} while (false);
-				dwLoc0C_100 = dwLoc0C_100 - 0x01;
+				--dwLoc0C_100;
 			}
 			while (true)
 			{
@@ -65,7 +65,7 @@ l000000000040018B:
 			h();
 			if (true)
 			{
-				dwLoc10_11 = dwLoc10_11 + 0x01;
+				++dwLoc10_11;
 				goto l000000000040018B;
 			}
 			word32 v16_120 = dwLoc10_11 + 0x01;

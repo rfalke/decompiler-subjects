@@ -154,14 +154,14 @@ ptr64 g()
 	globals->dw11038 = w0_4 - 0x01;
 	if ((w0_4 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return fp;
 	}
 	else
 	{
 		word64 sp_21;
 		f(out sp_21);
-		globals->dw11074 = globals->dw11074 + 0x0D;
+		globals->dw11074 += 0x0D;
 		return sp_21 + 0x0010;
 	}
 }
@@ -175,14 +175,14 @@ word64 f(ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		return x30;
 	}
 	else
 	{
 		struct Eq_245 * sp_23 = g();
 		word64 x30_28 = sp_23->qw0008;
-		globals->dw11074 = globals->dw11074 + 11;
+		globals->dw11074 += 11;
 		word64 sp_29;
 		*spOut = &sp_23->qw0008 + 0x01;
 		return x30_28;
@@ -192,7 +192,7 @@ word64 f(ptr64 & spOut)
 // 0000000000000914: void i()
 void i()
 {
-	globals->dw11074 = globals->dw11074 + 0x13;
+	globals->dw11074 += 0x13;
 }
 
 // 0000000000000928: Register word64 h(Stack word64 qwArg00, Register out ptr64 spOut)
@@ -204,13 +204,13 @@ word64 h(word64 qwArg00, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x11;
+		globals->dw11074 += 0x11;
 		return x30;
 	}
 	else
 	{
 		i();
-		globals->dw11074 = globals->dw11074 + 0x11;
+		globals->dw11074 += 0x11;
 		word64 sp_29;
 		*spOut = fp + 0x08;
 		return qwArg00;
@@ -224,13 +224,13 @@ ptr64 l(word64 x30)
 	globals->dw11044 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		return fp;
 	}
 	else
 	{
 		word64 sp_22 = b(x30, x30);
-		globals->dw11074 = globals->dw11074 + 0x1D;
+		globals->dw11074 += 0x1D;
 		return sp_22 + 0x0010;
 	}
 }
@@ -265,7 +265,7 @@ word64 c(word64 x30)
 	if ((w0_40 - 0x01 & 0x00) != 0x00)
 		sp_19 = l(x30);
 	word64 x19_45 = sp_19->qw0010;
-	globals->dw11074 = globals->dw11074 + 0x03;
+	globals->dw11074 += 0x03;
 	return x19_45;
 }
 
@@ -276,13 +276,13 @@ ptr64 b(word64 x30, word64 qwArg00)
 	globals->dw1105C = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		return fp;
 	}
 	else
 	{
 		c(x30);
-		globals->dw11074 = globals->dw11074 + 0x02;
+		globals->dw11074 += 0x02;
 		return fp + 0x08;
 	}
 }
@@ -296,13 +296,13 @@ word64 e(word64 x30, word64 qwArg00, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		return x19;
 	}
 	else
 	{
 		word64 x19_24 = c(x30);
-		globals->dw11074 = globals->dw11074 + 0x07;
+		globals->dw11074 += 0x07;
 		word64 sp_31;
 		*spOut = fp + 0x08;
 		return x19_24;
@@ -319,7 +319,7 @@ word64 d(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		return x19;
 	}
 	else
@@ -328,7 +328,7 @@ word64 d(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 		word64 x19_26 = e(x30, x30, out sp_25);
 		word64 x30_31;
 		*x30Out = sp_25->qw0008;
-		globals->dw11074 = globals->dw11074 + 0x05;
+		globals->dw11074 += 0x05;
 		word64 sp_32;
 		*spOut = &sp_25->qw0008 + 0x01;
 		return x19_26;
@@ -344,14 +344,14 @@ word64 k(word64 x30, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		return x19;
 	}
 	else
 	{
 		word64 sp_24;
 		word64 x19_25 = e(x30, x30, out sp_24);
-		globals->dw11074 = globals->dw11074 + 0x1B;
+		globals->dw11074 += 0x1B;
 		word64 sp_31;
 		*spOut = sp_24 + 0x0010;
 		return x19_25;
@@ -368,7 +368,7 @@ word64 j(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 	*spOut = fp;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		return x19;
 	}
 	else
@@ -377,7 +377,7 @@ word64 j(word64 x30, ptr64 & x30Out, ptr64 & spOut)
 		word64 x19_26 = k(x30, out sp_25);
 		word64 x30_31;
 		*x30Out = sp_25->qw0008;
-		globals->dw11074 = globals->dw11074 + 0x17;
+		globals->dw11074 += 0x17;
 		word64 sp_32;
 		*spOut = &sp_25->qw0008 + 0x01;
 		return x19_26;

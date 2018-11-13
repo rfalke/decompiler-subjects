@@ -4,16 +4,15 @@
 
 #include "subject.h"
 
-// 000104B4: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Stack word32 dwArg40)
-void _start( * g1, word32 o7, word32 dwArg40)
+// 000104B4: void _start(Register (ptr32 Eq_2) g1, Register word32 o7, Register word32 f2, Stack word32 dwArg40)
+void _start( * g1, word32 o7, word32 f2, word32 dwArg40)
 {
 	if (g1 == null)
 	{
 		atexit(&globals->t10758);
-		int32 l0_18 = _init(o7);
-		globals->ptr2093C = fp + 0x44 + ((l0_18 << 0x02) + 0x04);
-		main();
-		exit(l0_18);
+		globals->ptr2093C = fp + 0x44 + ((_init(o7) << 0x02) + 0x04);
+		main(f2);
+		exit(0x00);
 	}
 	else
 		atexit(g1);
@@ -28,19 +27,19 @@ word32 fn00010528(word32 o7, word32 l7)
 // 00010530: void __do_global_dtors_aux(Register word32 o7)
 void __do_global_dtors_aux(word32 o7)
 {
-	struct Eq_40 * l7_136 = fn00010528(o7, 66132);
+	struct Eq_42 * l7_136 = fn00010528(o7, 66132);
 	word32 o2_26 = (word32) *l7_136->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_54 = l7_136->ptr0010;
+	word32 o1_56 = **o0_54;
+	if (o1_56 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 ** l0_112 = o0_54;
+		word32 * o0_114 = (char *) *o0_54 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
+			*l0_112 = o0_114;
 			word32 sp_119;
 			word32 i0_120;
 			word32 o0_121;
@@ -61,11 +60,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_137;
 			byte NZVC_138;
 			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			fn12000000();
+			word32 * o0_141 = *l0_112;
+			if (*o0_141 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_114 = o0_141 + 0x01;
 		}
 	}
 	if (l7_136->dw0024 == 0x00)
@@ -106,7 +105,7 @@ void call___do_global_dtors_aux()
 // 000105F0: void frame_dummy(Register word32 o7)
 void frame_dummy(word32 o7)
 {
-	struct Eq_40 * l7_22 = fn00010528(o7, 0x00010194);
+	struct Eq_42 * l7_22 = fn00010528(o7, 0x00010194);
 	if (l7_22->dw0020 == 0x00)
 	{
 		word32 * i0_58 = l7_22->ptr0014;
@@ -165,9 +164,10 @@ void call_frame_dummy()
 {
 }
 
-// 00010684: void main()
-void main()
+// 00010684: void main(Register word32 f2)
+void main(word32 f2)
 {
+	printf("Pi is about %.5f\n", globals->t1078C);
 }
 
 // 000106D4: Register word32 fn000106D4(Register word32 o7, Register word32 l7)
@@ -180,10 +180,10 @@ word32 fn000106D4(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_219 * l7_22 = fn000106D4(o7, 0x000100A8);
-	struct Eq_224 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_231 * l7_22 = fn000106D4(o7, 0x000100A8);
+	struct Eq_236 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -207,11 +207,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

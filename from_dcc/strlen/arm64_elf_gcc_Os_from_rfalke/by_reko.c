@@ -139,7 +139,7 @@ void strlen(ptr64 x0)
 {
 	int64 x1_4 = 0x00;
 	do
-		x1_4 = x1_4 + 0x01;
+		++x1_4;
 	while ((word32) (x0 + x1_4)->bFFFFFFFF != 0x00);
 }
 

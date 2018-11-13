@@ -149,7 +149,7 @@ void main(word64 qwArg00)
 		do
 			;
 		while ((word32) wLoc1E <= 0x28);
-		qwLoc28_151 = qwLoc28_151 + 0x01;
+		++qwLoc28_151;
 	}
 	fn00000000004004E0();
 }

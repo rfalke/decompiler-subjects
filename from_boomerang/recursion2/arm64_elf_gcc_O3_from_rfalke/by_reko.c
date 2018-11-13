@@ -154,7 +154,7 @@ word64 f(word64 * x29, word64 x30)
 	globals->dw12038 = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw12074 = globals->dw12074 + 11;
+		globals->dw12074 += 11;
 		return x30;
 	}
 	else
@@ -183,7 +183,7 @@ word64 f(word64 * x29, word64 x30)
 							sp_85->qwFFFFFFF8 = x30;
 							f(&sp_85->qwFFFFFFF8, x30);
 							word64 x30_99 = sp_85->qw0000;
-							globals->dw12074 = globals->dw12074 + 0x48;
+							globals->dw12074 += 0x48;
 							return x30_99;
 						}
 						w0_113 = globals->dw12074 + 0x18;
@@ -281,7 +281,7 @@ word64 c(word64 x30, word64 qwArg00, ptr64 & x30Out, Eq_318 * & spOut)
 			globals->dw12074 = w0_184 + 11;
 		}
 		else
-			globals->dw12074 = globals->dw12074 + 11;
+			globals->dw12074 += 11;
 	}
 	ui32 w0_49 = globals->dw12050;
 	globals->dw12050 = w0_49 - 0x01;
@@ -328,7 +328,7 @@ word64 c(word64 x30, word64 qwArg00, ptr64 & x30Out, Eq_318 * & spOut)
 	globals->dw12064 = w0_63 - 0x01;
 	if ((w0_63 - 0x01 & 0x00) == 0x00)
 	{
-		globals->dw12074 = globals->dw12074 + 0x03;
+		globals->dw12074 += 0x03;
 		word64 x30_119;
 		*x30Out = sp_100->qw0008;
 		word64 sp_120;
@@ -368,19 +368,19 @@ void d(word64 x30)
 	ui32 w1_6 = globals->dw12044;
 	globals->dw12044 = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x05;
+		globals->dw12074 += 0x05;
 	else
 	{
 		ui32 w1_17 = globals->dw12048;
 		globals->dw12048 = w1_17 - 0x01;
 		if ((w1_17 - 0x01 & 0x00) == 0x00)
-			globals->dw12074 = globals->dw12074 + 0x0C;
+			globals->dw12074 += 0x0C;
 		else
 		{
 			word64 x30_27;
 			word64 sp_28;
 			c(x30, x30, out x30_27, out sp_28);
-			globals->dw12074 = globals->dw12074 + 0x0C;
+			globals->dw12074 += 0x0C;
 		}
 	}
 }
@@ -391,7 +391,7 @@ void b(word64 x30)
 	ui32 w1_6 = globals->dw1206C;
 	globals->dw1206C = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x02;
+		globals->dw12074 += 0x02;
 	else
 	{
 		ui32 w1_34 = globals->dw12040;
@@ -513,7 +513,7 @@ void b(word64 x30)
 		ui32 w0_75 = globals->dw12064;
 		globals->dw12064 = w0_75 - 0x01;
 		if ((w0_75 - 0x01 & 0x00) == 0x00)
-			globals->dw12074 = globals->dw12074 + 0x05;
+			globals->dw12074 += 0x05;
 		else
 		{
 			word32 w0_100;
@@ -544,7 +544,7 @@ void e(word64 x30)
 	ui32 w2_6 = globals->dw12048;
 	globals->dw12048 = w2_6 - 0x01;
 	if ((w2_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x07;
+		globals->dw12074 += 0x07;
 	else
 	{
 		ui32 w1_34 = globals->dw12040;
@@ -665,7 +665,7 @@ void e(word64 x30)
 		ui32 w0_78 = globals->dw12064;
 		globals->dw12064 = w0_78 - 0x01;
 		if ((w0_78 - 0x01 & 0x00) == 0x00)
-			globals->dw12074 = globals->dw12074 + 0x0A;
+			globals->dw12074 += 0x0A;
 		else
 		{
 			word32 w0_103;
@@ -696,7 +696,7 @@ void g(word64 x29, word64 x30)
 	ui32 w3_7 = globals->dw1203C;
 	globals->dw1203C = w3_7 - 0x01;
 	if ((w3_7 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x0D;
+		globals->dw12074 += 0x0D;
 	else
 	{
 		word32 w0_143;
@@ -726,7 +726,7 @@ void g(word64 x29, word64 x30)
 								sp_99->qwFFFFFFF0 = x29;
 								sp_99->qwFFFFFFF8 = x30;
 								f(&sp_99->qwFFFFFFF8, x30);
-								globals->dw12074 = globals->dw12074 + 0x55;
+								globals->dw12074 += 0x55;
 								return;
 							}
 							w0_127 = globals->dw12074 + 0x18;
@@ -758,15 +758,15 @@ void h()
 	ui32 w0_5 = globals->dw12054;
 	globals->dw12054 = w0_5 - 0x01;
 	if ((w0_5 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x11;
+		globals->dw12074 += 0x11;
 	else
-		globals->dw12074 = globals->dw12074 + 0x24;
+		globals->dw12074 += 0x24;
 }
 
 // 0000000000001340: void i()
 void i()
 {
-	globals->dw12074 = globals->dw12074 + 0x13;
+	globals->dw12074 += 0x13;
 }
 
 // 0000000000001358: void j(Register word64 x30)
@@ -775,7 +775,7 @@ void j(word64 x30)
 	ui32 w1_6 = globals->dw1205C;
 	globals->dw1205C = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x17;
+		globals->dw12074 += 0x17;
 	else
 	{
 		word32 w0_24;
@@ -790,7 +790,7 @@ void j(word64 x30)
 				word64 x30_40;
 				word64 sp_41;
 				c(x30, x30, out x30_40, out sp_41);
-				globals->dw12074 = globals->dw12074 + 0x39;
+				globals->dw12074 += 0x39;
 				return;
 			}
 			w0_24 = globals->dw12074 + 0x07;
@@ -807,19 +807,19 @@ void k(word64 x30)
 	ui32 w1_6 = globals->dw12060;
 	globals->dw12060 = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x1B;
+		globals->dw12074 += 0x1B;
 	else
 	{
 		ui32 w1_17 = globals->dw12048;
 		globals->dw12048 = w1_17 - 0x01;
 		if ((w1_17 - 0x01 & 0x00) == 0x00)
-			globals->dw12074 = globals->dw12074 + 0x22;
+			globals->dw12074 += 0x22;
 		else
 		{
 			word64 x30_27;
 			word64 sp_28;
 			c(x30, x30, out x30_27, out sp_28);
-			globals->dw12074 = globals->dw12074 + 0x22;
+			globals->dw12074 += 0x22;
 		}
 	}
 }
@@ -830,19 +830,19 @@ void l(word64 x30)
 	ui32 w1_6 = globals->dw12068;
 	globals->dw12068 = w1_6 - 0x01;
 	if ((w1_6 - 0x01 & 0x00) == 0x00)
-		globals->dw12074 = globals->dw12074 + 0x1D;
+		globals->dw12074 += 0x1D;
 	else
 	{
 		ui32 w1_17 = globals->dw1206C;
 		globals->dw1206C = w1_17 - 0x01;
 		if ((w1_17 - 0x01 & 0x00) == 0x00)
-			globals->dw12074 = globals->dw12074 + 0x1F;
+			globals->dw12074 += 0x1F;
 		else
 		{
 			word64 x30_27;
 			word64 sp_28;
 			c(x30, x30, out x30_27, out sp_28);
-			globals->dw12074 = globals->dw12074 + 0x1F;
+			globals->dw12074 += 0x1F;
 		}
 	}
 }

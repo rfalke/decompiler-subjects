@@ -1,0 +1,8 @@
+Using options:
+080490E0: warning: Call target address 00000000 is invalid.
+0805DC53: warning: Call target address 00000002 is invalid.
+0805DD39: warning: Call target address A3B17984 is invalid.
+0805DE20: warning: Call target address 313EC0E8 is invalid.
+0804912D: warning: Call target address 00000000 is invalid.
+080D501C: warning: Expected sizes of arrays to have been determined by now
+080D501C: warning: Expected sizes of arrays to have been determined by now

@@ -219,11 +219,11 @@ word32 dumpline(byte * x0, int32 w2, Eq_217 & w25Out, ptr64 & x29Out, ptr64 & sp
 	int32 w19_117 = w2 <= 0x10 ? w2 : 0x10;
 	if (w19_117 > 0x00)
 	{
-		ui32 w21_245 = 0x00;
+		ui32 w21_245;
 		do
 		{
 			fn0000000000000850();
-			w21_245 = w21_245 + 0x03;
+			w21_245 += 0x03;
 		} while (w21_245 != w19_117 * 0x03);
 		w21_191 = w19_117 + 0x01;
 		if (w19_117 > 0x0F)
@@ -242,7 +242,7 @@ word32 dumpline(byte * x0, int32 w2, Eq_217 & w25Out, ptr64 & x29Out, ptr64 & sp
 	{
 		fn0000000000000820();
 		Mem212[fp + ~0x47 + (fp + ~0x47):word32] = w23_207;
-		w21_191 = w21_191 + 0x01;
+		++w21_191;
 	} while (w21_191 <= 0x10);
 	fn0000000000000820();
 	w0_121 = (word32) &fp->aFFFFFFB8->t0000;
@@ -255,14 +255,14 @@ word32 dumpline(byte * x0, int32 w2, Eq_217 & w25Out, ptr64 & x29Out, ptr64 & sp
 	}
 l0000000000000B10:
 	byte * x4_164 = x0;
-	int32 w2_165 = w8_107;
+	int32 w2_165;
 	int32 w5_168 = w19_117 + 0x03 + w0_121;
 	do
 	{
 		word32 w1_175 = (word32) *x4_164;
 		(&fp->aFFFFFFB8->t0000)[(int64) (int32) w2_165] = (struct Eq_250) (byte) ((uint32) (uint8) (w1_175 - 0x20) <= 0x5E ? w1_175 : 0x2E);
-		x4_164 = x4_164 + 0x01;
-		w2_165 = w2_165 + 0x01;
+		++x4_164;
+		++w2_165;
 	} while (w2_165 != w5_168);
 	if (w19_117 > 0x0F)
 	{
@@ -280,7 +280,7 @@ l0000000000000B74:
 l0000000000000B54:
 	do
 	{
-		w19_117 = w19_117 + 0x01;
+		++w19_117;
 		(&fp->aFFFFFFB8->t0000)[(int64) (int32) (w19_117 + 0x02 + w0_121)] = (struct Eq_250) 0x20;
 	} while (w19_117 <= 0x0F);
 	goto l0000000000000B74;
@@ -310,7 +310,7 @@ word32 hexdump(word64 x0, word32 w20, ptr64 & spOut)
 						break;
 					struct Eq_410 * x29_125;
 					dumpline(fp + ~0x07, w0_118, out w25_107, out x29_125, out sp_101);
-					x19_111 = x19_111 + (int64) ((int32) w20_120);
+					x19_111 += (int64) (int32) w20_120;
 				} while (x29_125->qw0080 - x19_111 > 0x00);
 			}
 			fn0000000000000860();
@@ -341,9 +341,9 @@ void main(int32 w0, word64 x1, word64 x21)
 		word32 w20_45 = 0x00;
 		do
 		{
-			x19_40 = x19_40 + 0x01;
+			++x19_40;
 			word64 sp_52;
-			w20_45 = w20_45 + hexdump(*x19_40, w20_45, out sp_52);
+			w20_45 += hexdump(*x19_40, w20_45, out sp_52);
 		} while (x19_40 - x21_44 != 0x00);
 	}
 }

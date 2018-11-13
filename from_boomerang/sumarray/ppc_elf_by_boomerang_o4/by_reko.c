@@ -79,15 +79,14 @@ void call_frame_dummy(word32 dwArg04)
 // 10000418: void main(Stack word32 dwArg00, Stack word32 dwArg04)
 void main(word32 dwArg00, word32 dwArg04)
 {
-	int32 ctr_15 = 0x0A;
+	int32 ctr_15;
 	int32 r11_11 = 0x00;
 	int32 r4_12 = 0x00;
-	do
+	for (ctr_15 = 0x0A; ctr_15 != 0x00; --ctr_15)
 	{
-		r11_11 = r11_11 + 0x01;
-		r4_12 = r4_12 + (globals->a10010918)[r11_11 * 0x04];
-		ctr_15 = ctr_15 - 0x01;
-	} while (ctr_15 != 0x00);
+		++r11_11;
+		r4_12 += globals->a10010918[r11_11 * 0x04];
+	}
 	__crxor(0x06, 0x06, 0x06);
 	printf("Sum is %d\n", r4_12);
 }

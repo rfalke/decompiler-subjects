@@ -109,11 +109,11 @@ int32 fib(int32 dwArg04)
 		int32 ebx_29 = 0x01;
 		if (dwArg04 > 0x02)
 		{
-			int32 edx_37 = dwArg04 - 0x02;
+			int32 edx_37;
 			do
 			{
-				ecx_28 = ecx_28 + ebx_29;
-				edx_37 = edx_37 - 0x01;
+				ecx_28 += ebx_29;
+				--edx_37;
 				ebx_29 = ecx_28;
 			} while (edx_37 != 0x00);
 		}

@@ -27,72 +27,50 @@ word32 fn000105A0(word32 o7, word32 l7)
 // 000105A8: void __do_global_dtors_aux(Register word32 o7)
 void __do_global_dtors_aux(word32 o7)
 {
-	struct Eq_40 * l7_136 = fn000105A0(o7, 66196);
-	word32 o2_26 = (word32) *l7_136->ptr000C;
+	struct Eq_40 * l7_22 = fn000105A0(o7, 66196);
+	word32 o2_26 = (word32) *l7_22->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_44 = l7_22->ptr0010;
+	if (**o0_44 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 * o0_100 = (char *) *o0_44 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
-			word32 sp_119;
-			word32 i0_120;
-			word32 o0_121;
-			word32 i1_122;
-			word32 o1_123;
-			word32 i2_124;
-			word32 o2_125;
-			word32 i3_126;
-			word32 o3_127;
-			word32 i4_128;
-			word32 o4_129;
-			word32 i5_130;
-			word32 o5_131;
-			word32 i6_132;
-			word32 i7_133;
-			word32 o7_134;
-			word32 l1_135;
-			word32 g0_137;
-			byte NZVC_138;
-			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			*o0_44 = o0_100;
+			_GLOBAL_OFFSET_TABLE_();
+			word32 * o0_93 = *o0_44;
+			if (*o0_93 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_100 = o0_93 + 0x01;
 		}
 	}
-	if (l7_136->dw001C == 0x00)
-		*l7_136->ptr000C = 0x01;
+	if (l7_22->dw001C == 0x00)
+		*l7_22->ptr000C = 0x01;
 	else
 	{
-		word32 sp_85;
-		word32 i0_86;
-		word32 o0_87;
-		word32 i1_88;
-		word32 o1_89;
-		word32 i2_90;
-		word32 o2_91;
-		word32 i3_92;
-		word32 o3_93;
-		word32 i4_94;
-		word32 o4_95;
-		word32 i5_96;
-		word32 o5_97;
-		word32 i6_98;
-		word32 i7_99;
-		word32 o7_100;
-		word32 l1_101;
-		word32 l7_102;
-		word32 g0_103;
-		byte NZVC_104;
-		byte Z_105;
-		word32 l0_106;
+		word32 sp_60;
+		word32 i0_61;
+		word32 o0_62;
+		word32 i1_63;
+		word32 o1_64;
+		word32 i2_65;
+		word32 o2_66;
+		word32 i3_67;
+		word32 o3_68;
+		word32 i4_69;
+		word32 o4_70;
+		word32 i5_71;
+		word32 o5_72;
+		word32 i6_73;
+		word32 i7_74;
+		word32 o7_75;
+		word32 l1_76;
+		word32 l7_77;
+		word32 g0_78;
+		byte NZVC_79;
+		byte Z_80;
+		word32 l0_81;
 		__deregister_frame_info();
 	}
 }
@@ -194,10 +172,10 @@ word32 fn00010790(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_243 * l7_22 = fn00010790(o7, 0x000100A4);
-	struct Eq_248 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_224 * l7_22 = fn00010790(o7, 0x000100A4);
+	struct Eq_229 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -221,11 +199,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 
@@ -245,6 +223,11 @@ word32 _init(word32 o7)
 void _fini(word32 o7)
 {
 	__do_global_dtors_aux(o7);
+}
+
+// 00020848: void _GLOBAL_OFFSET_TABLE_()
+void _GLOBAL_OFFSET_TABLE_()
+{
 }
 
 // 000208A0: void atexit()

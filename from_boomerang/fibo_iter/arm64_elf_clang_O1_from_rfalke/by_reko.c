@@ -145,7 +145,7 @@ void fib(int32 w0)
 	if (w0 < 0x03)
 		return;
 	do
-		w8_24 = w8_24 - 0x01;
+		--w8_24;
 	while (w8_24 != 0x00);
 }
 

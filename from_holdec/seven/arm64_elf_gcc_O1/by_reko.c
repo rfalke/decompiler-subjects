@@ -184,7 +184,7 @@ void main(word32 w0, word64 x1, uint64 x5, word32 w6, word32 w8, word64 x31)
 		if (ZC_102)
 			break;
 		w21_103 = w19_105;
-		w19_105 = w19_105 + 1000000;
+		w19_105 += 1000000;
 	}
 }
 

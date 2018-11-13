@@ -216,7 +216,7 @@ ptr64 l(ui32 w0, word64 x8, word64 qwArg00)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00400000;
-	x0 = x0 + 0x0A0D;
+	x0 += 0x0A0D;
 	w1 = w19;
 	fn0000000000400480();
 	NZCV = cond(w19 - 0x02);
@@ -267,7 +267,7 @@ ptr64 e(Eq_159 w0, word64 x8, word64 qwArg00)
 	x29 = fp + ~0x07;
 	w19 = w0;
 	x0 = 0x00400000;
-	x0 = x0 + 2524;
+	x0 += 2524;
 	w1 = w19;
 	fn0000000000400480();
 	v12 = fp + -0x08;
@@ -301,7 +301,7 @@ ptr64 g(int32 w0, word64 qwArg00)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00400000;
-	x0 = x0 + 0x09EA;
+	x0 += 0x09EA;
 	w1 = w19;
 	fn0000000000400480();
 	NZCV = cond(w19 - 0x02);
@@ -359,7 +359,7 @@ ptr64 k(Eq_159 w0, word64 x8, word64 qwArg00)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00400000;
-	x0 = x0 + 0x0A06;
+	x0 += 0x0A06;
 	w1 = w19;
 	fn0000000000400480();
 	NZCV = cond(w19 - 0x02);

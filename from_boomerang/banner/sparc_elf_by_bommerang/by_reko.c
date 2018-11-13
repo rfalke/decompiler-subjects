@@ -31,15 +31,15 @@ void __do_global_dtors_aux(word32 o7)
 	word32 o2_26 = (word32) *l7_136->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_54 = l7_136->ptr0010;
+	word32 o1_56 = **o0_54;
+	if (o1_56 != 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
+		word32 ** l0_112 = o0_54;
+		word32 * o0_114 = (char *) *o0_54 + 0x04;
 		while (true)
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
+			*l0_112 = o0_114;
 			word32 sp_119;
 			word32 i0_120;
 			word32 o0_121;
@@ -60,11 +60,11 @@ void __do_global_dtors_aux(word32 o7)
 			word32 g0_137;
 			byte NZVC_138;
 			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
+			fn23202020();
+			word32 * o0_141 = *l0_112;
+			if (*o0_141 == 0x00)
 				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			o0_114 = o0_141 + 0x01;
 		}
 	}
 	if (l7_136->dw001C == 0x00)
@@ -167,7 +167,7 @@ void call_frame_dummy()
 // 00010704: void main()
 void main()
 {
-	struct Eq_213 * o0_20 = malloc(0x0C);
+	struct Eq_215 * o0_20 = malloc(0x0C);
 	o0_20->dw0004 = 0x00011F18;
 	word32 dwLoc14_30 = 0x02;
 	ptr32 * dwLoc18_104 = &o0_20->dw0004;
@@ -177,42 +177,41 @@ void main()
 		dwLoc14_30 = o0_56;
 		if (o0_56 == 0x00)
 			break;
-		Eq_216 o0_73 = strlen(*dwLoc18_104);
-		Eq_216 dwLoc28_227 = o0_73;
+		Eq_218 o0_73 = strlen(*dwLoc18_104);
+		Eq_218 dwLoc28_227 = o0_73;
 		if (o0_73 > 0x0A)
 			dwLoc28_227.u0 = 0x0A;
-		int32 dwLoc1C_138 = 0x00;
-		while (dwLoc1C_138 <= 0x06)
+		int32 dwLoc1C_138;
+		for (dwLoc1C_138 = 0x00; dwLoc1C_138 <= 0x06; ++dwLoc1C_138)
 		{
 			int32 dwLoc20_105 = 0x00;
 			while (dwLoc20_105 - dwLoc28_227 < 0x00)
 			{
 				int32 o0_161 = (word32) (*dwLoc18_104 + dwLoc20_105) << 0x18 >> 0x18;
-				Eq_262 dwLoc2C_163 = o0_161 + ~0x1F;
+				Eq_264 dwLoc2C_163 = o0_161 + ~0x1F;
 				if (o0_161 < ~0x1F)
 					dwLoc2C_163.u0 = 0x00;
-				Eq_297 dwLoc24_168 = 0x00;
+				Eq_299 dwLoc24_168 = 0x00;
 				while (dwLoc24_168 <= 0x06)
 				{
-					Eq_302 o0_198 = (word32) dwLoc2C_163.u0 + ((dwLoc2C_163 >> 0x1F) >> 0x1D);
+					Eq_304 o0_198 = (word32) dwLoc2C_163.u0 + ((dwLoc2C_163 >> 0x1F) >> 0x1D);
 					word32 o1_212 = dwLoc2C_163 - ((dwLoc2C_163 + ((dwLoc2C_163 >> 0x1F) >>u 0x1D) >> 0x03) << 0x03);
 					Mem221[(dwLoc20_105 << 0x03) + (fp + ~0x0F) + dwLoc24_168 + -112:byte] = (byte) (word32) Mem28[(o1_212 << 0x03) - o1_212 + dwLoc24_168 + 139444[((((o0_198 >> 0x03) << 0x03) - (o0_198 >> 0x03)) + dwLoc1C_138) * 0x04]:byte];
 					dwLoc24_168 = (word32) dwLoc24_168 + 0x01;
 				}
 				((dwLoc20_105 << 0x03) + (fp + ~0x0F))->bFFFFFF97 = 0x20;
-				dwLoc20_105 = dwLoc20_105 + 0x01;
+				++dwLoc20_105;
 			}
 			int32 dwLoc20_121 = (dwLoc28_227 << 0x03) + ~0x00;
 			while (dwLoc20_121 >= 0x00 && ((word32) ((fp + ~0x0F) + dwLoc20_121)->bFFFFFF90 << 0x18) >> 0x18 == 0x20)
 			{
 				(fp + ~0x0F + dwLoc20_121)->bFFFFFF90 = 0x00;
-				dwLoc20_121 = dwLoc20_121 + ~0x00;
+				dwLoc20_121 += ~0x00;
 			}
 			puts(fp + ~0x7F);
-			dwLoc1C_138 = dwLoc1C_138 + 0x01;
 		}
 		puts("");
-		dwLoc18_104 = dwLoc18_104 + 0x01;
+		++dwLoc18_104;
 	}
 }
 
@@ -226,10 +225,10 @@ word32 fn000109B8(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_382 * l7_22 = fn000109B8(o7, 0x00011560);
-	struct Eq_387 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_384 * l7_22 = fn000109B8(o7, 0x00011560);
+	struct Eq_389 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -253,11 +252,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

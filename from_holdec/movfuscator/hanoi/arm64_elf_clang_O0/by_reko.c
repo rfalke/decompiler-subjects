@@ -191,7 +191,7 @@ word64 text(word32 w0, word32 w1, int32 w2, word64 qwArg00, ptr64 & spOut)
 	int32 dwLoc14_18 = w2;
 	while (true)
 	{
-		dwLoc14_18 = dwLoc14_18 - 0x01;
+		--dwLoc14_18;
 		if (dwLoc14_18 == 0x00)
 			break;
 		fn0000000000400650();
@@ -272,14 +272,14 @@ l0000000000400B04:
 			{
 				x29_33 = new_tower(*0x00411080, qwArg00);
 				[(word64) x29_33->dwFFFFFFF8 * 0x00] = 0x00;
-				x29_33->dwFFFFFFF8 = x29_33->dwFFFFFFF8 + 0x01;
+				++x29_33->dwFFFFFFF8;
 			}
 			x29_33->dwFFFFFFF8 = *0x00411080;
 			while (x29_33->dwFFFFFFF8 != 0x00)
 			{
 				word64 sp_70;
 				x29_33 = add_disk(0x00, x29_33->dwFFFFFFF8, out sp_70);
-				x29_33->dwFFFFFFF8 = x29_33->dwFFFFFFF8 - 0x01;
+				--x29_33->dwFFFFFFF8;
 			}
 			struct Eq_468 * sp_82;
 			move(*0x00411080, out sp_82);

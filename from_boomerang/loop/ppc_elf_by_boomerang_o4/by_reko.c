@@ -79,10 +79,9 @@ void call_frame_dummy(word32 dwArg04)
 // 10000418: void main(Stack word32 dwArg00, Stack word32 dwArg04)
 void main(word32 dwArg00, word32 dwArg04)
 {
-	int32 ctr_10 = 0x0A;
-	do
-		ctr_10 = ctr_10 - 0x01;
-	while (ctr_10 != 0x00);
+	int32 ctr_10;
+	for (ctr_10 = 0x0A; ctr_10 != 0x00; --ctr_10)
+		;
 	__crxor(0x06, 0x06, 0x06);
 	printf("%i\n", 0x0A);
 }

@@ -4,16 +4,15 @@
 
 #include "subject.h"
 
-byte g_bFFBF4B24;
-Eq_8697 g_tFFBF4C08;
-Eq_8763 g_t0001;
-Eq_7412 g_t0004;
-Eq_8336 g_t0041;
-Eq_8336 g_t005A;
-Eq_8336 g_t0061;
-Eq_8336 g_t007A;
-Eq_8763 g_t00FF;
-Eq_8336 g_t0100;
+Eq_8824 g_tFFBF4C08;
+Eq_8890 g_t0001;
+Eq_7414 g_t0004;
+Eq_8463 g_t0041;
+Eq_8463 g_t005A;
+Eq_8463 g_t0061;
+Eq_8463 g_t007A;
+Eq_8890 g_t00FF;
+Eq_8463 g_t0100;
 <anonymous> g_t401164 = <code>;
 <anonymous> * g_a401C9A[] = 
 	{
@@ -39,7 +38,7 @@ Eq_8336 g_t0100;
 	};
 CHAR g_t4091C0 = 'C';
 CHAR g_t4091D0 = 'm';
-Eq_16065 g_a409708[] = 
+Eq_16189 g_a409708[] = 
 	{
 	};
 CHAR g_t409B1C = 'G';
@@ -97,14 +96,14 @@ Eq_189 g_t40B108 =
 		0x00000000,
 	};
 <anonymous> * g_ptr40B350 = &g_t4051BD;
-Eq_16077 g_a40B360[] = 
+Eq_16201 g_a40B360[] = 
 	{
 	};
-Eq_7032 g_t40B480 = 
+Eq_7034 g_t40B480 = 
 	{
 		0x80,
 	};
-Eq_16065 (* g_ptr40B490)[] = &g_a409708;
+Eq_16189 (* g_ptr40B490)[] = &g_a409708;
 Eq_4 g_t40B498 = 
 	{
 		0x4E
@@ -122,7 +121,7 @@ byte g_a40B4E0[5] =
 		0x08,
 		0x00,
 	};
-Eq_16120 g_a40B4E8[6] = 
+Eq_16244 g_a40B4E8[6] = 
 	{
 		
 		{
@@ -167,10 +166,10 @@ Eq_16120 g_a40B4E8[6] =
 			},
 		},
 	};
-Eq_16204 g_a40B5F8[] = 
+Eq_16328 g_a40B5F8[] = 
 	{
 	};
-Eq_16203 g_a40B5FC[] = 
+Eq_16327 g_a40B5FC[] = 
 	{
 	};
 Eq_4 g_t40BA28 = 
@@ -255,13 +254,13 @@ Eq_4 g_t40BC88 =
 		0x00
 	};
 ui32 g_dw40BC8C = 0x00000000;
-Eq_9414 g_t40BC90 = 
+Eq_9539 g_t40BC90 = 
 	{
 		0
 	};
 word32 g_dw40BC94 = 0x00000000;
 word32 g_dw40BC98 = 0x00000000;
-Eq_8285 g_a40BCA0[] = 
+Eq_8412 g_a40BCA0[] = 
 	{
 	};
 byte g_a40BCA1[257] = 
@@ -789,7 +788,7 @@ Eq_4 g_t40BDA4 =
 word32 g_dw40BDB0 = 0x00000000;
 word32 g_dw40BDB4 = 0x00000000;
 word32 g_dw40BDB8 = 0x00000000;
-Eq_16109 g_a40BDC0[257] = 
+Eq_16233 g_a40BDC0[257] = 
 	{
 		
 		{

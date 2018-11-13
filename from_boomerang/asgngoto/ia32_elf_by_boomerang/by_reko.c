@@ -12,8 +12,63 @@ void _init(word32 esi)
 	__do_global_ctors_aux();
 }
 
+// 08048564: void do_lio()
+void do_lio()
+{
+}
+
+// 08048574: void e_wsle()
+void e_wsle()
+{
+}
+
 // 08048584: void f_exit()
 void f_exit()
+{
+}
+
+// 08048594: void s_rsle()
+void s_rsle()
+{
+}
+
+// 080485A4: void __cxa_atexit()
+void __cxa_atexit()
+{
+}
+
+// 080485B4: void e_rsle()
+void e_rsle()
+{
+}
+
+// 080485C4: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080485D4: void f_init()
+void f_init()
+{
+}
+
+// 080485E4: void f_setsig()
+void f_setsig()
+{
+}
+
+// 080485F4: void exit()
+void exit()
+{
+}
+
+// 08048604: void f_setarg()
+void f_setarg()
+{
+}
+
+// 08048614: void s_wsle()
+void s_wsle()
 {
 }
 
@@ -95,37 +150,37 @@ word32 MAIN__()
 	byte SCZO_13;
 	word32 eax_14;
 	bool Z_15;
-	!s_wsle();
+	s_wsle();
 	word32 esp_26;
 	word32 ebp_27;
 	byte SCZO_28;
 	word32 eax_29;
 	bool Z_30;
-	!do_lio();
+	do_lio();
 	word32 esp_33;
 	word32 ebp_34;
 	byte SCZO_35;
 	word32 eax_36;
 	bool Z_37;
-	!e_wsle();
+	e_wsle();
 	word32 esp_42;
 	word32 ebp_43;
 	byte SCZO_44;
 	word32 eax_45;
 	bool Z_46;
-	!s_rsle();
+	s_rsle();
 	word32 esp_58;
 	word32 ebp_59;
 	byte SCZO_60;
 	word32 eax_61;
 	bool Z_62;
-	!do_lio();
+	do_lio();
 	word32 esp_65;
 	word32 ebp_66;
 	byte SCZO_67;
 	word32 eax_68;
 	bool Z_69;
-	!e_rsle();
+	e_rsle();
 	<anonymous> * dwLoc10_70 = &globals->t8048760;
 	if (dwLoc08 == 0x02)
 		dwLoc10_70 = &globals->t8048793;
@@ -150,17 +205,17 @@ void main(word32 dwArg04, word32 dwArg08)
 	word32 ebp_16;
 	byte SCZO_17;
 	word32 eax_18;
-	!f_setarg();
+	f_setarg();
 	word32 esp_19;
 	word32 ebp_20;
 	byte SCZO_21;
 	word32 eax_22;
-	!f_setsig();
+	f_setsig();
 	word32 esp_23;
 	word32 ebp_24;
 	byte SCZO_25;
 	word32 eax_26;
-	!f_init();
+	f_init();
 	atexit(&globals->t8048584);
 	int32 * esp_28 = MAIN__();
 	*esp_28 = 0x00;

@@ -13,6 +13,7 @@ Eq_43 g_t10000918 = Unexpected function type (fn void ())
 ;
 char g_str1000092C[] = "%d";
 char g_str10000930[] = "Input number: ";
+char g_str10000940[] = "fibonacci(%d) = %d\n";
 int32 g_dw10010958 = -1;
 int32 g_dw10010964 = 0;
 int32 g_dw10010968 = 0;

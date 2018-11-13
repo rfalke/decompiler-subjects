@@ -125,27 +125,24 @@ void main(word64 x9, word64 qwArg00)
 // 00000000004005C4: void multMatrix(Register (ptr64 ui32) x0, Register ptr64 x1, Register ptr64 x2, Register word64 x9)
 void multMatrix(ui32 * x0, ptr64 x1, ptr64 x2, word64 x9)
 {
-	ui64 x8_2 = 0x00;
+	ui64 x8_2;
 	ui64 x9_5 = DPB(x9, 0x14, 0);
-	do
+	for (x8_2 = 0x00; x8_2 != 0x05; ++x8_2)
 	{
-		ui64 x10_27 = 0x00;
-		do
+		ui64 x10_27;
+		for (x10_27 = 0x00; x10_27 != 0x04; ++x10_27)
 		{
-			int64 x11_37 = 0x00;
+			int64 x11_37;
 			word32 * x12_38 = x2 + x8_2 * x9_5 + (x10_27 << 0x02);
 			ui32 * x13_39 = x0;
-			do
+			for (x11_37 = 0x00; x11_37 != 0x50; x11_37 += 0x14)
 			{
-				*x12_38 = *x12_38 + (x1 + x11_37)[x10_27] * *x13_39;
-				x13_39 = x13_39 + 0x01;
-				x11_37 = x11_37 + 0x14;
-			} while (x11_37 != 0x50);
-			x10_27 = x10_27 + 0x01;
-		} while (x10_27 != 0x04);
-		x8_2 = x8_2 + 0x01;
-		x0 = x0 + 0x04;
-	} while (x8_2 != 0x05);
+				*x12_38 += (x1 + x11_37)[x10_27] * *x13_39;
+				++x13_39;
+			}
+		}
+		x0 += 0x04;
+	}
 }
 
 // 0000000000400628: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

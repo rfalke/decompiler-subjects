@@ -1,12 +1,2 @@
 Using options:
 10000410: warning: Call target address 10000000 is invalid.
-100004B8: error: The method or operation is not implemented.
-fib2: error: An error occurred during data flow analysis.
-    The given key 'r1' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <135e7c260ae04ab1a5538976c2d8cf31>:0 
-  at Reko.Analysis.Aliases.Def (Reko.Core.Expressions.Identifier idar) [0x00014] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.Aliases.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00007] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Analysis.Aliases.Transform () [0x0005d] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildSsaTransform (Reko.Core.Procedure proc) [0x00024] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x00060] in <6a264ef1b92c4115b517d6a392a986a9>:0 

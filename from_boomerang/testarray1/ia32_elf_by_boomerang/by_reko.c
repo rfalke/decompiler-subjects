@@ -12,6 +12,16 @@ void _init(word32 esi)
 	__do_global_ctors_aux();
 }
 
+// 080482A0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080482B0: void printf()
+void printf()
+{
+}
+
 // 080482C0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
@@ -87,12 +97,9 @@ void main()
 {
 	__align(fp - 0x0C);
 	int32 dwLoc0C_14 = 0x00;
-	byte * dwLoc08_15 = globals->a80495BC;
-	while (dwLoc08_15 <= (byte *) 4160449096)
-	{
-		dwLoc0C_14 = dwLoc0C_14 + (int32) (*dwLoc08_15);
-		dwLoc08_15 = dwLoc08_15 + 0x01;
-	}
+	byte * dwLoc08_15;
+	for (dwLoc08_15 = globals->a80495BC; dwLoc08_15 <= (byte *) 4160449096; ++dwLoc08_15)
+		dwLoc0C_14 += (int32) *dwLoc08_15;
 	printf("Sum is %d\n", dwLoc0C_14);
 }
 

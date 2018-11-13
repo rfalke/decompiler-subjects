@@ -1,106 +1,26 @@
 Using options:
 0CAB:0123: error: An error occurred while processing the statement word16 ax_240 = wLoc90_121 - (fp - 0x0084).
     Not handling mp16 and mp16 yet
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
 0CAB:00AA: error: An error occurred while processing the statement word16 ax_170 = v29_164 - (fp - 0x0084).
     Not handling mp16 and mp16 yet
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
 0CAB:00C6: error: An error occurred while processing the statement word16 ax_186 = v29_164 - (fp - 0x0084).
     Not handling mp16 and mp16 yet
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d0] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-_sroot: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceCyclic (Reko.Structure.Region n) [0x00188] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x00104] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-__pull_free_block: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-fn0BD0_0081: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-_farmalloc: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceCyclic (Reko.Structure.Region n) [0x0008e] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x00104] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-__sbrk: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Expressions.BinaryExpression.Invert () [0x00052] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00085] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
 l0D28_00F1: warning: Non-integral switch expression
-fn0D7F_0016: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-fn0D7F_00B5: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-fn0D7F_012D: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-fn0D7F_0212: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Core.Expressions.BinaryExpression.Invert () [0x0005d] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-_farfree: error: An error occurred while rewriting procedure to high-level language.
-    Expression of type Cast doesn't support Invert.
-      at Reko.Core.Expressions.Expression.Invert () [0x00015] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x0011b] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000ec] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <6a264ef1b92c4115b517d6a392a986a9>:0 

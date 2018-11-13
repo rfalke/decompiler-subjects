@@ -169,7 +169,7 @@ ptr64 f(int32 w0)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00;
-	x0 = x0 + 0x0BFC;
+	x0 += 0x0BFC;
 	fn00000000000006E0();
 	NZCV = cond(w19 - 0x01);
 	ZCV = NZCV;
@@ -275,7 +275,7 @@ ptr64 d(int32 w0)
 	w19 = w0;
 	x19 = DPB(x19, w19, 0);
 	x0 = 0x00;
-	x0 = x0 + 0x0C34;
+	x0 += 0x0C34;
 	fn00000000000006E0();
 	NZCV = cond(w19 - 0x01);
 	ZCV = NZCV;

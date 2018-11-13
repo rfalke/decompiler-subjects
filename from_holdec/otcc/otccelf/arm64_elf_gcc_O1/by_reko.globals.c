@@ -9,13 +9,13 @@ word64 g_qw0001;
 word64 g_qw2B38 = 0x2E6F732E6362696C;
 word16 g_w2B40 = 0x0036;
 word64 g_qw2B48 = 0x6F732E6C6462696C;
-union Eq_4047 g_u2B4F = 
+union Eq_4045 g_u2B4F = 
 	{
 		0x0000000000322E6F
 	};
 word64 g_qw2B58 = 0x2D646C2F62696C2F;
 word64 g_qw2B60 = 0x6F732E78756E696C;
-union Eq_4398 g_u2B67 = 
+union Eq_4396 g_u2B67 = 
 	{
 		0x0000000000322E6F
 	};
@@ -49,7 +49,7 @@ int32 * g_ptr12F70 = &g_dw130AC;
 word32 * g_ptr12F80 = &g_dw130B0;
 int32 * g_ptr12F88 = &g_dw130B4;
 int32 * g_ptr12F90 = &g_dw130B8;
-union Eq_1103 * g_ptr12F98 = &g_t130BC;
+union Eq_1101 * g_ptr12F98 = &g_t130BC;
 int32 * g_ptr12FA0 = &g_dw130C0;
 ui32 * g_ptr12FA8 = &g_dw130C4;
 int32 * g_ptr12FB0 = &g_dw130C8;
@@ -85,7 +85,7 @@ int32 g_dw130AC = 0;
 word32 g_dw130B0 = 0x00000000;
 int32 g_dw130B4 = 0;
 int32 g_dw130B8 = 0;
-Eq_1103 g_t130BC = 
+Eq_1101 g_t130BC = 
 	{
 		0
 	};

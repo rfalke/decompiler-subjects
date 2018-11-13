@@ -144,7 +144,7 @@ word64 b(word64 x30, word64 qwArg00, ptr64 & spOut)
 	globals->dw411030 = w9_12 - 0x01;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		c(x30);
-	globals->dw41106C = globals->dw41106C + 0x02;
+	globals->dw41106C += 0x02;
 	word64 sp_25;
 	*spOut = fp + 0x08;
 	return x30;
@@ -185,7 +185,7 @@ void c(word64 x30)
 	globals->dw411060 = w9_40 - 0x01;
 	if ((w9_40 - 0x01 & 0x00) != 0x00)
 		l(x30);
-	globals->dw41106C = globals->dw41106C + 0x03;
+	globals->dw41106C += 0x03;
 }
 
 // 0000000000400738: Register word64 d(Register word64 x30, Register out ptr64 spOut)
@@ -196,7 +196,7 @@ word64 d(word64 x30, ptr64 & spOut)
 	struct Eq_338 * sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		sp_15 = e(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x05;
+	globals->dw41106C += 0x05;
 	word64 sp_25;
 	*spOut = &sp_15->qw0008 + 0x01;
 	return sp_15->qw0008;
@@ -209,7 +209,7 @@ ptr64 e(word64 x30, word64 qwArg00)
 	globals->dw41103C = w9_12 - 0x01;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		c(x30);
-	globals->dw41106C = globals->dw41106C + 0x07;
+	globals->dw41106C += 0x07;
 	return fp + 0x08;
 }
 
@@ -221,7 +221,7 @@ word64 f(ptr64 & spOut)
 	struct Eq_413 * sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		sp_15 = g();
-	globals->dw41106C = globals->dw41106C + 11;
+	globals->dw41106C += 11;
 	word64 sp_25;
 	*spOut = &sp_15->qw0008 + 0x01;
 	return sp_15->qw0008;
@@ -235,7 +235,7 @@ ptr64 g()
 	ptr64 sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		f(out sp_15);
-	globals->dw41106C = globals->dw41106C + 0x0D;
+	globals->dw41106C += 0x0D;
 	return sp_15 + 0x0010;
 }
 
@@ -246,7 +246,7 @@ word64 h(word64 qwArg00, ptr64 & spOut)
 	globals->dw411050 = w9_12 - 0x01;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		i();
-	globals->dw41106C = globals->dw41106C + 0x11;
+	globals->dw41106C += 0x11;
 	word64 sp_25;
 	*spOut = fp + 0x08;
 	return qwArg00;
@@ -255,7 +255,7 @@ word64 h(word64 qwArg00, ptr64 & spOut)
 // 0000000000400878: void i()
 void i()
 {
-	globals->dw41106C = globals->dw41106C + 0x13;
+	globals->dw41106C += 0x13;
 }
 
 // 0000000000400890: Register word64 j(Register word64 x30, Register out ptr64 spOut)
@@ -266,7 +266,7 @@ word64 j(word64 x30, ptr64 & spOut)
 	struct Eq_534 * sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		sp_15 = k(x30);
-	globals->dw41106C = globals->dw41106C + 0x17;
+	globals->dw41106C += 0x17;
 	word64 sp_25;
 	*spOut = &sp_15->qw0008 + 0x01;
 	return sp_15->qw0008;
@@ -280,7 +280,7 @@ ptr64 k(word64 x30)
 	struct Eq_338 * sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		sp_15 = e(x30, x30);
-	globals->dw41106C = globals->dw41106C + 0x1B;
+	globals->dw41106C += 0x1B;
 	return &sp_15->qw0008 + 0x01;
 }
 
@@ -292,7 +292,7 @@ ptr64 l(word64 x30)
 	ptr64 sp_15 = fp + -0x08;
 	if ((w9_12 - 0x01 & 0x00) != 0x00)
 		b(x30, x30, out sp_15);
-	globals->dw41106C = globals->dw41106C + 0x1D;
+	globals->dw41106C += 0x1D;
 	return sp_15 + 0x0010;
 }
 

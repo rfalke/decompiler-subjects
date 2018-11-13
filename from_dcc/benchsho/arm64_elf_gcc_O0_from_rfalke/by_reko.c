@@ -162,7 +162,7 @@ void main(word16 wArg06)
 		word16 wArg06_162 = 0x01;
 		while ((word32) wArg06_162 <= 0x28)
 			wArg06_162 = (word16) (uint32) (uint16) ((word32) wArg06_162 + 0x01);
-		qwLoc08_27 = qwLoc08_27 + 0x01;
+		++qwLoc08_27;
 	}
 	fn0000000000000730();
 }

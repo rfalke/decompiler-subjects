@@ -4,7 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t11668 = Unexpected function type (fn void ())
 ;
 char g_str11688[] = "Input number: ";

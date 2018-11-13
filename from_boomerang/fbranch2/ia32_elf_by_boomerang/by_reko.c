@@ -12,6 +12,26 @@ void _init()
 	__do_global_ctors_aux();
 }
 
+// 080482F0: void puts()
+void puts()
+{
+}
+
+// 08048300: void scanf()
+void scanf()
+{
+}
+
+// 08048310: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048320: void printf()
+void printf()
+{
+}
+
 // 08048340: void _start(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
@@ -36,7 +56,7 @@ void call_gmon_start()
 		bool C_40;
 		bool Z_41;
 		word32 eax_42;
-		!__gmon_start__();
+		__gmon_start__();
 	}
 }
 

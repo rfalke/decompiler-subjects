@@ -7,21 +7,36 @@
 // 080482B4: void _init()
 void _init()
 {
-	word32 eax_11 = __x86.get_pc_thunk.bx(dwLoc10)->dw1453;
-	if (eax_11 != 0x00)
+	word32 eax_9 = globals->dw8049718;
+	if (eax_9 != 0x00)
 	{
-		word32 esp_23;
-		word32 ebx_24;
-		byte SCZO_25;
-		word32 eax_26;
-		byte SZO_27;
-		bool C_28;
-		bool Z_29;
-		!__gmon_start__();
+		word32 esp_22;
+		word32 ebx_23;
+		byte SCZO_24;
+		word32 eax_25;
+		byte SZO_26;
+		bool C_27;
+		bool Z_28;
+		__gmon_start__();
 	}
 }
 
-// 08048330: void _start(Register (ptr32 Eq_22) edx, Stack int32 dwArg00)
+// 08048300: void strlen()
+void strlen()
+{
+}
+
+// 08048310: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 08048320: void putchar()
+void putchar()
+{
+}
+
+// 08048330: void _start(Register (ptr32 Eq_18) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -29,10 +44,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 08048360: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 08048360: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048370: void deregister_tm_clones()
@@ -101,12 +115,12 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x04);
-	Eq_114 eax_11 = strlen("Hello, World!");
-	Eq_114 dwLoc08_13 = globals->str8048530;
+	Eq_110 eax_11 = strlen("Hello, World!");
+	Eq_110 dwLoc08_13 = globals->str8048530;
 	while (dwLoc08_13 < eax_11)
 	{
 		putchar((int32) (byte) (word32) dwLoc08_13->b0000);
-		dwLoc08_13 = (Eq_114) (dwLoc08_13 + 0x01);
+		dwLoc08_13 = (Eq_110) (dwLoc08_13 + 0x01);
 	}
 	putchar(0x0A);
 }
@@ -114,24 +128,23 @@ void main()
 // 080484A0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_7 * ebx_18 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_18->ptr1171 + 0x04 - &ebx_18->ptr1171 >> 0x02 != 0x00)
+	if (0x08049808 - 0x0804980C >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_61;
-			word32 ebp_62;
-			word32 edi_63;
-			byte SZO_64;
-			bool C_65;
-			word32 esi_66;
-			word32 ebx_67;
-			byte SCZO_68;
-			word32 eax_69;
-			bool Z_70;
-			ebx_18->ptr1171();
-		} while (edi_63 + 0x01 != esi_66);
+			word32 esp_58;
+			word32 ebp_59;
+			word32 edi_60;
+			byte SZO_61;
+			bool C_62;
+			word32 esi_63;
+			word32 ebx_64;
+			byte SCZO_65;
+			word32 eax_66;
+			bool Z_67;
+			(0x0804980C + 134518548)();
+		} while (edi_60 + 0x01 != esi_63);
 	}
 }
 
@@ -143,6 +156,5 @@ void __libc_csu_fini()
 // 08048514: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

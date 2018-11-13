@@ -12,6 +12,16 @@ void _init()
 	__do_global_ctors_aux();
 }
 
+// 080482A8: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080482B8: void printf()
+void printf()
+{
+}
+
 // 080482D8: void _start(Register (ptr32 Eq_11) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
@@ -36,7 +46,7 @@ void call_gmon_start()
 		bool C_40;
 		bool Z_41;
 		word32 eax_42;
-		!__gmon_start__();
+		__gmon_start__();
 	}
 }
 
@@ -93,113 +103,113 @@ void main()
 // 080483D6: Register word32 b()
 word32 b()
 {
-	globals->dw8049810 = globals->dw8049810 - 0x01;
+	--globals->dw8049810;
 	if (globals->dw8049810 >= 0x00)
 		edx = c();
-	globals->dw804984C = globals->dw804984C + 0x02;
+	globals->dw804984C += 0x02;
 	return edx;
 }
 
 // 08048408: Register word32 c()
 word32 c()
 {
-	globals->dw8049814 = globals->dw8049814 - 0x01;
+	--globals->dw8049814;
 	if (globals->dw8049814 >= 0x00)
 		ecx = d();
-	globals->dw8049820 = globals->dw8049820 - 0x01;
+	--globals->dw8049820;
 	if (globals->dw8049820 >= 0x00)
 		f();
-	globals->dw804982C = globals->dw804982C - 0x01;
+	--globals->dw804982C;
 	if (globals->dw804982C >= 0x00)
 		h();
-	globals->dw8049834 = globals->dw8049834 - 0x01;
+	--globals->dw8049834;
 	if (globals->dw8049834 >= 0x00)
 		ecx = j();
-	globals->dw8049840 = globals->dw8049840 - 0x01;
+	--globals->dw8049840;
 	if (globals->dw8049840 >= 0x00)
 		ecx = l();
-	globals->dw804984C = globals->dw804984C + 0x03;
+	globals->dw804984C += 0x03;
 	return ecx;
 }
 
 // 080484A6: Register word32 d()
 word32 d()
 {
-	globals->dw8049818 = globals->dw8049818 - 0x01;
+	--globals->dw8049818;
 	if (globals->dw8049818 >= 0x00)
 		e();
-	globals->dw804984C = globals->dw804984C + 0x05;
+	globals->dw804984C += 0x05;
 	return edx;
 }
 
 // 080484D8: void e()
 void e()
 {
-	globals->dw804981C = globals->dw804981C - 0x01;
+	--globals->dw804981C;
 	if (globals->dw804981C >= 0x00)
 		c();
-	globals->dw804984C = globals->dw804984C + 0x07;
+	globals->dw804984C += 0x07;
 }
 
 // 0804850A: void f()
 void f()
 {
-	globals->dw8049824 = globals->dw8049824 - 0x01;
+	--globals->dw8049824;
 	if (globals->dw8049824 >= 0x00)
 		g();
-	globals->dw804984C = globals->dw804984C + 11;
+	globals->dw804984C += 11;
 }
 
 // 08048538: void g()
 void g()
 {
-	globals->dw8049828 = globals->dw8049828 - 0x01;
+	--globals->dw8049828;
 	if (globals->dw8049828 >= 0x00)
 		f();
-	globals->dw804984C = globals->dw804984C + 0x0D;
+	globals->dw804984C += 0x0D;
 }
 
 // 08048566: void h()
 void h()
 {
-	globals->dw8049830 = globals->dw8049830 - 0x01;
+	--globals->dw8049830;
 	if (globals->dw8049830 >= 0x00)
 		i();
-	globals->dw804984C = globals->dw804984C + 0x11;
+	globals->dw804984C += 0x11;
 }
 
 // 08048594: void i()
 void i()
 {
-	globals->dw804984C = globals->dw804984C + 0x13;
+	globals->dw804984C += 0x13;
 }
 
 // 080485A6: Register word32 j()
 word32 j()
 {
-	globals->dw8049838 = globals->dw8049838 - 0x01;
+	--globals->dw8049838;
 	if (globals->dw8049838 >= 0x00)
 		k();
-	globals->dw804984C = globals->dw804984C + 0x17;
+	globals->dw804984C += 0x17;
 	return edx;
 }
 
 // 080485D8: void k()
 void k()
 {
-	globals->dw804983C = globals->dw804983C - 0x01;
+	--globals->dw804983C;
 	if (globals->dw804983C >= 0x00)
 		e();
-	globals->dw804984C = globals->dw804984C + 0x1B;
+	globals->dw804984C += 0x1B;
 }
 
 // 0804860B: Register word32 l()
 word32 l()
 {
-	globals->dw8049844 = globals->dw8049844 - 0x01;
+	--globals->dw8049844;
 	if (globals->dw8049844 >= 0x00)
 		b();
-	globals->dw804984C = globals->dw804984C + 0x1D;
+	globals->dw804984C += 0x1D;
 	return edx;
 }
 

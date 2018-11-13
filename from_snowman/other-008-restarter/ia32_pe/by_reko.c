@@ -86,7 +86,7 @@ Eq_2 Win32CrtStartup()
 			if (*eax_275 == 0x00)
 				goto l004011CF;
 			eax_275 = (word32) eax_275 + 0x02;
-			esi_127 = esi_127 - 0x01;
+			--esi_127;
 		} while (esi_127 != 0x00);
 	}
 l00401193:
@@ -98,7 +98,7 @@ l00401193:
 		{
 			do
 			{
-				eax_112 = eax_112 + 0x01;
+				++eax_112;
 				ecx_103 = (word32) *((word32) edi_81 + eax_112 * 0x02) - 0x30 + ecx_103 * 0x0A;
 			} while (eax_112 < edx_101);
 		}
@@ -122,32 +122,27 @@ l004011CF:
 		esi_153 = eax_22->t000C;
 	if (MoveFileW(eax_22->t0008, esi_153) == 0x00)
 		fn00401000(0x004022A4, eax_22->t0008);
-	word32 ecx_165 = 0x44;
+	word32 ecx_165;
 	byte * eax_167 = fp - 0x4C;
-	do
+	for (ecx_165 = 0x44; ecx_165 != 0x00; --ecx_165)
 	{
 		*eax_167 = 0x00;
-		eax_167 = eax_167 + 0x01;
-		ecx_165 = ecx_165 - 0x01;
-	} while (ecx_165 != 0x00);
-	Eq_2 ecx_178 = 0x10;
+		++eax_167;
+	}
+	Eq_2 ecx_178;
 	byte * eax_180 = fp - 0x5C;
-	do
+	for (ecx_178 = 0x10; ecx_178 != 0x00; --ecx_178)
 	{
 		*eax_180 = 0x00;
-		eax_180 = eax_180 + 0x01;
-		ecx_178 = ecx_178 - 0x01;
-	} while (ecx_178 != 0x00);
+		++eax_180;
+	}
 	if (CreateProcessW(ecx_178, esi_153, ecx_178, ecx_178, ecx_178, ecx_178, ecx_178, ecx_178, fp - 0x4C, fp - 0x5C) == 0x00)
 		fn00401000(0x004022B8, esi_153);
 	if (esi_153 != eax_22->t000C)
 	{
-		word32 esi_233 = 100;
-		do
-		{
+		word32 esi_233;
+		for (esi_233 = 100; esi_233 != 0x00; --esi_233)
 			fn004010A0(eax_22->t000C);
-			esi_233 = esi_233 - 0x01;
-		} while (esi_233 != 0x00);
 	}
 	return 0x00;
 }

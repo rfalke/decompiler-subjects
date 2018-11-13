@@ -6,14 +6,15 @@
 
 word16 g_w00C8;
 <anonymous> g_t06B0 = <code>;
+word16 g_w08B8 = 0x0022;
 int16 g_w0958 = 34;
-Eq_203 g_a0C98[] = 
+Eq_201 g_a0C98[] = 
 	{
 	};
-Eq_294 g_a0C9C[] = 
+Eq_292 g_a0C9C[] = 
 	{
 	};
-Eq_562 g_a0CA4[] = 
+Eq_558 g_a0CA4[] = 
 	{
 	};
 <anonymous> * g_a10DA8[] = 

@@ -1,19 +1,16 @@
 Using options:
-0000000000400951: warning: Unable to resolve imported reference srand.
-0000000000400956: warning: Unable to resolve imported reference rand.
-0000000000400AC1: warning: Unable to resolve imported reference strncat.
 00000000004008DD: warning: Call target address 0000000000000000 is invalid.
 00000000004006F0: warning: Unable to resolve imported reference __gmon_start__.
 00000000004008E0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004008E8: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry (System.String name, Reko.ImageLoaders.Elf.DtFormat format, Reko.ImageLoaders.Elf.ElfDynamicEntry entry, Reko.Core.Output.Formatter formatter) [0x00098] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (System.UInt64 fileOffset, Reko.Core.Output.Formatter formatter) [0x000c4] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (Reko.Core.ImageSegment segment, Reko.Core.Program program, Reko.Core.Output.Formatter formatter) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.Core.Dumper.Dump (Reko.Core.Output.Formatter formatter) [0x0015d] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.DecompilerDriver.DumpAssembler (Reko.Core.Program program, Reko.Core.Output.Formatter wr) [0x00012] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver+<>c__DisplayClass29_0.<ScanProgram>b__0 (Reko.Core.Output.Formatter w) [0x00000] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineHost.WriteDisassembly (Reko.Core.Program program, System.Action`1[T] writer) [0x00014] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
-  at Reko.DecompilerDriver.ScanProgram (Reko.Core.Program program) [0x00072] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.ScanPrograms () [0x00037] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0009f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry (System.String name, Reko.ImageLoaders.Elf.DtFormat format, Reko.ImageLoaders.Elf.ElfDynamicEntry entry, Reko.Core.Output.Formatter formatter) [0x00098] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (System.UInt64 fileOffset, Reko.Core.Output.Formatter formatter) [0x000c4] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (Reko.Core.ImageSegment segment, Reko.Core.Program program, Reko.Core.Output.Formatter formatter) [0x00000] in <15a015d4f09149dc994a73592017feac>:0 
+  at Reko.Core.Dumper.Dump (Reko.Core.Output.Formatter formatter) [0x0015d] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+  at Reko.DecompilerDriver.DumpAssembler (Reko.Core.Program program, Reko.Core.Output.Formatter wr) [0x00034] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver+<>c__DisplayClass29_0.<ScanProgram>b__0 (Reko.Core.Output.Formatter w) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.CmdLine.CmdLineHost.WriteDisassembly (Reko.Core.Program program, System.Action`1[T] writer) [0x00014] in <d6ad61555b7f4116a6906ac874c0208a>:0 
+  at Reko.DecompilerDriver.ScanProgram (Reko.Core.Program program) [0x00072] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.DecompilerDriver.ScanPrograms () [0x00037] in <55635f0d4b464606be1dcd97c7688665>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x000fb] in <d6ad61555b7f4116a6906ac874c0208a>:0 

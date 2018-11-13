@@ -175,7 +175,7 @@ void main(word64 x31, word32 dwArg00, word32 dwArg04)
 		if (dwArg04_23 != 0x00 && dwArg00_10 < dwArg04_23)
 			break;
 		dwArg04_23 = dwArg00_10;
-		dwArg00_10 = dwArg00_10 + 1000000;
+		dwArg00_10 += 1000000;
 	}
 }
 

@@ -1,4 +1,6 @@
 Using options:
 00010698: warning: Unable to resolve imported reference __register_frame_info.
 000106D0: warning: Unable to resolve imported reference _Jv_RegisterClasses.
+000107B8: warning: Call target address 00000018 is invalid.
+000105F4: warning: Call target address 20000000 is invalid.
 0001062C: warning: Unable to resolve imported reference __deregister_frame_info.

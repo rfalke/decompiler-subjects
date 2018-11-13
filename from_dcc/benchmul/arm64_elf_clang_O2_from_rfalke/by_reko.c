@@ -159,10 +159,9 @@ void main(word64 x9, word64 qwArg00)
 	{
 		do
 		{
-			word32 w10_81 = 0x28;
-			do
-				w10_81 = w10_81 - 0x01;
-			while (w10_81 != 0x00);
+			word32 w10_81;
+			for (w10_81 = 0x28; w10_81 != 0x00; --w10_81)
+				;
 			x9_101 = x9_104 + 0x01;
 			int64 x9_104 = x9_101;
 		} while (x9_104 - qwLoc28 < 0x00);

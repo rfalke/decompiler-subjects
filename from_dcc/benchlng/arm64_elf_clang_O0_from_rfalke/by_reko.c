@@ -146,10 +146,10 @@ void main(word64 qwArg00)
 	int64 qwLoc38_141 = 0x00;
 	while (qwLoc38_141 - qwLoc40 <= 0x00)
 	{
-		int64 qwLoc30_138 = 0x00;
-		while (qwLoc30_138 <= 0x28)
-			qwLoc30_138 = qwLoc30_138 + 0x01;
-		qwLoc38_141 = qwLoc38_141 + 0x01;
+		int64 qwLoc30_138;
+		for (qwLoc30_138 = 0x00; qwLoc30_138 <= 0x28; ++qwLoc30_138)
+			;
+		++qwLoc38_141;
 	}
 	fn00000000004004E0();
 }

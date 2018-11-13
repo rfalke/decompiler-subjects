@@ -12,6 +12,8 @@ struct Eq_3 g_t10000608 =
 Eq_43 g_t100008F0 = Unexpected function type (fn void ())
 ;
 char g_str10000904[] = "Input number: ";
+char g_str10000914[] = "%d";
+char g_str10000918[] = "fibonacci(%d) = %d\n";
 int32 g_dw10010930 = -1;
 int32 g_dw1001093C = 0;
 int32 g_dw10010940 = 0;

@@ -183,20 +183,20 @@ word32 fib2(word32 w0, word64 qwArg00, Eq_64 & w20Out, ptr64 & spOut)
 		if (Test(LE,ZCV))
 			break;
 		w0 = w19 - 0x01;
-		w19 = w19 - 0x02;
+		w19 -= 0x02;
 		w19 = fib2(w0, qwArg00, out w20, out sp);
-		w20 = w20 + w0;
+		w20 += w0;
 	}
 	w0 = w19 + w20;
 	v13 = sp + 0x02;
 	x19 = *v13;
-	v13 = v13 + 0x01;
+	++v13;
 	x20 = *v13;
 	v14 = sp;
 	x29 = *v14;
-	v14 = v14 + 0x01;
+	++v14;
 	x30 = *v14;
-	sp = sp + 0x04;
+	sp += 0x04;
 	return w19;
 }
 

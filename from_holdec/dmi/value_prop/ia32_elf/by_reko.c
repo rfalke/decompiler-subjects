@@ -7,7 +7,7 @@
 // 08048328: void _init()
 void _init()
 {
-	if (__x86.get_pc_thunk.bx(dwLoc10)->dw1CCB != 0x00)
+	if (globals->dw804A004 != 0x00)
 		fn080483C0();
 }
 
@@ -73,7 +73,7 @@ void main(word32 dwArg00, int32 dwArg04, char * * dwArg08)
 	exit(ebx_96 + (int32) (*(*dwArg08)));
 }
 
-// 08048493: void _start(Register (ptr32 Eq_124) edx, Stack int32 dwArg00)
+// 08048493: void _start(Register (ptr32 Eq_120) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {
 	__align((char *) fp + 0x04);
@@ -81,10 +81,9 @@ void _start( * edx, int32 dwArg00)
 	__hlt();
 }
 
-// 080484C0: Register word32 __x86.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __x86.get_pc_thunk.bx(word32 dwArg00)
+// 080484C0: void __x86.get_pc_thunk.bx(Stack word32 dwArg00)
+void __x86.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 080484D0: void deregister_tm_clones()
@@ -287,7 +286,7 @@ word32 intermediate_4_mem_cond_change(int32 dwArg04)
 {
 	globals->t804A02C = 0x41;
 	if (dwArg04 != 0x2A)
-		globals->t804A02C = (Eq_324) ((word32) globals->t804A02C + 0x0020);
+		globals->t804A02C = (Eq_320) ((word32) globals->t804A02C + 0x0020);
 	putchar((word32) globals->t804A02C + dwArg04);
 	return 0x00;
 }
@@ -336,7 +335,7 @@ word32 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(word32 eax, int
 	return (word32) globals->t804A02C + eax_17;
 }
 
-// 080488AF: Register Eq_442 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
+// 080488AF: Register Eq_438 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
 size_t advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg04)
 {
 	globals->t804A02C = 0x01;
@@ -346,24 +345,23 @@ size_t advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg0
 // 080488E0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
-	struct Eq_6 * ebx_15 = __x86.get_pc_thunk.bx(dwLoc14);
 	_init();
-	if ((char *) &ebx_15->ptr161F + 0x04 - &ebx_15->ptr161F >> 0x02 != 0x00)
+	if (0x0804A0F4 - 0x0804A0F8 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_66;
-			word32 ebp_67;
-			word32 edi_68;
-			word32 esi_69;
-			word32 ebx_70;
-			byte SCZO_71;
-			word32 eax_72;
-			byte SZO_73;
-			bool C_74;
-			bool Z_75;
-			ebx_15->ptr161F();
-		} while (esi_69 != edi_68 + 0x01);
+			word32 esp_65;
+			word32 ebp_66;
+			word32 edi_67;
+			word32 esi_68;
+			word32 ebx_69;
+			byte SCZO_70;
+			word32 eax_71;
+			byte SZO_72;
+			bool C_73;
+			bool Z_74;
+			(0x0804A0F8 + 0x0804A000)();
+		} while (esi_68 != edi_67 + 0x01);
 	}
 }
 
@@ -375,6 +373,5 @@ void __libc_csu_fini()
 // 08048944: void _fini()
 void _fini()
 {
-	__x86.get_pc_thunk.bx(dwLoc10);
 }
 

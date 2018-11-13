@@ -189,7 +189,7 @@ void main(int64 qwArg00)
 	{
 		int64 x0_34 = 0x01;
 		do
-			x0_34 = x0_34 + 0x01;
+			++x0_34;
 		while (x0_34 - qwArg00 <= 0x00);
 	}
 	fn0000000000000750();

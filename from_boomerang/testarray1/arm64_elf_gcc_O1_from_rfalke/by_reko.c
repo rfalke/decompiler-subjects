@@ -142,10 +142,9 @@ void frame_dummy(word64 qwArg00)
 // 0000000000000838: void main(Stack word64 qwArg00)
 void main(word64 qwArg00)
 {
-	word64 x0_15 = 0x00;
-	do
-		x0_15 = x0_15 + 0x01;
-	while (x0_15 != 0x05);
+	word64 x0_15;
+	for (x0_15 = 0x00; x0_15 != 0x05; ++x0_15)
+		;
 	fn00000000000006E0();
 }
 

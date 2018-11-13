@@ -20,8 +20,8 @@ void main()
 // 0000000000400594: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
 void _start( * rdx, Eq_12 qwArg00)
 {
-	__align((char *) fp + 0x08);
-	__libc_start_main(&globals->t400590, qwArg00, (char *) fp + 0x08, &globals->t4009B0, &globals->t4009A0, rdx, fp);
+	__align((const char *) fp + 0x08);
+	__libc_start_main(&globals->t400590, qwArg00, (const char *) fp + 0x08, &globals->t4009B0, &globals->t4009A0, rdx, fp);
 	__hlt();
 }
 
@@ -47,23 +47,20 @@ void __do_global_dtors_aux()
 	if (globals->b600E20 == 0x00)
 	{
 		up64 rax_27 = globals->qw600E28;
-		if (rax_27 < 0x00)
+		while (rax_27 < 0x00)
 		{
-			do
-			{
-				uint64 rax_43 = rax_27 + 0x01;
-				globals->qw600E28 = rax_43;
-				word64 rsp_46;
-				word64 rbp_47;
-				word64 rbx_48;
-				byte SCZO_49;
-				bool Z_50;
-				word32 ebx_51;
-				word64 rax_52;
-				bool C_53;
-				(*((char *) globals->a600BE0 + rax_43 * 0x08))();
-				rax_27 = globals->qw600E28;
-			} while (rax_27 < 0x00);
+			uint64 rax_43 = rax_27 + 0x01;
+			globals->qw600E28 = rax_43;
+			word64 rsp_46;
+			word64 rbp_47;
+			word64 rbx_48;
+			byte SCZO_49;
+			bool Z_50;
+			word32 ebx_51;
+			word64 rax_52;
+			bool C_53;
+			(*((const char *) globals->a600BE0 + rax_43 * 0x08))();
+			rax_27 = globals->qw600E28;
 		}
 		globals->b600E20 = 0x01;
 	}
@@ -145,7 +142,7 @@ void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_E
 				memmove(r14_367, r9_352, (rcx_353 >> 0x02) * 0x04);
 				r14_367 = r11->ptr0008;
 			}
-			void * rdi_372 = (char *) r14_367 + ((r13_100 >> 0x02) - (r15_274 >> 0x02)) * 0x04;
+			void * rdi_372 = (const char *) r14_367 + ((r13_100 >> 0x02) - (r15_274 >> 0x02)) * 0x04;
 			rdi->ptr0008 = rdi_372;
 			if (r15_274 >> 0x02 != 0x00)
 			{
@@ -215,7 +212,7 @@ l0000000000400746:
 			word64 rcx_148 = rcx_136 + r14_131;
 			if (r13_101 != 0x00)
 			{
-				r13_101 = r13_101 << 0x02;
+				r13_101 <<= 0x02;
 				memmove(rcx_148, rbp_128, r13_101);
 				rsi_106 = rbp_128;
 			}
@@ -239,7 +236,7 @@ l0000000000400746:
 		}
 	}
 	else
-		std::__throw_length_error(&globals->t400A8C);
+		std::__throw_length_error("vector::_M_range_insert");
 	goto l0000000000400738;
 }
 

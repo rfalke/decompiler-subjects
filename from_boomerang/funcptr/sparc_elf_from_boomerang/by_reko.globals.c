@@ -4,9 +4,6 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-<anonymous> g_t106A0 = <code>;
-<anonymous> g_t106C0 = <code>;
 Eq_2 g_t107AC = Unexpected function type (fn void ())
 ;
 char g_str107C8[] = "Hello, ";

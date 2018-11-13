@@ -11,8 +11,7 @@ void _start( * g1, word32 o7, word32 dwArg40)
 	{
 		atexit(&globals->t10764);
 		globals->ptr20978 = fp + 0x44 + ((_init(o7) << 0x02) + 0x04);
-		main();
-		exit(0x00010780);
+		exit(main());
 	}
 	else
 		atexit(g1);
@@ -27,74 +26,44 @@ word32 fn0001054C(word32 o7, word32 l7)
 // 00010554: void __do_global_dtors_aux(Register word32 o7)
 void __do_global_dtors_aux(word32 o7)
 {
-	struct Eq_40 * l7_136 = fn0001054C(o7, 66144);
-	word32 o2_26 = (word32) *l7_136->ptr000C;
+	struct Eq_39 * l7_22 = fn0001054C(o7, 66144);
+	word32 o2_26 = (word32) *l7_22->ptr000C;
 	if (o2_26 != 0x00)
 		return;
-	<anonymous> *** o0_54 = l7_136->ptr0010;
-	<anonymous> * o1_56 = **o0_54;
-	if (o1_56 != null)
+	word32 ** o0_43 = l7_22->ptr0010;
+	if (**o0_43 == 0x00)
 	{
-		<anonymous> *** l0_112 = o0_54;
-		<anonymous> ** o0_114 = (char *) *o0_54 + 0x04;
-		while (true)
+		if (l7_22->dw0024 == 0x00)
+			*l7_22->ptr000C = 0x01;
+		else
 		{
-			*l0_112 = (<anonymous> ***) o0_114;
-			word32 sp_119;
-			word32 i0_120;
-			word32 o0_121;
-			word32 i1_122;
-			word32 o1_123;
-			word32 i2_124;
-			word32 o2_125;
-			word32 i3_126;
-			word32 o3_127;
-			word32 i4_128;
-			word32 o4_129;
-			word32 i5_130;
-			word32 o5_131;
-			word32 i6_132;
-			word32 i7_133;
-			word32 o7_134;
-			word32 l1_135;
-			word32 g0_137;
-			byte NZVC_138;
-			byte Z_139;
-			o1_56();
-			<anonymous> ** o0_141 = *l0_112;
-			if (*o0_141 == null)
-				break;
-			o0_114 = (<anonymous> **) ((char *) o0_141 + 0x04);
+			word32 sp_64;
+			word32 i0_65;
+			word32 o0_66;
+			word32 i1_67;
+			word32 o1_68;
+			word32 i2_69;
+			word32 o2_70;
+			word32 i3_71;
+			word32 o3_72;
+			word32 i4_73;
+			word32 o4_74;
+			word32 i5_75;
+			word32 o5_76;
+			word32 i6_77;
+			word32 i7_78;
+			word32 o7_79;
+			word32 l1_80;
+			word32 l7_81;
+			word32 g0_82;
+			byte NZVC_83;
+			byte Z_84;
+			word32 l0_85;
+			__deregister_frame_info();
 		}
 	}
-	if (l7_136->dw0024 == 0x00)
-		*l7_136->ptr000C = 0x01;
 	else
-	{
-		word32 sp_85;
-		word32 i0_86;
-		word32 o0_87;
-		word32 i1_88;
-		word32 o1_89;
-		word32 i2_90;
-		word32 o2_91;
-		word32 i3_92;
-		word32 o3_93;
-		word32 i4_94;
-		word32 o4_95;
-		word32 i5_96;
-		word32 o5_97;
-		word32 i6_98;
-		word32 i7_99;
-		word32 o7_100;
-		word32 l1_101;
-		word32 l7_102;
-		word32 g0_103;
-		byte NZVC_104;
-		byte Z_105;
-		word32 l0_106;
-		__deregister_frame_info();
-	}
+		*o0_43 = (word32 **) ((char *) *o0_43 + 0x04);
 }
 
 // 00010604: void call___do_global_dtors_aux()
@@ -105,7 +74,7 @@ void call___do_global_dtors_aux()
 // 00010614: void frame_dummy(Register word32 o7)
 void frame_dummy(word32 o7)
 {
-	struct Eq_40 * l7_22 = fn0001054C(o7, 0x000101A0);
+	struct Eq_39 * l7_22 = fn0001054C(o7, 0x000101A0);
 	if (l7_22->dw0020 == 0x00)
 	{
 		word32 * i0_58 = l7_22->ptr0014;
@@ -164,28 +133,12 @@ void call_frame_dummy()
 {
 }
 
-// 000106A8: void main()
-void main()
+// 000106A8: Register int32 main()
+int32 main()
 {
-	word32 sp_22;
-	word32 i0_23;
-	word32 o0_24;
-	word32 i1_25;
-	word32 o1_26;
-	word32 i2_27;
-	word32 o2_28;
-	word32 i3_29;
-	word32 o3_30;
-	word32 i4_31;
-	word32 o4_32;
-	word32 i5_33;
-	word32 o5_34;
-	word32 i6_35;
-	word32 i7_36;
-	word32 o7_37;
-	word32 g1_38;
-	stat();
-	printf("Stat returns %d; size of file is %d\n", 0x00010780, dwLoc68);
+	int32 o0_20 = stat("test/source/stattest.c", fp + ~0x97);
+	printf("Stat returns %d; size of file is %d\n", o0_20, dwLoc68);
+	return o0_20;
 }
 
 // 000106E0: Register word32 fn000106E0(Register word32 o7, Register word32 l7)
@@ -198,10 +151,10 @@ word32 fn000106E0(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o7)
 {
 	word32 * l0_30;
-	struct Eq_247 * l7_22 = fn000106E0(o7, 0x000100CC);
-	struct Eq_252 * o1_25 = l7_22->ptr0018;
-	<anonymous> * o0_26 = o1_25->ptrFFFFFFFC;
-	if (o0_26 != (<anonymous> *) ~0x00)
+	struct Eq_203 * l7_22 = fn000106E0(o7, 0x000100CC);
+	struct Eq_208 * o1_25 = l7_22->ptr0018;
+	word32 o0_26 = o1_25->dwFFFFFFFC;
+	if (o0_26 != ~0x00)
 	{
 		do
 		{
@@ -225,11 +178,11 @@ word32 * __do_global_ctors_aux(word32 o7)
 			word32 g0_72;
 			byte NZVC_73;
 			byte Z_74;
-			o0_26();
+			fn00000018();
 		} while (*l0_30 != ~0x00);
 	}
 	else
-		l0_30 = (word32 *) &o1_25->ptrFFFFFFFC;
+		l0_30 = (word32 *) &o1_25->dwFFFFFFFC;
 	return l0_30;
 }
 

@@ -4,4 +4,15 @@
 
 #include "subject.h"
 
+<anonymous> g_t8264 = <code>;
+int32 (* g_ptr82D0)(int32 r0, char ** r1, char ** r2) = main;
+void (* g_ptr82D4)() = __libc_csu_init;
+int32 g_dw82F4 = 33432;
+int32 g_dw82F8 = 24;
+up32 g_dw8328 = 0x000105A7;
+int32 g_dw8468 = 32864;
+int32 g_dw846C = 32852;
+word32 g_dw10494 = 0x00000000;
+<anonymous> * g_ptr10590 = &g_t8264;
+byte g_b105A4 = 0x00;
 

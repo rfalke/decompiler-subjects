@@ -106,58 +106,55 @@ void main()
 // 080483A0: void __libc_csu_init(Register word32 edi)
 void __libc_csu_init(word32 edi)
 {
-	struct Eq_127 * ebx_19 = __i686.get_pc_thunk.bx(dwLoc20);
 	_init(0x00, edi);
-	if (0x00 < &ebx_19->ptr110C - &ebx_19->ptr110C >> 0x02)
+	if (0x00 < 0x08049694 - 0x08049694 >> 0x02)
 	{
 		do
 		{
-			word32 esp_47;
-			word32 ebp_48;
-			up32 edi_49;
-			up32 esi_50;
-			byte SZO_51;
-			bool C_52;
-			word32 ebx_53;
-			byte SCZO_54;
-			word32 edx_55;
-			word32 eax_56;
-			ebx_19->ptr110C();
-		} while (esi_50 + 0x01 < edi_49);
+			word32 esp_45;
+			word32 ebp_46;
+			up32 edi_47;
+			up32 esi_48;
+			byte SZO_49;
+			bool C_50;
+			word32 ebx_51;
+			byte SCZO_52;
+			word32 edx_53;
+			word32 eax_54;
+			(0x08049694 + 134518184)();
+		} while (esi_48 + 0x01 < edi_47);
 	}
 }
 
 // 08048400: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	struct Eq_127 * ebx_11 = __i686.get_pc_thunk.bx(dwLoc10);
-	int32 eax_17 = ebx_11->a10AE - ebx_11->a10AE;
-	int32 esi_22 = (eax_17 >> 0x02) - 0x01;
-	if (eax_17 >> 0x02 != 0x00)
+	int32 eax_15 = 0x08049694 - 0x08049694;
+	int32 esi_20 = (eax_15 >> 0x02) - 0x01;
+	if (eax_15 >> 0x02 != 0x00)
 	{
 		do
 		{
-			word32 esp_36;
-			word32 ebp_37;
-			byte SCZO_38;
-			word32 ebx_39;
-			word32 esi_40;
-			word32 eax_41;
-			word32 edx_42;
-			byte SZO_43;
-			bool C_44;
-			bool Z_45;
-			ebx_11->a10AE[esi_22]();
-			esi_22 = esi_40 - 0x01;
-		} while (esi_40 != 0x00);
+			word32 esp_35;
+			word32 ebp_36;
+			byte SCZO_37;
+			word32 ebx_38;
+			word32 esi_39;
+			word32 eax_40;
+			word32 edx_41;
+			byte SZO_42;
+			bool C_43;
+			bool Z_44;
+			((<anonymous> *[]) 0x08049694)[esi_20]();
+			esi_20 = esi_39 - 0x01;
+		} while (esi_39 != 0x00);
 	}
-	_fini(esi_22);
+	_fini(esi_20);
 }
 
-// 08048450: Register word32 __i686.get_pc_thunk.bx(Stack word32 dwArg00)
-word32 __i686.get_pc_thunk.bx(word32 dwArg00)
+// 08048450: void __i686.get_pc_thunk.bx(Stack word32 dwArg00)
+void __i686.get_pc_thunk.bx(word32 dwArg00)
 {
-	return dwArg00;
 }
 
 // 08048460: void __do_global_ctors_aux(Register word32 esi, Register word32 edi)

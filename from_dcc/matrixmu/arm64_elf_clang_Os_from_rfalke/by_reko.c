@@ -119,13 +119,13 @@ void frame_dummy(word64 qwArg00)
 // 0000000000400590: void main(Register word64 x10)
 void main(word64 x10)
 {
-	ui64 x8_25 = 0x00;
+	ui64 x8_25;
 	ui32 * x9_26 = fp - 0x50;
 	ui64 x10_7 = DPB(x10, 0x14, 0);
-	do
+	for (x8_25 = 0x00; x8_25 != 0x05; ++x8_25)
 	{
-		ui64 x13_30 = 0x00;
-		do
+		ui64 x13_30;
+		for (x13_30 = 0x00; x13_30 != 0x04; ++x13_30)
 		{
 			word32 * x14_38 = fp - 0xF0 + x8_25 * x10_7 + (x13_30 << 0x02);
 			word32 w15_40 = *x14_38;
@@ -133,16 +133,14 @@ void main(word64 x10)
 			ui32 * x17_42 = x9_26;
 			do
 			{
-				x17_42 = x17_42 + 0x01;
-				x16_41 = x16_41 + 0x14;
-				w15_40 = w15_40 + ((fp - 0xA0) + x16_41)[x13_30] * *x17_42;
+				++x17_42;
+				x16_41 += 0x14;
+				w15_40 += (fp - 0xA0 + x16_41)[x13_30] * *x17_42;
 			} while (x16_41 != 0x50);
 			*x14_38 = w15_40;
-			x13_30 = x13_30 + 0x01;
-		} while (x13_30 != 0x04);
-		x8_25 = x8_25 + 0x01;
-		x9_26 = x9_26 + 0x04;
-	} while (x8_25 != 0x05);
+		}
+		x9_26 += 0x04;
+	}
 }
 
 // 0000000000400608: void __libc_csu_init(Register word64 x30, Stack word64 qwArg00)

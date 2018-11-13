@@ -12,6 +12,16 @@ void _init(word32 esi)
 	__do_global_ctors_aux();
 }
 
+// 080482A0: void __libc_start_main()
+void __libc_start_main()
+{
+}
+
+// 080482B0: void printf()
+void printf()
+{
+}
+
 // 080482C0: void _start(Register (ptr32 Eq_13) edx, Stack int32 dwArg00)
 void _start( * edx, int32 dwArg00)
 {

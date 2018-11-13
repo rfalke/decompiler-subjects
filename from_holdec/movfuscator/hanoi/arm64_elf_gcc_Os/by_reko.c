@@ -107,18 +107,17 @@ void main(int32 w0, Eq_75 * x1, word64 qwArg00)
 	*globals->ptr11FD0 = 0x08;
 l000000000000093C:
 	union Eq_111 * x22_41 = globals->ptr11FD0;
-	int64 x20_43 = 0x00;
+	int64 x20_43;
 	ptr64 x21_45 = globals->ptr11FA8;
-	do
+	for (x20_43 = 0x00; x20_43 != 0x18; x20_43 += 0x08)
 	{
 		new_tower(*x22_41, x22);
 		x21_45 + x20_43 = 0x01;
-		x20_43 = x20_43 + 0x08;
-	} while (x20_43 != 0x18);
+	}
 	Eq_111 w20_54 = *x22_41;
 	while (w20_54 != 0x00)
 	{
-		w20_54 = w20_54 - 0x01;
+		--w20_54;
 		word64 sp_97;
 		x19_31 = DPB(x19_31, add_disk(0x00, w20_54, out sp_97), 0);
 	}
@@ -229,12 +228,9 @@ void new_tower(Eq_111 w0, word64 qwArg00)
 word32 text(word32 w0, word32 w1, Eq_111 w2, ptr64 & spOut)
 {
 	fn00000000000008F0();
-	Eq_111 w19_18 = w2;
-	while (w19_18 != 0x00)
-	{
+	Eq_111 w19_18;
+	for (w19_18 = w2; w19_18 != 0x00; --w19_18)
 		fn00000000000008F0();
-		w19_18 = w19_18 - 0x01;
-	}
 	word64 sp_54;
 	*spOut = fp + 0x08;
 	return (word32) x19;

@@ -4,11 +4,11 @@
 
 #include "subject.h"
 
-Eq_854 g_t8048420 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
+Eq_850 g_t8048420 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_857 g_t80491A0 = Unexpected function type (fn void ())
+Eq_853 g_t80491A0 = Unexpected function type (fn void ())
 ;
-Eq_858 g_t8049200 = Unexpected function type (fn void ())
+Eq_854 g_t8049200 = Unexpected function type (fn void ())
 ;
 char g_str8049224[] = "with single ' quote %p\n";
 char g_str804923C[] = "with double \" quote %p\n";
@@ -272,5 +272,6 @@ char g_str804ADC1[] = "hex=0xff dec=255 char=\xFFFINI";
 void g_v804ADDD = ??void??;
 word32 g_dw804BF10 = 0x00000000;
 <anonymous> * g_ptr804BFFC = null;
+word32 g_dw804C004 = 0x00000000;
 byte g_b804C02C = 0x00;
 

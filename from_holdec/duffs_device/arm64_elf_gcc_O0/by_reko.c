@@ -173,7 +173,7 @@ void copy2_four_times(word16 * x0, int16 * x1, int32 w2)
 	int32 dwLoc14_31 = w2;
 	if (w2 > 0x00)
 	{
-		while (dwLoc14_31 != 0x00)
+		for (; dwLoc14_31 != 0x00; dwLoc14_31 -= 0x04)
 		{
 			word32 w0_37 = 0x04 - dwLoc14_31;
 			if (w0_37 != 0x02)
@@ -183,21 +183,20 @@ void copy2_four_times(word16 * x0, int16 * x1, int32 w2)
 				if (w0_37 != 0x01)
 				{
 					*qwLoc08_26 = (word16) (word32) *qwLoc10_29;
-					qwLoc08_26 = qwLoc08_26 + 0x01;
-					qwLoc10_29 = qwLoc10_29 + 0x01;
+					++qwLoc08_26;
+					++qwLoc10_29;
 				}
 				*qwLoc08_26 = (word16) (word32) *qwLoc10_29;
-				qwLoc08_26 = qwLoc08_26 + 0x01;
-				qwLoc10_29 = qwLoc10_29 + 0x01;
+				++qwLoc08_26;
+				++qwLoc10_29;
 			}
 			*qwLoc08_26 = (word16) (word32) *qwLoc10_29;
-			qwLoc08_26 = qwLoc08_26 + 0x01;
-			qwLoc10_29 = qwLoc10_29 + 0x01;
+			++qwLoc08_26;
+			++qwLoc10_29;
 l0000000000000BC4:
 			*qwLoc08_26 = (word16) (word32) *qwLoc10_29;
-			qwLoc08_26 = qwLoc08_26 + 0x01;
-			qwLoc10_29 = qwLoc10_29 + 0x01;
-			dwLoc14_31 = dwLoc14_31 - 0x04;
+			++qwLoc08_26;
+			++qwLoc10_29;
 		}
 	}
 }
@@ -210,7 +209,7 @@ void copy2_eight_times(word16 * x0, int16 * x1, int32 w2)
 	int32 dwLoc14_125 = w2;
 	if (w2 > 0x00)
 	{
-		while (dwLoc14_125 != 0x00)
+		for (; dwLoc14_125 != 0x00; dwLoc14_125 -= 0x08)
 		{
 			up32 w0_40 = 0x08 - dwLoc14_125;
 			if (w0_40 <= 0x07 && w0_40 >= 0x01)
@@ -227,7 +226,6 @@ void copy2_eight_times(word16 * x0, int16 * x1, int32 w2)
 			x1_52->w000C = (word16) (word32) x2_55->w000C;
 			qwLoc08_116 = (word16 *) (&x1_52->w000C + 0x01);
 			qwLoc10_119 = (int16 *) (&x2_55->w000C + 0x01);
-			dwLoc14_125 = dwLoc14_125 - 0x08;
 		}
 	}
 }

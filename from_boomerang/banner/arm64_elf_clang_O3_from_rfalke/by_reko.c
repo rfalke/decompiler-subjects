@@ -139,8 +139,8 @@ void frame_dummy(word64 qwArg00)
 // 0000000000400640: void main(Stack word64 qwArg00)
 void main(word64 qwArg00)
 {
-	word32 w19_111 = 0x00;
-	do
+	word32 w19_111;
+	for (w19_111 = 0x00; w19_111 != 0x07; ++w19_111)
 	{
 		int64 x8_58 = 0x00;
 		struct Eq_195 * x9_60 = fp - 0x88;
@@ -156,8 +156,8 @@ void main(word64 qwArg00)
 			word32 w10_92 = x10_83->dw0000;
 			x9_60->b0007 = 0x20;
 			x9_60->dw0000 = w10_92;
-			x8_58 = x8_58 + 0x01;
-			x9_60 = x9_60 + 0x01;
+			++x8_58;
+			++x9_60;
 			struct Eq_222 * x10_100 = DPB(x10_83, 0x4F, 0);
 		} while (x8_58 < 0x0A);
 		while ((word32) x10_142[(fp - 0x88) / 0x07] == 0x20)
@@ -169,8 +169,7 @@ void main(word64 qwArg00)
 				break;
 		}
 		fn00000000004004D0();
-		w19_111 = w19_111 + 0x01;
-	} while (w19_111 != 0x07);
+	}
 	fn00000000004004E0();
 }
 

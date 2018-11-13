@@ -5,6 +5,7 @@
 #include "subject.h"
 
 byte g_a0100[];
+Eq_435 g_t0101;
 <anonymous> g_t0850 = <code>;
 <anonymous> * g_a11D88[] = 
 	{

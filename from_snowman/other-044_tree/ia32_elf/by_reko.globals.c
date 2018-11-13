@@ -4,13 +4,14 @@
 
 #include "subject.h"
 
-Eq_33 g_t8048515 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
+Eq_29 g_t8048515 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
-Eq_36 g_t80485A0 = Unexpected function type (fn void ())
+Eq_32 g_t80485A0 = Unexpected function type (fn void ())
 ;
-Eq_37 g_t8048610 = Unexpected function type (fn void ())
+Eq_33 g_t8048610 = Unexpected function type (fn void ())
 ;
 char g_str8048630[] = "%d\n";
 word32 g_dw8049768 = 0x00000000;
+word32 g_dw804985C = 0x00000000;
 byte g_b8049880 = 0x00;
 

@@ -147,10 +147,10 @@ void main(word64 qwArg00)
 	int64 qwLoc30_128 = 0x00;
 	while (qwLoc30_128 - qwLoc38 <= 0x00)
 	{
-		int32 dwLoc24_125 = 0x01;
-		while (dwLoc24_125 <= 0x28)
-			dwLoc24_125 = dwLoc24_125 + 0x01;
-		qwLoc30_128 = qwLoc30_128 + 0x01;
+		int32 dwLoc24_125;
+		for (dwLoc24_125 = 0x01; dwLoc24_125 <= 0x28; ++dwLoc24_125)
+			;
+		++qwLoc30_128;
 	}
 	fn00000000004004E0();
 }

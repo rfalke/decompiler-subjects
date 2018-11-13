@@ -21,7 +21,7 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 	word32 dwLoc10_11 = esi;
 	word32 dwLoc18_15 = ecx;
 	while (edi != 0x00)
-		dwLoc10_11 = dwLoc10_11 + 0x01;
+		++dwLoc10_11;
 	do
 	{
 		if (edi == 0x00)
@@ -31,7 +31,7 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 				h();
 				if (true)
 					break;
-				dwLoc0C_122 = dwLoc0C_122 + 0x01;
+				++dwLoc0C_122;
 			}
 			while (true)
 			{
@@ -41,7 +41,7 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 				h();
 				if (true)
 					break;
-				dwLoc0C_122 = dwLoc0C_122 + 0x01;
+				++dwLoc0C_122;
 			}
 			do
 			{

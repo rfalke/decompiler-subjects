@@ -7,7 +7,7 @@
 // 004019E0: Register Eq_2 Win32CrtStartup()
 DWORD Win32CrtStartup()
 {
-	fs->ptr0000 = fp - 0x14;
+	fs->ptr0000 = fp - 0x0014;
 	__set_app_type(0x02);
 	globals->dw40312C = ~0x00;
 	globals->dw403130 = ~0x00;
@@ -42,23 +42,23 @@ DWORD Win32CrtStartup()
 	{
 		do
 		{
-			esi_101 = esi_101 + 0x01;
+			++esi_101;
 			cu8 al_161 = *esi_101;
 		} while (al_161 != 0x00 && al_161 != 0x22);
 		if (*esi_101 == 0x22)
-			esi_101 = esi_101 + 0x01;
+			++esi_101;
 	}
 	else
 	{
 		while (*esi_101 > 0x20)
-			esi_101 = esi_101 + 0x01;
+			++esi_101;
 	}
 	while (true)
 	{
 		cu8 al_103 = *esi_101;
 		if (al_103 == 0x00 || al_103 > 0x20)
 			break;
-		esi_101 = esi_101 + 0x01;
+		++esi_101;
 	}
 	ui32 eax_121;
 	*(esp_79 - 0x04) = fp - 0x60;
@@ -70,8 +70,8 @@ DWORD Win32CrtStartup()
 	*(esp_79 - 0x04) = eax_121;
 	*(esp_79 - 0x08) = (cu8 **) esi_101;
 	*(esp_79 - 0x0C) = 0x00;
-	*(esp_79 - 0x10) = 0x00;
-	Eq_190 eax_131 = GetModuleHandleA(*(esp_79 - 0x10));
+	*(esp_79 - 0x0010) = 0x00;
+	Eq_190 eax_131 = GetModuleHandleA(*(esp_79 - 0x0010));
 	*(esp_79 - 0x10) = (HMODULE *) eax_131;
 	fn00401BFC(dwArg00, dwArg04, dwArg08, dwArg0C);
 	*(esp_79 - 0x04) = (HMODULE *) eax_131;

@@ -11,6 +11,14 @@ struct Eq_3 g_t1000061C =
 	};
 Eq_43 g_t10000908 = Unexpected function type (fn void ())
 ;
+char g_str1000091C[] = "%f";
+char g_str10000920[] = "a is %f, b is %f\n";
+char g_str10000934[] = "Equal\n";
+char g_str1000093C[] = "Not Equal\n";
+char g_str10000948[] = "Greater\n";
+char g_str10000954[] = "Less or Equal\n";
+char g_str10000964[] = "Greater or Equal\n";
+char g_str10000978[] = "Less\n";
 int32 g_dw10010984 = -1;
 int32 g_dw10010990 = 0;
 int32 g_dw10010994 = 0;

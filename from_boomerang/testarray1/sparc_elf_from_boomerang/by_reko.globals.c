@@ -5,7 +5,6 @@
 #include "subject.h"
 
 byte g_bFFFDF6D4;
-<anonymous> g_tFFFFFFFF;
 Eq_2 g_t10790 = Unexpected function type (fn void ())
 ;
 char g_str107B0[] = "Sum is %d\n";

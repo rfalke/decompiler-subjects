@@ -124,9 +124,9 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x1C);
-	int32 dwLoc08_10 = 0x00;
-	while (dwLoc08_10 <= 0x09)
-		dwLoc08_10 = dwLoc08_10 + 0x01;
+	int32 dwLoc08_10;
+	for (dwLoc08_10 = 0x00; dwLoc08_10 <= 0x09; ++dwLoc08_10)
+		;
 	printf("%i\n", dwLoc08_10);
 }
 

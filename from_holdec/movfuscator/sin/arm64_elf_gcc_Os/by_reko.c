@@ -56,14 +56,13 @@ void main(word64 qwArg00)
 {
 	real32 s8_24 = globals->r077C;
 	real32 s9_26 = globals->r0780;
-	word32 w19_28 = 33;
-	do
+	word32 w19_28;
+	for (w19_28 = 33; w19_28 != 0x00; --w19_28)
 	{
 		sin(s8_24);
 		fn0000000000000710();
-		s8_24 = s8_24 + s9_26;
-		w19_28 = w19_28 - 0x01;
-	} while (w19_28 != 0x00);
+		s8_24 += s9_26;
+	}
 }
 
 // 0000000000000784: void _start(Stack word64 qwArg00)

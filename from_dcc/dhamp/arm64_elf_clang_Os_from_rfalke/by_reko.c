@@ -171,8 +171,8 @@ void main(word64 qwArg00)
 {
 	fn00000000004005F0();
 	Eq_175 x8_49 = 0x00400000;
-	up32 w27_133 = 0x00;
-	do
+	up32 w27_133;
+	for (w27_133 = 0x00; w27_133 != 0x06; ++w27_133)
 	{
 		x8_49 = DPB(x8_49, w27_133, 0);
 		if (w27_133 <= 0x05)
@@ -207,8 +207,7 @@ void main(word64 qwArg00)
 			x8_105();
 			return;
 		}
-		w27_133 = w27_133 + 0x01;
-	} while (w27_133 != 0x06);
+	}
 	fn00000000004005F0();
 }
 
@@ -283,21 +282,15 @@ int32 fib(int32 w0, word64 qwArg00, Eq_274 & w19Out, Eq_275 & w20Out, ptr64 & sp
 // 0000000000400AC8: void stest(Register (arr Eq_351) x0, Register (arr Eq_361) x1)
 void stest(Eq_351 x0[], Eq_361 x1[])
 {
-	word32 w9_27 = 0x00;
-	do
+	word32 w9_27;
+	for (w9_27 = 0x00; w9_27 != 9000; ++w9_27)
 	{
-		int64 x15_30 = 0x00;
-		do
-		{
+		int64 x15_30;
+		for (x15_30 = 0x00; x15_30 != 0x11; ++x15_30)
 			x0[x15_30].t0000.u0 = (byte) (word32) (0x00400DF7 + x15_30);
-			x15_30 = x15_30 + 0x01;
-		} while (x15_30 != 0x11);
-		int64 x15_41 = 0x00;
-		do
-		{
+		int64 x15_41;
+		for (x15_41 = 0x00; x15_41 != 0x11; ++x15_41)
 			x1[x15_41].t0000.u0 = (byte) (word32) (0x00400E08 + x15_41);
-			x15_41 = x15_41 + 0x01;
-		} while (x15_41 != 0x11);
 		ui32 w15_52 = (word32) x0[0x00].t0000;
 		byte * x16_58 = &(x0 + 0x01)->t0000;
 		byte * x17_60 = &(x1 + 0x01)->t0000;
@@ -308,14 +301,13 @@ void stest(Eq_351 x0[], Eq_361 x1[])
 				if ((w15_52 & 0xFF) == 0x00)
 					goto l0000000000400B5C;
 				w15_52 = (word32) *x16_58;
-				x16_58 = x16_58 + 0x01;
+				++x16_58;
 				x17_60 = x17_103 + 0x01;
 				byte * x17_103 = x17_60;
 			} while (w15_52 == (word32) (*x17_103));
 		}
 l0000000000400B5C:
-		w9_27 = w9_27 + 0x01;
-	} while (w9_27 != 9000);
+	}
 }
 
 // 0000000000400B70: void mstrcmp(Register (ptr64 byte) x0, Register (ptr64 byte) x1)
@@ -331,7 +323,7 @@ void mstrcmp(byte * x0, byte * x1)
 			if ((w8_29 & 0xFF) == 0x00)
 				return;
 			w8_29 = (word32) *x10_28;
-			x10_28 = x10_28 + 0x01;
+			++x10_28;
 			x9_27 = x9_45 + 0x01;
 			byte * x9_45 = x9_27;
 		} while (w8_29 == (word32) (*x9_45));
@@ -345,20 +337,17 @@ void mstrcpy(byte * x0, byte * x1)
 	{
 		word32 w8_8 = (word32) *x1;
 		*x0 = (byte) w8_8;
-		x1 = x1 + 0x01;
-		x0 = x0 + 0x01;
+		++x1;
+		++x0;
 	} while (w8_8 != 0x00);
 }
 
 // 0000000000400BC0: void mcopy(Stack word64 qwArg00)
 void mcopy(word64 qwArg00)
 {
-	int64 x8_29 = 0x00;
-	do
-	{
+	int64 x8_29;
+	for (x8_29 = 0x00; x8_29 != 0x0E; ++x8_29)
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x9C)[x8_29].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00].a0000)[0x00] = (byte) (word32) (0x00400E19 + x8_29);
-		x8_29 = x8_29 + 0x01;
-	} while (x8_29 != 0x0E);
 	fn00000000004005A0();
 	if (0x00400E27 == 0x00)
 	{
@@ -369,8 +358,8 @@ void mcopy(word64 qwArg00)
 	else
 	{
 		word32 w20_67 = (word32) bLoc9C;
-		word32 w22_71 = 0x01;
-		do
+		word32 w22_71;
+		for (w22_71 = 0x01; w22_71 != 1000; ++w22_71)
 		{
 			byte * x23_116 = fp - 155;
 			if (w20_67 != 0x00)
@@ -382,8 +371,7 @@ void mcopy(word64 qwArg00)
 					byte * x23_128 = x23_116;
 				} while ((word32) *x23_128 != 0x00);
 			}
-			w22_71 = w22_71 + 0x01;
-		} while (w22_71 != 1000);
+		}
 		fn0000000000400590();
 	}
 }

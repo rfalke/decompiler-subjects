@@ -271,7 +271,7 @@ void main(word32 w0)
 	{
 		word32 w0_47 = f0(out x29_35, out sp_36);
 		sp_36->dw0010 = w0_47;
-		x29_35->qwFFFFFFE8 = x29_35->qwFFFFFFE8 + 0x01;
+		++x29_35->qwFFFFFFE8;
 	}
 	fn00000000004004E0();
 	sp_36->dw000C = (word32) 0x00400912;

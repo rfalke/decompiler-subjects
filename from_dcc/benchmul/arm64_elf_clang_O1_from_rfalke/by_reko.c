@@ -159,10 +159,9 @@ void main(word64 x10, word64 qwArg00)
 		int64 x10_71 = DPB(x10, 0x01, 0);
 		do
 		{
-			word32 w11_80 = 0x28;
-			do
-				w11_80 = w11_80 - 0x01;
-			while (w11_80 != 0x00);
+			word32 w11_80;
+			for (w11_80 = 0x28; w11_80 != 0x00; --w11_80)
+				;
 			x10_71 = x10_101 + 0x01;
 			int64 x10_101 = x10_71;
 		} while (x10_101 - qwLoc28 < 0x00);

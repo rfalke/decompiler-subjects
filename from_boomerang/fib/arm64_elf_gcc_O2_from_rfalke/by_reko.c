@@ -54,15 +54,14 @@ void fn00000000000006E0()
 // 00000000000006F0: void main()
 void main()
 {
-	int32 w2_11 = 0x09;
-	do
+	int32 w2_11;
+	for (w2_11 = 0x09; w2_11 != 0x01; w2_11 -= 0x02)
 	{
 		word32 w20_15;
 		word32 w21_16;
 		word64 sp_17;
 		fib(w2_11, out w20_15, out w21_16, out sp_17);
-		w2_11 = w2_11 - 0x02;
-	} while (w2_11 != 0x01);
+	}
 	fn00000000000006E0();
 }
 
