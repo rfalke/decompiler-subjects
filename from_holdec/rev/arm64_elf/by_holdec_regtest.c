@@ -4,6 +4,11 @@
 // full-signature: func(main, return=[<int(undef, 8),null,unknown>], parameter=[<int(undef, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 d8 main(d4 argc, d1** argv)
 {
+  reg_var9 = UNDEF;
+  reg_var10 = UNDEF;
+  reg_var14 = UNDEF;
+  reg_var18 = UNDEF;
+  reg_var19 = UNDEF;
   reg_var7 = LOAD(stdin);
   (void) setlocale(6, "");
   (void) bindtextdomain("util-linux", "/usr/share/locale");
@@ -85,9 +90,9 @@ L12:
 // startStackOffset -128
 // modifiedAddresses  []
 L18:
-  reg_var10 = UNSIGNED_EXTEND(reg_bk) * 4;
-  reg_var9 = reg_var10 + -4;
-  if(LOAD(reg_bj + reg_var9) == 10) goto L43;
+  reg_var12 = UNSIGNED_EXTEND(reg_var9) * 4;
+  reg_var11 = reg_var12 + -4;
+  if(LOAD(reg_var10 + reg_var11) == 10) goto L43;
   goto L350;
 
 // calls     [9, 42]
@@ -119,7 +124,7 @@ L42:
 // startStackOffset -128
 // modifiedAddresses  []
 L43:
-  reg_var14 = reg_var1;
+  reg_var17 = reg_var1;
   goto L44;
 
 // calls     [31]
@@ -129,10 +134,10 @@ L43:
 // startStackOffset -128
 // modifiedAddresses  [ADD(LOAD(ADDR(g_0x00020010)), reg_pp_214)]
 L44:
-  reg_var11--;
-  reg_var1 = reg_var14;
+  reg_var13--;
+  reg_var1 = reg_var17;
   reg_var4 = NARROW(reg_var1);
-  (void) STORE(reg_var10 + buffer_addr, 0);
+  (void) STORE(reg_var12 + buffer_addr, 0);
   goto L31;
 
 // calls     [40]
@@ -142,10 +147,10 @@ L44:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L47:
-  reg_dt = dcgettext(reg_as, "cannot open %s", 5);
+  reg_dx = dcgettext(reg_as, "cannot open %s", 5);
   reg_var5 += 8;
   reg_var6 = 1;
-  (void) warn(reg_dt, LOAD(reg_var5 + -8), 1, &g_0x0001fc28, reg_var2, InitValue(initial_value_of_x5));
+  (void) warn(reg_dx, LOAD(reg_var5 + -8), 1, &g_0x0001fc28, reg_var2, InitValue(initial_value_of_x5));
   goto L40;
 
 // calls     [44]
@@ -154,7 +159,7 @@ L47:
 // deep-called    {0, 4, 6, 9, 11, 12, 14, 16, 18, 19, 23, 25, 26, 27, 30, 31, 33, 34, 35, 36, 39, 40, 43, 44, 45, 46, 47, 61, 62, 99, 100, 138, 139, 140, 141, 305, 311, 312, 313, 314, 316, 317, 342, 343, 344, 346, 347, 348, 349, 350, 352, 353, 354, 360, 393, 400, 430, 436, 437, 438, 439, 440, 466, 467, 468, 469, 470, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519}
 // modifiedAddresses  null
 L477:
-  reg_var14 = reg_var1;
+  reg_var17 = reg_var1;
   goto L44;
 
 // calls     [39, 46]
@@ -164,8 +169,8 @@ L477:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L36:
-  reg_cw = ferror(reg_var7);
-  if(reg_cw != 0) {
+  reg_da = ferror(reg_var7);
+  if(reg_da != 0) {
     reg_var6 = 1;
     (void) warn("%s", reg_var8);
   }
@@ -178,11 +183,11 @@ L36:
 // deep-called    {0, 4, 6, 9, 11, 12, 14, 16, 18, 19, 23, 25, 26, 27, 30, 31, 33, 34, 35, 36, 39, 40, 43, 44, 45, 46, 47, 61, 62, 99, 100, 138, 139, 140, 141, 305, 311, 312, 313, 314, 316, 317, 342, 343, 344, 346, 347, 348, 349, 350, 352, 353, 354, 360, 393, 400, 430, 436, 437, 438, 439, 440, 466, 467, 468, 469, 470, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519}
 // modifiedAddresses  null
 L354:
-  if(reg_var17 != 0) {
-    reg_var1 = reg_var14;
+  if(reg_var22 != 0) {
+    reg_var1 = reg_var18;
     reg_var4 = NARROW(reg_var1);
   }
-  if(LOAD(reg_var9 + buffer_addr) == 10) goto L477;
+  if(LOAD(reg_var14 + buffer_addr) == 10) goto L477;
   goto L31;
 
 // calls     [338]
@@ -203,7 +208,7 @@ L53:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L48:
-  (void) err(1, "cannot allocate %zu bytes", reg_var1 * 8);
+  (void) err(1, "cannot allocate %zu bytes", reg_var19 * 8);
   // not reached
   goto L63;
 
@@ -216,18 +221,20 @@ L344:
   while(1) {
     reg_bi = fgetws(buffer_addr, reg_var4, reg_var7);
     if(reg_bi == 0) {
-      reg_var16 = 1;
+      reg_var21 = 1;
       break;
     }
     reg_bj = buffer_addr;
     reg_bk = wcslen(buffer_addr);
-    reg_var11 = UNSIGNED_EXTEND(reg_bk);
-    if(reg_var11 != 0) {
-      reg_var16 = 0;
+    reg_var13 = UNSIGNED_EXTEND(reg_bk);
+    if(reg_var13 != 0) {
+      reg_var21 = 0;
+      reg_var10 = reg_bj;
+      reg_var9 = reg_bk;
       break;
     }
   }
-  if(reg_var16 == 0) goto L18;
+  if(reg_var21 == 0) goto L18;
   goto L36;
 
 // calls     [2, 51, 55]
@@ -242,32 +249,32 @@ L397:
     (void) exit(0);
     // not reached
   } else if(reg_ac == 104) {
-    reg_dy = LOAD(stdout);
-    reg_ea = dcgettext("", "Usage: %s [options] [file ...]\n", 5);
-    (void) __fprintf_chk(reg_dy, 1, reg_ea, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
-    (void) fputc(10, reg_dy);
-    reg_eb = dcgettext("", "Reverse lines characterwise.\n", 5);
-    (void) fputs(reg_eb, reg_dy);
-    reg_ec = dcgettext("", "\nOptions:\n", 5);
-    (void) fputs(reg_ec, reg_dy);
-    reg_ed = dcgettext("", " -h, --help     display this help and exit\n", 5);
-    (void) fputs(reg_ed, reg_dy);
-    reg_ee = dcgettext("", " -V, --version  output version information and exit\n", 5);
-    (void) fputs(reg_ee, reg_dy);
-    reg_ef = dcgettext("", "\nFor more details see %s.\n", 5);
-    (void) __fprintf_chk(reg_dy, 1, reg_ef, "rev(1)", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
-    if(reg_dy == LOAD(stderr)) {
-      reg_var15 = 1;
+    reg_ee = LOAD(stdout);
+    reg_ef = dcgettext("", "Usage: %s [options] [file ...]\n", 5);
+    (void) __fprintf_chk(reg_ee, 1, reg_ef, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    (void) fputc(10, reg_ee);
+    reg_eg = dcgettext("", "Reverse lines characterwise.\n", 5);
+    (void) fputs(reg_eg, reg_ee);
+    reg_eh = dcgettext("", "\nOptions:\n", 5);
+    (void) fputs(reg_eh, reg_ee);
+    reg_ei = dcgettext("", " -h, --help     display this help and exit\n", 5);
+    (void) fputs(reg_ei, reg_ee);
+    reg_ej = dcgettext("", " -V, --version  output version information and exit\n", 5);
+    (void) fputs(reg_ej, reg_ee);
+    reg_ek = dcgettext("", "\nFor more details see %s.\n", 5);
+    (void) __fprintf_chk(reg_ee, 1, reg_ek, "rev(1)", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    if(reg_ee == LOAD(stderr)) {
+      reg_var20 = 1;
       reg_result = 1;
     } else {
-      reg_var15 = 0;
+      reg_var20 = 0;
       reg_result = 0;
     }
-    (void) exit(reg_var15);
+    (void) exit(reg_var20);
   } else {
-    reg_dw = LOAD(stderr);
-    reg_dx = dcgettext("", "Try '%s --help' for more information.\n", 5);
-    (void) __fprintf_chk(reg_dw, 1, reg_dx, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    reg_ec = LOAD(stderr);
+    reg_ed = dcgettext("", "Try '%s --help' for more information.\n", 5);
+    (void) __fprintf_chk(reg_ec, 1, reg_ed, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
     (void) exit(1);
     // not reached
   }
@@ -280,38 +287,41 @@ L397:
 // modifiedAddresses  null
 L350:
   while(1) {
-    reg_ce = buffer_addr;
-    reg_cf = feof(reg_var7);
-    if(reg_cf != 0) {
-      reg_var17 = 0;
+    reg_cg = buffer_addr;
+    reg_ch = feof(reg_var7);
+    if(reg_ch != 0) {
+      reg_var22 = 0;
+      reg_var14 = reg_var11;
       break;
     }
-    reg_bo = realloc(reg_ce, NARROW(reg_var1) * 8);
-    reg_var14 = reg_var1 * 2;
-    if(reg_var1 * 8 != 0 && reg_bo == 0) {
-      reg_var17 = 3;
+    reg_bq = realloc(reg_cg, NARROW(reg_var1) * 8);
+    reg_var17 = reg_var1 * 2;
+    if(reg_var1 * 8 != 0 && reg_bq == 0) {
+      reg_var22 = 3;
+      reg_var19 = reg_var1;
       break;
     }
-    (void) STORE(&buffer_addr, reg_bo);
-    reg_bq = fgetws(reg_bo + reg_var10, reg_var4, reg_var7);
-    if(reg_bq == 0) {
-      reg_var17 = 2;
+    (void) STORE(&buffer_addr, reg_bq);
+    reg_bs = fgetws(reg_bq + reg_var12, reg_var4, reg_var7);
+    if(reg_bs == 0) {
+      reg_var22 = 2;
+      reg_var18 = reg_var17;
       break;
     }
-    reg_br = buffer_addr;
-    reg_bs = wcslen(buffer_addr);
-    reg_var10 = UNSIGNED_EXTEND(reg_bs) * 4;
-    reg_var11 = UNSIGNED_EXTEND(reg_bs);
-    reg_var9 = reg_var10 + -4;
-    if(LOAD(reg_br + reg_var9) == 10) {
-      reg_var17 = 1;
+    reg_bt = buffer_addr;
+    reg_bu = wcslen(buffer_addr);
+    reg_var12 = UNSIGNED_EXTEND(reg_bu) * 4;
+    reg_var13 = UNSIGNED_EXTEND(reg_bu);
+    reg_var11 = reg_var12 + -4;
+    if(LOAD(reg_bt + reg_var11) == 10) {
+      reg_var22 = 1;
       break;
     }
-    reg_var1 = reg_var14;
+    reg_var1 = reg_var17;
     reg_var4 = NARROW(reg_var1);
   }
-  if(reg_var17 == 1) goto L44;
-  if(reg_var17 != 0 && reg_var17 != 2) goto L48;
+  if(reg_var22 == 1) goto L44;
+  if(reg_var22 != 0 && reg_var22 != 2) goto L48;
   goto L354;
 
 // calls     [33, 35]
@@ -321,21 +331,21 @@ L350:
 // startStackOffset -128
 // modifiedAddresses  []
 L31:
-  reg_cl = buffer_addr;
-  reg_var2 = reg_var11 / 2;
+  reg_co = buffer_addr;
+  reg_var2 = reg_var13 / 2;
   if(reg_var2 != 0) {
-    reg_var13 = reg_cl;
-    reg_var12 = reg_cl + reg_var11 * 4;
-    reg_var2 = reg_cl + reg_var2 * 4;
+    reg_var16 = reg_co;
+    reg_var15 = reg_co + reg_var13 * 4;
+    reg_var2 = reg_co + reg_var2 * 4;
     do {
-      reg_cs = LOAD(reg_var13);
-      (void) STORE(reg_var13, LOAD(reg_var12 + -4));
-      reg_var13 += 4;
-      (void) STORE(reg_var12 + -4, reg_cs);
-      reg_var12 += -4;
-    } while(reg_var13 != reg_var2);
+      reg_cv = LOAD(reg_var16);
+      (void) STORE(reg_var16, LOAD(reg_var15 + -4));
+      reg_var16 += 4;
+      (void) STORE(reg_var15 + -4, reg_cv);
+      reg_var15 += -4;
+    } while(reg_var16 != reg_var2);
   }
-  (void) fputws(reg_cl, LOAD(reg_be));
+  (void) fputws(reg_co, LOAD(reg_be));
   goto L344;
 
 // is exit block
