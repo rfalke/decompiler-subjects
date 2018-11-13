@@ -2938,7 +2938,7 @@ adc4_mv_constant_complex2:
 .globl adc_locked_mv_plain
          .type   adc_locked_mv_plain, @function
 adc_locked_mv_plain:
-      lock adc 8(%ebp), %eax
+      .byte 0xf0,0x13,0x45,0x08
   mov $0x0,%eax
 
     ret
@@ -2960,7 +2960,7 @@ adc_locked_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  lock adc 8(%ebp), %eax
+  .byte 0xf0,0x13,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -3010,7 +3010,7 @@ adc_locked_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  lock adc 8(%ebp), %eax
+  .byte 0xf0,0x13,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -3060,7 +3060,7 @@ adc_locked_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  lock adc 8(%ebp), %eax
+  .byte 0xf0,0x13,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -3110,7 +3110,7 @@ adc_locked_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  lock adc 8(%ebp), %eax
+  .byte 0xf0,0x13,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -5681,7 +5681,7 @@ add12_mv_constant_complex2:
 .globl add_locked_mv_plain
          .type   add_locked_mv_plain, @function
 add_locked_mv_plain:
-      lock addl 8(%ebp), %eax
+      .byte 0xf0,0x03,0x45,0x08
   mov $0x0,%eax
 
     ret
@@ -5703,7 +5703,7 @@ add_locked_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  lock addl 8(%ebp), %eax
+  .byte 0xf0,0x03,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -5753,7 +5753,7 @@ add_locked_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  lock addl 8(%ebp), %eax
+  .byte 0xf0,0x03,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -5803,7 +5803,7 @@ add_locked_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  lock addl 8(%ebp), %eax
+  .byte 0xf0,0x03,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -5853,7 +5853,7 @@ add_locked_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  lock addl 8(%ebp), %eax
+  .byte 0xf0,0x03,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -9057,7 +9057,7 @@ and7_mv_constant_complex2:
 .globl and_locked_mv_plain
          .type   and_locked_mv_plain, @function
 and_locked_mv_plain:
-      lock andl 8(%ebp), %eax
+      .byte 0xf0,0x23,0x45,0x08
   mov $0x0,%eax
 
     ret
@@ -9079,7 +9079,7 @@ and_locked_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  lock andl 8(%ebp), %eax
+  .byte 0xf0,0x23,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -9129,7 +9129,7 @@ and_locked_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  lock andl 8(%ebp), %eax
+  .byte 0xf0,0x23,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -9179,7 +9179,7 @@ and_locked_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  lock andl 8(%ebp), %eax
+  .byte 0xf0,0x23,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -9229,7 +9229,7 @@ and_locked_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  lock andl 8(%ebp), %eax
+  .byte 0xf0,0x23,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10323,7 +10323,7 @@ bsf2_constant_complex2:
 .globl bsf3_mv_plain
          .type   bsf3_mv_plain, @function
 bsf3_mv_plain:
-      bsf %bx,%eax
+      bsf %bx,%ax
   mov $0x0,%eax
 
     ret
@@ -10345,7 +10345,7 @@ bsf3_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bsf %bx,%eax
+  bsf %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10395,7 +10395,7 @@ bsf3_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bsf %bx,%eax
+  bsf %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10445,7 +10445,7 @@ bsf3_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bsf %bx,%eax
+  bsf %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10495,7 +10495,7 @@ bsf3_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bsf %bx,%eax
+  bsf %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10534,7 +10534,7 @@ bsf3_mv_constant_complex2:
 .globl bsf4_mv_plain
          .type   bsf4_mv_plain, @function
 bsf4_mv_plain:
-      bsf %ebx,%ax
+      bsf %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -10556,7 +10556,7 @@ bsf4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bsf %ebx,%ax
+  bsf %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10606,7 +10606,7 @@ bsf4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bsf %ebx,%ax
+  bsf %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10656,7 +10656,7 @@ bsf4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bsf %ebx,%ax
+  bsf %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -10706,7 +10706,7 @@ bsf4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bsf %ebx,%ax
+  bsf %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12011,7 +12011,7 @@ bsr2_constant_complex2:
 .globl bsr3_mv_plain
          .type   bsr3_mv_plain, @function
 bsr3_mv_plain:
-      bsr %bx,%eax
+      bsr %bx,%ax
   mov $0x0,%eax
 
     ret
@@ -12033,7 +12033,7 @@ bsr3_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bsr %bx,%eax
+  bsr %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12083,7 +12083,7 @@ bsr3_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bsr %bx,%eax
+  bsr %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12133,7 +12133,7 @@ bsr3_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bsr %bx,%eax
+  bsr %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12183,7 +12183,7 @@ bsr3_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bsr %bx,%eax
+  bsr %bx,%ax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12222,7 +12222,7 @@ bsr3_mv_constant_complex2:
 .globl bsr4_mv_plain
          .type   bsr4_mv_plain, @function
 bsr4_mv_plain:
-      bsr %ebx,%ax
+      bsr %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -12244,7 +12244,7 @@ bsr4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bsr %ebx,%ax
+  bsr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12294,7 +12294,7 @@ bsr4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bsr %ebx,%ax
+  bsr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12344,7 +12344,7 @@ bsr4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bsr %ebx,%ax
+  bsr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -12394,7 +12394,7 @@ bsr4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bsr %ebx,%ax
+  bsr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -13910,7 +13910,7 @@ bt3_constant_complex2:
 .globl bt4_mv_plain
          .type   bt4_mv_plain, @function
 bt4_mv_plain:
-      bt %bx,%eax
+      bt %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -13932,7 +13932,7 @@ bt4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bt %bx,%eax
+  bt %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -13982,7 +13982,7 @@ bt4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bt %bx,%eax
+  bt %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -14032,7 +14032,7 @@ bt4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bt %bx,%eax
+  bt %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -14082,7 +14082,7 @@ bt4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bt %bx,%eax
+  bt %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -14965,7 +14965,7 @@ btc3_constant_complex2:
 .globl btc4_mv_plain
          .type   btc4_mv_plain, @function
 btc4_mv_plain:
-      btc %bx,%eax
+      btc %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -14987,7 +14987,7 @@ btc4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  btc %bx,%eax
+  btc %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -15037,7 +15037,7 @@ btc4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  btc %bx,%eax
+  btc %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -15087,7 +15087,7 @@ btc4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  btc %bx,%eax
+  btc %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -15137,7 +15137,7 @@ btc4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  btc %bx,%eax
+  btc %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -16231,7 +16231,7 @@ btr3_constant_complex2:
 .globl btr4_mv_plain
          .type   btr4_mv_plain, @function
 btr4_mv_plain:
-      btr %bx,%eax
+      btr %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -16253,7 +16253,7 @@ btr4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  btr %bx,%eax
+  btr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -16303,7 +16303,7 @@ btr4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  btr %bx,%eax
+  btr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -16353,7 +16353,7 @@ btr4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  btr %bx,%eax
+  btr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -16403,7 +16403,7 @@ btr4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  btr %bx,%eax
+  btr %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -17497,7 +17497,7 @@ bts3_constant_complex2:
 .globl bts4_mv_plain
          .type   bts4_mv_plain, @function
 bts4_mv_plain:
-      bts %bx,%eax
+      bts %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -17519,7 +17519,7 @@ bts4_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  bts %bx,%eax
+  bts %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -17569,7 +17569,7 @@ bts4_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  bts %bx,%eax
+  bts %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -17619,7 +17619,7 @@ bts4_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  bts %bx,%eax
+  bts %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -17669,7 +17669,7 @@ bts4_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  bts %bx,%eax
+  bts %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -65767,7 +65767,7 @@ or9_mv_constant_complex2:
 .globl or_locked_mv_plain
          .type   or_locked_mv_plain, @function
 or_locked_mv_plain:
-      lock or 8(%ebp), %eax
+      .byte 0xf0,0x0b,0x45,0x08
   mov $0x0,%eax
 
     ret
@@ -65789,7 +65789,7 @@ or_locked_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  lock or 8(%ebp), %eax
+  .byte 0xf0,0x0b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -65839,7 +65839,7 @@ or_locked_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  lock or 8(%ebp), %eax
+  .byte 0xf0,0x0b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -65889,7 +65889,7 @@ or_locked_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  lock or 8(%ebp), %eax
+  .byte 0xf0,0x0b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -65939,7 +65939,7 @@ or_locked_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  lock or 8(%ebp), %eax
+  .byte 0xf0,0x0b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -113387,7 +113387,7 @@ sub7_mv_constant_complex2:
 .globl sub_locked_mv_plain
          .type   sub_locked_mv_plain, @function
 sub_locked_mv_plain:
-      lock subl 8(%ebp), %eax
+      .byte 0xf0,0x2b,0x45,0x08
   mov $0x0,%eax
 
     ret
@@ -113409,7 +113409,7 @@ sub_locked_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  lock subl 8(%ebp), %eax
+  .byte 0xf0,0x2b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -113459,7 +113459,7 @@ sub_locked_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  lock subl 8(%ebp), %eax
+  .byte 0xf0,0x2b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -113509,7 +113509,7 @@ sub_locked_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  lock subl 8(%ebp), %eax
+  .byte 0xf0,0x2b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -113559,7 +113559,7 @@ sub_locked_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  lock subl 8(%ebp), %eax
+  .byte 0xf0,0x2b,0x45,0x08
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200

@@ -38,7 +38,7 @@ wrmsr[doNotEval]: wrmsr
 ### P6
 
 cmov1_mv: cmovz %bx,%ax
-cmov2_mv: cmovz %ebx,%ax
+cmov2_mv: cmovz %ebx,%eax
 cmov3: cmovz %ebx,%eax
 cmov4_mv[doNotEval]: cmovz 12(%ebx),%ax
 cmov5_mv[doNotEval]: cmovz 34(%ebx),%eax

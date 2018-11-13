@@ -4859,7 +4859,7 @@ cmov1_mv_constant_complex2:
 .globl cmov2_mv_plain
          .type   cmov2_mv_plain, @function
 cmov2_mv_plain:
-      cmovz %ebx,%ax
+      cmovz %ebx,%eax
   mov $0x0,%eax
 
     ret
@@ -4881,7 +4881,7 @@ cmov2_mv_allregs:
   mov 4116,%esi
   mov 4120,%edi
   mov %esp,8272
-  cmovz %ebx,%ax
+  cmovz %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -4931,7 +4931,7 @@ cmov2_mv_constant_simple:
   mov $7,%esi
   mov $8,%edi
   mov %esp,8272
-  cmovz %ebx,%ax
+  cmovz %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -4981,7 +4981,7 @@ cmov2_mv_constant_complex1:
   mov $0xad3c2d78,%esi
   mov $0xe465e152,%edi
   mov %esp,8272
-  cmovz %ebx,%ax
+  cmovz %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200
@@ -5031,7 +5031,7 @@ cmov2_mv_constant_complex2:
   mov $0x2f37a4a5,%esi
   mov $0x91a917b4,%edi
   mov %esp,8272
-  cmovz %ebx,%ax
+  cmovz %ebx,%eax
   mov %eax,8192
   mov %ebx,8196
   mov %ecx,8200

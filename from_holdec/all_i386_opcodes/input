@@ -16,7 +16,7 @@ adc2a_mv[in=flags ax,out=ax]: hex 66 15 10 00
 adc3[in=flags eax,out=eax]: adc $0x10,%eax
 adc3a_mv[in=flags eax,out=eax]: hex 15 10 00 00 00
 adc4_mv[doNotEval,in=flags eax ebp,out=eax]: adc 8(%ebp), %eax
-adc_locked_mv[doNotEval]: lock adc 8(%ebp), %eax
+adc_locked_mv[doNotEval]: hex f0 13 45 08
 
 add1[in=al,out=al]: hex 04 02
 add2_mv[in=al,out=al]: hex 04 fe
@@ -30,7 +30,7 @@ add9_mv[in=ax,out=eax]: add $0x2, %ax
 add10_mv[in=al,out=ax]: add $0x2, %al
 add11_mv[in=ah,out=ax]: add $0x2, %ah
 add12_mv[in=ax,out=eax]: add $0x2, %ax
-add_locked_mv[doNotEval]: lock addl 8(%ebp), %eax
+add_locked_mv[doNotEval]: hex f0 03 45 08
 add_ft_0_mv: mov $0x01,%al; mov $0x01,%bl; add %al,%bl
 add_ft_1_mv: mov $0x7f,%al; mov $0x01,%bl; add %al,%bl
 add_ft_2_mv: mov $0x01,%al; mov $0xff,%bl; add %al,%bl
@@ -47,7 +47,7 @@ and4_mv[in=ax,out=ax]: hex 66 25 fe ff
 and5[in=eax,out=eax]: hex 25 02 00 00 00
 and6_mv[in=eax,out=eax]: hex 25 fe ff ff ff
 and7_mv[doNotEval,in=eax ebp,out=eax]: andl 8(%ebp), %eax
-and_locked_mv[doNotEval]: lock andl 8(%ebp), %eax
+and_locked_mv[doNotEval]: hex f0 23 45 08
 
 arpl[in=ax bx,out=]: arpl %ax, %bx
 
@@ -56,8 +56,8 @@ bound2[doNotEval,in=eax ebx,out=]: bound %eax,(%ebx)
 
 bsf1_mv[in=bx,out=ax]: bsf %bx,%ax
 bsf2[in=ebx,out=eax]: bsf %ebx,%eax
-bsf3_mv[in=bx,out=eax]: bsf %bx,%eax
-bsf4_mv[in=ebx,out=eax]: bsf %ebx,%ax
+bsf3_mv[in=bx,out=ax]: bsf %bx,%ax
+bsf4_mv[in=ebx,out=eax]: bsf %ebx,%eax
 bsf5_mv[doNotEval,in=bx,out=ax]: bsf (%bx),%ax
 bsf6_mv[doNotEval,in=ebx,out=eax]: bsf (%ebx),%eax
 bsf7_mv[doNotEval,in=bx,out=eax]: bsf (%bx),%eax
@@ -65,8 +65,8 @@ bsf8_mv[doNotEval,in=ebx,out=eax]: bsf (%ebx),%ax
 
 bsr1_mv[in=bx,out=ax]: bsr %bx,%ax
 bsr2[in=ebx,out=eax]: bsr %ebx,%eax
-bsr3_mv[in=bx,out=ax]: bsr %bx,%eax
-bsr4_mv[in=ebx,out=ax]: bsr %ebx,%ax
+bsr3_mv[in=bx,out=ax]: bsr %bx,%ax
+bsr4_mv[in=ebx,out=eax]: bsr %ebx,%eax
 bsr5_mv[doNotEval,in=bx,out=ax]: bsr (%bx),%ax
 bsr6_mv[doNotEval,in=ebx,out=eax]: bsr (%ebx),%eax
 bsr7_mv[doNotEval,in=bx,out=ax]: bsr (%bx),%eax
@@ -75,27 +75,27 @@ bsr8_mv[doNotEval,in=ebx,out=ax]: bsr (%ebx),%ax
 bt1_mv[in=ax,out=]: bt $4,%ax
 bt2_mv[in=ax bx,out=]: bt %bx,%ax
 bt3[in=eax,out=]: bt $31,%eax
-bt4_mv[in=eax bx,out=]: bt %bx,%eax
+bt4_mv[in=eax ebx,out=]: bt %ebx,%eax
 bt5_mv[doNotEval,in=eax ebx,out=]: bt %ebx,(%eax)
 
 btc1_mv[in=ax,out=ax]: btc $4,%ax
 btc2_mv[in=ax bx,out=ax]: btc %bx,%ax
 btc3[in=eax,out=eax]: btc $31,%eax
-btc4_mv[in=eax bx,out=eax]: btc %bx,%eax
+btc4_mv[in=eax ebx,out=eax]: btc %ebx,%eax
 btc5_mv[doNotEval,in=eax ebx,out=]: btc %ebx,(%eax)
 btc_locked_mv[doNotEval]: lock btc %ebx,(%eax)
 
 btr1_mv[in=ax,out=ax]: btr $4,%ax
 btr2_mv[in=ax bx,out=ax]: btr %bx,%ax
 btr3[in=eax,out=eax]: btr $31,%eax
-btr4_mv[in=eax bx,out=eax]: btr %bx,%eax
+btr4_mv[in=eax ebx,out=eax]: btr %ebx,%eax
 btr5_mv[doNotEval,in=eax ebx,out=]: btr %ebx,(%eax)
 btr_locked_mv[doNotEval]: lock btr %ebx,(%eax)
 
 bts1_mv[in=ax,out=ax]: bts $4,%ax
 bts2_mv[in=ax bx,out=ax]: bts %bx,%ax
 bts3[in=eax,out=eax]: bts $31,%eax
-bts4_mv[in=eax bx,out=eax]: bts %bx,%eax
+bts4_mv[in=eax ebx,out=eax]: bts %ebx,%eax
 bts5_mv[doNotEval,in=eax ebx,out=]: bts %ebx,(%eax)
 bts_locked_mv[doNotEval]: lock bts %ebx,(%eax)
 
@@ -374,7 +374,7 @@ or6_mv[in=eax,out=eax]: hex 0d fe ff ff ff
 or7_mv[doNotEval,in=eax ebp,out=eax]: orl 8(%ebp), %eax
 or8_mv[in=eax,out=eax]: orl $0x02,%eax
 or9_mv[in=eax,out=eax]: orl $0xf2,%eax
-or_locked_mv[doNotEval]: lock or 8(%ebp), %eax
+or_locked_mv[doNotEval]: hex f0 0b 45 08
 
 out1[doNotEval,in=al,out=]: hex e6 12
 out2_mv[doNotEval,in=ax,out=]: hex 66 e7 12
@@ -652,7 +652,7 @@ sub4_mv[in=ax,out=ax]: hex 66 2d fe ff
 sub5[in=eax,out=eax]: hex 2d 02 00 00 00
 sub6_mv[in=eax,out=eax]: hex 2d fe ff ff ff
 sub7_mv[doNotEval,in=eax ebp,out=eax]: subl 8(%ebp), %eax
-sub_locked_mv[doNotEval]: lock subl 8(%ebp), %eax
+sub_locked_mv[doNotEval]: hex f0 2b 45 08
 sub_ft_0_mv: mov $0x01,%al; mov $0x01,%bl; sub %bl,%al
 sub_ft_1_mv: mov $0x01,%al; mov $0x02,%bl; sub %bl,%al
 sub_ft_2_mv: mov $0x80,%al; mov $0x7f,%bl; sub %bl,%al

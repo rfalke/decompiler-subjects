@@ -9,7 +9,7 @@ all_i386_opcodes/ia32_elf/subject.o: all_i386_opcodes/source.s
 	gcc -m32 -c $< -o $@
 
 all_i386_opcodes/ia32_elf/subject.exe: all_i386_opcodes/ia32_elf/subject.o
-	echo "int main(){return 0;}" >main.c
+	echo "extern void callAll(); int main(){callAll();return 0;}" >main.c
 	gcc -m32 -c main.c
 	gcc -m32 $< main.o -o $@
 	rm main.c main.o $<
@@ -36,7 +36,7 @@ post_i386_opcodes/ia32_elf/subject.o: post_i386_opcodes/source.s
 	gcc -m32 -c $< -o $@
 
 post_i386_opcodes/ia32_elf/subject.exe: post_i386_opcodes/ia32_elf/subject.o
-	echo "int main(){return 0;}" >main.c
+	echo "extern void callAll(); int main(){callAll();return 0;}" >main.c
 	gcc -m32 -c main.c
 	gcc -m32 $< main.o -o $@
 	rm main.c main.o $<
