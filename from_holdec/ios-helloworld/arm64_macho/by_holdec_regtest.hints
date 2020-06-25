@@ -1,0 +1,25 @@
+[0x100005ca8]
+signature: d8 fib(d8 n <x0>)
+
+[0x100005ce8]
+signature: d8 string_concat(d8 ARG_1 <x0>, d8 ARG_2 <x3>, d8 ARG_3 <x8>, d8 ARG_4 <x19>, d8 ARG_5 <x20>, d8 ARG_6 <x21>, d8 ARG_7 <x22>, d8 ARG_8 <x23>, d8 ARG_9 <x24>, d8 ARG_10 <x25>, d8 ARG_11 <x26>, d8 ARG_12 <x29>, d8 ARG_13 <x30>)
+
+[0x100005e90]
+signature: d8 other(void)
+
+[0x100005e98]
+signature: d8 time_based_random(void)
+
+[func:_objc_allocWithZone]
+signature: d8 _objc_allocWithZone(d8 zone <x0>)
+
+[func:_objc_msgSend]
+signature: {d8 int_result <x0>, f8 float_result <d0>} _objc_msgSend(d8 obj <x0>, d1* msg <x1>)
+
+[func:_objc_release]
+signature: void _objc_release(d8 obj <x0>)
+
+[activeFunctions]
+fib
+time_based_random
+# string_concat
