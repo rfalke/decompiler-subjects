@@ -1,0 +1,110 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+WARN  Decompiling 08048810, pcode error at 0804c01c: Unable to disassemble EXTERNAL block location: 0804c01c (DecompileCallback)  
+WARN  Decompiling 08048910, pcode error at 0804c05c: Unable to disassemble EXTERNAL block location: 0804c05c (DecompileCallback)  
+WARN  Decompiling 080488d0, pcode error at 0804c04c: Unable to disassemble EXTERNAL block location: 0804c04c (DecompileCallback)  
+WARN  Decompiling 08048850, pcode error at 0804c02c: Unable to disassemble EXTERNAL block location: 0804c02c (DecompileCallback)  
+WARN  Decompiling 080487c0, pcode error at 0804c008: Unable to disassemble EXTERNAL block location: 0804c008 (DecompileCallback)  
+WARN  Decompiling 080487d0, pcode error at 0804c00c: Unable to disassemble EXTERNAL block location: 0804c00c (DecompileCallback)  
+WARN  Decompiling 08048800, pcode error at 0804c018: Unable to disassemble EXTERNAL block location: 0804c018 (DecompileCallback)  
+WARN  Decompiling 08048840, pcode error at 0804c028: Unable to disassemble EXTERNAL block location: 0804c028 (DecompileCallback)  
+WARN  Decompiling 08048950, pcode error at 0804c06c: Unable to disassemble EXTERNAL block location: 0804c06c (DecompileCallback)  
+WARN  Decompiling 080488c0, pcode error at 0804c048: Unable to disassemble EXTERNAL block location: 0804c048 (DecompileCallback)  
+WARN  Decompiling 08048880, pcode error at 0804c038: Unable to disassemble EXTERNAL block location: 0804c038 (DecompileCallback)  
+WARN  Decompiling 080487f0, pcode error at 0804c014: Unable to disassemble EXTERNAL block location: 0804c014 (DecompileCallback)  
+WARN  Decompiling 08048940, pcode error at 0804c068: Unable to disassemble EXTERNAL block location: 0804c068 (DecompileCallback)  
+WARN  Decompiling 080488b0, pcode error at 0804c044: Unable to disassemble EXTERNAL block location: 0804c044 (DecompileCallback)  
+WARN  Decompiling 08048830, pcode error at 0804c024: Unable to disassemble EXTERNAL block location: 0804c024 (DecompileCallback)  
+WARN  Decompiling 080487b0, pcode error at 0804c004: Unable to disassemble EXTERNAL block location: 0804c004 (DecompileCallback)  
+WARN  Decompiling 08048930, pcode error at 0804c064: Unable to disassemble EXTERNAL block location: 0804c064 (DecompileCallback)  
+WARN  Decompiling 08048870, pcode error at 0804c034: Unable to disassemble EXTERNAL block location: 0804c034 (DecompileCallback)  
+WARN  Decompiling 08048970, pcode error at 0804c078: Unable to disassemble EXTERNAL block location: 0804c078 (DecompileCallback)  
+WARN  Decompiling 080488f0, pcode error at 0804c054: Unable to disassemble EXTERNAL block location: 0804c054 (DecompileCallback)  
+WARN  Decompiling 080487a0, pcode error at 0804c000: Unable to disassemble EXTERNAL block location: 0804c000 (DecompileCallback)  
+WARN  Decompiling 08048820, pcode error at 0804c020: Unable to disassemble EXTERNAL block location: 0804c020 (DecompileCallback)  
+WARN  Decompiling 080487e0, pcode error at 0804c010: Unable to disassemble EXTERNAL block location: 0804c010 (DecompileCallback)  
+WARN  Decompiling 08048900, pcode error at 0804c058: Unable to disassemble EXTERNAL block location: 0804c058 (DecompileCallback)  
+WARN  Decompiling 08048960, pcode error at 0804c070: Unable to disassemble EXTERNAL block location: 0804c070 (DecompileCallback)  
+WARN  Decompiling 08048860, pcode error at 0804c030: Unable to disassemble EXTERNAL block location: 0804c030 (DecompileCallback)  
+WARN  Decompiling 080488a0, pcode error at 0804c040: Unable to disassemble EXTERNAL block location: 0804c040 (DecompileCallback)  
+WARN  Decompiling 080488e0, pcode error at 0804c050: Unable to disassemble EXTERNAL block location: 0804c050 (DecompileCallback)  
+WARN  Decompiling 08048920, pcode error at 0804c060: Unable to disassemble EXTERNAL block location: 0804c060 (DecompileCallback)  
+WARN  Failed to find entry point for subroutine containing 0804b750 (MultEntSubModel)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    DWARF                                      some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Demangler                                  some time
+    Disassemble                                some time
+    Disassemble Entry Points                   some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    Function Start Search delayed - One Time   some time
+    GCC Exception Handlers                     some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                      some time
+    Subroutine References                      some time
+    Subroutine References - One Time           some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer            some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Decompiling 0804b750, pcode error at 0804b7d6: Could not follow disassembly flow into non-existing memory at 0804b7d6 (DecompileCallback)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

@@ -1,0 +1,81 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  Read DWARF debug string table, 0 bytes. (DWARFProgram)  
+INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
+INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
+INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Function                            some time
+    DWARF                                      some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Decompiler Switch Analysis - One Time      some time
+    Demangler                                  some time
+    Disassemble Entry Points                   some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    GCC Exception Handlers                     some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                      some time
+    Subroutine References                      some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer            some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

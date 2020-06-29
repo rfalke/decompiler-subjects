@@ -1,0 +1,240 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  Read DWARF debug string table, 116679 bytes. (DWARFProgram)  
+INFO  Conflict with existing type stat(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type dist(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type use_gc(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type use_gc(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type triangle_next(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type replace_vertex(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+ERROR Error updating function SearchLineByLocation at 080ca570: Stack varnode violates stack frame constraints (stack offset=-184, size=280 (DWARFFunctionImporter)  
+ERROR Error updating function SearchObjectByLocation at 080caa70: Stack varnode violates stack frame constraints (stack offset=-212, size=280 (DWARFFunctionImporter)  
+INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
+INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
+INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
+INFO  DWARF types imported: 2850 (DWARFImportSummary)  
+INFO  DWARF function signatures added: 2754 (DWARFImportSummary)  
+ERROR DWARF data type remappings (DWARF data type definitions that changed meaning in different compile units): (DWARFImportSummary)  
+ERROR   Data type -> changed to -> Data Type (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/yyalloc.conflict1 -> /DWARF/_UNCATEGORIZED_/yyalloc (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ElementType.conflict -> /DWARF/_UNCATEGORIZED_/ElementType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict1 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType -> /DWARF/_UNCATEGORIZED_/PCBType.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType -> /DWARF/_UNCATEGORIZED_/PCBType.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType -> /DWARF/_UNCATEGORIZED_/PCBType.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType -> /DWARF/_UNCATEGORIZED_/PCBType.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/line_info.conflict -> /DWARF/_UNCATEGORIZED_/line_info (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict9 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict11 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PointTypePtr -> /DWARF/_UNCATEGORIZED_/PointTypePtr.conflict * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict2 -> /DWARF/_UNCATEGORIZED_/LayerType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DataType -> /DWARF/_UNCATEGORIZED_/DataType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LineTypePtr -> /DWARF/_UNCATEGORIZED_/LineTypePtr.conflict * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_subr_void -> /DWARF/_UNCATEGORIZED_/anon_subr_void.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ConnectionTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/ConnectionTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType -> /DWARF/_UNCATEGORIZED_/LayerType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GtkListStore.conflict -> /DWARF/_UNCATEGORIZED_/GtkListStore (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/polygon_st.conflict -> /DWARF/_UNCATEGORIZED_/polygon_st (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/RatTypePtr * -> /DWARF/_UNCATEGORIZED_/RatTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ArcTypePtr * -> /DWARF/_UNCATEGORIZED_/ArcTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict4 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GDestroyNotify.conflict -> /DWARF/_UNCATEGORIZED_/GDestroyNotify * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryEntryTypePtr * -> /DWARF/_UNCATEGORIZED_/LibraryEntryTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict4 -> /DWARF/_UNCATEGORIZED_/hid_gc_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/SymbolType.conflict -> /DWARF/_UNCATEGORIZED_/SymbolType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PointTypePtr * -> /DWARF/_UNCATEGORIZED_/PointTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict[18] -> /DWARF/_UNCATEGORIZED_/LayerType.conflict2[18] (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryMenuTypePtr * -> /DWARF/_UNCATEGORIZED_/LibraryMenuTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GSourceDummyMarshal * -> /DWARF/_UNCATEGORIZED_/GSourceDummyMarshal.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/color_struct -> /DWARF/_UNCATEGORIZED_/color_struct.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryType.conflict -> /DWARF/_UNCATEGORIZED_/LibraryType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_subr_int.conflict -> /DWARF/_UNCATEGORIZED_/anon_subr_int (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DataTypePtr * -> /DWARF/_UNCATEGORIZED_/DataTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryMenuType -> /DWARF/_UNCATEGORIZED_/LibraryMenuType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/SymbolType -> /DWARF/_UNCATEGORIZED_/SymbolType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryMenuTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/LibraryMenuTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType.conflict4 -> /DWARF/_UNCATEGORIZED_/PCBType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict14 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict1 -> /DWARF/_UNCATEGORIZED_/LayerType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DrillTypePtr.conflict1 * -> /DWARF/_UNCATEGORIZED_/DrillTypePtr.conflict * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType.conflict -> /DWARF/_UNCATEGORIZED_/PCBType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DataType.conflict -> /DWARF/_UNCATEGORIZED_/DataType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryMenuType.conflict -> /DWARF/_UNCATEGORIZED_/LibraryMenuType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict3 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_subr_void.conflict -> /DWARF/_UNCATEGORIZED_/anon_subr_void (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DataTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/DataTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ElementTypePtr * -> /DWARF/_UNCATEGORIZED_/ElementTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict1 -> /DWARF/_UNCATEGORIZED_/hid_gc_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryType -> /DWARF/_UNCATEGORIZED_/LibraryType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/yyalloc.conflict -> /DWARF/_UNCATEGORIZED_/yyalloc (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LineTypePtr * -> /DWARF/_UNCATEGORIZED_/LineTypePtr.conflict * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/_GtkListStore.conflict -> /DWARF/_UNCATEGORIZED_/_GtkListStore (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/color_struct.conflict -> /DWARF/_UNCATEGORIZED_/color_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr * -> /DWARF/_UNCATEGORIZED_/PinTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/YYSTYPE.conflict -> /DWARF/_UNCATEGORIZED_/YYSTYPE (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict6 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PointTypePtr.conflict * -> /DWARF/_UNCATEGORIZED_/PointTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/PinTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct -> /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/YYSTYPE.conflict1 -> /DWARF/_UNCATEGORIZED_/YYSTYPE (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct -> /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict13 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict12 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct -> /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict14 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct -> /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict11 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict10 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict12 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ArcTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/ArcTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType.conflict2 -> /DWARF/_UNCATEGORIZED_/PCBType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict2[18] -> /DWARF/_UNCATEGORIZED_/LayerType.conflict[18] (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ElementTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/ElementTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType.conflict1 -> /DWARF/_UNCATEGORIZED_/PCBType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict5 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GtkTreeSelection.conflict -> /DWARF/_UNCATEGORIZED_/GtkTreeSelection (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/PinTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict3 -> /DWARF/_UNCATEGORIZED_/hid_gc_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GDestroyNotify * -> /DWARF/_UNCATEGORIZED_/GDestroyNotify.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PadTypePtr * -> /DWARF/_UNCATEGORIZED_/PadTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/YYSTYPE -> /DWARF/_UNCATEGORIZED_/YYSTYPE.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_subr_int_char_ptr.conflict -> /DWARF/_UNCATEGORIZED_/anon_subr_int_char_ptr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType -> /DWARF/_UNCATEGORIZED_/PCBType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/_GSourceFuncs.conflict -> /DWARF/_UNCATEGORIZED_/_GSourceFuncs (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/_GSourceFuncs -> /DWARF/_UNCATEGORIZED_/_GSourceFuncs.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GSourceFuncs -> /DWARF/_UNCATEGORIZED_/GSourceFuncs.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ConnectionTypePtr * -> /DWARF/_UNCATEGORIZED_/ConnectionTypePtr.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/YYSTYPE -> /DWARF/_UNCATEGORIZED_/YYSTYPE.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PadTypePtr * -> /DWARF/_UNCATEGORIZED_/PadTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DrillTypePtr.conflict * -> /DWARF/_UNCATEGORIZED_/DrillTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict10 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict8 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GSourceFuncs.conflict -> /DWARF/_UNCATEGORIZED_/GSourceFuncs (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PadTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/PadTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/FontType.conflict -> /DWARF/_UNCATEGORIZED_/FontType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct -> /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/_GtkTreeSelection.conflict -> /DWARF/_UNCATEGORIZED_/_GtkTreeSelection (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PolygonType.conflict -> /DWARF/_UNCATEGORIZED_/PolygonType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict7 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict9 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict -> /DWARF/_UNCATEGORIZED_/LayerType.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/SymbolType.conflict[256] -> /DWARF/_UNCATEGORIZED_/SymbolType[256] (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PointTypePtr -> /DWARF/_UNCATEGORIZED_/PointTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute -> /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict6 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/ElementType -> /DWARF/_UNCATEGORIZED_/ElementType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LineTypePtr.conflict * -> /DWARF/_UNCATEGORIZED_/LineTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/RatTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/RatTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType -> /DWARF/_UNCATEGORIZED_/LayerType.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType -> /DWARF/_UNCATEGORIZED_/LayerType.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict -> /DWARF/_UNCATEGORIZED_/hid_gc_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PCBType.conflict3 -> /DWARF/_UNCATEGORIZED_/PCBType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/DrillTypePtr -> /DWARF/_UNCATEGORIZED_/DrillTypePtr.conflict * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/_GtkTreeStore.conflict -> /DWARF/_UNCATEGORIZED_/_GtkTreeStore (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/SymbolType[256] -> /DWARF/_UNCATEGORIZED_/SymbolType.conflict[256] (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/HID_Attribute.conflict2 -> /DWARF/_UNCATEGORIZED_/HID_Attribute (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr * -> /DWARF/_UNCATEGORIZED_/PinTypePtr (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GtkTreeStore.conflict -> /DWARF/_UNCATEGORIZED_/GtkTreeStore (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/FontType -> /DWARF/_UNCATEGORIZED_/FontType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/hid_gc_struct.conflict2 -> /DWARF/_UNCATEGORIZED_/hid_gc_struct (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LibraryEntryTypePtr.conflict -> /DWARF/_UNCATEGORIZED_/LibraryEntryTypePtr * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict -> /DWARF/_UNCATEGORIZED_/LayerType (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr * -> /DWARF/_UNCATEGORIZED_/PinTypePtr * * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/LayerType.conflict2 -> /DWARF/_UNCATEGORIZED_/LayerType.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/GSourceDummyMarshal.conflict -> /DWARF/_UNCATEGORIZED_/GSourceDummyMarshal * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/PinTypePtr -> /DWARF/_UNCATEGORIZED_/PinTypePtr * (DWARFImportSummary)  
+ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 1520 (DWARFImportSummary)  
+ERROR DWARF expression failed to read: 7 (DWARFImportSummary)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    DWARF                                     some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Decompiler Switch Analysis - One Time      some time
+    Demangler                                  some time
+    Disassemble                                some time
+    Disassemble Entry Points                  some time
+    Disassemble Entry Points - One Time        some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    Function Start Search delayed - One Time   some time
+    GCC Exception Handlers                     some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                     some time
+    Subroutine References                      some time
+    Subroutine References - One Time           some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer           some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+ERROR Invalid symbol reference: 22022368 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 22275168 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 26678544 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 25468496 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 39730832 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 39320448 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 44794256 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 40718368 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 24669600 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 40158480 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 45039328 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 39333488 (ClangVariableDecl)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

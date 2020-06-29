@@ -1,0 +1,246 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  Read DWARF debug string table, 143429 bytes. (DWARFProgram)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
+INFO  Conflict with existing type hierbox_browser(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type write_bookmarks_default(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type read_bookmarks_xbel(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type stat(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type build_edit_dialog(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type connection_state(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type realloc_line(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type split_line(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type init_template(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type scan_css_token(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type scan_css_tokens(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type format_command(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type parse_header_param(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type do_move(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type get_color(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type delayed_open(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  Conflict with existing type fastfind_index(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
+INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
+INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
+INFO  DWARF types imported: 1560 (DWARFImportSummary)  
+INFO  DWARF function signatures added: 2555 (DWARFImportSummary)  
+ERROR DWARF data type remappings (DWARF data type definitions that changed meaning in different compile units): (DWARFImportSummary)  
+ERROR   Data type -> changed to -> Data Type (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done -> /DWARF/_UNCATEGORIZED_/protocol_handler_T (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict5 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict6 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/html_context.conflict -> /DWARF/_UNCATEGORIZED_/html_context (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict7 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict2 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict8 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict8 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict7 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict -> /DWARF/_UNCATEGORIZED_/scan_table_info (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict6 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/html_context -> /DWARF/_UNCATEGORIZED_/html_context.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict6 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict3 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/connection.conflict -> /DWARF/_UNCATEGORIZED_/connection (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict4 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/protocol_handler_T * -> /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/progress.conflict -> /DWARF/_UNCATEGORIZED_/progress (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/connection -> /DWARF/_UNCATEGORIZED_/connection.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict3 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/protocol_handler_T -> /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/progress -> /DWARF/_UNCATEGORIZED_/progress.conflict (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict6 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/session.conflict1 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done * -> /DWARF/_UNCATEGORIZED_/protocol_handler_T * (DWARFImportSummary)  
+ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 973 (DWARFImportSummary)  
+ERROR DWARF expression failed to read: 7 (DWARFImportSummary)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    DWARF                                     some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Decompiler Switch Analysis - One Time      some time
+    Demangler                                  some time
+    Disassemble Entry Points                   some time
+    Disassemble Entry Points - One Time        some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    GCC Exception Handlers                     some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                     some time
+    Subroutine References                      some time
+    Subroutine References - One Time           some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer           some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+ERROR Invalid symbol reference: 11983072 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 14181248 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 19910384 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 18445088 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 13168928 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 13494208 (ClangVariableDecl)  
+ERROR Invalid symbol reference: 14612928 (ClangVariableDecl)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

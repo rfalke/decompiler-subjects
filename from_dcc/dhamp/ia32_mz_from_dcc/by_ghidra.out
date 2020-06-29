@@ -1,0 +1,149 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:16:Real Mode" and cspec "default" for file: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8921: Could not follow disassembly flow into non-existing memory at 1000:8921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd35: Could not follow disassembly flow into non-existing memory at 1000:cd35 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:7537: Could not follow disassembly flow into non-existing memory at 1000:7537 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:87e9: Could not follow disassembly flow into non-existing memory at 1000:87e9 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:8126: Could not follow disassembly flow into non-existing memory at 1000:8126 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:7fff: Could not follow disassembly flow into non-existing memory at 1000:7fff (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:b9d8: Could not follow disassembly flow into non-existing memory at 1000:b9d8 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ba90: Could not follow disassembly flow into non-existing memory at 1000:ba90 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:b921: Could not follow disassembly flow into non-existing memory at 1000:b921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd04: Could not follow disassembly flow into non-existing memory at 1000:cd04 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ec8b: Could not follow disassembly flow into non-existing memory at 1000:ec8b (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:729a: Could not follow disassembly flow into non-existing memory at 1000:729a (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ca00: Could not follow disassembly flow into non-existing memory at 1000:ca00 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d83e: Could not follow disassembly flow into non-existing memory at 1000:d83e (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8b56: Could not follow disassembly flow into non-existing memory at 1000:8b56 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:fe87: Could not follow disassembly flow into non-existing memory at 1000:fe87 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8904: Could not follow disassembly flow into non-existing memory at 1000:8904 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:7689: Could not follow disassembly flow into non-existing memory at 1000:7689 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8921: Could not follow disassembly flow into non-existing memory at 1000:8921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd35: Could not follow disassembly flow into non-existing memory at 1000:cd35 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:87e9: Could not follow disassembly flow into non-existing memory at 1000:87e9 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ba90: Could not follow disassembly flow into non-existing memory at 1000:ba90 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:b921: Could not follow disassembly flow into non-existing memory at 1000:b921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd04: Could not follow disassembly flow into non-existing memory at 1000:cd04 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ec8b: Could not follow disassembly flow into non-existing memory at 1000:ec8b (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:729a: Could not follow disassembly flow into non-existing memory at 1000:729a (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ca00: Could not follow disassembly flow into non-existing memory at 1000:ca00 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:f706: Could not follow disassembly flow into non-existing memory at 1000:f706 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d783: Could not follow disassembly flow into non-existing memory at 1000:d783 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d83e: Could not follow disassembly flow into non-existing memory at 1000:d83e (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8b56: Could not follow disassembly flow into non-existing memory at 1000:8b56 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:fe87: Could not follow disassembly flow into non-existing memory at 1000:fe87 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8904: Could not follow disassembly flow into non-existing memory at 1000:8904 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:7689: Could not follow disassembly flow into non-existing memory at 1000:7689 (DecompileCallback)  
+INFO  WARNING! Inserting overlapping parameter for function FUN_1401_0004 at Stack[0x4]:2 - Replacing existing parameter! (FunctionDB)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Function                            some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Demangler                                  some time
+    Disassemble                                some time
+    Disassemble Entry Points                   some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function Start Search                      some time
+    Non-Returning Functions - Discovered       some time
+    Reference                                  some time
+    Segmented X86 Calling Conventions          some time
+    Shared Return Calls                        some time
+    Stack                                      some time
+    Subroutine References                      some time
+    Subroutine References - One Time           some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer            some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Decompiling 1000:02bd, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 1000:0283, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:7537: Could not follow disassembly flow into non-existing memory at 1000:7537 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:8126: Could not follow disassembly flow into non-existing memory at 1000:8126 (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:7fff: Could not follow disassembly flow into non-existing memory at 1000:7fff (DecompileCallback)  
+WARN  Decompiling 107b:0004, pcode error at 1000:b9d8: Could not follow disassembly flow into non-existing memory at 1000:b9d8 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8921: Could not follow disassembly flow into non-existing memory at 1000:8921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd35: Could not follow disassembly flow into non-existing memory at 1000:cd35 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:87e9: Could not follow disassembly flow into non-existing memory at 1000:87e9 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ba90: Could not follow disassembly flow into non-existing memory at 1000:ba90 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:b921: Could not follow disassembly flow into non-existing memory at 1000:b921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd04: Could not follow disassembly flow into non-existing memory at 1000:cd04 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ec8b: Could not follow disassembly flow into non-existing memory at 1000:ec8b (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:729a: Could not follow disassembly flow into non-existing memory at 1000:729a (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ca00: Could not follow disassembly flow into non-existing memory at 1000:ca00 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:f706: Could not follow disassembly flow into non-existing memory at 1000:f706 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d783: Could not follow disassembly flow into non-existing memory at 1000:d783 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d83e: Could not follow disassembly flow into non-existing memory at 1000:d83e (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8b56: Could not follow disassembly flow into non-existing memory at 1000:8b56 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:fe87: Could not follow disassembly flow into non-existing memory at 1000:fe87 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8904: Could not follow disassembly flow into non-existing memory at 1000:8904 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:7689: Could not follow disassembly flow into non-existing memory at 1000:7689 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8921: Could not follow disassembly flow into non-existing memory at 1000:8921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd35: Could not follow disassembly flow into non-existing memory at 1000:cd35 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:87e9: Could not follow disassembly flow into non-existing memory at 1000:87e9 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ba90: Could not follow disassembly flow into non-existing memory at 1000:ba90 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:b921: Could not follow disassembly flow into non-existing memory at 1000:b921 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:cd04: Could not follow disassembly flow into non-existing memory at 1000:cd04 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ec8b: Could not follow disassembly flow into non-existing memory at 1000:ec8b (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:729a: Could not follow disassembly flow into non-existing memory at 1000:729a (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:ca00: Could not follow disassembly flow into non-existing memory at 1000:ca00 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:0337: Unable to resolve constructor at 1000:0337 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:f706: Could not follow disassembly flow into non-existing memory at 1000:f706 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d783: Could not follow disassembly flow into non-existing memory at 1000:d783 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:d83e: Could not follow disassembly flow into non-existing memory at 1000:d83e (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8b56: Could not follow disassembly flow into non-existing memory at 1000:8b56 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:fe87: Could not follow disassembly flow into non-existing memory at 1000:fe87 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:8904: Could not follow disassembly flow into non-existing memory at 1000:8904 (DecompileCallback)  
+WARN  Decompiling 1528:002b, pcode error at 1000:7689: Could not follow disassembly flow into non-existing memory at 1000:7689 (DecompileCallback)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_dcc/dhamp/ia32_mz_from_dcc/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

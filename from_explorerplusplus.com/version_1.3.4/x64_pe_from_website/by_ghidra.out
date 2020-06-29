@@ -1,0 +1,117 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "windows" for file: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+ERROR Failed to create data at 1400dbdce: Could not create Data at address 1400dbdce (DemangledVariable)  
+ERROR Failed to create data at 1400dbe0f: Could not create Data at address 1400dbe0f (DemangledVariable)  
+WARN  java.lang.NumberFormatException: For input string: "" (java
+For input string: "")  
+java.lang.NumberFormatException: For input string: ""
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at WindowsResourceReference.findResource(WindowsResourceReference.java:575)
+	at WindowsResourceReference.addResourceTableReferences(WindowsResourceReference.java:520)
+	at WindowsResourceReference.run(WindowsResourceReference.java:213)
+	at ghidra.app.script.GhidraScript.executeNormal(GhidraScript.java:365)
+	at ghidra.app.script.GhidraScript.doExecute(GhidraScript.java:220)
+	at ghidra.app.script.GhidraScript.execute(GhidraScript.java:198)
+	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:815)
+	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:723)
+	at ghidra.app.plugin.prototype.MicrosoftCodeAnalyzerPlugin.WindowsResourceReferenceAnalyzer.runScript(WindowsResourceReferenceAnalyzer.java:106)
+	at ghidra.app.plugin.prototype.MicrosoftCodeAnalyzerPlugin.WindowsResourceReferenceAnalyzer.added(WindowsResourceReferenceAnalyzer.java:72)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
+INFO  PDB> Unable to locate PDB file "C:\Users\David\Documents\Visual Studio 2010\Projects\Explorer++ 1.3.4 (Tag - DON'T UPDATE)\Explorer++\Explorer++\x64\Release\Explorer++.pdb" with matching GUID.
+ Use a script to set the PDB file location. I.e.,
+    setAnalysisOption(currentProgram, "PDB.Symbol Repository Path", "/path/to/pdb/folder");
+ This must be done using a pre-script (prior to analysis).
+Demangle Symbol> Failed to apply mangled symbol at 1400dbdce; name:  ?filt$0@?0??__ArrayUnwind@@YAXPEAX_KHP6AX0@Z@Z@4HA (ghidra.app.util.demangler.microsoft.MicrosoftDemangler/ghidra.app.util.demangler.DemangledVariable)
+Demangle Symbol> Failed to apply mangled symbol at 1400dbe0f; name:  ?fin$0@?0???_M@YAXPEAX_KHP6AX0@Z@Z@4HA (ghidra.app.util.demangler.microsoft.MicrosoftDemangler/ghidra.app.util.demangler.DemangledVariable)
+ (AutoAnalysisManager)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification             some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    Data Reference                             some time
+    Decompiler Parameter ID                   some time
+    Decompiler Switch Analysis                 some time
+    Demangler                                  some time
+    Disassemble                                some time
+    Disassemble Entry Points                   some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    PDB                                        some time
+    Reference                                  some time
+    Scalar Operand References                  some time
+    Shared Return Calls                        some time
+    Stack                                     some time
+    Subroutine References                      some time
+    Subroutine References - One Time           some time
+    Windows x86 PE Exception Handling          some time
+    Windows x86 PE RTTI Analyzer              some time
+    WindowsResourceReference                  some time
+    x86 Constant Reference Analyzer           some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
