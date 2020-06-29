@@ -1,4 +1,4 @@
-Using options:
+=== Using options:
 080482F0: warning: Unable to resolve imported reference usleep.
 08058080: warning: Expected sizes of arrays to have been determined by now
 080580A0: warning: Expected sizes of arrays to have been determined by now
@@ -16,6 +16,8 @@ Using options:
 081DED10: warning: Expected sizes of arrays to have been determined by now
 081EF220: warning: Expected sizes of arrays to have been determined by now
 08200F80: warning: Expected sizes of arrays to have been determined by now
+08200FF9: warning: Expected sizes of arrays to have been determined by now
+08200FFB: warning: Expected sizes of arrays to have been determined by now
 08401150: warning: Expected sizes of arrays to have been determined by now
 08401160: warning: Expected sizes of arrays to have been determined by now
 08401170: warning: Expected sizes of arrays to have been determined by now
@@ -36,6 +38,8 @@ Using options:
 081DED10: warning: Expected sizes of arrays to have been determined by now
 081EF220: warning: Expected sizes of arrays to have been determined by now
 08200F80: warning: Expected sizes of arrays to have been determined by now
+08200FF9: warning: Expected sizes of arrays to have been determined by now
+08200FFB: warning: Expected sizes of arrays to have been determined by now
 08401150: warning: Expected sizes of arrays to have been determined by now
 08401160: warning: Expected sizes of arrays to have been determined by now
 08401170: warning: Expected sizes of arrays to have been determined by now

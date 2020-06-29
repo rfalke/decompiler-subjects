@@ -1,17 +1,7 @@
-Using options:
-error: Unable to load metadata file Xlib.xml. System.ApplicationException: An error occurred when loading the signature of procedure XCreateWindow. ---> System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at Reko.Environments.SysV.ArchSpecific.Arm64CallingConvention.Generate (Reko.Core.ICallingConventionEmitter ccr, Reko.Core.Types.DataType dtRet, Reko.Core.Types.DataType dtThis, System.Collections.Generic.List`1[T] dtParams) [0x0001d] in <89651e63d0a243a1b634038a23aca7fc>:0 
-  at Reko.Core.Serialization.ProcedureSerializer.Deserialize (Reko.Core.Serialization.SerializedSignature ss, Reko.Core.Frame frame) [0x001ec] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedure (Reko.Core.Serialization.Procedure_v1 sp) [0x00028] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-   --- End of inner exception stack trace ---
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedure (Reko.Core.Serialization.Procedure_v1 sp) [0x000c3] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.TypeLibraryDeserializer.LoadProcedures (Reko.Core.Serialization.SerializedLibrary serializedLibrary) [0x00029] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.TypeLibraryDeserializer.Load (Reko.Core.Serialization.SerializedLibrary sLib) [0x0001f] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.TypeLibraryLoader.Load (Reko.Core.IPlatform platform, Reko.Core.TypeLibrary dstLib) [0x0001e] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.MetadataLoader.Load (Reko.Core.IPlatform platform, System.String moduleName, Reko.Core.TypeLibrary dstLib) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Services.TypeLibraryLoaderServiceImpl.LoadMetadataIntoLibrary (Reko.Core.IPlatform platform, Reko.Core.Configuration.ITypeLibraryElement tlElement, Reko.Core.TypeLibrary libDst) [0x0006f] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
-  at Reko.Core.Program.BuildImageMap () [0x0008d] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.DecompilerDriver.BuildImageMaps () [0x00019] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x000a9] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <d6ad61555b7f4116a6906ac874c0208a>:0 
+=== Using options:
+000000000009458C: warning: AArch64 instruction smulh	x3,w2,w3 is not supported yet.
+000000000009D7CC: warning: AArch64 instruction smulh	x2,w3,w2 is not supported yet.
+00000000000CC0DC: warning: AArch64 instruction smulh	x3,w2,w3 is not supported yet.
+00000000000D531C: warning: AArch64 instruction smulh	x2,w3,w2 is not supported yet.
+0010CD08: warning: Expected sizes of arrays to have been determined by now
+0010CD08: warning: Expected sizes of arrays to have been determined by now

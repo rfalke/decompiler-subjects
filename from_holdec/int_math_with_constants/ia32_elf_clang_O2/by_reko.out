@@ -1,6 +1,36 @@
-Using options:
-error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
-  at Reko.Core.Program.BuildImageMap () [0x0008d] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.DecompilerDriver.BuildImageMaps () [0x00019] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x000a9] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <d6ad61555b7f4116a6906ac874c0208a>:0 
+=== Using options:
+080483AD: warning: Call target address 00000000 is invalid.
+0805D72E: warning: x86 instruction 'movdqu' is not supported yet.
+080A5F75: warning: x86 instruction 'movdqu' is not supported yet.
+08048410: warning: x86 instruction 'movdqu' is not supported yet.
+08048410: warning: x86 instruction 'movdqu' is not supported yet.
+08048F7E: warning: x86 instruction 'movdqu' is not supported yet.
+0805CBC0: warning: x86 instruction 'movdqu' is not supported yet.
+0805CBC0: warning: x86 instruction 'movdqu' is not supported yet.
+0805F548: warning: x86 instruction 'movdqu' is not supported yet.
+08068990: warning: x86 instruction 'movdqu' is not supported yet.
+08068990: warning: x86 instruction 'movdqu' is not supported yet.
+080695A7: warning: x86 instruction 'movdqu' is not supported yet.
+0807DAC0: warning: x86 instruction 'movdqu' is not supported yet.
+0807DAC0: warning: x86 instruction 'movdqu' is not supported yet.
+0807E6D7: warning: x86 instruction 'movdqu' is not supported yet.
+0808E510: warning: x86 instruction 'movdqu' is not supported yet.
+0808E510: warning: x86 instruction 'movdqu' is not supported yet.
+0808FD25: warning: x86 instruction 'movdqu' is not supported yet.
+080A4760: warning: x86 instruction 'movdqu' is not supported yet.
+080A4760: warning: x86 instruction 'movdqu' is not supported yet.
+080B7610: warning: x86 instruction 'movdqu' is not supported yet.
+080B7610: warning: x86 instruction 'movdqu' is not supported yet.
+080B8E25: warning: x86 instruction 'movdqu' is not supported yet.
+080CD860: warning: x86 instruction 'movdqu' is not supported yet.
+080CD860: warning: x86 instruction 'movdqu' is not supported yet.
+080CF075: warning: x86 instruction 'movdqu' is not supported yet.
+080E0710: warning: x86 instruction 'movdqu' is not supported yet.
+080E0710: warning: x86 instruction 'movdqu' is not supported yet.
+080E373B: warning: x86 instruction 'movdqu' is not supported yet.
+080FF450: warning: x86 instruction 'movdqu' is not supported yet.
+080FF450: warning: x86 instruction 'movdqu' is not supported yet.
+0810247B: warning: x86 instruction 'movdqu' is not supported yet.
+08048400: warning: Call target address 00000000 is invalid.
+08048373: warning: Call target address 00000000 is invalid.
+=== Killed because of CPU time limit

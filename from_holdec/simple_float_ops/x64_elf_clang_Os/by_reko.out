@@ -1,5 +1,5 @@
-Using options:
-00000000004003D8: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:
+00000000004003CC: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400880: warning: The format specifier '%z' passed to *printf is not known.
@@ -12,25 +12,5 @@ Using options:
 00000000004004EE: warning: Call target address 0000000000000000 is invalid.
 00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00400940: error: Failed to write global variable g_u400940.
-    Primitive type word128 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x00075] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-00400940: error: Failed to write global variable g_u400940.
-    Primitive type word128 not supported.
-      at Reko.Core.MemoryArea.ReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x000c1] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.MemoryArea.ReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type) [0x00027] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.ImageReader.ReadLe (Reko.Core.Types.PrimitiveType type) [0x00008] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.LeImageReader.Read (Reko.Core.Types.PrimitiveType dataType) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitPrimitive (Reko.Core.Types.PrimitiveType pt) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Types.PrimitiveType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.VisitUnion (Reko.Core.Types.UnionType ut) [0x00081] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Types.UnionType.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable (Reko.Core.Types.StructureField field) [0x00075] in <646e98867dbb42e9bc0862d64ce0c776>:0 
+00600E08: warning: Expected sizes of arrays to have been determined by now
+00600E08: warning: Expected sizes of arrays to have been determined by now

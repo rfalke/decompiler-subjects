@@ -1,5 +1,5 @@
-Using options:
-00000000004003D8: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:
+00000000004003CC: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400984: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400984: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400984: warning: The format specifier '%z' passed to *printf is not known.
@@ -11,14 +11,5 @@ Using options:
 00000000004004EE: warning: Call target address 0000000000000000 is invalid.
 00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-compare_floats: error: An error occurred during data flow analysis.
-    Case PO not handled.
-      at Reko.Analysis.ConditionCodeEliminator.ComparisonFromConditionCode (Reko.Core.Expressions.ConditionCode cc, Reko.Core.Expressions.BinaryExpression bin, System.Boolean isNegated) [0x0012b] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.ConditionCodeEliminator.UseGrfConditionally (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.ConditionCode cc) [0x00099] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x00031] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Analysis.ConditionCodeEliminator.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x000a1] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000f0] in <55635f0d4b464606be1dcd97c7688665>:0 
-l000000000040084B: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+00601E08: warning: Expected sizes of arrays to have been determined by now
+00601E08: warning: Expected sizes of arrays to have been determined by now

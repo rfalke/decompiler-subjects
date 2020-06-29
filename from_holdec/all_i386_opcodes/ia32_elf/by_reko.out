@@ -1,8 +1,23 @@
-Using options:
+=== Using options:
 080490E0: warning: Call target address 00000000 is invalid.
 0805DC53: warning: Call target address 00000002 is invalid.
 0805DD39: warning: Call target address A3B17984 is invalid.
 0805DE20: warning: Call target address 313EC0E8 is invalid.
 0804912D: warning: Call target address 00000000 is invalid.
-080D501C: warning: Expected sizes of arrays to have been determined by now
-080D501C: warning: Expected sizes of arrays to have been determined by now
+08049170: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+error: An error occurred during decompilation. System.InvalidCastException: Specified cast is not valid.
+  at Reko.Analysis.ConditionCodeEliminator.VisitTestCondition (Reko.Core.Expressions.TestCondition tc) [0x0000c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.TestCondition.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformStore (Reko.Core.Code.Store store) [0x00008] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Analysis.ConditionCodeEliminator.Transform () [0x00097] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x00098] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <b195e9013e6f4bfe9c4a55d515fad233>:0 
