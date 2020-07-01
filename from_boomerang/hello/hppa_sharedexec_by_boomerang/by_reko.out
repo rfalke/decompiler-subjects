@@ -1,1 +1,9 @@
-Using options:
+=== Using options:
+error: An error occurred during decompilation. System.ArgumentException: An item with the same key has already been added. Key: 00000000
+Parameter name: key
+  at System.Collections.Generic.SortedList`2[TKey,TValue].Add (TKey key, TValue value) [0x00041] in <151f80cbb7ba44dda59f10092af4d033>:0 
+  at Reko.Core.EnumerableEx.ToSortedList[TSource,TKey] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector) [0x00021] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.ImageLoaders.HpSom.HpSomLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00005] in <0f559893499046d8918aff91bd14ac94>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <b195e9013e6f4bfe9c4a55d515fad233>:0 

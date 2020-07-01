@@ -1,32 +1,37 @@
-Using options:
+=== Using options:
 00402545: warning: Procedure fn00402540 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00403854: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-00402784: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-: error: Error when reconstructing types.
-    Object reference not set to an instance of an object
-      at Reko.Core.Types.TypeStore.MergeClasses (Reko.Core.Types.TypeVariable tv1, Reko.Core.Types.TypeVariable tv2) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Typing.EquivalenceClassBuilder.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) [0x00043] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Core.Code.ReturnInstruction.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Typing.EquivalenceClassBuilder.Build (Reko.Core.Program program) [0x000c2] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Typing.TypeAnalyzer.RewriteProgram (Reko.Core.Program program) [0x000c1] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.ReconstructTypes () [0x0004a] in <55635f0d4b464606be1dcd97c7688665>:0 
-fn00402730: error: An error occurred while rewriting procedure to high-level language.
-    Can't collapse l00402914 (IncSwitch) => l00402A20
-      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) [0x000b0] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.StructureAnalysis+VirtualEdge vEdge) [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) [0x0009a] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () [0x00048] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x00144] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <55635f0d4b464606be1dcd97c7688665>:0 
-fn00403800: error: An error occurred while rewriting procedure to high-level language.
-    Can't collapse l004039E4 (IncSwitch) => l00403AF0
-      at Reko.Structure.StructureAnalysis.CollapseToTailRegion (Reko.Structure.Region from, Reko.Structure.Region to, Reko.Core.Absyn.AbsynStatement stm) [0x000b0] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeEdge (Reko.Structure.StructureAnalysis+VirtualEdge vEdge) [0x000d8] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.VirtualizeIrregularSwitchEntries (Reko.Structure.Region n) [0x0009a] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.RefineIncSwitch (Reko.Structure.Region n) [0x00000] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions () [0x00048] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x00144] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.StructureProgram () [0x00080] in <55635f0d4b464606be1dcd97c7688665>:0 
+00402860: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
+    Not handling (ptr32 (struct (0 (arr T_5752) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00146] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+00403930: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
+    Not handling (ptr32 (struct (0 (arr T_5795) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00146] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+l00402914: warning: Non-integral switch expression
+00402878: warning: Expected sizes of arrays to have been determined by now
+00402A10: warning: Expected sizes of arrays to have been determined by now
+00403948: warning: Expected sizes of arrays to have been determined by now
+00403AE0: warning: Expected sizes of arrays to have been determined by now
+0040528A: warning: Expected sizes of arrays to have been determined by now
+00405840: warning: Expected sizes of arrays to have been determined by now
+00405964: warning: Expected sizes of arrays to have been determined by now
+00402878: warning: Expected sizes of arrays to have been determined by now
+00402A10: warning: Expected sizes of arrays to have been determined by now
+00403948: warning: Expected sizes of arrays to have been determined by now
+00403AE0: warning: Expected sizes of arrays to have been determined by now
+0040528A: warning: Expected sizes of arrays to have been determined by now
+00405840: warning: Expected sizes of arrays to have been determined by now
+00405964: warning: Expected sizes of arrays to have been determined by now

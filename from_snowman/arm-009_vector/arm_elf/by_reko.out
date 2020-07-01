@@ -1,4 +1,4 @@
-Using options:
+=== Using options:
 00008618: warning: Unable to resolve imported reference __cxa_end_cleanup.
 00009F14: warning: Multiple different values of stack delta in procedure new_allocator<prim(SignedInt,4)>::max_size when processing RET instruction; was 4 previously.
 00009B6C: warning: Unable to resolve imported reference _Znwj.
@@ -8,12 +8,7 @@ Using options:
 0000863C: warning: Unable to resolve imported reference __cxa_end_catch.
 00008624: warning: Unable to resolve imported reference _Znwj.
 0000860C: warning: Unable to resolve imported reference __cxa_rethrow.
-error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-  at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
-  at Reko.Analysis.UserSignatureBuilder.ApplySignatureToProcedure (Reko.Core.Address addr, Reko.Core.Types.FunctionType sig, Reko.Core.Procedure proc) [0x00014] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.UserSignatureBuilder.BuildSignature (Reko.Core.Address addr, Reko.Core.Procedure proc) [0x00083] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.UserSignatureBuilder.BuildSignatures (Reko.Core.Services.DecompilerEventListener listener) [0x00033] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.DecompilerDriver.AnalyzeDataFlow () [0x00097] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00106] in <d6ad61555b7f4116a6906ac874c0208a>:0 
+0000A0DC: warning: Expected sizes of arrays to have been determined by now
+000082F0: warning: Expected sizes of arrays to have been determined by now
+000082F0: warning: Expected sizes of arrays to have been determined by now
+0000A0DC: warning: Expected sizes of arrays to have been determined by now

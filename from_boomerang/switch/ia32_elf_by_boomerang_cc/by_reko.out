@@ -1,4 +1,3 @@
-Using options:
+=== Using options:
 0804881C: warning: Unable to resolve imported reference __fpstart.
-08048969: warning: Unable to determine format string for call to 'printf'.
 080487B4: warning: Unable to resolve imported reference __fpstart.

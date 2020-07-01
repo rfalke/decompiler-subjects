@@ -1,12 +1,151 @@
-Using options:
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry (Reko.Core.Program program, Reko.ImageLoaders.Elf.ElfSymbol sym, Reko.ImageLoaders.Elf.ElfSection referringSection, Reko.ImageLoaders.Elf.ElfRelocation rela) [0x00056] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator+RelocationTable.RelocateEntries (Reko.Core.Program program, System.UInt64 offStrtab, System.UInt64 offSymtab, System.UInt64 symEntrySize) [0x00060] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols (Reko.Core.Program program) [0x001c1] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x0001a] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x000ce] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+=== Using options:
+08049499: warning: Unable to resolve imported reference __gmon_start__.
+08049B7F: warning: Call target address 00000000 is invalid.
+0804968C: warning: Unable to resolve imported reference ferror_unlocked.
+0805E467: warning: Unable to resolve imported reference __lxstat64.
+0805E427: warning: Unable to resolve imported reference __fxstat64.
+0805E3E7: warning: Unable to resolve imported reference __xstat64.
+0805A2A1: warning: Unable to resolve imported reference __signbitl.
+080595C3: warning: Unable to resolve imported reference ferror_unlocked.
+08059263: warning: Unable to resolve imported reference strtoumax.
+0805909F: warning: Unable to resolve imported reference strndup.
+080519F1: warning: Unable to resolve imported reference gettext.
+08058B8E: warning: Unable to resolve imported reference gettext.
+08055F3F: warning: Unable to resolve imported reference mbrlen.
+08055BCF: warning: Unable to resolve imported reference tolower.
+08055C11: warning: Unable to resolve imported reference toupper.
+08054EF9: warning: Unable to resolve imported reference gettext.
+08053CDA: error: Unexpected instruction setz	al after fstsw
+08051EB0: warning: Unable to resolve imported reference gettext.
+08051B30: warning: Unable to resolve imported reference gettext.
+08051B41: warning: Unable to resolve imported reference gettext.
+08051BBC: warning: Unable to resolve imported reference gettext.
+08051BCE: warning: Unable to determine format string for call to 'fprintf'.
+08051C8B: warning: Unable to resolve imported reference putc_unlocked.
+08051076: warning: Unable to resolve imported reference gettext.
+0805108C: warning: Unable to determine format string for call to 'fprintf'.
+080510A3: warning: Unable to resolve imported reference gettext.
+080510AF: warning: Unable to determine format string for call to 'printf'.
+080510C1: warning: Unable to resolve imported reference gettext.
+080510DF: warning: Unable to resolve imported reference gettext.
+080510FD: warning: Unable to resolve imported reference gettext.
+0805111B: warning: Unable to resolve imported reference gettext.
+08051139: warning: Unable to resolve imported reference gettext.
+08051157: warning: Unable to resolve imported reference gettext.
+08051175: warning: Unable to resolve imported reference gettext.
+08051193: warning: Unable to resolve imported reference gettext.
+080511B1: warning: Unable to resolve imported reference gettext.
+080511CF: warning: Unable to resolve imported reference gettext.
+080511ED: warning: Unable to resolve imported reference gettext.
+0805120B: warning: Unable to resolve imported reference gettext.
+08051229: warning: Unable to resolve imported reference gettext.
+08051247: warning: Unable to resolve imported reference gettext.
+08051265: warning: Unable to resolve imported reference gettext.
+08051283: warning: Unable to resolve imported reference gettext.
+080512A1: warning: Unable to resolve imported reference gettext.
+080512BF: warning: Unable to resolve imported reference gettext.
+080512DD: warning: Unable to resolve imported reference gettext.
+080512FB: warning: Unable to resolve imported reference gettext.
+08051319: warning: Unable to resolve imported reference gettext.
+08051337: warning: Unable to resolve imported reference gettext.
+08051355: warning: Unable to resolve imported reference gettext.
+08051373: warning: Unable to resolve imported reference gettext.
+08051391: warning: Unable to resolve imported reference gettext.
+080513BF: warning: Unable to resolve imported reference gettext.
+080513CF: warning: Unable to determine format string for call to 'printf'.
+080517D3: warning: Unable to resolve imported reference gettext.
+080517FE: warning: Unable to resolve imported reference gettext.
+08051991: warning: Unable to resolve imported reference gettext.
+080518B0: warning: Unable to resolve imported reference gettext.
+0805196D: warning: Unable to resolve imported reference gettext.
+08051949: warning: Unable to resolve imported reference gettext.
+08051925: warning: Unable to resolve imported reference gettext.
+080518FE: warning: Unable to resolve imported reference gettext.
+080518D7: warning: Unable to resolve imported reference gettext.
+08051889: warning: Unable to resolve imported reference gettext.
+08051862: warning: Unable to resolve imported reference gettext.
+0805183B: warning: Unable to resolve imported reference gettext.
+08050B5D: warning: Unable to resolve imported reference putchar_unlocked.
+08050B94: warning: Unable to resolve imported reference putchar_unlocked.
+08050AFE: warning: Unable to resolve imported reference putchar_unlocked.
+0805002D: warning: The format specifier '%*' passed to *printf is not known.
+080500E1: warning: The format specifier '%*' passed to *printf is not known.
+08050139: warning: The format specifier '%*' passed to *printf is not known.
+08050638: warning: Unable to resolve imported reference putchar_unlocked.
+0805039E: warning: Unable to resolve imported reference putchar_unlocked.
+08050AC3: warning: Unable to resolve imported reference putchar_unlocked.
+08050ACF: warning: Unable to resolve imported reference putchar_unlocked.
+08050A4E: warning: Unable to resolve imported reference putchar_unlocked.
+080509C3: warning: Unable to resolve imported reference putchar_unlocked.
+0805091A: warning: Unable to resolve imported reference putchar_unlocked.
+0804EE64: warning: Unable to resolve imported reference putchar_unlocked.
+0804EE8F: warning: The format specifier '%*' passed to *printf is not known.
+0804F577: warning: Unable to resolve imported reference gnu_dev_minor.
+0804F5B1: warning: Unable to resolve imported reference gnu_dev_major.
+0804EC7B: warning: Unable to resolve imported reference putchar_unlocked.
+0804ECCE: warning: Unable to resolve imported reference putchar_unlocked.
+0804E9B1: warning: Unable to resolve imported reference strverscmp.
+0804E199: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0804D720: warning: Unable to resolve imported reference gettext.
+0804D3AC: warning: Unable to resolve imported reference gettext.
+0804CC1C: warning: Unable to resolve imported reference gettext.
+0804D13F: warning: Unable to resolve imported reference gnu_dev_major.
+0804D18E: warning: Unable to resolve imported reference gnu_dev_minor.
+0804BFDF: warning: Unable to resolve imported reference gettext.
+0804C072: warning: Unable to resolve imported reference gettext.
+0804C0E7: warning: Unable to resolve imported reference gettext.
+0804C1AC: warning: Unable to resolve imported reference readdir64.
+0804C299: warning: Unable to resolve imported reference gettext.
+0804C2E0: warning: Unable to resolve imported reference gettext.
+0804C358: warning: Unable to resolve imported reference putchar_unlocked.
+0804C576: warning: Unable to resolve imported reference gettext.
+0804C5B3: warning: Unable to resolve imported reference putchar_unlocked.
+0804C646: warning: Unable to resolve imported reference putchar_unlocked.
+0804BDFE: warning: Unable to resolve imported reference gettext.
+0804BD5F: warning: Unable to resolve imported reference gettext.
+0804A9FF: warning: Unable to resolve imported reference gettext.
+0804AAF2: warning: Unable to resolve imported reference gettext.
+0804ABB3: warning: Unable to resolve imported reference gettext.
+0804AE7C: warning: Unable to resolve imported reference gettext.
+0804B67F: warning: Unable to resolve imported reference gettext.
+0804AFFE: warning: Unable to resolve imported reference gettext.
+0804A5D3: warning: Unable to resolve imported reference putchar_unlocked.
+08049D49: warning: Unable to resolve imported reference putchar_unlocked.
+08049ABC: warning: Unable to resolve imported reference putchar_unlocked.
+08049A8C: warning: Unable to resolve imported reference tolower.
+080499FC: warning: Unable to resolve imported reference gnu_dev_major.
+080499EC: warning: Unable to resolve imported reference __fxstat64.
+080499CC: warning: Unable to resolve imported reference strndup.
+080498EC: warning: Unable to resolve imported reference __signbitl.
+080498CC: warning: Unable to resolve imported reference mbrlen.
+0804982C: warning: Unable to resolve imported reference readdir64.
+0804976C: warning: Unable to resolve imported reference strverscmp.
+0804972C: warning: Unable to resolve imported reference strtoumax.
+0804971C: warning: Unable to resolve imported reference __lxstat64.
+080496EC: warning: Unable to resolve imported reference gettext.
+0804963C: warning: Unable to resolve imported reference toupper.
+0804962C: warning: Unable to resolve imported reference gnu_dev_minor.
+080495BC: warning: Unable to resolve imported reference __xstat64.
+0804959C: warning: Unable to resolve imported reference __gmon_start__.
+080494DC: warning: Unable to resolve imported reference putc_unlocked.
+error: An error occurred during decompilation. System.NotSupportedException: Constants of type real80 are not supported.
+  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.Int64 value) [0x0035a] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.UInt64 value) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence (Reko.Core.Expressions.MkSequence seq) [0x00135] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.MkSequence.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Analysis.ValuePropagator.VisitAssignment (Reko.Core.Code.Assignment a) [0x00007] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0011d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <b195e9013e6f4bfe9c4a55d515fad233>:0 

@@ -1,12 +1,1662 @@
-Using options:
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry (Reko.Core.Program program, Reko.ImageLoaders.Elf.ElfSymbol sym, Reko.ImageLoaders.Elf.ElfSection referringSection, Reko.ImageLoaders.Elf.ElfRelocation rela) [0x00056] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator+RelocationTable.RelocateEntries (Reko.Core.Program program, System.UInt64 offStrtab, System.UInt64 offSymtab, System.UInt64 symEntrySize) [0x00060] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols (Reko.Core.Program program) [0x001c1] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate (Reko.Core.Program program) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x0001a] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <a60656af1da0471c8fe806a37ac089bd>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x000ce] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+=== Using options:
+08058BE5: warning: Unable to resolve imported reference __gmon_start__.
+08059BFF: warning: Call target address 00000000 is invalid.
+08058CD8: warning: Unable to resolve imported reference gss_release_name.
+08058DD8: warning: Unable to resolve imported reference gnutls_handshake.
+080593D8: warning: Unable to resolve imported reference gnutls_protocol_get_version.
+08074241: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+080B0866: warning: Unable to resolve imported reference tfind.
+080B1887: warning: Unable to resolve imported reference __argz_stringify.
+080B1B6D: warning: Unable to resolve imported reference __argz_count.
+080B1BED: warning: Unable to resolve imported reference __argz_count.
+080B1C39: warning: Unable to resolve imported reference __argz_count.
+080B3298: warning: Unable to resolve imported reference bsearch.
+080B2DCE: warning: Unable to resolve imported reference fgets_unlocked.
+080B3025: warning: Unable to resolve imported reference fgets_unlocked.
+080B3090: warning: Unable to resolve imported reference qsort.
+080B2496: warning: Unable to resolve imported reference __fxstat64.
+080B2275: warning: Unable to resolve imported reference iconv_close.
+080B0675: warning: Unable to resolve imported reference iconv.
+080B239A: warning: Unable to resolve imported reference iconv_open.
+080B2BB3: warning: Unable to resolve imported reference __isoc99_fscanf.
+080B363A: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+080B0CF8: warning: Unable to resolve imported reference tsearch.
+080B0DE0: warning: Unable to resolve imported reference getegid.
+080C562A: warning: Unable to resolve imported reference idna_to_ascii_lz.
+080C532F: warning: Unable to resolve imported reference memchr.
+080EB5B0: warning: Unable to resolve imported reference __vsnprintf_chk.
+080EB64A: warning: Unable to resolve imported reference __vsnprintf_chk.
+0809C26B: warning: Unable to resolve imported reference memchr.
+080ADEDF: warning: Unable to resolve imported reference memchr.
+080ADDA7: warning: Unable to resolve imported reference qsort.
+080ADC39: warning: Unable to resolve imported reference bsearch.
+080F0DDD: warning: Procedure init_form_state previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805A363: warning: Unable to resolve imported reference memchr.
+080656EA: warning: Unable to resolve imported reference __vsnprintf_chk.
+0806572A: warning: Unable to resolve imported reference __vsnprintf_chk.
+080FBFA6: warning: Unable to resolve imported reference memrchr.
+080C2F92: warning: Unable to resolve imported reference memchr.
+080C3003: warning: Unable to resolve imported reference strcspn.
+080C308E: warning: Unable to resolve imported reference strcspn.
+080BE81B: warning: Unable to resolve imported reference gnutls_compression_get.
+080BE823: warning: Unable to resolve imported reference gnutls_compression_get_name.
+080BE832: warning: Unable to resolve imported reference gnutls_certificate_type_get.
+080BE83A: warning: Unable to resolve imported reference gnutls_certificate_type_get_name.
+080BE846: warning: Unable to resolve imported reference gnutls_mac_get.
+080BE84E: warning: Unable to resolve imported reference gnutls_mac_get_name.
+080BE85D: warning: Unable to resolve imported reference gnutls_cipher_get.
+080BE865: warning: Unable to resolve imported reference gnutls_cipher_get_name.
+080BE872: warning: Unable to resolve imported reference gnutls_kx_get.
+080BE87A: warning: Unable to resolve imported reference gnutls_kx_get_name.
+080BE887: warning: Unable to resolve imported reference gnutls_protocol_get_version.
+080BE88F: warning: Unable to resolve imported reference gnutls_protocol_get_name.
+080BE1BA: warning: Unable to resolve imported reference gnutls_bye.
+080BE8FB: warning: Unable to resolve imported reference gnutls_deinit.
+080E9B5B: warning: Unable to resolve imported reference mremap.
+080B99D6: warning: Procedure set_connection_state previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080BA9EA: warning: Procedure cancel_download previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808227A: warning: Procedure done_form_control previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E9B97: warning: Procedure mem_mmap_realloc previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A249A: warning: Procedure done_dom_node previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08083345: warning: Unable to resolve imported reference qsort.
+080A0FDB: warning: Unable to resolve imported reference memchr.
+080C5039: warning: Unable to resolve imported reference memchr.
+0809D277: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0809AAE2: warning: Procedure put_link_line previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08083E0C: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+080D9838: warning: Procedure ses_goto previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080F56A8: warning: Call target address 00000000 is invalid.
+080F5F50: warning: Procedure set_link previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080F97F2: warning: Unable to resolve imported reference towlower.
+080F8535: warning: Unable to resolve imported reference towlower.
+080F9910: warning: Unable to resolve imported reference towlower.
+080BF506: warning: Unable to resolve imported reference fork.
+080BF560: warning: Call target address 00000001 is invalid.
+080BF8A3: warning: Unable to resolve imported reference sigfillset.
+080BF943: warning: Unable to resolve imported reference sigfillset.
+080BFFD9: warning: Unable to resolve imported reference Gpm_Open.
+080DE2B5: warning: Unable to resolve imported reference tcgetattr.
+080B58C4: warning: Unable to resolve imported reference select.
+080C00E5: warning: Unable to resolve imported reference Gpm_Close.
+08072D8D: warning: Procedure add_keystroke_action_to_string previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080EFFBB: warning: Procedure refresh_view previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0810050F: warning: Procedure check_vs previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FF4AA: warning: Procedure toggle_wrap_text previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FF4C9: warning: Procedure toggle_wrap_text previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FF583: warning: Procedure toggle_plain_html previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FF5A1: warning: Procedure toggle_plain_html previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08062F35: warning: Procedure do_menu_selected previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806EB96: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806EBC3: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806EC0F: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806EC91: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806E352: warning: Procedure skip_option_value previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080EA440: warning: Unable to resolve imported reference umask.
+080EA4EF: warning: Unable to resolve imported reference __lxstat64.
+080EA53F: warning: Unable to resolve imported reference mkstemp64.
+080EA5D6: warning: Unable to resolve imported reference umask.
+080EA3A5: warning: Unable to resolve imported reference rename.
+080EA415: warning: Unable to resolve imported reference fsync.
+08082591: warning: Procedure toggle_document_option previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807D2FC: warning: Procedure exit_prog previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FE69A: warning: Procedure move_cursor_line_start previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08082601: warning: Procedure toggle_document_option previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080FA179: warning: Unable to resolve imported reference towlower.
+080FA1EF: warning: Unable to resolve imported reference towlower.
+08079640: warning: Unable to resolve imported reference ctime.
+0807990F: warning: Unable to resolve imported reference ctime.
+080BF136: warning: Unable to resolve imported reference system.
+08076A2C: warning: Procedure delete_cookie previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D6F3E: warning: Procedure get_current_link_name previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080D6FC6: warning: Procedure get_current_link_url previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D716E: warning: Procedure get_current_url previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080D707F: warning: Procedure get_current_title previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08073C37: warning: Procedure toggle_option previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080EC144: warning: Unable to resolve imported reference fseeko64.
+080EC154: warning: Unable to resolve imported reference ftello64.
+080EC181: warning: Unable to resolve imported reference fseeko64.
+080E8313: warning: Unable to resolve imported reference umask.
+080E8320: warning: Unable to resolve imported reference mkstemp64.
+080E832A: warning: Unable to resolve imported reference umask.
+080F169E: warning: Unable to resolve imported reference memrchr.
+080E7BDB: warning: Unable to resolve imported reference readdir64.
+080E7C89: warning: Unable to resolve imported reference __lxstat64.
+080E7F86: warning: Unable to resolve imported reference readdir64.
+080E7FD1: warning: Unable to resolve imported reference qsort.
+080E869B: warning: Unable to resolve imported reference __xstat64.
+080FE6D6: warning: Procedure move_cursor_up previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080ADA1F: warning: Procedure u2cp_ previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080BF273: warning: Unable to resolve imported reference chdir.
+080FC317: warning: Procedure textarea_op_bob previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080F88A6: warning: Unable to resolve imported reference strcasestr.
+080F574E: warning: Procedure next_link_in_view previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080EAA4E: warning: Unable to resolve imported reference vasprintf.
+080E7851: warning: Unable to resolve imported reference memchr.
+080E7681: warning: Unable to resolve imported reference memchr.
+080E6C9C: warning: Unable to resolve imported reference __vasprintf_chk.
+080E69CD: warning: Unable to resolve imported reference backtrace.
+080E69EA: warning: Unable to resolve imported reference backtrace_symbols.
+080E6A86: warning: Unable to resolve imported reference backtrace_symbols_fd.
+080E6966: warning: Unable to resolve imported reference setenv.
+080E6999: warning: Unable to resolve imported reference setenv.
+080E6200: warning: Procedure add_timeval_to_string previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08076016: warning: Procedure num_wr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E34B5: warning: Procedure exec_on_terminal previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080DFEF1: warning: Procedure toggle_mouse previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E0203: warning: Procedure erase_screen previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080F842E: warning: Procedure search_dlg_ok previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080DE0C7: warning: Procedure itrm_queue_event previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E3A69: warning: Unable to resolve imported reference fork.
+080BEDB7: warning: Unable to resolve imported reference system.
+080E38EF: warning: Unable to resolve imported reference setpgid.
+080E311A: warning: Procedure close_tab previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E2C90: warning: Procedure close_all_tabs_but_current previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080F862D: warning: Procedure print_find_error_not_found previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080DF9F8: warning: Procedure in_kbd previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080DEB5A: warning: Unable to resolve imported reference __memmove_chk.
+080DEE19: warning: Unable to resolve imported reference __memmove_chk.
+080E34F7: warning: Procedure exec_on_terminal previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080DE979: warning: Procedure unblock_itrm_x previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080DE26D: warning: Procedure itrm_queue_write previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D8605: warning: Unable to resolve imported reference memchr.
+080D73EB: warning: Procedure abort_loading previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D5A2D: warning: Unable to resolve imported reference tempnam.
+080D461C: warning: Procedure tp_open previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D5BEE: warning: Procedure tp_open previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D8CFE: warning: Procedure tabwin_func previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D4655: warning: Procedure tp_cancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D69DA: warning: Procedure go_history_by_n previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D6A01: warning: Procedure go_history_by_n previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D5CCF: warning: Procedure start_download previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D5600: warning: Unable to resolve imported reference lseek64.
+080D54CD: warning: Procedure download_data previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D502C: warning: Unable to resolve imported reference __fxstat64.
+080D5C07: warning: Procedure tp_open previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D4757: warning: Procedure lun_resume previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D400B: warning: Unable to resolve imported reference rb_str_new2.
+080D4020: warning: Unable to resolve imported reference rb_str_new.
+080D4051: warning: Unable to resolve imported reference rb_protect.
+080D389E: warning: Unable to resolve imported reference rb_obj_as_string.
+080D38BC: warning: Unable to resolve imported reference rb_class_path.
+080D3EAA: warning: Unable to resolve imported reference rb_str_new.
+080D3ED1: warning: Unable to resolve imported reference rb_str_new.
+080D3F02: warning: Unable to resolve imported reference rb_protect.
+080D3DB0: warning: Unable to resolve imported reference rb_str_new.
+080D3DE1: warning: Unable to resolve imported reference rb_protect.
+080D3C9B: warning: Unable to resolve imported reference rb_str_new.
+080D3CCC: warning: Unable to resolve imported reference rb_protect.
+080D3C08: warning: Unable to resolve imported reference rb_intern.
+080D3C27: warning: Unable to resolve imported reference rb_funcall3.
+080D3BBF: warning: Unable to resolve imported reference rb_protect.
+080D39D7: warning: Unable to resolve imported reference ruby_init.
+080D39E3: warning: Unable to resolve imported reference ruby_script.
+080D39E8: warning: Unable to resolve imported reference ruby_init_loadpath.
+080D3A0D: warning: Unable to resolve imported reference rb_define_singleton_method.
+080D3A29: warning: Unable to resolve imported reference rb_define_global_function.
+080D3A35: warning: Unable to resolve imported reference rb_define_module.
+080D3A46: warning: Unable to resolve imported reference rb_str_new2.
+080D3A5F: warning: Unable to resolve imported reference rb_define_const.
+080D3A76: warning: Unable to resolve imported reference rb_str_new2.
+080D3A8F: warning: Unable to resolve imported reference rb_define_const.
+080D3AB4: warning: Unable to resolve imported reference rb_define_module_function.
+080D3AD9: warning: Unable to resolve imported reference rb_define_module_function.
+080D3AFE: warning: Unable to resolve imported reference rb_define_module_function.
+080D3B4B: warning: Unable to resolve imported reference rb_str_new2.
+080D3B62: warning: Unable to resolve imported reference rb_load_protect.
+080D372D: warning: Unable to resolve imported reference rb_obj_as_string.
+080D3569: warning: Unable to resolve imported reference rb_inspect.
+080D28EB: warning: Unable to resolve imported reference gss_init_sec_context.
+080D2BBC: warning: Unable to resolve imported reference gss_import_name.
+080D294F: warning: Unable to resolve imported reference gss_delete_sec_context.
+080D2973: warning: Unable to resolve imported reference gss_release_name.
+080D29A5: warning: Unable to resolve imported reference gss_release_buffer.
+080CF5B4: warning: Unable to resolve imported reference strcspn.
+080C6B29: warning: Procedure del_auth_entry previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080D27E7: warning: Procedure proxy_protocol_handler previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080BACF9: warning: Procedure retry_connection previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080BAD39: warning: Procedure retry_connection previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080BAD75: warning: Procedure retry_connection previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080BE94D: warning: Unable to resolve imported reference gnutls_init.
+080BE970: warning: Unable to resolve imported reference gnutls_credentials_set.
+080BE993: warning: Unable to resolve imported reference gnutls_credentials_set.
+080BE9B1: warning: Unable to resolve imported reference gnutls_priority_set_direct.
+080BE9C7: warning: Unable to resolve imported reference gnutls_cipher_set_priority.
+080BE9D9: warning: Unable to resolve imported reference gnutls_kx_set_priority.
+080BE9F5: warning: Unable to resolve imported reference gnutls_deinit.
+080BEA15: warning: Unable to resolve imported reference gnutls_deinit.
+080BE4C6: warning: Unable to resolve imported reference gnutls_transport_set_ptr.
+080BE4D3: warning: Unable to resolve imported reference gnutls_handshake.
+080BD68C: warning: Unable to resolve imported reference getifaddrs.
+080BD5A4: warning: Unable to resolve imported reference getifaddrs.
+080BD61F: warning: Unable to resolve imported reference freeifaddrs.
+080BE638: warning: Unable to resolve imported reference gnutls_certificate_verify_peers.
+080BE5F0: warning: Unable to resolve imported reference gnutls_protocol_set_priority.
+080CE62B: warning: Unable to resolve imported reference bsearch.
+080CD7C8: warning: Unable to resolve imported reference memchr.
+080CD7F1: warning: Unable to resolve imported reference memchr.
+080CE214: warning: Unable to resolve imported reference memchr.
+080CE245: warning: Unable to resolve imported reference memchr.
+080CD92B: warning: Unable to resolve imported reference memchr.
+080CDE76: warning: Unable to resolve imported reference memchr.
+080CDB78: warning: Unable to resolve imported reference memchr.
+080CA4B8: warning: Unable to resolve imported reference memchr.
+080CA652: warning: Unable to resolve imported reference getpeername.
+080BC5A9: warning: Unable to resolve imported reference getsockname.
+080BC63A: warning: Unable to resolve imported reference getsockname.
+080BC652: warning: Unable to resolve imported reference listen.
+080BF412: warning: Unable to resolve imported reference setsockopt.
+080CD3C2: warning: Procedure ftp_got_info previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080CC939: warning: Unable to resolve imported reference strtod.
+080CA9DA: warning: Unable to resolve imported reference gmtime.
+080CADA7: warning: Unable to resolve imported reference memchr.
+080CC421: warning: Procedure ftp_got_final_response previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080C8BFA: warning: Unable to resolve imported reference __xstat64.
+080C8D94: warning: Unable to resolve imported reference fork.
+080C9404: warning: Unable to resolve imported reference dup2.
+080C941F: warning: Unable to resolve imported reference dup2.
+080C0406: warning: Unable to resolve imported reference getrlimit64.
+080C945A: warning: Unable to resolve imported reference execl.
+080BCBA0: warning: Procedure request_from_socket previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080AAF89: warning: Unable to resolve imported reference __fxstat64.
+080C9812: warning: Unable to resolve imported reference __xstat64.
+080C0B3A: warning: Unable to resolve imported reference memchr.
+080C0CE5: warning: Unable to resolve imported reference memchr.
+080C0192: warning: Unable to resolve imported reference Gpm_GetEvent.
+080BFE7E: warning: Unable to resolve imported reference uname.
+080BFE9A: warning: Unable to resolve imported reference popen.
+080BFED0: warning: Unable to resolve imported reference pclose.
+080BFF5B: warning: Unable to resolve imported reference pclose.
+080BF9FD: warning: Unable to resolve imported reference alarm.
+080BF7A3: warning: Unable to resolve imported reference fork.
+080BF7D4: warning: Unable to resolve imported reference kill.
+080BF780: warning: Procedure sig_cont previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080BF677: warning: Unable to resolve imported reference alarm.
+080BF64F: warning: Unable to resolve imported reference waitpid.
+080BED67: warning: Procedure get_input_handle previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080BE6B8: warning: Unable to resolve imported reference gnutls_global_init.
+080BE6E5: warning: Unable to resolve imported reference gnutls_anon_allocate_client_credentials.
+080BE6F9: warning: Unable to resolve imported reference gnutls_certificate_allocate_credentials.
+080BE71B: warning: Unable to resolve imported reference gnutls_certificate_set_x509_trust_file.
+080BE730: warning: Unable to resolve imported reference gnutls_certificate_set_verify_flags.
+080BE787: warning: Unable to resolve imported reference gnutls_strerror.
+080BE7A3: warning: Unable to resolve imported reference gnutls_anon_allocate_client_credentials.
+080BE7C7: warning: Unable to resolve imported reference gnutls_strerror.
+080BE757: warning: Unable to resolve imported reference gnutls_strerror.
+080BE692: warning: Unable to resolve imported reference gnutls_certificate_free_credentials.
+080BE6A3: warning: Unable to resolve imported reference gnutls_anon_free_client_credentials.
+080BE6A9: warning: Unable to resolve imported reference gnutls_global_deinit.
+080BE36D: warning: Unable to resolve imported reference gnutls_handshake.
+080BE39E: warning: Unable to resolve imported reference gnutls_certificate_verify_peers.
+080BE438: warning: Unable to resolve imported reference gnutls_protocol_set_priority.
+080BE26F: warning: Unable to resolve imported reference gnutls_record_send.
+080BE1EF: warning: Unable to resolve imported reference gnutls_record_recv.
+080BDC8C: warning: Unable to resolve imported reference getsockopt.
+08073B9F: warning: Procedure really_del_ext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B5E26: warning: Unable to resolve imported reference select.
+080B58EF: warning: Procedure can_write previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B6AEB: warning: Procedure really_del_ext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806DDF0: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08076065: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08076091: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+080B5123: warning: Unable to resolve imported reference chdir.
+08075007: warning: Procedure update_options_visibility previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B4A23: warning: Unable to resolve imported reference select.
+080B4B0E: warning: Unable to resolve imported reference umask.
+080B4CA4: warning: Unable to resolve imported reference listen.
+080B4CE0: warning: Unable to resolve imported reference umask.
+080B4C36: warning: Unable to resolve imported reference umask.
+0807245C: warning: Unable to resolve imported reference __xstat64.
+080B15F7: warning: Procedure textdomain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B1657: warning: Procedure gettext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B1617: warning: Procedure dngettext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B1647: warning: Procedure dgettext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B15E7: warning: Procedure bindtextdomain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B15D7: warning: Procedure bind_textdomain_codeset previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080AD6B7: warning: Unable to resolve imported reference towlower.
+080ACD27: warning: Procedure init_global_history previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080AC742: warning: Unable to resolve imported reference strcasestr.
+080AC2A5: warning: Unable to resolve imported reference ctime.
+080AB9A1: warning: Procedure never_for_this_site previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080AA93A: warning: Unable to resolve imported reference inflateInit2_.
+080AA97F: warning: Unable to resolve imported reference inflate.
+080AA99C: warning: Unable to resolve imported reference inflateEnd.
+080AA9DA: warning: Unable to resolve imported reference inflateEnd.
+080AA9B6: warning: Unable to resolve imported reference inflateEnd.
+080AAA28: warning: Procedure deflate_raw_decode_buffer previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080AA8A0: warning: Unable to resolve imported reference inflateInit2_.
+080AA6D3: warning: Unable to resolve imported reference inflate.
+080AA6FF: warning: Unable to resolve imported reference inflateEnd.
+080AA730: warning: Unable to resolve imported reference inflateInit2_.
+080AA5F9: warning: Unable to resolve imported reference inflateEnd.
+080AA4E1: warning: Unable to resolve imported reference BZ2_bzDecompressInit.
+080AA529: warning: Unable to resolve imported reference BZ2_bzDecompress.
+080AA5CE: warning: Unable to resolve imported reference BZ2_bzDecompressEnd.
+080AA58B: warning: Unable to resolve imported reference BZ2_bzDecompressEnd.
+080AA5B3: warning: Unable to resolve imported reference BZ2_bzDecompressEnd.
+080AA46B: warning: Unable to resolve imported reference BZ2_bzDecompressInit.
+080AA334: warning: Unable to resolve imported reference BZ2_bzDecompress.
+080AA269: warning: Unable to resolve imported reference BZ2_bzDecompressEnd.
+080A90BB: warning: Unable to resolve imported reference memchr.
+080A8CF5: warning: Unable to resolve imported reference memchr.
+080A8A40: warning: Unable to resolve imported reference memchr.
+080A7F03: warning: Unable to resolve imported reference bsearch.
+080A72D4: warning: Unable to resolve imported reference bsearch.
+080A7772: warning: Unable to resolve imported reference bsearch.
+080A8731: warning: Unable to resolve imported reference bsearch.
+080A606A: warning: Unable to resolve imported reference memchr.
+080A5D40: warning: Unable to resolve imported reference memchr.
+080A5723: warning: Procedure walk_dom_nodes previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809A028: warning: Procedure html_html_close previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809A0CC: warning: Procedure html_body previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809958C: warning: Unable to resolve imported reference __strcat_chk.
+080624C2: warning: Procedure destroy_menu previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08092B1D: warning: Procedure put_chars_conv previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809B8AC: warning: Procedure html_a previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080865FA: warning: Unable to resolve imported reference memchr.
+080862D0: warning: Unable to resolve imported reference memchr.
+080802F4: warning: Procedure get_download_msg previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807E4CA: warning: Procedure push_ok_button previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080E312A: warning: Procedure close_tab previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807D2A3: warning: Procedure exit_prog previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807C17F: warning: Procedure history_menu previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08065B90: warning: Procedure refreshed_msg_box previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08075DC6: warning: Procedure cp_wr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08075A03: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08075923: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08075849: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08075766: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08075676: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08072088: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08071E4E: warning: Unable to resolve imported reference strcasestr.
+08071D70: warning: Unable to resolve imported reference strcasestr.
+08071DE3: warning: Unable to resolve imported reference strcasestr.
+0807160A: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08070F8E: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08070FB1: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+08070C88: warning: Procedure delete_option_item previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08070F1A: warning: Procedure add_option_to_tree previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806F1FF: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806E9C6: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+0806DC17: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+080B53C2: warning: Procedure shrink_memory previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080B9643: warning: Procedure detach_connection previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806A59B: warning: Unable to resolve imported reference XML_ParserCreate.
+0806A5CD: warning: Unable to resolve imported reference XML_SetElementHandler.
+0806A5E3: warning: Unable to resolve imported reference XML_SetCharacterDataHandler.
+0806A64B: warning: Unable to resolve imported reference XML_ParserFree.
+0806A69D: warning: Unable to resolve imported reference XML_Parse.
+0806A6F1: warning: Unable to resolve imported reference XML_GetErrorCode.
+0806A6F9: warning: Unable to resolve imported reference XML_ErrorString.
+0806A709: warning: Unable to resolve imported reference XML_GetCurrentColumnNumber.
+0806A719: warning: Unable to resolve imported reference XML_GetCurrentLineNumber.
+080690E9: warning: Procedure bookmark_edit_done previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08068ABA: warning: Unable to resolve imported reference strcasestr.
+08067E31: warning: Procedure delete_bookmark_item previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806786A: warning: Procedure bookmark_terminal_tabs previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08062BA3: warning: Procedure scroll_menu previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080647D2: warning: Procedure do_mainmenu previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08064C34: warning: Unable to resolve imported reference strcasestr.
+08064944: warning: Procedure mainmenu_handler previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805F6C3: warning: Procedure input_field_ok previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805E92F: warning: Procedure display_field previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805E587: warning: Procedure check_hotkeys previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08059B28: warning: Unable to resolve imported reference tsearch.
+08059B08: warning: Unable to resolve imported reference __vasprintf_chk.
+08059AF8: warning: Unable to resolve imported reference backtrace_symbols_fd.
+08059AE8: warning: Unable to resolve imported reference pclose.
+08059AD8: warning: Unable to resolve imported reference gnutls_strerror.
+08059AC8: warning: Unable to resolve imported reference rb_define_const.
+08059AB8: warning: Unable to resolve imported reference gnutls_bye.
+08059A98: warning: Unable to resolve imported reference setenv.
+08059A68: warning: Unable to resolve imported reference gnutls_cipher_get.
+08059A58: warning: Unable to resolve imported reference XML_SetCharacterDataHandler.
+08059A38: warning: Unable to resolve imported reference gss_init_sec_context.
+08059A08: warning: Unable to resolve imported reference BZ2_bzDecompressInit.
+080599F8: warning: Unable to resolve imported reference getpeername.
+080599E8: warning: Unable to resolve imported reference strcspn.
+080599D8: warning: Unable to resolve imported reference tempnam.
+080599C8: warning: Unable to resolve imported reference __memmove_chk.
+080599A8: warning: Unable to resolve imported reference kill.
+08059988: warning: Unable to resolve imported reference gnutls_global_deinit.
+08059978: warning: Unable to resolve imported reference getsockopt.
+08059958: warning: Unable to resolve imported reference Gpm_Open.
+08059908: warning: Unable to resolve imported reference rb_funcall3.
+080598D8: warning: Unable to resolve imported reference memchr.
+080598B8: warning: Unable to resolve imported reference gmtime.
+08059898: warning: Unable to resolve imported reference getrlimit64.
+08059878: warning: Unable to resolve imported reference rb_intern.
+08059858: warning: Unable to resolve imported reference setsockopt.
+08059848: warning: Unable to resolve imported reference XML_Parse.
+08059838: warning: Unable to resolve imported reference rb_str_new2.
+08059828: warning: Unable to resolve imported reference gss_import_name.
+08059818: warning: Unable to resolve imported reference __fxstat64.
+08059808: warning: Unable to resolve imported reference gnutls_kx_get_name.
+080597F8: warning: Unable to resolve imported reference gnutls_kx_get.
+080597E8: warning: Unable to resolve imported reference fork.
+080597D8: warning: Unable to resolve imported reference gnutls_priority_set_direct.
+080597C8: warning: Unable to resolve imported reference XML_SetElementHandler.
+080597A8: warning: Unable to resolve imported reference vasprintf.
+08059798: warning: Unable to resolve imported reference sigfillset.
+08059778: warning: Unable to resolve imported reference gnutls_certificate_type_get.
+08059768: warning: Unable to resolve imported reference towlower.
+08059748: warning: Unable to resolve imported reference XML_ParserFree.
+08059728: warning: Unable to resolve imported reference backtrace.
+080596E8: warning: Unable to resolve imported reference freeifaddrs.
+080596D8: warning: Unable to resolve imported reference strcasestr.
+080596C8: warning: Unable to resolve imported reference gss_delete_sec_context.
+080596B8: warning: Unable to resolve imported reference rb_define_module_function.
+080596A8: warning: Unable to resolve imported reference memrchr.
+08059688: warning: Unable to resolve imported reference iconv_close.
+08059678: warning: Unable to resolve imported reference Gpm_Close.
+08059658: warning: Unable to resolve imported reference rb_obj_as_string.
+08059648: warning: Unable to resolve imported reference XML_ErrorString.
+08059618: warning: Unable to resolve imported reference BZ2_bzDecompressEnd.
+08059608: warning: Unable to resolve imported reference gnutls_certificate_free_credentials.
+080595A8: warning: Unable to resolve imported reference select.
+08059598: warning: Unable to resolve imported reference gnutls_compression_get_name.
+08059588: warning: Unable to resolve imported reference mkstemp64.
+08059578: warning: Unable to resolve imported reference Gpm_GetEvent.
+08059568: warning: Unable to resolve imported reference gnutls_certificate_verify_peers.
+08059528: warning: Unable to resolve imported reference ctime.
+08059518: warning: Unable to resolve imported reference ruby_script.
+08059508: warning: Unable to resolve imported reference gnutls_mac_get_name.
+080594F8: warning: Unable to resolve imported reference chdir.
+080594E8: warning: Unable to resolve imported reference rb_inspect.
+080594D8: warning: Unable to resolve imported reference XML_GetCurrentLineNumber.
+080594C8: warning: Unable to resolve imported reference getegid.
+08059498: warning: Unable to resolve imported reference waitpid.
+08059478: warning: Unable to resolve imported reference getifaddrs.
+08059468: warning: Unable to resolve imported reference BZ2_bzDecompress.
+08059448: warning: Unable to resolve imported reference iconv.
+08059428: warning: Unable to resolve imported reference rb_class_path.
+08059418: warning: Unable to resolve imported reference gnutls_anon_allocate_client_credentials.
+08059408: warning: Unable to resolve imported reference alarm.
+080593F8: warning: Unable to resolve imported reference rb_load_protect.
+080593E8: warning: Unable to resolve imported reference gnutls_deinit.
+080593A8: warning: Unable to resolve imported reference gnutls_protocol_set_priority.
+08059388: warning: Unable to resolve imported reference gnutls_kx_set_priority.
+08059368: warning: Unable to resolve imported reference tfind.
+08059358: warning: Unable to resolve imported reference readdir64.
+08059348: warning: Unable to resolve imported reference fsync.
+08059328: warning: Unable to resolve imported reference ftello64.
+08059308: warning: Unable to resolve imported reference umask.
+080592C8: warning: Unable to resolve imported reference dup2.
+08059288: warning: Unable to resolve imported reference rb_define_module.
+08059228: warning: Unable to resolve imported reference setpgid.
+08059218: warning: Unable to resolve imported reference fgets_unlocked.
+08059208: warning: Unable to resolve imported reference backtrace_symbols.
+080591F8: warning: Unable to resolve imported reference __lxstat64.
+080591D8: warning: Unable to resolve imported reference rb_define_singleton_method.
+08059188: warning: Unable to resolve imported reference inflate.
+08059168: warning: Unable to resolve imported reference gnutls_init.
+08059148: warning: Unable to resolve imported reference gnutls_cipher_get_name.
+08059138: warning: Unable to resolve imported reference gnutls_credentials_set.
+08059128: warning: Unable to resolve imported reference gnutls_anon_free_client_credentials.
+08059118: warning: Unable to resolve imported reference __strcat_chk.
+08059108: warning: Unable to resolve imported reference inflateInit2_.
+080590E8: warning: Unable to resolve imported reference gnutls_cipher_set_priority.
+080590D8: warning: Unable to resolve imported reference XML_GetCurrentColumnNumber.
+080590C8: warning: Unable to resolve imported reference idna_to_ascii_lz.
+080590B8: warning: Unable to resolve imported reference rb_str_new.
+080590A8: warning: Unable to resolve imported reference __vsnprintf_chk.
+08059098: warning: Unable to resolve imported reference fseeko64.
+08059088: warning: Unable to resolve imported reference tcgetattr.
+08059078: warning: Unable to resolve imported reference uname.
+08059018: warning: Unable to resolve imported reference execl.
+08058FE8: warning: Unable to resolve imported reference ruby_init_loadpath.
+08058FB8: warning: Unable to resolve imported reference rb_protect.
+08058FA8: warning: Unable to resolve imported reference rename.
+08058F88: warning: Unable to resolve imported reference XML_GetErrorCode.
+08058F78: warning: Unable to resolve imported reference lseek64.
+08058F68: warning: Unable to resolve imported reference listen.
+08058F48: warning: Unable to resolve imported reference gnutls_certificate_set_verify_flags.
+08058F38: warning: Unable to resolve imported reference mremap.
+08058F28: warning: Unable to resolve imported reference ruby_init.
+08058F18: warning: Unable to resolve imported reference gnutls_transport_set_ptr.
+08058EF8: warning: Unable to resolve imported reference system.
+08058EE8: warning: Unable to resolve imported reference gnutls_certificate_allocate_credentials.
+08058EA8: warning: Unable to resolve imported reference strtod.
+08058E88: warning: Unable to resolve imported reference __argz_stringify.
+08058E68: warning: Unable to resolve imported reference __xstat64.
+08058E58: warning: Unable to resolve imported reference gnutls_compression_get.
+08058E48: warning: Unable to resolve imported reference iconv_open.
+08058E28: warning: Unable to resolve imported reference gnutls_certificate_set_x509_trust_file.
+08058E18: warning: Unable to resolve imported reference __gmon_start__.
+08058DF8: warning: Unable to resolve imported reference gnutls_protocol_get_name.
+08058DC8: warning: Unable to resolve imported reference gnutls_record_send.
+08058DB8: warning: Unable to resolve imported reference __isoc99_fscanf.
+08058DA8: warning: Unable to resolve imported reference gss_release_buffer.
+08058D98: warning: Unable to resolve imported reference inflateEnd.
+08058D88: warning: Unable to resolve imported reference bsearch.
+08058D78: warning: Unable to resolve imported reference XML_ParserCreate.
+08058D68: warning: Unable to resolve imported reference gnutls_record_recv.
+08058D48: warning: Unable to resolve imported reference qsort.
+08058D38: warning: Unable to resolve imported reference gnutls_certificate_type_get_name.
+08058D08: warning: Unable to resolve imported reference getsockname.
+08058CB8: warning: Unable to resolve imported reference rb_define_global_function.
+08058C98: warning: Unable to resolve imported reference __argz_count.
+08058C78: warning: Unable to resolve imported reference popen.
+08058C68: warning: Unable to resolve imported reference gnutls_global_init.
+08058C48: warning: Unable to resolve imported reference gnutls_mac_get.
+0805F507: error: An error occurred while processing the statement branch edi_53 >u ((ecx_58 - 3<32>) - (al_81 * 2<8> <u 0<8>)) - (esi_17 + 0xC<32>) l0805F442.
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00014] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0806041B: error: An error occurred while processing the statement Mem150[ebp_30 - 0x41D<32> + (((edx_111 - 3<32>) - (al_134 * 2<8> <u 0<8>)) - (ebp_30 - 0x41C<32>)):byte] = 0<8>.
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00014] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccessCommon (Reko.Core.Expressions.Expression access, Reko.Core.Expressions.Expression ea) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00048] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080608A0: error: An error occurred while processing the statement eax_124 = eax_110 - 3<32> - (cl_114 * 2<8> <u 0<8>) - edi_331.
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+08063714: error: An error occurred while processing the statement Mem1220[esp_1097 + 4<32>:word32] = ecx_1207 + 2<32> + (edi_1176 - 2<32>) - eax_1213.
+    Not handling (ptr32 (struct (0 char b0000) (24 T_88 t0024))) and (union ((ptr32 (struct (0 char b0000) (24 T_88 t0024))) u1) (ptr32 u0)) yet.
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00050] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0806D0BD: error: An error occurred while processing the statement eax_109 = eax_109 - (ebx_52 <u eax_109).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0806FF79: error: An error occurred while processing the statement ebx_105 = ebx_105 - 0xFFFFFFFF<32> - (SLICE((word32) Mem171[ebp_272 + -32<i32>:byte], byte, 0) <u 1<8>).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0807D539: error: An error occurred while processing the statement esi_178 = esi_340 - 0xFFFFFFFF<32> - (Mem456[esi_340 + 0<32>:byte] <u 1<8>).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0807D71B: error: An error occurred while processing the statement word32 edx_293 = edx_288 - Mem292[ebp_26 + -48<i32>:word32].
+    Pulling difference int32 and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0807F5AE: error: An error occurred while processing the statement word32 edx_140 = edx_106 - 3<32> - (al_129 * 2<8> <u 0<8>) - ebx_98.
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+08086AD5: error: An error occurred while processing the statement word32 eax_904 = eax_892 - esi_874.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (1 byte b0001))) u1) (ptr32 u0)) and (ptr32 (struct 0001 (0 byte b0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0808688E: error: An error occurred while processing the statement branch edx_1041 - esi_1123 <= 1<32> l080868AA.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (1 byte b0001))) u1) (ptr32 u0)) and (ptr32 (struct 0001 (0 byte b0000) (1 byte b0001)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0808AAA3: error: An error occurred while processing the statement word32 ecx_712 = ecx_704 - Mem711[ebp_617 + -68<i32>:word32].
+    Pulling difference int32 and (ptr32 (struct (0 char b0000) (24 T_88 t0024)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080993C7: error: An error occurred while processing the statement word32 esi_338 = esi_304 - 3<32> - (al_327 * 2<8> <u 0<8>) - (fp - 0x40<32>).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0809A37E: error: An error occurred while processing the statement memacpy(gs, eax_29, ebx_30 + edx - eax_29, out edx_200).
+    Pulling difference int32 and (ptr32 (struct 0001 (FFFFFFFF byte bFFFFFFFF) (0 T_145492 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0809CCB9: error: An error occurred while processing the statement branch edx_1032 - eax_268 <= 1<32> l0809D080.
+    Pulling difference (ptr32 (struct (0 (union (char u0) ((ptr32 char) u1) (T_146021 u2)) u0000) (24 T_88 t0024))) and (union ((ptr32 (struct 0001 (0 (union (char u1) ((ptr32 char) u0) (T_146021 u2)) u0000) (2 byte b0002) (24 T_88 t0024))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0809D102: error: An error occurred while processing the statement Mem451[esp_1034 + 8<32>:word32] = esi_428 - edi_118.
+    Pulling difference (ptr32 (struct (0 (union (char u1) ((ptr32 char) u0) (T_146021 u2)) u0000) (24 T_88 t0024))) and (union ((ptr32 (struct 0001 (0 (union (char u1) ((ptr32 char) u0) (T_146021 u2) (T_152871 u3) (T_152888 u4) (T_152893 u5) (T_152912 u6) (T_152943 u7) (T_152953 u8) (T_152960 u9)) u0000) (1 byte b0001) (2 byte b0002) (24 T_88 t0024))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080A3A35: error: An error occurred while processing the statement eax_515 = ebx_544 - Mem697[esi_392 + 0x10<32>:word32].
+    Pulling difference (union (int32 u1) (size_t u0) (size_t u2)) and (ptr32 (struct (0 (union (char u1) ((ptr32 char) u0) (T_146021 u2) (T_155254 u3) (T_156831 u4) (T_159831 u5) (T_160503 u6)) u0000) (24 T_88 t0024)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080A6545: error: An error occurred while processing the statement word32 eax_910 = eax_898 - esi_880.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (1 byte b0001))) u1) (ptr32 u0)) and (ptr32 (struct 0001 (0 byte b0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080A62FE: error: An error occurred while processing the statement branch edx_1047 - esi_239 <= 1<32> l080A631A.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (1 byte b0001))) u1) (ptr32 u0)) and (ptr32 (struct (0 T_172321 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080AA10F: error: An error occurred while processing the statement dwLoc34_2607 = eax_471 - 3<32> - (dwLoc20_2621 + 2<32>).
+    Pulling difference ptr32 and (union ((ptr32 (struct (0 T_178453 t0000) (1 T_178457 t0001))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080AA153: error: An error occurred while processing the statement dwLoc34_2607 = eax_471 - 2<32> - (dwLoc20_2621 + 2<32>).
+    Pulling difference ptr32 and (union ((ptr32 (struct (0 T_178453 t0000) (1 T_178457 t0001))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080A99C8: error: An error occurred while processing the statement dwLoc34_2607 = eax_368 - dwLoc34_2602.
+    Pulling difference (ptr32 (struct (0 byte b0000))) and (union ((ptr32 (struct 0001 (FFFFFFFF T_178439 tFFFFFFFF) (0 (union (char u0) ((ptr32 char) u1) ((arr T_350607) u2) (T_146021 u3) (T_155254 u4) (T_156831 u5) (T_159831 u6) (T_160503 u7) (T_178362 u8) (T_178396 u9) (T_178453 u10) (T_350607 u11)) u0000) (1 T_178457 t0001) (24 T_88 t0024))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080AAD17: error: An error occurred while processing the statement branch strcmp(ebx_22 - eax_42, esi_36) == 0<32> l080AAD38.
+    Pulling difference ptr32 and (union (int32 u1) (size_t u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080C3B55: error: An error occurred while processing the statement Mem702[dwArg04 + 0x2C<32>:word16] = SLICE(edi_1235 - 1<32> - eax_679, word16, 0).
+    Pulling difference (union ((ptr32 (struct (0 char b0000) (1 T_222838 t0001))) u1) (ptr32 u0)) and (ptr32 char)
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080C4C2C: error: An error occurred while processing the statement word32 ecx_732 = dwLoc48 - dwLoc64.
+    Pulling difference (ptr32 (struct (0 T_225163 t0000))) and (union ((ptr32 (struct 0001 (0 byte b0000))) u0) (up32 u1))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080C7CD3: error: An error occurred while processing the statement update_md5(fp - 0x170<32>, dwArg04 + 0x20<32>, edx_71 - 3<32> - (al_94 * 2<8> <u 0<8>) - (dwArg04 + 0x20<32>)).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080C7D7F: error: An error occurred while processing the statement update_md5(fp - 0x170<32>, dwArg04 + 0x48<32>, edx_166 - 3<32> - (al_189 * 2<8> <u 0<8>) - (dwArg04 + 0x48<32>)).
+    Pulling difference ptr32 and bool
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080CDE50: error: An error occurred while processing the statement bool Z_1431 = SLICE(cond(edx_350 - eax_437), bool, 2).
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (4 T_83 t0004) (8 T_83 t0008) (14 T_242984 t0014) (18 T_242987 t0018) (1C T_83 t001C) (20 T_243060 t0020) (24 T_242903 t0024))) u1) (ptr32 u0)) and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf (Reko.Core.Expressions.ConditionOf cof) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ConditionOf.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080CDE62: error: An error occurred while processing the statement word32 edx_464 = edx_350 - eax_440.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (4 T_83 t0004) (8 T_83 t0008) (C T_243310 t000C) (14 T_242984 t0014) (18 T_242987 t0018) (1C T_83 t001C) (20 T_243060 t0020) (24 T_242903 t0024))) u1) (ptr32 u0)) and (ptr32 (struct 0001 (0 byte b0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080CDEB0: error: An error occurred while processing the statement Mem510[dwArg04 + 0x10<32>:word32] = edx_350 - 4<32> - eax_440.
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (4 T_83 t0004) (8 T_83 t0008) (C T_243310 t000C) (14 T_242984 t0014) (18 T_242987 t0018) (1C T_83 t001C) (20 T_243060 t0020) (24 T_242903 t0024))) u1) (ptr32 u0)) and (ptr32 (struct 0001 (0 byte b0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080CDEB6: error: An error occurred while processing the statement Mem513[dwArg04 + 8<32>:word32] = eax_440 - dwLoc20_1653.
+    Pulling difference (ptr32 (struct 0001 (0 byte b0000))) and (union ((ptr32 (struct 0001 (0 byte b0000) (4 T_83 t0004) (8 T_83 t0008) (C T_243310 t000C) (14 T_242984 t0014) (18 T_242987 t0018) (1C T_83 t001C) (20 T_243060 t0020) (24 T_242903 t0024))) u1) (ptr32 u0))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080CDE86: error: An error occurred while processing the statement Z_1431 = SLICE(cond(edx_350 - (eax_440 + 3<32>)), bool, 2) (alias).
+    Pulling difference (union ((ptr32 (struct 0001 (0 byte b0000) (4 T_83 t0004) (8 T_83 t0008) (C T_243310 t000C) (14 T_242984 t0014) (18 T_242987 t0018) (1C T_83 t001C) (20 T_243060 t0020) (24 T_242903 t0024))) u1) (ptr32 u0)) and ptr32
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf (Reko.Core.Expressions.ConditionOf cof) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ConditionOf.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080DC0F4: error: An error occurred while processing the statement branch edx_117 == (word32) Mem77[(((dwArg10 >>u 1<32>) << 2<32>) - (dwArg10 & 1<32>)) + 0x810D4B2<32>:byte] l080DC180.
+    Not handling (ptr32 (struct (810D4B2 T_275446 t810D4B2))) and (union (ui32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e4] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080E5952: error: An error occurred while processing the statement Mem209[fp - 0x40<32> + esi_194:byte] = SLICE((word32) Mem203[ecx_110 - ((edx_198 >>u 3<32>) + (edx_198 >>u 3<32>) * 4<32>) * 2<32> + 0x810F577<32>:byte], byte, 0).
+    Not handling (ptr32 (struct (810F577 T_294241 t810F577))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e4] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080E609A: error: An error occurred while processing the statement word32 esi_204 = edi_159 - 1<32> + dwLoc74_685 + (fp - 0x60<32>).
+    Not handling (ptr32 (struct 0001 (0 byte b0000))) and (union ((ptr32 (struct 0001 (0 byte b0000))) u0) (ptr32 u1)) yet.
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00050] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080E62DA: error: An error occurred while processing the statement Mem129[ecx_115 + 0<32>:byte] = SLICE((word32) Mem124[esi_117 - ((edx_119 >>u 3<32>) + (edx_119 >>u 3<32>) * 4<32>) * 2<32> + 0x810F577<32>:byte], byte, 0).
+    Not handling (ptr32 (struct (810F577 T_295139 t810F577))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e4] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080F1AE5: error: An error occurred while processing the statement memmove(edx_934, edx_934 + 1<32>, eax_922 - ebx_925).
+    Pulling difference (union (int32 u1) (size_t u0)) and (ptr32 (struct (0 (union (char u1) ((ptr32 char) u0) ((arr T_350607) u7) ((arr T_350952) u10) ((arr T_351040) u12) ((arr T_351066) u14) ((arr T_351173) u22) ((arr T_351176) u24) ((arr T_351254) u28) (T_146021 u2) (T_155254 u3) (T_156831 u4) (T_159831 u5) (T_160503 u6) (T_213411 u9) (T_270951 u16) (T_281771 u17) (T_286489 u18) (T_288361 u19) (T_289324 u20) (T_289337 u21) (T_299760 u26) (T_299775 u27) (T_316083 u30) (T_350607 u8) (T_350953 u11) (T_351041 u13) (T_351067 u15) (T_351174 u23) (T_351177 u25) (T_351255 u29)) u0000) (24 T_88 t0024)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitApplication (Reko.Core.Expressions.Application appl) [0x00012] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.SideEffect.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080F36D9: error: An error occurred while processing the statement byte CZ_1061 = SLICE(cond(edx_1056 - Mem1058[ebp_114 + -1076<i32>:word32]), bool, 2).
+    Pulling difference (union (char u1) ((ptr32 char) u0) ((arr T_350607) u7) ((arr T_350952) u10) ((arr T_351040) u12) ((arr T_351066) u14) ((arr T_351173) u22) ((arr T_351176) u24) ((arr T_351254) u28) (T_146021 u2) (T_155254 u3) (T_156831 u4) (T_159831 u5) (T_160503 u6) (T_213411 u9) (T_270951 u16) (T_281771 u17) (T_286489 u18) (T_288361 u19) (T_289324 u20) (T_289337 u21) (T_299760 u26) (T_299775 u27) (T_316083 u30) (T_318412 u31) (T_321211 u32) (T_321758 u33) (T_322733 u34) (T_322846 u35) (T_350607 u8) (T_350953 u11) (T_351041 u13) (T_351067 u15) (T_351174 u23) (T_351177 u25) (T_351255 u29)) and (ptr32 (struct (0 (union (char u1) ((ptr32 char) u0) ((arr T_350607) u7) ((arr T_350952) u10) ((arr T_351040) u12) ((arr T_351066) u14) ((arr T_351173) u22) ((arr T_351176) u24) ((arr T_351254) u28) (T_146021 u2) (T_155254 u3) (T_156831 u4) (T_159831 u5) (T_160503 u6) (T_213411 u9) (T_270951 u16) (T_281771 u17) (T_286489 u18) (T_288361 u19) (T_289324 u20) (T_289337 u21) (T_299760 u26) (T_299775 u27) (T_316083 u30) (T_318412 u31) (T_321211 u32) (T_321758 u33) (T_322733 u34) (T_322846 u35) (T_350607 u8) (T_350953 u11) (T_351041 u13) (T_351067 u15) (T_351174 u23) (T_351177 u25) (T_351255 u29)) u0000) (24 T_88 t0024)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConditionOf (Reko.Core.Expressions.ConditionOf cof) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ConditionOf.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+080FC638: error: An error occurred while processing the statement word32 ecx_236 = eax_156 - Mem222[dwArg04 + 0x34<32>:word32].
+    Pulling difference int32 and (ptr32 (struct (0 (union (char u1) ((ptr32 char) u0) ((ptr32 (struct (0 T_322900 t0000) (4 T_322906 t0004) (8 T_322912 t0008) (C T_322918 t000C) (10 T_322924 t0010) (14 T_322930 t0014) (18 T_322936 t0018) (1C T_322942 t001C))) u38) ((arr T_350607) u7) ((arr T_350952) u10) ((arr T_351040) u12) ((arr T_351066) u14) ((arr T_351173) u22) ((arr T_351176) u24) ((arr T_351254) u28) ((arr T_351361) u40) ((arr T_351362) u42) ((arr T_351365) u45) ((arr T_351379) u49) ((arr T_351381) u51) ((arr T_351402) u53) (T_146021 u2) (T_155254 u3) (T_156831 u4) (T_159831 u5) (T_160503 u6) (T_213411 u9) (T_270951 u16) (T_281771 u17) (T_286489 u18) (T_288361 u19) (T_289324 u20) (T_289337 u21) (T_299760 u26) (T_299775 u27) (T_316083 u30) (T_318412 u31) (T_321211 u32) (T_321271 u36) (T_321758 u33) (T_322733 u34) (T_322846 u35) (T_322890 u37) (T_324704 u39) (T_335496 u44) (T_335808 u47) (T_336596 u48) (T_340288 u55) (T_350607 u8) (T_350953 u11) (T_351041 u13) (T_351067 u15) (T_351174 u23) (T_351177 u25) (T_351255 u29) (T_351361 u41) (T_351362 u43) (T_351365 u46) (T_351379 u50) (T_351381 u52) (T_351402 u54)) u0000) (24 T_88 t0024)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+: warning: Recursion too deep in PtrPrimitiveReplacer
+=== Killed because of CPU time limit

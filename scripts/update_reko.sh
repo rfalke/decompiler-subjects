@@ -49,7 +49,7 @@ do
   if test "$(cat error_code)" -eq 152 ; then
   	echo "=== Killed because of CPU time limit" >>out
   fi
-  if stat --printf='' "$dir"/subject.reko/*.c 2>/dev/null ; then
+  if stat --printf='' "$dir"/subject.reko/subject_*.c 2>/dev/null ; then
     echo "  ok"
 
     (cd "$dir" && cat subject.reko/subject_*.c >subject.reko/all.c)

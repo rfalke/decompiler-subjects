@@ -1,4 +1,5 @@
-Using options:
-080482C8: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:
+08048317: warning: Unable to resolve imported reference __gmon_start__.
 08048374: warning: Call target address 00000000 is invalid.
+080482C8: warning: Unable to resolve imported reference __gmon_start__.
 l08048411: warning: Non-integral switch expression

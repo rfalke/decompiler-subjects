@@ -1,4 +1,4 @@
-Using options:
+=== Using options:
 00401607: warning: Unable to guess parameters of msvcrt.dll!_iob.
 00401BC4: warning: Unable to resolve imported reference msvcrt.dll!vfprintf.
 00401940: warning: Call target address 909090C3 is invalid.
@@ -10,10 +10,3 @@ Using options:
 00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
 00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
 00401BAC: warning: Unable to guess parameters of msvcrt.dll!_setmode.
-00401297: error: An error occurred while processing instruction at address 00401297.
-    The given key 'esp' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <b78dcefd6c184245be8bf4a1e52466d9>:0 
-  at Reko.Analysis.ExpressionPropagator.GetStackDepthBeforeCall () [0x0001b] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Analysis.ExpressionPropagator.VisitCallInstruction (Reko.Core.Code.CallInstruction ci) [0x00006] in <55635f0d4b464606be1dcd97c7688665>:0 
-  at Reko.Core.Code.CallInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <646e98867dbb42e9bc0862d64ce0c776>:0 
-  at Reko.Analysis.TrashedRegisterFinder.RewriteBlock (Reko.Core.Block block) [0x0005b] in <55635f0d4b464606be1dcd97c7688665>:0 

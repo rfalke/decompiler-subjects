@@ -1,4 +1,4 @@
-Using options:
+=== Using options:
 00411E9E: warning: Unable to guess parameters of MSVCR90D.dll!_CrtDbgReportW.
 00411EE8: warning: Unable to guess parameters of MSVCR90D.dll!_CrtSetCheckCount.
 00411EF1: warning: Unable to guess parameters of MSVCR90D.dll!__initenv.
@@ -6,11 +6,20 @@ Using options:
 004133F4: warning: Unable to guess parameters of MSVCR90D.dll!_crt_debugger_hook.
 004125D2: warning: Call target address 00000000 is invalid.
 00411F3E: warning: Unable to guess parameters of MSVCR90D.dll!_cexit.
+0041362F: error: An error occurred while processing the statement branch edi_400 <u Mem389[eax_367 + 0<32>:word32] l0041367F.
+    Specified argument was out of the range of valid values.
+Parameter name: bitSize
+      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00344] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
 00415B64: warning: Expected sizes of arrays to have been determined by now
-00415B7C: warning: Expected sizes of arrays to have been determined by now
 00415B94: warning: Expected sizes of arrays to have been determined by now
 00417008: warning: Expected sizes of arrays to have been determined by now
+00416144: warning: Expected sizes of arrays to have been determined by now
 00415B64: warning: Expected sizes of arrays to have been determined by now
-00415B7C: warning: Expected sizes of arrays to have been determined by now
 00415B94: warning: Expected sizes of arrays to have been determined by now
+00416144: warning: Expected sizes of arrays to have been determined by now
 00417008: warning: Expected sizes of arrays to have been determined by now

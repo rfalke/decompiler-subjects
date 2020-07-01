@@ -1,52 +1,29 @@
-Using options:
-0000000140001A0B: warning: Call target address 00000000000027F6 is invalid.
-0000000140001A16: warning: Call target address 00000000000027E0 is invalid.
-0000000140001A22: warning: Call target address 00000000000027CA is invalid.
-0000000140001A2E: warning: Call target address 00000000000027BA is invalid.
-0000000140001A3F: warning: Call target address 00000000000027A0 is invalid.
-00000001400013C1: warning: Call target address 00000000000026E0 is invalid.
-00000001400011AD: warning: Call target address 0000000000002578 is invalid.
-00000001400011BA: warning: Call target address 000000000000254A is invalid.
-0000000140001617: warning: Call target address 000000000000278C is invalid.
+=== Using options:
+subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
+0000000140001478: warning: Unable to guess parameters of MSVCR90.dll!__initenv.
+00000001400011AD: warning: Unable to guess parameters of MSVCR90.dll!_stat64i32.
 0000000140001AA6: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
-00000001400016F4: warning: Call target address 000000000000274A is invalid.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
-000000014000170C: warning: Call target address 000000000000272C is invalid.
-0000000140001719: warning: Call target address 0000000000002710 is invalid.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
-0000000140001732: warning: Call target address 00000000000026FC is invalid.
-0000000140001740: warning: Call target address 00000000000026E8 is invalid.
-00000001400011EA: warning: Call target address 000000000000255E is invalid.
-00000001400011FB: warning: Call target address 000000000000254A is invalid.
 000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140001231: warning: Call target address 0000000000002566 is invalid.
-000000014000103D: warning: Call target address 0000000000002540 is invalid.
-0000000140001084: warning: Call target address 0000000000002540 is invalid.
-000000014000115E: warning: Call target address 0000000000002554 is invalid.
+000000014000103D: warning: Unable to determine format string for call to 'sprintf'.
+0000000140001084: warning: Unable to determine format string for call to 'sprintf'.
+000000014000115E: warning: Unable to determine format string for call to 'printf'.
 0000000140001255: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140001260: warning: Call target address 000000000000256E is invalid.
-00000001400014B3: warning: Call target address 00000000000025E8 is invalid.
-00000001400014C2: warning: Call target address 00000000000025DE is invalid.
+00000001400014C2: warning: Unable to guess parameters of MSVCR90.dll!_cexit.
 000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400015FD: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
 00000001400018F2: warning: Unable to guess parameters of MSVCR90.dll!_XcptFilter.
-00000001400017C4: warning: Call target address 00000000000026CE is invalid.
-00000001400017D8: warning: Call target address 00000000000026C4 is invalid.
 0000000140001AA0: warning: Unable to guess parameters of MSVCR90.dll!_lock.
-00000001400017F2: warning: Call target address 00000000000026CE is invalid.
-0000000140001804: warning: Call target address 00000000000026CE is invalid.
-0000000140001812: warning: Call target address 0000000000002656 is invalid.
-0000000140001832: warning: Call target address 0000000000002656 is invalid.
-0000000140001844: warning: Call target address 0000000000002656 is invalid.
+0000000140001812: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
+0000000140001832: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
+0000000140001844: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
-000000014000179F: warning: Call target address 000000000000272C is invalid.
 000000014000131A: warning: Procedure fn0000000140001300 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140001578: warning: Call target address 0000000000002668 is invalid.
-0000000140001582: warning: Call target address 0000000000002656 is invalid.
-00000001400015CE: warning: Call target address 000000000000262C is invalid.
-00000001400015E0: warning: Call target address 0000000000002616 is invalid.
-0000000140001366: warning: Call target address 00000000000025A0 is invalid.
+0000000140001582: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
+0000000140001588: warning: Unable to guess parameters of MSVCR90.dll!_fmode.
+00000001400015A5: warning: Unable to guess parameters of MSVCR90.dll!_commode.
+00000001400015E0: warning: Unable to guess parameters of MSVCR90.dll!_configthreadlocale.
 000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001204: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-fn000000014000120E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

@@ -1,5 +1,1005 @@
-Using options:
+=== Using options:
 00401321: warning: Unable to guess parameters of MSVCR100.dll!__initenv.
 0040116A: warning: Unable to guess parameters of MSVCR100.dll!_CxxThrowException.
 0040116A: warning: Unable to guess parameters of MSVCR100.dll!_CxxThrowException.
 0040138F: warning: Unable to guess parameters of MSVCR100.dll!_cexit.
+error: An error occurred during decompilation. System.StackOverflowException: The requested operation caused a stack overflow.
+  at (wrapper managed-to-native) System.Object.__icall_wrapper_mono_gc_alloc_obj(intptr,intptr)
+  at (wrapper alloc) System.Object.AllocSmall(intptr,intptr)
+  at Reko.Core.Lib.IntervalTree`2+IntervalNode[T,TypeValue].GetIntervalsOverlappingWith (Reko.Core.Lib.Interval`1[T] toFind) [0x00000] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.IntervalTree`2+IntervalNode+<GetIntervalsOverlappingWith>d__41[T,TypeValue].MoveNext () [0x000b6] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Lib.IntervalTree`2+IntervalNode+<GetIntervalsOverlappingWith>d__41[T,TypeValue].MoveNext () [0x00116] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at System.Collections.Generic.EnumerableHelpers.ToArray[T] (System.Collections.Generic.IEnumerable`1[T] source, System.Int32& length) [0x00032] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Buffer`1[TElement]..ctor (System.Collections.Generic.IEnumerable`1[T] source) [0x00022] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.OrderedEnumerable`1+<GetEnumerator>d__3[TElement].MoveNext () [0x0001e] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable+SelectIPartitionIterator`2[TSource,TResult].LazyToArray () [0x00030] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable+SelectIPartitionIterator`2[TSource,TResult].ToArray () [0x00016] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+StackTransformer.ReadBlockLocalVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0006a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0002a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.<AddPhiOperands>b__17_0 (Reko.Core.Block p) [0x0000e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at (wrapper delegate-invoke) System.Func`2[Reko.Core.Block,Reko.Core.Expressions.PhiArgument].invoke_TResult_T(Reko.Core.Block)
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.AddPhiOperands (Reko.Analysis.SsaIdentifier phi) [0x00021] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x000c3] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariableRecursive (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0009f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00037] in <4f9e4953ec124ff795bb138cf8ef3040>:0 

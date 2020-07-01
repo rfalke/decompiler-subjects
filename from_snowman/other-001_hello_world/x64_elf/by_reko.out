@@ -1,4 +1,4 @@
-Using options:
-000000000040043C: warning: Unable to resolve imported reference __gmon_start__.
+=== Using options:
+0000000000400430: warning: Unable to resolve imported reference __gmon_start__.
 006006B0: warning: Expected sizes of arrays to have been determined by now
 006006B0: warning: Expected sizes of arrays to have been determined by now

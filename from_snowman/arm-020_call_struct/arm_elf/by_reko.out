@@ -1,3 +1,5 @@
-Using options:
+=== Using options:
 00008514: warning: Multiple different values of stack delta in procedure g when processing RET instruction; was 4 previously.
 00008470: warning: Call target address 00000000 is invalid.
+00008554: warning: Expected sizes of arrays to have been determined by now
+00008554: warning: Expected sizes of arrays to have been determined by now

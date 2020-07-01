@@ -1,22 +1,36 @@
-Using options:
+=== Using options:
+subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
 0000000000402C10: warning: Unable to resolve imported reference msvcrt.dll!vfprintf.
 0000000000401A0F: warning: Unable to resolve imported reference KERNEL32.dll!RtlAddFunctionTable.
 00000000004023BA: warning: Procedure fn0000000000402390 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004012B2: warning: Unable to guess parameters of msvcrt.dll!_acmdln.
+00000000004026E7: warning: Procedure fn0000000000402710 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402BD0: warning: Unable to guess parameters of msvcrt.dll!_lock.
 0000000000402BE0: warning: Unable to guess parameters of msvcrt.dll!_unlock.
+00000000004013AB: warning: Unable to guess parameters of msvcrt.dll!__initenv.
+0000000000401504: warning: Unable to guess parameters of libstdc++-6.dll!_ZSt4cerr.
 00000000004015A8: warning: Unable to guess parameters of libstdc++-6.dll!_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.
 00000000004015B0: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSolsEPFRSoS_E.
 0000000000402BA0: warning: Unable to guess parameters of msvcrt.dll!_cexit.
+00000000004010D3: warning: Unable to guess parameters of msvcrt.dll!_fmode.
 000000000040286D: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 000000000040272A: warning: Procedure fn0000000000402710 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
+0000000000401680: warning: Unable to guess parameters of msvcrt.dll!__lconv_init.
+0000000000401680: warning: Unable to guess parameters of msvcrt.dll!__lconv_init.
 00000000004015C0: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSt8ios_base4InitC1Ev.
 00000000004015B8: warning: Unable to guess parameters of libstdc++-6.dll!_ZNSt8ios_base4InitD1Ev.
+00000000004021B5: error: An error occurred while processing the statement r8 = r8_111 - rdx.
+    Pulling difference uint64 and (ptr64 (struct (0 T_1545 t0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
 00400006: warning: Expected sizes of arrays to have been determined by now
 00400090: warning: Expected sizes of arrays to have been determined by now
-00407244: warning: Expected sizes of arrays to have been determined by now
 00400006: warning: Expected sizes of arrays to have been determined by now
 00400090: warning: Expected sizes of arrays to have been determined by now
-00407244: warning: Expected sizes of arrays to have been determined by now

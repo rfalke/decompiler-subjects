@@ -1,3 +1,5 @@
-Using options:
+=== Using options:
 08048350: warning: Call target address 00000000 is invalid.
 08048360: warning: Procedure fib1 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080494BC: warning: Expected sizes of arrays to have been determined by now
+080494BC: warning: Expected sizes of arrays to have been determined by now

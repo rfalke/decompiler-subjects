@@ -1,4 +1,4 @@
-Using options:
+=== Using options:
 0000120C: warning: Procedure fn00001198 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000012B6: warning: Procedure fn0000120E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000077C6: warning: Procedure fn00007622 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
@@ -21,29 +21,27 @@ Using options:
 00005DF4: warning: Procedure fn00005CD2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000163C: warning: Expected sizes of arrays to have been determined by now
 00014FCA: warning: Expected sizes of arrays to have been determined by now
+00014FCC: warning: Expected sizes of arrays to have been determined by now
 0001565E: warning: Expected sizes of arrays to have been determined by now
 00015674: warning: Expected sizes of arrays to have been determined by now
 00015674: warning: Expected sizes of arrays to have been determined by now
-00018336: warning: Expected sizes of arrays to have been determined by now
 0002D854: warning: Expected sizes of arrays to have been determined by now
 0002D856: warning: Expected sizes of arrays to have been determined by now
 0002D876: warning: Expected sizes of arrays to have been determined by now
 0002D896: warning: Expected sizes of arrays to have been determined by now
 0002D8C6: warning: Expected sizes of arrays to have been determined by now
 0003AAB4: warning: Expected sizes of arrays to have been determined by now
-0003AAB5: warning: Expected sizes of arrays to have been determined by now
 0003AC8A: warning: Expected sizes of arrays to have been determined by now
 0000163C: warning: Expected sizes of arrays to have been determined by now
 00014FCA: warning: Expected sizes of arrays to have been determined by now
+00014FCC: warning: Expected sizes of arrays to have been determined by now
 0001565E: warning: Expected sizes of arrays to have been determined by now
 00015674: warning: Expected sizes of arrays to have been determined by now
 00015674: warning: Expected sizes of arrays to have been determined by now
-00018336: warning: Expected sizes of arrays to have been determined by now
 0002D854: warning: Expected sizes of arrays to have been determined by now
 0002D856: warning: Expected sizes of arrays to have been determined by now
 0002D876: warning: Expected sizes of arrays to have been determined by now
 0002D896: warning: Expected sizes of arrays to have been determined by now
 0002D8C6: warning: Expected sizes of arrays to have been determined by now
 0003AAB4: warning: Expected sizes of arrays to have been determined by now
-0003AAB5: warning: Expected sizes of arrays to have been determined by now
 0003AC8A: warning: Expected sizes of arrays to have been determined by now

@@ -1,2 +1,4 @@
-Using options:
+=== Using options:
 08048350: warning: Call target address 00000000 is invalid.
+08049504: warning: Expected sizes of arrays to have been determined by now
+08049504: warning: Expected sizes of arrays to have been determined by now
