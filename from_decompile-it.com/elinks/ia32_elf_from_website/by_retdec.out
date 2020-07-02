@@ -1,0 +1,539 @@
+Running phase: Unpacking ( some time )
+No matching plugins found for 'GCC 4.4.5'
+No matching plugins found for 'GCC 4.6.3'
+Running phase: Initialization ( some time )
+Running phase: Providers initialization ( some time )
+Running phase: Input binary to LLVM IR decoding ( some time )
+Running phase: LLVM ( some time )
+Running phase: x86 address spaces optimization ( some time )
+Running phase: x87 fpu register analysis ( some time )
+Running phase: Main function identification optimization ( some time )
+Running phase: Libgcc idioms optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Conditional branch optimization ( some time )
+Running phase: Syscalls optimization ( some time )
+Running phase: Stack optimization ( some time )
+Running phase: Constants optimization ( some time )
+Running phase: Function parameters and returns optimization ( some time )
+Running phase: LLVM instruction optimization using RDA ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Disassembly generation ( some time )
+Running phase: Assembly mapping instruction removal ( some time )
+Running phase: C++ class hierarchy optimization ( some time )
+Running phase: Selected functions optimization ( some time )
+Running phase: Unreachable functions optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Make all registers local ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Stack pointer operations optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: Phi removal ( some time )
+Running phase: LLVM ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: Generate the current LLVM IR ( some time )
+Running phase: Generate the current bitcode ( some time )
+Running phase: LLVM IR -> HLL ( some time )
+Running phase: initialization ( some time )
+ -> loading the input config ( some time )
+ -> creating the used HLL writer [c] ( some time )
+ -> creating the used alias analysis [simple] ( some time )
+ -> creating the used call info obtainer [optim] ( some time )
+ -> creating the used evaluator of arithmetical expressions [c] ( some time )
+ -> creating the used variable names generator [fruit] ( some time )
+ -> creating the used variable renamer [readable] ( some time )
+ -> creating the used semantics [libc,gcc-general,win-api] ( some time )
+Running phase: conversion of LLVM IR into BIR ( some time )
+ -> converting global variables ( some time )
+ -> converting function function_8058c48 ( some time )
+ -> converting function function_8058d38 ( some time )
+ -> converting function function_8058df8 ( some time )
+ -> converting function function_8058e58 ( some time )
+ -> converting function function_80590c8 ( some time )
+ -> converting function function_8059148 ( some time )
+ -> converting function function_80593d8 ( some time )
+ -> converting function function_80593e8 ( some time )
+ -> converting function function_8059508 ( some time )
+ -> converting function function_8059598 ( some time )
+ -> converting function function_8059678 ( some time )
+ -> converting function function_8059778 ( some time )
+ -> converting function function_80597f8 ( some time )
+ -> converting function function_8059808 ( some time )
+ -> converting function function_8059a68 ( some time )
+ -> converting function function_8059ab8 ( some time )
+ -> converting function cancel_dialog ( some time )
+ -> converting function update_hierbox_browser ( some time )
+ -> converting function add_listbox_item ( some time )
+ -> converting function done_listbox_item ( some time )
+ -> converting function traverse_listbox_items_list ( some time )
+ -> converting function free_menu ( some time )
+ -> converting function done_bfu_colors ( some time )
+ -> converting function get_auto_save_bookmark_foldername_utf8 ( some time )
+ -> converting function add_bookmark ( some time )
+ -> converting function add_bookmark_cp ( some time )
+ -> converting function bookmark_terminal ( some time )
+ -> converting function bookmark_terminal_tabs ( some time )
+ -> converting function delete_bookmark ( some time )
+ -> converting function bookmark_auto_save_tabs ( some time )
+ -> converting function delete_entry_content ( some time )
+ -> converting function delete_cache_entry ( some time )
+ -> converting function garbage_collection ( some time )
+ -> converting function truncate_entry ( some time )
+ -> converting function normalize_cache_entry ( some time )
+ -> converting function done_home ( some time )
+ -> converting function delete_option_do ( some time )
+ -> converting function unregister_options ( some time )
+ -> converting function done_options ( some time )
+ -> converting function copy_option ( some time )
+ -> converting function get_opt_rec ( some time )
+ -> converting function get_opt_ ( some time )
+ -> converting function add_opt_rec ( some time )
+ -> converting function get_opt_rec_real ( some time )
+ -> converting function done_download_display ( some time )
+ -> converting function free_history_lists ( some time )
+ -> converting function free_frameset_desc ( some time )
+ -> converting function done_link_members ( some time )
+ -> converting function done_document ( some time )
+ -> converting function shrink_format_cache ( some time )
+ -> converting function done_form_control ( some time )
+ -> converting function done_form ( some time )
+ -> converting function done_document_options ( some time )
+ -> converting function done_document_refresh ( some time )
+ -> converting function close_encoded ( some time )
+ -> converting function is_cp_utf8 ( some time )
+ -> converting function free_charsets_lookup ( some time )
+ -> converting function get_cp_index ( some time )
+ -> converting function cp2u ( some time )
+ -> converting function utf8_to_unicode ( some time )
+ -> converting function cp_to_unicode ( some time )
+ -> converting function free_translation_table ( some time )
+ -> converting function new_translation_table ( some time )
+ -> converting function free_conv_table ( some time )
+ -> converting function encode_utf8 ( some time )
+ -> converting function u2cp_ ( some time )
+ -> converting function get_entity_string ( some time )
+ -> converting function convert_string_elinks ( some time )
+ -> converting function T.163 ( some time )
+ -> converting function cp2utf8 ( some time )
+ -> converting function get_translation_table ( some time )
+ -> converting function dcgettext__ ( some time )
+ -> converting function plural_eval ( some time )
+ -> converting function _nl_find_msg ( some time )
+ -> converting function plural_lookup ( some time )
+ -> converting function dcigettext__ ( some time )
+ -> converting function _nl_explode_name ( some time )
+ -> converting function _nl_find_domain ( some time )
+ -> converting function gettext__ ( some time )
+ -> converting function gettext ( some time )
+ -> converting function _nl_normalize_codeset ( some time )
+ -> converting function _nl_make_l10nflist ( some time )
+ -> converting function add_bytes_to_string__.17 ( some time )
+ -> converting function _nl_free_domain_conv ( some time )
+ -> converting function _nl_init_domain_conv ( some time )
+ -> converting function _nl_load_domain ( some time )
+ -> converting function elinks_locale_charset ( some time )
+ -> converting function read_alias_file ( some time )
+ -> converting function _nl_expand_alias ( some time )
+ -> converting function gettext_free_exp__ ( some time )
+ -> converting function new_exp ( some time )
+ -> converting function gettext__parse ( some time )
+ -> converting function done_event ( some time )
+ -> converting function unregister_event_hook ( some time )
+ -> converting function trigger_event_va ( some time )
+ -> converting function trigger_event ( some time )
+ -> converting function get_event_id ( some time )
+ -> converting function unregister_event_hooks ( some time )
+ -> converting function trigger_event_name ( some time )
+ -> converting function unlink_unix ( some time )
+ -> converting function done_interlink ( some time )
+ -> converting function shrink_memory ( some time )
+ -> converting function main ( some time )
+ -> converting function done_module ( some time )
+ -> converting function done_modules ( some time )
+ -> converting function unregister_module_options ( some time )
+ -> converting function unregister_modules_options ( some time )
+ -> converting function can_read_or_write ( some time )
+ -> converting function can_read ( some time )
+ -> converting function set_handlers ( some time )
+ -> converting function check_bottom_halves ( some time )
+ -> converting function select_loop ( some time )
+ -> converting function register_bottom_half_do ( some time )
+ -> converting function get_next_timer_time ( some time )
+ -> converting function kill_timer ( some time )
+ -> converting function install_timer ( some time )
+ -> converting function check_timers ( some time )
+ -> converting function notify_connection_callbacks ( some time )
+ -> converting function is_entry_used ( some time )
+ -> converting function get_priority ( some time )
+ -> converting function sort_queue ( some time )
+ -> converting function connection_state.27 ( some time )
+ -> converting function init_connection ( some time )
+ -> converting function get_host_connection ( some time )
+ -> converting function add_host_connection ( some time )
+ -> converting function register_check_queue ( some time )
+ -> converting function shutdown_connection_stream ( some time )
+ -> converting function free_connection_data ( some time )
+ -> converting function set_connection_state ( some time )
+ -> converting function done_connection ( some time )
+ -> converting function do_keepalive_connection_callback ( some time )
+ -> converting function has_keepalive_connection ( some time )
+ -> converting function check_keepalive_connections ( some time )
+ -> converting function abort_connection ( some time )
+ -> converting function abort_all_connections ( some time )
+ -> converting function cancel_download ( some time )
+ -> converting function del_dns_cache_entry ( some time )
+ -> converting function shrink_dns_cache ( some time )
+ -> converting function done_dns_lookup ( some time )
+ -> converting function kill_dns_request ( some time )
+ -> converting function update_progress ( some time )
+ -> converting function done_progress ( some time )
+ -> converting function init_progress ( some time )
+ -> converting function start_update_progress ( some time )
+ -> converting function init_socket ( some time )
+ -> converting function done_connection_info ( some time )
+ -> converting function close_socket ( some time )
+ -> converting function done_socket ( some time )
+ -> converting function done_state_message ( some time )
+ -> converting function ssl_close ( some time )
+ -> converting function get_ssl_connection_cipher ( some time )
+ -> converting function done_ssl_connection ( some time )
+ -> converting function want_draw ( some time )
+ -> converting function done_draw ( some time )
+ -> converting function get_output_handle ( some time )
+ -> converting function terminate_osdep ( some time )
+ -> converting function get_system_str ( some time )
+ -> converting function is_xterm ( some time )
+ -> converting function is_gnuscreen ( some time )
+ -> converting function set_window_title ( some time )
+ -> converting function unhandle_terminal_resize ( some time )
+ -> converting function check_signals ( some time )
+ -> converting function uninstall_alarm ( some time )
+ -> converting function clear_signal_mask_and_handlers ( some time )
+ -> converting function install_signal_handler ( some time )
+ -> converting function unhandle_terminal_signals ( some time )
+ -> converting function unhandle_mouse ( some time )
+ -> converting function parse_day ( some time )
+ -> converting function parse_time ( some time )
+ -> converting function get_protocol_free_syntax ( some time )
+ -> converting function get_protocol_need_slash_after_host ( some time )
+ -> converting function get_protocol_need_slashes ( some time )
+ -> converting function get_protocol_port ( some time )
+ -> converting function get_protocol ( some time )
+ -> converting function get_proxied_uri ( some time )
+ -> converting function strip_proxy_protocol ( some time )
+ -> converting function get_protocol_proxy ( some time )
+ -> converting function proxy_uri ( some time )
+ -> converting function get_proxy_uri ( some time )
+ -> converting function done_uri ( some time )
+ -> converting function free_uri_list ( some time )
+ -> converting function mem_align_alloc__.31 ( some time )
+ -> converting function add_bytes_to_string__.32 ( some time )
+ -> converting function compare_component ( some time )
+ -> converting function compare_uri ( some time )
+ -> converting function parse_uri ( some time )
+ -> converting function add_uri_to_string ( some time )
+ -> converting function get_uri_string ( some time )
+ -> converting function get_composed_uri ( some time )
+ -> converting function get_uri ( some time )
+ -> converting function get_user_program ( some time )
+ -> converting function function_80cd909 ( some time )
+ -> converting function function_80cd977 ( some time )
+ -> converting function function_80cd995 ( some time )
+ -> converting function function_80cd9d6 ( some time )
+ -> converting function function_80cda2f ( some time )
+ -> converting function function_80cdd8d ( some time )
+ -> converting function function_80cdde2 ( some time )
+ -> converting function function_80cde19 ( some time )
+ -> converting function function_80cde45 ( some time )
+ -> converting function function_80cdf00 ( some time )
+ -> converting function abort_download ( some time )
+ -> converting function detach_downloads_from_terminal ( some time )
+ -> converting function abort_all_downloads ( some time )
+ -> converting function get_current_title ( some time )
+ -> converting function get_current_url ( some time )
+ -> converting function check_questions_queue ( some time )
+ -> converting function done_session_info ( some time )
+ -> converting function done_saved_session_info ( some time )
+ -> converting function set_term_color ( some time )
+ -> converting function set_cursor ( some time )
+ -> converting function draw_box ( some time )
+ -> converting function clear_terminal ( some time )
+ -> converting function term_send_event ( some time )
+ -> converting function hard_write ( some time )
+ -> converting function is_blocked ( some time )
+ -> converting function send_done_sequence ( some time )
+ -> converting function get_terminal_name ( some time )
+ -> converting function free_itrm ( some time )
+ -> converting function free_all_itrms ( some time )
+ -> converting function send_mouse_done_sequence ( some time )
+ -> converting function disable_mouse ( some time )
+ -> converting function done_screen ( some time )
+ -> converting function resize_screen ( some time )
+ -> converting function erase_screen ( some time )
+ -> converting function set_screen_driver_opt ( some time )
+ -> converting function add_bytes_to_string__.39 ( some time )
+ -> converting function redraw_screen ( some time )
+ -> converting function get_tab_by_number ( some time )
+ -> converting function get_terminal_codepage ( some time )
+ -> converting function destroy_terminal ( some time )
+ -> converting function destroy_all_terminals ( some time )
+ -> converting function redraw_all_terminals ( some time )
+ -> converting function redraw_terminal ( some time )
+ -> converting function redraw_from_window ( some time )
+ -> converting function delete_window ( some time )
+ -> converting function free_colors_lookup ( some time )
+ -> converting function elinks_ulongcat ( some time )
+ -> converting function c_tolower ( some time )
+ -> converting function c_toupper ( some time )
+ -> converting function c_isupper ( some time )
+ -> converting function add_bytes_to_string__.40 ( some time )
+ -> converting function sanitize_url ( some time )
+ -> converting function sanitize_title ( some time )
+ -> converting function add_long_to_string ( some time )
+ -> converting function er ( some time )
+ -> converting function elinks_internal ( some time )
+ -> converting function elinks_error ( some time )
+ -> converting function fastfind_done ( some time )
+ -> converting function fastfind_search ( some time )
+ -> converting function del_hash_item ( some time )
+ -> converting function free_hash ( some time )
+ -> converting function get_hash_item ( some time )
+ -> converting function add_hash_item ( some time )
+ -> converting function init_hash8 ( some time )
+ -> converting function round_size ( some time )
+ -> converting function mem_mmap_free ( some time )
+ -> converting function mem_mmap_alloc ( some time )
+ -> converting function mem_mmap_realloc ( some time )
+ -> converting function patience ( some time )
+ -> converting function mem_free ( some time )
+ -> converting function mem_calloc ( some time )
+ -> converting function mem_alloc ( some time )
+ -> converting function mem_realloc ( some time )
+ -> converting function init_string ( some time )
+ -> converting function done_string ( some time )
+ -> converting function memacpy ( some time )
+ -> converting function stracpy ( some time )
+ -> converting function c_strncasecmp ( some time )
+ -> converting function c_strcasestr ( some time )
+ -> converting function c_strcasecmp ( some time )
+ -> converting function safe_strncpy ( some time )
+ -> converting function T.146 ( some time )
+ -> converting function add_format_to_string ( some time )
+ -> converting function string_concat ( some time )
+ -> converting function add_char_to_string ( some time )
+ -> converting function add_to_string ( some time )
+ -> converting function timeval_sub_interval ( some time )
+ -> converting function timeval_sub ( some time )
+ -> converting function timeval_add_interval ( some time )
+ -> converting function timeval_from_milliseconds ( some time )
+ -> converting function timeval_from_seconds ( some time )
+ -> converting function timeval_is_positive ( some time )
+ -> converting function timeval_limit_to_zero_or_one ( some time )
+ -> converting function timeval_cmp ( some time )
+ -> converting function timeval_div_off_t ( some time )
+ -> converting function mult_ms ( some time )
+ -> converting function timeval_now ( some time )
+ -> converting function current_frame ( some time )
+ -> converting function __divdi3 ( some time )
+ -> converting function __udivdi3 ( some time )
+Running phase: removing functions from standard libraries ( some time )
+Running phase: removing code that is not reachable in a CFG ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061457_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
+Running phase: signed/unsigned types fixing ( some time )
+Running phase: converting LLVM intrinsic functions to standard functions ( some time )
+Running phase: obtaining debug information ( some time )
+Running phase: alias analysis [simple] ( some time )
+Running phase: optimizations [normal] ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running RemoveUselessCastsOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061457_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061457_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running IfStructureOptimizer ( some time )
+ -> running LoopLastContinueOptimizer ( some time )
+ -> running PreWhileTrueLoopConvOptimizer ( some time )
+ -> running WhileTrueToForLoopOptimizer ( some time )
+ -> running WhileTrueToWhileCondOptimizer ( some time )
+ -> running IfBeforeLoopOptimizer ( some time )
+ -> running LLVMIntrinsicsOptimizer ( some time )
+ -> running VoidReturnOptimizer ( some time )
+ -> running BreakContinueReturnOptimizer ( some time )
+ -> running BitShiftOptimizer ( some time )
+ -> running DerefAddressOptimizer ( some time )
+ -> running EmptyArrayToStringOptimizer ( some time )
+ -> running BitOpToLogOpOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061457_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061457_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+Warning: In shrink_format_cache(), found `break` outside of a loop or a switch statement.
+Warning: In get_entity_string(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_find_msg(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_find_msg(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_normalize_codeset(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_normalize_codeset(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_make_l10nflist(), found `break` outside of a loop or a switch statement.
+Warning: In _nl_expand_alias(), found `break` outside of a loop or a switch statement.
+Warning: In select_loop(), found `break` outside of a loop or a switch statement.
+Warning: In get_user_program(), found `break` outside of a loop or a switch statement.
+Warning: In get_user_program(), found `break` outside of a loop or a switch statement.
+Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
+Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
+Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
+Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
+Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
+Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
+Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
+Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )

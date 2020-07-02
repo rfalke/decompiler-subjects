@@ -1,1 +1,1751 @@
-scripts/update_retdec_helper.sh: error: Time limit exceeded.
+Running phase: Unpacking ( some time )
+No matching plugins found for 'GCC 4.3.3'
+No matching plugins found for 'GCC 4.6.3'
+Running phase: Initialization ( some time )
+Running phase: Providers initialization ( some time )
+Running phase: Input binary to LLVM IR decoding ( some time )
+Running phase: LLVM ( some time )
+Running phase: x86 address spaces optimization ( some time )
+Running phase: x87 fpu register analysis ( some time )
+Running phase: Main function identification optimization ( some time )
+Running phase: Libgcc idioms optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Conditional branch optimization ( some time )
+Running phase: Syscalls optimization ( some time )
+Running phase: Stack optimization ( some time )
+Running phase: Constants optimization ( some time )
+Running phase: Function parameters and returns optimization ( some time )
+Running phase: LLVM instruction optimization using RDA ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Disassembly generation ( some time )
+Running phase: Assembly mapping instruction removal ( some time )
+Running phase: C++ class hierarchy optimization ( some time )
+Running phase: Selected functions optimization ( some time )
+Running phase: Unreachable functions optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Make all registers local ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Stack pointer operations optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: Phi removal ( some time )
+Running phase: LLVM ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: Generate the current LLVM IR ( some time )
+Running phase: Generate the current bitcode ( some time )
+Running phase: LLVM IR -> HLL ( some time )
+Running phase: initialization ( some time )
+ -> loading the input config ( some time )
+ -> creating the used HLL writer [c] ( some time )
+ -> creating the used alias analysis [simple] ( some time )
+ -> creating the used call info obtainer [optim] ( some time )
+ -> creating the used evaluator of arithmetical expressions [c] ( some time )
+ -> creating the used variable names generator [fruit] ( some time )
+ -> creating the used variable renamer [readable] ( some time )
+ -> creating the used semantics [libc,gcc-general,win-api] ( some time )
+Running phase: conversion of LLVM IR into BIR ( some time )
+ -> converting global variables ( some time )
+ -> converting function function_804a784 ( some time )
+ -> converting function function_804a7a4 ( some time )
+ -> converting function function_804a854 ( some time )
+ -> converting function function_804a8b4 ( some time )
+ -> converting function function_804a8f4 ( some time )
+ -> converting function function_804a914 ( some time )
+ -> converting function function_804a934 ( some time )
+ -> converting function function_804a964 ( some time )
+ -> converting function function_804a9c4 ( some time )
+ -> converting function function_804aa84 ( some time )
+ -> converting function function_804aa94 ( some time )
+ -> converting function function_804aab4 ( some time )
+ -> converting function function_804ab84 ( some time )
+ -> converting function function_804ab94 ( some time )
+ -> converting function function_804abb4 ( some time )
+ -> converting function function_804ac04 ( some time )
+ -> converting function function_804ac24 ( some time )
+ -> converting function function_804ac64 ( some time )
+ -> converting function function_804aca4 ( some time )
+ -> converting function function_804acb4 ( some time )
+ -> converting function function_804acc4 ( some time )
+ -> converting function function_804ace4 ( some time )
+ -> converting function function_804ad84 ( some time )
+ -> converting function function_804ade4 ( some time )
+ -> converting function function_804ae04 ( some time )
+ -> converting function function_804af04 ( some time )
+ -> converting function function_804af84 ( some time )
+ -> converting function function_804afb4 ( some time )
+ -> converting function function_804aff4 ( some time )
+ -> converting function function_804b034 ( some time )
+ -> converting function function_804b094 ( some time )
+ -> converting function function_804b0e4 ( some time )
+ -> converting function function_804b144 ( some time )
+ -> converting function function_804b194 ( some time )
+ -> converting function function_804b1f4 ( some time )
+ -> converting function function_804b214 ( some time )
+ -> converting function function_804b264 ( some time )
+ -> converting function function_804b2a4 ( some time )
+ -> converting function function_804b324 ( some time )
+ -> converting function function_804b364 ( some time )
+ -> converting function function_804b394 ( some time )
+ -> converting function function_804b3b4 ( some time )
+ -> converting function function_804b3e4 ( some time )
+ -> converting function function_804b404 ( some time )
+ -> converting function cleanup_sig ( some time )
+ -> converting function cleanup_files ( some time )
+ -> converting function cleanup ( some time )
+ -> converting function LYVersionIsRelease ( some time )
+ -> converting function LYVersionStatus ( some time )
+ -> converting function LYVersionDate ( some time )
+ -> converting function dt_String ( some time )
+ -> converting function dt_Number ( some time )
+ -> converting function LYShowInfo ( some time )
+ -> converting function editor_can_position ( some time )
+ -> converting function edit_current_file ( some time )
+ -> converting function edit_temporary_file ( some time )
+ -> converting function peek_mouse_levent ( some time )
+ -> converting function get_mouse_link ( some time )
+ -> converting function peek_mouse_link ( some time )
+ -> converting function fancy_mouse ( some time )
+ -> converting function whichRecall ( some time )
+ -> converting function LYRemoveFromCloset ( some time )
+ -> converting function LYCloseCloset ( some time )
+ -> converting function LYFindInCloset ( some time )
+ -> converting function LYAddToCloset ( some time )
+ -> converting function XYdist ( some time )
+ -> converting function set_clicked_link ( some time )
+ -> converting function LYstrncpy ( some time )
+ -> converting function LYmbcsstrncpy ( some time )
+ -> converting function LYmbcs_skip_glyphs ( some time )
+ -> converting function LYmbcs_skip_cells ( some time )
+ -> converting function LYmbcsstrlen ( some time )
+ -> converting function ena_csi ( some time )
+ -> converting function read_keymap_file ( some time )
+ -> converting function setup_vtXXX_keymap ( some time )
+ -> converting function lynx_initialize_keymaps ( some time )
+ -> converting function LYmouse_menu ( some time )
+ -> converting function LYgetch_for ( some time )
+ -> converting function LYgetch ( some time )
+ -> converting function LYgetch_choice ( some time )
+ -> converting function LYgetch_input ( some time )
+ -> converting function LYgetch_single ( some time )
+ -> converting function LYLowerCase ( some time )
+ -> converting function LYUpperCase ( some time )
+ -> converting function LYReduceBlanks ( some time )
+ -> converting function LYRemoveBlanks ( some time )
+ -> converting function LYSkipBlanks ( some time )
+ -> converting function LYSkipNonBlanks ( some time )
+ -> converting function LYSkipCBlanks ( some time )
+ -> converting function LYTrimLeading ( some time )
+ -> converting function LYTrimNewline ( some time )
+ -> converting function LYTrimTrailing ( some time )
+ -> converting function LYTrimStartfile ( some time )
+ -> converting function LYEscapeStartfile ( some time )
+ -> converting function LYTrimAllStartfile ( some time )
+ -> converting function LYSetupEdit ( some time )
+ -> converting function mbcs_glyphs ( some time )
+ -> converting function mbcs_skip ( some time )
+ -> converting function cell2char ( some time )
+ -> converting function LYEditInsert ( some time )
+ -> converting function LYEdit1 ( some time )
+ -> converting function get_popup_number ( some time )
+ -> converting function remember_column ( some time )
+ -> converting function fill_edited_line ( some time )
+ -> converting function LYRefreshEdit ( some time )
+ -> converting function reinsertEdit ( some time )
+ -> converting function sortedList ( some time )
+ -> converting function LYarrayLength ( some time )
+ -> converting function FormatChoiceNum ( some time )
+ -> converting function options_width ( some time )
+ -> converting function draw_option ( some time )
+ -> converting function LYhandlePopupList ( some time )
+ -> converting function LYgetstr ( some time )
+ -> converting function LYLineeditHelpURL ( some time )
+ -> converting function LYstrsep ( some time )
+ -> converting function LYstrstr ( some time )
+ -> converting function LYno_attr_char_case_strstr ( some time )
+ -> converting function LYno_attr_char_strstr ( some time )
+ -> converting function LYno_attr_mbcs_case_strstr ( some time )
+ -> converting function LYno_attr_mbcs_strstr ( some time )
+ -> converting function SNACopy ( some time )
+ -> converting function UniToLowerCase ( some time )
+ -> converting function UPPER8 ( some time )
+ -> converting function LYSafeGets ( some time )
+ -> converting function LYOpenCmdLogfile ( some time )
+ -> converting function LYHaveCmdScript ( some time )
+ -> converting function LYOpenCmdScript ( some time )
+ -> converting function LYReadCmdKey ( some time )
+ -> converting function LYWriteCmdKey ( some time )
+ -> converting function LYCloseCmdLogfile ( some time )
+ -> converting function SafeHTUnEscape ( some time )
+ -> converting function remove_tildes ( some time )
+ -> converting function comma_append ( some time )
+ -> converting function extract_field ( some time )
+ -> converting function extract_subject ( some time )
+ -> converting function extract_body ( some time )
+ -> converting function trim_comma ( some time )
+ -> converting function convert_explorer ( some time )
+ -> converting function header_prompt ( some time )
+ -> converting function show_addresses ( some time )
+ -> converting function LYPipeToMailer ( some time )
+ -> converting function mailform ( some time )
+ -> converting function mailmsg ( some time )
+ -> converting function reply_by_mail ( some time )
+ -> converting function LYSystemMail ( some time )
+ -> converting function HTAlert ( some time )
+ -> converting function HTAlwaysAlert ( some time )
+ -> converting function HTInfoMsg ( some time )
+ -> converting function HTUserMsg ( some time )
+ -> converting function HTUserMsg2 ( some time )
+ -> converting function HTProgress ( some time )
+ -> converting function HTProgressUnits ( some time )
+ -> converting function sprint_bytes ( some time )
+ -> converting function sprint_tbuf ( some time )
+ -> converting function HTReadProgress ( some time )
+ -> converting function HTLastConfirmCancelled ( some time )
+ -> converting function HTForcedPrompt ( some time )
+ -> converting function HTConfirmDefault ( some time )
+ -> converting function HTConfirm ( some time )
+ -> converting function confirm_post_resub ( some time )
+ -> converting function HTConfirmCookie ( some time )
+ -> converting function LYSleepAlert ( some time )
+ -> converting function LYSleepDebug ( some time )
+ -> converting function LYSleepInfo ( some time )
+ -> converting function LYSleepMsg ( some time )
+ -> converting function LYSleepReplay ( some time )
+ -> converting function ALLOC_IN_POOL ( some time )
+ -> converting function POOL_FREE ( some time )
+ -> converting function HText_halt ( some time )
+ -> converting function mem_is_avail ( some time )
+ -> converting function LY_check_calloc ( some time )
+ -> converting function StyleToCols ( some time )
+ -> converting function LYClearHiText ( some time )
+ -> converting function LYSetHiText ( some time )
+ -> converting function LYAddHiText ( some time )
+ -> converting function LYAdjHiTextPos ( some time )
+ -> converting function LYGetHiTextStr ( some time )
+ -> converting function LYGetHiTextPos ( some time )
+ -> converting function LYCopyHiText ( some time )
+ -> converting function PerFormInfo_free ( some time )
+ -> converting function free_form_fields ( some time )
+ -> converting function FormList_delete ( some time )
+ -> converting function ResetPartialLinenos ( some time )
+ -> converting function HText_free ( some time )
+ -> converting function display_line ( some time )
+ -> converting function display_title ( some time )
+ -> converting function display_scrollbar ( some time )
+ -> converting function display_page ( some time )
+ -> converting function remove_special_attr_chars ( some time )
+ -> converting function HText_trimHightext ( some time )
+ -> converting function HText_childNextNumber ( some time )
+ -> converting function HText_FormDescNumber ( some time )
+ -> converting function HTGetRelLinkNum ( some time )
+ -> converting function HTGetLinkInfo ( some time )
+ -> converting function same_anchor_or_field ( some time )
+ -> converting function HText_TAHasMoreLines ( some time )
+ -> converting function HTGetLinkOrFieldStart ( some time )
+ -> converting function HText_getFirstTargetInLine ( some time )
+ -> converting function HText_getNumOfLines ( some time )
+ -> converting function HText_getNumOfBytes ( some time )
+ -> converting function HText_getTitle ( some time )
+ -> converting function HText_getStyle ( some time )
+ -> converting function HText_getSugFname ( some time )
+ -> converting function HTCheckFnameForCompression ( some time )
+ -> converting function HText_getLastModified ( some time )
+ -> converting function HText_getDate ( some time )
+ -> converting function HText_getServer ( some time )
+ -> converting function HText_pageDisplay ( some time )
+ -> converting function HText_pageHasPrevTarget ( some time )
+ -> converting function HText_closestAnchor ( some time )
+ -> converting function HText_locateAnchor ( some time )
+ -> converting function anchor_is_numbered ( some time )
+ -> converting function HText_getAbsLineNumber ( some time )
+ -> converting function HText_anchorRelativeTo ( some time )
+ -> converting function HText_LinksInLines ( some time )
+ -> converting function HText_setStale ( some time )
+ -> converting function HText_sourceAnchors ( some time )
+ -> converting function HText_canScrollDown ( some time )
+ -> converting function HText_select ( some time )
+ -> converting function HText_POSTReplyLoaded ( some time )
+ -> converting function HTFindPoundSelector ( some time )
+ -> converting function HText_getTopOfScreen ( some time )
+ -> converting function HText_getPreferredTopLine ( some time )
+ -> converting function HTAddSearchQuery ( some time )
+ -> converting function do_www_search ( some time )
+ -> converting function write_offset ( some time )
+ -> converting function write_hyphen ( some time )
+ -> converting function TrimmedLength ( some time )
+ -> converting function print_wwwfile_to_fd ( some time )
+ -> converting function print_crawl_to_fd ( some time )
+ -> converting function adjust_search_result ( some time )
+ -> converting function anchor_has_target ( some time )
+ -> converting function line_num_to_anchor ( some time )
+ -> converting function line_num_in_text ( some time )
+ -> converting function get_prev_anchor ( some time )
+ -> converting function www_search_forward ( some time )
+ -> converting function www_search_backward ( some time )
+ -> converting function www_user_search ( some time )
+ -> converting function user_message ( some time )
+ -> converting function HText_getOwner ( some time )
+ -> converting function HText_setMainTextOwner ( some time )
+ -> converting function HText_getRevTitle ( some time )
+ -> converting function HText_getContentBase ( some time )
+ -> converting function HText_getContentLocation ( some time )
+ -> converting function HText_getMessageID ( some time )
+ -> converting function HTuncache_current_document ( some time )
+ -> converting function useSourceCache ( some time )
+ -> converting function useMemoryCache ( some time )
+ -> converting function HTreparse_document ( some time )
+ -> converting function HTcan_reparse_document ( some time )
+ -> converting function trace_setting_change ( some time )
+ -> converting function HTdocument_settings_changed ( some time )
+ -> converting function HTisDocumentSource ( some time )
+ -> converting function HTLoadedDocumentURL ( some time )
+ -> converting function HTLoadedDocumentPost_data ( some time )
+ -> converting function HTLoadedDocumentTitle ( some time )
+ -> converting function HTLoadedDocumentIsHEAD ( some time )
+ -> converting function HTLoadedDocumentIsSafe ( some time )
+ -> converting function HTLoadedDocumentCharset ( some time )
+ -> converting function HTLoadedDocumentEightbit ( some time )
+ -> converting function HTLoadedDocumentBookmark ( some time )
+ -> converting function HText_HiddenLinkCount ( some time )
+ -> converting function HText_HiddenLinkAt ( some time )
+ -> converting function get_trans_q ( some time )
+ -> converting function find_best_target_cs ( some time )
+ -> converting function load_a_file ( some time )
+ -> converting function guess_content_type ( some time )
+ -> converting function cannot_transcode ( some time )
+ -> converting function check_form_specialchars ( some time )
+ -> converting function UpdateBoundary ( some time )
+ -> converting function convert_to_base64 ( some time )
+ -> converting function escape_or_quote_name ( some time )
+ -> converting function escape_or_quote_value ( some time )
+ -> converting function check_if_base64_needed ( some time )
+ -> converting function HText_SubmitForm ( some time )
+ -> converting function HText_DisableCurrentForm ( some time )
+ -> converting function HText_ResetForm ( some time )
+ -> converting function HText_HaveUserChangedForms ( some time )
+ -> converting function HText_activateRadioButton ( some time )
+ -> converting function stub_HTAnchor_address ( some time )
+ -> converting function HText_hasToolbar ( some time )
+ -> converting function HText_setNoCache ( some time )
+ -> converting function HText_hasNoCacheSet ( some time )
+ -> converting function HText_hasUTF8OutputSet ( some time )
+ -> converting function HText_AreDifferent ( some time )
+ -> converting function increment_tagged_htline ( some time )
+ -> converting function insert_new_textarea_anchor ( some time )
+ -> converting function update_subsequent_anchors ( some time )
+ -> converting function IsFormsTextarea ( some time )
+ -> converting function finish_ExtEditForm ( some time )
+ -> converting function HText_ExtEditForm ( some time )
+ -> converting function HText_ExpandTextarea ( some time )
+ -> converting function HText_InsertFile ( some time )
+ -> converting function GetColumn ( some time )
+ -> converting function DidWrap ( some time )
+ -> converting function redraw_part_of_line ( some time )
+ -> converting function redraw_lines_of_link ( some time )
+ -> converting function HTMark_asSource ( some time )
+ -> converting function HTMainText_Get_UCLYhndl ( some time )
+ -> converting function getfile ( some time )
+ -> converting function srcmode_for_next_retrieval ( some time )
+ -> converting function follow_link_number ( some time )
+ -> converting function add_trusted ( some time )
+ -> converting function exec_ok ( some time )
+ -> converting function fix_httplike_urls ( some time )
+ -> converting function LYStdinArgs_free ( some time )
+ -> converting function reset_signals ( some time )
+ -> converting function exit_immediately ( some time )
+ -> converting function GetStdin ( some time )
+ -> converting function SetLocale ( some time )
+ -> converting function main ( some time )
+ -> converting function LYRegisterLynxProtocols ( some time )
+ -> converting function reload_read_cfg ( some time )
+ -> converting function print_help_strings ( some time )
+ -> converting function print_help_and_exit ( some time )
+ -> converting function arg_eqs_parse ( some time )
+ -> converting function parse_arg ( some time )
+ -> converting function sametext ( some time )
+ -> converting function TracelogOpenFailed ( some time )
+ -> converting function LYReopenTracelog ( some time )
+ -> converting function turn_trace_back_on ( some time )
+ -> converting function TraceFP ( some time )
+ -> converting function LYOpenTraceLog ( some time )
+ -> converting function LYCloseTracelog ( some time )
+ -> converting function handle_LYK_TRACE_TOGGLE ( some time )
+ -> converting function LYSetNewline ( some time )
+ -> converting function LYGetNewline ( some time )
+ -> converting function reparse_document ( some time )
+ -> converting function reparse_or_reload ( some time )
+ -> converting function set_address ( some time )
+ -> converting function copy_address ( some time )
+ -> converting function free_address ( some time )
+ -> converting function move_address ( some time )
+ -> converting function LYMainLoop_pageDisplay ( some time )
+ -> converting function set_curdoc_link ( some time )
+ -> converting function goto_line ( some time )
+ -> converting function set_curdoc_link_by_mouse ( some time )
+ -> converting function do_change_link ( some time )
+ -> converting function do_check_goto_URL ( some time )
+ -> converting function do_check_recall ( some time )
+ -> converting function do_cleanup_after_delete ( some time )
+ -> converting function find_link_near_col ( some time )
+ -> converting function DoTraversal ( some time )
+ -> converting function handle_LYK_ACTIVATE ( some time )
+ -> converting function handle_LYK_ADD_BOOKMARK ( some time )
+ -> converting function handle_LYK_CLEAR_AUTH ( some time )
+ -> converting function handle_LYK_COMMAND ( some time )
+ -> converting function handle_LYK_COMMENT ( some time )
+ -> converting function handle_LYK_COOKIE_JAR ( some time )
+ -> converting function handle_LYK_CREATE ( some time )
+ -> converting function handle_LYK_DEL_BOOKMARK ( some time )
+ -> converting function handle_LYK_DIRED_MENU ( some time )
+ -> converting function handle_LYK_DOWNLOAD ( some time )
+ -> converting function handle_LYK_DOWN_xxx ( some time )
+ -> converting function handle_LYK_DOWN_HALF ( some time )
+ -> converting function handle_LYK_DOWN_LINK ( some time )
+ -> converting function handle_LYK_DOWN_TWO ( some time )
+ -> converting function handle_LYK_DWIMEDIT ( some time )
+ -> converting function handle_LYK_ECGOTO ( some time )
+ -> converting function handle_LYK_EDIT ( some time )
+ -> converting function handle_LYK_DWIMHELP ( some time )
+ -> converting function handle_LYK_EDIT_TEXTAREA ( some time )
+ -> converting function handle_LYK_ELGOTO ( some time )
+ -> converting function handle_LYK_EXTERN_LINK ( some time )
+ -> converting function handle_LYK_EXTERN_PAGE ( some time )
+ -> converting function handle_LYK_FASTBACKW_LINK ( some time )
+ -> converting function handle_LYK_FASTFORW_LINK ( some time )
+ -> converting function handle_LYK_FIRST_LINK ( some time )
+ -> converting function handle_LYK_GOTO ( some time )
+ -> converting function handle_LYK_GROW_TEXTAREA ( some time )
+ -> converting function handle_LYK_HEAD ( some time )
+ -> converting function handle_LYK_HELP ( some time )
+ -> converting function handle_LYK_HISTORICAL ( some time )
+ -> converting function handle_LYK_HISTORY ( some time )
+ -> converting function handle_LYK_IMAGE_TOGGLE ( some time )
+ -> converting function handle_LYK_INDEX ( some time )
+ -> converting function handle_LYK_INDEX_SEARCH ( some time )
+ -> converting function handle_LYK_INFO ( some time )
+ -> converting function handle_LYK_INLINE_TOGGLE ( some time )
+ -> converting function handle_LYK_INSERT_FILE ( some time )
+ -> converting function handle_LYK_JUMP ( some time )
+ -> converting function handle_LYK_KEYMAP ( some time )
+ -> converting function handle_LYK_LAST_LINK ( some time )
+ -> converting function handle_LYK_LEFT_LINK ( some time )
+ -> converting function handle_LYK_LIST ( some time )
+ -> converting function handle_LYK_MAIN_MENU ( some time )
+ -> converting function handle_LYK_MINIMAL ( some time )
+ -> converting function handle_LYK_MODIFY ( some time )
+ -> converting function handle_LYK_NESTED_TABLES ( some time )
+ -> converting function handle_LYK_OPTIONS ( some time )
+ -> converting function handle_NEXT_DOC ( some time )
+ -> converting function handle_LYK_NEXT_LINK ( some time )
+ -> converting function handle_LYK_NEXT_PAGE ( some time )
+ -> converting function handle_LYK_NOCACHE ( some time )
+ -> converting function handle_LYK_PREV_LINK ( some time )
+ -> converting function handle_PREV_DOC ( some time )
+ -> converting function handle_LYK_PREV_PAGE ( some time )
+ -> converting function handle_LYK_PRINT ( some time )
+ -> converting function handle_LYK_QUIT ( some time )
+ -> converting function handle_LYK_RAW_TOGGLE ( some time )
+ -> converting function handle_LYK_RELOAD ( some time )
+ -> converting function handle_LYK_REMOVE ( some time )
+ -> converting function handle_LYK_RIGHT_LINK ( some time )
+ -> converting function handle_LYK_SHELL ( some time )
+ -> converting function handle_LYK_SOFT_DQUOTES ( some time )
+ -> converting function wrap_reparse_document ( some time )
+ -> converting function handle_LYK_SOURCE ( some time )
+ -> converting function handle_LYK_SWITCH_DTD ( some time )
+ -> converting function handle_LYK_TAG_LINK ( some time )
+ -> converting function handle_LYK_TOGGLE_HELP ( some time )
+ -> converting function handle_LYK_TOOLBAR ( some time )
+ -> converting function handle_LYK_TRACE_LOG ( some time )
+ -> converting function handle_LYK_UPLOAD ( some time )
+ -> converting function handle_LYK_UP_xxx ( some time )
+ -> converting function handle_LYK_UP_HALF ( some time )
+ -> converting function handle_LYK_UP_LINK ( some time )
+ -> converting function handle_LYK_UP_TWO ( some time )
+ -> converting function handle_LYK_VIEW_BOOKMARK ( some time )
+ -> converting function handle_LYK_VLINKS ( some time )
+ -> converting function handle_LYK_WHEREIS ( some time )
+ -> converting function handle_LYK_digit ( some time )
+ -> converting function handle_LYK_CHDIR ( some time )
+ -> converting function repeat_to_delta ( some time )
+ -> converting function handle_LYK_SHIFT_LEFT ( some time )
+ -> converting function handle_LYK_SHIFT_RIGHT ( some time )
+ -> converting function handle_LYK_LINEWRAP_TOGGLE ( some time )
+ -> converting function mainloop ( some time )
+ -> converting function are_different ( some time )
+ -> converting function HTAddGotoURL ( some time )
+ -> converting function show_main_statusline ( some time )
+ -> converting function repaint_main_statusline ( some time )
+ -> converting function form_noviceline ( some time )
+ -> converting function exit_immediately_with_error_message ( some time )
+ -> converting function status_link ( some time )
+ -> converting function LYDownLoadAddress ( some time )
+ -> converting function string_to_attr ( some time )
+ -> converting function attr_to_string ( some time )
+ -> converting function LYbox ( some time )
+ -> converting function setStyle ( some time )
+ -> converting function setHashStyle ( some time )
+ -> converting function LYAttrset ( some time )
+ -> converting function curses_w_style ( some time )
+ -> converting function curses_style ( some time )
+ -> converting function get_color_pair ( some time )
+ -> converting function lynx_color_cfg_attr ( some time )
+ -> converting function encode_color_attr ( some time )
+ -> converting function decode_mono_code ( some time )
+ -> converting function LYgetTableString ( some time )
+ -> converting function lynx_init_color_pair ( some time )
+ -> converting function lynx_map_color ( some time )
+ -> converting function lynx_init_colors ( some time )
+ -> converting function lynx_setup_colors ( some time )
+ -> converting function LYnoVideo ( some time )
+ -> converting function start_curses ( some time )
+ -> converting function lynx_enable_mouse ( some time )
+ -> converting function lynx_nl2crlf ( some time )
+ -> converting function stop_curses ( some time )
+ -> converting function setup ( some time )
+ -> converting function dumbterm ( some time )
+ -> converting function LYpaddstr ( some time )
+ -> converting function LYsubwindow ( some time )
+ -> converting function LYtopwindow ( some time )
+ -> converting function LYstartPopup ( some time )
+ -> converting function LYstartTargetEmphasis ( some time )
+ -> converting function LYstopTargetEmphasis ( some time )
+ -> converting function LYwaddnstr ( some time )
+ -> converting function LYstrExtent ( some time )
+ -> converting function LYstrExtent2 ( some time )
+ -> converting function LYstrCells ( some time )
+ -> converting function LYscreenHeight ( some time )
+ -> converting function LYscreenWidth ( some time )
+ -> converting function LYnormalColor ( some time )
+ -> converting function LYclear ( some time )
+ -> converting function LYclrtoeol ( some time )
+ -> converting function LYerase ( some time )
+ -> converting function LYmove ( some time )
+ -> converting function LYrefresh ( some time )
+ -> converting function lynx_force_repaint ( some time )
+ -> converting function lynx_start_title_color ( some time )
+ -> converting function lynx_stop_title_color ( some time )
+ -> converting function lynx_stop_link_color ( some time )
+ -> converting function lynx_start_h1_color ( some time )
+ -> converting function lynx_stop_h1_color ( some time )
+ -> converting function lynx_start_prompt_color ( some time )
+ -> converting function lynx_stop_prompt_color ( some time )
+ -> converting function lynx_start_radio_color ( some time )
+ -> converting function lynx_stop_radio_color ( some time )
+ -> converting function lynx_stop_all_colors ( some time )
+ -> converting function lynx_start_bold ( some time )
+ -> converting function lynx_start_reverse ( some time )
+ -> converting function lynx_start_underline ( some time )
+ -> converting function lynx_stop_bold ( some time )
+ -> converting function lynx_stop_reverse ( some time )
+ -> converting function lynx_stop_underline ( some time )
+ -> converting function LYSetDisplayLines ( some time )
+ -> converting function LYstowCursor ( some time )
+ -> converting function LYgetattrs ( some time )
+ -> converting function LYindex2MBM ( some time )
+ -> converting function LYMBM2index ( some time )
+ -> converting function show_bookmark_not_defined ( some time )
+ -> converting function get_bookmark_filename ( some time )
+ -> converting function convert_mosaic_bookmark_file ( some time )
+ -> converting function save_bookmark_link ( some time )
+ -> converting function remove_bookmark_link ( some time )
+ -> converting function select_multi_bookmarks ( some time )
+ -> converting function select_menu_multi_bookmarks ( some time )
+ -> converting function LYHaveSubBookmarks ( some time )
+ -> converting function LYMBM_statusline ( some time )
+ -> converting function havevisible ( some time )
+ -> converting function have8bit ( some time )
+ -> converting function title_convert8bit ( some time )
+ -> converting function set_default_bookmark_page ( some time )
+ -> converting function FindTempfileByName ( some time )
+ -> converting function FindTempfileByFP ( some time )
+ -> converting function LYGetEnv ( some time )
+ -> converting function utf8_length ( some time )
+ -> converting function LYFreeHilites ( some time )
+ -> converting function LYSetHilite ( some time )
+ -> converting function LYAddHilite ( some time )
+ -> converting function LYGetHiliteStr ( some time )
+ -> converting function LYGetHilitePos ( some time )
+ -> converting function show_whereis_targets ( some time )
+ -> converting function find_cached_style ( some time )
+ -> converting function LYhighlight ( some time )
+ -> converting function convert_to_spaces ( some time )
+ -> converting function strip_trailing_slash ( some time )
+ -> converting function remove_most_blanks ( some time )
+ -> converting function statusline ( some time )
+ -> converting function novice_lines ( some time )
+ -> converting function toggle_novice_line ( some time )
+ -> converting function noviceline ( some time )
+ -> converting function LYReopenInput ( some time )
+ -> converting function LYConsoleInputFD ( some time )
+ -> converting function LYFakeZap ( some time )
+ -> converting function DontCheck ( some time )
+ -> converting function HTCheckForInterrupt ( some time )
+ -> converting function LYisAbsPath ( some time )
+ -> converting function LYisRootPath ( some time )
+ -> converting function LYisLocalFile ( some time )
+ -> converting function LYisLocalHost ( some time )
+ -> converting function LYFreeStringList ( some time )
+ -> converting function LYisLocalAlias ( some time )
+ -> converting function LYCheckForProxyURL ( some time )
+ -> converting function compare_type ( some time )
+ -> converting function is_url ( some time )
+ -> converting function LYFixCursesOn ( some time )
+ -> converting function LYFixCursesOnForAccess ( some time )
+ -> converting function LYCanDoHEAD ( some time )
+ -> converting function LYCloseInput ( some time )
+ -> converting function LYCloseOutput ( some time )
+ -> converting function LYCanWriteFile ( some time )
+ -> converting function LYCanReadFile ( some time )
+ -> converting function remove_backslashes ( some time )
+ -> converting function inlocaldomain ( some time )
+ -> converting function LYExtSignal ( some time )
+ -> converting function LYToggleSigDfl ( some time )
+ -> converting function size_change ( some time )
+ -> converting function HTAddSugFilename ( some time )
+ -> converting function change_sug_filename ( some time )
+ -> converting function fmt_tempname ( some time )
+ -> converting function strn_dash_equ ( some time )
+ -> converting function parse_restrictions ( some time )
+ -> converting function LYCheckMail ( some time )
+ -> converting function LYEnsureAbsoluteURL ( some time )
+ -> converting function LYConvertToURL ( some time )
+ -> converting function LYExpandHostForURL ( some time )
+ -> converting function LYAddSchemeForURL ( some time )
+ -> converting function LYTrimRelFromAbsPath ( some time )
+ -> converting function Current_Dir ( some time )
+ -> converting function CheckDir ( some time )
+ -> converting function HomeEnv ( some time )
+ -> converting function Home_Dir ( some time )
+ -> converting function LYPathLeaf ( some time )
+ -> converting function LYPathOffHomeOK ( some time )
+ -> converting function FindLeadingTilde ( some time )
+ -> converting function LYAbsOrHomePath ( some time )
+ -> converting function LYTildeExpand ( some time )
+ -> converting function LYAddPathToHome ( some time )
+ -> converting function LYAddPathToSave ( some time )
+ -> converting function IsOurSymlink ( some time )
+ -> converting function IsOurFile ( some time )
+ -> converting function OpenHiddenFile ( some time )
+ -> converting function LYNewBinFile ( some time )
+ -> converting function LYNewTxtFile ( some time )
+ -> converting function LYAppendToTxtFile ( some time )
+ -> converting function LYRelaxFilePermissions ( some time )
+ -> converting function LYOpenTemp ( some time )
+ -> converting function LYReopenTemp ( some time )
+ -> converting function LYOpenTempRewrite ( some time )
+ -> converting function LYOpenScratch ( some time )
+ -> converting function LY_close_temp ( some time )
+ -> converting function LYCloseTemp ( some time )
+ -> converting function LYCloseTempFP ( some time )
+ -> converting function LYRemoveTemp ( some time )
+ -> converting function LYCleanupTemp ( some time )
+ -> converting function LYCheckBibHost ( some time )
+ -> converting function LYIsUIPage3 ( some time )
+ -> converting function LYRegisterUIPage ( some time )
+ -> converting function wwwName ( some time )
+ -> converting function LYValidateFilename ( some time )
+ -> converting function LYValidateOutput ( some time )
+ -> converting function LYLocalFileToURL ( some time )
+ -> converting function InternalPageFP ( some time )
+ -> converting function WriteInternalTitle ( some time )
+ -> converting function BeginInternalPage ( some time )
+ -> converting function EndInternalPage ( some time )
+ -> converting function trimPoundSelector ( some time )
+ -> converting function LYTrimPathSep ( some time )
+ -> converting function LYAddPathSep ( some time )
+ -> converting function LYLastPathSep ( some time )
+ -> converting function LYTrimHtmlSep ( some time )
+ -> converting function LYAddHtmlSep ( some time )
+ -> converting function LYCopyFile ( some time )
+ -> converting function LYSystem ( some time )
+ -> converting function LYSysShell ( some time )
+ -> converting function LYgetXDisplay ( some time )
+ -> converting function LYsetXDisplay ( some time )
+ -> converting function get_clip_release ( some time )
+ -> converting function clip_grab ( some time )
+ -> converting function get_clip_grab ( some time )
+ -> converting function put_clip ( some time )
+ -> converting function LYmsec_delay ( some time )
+ -> converting function LYOpenlog ( some time )
+ -> converting function looks_like_password ( some time )
+ -> converting function LYSyslog ( some time )
+ -> converting function LYCloselog ( some time )
+ -> converting function LYCheckUserAgent ( some time )
+ -> converting function validate_x_display ( some time )
+ -> converting function summarize_x_display ( some time )
+ -> converting function SetupChosenShowColor ( some time )
+ -> converting function add_it ( some time )
+ -> converting function addlbl ( some time )
+ -> converting function LYoptions ( some time )
+ -> converting function widest_choice ( some time )
+ -> converting function show_choice ( some time )
+ -> converting function boolean_choice ( some time )
+ -> converting function edit_bookmarks ( some time )
+ -> converting function popup_choice ( some time )
+ -> converting function PutOptValues ( some time )
+ -> converting function GetOptValues ( some time )
+ -> converting function break_data ( some time )
+ -> converting function isLynxOptionsPage ( some time )
+ -> converting function postoptions ( some time )
+ -> converting function NewSecureValue ( some time )
+ -> converting function PutLabel ( some time )
+ -> converting function check_if_write_lynxrc ( some time )
+ -> converting function will_save_cookies ( some time )
+ -> converting function will_save_images ( some time )
+ -> converting function LYMenuVisitedLinks ( some time )
+ -> converting function gen_options ( some time )
+ -> converting function is_true ( some time )
+ -> converting function find_colon ( some time )
+ -> converting function free_item_list ( some time )
+ -> converting function free_all_item_lists ( some time )
+ -> converting function add_item_to_list ( some time )
+ -> converting function match_item_by_name ( some time )
+ -> converting function check_color ( some time )
+ -> converting function lookup_color ( some time )
+ -> converting function free_lynx_cfg ( some time )
+ -> converting function lookup_config ( some time )
+ -> converting function actual_filename ( some time )
+ -> converting function LYOpenCFG ( some time )
+ -> converting function LYSetConfigValue ( some time )
+ -> converting function do_read_cfg ( some time )
+ -> converting function read_cfg ( some time )
+ -> converting function extra_cfg_link ( some time )
+ -> converting function lynx_cfg_infopage ( some time )
+ -> converting function lynx_compile_opts ( some time )
+ -> converting function link_has_target ( some time )
+ -> converting function check_next_target_in_links ( some time )
+ -> converting function check_prev_target_in_links ( some time )
+ -> converting function textsearch ( some time )
+ -> converting function trace_history ( some time )
+ -> converting function LYAddVisitedLink ( some time )
+ -> converting function LYwouldPush ( some time )
+ -> converting function LYFreePostData ( some time )
+ -> converting function LYFreeDocInfo ( some time )
+ -> converting function clean_extra_history ( some time )
+ -> converting function are_identical ( some time )
+ -> converting function LYAllocHistory ( some time )
+ -> converting function LYpush ( some time )
+ -> converting function LYpop ( some time )
+ -> converting function LYhist_prev ( some time )
+ -> converting function LYhist_prev_register ( some time )
+ -> converting function LYhist_next ( some time )
+ -> converting function LYpop_num ( some time )
+ -> converting function showhistory ( some time )
+ -> converting function historytarget ( some time )
+ -> converting function LYShowVisitedLinks ( some time )
+ -> converting function to_stack ( some time )
+ -> converting function LYstatusline_messages_on_exit ( some time )
+ -> converting function LYstore_message2 ( some time )
+ -> converting function LYstore_message ( some time )
+ -> converting function options_list ( some time )
+ -> converting function change_form_link_ex ( some time )
+ -> converting function change_form_link ( some time )
+ -> converting function LYSetLastTFPos ( some time )
+ -> converting function form_getstr ( some time )
+ -> converting function show_formlink_statusline ( some time )
+ -> converting function set_environ ( some time )
+ -> converting function suggested_filename ( some time )
+ -> converting function SetupFilename ( some time )
+ -> converting function RecallFilename ( some time )
+ -> converting function confirm_by_pages ( some time )
+ -> converting function send_file_to_file ( some time )
+ -> converting function send_file_to_mail ( some time )
+ -> converting function send_file_to_printer ( some time )
+ -> converting function send_file_to_screen ( some time )
+ -> converting function printfile ( some time )
+ -> converting function subject_translate8bit ( some time )
+ -> converting function print_options ( some time )
+ -> converting function GetFileName ( some time )
+ -> converting function getBool ( some time )
+ -> converting function LYputEnum ( some time )
+ -> converting function LYgetEnum ( some time )
+ -> converting function lookup_config.5 ( some time )
+ -> converting function read_rc ( some time )
+ -> converting function write_list ( some time )
+ -> converting function explain_keypad_mode ( some time )
+ -> converting function save_rc ( some time )
+ -> converting function will_save_rc ( some time )
+ -> converting function LYDownload ( some time )
+ -> converting function SuffixIs ( some time )
+ -> converting function LYdownload_options ( some time )
+ -> converting function LYcommandList ( some time )
+ -> converting function LYStringToKcmd ( some time )
+ -> converting function LYKeycodeToString ( some time )
+ -> converting function LYStringToKeycode ( some time )
+ -> converting function set_any_keys ( some time )
+ -> converting function reset_any_keys ( some time )
+ -> converting function set_vi_keys ( some time )
+ -> converting function reset_vi_keys ( some time )
+ -> converting function set_emacs_keys ( some time )
+ -> converting function reset_emacs_keys ( some time )
+ -> converting function set_numbers_as_arrows ( some time )
+ -> converting function reset_numbers_as_arrows ( some time )
+ -> converting function key_for_func ( some time )
+ -> converting function fmt_keys ( some time )
+ -> converting function best_reverse_keymap ( some time )
+ -> converting function key_for_func_ext ( some time )
+ -> converting function LYisNonAlnumKeyname ( some time )
+ -> converting function LYReverseKeymap ( some time )
+ -> converting function strtolower ( some time )
+ -> converting function HTLoadError ( some time )
+ -> converting function HTFormatInit ( some time )
+ -> converting function HTPreparsedFormatInit ( some time )
+ -> converting function GetCommand ( some time )
+ -> converting function Cleanse ( some time )
+ -> converting function TrimCommand ( some time )
+ -> converting function ProcessMailcapEntry ( some time )
+ -> converting function LYSkipQuoted ( some time )
+ -> converting function LYSkipToken ( some time )
+ -> converting function LYSkipValue ( some time )
+ -> converting function LYCopyValue ( some time )
+ -> converting function LYGetContentType ( some time )
+ -> converting function LYMailcapUsesPctS ( some time )
+ -> converting function BuildCommand ( some time )
+ -> converting function LYTestMailcapCommand ( some time )
+ -> converting function RememberTestResult ( some time )
+ -> converting function PassesTest ( some time )
+ -> converting function ProcessMailcapFile ( some time )
+ -> converting function ExitWithError ( some time )
+ -> converting function HTLoadTypesConfigFile ( some time )
+ -> converting function HTFileInit ( some time )
+ -> converting function HTGetLine ( some time )
+ -> converting function HTGetWord ( some time )
+ -> converting function HTLoadExtensionsConfigFile ( some time )
+ -> converting function LYUpload ( some time )
+ -> converting function LYUpload_options ( some time )
+ -> converting function LYCompleteExit ( some time )
+ -> converting function LYexit ( some time )
+ -> converting function outofmem ( some time )
+ -> converting function LYAddJumpShortcut ( some time )
+ -> converting function LYJump ( some time )
+ -> converting function LYRead_Jumpfile ( some time )
+ -> converting function showlist ( some time )
+ -> converting function print_refs ( some time )
+ -> converting function print_hidden_refs ( some time )
+ -> converting function printlist ( some time )
+ -> converting function final_perror ( some time )
+ -> converting function exit_with_perror ( some time )
+ -> converting function lookup_link ( some time )
+ -> converting function add_to_table ( some time )
+ -> converting function add_to_traverse_list ( some time )
+ -> converting function dump_traversal_history ( some time )
+ -> converting function add_to_reject_list ( some time )
+ -> converting function lookup_reject ( some time )
+ -> converting function EditBinding ( some time )
+ -> converting function LYKeyForEditAction ( some time )
+ -> converting function LYEditKeyForAction ( some time )
+ -> converting function LYEditmapDeclared ( some time )
+ -> converting function HTMLSetCharacterHandling ( some time )
+ -> converting function Set_HTCJK ( some time )
+ -> converting function HTMLSetRawModeDefault ( some time )
+ -> converting function HTMLSetUseDefaultRawMode ( some time )
+ -> converting function HTMLSetHaveCJKCharacterSet ( some time )
+ -> converting function HTMLSetDisplayCharsetMatchLocale ( some time )
+ -> converting function HTMLGetEntityUCValue ( some time )
+ -> converting function HTMLUseCharacterSet ( some time )
+ -> converting function LYCharSetsDeclared ( some time )
+ -> converting function LYEntify ( some time )
+ -> converting function LYTrimHead ( some time )
+ -> converting function LYTrimTail ( some time )
+ -> converting function LYFillLocalFileURL ( some time )
+ -> converting function LYAddMETAcharsetToFD ( some time )
+ -> converting function UCPutUtf8ToBuffer ( some time )
+ -> converting function LYUCFullyTranslateString ( some time )
+ -> converting function LYUCTranslateBackFormData ( some time )
+ -> converting function LYformTitle ( some time )
+ -> converting function ImageMapList_free ( some time )
+ -> converting function LYPrintImgMaps ( some time )
+ -> converting function newCookie ( some time )
+ -> converting function freeCookie ( some time )
+ -> converting function host_matches ( some time )
+ -> converting function ignore_trailing_slash ( some time )
+ -> converting function is_prefix ( some time )
+ -> converting function find_domain_entry ( some time )
+ -> converting function store_cookie ( some time )
+ -> converting function LYLoadCookies ( some time )
+ -> converting function NewCookieFile ( some time )
+ -> converting function LYStoreCookies ( some time )
+ -> converting function cookie_domain_flag_set ( some time )
+ -> converting function LYConfigCookies ( some time )
+ -> converting function TrimLowercase ( some time )
+ -> converting function parse_either ( some time )
+ -> converting function parse_attributes ( some time )
+ -> converting function parse_style ( some time )
+ -> converting function style_deleteStyleList ( some time )
+ -> converting function free_colorstylestuff ( some time )
+ -> converting function initialise_default_stylesheet ( some time )
+ -> converting function style_initialiseHashTable ( some time )
+ -> converting function parse_userstyles ( some time )
+ -> converting function HStyle_addStyle ( some time )
+ -> converting function style_readFromFileREC ( some time )
+ -> converting function style_readFromFile ( some time )
+ -> converting function cache_tag_styles ( some time )
+ -> converting function RefCachedStyle ( some time )
+ -> converting function ValidCachedStyle ( some time )
+ -> converting function GetCachedStyle ( some time )
+ -> converting function SetCachedStyle ( some time )
+ -> converting function ResetCachedStyles ( some time )
+ -> converting function FreeCachedStyles ( some time )
+ -> converting function hash_code ( some time )
+ -> converting function hash_code_lowercase_on_fly ( some time )
+ -> converting function hash_code_aggregate_char ( some time )
+ -> converting function hash_code_aggregate_lower_str ( some time )
+ -> converting function html_src_tag_index ( some time )
+ -> converting function append_close_tag ( some time )
+ -> converting function append_open_tag ( some time )
+ -> converting function html_src_parse_tagspec ( some time )
+ -> converting function html_src_clean_item ( some time )
+ -> converting function html_src_clean_data ( some time )
+ -> converting function html_src_on_lynxcfg_reload ( some time )
+ -> converting function failed_init ( some time )
+ -> converting function HTMLSRC_init_caches ( some time )
+ -> converting function Stbl_getStartLineDeep ( some time )
+ -> converting function set_inverse_transl ( some time )
+ -> converting function set_translate ( some time )
+ -> converting function UC_valid_UC_charset ( some time )
+ -> converting function UC_con_set_trans ( some time )
+ -> converting function con_insert_unipair ( some time )
+ -> converting function con_insert_unipair_str ( some time )
+ -> converting function con_clear_unimap ( some time )
+ -> converting function con_clear_unimap_str ( some time )
+ -> converting function con_set_default_unimap ( some time )
+ -> converting function UC_con_set_unimap ( some time )
+ -> converting function UC_con_set_unimap_str ( some time )
+ -> converting function conv_uni_to_pc ( some time )
+ -> converting function conv_uni_to_str ( some time )
+ -> converting function UCconsole_map_init ( some time )
+ -> converting function UCTransUniChar ( some time )
+ -> converting function UCTransUniCharStr ( some time )
+ -> converting function UC_MapGN ( some time )
+ -> converting function UCTransChar ( some time )
+ -> converting function UCTransJPToUni ( some time )
+ -> converting function UCTransToUni ( some time )
+ -> converting function UCReverseTransChar ( some time )
+ -> converting function UCTransCharStr ( some time )
+ -> converting function UC_FindGN_byMIME ( some time )
+ -> converting function getLYhndl_byCP ( some time )
+ -> converting function UCGetLYhndl_byMIME ( some time )
+ -> converting function UCreset_allocated_LYCharSets ( some time )
+ -> converting function UC_setup_LYCharSets_repl ( some time )
+ -> converting function UC_Register_with_LYCharSets ( some time )
+ -> converting function UC_Charset_Setup ( some time )
+ -> converting function UC_NoUctb_Register_with_LYCharSets ( some time )
+ -> converting function UC_Charset_NoUctb_Setup ( some time )
+ -> converting function UCInit ( some time )
+ -> converting function safeUCGetLYhndl_byMIME ( some time )
+ -> converting function LYFindLocaleCharset ( some time )
+ -> converting function UCCanUniTranslateFrom ( some time )
+ -> converting function UCCanTranslateUniTo ( some time )
+ -> converting function UCCanTranslateFromTo ( some time )
+ -> converting function UCNeedNotTranslate ( some time )
+ -> converting function UCSetTransParams ( some time )
+ -> converting function UCTransParams_clear ( some time )
+ -> converting function UCSetBoxChars ( some time )
+ -> converting function UCGetUniFromUtf8String ( some time )
+ -> converting function format ( some time )
+ -> converting function format_command ( some time )
+ -> converting function lookup_external ( some time )
+ -> converting function run_external ( some time )
+ -> converting function cannot_stat ( some time )
+ -> converting function ok_stat ( some time )
+ -> converting function ok_lstat ( some time )
+ -> converting function ok_file_or_dir ( some time )
+ -> converting function LYExecv ( some time )
+ -> converting function make_directory ( some time )
+ -> converting function remove_file ( some time )
+ -> converting function remove_directory ( some time )
+ -> converting function touch_file ( some time )
+ -> converting function move_file ( some time )
+ -> converting function not_already_exists ( some time )
+ -> converting function dir_has_same_owner ( some time )
+ -> converting function remove_tagged ( some time )
+ -> converting function modify_tagged ( some time )
+ -> converting function modify_name ( some time )
+ -> converting function modify_location ( some time )
+ -> converting function local_modify ( some time )
+ -> converting function create_file ( some time )
+ -> converting function create_directory ( some time )
+ -> converting function local_create ( some time )
+ -> converting function remove_single ( some time )
+ -> converting function local_remove ( some time )
+ -> converting function permit_bits ( some time )
+ -> converting function permit_location ( some time )
+ -> converting function tagflag ( some time )
+ -> converting function showtags ( some time )
+ -> converting function DirectoryOf ( some time )
+ -> converting function match_op ( some time )
+ -> converting function build_command ( some time )
+ -> converting function local_dired ( some time )
+ -> converting function dired_options ( some time )
+ -> converting function get_filename ( some time )
+ -> converting function clear_tags ( some time )
+ -> converting function reset_dired_menu ( some time )
+ -> converting function render_item ( some time )
+ -> converting function HTStrip ( some time )
+ -> converting function scan ( some time )
+ -> converting function strchr_or_end ( some time )
+ -> converting function HTParsePort ( some time )
+ -> converting function HTParse ( some time )
+ -> converting function HTParseAnchor ( some time )
+ -> converting function HTSimplify ( some time )
+ -> converting function HTRelative ( some time )
+ -> converting function HTEscape ( some time )
+ -> converting function HTEscapeUnsafe ( some time )
+ -> converting function HTEscapeSP ( some time )
+ -> converting function from_hex ( some time )
+ -> converting function HTUnEscape ( some time )
+ -> converting function HTUnEscapeSome ( some time )
+ -> converting function HTMake822Word ( some time )
+ -> converting function HTRegisterProtocol ( some time )
+ -> converting function HTAccessInit ( some time )
+ -> converting function override_proxy ( some time )
+ -> converting function get_physical ( some time )
+ -> converting function LYUCPushAssumed ( some time )
+ -> converting function LYUCPopAssumed ( some time )
+ -> converting function HTLoad ( some time )
+ -> converting function HTLoadDocument ( some time )
+ -> converting function HTLoadAbsolute ( some time )
+ -> converting function HTLoadRelative ( some time )
+ -> converting function hex ( some time )
+ -> converting function HTSearch ( some time )
+ -> converting function HTSetSuffix5 ( some time )
+ -> converting function HTURLPath_toFile ( some time )
+ -> converting function HTnameOfFile_WWW ( some time )
+ -> converting function HTFileFormat ( some time )
+ -> converting function HTCharsetFormat ( some time )
+ -> converting function LYGetFileInfo ( some time )
+ -> converting function HTCompressFileType ( some time )
+ -> converting function HTCompressTypeToSuffix ( some time )
+ -> converting function HTEncodingToCompressType ( some time )
+ -> converting function HTContentTypeToCompressType ( some time )
+ -> converting function HTContentToCompressType ( some time )
+ -> converting function HTEditable ( some time )
+ -> converting function HTStat ( some time )
+ -> converting function HTGetProgramPath ( some time )
+ -> converting function HTSetProgramPath ( some time )
+ -> converting function HTInitProgramPaths ( some time )
+ -> converting function HTBTree_new ( some time )
+ -> converting function HTBTElement_free ( some time )
+ -> converting function HTBTree_free ( some time )
+ -> converting function HTBTree_search ( some time )
+ -> converting function HTBTree_add ( some time )
+ -> converting function HTBTree_next ( some time )
+ -> converting function HTClearFTPPassword ( some time )
+ -> converting function valid_hostname ( some time )
+ -> converting function dump_hostent ( some time )
+ -> converting function fill_rehostent ( some time )
+ -> converting function readit ( some time )
+ -> converting function LYGetHostByName ( some time )
+ -> converting function get_host_details ( some time )
+ -> converting function HTHostName ( some time )
+ -> converting function SGMLFindTag ( some time )
+ -> converting function SGML_offset ( some time )
+ -> converting function IS_SJIS_STR ( some time )
+ -> converting function SJIS_TO_JIS1 ( some time )
+ -> converting function JIS_TO_SJIS1 ( some time )
+ -> converting function SJIS_TO_EUC1 ( some time )
+ -> converting function EUC_TO_SJIS ( some time )
+ -> converting function repairJIStoEUC ( some time )
+ -> converting function TO_EUC ( some time )
+ -> converting function is_EUC_JP ( some time )
+ -> converting function TO_SJIS ( some time )
+ -> converting function HTSwitchDTD ( some time )
+ -> converting function HTChunkInit ( some time )
+ -> converting function HTChunkCreate ( some time )
+ -> converting function HTChunkCreate2 ( some time )
+ -> converting function HTChunkClear ( some time )
+ -> converting function HTChunkFree ( some time )
+ -> converting function HTChunkRealloc ( some time )
+ -> converting function HTChunkPutc ( some time )
+ -> converting function HTChunkPutb ( some time )
+ -> converting function HTChunkTerminate ( some time )
+ -> converting function HTChunkPuts ( some time )
+ -> converting function HTAtom_for ( some time )
+ -> converting function HASH_FUNCTION ( some time )
+ -> converting function HTParentAnchor0_new ( some time )
+ -> converting function HTParentAnchor_new ( some time )
+ -> converting function HTChildAnchor_new ( some time )
+ -> converting function HTSEquivalent ( some time )
+ -> converting function HTBEquivalent ( some time )
+ -> converting function HTAnchor_findNamedChild ( some time )
+ -> converting function HTAnchor_findAddress ( some time )
+ -> converting function HTAnchor_findAddress_in_adult_table ( some time )
+ -> converting function HTAnchor_findSimpleAddress ( some time )
+ -> converting function deleteLinks ( some time )
+ -> converting function HTAnchor_delete ( some time )
+ -> converting function HTAnchor_delete_links ( some time )
+ -> converting function HTParentAnchor_free ( some time )
+ -> converting function HTAnchor_clearSourceCache ( some time )
+ -> converting function HTAnchor_parent ( some time )
+ -> converting function HTAnchor_setDocument ( some time )
+ -> converting function HTAnchor_document ( some time )
+ -> converting function HTAnchor_address ( some time )
+ -> converting function HTAnchor_format ( some time )
+ -> converting function HTAnchor_isIndex ( some time )
+ -> converting function HTAnchor_isISMAPScript ( some time )
+ -> converting function HTAnchor_style ( some time )
+ -> converting function HTAnchor_title ( some time )
+ -> converting function HTAnchor_owner ( some time )
+ -> converting function HTAnchor_setOwner ( some time )
+ -> converting function HTAnchor_RevTitle ( some time )
+ -> converting function HTAnchor_citehost ( some time )
+ -> converting function HTAnchor_SugFname ( some time )
+ -> converting function HTAnchor_content_encoding ( some time )
+ -> converting function HTAnchor_content_type ( some time )
+ -> converting function HTAnchor_last_modified ( some time )
+ -> converting function HTAnchor_date ( some time )
+ -> converting function HTAnchor_server ( some time )
+ -> converting function HTAnchor_safe ( some time )
+ -> converting function HTAnchor_content_base ( some time )
+ -> converting function HTAnchor_content_location ( some time )
+ -> converting function HTAnchor_messageID ( some time )
+ -> converting function HTAnchor_subject ( some time )
+ -> converting function HTAnchor_followLink ( some time )
+ -> converting function HTAnchor_protocol ( some time )
+ -> converting function HTAnchor_setProtocol ( some time )
+ -> converting function HTAnchor_physical ( some time )
+ -> converting function HTAnchor_setPhysical ( some time )
+ -> converting function HTAnchor_getUCInfoStage ( some time )
+ -> converting function HTAnchor_getUCLYhndl ( some time )
+ -> converting function HTAnchor_setUCInfoStage ( some time )
+ -> converting function HTAnchor_resetUCInfoStage ( some time )
+ -> converting function HTAnchor_copyUCInfoStage ( some time )
+ -> converting function HTList_new ( some time )
+ -> converting function HTList_delete ( some time )
+ -> converting function HTList_reverse ( some time )
+ -> converting function HTList_appendList ( some time )
+ -> converting function HTList_linkObject ( some time )
+ -> converting function HTList_addObject ( some time )
+ -> converting function HTList_appendObject ( some time )
+ -> converting function HTList_insertObjectAt ( some time )
+ -> converting function HTList_unlinkObject ( some time )
+ -> converting function HTList_removeObject ( some time )
+ -> converting function HTList_removeObjectAt ( some time )
+ -> converting function HTList_unlinkLastObject ( some time )
+ -> converting function HTList_removeLastObject ( some time )
+ -> converting function HTList_removeFirstObject ( some time )
+ -> converting function HTList_count ( some time )
+ -> converting function HTList_objectAt ( some time )
+ -> converting function strcasecomp8 ( some time )
+ -> converting function strncasecomp8 ( some time )
+ -> converting function strcasecomp ( some time )
+ -> converting function strncasecomp ( some time )
+ -> converting function HTSACopy ( some time )
+ -> converting function HTSACat ( some time )
+ -> converting function HTNextField ( some time )
+ -> converting function HTNextTok ( some time )
+ -> converting function HTAlloc ( some time )
+ -> converting function StrAllocVsprintf ( some time )
+ -> converting function HTSprintf ( some time )
+ -> converting function HTSprintf0 ( some time )
+ -> converting function HTQuoteParameter ( some time )
+ -> converting function HTCountCommandArgs ( some time )
+ -> converting function HTAfterCommandArg ( some time )
+ -> converting function HTAddXpand ( some time )
+ -> converting function HTAddToCmd ( some time )
+ -> converting function HTAddParam ( some time )
+ -> converting function HTEndParam ( some time )
+ -> converting function HTSABCopy ( some time )
+ -> converting function HTSABCopy0 ( some time )
+ -> converting function HTSABCat ( some time )
+ -> converting function HTSABCat0 ( some time )
+ -> converting function HTSABEql ( some time )
+ -> converting function HTSABFree ( some time )
+ -> converting function HTBprintf ( some time )
+ -> converting function trace_bstring2 ( some time )
+ -> converting function trace_bstring ( some time )
+ -> converting function rule_cond_ok ( some time )
+ -> converting function HTTranslate ( some time )
+ -> converting function HTSetPresentation ( some time )
+ -> converting function HTSetConversion ( some time )
+ -> converting function half_match ( some time )
+ -> converting function failsMailcap ( some time )
+ -> converting function HTFindPresentation ( some time )
+ -> converting function HTStreamStack ( some time )
+ -> converting function HTReorderPresentation ( some time )
+ -> converting function HTFilterPresentations ( some time )
+ -> converting function HTDisplayPartial ( some time )
+ -> converting function HTFinishDisplayPartial ( some time )
+ -> converting function HTFileCopy ( some time )
+ -> converting function HTMemCopy ( some time )
+ -> converting function HTParseFile ( some time )
+ -> converting function HTParseMem ( some time )
+ -> converting function free_NNTP_AuthInfo ( some time )
+ -> converting function HTClearNNTPAuthInfo ( some time )
+ -> converting function HTAAForwardAuth_reset ( some time )
+ -> converting function HTAAServer_delete ( some time )
+ -> converting function HTAASetup_delete ( some time )
+ -> converting function free_HTAAGlobals ( some time )
+ -> converting function HTClearHTTPAuthInfo ( some time )
+ -> converting function HTAA_setIds ( some time )
+ -> converting function HTAA_parseProtFile ( some time )
+ -> converting function HTAAProt_new ( some time )
+ -> converting function HTAA_setDefaultProtection ( some time )
+ -> converting function HTAA_setCurrentProtection ( some time )
+ -> converting function HTAA_clearProtections ( some time )
+ -> converting function save_gid_info ( some time )
+ -> converting function save_uid_info ( some time )
+ -> converting function HTAA_UidToName ( some time )
+ -> converting function HTAA_GidToName ( some time )
+ -> converting function HTAssocList_new ( some time )
+ -> converting function HTAssocList_delete ( some time )
+ -> converting function HTAssocList_add ( some time )
+ -> converting function unlex ( some time )
+ -> converting function lex ( some time )
+ -> converting function lex_verbose ( some time )
+ -> converting function HTAAScheme_enum ( some time )
+ -> converting function HTAAScheme_name ( some time )
+ -> converting function syntax_error ( some time )
+ -> converting function parse_address_part ( some time )
+ -> converting function parse_user_part ( some time )
+ -> converting function parse_item ( some time )
+ -> converting function parse_item_list ( some time )
+ -> converting function HTAA_parseGroupDef ( some time )
+ -> converting function print_item ( some time )
+ -> converting function print_item_list ( some time )
+ -> converting function HTAA_printGroupDef ( some time )
+ -> converting function __divdi3 ( some time )
+ -> converting function __i686.get_pc_thunk.bx ( some time )
+ -> converting function stat64 ( some time )
+ -> converting function lstat64 ( some time )
+Running phase: removing functions from standard libraries ( some time )
+Running phase: removing code that is not reachable in a CFG ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804ba8e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_60_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = recent_sizechange` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80502dc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8052ca6` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var46 = *(IntToPtrCastExpr<ptr>(((storemerge19227_reload * 4) + var39)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var_4 = var134` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = gettext("Cancelled!!!")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var167 = strcmp(BitCastExpr<ptr>(&(global_var_81ab8c0)), var150)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8055357` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805608b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem115 = IntToPtrCastExpr<ptr>(_reload90)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8059f6f_5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e4d1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e6b8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805fc7b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_128_0_reload = stack_var__2d_128_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var51 = *(IntToPtrCastExpr<ptr>((var47 + 28)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload45 = _reg2mem44` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806a01a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge74_reg2mem = BitCastExpr<ptr>(&(global_var_814cbac))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070380` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var192) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var390 = *(IntToPtrCastExpr<ptr>(((var383 * 32) + PtrToIntCastExpr<int32>(&(global_var_819b384)))))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80709d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYFixCursesOn("ask for confirmation:")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807415b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075b5a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075d68` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSACat(&(stack_var__2d_68), "bibp1.0/resolve?usin=")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e5be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e80d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80814e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8087bcf` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = BitCastExpr<ptr>(&(startrealm))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = IntToPtrCastExpr<ptr>(var135)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80883af` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ForcePush__2d_1192 = 14` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80894e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(&(stack_var__2d_272), var5, 255)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var62 = __errno_location()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80927fa` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var90 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var105 = *(IntToPtrCastExpr<ptr>((var83 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var106 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8092796` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809175d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8091672` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var146 = *(IntToPtrCastExpr<ptr>((var130 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var159 = *(IntToPtrCastExpr<ptr>((var147 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80921a7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80920bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var171 = *(IntToPtrCastExpr<ptr>((var162 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_300 = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809ec9d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809dff2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809e582` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = *(IntToPtrCastExpr<ptr>((((stack_var__2d_8_1_reload * 2) & 4094) + 135888546)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a1654` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYSetCookies = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `fprintf(fp0, "%s:%s\n", var25, var34)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a8e4f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a9942` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(prev_target, BitCastExpr<ptr>(&(global_var_81afaa0)), target_size)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = stack_var__2d_8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_17466_1_ph119_reload = stack_var__2d_17466_1_ph119_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(BitCastExpr<ptr>(var33))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var49 = lookup_config_5("multi_bookmark")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b381a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d73f8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(IntToPtrCastExpr<ptr>(var19))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dbad5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem86 = var32` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `gts__2d_36_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var135 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dfbe8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80df6eb` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = *(var39)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e5e0d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80fe17e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var51) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8100628` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(_reload13) = _reload15` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `get_blanks__2d_9_0_reg2mem = 93` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x812bef2` -> skipping this edge
+Running phase: signed/unsigned types fixing ( some time )
+Running phase: converting LLVM intrinsic functions to standard functions ( some time )
+Running phase: obtaining debug information ( some time )
+Running phase: alias analysis [simple] ( some time )
+Running phase: optimizations [normal] ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running RemoveUselessCastsOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804ba8e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_60_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = recent_sizechange` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80502dc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8052ca6` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var46 = *(IntToPtrCastExpr<ptr>(((storemerge19227_reload * 4) + var39)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var_4 = var134` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = gettext("Cancelled!!!")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var167 = strcmp(BitCastExpr<ptr>(&(global_var_81ab8c0)), var150)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8055357` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805608b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem115 = IntToPtrCastExpr<ptr>(_reload90)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8059f6f_5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e4d1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e6b8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805fc7b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_128_0_reload = stack_var__2d_128_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var51 = *(IntToPtrCastExpr<ptr>((var47 + 28)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806a01a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge74_reg2mem = BitCastExpr<ptr>(&(global_var_814cbac))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070380` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var192) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var390 = *(IntToPtrCastExpr<ptr>(((var383 * 32) + PtrToIntCastExpr<int32>(&(global_var_819b384)))))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80709d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYFixCursesOn("ask for confirmation:")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807415b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075b5a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075d68` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSACat(&(stack_var__2d_68), "bibp1.0/resolve?usin=")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e5be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e80d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80814e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8087bcf` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = BitCastExpr<ptr>(&(startrealm))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = IntToPtrCastExpr<ptr>(var135)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80883af` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ForcePush__2d_1192 = 14` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80894e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(&(stack_var__2d_272), var5, 255)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var62 = __errno_location()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80927fa` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var90 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var105 = *(IntToPtrCastExpr<ptr>((var83 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var106 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8092796` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809175d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8091672` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var146 = *(IntToPtrCastExpr<ptr>((var130 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var159 = *(IntToPtrCastExpr<ptr>((var147 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80921a7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80920bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var171 = *(IntToPtrCastExpr<ptr>((var162 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_300 = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809ec9d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809dff2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809e582` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = *(IntToPtrCastExpr<ptr>((((stack_var__2d_8_1_reload * 2) & 4094) + 135888546)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a1654` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYSetCookies = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `fprintf(fp0, "%s:%s\n", var25, var34)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a8e4f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a9942` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(prev_target, BitCastExpr<ptr>(&(global_var_81afaa0)), target_size)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = stack_var__2d_8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_17466_1_ph119_reload = stack_var__2d_17466_1_ph119_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(BitCastExpr<ptr>(var33))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var49 = lookup_config_5("multi_bookmark")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b381a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d73f8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var21 = HTList_count(var16)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(IntToPtrCastExpr<ptr>(var19))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dbad5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem86 = var32` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `gts__2d_36_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var135 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dfbe8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80df6eb` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = *(var39)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e5e0d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80fe17e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var51) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8100628` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(_reload13) = _reload15` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `get_blanks__2d_9_0_reg2mem = 93` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x812bef2` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804ba8e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_60_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = recent_sizechange` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80502dc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8052ca6` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var46 = *(IntToPtrCastExpr<ptr>(((storemerge19227_reload * 4) + var39)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var_4 = var134` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTInfoMsg(gettext("Cancelled!!!"))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var167 = strcmp(BitCastExpr<ptr>(&(global_var_81ab8c0)), var150)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8055357` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805608b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem115 = IntToPtrCastExpr<ptr>(_reload90)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8059f6f_5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e4d1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e6b8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805fc7b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_128_0_reload = stack_var__2d_128_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var51 = *(IntToPtrCastExpr<ptr>((var47 + 28)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806a01a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge74_reg2mem = BitCastExpr<ptr>(&(global_var_814cbac))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070380` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var192) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var390 = *(IntToPtrCastExpr<ptr>(((var383 * 32) + PtrToIntCastExpr<int32>(&(global_var_819b384)))))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80709d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYFixCursesOn("ask for confirmation:")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807415b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075b5a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075d68` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSACat(&(stack_var__2d_68), "bibp1.0/resolve?usin=")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e5be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e80d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80814e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8087bcf` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = BitCastExpr<ptr>(&(startrealm))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = IntToPtrCastExpr<ptr>(var135)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80883af` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ForcePush__2d_1192 = 14` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80894e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(&(stack_var__2d_272), var5, 255)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var62 = __errno_location()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80927fa` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var90 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var105 = *(IntToPtrCastExpr<ptr>((var83 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var106 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8092796` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809175d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8091672` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var146 = *(IntToPtrCastExpr<ptr>((var130 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var159 = *(IntToPtrCastExpr<ptr>((var147 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80921a7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80920bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var171 = *(IntToPtrCastExpr<ptr>((var162 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_300 = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809ec9d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809dff2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809e582` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = *(IntToPtrCastExpr<ptr>((((stack_var__2d_8_1_reload * 2) & 4094) + 135888546)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a1654` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYSetCookies = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `fprintf(fp0, "%s:%s\n", var25, var34)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a8e4f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a9942` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(prev_target, BitCastExpr<ptr>(&(global_var_81afaa0)), target_size)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = stack_var__2d_8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_17466_1_ph119_reload = stack_var__2d_17466_1_ph119_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(BitCastExpr<ptr>(var33))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var49 = lookup_config_5("multi_bookmark")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b381a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d73f8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge7_reg2mem = HTList_count(var16)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(IntToPtrCastExpr<ptr>(var19))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dbad5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem86 = var32` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `gts__2d_36_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var135 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dfbe8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80df6eb` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = *(var39)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e5e0d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80fe17e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var51) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8100628` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(_reload13) = _reload15` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `get_blanks__2d_9_0_reg2mem = 93` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x812bef2` -> skipping this edge
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running IfStructureOptimizer ( some time )
+ -> running LoopLastContinueOptimizer ( some time )
+ -> running PreWhileTrueLoopConvOptimizer ( some time )
+ -> running WhileTrueToForLoopOptimizer ( some time )
+ -> running WhileTrueToWhileCondOptimizer ( some time )
+ -> running IfBeforeLoopOptimizer ( some time )
+ -> running LLVMIntrinsicsOptimizer ( some time )
+ -> running VoidReturnOptimizer ( some time )
+ -> running BreakContinueReturnOptimizer ( some time )
+ -> running BitShiftOptimizer ( some time )
+ -> running DerefAddressOptimizer ( some time )
+ -> running EmptyArrayToStringOptimizer ( some time )
+ -> running BitOpToLogOpOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804ba8e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_60_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = recent_sizechange` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80502dc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8052ca6` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var46 = *(IntToPtrCastExpr<ptr>(((4 * storemerge19227_reload) + var39)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var_4 = var134` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTInfoMsg(gettext("Cancelled!!!"))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8055357` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805608b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80565c3` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8059f6f_5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e4d1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805fc7b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_128_0_reload = stack_var__2d_128_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806a01a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge74_reg2mem = BitCastExpr<ptr>(&(global_var_814cbac))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070380` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var192) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var390 = *(IntToPtrCastExpr<ptr>(((32 * var383) + PtrToIntCastExpr<int32>(&(global_var_819b384)))))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80709d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYFixCursesOn("ask for confirmation:")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807415b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075b5a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075d68` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSACat(&(stack_var__2d_68), "bibp1.0/resolve?usin=")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e5be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e80d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80814e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8087bcf` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = BitCastExpr<ptr>(&(startrealm))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = IntToPtrCastExpr<ptr>(var135)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80883af` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ForcePush__2d_1192 = 14` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80894e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var62 = __errno_location()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80927fa` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var90 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var105 = *(IntToPtrCastExpr<ptr>((var83 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var106 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8092796` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809175d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8091672` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80921a7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80920bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_300 = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809ec9d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYwaddnstr(LYwin, "ON ", 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809e582` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = *(IntToPtrCastExpr<ptr>((((2 * stack_var__2d_8_1_reload) & 4094) + 135888546)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYSetCookies = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `fprintf(fp0, "%s:%s\n", var25, var34)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a8e4f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a9942` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(prev_target, BitCastExpr<ptr>(&(global_var_81afaa0)), target_size)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = stack_var__2d_8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_17466_1_ph119_reload = stack_var__2d_17466_1_ph119_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(BitCastExpr<ptr>(var33))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var49 = lookup_config_5("multi_bookmark")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b381a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d73f8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge7_reg2mem = HTList_count(var16)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(IntToPtrCastExpr<ptr>(var19))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dbad5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `gts__2d_36_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem88 = _pre71` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem86 = var32` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var135 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dfbe8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80df6eb` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = *(var39)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e5e0d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80fe17e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var51) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8100628` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(_reload13) = _reload15` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSetProgramPath(var2, IntToPtrCastExpr<ptr>(code__2d_16_0_reg2mem))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `get_blanks__2d_9_0_reg2mem = 93` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x812bef2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804ba8e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_60_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = recent_sizechange` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80502dc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8052ca6` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var46 = *(IntToPtrCastExpr<ptr>(((4 * storemerge19227_reload) + var39)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var_4 = var134` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTInfoMsg(gettext("Cancelled!!!"))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8055357` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805608b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80565c3` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8059f6f_5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805e4d1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805fc7b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_128_0_reload = stack_var__2d_128_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806a01a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge74_reg2mem = BitCastExpr<ptr>(&(global_var_814cbac))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070380` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var192) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var390 = *(IntToPtrCastExpr<ptr>(((32 * var383) + PtrToIntCastExpr<int32>(&(global_var_819b384)))))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80709d0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYFixCursesOn("ask for confirmation:")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807415b` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075b5a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8075d68` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSACat(&(stack_var__2d_68), "bibp1.0/resolve?usin=")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e5be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807e80d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80814e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8087bcf` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = BitCastExpr<ptr>(&(startrealm))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1692 = IntToPtrCastExpr<ptr>(var135)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80883af` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ForcePush__2d_1192 = 14` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80894e7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var62 = __errno_location()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80927fa` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var90 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var105 = *(IntToPtrCastExpr<ptr>((var83 + 2)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var106 = stack_var__2d_1088` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8092796` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809175d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8091672` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80921a7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80920bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_300 = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809ec9d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYwaddnstr(LYwin, "ON ", 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x809e582` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = *(IntToPtrCastExpr<ptr>((((2 * stack_var__2d_8_1_reload) & 4094) + 135888546)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYSetCookies = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `fprintf(fp0, "%s:%s\n", var25, var34)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a8e4f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a9942` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `LYstrncpy(prev_target, BitCastExpr<ptr>(&(global_var_81afaa0)), target_size)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = stack_var__2d_8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_17466_1_ph119_reload = stack_var__2d_17466_1_ph119_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(BitCastExpr<ptr>(var33))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var49 = lookup_config_5("multi_bookmark")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b381a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d73f8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge7_reg2mem = HTList_count(var16)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `free(IntToPtrCastExpr<ptr>(var19))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dbad5` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `gts__2d_36_0_reg2mem = 1` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem88 = _pre71` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reg2mem86 = var32` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var135 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80dfbe8` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80df6eb` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var196 = *(var39)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e5e0d` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80fe17e` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var51) = 0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8100628` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(_reload13) = _reload15` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `HTSetProgramPath(var2, IntToPtrCastExpr<ptr>(code__2d_16_0_reg2mem))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `get_blanks__2d_9_0_reg2mem = 93` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x812bef2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+Warning: In LYmbcs_skip_glyphs(), found `break` outside of a loop or a switch statement.
+Warning: In LYhandlePopupList(), found `break` outside of a loop or a switch statement.
+Warning: In LYstrstr(), found `break` outside of a loop or a switch statement.
+Warning: In LYno_attr_char_strstr(), found `break` outside of a loop or a switch statement.
+Warning: In LYno_attr_char_strstr(), found `break` outside of a loop or a switch statement.
+Warning: In extract_body(), found `break` outside of a loop or a switch statement.
+Warning: In show_addresses(), found `break` outside of a loop or a switch statement.
+Warning: In HTGetRelLinkNum(), found `break` outside of a loop or a switch statement.
+Warning: In HText_TAHasMoreLines(), found `break` outside of a loop or a switch statement.
+Warning: In HText_TAHasMoreLines(), found `break` outside of a loop or a switch statement.
+Warning: In HText_ResetForm(), found `break` outside of a loop or a switch statement.
+Warning: In HText_HaveUserChangedForms(), found `break` outside of a loop or a switch statement.
+Warning: In HText_HaveUserChangedForms(), found `break` outside of a loop or a switch statement.
+Warning: In HText_HaveUserChangedForms(), found `break` outside of a loop or a switch statement.
+Warning: In HText_HaveUserChangedForms(), found `break` outside of a loop or a switch statement.
+Warning: In HText_HaveUserChangedForms(), found `break` outside of a loop or a switch statement.
+Warning: In HText_activateRadioButton(), found `break` outside of a loop or a switch statement.
+Warning: In HText_ExtEditForm(), found `break` outside of a loop or a switch statement.
+Warning: In HText_ExpandTextarea(), found `break` outside of a loop or a switch statement.
+Warning: In HText_InsertFile(), found `break` outside of a loop or a switch statement.
+Warning: In select_multi_bookmarks(), found `break` outside of a loop or a switch statement.
+Warning: In LYHaveSubBookmarks(), found `break` outside of a loop or a switch statement.
+Warning: In find_colon(), found `break` outside of a loop or a switch statement.
+Warning: In lookup_config(), found `break` outside of a loop or a switch statement.
+Warning: In form_getstr(), found `break` outside of a loop or a switch statement.
+Warning: In lookup_config2(), found `break` outside of a loop or a switch statement.
+Warning: In ProcessMailcapEntry(), found `break` outside of a loop or a switch statement.
+Warning: In HTLoadExtensionsConfigFile(), found `break` outside of a loop or a switch statement.
+Warning: In find_domain_entry(), found `break` outside of a loop or a switch statement.
+Warning: In LYGetHostByName(), found `break` outside of a loop or a switch statement.
+Warning: In IS_SJIS_STR(), found `break` outside of a loop or a switch statement.
+Warning: In is_EUC_JP(), found `break` outside of a loop or a switch statement.
+Warning: In is_EUC_JP(), found `break` outside of a loop or a switch statement.
+Warning: In is_EUC_JP(), found `break` outside of a loop or a switch statement.
+Warning: In HTChunkPuts(), found `break` outside of a loop or a switch statement.
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )

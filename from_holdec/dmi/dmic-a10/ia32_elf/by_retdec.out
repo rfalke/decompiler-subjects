@@ -1,139 +1,107 @@
-##### Checking if file is a Mach-O Universal static library...
-
-##### Checking if file is an archive...
-RUN: RETDECDIR/bin/retdec-ar-extractor from_holdec/dmi/dmic-a10/ia32_elf/subject.exe --arch-magic
-Not an archive, going to the next step.
-
-##### Gathering file information...
-RUN: RETDECDIR/bin/retdec-fileinfo -c from_holdec/dmi/dmic-a10/ia32_elf/subject.c.json --similarity from_holdec/dmi/dmic-a10/ia32_elf/subject.exe --no-hashes=all --crypto RETDECDIR/bin/../share/retdec/support/generic/yara_patterns/signsrch/signsrch.yara
-Input file               : from_holdec/dmi/dmic-a10/ia32_elf/subject.exe
-File format              : ELF
-File class               : 32-bit
-File type                : Executable file
-Architecture             : x86 (or later and compatible)
-Endianness               : Little endian
-Entry point address      : 0x80482e0
-Entry point offset       : 0x2e0
-Entry point section name : .text
-Entry point section index: 14
-Bytes on entry point     : 31ed5e89e183e4f050545268708404086810840408515668f7830408e8bffffffff466906690669066906690669066908b1c
-Detected tool            : GCC (6.4.1) (compiler), .comment section heuristic
-Detected tool            : GCC (4.6.3) RHEL (compiler), 47 from 49 significant nibbles (95.9184%)
-
-##### Trying to unpack from_holdec/dmi/dmic-a10/ia32_elf/subject.exe into from_holdec/dmi/dmic-a10/ia32_elf/subject-unpacked.tmp by using generic unpacker...
-RUN: RETDECDIR/bin/retdec-unpacker from_holdec/dmi/dmic-a10/ia32_elf/subject.exe -o from_holdec/dmi/dmic-a10/ia32_elf/subject-unpacked.tmp
+Running phase: Unpacking ( some time )
 No matching plugins found for 'GCC 6.4.1'
 No matching plugins found for 'GCC 4.6.3'
-##### Unpacking by using generic unpacker: nothing to do
-##### 'upx' not available: nothing to do
-
-##### Decompiling from_holdec/dmi/dmic-a10/ia32_elf/subject.exe into from_holdec/dmi/dmic-a10/ia32_elf/subject.c.backend.bc...
-RUN: RETDECDIR/bin/retdec-bin2llvmir -provider-init -decoder -verify -main-detection -idioms-libgcc -inst-opt -register -cond-branch-opt -syscalls -stack -constants -param-return -local-vars -inst-opt -simple-types -generate-dsm -remove-asm-instrs -class-hierarchy -select-fncs -unreachable-funcs -inst-opt -value-protect -instcombine -tbaa -targetlibinfo -basicaa -domtree -simplifycfg -domtree -early-cse -lower-expect -targetlibinfo -tbaa -basicaa -globalopt -mem2reg -instcombine -simplifycfg -basiccg -domtree -early-cse -lazy-value-info -jump-threading -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -domtree -loops -loop-simplify -lcssa -loop-rotate -licm -lcssa -instcombine -scalar-evolution -loop-simplifycfg -loop-simplify -aa -loop-accesses -loop-load-elim -lcssa -indvars -loop-idiom -loop-deletion -memdep -gvn -memdep -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -domtree -memdep -dse -dce -bdce -adce -die -simplifycfg -instcombine -strip-dead-prototypes -globaldce -constmerge -constprop -instnamer -domtree -instcombine -instcombine -tbaa -targetlibinfo -basicaa -domtree -simplifycfg -domtree -early-cse -lower-expect -targetlibinfo -tbaa -basicaa -globalopt -mem2reg -instcombine -simplifycfg -basiccg -domtree -early-cse -lazy-value-info -jump-threading -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -domtree -loops -loop-simplify -lcssa -loop-rotate -licm -lcssa -instcombine -scalar-evolution -loop-simplifycfg -loop-simplify -aa -loop-accesses -loop-load-elim -lcssa -indvars -loop-idiom -loop-deletion -memdep -gvn -memdep -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -domtree -memdep -dse -dce -bdce -adce -die -simplifycfg -instcombine -strip-dead-prototypes -globaldce -constmerge -constprop -instnamer -domtree -instcombine -simple-types -stack-ptr-op-remove -inst-opt -idioms -global-to-local -dead-global-assign -instcombine -phi2seq -value-protect -disable-inlining -disable-simplify-libcalls -config-path from_holdec/dmi/dmic-a10/ia32_elf/subject.c.json -o from_holdec/dmi/dmic-a10/ia32_elf/subject.c.backend.bc
-[0;1;33mRunning phase: Initialization ( 0.01s )[0m
-[0;1;33mRunning phase: LLVM ( 0.02s )[0m
-[0;1;33mRunning phase: Providers initialization ( 0.02s )[0m
-[0;1;33mRunning phase: Input binary to LLVM IR decoding ( 0.06s )[0m
-[0;1;33mRunning phase: LLVM ( 0.06s )[0m
-[0;1;33mRunning phase: Main function identification optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Libgcc idioms optimization ( 0.06s )[0m
-[0;1;33mRunning phase: LLVM instruction optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Assembly register optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Conditional branch optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Syscalls optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Stack optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Constants optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Function parameters and returns optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Register localization optimization ( 0.06s )[0m
-[0;1;33mRunning phase: LLVM instruction optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Simple types recovery optimization ( 0.06s )[0m
-[0;1;33mRunning phase: Disassembly generation ( 0.07s )[0m
-[0;1;33mRunning phase: Assembly mapping instruction removal ( 0.07s )[0m
-[0;1;33mRunning phase: C++ class hierarchy optimization ( 0.07s )[0m
-[0;1;33mRunning phase: Selected functions optimization ( 0.07s )[0m
-[0;1;33mRunning phase: Unreachable functions optimization ( 0.07s )[0m
-[0;1;33mRunning phase: LLVM instruction optimization ( 0.07s )[0m
-[0;1;33mRunning phase: Value protection optimization ( 0.07s )[0m
-[0;1;33mRunning phase: LLVM ( 0.07s )[0m
-[0;1;33mRunning phase: Simple types recovery optimization ( 0.08s )[0m
-[0;1;33mRunning phase: Stack pointer operations optimization ( 0.08s )[0m
-[0;1;33mRunning phase: LLVM instruction optimization ( 0.08s )[0m
-[0;1;33mRunning phase: Instruction idioms optimization ( 0.08s )[0m
-[0;1;33mRunning phase: Global to local optimization ( 0.08s )[0m
-[0;1;33mRunning phase: Dead global assign optimization ( 0.08s )[0m
-[0;1;33mRunning phase: LLVM ( 0.08s )[0m
-[0;1;33mRunning phase: Phi2Seq optimization ( 0.08s )[0m
-[0;1;33mRunning phase: Value protection optimization ( 0.08s )[0m
-[0;1;33mRunning phase: LLVM ( 0.08s )[0m
-[0;1;33mRunning phase: Bitcode Writer ( 0.08s )[0m
-[0;1;33mRunning phase: Assembly Writer ( 0.08s )[0m
-[0;1;33mRunning phase: Cleanup ( 0.09s )[0m
-
-##### Decompiling from_holdec/dmi/dmic-a10/ia32_elf/subject.c.backend.bc into from_holdec/dmi/dmic-a10/ia32_elf/subject.c...
-RUN: RETDECDIR/bin/retdec-llvmir2hll -target-hll=c -var-renamer=readable -var-name-gen=fruit -var-name-gen-prefix= -call-info-obtainer=optim -arithm-expr-evaluator=c -validate-module -llvmir2bir-converter=orig -o from_holdec/dmi/dmic-a10/ia32_elf/subject.c from_holdec/dmi/dmic-a10/ia32_elf/subject.c.backend.bc -enable-debug -emit-debug-comments -config-path=from_holdec/dmi/dmic-a10/ia32_elf/subject.c.json
-[0;1;33mRunning phase: initialization ( 0.02s )[0m
-[0;1;33m -> creating the used HLL writer [c] ( 0.02s )[0m
-[0;1;33m -> creating the used alias analysis [simple] ( 0.02s )[0m
-[0;1;33m -> creating the used call info obtainer [optim] ( 0.02s )[0m
-[0;1;33m -> creating the used evaluator of arithmetical expressions [c] ( 0.02s )[0m
-[0;1;33m -> creating the used variable names generator [fruit] ( 0.02s )[0m
-[0;1;33m -> creating the used variable renamer [readable] ( 0.02s )[0m
-[0;1;33m -> creating the used LLVM IR to BIR converter [orig] ( 0.02s )[0m
-[0;1;33m -> creating the used semantics [libc,gcc-general,win-api] ( 0.02s )[0m
-[0;1;33m -> loading the input config ( 0.02s )[0m
-[0;1;33mRunning phase: conversion of LLVM IR into BIR ( 0.02s )[0m
-[0;1;33m -> ordering dependent PHI nodes ( 0.02s )[0m
-[0;1;33m -> converting sum5() ( 0.02s )[0m
-[0;1;33m -> converting main() ( 0.02s )[0m
-[0;1;33mRunning phase: removing functions prefixed with [__decompiler_undefined_function_] ( 0.02s )[0m
-[0;1;33mRunning phase: removing functions from standard libraries ( 0.02s )[0m
-[0;1;33mRunning phase: removing code that is not reachable in a CFG ( 0.02s )[0m
-[0;1;33mRunning phase: signed/unsigned types fixing ( 0.02s )[0m
-[0;1;33mRunning phase: converting LLVM intrinsic functions to standard functions ( 0.02s )[0m
-[0;1;33mRunning phase: obtaining debug information ( 0.02s )[0m
-[0;1;33mRunning phase: alias analysis [simple] ( 0.02s )[0m
-[0;1;33mRunning phase: optimizations [normal] ( 0.02s )[0m
-[0;1;33m -> running RemoveUselessCastsOptimizer ( 0.02s )[0m
-[0;1;33m -> running UnusedGlobalVarOptimizer ( 0.02s )[0m
-[0;1;33m -> running DeadLocalAssignOptimizer ( 0.02s )[0m
-[0;1;33m -> running SimpleCopyPropagationOptimizer ( 0.02s )[0m
-[0;1;33m -> running CopyPropagationOptimizer ( 0.02s )[0m
-[0;1;33m -> running AuxiliaryVariablesOptimizer ( 0.02s )[0m
-[0;1;33m -> running SimplifyArithmExprOptimizer ( 0.02s )[0m
-[0;1;33m -> running IfStructureOptimizer ( 0.02s )[0m
-[0;1;33m -> running LoopLastContinueOptimizer ( 0.02s )[0m
-[0;1;33m -> running PreWhileTrueLoopConvOptimizer ( 0.02s )[0m
-[0;1;33m -> running WhileTrueToForLoopOptimizer ( 0.02s )[0m
-[0;1;33m -> running WhileTrueToWhileCondOptimizer ( 0.02s )[0m
-[0;1;33m -> running IfBeforeLoopOptimizer ( 0.02s )[0m
-[0;1;33m -> running LLVMIntrinsicsOptimizer ( 0.02s )[0m
-[0;1;33m -> running VoidReturnOptimizer ( 0.02s )[0m
-[0;1;33m -> running BreakContinueReturnOptimizer ( 0.02s )[0m
-[0;1;33m -> running BitShiftOptimizer ( 0.02s )[0m
-[0;1;33m -> running DerefAddressOptimizer ( 0.02s )[0m
-[0;1;33m -> running EmptyArrayToStringOptimizer ( 0.02s )[0m
-[0;1;33m -> running BitOpToLogOpOptimizer ( 0.02s )[0m
-[0;1;33m -> running SimplifyArithmExprOptimizer ( 0.02s )[0m
-[0;1;33m -> running UnusedGlobalVarOptimizer ( 0.02s )[0m
-[0;1;33m -> running DeadLocalAssignOptimizer ( 0.02s )[0m
-[0;1;33m -> running SimpleCopyPropagationOptimizer ( 0.02s )[0m
-[0;1;33m -> running CopyPropagationOptimizer ( 0.02s )[0m
-[0;1;33m -> running SelfAssignOptimizer ( 0.02s )[0m
-[0;1;33m -> running VarDefForLoopOptimizer ( 0.02s )[0m
-[0;1;33m -> running VarDefStmtOptimizer ( 0.02s )[0m
-[0;1;33m -> running SimplifyArithmExprOptimizer ( 0.02s )[0m
-[0;1;33m -> running DeadCodeOptimizer ( 0.02s )[0m
-[0;1;33m -> running DerefToArrayIndexOptimizer ( 0.02s )[0m
-[0;1;33m -> running IfToSwitchOptimizer ( 0.02s )[0m
-[0;1;33m -> running CCastOptimizer ( 0.02s )[0m
-[0;1;33m -> running CArrayArgOptimizer ( 0.02s )[0m
-[0;1;33mRunning phase: variable renaming [readable] ( 0.02s )[0m
-[0;1;33mRunning phase: converting constants to symbolic names ( 0.02s )[0m
-[0;1;33mRunning phase: module validation ( 0.02s )[0m
-[0;1;33m -> running BreakOutsideLoopValidator ( 0.02s )[0m
-[0;1;33m -> running NoGlobalVarDefValidator ( 0.02s )[0m
-[0;1;33m -> running ReturnValidator ( 0.02s )[0m
-[0;1;33mRunning phase: emission of the target code [c] ( 0.02s )[0m
-[0;1;33mRunning phase: finalization ( 0.02s )[0m
-[0;1;33mRunning phase: cleanup ( 0.02s )[0m
-
-##### Done!
+Running phase: Initialization ( some time )
+Running phase: Providers initialization ( some time )
+Running phase: Input binary to LLVM IR decoding ( some time )
+Running phase: LLVM ( some time )
+Running phase: x86 address spaces optimization ( some time )
+Running phase: x87 fpu register analysis ( some time )
+Running phase: Main function identification optimization ( some time )
+Running phase: Libgcc idioms optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Conditional branch optimization ( some time )
+Running phase: Syscalls optimization ( some time )
+Running phase: Stack optimization ( some time )
+Running phase: Constants optimization ( some time )
+Running phase: Function parameters and returns optimization ( some time )
+Running phase: LLVM instruction optimization using RDA ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Disassembly generation ( some time )
+Running phase: Assembly mapping instruction removal ( some time )
+Running phase: C++ class hierarchy optimization ( some time )
+Running phase: Selected functions optimization ( some time )
+Running phase: Unreachable functions optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Make all registers local ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Stack pointer operations optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: Phi removal ( some time )
+Running phase: LLVM ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: Generate the current LLVM IR ( some time )
+Running phase: Generate the current bitcode ( some time )
+Running phase: LLVM IR -> HLL ( some time )
+Running phase: initialization ( some time )
+ -> loading the input config ( some time )
+ -> creating the used HLL writer [c] ( some time )
+ -> creating the used alias analysis [simple] ( some time )
+ -> creating the used call info obtainer [optim] ( some time )
+ -> creating the used evaluator of arithmetical expressions [c] ( some time )
+ -> creating the used variable names generator [fruit] ( some time )
+ -> creating the used variable renamer [readable] ( some time )
+ -> creating the used semantics [libc,gcc-general,win-api] ( some time )
+Running phase: conversion of LLVM IR into BIR ( some time )
+ -> converting global variables ( some time )
+ -> converting function sum5 ( some time )
+ -> converting function main ( some time )
+Running phase: removing functions from standard libraries ( some time )
+Running phase: removing code that is not reachable in a CFG ( some time )
+Running phase: signed/unsigned types fixing ( some time )
+Running phase: converting LLVM intrinsic functions to standard functions ( some time )
+Running phase: obtaining debug information ( some time )
+Running phase: alias analysis [simple] ( some time )
+Running phase: optimizations [normal] ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running RemoveUselessCastsOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+ -> running CopyPropagationOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running IfStructureOptimizer ( some time )
+ -> running LoopLastContinueOptimizer ( some time )
+ -> running PreWhileTrueLoopConvOptimizer ( some time )
+ -> running WhileTrueToForLoopOptimizer ( some time )
+ -> running WhileTrueToWhileCondOptimizer ( some time )
+ -> running IfBeforeLoopOptimizer ( some time )
+ -> running LLVMIntrinsicsOptimizer ( some time )
+ -> running VoidReturnOptimizer ( some time )
+ -> running BreakContinueReturnOptimizer ( some time )
+ -> running BitShiftOptimizer ( some time )
+ -> running DerefAddressOptimizer ( some time )
+ -> running EmptyArrayToStringOptimizer ( some time )
+ -> running BitOpToLogOpOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+ -> running CopyPropagationOptimizer ( some time )
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )

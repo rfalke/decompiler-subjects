@@ -1,0 +1,445 @@
+Running phase: Unpacking ( some time )
+No matching plugins found for 'GCC 4.6.3'
+No matching plugins found for 'GCC 4.4.5'
+Running phase: Initialization ( some time )
+Running phase: Providers initialization ( some time )
+Running phase: Input binary to LLVM IR decoding ( some time )
+Running phase: LLVM ( some time )
+Running phase: x86 address spaces optimization ( some time )
+Running phase: x87 fpu register analysis ( some time )
+Running phase: Main function identification optimization ( some time )
+Running phase: Libgcc idioms optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Conditional branch optimization ( some time )
+Running phase: Syscalls optimization ( some time )
+Running phase: Stack optimization ( some time )
+Running phase: Constants optimization ( some time )
+Running phase: Function parameters and returns optimization ( some time )
+Running phase: LLVM instruction optimization using RDA ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Disassembly generation ( some time )
+Running phase: Assembly mapping instruction removal ( some time )
+Running phase: C++ class hierarchy optimization ( some time )
+Running phase: Selected functions optimization ( some time )
+Running phase: Unreachable functions optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Make all registers local ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Stack pointer operations optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: Phi removal ( some time )
+Running phase: LLVM ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: Generate the current LLVM IR ( some time )
+Running phase: Generate the current bitcode ( some time )
+Running phase: LLVM IR -> HLL ( some time )
+Running phase: initialization ( some time )
+ -> loading the input config ( some time )
+ -> creating the used HLL writer [c] ( some time )
+ -> creating the used alias analysis [simple] ( some time )
+ -> creating the used call info obtainer [optim] ( some time )
+ -> creating the used evaluator of arithmetical expressions [c] ( some time )
+ -> creating the used variable names generator [fruit] ( some time )
+ -> creating the used variable renamer [readable] ( some time )
+ -> creating the used semantics [libc,gcc-general,win-api] ( some time )
+Running phase: conversion of LLVM IR into BIR ( some time )
+ -> converting global variables ( some time )
+ -> converting function function_8048ec4 ( some time )
+ -> converting function function_8048ee4 ( some time )
+ -> converting function function_8048ef4 ( some time )
+ -> converting function function_8048f54 ( some time )
+ -> converting function function_8048fd4 ( some time )
+ -> converting function function_8049154 ( some time )
+ -> converting function function_8049164 ( some time )
+ -> converting function function_8049204 ( some time )
+ -> converting function function_8049254 ( some time )
+ -> converting function function_80492a4 ( some time )
+ -> converting function exit_program ( some time )
+ -> converting function usage ( some time )
+ -> converting function load_rc ( some time )
+ -> converting function set_signals ( some time )
+ -> converting function main_io_loop ( some time )
+ -> converting function main ( some time )
+ -> converting function init_gvars ( some time )
+ -> converting function next_sign ( some time )
+ -> converting function found_var ( some time )
+ -> converting function min_level ( some time )
+ -> converting function level_plus_count ( some time )
+ -> converting function level1_plus_count ( some time )
+ -> converting function exp_is_numeric ( some time )
+ -> converting function isdelimiter ( some time )
+ -> converting function strcmp_tospace ( some time )
+ -> converting function is_all ( some time )
+ -> converting function skip_space ( some time )
+ -> converting function skip_param ( some time )
+ -> converting function decstrtol ( some time )
+ -> converting function return_result ( some time )
+ -> converting function get_string ( some time )
+ -> converting function get_expr ( some time )
+ -> converting function error_huge ( some time )
+ -> converting function subst_var_with_exp ( some time )
+ -> converting function alloc_espace ( some time )
+ -> converting function clean_up ( some time )
+ -> converting function get_screen_size ( some time )
+ -> converting function warning ( some time )
+ -> converting function check_divide_by_zero ( some time )
+ -> converting function alloc_next_espace ( some time )
+ -> converting function error ( some time )
+ -> converting function extra_characters ( some time )
+ -> converting function current_not_defined ( some time )
+ -> converting function next_espace ( some time )
+ -> converting function check_err ( some time )
+ -> converting function error_bug ( some time )
+ -> converting function clear_all ( some time )
+ -> converting function init_mem ( some time )
+ -> converting function set_sign_array ( some time )
+ -> converting function flip ( some time )
+ -> converting function g_of_f ( some time )
+ -> converting function quad_solve ( some time )
+ -> converting function solve_sub ( some time )
+ -> converting function solve_espace ( some time )
+ -> converting function display_command ( some time )
+ -> converting function parse_var2 ( some time )
+ -> converting function shell_out ( some time )
+ -> converting function parse ( some time )
+ -> converting function process_parse ( some time )
+ -> converting function process ( some time )
+ -> converting function display_process ( some time )
+ -> converting function read_examples ( some time )
+ -> converting function help_cmd ( some time )
+ -> converting function var_is_const ( some time )
+ -> converting function subst_constants ( some time )
+ -> converting function my_strlcpy ( some time )
+ -> converting function remove_trailing_spaces ( some time )
+ -> converting function set_error_level ( some time )
+ -> converting function binary_parenthesize ( some time )
+ -> converting function give_priority ( some time )
+ -> converting function handle_negate ( some time )
+ -> converting function isvarchar ( some time )
+ -> converting function parse_var ( some time )
+ -> converting function put_up_arrow ( some time )
+ -> converting function parse_section ( some time )
+ -> converting function str_tolower ( some time )
+ -> converting function parse_expr ( some time )
+ -> converting function parse_equation ( some time )
+ -> converting function skip_no ( some time )
+ -> converting function output_options ( some time )
+ -> converting function save_set_options ( some time )
+ -> converting function version_report ( some time )
+ -> converting function pause_cmd ( some time )
+ -> converting function output_current_directory ( some time )
+ -> converting function set_options ( some time )
+ -> converting function read_sub ( some time )
+ -> converting function read_file ( some time )
+ -> converting function calculate_cmd ( some time )
+ -> converting function org_up_level ( some time )
+ -> converting function org_recurse ( some time )
+ -> converting function div_imaginary ( some time )
+ -> converting function simp2_power ( some time )
+ -> converting function simp_constant_power ( some time )
+ -> converting function order_recurse ( some time )
+ -> converting function reorder ( some time )
+ -> converting function elim_sign ( some time )
+ -> converting function simp_pp ( some time )
+ -> converting function compare_recurse ( some time )
+ -> converting function se_compare ( some time )
+ -> converting function elim_k ( some time )
+ -> converting function calc ( some time )
+ -> converting function const_recurse ( some time )
+ -> converting function combine_constants ( some time )
+ -> converting function organize ( some time )
+ -> converting function elim_loop ( some time )
+ -> converting function simp_loop ( some time )
+ -> converting function factorv ( some time )
+ -> converting function simp_ssub ( some time )
+ -> converting function simp_side ( some time )
+ -> converting function calc_simp ( some time )
+ -> converting function simps_side ( some time )
+ -> converting function fpower_recurse ( some time )
+ -> converting function factor_power ( some time )
+ -> converting function ftimes_recurse ( some time )
+ -> converting function factor_times ( some time )
+ -> converting function big_fplus ( some time )
+ -> converting function fplus_recurse ( some time )
+ -> converting function factor_plus ( some time )
+ -> converting function subtract_itself ( some time )
+ -> converting function factor_divide ( some time )
+ -> converting function sf_recurse ( some time )
+ -> converting function group_recurse ( some time )
+ -> converting function group_proc ( some time )
+ -> converting function super_factor ( some time )
+ -> converting function fractions_and_group ( some time )
+ -> converting function make_fractions_and_group ( some time )
+ -> converting function patch_root_div ( some time )
+ -> converting function sub_ufactor ( some time )
+ -> converting function uf_repeat ( some time )
+ -> converting function uf_allpower ( some time )
+ -> converting function uf_power ( some time )
+ -> converting function uf_times ( some time )
+ -> converting function ufactor ( some time )
+ -> converting function uf_tsimp ( some time )
+ -> converting function uf_simp ( some time )
+ -> converting function term_value ( some time )
+ -> converting function find_greatest_power ( some time )
+ -> converting function find_highest_count ( some time )
+ -> converting function poly_div ( some time )
+ -> converting function do_gcd ( some time )
+ -> converting function poly2_gcd ( some time )
+ -> converting function get_constant ( some time )
+ -> converting function parse_complex ( some time )
+ -> converting function complex_root_simp ( some time )
+ -> converting function approximate_complex_roots ( some time )
+ -> converting function complex_fixup ( some time )
+ -> converting function complex_mult ( some time )
+ -> converting function complex_div ( some time )
+ -> converting function complex_exp ( some time )
+ -> converting function complex_log ( some time )
+ -> converting function complex_pow ( some time )
+ -> converting function var_name ( some time )
+ -> converting function trim_zeros ( some time )
+ -> converting function list_var ( some time )
+ -> converting function set_color ( some time )
+ -> converting function flist_recurse ( some time )
+ -> converting function list_string_sub ( some time )
+ -> converting function list_proc ( some time )
+ -> converting function list_debug ( some time )
+ -> converting function list1_sub ( some time )
+ -> converting function default_color ( some time )
+ -> converting function flist_sub ( some time )
+ -> converting function flist_equation ( some time )
+ -> converting function list_sub ( some time )
+ -> converting function reset_attr ( some time )
+ -> converting function gcd ( some time )
+ -> converting function gcd_verified ( some time )
+ -> converting function my_round ( some time )
+ -> converting function f_to_fraction ( some time )
+ -> converting function make_fractions ( some time )
+ -> converting function multiply_out_unique ( some time )
+ -> converting function fc_recurse ( some time )
+ -> converting function factor_constants ( some time )
+ -> converting function try_factor ( some time )
+ -> converting function factor_one ( some time )
+ -> converting function factor_int ( some time )
+ -> converting function list_factor ( some time )
+ -> converting function factor_int_sub ( some time )
+Running phase: removing functions from standard libraries ( some time )
+Running phase: removing code that is not reachable in a CFG ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__printf_chk(1, "Secure ")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804e4be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d2bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = *(IntToPtrCastExpr<ptr>((storemerge19_in311_reload + 24)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = tlhs` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_84_0269 = (edi_0277_reload + 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var244 = *(IntToPtrCastExpr<ptr>((ebx_8_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804def9` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var35 = __ctype_b_loc()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8050d42` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80512ac` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805ac7a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var47, var62)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var31 = __frontend_reg_load_fpr(var9)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = *(IntToPtrCastExpr<ptr>((p1 + 8)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805b925` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var165 = *(IntToPtrCastExpr<ptr>((ebx_6_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `error_huge()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_0_reg2mem = var27` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80649e0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `oflag__2d_552_5_reg2mem = (oflag__2d_552_3_reload + 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070d99` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var252 = __frontend_reg_load_fpr(fpu_stat_TOP_2_reload)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var159 = __frontend_reg_load_fpr(var130)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var227 = __frontend_reg_load_fpr(_pre_2d_phi339_reload)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = eax_9_reg2mem` -> skipping this edge
+Running phase: signed/unsigned types fixing ( some time )
+Running phase: converting LLVM intrinsic functions to standard functions ( some time )
+Running phase: obtaining debug information ( some time )
+Running phase: alias analysis [simple] ( some time )
+Running phase: optimizations [normal] ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running RemoveUselessCastsOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__printf_chk(1, "Secure ")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804e4be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d2bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = *(IntToPtrCastExpr<ptr>((storemerge19_in311_reload + 24)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = tlhs` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_84_0269 = (edi_0277_reload + 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var244 = *(IntToPtrCastExpr<ptr>((ebx_8_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804def9` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8050d42` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80512ac` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805ac7a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var47, var62)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = *(IntToPtrCastExpr<ptr>((p1 + 8)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805b925` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var165 = *(IntToPtrCastExpr<ptr>((ebx_6_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `error_huge()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80649e0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `oflag__2d_552_5_reg2mem = (oflag__2d_552_3_reload + 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070d99` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var252 = __frontend_reg_load_fpr(fpu_stat_TOP_2_reload)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var159 = __frontend_reg_load_fpr(var130)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var227 = __frontend_reg_load_fpr(_pre_2d_phi339_reload)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = eax_9_reg2mem` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__printf_chk(1, "Secure ")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804e4be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d2bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = *(IntToPtrCastExpr<ptr>((storemerge19_in311_reload + 24)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = tlhs` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_84_0269 = (edi_0277_reload + 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var244 = *(IntToPtrCastExpr<ptr>((ebx_8_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804def9` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8050d42` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80512ac` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805ac7a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var47, var62)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var57 = *(IntToPtrCastExpr<ptr>((p1 + 8)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805b925` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var165 = *(IntToPtrCastExpr<ptr>((ebx_6_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `error_huge()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80649e0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `oflag__2d_552_5_reg2mem = (oflag__2d_552_3_reload + 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070d99` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var190, __frontend_reg_load_fpr(fpu_stat_TOP_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(fpu_stat_TOP_0_reload, __frontend_reg_load_fpr(var130))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(_pre_2d_phi339_reload, __frontend_reg_load_fpr(_pre_2d_phi339_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = eax_9_reg2mem` -> skipping this edge
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running IfStructureOptimizer ( some time )
+ -> running LoopLastContinueOptimizer ( some time )
+ -> running PreWhileTrueLoopConvOptimizer ( some time )
+ -> running WhileTrueToForLoopOptimizer ( some time )
+ -> running WhileTrueToWhileCondOptimizer ( some time )
+ -> running IfBeforeLoopOptimizer ( some time )
+ -> running LLVMIntrinsicsOptimizer ( some time )
+ -> running VoidReturnOptimizer ( some time )
+ -> running BreakContinueReturnOptimizer ( some time )
+ -> running BitShiftOptimizer ( some time )
+ -> running DerefAddressOptimizer ( some time )
+ -> running EmptyArrayToStringOptimizer ( some time )
+ -> running BitOpToLogOpOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__printf_chk(1, "Secure ")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804e4be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d2bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d3a2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = tlhs` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_84_0269 = (edi_0277_reload + 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var244 = *(IntToPtrCastExpr<ptr>((ebx_8_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `uf_flag__2d_92_1_reg2mem = uf_flag__2d_92_0322_reload` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804def9` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (*(IntToPtrCastExpr<ptr>((eax_9286_reload + 8))) == v__2d_80_0_reg2mem):` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8050d42` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `warning("Multifactorial not implemented, using x!! = (x!)!")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80512ac` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805ac7a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var47, var62)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805b925` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var165 = *(IntToPtrCastExpr<ptr>((ebx_6_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `error_huge()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_3_reg2mem = var40` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80649e0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `oflag__2d_552_5_reg2mem = (oflag__2d_552_3_reload + 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070d99` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var190, __frontend_reg_load_fpr(fpu_stat_TOP_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(fpu_stat_TOP_0_reload, __frontend_reg_load_fpr(var130))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(_pre_2d_phi339_reload, __frontend_reg_load_fpr(_pre_2d_phi339_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807102d_3` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__printf_chk(1, "Secure ")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804e4be` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d2bc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804d3a2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = tlhs` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_84_0269 = (edi_0277_reload + 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var244 = *(IntToPtrCastExpr<ptr>((ebx_8_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `uf_flag__2d_92_1_reg2mem = uf_flag__2d_92_0322_reload` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804def9` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (*(IntToPtrCastExpr<ptr>((eax_9286_reload + 8))) == v__2d_80_0_reg2mem):` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8050d42` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `warning("Multifactorial not implemented, using x!! = (x!)!")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80512ac` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805ac7a` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var47, var62)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805b925` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var165 = *(IntToPtrCastExpr<ptr>((ebx_6_reload + 36)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `error_huge()` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_3_reg2mem = var40` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80649e0` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `oflag__2d_552_5_reg2mem = (oflag__2d_552_3_reload + 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8070d99` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var190, __frontend_reg_load_fpr(fpu_stat_TOP_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(fpu_stat_TOP_0_reload, __frontend_reg_load_fpr(var130))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(_pre_2d_phi339_reload, __frontend_reg_load_fpr(_pre_2d_phi339_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x807102d_3` -> skipping this edge
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+Warning: In exp_is_numeric(), found `break` outside of a loop or a switch statement.
+Warning: In skip_param(), found `break` outside of a loop or a switch statement.
+Warning: In g_of_f(), found `break` outside of a loop or a switch statement.
+Warning: In help_cmd(), found `break` outside of a loop or a switch statement.
+Warning: In org_recurse(), found `break` outside of a loop or a switch statement.
+Warning: In ftimes_recurse(), found `break` outside of a loop or a switch statement.
+Warning: In group_recurse(), found `break` outside of a loop or a switch statement.
+Warning: In term_value(), found `break` outside of a loop or a switch statement.
+Warning: In find_greatest_power(), found `break` outside of a loop or a switch statement.
+Warning: In complex_root_simp(), found `break` outside of a loop or a switch statement.
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )

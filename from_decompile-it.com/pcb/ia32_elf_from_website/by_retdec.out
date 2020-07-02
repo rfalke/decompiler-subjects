@@ -1,1 +1,533 @@
-scripts/update_retdec_helper.sh: error: Time limit exceeded.
+Running phase: Unpacking ( some time )
+No matching plugins found for 'GCC 4.4.5'
+No matching plugins found for 'GCC 4.6.3'
+Running phase: Initialization ( some time )
+Running phase: Providers initialization ( some time )
+Running phase: Input binary to LLVM IR decoding ( some time )
+Running phase: LLVM ( some time )
+Running phase: x86 address spaces optimization ( some time )
+Running phase: x87 fpu register analysis ( some time )
+Running phase: Main function identification optimization ( some time )
+Running phase: Libgcc idioms optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Conditional branch optimization ( some time )
+Running phase: Syscalls optimization ( some time )
+Running phase: Stack optimization ( some time )
+Running phase: Constants optimization ( some time )
+Running phase: Function parameters and returns optimization ( some time )
+Running phase: LLVM instruction optimization using RDA ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Disassembly generation ( some time )
+Running phase: Assembly mapping instruction removal ( some time )
+Running phase: C++ class hierarchy optimization ( some time )
+Running phase: Selected functions optimization ( some time )
+Running phase: Unreachable functions optimization ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Make all registers local ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Simple types recovery optimization ( some time )
+Running phase: Stack pointer operations optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: LLVM ( some time )
+Running phase: LLVM instruction optimization ( some time )
+Running phase: Instruction idioms optimization ( some time )
+Running phase: Phi removal ( some time )
+Running phase: LLVM ( some time )
+Running phase: Value protection optimization ( some time )
+Running phase: Generate the current LLVM IR ( some time )
+Running phase: Generate the current bitcode ( some time )
+Running phase: LLVM IR -> HLL ( some time )
+Running phase: initialization ( some time )
+ -> loading the input config ( some time )
+ -> creating the used HLL writer [c] ( some time )
+ -> creating the used alias analysis [simple] ( some time )
+ -> creating the used call info obtainer [optim] ( some time )
+ -> creating the used evaluator of arithmetical expressions [c] ( some time )
+ -> creating the used variable names generator [fruit] ( some time )
+ -> creating the used variable renamer [readable] ( some time )
+ -> creating the used semantics [libc,gcc-general,win-api] ( some time )
+Running phase: conversion of LLVM IR into BIR ( some time )
+ -> converting global variables ( some time )
+ -> converting function function_805e978 ( some time )
+ -> converting function function_805ecf8 ( some time )
+ -> converting function function_805edd8 ( some time )
+ -> converting function function_805ef38 ( some time )
+ -> converting function function_805efc8 ( some time )
+ -> converting function function_805eff8 ( some time )
+ -> converting function function_805f098 ( some time )
+ -> converting function function_805f2b8 ( some time )
+ -> converting function function_805f448 ( some time )
+ -> converting function function_805fc48 ( some time )
+ -> converting function function_805fcf8 ( some time )
+ -> converting function function_80600e8 ( some time )
+ -> converting function function_8060118 ( some time )
+ -> converting function function_8060718 ( some time )
+ -> converting function function_80607f8 ( some time )
+ -> converting function function_8060908 ( some time )
+ -> converting function function_8060d88 ( some time )
+ -> converting function register_action_action_list ( some time )
+ -> converting function AdjustAttachedObjects ( some time )
+ -> converting function register_rotate_action_list ( some time )
+ -> converting function InitBuffers ( some time )
+ -> converting function SetBufferBoundingBox ( some time )
+ -> converting function ChangePCBSize ( some time )
+ -> converting function register_command_action_list ( some time )
+ -> converting function pcb_colors_from_settings ( some time )
+ -> converting function CreateNewAttribute ( some time )
+ -> converting function CreateNewConnection ( some time )
+ -> converting function CreateNewNet ( some time )
+ -> converting function CreateDefaultFont ( some time )
+ -> converting function CreateNewLineInSymbol ( some time )
+ -> converting function CreateNewArcInElement ( some time )
+ -> converting function CreateNewPad ( some time )
+ -> converting function CreateNewPin ( some time )
+ -> converting function CreateNewLineInElement ( some time )
+ -> converting function AddTextToElement ( some time )
+ -> converting function CreateNewElement ( some time )
+ -> converting function CreateNewPointInPolygon ( some time )
+ -> converting function CreateNewPolygon ( some time )
+ -> converting function CreateNewText ( some time )
+ -> converting function CreateNewPolygonFromRectangle ( some time )
+ -> converting function CreateNewArcOnLayer ( some time )
+ -> converting function CreateNewRat ( some time )
+ -> converting function CreateNewLineOnLayer ( some time )
+ -> converting function CreateNewVia ( some time )
+ -> converting function CreateNewPCBPost ( some time )
+ -> converting function CreateNewBuffer ( some time )
+ -> converting function CreateNewPCB ( some time )
+ -> converting function XORPolygon ( some time )
+ -> converting function XORDrawElement ( some time )
+ -> converting function DrawMark ( some time )
+ -> converting function InitCrosshair ( some time )
+ -> converting function FitCrosshairIntoGrid ( some time )
+ -> converting function MoveCrosshairRelative ( some time )
+ -> converting function SetCrosshairRange ( some time )
+ -> converting function XORDrawAttachedArc ( some time )
+ -> converting function XORDrawAttachedLine ( some time )
+ -> converting function DrawAttached ( some time )
+ -> converting function CrosshairOff ( some time )
+ -> converting function HideCrosshair ( some time )
+ -> converting function CrosshairOn ( some time )
+ -> converting function RestoreCrosshair ( some time )
+ -> converting function register_djopt_action_list ( some time )
+ -> converting function register_djopt_flag_list ( some time )
+ -> converting function SetPVColor ( some time )
+ -> converting function DrawSpecialPolygon ( some time )
+ -> converting function DrawPinOrViaLowLevel ( some time )
+ -> converting function DrawLineLowLevel ( some time )
+ -> converting function DrawArcLowLevel ( some time )
+ -> converting function DrawLine ( some time )
+ -> converting function DrawRat ( some time )
+ -> converting function DrawArc ( some time )
+ -> converting function DrawPadLowLevel ( some time )
+ -> converting function DrawPolygon ( some time )
+ -> converting function DrawTextLowLevel ( some time )
+ -> converting function DrawPinOrViaNameLowLevel ( some time )
+ -> converting function DrawPin ( some time )
+ -> converting function DrawVia ( some time )
+ -> converting function DrawPadNameLowLevel ( some time )
+ -> converting function DrawPad ( some time )
+ -> converting function Draw ( some time )
+ -> converting function Message ( some time )
+ -> converting function MyFatal ( some time )
+ -> converting function OpendirErrorMessage ( some time )
+ -> converting function PopenErrorMessage ( some time )
+ -> converting function OpenErrorMessage ( some time )
+ -> converting function PreLoadElementPCB ( some time )
+ -> converting function EnableAutosave ( some time )
+ -> converting function sort_library ( some time )
+ -> converting function RemoveTMPData ( some time )
+ -> converting function WritePCBInfoHeader ( some time )
+ -> converting function PrintQuotedString ( some time )
+ -> converting function WriteViaData ( some time )
+ -> converting function WriteLayerData ( some time )
+ -> converting function WriteElementData ( some time )
+ -> converting function WritePCB ( some time )
+ -> converting function WritePCBFile ( some time )
+ -> converting function SaveTMPData ( some time )
+ -> converting function SaveInTMP ( some time )
+ -> converting function EmergencySave ( some time )
+ -> converting function PostLoadElementPCB ( some time )
+ -> converting function LoadPCB ( some time )
+ -> converting function ParseLibraryTree ( some time )
+ -> converting function ReadLibraryContents ( some time )
+ -> converting function ResetFoundLinesAndPolygons ( some time )
+ -> converting function ResetFoundPinsViasAndPads ( some time )
+ -> converting function register_flags_flag_list ( some time )
+ -> converting function register_fontmode_action_list ( some time )
+ -> converting function AdjustInsertPoint ( some time )
+ -> converting function FortyFiveLine ( some time )
+ -> converting function AdjustAttachedLine ( some time )
+ -> converting function AdjustTwoLine ( some time )
+ -> converting function drc_lines ( some time )
+ -> converting function EnforceLineDRC ( some time )
+ -> converting function lrealpath ( some time )
+ -> converting function print_defaults_1 ( some time )
+ -> converting function u ( some time )
+ -> converting function usage_attr ( some time )
+ -> converting function usage_hid ( some time )
+ -> converting function usage ( some time )
+ -> converting function print_version ( some time )
+ -> converting function copyright ( some time )
+ -> converting function register_main_attribute_list ( some time )
+ -> converting function main ( some time )
+ -> converting function SetPinBoundingBox ( some time )
+ -> converting function SetLineBoundingBox ( some time )
+ -> converting function SetPolygonBoundingBox ( some time )
+ -> converting function IsDataEmpty ( some time )
+ -> converting function GetDataBoundingBox ( some time )
+ -> converting function SetFontInfo ( some time )
+ -> converting function GetLayerNumber ( some time )
+ -> converting function GetGroupOfLayer ( some time )
+ -> converting function GetLayerGroupNumberByNumber ( some time )
+ -> converting function mem_any_set ( some time )
+ -> converting function c_strtod ( some time )
+ -> converting function c_dtostr ( some time )
+ -> converting function LayerGroupsToString ( some time )
+ -> converting function Concat ( some time )
+ -> converting function UniqueElementName ( some time )
+ -> converting function ParseGroupString ( some time )
+ -> converting function GetNum ( some time )
+ -> converting function RightAngles ( some time )
+ -> converting function GetArcEnds ( some time )
+ -> converting function SetArcBoundingBox ( some time )
+ -> converting function CreateQuotedString ( some time )
+ -> converting function GetWorkingDirectory ( some time )
+ -> converting function ChangeGroupVisibility ( some time )
+ -> converting function ResetStackAndVisibility ( some time )
+ -> converting function LayerStringToLayerStack ( some time )
+ -> converting function EvaluateFilename ( some time )
+ -> converting function ParseRouteString ( some time )
+ -> converting function SetTextBoundingBox ( some time )
+ -> converting function SetPadBoundingBox ( some time )
+ -> converting function SetElementBoundingBox ( some time )
+ -> converting function OldFlags ( some time )
+ -> converting function MakeFlags ( some time )
+ -> converting function register_move_action_list ( some time )
+ -> converting function MoveElementLowLevel ( some time )
+ -> converting function DSClearString ( some time )
+ -> converting function SaveFree ( some time )
+ -> converting function FreeAttributeListMemory ( some time )
+ -> converting function FreeLibraryMemory ( some time )
+ -> converting function FreeElementMemory ( some time )
+ -> converting function FreePolygonMemory ( some time )
+ -> converting function FreeDataMemory ( some time )
+ -> converting function FreePCBMemory ( some time )
+ -> converting function MyStrdup ( some time )
+ -> converting function MyRealloc ( some time )
+ -> converting function DSAddString ( some time )
+ -> converting function DSAddCharacter ( some time )
+ -> converting function GetLibraryEntryMemory ( some time )
+ -> converting function GetLibraryMenuMemory ( some time )
+ -> converting function GetPointMemoryInPolygon ( some time )
+ -> converting function MyCalloc ( some time )
+ -> converting function GetElementMemory ( some time )
+ -> converting function GetPolygonMemory ( some time )
+ -> converting function GetTextMemory ( some time )
+ -> converting function GetArcMemory ( some time )
+ -> converting function GetLineMemory ( some time )
+ -> converting function GetRatMemory ( some time )
+ -> converting function GetViaMemory ( some time )
+ -> converting function GetPadMemory ( some time )
+ -> converting function GetPinMemory ( some time )
+ -> converting function register_netlist_action_list ( some time )
+ -> converting function yy_flush_buffer ( some time )
+ -> converting function yy_delete_buffer ( some time )
+ -> converting function yy_fatal_error ( some time )
+ -> converting function yy_init_buffer ( some time )
+ -> converting function yy_create_buffer ( some time )
+ -> converting function yyrestart ( some time )
+ -> converting function Parse ( some time )
+ -> converting function ParseFont ( some time )
+ -> converting function ParsePCB ( some time )
+ -> converting function parse_number ( some time )
+ -> converting function yylex ( some time )
+ -> converting function yywrap ( some time )
+ -> converting function yyparse ( some time )
+ -> converting function original_poly ( some time )
+ -> converting function clearPoly ( some time )
+ -> converting function PlowsPolygon ( some time )
+ -> converting function InitClip ( some time )
+ -> converting function ClearFromPolygon ( some time )
+ -> converting function RestoreToPolygon ( some time )
+ -> converting function poly_InclContour ( some time )
+ -> converting function poly_InclVertex ( some time )
+ -> converting function poly_ExclVertex ( some time )
+ -> converting function poly_Create ( some time )
+ -> converting function poly_InvContour ( some time )
+ -> converting function poly_NewContour ( some time )
+ -> converting function poly_CreateNode ( some time )
+ -> converting function make_edge_tree ( some time )
+ -> converting function poly_PreContour ( some time )
+ -> converting function poly_DelContour ( some time )
+ -> converting function poly_FreeContours ( some time )
+ -> converting function poly_Free ( some time )
+ -> converting function register_puller_action_list ( some time )
+ -> converting function DestroyObject ( some time )
+ -> converting function RemovePCB ( some time )
+ -> converting function register_report_action_list ( some time )
+ -> converting function RotateBoxLowLevel ( some time )
+ -> converting function RotateLineLowLevel ( some time )
+ -> converting function adjust_bounds ( some time )
+ -> converting function __r_search ( some time )
+ -> converting function r_search ( some time )
+ -> converting function __r_delete ( some time )
+ -> converting function r_delete_entry ( some time )
+ -> converting function __r_destroy_tree ( some time )
+ -> converting function r_destroy_tree ( some time )
+ -> converting function find_clusters ( some time )
+ -> converting function __r_insert_node ( some time )
+ -> converting function r_insert_entry ( some time )
+ -> converting function r_create_tree ( some time )
+ -> converting function SearchObjectByID ( some time )
+ -> converting function SearchRatLineByLocation ( some time )
+ -> converting function SearchViaByLocation ( some time )
+ -> converting function SearchPinByLocation ( some time )
+ -> converting function SearchLineByLocation ( some time )
+ -> converting function SearchArcByLocation ( some time )
+ -> converting function SearchTextByLocation ( some time )
+ -> converting function SearchPolygonByLocation ( some time )
+ -> converting function SearchPadByLocation ( some time )
+ -> converting function SearchElementNameByLocation ( some time )
+ -> converting function SearchElementByLocation ( some time )
+ -> converting function SearchObjectByLocation ( some time )
+ -> converting function SearchScreen ( some time )
+ -> converting function ObjectOperation ( some time )
+ -> converting function SetViaSize ( some time )
+ -> converting function SetViaDrillingHole ( some time )
+ -> converting function SetKeepawayWidth ( some time )
+ -> converting function SetChangedFlag ( some time )
+ -> converting function SetLocalRef ( some time )
+ -> converting function SetCrosshairRangeToBuffer ( some time )
+ -> converting function SetMode ( some time )
+ -> converting function SetLineSize ( some time )
+ -> converting function alloc_buf ( some time )
+ -> converting function grow_layer_list ( some time )
+ -> converting function common_flags_to_string ( some time )
+ -> converting function pcbflags_to_string ( some time )
+ -> converting function flags_to_string ( some time )
+ -> converting function common_string_to_flags ( some time )
+ -> converting function string_to_pcbflags ( some time )
+ -> converting function string_to_flags ( some time )
+ -> converting function RestoreUndoSerialNumber ( some time )
+ -> converting function SaveUndoSerialNumber ( some time )
+ -> converting function GetUndoSlot ( some time )
+ -> converting function AddObjectToFlagUndoList ( some time )
+ -> converting function ClearUndoList ( some time )
+ -> converting function IncrementUndoSerialNumber ( some time )
+ -> converting function register_vendor_flag_list ( some time )
+ -> converting function register_vendor_action_list ( some time )
+ -> converting function vendorDrillMap ( some time )
+ -> converting function rematch ( some time )
+ -> converting function vendorIsElementMappable ( some time )
+ -> converting function hid_parse_actions ( some time )
+ -> converting function dump_string ( some time )
+ -> converting function hid_find_action ( some time )
+ -> converting function hid_actionv ( some time )
+ -> converting function hid_actionl ( some time )
+ -> converting function hid_action ( some time )
+ -> converting function dump_actions ( some time )
+ -> converting function print_actions ( some time )
+ -> converting function hid_register_actions_context ( some time )
+ -> converting function hid_register_actions ( some time )
+ -> converting function hid_find_flag ( some time )
+ -> converting function hid_get_flag ( some time )
+ -> converting function hid_register_flags ( some time )
+ -> converting function hid_find_printer ( some time )
+ -> converting function hid_enumerate ( some time )
+ -> converting function hid_register_attributes ( some time )
+ -> converting function hid_find_exporter ( some time )
+ -> converting function hid_find_gui ( some time )
+ -> converting function hid_load_settings_1 ( some time )
+ -> converting function hid_load_settings ( some time )
+ -> converting function hid_register_hid ( some time )
+ -> converting function hid_load_dir ( some time )
+ -> converting function hid_init ( some time )
+ -> converting function apply_default_hid ( some time )
+ -> converting function register_toporouter_action_list ( some time )
+ -> converting function pcb_dbus_connection_finish_with_mainloop ( some time )
+ -> converting function pcb_dbus_connection_setup_with_mainloop ( some time )
+ -> converting function pcb_dbus_finish ( some time )
+ -> converting function pcb_dbus_setup ( some time )
+ -> converting function register_ghid_main_flag_list ( some time )
+ -> converting function register_ghid_main_action_list ( some time )
+ -> converting function hid_gtk_init ( some time )
+ -> converting function register_ghid_netlist_action_list ( some time )
+ -> converting function register_ghid_menu_action_list ( some time )
+ -> converting function register_gtk_topwindow_action_list ( some time )
+ -> converting function register_pcbmenu_attr ( some time )
+ -> converting function register_ghid_attribute_list ( some time )
+ -> converting function hid_lpr_init ( some time )
+ -> converting function hid_bom_init ( some time )
+ -> converting function hid_gerber_init ( some time )
+ -> converting function register_nelma_attribute_list ( some time )
+ -> converting function hid_nelma_init ( some time )
+ -> converting function register_png_attribute_list ( some time )
+ -> converting function hid_png_init ( some time )
+ -> converting function register_ps_attribute_list ( some time )
+ -> converting function hid_ps_init ( some time )
+ -> converting function hid_eps_init ( some time )
+ -> converting function register_eps_attribute_list ( some time )
+ -> converting function __i686.get_pc_thunk.bx ( some time )
+ -> converting function atexit ( some time )
+Running phase: removing functions from standard libraries ( some time )
+ -> removing atexit() ( some time )
+Running phase: removing code that is not reachable in a CFG ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
+Running phase: signed/unsigned types fixing ( some time )
+Running phase: converting LLVM intrinsic functions to standard functions ( some time )
+Running phase: obtaining debug information ( some time )
+Running phase: alias analysis [simple] ( some time )
+Running phase: optimizations [normal] ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running RemoveUselessCastsOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_1_reg2mem = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running IfStructureOptimizer ( some time )
+ -> running LoopLastContinueOptimizer ( some time )
+ -> running PreWhileTrueLoopConvOptimizer ( some time )
+ -> running WhileTrueToForLoopOptimizer ( some time )
+ -> running WhileTrueToWhileCondOptimizer ( some time )
+ -> running IfBeforeLoopOptimizer ( some time )
+ -> running LLVMIntrinsicsOptimizer ( some time )
+ -> running VoidReturnOptimizer ( some time )
+ -> running BreakContinueReturnOptimizer ( some time )
+ -> running BitShiftOptimizer ( some time )
+ -> running DerefAddressOptimizer ( some time )
+ -> running EmptyArrayToStringOptimizer ( some time )
+ -> running BitOpToLogOpOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running UnusedGlobalVarOptimizer ( some time )
+ -> running DeadLocalAssignOptimizer ( some time )
+ -> running SimpleCopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var15 = strtok(NULL, ":")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_1_reg2mem = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = var29` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = var45` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = var60` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ade06` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var831) = (var830 - 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_3220_5_reg2mem = eax_1_reload` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ca090_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80cfecc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ebx_12_reload = ebx_12_ph_reload` -> skipping this edge
+ -> running CopyPropagationOptimizer ( some time )
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var15 = strtok(NULL, ":")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_1_reg2mem = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = var29` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = var45` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = var60` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ade06` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var831) = (var830 - 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_3220_5_reg2mem = eax_1_reload` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ca090_2` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80cfecc` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ebx_12_reload = ebx_12_ph_reload` -> skipping this edge
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+Warning: In ResetFoundPinsViasAndPads(), found `break` outside of a loop or a switch statement.
+Warning: In print_defaults_1(), found `break` outside of a loop or a switch statement.
+Warning: In GetGroupOfLayer(), found `break` outside of a loop or a switch statement.
+Warning: In GetLayerGroupNumberByNumber(), found `break` outside of a loop or a switch statement.
+Warning: In yylex(), found `break` outside of a loop or a switch statement.
+Warning: In yylex(), found `break` outside of a loop or a switch statement.
+Warning: In original_poly(), found `break` outside of a loop or a switch statement.
+Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
+Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
+Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
+Warning: In common_flags_to_string(), found `break` outside of a loop or a switch statement.
+Warning: In common_flags_to_string(), found `break` outside of a loop or a switch statement.
+Warning: In common_string_to_flags(), found `break` outside of a loop or a switch statement.
+Warning: In common_string_to_flags(), found `break` outside of a loop or a switch statement.
+Warning: In hid_parse_actions(), found `break` outside of a loop or a switch statement.
+Warning: In hid_parse_actions(), found `break` outside of a loop or a switch statement.
+Warning: In hid_find_exporter(), found `break` outside of a loop or a switch statement.
+Warning: In hid_find_exporter(), found `break` outside of a loop or a switch statement.
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )
