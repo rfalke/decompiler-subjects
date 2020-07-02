@@ -1,0 +1,6 @@
+[func:main]
+local-variable: 58,4,,five,isFloat
+local-variable: 64,4,,input_value,isFloat
+
+[activeFunctions]
+main
