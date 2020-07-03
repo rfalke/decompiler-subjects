@@ -1,1 +1,11 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:02B4: error: An error occurred while processing the statement di = di - bx.
+    Not handling (memptr T_313 (struct (0 T_452 t0000))) and (memptr T_314 (struct (302 T_512 t0302) (303 T_449 t0303))) yet.
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+: warning: Selector 0040 has no known segment.
+: warning: Selector 0040 has no known segment.

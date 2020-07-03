@@ -1,1 +1,19 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+error: An error occurred during decompilation. System.ArgumentException: An item with the same key has already been added. Key: cx
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.Add (Reko.Core.Expressions.Identifier idOld, Reko.Core.Statement stmDef, Reko.Core.Expressions.Expression exprDef, System.Boolean isSideEffect) [0x00067] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Analysis.ProjectionPropagator+ProjectionFilter.RewriteSeqOfDefs (Reko.Analysis.SsaIdentifier[] sids, Reko.Core.Expressions.Identifier idWide) [0x0000b] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Analysis.ProjectionPropagator+ProjectionFilter.FuseIdentifiers (Reko.Analysis.SsaIdentifier[] sids) [0x0017a] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Analysis.ProjectionPropagator+ProjectionFilter.VisitMkSequence (Reko.Core.Expressions.MkSequence seq) [0x00071] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Expressions.MkSequence.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Code.InstructionTransformer.TransformAssignment (Reko.Core.Code.Assignment a) [0x00008] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Analysis.ProjectionPropagator.Transform () [0x00039] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x0012c] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.CmdLine.CmdLineDriver.DecompileRawImage (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00184] in <12789205764c44eb95bd5d170c645452>:0 

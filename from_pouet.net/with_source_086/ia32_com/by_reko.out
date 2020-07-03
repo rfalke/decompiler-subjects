@@ -1,1 +1,5 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:0129: warning: Call target address 0C00:018E is invalid.
+0C00:012F: warning: Call target address 0C00:0153 is invalid.
+0C00:013C: warning: Call target address 0C00:01B0 is invalid.
+fn0C00_0100: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

@@ -1,1 +1,13 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:10C0: warning: Call target address 0C00:1100 is invalid.
+0C00:10B8: error: Translation needed for return.
+0C00:10D7: warning: Call target address 0C00:1113 is invalid.
+0C00:10CB: error: Translation needed for return.
+0C00:10D9: error: Translation needed for return.
+: warning: Selector 0C00 has no known segment.
+: warning: Selector 0C00 has no known segment.
+: warning: Selector 0C00 has no known segment.
+: warning: Selector 0C00 has no known segment.
+: warning: Selector 0C00 has no known segment.
+: warning: Selector 0C00 has no known segment.
+fn0C00_0100: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

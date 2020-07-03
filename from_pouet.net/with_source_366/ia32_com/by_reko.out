@@ -1,1 +1,2 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:0120: warning: Call target address 0C00:1A55 is invalid.

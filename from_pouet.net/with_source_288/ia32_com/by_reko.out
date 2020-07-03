@@ -1,1 +1,21 @@
-Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0
+=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:0110: error: An error occurred while processing the statement al_11 = SLICE(al_11 *s al_11 >>u 7<16>, byte, 0) (alias).
+    An item with the same key has already been added. Key: bool
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Types.PrimitiveType.Create (Reko.Core.Types.Domain dom, System.Int32 bitSize, System.String name) [0x0006b] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Types.PrimitiveType.Create (Reko.Core.Types.Domain dom, System.Int32 bitSize) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Types.Unifier.UnifyPrimitives (Reko.Core.Types.PrimitiveType pa, Reko.Core.Types.PrimitiveType pb) [0x0002f] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Types.Unifier.UnifyInternal (Reko.Core.Types.DataType a, Reko.Core.Types.DataType b) [0x0017f] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Core.Types.Unifier.Unify (Reko.Core.Types.DataType a, Reko.Core.Types.DataType b) [0x0008f] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.ExpressionTypeDescender.MeetDataType (Reko.Core.Types.TypeVariable tvExp, Reko.Core.Types.DataType dt) [0x0003e] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Typing.ExpressionTypeDescender.MeetDataType (Reko.Core.Expressions.Expression exp, Reko.Core.Types.DataType dt) [0x00007] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x001b9] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <a48b1ad88cf94361b029fb81eb525e58>:0 
