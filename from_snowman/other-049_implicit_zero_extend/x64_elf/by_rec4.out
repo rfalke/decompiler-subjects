@@ -1,0 +1,40 @@
+Analyzing './from_snowman/other-049_implicit_zero_extend/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-049_implicit_zero_extend/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-049_implicit_zero_extend/x64_elf/subject.exe: 6 sections starting at 0x00000118
+./from_snowman/other-049_implicit_zero_extend/x64_elf/subject.exe: section string table at 0x000001D8, 0x34 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000118: [ 0] 00000000 00000000 00000000 
+00000158: [ 1] 004000B0 00000024 000000B0 .note.gnu.build-id
+00000198: [ 2] 004000D4 00000010 000000D4 .text
+000001D8: [ 3] 00000000 00000034 000000E4 .shstrtab
+00000218: [ 4] 00000000 000000A8 00000298 .symtab
+00000258: [ 5] 00000000 00000020 00000340 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

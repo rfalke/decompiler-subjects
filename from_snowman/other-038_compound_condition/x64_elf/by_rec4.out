@@ -1,0 +1,43 @@
+Analyzing './from_snowman/other-038_compound_condition/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-038_compound_condition/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-038_compound_condition/x64_elf/subject.exe: 9 sections starting at 0x000002F0
+./from_snowman/other-038_compound_condition/x64_elf/subject.exe: section string table at 0x00000470, 0x55 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000002F0: [ 0] 00000000 00000000 00000000 
+00000330: [ 1] 00400120 00000024 00000120 .note.gnu.build-id
+00000370: [ 2] 00400144 00000094 00000144 .text
+000003B0: [ 3] 004001D8 00000024 000001D8 .eh_frame_hdr
+000003F0: [ 4] 00400200 00000078 00000200 .eh_frame
+00000430: [ 5] 00000000 0000001C 00000278 .comment
+00000470: [ 6] 00000000 00000055 00000294 .shstrtab
+000004B0: [ 7] 00000000 00000150 00000530 .symtab
+000004F0: [ 8] 00000000 0000003F 00000680 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

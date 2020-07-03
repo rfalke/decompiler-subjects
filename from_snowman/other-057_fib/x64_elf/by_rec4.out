@@ -1,0 +1,116 @@
+Analyzing './from_snowman/other-057_fib/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-057_fib/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-057_fib/x64_elf/subject.exe: 30 sections starting at 0x00000AA8
+./from_snowman/other-057_fib/x64_elf/subject.exe: section string table at 0x00001168, 0x108 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000AA8: [ 0] 00000000 00000000 00000000 
+00000AE8: [ 1] 00400200 0000001C 00000200 .interp
+00000B28: [ 2] 0040021C 00000020 0000021C .note.ABI-tag
+00000B68: [ 3] 0040023C 00000024 0000023C .note.gnu.build-id
+00000BA8: [ 4] 00400260 0000001C 00000260 .gnu.hash
+00000BE8: [ 5] 00400280 00000060 00000280 .dynsym
+00000C28: [ 6] 004002E0 0000003F 000002E0 .dynstr
+00000C68: [ 7] 00400320 00000008 00000320 .gnu.version
+00000CA8: [ 8] 00400328 00000020 00000328 .gnu.version_r
+00000CE8: [ 9] 00400348 00000018 00000348 .rela.dyn
+00000D28: [10] 00400360 00000048 00000360 .rela.plt
+00000D68: [11] 004003A8 0000001A 000003A8 .init
+00000DA8: [12] 004003D0 00000040 000003D0 .plt
+00000DE8: [13] 00400410 000001D2 00000410 .text
+00000E28: [14] 004005E4 00000009 000005E4 .fini
+00000E68: [15] 004005F0 00000007 000005F0 .rodata
+00000EA8: [16] 004005F8 0000003C 000005F8 .eh_frame_hdr
+00000EE8: [17] 00400638 00000114 00000638 .eh_frame
+00000F28: [18] 00600750 00000008 00000750 .init_array
+00000F68: [19] 00600758 00000008 00000758 .fini_array
+00000FA8: [20] 00600760 00000008 00000760 .jcr
+00000FE8: [21] 00600768 000001D0 00000768 .dynamic
+00001028: [22] 00600938 00000008 00000938 .got
+00001068: [23] 00600940 00000030 00000940 .got.plt
+000010A8: [24] 00600970 00000010 00000970 .data
+000010E8: [25] 00600980 00000008 00000980 .bss
+00001128: [26] 00000000 0000001D 00000980 .comment
+00001168: [27] 00000000 00000108 0000099D .shstrtab
+000011A8: [28] 00000000 00000630 00001228 .symtab
+000011E8: [29] 00000000 0000023F 00001858 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 6 Labels, 4 Branches, 0 / 1 kB covered
+0 Procs, 6 Labels, 4 Branches, 0 / 1 kB covered
+0 Procs, 13 Labels, 10 Branches, 0 / 1 kB covered
+0 Procs, 14 Labels, 10 Branches, 0 / 1 kB covered
+0 Procs, 19 Labels, 14 Branches, 0 / 1 kB covered
+0 Procs, 27 Labels, 21 Branches, 0 / 1 kB covered
+0 Procs, 28 Labels, 21 Branches, 0 / 1 kB covered
+0 Procs, 32 Labels, 26 Branches, 0 / 1 kB covered
+0 Procs, 35 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 40 Labels, 35 Branches, 0 / 1 kB covered
+0 Procs, 42 Labels, 36 Branches, 0 / 1 kB covered
+0 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Resolving indirect jumps...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Resolving constants and strings...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Discovering unreached functions...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Computing call tree...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Computing calling conventions...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+Computing Calling Convention: 2/14  0x004003E0
+Computing Calling Convention: 3/14  0x004003F0
+Computing Calling Convention: 4/14  0x00400400
+Computing Calling Convention: 5/14  0x00400410
+Computing Calling Convention: 6/14  0x00400440
+Computing Calling Convention: 7/14  0x00400470
+Computing Calling Convention: 8/14  0x004004B0
+Computing Calling Convention: 9/14  0x004004D0
+Computing Calling Convention: 13/14  0x004005E0
+Computing Calling Convention: 14/14  0x004005E4
+Computing Calling Convention: 1/4  0x004003A8
+Computing Calling Convention: 4/4  0x00400570
+Computing Calling Convention: xx/2  0x00400543
+Computing Calling Convention: 1/1  0x00400543
+Computing label cross-references...
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+File analysis complete.
+14 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+
+Decompiling 1/14: 0x004003A8
+Decompiling 2/14: 0x004003E0
+Decompiling 3/14: 0x004003F0
+Decompiling 4/14: 0x00400400
+Decompiling 5/14: 0x00400410
+Decompiling 6/14: 0x00400440
+Decompiling 7/14: 0x00400470
+Decompiling 8/14: 0x004004B0
+Decompiling 9/14: 0x004004D0
+Decompiling 10/14: 0x004004FD
+Decompiling 11/14: 0x00400543
+Decompiling 12/14: 0x00400570
+Decompiling 13/14: 0x004005E0
+Decompiling 14/14: 0x004005E4
+Decompiling 14/14: 0x004005E4
+

@@ -1,24 +1,82 @@
 Analyzing './from_rec/hd2/x64_pe_from_rec_msvc8_release/subject.exe' as a x86_64 32 PECOFF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+0 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 Resolving indirect jumps...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 Resolving constants and strings...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 Discovering unreached functions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 Computing call tree...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 Computing calling conventions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
+Computing Calling Convention: 5/15  0x00000001400017AC
+Computing Calling Convention: 6/15  0x0000000140001900
+Computing Calling Convention: 7/15  0x0000000140001930
+Computing Calling Convention: 8/15  0x0000000140001980
+Computing Calling Convention: 9/15  0x00000001400019C2
+Computing Calling Convention: 10/15  0x00000001400019C8
+Computing Calling Convention: 11/15  0x00000001400019D4
+Computing Calling Convention: 12/15  0x0000000140001A88
+Computing Calling Convention: 13/15  0x0000000140001AA6
+Computing Calling Convention: 14/15  0x0000000140001AAC
+Computing Calling Convention: 15/15  0x0000000140001B36
+Computing Calling Convention: 4/4  0x0000000140001300
+Computing Calling Convention: 1/3  0x0000000140001000
+Computing Calling Convention: 2/3  0x0000000140001190
+Computing Calling Convention: 3/3  0x0000000140001290
+Computing label cross-references...
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 File analysis complete.
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 3 kB covered
+15 Procs, 109 Labels, 111 Branches, 0 / 3 kB covered
 
-
+Decompiling 1/15: 0x0000000140001000
+Decompiling 2/15: 0x0000000140001190
+Decompiling 3/15: 0x0000000140001290
+Decompiling 4/15: 0x0000000140001300
+Decompiling 5/15: 0x00000001400017AC
+Decompiling 6/15: 0x0000000140001900
+Decompiling 7/15: 0x0000000140001930
+Decompiling 8/15: 0x0000000140001980
+Decompiling 9/15: 0x00000001400019C2
+Decompiling 10/15: 0x00000001400019C8
+Decompiling 11/15: 0x00000001400019D4
+Decompiling 12/15: 0x0000000140001A88
+Decompiling 13/15: 0x0000000140001AA6
+Decompiling 14/15: 0x0000000140001AAC
+Decompiling 15/15: 0x0000000140001B36
+Decompiling 15/15: 0x0000000140001B36
+

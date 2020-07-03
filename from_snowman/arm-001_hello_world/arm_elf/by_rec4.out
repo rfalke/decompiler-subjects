@@ -1,0 +1,77 @@
+Analyzing './from_snowman/arm-001_hello_world/arm_elf/subject.exe' as a ARM 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/arm-001_hello_world/arm_elf/subject.exe: no .debug_info section
+./from_snowman/arm-001_hello_world/arm_elf/subject.exe: 29 sections starting at 0x00000710
+./from_snowman/arm-001_hello_world/arm_elf/subject.exe: section string table at 0x00000B20, 0xF3 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000710: [ 0] 00000000 00000000 00000000 
+00000738: [ 1] 00008134 00000019 00000134 .interp
+00000760: [ 2] 00008150 00000020 00000150 .note.ABI-tag
+00000788: [ 3] 00008170 00000028 00000170 .hash
+000007B0: [ 4] 00008198 00000050 00000198 .dynsym
+000007D8: [ 5] 000081E8 00000041 000001E8 .dynstr
+00000800: [ 6] 0000822A 0000000A 0000022A .gnu.version
+00000828: [ 7] 00008234 00000020 00000234 .gnu.version_r
+00000850: [ 8] 00008254 00000008 00000254 .rel.dyn
+00000878: [ 9] 0000825C 00000020 0000025C .rel.plt
+000008A0: [10] 0000827C 0000000C 0000027C .init
+000008C8: [11] 00008288 00000044 00000288 .plt
+000008F0: [12] 000082CC 000001AC 000002CC .text
+00000918: [13] 00008478 00000008 00000478 .fini
+00000940: [14] 00008480 00000014 00000480 .rodata
+00000968: [15] 00008494 00000008 00000494 .ARM.exidx
+00000990: [16] 0000849C 00000004 0000049C .eh_frame
+000009B8: [17] 000104A0 00000004 000004A0 .init_array
+000009E0: [18] 000104A4 00000004 000004A4 .fini_array
+00000A08: [19] 000104A8 00000004 000004A8 .jcr
+00000A30: [20] 000104AC 000000E8 000004AC .dynamic
+00000A58: [21] 00010594 00000020 00000594 .got
+00000A80: [22] 000105B4 00000008 000005B4 .data
+00000AA8: [23] 000105BC 00000004 000005BC .bss
+00000AD0: [24] 00000000 00000021 000005BC .comment
+00000AF8: [25] 00000000 0000003D 000005DD .ARM.attributes
+00000B20: [26] 00000000 000000F3 0000061A .shstrtab
+00000B48: [27] 00000000 00000640 00000B98 .symtab
+00000B70: [28] 00000000 000002A0 000011D8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 2 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 3 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Resolving indirect jumps...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Resolving constants and strings...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Discovering unreached functions...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Computing call tree...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Computing calling conventions...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+Computing Calling Convention: 1/4  0x000082A8
+Computing Calling Convention: 2/4  0x000082C0
+Computing Calling Convention: 3/4  0x00008394
+Computing Calling Convention: 4/4  0x000083BC
+Computing label cross-references...
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+File analysis complete.
+4 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+
+Decompiling 1/4: 0x000082A8
+Decompiling 2/4: 0x000082C0
+Decompiling 3/4: 0x00008394
+Decompiling 4/4: 0x000083BC
+Decompiling 4/4: 0x000083BC
+

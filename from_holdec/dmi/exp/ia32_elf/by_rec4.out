@@ -1,0 +1,143 @@
+Analyzing './from_holdec/dmi/exp/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/dmi/exp/ia32_elf/subject.exe: no .debug_info section
+./from_holdec/dmi/exp/ia32_elf/subject.exe: 31 sections starting at 0x00001910
+./from_holdec/dmi/exp/ia32_elf/subject.exe: section string table at 0x00001D70, 0x10A bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001910: [ 0] 00000000 00000000 00000000 
+00001938: [ 1] 08048154 00000013 00000154 .interp
+00001960: [ 2] 08048168 00000020 00000168 .note.ABI-tag
+00001988: [ 3] 08048188 00000024 00000188 .note.gnu.build-id
+000019B0: [ 4] 080481AC 00000020 000001AC .gnu.hash
+000019D8: [ 5] 080481CC 00000070 000001CC .dynsym
+00001A00: [ 6] 0804823C 00000057 0000023C .dynstr
+00001A28: [ 7] 08048294 0000000E 00000294 .gnu.version
+00001A50: [ 8] 080482A4 00000020 000002A4 .gnu.version_r
+00001A78: [ 9] 080482C4 00000008 000002C4 .rel.dyn
+00001AA0: [10] 080482CC 00000020 000002CC .rel.plt
+00001AC8: [11] 080482EC 00000023 000002EC .init
+00001AF0: [12] 08048310 00000050 00000310 .plt
+00001B18: [13] 08048360 00000008 00000360 .plt.got
+00001B40: [14] 08048370 00000352 00000370 .text
+00001B68: [15] 080486C4 00000014 000006C4 .fini
+00001B90: [16] 080486D8 00000051 000006D8 .rodata
+00001BB8: [17] 0804872C 00000054 0000072C .eh_frame_hdr
+00001BE0: [18] 08048780 000001A4 00000780 .eh_frame
+00001C08: [19] 08049F08 00000004 00000F08 .init_array
+00001C30: [20] 08049F0C 00000004 00000F0C .fini_array
+00001C58: [21] 08049F10 00000004 00000F10 .jcr
+00001C80: [22] 08049F14 000000E8 00000F14 .dynamic
+00001CA8: [23] 08049FFC 00000004 00000FFC .got
+00001CD0: [24] 0804A000 0000001C 00001000 .got.plt
+00001CF8: [25] 0804A01C 00000004 0000101C .data
+00001D20: [26] 0804A020 00000004 00001020 .bss
+00001D48: [27] 00000000 0000002C 00001020 .comment
+00001D70: [28] 00000000 0000010A 00001805 .shstrtab
+00001D98: [29] 00000000 000004C0 0000104C .symtab
+00001DC0: [30] 00000000 000002F9 0000150C .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 2 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 2 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 2 kB covered
+0 Procs, 8 Labels, 6 Branches, 0 / 2 kB covered
+0 Procs, 8 Labels, 6 Branches, 0 / 2 kB covered
+0 Procs, 52 Labels, 53 Branches, 0 / 2 kB covered
+0 Procs, 53 Labels, 53 Branches, 0 / 2 kB covered
+0 Procs, 53 Labels, 53 Branches, 0 / 2 kB covered
+0 Procs, 67 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 67 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 68 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 69 Labels, 66 Branches, 0 / 2 kB covered
+0 Procs, 74 Labels, 72 Branches, 0 / 2 kB covered
+0 Procs, 76 Labels, 74 Branches, 0 / 2 kB covered
+0 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Resolving indirect jumps...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Resolving constants and strings...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Discovering unreached functions...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Computing call tree...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Computing calling conventions...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+Computing Calling Convention: 2/21  0x08048320
+Computing Calling Convention: 3/21  0x08048330
+Computing Calling Convention: 4/21  0x08048340
+Computing Calling Convention: 5/21  0x08048350
+Computing Calling Convention: 6/21  0x08048360
+Computing Calling Convention: 8/21  0x080483F7
+Computing Calling Convention: 9/21  0x08048420
+Computing Calling Convention: 11/21  0x08048460
+Computing Calling Convention: 12/21  0x080484A0
+Computing Calling Convention: 13/21  0x080484C0
+Computing Calling Convention: 14/21  0x080484EB
+Computing Calling Convention: 15/21  0x08048551
+Computing Calling Convention: 16/21  0x080485BE
+Computing Calling Convention: 17/21  0x080485E4
+Computing Calling Convention: 18/21  0x0804861A
+Computing Calling Convention: 20/21  0x080486C0
+Computing Calling Convention: 21/21  0x080486C4
+Computing Calling Convention: 1/4  0x080482EC
+Computing Calling Convention: 2/4  0x08048370
+Computing Calling Convention: 4/4  0x08048660
+Computing Calling Convention: xx/1  0x08048430
+Computing label cross-references...
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+File analysis complete.
+21 Procs, 77 Labels, 74 Branches, 0 / 2 kB covered
+
+Decompiling 1/21: 0x080482EC
+Decompiling 2/21: 0x08048320
+Decompiling 3/21: 0x08048330
+Decompiling 4/21: 0x08048340
+Decompiling 5/21: 0x08048350
+Decompiling 6/21: 0x08048360
+Decompiling 7/21: 0x08048370
+Decompiling 8/21: 0x080483F7
+Decompiling 9/21: 0x08048420
+Decompiling 10/21: 0x08048430
+Decompiling 11/21: 0x08048460
+Decompiling 12/21: 0x080484A0
+Decompiling 13/21: 0x080484C0
+Decompiling 14/21: 0x080484EB
+Decompiling 15/21: 0x08048551
+Decompiling 16/21: 0x080485BE
+Decompiling 17/21: 0x080485E4
+Decompiling 18/21: 0x0804861A
+Decompiling 19/21: 0x08048660
+Decompiling 20/21: 0x080486C0
+Decompiling 21/21: 0x080486C4
+Decompiling 21/21: 0x080486C4
+

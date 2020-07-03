@@ -1,0 +1,4 @@
+Analyzing './from_holdec/condition_redundant/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+malloc(): invalid size (unsorted)

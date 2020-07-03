@@ -1,0 +1,64 @@
+Analyzing './from_holdec/movfuscator/hello/ia32_elf_movcc/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/movfuscator/hello/ia32_elf_movcc/subject.exe: no .debug_info section
+./from_holdec/movfuscator/hello/ia32_elf_movcc/subject.exe: 20 sections starting at 0x009BE480
+./from_holdec/movfuscator/hello/ia32_elf_movcc/subject.exe: section string table at 0x009BE728, 0x9A bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+009BE480: [ 0] 00000000 00000000 00000000 
+009BE4A8: [ 1] 080480F4 00000013 000000F4 .interp
+009BE4D0: [ 2] 08048108 00000024 00000108 .hash
+009BE4F8: [ 3] 0804812C 00000040 0000012C .dynsym
+009BE520: [ 4] 0804816C 00000035 0000016C .dynstr
+009BE548: [ 5] 080481A2 00000008 000001A2 .gnu.version
+009BE570: [ 6] 080481AC 00000020 000001AC .gnu.version_r
+009BE598: [ 7] 080481CC 00000018 000001CC .rel.plt
+009BE5C0: [ 8] 080481F0 0000004C 000001F0 .plt
+009BE5E8: [ 9] 0804823C 00000FD4 0000023C .text
+009BE610: [10] 08049210 00000000 00001210 .eh_frame
+009BE638: [11] 0804AF58 000000A8 00001F58 .dynamic
+009BE660: [12] 0804B000 00000018 00002000 .got.plt
+009BE688: [13] 0804B020 005A92AC 00002020 .data
+009BE6B0: [14] 085F42D0 00200010 005AB2CC .bss
+009BE6D8: [15] 00000000 00000588 005AB2CC .stab
+009BE700: [16] 00000000 00000A55 005AB854 .stabstr
+009BE728: [17] 00000000 0000009A 009BE3E6 .shstrtab
+009BE750: [18] 00000000 002072B0 005AC2AC .symtab
+009BE778: [19] 00000000 0020AE8A 007B355C .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 4 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 4 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 4 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 4 kB covered
+0 Procs, 4 Labels, 2 Branches, 0 / 4 kB covered
+0 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Resolving indirect jumps...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Resolving constants and strings...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Discovering unreached functions...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Computing call tree...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Computing calling conventions...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+Computing Calling Convention: 1/3  0x08048200
+Computing Calling Convention: 2/3  0x08048210
+Computing Calling Convention: 3/3  0x08048764
+Computing label cross-references...
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+File analysis complete.
+3 Procs, 5 Labels, 2 Branches, 0 / 4 kB covered
+
+Decompiling 1/3: 0x08048200
+Decompiling 2/3: 0x08048210
+Decompiling 3/3: 0x08048764
+Decompiling 3/3: 0x08048764
+

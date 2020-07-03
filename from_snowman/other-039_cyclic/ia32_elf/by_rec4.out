@@ -1,0 +1,43 @@
+Analyzing './from_snowman/other-039_cyclic/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-039_cyclic/ia32_elf/subject.exe: no .debug_info section
+./from_snowman/other-039_cyclic/ia32_elf/subject.exe: 9 sections starting at 0x000002DC
+./from_snowman/other-039_cyclic/ia32_elf/subject.exe: section string table at 0x000003CC, 0x55 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000002DC: [ 0] 00000000 00000000 00000000 
+00000304: [ 1] 080480B4 00000024 000000B4 .note.gnu.build-id
+0000032C: [ 2] 080480D8 000000F2 000000D8 .text
+00000354: [ 3] 080481CC 00000024 000001CC .eh_frame_hdr
+0000037C: [ 4] 080481F0 00000078 000001F0 .eh_frame
+000003A4: [ 5] 00000000 0000001C 00000268 .comment
+000003CC: [ 6] 00000000 00000055 00000284 .shstrtab
+000003F4: [ 7] 00000000 000000E0 00000444 .symtab
+0000041C: [ 8] 00000000 00000033 00000524 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

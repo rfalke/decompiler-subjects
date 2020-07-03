@@ -1,0 +1,43 @@
+Analyzing './from_snowman/other-037_switch/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-037_switch/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-037_switch/x64_elf/subject.exe: 9 sections starting at 0x00000270
+./from_snowman/other-037_switch/x64_elf/subject.exe: section string table at 0x000003F0, 0x55 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000270: [ 0] 00000000 00000000 00000000 
+000002B0: [ 1] 00400120 00000024 00000120 .note.gnu.build-id
+000002F0: [ 2] 00400144 00000078 00000144 .text
+00000330: [ 3] 004001BC 00000014 000001BC .eh_frame_hdr
+00000370: [ 4] 004001D0 00000038 000001D0 .eh_frame
+000003B0: [ 5] 00000000 00000011 00000208 .comment
+000003F0: [ 6] 00000000 00000055 00000219 .shstrtab
+00000430: [ 7] 00000000 00000138 000004B0 .symtab
+00000470: [ 8] 00000000 0000003A 000005E8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 21 Labels, 17 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

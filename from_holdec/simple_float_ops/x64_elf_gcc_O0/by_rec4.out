@@ -1,0 +1,168 @@
+Analyzing './from_holdec/simple_float_ops/x64_elf_gcc_O0/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/simple_float_ops/x64_elf_gcc_O0/subject.exe: 35 sections starting at 0x00003CD0
+./from_holdec/simple_float_ops/x64_elf_gcc_O0/subject.exe: section string table at 0x000044D0, 0x148 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00003CD0: [ 0] 00000000 00000000 00000000 
+00003D10: [ 1] 00400238 0000001C 00000238 .interp
+00003D50: [ 2] 00400254 00000020 00000254 .note.ABI-tag
+00003D90: [ 3] 00400274 00000024 00000274 .note.gnu.build-id
+00003DD0: [ 4] 00400298 0000001C 00000298 .gnu.hash
+00003E10: [ 5] 004002B8 00000060 000002B8 .dynsym
+00003E50: [ 6] 00400318 0000003F 00000318 .dynstr
+00003E90: [ 7] 00400358 00000008 00000358 .gnu.version
+00003ED0: [ 8] 00400360 00000020 00000360 .gnu.version_r
+00003F10: [ 9] 00400380 00000030 00000380 .rela.dyn
+00003F50: [10] 004003B0 00000018 000003B0 .rela.plt
+00003F90: [11] 004003C8 00000017 000003C8 .init
+00003FD0: [12] 004003E0 00000020 000003E0 .plt
+00004010: [13] 00400400 00000622 00000400 .text
+00004050: [14] 00400A24 00000009 00000A24 .fini
+00004090: [15] 00400A30 00000070 00000A30 .rodata
+000040D0: [16] 00400AA0 000000AC 00000AA0 .eh_frame_hdr
+00004110: [17] 00400B50 000002D4 00000B50 .eh_frame
+00004150: [18] 00601E08 00000008 00001E08 .init_array
+00004190: [19] 00601E10 00000008 00001E10 .fini_array
+000041D0: [20] 00601E18 00000008 00001E18 .jcr
+00004210: [21] 00601E20 000001D0 00001E20 .dynamic
+00004250: [22] 00601FF0 00000010 00001FF0 .got
+00004290: [23] 00602000 00000020 00002000 .got.plt
+000042D0: [24] 00602020 00000050 00002020 .data
+00004310: [25] 00602070 00000008 00002070 .bss
+00004350: [26] 00000000 0000002C 00002070 .comment
+00004390: [27] 00000000 00000030 0000209C .debug_aranges
+000043D0: [28] 00000000 00000676 000020CC .debug_info
+00004410: [29] 00000000 000001F1 00002742 .debug_abbrev
+00004450: [30] 00000000 0000014B 00002933 .debug_line
+00004490: [31] 00000000 000004A0 00002A7E .debug_str
+000044D0: [32] 00000000 00000148 00003B88 .shstrtab
+00004510: [33] 00000000 000008D0 00002F20 .symtab
+00004550: [34] 00000000 00000398 000037F0 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 3 kB covered
+0 Procs, 4 Labels, 3 Branches, 0 / 3 kB covered
+0 Procs, 10 Labels, 8 Branches, 0 / 3 kB covered
+0 Procs, 11 Labels, 8 Branches, 0 / 3 kB covered
+0 Procs, 17 Labels, 12 Branches, 0 / 3 kB covered
+0 Procs, 25 Labels, 19 Branches, 0 / 3 kB covered
+0 Procs, 26 Labels, 19 Branches, 0 / 3 kB covered
+0 Procs, 29 Labels, 22 Branches, 0 / 3 kB covered
+0 Procs, 30 Labels, 24 Branches, 0 / 3 kB covered
+0 Procs, 31 Labels, 26 Branches, 0 / 3 kB covered
+0 Procs, 32 Labels, 27 Branches, 0 / 3 kB covered
+0 Procs, 33 Labels, 29 Branches, 0 / 3 kB covered
+0 Procs, 34 Labels, 30 Branches, 0 / 3 kB covered
+0 Procs, 35 Labels, 31 Branches, 0 / 3 kB covered
+0 Procs, 36 Labels, 32 Branches, 0 / 3 kB covered
+0 Procs, 37 Labels, 33 Branches, 0 / 3 kB covered
+0 Procs, 38 Labels, 34 Branches, 0 / 3 kB covered
+0 Procs, 39 Labels, 35 Branches, 0 / 3 kB covered
+0 Procs, 40 Labels, 36 Branches, 0 / 3 kB covered
+0 Procs, 41 Labels, 44 Branches, 0 / 3 kB covered
+0 Procs, 42 Labels, 51 Branches, 0 / 3 kB covered
+0 Procs, 43 Labels, 57 Branches, 0 / 3 kB covered
+0 Procs, 44 Labels, 60 Branches, 0 / 3 kB covered
+0 Procs, 49 Labels, 65 Branches, 0 / 3 kB covered
+0 Procs, 51 Labels, 66 Branches, 0 / 3 kB covered
+0 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Resolving indirect jumps...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Resolving constants and strings...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Discovering unreached functions...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Computing call tree...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Computing calling conventions...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+Computing Calling Convention: 1/26  0x004003C8
+Computing Calling Convention: 2/26  0x004003F0
+Computing Calling Convention: 3/26  0x00400400
+Computing Calling Convention: 4/26  0x00400430
+Computing Calling Convention: 5/26  0x00400470
+Computing Calling Convention: 6/26  0x004004B0
+Computing Calling Convention: 7/26  0x004004D0
+Computing Calling Convention: 8/26  0x004004F6
+Computing Calling Convention: 9/26  0x00400522
+Computing Calling Convention: 10/26  0x00400544
+Computing Calling Convention: 11/26  0x00400604
+Computing Calling Convention: 12/26  0x00400664
+Computing Calling Convention: 13/26  0x004006CC
+Computing Calling Convention: 14/26  0x004006FB
+Computing Calling Convention: 15/26  0x00400716
+Computing Calling Convention: 16/26  0x00400733
+Computing Calling Convention: 17/26  0x0040074E
+Computing Calling Convention: 18/26  0x0040076B
+Computing Calling Convention: 19/26  0x0040077E
+Computing Calling Convention: 20/26  0x00400791
+Computing Calling Convention: 21/26  0x0040081A
+Computing Calling Convention: 22/26  0x004008E1
+Computing Calling Convention: 23/26  0x0040095B
+Computing Calling Convention: 24/26  0x004009B0
+Computing Calling Convention: 25/26  0x00400A20
+Computing Calling Convention: 26/26  0x00400A24
+Computing label cross-references...
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+File analysis complete.
+26 Procs, 52 Labels, 66 Branches, 0 / 3 kB covered
+
+Decompiling 1/26: 0x004003C8
+Decompiling 2/26: 0x004003F0
+Decompiling 3/26: 0x00400400
+Decompiling 4/26: 0x00400430
+Decompiling 5/26: 0x00400470
+Decompiling 6/26: 0x004004B0
+Decompiling 7/26: 0x004004D0
+Decompiling 8/26: 0x004004F6
+Decompiling 9/26: 0x00400522
+Decompiling 10/26: 0x00400544
+Decompiling 11/26: 0x00400604
+Decompiling 12/26: 0x00400664
+Decompiling 13/26: 0x004006CC
+Decompiling 14/26: 0x004006FB
+Decompiling 15/26: 0x00400716
+Decompiling 16/26: 0x00400733
+Decompiling 17/26: 0x0040074E
+Decompiling 18/26: 0x0040076B
+Decompiling 19/26: 0x0040077E
+Decompiling 20/26: 0x00400791
+Decompiling 21/26: 0x0040081A
+Decompiling 22/26: 0x004008E1
+Decompiling 23/26: 0x0040095B
+Decompiling 24/26: 0x004009B0
+Decompiling 25/26: 0x00400A20
+Decompiling 26/26: 0x00400A24
+Decompiling 26/26: 0x00400A24

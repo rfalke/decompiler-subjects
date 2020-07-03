@@ -1,6 +1,6 @@
 Analyzing './from_boomerang/global3/ia32_elf_by_boomerang/subject.exe' as a x86 32 ELF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 ./from_boomerang/global3/ia32_elf_by_boomerang/subject.exe: 34 sections starting at 0x00001D7C
 ./from_boomerang/global3/ia32_elf_by_boomerang/subject.exe: section string table at 0x00002254, 0x12B bytes
  Offset:  [ix]  Address    Size    Offset  Name
@@ -39,116 +39,97 @@ Analyzing './from_boomerang/global3/ia32_elf_by_boomerang/subject.exe' as a x86 
 0000227C: [32] 00000000 00000700 000022CC .symtab
 000022A4: [33] 00000000 00000402 000029CC .strtab
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 16 Labels, 15 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 18 Labels, 16 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 20 Labels, 17 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 21 Labels, 18 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 21 Labels, 18 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 28 Labels, 23 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 28 Labels, 23 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 30 Labels, 25 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 31 Labels, 27 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 32 Labels, 30 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 37 Labels, 35 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 43 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 43 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 43 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 44 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 45 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 16 Labels, 15 Branches, 0 / 1 kB covered
+0 Procs, 18 Labels, 16 Branches, 0 / 1 kB covered
+0 Procs, 21 Labels, 18 Branches, 0 / 1 kB covered
+0 Procs, 22 Labels, 19 Branches, 0 / 1 kB covered
+0 Procs, 23 Labels, 20 Branches, 0 / 1 kB covered
+0 Procs, 23 Labels, 21 Branches, 0 / 1 kB covered
+0 Procs, 23 Labels, 21 Branches, 0 / 1 kB covered
+0 Procs, 30 Labels, 26 Branches, 0 / 1 kB covered
+0 Procs, 30 Labels, 26 Branches, 0 / 1 kB covered
+0 Procs, 32 Labels, 28 Branches, 0 / 1 kB covered
+0 Procs, 33 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 34 Labels, 33 Branches, 0 / 1 kB covered
+0 Procs, 39 Labels, 38 Branches, 0 / 1 kB covered
+0 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+0 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+0 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 Resolving indirect jumps...
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 Resolving constants and strings...
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 Discovering unreached functions...
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 Computing call tree...
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 Computing calling conventions...
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
-Computing Calling Convention: 2/16  0x08048258
-Computing Calling Convention: 3/16  0x08048268
-Computing Calling Convention: 4/16  0x08048278
-Computing Calling Convention: 6/16  0x080482A6
-Computing Calling Convention: 7/16  0x080482C0
-Computing Calling Convention: 8/16  0x080482FC
-Computing Calling Convention: 9/16  0x08048328
-Computing Calling Convention: 10/16  0x08048356
-Computing Calling Convention: 11/16  0x08048363
-Computing Calling Convention: 13/16  0x080483C8
-Computing Calling Convention: 14/16  0x080483FC
-Computing Calling Convention: 16/16  0x0804842A
-Computing Calling Convention: 2/4  0x0804829C
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
+Computing Calling Convention: 2/18  0x08048258
+Computing Calling Convention: 3/18  0x0804825E
+Computing Calling Convention: 4/18  0x08048268
+Computing Calling Convention: 5/18  0x0804826E
+Computing Calling Convention: 7/18  0x0804829C
+Computing Calling Convention: 8/18  0x080482A6
+Computing Calling Convention: 9/18  0x080482C0
+Computing Calling Convention: 10/18  0x080482FC
+Computing Calling Convention: 11/18  0x08048328
+Computing Calling Convention: 12/18  0x08048356
+Computing Calling Convention: 13/18  0x08048363
+Computing Calling Convention: 15/18  0x080483C8
+Computing Calling Convention: 16/18  0x080483FC
+Computing Calling Convention: 18/18  0x0804842A
+Computing Calling Convention: 1/4  0x08048230
+Computing Calling Convention: 2/4  0x08048278
+Computing Calling Convention: 3/4  0x08048398
 Computing Calling Convention: 4/4  0x08048420
-Computing Calling Convention: 1/2  0x08048230
-Computing Calling Convention: 2/2  0x08048398
+Computing label cross-references...
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 File analysis complete.
-16 Procs, 46 Labels, 43 Branches, 0 MB used, 0 / 1 kB covered
+18 Procs, 45 Labels, 46 Branches, 0 / 1 kB covered
 
-Decompiling 1/16: 0x08048230
-Decompiling 2/16: 0x08048258
-Decompiling 3/16: 0x08048268
-Decompiling 4/16: 0x08048278
-Decompiling 5/16: 0x0804829C
-Decompiling 6/16: 0x080482A6
-Decompiling 7/16: 0x080482C0
-Decompiling 8/16: 0x080482FC
-Decompiling 9/16: 0x08048328
-Decompiling 10/16: 0x08048356
-Decompiling 11/16: 0x08048363
-Decompiling 12/16: 0x08048398
-Decompiling 13/16: 0x080483C8
-Decompiling 14/16: 0x080483FC
-Decompiling 15/16: 0x08048420
-Decompiling 16/16: 0x0804842A
-Decompiling 16/16: 0x0804842A
+Decompiling 1/18: 0x08048230
+Decompiling 2/18: 0x08048258
+Decompiling 3/18: 0x0804825E
+Decompiling 4/18: 0x08048268
+Decompiling 5/18: 0x0804826E
+Decompiling 6/18: 0x08048278
+Decompiling 7/18: 0x0804829C
+Decompiling 8/18: 0x080482A6
+Decompiling 9/18: 0x080482C0
+Decompiling 10/18: 0x080482FC
+Decompiling 11/18: 0x08048328
+Decompiling 12/18: 0x08048356
+Decompiling 13/18: 0x08048363
+Decompiling 14/18: 0x08048398
+Decompiling 15/18: 0x080483C8
+Decompiling 16/18: 0x080483FC
+Decompiling 17/18: 0x08048420
+Decompiling 18/18: 0x0804842A
+Decompiling 18/18: 0x0804842A
+

@@ -1,0 +1,129 @@
+Analyzing './from_snowman/other-009-adjustment_thunk/ia32_pe/subject.exe' as a x86 32 PECOFF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 8 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 8 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 8 kB covered
+0 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+0 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+0 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+0 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+0 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Resolving indirect jumps...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Resolving constants and strings...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Discovering unreached functions...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Computing call tree...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Computing calling conventions...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+Computing Calling Convention: 2/12  0x004013B8
+Computing Calling Convention: 3/12  0x004017C8
+Computing Calling Convention: 4/12  0x004018E4
+Computing Calling Convention: 5/12  0x004018F0
+Computing Calling Convention: 6/12  0x00401930
+Computing Calling Convention: 7/12  0x00401980
+Computing Calling Convention: 8/12  0x00401A3C
+Computing Calling Convention: 9/12  0x00401A42
+Computing Calling Convention: 10/12  0x00401A50
+Computing Calling Convention: 11/12  0x00401A95
+Computing Calling Convention: 12/12  0x00401B30
+Computing Calling Convention: 1/1  0x0040106E
+Separating code and data...
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 77 Labels, 76 Branches, 0 / 8 kB covered
+12 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+12 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Resolving indirect jumps...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Resolving constants and strings...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Discovering unreached functions...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Computing call tree...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Computing calling conventions...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+Computing Calling Convention: 2/13  0x004013B8
+Computing Calling Convention: 3/13  0x004017C8
+Computing Calling Convention: 4/13  0x004018E4
+Computing Calling Convention: 5/13  0x004018F0
+Computing Calling Convention: 6/13  0x00401930
+Computing Calling Convention: 7/13  0x00401980
+Computing Calling Convention: 8/13  0x00401A3C
+Computing Calling Convention: 9/13  0x00401A42
+Computing Calling Convention: 10/13  0x00401A50
+Computing Calling Convention: 11/13  0x00401A95
+Computing Calling Convention: 12/13  0x00401B30
+Computing Calling Convention: 13/13  0x00401D12
+Computing Calling Convention: 1/1  0x0040106E
+Computing label cross-references...
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+File analysis complete.
+13 Procs, 82 Labels, 86 Branches, 0 / 8 kB covered
+
+Decompiling 1/13: 0x0040106E
+Decompiling 2/13: 0x004013B8
+Decompiling 3/13: 0x004017C8
+Decompiling 4/13: 0x004018E4
+Decompiling 5/13: 0x004018F0
+Decompiling 6/13: 0x00401930
+Decompiling 7/13: 0x00401980
+Decompiling 8/13: 0x00401A3C
+Decompiling 9/13: 0x00401A42
+Decompiling 10/13: 0x00401A50
+Decompiling 11/13: 0x00401A95
+Decompiling 12/13: 0x00401B30
+Decompiling 13/13: 0x00401D12
+Decompiling 13/13: 0x00401D12
+

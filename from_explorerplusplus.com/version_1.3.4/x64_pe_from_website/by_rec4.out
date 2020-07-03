@@ -1,24 +1,562 @@
 Analyzing './from_explorerplusplus.com/version_1.3.4/x64_pe_from_website/subject.exe' as a x86_64 32 PECOFF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 904 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 904 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 904 kB covered
+0 Procs, 2596 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2597 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2598 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2599 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2600 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+0 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 Resolving indirect jumps...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 Resolving constants and strings...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 Discovering unreached functions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 Computing call tree...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 Computing calling conventions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
+Computing Calling Convention: 7/173  0x0000000140009610
+Computing Calling Convention: 16/173  0x000000014002B630
+Computing Calling Convention: 21/173  0x000000014004ABD8
+Computing Calling Convention: 22/173  0x000000014004AC18
+Computing Calling Convention: 25/173  0x000000014004AD98
+Computing Calling Convention: 27/173  0x000000014004AE24
+Computing Calling Convention: 33/173  0x000000014004B110
+Computing Calling Convention: 39/173  0x000000014004D4C0
+Computing Calling Convention: 40/173  0x000000014004EC14
+Computing Calling Convention: 49/173  0x0000000140051920
+Computing Calling Convention: 50/173  0x0000000140051BBC
+Computing Calling Convention: 56/173  0x0000000140052AD0
+Computing Calling Convention: 60/173  0x0000000140052CC8
+Computing Calling Convention: 61/173  0x0000000140052D54
+Computing Calling Convention: 62/173  0x0000000140052D90
+Computing Calling Convention: 63/173  0x0000000140052DA8
+Computing Calling Convention: 64/173  0x0000000140052DB4
+Computing Calling Convention: 66/173  0x0000000140052E04
+Computing Calling Convention: 67/173  0x0000000140052E38
+Computing Calling Convention: 69/173  0x0000000140052F24
+Computing Calling Convention: 70/173  0x00000001400530B4
+Computing Calling Convention: 73/173  0x0000000140053114
+Computing Calling Convention: 76/173  0x00000001400533E4
+Computing Calling Convention: 77/173  0x000000014005343C
+Computing Calling Convention: 78/173  0x0000000140053444
+Computing Calling Convention: 81/173  0x0000000140054264
+Computing Calling Convention: 82/173  0x00000001400542F0
+Computing Calling Convention: 86/173  0x00000001400545E0
+Computing Calling Convention: 87/173  0x00000001400545EC
+Computing Calling Convention: 92/173  0x0000000140054EBC
+Computing Calling Convention: 99/173  0x000000014005592C
+Computing Calling Convention: 100/173  0x000000014005599C
+Computing Calling Convention: 101/173  0x0000000140055A50
+Computing Calling Convention: 108/173  0x0000000140056970
+Computing Calling Convention: 109/173  0x00000001400569C0
+Computing Calling Convention: 110/173  0x0000000140057798
+Computing Calling Convention: 111/173  0x0000000140057C24
+Computing Calling Convention: 112/173  0x0000000140057EF8
+Computing Calling Convention: 113/173  0x00000001400584B8
+Computing Calling Convention: 114/173  0x00000001400585C4
+Computing Calling Convention: 120/173  0x000000014005A430
+Computing Calling Convention: 121/173  0x000000014005A624
+Computing Calling Convention: 122/173  0x000000014005A888
+Computing Calling Convention: 129/173  0x000000014005B300
+Computing Calling Convention: 132/173  0x000000014005B73C
+Computing Calling Convention: 133/173  0x000000014005B754
+Computing Calling Convention: 135/173  0x000000014005B8D4
+Computing Calling Convention: 136/173  0x000000014005B8E0
+Computing Calling Convention: 137/173  0x000000014005B910
+Computing Calling Convention: 138/173  0x000000014005B960
+Computing Calling Convention: 144/173  0x000000014005BE10
+Computing Calling Convention: 150/173  0x000000014005EC64
+Computing Calling Convention: 153/173  0x0000000140060254
+Computing Calling Convention: 154/173  0x0000000140060D54
+Computing Calling Convention: 155/173  0x0000000140060D5A
+Computing Calling Convention: 156/173  0x0000000140060D66
+Computing Calling Convention: 157/173  0x000000014007BBA0
+Computing Calling Convention: 158/173  0x000000014007DCB0
+Computing Calling Convention: 159/173  0x000000014007E090
+Computing Calling Convention: 160/173  0x000000014007E270
+Computing Calling Convention: 164/173  0x00000001400805D0
+Computing Calling Convention: 170/173  0x00000001400A4710
+Computing Calling Convention: 6/111  0x0000000140009570
+Computing Calling Convention: 15/111  0x000000014004A990
+Computing Calling Convention: 31/111  0x000000014004D414
+Computing Calling Convention: 45/111  0x0000000140052AD8
+Computing Calling Convention: 46/111  0x0000000140052C24
+Computing Calling Convention: 48/111  0x0000000140052DC0
+Computing Calling Convention: 89/111  0x000000014005B9A4
+Computing Calling Convention: 99/111  0x000000014005EC8C
+Computing Calling Convention: 101/111  0x000000014007E5F0
+Computing Calling Convention: 103/111  0x000000014007F810
+Computing Calling Convention: 104/111  0x0000000140084BE0
+Computing Calling Convention: 109/111  0x00000001400B0390
+Computing Calling Convention: 3/99  0x00000001400013C0
+Computing Calling Convention: 4/99  0x00000001400015A0
+Computing Calling Convention: 5/99  0x0000000140001610
+Computing Calling Convention: 9/99  0x000000014000AF70
+Computing Calling Convention: 10/99  0x000000014001A730
+Computing Calling Convention: 11/99  0x000000014001A9F0
+Computing Calling Convention: 12/99  0x000000014001AB20
+Computing Calling Convention: 96/99  0x000000014008F2A0
+Computing Calling Convention: 2/91  0x0000000140001240
+Computing Calling Convention: 86/91  0x000000014007F0B0
+Computing Calling Convention: xx/89  0x00000001400D1DE0
+Computing Calling Convention: 87/88  0x00000001400D1B10
+Computing Calling Convention: 88/88  0x00000001400D1DE0
+Computing Calling Convention: xx/86  0x000000014008F380
+Computing Calling Convention: xx/85  0x000000014008F380
+Computing Calling Convention: xx/84  0x000000014008F380
+Computing Calling Convention: xx/83  0x000000014008F380
+Computing Calling Convention: 81/82  0x000000014008EC90
+Computing Calling Convention: xx/81  0x000000014008F380
+Computing Calling Convention: 1/80  0x000000014004AAAC
+Computing Calling Convention: xx/79  0x000000014008F380
+Computing Calling Convention: 16/78  0x000000014004F1FC
+Computing Calling Convention: 18/78  0x000000014004F79C
+Computing Calling Convention: 45/78  0x0000000140055564
+Computing Calling Convention: 55/78  0x00000001400591B4
+Computing Calling Convention: 62/78  0x000000014005B24C
+Computing Calling Convention: xx/73  0x000000014008F380
+Computing Calling Convention: 17/72  0x000000014004F8A0
+Computing Calling Convention: xx/71  0x000000014008F380
+Computing Calling Convention: xx/70  0x000000014008F380
+Computing Calling Convention: 1/69  0x000000014004AE4C
+Computing Calling Convention: 2/69  0x000000014004AE7C
+Computing Calling Convention: 3/69  0x000000014004AF38
+Computing Calling Convention: xx/66  0x000000014008F380
+Computing Calling Convention: 1/65  0x000000014004B0E0
+Computing Calling Convention: 17/65  0x0000000140052E74
+Computing Calling Convention: xx/63  0x000000014008F380
+Computing Calling Convention: 61/62  0x0000000140084E80
+Computing Calling Convention: 62/62  0x000000014008F380
+Computing Calling Convention: xx/60  0x000000014005EF54
+Computing Calling Convention: 1/59  0x000000014004D294
+Computing Calling Convention: 2/59  0x000000014004D2DC
+Computing Calling Convention: 6/59  0x000000014004F4C8
+Computing Calling Convention: 34/59  0x0000000140055D88
+Computing Calling Convention: 40/59  0x0000000140059314
+Computing Calling Convention: 56/59  0x000000014005CFC0
+Computing Calling Convention: 26/53  0x000000014005529C
+Computing Calling Convention: 29/53  0x0000000140055ADC
+Computing Calling Convention: 31/53  0x0000000140055E18
+Computing Calling Convention: xx/50  0x000000014005EF54
+Computing Calling Convention: 14/49  0x0000000140053478
+Computing Calling Convention: 15/49  0x00000001400534DC
+Computing Calling Convention: 16/49  0x0000000140054394
+Computing Calling Convention: 17/49  0x0000000140054510
+Computing Calling Convention: 32/49  0x00000001400595EC
+Computing Calling Convention: 37/49  0x000000014005B2A0
+Computing Calling Convention: 38/49  0x000000014005B514
+Computing Calling Convention: 40/49  0x000000014005B8CC
+Computing Calling Convention: 41/49  0x000000014005BBAC
+Computing Calling Convention: 42/49  0x000000014005BC34
+Computing Calling Convention: 43/49  0x000000014005BD04
+Computing Calling Convention: 44/49  0x000000014005BD70
+Computing Calling Convention: 45/49  0x000000014005BFA8
+Computing Calling Convention: 46/49  0x000000014005C16C
+Computing Calling Convention: 3/35  0x000000014004F81C
+Computing Calling Convention: 12/35  0x0000000140053140
+Computing Calling Convention: 13/35  0x00000001400533A0
+Computing Calling Convention: 22/35  0x0000000140055658
+Computing Calling Convention: 10/31  0x00000001400530EC
+Computing Calling Convention: xx/30  0x000000014005EF54
+Computing Calling Convention: 27/29  0x000000014005EB48
+Computing Calling Convention: xx/28  0x000000014005EF54
+Computing Calling Convention: 21/27  0x000000014005A890
+Computing Calling Convention: xx/26  0x000000014005EF54
+Computing Calling Convention: xx/25  0x000000014005EF54
+Computing Calling Convention: 1/24  0x0000000140051EEC
+Computing Calling Convention: 2/24  0x0000000140051F40
+Computing Calling Convention: 3/24  0x0000000140051FDC
+Computing Calling Convention: xx/21  0x000000014005EF54
+Computing Calling Convention: xx/20  0x000000014005EF54
+Computing Calling Convention: xx/19  0x000000014005EF54
+Computing Calling Convention: xx/18  0x000000014005EF54
+Computing Calling Convention: 1/17  0x00000001400546CC
+Computing Calling Convention: 2/17  0x0000000140054750
+Computing Calling Convention: 3/17  0x00000001400548A8
+Computing Calling Convention: 13/17  0x000000014005AA0C
+Computing Calling Convention: xx/13  0x000000014005EF54
+Computing Calling Convention: xx/12  0x000000014005EF54
+Computing Calling Convention: xx/11  0x000000014005EF54
+Computing Calling Convention: xx/10  0x000000014005EF54
+Computing Calling Convention: xx/9  0x000000014005EF54
+Computing Calling Convention: 1/8  0x0000000140056270
+Computing Calling Convention: xx/7  0x000000014005EF54
+Computing Calling Convention: 1/6  0x00000001400586C4
+Computing Calling Convention: 5/6  0x000000014005EBBC
+Computing Calling Convention: 1/4  0x000000014005A928
+Computing Calling Convention: 2/4  0x000000014005B16C
+Computing Calling Convention: 4/4  0x000000014005EF54
+Computing Calling Convention: 1/1  0x000000014005B53C
+Computing label cross-references...
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 File analysis complete.
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 904 kB covered
+173 Procs, 2601 Labels, 2901 Branches, 0 / 904 kB covered
 
-
+Decompiling 1/173: 0x0000000140001000
+Decompiling 2/173: 0x0000000140001240
+Decompiling 3/173: 0x00000001400013C0
+Decompiling 4/173: 0x00000001400015A0
+Decompiling 5/173: 0x0000000140001610
+Decompiling 6/173: 0x0000000140009570
+Decompiling 7/173: 0x0000000140009610
+Decompiling 8/173: 0x00000001400097B0
+Decompiling 9/173: 0x00000001400099E0
+Decompiling 10/173: 0x000000014000A760
+Decompiling 11/173: 0x000000014000AF70
+Decompiling 12/173: 0x000000014001A730
+Decompiling 13/173: 0x000000014001A9F0
+Decompiling 14/173: 0x000000014001AB20
+Decompiling 15/173: 0x000000014002B5F8
+Decompiling 16/173: 0x000000014002B630
+Decompiling 17/173: 0x000000014004A990
+Decompiling 18/173: 0x000000014004A9B0
+Decompiling 19/173: 0x000000014004AAAC
+Decompiling 20/173: 0x000000014004AB20
+Decompiling 21/173: 0x000000014004ABD8
+Decompiling 22/173: 0x000000014004AC18
+Decompiling 23/173: 0x000000014004AC20
+Decompiling 24/173: 0x000000014004ACF4
+Decompiling 25/173: 0x000000014004AD98
+Decompiling 26/173: 0x000000014004ADC8
+Decompiling 27/173: 0x000000014004AE24
+Decompiling 28/173: 0x000000014004AE4C
+Decompiling 29/173: 0x000000014004AE7C
+Decompiling 30/173: 0x000000014004AF38
+Decompiling 31/173: 0x000000014004AFD4
+Decompiling 32/173: 0x000000014004B0E0
+Decompiling 33/173: 0x000000014004B110
+Decompiling 34/173: 0x000000014004B61C
+Decompiling 35/173: 0x000000014004BD08
+Decompiling 36/173: 0x000000014004D294
+Decompiling 37/173: 0x000000014004D2DC
+Decompiling 38/173: 0x000000014004D414
+Decompiling 39/173: 0x000000014004D4C0
+Decompiling 40/173: 0x000000014004EC14
+Decompiling 41/173: 0x000000014004EC5C
+Decompiling 42/173: 0x000000014004EC7C
+Decompiling 43/173: 0x000000014004EC9C
+Decompiling 44/173: 0x000000014004F1FC
+Decompiling 45/173: 0x000000014004F4C8
+Decompiling 46/173: 0x000000014004F79C
+Decompiling 47/173: 0x000000014004F81C
+Decompiling 48/173: 0x000000014004F8A0
+Decompiling 49/173: 0x0000000140051920
+Decompiling 50/173: 0x0000000140051BBC
+Decompiling 51/173: 0x0000000140051D24
+Decompiling 52/173: 0x0000000140051EB4
+Decompiling 53/173: 0x0000000140051EEC
+Decompiling 54/173: 0x0000000140051F40
+Decompiling 55/173: 0x0000000140051FDC
+Decompiling 56/173: 0x0000000140052AD0
+Decompiling 57/173: 0x0000000140052AD8
+Decompiling 58/173: 0x0000000140052C24
+Decompiling 59/173: 0x0000000140052C58
+Decompiling 60/173: 0x0000000140052CC8
+Decompiling 61/173: 0x0000000140052D54
+Decompiling 62/173: 0x0000000140052D90
+Decompiling 63/173: 0x0000000140052DA8
+Decompiling 64/173: 0x0000000140052DB4
+Decompiling 65/173: 0x0000000140052DC0
+Decompiling 66/173: 0x0000000140052E04
+Decompiling 67/173: 0x0000000140052E38
+Decompiling 68/173: 0x0000000140052E74
+Decompiling 69/173: 0x0000000140052F24
+Decompiling 70/173: 0x00000001400530B4
+Decompiling 71/173: 0x00000001400530CC
+Decompiling 72/173: 0x00000001400530EC
+Decompiling 73/173: 0x0000000140053114
+Decompiling 74/173: 0x0000000140053140
+Decompiling 75/173: 0x00000001400533A0
+Decompiling 76/173: 0x00000001400533E4
+Decompiling 77/173: 0x000000014005343C
+Decompiling 78/173: 0x0000000140053444
+Decompiling 79/173: 0x0000000140053478
+Decompiling 80/173: 0x00000001400534DC
+Decompiling 81/173: 0x0000000140054264
+Decompiling 82/173: 0x00000001400542F0
+Decompiling 83/173: 0x0000000140054394
+Decompiling 84/173: 0x0000000140054510
+Decompiling 85/173: 0x0000000140054568
+Decompiling 86/173: 0x00000001400545E0
+Decompiling 87/173: 0x00000001400545EC
+Decompiling 88/173: 0x0000000140054614
+Decompiling 89/173: 0x00000001400546CC
+Decompiling 90/173: 0x0000000140054750
+Decompiling 91/173: 0x00000001400548A8
+Decompiling 92/173: 0x0000000140054EBC
+Decompiling 93/173: 0x00000001400550F0
+Decompiling 94/173: 0x000000014005516C
+Decompiling 95/173: 0x000000014005529C
+Decompiling 96/173: 0x000000014005546C
+Decompiling 97/173: 0x0000000140055564
+Decompiling 98/173: 0x0000000140055658
+Decompiling 99/173: 0x000000014005592C
+Decompiling 100/173: 0x000000014005599C
+Decompiling 101/173: 0x0000000140055A50
+Decompiling 102/173: 0x0000000140055ADC
+Decompiling 103/173: 0x0000000140055CCC
+Decompiling 104/173: 0x0000000140055D88
+Decompiling 105/173: 0x0000000140055E18
+Decompiling 106/173: 0x0000000140056090
+Decompiling 107/173: 0x0000000140056270
+Decompiling 108/173: 0x0000000140056970
+Decompiling 109/173: 0x00000001400569C0
+Decompiling 110/173: 0x0000000140057798
+Decompiling 111/173: 0x0000000140057C24
+Decompiling 112/173: 0x0000000140057EF8
+Decompiling 113/173: 0x00000001400584B8
+Decompiling 114/173: 0x00000001400585C4
+Decompiling 115/173: 0x00000001400585DC
+Decompiling 116/173: 0x00000001400586C4
+Decompiling 117/173: 0x00000001400591B4
+Decompiling 118/173: 0x0000000140059314
+Decompiling 119/173: 0x00000001400595EC
+Decompiling 120/173: 0x000000014005A430
+Decompiling 121/173: 0x000000014005A624
+Decompiling 122/173: 0x000000014005A888
+Decompiling 123/173: 0x000000014005A890
+Decompiling 124/173: 0x000000014005A928
+Decompiling 125/173: 0x000000014005AA0C
+Decompiling 126/173: 0x000000014005B16C
+Decompiling 127/173: 0x000000014005B24C
+Decompiling 128/173: 0x000000014005B2A0
+Decompiling 129/173: 0x000000014005B300
+Decompiling 130/173: 0x000000014005B514
+Decompiling 131/173: 0x000000014005B53C
+Decompiling 132/173: 0x000000014005B73C
+Decompiling 133/173: 0x000000014005B754
+Decompiling 134/173: 0x000000014005B8CC
+Decompiling 135/173: 0x000000014005B8D4
+Decompiling 136/173: 0x000000014005B8E0
+Decompiling 137/173: 0x000000014005B910
+Decompiling 138/173: 0x000000014005B960
+Decompiling 139/173: 0x000000014005B9A4
+Decompiling 140/173: 0x000000014005BBAC
+Decompiling 141/173: 0x000000014005BC34
+Decompiling 142/173: 0x000000014005BD04
+Decompiling 143/173: 0x000000014005BD70
+Decompiling 144/173: 0x000000014005BE10
+Decompiling 145/173: 0x000000014005BFA8
+Decompiling 146/173: 0x000000014005C16C
+Decompiling 147/173: 0x000000014005CFC0
+Decompiling 148/173: 0x000000014005EB48
+Decompiling 149/173: 0x000000014005EBBC
+Decompiling 150/173: 0x000000014005EC64
+Decompiling 151/173: 0x000000014005EC8C
+Decompiling 152/173: 0x000000014005EF54
+Decompiling 153/173: 0x0000000140060254
+Decompiling 154/173: 0x0000000140060D54
+Decompiling 155/173: 0x0000000140060D5A
+Decompiling 156/173: 0x0000000140060D66
+Decompiling 157/173: 0x000000014007BBA0
+Decompiling 158/173: 0x000000014007DCB0
+Decompiling 159/173: 0x000000014007E090
+Decompiling 160/173: 0x000000014007E270
+Decompiling 161/173: 0x000000014007E5F0
+Decompiling 162/173: 0x000000014007F0B0
+Decompiling 163/173: 0x000000014007F810
+Decompiling 164/173: 0x00000001400805D0
+Decompiling 165/173: 0x0000000140084BE0
+Decompiling 166/173: 0x0000000140084E80
+Decompiling 167/173: 0x000000014008EC90
+Decompiling 168/173: 0x000000014008F2A0
+Decompiling 169/173: 0x000000014008F380
+Decompiling 170/173: 0x00000001400A4710
+Decompiling 171/173: 0x00000001400B0390
+Decompiling 172/173: 0x00000001400D1B10
+Decompiling 173/173: 0x00000001400D1DE0
+Decompiling 173/173: 0x00000001400D1DE0
+

@@ -1,0 +1,121 @@
+Analyzing './from_holdec/signed_unsigned_comparsion/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/signed_unsigned_comparsion/ia32_elf/subject.exe: no .debug_info section
+./from_holdec/signed_unsigned_comparsion/ia32_elf/subject.exe: 31 sections starting at 0x000017E0
+./from_holdec/signed_unsigned_comparsion/ia32_elf/subject.exe: section string table at 0x00001C40, 0x10A bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000017E0: [ 0] 00000000 00000000 00000000 
+00001808: [ 1] 08048154 00000013 00000154 .interp
+00001830: [ 2] 08048168 00000020 00000168 .note.ABI-tag
+00001858: [ 3] 08048188 00000024 00000188 .note.gnu.build-id
+00001880: [ 4] 080481AC 00000020 000001AC .gnu.hash
+000018A8: [ 5] 080481CC 00000050 000001CC .dynsym
+000018D0: [ 6] 0804821C 0000004C 0000021C .dynstr
+000018F8: [ 7] 08048268 0000000A 00000268 .gnu.version
+00001920: [ 8] 08048274 00000020 00000274 .gnu.version_r
+00001948: [ 9] 08048294 00000008 00000294 .rel.dyn
+00001970: [10] 0804829C 00000010 0000029C .rel.plt
+00001998: [11] 080482AC 00000023 000002AC .init
+000019C0: [12] 080482D0 00000030 000002D0 .plt
+000019E8: [13] 08048300 00000008 00000300 .plt.got
+00001A10: [14] 08048310 000001D2 00000310 .text
+00001A38: [15] 080484E4 00000014 000004E4 .fini
+00001A60: [16] 080484F8 00000036 000004F8 .rodata
+00001A88: [17] 08048530 00000034 00000530 .eh_frame_hdr
+00001AB0: [18] 08048564 00000100 00000564 .eh_frame
+00001AD8: [19] 08049F08 00000004 00000F08 .init_array
+00001B00: [20] 08049F0C 00000004 00000F0C .fini_array
+00001B28: [21] 08049F10 00000004 00000F10 .jcr
+00001B50: [22] 08049F14 000000E8 00000F14 .dynamic
+00001B78: [23] 08049FFC 00000004 00000FFC .got
+00001BA0: [24] 0804A000 00000014 00001000 .got.plt
+00001BC8: [25] 0804A014 00000004 00001014 .data
+00001BF0: [26] 0804A018 00000004 00001018 .bss
+00001C18: [27] 00000000 0000002C 00001018 .comment
+00001C40: [28] 00000000 0000010A 000016D6 .shstrtab
+00001C68: [29] 00000000 00000460 00001044 .symtab
+00001C90: [30] 00000000 00000232 000014A4 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 8 Labels, 6 Branches, 0 / 1 kB covered
+0 Procs, 8 Labels, 6 Branches, 0 / 1 kB covered
+0 Procs, 20 Labels, 15 Branches, 0 / 1 kB covered
+0 Procs, 22 Labels, 17 Branches, 0 / 1 kB covered
+0 Procs, 22 Labels, 17 Branches, 0 / 1 kB covered
+0 Procs, 36 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 36 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 37 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 38 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 38 Labels, 30 Branches, 0 / 1 kB covered
+0 Procs, 43 Labels, 36 Branches, 0 / 1 kB covered
+0 Procs, 45 Labels, 38 Branches, 0 / 1 kB covered
+0 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Resolving indirect jumps...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Resolving constants and strings...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Discovering unreached functions...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Computing call tree...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Computing calling conventions...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+Computing Calling Convention: 2/15  0x080482E0
+Computing Calling Convention: 3/15  0x080482F0
+Computing Calling Convention: 4/15  0x08048300
+Computing Calling Convention: 6/15  0x0804833F
+Computing Calling Convention: 7/15  0x08048370
+Computing Calling Convention: 9/15  0x080483B0
+Computing Calling Convention: 10/15  0x080483F0
+Computing Calling Convention: 11/15  0x08048410
+Computing Calling Convention: 12/15  0x0804843B
+Computing Calling Convention: 14/15  0x080484E0
+Computing Calling Convention: 15/15  0x080484E4
+Computing Calling Convention: 1/4  0x080482AC
+Computing Calling Convention: 2/4  0x08048310
+Computing Calling Convention: 4/4  0x08048480
+Computing Calling Convention: xx/1  0x08048380
+Computing label cross-references...
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+File analysis complete.
+15 Procs, 46 Labels, 38 Branches, 0 / 1 kB covered
+
+Decompiling 1/15: 0x080482AC
+Decompiling 2/15: 0x080482E0
+Decompiling 3/15: 0x080482F0
+Decompiling 4/15: 0x08048300
+Decompiling 5/15: 0x08048310
+Decompiling 6/15: 0x0804833F
+Decompiling 7/15: 0x08048370
+Decompiling 8/15: 0x08048380
+Decompiling 9/15: 0x080483B0
+Decompiling 10/15: 0x080483F0
+Decompiling 11/15: 0x08048410
+Decompiling 12/15: 0x0804843B
+Decompiling 13/15: 0x08048480
+Decompiling 14/15: 0x080484E0
+Decompiling 15/15: 0x080484E4
+Decompiling 15/15: 0x080484E4
+

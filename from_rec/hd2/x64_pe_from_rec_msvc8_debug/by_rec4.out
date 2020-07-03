@@ -1,24 +1,123 @@
 Analyzing './from_rec/hd2/x64_pe_from_rec_msvc8_debug/subject.exe' as a x86_64 32 PECOFF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 19 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 19 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+0 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 Resolving indirect jumps...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 Resolving constants and strings...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 Discovering unreached functions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 Computing call tree...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 Computing calling conventions...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
+Computing Calling Convention: 4/29  0x0000000140001430
+Computing Calling Convention: 5/29  0x000000014000176A
+Computing Calling Convention: 6/29  0x0000000140001770
+Computing Calling Convention: 7/29  0x0000000140001776
+Computing Calling Convention: 11/29  0x0000000140001D70
+Computing Calling Convention: 12/29  0x0000000140002000
+Computing Calling Convention: 14/29  0x0000000140002310
+Computing Calling Convention: 16/29  0x0000000140002860
+Computing Calling Convention: 17/29  0x0000000140002870
+Computing Calling Convention: 18/29  0x0000000140002AD0
+Computing Calling Convention: 19/29  0x0000000140002AE0
+Computing Calling Convention: 20/29  0x0000000140002C10
+Computing Calling Convention: 21/29  0x0000000140002C90
+Computing Calling Convention: 22/29  0x0000000140002D40
+Computing Calling Convention: 23/29  0x0000000140002DD2
+Computing Calling Convention: 24/29  0x0000000140002DD8
+Computing Calling Convention: 25/29  0x0000000140002DDE
+Computing Calling Convention: 28/29  0x0000000140003460
+Computing Calling Convention: 29/29  0x0000000140003466
+Computing Calling Convention: 4/10  0x00000001400017A0
+Computing Calling Convention: 10/10  0x00000001400031D0
+Computing Calling Convention: 8/8  0x0000000140002DF0
+Computing Calling Convention: 6/7  0x00000001400020B0
+Computing Calling Convention: 7/7  0x0000000140002360
+Computing Calling Convention: 4/5  0x00000001400017C0
+Computing Calling Convention: 2/4  0x000000014000100A
+Computing Calling Convention: 3/4  0x000000014000100F
+Computing Calling Convention: 1/2  0x0000000140001005
+Computing Calling Convention: 2/2  0x0000000140001B70
+Computing label cross-references...
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 File analysis complete.
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 19 kB covered
+29 Procs, 277 Labels, 296 Branches, 0 / 19 kB covered
 
-
+Decompiling 1/29: 0x0000000140001005
+Decompiling 2/29: 0x000000014000100A
+Decompiling 3/29: 0x000000014000100F
+Decompiling 4/29: 0x0000000140001430
+Decompiling 5/29: 0x000000014000176A
+Decompiling 6/29: 0x0000000140001770
+Decompiling 7/29: 0x0000000140001776
+Decompiling 8/29: 0x00000001400017A0
+Decompiling 9/29: 0x00000001400017C0
+Decompiling 10/29: 0x0000000140001B70
+Decompiling 11/29: 0x0000000140001D70
+Decompiling 12/29: 0x0000000140002000
+Decompiling 13/29: 0x00000001400020B0
+Decompiling 14/29: 0x0000000140002310
+Decompiling 15/29: 0x0000000140002360
+Decompiling 16/29: 0x0000000140002860
+Decompiling 17/29: 0x0000000140002870
+Decompiling 18/29: 0x0000000140002AD0
+Decompiling 19/29: 0x0000000140002AE0
+Decompiling 20/29: 0x0000000140002C10
+Decompiling 21/29: 0x0000000140002C90
+Decompiling 22/29: 0x0000000140002D40
+Decompiling 23/29: 0x0000000140002DD2
+Decompiling 24/29: 0x0000000140002DD8
+Decompiling 25/29: 0x0000000140002DDE
+Decompiling 26/29: 0x0000000140002DF0
+Decompiling 27/29: 0x00000001400031D0
+Decompiling 28/29: 0x0000000140003460
+Decompiling 29/29: 0x0000000140003466
+Decompiling 29/29: 0x0000000140003466
+

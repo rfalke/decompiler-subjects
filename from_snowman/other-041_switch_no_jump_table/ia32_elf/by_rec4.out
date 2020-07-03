@@ -1,0 +1,44 @@
+Analyzing './from_snowman/other-041_switch_no_jump_table/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-041_switch_no_jump_table/ia32_elf/subject.exe: no .debug_info section
+./from_snowman/other-041_switch_no_jump_table/ia32_elf/subject.exe: 10 sections starting at 0x000002A0
+./from_snowman/other-041_switch_no_jump_table/ia32_elf/subject.exe: section string table at 0x000003B8, 0x5D bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000002A0: [ 0] 00000000 00000000 00000000 
+000002C8: [ 1] 080480B4 00000024 000000B4 .note.gnu.build-id
+000002F0: [ 2] 080480D8 000000B8 000000D8 .text
+00000318: [ 3] 08048190 00000046 00000190 .rodata
+00000340: [ 4] 080481D8 00000014 000001D8 .eh_frame_hdr
+00000368: [ 5] 080481EC 00000038 000001EC .eh_frame
+00000390: [ 6] 00000000 0000001C 00000224 .comment
+000003B8: [ 7] 00000000 0000005D 00000240 .shstrtab
+000003E0: [ 8] 00000000 000000D0 00000430 .symtab
+00000408: [ 9] 00000000 00000049 00000500 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 34 Labels, 32 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

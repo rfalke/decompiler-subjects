@@ -1,0 +1,105 @@
+Analyzing './from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe: no .debug_info section
+./from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe: 21 sections starting at 0x009CDB80
+./from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe: section string table at 0x009CDE50, 0xA3 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+009CDB80: [ 0] 00000000 00000000 00000000 
+009CDBA8: [ 1] 080480F4 00000013 000000F4 .interp
+009CDBD0: [ 2] 08048108 0000003C 00000108 .hash
+009CDBF8: [ 3] 08048144 000000A0 00000144 .dynsym
+009CDC20: [ 4] 080481E4 0000005B 000001E4 .dynstr
+009CDC48: [ 5] 08048240 00000014 00000240 .gnu.version
+009CDC70: [ 6] 08048254 00000020 00000254 .gnu.version_r
+009CDC98: [ 7] 08048274 00000008 00000274 .rel.dyn
+009CDCC0: [ 8] 0804827C 00000040 0000027C .rel.plt
+009CDCE8: [ 9] 080482C0 0000009C 000002C0 .plt
+009CDD10: [10] 0804835C 0000E101 0000035C .text
+009CDD38: [11] 08056460 00000000 0000E460 .eh_frame
+009CDD60: [12] 08057F40 000000C0 0000EF40 .dynamic
+009CDD88: [13] 08058000 0000002C 0000F000 .got.plt
+009CDDB0: [14] 08058030 005A92BC 0000F030 .data
+009CDDD8: [15] 086012F0 00200020 005B82EC .bss
+009CDE00: [16] 00000000 00000D38 005B82EC .stab
+009CDE28: [17] 00000000 00002802 005B9024 .stabstr
+009CDE50: [18] 00000000 000000A3 009CDADA .shstrtab
+009CDE78: [19] 00000000 00207390 005BB828 .symtab
+009CDEA0: [20] 00000000 0020AF22 007C2BB8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 57 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 57 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 57 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 57 kB covered
+0 Procs, 4 Labels, 2 Branches, 0 / 57 kB covered
+0 Procs, 6 Labels, 3 Branches, 0 / 57 kB covered
+0 Procs, 8 Labels, 4 Branches, 0 / 57 kB covered
+0 Procs, 10 Labels, 5 Branches, 0 / 57 kB covered
+0 Procs, 12 Labels, 6 Branches, 0 / 57 kB covered
+0 Procs, 14 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 15 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 16 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 17 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 18 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 19 Labels, 7 Branches, 0 / 57 kB covered
+0 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Resolving indirect jumps...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Resolving constants and strings...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Discovering unreached functions...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Computing call tree...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Computing calling conventions...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+Computing Calling Convention: 1/13  0x080482D0
+Computing Calling Convention: 2/13  0x080482E0
+Computing Calling Convention: 3/13  0x080482F0
+Computing Calling Convention: 4/13  0x08048300
+Computing Calling Convention: 5/13  0x08048310
+Computing Calling Convention: 6/13  0x08048320
+Computing Calling Convention: 7/13  0x08048340
+Computing Calling Convention: 8/13  0x08048884
+Computing Calling Convention: 9/13  0x08049900
+Computing Calling Convention: 10/13  0x0804BC99
+Computing Calling Convention: 11/13  0x0804E0CC
+Computing Calling Convention: 12/13  0x080501FA
+Computing Calling Convention: 13/13  0x0805254D
+Computing label cross-references...
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+File analysis complete.
+13 Procs, 20 Labels, 7 Branches, 0 / 57 kB covered
+
+Decompiling 1/13: 0x080482D0
+Decompiling 2/13: 0x080482E0
+Decompiling 3/13: 0x080482F0
+Decompiling 4/13: 0x08048300
+Decompiling 5/13: 0x08048310
+Decompiling 6/13: 0x08048320
+Decompiling 7/13: 0x08048340
+Decompiling 8/13: 0x08048884
+Decompiling 9/13: 0x08049900
+Decompiling 10/13: 0x0804BC99
+Decompiling 11/13: 0x0804E0CC
+Decompiling 12/13: 0x080501FA
+Decompiling 13/13: 0x0805254D
+Decompiling 13/13: 0x0805254D
+

@@ -1,0 +1,67 @@
+Analyzing './from_snowman/malformed-elf-3/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/malformed-elf-3/x64_elf/subject.exe: no .debug_info section
+./from_snowman/malformed-elf-3/x64_elf/subject.exe: 35 sections starting at 0x00001E40
+./from_snowman/malformed-elf-3/x64_elf/subject.exe: section string table at 0x00002640, 0x148 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001E40: [ 0] 00000000 00000000 41414141 
+00001E80: [ 1] 00400238 0000001C 00000238 .interp
+00001EC0: [ 2] 00400254 00000020 00000254 .note.ABI-tag
+00001F00: [ 3] 00400274 00000024 00000274 .note.gnu.build-id
+00001F40: [ 4] 00400298 00000024 00000298 .gnu.hash
+00001F80: [ 5] 004002C0 444444440D15EA5E 000002C0 .dynsym
+00001FC0: [ 6] 00400458 0000009B 00000458 .dynstr
+00002000: [ 7] 004004F4 00000022 000004F4 .gnu.version
+00002040: [ 8] 00400518 00000030 00000518 .gnu.version_r
+00002080: [ 9] 00400548 00000030 00000548 .rela.dyn
+000020C0: [10] 00400578 00000168 00000578 h_frame
+00002100: [11] 004006E0 0000001A 000006E0 .init
+00002140: [12] 00400700 00000100 00000700 .plt
+00002180: [13] 00400800 000003A2 00000800 .text
+000021C0: [14] 00400BA4 00000000 00000BA4 .fini
+00002200: [15] 00400BB0 00000031 00000BB0 
+00002240: [16] 00400BE4 0000003C 00000BE4 .eh_frame_hdr
+00002280: [17] 00400C20 00000104 00000C20 .eh_frame
+000022C0: [18] 00600E10 00000008 00000E10 .init_array
+00002300: [19] 00600E18 00000009 00000E18 .fini_array
+00002340: [20] 00600E20 00000008 00000E20 .jcr
+00002380: [21] 00600E28 000001D1 00000E28 .dynamic
+000023C0: [22] 00600FF8 00000008 00000FF8 .got
+00002400: [23] 00601000 00000090 00001000 .got.plt
+00002440: [24] 00601090 00000010 00001090 .data
+00002480: [25] 006010A0 00000010 000010A0 .bss
+000024C0: [26] 00000000 00000055 000010A0 .comment
+00002500: [27] 00000000 00000060 000010F5 .debug_aranges
+00002540: [28] 00000000 000005D4 00001155 array
+00002580: [29] 00000000 000001AC 00001729 .debug_abbrev
+000025C0: [30] 00000000 000001B7 000018D5 .debug_line
+00002600: [31] 00000000 00000269 00001A8C .debug_str
+00002640: [32] 00000000 00000148 00001CF5 .shstrtab
+00002680: [33] 00000000 600DCAFE4ECF2051 62BBA87F .symtab
+000026C0: [34] 00000000 00000348 00002EF8 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

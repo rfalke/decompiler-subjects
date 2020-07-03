@@ -1,27 +1,50 @@
 Analyzing './from_pouet.net/with_source_382/ia32_elf/subject.exe' as a x86 32 ELF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 ./from_pouet.net/with_source_382/ia32_elf/subject.exe: 0 sections starting at 0x00000000
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 6 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 6 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 6 kB covered
-0 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 6 kB covered
+0 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Resolving indirect jumps...
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Resolving constants and strings...
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Discovering unreached functions...
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Computing call tree...
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Computing calling conventions...
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 Computing Calling Convention: 1/23  0x08048398
 Computing Calling Convention: 2/23  0x080483A8
 Computing Calling Convention: 3/23  0x080483B8
@@ -45,8 +68,10 @@ Computing Calling Convention: 21/23  0x08048C66
 Computing Calling Convention: xx/3  0x0804938F
 Computing Calling Convention: xx/2  0x0804938F
 Computing Calling Convention: 1/1  0x0804938F
+Computing label cross-references...
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 File analysis complete.
-23 Procs, 177 Labels, 244 Branches, 0 MB used, 5 / 6 kB covered
+23 Procs, 177 Labels, 244 Branches, 5 / 6 kB covered
 
 Decompiling 1/23: 0x08048398
 Decompiling 2/23: 0x080483A8
@@ -72,3 +97,4 @@ Decompiling 21/23: 0x08048C66
 Decompiling 22/23: 0x08048EBE
 Decompiling 23/23: 0x0804938F
 Decompiling 23/23: 0x0804938F
+

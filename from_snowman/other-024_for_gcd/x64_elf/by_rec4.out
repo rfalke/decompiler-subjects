@@ -1,0 +1,46 @@
+Analyzing './from_snowman/other-024_for_gcd/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-024_for_gcd/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-024_for_gcd/x64_elf/subject.exe: 10 sections starting at 0x00001070
+./from_snowman/other-024_for_gcd/x64_elf/subject.exe: section string table at 0x00001230, 0x47 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001070: [ 0] 00000000 00000000 00000000 
+000010B0: [ 1] 004000E8 00000000 000000E8 .rela.plt
+000010F0: [ 2] 004000E8 00000000 000000E8 .plt
+00001130: [ 3] 004000E8 00000068 000000E8 .text
+00001170: [ 4] 00400150 00000058 00000150 .eh_frame
+000011B0: [ 5] 00601000 00000000 00001000 .got.plt
+000011F0: [ 6] 00000000 00000027 00001000 .comment
+00001230: [ 7] 00000000 00000047 00001027 .shstrtab
+00001270: [ 8] 00000000 00000150 000012F0 .symtab
+000012B0: [ 9] 00000000 00000037 00001440 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing call tree...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing calling conventions...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing Calling Convention: xx/1  0x004000E8
+Computing label cross-references...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+File analysis complete.
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+
+Decompiling 1/1: 0x004000E8
+Decompiling 1/1: 0x004000E8
+

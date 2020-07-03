@@ -1,0 +1,93 @@
+Analyzing './from_snowman/arm-015_tree/arm_elf/subject.exe' as a ARM 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/arm-015_tree/arm_elf/subject.exe: no .debug_info section
+./from_snowman/arm-015_tree/arm_elf/subject.exe: 29 sections starting at 0x00000908
+./from_snowman/arm-015_tree/arm_elf/subject.exe: section string table at 0x00000D18, 0xF3 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00000908: [ 0] 00000000 00000000 00000000 
+00000930: [ 1] 00008134 00000019 00000134 .interp
+00000958: [ 2] 00008150 00000020 00000150 .note.ABI-tag
+00000980: [ 3] 00008170 00000030 00000170 .hash
+000009A8: [ 4] 000081A0 00000070 000001A0 .dynsym
+000009D0: [ 5] 00008210 0000004F 00000210 .dynstr
+000009F8: [ 6] 00008260 0000000E 00000260 .gnu.version
+00000A20: [ 7] 00008270 00000020 00000270 .gnu.version_r
+00000A48: [ 8] 00008290 00000008 00000290 .rel.dyn
+00000A70: [ 9] 00008298 00000030 00000298 .rel.plt
+00000A98: [10] 000082C8 0000000C 000002C8 .init
+00000AC0: [11] 000082D4 0000005C 000002D4 .plt
+00000AE8: [12] 00008330 00000344 00000330 .text
+00000B10: [13] 00008674 00000008 00000674 .fini
+00000B38: [14] 0000867C 00000008 0000067C .rodata
+00000B60: [15] 00008684 00000008 00000684 .ARM.exidx
+00000B88: [16] 0000868C 00000004 0000068C .eh_frame
+00000BB0: [17] 00010690 00000004 00000690 .init_array
+00000BD8: [18] 00010694 00000004 00000694 .fini_array
+00000C00: [19] 00010698 00000004 00000698 .jcr
+00000C28: [20] 0001069C 000000E8 0000069C .dynamic
+00000C50: [21] 00010784 00000028 00000784 .got
+00000C78: [22] 000107AC 00000008 000007AC .data
+00000CA0: [23] 000107B4 00000004 000007B4 .bss
+00000CC8: [24] 00000000 00000021 000007B4 .comment
+00000CF0: [25] 00000000 0000003D 000007D5 .ARM.attributes
+00000D18: [26] 00000000 000000F3 00000812 .shstrtab
+00000D40: [27] 00000000 00000680 00000D90 .symtab
+00000D68: [28] 00000000 000002CD 00001410 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 2 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 3 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 4 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 5 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 6 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 7 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Resolving indirect jumps...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Resolving constants and strings...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Discovering unreached functions...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Computing call tree...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Computing calling conventions...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+Computing Calling Convention: 1/8  0x000082F4
+Computing Calling Convention: 2/8  0x00008300
+Computing Calling Convention: 3/8  0x00008318
+Computing Calling Convention: 4/8  0x00008324
+Computing Calling Convention: 5/8  0x000083F8
+Computing Calling Convention: 6/8  0x00008420
+Computing Calling Convention: 7/8  0x00008500
+Computing Calling Convention: 8/8  0x00008570
+Computing label cross-references...
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+File analysis complete.
+8 Procs, 8 Labels, 0 Branches, 0 / 1 kB covered
+
+Decompiling 1/8: 0x000082F4
+Decompiling 2/8: 0x00008300
+Decompiling 3/8: 0x00008318
+Decompiling 4/8: 0x00008324
+Decompiling 5/8: 0x000083F8
+Decompiling 6/8: 0x00008420
+Decompiling 7/8: 0x00008500
+Decompiling 8/8: 0x00008570
+Decompiling 8/8: 0x00008570
+

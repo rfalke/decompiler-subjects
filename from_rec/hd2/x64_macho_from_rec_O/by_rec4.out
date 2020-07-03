@@ -1,40 +1,51 @@
 Analyzing './from_rec/hd2/x64_macho_from_rec_O/subject.exe' as a x86_64 64 mac binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-0 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+0 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Resolving indirect jumps...
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Resolving constants and strings...
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Discovering unreached functions...
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Computing call tree...
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Computing calling conventions...
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 Computing Calling Convention: 4/14  0x0000000100000E08
 Computing Calling Convention: 5/14  0x0000000100000E0E
 Computing Calling Convention: 6/14  0x0000000100000E14
@@ -49,8 +60,10 @@ Computing Calling Convention: 14/14  0x0000000100000E44
 Computing Calling Convention: 1/3  0x0000000100000AEC
 Computing Calling Convention: 2/3  0x0000000100000CD9
 Computing Calling Convention: 3/3  0x0000000100000DBC
+Computing label cross-references...
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 File analysis complete.
-14 Procs, 51 Labels, 45 Branches, 0 MB used, 0 / 0 kB covered
+14 Procs, 51 Labels, 45 Branches, 0 / 0 kB covered
 
 Decompiling 1/14: 0x0000000100000AEC
 Decompiling 2/14: 0x0000000100000CD9
@@ -67,3 +80,4 @@ Decompiling 12/14: 0x0000000100000E38
 Decompiling 13/14: 0x0000000100000E3E
 Decompiling 14/14: 0x0000000100000E44
 Decompiling 14/14: 0x0000000100000E44
+

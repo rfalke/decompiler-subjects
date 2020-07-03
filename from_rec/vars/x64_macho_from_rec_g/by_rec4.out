@@ -1,0 +1,81 @@
+Analyzing './from_rec/vars/x64_macho_from_rec_g/subject.exe' as a x86_64 64 mac binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+0 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Computing call tree...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Computing calling conventions...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+Computing Calling Convention: 1/4  0x0000000100000E34
+Computing Calling Convention: 2/4  0x0000000100000E5C
+Computing Calling Convention: 3/4  0x0000000100000EC1
+Computing Calling Convention: 4/4  0x0000000100000EDE
+Computing label cross-references...
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+File analysis complete.
+4 Procs, 9 Labels, 9 Branches, 0 / 0 kB covered
+
+Decompiling 1/4: 0x0000000100000E34
+Decompiling 2/4: 0x0000000100000E5C
+Decompiling 3/4: 0x0000000100000EC1
+Decompiling 4/4: 0x0000000100000EDE
+Decompiling 4/4: 0x0000000100000EDE
+

@@ -1,0 +1,45 @@
+Analyzing './from_snowman/other-003_gcd_m32/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-003_gcd_m32/ia32_elf/subject.exe: no .debug_info section
+./from_snowman/other-003_gcd_m32/ia32_elf/subject.exe: 9 sections starting at 0x0000011C
+./from_snowman/other-003_gcd_m32/ia32_elf/subject.exe: section string table at 0x0000020C, 0x3C bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+0000011C: [ 0] 00000000 00000000 00000000 
+00000144: [ 1] 08048094 00000000 00000094 .rel.plt
+0000016C: [ 2] 08048094 00000000 00000094 .plt
+00000194: [ 3] 08048094 0000002F 00000094 .text
+000001BC: [ 4] 080490C4 00000000 000000C4 .got.plt
+000001E4: [ 5] 00000000 0000001C 000000C4 .comment
+0000020C: [ 6] 00000000 0000003C 000000E0 .shstrtab
+00000234: [ 7] 00000000 000000C0 00000284 .symtab
+0000025C: [ 8] 00000000 00000032 00000344 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing call tree...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing calling conventions...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+Computing Calling Convention: xx/1  0x08048094
+Computing label cross-references...
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+File analysis complete.
+1 Procs, 5 Labels, 4 Branches, 0 / 0 kB covered
+
+Decompiling 1/1: 0x08048094
+Decompiling 1/1: 0x08048094
+

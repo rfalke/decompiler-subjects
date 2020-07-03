@@ -1,0 +1,46 @@
+Analyzing './from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe: no .debug_info section
+./from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe: 12 sections starting at 0x00001184
+./from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe: section string table at 0x0000133C, 0x69 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001184: [ 0] 00000000 00000000 00000000 
+000011AC: [ 1] 00000114 00000013 00000114 .interp
+000011D4: [ 2] 00000128 00000024 00000128 .note.gnu.build-id
+000011FC: [ 3] 0000014C 00000018 0000014C .gnu.hash
+00001224: [ 4] 00000164 00000010 00000164 .dynsym
+0000124C: [ 5] 00000174 00000001 00000174 .dynstr
+00001274: [ 6] 00000175 00000012 00000175 .text
+0000129C: [ 7] 00000188 00000000 00000188 .eh_frame
+000012C4: [ 8] 00001F98 00000068 00000F98 .dynamic
+000012EC: [ 9] 00000000 000000E0 00001000 .symtab
+00001314: [10] 00000000 00000038 000010E0 .strtab
+0000133C: [11] 00000000 00000069 00001118 .shstrtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

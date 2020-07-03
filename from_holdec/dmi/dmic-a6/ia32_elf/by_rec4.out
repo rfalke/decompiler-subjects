@@ -1,0 +1,100 @@
+Analyzing './from_holdec/dmi/dmic-a6/ia32_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/dmi/dmic-a6/ia32_elf/subject.exe: no .debug_info section
+./from_holdec/dmi/dmic-a6/ia32_elf/subject.exe: 28 sections starting at 0x00001910
+./from_holdec/dmi/dmic-a6/ia32_elf/subject.exe: section string table at 0x00001F50, 0xFE bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001910: [ 0] 00000000 00000000 00000000 
+00001950: [ 1] 00400238 0000001C 00000238 .interp
+00001990: [ 2] 00400254 00000020 00000254 .note.ABI-tag
+000019D0: [ 3] 00400274 00000024 00000274 .note.gnu.build-id
+00001A10: [ 4] 00400298 0000001C 00000298 .gnu.hash
+00001A50: [ 5] 004002B8 00000048 000002B8 .dynsym
+00001A90: [ 6] 00400300 00000038 00000300 .dynstr
+00001AD0: [ 7] 00400338 00000006 00000338 .gnu.version
+00001B10: [ 8] 00400340 00000020 00000340 .gnu.version_r
+00001B50: [ 9] 00400360 00000030 00000360 .rela.dyn
+00001B90: [10] 00400390 00000017 00000390 .init
+00001BD0: [11] 004003B0 00000182 000003B0 .text
+00001C10: [12] 00400534 00000009 00000534 .fini
+00001C50: [13] 00400540 00000010 00000540 .rodata
+00001C90: [14] 00400550 00000024 00000550 .eh_frame_hdr
+00001CD0: [15] 00400578 000000AC 00000578 .eh_frame
+00001D10: [16] 00600E48 00000008 00000E48 .init_array
+00001D50: [17] 00600E50 00000008 00000E50 .fini_array
+00001D90: [18] 00600E58 00000008 00000E58 .jcr
+00001DD0: [19] 00600E60 00000190 00000E60 .dynamic
+00001E10: [20] 00600FF0 00000010 00000FF0 .got
+00001E50: [21] 00601000 00000018 00001000 .got.plt
+00001E90: [22] 00601018 00000004 00001018 .data
+00001ED0: [23] 0060101C 00000004 0000101C .bss
+00001F10: [24] 00000000 0000002C 0000101C .comment
+00001F50: [25] 00000000 000000FE 00001812 .shstrtab
+00001F90: [26] 00000000 000005D0 00001048 .symtab
+00001FD0: [27] 00000000 000001FA 00001618 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 4 Labels, 3 Branches, 0 / 1 kB covered
+0 Procs, 10 Labels, 8 Branches, 0 / 1 kB covered
+0 Procs, 11 Labels, 8 Branches, 0 / 1 kB covered
+0 Procs, 17 Labels, 12 Branches, 0 / 1 kB covered
+0 Procs, 25 Labels, 19 Branches, 0 / 1 kB covered
+0 Procs, 26 Labels, 19 Branches, 0 / 1 kB covered
+0 Procs, 27 Labels, 20 Branches, 0 / 1 kB covered
+0 Procs, 32 Labels, 25 Branches, 0 / 1 kB covered
+0 Procs, 34 Labels, 26 Branches, 0 / 1 kB covered
+0 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Resolving indirect jumps...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Resolving constants and strings...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Discovering unreached functions...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Computing call tree...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Computing calling conventions...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+Computing Calling Convention: 1/10  0x00400390
+Computing Calling Convention: 2/10  0x004003B0
+Computing Calling Convention: 3/10  0x004003E0
+Computing Calling Convention: 4/10  0x00400420
+Computing Calling Convention: 5/10  0x00400460
+Computing Calling Convention: 6/10  0x00400480
+Computing Calling Convention: 7/10  0x004004A6
+Computing Calling Convention: 8/10  0x004004C0
+Computing Calling Convention: 9/10  0x00400530
+Computing Calling Convention: 10/10  0x00400534
+Computing label cross-references...
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+File analysis complete.
+10 Procs, 35 Labels, 26 Branches, 0 / 1 kB covered
+
+Decompiling 1/10: 0x00400390
+Decompiling 2/10: 0x004003B0
+Decompiling 3/10: 0x004003E0
+Decompiling 4/10: 0x00400420
+Decompiling 5/10: 0x00400460
+Decompiling 6/10: 0x00400480
+Decompiling 7/10: 0x004004A6
+Decompiling 8/10: 0x004004C0
+Decompiling 9/10: 0x00400530
+Decompiling 10/10: 0x00400534
+Decompiling 10/10: 0x00400534
+

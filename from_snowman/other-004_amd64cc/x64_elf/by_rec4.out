@@ -1,0 +1,44 @@
+Analyzing './from_snowman/other-004_amd64cc/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-004_amd64cc/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-004_amd64cc/x64_elf/subject.exe: 10 sections starting at 0x00001068
+./from_snowman/other-004_amd64cc/x64_elf/subject.exe: section string table at 0x00001228, 0x47 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001068: [ 0] 00000000 00000000 00000000 
+000010A8: [ 1] 004000E8 00000000 000000E8 .rela.plt
+000010E8: [ 2] 004000E8 00000000 000000E8 .plt
+00001128: [ 3] 004000E8 0000007F 000000E8 .text
+00001168: [ 4] 00400168 00000058 00000168 .eh_frame
+000011A8: [ 5] 00601000 00000000 00001000 .got.plt
+000011E8: [ 6] 00000000 0000001C 00001000 .comment
+00001228: [ 7] 00000000 00000047 0000101C .shstrtab
+00001268: [ 8] 00000000 00000150 000012E8 .symtab
+000012A8: [ 9] 00000000 0000002D 00001438 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

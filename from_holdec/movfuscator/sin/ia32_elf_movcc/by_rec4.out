@@ -1,0 +1,224 @@
+Analyzing './from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe: no .debug_info section
+./from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe: 20 sections starting at 0x00BAB6D4
+./from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe: section string table at 0x00BAB97C, 0x9A bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00BAB6D4: [ 0] 00000000 00000000 00000000 
+00BAB6FC: [ 1] 080480F4 00000013 000000F4 .interp
+00BAB724: [ 2] 08048108 00000028 00000108 .hash
+00BAB74C: [ 3] 08048130 00000050 00000130 .dynsym
+00BAB774: [ 4] 08048180 00000039 00000180 .dynstr
+00BAB79C: [ 5] 080481BA 0000000A 000001BA .gnu.version
+00BAB7C4: [ 6] 080481C4 00000020 000001C4 .gnu.version_r
+00BAB7EC: [ 7] 080481E4 00000018 000001E4 .rel.plt
+00BAB814: [ 8] 08048200 0000004C 00000200 .plt
+00BAB83C: [ 9] 0804824C 001ECF22 0000024C .text
+00BAB864: [10] 08235170 00000000 001ED170 .eh_frame
+00BAB88C: [11] 08236F58 000000A8 001EDF58 .dynamic
+00BAB8B4: [12] 08237000 00000018 001EE000 .got.plt
+00BAB8DC: [13] 08237020 005A972C 001EE020 .data
+00BAB904: [14] 087E0750 00200010 0079774C .bss
+00BAB92C: [15] 00000000 00000744 0079774C .stab
+00BAB954: [16] 00000000 00000A98 00797E90 .stabstr
+00BAB97C: [17] 00000000 0000009A 00BAB637 .shstrtab
+00BAB9A4: [18] 00000000 00207870 00798928 .symtab
+00BAB9CC: [19] 00000000 0020B49F 009A0198 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 1972 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1972 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 1972 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 1972 kB covered
+0 Procs, 4 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 5 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 6 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 7 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 8 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 9 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 10 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 11 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 12 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 13 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 14 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 15 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 16 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 17 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 18 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 19 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 20 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 21 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 22 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 23 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 24 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 25 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 26 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 27 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 28 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 29 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 30 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 31 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 32 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 33 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 34 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 35 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 36 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 37 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 38 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 39 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 40 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 41 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 42 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 43 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 44 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 45 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 46 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 47 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 48 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 49 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 50 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 51 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 52 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 53 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 54 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 55 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 56 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 57 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 58 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 59 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 60 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 61 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 62 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 63 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 64 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 65 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 66 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 67 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 68 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 69 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 70 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 71 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 72 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 73 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 74 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 75 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 76 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 77 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 78 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 79 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 80 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 81 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 82 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 83 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 84 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 85 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 86 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 87 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 88 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 89 Labels, 2 Branches, 0 / 1972 kB covered
+0 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Resolving indirect jumps...
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Resolving constants and strings...
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Discovering unreached functions...
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Computing call tree...
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Computing calling conventions...
+88 Procs, 90 Labels, 2 Branches, 0 / 1972 kB covered
+Computing Calling Convention: 1/88  0x08048210
+Computing Calling Convention: 2/88  0x08048220
+Computing Calling Convention: 3/88  0x08048774

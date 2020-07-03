@@ -1,0 +1,45 @@
+Analyzing './from_snowman/other-005_for/x64_elf/subject.exe' as a x86_64 64 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_snowman/other-005_for/x64_elf/subject.exe: no .debug_info section
+./from_snowman/other-005_for/x64_elf/subject.exe: 11 sections starting at 0x00001070
+./from_snowman/other-005_for/x64_elf/subject.exe: section string table at 0x00001270, 0x4F bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+00001070: [ 0] 00000000 00000000 00000000 
+000010B0: [ 1] 004000E8 00000000 000000E8 .rela.plt
+000010F0: [ 2] 004000E8 00000000 000000E8 .plt
+00001130: [ 3] 004000E8 00000036 000000E8 .text
+00001170: [ 4] 0040011E 00000008 0000011E .rodata
+000011B0: [ 5] 00400128 00000058 00000128 .eh_frame
+000011F0: [ 6] 00601000 00000000 00001000 .got.plt
+00001230: [ 7] 00000000 0000001C 00001000 .comment
+00001270: [ 8] 00000000 0000004F 0000101C .shstrtab
+000012B0: [ 9] 00000000 00000168 00001330 .symtab
+000012F0: [10] 00000000 00000034 00001498 .strtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 2 Labels, 1 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches

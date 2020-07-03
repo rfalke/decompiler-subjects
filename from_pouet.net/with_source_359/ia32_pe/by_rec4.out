@@ -1,35 +1,42 @@
 Analyzing './from_pouet.net/with_source_359/ia32_pe/subject.exe' as a x86 32 PECOFF binary file.
 
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
 Matching signatures...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
 Separating code and data...
-0 Procs, 0 Labels, 0 Branches, 0 MB used, 0 / 1 kB covered
-0 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 1 kB covered
+0 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Resolving indirect jumps...
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Resolving constants and strings...
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Discovering unreached functions...
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Computing call tree...
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Computing calling conventions...
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 Computing Calling Convention: 1/4  0x00401000
 Computing Calling Convention: 3/4  0x0040114A
 Computing Calling Convention: 4/4  0x0040115F
 Computing Calling Convention: 1/1  0x0040101B
+Computing label cross-references...
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 File analysis complete.
-4 Procs, 28 Labels, 47 Branches, 0 MB used, 0 / 1 kB covered
+4 Procs, 28 Labels, 47 Branches, 0 / 1 kB covered
 
 Decompiling 1/4: 0x00401000
 Decompiling 2/4: 0x0040101B
 Decompiling 3/4: 0x0040114A
 Decompiling 4/4: 0x0040115F
 Decompiling 4/4: 0x0040115F
+

@@ -1,0 +1,38 @@
+Analyzing './from_holdec/linux_syscall/ia32_elf/subject.exe' as a x86 32 ELF binary file.
+
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+./from_holdec/linux_syscall/ia32_elf/subject.exe: no .debug_info section
+./from_holdec/linux_syscall/ia32_elf/subject.exe: 4 sections starting at 0x000000C8
+./from_holdec/linux_syscall/ia32_elf/subject.exe: section string table at 0x00000140, 0x17 bytes
+ Offset:  [ix]  Address    Size    Offset  Name
+000000C8: [ 0] 00000000 00000000 00000000 
+000000F0: [ 1] 08048080 0000001D 00000080 .text
+00000118: [ 2] 080490A0 0000000E 000000A0 .data
+00000140: [ 3] 00000000 00000017 000000AE .shstrtab
+Matching signatures...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+Separating code and data...
+0 Procs, 0 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving indirect jumps...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Resolving constants and strings...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Discovering unreached functions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing call tree...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing calling conventions...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+Computing label cross-references...
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+File analysis complete.
+0 Procs, 1 Labels, 0 Branches, 0 / 0 kB covered
+
+
+Binary file (standard input) matches
