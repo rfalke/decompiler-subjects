@@ -1,0 +1,6 @@
+Source: http://pof.eslack.org/tmp/IOLI-crackme.tar.gz
+Source: https://github.com/Maijin/radare2-workshop-2015/tree/master/IOLI-crackme
+Person: Pau Oliva Fora (pof)
+Arch:   ia32
+Format: various
+Size:   small
