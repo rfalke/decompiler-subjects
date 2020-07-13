@@ -1,0 +1,9 @@
+[0x000505]
+signature: void do_adlib_io(d1 cmd1 <al>, d1 cmd2 <ah>)
+
+[0x000ef2]
+signature: void copy_with_or(d2 src <si>, d2 dest <di>, d2 num_words <cx>, d1 value_to_or <bl>)
+
+[activeFunctions]
+do_adlib_io
+copy_with_or

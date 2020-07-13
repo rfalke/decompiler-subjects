@@ -1,0 +1,12 @@
+[0x000100]
+signature: d2 main(void)
+
+[readOnlyRanges]
+0x000100-0x000110
+0x00013c-0x00013f
+
+[interruptHint]
+0x122:16:19:0:19;auto
+
+[activeFunctions]
+main
