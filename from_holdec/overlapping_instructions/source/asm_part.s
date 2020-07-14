@@ -1,9 +1,9 @@
         .file   "a.c"
         .text
     
-.globl overlapping1
-         .type   overlapping1, @function
-overlapping1:
+.globl exec_python
+         .type   exec_python, @function
+exec_python:
  .byte 0x05
  .byte 0x31
  .byte 0xc0
@@ -184,25 +184,28 @@ overlapping1:
  .byte 0xff
  .byte 0xff
  .byte 0xff
-         .size   overlapping1, .-overlapping1
+         .size   exec_python, .-exec_python
 
-.globl overlapping2
-         .type   overlapping2, @function
-overlapping2:
+.globl return_constant
+         .type   return_constant, @function
+return_constant:
  .byte 0xB8, 0x00, 0x03, 0xC1, 0xBB
  .byte 0xB9, 0x00, 0x00, 0x00, 0x05
  .byte 0x03, 0xC1, 0xEB, 0xF4, 0x03
  .byte 0xC3, 0xC3
-         .size   overlapping2, .-overlapping2
+         .size   return_constant, .-return_constant
 
-.globl overlapping3
-         .type   overlapping3, @function
-overlapping3:
- .byte 0xEB, 0x01,0x68, 0xc3, 0x90, 0x90, 0x90
-         .size   overlapping3, .-overlapping3
+.globl not_endless_loop
+         .type   not_endless_loop, @function
+not_endless_loop:
+.start:
+ .byte 0xEB, 0x01, 0x81, 0xc3, 0x11, 0x22, 0x33, 0x44
+		jmp .start
+         .size   not_endless_loop, .-not_endless_loop
 
-.globl overlapping4
-         .type   overlapping4, @function
-overlapping4:
+.globl add_one
+         .type   add_one, @function
+add_one:
+	mov    0x4(%esp),%eax
  .byte 0xEB, 0xFF, 0xC0, 0xC3, 0x00
-         .size   overlapping4, .-overlapping4
+         .size   add_one, .-add_one
