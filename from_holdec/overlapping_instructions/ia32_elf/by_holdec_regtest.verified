@@ -35,6 +35,12 @@ d4 return_constant(void)
   return -1163082564;
 }
 
+// address: 080492ab.0
+// full-signature: func(not_endless_loop, return=[], parameter=[], varargs=false)
+void not_endless_loop(void)
+{
+}
+
 // address: 080492b5.0
 // full-signature: func(add_one, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 add_one(d4 ARG_0)
