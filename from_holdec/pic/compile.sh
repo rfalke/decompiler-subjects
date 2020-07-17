@@ -27,3 +27,4 @@ do
 		done
 	done
 done
+chmod a-x */subject.exe

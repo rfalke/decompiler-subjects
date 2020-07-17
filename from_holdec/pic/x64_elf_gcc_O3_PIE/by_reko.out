@@ -1,0 +1,8 @@
+=== Using options:
+0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+000000000040117F: warning: Unable to determine format string for call to 'printf'.
+0000000000401160: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000401053: warning: Unable to determine format string for call to 'printf'.
+0000000000401070: warning: Unable to determine format string for call to 'printf'.
+00403E10: warning: Expected sizes of arrays to have been determined by now
+00403E10: warning: Expected sizes of arrays to have been determined by now
