@@ -1,6 +1,0 @@
-=== Using options:
-080491EE: warning: Unable to determine format string for call to 'printf'.
-0804917D: warning: Call target address 00000000 is invalid.
-08049130: warning: Call target address 00000000 is invalid.
-080491C0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804908D: warning: Unable to determine format string for call to 'printf'.
