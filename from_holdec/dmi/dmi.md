@@ -79,19 +79,19 @@
 
 | Test                           | Ghidra          | Hex-Rays | Reko              | Retdec        | Snowman                       | Holdec |
 |--------------------------------|-----------------|----------|-------------------|---------------|-------------------------------|--------|
-| basic1: reg in block           | +               | +        | +                 | +             | +                             | ?      |
-| basic2: reg in prev block      | +               | +        | +                 | +             | 1/2 (values are not combined) | ?      |
-| basic4: reg in 2 blocks incr   | +               | +        | +                 | +             | +                             | ?      |
-| basic6: most basic case        | +               | +        | +                 | +             | +                             | ?      |
-| inter1: mem in block           | +               | +        | 0 (performs read) | +             | 0 (performs read)             | ?      |
-| inter2: mem in prev block      | +               | +        | 0 (performs read) | +             | 0 (performs read)             | ?      |
-| inter5: merge writes in blocks | 0               | 0        | 0                 | +             | 0                             | ?      |
-| inter6: mem overwrite in block | +               | +        | 0                 | +             | 0                             | ?      |
-| inter10: subregs               | 1/2 (noise)     | +        | 0                 | 1/2 (noise)   | 0                             | ?      |
-| advan1: merge writes           | 0               | 0        | 0                 | 0             | 0                             | ?      |
-| advan2: prop value             | 0               | +        | 0                 | 0             | 0                             | ?      |
-| advan3: value analysis         | 1/2 (== cmp ok) | +        | 0                 | 3/4 (partial) | 0                             | ?      |
-| **Sum all**                    | 8               | 10       | 4                 | 9.25          | 2.5                           | ?      |
+| basic1: reg in block           | +               | +        | +                 | +             | +                             | +      |
+| basic2: reg in prev block      | +               | +        | +                 | +             | 1/2 (values are not combined) | +      |
+| basic4: reg in 2 blocks incr   | +               | +        | +                 | +             | +                             | +      |
+| basic6: most basic case        | +               | +        | +                 | +             | +                             | +      |
+| inter1: mem in block           | +               | +        | 0 (performs read) | +             | 0 (performs read)             | +      |
+| inter2: mem in prev block      | +               | +        | 0 (performs read) | +             | 0 (performs read)             | +      |
+| inter5: merge writes in blocks | 0               | 0        | 0                 | +             | 0                             | 0      |
+| inter6: mem overwrite in block | +               | +        | 0                 | +             | 0                             | +      |
+| inter10: subregs               | 1/2 (noise)     | +        | 0                 | 1/2 (noise)   | 0                             | +      |
+| advan1: merge writes           | 0               | 0        | 0                 | 0             | 0                             | 0      |
+| advan2: prop value             | 0               | +        | 0                 | 0             | 0                             | 0      |
+| advan3: value analysis         | 1/2 (== cmp ok) | +        | 0                 | 3/4 (partial) | 0                             | 0      |
+| **Sum all**                    | 8               | 10       | 4                 | 9.25          | 2.5                           | 8      |
 
 ### Remarks
 * basic3, basic5 tests the ternary detection which was already covered in transformation:inter1
