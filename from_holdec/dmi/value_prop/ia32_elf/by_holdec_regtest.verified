@@ -101,7 +101,7 @@ d4 basic_6_reg_overwrite_in_block(d4 ARG_0)
 d4 intermediate_1_mem_in_block(d4 ARG_0)
 {
   reg_aa = ARG_0;
-  (void) STORE(&g_0x0804a02c, 48);
+  (void) STORE(&global_var, 48);
   (void) putchar(reg_aa + 48);
   return 0;
 }
@@ -111,7 +111,7 @@ d4 intermediate_1_mem_in_block(d4 ARG_0)
 d4 intermediate_2_mem_in_prev_block(d4 ARG_0)
 {
   reg_aa = ARG_0;
-  (void) STORE(&g_0x0804a02c, 48);
+  (void) STORE(&global_var, 48);
   (void) putchar(reg_aa + 49);
   return 0;
 }
@@ -121,11 +121,11 @@ d4 intermediate_2_mem_in_prev_block(d4 ARG_0)
 d4 intermediate_3_mem_cond_overwrite(d4 ARG_0)
 {
   reg_aa = ARG_0;
-  (void) STORE(&g_0x0804a02c, 65);
+  (void) STORE(&global_var, 65);
   if(reg_aa != 42) {
-    (void) STORE(&g_0x0804a02c, 97);
+    (void) STORE(&global_var, 97);
   }
-  (void) putchar(g_0x0804a02c + reg_aa);
+  (void) putchar(reg_aa + global_var);
   return 0;
 }
 
@@ -134,11 +134,11 @@ d4 intermediate_3_mem_cond_overwrite(d4 ARG_0)
 d4 intermediate_4_mem_cond_change(d4 ARG_0)
 {
   reg_aa = ARG_0;
-  (void) STORE(&g_0x0804a02c, 65);
+  (void) STORE(&global_var, 65);
   if(reg_aa != 42) {
-    (void) STORE(&g_0x0804a02c, 97);
+    (void) STORE(&global_var, 97);
   }
-  (void) putchar(g_0x0804a02c + reg_aa);
+  (void) putchar(reg_aa + global_var);
   return 0;
 }
 
@@ -148,11 +148,11 @@ d4 intermediate_5_mem_different_values(d4 ARG_0)
 {
   reg_aa = ARG_0;
   if(ARG_0 == 42) {
-    (void) STORE(&g_0x0804a02c, 97);
+    (void) STORE(&global_var, 97);
   } else {
-    (void) STORE(&g_0x0804a02c, 65);
+    (void) STORE(&global_var, 65);
   }
-  (void) putchar(g_0x0804a02c + reg_aa);
+  (void) putchar(reg_aa + global_var);
   return 0;
 }
 
@@ -161,7 +161,7 @@ d4 intermediate_5_mem_different_values(d4 ARG_0)
 d4 intermediate_6_mem_overwrite_in_block(d4 ARG_0)
 {
   reg_aa = ARG_0;
-  (void) STORE(&g_0x0804a02c, 48);
+  (void) STORE(&global_var, 48);
   (void) putchar(reg_aa + 48);
   return 0;
 }
@@ -170,7 +170,7 @@ d4 intermediate_6_mem_overwrite_in_block(d4 ARG_0)
 // full-signature: func(intermediate_10_subregs, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 intermediate_10_subregs(void)
 {
-  (void) putchar(UNSIGNED_EXTEND(g_0x0804a030 * 2) + UNSIGNED_EXTEND(g_0x0804a031 * 4));
+  (void) putchar(UNSIGNED_EXTEND(global_char1 * 2) + UNSIGNED_EXTEND(global_char2 * 4));
   return 0;
 }
 
@@ -178,9 +178,9 @@ d4 intermediate_10_subregs(void)
 // full-signature: func(advanced_1_writes_can_be_omitted_for_non_mem_access_calls, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(d4 ARG_0)
 {
-  (void) STORE(&g_0x0804a02c, 1);
+  (void) STORE(&global_var, 1);
   reg_aa = abs(ARG_0);
-  (void) STORE(&g_0x0804a02c, 2);
+  (void) STORE(&global_var, 2);
   return reg_aa + 2;
 }
 
@@ -188,8 +188,8 @@ d4 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(d4 ARG_0)
 // full-signature: func(advanced_2_mem_values_can_be_propagated_for_non_write_calls, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_2_mem_values_can_be_propagated_for_non_write_calls(d4 ARG_0)
 {
-  (void) STORE(&g_0x0804a02c, 1);
+  (void) STORE(&global_var, 1);
   reg_aa = strlen(ARG_0);
-  return g_0x0804a02c + reg_aa;
+  return reg_aa + global_var;
 }
 
