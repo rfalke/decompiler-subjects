@@ -4,7 +4,7 @@
 // full-signature: func(test, return=[], parameter=[<int(signed, 4),n,unknown>], varargs=false)
 void test(s4 n)
 {
-  reg_aa = BIT_TO_INT((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n > 4294967294) * -1 + 0xffffffff) + 5 > 0) * -1 + ((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n > 4294967294) * -1 + 0xffffffff) + 2 > 0 ? -1 : 0);
+  reg_aa = BIT_TO_INT((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n > 4294967294) * -1 + 0xffffffff) + 5 > 0) * -1 + ((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n > 4294967294) * -1 + 0xffffffff) > -2 ? -1 : 0);
   (void) printf("MinMax result %d\n", ((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n > 4294967294) * -1 + 0xffffffff) * -1 + 0xfffffffb & reg_aa) + 3);
 }
 

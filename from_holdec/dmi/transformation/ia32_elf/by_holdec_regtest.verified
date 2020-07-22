@@ -39,9 +39,9 @@ d4 intermediate_10_double_word_signed_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 ARG_
   reg_ad = ARG_5;
   reg_ae = ARG_4;
   reg_af = ARG_2;
-  if(BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5) {
+  if(BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
-  } else if(BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5) {
+  } else if(BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
   }
   if(reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad) {
@@ -75,9 +75,9 @@ d4 intermediate_10_double_word_unsigned_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 AR
   reg_ad = ARG_5;
   reg_ae = ARG_4;
   reg_af = ARG_2;
-  if(BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5) {
+  if(BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
-  } else if(BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(BIT_TEST(31, ARG_0) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_2) || !BIT_TEST(31, ARG_0 + ARG_2) && BIT_TEST(31, ARG_0)) + ARG_1 + ARG_3 >= ARG_5) {
+  } else if(BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(ARG_0 + ARG_2 > -1 && ARG_2 < 0 || ARG_0 + ARG_2 > -1 && ARG_0 < 0 || ARG_0 < 0 && ARG_2 < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
   }
   reg_ag = reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab;

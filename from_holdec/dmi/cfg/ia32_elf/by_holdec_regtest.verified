@@ -324,7 +324,7 @@ d4 advanced_1_loop_with_multiple_entries(d4 ARG_0)
 {
   reg_var1 = ARG_0;
   if(ARG_0 == 42) goto L5;
-  if(ARG_0 <= 42) goto L4;
+  if(ARG_0 < 1) goto L4;
   goto L2;
 
 // calls     [3]
