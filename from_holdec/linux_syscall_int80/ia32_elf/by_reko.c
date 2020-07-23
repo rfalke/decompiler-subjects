@@ -4,8 +4,8 @@
 
 #include "subject_text.h"
 
-// 08048080: void fn08048080()
-void fn08048080()
+// 08049000: void fn08049000()
+void fn08049000()
 {
 	__syscall(0x80);
 	__syscall(0x80);

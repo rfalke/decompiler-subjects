@@ -14,11 +14,11 @@ int32_t entry_point(void);
 
 // ------------------------ Functions -------------------------
 
-// Address range: 0x8048080 - 0x804809d
+// Address range: 0x8049000 - 0x8049022
 int32_t entry_point(void) {
-    // 0x8048080
+    // 0x8049000
     write(1, (int32_t *)"Hello, world!\n", 14);
-    exit(1);
+    exit(0);
     return 1;
 }
 
@@ -29,6 +29,6 @@ int32_t entry_point(void) {
 
 // --------------------- Meta-Information ---------------------
 
-// Detected compiler/packer: elfcrypt (1.0)
+// Detected compiler/packer: gcc (4.4.3)
 // Detected functions: 1
 

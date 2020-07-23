@@ -25,18 +25,18 @@ INFO  HEADLESS Script Paths:
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
-INFO  Creating project: SUBJECTS/from_holdec/linux_syscall/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
-INFO  Creating project: SUBJECTS/from_holdec/linux_syscall/ia32_elf/project_loc/project_name (DefaultProject)  
+INFO  Creating project: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
-INFO       project: SUBJECTS/from_holdec/linux_syscall/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
-INFO  IMPORTING: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
-INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
@@ -66,10 +66,10 @@ INFO  -----------------------------------------------------
      Total Time  some time
 -----------------------------------------------------
  (AutoAnalysisManager)  
-INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Decompiling 08048080, pcode error at 0804809d: Could not follow disassembly flow into non-existing memory at 0804809d (DecompileCallback)  
-INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/linux_syscall/ia32_elf/ghidra.c (GhidraScript)  
-INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/linux_syscall/ia32_elf/subject.exe (HeadlessAnalyzer)  
+WARN  Decompiling 08049000, pcode error at 08049022: Could not follow disassembly flow into non-existing memory at 08049022 (DecompileCallback)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
