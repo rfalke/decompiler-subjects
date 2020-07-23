@@ -24,7 +24,7 @@ d4 exec_python(void)
   (void) STORE(&buffer + 8, 2037395310);
   (void) STORE(&buffer + 4, 1768042354);
   (void) STORE(&buffer, 1937059631);
-  (void) execve(&buffer, 0, 0);
+  (void) sys_execve(&buffer, 0, 0);
   // not reached
 }
 
