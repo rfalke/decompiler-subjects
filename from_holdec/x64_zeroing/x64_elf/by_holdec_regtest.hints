@@ -1,0 +1,5 @@
+[activeFunctions]
+main
+
+[0x401030]
+signature: void printf(d1* fmt<rdi>, d8 arg<rsi>)
