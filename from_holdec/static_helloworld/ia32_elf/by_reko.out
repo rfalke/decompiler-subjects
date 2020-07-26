@@ -1,0 +1,8 @@
+=== Using options:
+error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
+  at Reko.Core.ImageMapItem.set_Size (System.UInt32 value) [0x00009] in <bec34eb899c3465589ce81a9ed177392>:0 
+  at Reko.Core.ImageMap.AddItemWithSize (Reko.Core.Address addr, Reko.Core.ImageMapItem itemNew) [0x001e8] in <bec34eb899c3465589ce81a9ed177392>:0 
+  at Reko.Core.Program.BuildImageMap () [0x00099] in <bec34eb899c3465589ce81a9ed177392>:0 
+  at Reko.Decompiler.BuildImageMaps () [0x00022] in <f784ede1b8914274810e7771ef01afaf>:0 
+  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x000a8] in <f784ede1b8914274810e7771ef01afaf>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <33809380fabe49adac486f7407cc5323>:0 

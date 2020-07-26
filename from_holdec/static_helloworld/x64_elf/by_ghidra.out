@@ -1,0 +1,158 @@
+OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+ERROR Failed to process relocation section .rela.plt: unexpected section type for section index 0 (ElfHeader$$EnhancerByCGLIB$$4b5aeac)  
+INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+ERROR Failed to process relocation section .rela.plt: unexpected section type for section index 0 (ElfHeader$$EnhancerByCGLIB$$4b5aeac)  
+WARN  Decompiling 00473620, pcode error at 004010d8: Could not follow disassembly flow into non-existing memory at 004010d8 (DecompileCallback)  
+INFO  Multiple function definitions for __sigsetjmp at 0044c750 found.  No function signature applied. (ApplyFunctionDataTypesCmd)  
+WARN  Decompiling 0043ab57, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
+WARN  Decompiling 0046aa20, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention Identification            some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    DWARF                                      some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                some time
+    Demangler                                  some time
+    Disassemble Entry Points                   some time
+    Disassemble Entry Points - One Time        some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    Function Start Search After Code           some time
+    Function Start Search After Data           some time
+    GCC Exception Handlers                     some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                     some time
+    Subroutine References                      some time
+    x86 Constant Reference Analyzer           some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Decompiling 004010d6, pcode error at 004010d8: Could not follow disassembly flow into non-existing memory at 004010d8 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00426c40: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 00426c50: process: timeout
+ (CppExporter)  
+WARN  Decompiling 0042c280, pcode error at 0042c2df: Unable to resolve constructor at 0042c2df (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c353: Unable to resolve constructor at 0042c353 (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c4a9: Unable to resolve constructor at 0042c4a9 (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c598: Unable to resolve constructor at 0042c598 (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c6f6: Unable to resolve constructor at 0042c6f6 (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c85a: Unable to resolve constructor at 0042c85a (DecompileCallback)  
+WARN  Decompiling 0042c280, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c2df: Unable to resolve constructor at 0042c2df (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c353: Unable to resolve constructor at 0042c353 (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c4a9: Unable to resolve constructor at 0042c4a9 (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c598: Unable to resolve constructor at 0042c598 (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c6f6: Unable to resolve constructor at 0042c6f6 (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c85a: Unable to resolve constructor at 0042c85a (DecompileCallback)  
+WARN  Decompiling 0042c290, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c2df: Unable to resolve constructor at 0042c2df (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c353: Unable to resolve constructor at 0042c353 (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c4a9: Unable to resolve constructor at 0042c4a9 (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c598: Unable to resolve constructor at 0042c598 (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c6f6: Unable to resolve constructor at 0042c6f6 (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c85a: Unable to resolve constructor at 0042c85a (DecompileCallback)  
+WARN  Decompiling 0042c2a0, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c2df: Unable to resolve constructor at 0042c2df (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c353: Unable to resolve constructor at 0042c353 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00426c60: process: timeout
+ (CppExporter)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c4a9: Unable to resolve constructor at 0042c4a9 (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c598: Unable to resolve constructor at 0042c598 (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c6f6: Unable to resolve constructor at 0042c6f6 (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c85a: Unable to resolve constructor at 0042c85a (DecompileCallback)  
+WARN  Decompiling 0042c2b0, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
+WARN  Decompiling 0043ab57, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
+WARN  Decompiling 0043ab60, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
+WARN  Decompiling 0043ab70, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
+WARN  Decompiling 0043b600, pcode error at 0043b62e: Unable to resolve constructor at 0043b62e (DecompileCallback)  
+WARN  Decompiling 0043b600, pcode error at 0043b761: Unable to resolve constructor at 0043b761 (DecompileCallback)  
+WARN  Decompiling 0043b600, pcode error at 0043b7db: Unable to resolve constructor at 0043b7db (DecompileCallback)  
+WARN  Decompiling 0043b600, pcode error at 0043b828: Unable to resolve constructor at 0043b828 (DecompileCallback)  
+WARN  Decompiling 0043b600, pcode error at 0043b8f0: Unable to resolve constructor at 0043b8f0 (DecompileCallback)  
+WARN  Decompiling 0043b610, pcode error at 0043b62e: Unable to resolve constructor at 0043b62e (DecompileCallback)  
+WARN  Decompiling 0043b610, pcode error at 0043b761: Unable to resolve constructor at 0043b761 (DecompileCallback)  
+WARN  Decompiling 0043b610, pcode error at 0043b7db: Unable to resolve constructor at 0043b7db (DecompileCallback)  
+WARN  Decompiling 0043b610, pcode error at 0043b828: Unable to resolve constructor at 0043b828 (DecompileCallback)  
+WARN  Decompiling 0043b610, pcode error at 0043b8f0: Unable to resolve constructor at 0043b8f0 (DecompileCallback)  
+WARN  Decompiling 0043b650, pcode error at 0043b67a: Unable to resolve constructor at 0043b67a (DecompileCallback)  
+WARN  Decompiling 0043b650, pcode error at 0043b761: Unable to resolve constructor at 0043b761 (DecompileCallback)  
+WARN  Decompiling 0043b650, pcode error at 0043b7db: Unable to resolve constructor at 0043b7db (DecompileCallback)  
+WARN  Decompiling 0043b650, pcode error at 0043b828: Unable to resolve constructor at 0043b828 (DecompileCallback)  
+WARN  Decompiling 0043b650, pcode error at 0043b8f0: Unable to resolve constructor at 0043b8f0 (DecompileCallback)  
+WARN  Decompiling 0043b660, pcode error at 0043b67a: Unable to resolve constructor at 0043b67a (DecompileCallback)  
+WARN  Decompiling 0043b660, pcode error at 0043b761: Unable to resolve constructor at 0043b761 (DecompileCallback)  
+WARN  Decompiling 0043b660, pcode error at 0043b7db: Unable to resolve constructor at 0043b7db (DecompileCallback)  
+WARN  Decompiling 0043b660, pcode error at 0043b828: Unable to resolve constructor at 0043b828 (DecompileCallback)  
+WARN  Decompiling 0043b660, pcode error at 0043b8f0: Unable to resolve constructor at 0043b8f0 (DecompileCallback)  
+WARN  Decompiling 0043be50, pcode error at 0043be64: Unable to resolve constructor at 0043be64 (DecompileCallback)  
+WARN  Decompiling 0043be70, pcode error at 0043be80: Unable to resolve constructor at 0043be80 (DecompileCallback)  
+WARN  Decompiling 0043bed0, pcode error at 0043bee0: Unable to resolve constructor at 0043bee0 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00426c70: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 00429750: process: timeout
+ (CppExporter)  
+WARN  Decompiling 0046aa20, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Decompiling 0046f1f0, pcode error at 0046f296: Unable to resolve constructor at 0046f296 (DecompileCallback)  
+WARN  Decompiling 00473400, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Decompiling 00476000, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Decompiling 00476520, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Decompiling 0047db20, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Decompiling 0047dc30, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00429760: process: timeout
+ (CppExporter)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/static_helloworld/x64_elf/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
