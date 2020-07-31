@@ -1,0 +1,10 @@
+[activeFunctions]
+i386_memset_forward_b
+i386_memset_forward_w
+i386_memset_forward_l
+i386_memset_backward_b
+i386_memset_backward_w
+i386_memset_backward_l
+i386_memset_both_b
+i386_memset_both_w
+i386_memset_both_l
