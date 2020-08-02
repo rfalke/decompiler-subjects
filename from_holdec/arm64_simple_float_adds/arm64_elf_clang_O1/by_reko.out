@@ -1,0 +1,16 @@
+=== Using options:
+0000000000000C94: warning: AArch64 instruction sbc	x3,x3,x2 is not supported yet.
+0000000000000CEC: warning: AArch64 instruction sbc	x3,x3,x2 is not supported yet.
+000000000000113C: warning: AArch64 instruction extr	x1,x2,x1,#3 is not supported yet.
+0000000000000D90: warning: AArch64 instruction sbc	x3,x2,x3 is not supported yet.
+0000000000000DE8: warning: AArch64 instruction sbc	x3,x2,x0 is not supported yet.
+0000000000000EA4: warning: AArch64 instruction sbc	x0,x3,x2 is not supported yet.
+0000000000000F78: warning: AArch64 instruction sbc	x5,x3,x2 is not supported yet.
+0000000000000F34: warning: AArch64 instruction extr	x2,x4,x1,#&3D is not supported yet.
+00000000000008BC: warning: AArch64 instruction adc	x3,x3,x2 is not supported yet.
+0000000000000964: warning: AArch64 instruction adc	x3,x2,x3 is not supported yet.
+0000000000000A54: warning: AArch64 instruction adc	x3,x0,x2 is not supported yet.
+00000000000009FC: warning: AArch64 instruction adc	x3,x3,x2 is not supported yet.
+0000000000000AE0: warning: AArch64 instruction adc	x3,x3,x2 is not supported yet.
+0000000000000BE0: warning: AArch64 instruction adc	x2,x3,x2 is not supported yet.
+0000000000000B90: warning: AArch64 instruction extr	x2,x1,x9,#&3D is not supported yet.
