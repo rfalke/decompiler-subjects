@@ -177,7 +177,7 @@ int64_t frame_dummy(int64_t a1) {
     return register_tm_clones(v1);
 }
 
-// From module:   /home/foobar/work2/source.c
+// From module:   /home/foobar/work3/source.c
 // Address range: 0x808 - 0x9a8
 // Line range:    15 - 41
 void dump(char * msg) {
@@ -220,7 +220,7 @@ void dump(char * msg) {
     puts((char *)&g14);
 }
 
-// From module:   /home/foobar/work2/source.c
+// From module:   /home/foobar/work3/source.c
 // Address range: 0x9a8 - 0xaac
 // Line range:    43 - 64
 int main() {
@@ -245,8 +245,8 @@ int64_t _24_x(int64_t a1, int64_t a2, char * a3) {
     // 0xab0
     int128_t v1; // 0xab0
     __asm_ins(0.0, (float64_t)(int64_t)v1);
-    *(int64_t *)a2 = __asm_fmov(0.0);
-    *(int64_t *)a1 = 0x3fe8000000000000;
+    *(int64_t *)a1 = __asm_fmov(0.0);
+    *(int64_t *)a2 = 0x3fe8000000000000;
     return 0;
 }
 
@@ -255,9 +255,9 @@ int64_t modify2(int64_t a1, int64_t a2, char * a3) {
     // 0xad4
     int128_t v1; // 0xad4
     __asm_dup((float32_t)(int32_t)v1);
-    *(int64_t *)a2 = __asm_fmov(0.0);
+    *(int64_t *)a1 = __asm_fmov(0.0);
     float64_t v2; // 0xad4
-    *(int64_t *)a1 = (int64_t)v2;
+    *(int64_t *)a2 = (int64_t)v2;
     return 0;
 }
 
@@ -269,9 +269,9 @@ int64_t modify3(int64_t a1, int64_t a2, char * a3) {
     __asm_ins_7(0.0f, (float32_t)(int32_t)v1);
     int128_t v2 = __asm_ins_7(0.0f, (float32_t)(int32_t)v1); // 0xb20
     __asm_fdiv(v2, __asm_dup((float32_t)(int32_t)v1));
-    *(int64_t *)a2 = __asm_fmov(0.0);
+    *(int64_t *)a1 = __asm_fmov(0.0);
     float64_t v3; // 0xaf8
-    *(int64_t *)a1 = (int64_t)v3;
+    *(int64_t *)a2 = (int64_t)v3;
     return 0;
 }
 
@@ -285,9 +285,9 @@ int64_t modify4(int64_t a1, int64_t a2, char * a3) {
     int128_t v3 = __asm_dup((float32_t)(int32_t)v1); // 0xb84
     __asm_fdiv(v2, v3);
     __asm_dup_8((char)v3);
-    *(int64_t *)a2 = __asm_fmov(0.0);
+    *(int64_t *)a1 = __asm_fmov(0.0);
     float64_t v4; // 0xb50
-    *(int64_t *)a1 = (int64_t)v4;
+    *(int64_t *)a2 = (int64_t)v4;
     return 0;
 }
 
@@ -297,9 +297,9 @@ int64_t cmp_bytes(int64_t a1, int64_t a2, char * a3) {
     int128_t v1; // 0xbb8
     __asm_cmeq(v1, v1);
     *(float128_t *)a3 = *(float128_t *)"Lorem Ipsum is simply dummy text of the printing ";
-    *(int64_t *)a2 = __asm_fmov(0.0);
+    *(int64_t *)a1 = __asm_fmov(0.0);
     float64_t v2; // 0xbb8
-    *(int64_t *)a1 = (int64_t)v2;
+    *(int64_t *)a2 = (int64_t)v2;
     return 0;
 }
 

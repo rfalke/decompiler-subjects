@@ -497,8 +497,8 @@ undefined8 modify1(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
   param_3[1] = SUB328(ZEXT1632(auVar1) >> 0x40,0);
   *param_3 = SUB168(auVar1,0);
   uVar2 = SIMD_PIECE(auVar1,1);
-  *param_2 = uVar2;
-  *param_1 = SUB168(auVar1,0);
+  *param_1 = uVar2;
+  *param_2 = SUB168(auVar1,0);
   return 0;
 }
 
@@ -516,8 +516,8 @@ undefined8 modify2(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
   param_3[1] = SUB328(ZEXT1632(auVar2) >> 0x40,0);
   *param_3 = SUB168(auVar2,0);
   uVar3 = SIMD_PIECE(auVar2,1);
-  *param_2 = uVar3;
-  *param_1 = SUB168(auVar2,0);
+  *param_1 = uVar3;
+  *param_2 = SUB168(auVar2,0);
   return 0;
 }
 
@@ -543,8 +543,8 @@ undefined8 modify3(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
   param_3[1] = SUB328(ZEXT1632(auVar2) >> 0x40,0);
   *param_3 = SUB168(auVar2,0);
   uVar4 = SIMD_PIECE(auVar2,1);
-  *param_2 = uVar4;
-  *param_1 = SUB168(auVar2,0);
+  *param_1 = uVar4;
+  *param_2 = SUB168(auVar2,0);
   return 0;
 }
 
@@ -597,8 +597,8 @@ undefined8 modify4(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
   param_3[1] = SUB328(ZEXT1632(_cVar5) >> 0x40,0);
   *param_3 = SUB168(_cVar5,0);
   uVar4 = SIMD_PIECE(_cVar5,1);
-  *param_2 = uVar4;
-  *param_1 = SUB168(_cVar5,0);
+  *param_1 = uVar4;
+  *param_2 = SUB168(_cVar5,0);
   return 0;
 }
 
@@ -614,8 +614,8 @@ undefined8 cmp_bytes(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3
   param_3[1] = SUB168(auVar2 >> 0x40,0);
   *param_3 = SUB168(auVar2,0);
   uVar1 = SIMD_PIECE(auVar2,1);
-  *param_2 = uVar1;
-  *param_1 = SUB168(auVar2,0);
+  *param_1 = uVar1;
+  *param_2 = SUB168(auVar2,0);
   return 0;
 }
 

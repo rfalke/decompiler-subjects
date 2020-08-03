@@ -54,9 +54,8 @@ int main()
     modify4(&high, &low, (void*)buffer);
     dump("4x float values of 123, 456, 789, 543 divided by 100 and than add 2 to every byte");
 
-                                                              
-printf("first input:  '%s'\n", input1);
-printf("second input: '%s'\n", input2);        
+    printf("first input:  '%s'\n", input1);
+    printf("second input: '%s'\n", input2);
     cmp_bytes(&high, &low, (void*)buffer);
     dump("compare first 16 bytes of two strings (ff=eq, 00=ne)");
 
