@@ -32,6 +32,6 @@ d8 time_based_random(void)
     (void) _holdec_aarch64_breakpoint(1);
     // not reached
   }
-  return FLOAT_TO_INT(EXTRACT(reg_ac, float_result)) + (FLOAT_TO_INT(EXTRACT(reg_ac, float_result)) < 0 ? (FLOAT_TO_INT(EXTRACT(reg_ac, float_result)) + 0x3 & 0xfffffffffffffffc) * -1 : (FLOAT_TO_INT(EXTRACT(reg_ac, float_result)) & 0xfffffffffffffffc) * -1) + 6;
+  return FLOAT_TO_SIGNED_INT(EXTRACT(reg_ac, float_result)) + (FLOAT_TO_SIGNED_INT(EXTRACT(reg_ac, float_result)) < 0 ? (FLOAT_TO_SIGNED_INT(EXTRACT(reg_ac, float_result)) + 0x3 & 0xfffffffffffffffc) * -1 : (FLOAT_TO_SIGNED_INT(EXTRACT(reg_ac, float_result)) & 0xfffffffffffffffc) * -1) + 6;
 }
 

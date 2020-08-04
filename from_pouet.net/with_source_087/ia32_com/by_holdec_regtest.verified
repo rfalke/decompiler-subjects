@@ -8,7 +8,7 @@ d2 main(void)
   reg_var2 = 0.0;
   do {
     reg_var1a = reg_var1;
-    (void) STORE(UNSIGNED_EXTEND(reg_var1), FLOAT_TO_INT(34.0 * SIN(reg_var2) + 68.0));
+    (void) STORE(UNSIGNED_EXTEND(reg_var1), FLOAT_TO_SIGNED_INT(34.0 * SIN(reg_var2) + 68.0));
     reg_var2 += 0.01227184630308513;
     reg_af = reg_var1 + 1;
     reg_var1++;

@@ -1,0 +1,21 @@
+[0x000ab0]
+signature: void modify1(d1* high <x0>, d1* low <x1>, d1* buffer <x2>)
+
+[0x000ad4]
+signature: void modify2(d1* high <x0>, d1* low <x1>, d1* buffer <x2>)
+
+[0x000af8]
+signature: void modify3(d1* high <x0>, d1* low <x1>, d1* buffer <x2>)
+
+[0x000b50]
+signature: void modify4(d1* high <x0>, d1* low <x1>, d1* buffer <x2>)
+
+[0x000bb8]
+signature: void cmp_bytes(d1* high <x0>, d1* low <x1>, d1* buffer <x2>)
+
+[activeFunctions]
+modify1
+modify2
+modify3
+modify4
+cmp_bytes
