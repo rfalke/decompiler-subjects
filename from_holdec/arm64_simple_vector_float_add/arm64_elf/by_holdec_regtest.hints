@@ -1,0 +1,5 @@
+[activeFunctions]
+add_float_neon3
+
+[func:add_float_neon3]
+signature: void add_float_neon3(d1* dest <x0>, d1* src1 <x1>, d1* src2 <x2>, d4 count <w3>)
