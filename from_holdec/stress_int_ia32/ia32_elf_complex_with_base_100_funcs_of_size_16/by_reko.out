@@ -1,0 +1,20 @@
+=== Using options:
+0804942D: warning: Call target address 00000000 is invalid.
+080493E0: warning: Call target address 00000000 is invalid.
+08049470: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+log_size_4_var_090: error: An internal error occurred while building the expressions of log_size_4_var_090
+    An item with the same key has already been added. Key: bool
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Types.PrimitiveType.Create (Reko.Core.Types.Domain dom, System.Int32 bitSize, System.String name) [0x0006b] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Core.Types.PrimitiveType.Create (Reko.Core.Types.Domain dom, System.Int32 bitSize) [0x00001] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence (Reko.Core.Expressions.MkSequence seq) [0x000a8] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Core.Expressions.MkSequence.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Evaluation.ExpressionSimplifier.VisitApplication (Reko.Core.Expressions.Application appl) [0x0001c] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Core.Expressions.Application.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Analysis.ValuePropagator.VisitSideEffect (Reko.Core.Code.SideEffect side) [0x00006] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Core.Code.SideEffect.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0007e] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+l0804BCD9: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.

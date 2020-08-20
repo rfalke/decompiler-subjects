@@ -1,0 +1,4 @@
+=== Using options:
+0804A14D: warning: Call target address 00000000 is invalid.
+0804A100: warning: Call target address 00000000 is invalid.
+0804A190: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

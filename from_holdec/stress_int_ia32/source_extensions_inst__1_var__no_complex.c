@@ -1,0 +1,101 @@
+extern int inst_0_values_var_0(void);
+extern int inst_0_flags_var_0(void);
+extern int inst_1_values_var_0(void);
+extern int inst_1_flags_var_0(void);
+extern int inst_2_values_var_0(void);
+extern int inst_2_flags_var_0(void);
+extern int inst_3_values_var_0(void);
+extern int inst_3_flags_var_0(void);
+extern int inst_4_values_var_0(void);
+extern int inst_4_flags_var_0(void);
+extern int inst_5_values_var_0(void);
+extern int inst_5_flags_var_0(void);
+extern int inst_6_values_var_0(void);
+extern int inst_6_flags_var_0(void);
+extern int inst_7_values_var_0(void);
+extern int inst_7_flags_var_0(void);
+extern int inst_8_values_var_0(void);
+extern int inst_8_flags_var_0(void);
+extern int inst_9_values_var_0(void);
+extern int inst_9_flags_var_0(void);
+extern int inst_10_values_var_0(void);
+extern int inst_10_flags_var_0(void);
+extern int inst_11_values_var_0(void);
+extern int inst_11_flags_var_0(void);
+extern int inst_12_values_var_0(void);
+extern int inst_12_flags_var_0(void);
+extern int inst_13_values_var_0(void);
+extern int inst_13_flags_var_0(void);
+extern int inst_14_values_var_0(void);
+extern int inst_14_flags_var_0(void);
+extern int inst_15_values_var_0(void);
+extern int inst_15_flags_var_0(void);
+extern int inst_16_values_var_0(void);
+extern int inst_16_flags_var_0(void);
+extern int inst_17_values_var_0(void);
+extern int inst_17_flags_var_0(void);
+extern int inst_18_values_var_0(void);
+extern int inst_18_flags_var_0(void);
+extern int inst_19_values_var_0(void);
+extern int inst_19_flags_var_0(void);
+extern int inst_20_values_var_0(void);
+extern int inst_20_flags_var_0(void);
+extern int inst_21_values_var_0(void);
+extern int inst_21_flags_var_0(void);
+
+
+#include <stdio.h>
+#include <assert.h>
+
+
+int main(int argc, char *argv[])
+{
+  int sum=0;
+  {int x=inst_0_values_var_0(); sum+=x;}
+  {int x=inst_0_flags_var_0(); sum+=x;}
+  {int x=inst_1_values_var_0(); sum+=x;}
+  {int x=inst_1_flags_var_0(); sum+=x;}
+  {int x=inst_2_values_var_0(); sum+=x;}
+  {int x=inst_2_flags_var_0(); sum+=x;}
+  {int x=inst_3_values_var_0(); sum+=x;}
+  {int x=inst_3_flags_var_0(); sum+=x;}
+  {int x=inst_4_values_var_0(); sum+=x;}
+  {int x=inst_4_flags_var_0(); sum+=x;}
+  {int x=inst_5_values_var_0(); sum+=x;}
+  {int x=inst_5_flags_var_0(); sum+=x;}
+  {int x=inst_6_values_var_0(); sum+=x;}
+  {int x=inst_6_flags_var_0(); sum+=x;}
+  {int x=inst_7_values_var_0(); sum+=x;}
+  {int x=inst_7_flags_var_0(); sum+=x;}
+  {int x=inst_8_values_var_0(); sum+=x;}
+  {int x=inst_8_flags_var_0(); sum+=x;}
+  {int x=inst_9_values_var_0(); sum+=x;}
+  {int x=inst_9_flags_var_0(); sum+=x;}
+  {int x=inst_10_values_var_0(); sum+=x;}
+  {int x=inst_10_flags_var_0(); sum+=x;}
+  {int x=inst_11_values_var_0(); sum+=x;}
+  {int x=inst_11_flags_var_0(); sum+=x;}
+  {int x=inst_12_values_var_0(); sum+=x;}
+  {int x=inst_12_flags_var_0(); sum+=x;}
+  {int x=inst_13_values_var_0(); sum+=x;}
+  {int x=inst_13_flags_var_0(); sum+=x;}
+  {int x=inst_14_values_var_0(); sum+=x;}
+  {int x=inst_14_flags_var_0(); sum+=x;}
+  {int x=inst_15_values_var_0(); sum+=x;}
+  {int x=inst_15_flags_var_0(); sum+=x;}
+  {int x=inst_16_values_var_0(); sum+=x;}
+  {int x=inst_16_flags_var_0(); sum+=x;}
+  {int x=inst_17_values_var_0(); sum+=x;}
+  {int x=inst_17_flags_var_0(); sum+=x;}
+  {int x=inst_18_values_var_0(); sum+=x;}
+  {int x=inst_18_flags_var_0(); sum+=x;}
+  {int x=inst_19_values_var_0(); sum+=x;}
+  {int x=inst_19_flags_var_0(); sum+=x;}
+  {int x=inst_20_values_var_0(); sum+=x;}
+  {int x=inst_20_flags_var_0(); sum+=x;}
+  {int x=inst_21_values_var_0(); sum+=x;}
+  {int x=inst_21_flags_var_0(); sum+=x;}
+
+  assert(sum==0);
+  return 0;
+}

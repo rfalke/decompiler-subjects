@@ -1,0 +1,22 @@
+=== Using options:
+080491AD: warning: Call target address 00000000 is invalid.
+08049160: warning: Call target address 00000000 is invalid.
+080491F0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+error: An error occurred during decompilation. System.NotSupportedException: Constants of type ui40 are not supported.
+  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.Int64 value) [0x0035a] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.UInt64 value) [0x00001] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Analysis.LongAddRewriter.CreateCandidate (Reko.Core.Expressions.Expression expLo, Reko.Core.Expressions.Expression expHi, Reko.Core.Types.DataType totalSize) [0x000a0] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.LongAddRewriter.CreateLongInstruction (Reko.Analysis.AddSubCandidate loCandidate, Reko.Analysis.AddSubCandidate hiCandidate) [0x0003d] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.LongAddRewriter.ReplaceLongAdditions (Reko.Core.Block block) [0x00059] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.LongAddRewriter.Transform () [0x00033] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0007c] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <aa3aa805760347ab8f7bf9fb6a341e13>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <6601a3a4d7cf44d391c51e8abe37a440>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <fe0892cdfb8a43da812f85f1d6a9f850>:0 

@@ -1,0 +1,213 @@
+extern int log_size_4_var_000(void);
+extern int log_size_4_var_001(void);
+extern int log_size_4_var_002(void);
+extern int log_size_4_var_003(void);
+extern int log_size_4_var_004(void);
+extern int log_size_4_var_005(void);
+extern int log_size_4_var_006(void);
+extern int log_size_4_var_007(void);
+extern int log_size_4_var_008(void);
+extern int log_size_4_var_009(void);
+extern int log_size_4_var_010(void);
+extern int log_size_4_var_011(void);
+extern int log_size_4_var_012(void);
+extern int log_size_4_var_013(void);
+extern int log_size_4_var_014(void);
+extern int log_size_4_var_015(void);
+extern int log_size_4_var_016(void);
+extern int log_size_4_var_017(void);
+extern int log_size_4_var_018(void);
+extern int log_size_4_var_019(void);
+extern int log_size_4_var_020(void);
+extern int log_size_4_var_021(void);
+extern int log_size_4_var_022(void);
+extern int log_size_4_var_023(void);
+extern int log_size_4_var_024(void);
+extern int log_size_4_var_025(void);
+extern int log_size_4_var_026(void);
+extern int log_size_4_var_027(void);
+extern int log_size_4_var_028(void);
+extern int log_size_4_var_029(void);
+extern int log_size_4_var_030(void);
+extern int log_size_4_var_031(void);
+extern int log_size_4_var_032(void);
+extern int log_size_4_var_033(void);
+extern int log_size_4_var_034(void);
+extern int log_size_4_var_035(void);
+extern int log_size_4_var_036(void);
+extern int log_size_4_var_037(void);
+extern int log_size_4_var_038(void);
+extern int log_size_4_var_039(void);
+extern int log_size_4_var_040(void);
+extern int log_size_4_var_041(void);
+extern int log_size_4_var_042(void);
+extern int log_size_4_var_043(void);
+extern int log_size_4_var_044(void);
+extern int log_size_4_var_045(void);
+extern int log_size_4_var_046(void);
+extern int log_size_4_var_047(void);
+extern int log_size_4_var_048(void);
+extern int log_size_4_var_049(void);
+extern int log_size_4_var_050(void);
+extern int log_size_4_var_051(void);
+extern int log_size_4_var_052(void);
+extern int log_size_4_var_053(void);
+extern int log_size_4_var_054(void);
+extern int log_size_4_var_055(void);
+extern int log_size_4_var_056(void);
+extern int log_size_4_var_057(void);
+extern int log_size_4_var_058(void);
+extern int log_size_4_var_059(void);
+extern int log_size_4_var_060(void);
+extern int log_size_4_var_061(void);
+extern int log_size_4_var_062(void);
+extern int log_size_4_var_063(void);
+extern int log_size_4_var_064(void);
+extern int log_size_4_var_065(void);
+extern int log_size_4_var_066(void);
+extern int log_size_4_var_067(void);
+extern int log_size_4_var_068(void);
+extern int log_size_4_var_069(void);
+extern int log_size_4_var_070(void);
+extern int log_size_4_var_071(void);
+extern int log_size_4_var_072(void);
+extern int log_size_4_var_073(void);
+extern int log_size_4_var_074(void);
+extern int log_size_4_var_075(void);
+extern int log_size_4_var_076(void);
+extern int log_size_4_var_077(void);
+extern int log_size_4_var_078(void);
+extern int log_size_4_var_079(void);
+extern int log_size_4_var_080(void);
+extern int log_size_4_var_081(void);
+extern int log_size_4_var_082(void);
+extern int log_size_4_var_083(void);
+extern int log_size_4_var_084(void);
+extern int log_size_4_var_085(void);
+extern int log_size_4_var_086(void);
+extern int log_size_4_var_087(void);
+extern int log_size_4_var_088(void);
+extern int log_size_4_var_089(void);
+extern int log_size_4_var_090(void);
+extern int log_size_4_var_091(void);
+extern int log_size_4_var_092(void);
+extern int log_size_4_var_093(void);
+extern int log_size_4_var_094(void);
+extern int log_size_4_var_095(void);
+extern int log_size_4_var_096(void);
+extern int log_size_4_var_097(void);
+extern int log_size_4_var_098(void);
+extern int log_size_4_var_099(void);
+
+
+#include <stdio.h>
+#include <assert.h>
+
+
+int main(int argc, char *argv[])
+{
+  int sum=0;
+  {int x=log_size_4_var_000(); sum+=x;}
+  {int x=log_size_4_var_001(); sum+=x;}
+  {int x=log_size_4_var_002(); sum+=x;}
+  {int x=log_size_4_var_003(); sum+=x;}
+  {int x=log_size_4_var_004(); sum+=x;}
+  {int x=log_size_4_var_005(); sum+=x;}
+  {int x=log_size_4_var_006(); sum+=x;}
+  {int x=log_size_4_var_007(); sum+=x;}
+  {int x=log_size_4_var_008(); sum+=x;}
+  {int x=log_size_4_var_009(); sum+=x;}
+  {int x=log_size_4_var_010(); sum+=x;}
+  {int x=log_size_4_var_011(); sum+=x;}
+  {int x=log_size_4_var_012(); sum+=x;}
+  {int x=log_size_4_var_013(); sum+=x;}
+  {int x=log_size_4_var_014(); sum+=x;}
+  {int x=log_size_4_var_015(); sum+=x;}
+  {int x=log_size_4_var_016(); sum+=x;}
+  {int x=log_size_4_var_017(); sum+=x;}
+  {int x=log_size_4_var_018(); sum+=x;}
+  {int x=log_size_4_var_019(); sum+=x;}
+  {int x=log_size_4_var_020(); sum+=x;}
+  {int x=log_size_4_var_021(); sum+=x;}
+  {int x=log_size_4_var_022(); sum+=x;}
+  {int x=log_size_4_var_023(); sum+=x;}
+  {int x=log_size_4_var_024(); sum+=x;}
+  {int x=log_size_4_var_025(); sum+=x;}
+  {int x=log_size_4_var_026(); sum+=x;}
+  {int x=log_size_4_var_027(); sum+=x;}
+  {int x=log_size_4_var_028(); sum+=x;}
+  {int x=log_size_4_var_029(); sum+=x;}
+  {int x=log_size_4_var_030(); sum+=x;}
+  {int x=log_size_4_var_031(); sum+=x;}
+  {int x=log_size_4_var_032(); sum+=x;}
+  {int x=log_size_4_var_033(); sum+=x;}
+  {int x=log_size_4_var_034(); sum+=x;}
+  {int x=log_size_4_var_035(); sum+=x;}
+  {int x=log_size_4_var_036(); sum+=x;}
+  {int x=log_size_4_var_037(); sum+=x;}
+  {int x=log_size_4_var_038(); sum+=x;}
+  {int x=log_size_4_var_039(); sum+=x;}
+  {int x=log_size_4_var_040(); sum+=x;}
+  {int x=log_size_4_var_041(); sum+=x;}
+  {int x=log_size_4_var_042(); sum+=x;}
+  {int x=log_size_4_var_043(); sum+=x;}
+  {int x=log_size_4_var_044(); sum+=x;}
+  {int x=log_size_4_var_045(); sum+=x;}
+  {int x=log_size_4_var_046(); sum+=x;}
+  {int x=log_size_4_var_047(); sum+=x;}
+  {int x=log_size_4_var_048(); sum+=x;}
+  {int x=log_size_4_var_049(); sum+=x;}
+  {int x=log_size_4_var_050(); sum+=x;}
+  {int x=log_size_4_var_051(); sum+=x;}
+  {int x=log_size_4_var_052(); sum+=x;}
+  {int x=log_size_4_var_053(); sum+=x;}
+  {int x=log_size_4_var_054(); sum+=x;}
+  {int x=log_size_4_var_055(); sum+=x;}
+  {int x=log_size_4_var_056(); sum+=x;}
+  {int x=log_size_4_var_057(); sum+=x;}
+  {int x=log_size_4_var_058(); sum+=x;}
+  {int x=log_size_4_var_059(); sum+=x;}
+  {int x=log_size_4_var_060(); sum+=x;}
+  {int x=log_size_4_var_061(); sum+=x;}
+  {int x=log_size_4_var_062(); sum+=x;}
+  {int x=log_size_4_var_063(); sum+=x;}
+  {int x=log_size_4_var_064(); sum+=x;}
+  {int x=log_size_4_var_065(); sum+=x;}
+  {int x=log_size_4_var_066(); sum+=x;}
+  {int x=log_size_4_var_067(); sum+=x;}
+  {int x=log_size_4_var_068(); sum+=x;}
+  {int x=log_size_4_var_069(); sum+=x;}
+  {int x=log_size_4_var_070(); sum+=x;}
+  {int x=log_size_4_var_071(); sum+=x;}
+  {int x=log_size_4_var_072(); sum+=x;}
+  {int x=log_size_4_var_073(); sum+=x;}
+  {int x=log_size_4_var_074(); sum+=x;}
+  {int x=log_size_4_var_075(); sum+=x;}
+  {int x=log_size_4_var_076(); sum+=x;}
+  {int x=log_size_4_var_077(); sum+=x;}
+  {int x=log_size_4_var_078(); sum+=x;}
+  {int x=log_size_4_var_079(); sum+=x;}
+  {int x=log_size_4_var_080(); sum+=x;}
+  {int x=log_size_4_var_081(); sum+=x;}
+  {int x=log_size_4_var_082(); sum+=x;}
+  {int x=log_size_4_var_083(); sum+=x;}
+  {int x=log_size_4_var_084(); sum+=x;}
+  {int x=log_size_4_var_085(); sum+=x;}
+  {int x=log_size_4_var_086(); sum+=x;}
+  {int x=log_size_4_var_087(); sum+=x;}
+  {int x=log_size_4_var_088(); sum+=x;}
+  {int x=log_size_4_var_089(); sum+=x;}
+  {int x=log_size_4_var_090(); sum+=x;}
+  {int x=log_size_4_var_091(); sum+=x;}
+  {int x=log_size_4_var_092(); sum+=x;}
+  {int x=log_size_4_var_093(); sum+=x;}
+  {int x=log_size_4_var_094(); sum+=x;}
+  {int x=log_size_4_var_095(); sum+=x;}
+  {int x=log_size_4_var_096(); sum+=x;}
+  {int x=log_size_4_var_097(); sum+=x;}
+  {int x=log_size_4_var_098(); sum+=x;}
+  {int x=log_size_4_var_099(); sum+=x;}
+
+  assert(sum==0);
+  return 0;
+}
