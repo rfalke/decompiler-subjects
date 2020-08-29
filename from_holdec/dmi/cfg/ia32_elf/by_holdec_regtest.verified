@@ -290,8 +290,8 @@ d4 intermediate_20_nested_loops(d4 ARG_0)
 // full-signature: func(intermediate_30_switch_case, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_30_switch_case(d4 ARG_0)
 {
-  if(ARG_0 < 0 || ARG_0 > 6 && ARG_0 < 9) {
-    if(ARG_0 < 0 || ARG_0 == 7) {
+  if(ARG_0 > 6 && ARG_0 < 9) {
+    if(ARG_0 == 7) {
       (void) puts("7 with fall through");
     }
     (void) puts("8");

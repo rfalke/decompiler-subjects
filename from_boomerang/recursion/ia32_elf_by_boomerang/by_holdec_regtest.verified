@@ -22,7 +22,7 @@ void b(d4 x)
 void c(d4 x)
 {
   (void) printf("c(%d)\n", x);
-  if(x < 0 || x == 2) {
+  if(x != 0 && x != 1 && x < 3) {
     (void) d(2);
   } else if(x == 3) {
     (void) f(3);
@@ -30,7 +30,7 @@ void c(d4 x)
     (void) h(4);
   } else if(x == 5) {
     (void) j(5);
-  } else if(x < 0 || x > 1 && x < 7) {
+  } else if(x != 0 && x != 1 && x < 7) {
     (void) l(6);
   }
 }

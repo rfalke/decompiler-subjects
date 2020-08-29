@@ -4,7 +4,7 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  if(argc < 2 || argc > 7) {
+  if(argc > 7 || argc < 2 && argc > 7 || argc < 2 && argc < 5) {
     (void) puts("Other!");
   } else if(argc == 2) {
     (void) puts("Two!");
