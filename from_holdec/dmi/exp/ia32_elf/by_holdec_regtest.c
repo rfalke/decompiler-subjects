@@ -31,7 +31,7 @@ d4 intermediate_2_cmp_with_extra(d4 ARG_0)
   if(ARG_0 == 1) {
     (void) puts("!=2 is always true");
   }
-  if(ARG_0 >= 11) {
+  if(ARG_0 > 10) {
     (void) puts(">9 is always true");
   }
   return 0;

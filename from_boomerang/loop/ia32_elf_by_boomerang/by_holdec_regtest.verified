@@ -7,7 +7,7 @@ s4 main(s4 argc, d1** argv)
   reg_var1 = 0;
   for(...) {
     // state = PASSIVE_USE_OUTSIDE_LOOP
-    while(reg_var1 <= 9) {
+    while(reg_var1 < 10) {
       reg_var1++;
     }
   }

@@ -5,7 +5,7 @@
 s4 proc1(s4 x, d1* s)
 {
   reg_var1 = InitValue(initial_value_of_reg_20_local);
-  if(x <= 2) {
+  if(x < 3) {
     reg_ad = strlen(s);
     (void) STORE(&x, reg_ad);
   } else {

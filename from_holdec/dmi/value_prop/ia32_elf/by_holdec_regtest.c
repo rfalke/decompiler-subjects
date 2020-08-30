@@ -30,9 +30,9 @@ s4 main(s4 argc, d1** argv)
 d4 advanced_3_value_range_analysis(d4 ARG_0)
 {
   if(ARG_0 > 10) {
-    (void) putchar(ARG_0 <= 10 ? 97 : 98);
+    (void) putchar(ARG_0 < 11 ? 97 : 98);
     (void) putchar(ARG_0 > 10 ? 65 : 66);
-    (void) putchar(ARG_0 <= 9 ? 48 : 49);
+    (void) putchar(ARG_0 < 10 ? 48 : 49);
     if(ARG_0 > 8) {
       (void) puts(">10");
     }

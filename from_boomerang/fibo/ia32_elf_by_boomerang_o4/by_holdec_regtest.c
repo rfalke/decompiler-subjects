@@ -5,7 +5,7 @@
 u4 fib(u4 n)
 {
   reg_aa = n;
-  if(n <= 1) {
+  if(n < 2) {
     reg_result = n;
   } else {
     reg_ab = fib(n + -1);
@@ -22,7 +22,7 @@ void main(void)
   (void) printf("Input number: ");
   (void) scanf("%d", &x);
   reg_aa = x;
-  if(x <= 1) {
+  if(x < 2) {
     reg_var1 = x;
   } else {
     reg_ab = fib(x + -1);

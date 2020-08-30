@@ -10,7 +10,7 @@ s4 main(s4 argc, d1** argv)
     do {
       reg_var1++;
       (void) printf("%d ", reg_var1);
-    } while(reg_var1 <= 9);
+    } while(reg_var1 < 10);
   }
   (void) printf("a is %d, x is %d\n", 10, 10);
   return 0;

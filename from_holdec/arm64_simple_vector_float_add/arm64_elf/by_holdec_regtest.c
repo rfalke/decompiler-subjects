@@ -23,12 +23,12 @@ void add_float_neon3(d1* dest, d1* src1, d1* src2, d4 count)
     reg_ap = LOAD(reg_var1 + 8);
     reg_aq = LOAD(reg_var1 + 12);
     reg_var1 += 16;
-    reg_as = reg_var4 <= 4;
+    reg_as = reg_var4 < 5;
     reg_var4 += -4;
-    (void) STORE(reg_var3 + 8, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_ak) + INT_TO_FLOATBITS(reg_ap)));
-    (void) STORE(reg_var3 + 4, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_aj) + INT_TO_FLOATBITS(reg_ao)));
     (void) STORE(reg_var3 + 12, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_al) + INT_TO_FLOATBITS(reg_aq)));
+    (void) STORE(reg_var3 + 8, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_ak) + INT_TO_FLOATBITS(reg_ap)));
     (void) STORE(reg_var3, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_ai) + INT_TO_FLOATBITS(reg_an)));
+    (void) STORE(reg_var3 + 4, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_aj) + INT_TO_FLOATBITS(reg_ao)));
     reg_var3 += 16;
   } while(!reg_as);
   (void) STORE(InitStackPointerReg + -8, reg_var3);
