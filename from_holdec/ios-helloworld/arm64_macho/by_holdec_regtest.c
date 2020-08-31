@@ -11,7 +11,7 @@ d8 fib(d8 n)
     reg_aa = fib(n + -1);
     reg_ab = fib(n + -2);
     reg_result = reg_aa + reg_ab;
-    reg_var1 = BIT_TO_INT(_holdec_aarch64_addWouldOverflow(reg_aa, reg_ab));
+    reg_var1 = BIT_TO_INT(ADD_OVERFLOW_SIGNED(reg_aa, reg_ab));
   }
   if(reg_var1 != 0) {
     (void) _holdec_aarch64_breakpoint(1);
