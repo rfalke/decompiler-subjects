@@ -46,7 +46,7 @@ d4 intermediate_10_double_word_signed_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 ARG_
   }
   if(reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad) {
     (void) puts("sub");
-  } else if(reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && (reg_ae > -1 && reg_aa > reg_af + -1 || reg_ae < 0 && reg_aa < reg_af ? reg_aa > reg_ae + reg_af : reg_aa < reg_af) || reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad) {
+  } else if(reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && (reg_ae > -1 && reg_aa > reg_af + -1 || reg_ae < 0 && reg_aa < reg_af ? reg_aa > reg_ae + reg_af : reg_aa <= reg_af + -1) || reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad && reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad) {
     (void) puts("sub");
   }
   if(reg_ad < NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af) {
@@ -75,16 +75,14 @@ d4 intermediate_10_double_word_unsigned_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 AR
   reg_ad = ARG_5;
   reg_ae = ARG_4;
   reg_af = ARG_2;
-  if(BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295) + ARG_1 + ARG_3 >= ARG_5) {
+  if(BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > -1 ? UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295 : UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > -1 ? UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295 : UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
-  } else if(BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295) + ARG_1 + ARG_3 >= ARG_5) {
+  } else if(BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > -1 ? UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295 : UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) < 0) + ARG_1 + ARG_3 > ARG_5 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > -1 ? UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295 : UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) < 0) + ARG_1 + ARG_3 >= ARG_5 || ARG_0 + ARG_2 > ARG_4 && BIT_TO_INT(UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > -1 ? UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) > 4294967295 : UNSIGNED_EXTEND(ARG_0) + UNSIGNED_EXTEND(ARG_2) < 0) + ARG_1 + ARG_3 >= ARG_5) {
     (void) puts("add");
   }
-  reg_ag = reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab;
-  reg_ah = reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab;
-  if(reg_ag && reg_ah) {
+  if((reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac <= BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1) && (reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac <= BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1)) {
     (void) puts("sub");
-  } else if((reg_ae > -1 && reg_aa > reg_af + -1 || reg_ae < 0 && reg_aa < reg_af ? reg_aa > reg_ae + reg_af : reg_aa < reg_af) && reg_ah || reg_ag && reg_ah) {
+  } else if((reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac <= BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1) && (reg_ae > -1 && reg_aa > reg_af + -1 || reg_ae < 0 && reg_aa < reg_af ? reg_aa > reg_ae + reg_af : reg_aa <= reg_af + -1) || (reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac <= BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1) && (reg_ad > -1 && reg_ac > BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1 || reg_ad < 0 && reg_ac < BIT_TO_INT(reg_aa < reg_af) + reg_ab ? reg_ac >= BIT_TO_INT(reg_aa < reg_af) + reg_ab + reg_ad : reg_ac <= BIT_TO_INT(reg_aa < reg_af) + reg_ab + -1)) {
     (void) puts("sub");
   }
   if(reg_ad < NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af) {
@@ -92,12 +90,12 @@ d4 intermediate_10_double_word_unsigned_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 AR
   } else if(reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ae < reg_aa * reg_af || reg_ad < NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af) {
     (void) puts("mult");
   }
-  reg_ai = __udivdi3();
-  if(reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ae < reg_ai || reg_ad < NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af) {
+  reg_ag = __udivdi3();
+  if(reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ae < reg_ag || reg_ad < NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af && reg_ad <= NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af) {
     (void) puts("diff");
   }
-  reg_aj = __umoddi3();
-  if((NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af ^ reg_ad) == 0 && (reg_ae ^ reg_aj) == 0) {
+  reg_ah = __umoddi3();
+  if((NARROW(UNSIGNED_EXTEND(reg_aa) * UNSIGNED_EXTEND(reg_af) / 4294967296) + reg_aa * reg_ab + reg_ac * reg_af ^ reg_ad) == 0 && (reg_ae ^ reg_ah) == 0) {
     (void) puts("modulo");
   }
   return 0;

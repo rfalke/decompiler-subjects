@@ -146,13 +146,12 @@ d4 intermediate_4_mem_cond_change(d4 ARG_0)
 // full-signature: func(intermediate_5_mem_different_values, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_5_mem_different_values(d4 ARG_0)
 {
-  reg_aa = ARG_0;
   if(ARG_0 == 42) {
     (void) STORE(&global_var, 97);
   } else {
     (void) STORE(&global_var, 65);
   }
-  (void) putchar(reg_aa + global_var);
+  (void) putchar(ARG_0 + global_var);
   return 0;
 }
 

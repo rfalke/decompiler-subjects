@@ -28,7 +28,7 @@ d2 main(void)
       reg_av = UNSIGNED_EXTEND(reg_var4 & 0xff00 | 0xa0);
       reg_aw = reg_var4 & 0xff00 | 0xa0;
       reg_var4 = 0;
-      (void) _holdec_memcpy(UNSIGNED_EXTEND(reg_as), SEGMENT2ADDR(-24576) + UNSIGNED_EXTEND(reg_var5), reg_av * 2);
+      (void) _holdec_memcpy(UNSIGNED_EXTEND(reg_as), SEGMENT2ADDR(reg_var7a) + UNSIGNED_EXTEND(reg_var5), reg_av * 2);
       reg_var5 += reg_aw;
     } while(reg_var5 < -1536 || reg_var5 > -1);
     reg_var3 = reg_var7a;
