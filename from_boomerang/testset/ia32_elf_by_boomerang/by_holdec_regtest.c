@@ -6,7 +6,7 @@ s4 main(s4 argc, d1** argv)
 {
   (void) printf("Hello, set\n");
   (void) printf("argc <u 3: %d\n", BIT_TO_INT(argc < 3));
-  (void) printf("(argc - 4) >= 0: %d\n", BIT_TO_INT(argc > 3));
+  (void) printf("(argc - 4) >= 0: %d\n", BIT_TO_INT(argc + -4 > -1));
   return 0;
 }
 

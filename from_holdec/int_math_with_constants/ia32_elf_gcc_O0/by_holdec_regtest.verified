@@ -4,7 +4,7 @@
 // full-signature: func(signed_char_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 signed_char_add(void)
 {
-  (void) STORE(&g_0x0817b440, g_0x08170040 + 1);
+  (void) STORE(&signed_char_dest, signed_char_src + 1);
   (void) STORE(&g_0x0817b441, g_0x08170041 + 2);
   (void) STORE(&g_0x0817b442, g_0x08170042 + 3);
   (void) STORE(&g_0x0817b443, g_0x08170043 + 4);
@@ -1036,7 +1036,7 @@ d4 signed_char_add(void)
 // full-signature: func(unsigned_char_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 unsigned_char_add(void)
 {
-  (void) STORE(&g_0x08176840, g_0x08173440 + 1);
+  (void) STORE(&unsigned_char_dest, unsigned_char_src + 1);
   (void) STORE(&g_0x08176841, g_0x08173441 + 2);
   (void) STORE(&g_0x08176842, g_0x08173442 + 3);
   (void) STORE(&g_0x08176843, g_0x08173443 + 4);
@@ -2068,7 +2068,7 @@ d4 unsigned_char_add(void)
 // full-signature: func(signed_short_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 signed_short_add(void)
 {
-  (void) STORE(&g_0x0817b840, g_0x0817ac40 + 1);
+  (void) STORE(&signed_short_dest, signed_short_src + 1);
   (void) STORE(&g_0x0817b842, g_0x0817ac42 + 2);
   (void) STORE(&g_0x0817b844, g_0x0817ac44 + 3);
   (void) STORE(&g_0x0817b846, g_0x0817ac46 + 4);
@@ -3091,16 +3091,16 @@ d4 signed_short_add(void)
   (void) STORE(&g_0x0817c038, g_0x0817b438 + 1021);
   (void) STORE(&g_0x0817c03a, g_0x0817b43a + 1022);
   (void) STORE(&g_0x0817c03c, g_0x0817b43c + 1023);
-  reg_aa = UNSIGNED_EXTEND(g_0x0817b43e);
+  reg_result = UNSIGNED_EXTEND(g_0x0817b43e) & 0xffff0000 | WIDEN(g_0x0817b43e + 0x400);
   (void) STORE(&g_0x0817c03e, g_0x0817b43e + 0x400);
-  return reg_aa & 0xffff0000 | WIDEN(NARROW(reg_aa) + 0x400);
+  return reg_result;
 }
 
 // address: 080a370f.0
 // full-signature: func(unsigned_short_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 unsigned_short_add(void)
 {
-  (void) STORE(&g_0x0817e840, g_0x0817d040 + 1);
+  (void) STORE(&unsigned_short_dest, unsigned_short_src + 1);
   (void) STORE(&g_0x0817e842, g_0x0817d042 + 2);
   (void) STORE(&g_0x0817e844, g_0x0817d044 + 3);
   (void) STORE(&g_0x0817e846, g_0x0817d046 + 4);
@@ -4123,16 +4123,16 @@ d4 unsigned_short_add(void)
   (void) STORE(&g_0x0817f038, g_0x0817d838 + 1021);
   (void) STORE(&g_0x0817f03a, g_0x0817d83a + 1022);
   (void) STORE(&g_0x0817f03c, g_0x0817d83c + 1023);
-  reg_aa = UNSIGNED_EXTEND(g_0x0817d83e);
+  reg_result = UNSIGNED_EXTEND(g_0x0817d83e) & 0xffff0000 | WIDEN(g_0x0817d83e + 0x400);
   (void) STORE(&g_0x0817f03e, g_0x0817d83e + 0x400);
-  return reg_aa & 0xffff0000 | WIDEN(NARROW(reg_aa) + 0x400);
+  return reg_result;
 }
 
 // address: 080bef0f.0
 // full-signature: func(signed_int_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 signed_int_add(void)
 {
-  (void) STORE(&g_0x08176c40, g_0x08182040 + 1);
+  (void) STORE(&signed_int_dest, signed_int_src + 1);
   (void) STORE(&g_0x08176c44, g_0x08182044 + 2);
   (void) STORE(&g_0x08176c48, g_0x08182048 + 3);
   (void) STORE(&g_0x08176c4c, g_0x0818204c + 4);
@@ -5155,16 +5155,16 @@ d4 signed_int_add(void)
   (void) STORE(&g_0x08177c30, g_0x08183030 + 1021);
   (void) STORE(&g_0x08177c34, g_0x08183034 + 1022);
   (void) STORE(&g_0x08177c38, g_0x08183038 + 1023);
-  reg_aa = g_0x0818303c;
+  reg_result = g_0x0818303c + 0x400;
   (void) STORE(&g_0x08177c3c, g_0x0818303c + 0x400);
-  return reg_aa + 0x400;
+  return reg_result;
 }
 
 // address: 080d9efe.0
 // full-signature: func(unsigned_int_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 unsigned_int_add(void)
 {
-  (void) STORE(&g_0x0817c040, g_0x08179c40 + 1);
+  (void) STORE(&unsigned_int_dest, unsigned_int_src + 1);
   (void) STORE(&g_0x0817c044, g_0x08179c44 + 2);
   (void) STORE(&g_0x0817c048, g_0x08179c48 + 3);
   (void) STORE(&g_0x0817c04c, g_0x08179c4c + 4);
@@ -6187,16 +6187,16 @@ d4 unsigned_int_add(void)
   (void) STORE(&g_0x0817d030, g_0x0817ac30 + 1021);
   (void) STORE(&g_0x0817d034, g_0x0817ac34 + 1022);
   (void) STORE(&g_0x0817d038, g_0x0817ac38 + 1023);
-  reg_aa = g_0x0817ac3c;
+  reg_result = g_0x0817ac3c + 0x400;
   (void) STORE(&g_0x0817d03c, g_0x0817ac3c + 0x400);
-  return reg_aa + 0x400;
+  return reg_result;
 }
 
 // address: 080f09c9.0
 // full-signature: func(signed_long_int_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 signed_long_int_add(void)
 {
-  (void) STORE(&g_0x0817d840, g_0x08173840 + 1);
+  (void) STORE(&signed_long_int_dest, signed_long_int_src + 1);
   (void) STORE(&g_0x0817d844, g_0x08173844 + 2);
   (void) STORE(&g_0x0817d848, g_0x08173848 + 3);
   (void) STORE(&g_0x0817d84c, g_0x0817384c + 4);
@@ -7219,16 +7219,16 @@ d4 signed_long_int_add(void)
   (void) STORE(&g_0x0817e830, g_0x08174830 + 1021);
   (void) STORE(&g_0x0817e834, g_0x08174834 + 1022);
   (void) STORE(&g_0x0817e838, g_0x08174838 + 1023);
-  reg_aa = g_0x0817483c;
+  reg_result = g_0x0817483c + 0x400;
   (void) STORE(&g_0x0817e83c, g_0x0817483c + 0x400);
-  return reg_aa + 0x400;
+  return reg_result;
 }
 
 // address: 0810b9b8.0
 // full-signature: func(unsigned_long_int_add, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
 d4 unsigned_long_int_add(void)
 {
-  (void) STORE(&g_0x08181040, g_0x08172440 + 1);
+  (void) STORE(&unsigned_long_int_dest, unsigned_long_int_src + 1);
   (void) STORE(&g_0x08181044, g_0x08172444 + 2);
   (void) STORE(&g_0x08181048, g_0x08172448 + 3);
   (void) STORE(&g_0x0818104c, g_0x0817244c + 4);
@@ -8251,8 +8251,8 @@ d4 unsigned_long_int_add(void)
   (void) STORE(&g_0x08182030, g_0x08173430 + 1021);
   (void) STORE(&g_0x08182034, g_0x08173434 + 1022);
   (void) STORE(&g_0x08182038, g_0x08173438 + 1023);
-  reg_aa = g_0x0817343c;
+  reg_result = g_0x0817343c + 0x400;
   (void) STORE(&g_0x0818203c, g_0x0817343c + 0x400);
-  return reg_aa + 0x400;
+  return reg_result;
 }
 
