@@ -57,10 +57,10 @@ d4 main(void)
   if(reg_var4 != 0) {
     (void) fwrite("Carry Set\n", 1, 10, stdout);
   }
-  if(b < 6) {
+  if(b * -1 + 5 > -1) {
     (void) fwrite("Minus\n", 1, 6, stdout);
   }
-  reg_result = b > 5 ? fwrite("Plus\n", 1, 5, stdout) : b;
+  reg_result = b * -1 + 5 < 0 ? fwrite("Plus\n", 1, 5, stdout) : b;
   return reg_result;
 }
 

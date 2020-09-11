@@ -6,10 +6,10 @@ void initConditions(d4 startSeed)
 {
   reg_var1 = startSeed;
   do {
-    reg_ab = reg_var1 + 1;
+    reg_ab = reg_var1 == startSeed + 999;
     (void) STORE(startSeed * 4294967292 + reg_var1 * 4 + 134783040, reg_var1);
     reg_var1++;
-  } while(reg_ab != startSeed + 1000);
+  } while(!reg_ab);
 }
 
 // address: 08048437.0
