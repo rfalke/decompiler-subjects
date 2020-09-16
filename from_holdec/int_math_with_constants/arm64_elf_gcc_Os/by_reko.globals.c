@@ -12,15 +12,15 @@ word64 g_qwA7D18 = 0x00;
 <anonymous> * g_ptrA7F10 = null;
 struct Eq_214 * g_ptrA7F18 = &g_tA8038;
 word64 g_qwA7F20 = 0x00;
-struct Eq_346388 * g_ptrA7F28 = &g_tA8438;
-struct Eq_272363 * g_ptrA7F30 = &g_tAA438;
+struct Eq_346295 * g_ptrA7F28 = &g_tA8438;
+struct Eq_272321 * g_ptrA7F30 = &g_tAA438;
 struct Eq_34787 * g_ptrA7F38 = &g_tAC438;
 struct Eq_235306 * g_ptrA7F40 = &g_tAC838;
-struct Eq_309331 * g_ptrA7F48 = &g_tAE838;
+struct Eq_309280 * g_ptrA7F48 = &g_tAE838;
 struct Eq_34790 * g_ptrA7F50 = &g_tB0838;
 word64 g_qwA7F58 = 0x00;
 struct Eq_161290 * g_ptrA7F60 = &g_tB0C38;
-struct Eq_309328 * g_ptrA7F70 = &g_tB1C38;
+struct Eq_309277 * g_ptrA7F70 = &g_tB1C38;
 struct Eq_198344 * g_ptrA7F78 = &g_tB3C38;
 struct Eq_70815 * g_ptrA7F80 = &g_tB4C38;
 struct Eq_217 * g_ptrA7F88 = &g_tB5438;
@@ -31,8 +31,8 @@ struct Eq_116101 * g_ptrA7FB0 = &g_tB7038;
 struct Eq_235309 * g_ptrA7FB8 = &g_tB7838;
 struct Eq_116104 * g_ptrA7FC0 = &g_tB9838;
 <anonymous> * g_ptrA7FC8 = null;
-struct Eq_346385 * g_ptrA7FD0 = &g_tBA038;
-struct Eq_272366 * g_ptrA7FD8 = &g_tBC038;
+struct Eq_346292 * g_ptrA7FD0 = &g_tBA038;
+struct Eq_272324 * g_ptrA7FD8 = &g_tBC038;
 struct Eq_161287 * g_ptrA7FE0 = &g_tBE038;
 <anonymous> * g_ptrA8000 = &g_t0B80;
 <anonymous> * g_ptrA8008 = &g_t0B80;
@@ -1066,7 +1066,7 @@ Eq_214 g_tA8038 =
 		0x00,
 		0x00,
 	};
-Eq_346388 g_tA8438 = 
+Eq_346295 g_tA8438 = 
 	{
 		0x00,
 		0x00,
@@ -2093,7 +2093,7 @@ Eq_346388 g_tA8438 =
 		0x00,
 		0x00,
 	};
-Eq_272363 g_tAA438 = 
+Eq_272321 g_tAA438 = 
 	{
 		0x00,
 		0x00,
@@ -5177,7 +5177,7 @@ Eq_235306 g_tAC838 =
 		0,
 		0,
 	};
-Eq_309331 g_tAE838 = 
+Eq_309280 g_tAE838 = 
 	{
 		0x00,
 		0,
@@ -8258,7 +8258,7 @@ Eq_161290 g_tB0C38 =
 		0,
 		0,
 	};
-Eq_309328 g_tB1C38 = 
+Eq_309277 g_tB1C38 = 
 	{
 		0x00,
 		0,
@@ -17508,7 +17508,7 @@ Eq_116104 g_tB9838 =
 		0x00,
 		0x00,
 	};
-Eq_346385 g_tBA038 = 
+Eq_346292 g_tBA038 = 
 	{
 		0x00,
 		0x00,
@@ -18538,7 +18538,7 @@ Eq_346385 g_tBA038 =
 		0x00,
 		0x00,
 	};
-Eq_272366 g_tBC038 = 
+Eq_272324 g_tBC038 = 
 	{
 		0x00,
 		0x00,

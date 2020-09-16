@@ -111,20 +111,20 @@ void main(word64 x19, int32 dwArg00)
 						goto l0000000000000868;
 					w6_127 = w5_58 - 0x02;
 					int32 w5_64 = w5_58 & 0x01;
-					int32 w3_65;
+					int32 w3_65 = w6_127;
 					do
 					{
 						word64 x19_73;
-						word64 x20_74;
-						word64 x21_75;
-						word64 x22_76;
-						word64 x23_77;
-						word64 x24_179;
-						word64 x25_180;
-						word64 x26_181;
-						word64 x27_182;
-						word64 x28_183;
-						fib(w3_65, out x19_73, out x20_74, out x21_75, out x22_76, out x23_77, out x24_179, out x25_180, out x26_181, out x27_182, out x28_183, out x29_11);
+						word64 x20_179;
+						word64 x21_180;
+						word64 x22_181;
+						word64 x23_182;
+						word64 x24_183;
+						word64 x25_184;
+						word64 x26_185;
+						word64 x27_186;
+						word64 x28_187;
+						fib(w3_65, out x19_73, out x20_179, out x21_180, out x22_181, out x23_182, out x24_183, out x25_184, out x26_185, out x27_186, out x28_187, out x29_11);
 						w3_65 -= 0x02;
 						w19_110 = (word32) x19_73;
 					} while (w5_64 != w3_65);
@@ -248,17 +248,17 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 	else
 	{
 		struct Eq_217 * x29_13 = fp + -0x0098;
-		word64 x25_864 = SEQ(x25_32_32_381, w0 - 0x01);
+		word64 x25_863 = SEQ(x25_32_32_381, w0 - 0x01);
 		do
 		{
 			word32 w0_268;
-			int32 w25_273 = (word32) x25_864;
-			word32 x25_32_32_380 = SLICE(x25_864, word32, 32);
+			int32 w25_273 = (word32) x25_863;
+			word32 x25_32_32_380 = SLICE(x25_863, word32, 32);
 			int32 w1_262 = w25_273;
 			if (w25_273 != 0x02)
 			{
 				x29_13[74] = (struct Eq_217) 0x00;
-				word64 x25_142 = x25_864;
+				word64 x25_142 = x25_863;
 				do
 				{
 					word32 w0_258;
@@ -285,17 +285,17 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 										ui32 w1_82 = w0_240 - 0x02;
 										x29_13[62] = (struct Eq_217) w1_82;
 										x29_13[70] = (struct Eq_217) 0x00;
-										word64 x27_848 = SEQ(x27_32_32_509, w1_82);
+										word64 x27_847 = SEQ(x27_32_32_509, w1_82);
 										do
 										{
 											word32 w0_212;
-											int32 w27_217 = (word32) x27_848;
-											x27_32_32_509 = SLICE(x27_848, word32, 32);
+											int32 w27_217 = (word32) x27_847;
+											x27_32_32_509 = SLICE(x27_847, word32, 32);
 											int32 w24_206 = w27_217;
 											if (w27_217 != 0x02)
 											{
 												x29_13[0x0044] = (struct Eq_217) 0x00;
-												word64 x27_150 = x27_848;
+												word64 x27_150 = x27_847;
 												do
 												{
 													word32 w23_192;
@@ -303,28 +303,28 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 													{
 														word32 w0_101 = w24_206 - 0x02;
 														x29_13[64] = (struct Eq_217) w0_101;
-														word64 x22_819 = SEQ(x22_32_32_450, w0_101);
-														word64 x23_823 = SEQ(x23_32_32_469, 0x00);
+														word64 x22_818 = SEQ(x22_32_32_450, w0_101);
+														word64 x23_822 = SEQ(x23_32_32_469, 0x00);
 														word64 x24_149 = SEQ(x24_32_32_489, w24_206 & 0x01);
 														do
 														{
 															word32 w21_110;
-															int32 w22_106 = (word32) x22_819;
-															x23_32_32_469 = SLICE(x23_823, word32, 32);
-															x22_32_32_450 = SLICE(x22_819, word32, 32);
-															word32 w23_178 = (word32) x23_823;
+															int32 w22_106 = (word32) x22_818;
+															x23_32_32_469 = SLICE(x23_822, word32, 32);
+															x22_32_32_450 = SLICE(x22_818, word32, 32);
+															word32 w23_178 = (word32) x23_822;
 															int32 w19_108 = w22_106;
 															if (w22_106 != 0x02)
 															{
-																word64 x21_800 = SEQ(x21_32_32_430, 0x00);
-																word64 x22_147 = x22_819;
-																word64 x23_148 = x23_823;
+																word64 x21_799 = SEQ(x21_32_32_430, 0x00);
+																word64 x22_147 = x22_818;
+																word64 x23_148 = x23_822;
 																do
 																{
 																	word32 w2_115;
 																	int32 w20_116;
-																	x21_32_32_430 = SLICE(x21_800, word32, 32);
-																	word32 w21_166 = (word32) x21_800;
+																	x21_32_32_430 = SLICE(x21_799, word32, 32);
+																	word32 w21_166 = (word32) x21_799;
 																	if (w19_108 != 0x03)
 																	{
 																		int32 w26_119 = w19_108 - 0x02;
@@ -354,7 +354,7 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 																	w23_178 = (word32) x23_148;
 																	w22_106 = (word32) x22_147;
 																	w19_108 = w20_116;
-																	x21_800 = SEQ(x21_32_32_430, w21_170);
+																	x21_799 = SEQ(x21_32_32_430, w21_170);
 																} while (w20_116 > 0x02);
 																w21_110 = w21_170 + 0x01;
 															}
@@ -363,8 +363,8 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 															word32 w22_177 = w22_106 - 0x02;
 															word32 w23_184 = w23_178 + w21_110;
 															x24_32_32_489 = SLICE(x24_149, word32, 32);
-															x22_819 = SEQ(x22_32_32_450, w22_177);
-															x23_823 = SEQ(x23_32_32_469, w23_184);
+															x22_818 = SEQ(x22_32_32_450, w22_177);
+															x23_822 = SEQ(x23_32_32_469, w23_184);
 														} while ((word32) x24_149 != w22_177);
 														w23_192 = w23_184 + 0x01;
 													}
@@ -386,7 +386,7 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 												w0_212 = 0x01;
 											x29_13[70] = (struct Eq_217) ((word16) x29_13[70] + w0_212);
 											word32 w27_225 = w27_217 - 0x02;
-											x27_848 = SEQ(x27_32_32_509, w27_225);
+											x27_847 = SEQ(x27_32_32_509, w27_225);
 										} while (x29_13[58] != w27_225);
 										w0_233 = (word32) ((word16) x29_13[70] + 1);
 									}
@@ -426,7 +426,7 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22O
 				w0_268 = 0x01;
 			x29_13[76] = (struct Eq_217) ((word16) x29_13[76] + w0_268);
 			word32 w25_289 = w25_273 - 0x02;
-			x25_864 = SEQ(x25_32_32_380, w25_289);
+			x25_863 = SEQ(x25_32_32_380, w25_289);
 		} while (x29_13[54] != w25_289);
 		int32 w0_317 = (word16) x29_13[76] + 1;
 		x19Out = qwLoc90;

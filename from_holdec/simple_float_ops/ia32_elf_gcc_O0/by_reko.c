@@ -142,25 +142,25 @@ void read_ints()
 void write_ints(word64 qwArg04)
 {
 	word32 dwArg04 = (word32) qwArg04;
-	uint16 wLoc0E_64 = __fstcw();
-	uint16 ax_19 = (word16) (word32) wLoc0E_64;
-	__fldcw(ax_19);
-	__fldcw(wLoc0E_64);
+	uint16 wLoc0E_65 = __fstcw();
+	uint16 ax_20 = SEQ(0x0C, (byte) (word32) wLoc0E_65);
+	__fldcw(ax_20);
+	__fldcw(wLoc0E_65);
 	g_b804A030 = (byte) (word32) (int16) dwArg04;
-	__fldcw(ax_19);
-	__fldcw(wLoc0E_64);
+	__fldcw(ax_20);
+	__fldcw(wLoc0E_65);
 	g_w804A032 = (word16) (word32) (int16) dwArg04;
-	__fldcw(ax_19);
-	__fldcw(wLoc0E_64);
+	__fldcw(ax_20);
+	__fldcw(wLoc0E_65);
 	g_dw804A034 = dwArg04;
-	__fldcw(ax_19);
-	__fldcw(wLoc0E_64);
+	__fldcw(ax_20);
+	__fldcw(wLoc0E_65);
 	g_dw804A038 = dwArg04;
-	__fldcw(ax_19);
-	__fldcw(wLoc0E_64);
-	int64 qwLoc24_74 = (int64) qwArg04;
-	g_dw804A040 = (word32) qwLoc24_74;
-	g_dw804A044 = SLICE(qwLoc24_74, word32, 32);
+	__fldcw(ax_20);
+	__fldcw(wLoc0E_65);
+	int64 qwLoc24_75 = (int64) qwArg04;
+	g_dw804A040 = (word32) qwLoc24_75;
+	g_dw804A044 = SLICE(qwLoc24_75, word32, 32);
 }
 
 // 08048581: void read_floats()
@@ -226,21 +226,21 @@ void basic_operations(real64 qwArg04, real64 qwArg0C)
 	use(-qwArg04);
 }
 
-// 08048757: void compare_floats(Stack Eq_255 qwArg04, Stack Eq_255 qwArg0C)
-void compare_floats(Eq_255 qwArg04, Eq_255 qwArg0C)
+// 08048757: void compare_floats(Stack Eq_257 qwArg04, Stack Eq_257 qwArg0C)
+void compare_floats(Eq_257 qwArg04, Eq_257 qwArg0C)
 {
-	Eq_257 al_26 = !PARITY_EVEN(qwArg0C - qwArg04);
+	int8 al_26 = (int8) !PARITY_EVEN(qwArg0C - qwArg04);
 	if (qwArg0C != qwArg04)
-		al_26.u0 = 0x00;
+		al_26 = 0x00;
 	use_int((word32) al_26);
-	Eq_269 al_65 = PARITY_EVEN(qwArg0C - qwArg04);
+	int8 al_65 = (int8) PARITY_EVEN(qwArg0C - qwArg04);
 	if (qwArg0C != qwArg04)
-		al_65.u0 = 0x01;
+		al_65 = 0x01;
 	use_int((word32) al_65);
-	use_int((word32) (qwArg04 > qwArg0C));
-	use_int((word32) (qwArg04 >= qwArg0C));
-	use_int((word32) (qwArg0C > qwArg04));
-	use_int((word32) (qwArg0C >= qwArg04));
+	use_int((word32) (int8) (qwArg04 > qwArg0C));
+	use_int((word32) (int8) (qwArg04 >= qwArg0C));
+	use_int((word32) (int8) (qwArg0C > qwArg04));
+	use_int((word32) (int8) (qwArg0C >= qwArg04));
 }
 
 // 08048850: void constants(Stack real64 qwArg04)
@@ -268,7 +268,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

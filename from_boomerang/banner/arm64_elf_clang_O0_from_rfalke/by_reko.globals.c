@@ -20,7 +20,7 @@ word64 g_qw411FE0 = 0x00;
 <anonymous> * g_ptr412018 = &g_t4004B0;
 <anonymous> * g_ptr412020 = &g_t4004B0;
 <anonymous> * g_ptr412028 = &g_t4004B0;
-Eq_188 (* g_a412040[])[] = 
+Eq_182 (* g_a412040[])[] = 
 	{
 	};
 byte g_b4122E0 = 0x00;

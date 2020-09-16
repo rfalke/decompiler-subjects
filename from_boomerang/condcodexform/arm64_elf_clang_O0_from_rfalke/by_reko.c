@@ -207,7 +207,7 @@ void main(int32 w0)
 			{
 				dwLoc48_180 = 0x00;
 				if (x10_52 - 0x00000000004005F4<p64> == 0x00)
-					dwLoc48_180 = (word32) (x8_57 - 0x00000000004005FC<p64> == 0x00);
+					dwLoc48_180 = CONVERT(x8_57 - 0x00000000004005FC<p64> == 0x00, bool, word32);
 			}
 		}
 		dwLoc3C_185 = dwLoc48_180 & 0x01;

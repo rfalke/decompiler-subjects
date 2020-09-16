@@ -201,7 +201,7 @@ void dumpline(ptr64 x0, up64 x1, int32 w2)
 	if (w23_58 > 0x00)
 	{
 		int64 x26_63 = 0x00;
-		int64 x27_64 = (int64) (int32) w23_58;
+		int64 x27_64 = (int64) w23_58;
 		do
 		{
 			fn0000000000400680();
@@ -211,16 +211,16 @@ void dumpline(ptr64 x0, up64 x1, int32 w2)
 		if (w26_61 > 0x0F)
 		{
 l000000000040092C:
-			int64 x8_177;
+			int64 x8_120;
 			int64 x19_149;
 			fn0000000000400660();
 			word32 w0_109 = SLICE(fp + ~0xA7, word32, 0);
-			Mem111[fp + ~0xA7 + (int64) ((int32) w0_109):word32] = 0x005C2020;
+			Mem111[fp + ~0xA7 + CONVERT(w0_109, word32, int64):word32] = 0x005C2020;
 			if (w23_58 >= 0x01)
 			{
-				int64 x8_120 = 0x00;
-				int64 x10_121 = (int64) (int32) w23_58;
-				byte x11_122[] = fp + ~0xA7 + (int64) ((int32) (w0_109 + 0x03));
+				x8_120 = 0x00;
+				int64 x10_121 = (int64) w23_58;
+				byte x11_122[] = fp + ~0xA7 + CONVERT(w0_109 + 0x03, word32, int64);
 				do
 				{
 					up32 w13_128 = (word32) (x0 + x8_120);
@@ -229,25 +229,24 @@ l000000000040092C:
 					int32 w8_141 = (word32) x8_120;
 					x8_32_32_155 = SLICE(x8_120, word32, 32);
 				} while (x8_120 - x10_121 < 0x00);
-				x8_177 = x8_120;
 				if (w8_141 > 0x0F)
 				{
-					x19_149 = (int64) (int32) (w0_109 + 0x03);
+					x19_149 = (int64) (w0_109 + 0x03);
 l00000000004009BC:
-					Mem180[fp + ~0xA7 + x19_149 + x8_177:word16] = 0x7C;
+					Mem179[fp + ~0xA7 + x19_149 + x8_120:word16] = 0x7C;
 					fn00000000004006F0();
 					return;
 				}
 			}
 			fn00000000004006C0();
-			x19_149 = (int64) (int32) (w0_109 + 0x03);
-			x8_177 = SEQ(x8_32_32_155, 0x10);
+			x19_149 = (int64) (w0_109 + 0x03);
+			x8_120 = SEQ(x8_32_32_155, 0x10);
 			goto l00000000004009BC;
 		}
 	}
 	else
 		w26_61 = 0x00;
-	word32 w20_90;
+	word32 w20_90 = 0x10 - w26_61;
 	do
 	{
 		fn0000000000400660();
@@ -278,7 +277,7 @@ word64 hexdump(word64 x0, ptr64 & x21Out)
 					if (w21_54 == 0x00)
 						break;
 					dumpline(fp - 0x38, x20_44, w21_54);
-					x20_44 += (int64) (int32) w21_54;
+					x20_44 += (int64) w21_54;
 				} while (x20_44 - qwLoc88 < 0x00);
 			}
 			fn0000000000400690();

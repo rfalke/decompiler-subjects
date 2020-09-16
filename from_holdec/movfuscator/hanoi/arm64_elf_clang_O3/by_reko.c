@@ -211,8 +211,8 @@ void text(word32 w1, word32 w2)
 // 0000000000400860: void add_disk(Register word32 w0, Register word32 w1)
 void add_disk(word32 w0, word32 w1)
 {
-	struct Eq_139 * x8_25 = (&g_t411068)[(int64) (int32) w0 / 8];
-	ui64 x9_29 = (word64) x8_25->dw0004;
+	struct Eq_139 * x8_25 = (&g_t411068)[(int64) w0 / 8];
+	int64 x9_29 = (int64) x8_25->dw0004;
 	word32 x10_30[] = x8_25->ptr0000;
 	x8_25->dw0008 = (word32) x9_29 + 0x01;
 	x10_30[x9_29] = w1;
@@ -234,8 +234,8 @@ void add_disk(word32 w0, word32 w1)
 // 0000000000400914: void remove_disk(Register word32 w0)
 void remove_disk(word32 w0)
 {
-	struct Eq_185 * x8_25 = (&g_t411068)[(int64) (int32) w0 / 8];
-	ui64 x9_28 = (word64) x8_25->dw0004;
+	struct Eq_184 * x8_25 = (&g_t411068)[(int64) w0 / 8];
+	int64 x9_28 = (int64) x8_25->dw0004;
 	word32 x11_29[] = x8_25->ptr0000;
 	x8_25->dw0008 = (word32) (x9_28 - 0x01);
 	word32 w19_34 = x11_29[x9_28 - 0x01];
@@ -243,7 +243,7 @@ void remove_disk(word32 w0)
 	fn0000000000400660();
 	if (w19_34 != 0x00)
 	{
-		word32 w22_48;
+		word32 w22_48 = w19_34;
 		do
 		{
 			fn0000000000400660();
@@ -252,11 +252,11 @@ void remove_disk(word32 w0)
 	}
 }
 
-// 00000000004009B0: Register word64 move(Register word64 x0, Register word64 x2, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x24Out, Register out (ptr64 (arr (ptr64 Eq_277))) x28Out, Register out ptr64 x29Out)
+// 00000000004009B0: Register word64 move(Register word64 x0, Register word64 x2, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x24Out, Register out (ptr64 (arr (ptr64 Eq_274))) x28Out, Register out ptr64 x29Out)
 // Called from:
 //      move
 //      main
-word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out, struct Eq_277 * (& x28Out, ptr64 & x29Out)
+word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out, struct Eq_274 * (& x28Out, ptr64 & x29Out)
 {
 	word32 w0 = (word32) x0;
 	word32 w2 = (word32) x2;
@@ -264,17 +264,17 @@ word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out
 	if (w0 != 0x00)
 	{
 		__bfm(w2, 31, 30);
-		int64 x8_50 = (int64) (int32) w2;
+		int64 x8_50 = (int64) w2;
 		do
 		{
-			struct Eq_277 * x28_90[];
-			word64 x22_96;
+			struct Eq_274 * x28_90[];
 			word64 x21_97;
+			word64 x22_393;
 			word64 x24_394;
-			word32 w20_110 = (word32) move(x0, x2, out x21_97, out x22_96, out x24_394, out x28_90, out x29_100);
-			struct Eq_277 * x8_111 = x28_90[(int64) (int32) w20_110 / 8].ptr0000;
+			word32 w20_110 = (word32) move(x0, x2, out x21_97, out x22_393, out x24_394, out x28_90, out x29_100);
+			struct Eq_274 * x8_111 = x28_90[(int64) w20_110 / 8].ptr0000;
 			__bfm(w20_110, 31, 30);
-			ui64 x9_115 = (word64) x8_111->dw0004;
+			int64 x9_115 = (int64) x8_111->dw0004;
 			word32 x10_116[] = x8_111->ptr0000;
 			x8_111->dw0008 = (word32) (x9_115 - 0x01);
 			word32 w19_123 = x10_116[x9_115 - 0x01];
@@ -289,8 +289,8 @@ word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out
 					--w27_130;
 				} while (w27_130 != 0x00);
 			}
-			struct Eq_277 * x8_148 = x28_90[x8_50].ptr0000;
-			ui64 x9_150 = (word64) x8_148->dw0004;
+			struct Eq_274 * x8_148 = x28_90[x8_50].ptr0000;
+			int64 x9_150 = (int64) x8_148->dw0004;
 			word32 x10_151[] = x8_148->ptr0000;
 			x8_148->dw0008 = (word32) x9_150 + 0x01;
 			x10_151[x9_150] = w19_123;
@@ -301,12 +301,12 @@ word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out
 			fn0000000000400640();
 		} while (w21_203 != 0x00);
 	}
-	struct Eq_244 * sp_210 = x29_100 - 0x50;
+	struct Eq_242 * sp_210 = x29_100 - 0x50;
 	ptr64 x29_213 = sp_210->ptr0050;
 	word64 x20_217 = sp_210->qw0040;
 	ptr64 x22_221 = sp_210->ptr0030;
 	ptr64 x24_225 = sp_210->ptr0020;
-	struct Eq_277 * (* x28_233)[] = sp_210->ptr0000;
+	struct Eq_274 * (* x28_233)[] = sp_210->ptr0000;
 	x21Out = sp_210->ptr0038;
 	x22Out = x22_221;
 	x24Out = x24_225;
@@ -315,8 +315,8 @@ word64 move(word64 x0, word64 x2, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x24Out
 	return x20_217;
 }
 
-// 0000000000400B30: void main(Register int32 w0, Register (ptr64 Eq_372) x1, Register word32 x2_32_32)
-void main(int32 w0, struct Eq_372 * x1, word32 x2_32_32)
+// 0000000000400B30: void main(Register int32 w0, Register (ptr64 Eq_368) x1, Register word32 x2_32_32)
+void main(int32 w0, struct Eq_368 * x1, word32 x2_32_32)
 {
 	word64 x19_55;
 	fn0000000000400620();
@@ -336,8 +336,8 @@ l0000000000400B88:
 			word32 w19_120 = (word32) x19_55;
 			g_dw411080 = w19_120;
 			fn00000000004005F0();
-			Eq_408 x0_79 = SEQ(x0_32_32_75, 0x01);
-			*x0_79.t0000 = (Eq_408) ((word64) x0_79.t0000 + 16);
+			Eq_404 x0_79 = SEQ(x0_32_32_75, 0x01);
+			*x0_79.t0000 = (Eq_404) ((word64) x0_79.t0000 + 16);
 			g_t411068.t0000 = x0_79;
 			fn00000000004005F0();
 			word64 * x0_90 = SEQ(x0_32_32_75, 0x01);
@@ -347,15 +347,15 @@ l0000000000400B88:
 			word64 * x0_98 = SEQ(x0_32_32_75, 0x01);
 			g_ptr411078 = x0_98;
 			*x0_98 = x0_98 + 2;
-			Eq_408 x23_110 = x0_79;
+			Eq_404 x23_110 = x0_79;
 			while (true)
 			{
-				ui64 x8_113 = (word64) *((word64) x23_110.t0000 + 4);
+				int64 x8_113 = (int64) *((word64) x23_110.t0000 + 4);
 				word32 x9_114[] = *x23_110.t0000;
-				*((word64) x23_110.t0000 + 8) = (Eq_408) ((word32) x8_113 + 0x01);
+				*((word64) x23_110.t0000 + 8) = (Eq_404) ((word32) x8_113 + 0x01);
 				x9_114[x8_113] = w19_120;
 				fn0000000000400660();
-				word32 w23_132;
+				word32 w23_132 = 0x00;
 				do
 				{
 					fn0000000000400660();
@@ -367,14 +367,14 @@ l0000000000400B88:
 				--w19_120;
 				if (w19_120 == 0x00)
 					break;
-				x23_110 = (Eq_408) g_t411068.t0000;
+				x23_110 = (Eq_404) g_t411068.t0000;
 			}
-			word64 x24_178;
 			word64 x22_307;
-			word64 x28_308;
-			word64 x29_309;
+			word64 x24_308;
+			word64 x28_309;
+			word64 x29_310;
 			word64 x21_306;
-			move(SEQ(x0_32_32_168, g_dw411080), SEQ(x2_32_32, 0x02), out x21_306, out x22_307, out x24_178, out x28_308, out x29_309);
+			move(SEQ(x0_32_32_168, g_dw411080), SEQ(x2_32_32, 0x02), out x21_306, out x22_307, out x24_308, out x28_309, out x29_310);
 			fn0000000000400660();
 			fn0000000000400660();
 			return;

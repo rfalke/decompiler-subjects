@@ -1,5 +1,5 @@
 === Using options:
 08048384: warning: Call target address 00000000 is invalid.
-08048405: error: Unexpected 69 fstsw mask for jz mnemonic.
+080483F2: warning: Unexpected 64 fstsw;cmp mask for jnz mnemonic.
 080495D4: warning: Expected sizes of arrays to have been determined by now
 080495D4: warning: Expected sizes of arrays to have been determined by now

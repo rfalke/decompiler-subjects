@@ -9,9 +9,9 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	__syscall(0x10);
 	byte al_18 = 0x13;
-	Eq_10 wLoc02_236 = 0x5F;
-	Eq_12 wLoc04_237 = 0xA0;
-	Eq_10 wLoc06_238 = 100;
+	Eq_10 wLoc02_234 = 0x5F;
+	Eq_12 wLoc04_235 = 0xA0;
+	Eq_10 wLoc06_236 = 100;
 	do
 	{
 		__syscall(22);
@@ -28,15 +28,13 @@ void fn0C00_0100(struct Eq_2 * ds)
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		fn0C00_01B3(wLoc06_238, 0x0300, wLoc04_237, 0xA000, ds);
+		fn0C00_01B3(wLoc06_236, 0x0300, wLoc04_235, 0xA000, ds);
 		Eq_10 bx_82 = ds->t01AD;
-		byte al_84 = (byte) wLoc06_238;
-		byte ah_86 = SLICE(wLoc06_238, byte, 8);
+		byte al_84 = (byte) wLoc06_236;
+		byte ah_86 = SLICE(wLoc06_236, byte, 8);
 		byte bl_100 = (byte) bx_82;
-		bl_100 = (byte) bx_82;
-		byte bh_109 = SLICE(bx_82, byte, 8);
-		bh_109 = SLICE(bx_82, byte, 8);
-		if (wLoc04_237 >= 0xE6)
+		byte bh_108 = SLICE(bx_82, byte, 8);
+		if (wLoc04_235 >= 0xE6)
 		{
 			Eq_10 ax_87 = SEQ(ah_86, al_84 - 0x05);
 			if (ax_87 != bx_82)
@@ -44,35 +42,35 @@ void fn0C00_0100(struct Eq_2 * ds)
 				if (ax_87 <= bx_82)
 				{
 					bl_100 = (byte) (bx_82 - 0x01);
-					bh_109 = SLICE(bx_82 - 0x01, byte, 8);
+					bh_108 = SLICE(bx_82 - 0x01, byte, 8);
 				}
 				else
 				{
 					bl_100 = (byte) ((word16) bx_82.u0 + 1);
-					bh_109 = SLICE((word16) bx_82.u0 + 1, byte, 8);
+					bh_108 = SLICE((word16) bx_82.u0 + 1, byte, 8);
 				}
 			}
 		}
-		Eq_10 bx_115 = SEQ(bh_109, fn0C00_01D7(bl_100));
-		ds->t01AD = bx_115;
-		byte al_120 = al_84 + ds->b01B1;
-		if (al_120 == 0x01)
+		Eq_10 bx_113 = SEQ(bh_108, fn0C00_01D7(bl_100));
+		ds->t01AD = bx_113;
+		byte al_118 = al_84 + ds->b01B1;
+		if (al_118 == 0x01)
 			ds->b01B1 = -ds->b01B1;
-		Eq_10 ax_149 = SEQ(ah_86, al_120);
-		if (al_120 == 0xC6)
+		Eq_10 ax_147 = SEQ(ah_86, al_118);
+		if (al_118 == 0xC6)
 			ds->b01B1 = -ds->b01B1;
-		Eq_108 cx_153;
-		Eq_10 ax_152 = fn0C00_01E6(ax_149, (word16) wLoc04_237.u0 + ds->w01AF, 0x013F, bx_115, ds, out cx_153);
-		Eq_10 bx_178 = SEQ(SLICE(wLoc02_236, byte, 8), fn0C00_01D7((byte) wLoc02_236 + ds->b01B2));
-		Eq_12 cx_184;
-		Eq_10 ax_183 = fn0C00_01E6(ax_152, cx_153, 0x00, bx_178, ds, out cx_184);
-		fn0C00_01B3(ax_183, 0x0F, cx_184, 0xA000, ds);
-		fn0C00_01C3(ds->t01AD, SEQ(SLICE((uint16) (uint8) fn0C00_01C3(bx_178, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
-		wLoc02_236 = bx_178;
-		wLoc04_237 = cx_184;
-		wLoc06_238 = ax_183;
-		byte ah_232;
-	} while (bios_kbd_check_keystroke(out al_18, out ah_232));
+		Eq_106 cx_151;
+		Eq_10 ax_150 = fn0C00_01E6(ax_147, (word16) wLoc04_235.u0 + ds->w01AF, 0x013F, bx_113, ds, out cx_151);
+		Eq_10 bx_176 = SEQ(SLICE(wLoc02_234, byte, 8), fn0C00_01D7((byte) wLoc02_234 + ds->b01B2));
+		Eq_12 cx_182;
+		Eq_10 ax_181 = fn0C00_01E6(ax_150, cx_151, 0x00, bx_176, ds, out cx_182);
+		fn0C00_01B3(ax_181, 0x0F, cx_182, 0xA000, ds);
+		fn0C00_01C3(ds->t01AD, SEQ(SLICE((uint16) fn0C00_01C3(bx_176, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
+		wLoc02_234 = bx_176;
+		wLoc04_235 = cx_182;
+		wLoc06_236 = ax_181;
+		byte ah_230;
+	} while (bios_kbd_check_keystroke(out al_18, out ah_230));
 	msdos_terminate_program20();
 }
 
@@ -117,15 +115,13 @@ byte fn0C00_01D7(byte bl)
 	return bl;
 }
 
-// 0C00:01E6: Register Eq_10 fn0C00_01E6(Register Eq_10 ax, Register Eq_108 cx, Register Eq_108 dx, Register Eq_10 bx, Register (ptr16 Eq_2) ds, Register out Eq_108 cxOut)
+// 0C00:01E6: Register Eq_10 fn0C00_01E6(Register Eq_10 ax, Register Eq_106 cx, Register Eq_106 dx, Register Eq_10 bx, Register (ptr16 Eq_2) ds, Register out Eq_106 cxOut)
 // Called from:
 //      fn0C00_0100
-Eq_10 fn0C00_01E6(Eq_10 ax, Eq_108 cx, Eq_108 dx, Eq_10 bx, struct Eq_2 * ds, union Eq_108 & cxOut)
+Eq_10 fn0C00_01E6(Eq_10 ax, Eq_106 cx, Eq_106 dx, Eq_10 bx, struct Eq_2 * ds, union Eq_106 & cxOut)
 {
-	byte al_23 = (byte) ax;
-	al_23 = (byte) ax;
+	byte al_24 = (byte) ax;
 	byte ah_27 = SLICE(ax, byte, 8);
-	ah_27 = SLICE(ax, byte, 8);
 	byte bl_15 = (byte) bx;
 	byte bh_17 = SLICE(bx, byte, 8);
 	if (cx == dx)
@@ -136,7 +132,7 @@ Eq_10 fn0C00_01E6(Eq_10 ax, Eq_108 cx, Eq_108 dx, Eq_10 bx, struct Eq_2 * ds, un
 			cxOut = cx;
 			return ax;
 		}
-		ax = (SEQ(ah_27, al_23 + 0x61) & 0x7F) + 0x24;
+		ax = (SEQ(ah_27, al_24 + 0x61) & 0x7F) + 0x24;
 		cx.u0 = 0xA0;
 	}
 	cxOut = cx;

@@ -145,14 +145,14 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000838: Register word64 test_1(Register uint32 w0, Register word64 x31)
+// 0000000000000838: Register word64 test_1(Register uint32 w0)
 // Called from:
 //      main
-word64 test_1(uint32 w0, word64 x31)
+word64 test_1(uint32 w0)
 {
-	uint64 x0_10 = x31 + (uint64) (w0 * 0x24924925);
-	uint32 w0_12 = (word32) (x0_10 >> 32);
-	return SEQ(SLICE(x0_10 >> 32, word32, 32), (w0 - w0_12 >> 1) + w0_12 >> 2);
+	uint64 x0_9 = (uint64) (w0 * 0x24924925);
+	uint32 w0_11 = (word32) (x0_9 >> 32);
+	return SEQ(SLICE(x0_9 >> 32, word32, 32), (w0 - w0_11 >> 1) + w0_11 >> 2);
 }
 
 // 000000000000086C: Register ui64 test_2(Register ui64 x0)
@@ -174,23 +174,23 @@ uint64 test_3(uint64 x0)
 	return x0 * 0x24924925 >> 32;
 }
 
-// 0000000000000904: void main(Register word64 x31)
-void main(word64 x31)
+// 0000000000000904: void main()
+void main()
 {
-	uint32 dwArg04_104 = 0x00;
-	uint32 dwArg00_115 = 0x00;
+	uint32 dwArg04_109 = 0x00;
+	uint32 dwArg00_110 = 0x00;
 	while (true)
 	{
-		word64 x0_17 = test_1(dwArg00_115, x31);
-		word64 x0_23 = test_2(SEQ(SLICE(x0_17, word32, 32), dwArg00_115));
-		word32 w0_18 = (word32) x0_17;
-		word32 w0_32 = (word32) test_3(SEQ(SLICE(x0_23, word32, 32), dwArg00_115));
-		if (w0_18 != (word32) x0_23 || w0_18 != w0_32)
+		word64 x0_16 = test_1(dwArg00_110);
+		word64 x0_22 = test_2(SEQ(SLICE(x0_16, word32, 32), dwArg00_110));
+		word32 w0_17 = (word32) x0_16;
+		word32 w0_31 = (word32) test_3(SEQ(SLICE(x0_22, word32, 32), dwArg00_110));
+		if (w0_17 != (word32) x0_22 || w0_17 != w0_31)
 			fn00000000000006E0();
-		if (dwArg04_104 != 0x00 && dwArg00_115 < dwArg04_104)
+		if (dwArg04_109 != 0x00 && dwArg00_110 < dwArg04_109)
 			break;
-		dwArg04_104 = dwArg00_115;
-		dwArg00_115 += 1000000;
+		dwArg04_109 = dwArg00_110;
+		dwArg00_110 += 1000000;
 	}
 }
 

@@ -286,9 +286,9 @@ l004017D9:
 			eax_18 = ebx_245[1];
 			if (eax_18 != 0x01)
 			{
-				word32 ecx_72;
-				word32 edx_73;
-				fn004015FC(0x004030C4, out ecx_72, out edx_73);
+				word32 ecx_409;
+				word32 edx_410;
+				fn004015FC(0x004030C4, out ecx_409, out edx_410);
 				Eq_115 eax_104 = g_ptr402008->t0000;
 				while (eax_104 != 0x00)
 				{
@@ -306,7 +306,7 @@ l004017D9:
 				for (ebx_113 = &ebx_245->dw0008 + 1; ebx_113 < (struct Eq_606 *) 0x00403140; ++ebx_113)
 				{
 					ui32 edx_122 = ebx_113->dw0008;
-					word16 * eax_119 = ebx_113->dw0004 + 0x00400000;
+					union Eq_629 * eax_119 = ebx_113->dw0004 + 0x00400000;
 					ui32 edx_123 = edx_122 & 0xFF;
 					if ((edx_122 & 0xFF) != 0x10)
 					{
@@ -319,8 +319,8 @@ l004017D9:
 							// Failed to bind call argument.
 							// Please report this issue at https://github.com/uxmal/reko
 							Eq_418 stackArg4 = <invalid>;
-							word32 ecx_410;
-							eax_119 = fn004015FC(stackArg4, out ecx_410, out edx_123);
+							word32 ecx_412;
+							eax_119 = fn004015FC(stackArg4, out ecx_412, out edx_123);
 							esp_148 = (struct Eq_534 *) ((char *) esp_148 - 4);
 						}
 						if (((word32) *eax_119 & 0x80) != 0x00)

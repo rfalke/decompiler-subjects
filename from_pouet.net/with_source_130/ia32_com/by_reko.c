@@ -18,13 +18,13 @@ void fn0C00_0100()
 		ax_95 = ax_98 + 0x01;
 		ax_98 = ax_95;
 	} while (ax_98 != 0x01);
-	byte Eq_45::* bx_19 = &Eq_45::b7D00;
+	byte Eq_44::* bx_19 = &Eq_44::b7D00;
 	while (true)
 	{
 		++bx_19;
-		if (bx_19 == &Eq_45::b7E40)
-			bx_19 = &Eq_45::b7D00;
-		uint16 ax_28 = (uint16) (uint8) __inb(0x60);
+		if (bx_19 == &Eq_44::b7E40)
+			bx_19 = &Eq_44::b7D00;
+		uint16 ax_28 = (uint16) __inb(0x60);
 		byte ah_56 = SLICE(ax_28 - 0x01, byte, 8);
 		if (ax_28 == 0x01)
 			break;
@@ -32,11 +32,11 @@ void fn0C00_0100()
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		byte Eq_45::* di_46 = &Eq_45::b7D00;
+		byte Eq_44::* di_46 = &Eq_44::b7D00;
 		while (true)
 		{
 			++di_46;
-			if (di_46 == &Eq_45::b7E40)
+			if (di_46 == &Eq_44::b7E40)
 				break;
 			byte al_53 = 0xA000->*di_46;
 			word16 ax_57 = SEQ(ah_56, al_53);

@@ -273,7 +273,7 @@ void intermediate_1_for_loop_name(int32 dwArg04)
 {
 	if (dwArg04 > 0x00)
 	{
-		int32 ebx_15;
+		int32 ebx_15 = 0x30;
 		do
 		{
 			putchar(ebx_15);
@@ -383,7 +383,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804B0F4 - 0x0804B0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804B0F8)[edi_33]();

@@ -21,12 +21,12 @@ void fn0C00_0100(word16 cx)
 		cx_57 = cx_61 - 0x01;
 		cx_61 = cx_57;
 	} while (cx_61 != 0x01);
-	byte Eq_46::* di_26;
+	byte Eq_45::* di_26 = Eq_45::a0000;
 	do
 	{
-		0xA000->*di_26 = (byte) (uint16) ((uint32) (uint16) di_26 % 0x0140);
+		0xA000->*di_26 = (byte) (uint16) ((uint32) di_26 % 0x0140);
 		++di_26;
-	} while (di_26 != Eq_46::a0000);
+	} while (di_26 != Eq_45::a0000);
 	byte al_48;
 	bios_kbd_get_keystroke(out al_48);
 	msdos_terminate_program20();

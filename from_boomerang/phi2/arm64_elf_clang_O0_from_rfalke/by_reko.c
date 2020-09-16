@@ -169,8 +169,8 @@ word64 proc1(int32 w0, ptr64 & x29Out)
 void main(int32 w0)
 {
 	struct Eq_113 * sp_19 = (struct Eq_113 *) <invalid>;
-	word64 x29_26;
-	sp_19->dw000C = (word32) proc1(w0, out x29_26);
+	word64 x29_60;
+	sp_19->dw000C = (word32) proc1(w0, out x29_60);
 	fn00000000004004E0();
 	sp_19->dw0008 = (word32) 0x004007CF;
 }

@@ -20,7 +20,7 @@ void fn0C00_0100(byte ah, word16 cx, struct Eq_4 * ds)
 	{
 		++0xA000->*di_10;
 		byte Eq_28::* di_38 = di_10 + 1;
-		uint32 dx_ax_44 = (uint32) (uint16) (di_38 - 0x01);
+		uint32 dx_ax_44 = (uint32) (di_38 - 0x01);
 		uint16 dx_46 = (uint16) (dx_ax_44 % ds->w015E);
 		uint16 ax_47 = (uint16) (dx_ax_44 /u ds->w015E);
 		if (dx_46 == 0x00)

@@ -9,23 +9,24 @@ void fn0C00_0100(struct Eq_2 Eq_18::* bx, cu16 si)
 {
 	__syscall(0x10);
 	__outw(0x03D4, 8211);
-	struct Eq_2 Eq_18::* bx_71 = bx;
+	struct Eq_2 Eq_18::* bx_75 = bx;
 	while (true)
 	{
 		bi8 al_16 = (byte) (si >> 0x01);
-		Eq_32 cx_26 = (uint16) (uint8) SLICE(bx_76, byte, 8);
-		Eq_36 ax_31 = (uint16) ((int32) ~(al_16 *s al_16) /u ((word16) cx_26 + 1));
-		uint16 ax_39 = (word16) ax_31 + si;
-		ci8 al_49 = (byte) (SEQ(SLICE(ax_39, byte, 8), ((byte) ax_39 ^ SLICE(ax_31 *s ((word16) cx_26 + 1), byte, 16)) & 0x20) - 0x01) - SLICE(ax_31, byte, 8);
-		if (al_49 < 0x10)
-			al_49 = 0x10;
-		(0xA000->*bx_76).bFFFFFFA0 = al_49;
-		bx_71 = &bx_76->bFFFFFFA0 + 97;
-		bx_76 = bx_71;
-		if (bx_76 == &Eq_18::t0001)
+		int16 ax_18 = ~(al_16 *s al_16);
+		uint16 cx_28 = (uint16) SLICE(bx_80, byte, 8);
+		Eq_38 ax_33 = (uint16) ((int32) SEQ(SLICE(ax_18, byte, 8) - 0x8C, (byte) ax_18) /u (cx_28 + 0x01));
+		uint16 ax_43 = (word16) ax_33 + si;
+		ci8 al_53 = (byte) (SEQ(SLICE(ax_43, byte, 8), ((byte) ax_43 ^ SLICE(ax_33 *s SEQ((byte) bx_80, (byte) (cx_28 + 0x01)), byte, 16)) & 0x20) - 0x01) - SLICE(ax_33, byte, 8);
+		if (al_53 < 0x10)
+			al_53 = 0x10;
+		(0xA000->*bx_80).bFFFFFFA0 = al_53;
+		bx_75 = &bx_80->bFFFFFFA0 + 97;
+		bx_80 = bx_75;
+		if (bx_80 == &Eq_18::t0001)
 		{
 			++si;
-			bx_71 = &bx_76->bFFFFFFA0 + 97;
+			bx_75 = &bx_80->bFFFFFFA0 + 97;
 		}
 	}
 }

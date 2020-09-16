@@ -22,7 +22,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 	word16 ax_35;
 	msdos_create_truncate_file(0x00, ds, 442, out ax_35);
 	ds->w0202 = ax_35;
-	uint16 bx_43 = (uint16) (uint8) fn0C00_01B1(&ds->b01D4, 44);
+	uint16 bx_43 = (uint16) fn0C00_01B1(&ds->b01D4, 44);
 	byte Eq_2::* di_244 = Eq_2::a0259;
 	word16 cx_246 = 0x0100;
 	do
@@ -41,7 +41,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 			word16 bx_106 = SEQ(SLICE(bx_100 + 0x01, byte, 8), (byte) (bx_100 + 0x01) << 0x06);
 			word16 bx_107 = bx_106 - 0x01;
 			real64 rLoc1_277 = 0.0;
-			struct Eq_82 Eq_24::* bp_136 = Eq_24::a05EC;
+			struct Eq_81 Eq_24::* bp_136 = Eq_24::a05EC;
 			word16 cx_137 = 0x03;
 			do
 			{
@@ -50,7 +50,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 				real64 rLoc2_286 = (real64) *((char *) &&(ss->*(ss->*(&bp_136->w0000 + 2)).w0000) + si_164 * 0x04);
 				ui16 si_175 = (word16) (uint8) ((si_164 + 0x01) % (byte) bx_107);
 				(ss->*bp_136).w0000 = si_175;
-				real64 rLoc2_288 = (rLoc2_286 - *((char *) (&(&(ss->*(ss->*(&bp_136->w0000 + 2)).w0000))) + si_175 * 0x04)) / (real64) ds->w01C2;
+				real64 rLoc2_288 = (rLoc2_286 - (real64) (*((char *) (&(&(ss->*(ss->*(&bp_136->w0000 + 2)).w0000))) + si_175 * 0x04))) / (real64) ds->w01C2;
 				*((char *) &&(ss->*(ss->*(&bp_136->w0000 + 2)).w0000) + si_175 * 0x04) = (word16 **) (real32) rLoc2_288;
 				bcu8 bl_198 = (byte) bx_107;
 				byte bh_257 = SLICE(bx_107, byte, 8);

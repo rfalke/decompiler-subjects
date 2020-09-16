@@ -90,7 +90,7 @@ void a_func()
 void main()
 {
 	printf("in main: %d\n", 0x00);
-	g_t404024 = (uint64) g_t404024 + 0x01;
+	g_dw404024 = (word32) ((uint64) g_dw404024 + 0x01);
 	a_func();
 }
 
@@ -103,7 +103,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 4210200 - 0x00403E10;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_99 rbx_41 = 0x00;
+		Eq_100 rbx_41 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_41 * 0x08))();

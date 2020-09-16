@@ -189,7 +189,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 			ds->t0105.u0 = 0x96;
 			ds->t0105 -= dx_374;
 			Eq_194 cx_409 = ds->t010F;
-			uint16 ax_413 = (uint16) (uint8) al_401;
+			uint16 ax_413 = (uint16) al_401;
 			if (bx_372 == 0x01)
 			{
 				ds->t0103 = (word16) ds->t0103 + 0x0F;
@@ -368,7 +368,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 	fn0C00_0EC0(100, &Eq_2::b0596, 0xA000, ds);
 	do
 		;
-	while ((uint16) (uint8) __inb(0x60) != 0x01);
+	while ((uint16) __inb(0x60) != 0x01);
 	__syscall(33);
 	fn0C00_0D73(0xA000, ds);
 }
@@ -378,7 +378,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 //      fn0C00_0100
 void fn0C00_0D73(struct Eq_116 * es, struct Eq_2 * ds)
 {
-	ds->t0118.u0 = (real32) ((real64) ds->w0107 - ds->r0114);
+	ds->t0118.u0 = (real32) ((real64) ds->w0107 - (real64) ds->r0114);
 	ds->t0111.u0 = 200;
 	byte Eq_116::* di_14 = &Eq_116::bFFFFF9FF;
 	do
@@ -390,7 +390,7 @@ void fn0C00_0D73(struct Eq_116 * es, struct Eq_2 * ds)
 			ds->t010B = ds->t0111;
 			real64 rLoc1_72 = (real64) ds->t0103 - (real64) ds->t0109;
 			real64 rLoc2_75 = (real64) ds->t0105 - (real64) ds->t010B;
-			Eq_1104 rLoc1_78 = sqrt(rLoc1_72 * rLoc1_72 + rLoc2_75 * rLoc2_75);
+			Eq_1103 rLoc1_78 = sqrt(rLoc1_72 * rLoc1_72 + rLoc2_75 * rLoc2_75);
 			__wait();
 			if (rLoc1_78 <= ds->t0118)
 				es->*di_14 = ds->b0113;
@@ -480,7 +480,7 @@ void fn0C00_0EC0(word16 cx, byte Eq_2::* bx, struct Eq_116 * es, struct Eq_2 * d
 	do
 	{
 		byte Eq_2::* bx_15 = bx + 1;
-		es->*((word16) ((word16) (ds->t0111 * ((word16) ds->t0105 + (uint16) ((uint8) (ds->*bx_15))))) + ((word16) ds->t0103 + (uint16) ((uint8) (ds->*bx)))) = ds->b0113;
+		es->*((word16) ((word16) (ds->t0111 * ((word16) ds->t0105 + (uint16) (ds->*bx_15)))) + ((word16) ds->t0103 + (uint16) (ds->*bx))) = ds->b0113;
 		bx = bx_15 + 1;
 		--cx;
 	} while (cx != 0x00);

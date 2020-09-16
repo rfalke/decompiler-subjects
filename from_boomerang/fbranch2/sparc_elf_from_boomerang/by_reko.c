@@ -61,14 +61,14 @@ void printf()
 
 #include "subject_text.h"
 
-// 000104D0: void _start(Register (ptr32 Eq_2) g1, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register word32 o7, Register Eq_9 f21)
-void _start(void (* g1)(), word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7, Eq_9 f21)
+// 000104D0: void _start(Register (ptr32 Eq_2) g1, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register word32 o7, Register word32 f8, Register Eq_10 f9, Register Eq_11 f21, Register real32 f40, Register real32 f41)
+void _start(void (* g1)(), word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7, word32 f8, Eq_10 f9, Eq_11 f21, real32 f40, real32 f41)
 {
 	if (g1 == null)
 	{
 		atexit(&g_t108AC);
 		g_ptr20B10 = fp + 0x44 + ((_init(o1, o2, o3, o4, o5, o7) << 0x02) + 0x04);
-		main(f21);
+		exit(main(f8, f9, f21, f40, f41));
 	}
 	else
 		atexit(g1);
@@ -88,7 +88,7 @@ word32 fn00010544(word32 o7, word32 l7)
 //      _fini
 void __do_global_dtors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o7)
 {
-	struct Eq_50 * l7_23 = fn00010544(o7, 66544);
+	struct Eq_62 * l7_23 = fn00010544(o7, 66544);
 	ui32 l1_20 = 0x00;
 	word32 o4_129 = (word32) *l7_23->ptr0010;
 	if (o4_129 != 0x00)
@@ -130,7 +130,7 @@ void call___do_global_dtors_aux()
 //      _init
 word32 * frame_dummy(word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
-	struct Eq_50 * l7_23 = fn00010544(o7, 66360);
+	struct Eq_62 * l7_23 = fn00010544(o7, 66360);
 	word32 o5_28 = l7_23->dw0020;
 	if (o5_28 == 0x00)
 	{
@@ -148,13 +148,30 @@ void call_frame_dummy()
 {
 }
 
-// 00010694: void main(Register Eq_9 f21)
+// 00010694: Register word32 main(Register word32 f8, Register Eq_10 f9, Register Eq_11 f21, Register real32 f40, Register real32 f41)
 // Called from:
 //      _start
-void main(Eq_9 f21)
+word32 main(word32 f8, Eq_10 f9, Eq_11 f21, real32 f40, real32 f41)
 {
-	scanf("%f", 0x00);
+	scanf("%f", fp + ~0x17);
 	printf("a is %f, b is %f\n", f21, fp + ~0x17);
+	Eq_10 f8_34 = (real64) f8;
+	if (f8_34 == f9)
+		printf("Equal\n");
+	else if (f8_34 != f9)
+		printf("Not Equal\n");
+	else if (f41 != f40)
+		printf("Greater\n");
+	else if (f41 <= f40)
+		printf("Less or Equal\n");
+	else if (f41 >= f40)
+		printf("Greater or Equal\n");
+	else
+	{
+		if (f41 <= f40)
+			return 0x00;
+		printf("Less\n");
+	}
 }
 
 // 00010830: Register word32 fn00010830(Register word32 o7, Register word32 l7)
@@ -171,7 +188,7 @@ word32 fn00010830(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_182 * o5_26 = fn00010830(o7, 0x00010104)->ptr0018;
+	struct Eq_229 * o5_26 = fn00010830(o7, 0x00010104)->ptr0018;
 	if (o5_26->dwFFFFFFFC != ~0x00)
 	{
 		l0_31 = &o5_26->dwFFFFFFFC;

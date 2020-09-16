@@ -233,7 +233,7 @@ void c(word64 x1_32_32_w0)
 	fn00000000000006E0();
 	if (w0 > 0x06)
 		return;
-	int32 w0_29 = (word32) (2664 + (int64) ((int8) ((word32) (&g_t0C8C)[(uint64) ((uint32) (w0 - 0x02))])));
+	int32 w0_29 = (word32) (2664 + (int64) ((int8) ((word32) (&g_t0C8C)[(uint64) (w0 - 0x02)])));
 	switch (w0)
 	{
 	case 0x02:

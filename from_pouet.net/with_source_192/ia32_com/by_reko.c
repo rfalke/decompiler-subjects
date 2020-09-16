@@ -8,15 +8,15 @@
 void fn0C00_0100(word16 cx, Eq_3 bp, struct Eq_4 * es)
 {
 	__syscall(0x10);
-	cui16 ax_248 = 20226;
+	cui16 ax_247 = 20226;
 	do
 	{
-		byte al_8 = (byte) ax_248;
+		byte al_8 = (byte) ax_247;
 		__outb(969, al_8);
 		__outb(969, al_8);
 		__outb(969, al_8);
 		--cx;
-		++ax_248;
+		++ax_247;
 	} while (cx != 0x00);
 	__syscall(0x10);
 	do
@@ -28,15 +28,15 @@ void fn0C00_0100(word16 cx, Eq_3 bp, struct Eq_4 * es)
 			cu16 cx_149;
 			for (cx_149 = 0x0280; cx_149 != 0x00; --cx_149)
 			{
-				cu16 bx_41 = bx_251 - 0xF0;
+				cu16 bx_41 = bx_250 - 0xF0;
 				ui8 al_110 = (byte) (int16) (63 / SEQ(SLICE(bx_41, byte, 8), (byte) bx_41 | 0x01)) & 0x3F ^ 0x3F;
-				if (bx_251 >= 0x3C && (bx_251 < 0x017C && (cx_149 >= 0x32 && cx_149 < 500)))
+				if (bx_250 >= 0x3C && (bx_250 < 0x017C && (cx_149 >= 0x32 && cx_149 < 500)))
 				{
-					al_110 = (byte) (bx_251 >> 0x03);
-					if (bx_251 >= 0x50 && (bx_251 < 0x0168 && (cx_149 >= 0x3C && cx_149 < 0x01EA)))
+					al_110 = (byte) (bx_250 >> 0x03);
+					if (bx_250 >= 0x50 && (bx_250 < 0x0168 && (cx_149 >= 0x3C && cx_149 < 0x01EA)))
 					{
 						byte bl_100 = 0x00;
-						if ((Mem85[es:(bx_251 >>u 0x02 & 0x07) + bp + (((bx_251 ^ Mem77[0C00:0400:word16]) ^ cx_149) & 0x03C0):byte] & 0x01 << (SLICE(cx_149 >>u 0x01, byte, 0) & 0x07)) != 0x00)
+						if ((Mem85[es:(bx_250 >>u 0x02 & 0x07) + bp + (((bx_250 ^ Mem77[0C00:0400:word16]) ^ cx_149) & 0x03C0):byte] & 0x01 << (SLICE(cx_149 >>u 0x01, byte, 0) & 0x07)) != 0x00)
 							bl_100 = 0x10;
 						al_110 = (byte) ((word16) (di_103 * (word16) __rdtsc()) >> 0x0C) + bl_100;
 					}
@@ -47,9 +47,9 @@ void fn0C00_0100(word16 cx, Eq_3 bp, struct Eq_4 * es)
 				if (di_128 == 0x00)
 					__syscall(0x10);
 			}
-			bx_153 = bx_251 - 0x01;
-			bx_251 = bx_153;
-		} while (bx_251 != 0x01);
+			bx_153 = bx_250 - 0x01;
+			bx_250 = bx_153;
+		} while (bx_250 != 0x01);
 		0C00:0400 = (word16 *) ((char *) 0C00:0400 + 1);
 	} while (__inb(0x60) != 0x01);
 }

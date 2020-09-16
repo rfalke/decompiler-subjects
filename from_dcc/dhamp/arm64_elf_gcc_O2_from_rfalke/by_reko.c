@@ -134,7 +134,7 @@ l00000000000008F8:
 		} while (w1_109 > 0x04);
 	}
 	Eq_40 x1_119 = 2332;
-	Eq_40 x0_120 = 2332 + (int64) ((int8) ((word32) (&g_t1014)[(uint64) ((uint32) w1_109)]));
+	Eq_40 x0_120 = 2332 + (int64) ((int8) ((word32) (&g_t1014)[(uint64) w1_109]));
 	switch ((word32) 2332)
 	{
 	case 0x00:
@@ -245,10 +245,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000C20: Register ptr64 sq(Register Eq_40 x0, Register out Eq_109 x3Out)
+// 0000000000000C20: Register ptr64 sq(Register Eq_40 x0, Register out Eq_108 x3Out)
 // Called from:
 //      main
-ptr64 sq(Eq_40 x0, union Eq_109 & x3Out)
+ptr64 sq(Eq_40 x0, union Eq_108 & x3Out)
 {
 	if (x0 != 0x00)
 	{
@@ -265,14 +265,35 @@ ptr64 sq(Eq_40 x0, union Eq_109 & x3Out)
 	}
 }
 
-// 0000000000000C98: void sroot()
-void sroot()
+// 0000000000000C98: void sroot(Register real64 d0)
+void sroot(real64 d0)
 {
+	real64 d4_7 = g_r0CF8;
+	real64 d0_14 = d0 * 0.5;
+	if (d0 > (d0 * 0.5) * d4_7)
+	{
+		do
+		{
+			real64 d1_15 = d0 / d0_14;
+			real64 d2_16 = d1_15 + d0_14;
+			real64 d1_17 = d1_15 - d0_14;
+			d0_14 = d2_16 * 0.5;
+			real64 d2_22 = d2_16 * 0.5 * d4_7;
+			if (d1_17 < 0.0)
+			{
+				if (d2_22 >= -d1_17)
+					return;
+				continue;
+			}
+		} while (d2_22 < d1_17);
+	}
 }
 
-// 0000000000000D00: void abs()
-void abs()
+// 0000000000000D00: void abs(Register real64 d0)
+void abs(real64 d0)
 {
+	if (d0 < 0.0)
+		;
 }
 
 // 0000000000000D18: void dply()
@@ -307,12 +328,12 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	}
 }
 
-// 0000000000000DD0: Register word32 stest(Register (ptr64 byte) x0, Register (arr byte) x1, Register out Eq_61 w7Out)
+// 0000000000000DD0: Register word32 stest(Register (ptr64 byte) x0, Register (arr byte) x1, Register out Eq_60 w7Out)
 // Called from:
 //      main
-word32 stest(byte * x0, byte x1[], union Eq_61 & w7Out)
+word32 stest(byte * x0, byte x1[], union Eq_60 & w7Out)
 {
-	Eq_61 w7_54;
+	Eq_60 w7_54;
 	word32 w8_63 = 0x00;
 	for (w7_54 = 9000; w7_54 != 0x00; --w7_54)
 	{

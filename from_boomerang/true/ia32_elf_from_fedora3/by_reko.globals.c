@@ -26,15 +26,15 @@ char * g_ptr804B954 = null;
 FILE ** g_ptr804B958 = &g_ptr80488EA;
 int32 * g_ptr804B95C = &g_dw80488FA;
 <anonymous> ** g_ptr804B970 = &g_ptr804894A;
-Eq_578 g_t804B9DC = 
+Eq_580 g_t804B9DC = 
 	{
 		1
 	};
-Eq_636 g_t804B9E0 = 
+Eq_638 g_t804B9E0 = 
 	{
 		0x0100,
 	};
-Eq_630 g_t804B9E4 = 
+Eq_632 g_t804B9E4 = 
 	{
 		0x0804BA20,
 	};

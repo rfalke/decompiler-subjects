@@ -150,12 +150,12 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 {
 	if (w0 >= 0x02)
 	{
-		word64 x20_24;
 		word64 x19_25;
-		fib(w0 - 0x01, out x19_25, out x20_24);
+		word64 x20_81;
+		fib(w0 - 0x01, out x19_25, out x20_81);
 		word64 x20_36;
-		word64 x19_81;
-		w0 = fib((word32) x19_25, out x19_81, out x20_36) + (word32) x20_36;
+		word64 x19_82;
+		w0 = fib((word32) x19_25, out x19_82, out x20_36) + (word32) x20_36;
 	}
 	x19Out = <invalid>;
 	x20Out = <invalid>;

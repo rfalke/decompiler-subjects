@@ -4,6 +4,8 @@
 
 #include "subject.h"
 
-Eq_2 g_tFFFFD4BA;
-struct Eq_2 * g_ptr8000 = &g_tFFFFD4BA;
+Eq_2 g_t8000 = 
+	{
+		true
+	};
 

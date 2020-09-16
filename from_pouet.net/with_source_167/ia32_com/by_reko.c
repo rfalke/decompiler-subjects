@@ -4,26 +4,28 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte bh, FpuStack real64 rLoc2)
-void fn0C00_0100(byte ah, byte bh, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte bh)
+void fn0C00_0100(byte ah, byte bh)
 {
 	__syscall(0x10);
 	bios_video_set_CGA_palette(bh, 0x07);
 	word16 ax_12 = SEQ(ah, 0x12);
-	word16 cx_124 = 0x00;
+	word16 cx_127 = 0x00;
+	real64 rLoc1_158 = 0.0;
 	do
 	{
-		real64 rLoc2_161 = sin(rLoc2 * (real64) ax_12) * (real64) 200;
-		sin(rLoc2_161 * (real64) 0x31);
-		rLoc2 = rLoc2_161 * cos(rLoc2_161 * (real64) 0x28);
+		sin(rLoc1_158 * (real64) ax_12);
+		sin(rLoc1_158 * 49.0);
+		cos(rLoc1_158 * 40.0);
 		__syscall(0x10);
+		rLoc1_158 += (real64) 0.0001F;
 		if (__inb(0x60) == 0x01)
 			break;
-		cx_124 = cx_213 + 0x01;
-		cx_213 = cx_124;
-	} while (cx_213 != 0x01);
-	byte al_128;
-	bios_kbd_get_keystroke(out al_128);
+		cx_127 = cx_214 + 0x01;
+		cx_214 = cx_127;
+	} while (cx_214 != 0x01);
+	byte al_131;
+	bios_kbd_get_keystroke(out al_131);
 	bios_video_set_mode(0x03);
 }
 

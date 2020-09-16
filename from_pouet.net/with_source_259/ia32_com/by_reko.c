@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register (memptr (ptr16 Eq_61) byte) di, Register (ptr16 Eq_3) ds, Register (ptr16 Eq_4) fs)
-void fn0C00_0100(byte Eq_61::* di, struct Eq_3 * ds, struct Eq_4 * fs)
+// 0C00:0100: void fn0C00_0100(Register (memptr (ptr16 Eq_60) byte) di, Register (ptr16 Eq_3) ds, Register (ptr16 Eq_4) fs)
+void fn0C00_0100(byte Eq_60::* di, struct Eq_3 * ds, struct Eq_4 * fs)
 {
 	__syscall(0x10);
 	byte Eq_3::* si_11 = Eq_3::a0149;
@@ -24,7 +24,7 @@ void fn0C00_0100(byte Eq_61::* di, struct Eq_3 * ds, struct Eq_4 * fs)
 	bios_video_set_mode(0x13);
 	do
 	{
-		uint32 dx_ax_51 = (uint32) (uint16) di;
+		uint32 dx_ax_51 = (uint32) di;
 		0xA000->*di = ((byte) ((uint16) (dx_ax_51 /u 0x0140) ^ (uint16) (dx_ax_51 % 0x0140)) & 0x1F) + 0x20;
 		++di;
 	} while (__inb(0x60) != 0x01);

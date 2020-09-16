@@ -30,9 +30,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 		byte al_62 = (byte) ax_44;
 		byte ah_64 = SLICE(ax_44, byte, 8);
 		byte bl_73 = (byte) bx_60;
-		bl_73 = (byte) bx_60;
-		byte bh_83 = SLICE(bx_60, byte, 8);
-		bh_83 = SLICE(bx_60, byte, 8);
+		byte bh_82 = SLICE(bx_60, byte, 8);
 		if (bx_45 >= 0xE6)
 		{
 			Eq_40 ax_65 = SEQ(ah_64, al_62 - 0x05);
@@ -41,38 +39,38 @@ void fn0C00_0100(struct Eq_2 * ds)
 				if (ax_65 <= bx_60)
 				{
 					bl_73 = (byte) (bx_60 - 0x01);
-					bh_83 = SLICE(bx_60 - 0x01, byte, 8);
+					bh_82 = SLICE(bx_60 - 0x01, byte, 8);
 				}
 				else
 				{
 					bl_73 = (byte) ((word16) bx_60.u0 + 1);
-					bh_83 = SLICE((word16) bx_60.u0 + 1, byte, 8);
+					bh_82 = SLICE((word16) bx_60.u0 + 1, byte, 8);
 				}
 			}
 		}
-		Eq_40 bx_88 = SEQ(bh_83, fn0C00_01F3(bl_73));
-		ds->t01C1 = bx_88;
-		Eq_40 ax_92 = (word16) ds->t01C7 + ds->w01CB;
-		ds->t01C7 = ax_92;
-		byte al_94 = (byte) ax_92;
-		if (al_94 == 0x01)
+		Eq_40 bx_86 = SEQ(bh_82, fn0C00_01F3(bl_73));
+		ds->t01C1 = bx_86;
+		Eq_40 ax_90 = (word16) ds->t01C7 + ds->w01CB;
+		ds->t01C7 = ax_90;
+		byte al_92 = (byte) ax_90;
+		if (al_92 == 0x01)
 			ds->w01CB = -ds->w01CB;
-		if (al_94 == 0xC6)
+		if (al_92 == 0xC6)
 			ds->w01CB = -ds->w01CB;
-		Eq_43 cx_113 = (word16) ds->t01C5 + ds->w01C9;
-		ds->t01C5 = cx_113;
-		byte dh_192;
-		Eq_40 ax_123 = fn0C00_0202(ax_92, cx_113, 0x013F, bx_88, ds, out dh_192);
-		word16 bx_131 = (word16) ds->t01BF + ds->w01C3;
-		Eq_40 bx_140 = SEQ(SLICE(bx_131, byte, 8), fn0C00_01F3((byte) bx_131));
-		ds->t01BF = bx_140;
-		Eq_130 dx_146 = <invalid>;
-		Eq_49 dx_155 = SEQ(SLICE(dx_146, byte, 8), 0x0F);
-		byte dh_193;
-		fn0C00_01CF(fn0C00_0202(ax_123, cx_113, 0x00, bx_140, ds, out dh_193), dx_155, ds->t01C5, 0xA000, ds);
-		fn0C00_01DF(ds->t01C1, SEQ(SLICE((uint16) (uint8) fn0C00_01DF(ds->t01BF, dx_155, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
-		byte ah_188;
-	} while (bios_kbd_check_keystroke(out al_14, out ah_188));
+		Eq_43 cx_111 = (word16) ds->t01C5 + ds->w01C9;
+		ds->t01C5 = cx_111;
+		byte dh_190;
+		Eq_40 ax_121 = fn0C00_0202(ax_90, cx_111, 0x013F, bx_86, ds, out dh_190);
+		word16 bx_129 = (word16) ds->t01BF + ds->w01C3;
+		Eq_40 bx_138 = SEQ(SLICE(bx_129, byte, 8), fn0C00_01F3((byte) bx_129));
+		ds->t01BF = bx_138;
+		Eq_128 dx_144 = <invalid>;
+		Eq_49 dx_153 = SEQ(SLICE(dx_144, byte, 8), 0x0F);
+		byte dh_191;
+		fn0C00_01CF(fn0C00_0202(ax_121, cx_111, 0x00, bx_138, ds, out dh_191), dx_153, ds->t01C5, 0xA000, ds);
+		fn0C00_01DF(ds->t01C1, SEQ(SLICE((uint16) fn0C00_01DF(ds->t01BF, dx_153, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
+		byte ah_186;
+	} while (bios_kbd_check_keystroke(out al_14, out ah_186));
 	msdos_terminate_program20();
 }
 
@@ -117,10 +115,10 @@ byte fn0C00_01F3(byte bl)
 	return bl;
 }
 
-// 0C00:0202: Register Eq_40 fn0C00_0202(Register Eq_40 ax, Register Eq_43 cx, Register Eq_43 dx, Register Eq_40 bx, Register (ptr16 Eq_2) ds, Register out Eq_130 dhOut)
+// 0C00:0202: Register Eq_40 fn0C00_0202(Register Eq_40 ax, Register Eq_43 cx, Register Eq_43 dx, Register Eq_40 bx, Register (ptr16 Eq_2) ds, Register out Eq_128 dhOut)
 // Called from:
 //      fn0C00_0100
-Eq_40 fn0C00_0202(Eq_40 ax, Eq_43 cx, Eq_43 dx, Eq_40 bx, struct Eq_2 * ds, union Eq_130 & dhOut)
+Eq_40 fn0C00_0202(Eq_40 ax, Eq_43 cx, Eq_43 dx, Eq_40 bx, struct Eq_2 * ds, union Eq_128 & dhOut)
 {
 	byte bl_12 = (byte) bx;
 	byte bh_14 = SLICE(bx, byte, 8);

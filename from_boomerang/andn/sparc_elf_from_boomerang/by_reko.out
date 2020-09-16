@@ -2,6 +2,5 @@
 00010610: warning: Unable to resolve imported reference __register_frame_info.
 00010648: warning: Unable to resolve imported reference _Jv_RegisterClasses.
 000106F8: warning: Call target address 00000018 is invalid.
-00010690: warning: SPARC instruction 'orn' is not supported yet.
 0001056C: warning: Call target address 12000000 is invalid.
 000105A4: warning: Unable to resolve imported reference __deregister_frame_info.

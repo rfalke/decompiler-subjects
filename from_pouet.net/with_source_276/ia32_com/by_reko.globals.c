@@ -6,5 +6,5 @@
 
 struct Eq_81 * g_ptrFFF80000;
 struct Eq_81 * g_ptrFFFA0000;
-struct Eq_132 * g_ptr70000;
+struct Eq_133 * g_ptr70000;
 

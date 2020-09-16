@@ -14,7 +14,7 @@ void fn0C00_0100(union Eq_9 * ds_bx, byte Eq_13::* di)
 	{
 		do
 		{
-			uint32 dx_ax_13 = (uint32) (uint16) di;
+			uint32 dx_ax_13 = (uint32) di;
 			uint16 ax_17 = (uint16) (dx_ax_13 /u 0x0140);
 			ds_47->*di += (uint8) ((word16) (word32) SEQ(SLICE(ax_17, byte, 8), ((byte) ax_17 ^ (byte) ((uint16) (dx_ax_13 % 0x0140))) << 0x01) /u (byte) cx_54) >> 0x01;
 			++di;

@@ -28,7 +28,7 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 l000000000040018B:
 	if (edi == 0x00)
 	{
-		while ((word32) (uint64) (word32) (uint64) (dwLoc10_105 + dwLoc0C_104) != edx)
+		while ((word32) (uint64) (dwLoc10_105 + dwLoc0C_104) != edx)
 		{
 			while (true)
 			{

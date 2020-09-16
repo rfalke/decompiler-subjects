@@ -7,7 +7,7 @@
 // 0C00:0100: void fn0C00_0100(Register word16 eax_16_16, Register word16 bp, Register (ptr16 Eq_4) ds)
 void fn0C00_0100(word16 eax_16_16, word16 bp, struct Eq_4 * ds)
 {
-	int8 Top_130 = 0;
+	int8 Top_129 = 0;
 	__syscall(0x10);
 	do
 	{
@@ -15,22 +15,22 @@ void fn0C00_0100(word16 eax_16_16, word16 bp, struct Eq_4 * ds)
 		int16 bx_101;
 		for (bx_101 = ~0x62; (byte) bx_101 != 100; ++bx_101)
 		{
-			Eq_21 cx_15 = ~0x9F;
+			Eq_20 cx_15 = ~0x9F;
 			do
 			{
 				word16 ax_34 = (word16) (cx_15 *s (word16) ((int32) cx_15) + bx_101 *s (word16) ((int32) bx_101));
 				ds->t7340 = ax_34 + 0x1000;
 				ds->w7342 = 0x00;
-				Eq_132 dx_ax_40 = (ax_34 + 0x1000) * 0x733C;
+				Eq_131 dx_ax_40 = (ax_34 + 0x1000) * 0x733C;
 				word32 eax_56 = 400000000 - __ror(SEQ(SLICE(__ror(SEQ(eax_16_16, (word16) dx_ax_40), 0x10), word16, 16), SLICE(dx_ax_40, word16, 16)), 0x10);
 				cu16 ax_57 = (word16) eax_56;
-				word16 eax_16_16_61 = SLICE(eax_56, word16, 16);
+				eax_16_16 = SLICE(eax_56, word16, 16);
 				byte al_87 = (byte) (ax_57 >> 0x01);
-				Eq_21 eax_62 = SEQ(eax_16_16_61, ax_57 >> 0x01);
+				Eq_20 eax_62 = SEQ(eax_16_16, ax_57 >> 0x01);
 				if (ax_57 >> 0x01 >= 0x00)
 				{
 					ds->t733C = eax_62;
-					struct Eq_5 * Top_65 = Top_130 - 1;
+					struct Eq_5 * Top_65 = Top_129 - 1;
 					Top_65->r0000 = (real64) ds->t733C;
 					Top_65->r0000 = sqrt(Top_65->r0000);
 					ds->t733C.u0 = (int16) Top_65->r0000;
@@ -44,11 +44,10 @@ void fn0C00_0100(word16 eax_16_16, word16 bp, struct Eq_4 * ds)
 					ds->t733C.u0 = (int16) Top_65->rFFFFFFFF;
 					__wait();
 					__fninit();
-					Top_130 = Top_65;
+					Top_129 = Top_65;
 					al_87 = (byte) ((word32) ds->t733C + bp);
 				}
 				0xA000->*di_11 = al_87;
-				eax_16_16 = eax_16_16_61;
 				++di_11;
 				cx_15 = (word16) cx_15.u0 + 1;
 			} while (cx_15 != 0xA0);

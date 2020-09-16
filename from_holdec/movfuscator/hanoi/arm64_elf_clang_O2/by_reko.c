@@ -202,8 +202,8 @@ void text(word32 w1, word32 w2)
 //      main
 word64 add_disk(word32 w0, word32 w1, word64 x19, word64 x20, struct Eq_140 * x21, ptr64 x29, word64 x30, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x29Out, ptr64 & x30Out)
 {
-	struct Eq_148 * x8_25 = (&g_t411068)[(int64) (int32) w0 / 8];
-	ui64 x9_29 = (word64) x8_25->dw0004;
+	struct Eq_148 * x8_25 = (&g_t411068)[(int64) w0 / 8];
+	int64 x9_29 = (int64) x8_25->dw0004;
 	word32 x10_30[] = x8_25->ptr0000;
 	x8_25->dw0008 = (word32) x9_29 + 0x01;
 	x10_30[x9_29] = w1;
@@ -242,8 +242,8 @@ word64 add_disk(word32 w0, word32 w1, word64 x19, word64 x20, struct Eq_140 * x2
 // 0000000000400914: void remove_disk(Register word32 w0)
 void remove_disk(word32 w0)
 {
-	struct Eq_215 * x8_25 = (&g_t411068)[(int64) (int32) w0 / 8];
-	ui64 x9_28 = (word64) x8_25->dw0004;
+	struct Eq_214 * x8_25 = (&g_t411068)[(int64) w0 / 8];
+	int64 x9_28 = (int64) x8_25->dw0004;
 	word32 x11_29[] = x8_25->ptr0000;
 	x8_25->dw0008 = (word32) (x9_28 - 0x01);
 	word32 w19_34 = x11_29[x9_28 - 0x01];
@@ -251,7 +251,7 @@ void remove_disk(word32 w0)
 	fn0000000000400660();
 	if (w19_34 != 0x00)
 	{
-		word32 w22_48;
+		word32 w22_48 = w19_34;
 		do
 		{
 			fn0000000000400660();
@@ -271,16 +271,16 @@ ptr64 move(word64 x0, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x28Out, ptr64 & x2
 	{
 		do
 		{
-			word64 x28_81;
 			struct Eq_140 * x21_88;
 			word64 x20_89;
 			ptr64 x29_91;
 			word64 x30_92;
-			word64 x19_90 = move(x0, out x20_89, out x21_88, out x28_81, out x29_91, out x30_92);
+			word64 x28_337;
+			word64 x19_90 = move(x0, out x20_89, out x21_88, out x28_337, out x29_91, out x30_92);
 			word32 w20_103 = (word32) x20_89;
-			struct Eq_313 * x8_105 = (&g_t411068)[(int64) (int32) w20_103 / 8];
+			struct Eq_311 * x8_105 = (&g_t411068)[(int64) w20_103 / 8];
 			__bfm(w20_103, 31, 30);
-			ui64 x9_109 = (word64) x8_105->dw0004;
+			int64 x9_109 = (int64) x8_105->dw0004;
 			word32 x10_110[] = x8_105->ptr0000;
 			x8_105->dw0008 = (word32) (x9_109 - 0x01);
 			word32 w27_115 = x10_110[x9_109 - 0x01];
@@ -295,12 +295,12 @@ ptr64 move(word64 x0, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x28Out, ptr64 & x2
 					--w26_122;
 				} while (w26_122 != 0x00);
 			}
-			word64 x19_157;
-			word64 x20_158;
 			word64 x21_159;
-			word64 x29_161;
-			word64 x30_162;
-			add_disk(w19_133, w27_115, x19_90, x20_89, x21_88, x29_91, x30_92, out x19_157, out x20_158, out x21_159, out x29_161, out x30_162);
+			word64 x20_334;
+			word64 x29_335;
+			word64 x30_336;
+			word64 x19_333;
+			add_disk(w19_133, w27_115, x19_90, x20_89, x21_88, x29_91, x30_92, out x19_333, out x20_334, out x21_159, out x29_335, out x30_336);
 		} while ((word32) x21_159 != 0x00);
 	}
 	x20Out = x21;
@@ -311,8 +311,8 @@ ptr64 move(word64 x0, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x28Out, ptr64 & x2
 	return x20;
 }
 
-// 0000000000400AA8: void main(Register int32 w0, Register (ptr64 Eq_348) x1, Register word64 x30)
-void main(int32 w0, struct Eq_348 * x1, word64 x30)
+// 0000000000400AA8: void main(Register int32 w0, Register (ptr64 Eq_345) x1, Register word64 x30)
+void main(int32 w0, struct Eq_345 * x1, word64 x30)
 {
 	word64 x19_217;
 	fn0000000000400620();
@@ -332,8 +332,8 @@ l0000000000400AF4:
 			word64 x20_48 = __sbfiz(x19_217, 2) + 0x10;
 			g_dw411080 = (word32) x19_217;
 			fn00000000004005F0();
-			Eq_390 x0_61 = SEQ(x0_32_32_57, 0x01);
-			*x0_61.t0000 = (Eq_390) ((word64) x0_61.t0000 + 16);
+			Eq_387 x0_61 = SEQ(x0_32_32_57, 0x01);
+			*x0_61.t0000 = (Eq_387) ((word64) x0_61.t0000 + 16);
 			g_t411068.t0000 = x0_61;
 			fn00000000004005F0();
 			word64 * x0_70 = SEQ(x0_32_32_57, 0x01);
@@ -351,12 +351,12 @@ l0000000000400AF4:
 				word32 x0_32_32_113 = SLICE(add_disk(0x00, (word32) x19_217, x19_217, x20_48, x21_100, x29_102, x30, out x19_98, out x20_48, out x21_100, out x29_102, out x30), word32, 32);
 				x19_217 = SEQ(SLICE(x19_98, word32, 32), w19_106 - 0x01);
 			} while (w19_106 != 0x01);
-			word64 x21_119;
 			word64 x20_219;
-			word64 x28_220;
-			word64 x29_221;
-			word64 x30_222;
-			move(SEQ(x0_32_32_113, x21_100->dw0080), out x20_219, out x21_119, out x28_220, out x29_221, out x30_222);
+			word64 x21_220;
+			word64 x28_221;
+			word64 x29_222;
+			word64 x30_223;
+			move(SEQ(x0_32_32_113, x21_100->dw0080), out x20_219, out x21_220, out x28_221, out x29_222, out x30_223);
 			fn0000000000400660();
 			fn0000000000400660();
 			return;

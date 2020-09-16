@@ -65,18 +65,18 @@ void fn0C00_0100(Eq_2 ss_si, byte ah, byte dh, byte dl, Eq_6 bp, Eq_7 di)
 			Mem63[ss:bp + di:word16] = ax_116;
 			__fninit();
 			struct Eq_126 * Top_65 = Top_169 - 1;
-			ST67[Top_65 + 0x00:real64] = (real64) Mem63[ss:bp + si:real32];
-			ST68[Top_65 + 0x00:real64] = ST67[Top_65 + 0x00:real64] + Mem63[ss:(bp + 0x01) + si:real32];
-			Mem69[ss:bp + si:real32] = (real32) ST68[Top_65 + 0x00:real64];
-			ST70[Top_65 + 0x00:real64] = ST68[Top_65 + 0x00:real64] * (real64) Mem69[ss:bp + di:word16];
+			ST67[Top_65 + 0x00:real64] = CONVERT(Mem63[ss:bp + si:real32], real32, real64);
+			ST68[Top_65 + 0x00:real64] = ST67[Top_65 + 0x00:real64] + CONVERT(Mem63[ss:(bp + 0x01) + si:real32], real32, real64);
+			Mem69[ss:bp + si:real32] = CONVERT(ST68[Top_65 + 0x00:real64], real64, real32);
+			ST70[Top_65 + 0x00:real64] = ST68[Top_65 + 0x00:real64] * CONVERT(Mem69[ss:bp + di:int16], int16, real64);
 			real64 v26_71 = Top_65->r0000;
 			Top_65->r0000 = cos(v26_71);
 			Top_65->rFFFFFFFF = sin(v26_71);
-			ST75[Top_65 + -1:real64] = ST74[Top_65 + -1:real64] / (real64) Mem69[ss:bp + di:word16];
+			ST75[Top_65 + -1:real64] = ST74[Top_65 + -1:real64] / CONVERT(Mem69[ss:bp + di:int16], int16, real64);
 			real64 v27_76 = Top_65->rFFFFFFFF;
 			Top_65->rFFFFFFFF = Top_65->r0000;
 			Top_65->r0000 = v27_76;
-			ST79[Top_65 + -1:real64] = ST78[Top_65 + -1:real64] / (real64) Mem69[ss:bp + di:word16];
+			ST79[Top_65 + -1:real64] = ST78[Top_65 + -1:real64] / CONVERT(Mem69[ss:bp + di:int16], int16, real64);
 			Top_65->rFFFFFFFE = 0.0;
 			Top_65->rFFFFFFFD = 0.0;
 			uint8 ah_172 = SLICE(ax_116, byte, 8);
@@ -84,13 +84,13 @@ void fn0C00_0100(Eq_2 ss_si, byte ah, byte dh, byte dl, Eq_6 bp, Eq_7 di)
 			cx_111 = SEQ(0x09, cl_173);
 			do
 			{
-				Mem90[ss:bp + di:int16] = (int16) ST86[Top_65 + -3:real64];
+				Mem90[ss:bp + di:int16] = CONVERT(ST86[Top_65 + -3:real64], real64, int16);
 				Top_65->rFFFFFFFD += Top_65->rFFFFFFFF;
 				real64 v28_92 = Top_65->rFFFFFFFD;
 				Top_65->rFFFFFFFD = Top_65->rFFFFFFFE;
 				Top_65->rFFFFFFFE = v28_92;
 				word16 bx_95 = Mem90[ss:bp + di:word16] *s 0x0140;
-				Mem96[ss:bp + di:int16] = (int16) ST94[Top_65 + -3:real64];
+				Mem96[ss:bp + di:int16] = CONVERT(ST94[Top_65 + -3:real64], real64, int16);
 				Top_65->rFFFFFFFD += Top_65->r0000;
 				real64 v29_98 = Top_65->rFFFFFFFD;
 				Top_65->rFFFFFFFD = Top_65->rFFFFFFFE;

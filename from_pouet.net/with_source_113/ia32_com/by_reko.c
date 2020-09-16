@@ -14,7 +14,7 @@ void fn0C00_0100(word16 cx, cu16 bx, byte Eq_29::* di)
 		--cx;
 		do
 		{
-			uint32 dx_ax_19 = (uint32) (uint16) di;
+			uint32 dx_ax_19 = (uint32) di;
 			Eq_11 ax_22 = (uint16) (dx_ax_19 /u 0x0140);
 			Eq_23 dx_21 = (uint16) (dx_ax_19 % 0x0140);
 			bx = bx_11;

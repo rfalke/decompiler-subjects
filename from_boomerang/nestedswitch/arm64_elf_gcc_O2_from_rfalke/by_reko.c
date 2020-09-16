@@ -76,7 +76,7 @@ void main(up32 w0)
 		fn00000000000006D0();
 	else
 	{
-		switch ((word32) (1828 + (int64) ((int8) ((word32) (&g_t095C)[(uint64) ((uint32) (w0 - 0x02))]))))
+		switch ((word32) (1828 + (int64) ((int8) ((word32) (&g_t095C)[(uint64) (w0 - 0x02)]))))
 		{
 		case 0x00:
 l000000000000072C:

@@ -200,7 +200,7 @@ word64 dumpline(ptr64 x0, int32 w2, word32 x10_32_32)
 	if (w23_58 > 0x00)
 	{
 		int64 x26_63 = 0x00;
-		int64 x27_64 = (int64) (int32) w23_58;
+		int64 x27_64 = (int64) w23_58;
 		do
 		{
 			fn0000000000400680();
@@ -210,17 +210,17 @@ word64 dumpline(ptr64 x0, int32 w2, word32 x10_32_32)
 		if (w26_61 > 0x0F)
 		{
 l000000000040092C:
-			int64 x8_121;
 			int32 w8_119;
+			int64 x8_121;
 			fn0000000000400660();
 			word32 w0_106 = SLICE(fp + ~0xA7, word32, 0);
-			int64 x9_107 = (int64) (int32) w0_106;
+			int64 x9_107 = (int64) w0_106;
 			Mem112[fp + ~0xA7 + x9_107:word32] = 0x005C2020;
 			if (w23_58 >= 0x01)
 			{
 				x8_121 = 0x00;
-				int64 x9_122 = (int64) (int32) w23_58;
-				byte x10_123[] = fp + ~0xA7 + (int64) ((int32) (w0_106 + 0x03));
+				int64 x9_122 = (int64) w23_58;
+				byte x10_123[] = fp + ~0xA7 + CONVERT(w0_106 + 0x03, word32, int64);
 				do
 				{
 					up32 w12_129 = (word32) (x0 + x8_121);
@@ -232,7 +232,7 @@ l000000000040092C:
 				if (w8_119 > 0x0F)
 				{
 l00000000004009C0:
-					Mem183[fp + ~0xA7 + (x9_107 + 0x03) + (int64) ((int32) SLICE(x8_121, word32, 0)):word16] = 0x7C;
+					Mem181[fp + ~0xA7 + (x9_107 + 0x03) + CONVERT(SLICE(x8_121, word32, 0), word32, int64):word16] = 0x7C;
 					fn00000000004006F0();
 					return SEQ(x10_32_32, 0x7C);
 				}
@@ -240,13 +240,13 @@ l00000000004009C0:
 			else
 				w8_119 = 0x00;
 			fn00000000004006C0();
-			x8_121 = SEQ(SLICE((fp + ~0xA7 << 32 >> 32) + (int64) ((int32) w8_119), word32, 32), 0x10);
+			x8_121 = SEQ(SLICE(SLICE(fp + ~0xA7, word32, 0) + w8_119, word32, 32), 0x10);
 			goto l00000000004009C0;
 		}
 	}
 	else
 		w26_61 = 0x00;
-	word32 w20_90;
+	word32 w20_90 = 0x10 - w26_61;
 	do
 	{
 		fn0000000000400660();
@@ -278,8 +278,8 @@ word64 hexdump(word64 x0, ptr64 x10, ptr64 & x10Out, ptr64 & x21Out)
 					if (w21_54 == 0x00)
 						break;
 					x10 = dumpline(fp - 0x38, w21_54, x10_32_32_59);
-					struct Eq_266 * sp_60 = (struct Eq_266 *) <invalid>;
-					x20_44 += (int64) (int32) w21_54;
+					struct Eq_256 * sp_60 = (struct Eq_256 *) <invalid>;
+					x20_44 += (int64) w21_54;
 				} while (x20_44 - sp_60->qw0030 < 0x00);
 			}
 			fn0000000000400690();

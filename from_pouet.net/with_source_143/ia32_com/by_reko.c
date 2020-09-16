@@ -21,15 +21,15 @@ void fn0C00_0100(word16 cx)
 	} while (cx_131 != 0x01);
 	do
 	{
-		struct Eq_36 Eq_35::* bp_29;
+		struct Eq_36 Eq_35::* bp_29 = &Eq_35::t0320;
 		do
 		{
-			*((char *) &&(0xA000->*(0xA000->*(ss->*bp_29).ptr01D3).b0000) + (word32) (ss->*bp_29).w01D1 * 0x0140) = (byte **) ~0x00;
-			(ss->*bp_29).ptr01D3 += (int16) ((__inb(0x40) & 0x03) - 0x01) / 320;
+			*((char *) &&(0xA000->*(0xA000->*(ss->*bp_29).ptr01D3).b0000) + (word16) ((word32) (ss->*bp_29).w01D1 * 0x05) * 0x40) = (byte **) ~0x00;
+			(ss->*bp_29).ptr01D3 += (int16) ((__inb(0x40) & 0x03) - 0x01) / 64;
 			(ss->*bp_29).w01D1 += (int16) ((__inb(0x40) & 0x03) - 0x01);
 			bp_29 -= 0x08;
 		} while (bp_29 != &Eq_35::t0000);
-		byte Eq_34::* si_54;
+		byte Eq_34::* si_54 = Eq_34::a0000;
 		do
 		{
 			byte al_60 = 0xA000->*si_54;

@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Sequence (ptr32 Eq_2) ds_bx, Register Eq_3 di)
-void fn0C00_0100(struct Eq_2 * ds_bx, Eq_3 di)
+// 0C00:0100: void fn0C00_0100(Sequence (ptr32 Eq_2) ds_bx, Register (memptr (ptr16 Eq_11) byte) di)
+void fn0C00_0100(struct Eq_2 * ds_bx, byte Eq_11::* di)
 {
 	bios_video_set_mode(0x13);
 	word16 ax_11 = 0x13;
@@ -14,10 +14,10 @@ void fn0C00_0100(struct Eq_2 * ds_bx, Eq_3 di)
 	{
 		ax_23 = SEQ(ah_22, al_15 - 0x01);
 		byte al_15 = (byte) ax_11;
-		Eq_22 di_13 = (bool) (di_13 < 0x00) + ((word16) di + ax_11);
+		word16 di_13 = di + ax_11 + C;
 		es_26->*di_13 = al_15 - 0x01;
 		byte ah_22 = SLICE(ax_11, byte, 8);
-		di = (word16) di_13 + 1;
+		di = di_13 + 1;
 		ax_11 = ax_23;
 	}
 }

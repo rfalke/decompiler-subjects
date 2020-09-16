@@ -9,10 +9,10 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, word16 cx, byte Eq_6::* di)
 {
 	struct Eq_6 * es_28 = ds_bx->ptr0002;
 	__syscall(0x10);
-	cup16 ax_12 = SEQ(ah, 0x13);
+	word16 ax_12 = SEQ(ah, 0x13);
 	while (true)
 	{
-		ax_12 = ax_12 - di - (ax_12 >= 0x00);
+		ax_12 = ax_12 - di - C;
 		es_28->*di = (byte) ax_12;
 		++di;
 		--cx;

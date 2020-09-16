@@ -14,7 +14,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 	{
 		byte al_15 = ds->*si_10;
 		++si_10;
-		uint16 ax_27 = (uint16) (uint8) al_15;
+		uint16 ax_27 = (uint16) al_15;
 		if (al_15 == 0x00)
 		{
 			struct Eq_33 Eq_2::* di_20 = di_19 + 0x01;

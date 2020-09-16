@@ -57,7 +57,7 @@ void main()
 		int32 eax_33 = do_cmp_const((byte) esi_19);
 		ci8 al_48 = (byte) esi_19;
 		int32 eax_40 = do_signed_const((byte) esi_19);
-		int32 eax_54 = (word32) (al_48 <= 0x09);
+		int32 eax_54 = (word32) (int8) (al_48 <= 0x09);
 		if (eax_33 != eax_54)
 		{
 			printf("CONST C and setl differ: %3d = 0x%02x  ->  ", esi_19, esi_19);
@@ -74,7 +74,7 @@ void main()
 		{
 			Eq_50 eax_129 = do_cmp((byte) esi_19, (byte) ebx_115);
 			Eq_50 eax_144 = do_signed((byte) esi_19, (byte) ebx_115);
-			Eq_50 ecx_159 = (uint32) (uint8) (al_48 < (byte) ebx_115);
+			Eq_50 ecx_159 = (uint32) (int8) (al_48 < (byte) ebx_115);
 			if (eax_129 != ecx_159)
 			{
 				printf("C and setl differ: %3d = 0x%02x %3d = 0x%02x  ->  ", esi_19, esi_19, ebx_115, ebx_115);
@@ -92,7 +92,7 @@ void main()
 	} while (esi_19 != 0x0100);
 }
 
-// 080491D0: void _start(Register (ptr32 Eq_129) edx, Stack int32 dwArg00)
+// 080491D0: void _start(Register (ptr32 Eq_130) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -150,7 +150,7 @@ void frame_dummy()
 //      main
 uint32 do_cmp(byte bArg04, byte bArg08)
 {
-	return (uint32) (uint8) ((byte) (word32) bArg04 < (byte) ((word32) bArg08));
+	return (uint32) (int8) ((byte) (word32) bArg04 < (byte) ((word32) bArg08));
 }
 
 // 080492FB: Register uint32 do_signed(Stack byte bArg04, Stack byte bArg08)
@@ -158,7 +158,7 @@ uint32 do_cmp(byte bArg04, byte bArg08)
 //      main
 uint32 do_signed(byte bArg04, byte bArg08)
 {
-	return (uint32) (uint8) ((byte) (word32) bArg04 < (byte) ((word32) bArg08));
+	return (uint32) (int8) ((byte) (word32) bArg04 < (byte) ((word32) bArg08));
 }
 
 // 08049310: Register uint32 do_cmp_const(Stack byte bArg04)
@@ -166,7 +166,7 @@ uint32 do_signed(byte bArg04, byte bArg08)
 //      main
 uint32 do_cmp_const(byte bArg04)
 {
-	return (uint32) (1) ((byte) (word32) bArg04 < 0x0A);
+	return (uint32) (int8) ((byte) (word32) bArg04 < 0x0A);
 }
 
 // 08049320: Register uint32 do_signed_const(Stack byte bArg04)
@@ -174,7 +174,7 @@ uint32 do_cmp_const(byte bArg04)
 //      main
 uint32 do_signed_const(byte bArg04)
 {
-	return (uint32) (1) ((byte) (word32) bArg04 < 0x0A);
+	return (uint32) (int8) ((byte) (word32) bArg04 < 0x0A);
 }
 
 // 08049330: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

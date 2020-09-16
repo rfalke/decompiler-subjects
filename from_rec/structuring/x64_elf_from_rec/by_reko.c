@@ -122,7 +122,7 @@ void loop2()
 	{
 		do
 		{
-			word32 v9_19 = dwLoc0C + (uint64) (g_a6009C0[(int64) ((word32) ((uint64) g_dw600B50)) * 0x04] + g_dw600B54);
+			word32 v9_19 = dwLoc0C + (g_a6009C0[(int64) ((word32) ((uint64) g_dw600B50)) * 0x04] + g_dw600B54);
 			dwLoc0C = v9_19;
 			if (v9_19 == 0x0A)
 				dwLoc0C = v9_19 + 0x0C;
@@ -145,7 +145,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 r14d_75 = (word32) (uint64) edi;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_171 rbx_38 = 0x00;
+		Eq_170 rbx_38 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 6293396)[rbx_38]();

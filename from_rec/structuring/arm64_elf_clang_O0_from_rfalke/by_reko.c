@@ -153,7 +153,7 @@ void loop1()
 	g_dw411030 = 0x00;
 	while (g_dw411030 < 100)
 	{
-		g_a411034[(word64) g_dw411030 * 0x00] = g_dw411030;
+		g_a411034[(int64) g_dw411030 * 0x00] = g_dw411030;
 		++g_dw411030;
 	}
 	leave();
@@ -168,7 +168,7 @@ void loop2(word64 x29)
 	{
 		do
 		{
-			word32 w12_28 = dwLoc0C_62 + (g_a411034[(word64) g_dw411030 * 0x00] + g_dw41102C);
+			word32 w12_28 = dwLoc0C_62 + (g_a411034[(int64) g_dw411030 * 0x00] + g_dw41102C);
 			dwLoc0C_62 = w12_28;
 			if (w12_28 == 0x0A)
 				dwLoc0C_62 = w12_28 + 0x0C;

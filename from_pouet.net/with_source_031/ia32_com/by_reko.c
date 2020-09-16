@@ -10,7 +10,7 @@ void fn0C00_0100(union Eq_11 * ds_bx, byte Eq_17::* di)
 	word16 bx = (word16) ds_bx;
 	__syscall(0x10);
 	Eq_11 es_cx_8 = *ds_bx;
-	word16 cx_10;
+	word16 cx_10 = (word16) es_cx_8;
 	struct Eq_17 * es_50 = SLICE(es_cx_8, selector, 16);
 	do
 	{
@@ -24,19 +24,17 @@ void fn0C00_0100(union Eq_11 * ds_bx, byte Eq_17::* di)
 	{
 		word16 bx_16 = bx + 0x01;
 		byte bh_47 = SLICE(bx_16, byte, 8);
-		Eq_42 C_19 = !C;
-		word16 cx_58 = cx_10;
+		word16 cx_59 = cx_10;
 		do
 		{
-			al_13 = (byte) C_19 + (al_13 + SLICE(cx_63, byte, 8)) & 0x7F ^ bh_47;
+			al_13 = al_13 + SLICE(cx_64, byte, 8) & 0x7F ^ bh_47;
 			es_50->*di = al_13;
-			C = false;
 			++di;
 			bx = bx_16;
-			cx_58 = cx_63 - 0x01;
-			cx_63 = cx_58;
-		} while (cx_63 != 0x01);
-		cx_10 = cx_63 - 0x01;
+			cx_59 = cx_64 - 0x01;
+			cx_64 = cx_59;
+		} while (cx_64 != 0x01);
+		cx_10 = cx_64 - 0x01;
 	}
 }
 

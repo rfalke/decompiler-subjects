@@ -149,26 +149,27 @@ void read_ints()
 // 080484BE: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint16 wLoc06_34 = __fstcw();
-	__fldcw(wLoc06_34);
-	__fldcw(wLoc06_34);
-	__fldcw(wLoc06_34);
-	__fldcw(wLoc06_34);
-	int16 wLoc0A_38 = (int16) rArg04;
-	g_b804A062 = (byte) wLoc0A_38;
-	g_w804A060 = wLoc0A_38;
-	__fldcw(wLoc06_34);
+	uint16 wLoc06_36 = __fstcw();
+	uint16 ax_18 = SEQ(SLICE(wLoc06_36, byte, 8) | 0x0C, (byte) wLoc06_36);
+	__fldcw(ax_18);
+	__fldcw(wLoc06_36);
+	__fldcw(ax_18);
+	__fldcw(wLoc06_36);
+	int16 wLoc0A_40 = (int16) rArg04;
+	g_b804A062 = (byte) wLoc0A_40;
+	g_w804A060 = wLoc0A_40;
+	__fldcw(ax_18);
 	g_qw804A050 = (int64) rArg04;
-	__fldcw(wLoc06_34);
-	int32 dwLoc10_39 = (int32) rArg04;
-	g_dw804A05C = dwLoc10_39;
-	g_dw804A058 = dwLoc10_39;
+	__fldcw(wLoc06_36);
+	int32 dwLoc10_41 = (int32) rArg04;
+	g_dw804A05C = dwLoc10_41;
+	g_dw804A058 = dwLoc10_41;
 }
 
 // 08048516: void read_floats()
 void read_floats()
 {
-	use(g_r804A048 + 0.0 + g_r804A040 + (real64) g_r804A030);
+	use((real64) g_r804A048 + 0.0 + g_r804A040 + (real64) g_r804A030);
 }
 
 // 08048547: void write_floats(Stack real64 rArg04)
@@ -227,30 +228,30 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 08048647: void compare_floats(Stack Eq_246 rArg04, Stack Eq_246 rArg0C)
-void compare_floats(Eq_246 rArg04, Eq_246 rArg0C)
+// 08048647: void compare_floats(Stack Eq_253 rArg04, Stack Eq_253 rArg0C)
+void compare_floats(Eq_253 rArg04, Eq_253 rArg0C)
 {
-	Eq_103 eax_26 = (uint32) (uint8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_103 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_26.u0 = 0x00;
 	use_int(eax_26);
-	Eq_103 eax_55 = (uint32) (uint8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_103 eax_55 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_55.u0 = 0x01;
 	use_int(eax_55);
-	use_int((uint32) (uint8) (rArg04 > rArg0C));
-	use_int((uint32) (uint8) (rArg04 >= rArg0C));
-	use_int((uint32) (uint8) (rArg0C > rArg04));
-	use_int((uint32) (uint8) (rArg0C >= rArg04));
+	use_int((uint32) (int8) (rArg04 > rArg0C));
+	use_int((uint32) (int8) (rArg04 >= rArg0C));
+	use_int((uint32) (int8) (rArg0C > rArg04));
+	use_int((uint32) (int8) (rArg0C >= rArg04));
 }
 
-// 080486FA: void constants(Stack real64 rArg04, FpuStack real64 rLoc2)
-void constants(real64 rArg04, real64 rLoc2)
+// 080486FA: void constants(Stack real64 rArg04)
+void constants(real64 rArg04)
 {
-	use(rArg04 + rLoc2);
-	use(rArg04 * g_r8048800);
+	use(rArg04 + rArg04);
+	use(rArg04 * (real64) g_r8048800);
 	use(rArg04 * g_r8048808);
-	use(rArg04 * g_r8048804);
+	use(rArg04 * (real64) g_r8048804);
 	use(rArg04 * g_r8048810);
 }
 
@@ -261,7 +262,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

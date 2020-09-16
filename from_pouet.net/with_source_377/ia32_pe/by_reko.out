@@ -1,3 +1,18 @@
-Using options:
-00402136: warning: Expected sizes of arrays to have been determined by now
-00402136: warning: Expected sizes of arrays to have been determined by now
+=== Using options:
+error: An error occurred during decompilation. System.ArgumentException: dt
+Parameter name: Invalid bit size.
+  at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.TrashedRegisterFinder.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.TrashedRegisterFinder.ProcessBlock (Reko.Core.Block block) [0x0005c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.TrashedRegisterFinder.Compute () [0x00020] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00070] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 

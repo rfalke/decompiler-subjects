@@ -25,7 +25,7 @@ void fn0C00_0100(byte ah, byte bh)
 	do
 	{
 		byte bl_34 = bh;
-		struct Eq_52 Eq_51::* cx_35;
+		struct Eq_52 Eq_51::* cx_35 = &Eq_51::tFFFFFA00;
 		do
 		{
 			(0xA000->*cx_35).bFFFFFFFF = bl_34;

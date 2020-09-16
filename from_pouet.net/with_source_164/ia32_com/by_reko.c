@@ -8,9 +8,9 @@
 void fn0C00_0100(byte ch)
 {
 	__syscall(0x10);
-	word16 wLoc02_234 = 0x01;
-	word16 wLoc04_235 = 0x0140;
-	word16 cx_178;
+	word16 wLoc02_233 = 0x01;
+	word16 wLoc04_234 = 0x0140;
+	word16 cx_178 = SEQ(ch, ~0x01);
 	do
 	{
 		__outb(969, 0x00);
@@ -40,17 +40,17 @@ void fn0C00_0100(byte ch)
 				++di_95;
 			}
 			di_120 += 320;
-			cx_122 = cx_293 - 0x01;
-			cx_293 = cx_122;
-		} while (cx_293 != 0x01);
-		di_139 = di_139 + wLoc02_234 + wLoc04_235;
-		uint32 dx_ax_143 = (uint32) (uint16) di_139;
-		Eq_79 dx_145 = (uint16) (dx_ax_143 % 0x0140);
-		Eq_83 ax_146 = (uint16) (dx_ax_143 /u 0x0140);
+			cx_122 = cx_292 - 0x01;
+			cx_292 = cx_122;
+		} while (cx_292 != 0x01);
+		di_139 = di_139 + wLoc02_233 + wLoc04_234;
+		uint32 dx_ax_143 = (uint32) di_139;
+		Eq_78 dx_145 = (uint16) (dx_ax_143 % 0x0140);
+		Eq_82 ax_146 = (uint16) (dx_ax_143 /u 0x0140);
 		if (ax_146 <= 0x00 || ax_146 >= 161)
-			wLoc04_235 = -wLoc04_235;
+			wLoc04_234 = -wLoc04_234;
 		if (dx_145 <= 0x00 || dx_145 >= 0x0119)
-			wLoc02_234 = -wLoc02_234;
+			wLoc02_233 = -wLoc02_233;
 	} while (__inb(0x60) != 0x01);
 	msdos_terminate_program20();
 }

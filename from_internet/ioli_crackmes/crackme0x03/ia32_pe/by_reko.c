@@ -80,7 +80,7 @@ void fn00401310(char * dwArg04)
 	Eq_155 dwLoc80_45 = 0x00;
 	while (dwLoc80_45 < strlen(dwArg04))
 	{
-		Mem39[fp - 0x7C + dwLoc80_45:byte] = SLICE((word32) Mem15[dwLoc80_45 + dwArg04:byte], byte, 0) - 0x03;
+		Mem39[fp - 0x7C + dwLoc80_45:byte] = SLICE(CONVERT(Mem15[dwLoc80_45 + dwArg04:byte], byte, word32), byte, 0) - 0x03;
 		dwLoc80_45 = (word32) dwLoc80_45 + 1;
 	}
 	*((word32) dwLoc80_45 + (fp - 0x7C)) = 0x00;
@@ -146,11 +146,11 @@ void fn00401500()
 	if (eax_23 == ~0x00)
 	{
 		eax_23 = 0x00;
-		bool Z_28 = SLICE(cond(g_dw402EE4), bool, 2);
-		while (Z_28)
+		bool v14_82 = g_dw402EE4 != 0x00;
+		while (v14_82)
 		{
 			++eax_23;
-			Z_28 = SLICE(cond((&g_dw402EE4)[eax_23 * 0x04]), bool, 2);
+			v14_82 = (&g_dw402EE4)[eax_23 * 0x04] != 0x00;
 		}
 	}
 	ui32 ebx_38 = eax_23;

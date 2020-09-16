@@ -10,14 +10,14 @@ void fn0C00_0100(union Eq_17 * ds_bx, word16 cx, byte Eq_23::* di)
 	__syscall(0x10);
 	__outw(0x03D4, 8211);
 	Eq_17 es_ax_12 = *ds_bx;
-	cu8 al_14 = (byte) es_ax_12;
+	byte al_14 = (byte) es_ax_12;
 	struct Eq_23 * es_46 = SLICE(es_ax_12, selector, 16);
 	do
 	{
 		do
 		{
 			__outb(969, al_14);
-			al_14 = (cu8) ((bool) (al_14 < 0x00) + (al_14 + 0x95));
+			al_14 += 0x95;
 		} while (al_14 != 0x00);
 		do
 		{

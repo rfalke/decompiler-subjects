@@ -5,19 +5,19 @@
 #include "subject.h"
 
 <anonymous> g_t0680 = <code>;
-Eq_209 g_t15BC = 
+Eq_208 g_t15BC = 
 	{
 		
 		{
 		},
 	};
-Eq_358 g_t15CC = 
+Eq_356 g_t15CC = 
 	{
 		
 		{
 		},
 	};
-Eq_434 g_t15D4 = 
+Eq_431 g_t15D4 = 
 	{
 		
 		{

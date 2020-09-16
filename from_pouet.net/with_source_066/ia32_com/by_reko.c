@@ -38,17 +38,17 @@ void fn0C00_0100(byte ah, byte ch, byte dl, byte bh)
 				do
 					--cx_31;
 				while (cx_31 != 0x00);
-				dx_35 = dx_114 - 0x01;
-				cx_31 = dx_114;
-				ch = SLICE(dx_114, byte, 8);
+				dx_35 = dx_108 - 0x01;
+				cx_31 = dx_108;
+				ch = SLICE(dx_108, byte, 8);
 				dl = (byte) dx_35;
-				dx_114 = dx_35;
+				dx_108 = dx_35;
 			} while (dx_35 != 0x00);
 			--bx_48;
 			di_20 += si_21;
 			bh = SLICE(bx_48, byte, 8);
 		} while (bx_48 != 0x00);
-		byte ah_58 = SLICE(dx_114, byte, 8);
+		byte ah_58 = SLICE(dx_108, byte, 8);
 		ch = ah_58;
 		ax_22 = ax_23;
 	} while (SEQ(ah_58, __inb(0x60)) == 0x00);

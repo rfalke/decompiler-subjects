@@ -5,14 +5,14 @@
 #include "subject.h"
 
 <anonymous> g_t0640 = <code>;
-Eq_173 g_t0DF8 = 
+Eq_393 g_t0DF8 = 
 	{
 		
 		{
 			0x4C, 0x6F, 0x72, 0x65, 0x6D, 0x20, 0x49, 0x70, 0x73, 0x75, 0x6D, 0x20, 0x69, 0x73, 0x20, 0x73, 
 		}
 	};
-Eq_172 g_t0E30 = 
+Eq_392 g_t0E30 = 
 	{
 		
 		{
@@ -28,8 +28,15 @@ Eq_172 g_t0E30 =
 word64 g_qw11FA0 = 0x00;
 word64 g_qw11FB0 = 0x00;
 <anonymous> * g_ptr11FB8 = null;
+word64 * g_ptr11FC0 = &g_qw12050;
+word64 * g_ptr11FD0 = &g_qw12058;
 <anonymous> * g_ptr11FD8 = null;
 word64 g_qw11FE0 = 2472;
 word64 g_qw11FF8 = 0x00;
+word32 g_a12008[] = 
+	{
+	};
 byte g_b12018 = 0x00;
+word64 g_qw12050 = 0x00;
+word64 g_qw12058 = 0x00;
 

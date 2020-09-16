@@ -209,7 +209,7 @@ void dumpline(ptr64 x0, up64 x1, int32 w2)
 	if (w23_58 > 0x00)
 	{
 		int64 x26_63 = 0x00;
-		int64 x27_64 = (int64) (int32) w23_58;
+		int64 x27_64 = (int64) w23_58;
 		do
 		{
 			fn0000000000400680();
@@ -223,12 +223,12 @@ l000000000040092C:
 			int64 x19_147;
 			fn0000000000400660();
 			word32 w0_109 = SLICE(fp + ~0xA7, word32, 0);
-			Mem111[fp + ~0xA7 + (int64) ((int32) w0_109):word32] = 0x005C2020;
+			Mem111[fp + ~0xA7 + CONVERT(w0_109, word32, int64):word32] = 0x005C2020;
 			if (w23_58 >= 0x01)
 			{
 				int64 x9_120 = 0x00;
-				int64 x10_121 = (int64) (int32) w23_58;
-				byte x11_122[] = fp + ~0xA7 + (int64) ((int32) (w0_109 + 0x03));
+				int64 x10_121 = (int64) w23_58;
+				byte x11_122[] = fp + ~0xA7 + CONVERT(w0_109 + 0x03, word32, int64);
 				do
 				{
 					up32 w13_128 = (word32) (x0 + x9_120);
@@ -238,8 +238,8 @@ l000000000040092C:
 				} while (x9_120 - x10_121 < 0x00);
 				if (w9_141 >= 0x10)
 				{
-					x19_147 = (int64) (int32) (w0_109 + 0x03);
-					x8_168 = (int64) (int32) w9_141;
+					x19_147 = (int64) (w0_109 + 0x03);
+					x8_168 = (int64) w9_141;
 l00000000004009BC:
 					Mem179[fp + ~0xA7 + x19_147 + x8_168:word16] = 0x7C;
 					fn00000000004006F0();
@@ -247,14 +247,14 @@ l00000000004009BC:
 				}
 			}
 			fn00000000004006C0();
-			x19_147 = (int64) (int32) (w0_109 + 0x03);
+			x19_147 = (int64) (w0_109 + 0x03);
 			x8_168 = SEQ(x8_32_32_158, 0x10);
 			goto l00000000004009BC;
 		}
 	}
 	else
 		w26_61 = 0x00;
-	word32 w20_90;
+	word32 w20_90 = 0x10 - w26_61;
 	do
 	{
 		fn0000000000400660();
@@ -286,8 +286,8 @@ word64 hexdump(word64 x0, ptr64 & x21Out)
 					if (w21_52 == 0x00)
 						break;
 					dumpline(fp - 0x38, x20_42, w21_52);
-					struct Eq_255 * sp_57 = (struct Eq_255 *) <invalid>;
-					x20_42 += (int64) (int32) w21_52;
+					struct Eq_248 * sp_57 = (struct Eq_248 *) <invalid>;
+					x20_42 += (int64) w21_52;
 				} while (x20_42 - sp_57->qw0030 < 0x00);
 			}
 			fn0000000000400690();

@@ -150,7 +150,7 @@ void main(up32 w0)
 {
 	if (w0 <= 0x07)
 	{
-		switch ((word32) (0x085C + (int64) ((int32) (&g_t09A8)[(uint64) ((uint32) (w0 - 0x02)) / 4])))
+		switch ((word32) (0x085C + (int64) (&g_t09A8)[(uint64) (w0 - 0x02) / 4]))
 		{
 		case 0x00:
 			fn00000000000006D0();

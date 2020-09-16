@@ -11,13 +11,13 @@ void fn0C00_0100(union Eq_10 * ss_bp, struct Eq_3 * ds, real64 rArg0)
 	do
 	{
 		++ds->w0100;
-		ds->r01DA = (real32) ((real64) ds->r01DE + ds->r01DA);
+		ds->r01DA = (real32) ((real64) ds->r01DE + (real64) ds->r01DA);
 		real64 rLoc1_134 = (real64) ds->r01E6;
 		real64 rLoc2_135 = (real64) ds->w0100;
 		*ss_bp = (union Eq_10 *) 0x28;
 		ds->r01E2 = (real32) (sin(rLoc2_135 / (real64) (*ss_bp)) * rLoc1_134);
 		word16 dx_114;
-		byte Eq_152::* di_108 = &Eq_152::b0000;
+		byte Eq_156::* di_108 = &Eq_156::b0000;
 		for (dx_114 = 200; dx_114 != 0x00; --dx_114)
 		{
 			word16 cx_111;
@@ -30,16 +30,16 @@ void fn0C00_0100(union Eq_10 * ss_bp, struct Eq_3 * ds, real64 rArg0)
 				*ss_bp = (union Eq_10 *) (*ss_bp - cx_111);
 				*ss_bp = (real32) atan(rArg0, rLoc1_140);
 				real64 rLoc1_144 = (real64) *ss_bp;
-				real64 rLoc2_149 = sin((real64) *ss_bp * (real64) ds->w01D8 + ds->r01DA) * ds->r01E2;
+				real64 rLoc2_149 = sin((real64) *ss_bp * (real64) ds->w01D8 + (real64) ds->r01DA) * (real64) ds->r01E2;
 				*ss_bp = (union Eq_10 *) 0x01;
 				ds->r0103 = (real32) (rLoc2_149 + (real64) (*ss_bp));
-				*ss_bp = (union Eq_10 *) (int16) (rLoc1_144 * ds->r01EA);
+				*ss_bp = (union Eq_10 *) (int16) (rLoc1_144 * (real64) ds->r01EA);
 				Eq_10 bx_74 = *ss_bp;
 				*ss_bp = (union Eq_10 *) (0xA0 - cx_111);
 				real64 rLoc1_152 = (real64) *ss_bp;
 				*ss_bp = (union Eq_10 *) (100 - dx_114);
 				real64 rLoc2_154 = (real64) *ss_bp;
-				real64 rLoc2_158 = sqrt(rLoc2_154 * rLoc2_154 + rLoc1_152 * rLoc1_152) * ds->r0103;
+				real64 rLoc2_158 = sqrt(rLoc2_154 * rLoc2_154 + rLoc1_152 * rLoc1_152) * (real64) ds->r0103;
 				*ss_bp = (union Eq_10 *) 0x0800;
 				*ss_bp = (union Eq_10 *) (int16) ((real64) *ss_bp / rLoc2_158);
 				0xA000->*di_108 = (byte) ((char *) *ss_bp + ds->w0100 ^ (word32) bx_74 + ds->w0100) & 0x1F;

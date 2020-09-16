@@ -1,37 +1,34 @@
 === Using options:
-0000000000000D00: warning: AArch64 instruction fcmpe	d0,#0.0 is not supported yet.
-0000000000000D00: warning: AArch64 instruction fcmpe	d0,#0.0 is not supported yet.
-0000000000000CB0: warning: AArch64 instruction fcmpe	d3,d1 is not supported yet.
-0000000000000DEC: error: An error occurred while processing the statement word32 w3_14 = (word32) Mem12[x2_10 + 0x0000000000001020<p64>:byte].
+0000000000000DEC: error: An error occurred while processing the statement word32 w3_14 = CONVERT(Mem12[x2_10 + 0x0000000000001020<p64>:byte], byte, word32).
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000000000E00: error: An error occurred while processing the statement word32 w3_23 = (word32) Mem21[x2_18 + 0x0000000000001038<p64>:byte].
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+0000000000000E00: error: An error occurred while processing the statement word32 w3_23 = CONVERT(Mem21[x2_18 + 0x0000000000001038<p64>:byte], byte, word32).
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000000000EEC: error: An error occurred while processing the statement word32 w2_32 = (word32) Mem30[x0_11 + 0x0000000000001050<p64>:byte].
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+0000000000000EEC: error: An error occurred while processing the statement word32 w2_32 = CONVERT(Mem30[x0_11 + 0x0000000000001050<p64>:byte], byte, word32).
     Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 00001014: warning: Expected sizes of arrays to have been determined by now
 00011DA0: warning: Expected sizes of arrays to have been determined by now
 00001014: warning: Expected sizes of arrays to have been determined by now

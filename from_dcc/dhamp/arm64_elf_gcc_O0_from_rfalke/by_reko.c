@@ -188,7 +188,7 @@ void main()
 		Eq_113 w0_21 = x29_16->t00FC;
 		if (w0_21 <= 0x05)
 		{
-			switch ((word32) (2556 + (int64) ((int32) (&g_t126C)[(uint64) ((uint32) w0_21) / 4])))
+			switch ((word32) (2556 + (int64) (&g_t126C)[(uint64) w0_21 / 4]))
 			{
 			case 0x00:
 				*g_ptr11FD0 = (word32) stest((char *) x29_16 + 0x0080, (char *) x29_16 + 24, out x29_16);
@@ -218,14 +218,29 @@ void sq(word64 x0)
 	}
 }
 
-// 0000000000000C90: void sroot()
-void sroot()
+// 0000000000000C90: void sroot(Register real64 d0)
+void sroot(real64 d0)
 {
+	real64 qwLoc08_57 = d0 / 2.0;
+	real64 qwArg00_58 = d0;
+	while (qwLoc08_57 * g_r0D20 < qwArg00_58)
+	{
+		qwArg00_58 = abs(d0 / qwLoc08_57 - qwLoc08_57);
+		qwLoc08_57 = (d0 / qwLoc08_57 + qwLoc08_57) / 2.0;
+	}
 }
 
-// 0000000000000D28: void abs()
-void abs()
+// 0000000000000D28: Register real64 abs(Register real64 d0)
+// Called from:
+//      sroot
+real64 abs(real64 d0)
 {
+	real64 d0_11;
+	if (d0 < 0.0)
+		d0_11 = -d0;
+	else
+		d0_11 = d0;
+	return d0_11;
 }
 
 // 0000000000000D54: void dply()
@@ -244,12 +259,12 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x29Out)
 	int32 w0_17;
 	if (w0 > 0x02)
 	{
-		struct Eq_201 * x29_21;
-		word64 x19_23;
-		fib(w0 - 0x01, out x19_23, out x29_21);
+		struct Eq_222 * x29_21;
+		word64 x19_72;
+		fib(w0 - 0x01, out x19_72, out x29_21);
 		word64 x19_34;
-		word64 x29_72;
-		w0_17 = (word32) x19_34 + fib(x29_21->dw002C - 0x02, out x19_34, out x29_72);
+		word64 x29_73;
+		w0_17 = (word32) x19_34 + fib(x29_21->dw002C - 0x02, out x19_34, out x29_73);
 	}
 	else
 		w0_17 = 0x01;
@@ -258,10 +273,10 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x29Out)
 	return w0_17;
 }
 
-// 0000000000000EB8: Register (ptr64 byte) stest(Register (ptr64 byte) x0, Register (ptr64 byte) x1, Register out (ptr64 Eq_138) x29Out)
+// 0000000000000EB8: Register (ptr64 byte) stest(Register (ptr64 byte) x0, Register (ptr64 byte) x1, Register out (ptr64 Eq_136) x29Out)
 // Called from:
 //      main
-byte * stest(byte * x0, byte * x1, struct Eq_138 & x29Out)
+byte * stest(byte * x0, byte * x1, struct Eq_136 & x29Out)
 {
 	word32 x0_32_32_85 = SLICE(x0, word32, 32);
 	int32 dwArg04_71;
@@ -323,7 +338,7 @@ void mstrcpy(byte * x0, byte * x1)
 // 0000000000001000: void mcopy()
 void mcopy()
 {
-	mstrcpy(fp + ~0x6F, &g_b12B8);
+	mstrcpy(fp->aFFFFFF90, &g_b12B8);
 	fn0000000000000810();
 	if (0x12D0 == 0x00)
 	{
@@ -336,7 +351,7 @@ void mcopy()
 		++dwArg04_83;
 		if (dwArg04_83 > 999)
 			break;
-		while ((word32) (fp + ~0x6F + (word64) dwLoc44) != 0x00)
+		while ((word32) fp->aFFFFFF90[(int64) dwLoc44] != 0x00)
 			fn0000000000000850();
 	}
 	fn0000000000000800();

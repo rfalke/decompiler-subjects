@@ -45,10 +45,10 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 	do
 	{
 		struct Eq_90 Eq_89::* di_101 = &Eq_89::t0000;
-		byte ch_103;
+		byte ch_103 = 0x00;
 		do
 		{
-			byte cl_86;
+			byte cl_86 = 0x00;
 			do
 			{
 				byte al_88 = al_113 & 0x3F;
@@ -63,10 +63,10 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		} while (ch_103 != 0x00);
 		++ds->b01C0;
 		byte Eq_89::* di_110 = &Eq_89::b0001;
-		byte ch_111;
+		byte ch_111 = 0x00;
 		do
 		{
-			byte cl_112;
+			byte cl_112 = 0x00;
 			do
 			{
 				byte al_114 = al_113 & 0x3F;

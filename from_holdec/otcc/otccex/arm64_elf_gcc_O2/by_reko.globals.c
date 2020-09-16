@@ -5,13 +5,13 @@
 #include "subject.h"
 
 byte g_a0100[];
-Eq_322 g_t0101;
+Eq_317 g_t0101;
 <anonymous> g_t0850 = <code>;
 <anonymous> * g_a11D88[] = 
 	{
 	};
 word64 g_qw11D98 = 0x00;
-union Eq_58 * g_ptr11FA0 = &g_t1206C;
+union Eq_56 * g_ptr11FA0 = &g_t1206C;
 <anonymous> * g_ptr11FA8 = null;
 word64 g_qw11FB0 = 0x00;
 word64 g_qw11FC0 = 0x00;
@@ -29,7 +29,7 @@ word64 g_qw11FC0 = 0x00;
 <anonymous> * g_ptr12048 = &g_t0850;
 <anonymous> * g_ptr12050 = &g_t0850;
 byte g_b12068 = 0x00;
-Eq_58 g_t1206C = 
+Eq_56 g_t1206C = 
 	{
 		0
 	};

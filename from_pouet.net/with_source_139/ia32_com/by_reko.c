@@ -42,8 +42,8 @@ void fn0C00_0100(word16 cx, Eq_3 bx, struct Eq_4 * bp)
 				bp = ax_118;
 				byte ah_117 = SLICE(ax_37 * 0x12, byte, 8);
 				di_28 = (word16) di_28 + 1;
+				bx = bx_26;
 			}
-			bx = bx_26;
 		} while (bh_59 != ~0x05);
 		do
 			;

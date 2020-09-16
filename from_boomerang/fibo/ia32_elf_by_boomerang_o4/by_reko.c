@@ -127,7 +127,7 @@ word32 main()
 {
 	int32 eax_28;
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x08);
 	if (dwLoc08 > 0x01)
 		eax_28 = fib(dwLoc08 - 0x02) + fib(dwLoc08 - 0x01);
 	else

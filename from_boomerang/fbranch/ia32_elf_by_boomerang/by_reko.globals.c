@@ -13,8 +13,11 @@ Eq_28 g_t8048504 = Unexpected function type (fn void ())
 ;
 char g_str8048580[] = "%f";
 char g_str8048583[] = "a is %f, b is %f\n";
+char g_str8048595[] = "Less";
+char g_str804859A[] = "Greater or Equal";
 char g_str80485A5[] = "Equal";
-char g_str80485C1[] = "Not Equal";
+char g_str80485AB[] = "Less or Equal";
+char g_str80485B9[] = "Greater";
 real32 g_r80485CC = 5.0F;
 <anonymous> * g_a80495D4[] = 
 	{

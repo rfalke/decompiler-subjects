@@ -19,7 +19,7 @@ void fn0C00_0100(cu16 cx, ci16 bp, struct Eq_4 * ds)
 	byte Eq_55::* di_21 = &Eq_55::b0000;
 	do
 	{
-		uint32 dx_ax_31 = (uint32) (uint16) di_21;
+		uint32 dx_ax_31 = (uint32) di_21;
 		Eq_39 dx_34 = (uint16) (dx_ax_31 % ds->w0157);
 		Eq_36 ax_35 = (uint16) (dx_ax_31 /u ds->w0157);
 		Eq_41 dx_36 = dx_34 - 0xA0;

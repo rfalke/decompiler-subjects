@@ -7,15 +7,15 @@
 // 0C00:0100: void fn0C00_0100(Register word16 cx, Register (ptr16 Eq_3) ds)
 void fn0C00_0100(word16 cx, struct Eq_3 * ds)
 {
-	int8 Top_102 = 0;
+	int8 Top_105 = 0;
 	__syscall(0x10);
 	do
 	{
 		__outb(969, (byte) cx);
-		byte ah_106 = SLICE(cx, byte, 8);
+		byte ah_109 = SLICE(cx, byte, 8);
 		--cx;
 	} while (cx != 0x00);
-	byte Eq_28::* di_115 = &Eq_28::b0000;
+	byte Eq_28::* di_118 = &Eq_28::b0000;
 	do
 	{
 		ds->r0186 = -2.2F;
@@ -24,56 +24,56 @@ void fn0C00_0100(word16 cx, struct Eq_3 * ds)
 		{
 			__wait();
 			__fninit();
-			int8 Top_23 = Top_102 - 1;
+			int8 Top_23 = Top_105 - 1;
 			Top_23->r0000 = 0.0;
 			Top_23->rFFFFFFFF = 0.0;
-			Eq_26 ax_112;
+			Eq_26 ax_115 = SEQ(ah_109, 0x3F);
 			do
 			{
-				int8 Top_28 = Top_102 - 2;
-				Top_28->rFFFFFFFF = Top_28->rFFFFFFFF;
-				Top_28->rFFFFFFFF *= Top_28->rFFFFFFFF;
-				real64 v14_33 = Top_28->rFFFFFFFF;
+				int8 Top_28 = Top_105 - 2;
 				Top_28->rFFFFFFFF = Top_28->r0000;
-				Top_28->r0000 = v14_33;
+				Top_28->rFFFFFFFF *= Top_28->rFFFFFFFF;
+				real64 v15_34 = Top_28->rFFFFFFFF;
+				Top_28->rFFFFFFFF = Top_28->r0000;
+				Top_28->r0000 = v15_34;
 				Top_28->rFFFFFFFF *= Top_28->r0001;
 				Top_28->rFFFFFFFF += Top_28->rFFFFFFFF;
-				real64 v15_38 = Top_28->rFFFFFFFF;
+				real64 v16_39 = Top_28->rFFFFFFFF;
 				Top_28->rFFFFFFFF = Top_28->r0001;
-				Top_28->r0001 = v15_38;
+				Top_28->r0001 = v16_39;
 				Top_28->rFFFFFFFF *= Top_28->rFFFFFFFF;
 				Top_28->r0000 -= Top_28->rFFFFFFFF;
-				real64 v16_44 = Top_28->r0000;
+				real64 v17_45 = Top_28->r0000;
 				Top_28->r0000 = Top_28->r0001;
-				Top_28->r0001 = v16_44;
-				Top_28->r0000 += ds->r0182;
-				real64 v17_50 = Top_28->r0000;
+				Top_28->r0001 = v17_45;
+				Top_28->r0000 += (real64) ds->r0182;
+				real64 v18_51 = Top_28->r0000;
 				Top_28->r0000 = Top_28->r0001;
-				Top_28->r0001 = v17_50;
-				Top_28->r0000 += ds->r0186;
-				Top_28->rFFFFFFFF = Top_28->r0000;
+				Top_28->r0001 = v18_51;
+				Top_28->r0000 += (real64) ds->r0186;
+				Top_28->rFFFFFFFF = Top_28->r0001;
 				Top_28->rFFFFFFFF *= Top_28->rFFFFFFFF;
-				Top_28->rFFFFFFFE = Top_28->rFFFFFFFF;
+				Top_28->rFFFFFFFE = Top_28->r0000;
 				Top_28->rFFFFFFFE *= Top_28->rFFFFFFFE;
 				Top_28->rFFFFFFFF += Top_28->rFFFFFFFE;
 				ds->t018A.u0 = (int16) Top_28->rFFFFFFFF;
-				if (ds->t018A > ax_112)
+				if (ds->t018A > ax_115)
 					break;
-				--ax_112;
-			} while (ax_112 != 0x00);
-			0xA000->*di_115 = (byte) ax_112;
+				--ax_115;
+			} while (ax_115 != 0x00);
+			0xA000->*di_118 = (byte) ax_115;
 			Top_28->rFFFFFFFF = (real64) ds->r017E;
-			Top_28->rFFFFFFFF += ds->r0186;
+			Top_28->rFFFFFFFF += (real64) ds->r0186;
 			ds->r0186 = (real32) Top_28->rFFFFFFFF;
-			ah_106 = SLICE(ax_112, byte, 8);
-			++di_115;
-			Top_102 = Top_28;
+			ah_109 = SLICE(ax_115, byte, 8);
+			++di_118;
+			Top_105 = Top_28;
 		}
 		Top_28->rFFFFFFFF = (real64) ds->r0182;
-		Top_28->rFFFFFFFF -= ds->r017E;
+		Top_28->rFFFFFFFF -= (real64) ds->r017E;
 		ds->r0182 = (real32) Top_28->rFFFFFFFF;
-		Top_102 = Top_28;
-	} while (di_115 != &Eq_28::bFFFFFA00);
+		Top_105 = Top_28;
+	} while (di_118 != &Eq_28::bFFFFFA00);
 	__syscall(22);
 }
 

@@ -4,18 +4,13 @@
 
 #include "subject.h"
 
-Eq_7853 g_tFFFFFFF0;
-Eq_166 g_tFFFFFFFE;
+Eq_11747 g_t0001;
 word64 g_qw0008;
-uint64 g_qw000B;
-uint64 g_qw0010;
 word64 g_qw0028;
 word64 g_qw0030;
 uint64 g_a0038[];
+Eq_14450 g_t0200;
 word64 g_qw2028;
-word64 g_qwA2E6E;
-Eq_6036 g_tA6C61;
-Eq_6036 g_t400000;
 Eq_30 g_t400A90 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
 void g_t4087F0(int32 rdi) = Unexpected function type (fn void (int32))
@@ -29,7 +24,7 @@ Eq_75 g_t40A0A0 =
 		0x00,
 		
 		{
-			1
+			0x01
 		},
 		0x4000000000000001,
 	};
@@ -38,175 +33,47 @@ Eq_75 g_t40A0C0 =
 		33,
 		
 		{
-			4
+			0x04
 		},
 		0x4000000000000004,
 	};
 word64 g_qw40A0D8 = 0x0040A0E0;
-Eq_6036 g_t40A108 = 
-	{
-		0x656D616E2072756F,
-		
-		{
-			'I'
-		},
-		&g_t656C6C49,
-		
-		{
-			&g_qw7265706F
-		},
-		&g_tA6C61,
-	};
-Eq_6036 g_t40A110 = 
-	{
-		8255,
-		
-		{
-			'S'
-		},
-		&g_qw7265706F,
-		
-		{
-			&g_qwA2E6E
-		},
-		&g_t203A4550,
-	};
-Eq_6036 g_t40A12C = 
-	{
-		0x7265706F206C6167,
-		
-		{
-			'u'
-		},
-		&g_t46474953,
-		
-		{
-			&g_qw74697241
-		},
-		&g_t203A4550,
-	};
-Eq_6036 g_t40A13C = 
-	{
-		0x206E776F6E6B6E75,
-		
-		{
-			'S'
-		},
-		&g_t65206369,
-		
-		{
-			&g_qw53000A2E
-		},
-		&g_t4F45000A,
-	};
-Eq_6036 g_t40A157 = 
-	{
-		2333824980546840692,
-		
-		{
-			'S'
-		},
-		&g_t6465736F,
-		
-		{
-			&g_qw7245464F
-		},
-		&g_t736665,
-	};
 void g_v40A16C = ??void??;
 void g_v40A16D = ??void??;
-Eq_6036 g_t40A16E = 
-	{
-		0x632065706950203A,
-		
-		{
-			'E'
-		},
-		&g_t6E00646E,
-		
-		{
-			&g_qw73666552
-		},
-		&g_t656C6F,
-	};
 <anonymous> * g_a40A500[] = 
 	{
 	};
-uint64 * g_ptr40A860 = &g_qw000B;
-union Eq_485 * g_ptr40A880 = &g_t40A8A0;
-Eq_485 g_t40A8A0 = 
+union Eq_181 * g_ptr40A880 = &g_t40A8A0;
+Eq_181 g_t40A8A0 = 
 	{
-		63
+		0x3F
 	};
-uint64 * g_ptr40A900 = &g_qw0010;
-union Eq_485 * g_ptr40A928 = &g_t40A940;
-Eq_485 g_t40A940 = 
+union Eq_181 * g_ptr40A928 = &g_t40A940;
+Eq_181 g_t40A940 = 
 	{
-		75
+		0x4B
 	};
-union Eq_485 * g_ptr40A9A0 = &g_t40A9C0;
-Eq_485 g_t40A9C0 = 
+union Eq_181 * g_ptr40A9A0 = &g_t40A9C0;
+Eq_181 g_t40A9C0 = 
 	{
 		0x0D
 	};
-Eq_6036 g_t40AAE0 = 
-	{
-		0x707070707070707,
-		
-		{
-			'S'
-		},
-		&g_t20646574,
-		
-		{
-			&g_qw2D6C7274
-		},
-		&g_t6F747320,
-	};
-Eq_6036 g_t40AB00 = 
-	{
-		0x4320796220646574,
-		
-		{
-			'S'
-		},
-		&g_t6F747320,
-		
-		{
-			&g_qw63636120
-		},
-		&g_t72662064,
-	};
-Eq_6036 g_t40AB40 = 
-	{
-		0x6E206D6F72662064,
-		
-		{
-			'S'
-		},
-		&g_t6574206C,
-		
-		{
-			&g_qw6F697461
-		},
-		&g_t400000,
-	};
-Eq_6477 g_t40AB60 = 
+Eq_6588 g_t40AB60 = 
 	{
 		
 		{
 			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 		}
 	};
-Eq_6470 g_t40AB70 = 
+Eq_6581 g_t40AB70 = 
 	{
 		0x00400000
 	};
-Eq_6586 g_t40AB80 = 
+Eq_6704 g_t40AB80 = 
 	{
 		0
 	};
-Eq_7099 g_t40AB90 = 
+Eq_7254 g_t40AB90 = 
 	{
 		3944
 	};
@@ -218,9 +85,168 @@ word128 g_ow40ABB0 =
 	{
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x50, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 	};
-Eq_14449 (* g_ptr40ACD0)[] = ;
-Eq_14448 (* g_ptr40ACD8)[] = ;
-Eq_14452 (* g_ptr40ACE0)[] = ;
+Eq_190 g_t40ABC0 = 
+	{
+		
+		{
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ABD0 = 
+	{
+		
+		{
+			0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ABE0 = 
+	{
+		
+		{
+			0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ABF0 = 
+	{
+		
+		{
+			0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC00 = 
+	{
+		
+		{
+			0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC10 = 
+	{
+		
+		{
+			0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC20 = 
+	{
+		
+		{
+			0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC30 = 
+	{
+		
+		{
+			0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC40 = 
+	{
+		
+		{
+			0x0E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC50 = 
+	{
+		
+		{
+			0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC60 = 
+	{
+		
+		{
+			0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC70 = 
+	{
+		
+		{
+			0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC80 = 
+	{
+		
+		{
+			0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40AC90 = 
+	{
+		
+		{
+			0x0B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ACA0 = 
+	{
+		
+		{
+			0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ACB0 = 
+	{
+		
+		{
+			0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_190 g_t40ACC0 = 
+	{
+		
+		{
+			0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
+Eq_16222 (* g_ptr40ACD0)[] = ;
+Eq_16221 (* g_ptr40ACD8)[] = ;
+Eq_16225 (* g_ptr40ACE0)[] = ;
+Eq_16229 (* g_ptr40ACE8)[] = ;
+Eq_16233 (* g_ptr40ACF0)[] = ;
+Eq_16237 (* g_ptr40ACF8)[] = ;
+Eq_16241 (* g_ptr40AD00)[] = ;
+Eq_16245 (* g_ptr40AD08)[] = ;
+Eq_16249 (* g_ptr40AD10)[] = ;
+Eq_16253 (* g_ptr40AD18)[] = ;
+Eq_16257 (* g_ptr40AD20)[] = ;
+Eq_16269 (* g_ptr40AD28)[] = ;
+Eq_16265 (* g_ptr40AD30)[] = ;
+Eq_16273 (* g_ptr40AD38)[] = ;
+Eq_16277 (* g_ptr40AD40)[] = ;
+Eq_16281 (* g_ptr40AD48)[] = ;
+Eq_16285 (* g_ptr40AD50)[] = ;
+Eq_16289 (* g_ptr40AD58)[] = ;
+Eq_16293 (* g_ptr40AD60)[] = ;
+Eq_16297 (* g_ptr40AD68)[] = ;
+Eq_16301 (* g_ptr40AD70)[] = ;
+Eq_16305 (* g_ptr40AD78)[] = ;
+Eq_16309 (* g_ptr40AD80)[] = ;
+Eq_16313 (* g_ptr40AD88)[] = ;
+Eq_16317 (* g_ptr40AD90)[] = ;
+Eq_16321 (* g_ptr40AD98)[] = ;
+Eq_16325 (* g_ptr40ADA0)[] = ;
+Eq_16329 (* g_ptr40ADA8)[] = ;
+Eq_16333 (* g_ptr40ADB0)[] = ;
+Eq_16341 (* g_ptr40ADB8)[] = ;
+Eq_16337 (* g_ptr40ADC0)[] = ;
+Eq_16345 (* g_ptr40ADC8)[] = ;
+Eq_16353 (* g_ptr40ADD0)[] = ;
+Eq_16357 (* g_ptr40ADD8)[] = ;
+Eq_16361 (* g_ptr40ADE0)[] = ;
+Eq_16365 (* g_ptr40ADE8)[] = ;
+Eq_16349 (* g_ptr40ADF0)[] = ;
+Eq_16369 (* g_ptr40ADF8)[] = ;
+Eq_16373 (* g_ptr40AE00)[] = ;
+Eq_16381 (* g_ptr40AE08)[] = ;
+Eq_16377 (* g_ptr40AE10)[] = ;
+Eq_16385 (* g_ptr40AE18)[] = ;
+Eq_16389 (* g_ptr40AE20)[] = ;
 <anonymous> * g_a60CE00[] = 
 	{
 	};
@@ -228,52 +254,232 @@ FILE * g_ptr60D0C0 = &g_tC1A180;
 FILE * g_ptr60D0D0 = &g_tC1A190;
 FILE * g_ptr60D0E0 = &g_tC1A1A0;
 byte g_b60D0E8 = 0x00;
-Eq_14449 (* g_ptr60D420)[] = ;
-struct Eq_12557 * g_ptr60E860 = null;
-struct Eq_12557 * g_ptr60E868 = null;
+Eq_16062 (* g_ptr60D100)[] = ;
+word64 g_qw60D110 = 0x00;
+Eq_16062 (* g_ptr60D120)[] = ;
+Eq_16062 (* g_ptr60D130)[] = ;
+Eq_16062 (* g_ptr60D140)[] = ;
+Eq_16062 (* g_ptr60D160)[] = ;
+Eq_16062 (* g_ptr60D170)[] = ;
+Eq_16062 (* g_ptr60D180)[] = ;
+Eq_16062 (* g_ptr60D190)[] = ;
+Eq_16062 (* g_ptr60D1A0)[] = ;
+Eq_16062 (* g_ptr60D1B0)[] = ;
+word64 g_qw60D1C0 = 0x00;
+byte g_b60D3E0 = 0x00;
+word64 g_qw60D400 = 0x00;
+word64 g_qw60D408 = 0x00;
+byte g_b60D410 = 0x00;
+word64 g_qw60D418 = 0x00;
+Eq_16222 (* g_ptr60D420)[] = ;
+byte g_b60D440 = 0x00;
+word64 g_qw60D448 = 0x00;
+Eq_16062 (* g_ptr60D450)[] = ;
+byte g_b60E070 = 0x00;
+word64 g_qw60E090 = 0x00;
+word64 g_qw60E098 = 0x00;
+byte g_b60E0A0 = 0x00;
+word64 g_qw60E0A8 = 0x00;
+Eq_16062 (* g_ptr60E0B0)[] = ;
+byte g_b60E0D0 = 0x00;
+word64 g_qw60E0D8 = 0x00;
+word64 g_qw60E0E8 = 0x00;
+byte g_b60E100 = 0x00;
+word64 g_qw60E108 = 0x00;
+word64 g_qw60E118 = 0x00;
+byte g_b60E130 = 0x00;
+word64 g_qw60E138 = 0x00;
+word64 g_qw60E148 = 0x00;
+byte g_b60E160 = 0x00;
+word64 g_qw60E180 = 0x00;
+word64 g_qw60E188 = 0x00;
+byte g_b60E190 = 0x00;
+word64 g_qw60E1B0 = 0x00;
+byte g_b60E1C0 = 0x00;
+word64 g_qw60E1C8 = 0x00;
+Eq_16062 (* g_ptr60E1D0)[] = ;
+byte g_b60E1F0 = 0x00;
+word64 g_qw60E1F8 = 0x00;
+Eq_16062 (* g_ptr60E200)[] = ;
+byte g_b60E220 = 0x00;
+word64 g_qw60E240 = 0x00;
+word64 g_qw60E248 = 0x00;
+byte g_b60E250 = 0x00;
+word64 g_qw60E258 = 0x00;
+Eq_16062 (* g_ptr60E260)[] = ;
+byte g_b60E280 = 0x00;
+word64 g_qw60E288 = 0x00;
+word64 g_qw60E298 = 0x00;
+byte g_b60E2B0 = 0x00;
+word64 g_qw60E2B8 = 0x00;
+word64 g_qw60E2C8 = 0x00;
+byte g_b60E2E0 = 0x00;
+word64 g_qw60E2E8 = 0x00;
+word64 g_qw60E2F8 = 0x00;
+byte g_b60E310 = 0x00;
+word64 g_qw60E318 = 0x00;
+word64 g_qw60E328 = 0x00;
+byte g_b60E340 = 0x00;
+word64 g_qw60E360 = 0x00;
+word64 g_qw60E368 = 0x00;
+byte g_b60E370 = 0x00;
+word64 g_qw60E378 = 0x00;
+Eq_16222 (* g_ptr60E380)[] = ;
+byte g_b60E3A0 = 0x00;
+word64 g_qw60E3A8 = 0x00;
+Eq_16062 (* g_ptr60E3B0)[] = ;
+byte g_b60E3D0 = 0x00;
+word64 g_qw60E3D8 = 0x00;
+Eq_16062 (* g_ptr60E3E0)[] = ;
+byte g_b60E400 = 0x00;
+word64 g_qw60E408 = 0x00;
+Eq_16222 (* g_ptr60E410)[] = ;
+byte g_b60E430 = 0x00;
+word64 g_qw60E438 = 0x00;
+Eq_16062 (* g_ptr60E440)[] = ;
+byte g_b60E460 = 0x00;
+word64 g_qw60E468 = 0x00;
+Eq_16062 (* g_ptr60E470)[] = ;
+byte g_b60E490 = 0x00;
+word64 g_qw60E498 = 0x00;
+Eq_16062 (* g_ptr60E4A0)[] = ;
+byte g_b60E4C0 = 0x00;
+word64 g_qw60E4C8 = 0x00;
+Eq_16062 (* g_ptr60E4D0)[] = ;
+byte g_b60E4F0 = 0x00;
+word64 g_qw60E510 = 0x00;
+byte g_b60E520 = 0x00;
+word64 g_qw60E540 = 0x00;
+word64 g_qw60E548 = 0x00;
+byte g_b60E550 = 0x00;
+word64 g_qw60E558 = 0x00;
+Eq_16322 (* g_ptr60E560)[] = ;
+byte g_b60E580 = 0x00;
+word64 g_qw60E588 = 0x00;
+Eq_16062 (* g_ptr60E590)[] = ;
+byte g_b60E5B0 = 0x00;
+word64 g_qw60E5B8 = 0x00;
+Eq_16062 (* g_ptr60E5C0)[] = ;
+byte g_b60E5E0 = 0x00;
+word64 g_qw60E5E8 = 0x00;
+Eq_16062 (* g_ptr60E5F0)[] = ;
+byte g_b60E610 = 0x00;
+word64 g_qw60E630 = 0x00;
+word64 g_qw60E638 = 0x00;
+byte g_b60E640 = 0x00;
+word64 g_qw60E648 = 0x00;
+Eq_16062 (* g_ptr60E650)[] = ;
+byte g_b60E670 = 0x00;
+word64 g_qw60E678 = 0x00;
+Eq_16222 (* g_ptr60E680)[] = ;
+byte g_b60E6A0 = 0x00;
+word64 g_qw60E6A8 = 0x00;
+Eq_16062 (* g_ptr60E6B0)[] = ;
+byte g_b60E6D0 = 0x00;
+word64 g_qw60E6D8 = 0x00;
+Eq_16062 (* g_ptr60E6E0)[] = ;
+byte g_b60E700 = 0x00;
+word64 g_qw60E708 = 0x00;
+Eq_16322 (* g_ptr60E710)[] = ;
+byte g_b60E730 = 0x00;
+word64 g_qw60E750 = 0x00;
+byte g_b60E760 = 0x00;
+word64 g_qw60E780 = 0x00;
+byte g_b60E790 = 0x00;
+word64 g_qw60E7B0 = 0x00;
+byte g_b60E7C0 = 0x00;
+word64 g_qw60E7E0 = 0x00;
+byte g_b60E7F0 = 0x00;
+word64 g_qw60E810 = 0x00;
+Eq_16062 (* g_ptr60E820)[] = ;
+Eq_16062 (* g_ptr60E830)[] = ;
+Eq_16062 (* g_ptr60E840)[] = ;
+Eq_16062 (* g_ptr60E850)[] = ;
+struct Eq_12742 * g_ptr60E860 = null;
+struct Eq_12742 * g_ptr60E868 = null;
 word32 g_dw60E870 = 0x00;
 struct Eq_75 * g_ptr60E878 = null;
 word64 g_qw60E880 = 0x00;
 word64 g_qw60E888 = 0x00;
+word64 g_qw60ECA0 = 0x00;
+word16 g_w60ECA8 = 0x00;
+word64 g_qw60ECB0 = 0x00;
+word64 g_qw60ECB8 = 0x00;
+word64 g_qw60ECE0 = 0x00;
+word16 g_w60ECE8 = 0x00;
+word64 g_qw60ECF0 = 0x00;
+word64 g_qw60ECF8 = 0x00;
+word64 g_qw60ED20 = 0x00;
+byte g_b60ED28 = 0x00;
+word64 g_qw60ED30 = 0x00;
+word64 g_qw60ED48 = 0x00;
+word64 g_qw60ED60 = 0x00;
+word16 g_w60ED68 = 0x00;
+word64 g_qw60ED70 = 0x00;
+word64 g_qw60EDA0 = 0x00;
+byte g_b60EDA8 = 0x00;
+Eq_16062 (* g_ptr60EDB0)[] = ;
+word64 g_qw60EDE0 = 0x00;
+word16 g_w60EDE8 = 0x00;
+word64 g_qw60EDF0 = 0x00;
+word64 g_qw60EE20 = 0x00;
+byte g_b60EE28 = 0x00;
+Eq_16062 (* g_ptr60EE30)[] = ;
+word64 g_qw60EE48 = 0x00;
 <anonymous> * g_ptr60EE58 = null;
 <anonymous> * g_ptr60EE60 = null;
 word64 g_qw60EE80 = 0x00;
 word16 g_w60EE88 = 0x00;
 word64 g_qw60EE90 = 0x00;
-Eq_12557 g_t60EF00 = 
+word64 g_qw60EE98 = 0x00;
+word64 g_qw60EEC0 = 0x00;
+word16 g_w60EEC8 = 0x00;
+word64 g_qw60EED0 = 0x00;
+word64 g_qw60EF00 = 0x00;
+byte g_b60EF08 = 0x00;
+Eq_16062 (* g_ptr60EF10)[] = ;
+Eq_181 g_t60EF38 = 
 	{
-		null,
+		0x00
 	};
-struct Eq_6036 * g_ptr60EF38 = null;
+word64 g_qw60EF60 = 0x00;
+byte g_b60EF68 = 0x00;
+Eq_16062 (* g_ptr60EF70)[] = ;
 <anonymous> * g_ptr60EF98 = null;
+word64 g_qw60EFC0 = 0x00;
+word16 g_w60EFC8 = 0x00;
+Eq_16062 (* g_ptr60EFD0)[] = ;
 <anonymous> * g_ptr60EFF8 = null;
-union Eq_658 * g_ptr60F000 = null;
-Eq_6470 g_t60F008 = 
+union Eq_694 * g_ptr60F000 = null;
+Eq_6581 g_t60F008 = 
 	{
 		0
 	};
-Eq_12437 g_t60F010 = 
+Eq_12622 g_t60F010 = 
 	{
 		0
 	};
 word64 g_qw60F018 = 0x00;
-struct Eq_6614 * g_ptr60F020 = null;
-Eq_6586 g_t60F028 = 
+struct Eq_6732 * g_ptr60F020 = null;
+Eq_6704 g_t60F028 = 
 	{
 		0
 	};
 word64 g_qw60F038 = 0x00;
-Eq_6586 g_t60F040 = 
+Eq_6704 g_t60F040 = 
 	{
 		0
 	};
-Eq_6586 g_t60F048 = 
+Eq_6704 g_t60F048 = 
 	{
 		0
 	};
-struct Eq_6036 * g_ptr60F050 = null;
+Eq_181 g_t60F050 = 
+	{
+		0x00
+	};
 word64 g_qw60F058 = 0x00;
-Eq_167 g_t60F060 = 
+Eq_191 g_t60F060 = 
 	{
 		
 		{
@@ -285,7 +491,13 @@ Eq_167 g_t60F060 =
 		
 		{
 		},
-		null,
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
 		0,
 		0,
 		0x00,
@@ -295,36 +507,78 @@ Eq_167 g_t60F060 =
 		},
 		
 		{
-			0
+			0x00
 		},
 		
 		{
 		},
-		null,
-		null,
-		null,
-		null,
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
 		0x00,
 		
 		{
-			0
+			0x00
 		},
-		0x00,
-		null,
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
+		
+		{
+			
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			}
+		},
 	};
-Eq_7100 g_t60F0D0 = 
+Eq_7255 g_t60F0D0 = 
 	{
 		
 		{
 			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 		}
 	};
-Eq_6470 g_t6118F8 = 
+Eq_6581 g_t6118F8 = 
 	{
 		0
 	};
 word64 g_qw612108 = 0x00;
-word64 g_qw612138 = 0x00;
+Eq_190 g_t612138 = 
+	{
+		
+		{
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+		}
+	};
 word128 g_ow612350 = 
 	{
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -337,7 +591,7 @@ word128 g_ow612370 =
 	{
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 	};
-Eq_6477 g_t612388 = 
+Eq_6588 g_t612388 = 
 	{
 		
 		{
@@ -346,54 +600,90 @@ Eq_6477 g_t612388 =
 	};
 word64 g_qw612398 = 0x00;
 word64 g_qw6123A0 = 0x00;
-Eq_6586 g_t6123A8 = 
+Eq_6704 g_t6123A8 = 
 	{
 		0
 	};
 word64 g_qw6123B8 = 0x00;
 word64 g_qw6123C0 = 0x00;
-Eq_9475 g_t612458 = 
+word64 g_qw6123E0 = 0x00;
+word16 g_w6123E8 = 0x00;
+word64 g_qw6123F0 = 0x00;
+word64 g_qw612408 = 0x00;
+word64 g_qw612420 = 0x00;
+word16 g_w612428 = 0x00;
+word64 g_qw612430 = 0x00;
+Eq_9643 g_t612458 = 
 	{
 		0
 	};
+word64 g_qw612460 = 0x00;
+word16 g_w612468 = 0x00;
+word64 g_qw612470 = 0x00;
+word64 g_qw6124A0 = 0x00;
+word16 g_w6124A8 = 0x00;
+word64 g_qw6124B0 = 0x00;
+word64 g_qw6124B8 = 0x00;
+word64 g_qw6124E0 = 0x00;
+word16 g_w6124E8 = 0x00;
+word64 g_qw6124F0 = 0x00;
+word64 g_qw6124F8 = 0x00;
+word64 g_qw612520 = 0x00;
+byte g_b612528 = 0x00;
+word64 g_qw612530 = 0x00;
+word64 g_qw612548 = 0x00;
+word64 g_qw612560 = 0x00;
+word16 g_w612568 = 0x00;
+word64 g_qw612570 = 0x00;
+word64 g_qw612578 = 0x00;
 <anonymous> * g_ptr612598 = null;
+word64 g_qw6125A0 = 0x00;
+word16 g_w6125A8 = 0x00;
+word64 g_qw6125B0 = 0x00;
 byte g_b6125D8 = 0x00;
-Eq_11198 g_t612618 = 
+word64 g_qw6125E0 = 0x00;
+word16 g_w6125E8 = 0x00;
+word64 g_qw6125F0 = 0x00;
+Eq_11373 g_t612618 = 
 	{
 		0
 	};
+word64 g_qw612620 = 0x00;
+byte g_b612628 = 0x00;
+Eq_16062 (* g_ptr612630)[] = ;
+word64 g_qw612660 = 0x00;
+word16 g_w612668 = 0x00;
+word64 g_qw612670 = 0x00;
 word64 g_qw6126A0 = 0x00;
 word16 g_w6126A8 = 0x00;
-struct Eq_12683 * g_ptr612798 = null;
+word64 g_qw6126E0 = 0x00;
+word16 g_w6126E8 = 0x00;
+word64 g_qw6126F0 = 0x00;
+word64 g_qw612720 = 0x00;
+byte g_b612728 = 0x00;
+Eq_16062 (* g_ptr612730)[] = ;
+word64 g_qw612760 = 0x00;
+word16 g_w612768 = 0x00;
+word64 g_qw612770 = 0x00;
+struct Eq_12867 * g_ptr612798 = null;
 word64 g_qw6127A0 = 0x00;
+word64 g_qw6127C0 = 0x00;
+word16 g_w6127C8 = 0x00;
+word64 g_qw6127D0 = 0x00;
+word64 g_qw612800 = 0x00;
+byte g_b612808 = 0x00;
+Eq_16062 (* g_ptr612810)[] = ;
 word64 g_a612840[] = 
 	{
 	};
+word64 g_qw6195A0 = 0x00;
+word16 g_w6195A8 = 0x00;
+word64 g_qw6195B0 = 0x00;
+word64 g_qw6195B8 = 0x00;
 <anonymous> * g_a6195E0[] = 
 	{
 	};
-Eq_6036 g_t656C6F;
-Eq_6036 g_t736665;
-Eq_493 g_tC1A180;
-Eq_104 g_tC1A190;
-Eq_104 g_tC1A1A0;
-Eq_6036 g_t203A4550;
-Eq_6036 g_t20646574;
-word64 g_qw2D6C7274;
-Eq_6036 g_t46474953;
-Eq_6036 g_t4F45000A;
-word64 g_qw53000A2E;
-word64 g_qw63636120;
-Eq_6036 g_t6465736F;
-Eq_6036 g_t65206369;
-Eq_6036 g_t656C6C49;
-Eq_6036 g_t6574206C;
-Eq_6036 g_t6E00646E;
-word64 g_qw6F697461;
-Eq_6036 g_t6F747320;
-word64 g_qw7245464F;
-word64 g_qw7265706F;
-Eq_6036 g_t72662064;
-word64 g_qw73666552;
-word64 g_qw74697241;
+Eq_529 g_tC1A180;
+Eq_128 g_tC1A190;
+Eq_128 g_tC1A1A0;
 

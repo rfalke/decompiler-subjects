@@ -101,8 +101,8 @@ int16 Eq_7::* fn0C00_019C(word16 eax_16_16, word16 ecx_16_16, word16 ebx_16_16, 
 	Eq_233 ecx_35 = SEQ(ecx_16_16, cx_10);
 	real64 rLoc1_62 = atan(rArg0, (real64) (ds->*eax_14)) + (real64) (ds->*ecx_35) / (real64) ds->w02CD;
 	real64 rLoc1_63 = cos(rLoc1_62);
-	ds->*ebx_19 = (int16) (sin(rLoc1_62) * ds->r02EB);
-	ds->*eax_14 = (int16) (rLoc1_63 * ds->r02EB);
+	ds->*ebx_19 = (int16) (sin(rLoc1_62) * (real64) ds->r02EB);
+	ds->*eax_14 = (int16) (rLoc1_63 * (real64) ds->r02EB);
 	ecxOut = ecx_35;
 	ebxOut = ebx_19;
 	return eax_14;
@@ -113,60 +113,61 @@ int16 Eq_7::* fn0C00_019C(word16 eax_16_16, word16 ecx_16_16, word16 ebx_16_16, 
 //      fn0C00_0100
 word32 fn0C00_01E1(word16 eax_16_16, word16 ecx_16_16, word16 ebx_16_16, word16 esp_16_16, struct Eq_44 * es, struct Eq_7 * ds, real64 rArg0, union Eq_110 & ecxOut, union Eq_111 & ebxOut)
 {
-	struct Eq_318 Eq_322::* esp_7 = SEQ(esp_16_16, fp);
-	real64 rLoc1_152 = (real64) (ss->*esp_7).w0002 / (real64) ds->w02D5;
-	real64 rLoc1_153 = cos(rLoc1_152);
-	ds->w02DF = (int16) (sin(rLoc1_152) * (real64) ds->w02CD);
-	ds->w02E3 = (int16) (rLoc1_153 * (real64) ds->w02CD);
-	real64 rLoc1_158 = (real64) (ss->*esp_7).w0004 / (real64) ds->w02D5;
-	real64 rLoc1_159 = cos(rLoc1_158);
-	ds->w02E1 = (int16) (sin(rLoc1_158) * (real64) ds->w02E3);
-	ds->w02E3 = (int16) (rLoc1_159 * (real64) ds->w02E3);
-	word32 esp_49 = <invalid>;
-	struct Eq_379 Eq_322::* sp_50 = (word16) esp_49;
-	word32 ebx_47;
-	word32 ecx_48;
-	word16 eax_16_16_59 = SLICE(fn0C00_019C(eax_16_16, ecx_16_16, ebx_16_16, esp_16_16, ds, rArg0, out ecx_48, out ebx_47), word16, 16);
-	(ss->*sp_50).w0004 = 0x02DF;
-	(ss->*sp_50).w0002 = 0x02E3;
-	(ss->*sp_50).w0000 = 0x02D9;
-	word32 esp_65 = <invalid>;
-	struct Eq_403 Eq_322::* sp_66 = (word16) esp_65;
-	word32 ebx_63;
-	word32 ecx_64;
-	word16 eax_16_16_75 = SLICE(fn0C00_019C(eax_16_16_59, SLICE(ecx_48, word16, 16), SLICE(ebx_47, word16, 16), SLICE(esp_49, word16, 16), ds, rArg0, out ecx_64, out ebx_63), word16, 16);
-	(ss->*sp_66).w0004 = 737;
-	(ss->*sp_66).w0002 = 0x02E3;
-	(ss->*sp_66).w0000 = 0x02DB;
-	word32 ebx_79;
-	Eq_110 ecx_80;
-	word16 eax_16_16_200 = SLICE(fn0C00_019C(eax_16_16_75, SLICE(ecx_64, word16, 16), SLICE(ebx_63, word16, 16), SLICE(esp_65, word16, 16), ds, rArg0, out ecx_80, out ebx_79), word16, 16);
-	real64 rLoc2_169 = (real64) ds->w02DF - (real64) ds->w02C1;
-	real64 rLoc3_172 = (real64) ds->w02E1 - (real64) ds->w02C3;
-	real64 rLoc4_175 = (real64) ds->w02E3 - (real64) ds->w02C5;
-	ds->w02DD = (int16) ((real64) ds->w02C7 / ((rLoc2_169 * rLoc2_169 + (rLoc3_172 * rLoc3_172 + rLoc4_175 * rLoc4_175)) / (real64) ds->w02C9 + (real64) ds->w02CB));
-	real64 rLoc3_185 = (real64) ds->w02E3 / (real64) ds->w02D5;
-	real64 rLoc2_183 = (real64) ds->w02E1;
-	real64 rLoc1_190 = (real64) ds->w02DF / (rLoc2_183 / (rLoc3_185 + (rLoc3_185 + 1.0)));
-	ds->w02E1 = (int16) -rLoc2_183;
-	ds->w02DF = (int16) (rLoc1_190 * ds->r02D1);
-	int16 ax_137 = ds->w02DD;
-	word16 ebx_16_16_207 = SLICE(ebx_79, word16, 16);
-	cu8 Eq_44::* bx_136 = (word16) ((ds->w02E1 + 0x62) * 0x0140) + 0xA0 + ds->w02DF;
-	cu8 al_141 = (byte) ax_137;
-	word24 eax_24_8_202 = SEQ(eax_16_16_200, SLICE(ax_137, byte, 8));
-	if (SLICE(ax_137, byte, 8) != 0x00)
-		al_141 = ~0x05;
-	word32 eax_198 = SEQ(eax_24_8_202, al_141);
-	Eq_111 ebx_205 = SEQ(ebx_16_16_207, bx_136);
-	if (es->*bx_136 <= al_141)
+	struct Eq_320 Eq_324::* esp_7 = SEQ(esp_16_16, fp);
+	real64 rLoc1_150 = (real64) (ss->*esp_7).w0002 / (real64) ds->w02D5;
+	real64 rLoc1_151 = cos(rLoc1_150);
+	ds->w02DF = (int16) (sin(rLoc1_150) * (real64) ds->w02CD);
+	ds->w02E3 = (int16) (rLoc1_151 * (real64) ds->w02CD);
+	real64 rLoc1_156 = (real64) (ss->*esp_7).w0004 / (real64) ds->w02D5;
+	real64 rLoc1_157 = cos(rLoc1_156);
+	ds->w02E1 = (int16) (sin(rLoc1_156) * (real64) ds->w02E3);
+	ds->w02E3 = (int16) (rLoc1_157 * (real64) ds->w02E3);
+	word32 esp_47 = <invalid>;
+	struct Eq_381 Eq_324::* sp_48 = (word16) esp_47;
+	word32 ebx_45;
+	word32 ecx_46;
+	word16 eax_16_16_57 = SLICE(fn0C00_019C(eax_16_16, ecx_16_16, ebx_16_16, esp_16_16, ds, rArg0, out ecx_46, out ebx_45), word16, 16);
+	(ss->*sp_48).w0004 = 0x02DF;
+	(ss->*sp_48).w0002 = 0x02E3;
+	(ss->*sp_48).w0000 = 0x02D9;
+	word32 esp_63 = <invalid>;
+	struct Eq_405 Eq_324::* sp_64 = (word16) esp_63;
+	word32 ebx_61;
+	word32 ecx_62;
+	word16 eax_16_16_73 = SLICE(fn0C00_019C(eax_16_16_57, SLICE(ecx_46, word16, 16), SLICE(ebx_45, word16, 16), SLICE(esp_47, word16, 16), ds, rArg0, out ecx_62, out ebx_61), word16, 16);
+	(ss->*sp_64).w0004 = 737;
+	(ss->*sp_64).w0002 = 0x02E3;
+	(ss->*sp_64).w0000 = 0x02DB;
+	word32 ebx_77;
+	Eq_110 ecx_78;
+	word16 eax_16_16_198 = SLICE(fn0C00_019C(eax_16_16_73, SLICE(ecx_62, word16, 16), SLICE(ebx_61, word16, 16), SLICE(esp_63, word16, 16), ds, rArg0, out ecx_78, out ebx_77), word16, 16);
+	real64 rLoc2_167 = (real64) ds->w02DF - (real64) ds->w02C1;
+	real64 rLoc3_170 = (real64) ds->w02E1 - (real64) ds->w02C3;
+	real64 rLoc4_173 = (real64) ds->w02E3 - (real64) ds->w02C5;
+	ds->w02DD = (int16) ((real64) ds->w02C7 / ((rLoc2_167 * rLoc2_167 + (rLoc3_170 * rLoc3_170 + rLoc4_173 * rLoc4_173)) / (real64) ds->w02C9 + (real64) ds->w02CB));
+	real64 rLoc3_183 = (real64) ds->w02E3 / (real64) ds->w02D5;
+	real64 rLoc2_181 = (real64) ds->w02E1;
+	real64 rLoc1_188 = (real64) ds->w02DF / (rLoc2_181 / (rLoc3_183 + (rLoc3_183 + 1.0)));
+	ds->w02E1 = (int16) -rLoc2_181;
+	ds->w02DF = (int16) (rLoc1_188 * (real64) ds->r02D1);
+	int16 ax_135 = ds->w02DD;
+	byte ah_136 = SLICE(ax_135, byte, 8);
+	word16 ebx_16_16_204 = SLICE(ebx_77, word16, 16);
+	cu8 Eq_44::* bx_134 = (word16) ((ds->w02E1 + 0x62) * 0x0140) + 0xA0 + ds->w02DF;
+	cu8 al_139 = (byte) ax_135;
+	word24 eax_24_8_199 = SEQ(eax_16_16_198, ah_136);
+	if (ah_136 != 0x00)
+		al_139 = ~0x05;
+	word32 eax_196 = SEQ(eax_24_8_199, al_139);
+	Eq_111 ebx_202 = SEQ(ebx_16_16_204, bx_134);
+	if (es->*bx_134 <= al_139)
 	{
-		es->*bx_136 = al_141;
-		eax_198 = SEQ(eax_24_8_202, al_141);
-		ebx_205 = SEQ(ebx_16_16_207, bx_136);
+		es->*bx_134 = al_139;
+		eax_196 = SEQ(eax_24_8_199, al_139);
+		ebx_202 = SEQ(ebx_16_16_204, bx_134);
 	}
-	ecxOut = ecx_80;
-	ebxOut = ebx_205;
-	return eax_198;
+	ecxOut = ecx_78;
+	ebxOut = ebx_202;
+	return eax_196;
 }
 

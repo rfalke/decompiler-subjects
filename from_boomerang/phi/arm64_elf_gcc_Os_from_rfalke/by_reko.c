@@ -173,9 +173,9 @@ word64 fib(int32 w0, ptr64 & x19Out)
 	word64 x0_32_32_w19_90 = SEQ(x0_32_32, w0);
 	if (w0 > 0x01)
 	{
-		word64 x19_23;
 		word64 x19_35;
-		fib((word32) fib(w0 - 0x01, out x19_23) - 0x01, out x19_35);
+		word64 x19_94;
+		fib((word32) fib(w0 - 0x01, out x19_94) - 0x01, out x19_35);
 		fn0000000000000730();
 		x0_32_32_w19_90 = SEQ(SLICE(0x09B0, word32, 32), (word32) x19_35);
 	}

@@ -90,7 +90,7 @@ void frame_dummy()
 // 0000000000400520: void use(Register (ptr64 word32) rdi)
 void use(word32 * rdi)
 {
-	g_t601028 = (word64) g_t601028 + (word32) ((uint64) (*rdi));
+	g_dw601028 += (word32) (uint64) *rdi;
 }
 
 // 0000000000400530: void fill(Register word32 esi, Register (ptr64 void) rdi)
@@ -107,7 +107,7 @@ void with_array(word32 edi)
 	int64 rdx_8 = (int64) edi;
 	uint64 rbx_20 = (word64) (fp - 0x18 - ((rdx_8 << 0x02) + 0x12 & ~0x0F)) + 3 >> 0x02;
 	memset(rbx_20 * 0x04, 0x78, rdx_8 << 0x02);
-	g_t601028 = (uint64) g_t601028 + 0x0F + (uint64) null[rbx_20];
+	g_dw601028 = (word32) ((uint64) g_dw601028 + 0x0F + (uint64) null[rbx_20]);
 }
 
 // 00000000004005B0: void with_alloca(Register word32 edi)
@@ -116,7 +116,7 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	int64 rdx_5 = (int64) edi;
-	g_t601028 = (uint64) g_t601028 + 0x0F + (uint64) (*memset((word64) ((fp - 8) - ((rdx_5 << 0x02) + 0x1E & ~0x0F)) + 0x0F & ~0x0F, 0x78, rdx_5 << 0x02));
+	g_dw601028 = (word32) ((uint64) g_dw601028 + 0x0F + (uint64) (*memset((word64) ((fp - 8) - ((rdx_5 << 0x02) + 0x1E & ~0x0F)) + 0x0F & ~0x0F, 0x78, rdx_5 << 0x02)));
 }
 
 // 00000000004005F0: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -128,7 +128,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_192 rbx_42 = 0x00;
+		Eq_194 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

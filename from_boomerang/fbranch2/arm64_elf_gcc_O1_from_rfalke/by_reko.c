@@ -161,8 +161,8 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008C8: void main(Stack real32 dwArg04)
-void main(real32 dwArg04)
+// 00000000000008C8: void main(Stack Eq_100 dwArg04)
+void main(Eq_100 dwArg04)
 {
 	fn0000000000000760();
 	fn0000000000000770();
@@ -170,9 +170,23 @@ void main(real32 dwArg04)
 	{
 		fn0000000000000750();
 		if (dwArg04 == 5.0F)
-			fn0000000000000750();
+			goto l000000000000097C;
 	}
 	fn0000000000000750();
+	if (dwArg04 < 5.0F)
+		fn0000000000000750();
+	if (dwArg04 < 5.0F)
+	{
+l0000000000000934:
+		if (dwArg04 <= 5.0F)
+			fn0000000000000750();
+		if (dwArg04 > 5.0F)
+			fn0000000000000750();
+		return;
+	}
+l000000000000097C:
+	fn0000000000000750();
+	goto l0000000000000934;
 }
 
 // 00000000000009C0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

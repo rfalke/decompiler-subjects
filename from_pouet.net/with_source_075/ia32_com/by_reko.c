@@ -17,30 +17,30 @@ void fn0C00_0100(byte ah, Eq_3 bx, word16 di)
 		bp_15 -= 0x027F;
 		do
 		{
-			byte cl_53 = 0x00;
-			int16 dx_27;
+			byte cl_101 = 0x00;
+			int16 dx_27 = SLICE(bx * ax_25, word16, 16);
 			do
 			{
 				Eq_3 ax_44 = (word16) (((word16) bx.u0 + dx_27) *s (bx - dx_27)) + bp_15;
 				bx = ax_44;
-				uint16 cx_56 = (uint16) (uint8) cl_53;
+				uint16 cx_56 = (uint16) cl_101;
 				if (ax_44 > 0x00)
 					break;
-				cl_53 = ~cl_53;
+				cl_101 = ~cl_101;
 				dx_27 += di;
-				cx_56 = (uint16) (uint8) cl_53;
+				cx_56 = (uint16) cl_101;
 			} while (dx_27 != 0x00);
 			__syscall(0x10);
-			ax_25 = cx_56;
 			bx.u0 = 0x00;
 			++bp_15;
-			cx_14 = cx_118 - 0x01;
-			cx_118 = cx_14;
-		} while (cx_118 != 0x01);
+			cx_14 = cx_120 - 0x01;
+			ax_25 = SEQ(0x0C, (byte) cx_56);
+			cx_120 = cx_14;
+		} while (cx_120 != 0x01);
 		++di;
-		cx_11 = cx_117 - 0x01;
-		cx_117 = cx_11;
-	} while (cx_117 != 0x01);
+		cx_11 = cx_119 - 0x01;
+		cx_119 = cx_11;
+	} while (cx_119 != 0x01);
 	__syscall(22);
 }
 

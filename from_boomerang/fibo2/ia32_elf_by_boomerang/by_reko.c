@@ -140,7 +140,7 @@ void main()
 {
 	__align(fp - 0x0C);
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x08);
 	printf("fibonacci(%d) = %d\n", dwLoc08, fib1(0x0804849F, dwLoc08));
 }
 

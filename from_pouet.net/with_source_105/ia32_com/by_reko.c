@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register word16 cx, Register word16 si, Register (memptr (ptr16 Eq_54) byte) di)
-void fn0C00_0100(byte ah, word16 cx, word16 si, byte Eq_54::* di)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register word16 cx, Register word16 si, Register (memptr (ptr16 Eq_53) byte) di)
+void fn0C00_0100(byte ah, word16 cx, word16 si, byte Eq_53::* di)
 {
 	__syscall(0x10);
 	word16 ax_100 = SEQ(ah, 0x13);
@@ -19,11 +19,11 @@ void fn0C00_0100(byte ah, word16 cx, word16 si, byte Eq_54::* di)
 	{
 		do
 		{
-			uint32 dx_ax_22 = (uint32) (uint16) di;
-			Eq_29 ax_25 = (uint16) (dx_ax_22 /u 0x0140);
-			Eq_33 dx_24 = (uint16) (dx_ax_22 % 0x0140);
-			Eq_37 ax_26 = ax_25 - 100;
-			Eq_37 dx_27 = dx_24 - 0xA0;
+			uint32 dx_ax_22 = (uint32) di;
+			Eq_28 ax_25 = (uint16) (dx_ax_22 /u 0x0140);
+			Eq_32 dx_24 = (uint16) (dx_ax_22 % 0x0140);
+			Eq_36 ax_26 = ax_25 - 100;
+			Eq_36 dx_27 = dx_24 - 0xA0;
 			if (dx_24 <= 0xA0)
 				dx_27 = 0xA0 - dx_24;
 			if (ax_25 - 100 <= dx_27)

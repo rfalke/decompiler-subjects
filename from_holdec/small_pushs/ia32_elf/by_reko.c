@@ -52,7 +52,7 @@ void main()
 {
 	__align(fp);
 	printf("plain: 0x%08x\n", 0x11223344);
-	printf("small: 0x%08x\n", 0x3344);
+	printf("small: 0x%08x\n", 0x11223344);
 }
 
 // 080490B0: void _start(Register (ptr32 Eq_25) edx, Stack int32 dwArg00)

@@ -16,12 +16,13 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_2 * ds)
 		__outb(969, al_10 >> 0x04);
 		__outb(969, al_10 >> 0x04 << 0x02);
 		--cx_16;
-		byte cl_207 = (byte) cx_16;
+		byte cl_206 = (byte) cx_16;
 	} while (cx_16 != 0x00);
+	real64 rLoc1_233 = 0.0;
 	do
 	{
 		byte Eq_2::* di_21 = Eq_2::a0200;
-		word16 cx_131;
+		word16 cx_130 = SEQ(~0x05, cl_206);
 		do
 		{
 			cu8 al_28;
@@ -32,67 +33,67 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_2 * ds)
 				al_28 = 0x00;
 			es->*di_21 = al_28;
 			++di_21;
-			--cx_131;
-		} while (cx_131 != 0x00);
+			--cx_130;
+		} while (cx_130 != 0x00);
 		do
 		{
-			uint32 dx_ax_46 = (uint32) (uint16) cx_131;
+			uint32 dx_ax_46 = (uint32) cx_130;
 			uint32 dx_ax_56 = (uint32) (uint16) (dx_ax_46 /u 0x28);
-			Eq_68 dx_58 = (uint16) (dx_ax_56 % 0x28);
-			Eq_72 ax_59 = (uint16) (dx_ax_56 /u 0x28);
-			Eq_76 dx_48 = (uint16) (dx_ax_46 % 0x28);
-			Eq_80 ax_73 = (dx_48 - 0x14) *s (dx_48 - 0x14) + ((dx_58 - 0x14) *s (dx_58 - 0x14) + (ax_59 - 0x14) *s (ax_59 - 0x14));
-			byte ah_113 = SLICE(ax_73, byte, 8);
-			ah_113 = SLICE(ax_73, byte, 8);
+			Eq_69 dx_58 = (uint16) (dx_ax_56 % 0x28);
+			Eq_73 ax_59 = (uint16) (dx_ax_56 /u 0x28);
+			Eq_77 dx_48 = (uint16) (dx_ax_46 % 0x28);
+			Eq_81 ax_73 = (dx_48 - 0x14) *s (dx_48 - 0x14) + ((dx_58 - 0x14) *s (dx_58 - 0x14) + (ax_59 - 0x14) *s (ax_59 - 0x14));
+			byte ah_114 = SLICE(ax_73, byte, 8);
 			if (ax_73 < 133 || ax_73 >= 0x0280)
 			{
 				real64 rRet1_90;
-				Eq_101 rRet2_91;
+				real64 rRet2_91;
 				word64 rRet1_96;
 				word64 rRet2_97;
-				Eq_104 di_108 = ((int16) fn0C00_01D5(fn0C00_01D5((real64) (dx_58 - 0x14), (real64) (ax_59 - 0x14), (real64) (dx_48 - 0x14), out rRet1_90, out rRet2_91), rRet1_90, rRet2_91, out rRet1_96, out rRet2_97) + 100) *s 0x0140 + (int16) rRet1_96;
-				cu8 al_118 = (byte) (SEQ(ah_113, 0x80) + (int16) rRet2_97);
-				if (al_118 > ds->*((word16) di_108 + 688))
-					es->*((word16) di_108 + 688) = al_118;
+				Eq_104 di_108 = ((int16) fn0C00_01D5(fn0C00_01D5((real64) (dx_58 - 0x14), (real64) (ax_59 - 0x14), (real64) (dx_48 - 0x14), rLoc1_233, out rRet1_90, out rRet2_91), rRet1_90, rRet2_91, rLoc1_233, out rRet1_96, out rRet2_97) + 100) *s 0x0140 + (int16) rRet1_96;
+				cu8 al_117 = (byte) (SEQ(ah_114, 0x80) + (int16) rRet2_97);
+				if (al_117 > ds->*((word16) di_108 + 688))
+					es->*((word16) di_108 + 688) = al_117;
 			}
-			--cx_131;
-		} while (cx_131 != 0x00);
-		struct Eq_150 Eq_2::* di_132 = Eq_2::a0340;
-		word16 cx_133;
-		for (cx_133 = 0xF8C0; cx_133 != 0x00; --cx_133)
+			--cx_130;
+		} while (cx_130 != 0x00);
+		struct Eq_151 Eq_2::* di_131 = Eq_2::a0340;
+		word16 cx_132;
+		for (cx_132 = 0xF8C0; cx_132 != 0x00; --cx_132)
 		{
-			byte al_139 = (ds->*di_132).bFFFFFEC0 + (ds->*di_132).bFFFFFFFF;
-			cu8 al_143 = al_139 + di_132[1];
-			cu8 al_147 = al_143 + di_132[320];
-			(es->*di_132).b0000 = (byte) (SEQ(SLICE(cond(al_139), bool, 1) + (al_143 < 0x00) + (al_147 < 0x00), al_147) >> 0x02);
-			++di_132;
+			byte al_138 = (ds->*di_131).bFFFFFEC0 + (ds->*di_131).bFFFFFFFF;
+			cu8 al_142 = al_138 + di_131[1];
+			cu8 al_146 = al_142 + di_131[320];
+			(es->*di_131).b0000 = (byte) (SEQ(SLICE(cond(al_138), bool, 1) + (al_142 < 0x00) + (al_146 < 0x00), al_146) >> 0x02);
+			++di_131;
 		}
-		byte Eq_2::* si_166 = Eq_2::a0200;
-		byte Eq_210::* di_167 = Eq_210::a0000;
-		word16 cx_173 = cx_133 - 0x01;
+		byte Eq_2::* si_165 = Eq_2::a0200;
+		byte Eq_215::* di_166 = Eq_215::a0000;
+		word16 cx_172 = cx_132 - 0x01;
 		while (true)
 		{
-			cl_207 = (byte) cx_173;
-			if (cx_173 == 0x00)
+			cl_206 = (byte) cx_172;
+			if (cx_172 == 0x00)
 				break;
-			0xA000->*di_167 = ds->*si_166;
-			++si_166;
-			++di_167;
-			--cx_173;
+			0xA000->*di_166 = ds->*si_165;
+			++si_165;
+			++di_166;
+			--cx_172;
 		}
+		rLoc1_233 += (real64) ds->w01D3;
 	} while (__inw(0x60) != 0x01);
 }
 
-// 0C00:01D5: FpuStack real64 fn0C00_01D5(FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack Eq_101 rArg2, FpuStack out Eq_110 rArg1Out, FpuStack out Eq_101 rArg2Out)
+// 0C00:01D5: FpuStack real64 fn0C00_01D5(FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg2, FpuStack real64 rArg3, FpuStack out Eq_111 rArg1Out, FpuStack out Eq_112 rArg2Out)
 // Called from:
 //      fn0C00_0100
-real64 fn0C00_01D5(real64 rArg0, real64 rArg1, Eq_101 rArg2, union Eq_110 & rArg1Out, union Eq_101 & rArg2Out)
+real64 fn0C00_01D5(real64 rArg0, real64 rArg1, real64 rArg2, real64 rArg3, union Eq_111 & rArg1Out, union Eq_112 & rArg2Out)
 {
-	Eq_101 rLoc1_55 = sin(rArg2) * rArg0 + cos(rArg2) * rArg1;
-	Eq_110 rArg1_63 = rArg1 * sin(rArg2) - rArg0 * cos(rArg2);
-	real64 rLoc1_68 = cos(sin(rLoc1_55));
-	rArg1Out = rArg1_63;
-	rArg2Out = rLoc1_55;
-	return rArg2 * (((rLoc1_68 + rLoc1_68) * rLoc1_55) * rArg1_63);
+	Eq_112 rLoc1_58 = sin(rArg3) * rArg0 + cos(rArg3) * rArg1;
+	Eq_111 rArg1_66 = rArg1 * sin(rArg3) - rArg0 * cos(rArg3);
+	real64 rLoc1_72 = cos(sin(rArg3));
+	rArg1Out = rArg1_66;
+	rArg2Out = rLoc1_58;
+	return rArg2 * (((rLoc1_72 + rLoc1_72) * rLoc1_58) * rArg1_66);
 }
 

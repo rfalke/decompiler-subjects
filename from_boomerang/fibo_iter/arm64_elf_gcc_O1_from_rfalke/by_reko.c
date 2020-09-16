@@ -162,7 +162,7 @@ void fib(int32 w0)
 		return;
 	if (w0 <= 0x02)
 		return;
-	int32 w1_12;
+	int32 w1_12 = 0x02;
 	do
 		++w1_12;
 	while (w0 != w1_12);

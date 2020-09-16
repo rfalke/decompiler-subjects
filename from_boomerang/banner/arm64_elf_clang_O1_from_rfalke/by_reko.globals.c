@@ -19,7 +19,7 @@ word64 g_qw411FE0 = 0x00;
 <anonymous> * g_ptr412018 = &g_t4004B0;
 <anonymous> * g_ptr412020 = &g_t4004B0;
 <anonymous> * g_ptr412028 = &g_t4004B0;
-Eq_134 g_t412040 = 
+Eq_133 g_t412040 = 
 	{
 		
 		{

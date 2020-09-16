@@ -102,7 +102,7 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x0C);
-	printf("Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n", 0x01, 4.60763277876275e+18, 0x02, 4.61213637839012e+18, 0x03, 4.61461335818518e+18, 0x04, 4.6166399780175e+18);
+	printf("Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n", 0x01, 1.1, 0x02, 2.2, 0x03, 3.3, 0x04, 4.4);
 }
 
 // 08048374: void __libc_csu_init(Register word32 edx)

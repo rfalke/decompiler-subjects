@@ -8,7 +8,7 @@
 void fn0C00_0100(struct Eq_2 * ds)
 {
 	__syscall(0x10);
-	word16 cx_20;
+	word16 cx_20 = 0x00;
 	do
 	{
 		uint8 al_11 = (byte) cx_20;
@@ -21,32 +21,33 @@ void fn0C00_0100(struct Eq_2 * ds)
 	} while (cx_20 != 0x00);
 	do
 	{
-		word16 dx_112;
-		byte Eq_2::* di_100 = Eq_2::a0200;
-		for (dx_112 = 0x52; dx_112 != 0x78; --dx_112)
+		word16 dx_114;
+		byte Eq_2::* di_102 = Eq_2::a0200;
+		for (dx_114 = 0x52; dx_114 != 0x78; --dx_114)
 		{
-			word16 cx_111;
-			for (cx_111 = 0x0140; cx_111 != 0x00; --cx_111)
+			word16 cx_113;
+			for (cx_113 = 0x0140; cx_113 != 0x00; --cx_113)
 			{
-				ds->t01F8 = 0xA0 - cx_111;
-				ds->t01F8 = dx_112 + 0x00;
+				ds->t01F8 = 0xA0 - cx_113;
+				real64 rLoc1_207 = (real64) ds->t01F8;
+				ds->t01F8 = dx_114 + 0x00;
 				real64 rLoc2_208 = (real64) ds->t01F8;
-				real64 rLoc3_217 = sqrt(sqrt(rLoc2_208 * rLoc2_208 + rLoc2_208 * rLoc2_208));
+				real64 rLoc3_217 = sqrt(sqrt(rLoc2_208 * rLoc2_208 + rLoc1_207 * rLoc1_207));
 				ds->t01F8.u0 = (int16) (cos(rLoc3_217 * 3.14159265358979 + sin(atan(rLoc3_217 * 3.14159265358979, rLoc2_208) * __rndint((real64) ds->t01F6 / (real64) ds->w01FA) + (real64) ds->t01F6 / (real64) ds->w01FD) * __rndint((real64) ds->t01F6 / (real64) ds->w01FB) + -((real64) ds->t01F6)) * (real64) ds->w0188);
-				cu16 bx_101 = (word16) (ds->*di_100);
-				uint16 ax_104 = ((word16) ds->t01F8.u1 + 0x007F + bx_101 >> 0x01) + bx_101;
-				byte al_107 = (byte) (ax_104 >> 0x01);
-				ds->*di_100 = al_107;
-				++di_100;
+				cu16 bx_103 = (word16) (ds->*di_102);
+				uint16 ax_106 = ((word16) ds->t01F8.u1 + 0x007F + bx_103 >> 0x01) + bx_103;
+				byte al_109 = (byte) (ax_106 >> 0x01);
+				ds->*di_102 = al_109;
+				++di_102;
 			}
 		}
 		ds->t01F6 = (word16) ds->t01F6 + 1;
-		__outb(0x61, al_107);
+		__outb(0x61, al_109);
 		__outb(0x43, ~0x49);
-		byte al_129 = (byte) ds->t01F6.u1 + (byte) (ax_104 >> 0x01);
+		byte al_129 = (byte) ds->t01F6.u1 + (byte) (ax_106 >> 0x01);
 		__outb(66, al_129);
 		__outb(66, al_129);
-		struct Eq_189 Eq_2::* di_131 = Eq_2::a0200;
+		struct Eq_193 Eq_2::* di_131 = Eq_2::a0200;
 		word16 cx_132;
 		for (cx_132 = 64640; cx_132 != 0x00; --cx_132)
 		{
@@ -57,7 +58,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
 		word16 Eq_2::* si_168 = Eq_2::a0340;
-		word16 Eq_258::* di_169 = Eq_258::a0000;
+		word16 Eq_262::* di_169 = Eq_262::a0000;
 		word16 cx_172;
 		for (cx_172 = 0x7D00; cx_172 != 0x00; --cx_172)
 		{

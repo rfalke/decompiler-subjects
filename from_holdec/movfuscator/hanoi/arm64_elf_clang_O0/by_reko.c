@@ -212,10 +212,10 @@ word64 add_disk(word32 w0, int32 w1, struct Eq_121 & x29Out)
 	struct Eq_122 * x9_25 = *((char *) g_a411068 + (word64) w0 * 0x00);
 	word32 w1_26 = x9_25->dw0008;
 	x9_25->dw0008 = w1_26 + 0x01;
-	*((char *) **((char *) g_a411068 + (word64) w0 * 0x00) + (int64) ((int32) w1_26) * 0x00) = (struct Eq_122 **) w1;
+	*((char *) **((char *) g_a411068 + (word64) w0 * 0x00) + (int64) w1_26 * 0x00) = (struct Eq_122 **) w1;
 	struct Eq_121 ** x29_58 = text(w2);
 	fn0000000000400640();
-	struct Eq_158 * sp_51 = (struct Eq_158 *) <invalid>;
+	struct Eq_157 * sp_51 = (struct Eq_157 *) <invalid>;
 	word64 x8_66 = g_qw411058;
 	sp_51->dw0004 = 34464;
 	fn0000000000400630();
@@ -229,10 +229,10 @@ word64 add_disk(word32 w0, int32 w1, struct Eq_121 & x29Out)
 //      move
 word64 remove_disk(word32 w0)
 {
-	struct Eq_179 * x9_22 = *((char *) g_a411068 + (word64) w0 * 0x00);
+	struct Eq_178 * x9_22 = *((char *) g_a411068 + (word64) w0 * 0x00);
 	--x9_22->dw0008;
 	text(w2);
-	struct Eq_158 * sp_50 = (struct Eq_158 *) <invalid>;
+	struct Eq_157 * sp_50 = (struct Eq_157 *) <invalid>;
 	return SEQ(SLICE(x0_53, word32, 32), sp_50->dw0008);
 }
 
@@ -243,29 +243,29 @@ word64 remove_disk(word32 w0)
 word64 move(word64 x0)
 {
 	word32 w0 = (word32) x0;
-	struct Eq_207 * x29_75 = fp + -8;
+	struct Eq_206 * x29_75 = fp + -8;
 	if (w0 != 0x00)
 	{
-		struct Eq_207 * x29_26 = move(x0);
-		struct Eq_158 * sp_25 = (struct Eq_158 *) <invalid>;
+		struct Eq_206 * x29_26 = move(x0);
+		struct Eq_157 * sp_25 = (struct Eq_157 *) <invalid>;
 		word32 w8_34 = x29_26->dwFFFFFFF8;
 		sp_25->dw000C = x29_26->dwFFFFFFF4;
-		struct Eq_158 * sp_37 = (struct Eq_158 *) <invalid>;
+		struct Eq_157 * sp_37 = (struct Eq_157 *) <invalid>;
 		int32 w0_51 = (word32) remove_disk(w8_34);
 		word32 w8_50 = sp_37->dw000C;
 		sp_37->dw0008 = w0_51;
-		word64 x29_64;
-		add_disk(w8_50, sp_37->dw0008, out x29_64);
+		word64 x29_142;
+		add_disk(w8_50, sp_37->dw0008, out x29_142);
 		x29_75 = move(x0);
 	}
 	return x29_75->qw0000;
 }
 
-// 0000000000400A9C: void main(Register int32 w0, Register (ptr64 Eq_255) x1)
-void main(int32 w0, struct Eq_255 * x1)
+// 0000000000400A9C: void main(Register int32 w0, Register (ptr64 Eq_254) x1)
+void main(int32 w0, struct Eq_254 * x1)
 {
 	fn0000000000400620();
-	struct Eq_259 * x29_108 = fp + -8;
+	struct Eq_258 * x29_108 = fp + -8;
 	word32 x0_32_32_140 = SLICE(0x00400C82, word32, 32);
 	if (w0 > 0x01)
 	{
@@ -291,7 +291,7 @@ l0000000000400B04:
 				--x29_108->dwFFFFFFF8;
 			}
 			move(SEQ(x0_32_32_140, g_dw411080));
-			struct Eq_158 * sp_64 = (struct Eq_158 *) <invalid>;
+			struct Eq_157 * sp_64 = (struct Eq_157 *) <invalid>;
 			sp_64->dw0008 = 0x00;
 			text(0x01);
 			return;

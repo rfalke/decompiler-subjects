@@ -161,14 +161,22 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008C8: void main(Stack real32 dwArg00)
-void main(real32 dwArg00)
+// 00000000000008C8: void main(Stack Eq_100 dwArg00)
+void main(Eq_100 dwArg00)
 {
 	fn0000000000000760();
 	fn0000000000000770();
 	if (dwArg00 == 5.0F)
 		fn0000000000000750();
 	if (dwArg00 != 5.0F)
+		fn0000000000000750();
+	if (dwArg00 < 5.0F)
+		fn0000000000000750();
+	if (dwArg00 >= 5.0F)
+		fn0000000000000750();
+	if (dwArg00 <= 5.0F)
+		fn0000000000000750();
+	if (dwArg00 > 5.0F)
 		fn0000000000000750();
 }
 

@@ -79,10 +79,10 @@ void frame_dummy()
 	null();
 }
 
-// 0000000000400794: void dumpline(Register int32 edx, Register Eq_77 rdi)
+// 0000000000400794: void dumpline(Register int32 edx, Register ptr64 rdi)
 // Called from:
 //      hexdump
-void dumpline(int32 edx, Eq_77 rdi)
+void dumpline(int32 edx, ptr64 rdi)
 {
 	sprintf(fp - 0x78, "%08lX:", 0x00);
 	int32 dwLoc8C_191 = edx;
@@ -98,31 +98,31 @@ void dumpline(int32 edx, Eq_77 rdi)
 	while (true)
 	{
 		++dwLoc20_193;
-		if (dwLoc20_193 <= 0x0F == 0x00)
+		if ((int8) (dwLoc20_193 <= 0x0F) == 0x00)
 			break;
 		strcat(fp - 0x78, "   ");
 	}
-	Eq_135 eax_82 = strlen(fp - 0x78);
+	Eq_136 eax_82 = strlen(fp - 0x78);
 	memcpy(fp - 0x78 + (int64) ((word32) ((uint64) eax_82)), &g_v400B8E, 0x04);
-	Eq_156 dwLoc20_202 = 0x00;
+	Eq_157 dwLoc20_202 = 0x00;
 	while ((word32) (uint64) dwLoc20_202 < dwLoc8C_191)
 	{
-		Eq_161 al_136;
-		word32 edx_133 = (word32) (uint64) (word32) (uint64) ((word32) dwLoc20_202 + ((word64) eax_82 + 3));
-		if ((byte) (uint64) (word32) *((word64) rdi.u0 + (int64) ((word32) ((uint64) dwLoc20_202))) > 0x1F && (byte) ((uint64) ((word32) (*((word64) rdi.u0 + (int64) ((word32) ((uint64) dwLoc20_202)))))) <= 0x7E)
-			al_136 = (byte) (uint64) (word32) *((word64) rdi.u0 + (int64) ((word32) ((uint64) dwLoc20_202)));
+		Eq_162 al_136;
+		word32 edx_133 = (word32) (uint64) ((word64) dwLoc20_202 + ((word64) eax_82 + 3));
+		if ((byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc20_202 + rdi) > 0x1F && (byte) ((uint64) ((word32) ((int64) ((word32) ((uint64) dwLoc20_202)) + rdi))) <= 0x7E)
+			al_136 = (byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc20_202 + rdi);
 		else
-			al_136 = (Eq_161) 0x2E;
+			al_136 = (Eq_162) 0x2E;
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) edx_133].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = al_136;
-		dwLoc20_202 = (word32) dwLoc20_202 + 1;
+		dwLoc20_202 = (word64) dwLoc20_202 + 1;
 	}
 	while (dwLoc20_202 <= 0x0F)
 	{
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) (uint64) ((word32) dwLoc20_202 + ((word64) eax_82 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_208) 0x20;
-		dwLoc20_202 = (word32) dwLoc20_202 + 1;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) ((word64) dwLoc20_202 + ((word64) eax_82 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_207) 0x20;
+		dwLoc20_202 = (word64) dwLoc20_202 + 1;
 	}
-	memcpy(fp - 0x78 + (int64) ((word32) ((uint64) ((word32) dwLoc20_202 + ((word64) eax_82 + 3)))), &g_v400B92, 0x02);
-	puts(fp - 0x78);
+	memcpy((word64) (fp - (char *) 0x78) + ((word64) dwLoc20_202 + ((word64) eax_82 + 3)), &g_v400B92, 0x02);
+	puts(fp - (char *) 0x78);
 }
 
 // 0000000000400942: Register word32 hexdump(Register (ptr64 char) rdi)
@@ -149,7 +149,7 @@ word32 hexdump(char * rdi)
 			up64 qwLoc20_88;
 			for (qwLoc20_88 = 0x00; qwLoc98 > qwLoc20_88; qwLoc20_88 += (int64) (word32) (uint64) eax_43)
 			{
-				Eq_135 eax_43 = fread(fp - 0x38, 0x01, 0x10, rax_27);
+				Eq_136 eax_43 = fread(fp - 0x38, 0x01, 0x10, rax_27);
 				if (eax_43 == 0x00)
 					break;
 				dumpline((word32) (uint64) eax_43, fp - 0x38);
@@ -186,7 +186,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 r13d_73 = (word32) (uint64) edi;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_339 rbx_37 = 0x00;
+		Eq_334 rbx_37 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600CAC)[rbx_37]();
@@ -195,7 +195,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	}
 }
 
-// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_242) rsi, Register (ptr64 char) rdi)
+// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_237) rsi, Register (ptr64 char) rdi)
 // Called from:
 //      hexdump
 int32 stat(struct stat * rsi, char * rdi)

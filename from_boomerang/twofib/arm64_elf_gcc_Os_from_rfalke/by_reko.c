@@ -82,8 +82,8 @@ void main(word32 dwArg04)
 {
 	fn0000000000000720();
 	fn00000000000006D0();
-	word64 x1_25;
-	twofib(SEQ(SLICE(fp + 0x04, word32, 32), dwArg04), SLICE(0x09A7, word32, 32), out x1_25);
+	word64 x1_50;
+	twofib(SEQ(SLICE(fp + 0x04, word32, 32), dwArg04), SLICE(0x09A7, word32, 32), out x1_50);
 	fn0000000000000720();
 }
 

@@ -112,17 +112,34 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x0C);
-	scanf("%f", 0x00);
-	printf("a is %f, b is %f\n", 4.6173155179616e+18, (real64) rLoc08);
-	real64 rLoc1_98 = (real64) rLoc08;
-	real64 rLoc1_102 = rLoc1_98;
-	if ((cond(rLoc1_98 - (real64) g_r80485CC) & 0x45 ^ 0x40) == 0x00)
+	scanf("%f", fp - 0x08);
+	printf("a is %f, b is %f\n", 5.0, (real64) rLoc08);
+	real64 rLoc1_162 = (real64) rLoc08;
+	real64 rLoc1_166 = rLoc1_162;
+	if ((cond(rLoc1_162 - (real64) g_r80485CC) & 0x45 ^ 0x40) == 0x00)
 	{
 		puts("Equal");
-		rLoc1_102 = (real64) rLoc08;
+		rLoc1_166 = (real64) rLoc08;
 	}
-	if ((cond((real64) g_r80485CC - rLoc1_102) & 0x45) != 0x40)
-		puts("Not Equal");
+	0x0804849C = (ptr32) ((word16) cond((real64) g_r80485CC - rLoc1_166) << 8);
+	if ((real64) g_r80485CC > rLoc1_166)
+	{
+		puts("Greater");
+		rLoc1_166 = (real64) rLoc08;
+	}
+	real64 rLoc1_181 = rLoc1_166;
+	if ((cond(rLoc1_166 - (real64) g_r80485CC) & 0x01) == 0x00)
+	{
+		puts("Less or Equal");
+		rLoc1_181 = (real64) rLoc08;
+	}
+	if ((real64) g_r80485CC >= rLoc1_181)
+	{
+		puts("Greater or Equal");
+		rLoc1_181 = (real64) rLoc08;
+	}
+	if (rLoc1_181 > (real64) g_r80485CC)
+		puts("Less");
 }
 
 // 080484D4: void __libc_csu_init(Register word32 edx)

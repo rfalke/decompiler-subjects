@@ -10,7 +10,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 	Mem8[ds:0x055C:word16] = cs + 0x1000;
 	bios_video_set_mode(0x13);
 	__outb(0x03C8, 0x00);
-	bcu8 ah_20;
+	bcu8 ah_20 = 0x00;
 	do
 	{
 		uint8 al_22 = ah_20 >> 0x02;
@@ -21,12 +21,12 @@ void fn0C00_0100(struct Eq_2 * ds)
 	} while (ah_20 != 0x00);
 	__wait();
 	__fninit();
-	ds->r0550 = (real32) (ds->r04BB / (real64) ds->w04CB);
-	ds->r0554 = (real32) (ds->r04BB / (real64) ds->w04CD);
+	ds->r0550 = (real32) ((real64) ds->r04BB / (real64) ds->w04CB);
+	ds->r0554 = (real32) ((real64) ds->r04BB / (real64) ds->w04CD);
 	ds->r0558 = (real32) ((real64) ds->dw04CF / (3.14159265358979 + 3.14159265358979));
 	fn0C00_0452(cs + 0x2000);
-	Eq_82 Top_183 = 0;
-	struct Eq_84 Eq_78::* di_63;
+	Eq_84 Top_180 = 0;
+	struct Eq_86 Eq_80::* di_63 = Eq_80::a0000;
 	do
 	{
 		byte al_70 = Mem68[cs + 0x2000:di_63 + 0x01:byte] + Mem68[cs + 0x2000:di_63 + -1:byte];
@@ -35,17 +35,17 @@ void fn0C00_0100(struct Eq_2 * ds)
 		byte al_81 = al_74 + __rcr(bl_76, 0x01, SLICE(cond(bl_76), bool, 1));
 		Mem87[cs + 0x2000:di_63 + 0x00:byte] = __rcr(al_81, 0x01, SLICE(cond(al_81), bool, 1));
 		++di_63;
-	} while (di_63 != Eq_78::a0000);
+	} while (di_63 != Eq_80::a0000);
 	do
 	{
-		struct Eq_136 * Top_92 = Top_183 - 1;
+		struct Eq_138 * Top_92 = Top_180 - 1;
 		Top_92->t0000.u0 = (real64) ds->r0516;
-		Top_92->t0000 += ds->r051A;
+		Top_92->t0000 += (real64) ds->r051A;
 		ds->r0516 = (real32) Top_92->t0000;
 		Top_92->t0000 = sin(Top_92->t0000);
-		Top_92->t0000 *= ds->r04BF;
+		Top_92->t0000 *= (real64) ds->r04BF;
 		ds->r1E6C = (real32) Top_92->t0000;
-		Eq_141 rRet1_112;
+		Eq_143 rRet1_112;
 		real64 rRet0_113 = fn0C00_0249(ds, out rRet1_112);
 		Top_92->t0000 = rRet1_112;
 		Top_92->rFFFFFFFF = rRet0_113;
@@ -53,7 +53,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 		struct Eq_5 * ds_135 = ds->ptr055C;
 		word16 cx_138;
 		word32 Eq_5::* si_139 = Eq_5::a0000;
-		word32 Eq_219::* di_140 = Eq_219::a0000;
+		word32 Eq_223::* di_140 = Eq_223::a0000;
 		for (cx_138 = 16000; cx_138 != 0x00; --cx_138)
 		{
 			0xA000->*di_140 = ds_135->*si_139;
@@ -66,18 +66,18 @@ void fn0C00_0100(struct Eq_2 * ds)
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) != 0x00);
-		word64 rRet1_179;
-		real64 rRet0_180 = fn0C00_041E(ds, Top_92->rFFFFFFFA, out rRet1_179);
-		Top_92->qwFFFFFFFE = rRet1_179;
-		Top_92->rFFFFFFFD = rRet0_180;
+		word64 rRet1_173;
+		real64 rRet0_174 = fn0C00_041E(ds, out rRet1_173);
+		Top_92->qwFFFFFFFE = rRet1_173;
+		Top_92->rFFFFFFFD = rRet0_174;
 		ds->w04D7 += 0x0100;
 		ds->w04D9 += 0x0300;
-		Top_183 = Top_92 - 3;
-		byte al_192;
-		byte ah_193;
-	} while (bios_kbd_check_keystroke(out al_192, out ah_193));
-	byte al_198;
-	bios_kbd_get_keystroke(out al_198);
+		Top_180 = Top_92 - 3;
+		byte al_189;
+		byte ah_190;
+	} while (bios_kbd_check_keystroke(out al_189, out ah_190));
+	byte al_195;
+	bios_kbd_get_keystroke(out al_195);
 	bios_video_set_mode(0x03);
 	msdos_display_string(&ds->b0503);
 	msdos_terminate(0x00);
@@ -88,35 +88,35 @@ void fn0C00_0100(struct Eq_2 * ds)
 //      fn0C00_0249
 void fn0C00_01E9(struct Eq_308 Eq_2::* si, struct Eq_309 Eq_2::* di, struct Eq_2 * ds)
 {
-	(ds->*di).r0000 = (real32) ((real64) (ds->*si).r0000 + (ds->*di).r0000);
-	(ds->*di).r0004 = (real32) ((real64) (ds->*si).r0004 + (ds->*di).r0004);
-	(ds->*di).r0008 = (real32) ((real64) (ds->*si).r0008 + (ds->*di).r0008);
+	(ds->*di).r0000 = (real32) ((real64) (ds->*si).r0000 + (real64) (ds->*di).r0000);
+	(ds->*di).r0004 = (real32) ((real64) (ds->*si).r0004 + (real64) (ds->*di).r0004);
+	(ds->*di).r0008 = (real32) ((real64) (ds->*si).r0008 + (real64) (ds->*di).r0008);
 }
 
-// 0C00:0202: void fn0C00_0202(Register (memptr (ptr16 Eq_2) Eq_347) bx, Register (memptr (ptr16 Eq_2) Eq_348) si, Register (memptr (ptr16 Eq_2) Eq_349) di, Register (ptr16 Eq_2) ds)
+// 0C00:0202: void fn0C00_0202(Register (memptr (ptr16 Eq_2) Eq_350) bx, Register (memptr (ptr16 Eq_2) Eq_351) si, Register (memptr (ptr16 Eq_2) Eq_352) di, Register (ptr16 Eq_2) ds)
 // Called from:
 //      fn0C00_0249
-void fn0C00_0202(struct Eq_347 Eq_2::* bx, struct Eq_348 Eq_2::* si, struct Eq_349 Eq_2::* di, struct Eq_2 * ds)
+void fn0C00_0202(struct Eq_350 Eq_2::* bx, struct Eq_351 Eq_2::* si, struct Eq_352 Eq_2::* di, struct Eq_2 * ds)
 {
-	(ds->*bx).r0000 = (real32) ((real64) (ds->*si).r0000 - (ds->*di).r0000);
-	(ds->*bx).r0004 = (real32) ((real64) (ds->*si).r0004 - (ds->*di).r0004);
-	(ds->*bx).r0008 = (real32) ((real64) (ds->*si).r0008 - (ds->*di).r0008);
+	(ds->*bx).r0000 = (real32) ((real64) (ds->*si).r0000 - (real64) (ds->*di).r0000);
+	(ds->*bx).r0004 = (real32) ((real64) (ds->*si).r0004 - (real64) (ds->*di).r0004);
+	(ds->*bx).r0008 = (real32) ((real64) (ds->*si).r0008 - (real64) (ds->*di).r0008);
 }
 
-// 0C00:021B: void fn0C00_021B(Register (memptr (ptr16 Eq_2) Eq_387) si, Register (memptr (ptr16 Eq_2) Eq_388) di, Register (ptr16 Eq_2) ds, FpuStack Eq_141 rArg0)
+// 0C00:021B: void fn0C00_021B(Register (memptr (ptr16 Eq_2) Eq_393) si, Register (memptr (ptr16 Eq_2) Eq_394) di, Register (ptr16 Eq_2) ds, FpuStack Eq_143 rArg0)
 // Called from:
 //      fn0C00_0249
-void fn0C00_021B(struct Eq_387 Eq_2::* si, struct Eq_388 Eq_2::* di, struct Eq_2 * ds, Eq_141 rArg0)
+void fn0C00_021B(struct Eq_393 Eq_2::* si, struct Eq_394 Eq_2::* di, struct Eq_2 * ds, Eq_143 rArg0)
 {
 	(ds->*di).r0000 = (real32) ((real64) (ds->*si).r0000 * rArg0);
 	(ds->*di).r0004 = (real32) ((real64) (ds->*si).r0004 * rArg0);
 	(ds->*di).r0008 = (real32) ((real64) (ds->*si).r0008 * rArg0);
 }
 
-// 0C00:0232: void fn0C00_0232(Register (memptr (ptr16 Eq_2) Eq_418) si, Register (memptr (ptr16 Eq_2) Eq_419) di, Register (ptr16 Eq_2) ds)
+// 0C00:0232: void fn0C00_0232(Register (memptr (ptr16 Eq_2) Eq_424) si, Register (memptr (ptr16 Eq_2) Eq_425) di, Register (ptr16 Eq_2) ds)
 // Called from:
 //      fn0C00_0249
-void fn0C00_0232(struct Eq_418 Eq_2::* si, struct Eq_419 Eq_2::* di, struct Eq_2 * ds)
+void fn0C00_0232(struct Eq_424 Eq_2::* si, struct Eq_425 Eq_2::* di, struct Eq_2 * ds)
 {
 	word32 ebx_8 = (ds->*si).dw0004;
 	word32 ecx_9 = (ds->*si).dw0008;
@@ -125,73 +125,72 @@ void fn0C00_0232(struct Eq_418 Eq_2::* si, struct Eq_419 Eq_2::* di, struct Eq_2
 	(ds->*di).dw0008 = ecx_9;
 }
 
-// 0C00:0249: FpuStack Eq_141 fn0C00_0249(Register (ptr16 Eq_2) ds, FpuStack out Eq_141 rLoc1Out)
+// 0C00:0249: FpuStack Eq_143 fn0C00_0249(Register (ptr16 Eq_2) ds, FpuStack out Eq_143 rLoc1Out)
 // Called from:
 //      fn0C00_0100
-Eq_141 fn0C00_0249(struct Eq_2 * ds, union Eq_141 & rLoc1Out)
+Eq_143 fn0C00_0249(struct Eq_2 * ds, union Eq_143 & rLoc1Out)
 {
 	fn0C00_0202(&Eq_2::t0520, &Eq_2::t04E7, &Eq_2::t04DB, ds);
-	Eq_141 rLoc1_132 = (real64) ds->r0550;
-	fn0C00_021B(&Eq_2::t0520, &Eq_2::t0520, ds, rLoc1_132);
-	__ffree(rLoc1_132);
+	Eq_143 rLoc1_133 = (real64) ds->r0550;
+	fn0C00_021B(&Eq_2::t0520, &Eq_2::t0520, ds, rLoc1_133);
+	__ffree(rLoc1_133);
 	fn0C00_0202(&Eq_2::t052C, &Eq_2::t04F3, &Eq_2::t04DB, ds);
-	Eq_141 rLoc2_133 = (real64) ds->r0554;
-	fn0C00_021B(&Eq_2::t052C, &Eq_2::t052C, ds, rLoc2_133);
-	__ffree(rLoc2_133);
+	Eq_143 rLoc2_134 = (real64) ds->r0554;
+	fn0C00_021B(&Eq_2::t052C, &Eq_2::t052C, ds, rLoc2_134);
+	__ffree(rLoc2_134);
 	fn0C00_0232(&Eq_2::t04DB, &Eq_2::t0538, ds);
-	struct Eq_481 Eq_2::* bp_106 = &Eq_2::t0564;
-	word16 cx_124 = 0x1A;
+	struct Eq_487 Eq_2::* bp_107 = &Eq_2::t0564;
+	word16 cx_125 = 0x1A;
 	do
 	{
 		fn0C00_0232(&Eq_2::t0538, &Eq_2::r0544, ds);
-		word16 cx_117 = 0x29;
+		word16 cx_118 = 0x29;
 		do
 		{
-			real64 rLoc4_137 = (real64) ds->r0548;
-			real64 rLoc3_139 = atan(rLoc2_133, (real64) ds->r0544);
-			ds->t055E.u0 = (int32) (rLoc4_137 * ds->r0558);
-			(ds->*bp_106).w0002 = (word16) ds->t055E.u2 + ds->w04D7;
-			real64 rLoc3_145 = sin(rLoc3_139 * ds->r04C3) * ds->r1E6C + ds->r04BB;
-			real64 rLoc4_146 = (real64) ds->r0544;
-			real64 rLoc5_148 = (real64) ds->r0548;
-			ds->t055E.u0 = (int32) (rLoc3_145 * ((ds->r04FF / sqrt(rLoc4_146 * rLoc4_146 + rLoc5_148 * rLoc5_148)) * ds->r054C) * ds->r04C7);
-			Eq_486 eax_83 = ds->t055E;
-			(ds->*bp_106).w0000 = (word16) eax_83 + ds->w04D9;
-			Eq_486 ebx_84 = eax_83;
-			if (eax_83 < 0x00)
-				ebx_84 = -eax_83;
-			uint32 ebx_95 = ebx_84 >> 0x01;
-			word16 bx_100 = (word16) ebx_95;
-			if (ebx_95 >= 0x7F00)
+			real64 rLoc3_140 = atan(rLoc2_134, (real64) ds->r0544);
+			ds->t055E.u0 = (int32) (rLoc3_140 * (real64) ds->r0558);
+			(ds->*bp_107).w0002 = (word16) ds->t055E.u2 + ds->w04D7;
+			real64 rLoc3_146 = sin(rLoc3_140 * (real64) ds->r04C3) * (real64) ds->r1E6C + (real64) ds->r04BB;
+			real64 rLoc4_147 = (real64) ds->r0544;
+			real64 rLoc5_149 = (real64) ds->r0548;
+			ds->t055E.u0 = (int32) (rLoc3_146 * (((real64) ds->r04FF / sqrt(rLoc4_147 * rLoc4_147 + rLoc5_149 * rLoc5_149)) * (real64) ds->r054C) * (real64) ds->r04C7);
+			Eq_492 eax_84 = ds->t055E;
+			(ds->*bp_107).w0000 = (word16) eax_84 + ds->w04D9;
+			Eq_492 ebx_85 = eax_84;
+			if (eax_84 < 0x00)
+				ebx_85 = -eax_84;
+			uint32 ebx_96 = ebx_85 >> 0x01;
+			word16 bx_100 = (word16) ebx_96;
+			if (ebx_96 >= 0x7F00)
 				bx_100 = 0x7F00;
-			(ds->*bp_106).w0004 = bx_100;
+			(ds->*bp_107).w0004 = bx_100;
 			fn0C00_01E9(&Eq_2::t0520, &Eq_2::r0544, ds);
-			++bp_106;
-			cx_117 = cx_190 - 0x01;
-			cx_190 = cx_117;
-		} while (cx_190 != 0x01);
+			++bp_107;
+			cx_118 = cx_191 - 0x01;
+			cx_191 = cx_118;
+		} while (cx_191 != 0x01);
 		fn0C00_01E9(&Eq_2::t052C, &Eq_2::t0538, ds);
-		cx_124 = cx_189 - 0x01;
-		cx_189 = cx_124;
-	} while (cx_189 != 0x01);
-	rLoc1Out = rLoc1_132;
-	return rLoc2_133;
+		cx_125 = cx_190 - 0x01;
+		cx_190 = cx_125;
+	} while (cx_190 != 0x01);
+	rLoc1Out = rLoc1_133;
+	return rLoc2_134;
 }
 
-// 0C00:032F: void fn0C00_032F(Register (ptr16 Eq_201) es, Register (ptr16 Eq_2) ds, Register (ptr16 Eq_203) gs)
+// 0C00:032F: void fn0C00_032F(Register (ptr16 Eq_205) es, Register (ptr16 Eq_2) ds, Register (ptr16 Eq_207) gs)
 // Called from:
 //      fn0C00_0100
-void fn0C00_032F(struct Eq_78 * es, struct Eq_2 * ds, struct Eq_78 * gs)
+void fn0C00_032F(struct Eq_80 * es, struct Eq_2 * ds, struct Eq_80 * gs)
 {
-	struct Eq_602 Eq_2::* si_166 = &Eq_2::t0564;
-	struct Eq_604 Eq_78::* di_126 = Eq_78::a0000;
+	struct Eq_611 Eq_2::* si_166 = &Eq_2::t0564;
+	struct Eq_613 Eq_80::* di_126 = Eq_80::a0000;
 	word16 cx_11 = 0x19;
 	do
 	{
 		word16 cx_14 = 0x28;
 		do
 		{
-			struct Eq_696 Eq_2::* si_23 = (char *) &si_166->dw0002 + 2;
+			struct Eq_705 Eq_2::* si_23 = (char *) &si_166->dw0002 + 2;
 			word32 ebx_154 = (ds->*si_23).dw0002;
 			word32 eax_153 = (ds->*si_166).dw0000;
 			word32 edx_28 = (ds->*si_23).dw00F8 - ebx_154;
@@ -234,89 +233,86 @@ void fn0C00_032F(struct Eq_78 * es, struct Eq_2 * ds, struct Eq_78 * gs)
 				dx_155 += ds->w1E68;
 				si_156 += ds->w1E6A;
 			}
-			si_166 = (struct Eq_602 Eq_2::*) &si_23->dw0002;
+			si_166 = (struct Eq_611 Eq_2::*) &si_23->dw0002;
 			di_126 -= 0x08C0;
 			cx_14 = cx_238 - 0x01;
 			cx_238 = cx_14;
 		} while (cx_238 != 0x01);
-		si_166 = (struct Eq_602 Eq_2::*) (&si_23->w0006 + 1);
+		si_166 = (struct Eq_611 Eq_2::*) (&si_23->w0006 + 1);
 		cx_11 = cx_237 - 0x01;
 		cx_237 = cx_11;
 	} while (cx_237 != 0x01);
 }
 
-// 0C00:041E: FpuStack Eq_141 fn0C00_041E(Register (ptr16 Eq_2) ds, FpuStack real64 rLoc5, FpuStack out Eq_141 rLoc1Out)
+// 0C00:041E: FpuStack Eq_143 fn0C00_041E(Register (ptr16 Eq_2) ds, FpuStack out Eq_143 rLoc1Out)
 // Called from:
 //      fn0C00_0100
-Eq_141 fn0C00_041E(struct Eq_2 * ds, real64 rLoc5, union Eq_141 & rLoc1Out)
+Eq_143 fn0C00_041E(struct Eq_2 * ds, union Eq_143 & rLoc1Out)
 {
-	Eq_141 rLoc1_45 = (real64) ds->r04D3;
-	Eq_141 rLoc1_46 = cos(rLoc1_45);
-	struct Eq_807 Eq_2::* si_17 = &Eq_2::t04DB;
-	Eq_141 rLoc2_47 = sin(rLoc1_45);
+	Eq_143 rLoc1_47 = (real64) ds->r04D3;
+	Eq_143 rLoc1_48 = cos(rLoc1_47);
+	struct Eq_816 Eq_2::* si_17 = &Eq_2::t04DB;
+	Eq_143 rLoc2_49 = sin(rLoc1_47);
 	word16 cx_13;
 	for (cx_13 = 0x03; cx_13 != 0x00; --cx_13)
 	{
-		real64 rLoc4_49 = (real64) (ds->*si_17).r0004;
-		real64 rLoc3_48 = (real64) (ds->*si_17).r0008;
-		rLoc5 = rLoc5 * rLoc2_47 - rLoc4_49 * rLoc1_46;
-		(ds->*si_17).r0004 = (real32) rLoc5;
-		(ds->*si_17).r0008 = (real32) (rLoc4_49 * rLoc1_46 + rLoc3_48 * rLoc2_47);
+		real64 rLoc4_51 = (real64) (ds->*si_17).r0004;
+		real64 rLoc3_50 = (real64) (ds->*si_17).r0008;
+		(ds->*si_17).r0004 = (real32) (rLoc4_51 * rLoc2_49 - rLoc3_50 * rLoc1_48);
+		(ds->*si_17).r0008 = (real32) (rLoc4_51 * rLoc1_48 + rLoc3_50 * rLoc2_49);
 		++si_17;
 	}
-	__ffree(rLoc2_47);
-	__ffree(rLoc1_46);
-	rLoc1Out = rLoc1_46;
-	return rLoc2_47;
+	__ffree(rLoc2_49);
+	__ffree(rLoc1_48);
+	rLoc1Out = rLoc1_48;
+	return rLoc2_49;
 }
 
-// 0C00:0452: void fn0C00_0452(Register (ptr16 Eq_78) gs)
+// 0C00:0452: void fn0C00_0452(Register (ptr16 Eq_80) gs)
 // Called from:
 //      fn0C00_0100
-void fn0C00_0452(struct Eq_78 * gs)
+void fn0C00_0452(struct Eq_80 * gs)
 {
 	gs->a0000[0] = 0x80;
-	byte Eq_78::* bx_17 = Eq_78::a0000;
-	Eq_853 cx_13 = 0x80;
+	byte Eq_80::* bx_17 = Eq_80::a0000;
+	Eq_862 cx_13 = 0x80;
 	do
 	{
 		do
 		{
 			do
 			{
-				bx_79 = SEQ(bh_78, bl_63);
-				byte Eq_78::* bx_32 = fn0C00_0483(cx_87, (byte) (cx_87 << 0x08), fn0C00_0483(SLICE(cx_87, byte, 8), cx_87, bx_17, gs), gs);
-				fn0C00_0483(cx_87, -cx_87, SEQ(SLICE(bx_32, byte, 8), (word16) cx_87 + ((word16) cx_87 + (byte) bx_32)), gs);
+				bx_77 = SEQ(bh_66, bl_63);
+				byte Eq_80::* bx_32 = fn0C00_0483(cx_85, (byte) (cx_85 << 0x08), fn0C00_0483(SLICE(cx_85, byte, 8), cx_85, bx_17, gs), gs);
+				fn0C00_0483(cx_85, -cx_85, SEQ(SLICE(bx_32, byte, 8), (word16) cx_85 + ((word16) cx_85 + (byte) bx_32)), gs);
 				byte bh_66 = SLICE(bx_32, byte, 8);
-				byte bh_78 = SLICE(bx_32, byte, 8);
-				cx_13 = cx_87;
-				byte ch_74 = SLICE(cx_87, byte, 8);
-				cu8 bl_63 = (word16) cx_87 + ((word16) cx_87 + (byte) bx_32);
-				cx_87 = cx_13;
-				bx_17 = bx_79;
+				cx_13 = cx_85;
+				byte ch_74 = SLICE(cx_85, byte, 8);
+				cu8 bl_63 = (word16) cx_85 + ((word16) cx_85 + (byte) bx_32);
+				cx_85 = cx_13;
+				bx_17 = bx_77;
 			} while (bl_63 >= 0x00);
-			cu8 bh_68 = (word16) cx_87 + ((word16) cx_87 + bh_66);
-			cx_13 = cx_87;
+			cu8 bh_68 = (word16) cx_85 + ((word16) cx_85 + bh_66);
 			bx_17 = SEQ(bh_68, bl_63);
-			cx_88 = cx_13;
+			cx_86 = cx_13;
 		} while (bh_68 >= 0x00);
-		cx_13 = SEQ(ch_74, cx_87 >> 0x01);
-		cx_89 = cx_13;
-	} while (cx_87 >> 0x01 != 0x00);
+		cx_13 = SEQ(ch_74, cx_85 >> 0x01);
+		cx_87 = cx_13;
+	} while (cx_85 >> 0x01 != 0x00);
 }
 
-// 0C00:0483: Register (memptr (ptr16 Eq_78) byte) fn0C00_0483(Register Eq_853 ch, Register Eq_853 cl, Register (memptr (ptr16 Eq_78) byte) bx, Register (ptr16 Eq_78) gs)
+// 0C00:0483: Register (memptr (ptr16 Eq_80) byte) fn0C00_0483(Register Eq_862 ch, Register Eq_862 cl, Register (memptr (ptr16 Eq_80) byte) bx, Register (ptr16 Eq_80) gs)
 // Called from:
 //      fn0C00_0452
-byte Eq_78::* fn0C00_0483(Eq_853 ch, Eq_853 cl, byte Eq_78::* bx, struct Eq_78 * gs)
+byte Eq_80::* fn0C00_0483(Eq_862 ch, Eq_862 cl, byte Eq_80::* bx, struct Eq_80 * gs)
 {
 	byte bh_9 = SLICE(bx, byte, 8);
 	byte bl_13 = (byte) bx;
 	byte bh_12 = (byte) ch.u1 + ((byte) ch.u1 + bh_9);
 	byte bl_16 = (byte) cl.u1 + ((byte) cl.u1 + bl_13);
-	uint16 dx_24 = (uint16) (uint8) (gs->*SEQ(bh_12, bl_16) + gs->*bx);
+	Eq_923 dx_24 = gs->*SEQ(bh_12, bl_16) + gs->*bx;
 	int16 ax_28 = (int16) __inb(0x40);
-	Eq_934 dx_34 = (dx_24 >> 0x01) + (SEQ(SLICE(ax_28, byte, 8), (byte) ax_28 << cl) >> 0x03);
+	Eq_939 dx_34 = (dx_24 >> 0x01) + (SEQ(SLICE(ax_28, byte, 8), (byte) ax_28 << cl) >> 0x03);
 	byte dh_40 = SLICE(dx_34, byte, 8);
 	byte dl_46 = (byte) dx_34;
 	if (dx_34 < 0x00)

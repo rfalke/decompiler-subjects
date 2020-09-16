@@ -8,10 +8,10 @@
 void fn0C00_0100(struct Eq_2 * ds)
 {
 	__syscall(0x10);
-	cui16 cx_256 = 0x00;
+	cui16 cx_260 = 0x00;
 	do
 	{
-		Eq_10 cl_9 = (byte) cx_263;
+		Eq_10 cl_9 = (byte) cx_267;
 		__outb(0x03C8, cl_9);
 		Eq_10 al_12 = cl_9;
 		if (cl_9 < 0x00)
@@ -20,71 +20,72 @@ void fn0C00_0100(struct Eq_2 * ds)
 		__outb(969, al_18);
 		__outb(969, al_18);
 		__outb(969, SLICE(cl_9 * al_18, byte, 8) + 0x13);
-		cx_256 = cx_263 - 0x01;
-		cx_263 = cx_256;
-	} while (cx_263 != 0x01);
+		cx_260 = cx_267 - 0x01;
+		cx_267 = cx_260;
+	} while (cx_267 != 0x01);
 	do
 	{
 		++ds->w0100;
 		__fninit();
-		word16 di_167 = 0x00;
-		int16 ax_171 = ~0x63;
+		word16 di_171 = 0x00;
+		int16 ax_175 = ~0x63;
 		do
 		{
-			int16 bx_168 = ~0x9F;
+			int16 bx_172 = ~0x9F;
 			do
 			{
-				ds->wA000 = ax_262;
-				real64 rLoc1_230 = (real64) ds->wA000;
-				ds->wA000 = bx_261;
-				real64 rLoc2_231 = (real64) ds->wA000;
-				real64 rLoc3_233 = (real64) ds->w0100 / (real64) ds->w0130;
-				real64 rLoc3_234 = cos(rLoc3_233);
-				real64 rLoc4_235 = sin(rLoc3_233);
-				real64 rLoc1_240 = rLoc1_230 * (((real64) ds->w0126 * rLoc3_234 + rLoc2_231) * rLoc2_231);
-				ds->wA000 = (int16) (rLoc3_234 * rLoc4_235 + rLoc2_231 * rLoc3_234);
-				int16 bx_105 = ds->wA000;
-				ds->wA000 = (int16) (rLoc1_240 * rLoc4_235 - rLoc2_231 * rLoc3_234);
-				int16 ax_114 = ds->wA000;
-				byte bl_259;
-				byte bl_260;
-				fn0C00_019F(0xA000 + (ax_114 - bx_105), fn0C00_019F(ax_114, cx_263 - 0x01, 969, bx_105 >> 0x02, 0xA000, ds, out bl_259), 969, bx_105, 0xA000, ds, out bl_260);
-				Eq_116 bx_140 = <invalid>;
-				0xA000->*di_167 = SLICE((byte) bx_140 * 181 + 969, byte, 8);
-				++di_167;
-				bx_168 = bx_261 + 0x01;
-				bx_261 = bx_168;
-			} while (bx_261 != 0x9F);
-			ax_171 = ax_262 + 0x01;
-			byte ah_176 = SLICE(ax_262 + 0x01, byte, 8);
-			ax_262 = ax_171;
-		} while ((byte) (ax_262 + 0x01) != 100);
-	} while (SEQ(ah_176, __inb(0x60)) != 0x01);
+				ds->wA000 = ax_266;
+				real64 rLoc1_234 = (real64) ds->wA000;
+				ds->wA000 = bx_265;
+				real64 rLoc2_235 = (real64) ds->wA000;
+				real64 rLoc3_237 = (real64) ds->w0100 / (real64) ds->w0130;
+				real64 rLoc3_238 = cos(rLoc3_237);
+				real64 rLoc4_239 = sin(rLoc3_237);
+				real64 rLoc1_244 = rLoc1_234 * (((real64) ds->w0126 * rLoc3_238 + rLoc2_235) * rLoc2_235);
+				ds->wA000 = (int16) (rLoc2_235 * rLoc4_239 + rLoc1_244 * rLoc3_238);
+				int16 bx_107 = ds->wA000;
+				ds->wA000 = (int16) (rLoc1_244 * rLoc4_239 - rLoc2_235 * rLoc3_238);
+				Eq_104 bx_125 = <invalid>;
+				int16 ax_116 = ds->wA000;
+				word16 dx_141 = SEQ((byte) bx_125, 0xC9);
+				byte bl_263;
+				byte bl_264;
+				fn0C00_019F(0xA000 + (ax_116 - bx_107), fn0C00_019F(ax_116, cx_267 - 0x01, 969, bx_107 >> 0x02, 0xA000, ds, out bl_263), dx_141, bx_107, 0xA000, ds, out bl_264);
+				Eq_104 bx_144 = <invalid>;
+				0xA000->*di_171 = SLICE(dx_141 + (byte) bx_144 * 181, byte, 8);
+				++di_171;
+				bx_172 = bx_265 + 0x01;
+				bx_265 = bx_172;
+			} while (bx_265 != 0x9F);
+			ax_175 = ax_266 + 0x01;
+			byte ah_180 = SLICE(ax_266 + 0x01, byte, 8);
+			ax_266 = ax_175;
+		} while ((byte) (ax_266 + 0x01) != 100);
+	} while (SEQ(ah_180, __inb(0x60)) != 0x01);
 	__syscall(0x10);
 }
 
-// 0C00:019F: Register int16 fn0C00_019F(Register int16 ax, Register int16 cx, Register word16 dx, Register int16 bx, Register Eq_56 si, Register (ptr16 Eq_2) ds, Register out Eq_116 blOut)
+// 0C00:019F: Register uint16 fn0C00_019F(Register int16 ax, Register uint16 cx, Register word16 dx, Register int16 bx, Register Eq_56 si, Register (ptr16 Eq_2) ds, Register out Eq_104 blOut)
 // Called from:
 //      fn0C00_0100
-int16 fn0C00_019F(int16 ax, int16 cx, word16 dx, int16 bx, Eq_56 si, struct Eq_2 * ds, union Eq_116 & blOut)
+uint16 fn0C00_019F(int16 ax, uint16 cx, word16 dx, int16 bx, Eq_56 si, struct Eq_2 * ds, union Eq_104 & blOut)
 {
-	word16 dx_35;
-	word16 ax_36;
-	word16 cx_37;
-	word16 bx_38;
+	byte ah_31 = SLICE(ax, byte, 8);
+	byte cl_34 = (byte) cx;
+	word16 dx_37;
+	word16 ax_38;
+	word16 cx_39;
 	0C00:01E1();
-	word16 dx_45;
-	word16 ax_46;
-	word16 cx_47;
-	word16 bx_48;
+	word16 dx_49;
+	word16 ax_50;
+	word16 bx_52;
 	0C00:01E1();
-	word16 dx_55;
-	word16 ax_56;
-	word16 cx_57;
-	word16 bx_58;
+	word16 dx_61;
+	word16 ax_62;
+	word16 cx_63;
 	0C00:01E1();
 	0C00:01E1();
 	blOut.u0 = <invalid>;
-	return ax;
+	return (uint16) (byte) ax;
 }
 

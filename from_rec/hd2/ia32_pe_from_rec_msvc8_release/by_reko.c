@@ -81,7 +81,7 @@ l00401100:
 		}
 	}
 	word32 edx_74 = g_dw402114;
-	word32 ecx_77;
+	word32 ecx_77 = 0x10 - esi_38;
 	do
 	{
 		struct Eq_51 * edi_84 = fp - 0x55 + 0x01;
@@ -300,7 +300,7 @@ uint32 fn00401760(struct Eq_641 * dwArg04)
 	struct Eq_647 * eax_16 = dwArg04 + dwArg04->dw003C / 64;
 	if (eax_16->dw0000 != 0x4550)
 		return 0x00;
-	return (uint32) (uint8) (eax_16->w0018 == 0x010B);
+	return (uint32) (int8) (eax_16->w0018 == 0x010B);
 }
 
 // 004017A0: Register (ptr32 Eq_665) fn004017A0(Stack (ptr32 Eq_666) dwArg04, Stack uint32 dwArg08)
@@ -383,7 +383,7 @@ void fn00401968()
 	else
 	{
 		GetSystemTimeAsFileTime(fp - 0x0C);
-		ui32 esi_47 = dwLoc08 & 0x00 ^ dwLoc0C & 0x00 ^ GetCurrentProcessId() ^ GetCurrentThreadId() ^ GetTickCount();
+		ui32 esi_47 = GetCurrentProcessId() ^ GetCurrentThreadId() ^ GetTickCount();
 		QueryPerformanceCounter(fp - 0x14);
 		ui32 esi_55 = esi_47 ^ (dwLoc10 ^ dwLoc14);
 		if (esi_55 == 0xBB40E64E)

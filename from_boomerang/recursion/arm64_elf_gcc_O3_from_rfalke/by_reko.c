@@ -250,7 +250,7 @@ void e(int32 w0)
 	if (w19_26 > 0x04)
 		return;
 	word32 x1_32_32_72 = SLICE(0x0B28, word32, 32);
-	word32 w0_63 = (word32) (0x0B28 + (int64) ((int8) ((word32) (&g_t15BC)[(uint64) ((uint32) w19_26)])));
+	word32 w0_63 = (word32) (0x0B28 + (int64) ((int8) ((word32) (&g_t15BC)[(uint64) w19_26])));
 	switch (w19_26)
 	{
 	case 0x00:
@@ -378,11 +378,11 @@ void d(word64 x1_32_32_w0)
 		return;
 	fn00000000000006E0();
 	fn00000000000006E0();
-	Eq_340 w19_30 = w0 - 0x01 >> 1;
+	Eq_339 w19_30 = w0 - 0x01 >> 1;
 	if (w19_30 > 0x06)
 		return;
 	word32 x1_32_32_83 = SLICE(4144, word32, 32);
-	word32 w0_74 = (word32) (4144 + (int64) ((int8) ((word32) (&g_t15CC)[(uint64) ((uint32) (w19_30 - 0x02))])));
+	word32 w0_74 = (word32) (4144 + (int64) ((int8) ((word32) (&g_t15CC)[(uint64) (w19_30 - 0x02)])));
 	switch (w19_30)
 	{
 	case 0x02:
@@ -445,11 +445,11 @@ void k(word64 x1_32_32_w0)
 		return;
 	fn00000000000006E0();
 	fn00000000000006E0();
-	Eq_416 w19_30 = w0 - 0x01 >> 1;
+	Eq_414 w19_30 = w0 - 0x01 >> 1;
 	if (w19_30 > 0x06)
 		return;
 	word32 x1_32_32_81 = SLICE(0x12A0, word32, 32);
-	word32 w0_74 = (word32) (0x12A0 + (int64) ((int8) ((word32) (&g_t15D4)[(uint64) ((uint32) (w19_30 - 0x02))])));
+	word32 w0_74 = (word32) (0x12A0 + (int64) ((int8) ((word32) (&g_t15D4)[(uint64) (w19_30 - 0x02)])));
 	switch (w19_30)
 	{
 	case 0x02:
@@ -477,7 +477,7 @@ l00000000000012D8:
 // 00000000000013B8: void l(Sequence word64 x1_32_32_w0)
 void l(word64 x1_32_32_w0)
 {
-	Eq_452 w0 = (word32) x1_32_32_w0;
+	Eq_449 w0 = (word32) x1_32_32_w0;
 	fn00000000000006E0();
 	if (w0 <= 0x01)
 		return;

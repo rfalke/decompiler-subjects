@@ -2,24 +2,24 @@
 fn0C00_0100: error: An internal error occurred while building the expressions of fn0C00_0100
     The given key 'l0C00_0108' was not present in the dictionary.
       at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00042] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Core.Lib.BlockDominatorGraph..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entry) [0x00000] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0009a] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00042] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.BlockDominatorGraph..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entry) [0x00000] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000bd] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 l0C00_0108: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0C00:010B: error: An error occurred while processing the statement di_7 = di_7 + 1<i16> - ax_5 - C_3.
     Not handling (memptr T_37 (struct (1 T_41 t0001))) and bool yet.
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <a48b1ad88cf94361b029fb81eb525e58>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <a48b1ad88cf94361b029fb81eb525e58>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <a48b1ad88cf94361b029fb81eb525e58>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
     The given key 'l0C00_0108' was not present in the dictionary.
       at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Structure.Region entryNode) [0x00042] in <8954d8b4113543778d7dfe7dbe356718>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x0008c] in <a48b1ad88cf94361b029fb81eb525e58>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <a48b1ad88cf94361b029fb81eb525e58>:0 
-  at Reko.Decompiler.StructureProgram () [0x00089] in <a48b1ad88cf94361b029fb81eb525e58>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Structure.Region entryNode) [0x00042] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Structure.StructureAnalysis.Execute () [0x0007f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

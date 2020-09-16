@@ -102,7 +102,7 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x0C);
-	printf("Pi is about %.5f\n", (real64) 0x40490FDA);
+	printf("Pi is about %.5f\n", (real64) 3.141593F);
 }
 
 // 08048360: void __libc_csu_init(Register word32 edx)

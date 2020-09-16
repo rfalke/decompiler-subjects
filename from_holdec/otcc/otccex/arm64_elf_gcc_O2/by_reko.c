@@ -123,28 +123,27 @@ void fn0000000000000910()
 // 0000000000000920: void main(Register up32 w0, Register word32 w1, Register word64 x20, Register word64 x22)
 void main(up32 w0, word32 w1, word64 x20, word64 x22)
 {
-	word32 x20_32_32_162 = SLICE(x20, word32, 32);
-	word32 x22_32_32_168 = SLICE(x22, word32, 32);
-	union Eq_58 * x19_29 = (int64) (int32) w1;
-	word32 w19_31 = (word32) x19_29;
+	word32 x20_32_32_160 = SLICE(x20, word32, 32);
+	word32 x22_32_32_166 = SLICE(x22, word32, 32);
+	union Eq_56 * x19_105 = (int64) w1;
+	word32 w19_31 = (word32) x19_105;
 	if (w0 > 0x03)
 	{
 		fn0000000000000900();
 		fn00000000000008D0();
 		return;
 	}
-	int32 w0_35 = (int64) (int32) (w19_31 + 0x04) + 0x00;
+	int32 w0_35 = null[(int64) (w19_31 + 0x04) / 4];
 	fn0000000000000880();
-	union Eq_58 * x23_38 = g_ptr11FA0;
-	*x23_38 = (union Eq_58 *) 0x0A;
-	union Eq_58 * x19_105 = x19_29;
-	word64 x20_106 = SEQ(x20_32_32_162, w0);
+	union Eq_56 * x23_38 = g_ptr11FA0;
+	*x23_38 = (union Eq_56 *) 0x0A;
+	word64 x20_106 = SEQ(x20_32_32_160, w0);
 	if (w0 == 0x03)
 	{
-		x19_105 = (int64) (int32) (w19_31 + 0x08);
-		Eq_58 w0_46 = *x19_105;
+		x19_105 = (int64) (w19_31 + 0x08);
+		Eq_56 w0_46 = *x19_105;
 		fn0000000000000880();
-		*x23_38 = (union Eq_58 *) w0_46;
+		*x23_38 = (union Eq_56 *) w0_46;
 		if (w0_46 > 0x24)
 		{
 			fn00000000000008F0();
@@ -163,10 +162,10 @@ void main(up32 w0, word32 w1, word64 x20, word64 x22)
 			w1_101 -= 0x02;
 			w2_100 += fib(w1_101 - 0x01, out x19_105, out x20_106);
 		} while (w1_101 > 0x02);
-		word32 w3_125;
-		word64 x4_131;
-		word64 x31_132;
-		print_num(w2_100 + 0x01, *g_ptr11FA0, out w3_125, out x4_131, out x29_129, out x30_130, out x31_132);
+		word64 x31_355;
+		word32 w3_353;
+		word64 x4_354;
+		print_num(w2_100 + 0x01, *g_ptr11FA0, out w3_353, out x4_354, out x29_129, out x30_130, out x31_355);
 		fn0000000000000910();
 		fn0000000000000900();
 		if (w0_35 > 0x0C)
@@ -179,26 +178,26 @@ l0000000000000A1C:
 	}
 	else
 	{
-		word32 w3_352;
-		word64 x4_353;
-		word64 x31_354;
-		print_num(0x01, *g_ptr11FA0, out w3_352, out x4_353, out x29_129, out x30_130, out x31_354);
+		word32 w3_350;
+		word64 x4_351;
+		word64 x31_352;
+		print_num(0x01, *g_ptr11FA0, out w3_350, out x4_351, out x29_129, out x30_130, out x31_352);
 		fn0000000000000910();
 		fn0000000000000900();
 	}
-	<anonymous> * x1_153 = (int64) (int32) (word32) 0x0C08;
-	word64 x0_179;
-	struct Eq_170 * x21_180;
-	word64 x2_184;
-	word64 x3_185;
+	<anonymous> * x1_153 = (int64) (word32) 0x0C08;
+	word64 x0_177;
+	struct Eq_165 * x21_178;
+	word64 x2_182;
+	word64 x3_183;
 	x1_153();
-	word32 w3_198;
-	word64 x4_204;
-	word64 x31_205;
-	word64 x29_355;
-	word64 x30_356;
-	word64 x2_295 = SEQ(SLICE(x2_184, word32, 32), print_num((word32) x0_179, *x21_180->ptr0FA0, out w3_198, out x4_204, out x29_355, out x30_356, out x31_205));
-	word64 x3_304 = SEQ(SLICE(x3_185, word32, 32), w3_198);
+	word32 w3_196;
+	word64 x4_202;
+	word64 x31_203;
+	word64 x29_356;
+	word64 x30_357;
+	word64 x2_293 = SEQ(SLICE(x2_182, word32, 32), print_num((word32) x0_177, *x21_178->ptr0FA0, out w3_196, out x4_202, out x29_356, out x30_357, out x31_203));
+	word64 x3_302 = SEQ(SLICE(x3_183, word32, 32), w3_196);
 	goto l0000000000000A1C;
 }
 
@@ -283,17 +282,17 @@ void fact(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	int32 w1_11;
+	int32 w1_11 = 0x02;
 	do
 		++w1_11;
 	while (w1_11 != w0 + 0x01);
 }
 
-// 0000000000000C38: Register int32 fib(Register int32 w0, Register out (ptr64 Eq_58) x19Out, Register out (ptr64 Eq_58) x20Out)
+// 0000000000000C38: Register int32 fib(Register int32 w0, Register out (ptr64 Eq_56) x19Out, Register out (ptr64 Eq_56) x20Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, union Eq_58 & x19Out, union Eq_58 & x20Out)
+int32 fib(int32 w0, union Eq_56 & x19Out, union Eq_56 & x20Out)
 {
 	if (w0 <= 0x02)
 	{
@@ -317,39 +316,39 @@ int32 fib(int32 w0, union Eq_58 & x19Out, union Eq_58 & x20Out)
 	}
 }
 
-// 0000000000000C88: Register word32 print_num(Register int32 w0, Register Eq_58 w1, Register out Eq_101 w3Out, Register out ptr64 x4Out, Register out ptr64 x29Out, Register out ptr64 x30Out, Register out Eq_105 x31Out)
+// 0000000000000C88: Register word32 print_num(Register int32 w0, Register Eq_56 w1, Register out Eq_97 w3Out, Register out ptr64 x4Out, Register out ptr64 x29Out, Register out ptr64 x30Out, Register out Eq_101 x31Out)
 // Called from:
 //      main
-word32 print_num(int32 w0, Eq_58 w1, union Eq_101 & w3Out, ptr64 & x4Out, ptr64 & x29Out, ptr64 & x30Out, union Eq_105 & x31Out)
+word32 print_num(int32 w0, Eq_56 w1, union Eq_97 & w3Out, ptr64 & x4Out, ptr64 & x29Out, ptr64 & x30Out, union Eq_101 & x31Out)
 {
 	fn0000000000000890();
 	int32 w20_17 = w0;
-	struct Eq_322 * x0_149 = (struct Eq_322 *) 0x0101;
+	struct Eq_317 * x0_147 = (struct Eq_317 *) 0x0101;
 	while (true)
 	{
-		word32 w0_36 = (word32) x0_149;
-		int64 x19_37 = (int64) (int32) w0_36;
+		word32 w0_36 = (word32) x0_147;
+		int64 x19_37 = (int64) w0_36;
 		int32 w2_35 = w20_17 / w1;
-		Eq_101 w3_41 = w20_17 - w2_35 * w1;
+		Eq_97 w3_41 = w20_17 - w2_35 * w1;
 		word32 w2_47 = w3_41 < 0x0A ? (word32) w3_41.u0 + 48 : (word32) w3_41.u0 + 87;
-		x0_149->bFFFFFFFF = (byte) w2_47;
-		int32 x0_32_32_38 = SLICE(x0_149, word32, 32);
+		x0_147->bFFFFFFFF = (byte) w2_47;
+		int32 x0_32_32_38 = SLICE(x0_147, word32, 32);
 		word32 w19_52 = (word32) x19_37;
-		ptr64 x4_40 = x0_149 + 1;
+		ptr64 x4_40 = x0_147 + 1;
 		w20_17 = w2_35;
 		if (w2_35 == 0x00)
 			break;
-		++x0_149;
+		++x0_147;
 	}
 	if (w19_52 != 0x0100)
 	{
-		int64 x19_60 = x19_37 - 0x01;
-		int64 x20_62 = x19_37 - 0x02 - SEQ(x0_32_32_38, ~0x0100 + w0_36);
+		int64 x19_58 = x19_37 - 0x01;
+		int64 x20_60 = x19_37 - 0x02 - SEQ(x0_32_32_38, ~0x0100 + w0_36);
 		do
 		{
 			fn0000000000000910();
-			x19_60 += -1;
-			x31 = x19_60 - x20_62;
+			x19_58 += -1;
+			x31 = x19_58 - x20_60;
 		} while (x31 != 0x00);
 	}
 	fn00000000000008E0();

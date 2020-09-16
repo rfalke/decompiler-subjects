@@ -374,17 +374,17 @@
 08049E34: warning: Unable to resolve imported reference tcflow.
 08049DE4: warning: Unable to resolve imported reference fmod.
 08049DC4: warning: Unable to resolve imported reference ldexp.
-error: An error occurred during decompilation. System.NotImplementedException: Offsets not matching? SP(-3)
-  at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage (Reko.Core.FpuStackStorage fpu) [0x00099] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.FpuStackStorage.Accept[T] (Reko.Core.StorageVisitor`1[T] visitor) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.CallApplicationBuilder.With (System.Collections.Generic.Dictionary`2[TKey,TValue] map, Reko.Core.Storage stg) [0x00007] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.CallApplicationBuilder.WithUses (Reko.Core.Storage stg) [0x00007] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.CallApplicationBuilder.Bind (Reko.Core.Expressions.Identifier id) [0x00007] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.ApplicationBuilder.BindArguments (Reko.Core.Expressions.Identifier[] parameters, System.Boolean isVariadic, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00039] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.ApplicationBuilder.CreateInstruction (Reko.Core.Types.FunctionType sigCallee, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00069] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.CallRewriter.RewriteCall (Reko.Analysis.SsaState ssaCaller, Reko.Core.Statement stm, Reko.Core.Code.CallInstruction call) [0x0004d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.CallRewriter.RewriteCalls (Reko.Analysis.SsaState ssaCaller) [0x00031] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.CallRewriter.Rewrite (Reko.Core.IPlatform platform, System.Collections.Generic.List`1[T] ssts, Reko.Analysis.ProgramDataFlow summaries, Reko.Core.Services.DecompilerEventListener eventListener) [0x00092] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00103] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <b195e9013e6f4bfe9c4a55d515fad233>:0 
+error: An error occurred during decompilation. System.NotImplementedException: Offsets not matching? SP(0)
+  at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage (Reko.Core.FpuStackStorage fpu) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.FpuStackStorage.Accept[T] (Reko.Core.StorageVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.CallApplicationBuilder.With (System.Collections.Generic.Dictionary`2[TKey,TValue] map, Reko.Core.Storage stg) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.CallApplicationBuilder.WithUses (Reko.Core.Storage stg) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.CallApplicationBuilder.Bind (Reko.Core.Expressions.Identifier id) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.ApplicationBuilder.BindArguments (Reko.Core.Expressions.Identifier[] parameters, System.Boolean isVariadic, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00039] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.ApplicationBuilder.CreateInstruction (Reko.Core.Types.FunctionType sigCallee, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00069] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.CallRewriter.RewriteCall (Reko.Analysis.SsaState ssaCaller, Reko.Core.Statement stm, Reko.Core.Code.CallInstruction call) [0x0004d] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.CallRewriter.RewriteCalls (Reko.Analysis.SsaState ssaCaller) [0x00031] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.CallRewriter.Rewrite (Reko.Core.IPlatform platform, System.Collections.Generic.List`1[T] ssts, Reko.Analysis.ProgramDataFlow summaries, Reko.Core.Services.DecompilerEventListener eventListener) [0x00092] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00103] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 

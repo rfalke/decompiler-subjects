@@ -10,15 +10,16 @@ void fn0C00_0100(union Eq_9 * ds_bx, Eq_3 di)
 	__syscall(0x10);
 	Eq_9 es_ax_8 = *ds_bx;
 	word16 ax_55 = (word16) es_ax_8;
-	struct Eq_15 * es_66 = SLICE(es_ax_8, selector, 16);
+	struct Eq_15 * es_68 = SLICE(es_ax_8, selector, 16);
 	while (true)
 	{
 		Eq_64 dx_ax_15 = SEQ(SLICE((int32) ax_55, word16, 16), di);
-		word16 cx_13;
 		uint16 dx_17 = (uint16) (dx_ax_15 % 0x0140);
+		word16 cx_13;
 		uint16 ax_18 = (uint16) (dx_ax_15 /u 0x0140);
 		int16 bx_22 = 0x00;
 		int16 si_23 = 0x00;
+		word16 dx_67 = SEQ(SLICE(dx_17, byte, 8) - 0x01, (byte) dx_17);
 		for (cx_13 = 0x0140; cx_13 != 0x00; --cx_13)
 		{
 			int16 si_29 = si_23 *s bx_22;
@@ -31,10 +32,10 @@ void fn0C00_0100(union Eq_9 * ds_bx, Eq_3 di)
 			ci16 bx_37 = bx_31 + bp_34;
 			if (OVERFLOW(bx_37))
 				break;
-			bx_22 = (bx_37 - bp_34 - bp_34 >> 0x06) + dx_17;
+			bx_22 = (bx_37 - bp_34 - bp_34 >> 0x06) + dx_67;
 			si_23 = (si_29 * 0x02 >> 0x06) + (ax_18 - 100);
 		}
-		es_66->*di = (byte) cx_13;
+		es_68->*di = (byte) cx_13;
 		ax_55 = cx_13;
 		di = (word16) di + 1;
 	}

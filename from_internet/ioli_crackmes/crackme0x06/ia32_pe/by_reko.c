@@ -180,11 +180,11 @@ void fn004015B0()
 	if (eax_23 == ~0x00)
 	{
 		eax_23 = 0x00;
-		bool Z_28 = SLICE(cond(g_dw402FC4), bool, 2);
-		while (Z_28)
+		bool v14_82 = g_dw402FC4 != 0x00;
+		while (v14_82)
 		{
 			++eax_23;
-			Z_28 = SLICE(cond((&g_dw402FC4)[eax_23 * 0x04]), bool, 2);
+			v14_82 = (&g_dw402FC4)[eax_23 * 0x04] != 0x00;
 		}
 	}
 	ui32 ebx_38 = eax_23;

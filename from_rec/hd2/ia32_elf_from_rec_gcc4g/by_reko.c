@@ -158,7 +158,7 @@ void dumpline(struct Eq_74 * gs, Eq_75 dwArg04, Eq_76 dwArg0C)
 	while (true)
 	{
 		dwLoc64_182 = (Eq_76) ((word32) dwLoc64_182 + 1);
-		if (dwLoc64_182 <= 0x0F == 0x00)
+		if ((int8) (dwLoc64_182 <= 0x0F) == 0x00)
 			break;
 		strcat(fp - 0x60, "   ");
 	}
@@ -169,8 +169,8 @@ void dumpline(struct Eq_74 * gs, Eq_75 dwArg04, Eq_76 dwArg0C)
 	{
 		byte al_113;
 		word32 edx_95 = eax_74 + 0x03 + dwLoc64_200;
-		if (SLICE((word32) Mem89[dwLoc64_200 + dwArg04:byte], byte, 0) >u 0x1F && SLICE((word32) Mem89[dwLoc64_200 + dwArg04:byte], byte, 0) <=u 0x7E)
-			al_113 = SLICE((word32) Mem89[dwLoc64_200 + dwArg04:byte], byte, 0);
+		if (SLICE(CONVERT(Mem89[dwLoc64_200 + dwArg04:byte], byte, word32), byte, 0) >u 0x1F && SLICE(CONVERT(Mem89[dwLoc64_200 + dwArg04:byte], byte, word32), byte, 0) <=u 0x7E)
+			al_113 = SLICE(CONVERT(Mem89[dwLoc64_200 + dwArg04:byte], byte, word32), byte, 0);
 		else
 			al_113 = 0x2E;
 		Mem120[fp - 0x60 + edx_95:byte] = al_113;
@@ -245,7 +245,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 edi_29 = 0x0804A0DC - 0x0804A0DC;
 	if (edi_29 >> 0x02 != 0x00)
 	{
-		Eq_309 esi_34 = 0x00;
+		Eq_310 esi_34 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0DC)[esi_34]();
@@ -259,7 +259,7 @@ void __i686.get_pc_thunk.bx()
 {
 }
 
-// 08048990: Register int32 stat(Stack (ptr32 char) dwArg04, Stack (ptr32 Eq_216) dwArg08)
+// 08048990: Register int32 stat(Stack (ptr32 char) dwArg04, Stack (ptr32 Eq_217) dwArg08)
 // Called from:
 //      hexdump
 int32 stat(char * dwArg04, struct stat * dwArg08)

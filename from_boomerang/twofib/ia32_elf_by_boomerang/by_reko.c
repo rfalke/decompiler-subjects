@@ -132,7 +132,7 @@ void main()
 {
 	__align(fp - 0x1C);
 	printf("Enter number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x08);
 	twofib(fp - 0x14, dwLoc08);
 	printf("Fibonacci of %d is %d\n", dwLoc08, dwLoc14);
 }
@@ -143,7 +143,7 @@ void __libc_csu_init(word32 edx)
 	_init(edx);
 	if (0x08049734 - 0x08049734 >> 0x02 > 0x00)
 	{
-		Eq_140 esi_37 = 0x00;
+		Eq_142 esi_37 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x08049734)[esi_37]();

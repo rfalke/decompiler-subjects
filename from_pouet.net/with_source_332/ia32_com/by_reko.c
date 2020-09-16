@@ -9,7 +9,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	struct Eq_8 * es_12;
-	byte al_18 = (byte) (uint16) (uint8) fn0C00_014E(ds, out es_12);
+	byte al_18 = (byte) (uint16) fn0C00_014E(ds, out es_12);
 	do
 	{
 		fn0C00_01A7(al_18, ds);
@@ -55,7 +55,7 @@ byte fn0C00_014E(struct Eq_2 * ds, struct Eq_8 & esOut)
 		0xA000->*di_26 = 0x12;
 		++di_26;
 	}
-	uint16 ax_18 = (uint16) (uint8) fn0C00_0167(0xA000, ds);
+	uint16 ax_18 = (uint16) fn0C00_0167(0xA000, ds);
 	esOut = 0xA000;
 	return (byte) ax_18;
 }
@@ -69,14 +69,14 @@ byte fn0C00_0167(struct Eq_8 * es, struct Eq_2 * ds)
 	ds->t012E = (fn0C00_0140(ds) & 0x7F) + 0x24;
 	ds->w012C = 0xA0;
 	ds->w0138 = 0x1E;
-	Eq_127 bx_17 = ds->t013A;
+	Eq_125 bx_17 = ds->t013A;
 	if (bx_17 >= 0xA0)
 	{
 		ds->t013A.u0 = 0xA0;
 		bx_17.u0 = 0x00;
 	}
 	es->*bx_17 = 0x0F;
-	Eq_136 bx_27 = ds->t013C;
+	Eq_134 bx_27 = ds->t013C;
 	if (bx_27 <= 0xA0)
 	{
 		ds->t013C.u0 = 0xA0;
@@ -104,10 +104,10 @@ void fn0C00_01A7(byte al, struct Eq_2 * ds)
 //      fn0C00_0100
 void fn0C00_01C2(struct Eq_8 * es, struct Eq_2 * ds)
 {
-	Eq_118 bx_13 = ds->t0128;
+	Eq_116 bx_13 = ds->t0128;
 	if (ds->w012C >= 0xE6)
 	{
-		Eq_118 ax_10 = ds->t012E;
+		Eq_116 ax_10 = ds->t012E;
 		bx_13 = ds->t0128;
 		if (ax_10 >= (word16) bx_13.u0 + 5)
 		{
@@ -129,7 +129,7 @@ void fn0C00_01C2(struct Eq_8 * es, struct Eq_2 * ds)
 	word16 bx_27 = ds->w012A;
 	if (bx_27 == 0x00)
 		fn0C00_0140(ds);
-	Eq_118 bx_39 = (word16) ds->t0126 + bx_27;
+	Eq_116 bx_39 = (word16) ds->t0126 + bx_27;
 	if (bx_39 < 0x02)
 		bx_39.u0 = 0x02;
 	if (bx_39 > 0xBD)
@@ -137,7 +137,7 @@ void fn0C00_01C2(struct Eq_8 * es, struct Eq_2 * ds)
 	ds->t0126 = bx_39;
 	if (ds->w0138 == 0x00)
 	{
-		Eq_118 ax_54 = (word16) ds->t012E + ds->w0132;
+		Eq_116 ax_54 = (word16) ds->t012E + ds->w0132;
 		ds->t012E = ax_54;
 		if (ax_54 == 0x02)
 			ds->w0132 = 0x01;
@@ -147,7 +147,7 @@ void fn0C00_01C2(struct Eq_8 * es, struct Eq_2 * ds)
 		ds->w012C = cx_68;
 		if (cx_68 == 0x02 && (ax_54 >= bx_39 && ax_54 < (word16) bx_39.u0 + 0x0A))
 			ds->w0130 = 0x01;
-		Eq_118 bx_83 = ds->t0128;
+		Eq_116 bx_83 = ds->t0128;
 		if (cx_68 == 0x013D && (ax_54 >= bx_83 && ax_54 < (word16) bx_83.u0 + 0x0A))
 			ds->w0130 = ~0x00;
 		if (cx_68 != 0x00)
@@ -174,13 +174,13 @@ void fn0C00_01C2(struct Eq_8 * es, struct Eq_2 * ds)
 void fn0C00_02A7(struct Eq_8 * es, struct Eq_2 * ds)
 {
 	es->*((char *) ((word16) (ds->t0136 * 0x0140)) + ds->w0134) = 0x12;
-	Eq_118 ax_14 = ds->t012E;
+	Eq_116 ax_14 = ds->t012E;
 	ds->t0136 = ax_14;
 	es->*((char *) ((word16) (ax_14 * 0x0140)) + ds->w012C) = 0x0E;
 	ds->w0134 = ds->w012C;
-	struct Eq_329 Eq_8::* ax_28 = (word16) ((ds->t0126 - 0x01) * 0x0140);
+	struct Eq_327 Eq_8::* ax_28 = (word16) ((ds->t0126 - 0x01) * 0x0140);
 	(es->*ax_28).b0001 = 0x12;
-	struct Eq_341 Eq_8::* bx_31 = &ax_28->b0001;
+	struct Eq_339 Eq_8::* bx_31 = &ax_28->b0001;
 	word16 cx_33;
 	for (cx_33 = 0x0A; cx_33 != 0x00; --cx_33)
 	{
@@ -188,9 +188,9 @@ void fn0C00_02A7(struct Eq_8 * es, struct Eq_2 * ds)
 		(es->*bx_31).b0000 = 0x0A;
 	}
 	bx_31[1] = 0x12;
-	struct Eq_359 Eq_8::* ax_48 = (word16) ((ds->t0128 - 0x01) * 0x0140);
+	struct Eq_357 Eq_8::* ax_48 = (word16) ((ds->t0128 - 0x01) * 0x0140);
 	(es->*ax_48).b013E = 0x12;
-	struct Eq_371 Eq_8::* bx_51 = &ax_48->b013E;
+	struct Eq_369 Eq_8::* bx_51 = &ax_48->b013E;
 	word16 cx_53;
 	for (cx_53 = 0x0A; cx_53 != 0x00; --cx_53)
 	{

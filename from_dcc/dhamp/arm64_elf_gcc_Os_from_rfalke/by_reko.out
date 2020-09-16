@@ -1,5 +1,4 @@
 === Using options:
-0000000000000BD8: warning: AArch64 instruction fcmpe	d2,d4 is not supported yet.
 000008D8: warning: Expected sizes of arrays to have been determined by now
 00000EC0: warning: Expected sizes of arrays to have been determined by now
 00011DA0: warning: Expected sizes of arrays to have been determined by now

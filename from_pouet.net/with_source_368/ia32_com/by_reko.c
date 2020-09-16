@@ -7,14 +7,15 @@
 // 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds)
 void fn0C00_0100(struct Eq_2 * ds)
 {
-	word16 cx_11;
-	word16 Eq_2::* si_12 = Eq_2::a0100;
-	word16 Eq_12::* di_13 = Eq_12::a0100;
-	for (cx_11 = 0x0803; cx_11 != 0x00; --cx_11)
+	struct Eq_3 * ax_10 = SEQ(SLICE(cs, byte, 8) + 0x10, (byte) cs);
+	word16 cx_13;
+	word16 Eq_2::* si_14 = Eq_2::a0100;
+	word16 Eq_3::* di_15 = Eq_3::a0100;
+	for (cx_13 = 0x0803; cx_13 != 0x00; --cx_13)
 	{
-		cs->*di_13 = ds->*si_12;
-		++si_12;
-		++di_13;
+		ax_10->*di_15 = ds->*si_14;
+		++si_14;
+		++di_15;
 	}
 }
 

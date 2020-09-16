@@ -9,8 +9,8 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	byte al_18 = 0x13;
-	Eq_10 wLoc02_229 = 0xA0;
-	Eq_12 wLoc04_230 = 100;
+	Eq_10 wLoc02_227 = 0xA0;
+	Eq_12 wLoc04_228 = 100;
 	do
 	{
 		ds->w01B9 = 0x00;
@@ -25,15 +25,13 @@ void fn0C00_0100(struct Eq_2 * ds)
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		fn0C00_01C1(wLoc04_230, 0x0300, wLoc02_229, 0xA000, ds);
+		fn0C00_01C1(wLoc04_228, 0x0300, wLoc02_227, 0xA000, ds);
 		Eq_12 bx_75 = ds->t01B7;
-		byte al_77 = (byte) wLoc04_230;
-		byte ah_79 = SLICE(wLoc04_230, byte, 8);
+		byte al_77 = (byte) wLoc04_228;
+		byte ah_79 = SLICE(wLoc04_228, byte, 8);
 		byte bl_91 = (byte) bx_75;
-		bl_91 = (byte) bx_75;
-		byte bh_102 = SLICE(bx_75, byte, 8);
-		bh_102 = SLICE(bx_75, byte, 8);
-		if (wLoc02_229 >= 0xE6)
+		byte bh_101 = SLICE(bx_75, byte, 8);
+		if (wLoc02_227 >= 0xE6)
 		{
 			Eq_12 ax_80 = SEQ(ah_79, al_77 - 0x05);
 			if (ax_80 != bx_75)
@@ -41,36 +39,36 @@ void fn0C00_0100(struct Eq_2 * ds)
 				if (ax_80 <= bx_75)
 				{
 					bl_91 = (byte) (bx_75 - 0x01);
-					bh_102 = SLICE(bx_75 - 0x01, byte, 8);
+					bh_101 = SLICE(bx_75 - 0x01, byte, 8);
 				}
 				else
 				{
 					bl_91 = (byte) ((word16) bx_75.u0 + 1);
-					bh_102 = SLICE((word16) bx_75.u0 + 1, byte, 8);
+					bh_101 = SLICE((word16) bx_75.u0 + 1, byte, 8);
 				}
 			}
 		}
-		Eq_12 bx_108 = SEQ(bh_102, fn0C00_01E5(bl_91));
-		ds->t01B7 = bx_108;
-		Eq_12 ax_115 = (word16) wLoc04_230 + ds->w01BD;
-		byte al_116 = (byte) ax_115;
-		if (al_116 == 0x01)
+		Eq_12 bx_106 = SEQ(bh_101, fn0C00_01E5(bl_91));
+		ds->t01B7 = bx_106;
+		Eq_12 ax_113 = (word16) wLoc04_228 + ds->w01BD;
+		byte al_114 = (byte) ax_113;
+		if (al_114 == 0x01)
 			ds->w01BD = -ds->w01BD;
-		if (al_116 == 0xC6)
+		if (al_114 == 0xC6)
 			ds->w01BD = -ds->w01BD;
-		Eq_107 cx_148;
-		Eq_12 ax_147 = fn0C00_01F4(ax_115, (word16) wLoc02_229.u0 + ds->w01BB, 0x013F, bx_108, ds, out cx_148);
-		word16 bx_155 = (word16) ds->t01B5 + ds->w01B9;
-		Eq_12 bx_164 = SEQ(SLICE(bx_155, byte, 8), fn0C00_01E5((byte) bx_155));
-		ds->t01B5 = bx_164;
-		Eq_10 cx_170;
-		Eq_12 ax_169 = fn0C00_01F4(ax_147, cx_148, 0x00, bx_164, ds, out cx_170);
-		fn0C00_01C1(ax_169, 0x0F, cx_170, 0xA000, ds);
-		fn0C00_01D1(ds->t01B7, SEQ(SLICE((uint16) (uint8) fn0C00_01D1(ds->t01B5, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
-		wLoc02_229 = cx_170;
-		wLoc04_230 = ax_169;
-		byte ah_225;
-	} while (bios_kbd_check_keystroke(out al_18, out ah_225));
+		Eq_105 cx_146;
+		Eq_12 ax_145 = fn0C00_01F4(ax_113, (word16) wLoc02_227.u0 + ds->w01BB, 0x013F, bx_106, ds, out cx_146);
+		word16 bx_153 = (word16) ds->t01B5 + ds->w01B9;
+		Eq_12 bx_162 = SEQ(SLICE(bx_153, byte, 8), fn0C00_01E5((byte) bx_153));
+		ds->t01B5 = bx_162;
+		Eq_10 cx_168;
+		Eq_12 ax_167 = fn0C00_01F4(ax_145, cx_146, 0x00, bx_162, ds, out cx_168);
+		fn0C00_01C1(ax_167, 0x0F, cx_168, 0xA000, ds);
+		fn0C00_01D1(ds->t01B7, SEQ(SLICE((uint16) fn0C00_01D1(ds->t01B5, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
+		wLoc02_227 = cx_168;
+		wLoc04_228 = ax_167;
+		byte ah_223;
+	} while (bios_kbd_check_keystroke(out al_18, out ah_223));
 	msdos_terminate_program20();
 }
 
@@ -115,15 +113,13 @@ byte fn0C00_01E5(byte bl)
 	return bl;
 }
 
-// 0C00:01F4: Register Eq_12 fn0C00_01F4(Register Eq_12 ax, Register Eq_107 cx, Register Eq_107 dx, Register Eq_12 bx, Register (ptr16 Eq_2) ds, Register out Eq_107 cxOut)
+// 0C00:01F4: Register Eq_12 fn0C00_01F4(Register Eq_12 ax, Register Eq_105 cx, Register Eq_105 dx, Register Eq_12 bx, Register (ptr16 Eq_2) ds, Register out Eq_105 cxOut)
 // Called from:
 //      fn0C00_0100
-Eq_12 fn0C00_01F4(Eq_12 ax, Eq_107 cx, Eq_107 dx, Eq_12 bx, struct Eq_2 * ds, union Eq_107 & cxOut)
+Eq_12 fn0C00_01F4(Eq_12 ax, Eq_105 cx, Eq_105 dx, Eq_12 bx, struct Eq_2 * ds, union Eq_105 & cxOut)
 {
-	byte al_18 = (byte) ax;
-	al_18 = (byte) ax;
+	byte al_19 = (byte) ax;
 	byte ah_22 = SLICE(ax, byte, 8);
-	ah_22 = SLICE(ax, byte, 8);
 	byte bl_12 = (byte) bx;
 	byte bh_14 = SLICE(bx, byte, 8);
 	if (cx == dx)
@@ -134,7 +130,7 @@ Eq_12 fn0C00_01F4(Eq_12 ax, Eq_107 cx, Eq_107 dx, Eq_12 bx, struct Eq_2 * ds, un
 			cxOut = cx;
 			return ax;
 		}
-		ax = (SEQ(ah_22, al_18 + 0x61) & 0x7F) + 0x24;
+		ax = (SEQ(ah_22, al_19 + 0x61) & 0x7F) + 0x24;
 		cx.u0 = 0xA0;
 	}
 	cxOut = cx;

@@ -7,25 +7,25 @@
 // 0C00:0100: void fn0C00_0100(Register word16 cx, Register cui16 bp, Register (ptr16 Eq_4) ds)
 void fn0C00_0100(word16 cx, cui16 bp, struct Eq_4 * ds)
 {
-	int8 Top_171 = 0;
+	int8 Top_177 = 0;
 	__syscall(0x10);
-	word16 cx_216 = cx + 0x01;
+	word16 cx_222 = cx + 0x01;
 	do
 	{
-		uint8 cl_8 = (byte) cx_220;
+		uint8 cl_8 = (byte) cx_226;
 		__outb(0x03C8, cl_8);
 		__outb(969, cl_8 >> 0x02);
 		__outb(969, (cl_8 >> 0x02) + 0x02);
 		__outb(969, (cl_8 >> 0x02) + 0x06);
-		cx_216 = cx_220 - 0x01;
-		cx_220 = cx_216;
-	} while (cx_220 != 0x01);
+		cx_222 = cx_226 - 0x01;
+		cx_226 = cx_222;
+	} while (cx_226 != 0x01);
 	do
 	{
-		int8 Top_34 = Top_171 - 1;
+		int8 Top_34 = Top_177 - 1;
 		Top_34->r0000 = (real64) 0040:006C;
-		Top_34->r0000 *= ds->r01DA;
-		Top_34->rFFFFFFFF = Top_34->rFFFFFFFF;
+		Top_34->r0000 *= (real64) ds->r01DA;
+		Top_34->rFFFFFFFF = Top_34->r0000;
 		Top_34->rFFFFFFFF = cos(Top_34->rFFFFFFFF);
 		Top_34->rFFFFFFFF /= (real64) ds->w01E2;
 		ds->r01EC = (real32) Top_34->rFFFFFFFF;
@@ -33,62 +33,62 @@ void fn0C00_0100(word16 cx, cui16 bp, struct Eq_4 * ds)
 		Top_34->r0000 /= (real64) ds->w01E2;
 		ds->r01E8 = (real32) Top_34->r0000;
 		Top_34->r0000 = (real64) ds->r01DE;
-		byte Eq_67::* di_158 = &Eq_67::b0000;
-		int16 cx_175 = 200;
+		byte Eq_67::* di_164 = &Eq_67::b0000;
+		int16 cx_181 = 200;
 		do
 		{
 			Top_34->rFFFFFFFF = (real64) ds->r01DE;
-			int16 cx_169 = 0x0140;
+			int16 cx_175 = 0x0140;
 			do
 			{
-				Top_34->rFFFFFFFE = Top_34->rFFFFFFFE;
-				Top_34->rFFFFFFFD = Top_34->rFFFFFFFF;
-				word16 cx_118 = 0x1F;
+				Top_34->rFFFFFFFE = Top_34->rFFFFFFFF;
+				Top_34->rFFFFFFFD = Top_34->r0000;
+				word16 cx_124 = 0x1F;
 				do
 				{
 					Top_34->rFFFFFFFC = (real64) ds->r01E8;
-					Top_34->rFFFFFFFB = Top_34->rFFFFFFFD;
+					Top_34->rFFFFFFFB = Top_34->rFFFFFFFE;
 					Top_34->rFFFFFFFB *= Top_34->rFFFFFFFE;
 					Top_34->rFFFFFFFC += Top_34->rFFFFFFFB;
-					Top_34->rFFFFFFFB = Top_34->rFFFFFFFC;
+					Top_34->rFFFFFFFB = Top_34->rFFFFFFFD;
 					Top_34->rFFFFFFFB *= Top_34->rFFFFFFFD;
 					Top_34->rFFFFFFFC -= Top_34->rFFFFFFFB;
 					Top_34->rFFFFFFFB = (real64) ds->r01EC;
-					Top_34->rFFFFFFFA = Top_34->rFFFFFFFD;
+					Top_34->rFFFFFFFA = Top_34->rFFFFFFFE;
 					Top_34->rFFFFFFFA *= Top_34->rFFFFFFFD;
 					Top_34->rFFFFFFFA += Top_34->rFFFFFFFA;
 					Top_34->rFFFFFFFB += Top_34->rFFFFFFFA;
 					Top_34->rFFFFFFFD = Top_34->rFFFFFFFB;
-					real64 v17_103 = Top_34->rFFFFFFFB;
+					real64 v23_109 = Top_34->rFFFFFFFB;
 					Top_34->rFFFFFFFB = Top_34->rFFFFFFFC;
-					Top_34->rFFFFFFFC = v17_103;
+					Top_34->rFFFFFFFC = v23_109;
 					Top_34->rFFFFFFFE = Top_34->rFFFFFFFB;
 					Top_34->rFFFFFFFB *= Top_34->rFFFFFFFB;
-					real64 v18_108 = Top_34->rFFFFFFFB;
+					real64 v24_114 = Top_34->rFFFFFFFB;
 					Top_34->rFFFFFFFB = Top_34->rFFFFFFFC;
-					Top_34->rFFFFFFFC = v18_108;
+					Top_34->rFFFFFFFC = v24_114;
 					Top_34->rFFFFFFFB *= Top_34->rFFFFFFFB;
 					Top_34->rFFFFFFFC += Top_34->rFFFFFFFB;
 					ds->dw01E4 = (int32) Top_34->rFFFFFFFC;
-					byte cl_126 = (byte) cx_118;
-					byte ch_141 = SLICE(cx_118, byte, 8);
+					byte cl_132 = (byte) cx_124;
+					byte ch_147 = SLICE(cx_124, byte, 8);
 					if (ds->dw01E4 > 100)
 						break;
-					--cx_118;
-					cl_126 = (byte) cx_118;
-					ch_141 = SLICE(cx_118, byte, 8);
-				} while (cx_118 != 0x00);
-				0xA000->*di_158 = (byte) (((word16) ((cx_219 - 100) *s (cx_221 - 0xA0)) >> 0x07 & 0x1F | SEQ(ch_141, cl_126 ^ 0x1F) << 0x04) + bp);
-				Top_34->rFFFFFFFF += ds->r01D6;
-				++di_158;
-				cx_169 = cx_221 - 0x01;
-				cx_221 = cx_169;
-			} while (cx_221 != 0x01);
-			Top_34->r0000 += ds->r01DA;
-			Top_171 = Top_34;
-			cx_175 = cx_219 - 0x01;
-			cx_219 = cx_175;
-		} while (cx_219 != 0x01);
+					--cx_124;
+					cl_132 = (byte) cx_124;
+					ch_147 = SLICE(cx_124, byte, 8);
+				} while (cx_124 != 0x00);
+				0xA000->*di_164 = (byte) (((word16) ((cx_225 - 100) *s (cx_227 - 0xA0)) >> 0x07 & 0x1F | SEQ(ch_147, cl_132 ^ 0x1F) << 0x04) + bp);
+				Top_34->rFFFFFFFF += (real64) ds->r01D6;
+				++di_164;
+				cx_175 = cx_227 - 0x01;
+				cx_227 = cx_175;
+			} while (cx_227 != 0x01);
+			Top_34->r0000 += (real64) ds->r01DA;
+			Top_177 = Top_34;
+			cx_181 = cx_225 - 0x01;
+			cx_225 = cx_181;
+		} while (cx_225 != 0x01);
 		bp -= 0x04;
 	} while (__inb(0x60) != 0x01);
 }

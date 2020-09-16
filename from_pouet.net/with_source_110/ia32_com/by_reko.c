@@ -10,7 +10,7 @@ void fn0C00_0100(union Eq_11 * ds_bx, Eq_3 si)
 	int16 bx = (word16) ds_bx;
 	__syscall(0x10);
 	Eq_11 ds_cx_8 = *ds_bx;
-	uint16 cx_10;
+	uint16 cx_10 = (word16) ds_cx_8;
 	struct Eq_17 * ds_91 = SLICE(ds_cx_8, selector, 16);
 	do
 	{

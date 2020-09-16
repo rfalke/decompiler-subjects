@@ -5,6 +5,13 @@
 #include "subject.h"
 
 <anonymous> g_t06F0 = <code>;
+Eq_155 g_t09D0 = 
+	{
+		
+		{
+			0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 
+		}
+	};
 <anonymous> * g_a10D90[] = 
 	{
 	};
@@ -15,7 +22,7 @@ int32 * g_ptr10FA8 = &g_dw11038;
 word64 g_qw10FB0 = 0x00;
 int32 * g_ptr10FC0 = &g_dw1103C;
 <anonymous> * g_ptr10FD0 = null;
-struct Eq_95 * g_ptr10FD8 = &g_t11040;
+struct Eq_101 * g_ptr10FD8 = &g_t11040;
 <anonymous> * g_ptr10FE0 = null;
 <anonymous> * g_ptr11000 = &g_t06F0;
 <anonymous> * g_ptr11008 = &g_t06F0;
@@ -24,9 +31,11 @@ struct Eq_95 * g_ptr10FD8 = &g_t11040;
 byte g_b11030 = 0x00;
 int32 g_dw11038 = 0;
 int32 g_dw1103C = 0;
-Eq_95 g_t11040 = 
+Eq_101 g_t11040 = 
 	{
-		0x00,
+		
+		{
+		},
 		0x00,
 		0x00,
 	};

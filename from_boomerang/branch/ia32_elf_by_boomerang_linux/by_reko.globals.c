@@ -31,5 +31,5 @@ word32 g_dw8049834 = 0x00;
 <anonymous> * g_ptr8049850 = null;
 FILE * g_ptr8049854 = &g_t100930A8;
 byte g_b8049858 = 0x00;
-Eq_114 g_t100930A8;
+Eq_119 g_t100930A8;
 

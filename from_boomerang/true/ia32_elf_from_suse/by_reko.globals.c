@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> g_tFFFFFFFF;
-Eq_1251 g_a0001[];
+Eq_1258 g_a0001[];
 Eq_27 g_t8048B60 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
 ;
 Eq_168 g_t8048C80 = Unexpected function type (fn void ((ptr32 void)))
@@ -55,21 +55,21 @@ word32 g_dw804B670 = 0x00;
 void ** g_ptr804B74C = null;
 <anonymous> ** g_ptr804B7D0 = &g_ptr804B66C;
 int32 g_dw804B7D4 = 1;
-Eq_1251 (* g_ptr804B7D8)[] = &g_a0001;
-Eq_1251 g_t804B7DC = 
+Eq_1258 (* g_ptr804B7D8)[] = &g_a0001;
+Eq_1258 g_t804B7DC = 
 	{
 		0x0100,
 		0x0804B7DC,
 	};
-Eq_1255 g_t804B7E0 = 
+Eq_1262 g_t804B7E0 = 
 	{
 		0x0804A3C4,
 	};
-Eq_1251 (* g_ptr804B7E4)[] = &g_t804B7DC;
+Eq_1258 (* g_ptr804B7E4)[] = &g_t804B7DC;
 char * g_ptr804B7E8 = &g_str804A3C4;
 FILE * g_ptr804B800 = &g_t10097000;
 byte g_b804B804 = 0x00;
-Eq_269 g_t804B808 = 
+Eq_275 g_t804B808 = 
 	{
 		0x00
 	};

@@ -120,7 +120,7 @@ void main()
 			x0_49 = fp + ~0xC7;
 			goto l00000000000008E0;
 		}
-		x0_49 = 0x08D8 + (int64) ((int8) ((word32) (&g_t0EC0)[(uint64) ((uint32) w1_43)]));
+		x0_49 = 0x08D8 + (int64) ((int8) ((word32) (&g_t0EC0)[(uint64) w1_43]));
 		x1_47 = g_a08D8;
 		w0_60 = (word32) x0_49;
 		switch ((word32) 0x08D8)
@@ -235,9 +235,19 @@ void sq(word64 x0)
 	g_qw12058 = x1_17;
 }
 
-// 0000000000000BC4: void sroot()
-void sroot()
+// 0000000000000BC4: void sroot(Register real64 d0)
+void sroot(real64 d0)
 {
+	real64 d2_12 = d0;
+	real64 d5_7 = g_r0C08;
+	real64 d1_22 = d0 * 0.5;
+	while (d2_12 > d1_22 * d5_7)
+	{
+		real64 d4_16 = d0 / d1_22;
+		real64 d2_17 = d4_16 - d1_22;
+		d1_22 = (d1_22 + d4_16) * 0.5;
+		d2_12 = d2_17 >= 0.0 ? d2_17 : -d2_17;
+	}
 }
 
 // 0000000000000C10: void abs()

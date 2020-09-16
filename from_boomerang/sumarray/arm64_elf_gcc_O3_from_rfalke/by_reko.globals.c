@@ -18,14 +18,15 @@ word64 g_qw10FC0 = 0x00;
 <anonymous> * g_ptr11008 = &g_t0680;
 <anonymous> * g_ptr11010 = &g_t0680;
 <anonymous> * g_ptr11018 = &g_t0680;
-Eq_20 g_t11040 = 
+<anonymous> * g_ptr11020 = &g_t0680;
+Eq_22 g_t11040 = 
 	{
 		
 		{
 			0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 
 		}
 	};
-Eq_21 g_t11050 = 
+Eq_23 g_t11050 = 
 	{
 		
 		{

@@ -121,10 +121,12 @@ void frame_dummy()
 //      constants
 void use(real64 rArg04[1])
 {
-	printf("%f", (real64) (uint128) (uint64) rArg04);
+	printf("%f", (real64) (uint128) rArg04);
 }
 
 // 08048430: void use_int(Stack int32 dwArg04)
+// Called from:
+//      compare_floats
 void use_int(int32 dwArg04)
 {
 	printf("%d", dwArg04);
@@ -139,8 +141,8 @@ void read_ints()
 // 080484B0: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) (uint64) rArg04;
-	int32 eax_7 = (int32) xmm0_6;
+	uint128 xmm0_6 = (uint128) rArg04;
+	int32 eax_7 = (int32) (real64) xmm0_6;
 	g_b804A020 = (byte) eax_7;
 	g_w804A022 = (word16) eax_7;
 	g_dw804A024 = eax_7;
@@ -153,25 +155,25 @@ void write_ints(real64 rArg04)
 	g_t804A030 = (word32) qwLoc14_37;
 }
 
-// 08048520: void read_floats(Register Eq_153 xmm1)
-void read_floats(Eq_153 xmm1)
+// 08048520: void read_floats(Register Eq_152 xmm1)
+void read_floats(Eq_152 xmm1)
 {
-	use((real64) g_r804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((uint128) ((uint32) g_r804A038))) + g_r804A040));
+	use((real64) g_r804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((real32) ((uint128) g_r804A038))) + g_r804A040));
 }
 
 // 08048560: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) (uint64) rArg04;
+	uint128 xmm0_6 = (uint128) rArg04;
 	g_r804A040 = (real64) xmm0_6;
-	g_r804A038 = (real32) xmm0_6;
+	g_r804A038 = (real32) (real64) xmm0_6;
 	g_r804A048 = (real80) (real64) xmm0_6;
 }
 
 // 08048590: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	g_r804A038 = (real32) (uint128) (uint64) g_r804A040;
+	g_r804A038 = (real32) (real64) (uint128) g_r804A040;
 }
 
 // 080485B0: void converting_between_floats_f2()
@@ -183,7 +185,7 @@ void converting_between_floats_f2()
 // 080485C0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	g_r804A040 = (real64) (uint128) (uint32) g_r804A038;
+	g_r804A040 = (real64) (real32) (uint128) g_r804A038;
 }
 
 // 080485E0: void converting_between_floats_d2()
@@ -207,29 +209,30 @@ void converting_between_floats_l2()
 // 08048610: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(real64 rArg04, real64 rArg0C)
 {
-	use((real64) (uint128) (uint64) rArg04 + rArg0C);
-	use((real64) (uint128) (uint64) rArg04 - rArg0C);
-	use((real64) (uint128) (uint64) rArg0C - (real64) ((uint128) ((uint64) rArg04)));
-	use((real64) (uint128) (uint64) rArg04 * rArg0C);
-	use((real64) (uint128) (uint64) rArg04 / rArg0C);
-	use((real64) (uint128) (uint64) rArg0C / (real64) ((uint128) ((uint64) rArg04)));
-	use(__movlpd(__xorpd((uint128) (uint64) rArg04, g_t80488B0)));
+	use((real64) (uint128) rArg04 + rArg0C);
+	use((real64) (uint128) rArg04 - rArg0C);
+	use((real64) (uint128) rArg0C - (real64) ((uint128) rArg04));
+	use((real64) (uint128) rArg04 * rArg0C);
+	use((real64) (uint128) rArg04 / rArg0C);
+	use((real64) (uint128) rArg0C / (real64) ((uint128) rArg04));
+	use(__movlpd(__xorpd((uint128) rArg04, g_t80488B0)));
 }
 
-// 080486C0: void compare_floats()
-void compare_floats()
+// 080486C0: void compare_floats(Stack real64 rArg04, Stack real64 rArg0C)
+void compare_floats(real64 rArg04, real64 rArg0C)
 {
+	use_int((word32) ((real64) (uint128) rArg04 == rArg0C ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
 }
 
 // 08048760: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {
-	uint128 xmm0_7 = (uint128) (uint64) rArg04;
+	uint128 xmm0_7 = (uint128) rArg04;
 	use((real64) xmm0_7 + (real64) xmm0_7);
-	use((real64) (uint128) (uint64) g_r80488C0 * rArg04);
-	use((real64) (uint128) (uint64) g_r80488C8 * rArg04);
-	use((real64) (uint128) (uint64) g_r80488D0 * rArg04);
-	use((real64) (uint128) (uint64) rArg04 * g_r80488D8);
+	use((real64) (uint128) g_r80488C0 * rArg04);
+	use((real64) (uint128) g_r80488C8 * rArg04);
+	use((real64) (uint128) g_r80488D0 * rArg04);
+	use((real64) (uint128) rArg04 * g_r80488D8);
 }
 
 // 080487E0: void main()
@@ -246,7 +249,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

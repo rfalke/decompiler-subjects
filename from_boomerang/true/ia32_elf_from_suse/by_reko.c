@@ -266,7 +266,8 @@ void main(word32 dwArg04, struct Eq_136 * dwArg08)
 	if (dwArg04 == 0x02)
 	{
 		char * eax_40 = getenv("POSIXLY_CORRECT");
-		bool Z_43 = SLICE(cond(eax_40), bool, 2);
+		bool v22_113 = eax_40 != null;
+		bool v18_109 = eax_40 == null;
 		if (eax_40 == null)
 		{
 			byte * eax_45 = dwArg08->ptr0004;
@@ -275,40 +276,41 @@ void main(word32 dwArg04, struct Eq_136 * dwArg08)
 			word32 ecx_50 = 0x07;
 			while (ecx_50 != 0x00)
 			{
-				Z_43 = SLICE(cond(*esi_133 - *edi_134), bool, 2);
-				esi_48 = esi_133 + 1;
-				edi_46 = edi_134 + 1;
+				v22_113 = *esi_144 != *edi_145;
+				v18_109 = *esi_144 == *edi_145;
+				esi_48 = esi_144 + 1;
+				edi_46 = edi_145 + 1;
 				--ecx_50;
-				esi_133 = esi_48;
-				edi_134 = edi_46;
-				if (*esi_133 == *edi_134)
+				esi_144 = esi_48;
+				edi_145 = edi_46;
+				if (*esi_144 == *edi_145)
 					break;
 			}
-			if (Z_43)
+			if (v18_109)
 				usage(0x00);
 			byte * esi_69 = eax_45;
 			byte * edi_71 = &g_b804A07C;
 			word32 ecx_72 = 0x0A;
 			while (ecx_72 != 0x00)
 			{
-				Z_43 = SLICE(cond(*esi_135 - *edi_136), bool, 2);
-				esi_69 = esi_135 + 1;
-				edi_71 = edi_136 + 1;
+				v22_113 = *esi_146 != *edi_147;
+				esi_69 = esi_146 + 1;
+				edi_71 = edi_147 + 1;
 				--ecx_72;
-				esi_135 = esi_69;
-				edi_136 = edi_71;
-				if (*esi_135 == *edi_136)
+				esi_146 = esi_69;
+				edi_147 = edi_71;
+				if (*esi_146 == *edi_147)
 					break;
 			}
-			if (!Z_43)
+			if (!v22_113)
 				version_etc(g_ptr804B800, "true", "GNU coreutils", "5.2.1");
 		}
 	}
 	exit(0x00);
 }
 
-// 08048C70: void close_stdout_set_file_name(Stack Eq_269 dwArg04)
-void close_stdout_set_file_name(Eq_269 dwArg04)
+// 08048C70: void close_stdout_set_file_name(Stack Eq_275 dwArg04)
+void close_stdout_set_file_name(Eq_275 dwArg04)
 {
 	g_t804B808 = dwArg04;
 }
@@ -329,7 +331,7 @@ void close_stdout()
 	if (ebx_21 < 0x00)
 		return;
 	dcgettext(null, "write error", 0x05);
-	Eq_269 eax_53 = g_t804B808;
+	Eq_275 eax_53 = g_t804B808;
 	if (eax_53 == 0x00)
 		error(g_dw804B7D4, ebx_21, "%s", 0x00);
 	else
@@ -378,15 +380,15 @@ void set_char_quoting(ptr32 dwArg04, byte bArg08, ui32 dwArg0C)
 	}
 }
 
-// 08048E00: void clone_quoting_options(Stack (ptr32 Eq_413) dwArg04)
-void clone_quoting_options(struct Eq_413 * dwArg04)
+// 08048E00: void clone_quoting_options(Stack (ptr32 Eq_419) dwArg04)
+void clone_quoting_options(struct Eq_419 * dwArg04)
 {
 	int32 * eax_16 = __errno_location();
 	int32 esi_17 = *eax_16;
-	struct Eq_421 * eax_20 = xmalloc(0x24);
-	struct Eq_413 * edx_25 = dwArg04;
+	struct Eq_427 * eax_20 = xmalloc(0x24);
+	struct Eq_419 * edx_25 = dwArg04;
 	if (dwArg04 == null)
-		edx_25 = (struct Eq_413 *) &g_dw804B920;
+		edx_25 = (struct Eq_419 *) &g_dw804B920;
 	eax_20->dw0000 = edx_25->dw0000;
 	eax_20->dw0004 = edx_25->dw0004;
 	eax_20->dw0008 = edx_25->dw0008;
@@ -399,11 +401,11 @@ void clone_quoting_options(struct Eq_413 * dwArg04)
 	*eax_16 = esi_17;
 }
 
-// 08048E70: void quoting_options_from_style(Register (ptr32 Eq_488) eax, Register word32 edx)
+// 08048E70: void quoting_options_from_style(Register (ptr32 Eq_494) eax, Register word32 edx)
 // Called from:
 //      quotearg_n_style_mem
 //      quotearg_n_style
-void quoting_options_from_style(struct Eq_488 * eax, word32 edx)
+void quoting_options_from_style(struct Eq_494 * eax, word32 edx)
 {
 	word32 ecx_12;
 	word32 * edi_24 = fp - 0x38;
@@ -431,25 +433,25 @@ char * gettext_quote(char * eax, up32 edx)
 	ui24 edx_24_8_31 = SLICE(edx, word24, 8);
 	char * eax_21 = dcgettext(null, eax, 0x05);
 	char * ecx_23 = eax_21;
-	if (((byte) (SEQ(SLICE(eax_21, word24, 8), edx == 0x06) & SEQ(edx_24_8_31, eax_21 == eax)) & 0x01) != 0x00)
+	if (((byte) (SEQ(SLICE(eax_21, word24, 8), (int8) (edx == 0x06)) & SEQ(edx_24_8_31, (int8) (eax_21 == eax))) & 0x01) != 0x00)
 		ecx_23 = (char *) "\"";
 	return ecx_23;
 }
 
-// 08048F20: void quotearg_buffer_restyled(Register Eq_269 eax, Register Eq_269 ecx, Register Eq_269 edx, Stack Eq_269 dwArg04, Stack up32 dwArg08, Stack Eq_269 dwArg0C)
+// 08048F20: void quotearg_buffer_restyled(Register Eq_275 eax, Register Eq_275 ecx, Register Eq_275 edx, Stack Eq_275 dwArg04, Stack up32 dwArg08, Stack Eq_275 dwArg0C)
 // Called from:
 //      quotearg_buffer_restyled
 //      quotearg_buffer
-void quotearg_buffer_restyled(Eq_269 eax, Eq_269 ecx, Eq_269 edx, Eq_269 dwArg04, up32 dwArg08, Eq_269 dwArg0C)
+void quotearg_buffer_restyled(Eq_275 eax, Eq_275 ecx, Eq_275 edx, Eq_275 dwArg04, up32 dwArg08, Eq_275 dwArg0C)
 {
 }
 
-// 08049560: void quotearg_buffer(Stack Eq_269 dwArg04, Stack Eq_269 dwArg08, Stack Eq_269 dwArg0C, Stack Eq_269 dwArg10, Stack Eq_269 dwArg14)
+// 08049560: void quotearg_buffer(Stack Eq_275 dwArg04, Stack Eq_275 dwArg08, Stack Eq_275 dwArg0C, Stack Eq_275 dwArg10, Stack Eq_275 dwArg14)
 // Called from:
 //      quotearg_n
-void quotearg_buffer(Eq_269 dwArg04, Eq_269 dwArg08, Eq_269 dwArg0C, Eq_269 dwArg10, Eq_269 dwArg14)
+void quotearg_buffer(Eq_275 dwArg04, Eq_275 dwArg08, Eq_275 dwArg0C, Eq_275 dwArg10, Eq_275 dwArg14)
 {
-	Eq_269 edi_11 = dwArg14;
+	Eq_275 edi_11 = dwArg14;
 	if (dwArg14 == 0x00)
 		edi_11.u0 = 0x0804B920;
 	int32 * eax_20 = __errno_location();
@@ -458,13 +460,13 @@ void quotearg_buffer(Eq_269 dwArg04, Eq_269 dwArg08, Eq_269 dwArg0C, Eq_269 dwAr
 	*eax_20 = esi_22;
 }
 
-// 080495C0: Register ptr32 quotearg_n_options(Register (arr Eq_1251) eax, Register Eq_269 edx)
+// 080495C0: Register ptr32 quotearg_n_options(Register (arr Eq_1258) eax, Register Eq_275 edx)
 // Called from:
 //      quotearg_char
 //      quotearg_n_style_mem
 //      quotearg_n_style
 //      quotearg_n
-ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
+ptr32 quotearg_n_options(Eq_1258 eax[], Eq_275 edx)
 {
 	word32 eax_25 = *__errno_location();
 	if (eax < null)
@@ -473,15 +475,15 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 	{
 		if (g_ptr804B7D8 <= eax)
 		{
-			if (eax > (Eq_1251 (*)[]) 0x1FFFFFFE)
+			if (eax > (Eq_1258 (*)[]) 0x1FFFFFFE)
 			{
 				xalloc_die();
 				// Failed to bind call argument.
 				// Please report this issue at https://github.com/uxmal/reko
 				// Failed to bind call argument.
 				// Please report this issue at https://github.com/uxmal/reko
-				Eq_269 stackArg4 = <invalid>;
-				Eq_269 stackArg8 = <invalid>;
+				Eq_275 stackArg4 = <invalid>;
+				Eq_275 stackArg8 = <invalid>;
 				quotearg_char(stackArg4, stackArg8);
 				return fp - 4;
 			}
@@ -489,23 +491,23 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 			{
 				// Failed to bind call argument.
 				// Please report this issue at https://github.com/uxmal/reko
-				Eq_269 stackArg4 = <invalid>;
+				Eq_275 stackArg4 = <invalid>;
 				xmalloc(stackArg4);
 				g_ptr804B7E4 = eax;
-				Eq_1251 eax_47 = g_t804B7DC.dw0000;
-				*((word32) &eax[0].dw0000 + 4) = (Eq_1251 (*)[]) g_t804B7E0;
+				Eq_1258 eax_47 = g_t804B7DC.dw0000;
+				*((word32) &eax[0].dw0000 + 4) = (Eq_1258 (*)[]) g_t804B7E0;
 				eax[0].dw0000 = (word32) eax_47;
 			}
 			// Failed to bind call argument.
 			// Please report this issue at https://github.com/uxmal/reko
 			// Failed to bind call argument.
 			// Please report this issue at https://github.com/uxmal/reko
-			Eq_269 stackArg4 = <invalid>;
-			Eq_269 stackArg8 = <invalid>;
+			Eq_275 stackArg4 = <invalid>;
+			Eq_275 stackArg8 = <invalid>;
 			xrealloc(stackArg4, stackArg8);
-			Eq_1251 eax_54[] = (eax + 0x01) * 0x08;
+			Eq_1258 eax_54[] = (eax + 0x01) * 0x08;
 			g_ptr804B7E4 = eax_54;
-			Eq_1251 (* eax_59)[] = g_ptr804B7D8;
+			Eq_1258 (* eax_59)[] = g_ptr804B7D8;
 			word32 edx_61 = eax + 0x01 - eax_59;
 			word32 * edi_147 = &(eax_54 + eax_59)->dw0000;
 			uint32 eax_63 = edx_61 * 0x08;
@@ -523,7 +525,7 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 			}
 			Mem83[0x0804B7D8<p32>:word32] = eax + 0x01;
 		}
-		Eq_1251 eax_88[] = g_ptr804B7E4;
+		Eq_1258 eax_88[] = g_ptr804B7E4;
 		// Failed to bind call argument.
 		// Please report this issue at https://github.com/uxmal/reko
 		// Failed to bind call argument.
@@ -534,17 +536,17 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 		// Please report this issue at https://github.com/uxmal/reko
 		// Failed to bind call argument.
 		// Please report this issue at https://github.com/uxmal/reko
-		Eq_269 esi_89 = eax_88[eax].dw0000;
+		Eq_275 esi_89 = eax_88[eax].dw0000;
 		void * edi_90 = *((word32) &eax_88[eax].dw0000 + 4);
-		Eq_269 stackArg4 = <invalid>;
-		Eq_269 stackArg8 = <invalid>;
-		Eq_269 stackArg12 = <invalid>;
-		Eq_269 stackArg16 = <invalid>;
-		Eq_269 stackArg20 = <invalid>;
+		Eq_275 stackArg4 = <invalid>;
+		Eq_275 stackArg8 = <invalid>;
+		Eq_275 stackArg12 = <invalid>;
+		Eq_275 stackArg16 = <invalid>;
+		Eq_275 stackArg20 = <invalid>;
 		quotearg_buffer(stackArg4, stackArg8, stackArg12, stackArg16, stackArg20);
 		if (esi_89 <= edx)
 		{
-			Eq_1251 ebx_103[] = g_ptr804B7E4;
+			Eq_1258 ebx_103[] = g_ptr804B7E4;
 			ebx_103[eax].dw0000 = (word32) edx + 1;
 			if (edi_90 != &g_v804B820)
 			{
@@ -553,9 +555,9 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 			}
 			// Failed to bind call argument.
 			// Please report this issue at https://github.com/uxmal/reko
-			Eq_269 stackArg4 = <invalid>;
+			Eq_275 stackArg4 = <invalid>;
 			xmalloc(stackArg4);
-			*((word32) &ebx_103[eax].dw0000 + 4) = (Eq_1251 (*)[]) edx;
+			*((word32) &ebx_103[eax].dw0000 + 4) = (Eq_1258 (*)[]) edx;
 			// Failed to bind call argument.
 			// Please report this issue at https://github.com/uxmal/reko
 			// Failed to bind call argument.
@@ -566,11 +568,11 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 			// Please report this issue at https://github.com/uxmal/reko
 			// Failed to bind call argument.
 			// Please report this issue at https://github.com/uxmal/reko
-			Eq_269 stackArg4 = <invalid>;
-			Eq_269 stackArg8 = <invalid>;
-			Eq_269 stackArg12 = <invalid>;
-			Eq_269 stackArg16 = <invalid>;
-			Eq_269 stackArg20 = <invalid>;
+			Eq_275 stackArg4 = <invalid>;
+			Eq_275 stackArg8 = <invalid>;
+			Eq_275 stackArg12 = <invalid>;
+			Eq_275 stackArg16 = <invalid>;
+			Eq_275 stackArg20 = <invalid>;
 			quotearg_buffer(stackArg4, stackArg8, stackArg12, stackArg16, stackArg20);
 		}
 		*__errno_location() = eax_25;
@@ -578,64 +580,64 @@ ptr32 quotearg_n_options(Eq_1251 eax[], Eq_269 edx)
 	}
 }
 
-// 08049750: void quotearg_char(Stack Eq_269 dwArg04, Stack Eq_269 bArg08)
+// 08049750: void quotearg_char(Stack Eq_275 dwArg04, Stack Eq_275 bArg08)
 // Called from:
 //      quotearg_colon
 //      quotearg_n
-void quotearg_char(Eq_269 dwArg04, Eq_269 bArg08)
+void quotearg_char(Eq_275 dwArg04, Eq_275 bArg08)
 {
 	set_char_quoting(fp - 0x3C, (byte) (int32) bArg08, 0x01);
 	quotearg_n_options(null, dwArg04);
 }
 
-// 080497E0: void quotearg_colon(Stack Eq_269 dwArg04)
+// 080497E0: void quotearg_colon(Stack Eq_275 dwArg04)
 // Called from:
 //      close_stdout
-void quotearg_colon(Eq_269 dwArg04)
+void quotearg_colon(Eq_275 dwArg04)
 {
 	quotearg_char(dwArg04, 0x3A);
 }
 
-// 08049800: void quotearg_n_style_mem(Stack (ptr32 (arr Eq_1251)) dwArg04, Stack word32 dwArg08, Stack Eq_269 dwArg0C)
-void quotearg_n_style_mem(Eq_1251 (* dwArg04)[], word32 dwArg08, Eq_269 dwArg0C)
+// 08049800: void quotearg_n_style_mem(Stack (ptr32 (arr Eq_1258)) dwArg04, Stack word32 dwArg08, Stack Eq_275 dwArg0C)
+void quotearg_n_style_mem(Eq_1258 (* dwArg04)[], word32 dwArg08, Eq_275 dwArg0C)
 {
 	quoting_options_from_style(fp - 0x3C, dwArg08);
 	quotearg_n_options(dwArg04, dwArg0C);
 }
 
-// 08049830: void quotearg_n_style(Stack (ptr32 (arr Eq_1251)) dwArg04, Stack word32 dwArg08, Stack Eq_269 dwArg0C)
+// 08049830: void quotearg_n_style(Stack (ptr32 (arr Eq_1258)) dwArg04, Stack word32 dwArg08, Stack Eq_275 dwArg0C)
 // Called from:
 //      quotearg_style
-void quotearg_n_style(Eq_1251 (* dwArg04)[], word32 dwArg08, Eq_269 dwArg0C)
+void quotearg_n_style(Eq_1258 (* dwArg04)[], word32 dwArg08, Eq_275 dwArg0C)
 {
 	quoting_options_from_style(fp - 0x3C, dwArg08);
 	quotearg_n_options(dwArg04, dwArg0C);
 }
 
-// 08049860: void quotearg_style(Stack word32 dwArg04, Stack Eq_269 dwArg08)
-void quotearg_style(word32 dwArg04, Eq_269 dwArg08)
+// 08049860: void quotearg_style(Stack word32 dwArg04, Stack Eq_275 dwArg08)
+void quotearg_style(word32 dwArg04, Eq_275 dwArg08)
 {
 	quotearg_n_style(null, dwArg04, dwArg08);
 }
 
-// 08049890: Register word32 quotearg_n(Stack (ptr32 (arr Eq_1251)) dwArg04, Stack Eq_269 dwArg08)
+// 08049890: Register word32 quotearg_n(Stack (ptr32 (arr Eq_1258)) dwArg04, Stack Eq_275 dwArg08)
 // Called from:
 //      quotearg
-word32 quotearg_n(Eq_1251 (* dwArg04)[], Eq_269 dwArg08)
+word32 quotearg_n(Eq_1258 (* dwArg04)[], Eq_275 dwArg08)
 {
 	return quotearg_n_options(dwArg04, dwArg08);
 }
 
-// 080498B0: void quotearg(Stack Eq_269 dwArg04)
-void quotearg(Eq_269 dwArg04)
+// 080498B0: void quotearg(Stack Eq_275 dwArg04)
+void quotearg(Eq_275 dwArg04)
 {
 	quotearg_n(null, dwArg04);
 }
 
-// 080498D0: void version_etc_va(Stack (ptr32 Eq_105) dwArg04, Stack (ptr32 char) dwArg08, Stack (ptr32 char) dwArg0C, Stack (ptr32 char) dwArg10, Stack Eq_1335 dwArg14)
+// 080498D0: void version_etc_va(Stack (ptr32 Eq_105) dwArg04, Stack (ptr32 char) dwArg08, Stack (ptr32 char) dwArg0C, Stack (ptr32 char) dwArg10, Stack Eq_1342 dwArg14)
 // Called from:
 //      version_etc
-void version_etc_va(FILE * dwArg04, char * dwArg08, char * dwArg0C, char * dwArg10, Eq_1335 dwArg14)
+void version_etc_va(FILE * dwArg04, char * dwArg08, char * dwArg0C, char * dwArg10, Eq_1342 dwArg14)
 {
 	up32 ebx_18 = 0x00;
 	word32 * edx_25 = (word32) dwArg14 + 4;
@@ -741,33 +743,33 @@ void xalloc_die()
 	abort();
 }
 
-// 08049B80: void xcalloc(Stack Eq_269 dwArg04, Stack Eq_269 dwArg08)
-void xcalloc(Eq_269 dwArg04, Eq_269 dwArg08)
+// 08049B80: void xcalloc(Stack Eq_275 dwArg04, Stack Eq_275 dwArg08)
+void xcalloc(Eq_275 dwArg04, Eq_275 dwArg08)
 {
 	if ((uint32) (0xFFFFFFFF /u dwArg08) >= dwArg04 && calloc(dwArg04, dwArg08) != null)
 		return;
 	xalloc_die();
 }
 
-// 08049BC0: void xrealloc(Stack Eq_269 dwArg04, Stack Eq_269 dwArg08)
+// 08049BC0: void xrealloc(Stack Eq_275 dwArg04, Stack Eq_275 dwArg08)
 // Called from:
 //      quotearg_n
 //      xcalloc
 //      x2realloc
 //      x2nrealloc
-void xrealloc(Eq_269 dwArg04, Eq_269 dwArg08)
+void xrealloc(Eq_275 dwArg04, Eq_275 dwArg08)
 {
 	if (realloc(dwArg04, dwArg08) != null)
 		return;
 	xalloc_die();
 }
 
-// 08049BF0: void x2realloc(Stack Eq_269 dwArg04, Stack (ptr32 Eq_269) dwArg08)
+// 08049BF0: void x2realloc(Stack Eq_275 dwArg04, Stack (ptr32 Eq_275) dwArg08)
 // Called from:
 //      x2nrealloc
-void x2realloc(Eq_269 dwArg04, union Eq_269 * dwArg08)
+void x2realloc(Eq_275 dwArg04, union Eq_275 * dwArg08)
 {
-	Eq_269 eax_13 = *dwArg08;
+	Eq_275 eax_13 = *dwArg08;
 	if (dwArg04 != 0x00)
 	{
 		if (eax_13 < 0x00)
@@ -776,16 +778,16 @@ void x2realloc(Eq_269 dwArg04, union Eq_269 * dwArg08)
 	}
 	else if (eax_13 == 0x00)
 		eax_13.u0 = 0x40;
-	*dwArg08 = (union Eq_269 *) eax_13;
+	*dwArg08 = (union Eq_275 *) eax_13;
 	xrealloc(dwArg04, eax_13);
 }
 
-// 08049C30: void x2nrealloc(Stack Eq_269 dwArg04, Stack (ptr32 Eq_1533) dwArg08, Stack Eq_1532 dwArg0C)
+// 08049C30: void x2nrealloc(Stack Eq_275 dwArg04, Stack (ptr32 Eq_1540) dwArg08, Stack Eq_1539 dwArg0C)
 // Called from:
 //      x2realloc
-void x2nrealloc(Eq_269 dwArg04, union Eq_1533 * dwArg08, Eq_1532 dwArg0C)
+void x2nrealloc(Eq_275 dwArg04, union Eq_1540 * dwArg08, Eq_1539 dwArg0C)
 {
-	Eq_1533 ecx_19 = *dwArg08;
+	Eq_1540 ecx_19 = *dwArg08;
 	if (dwArg04 != 0x00)
 	{
 		if ((uint32) (0x7FFFFFFF /u dwArg0C) < ecx_19)
@@ -795,31 +797,31 @@ void x2nrealloc(Eq_269 dwArg04, union Eq_1533 * dwArg08, Eq_1532 dwArg0C)
 	else if (ecx_19 == 0x00)
 	{
 		uint32 eax_30 = (uint32) (0x40 /u dwArg0C);
-		ecx_19 = eax_30 + (uint32) ((uint8) (eax_30 == 0x00));
+		ecx_19 = eax_30 + (uint32) ((int8) (eax_30 == 0x00));
 	}
-	*dwArg08 = (union Eq_1533 *) ecx_19;
-	Eq_269 ecx_54 = ecx_19 *s dwArg0C;
+	*dwArg08 = (union Eq_1540 *) ecx_19;
+	Eq_275 ecx_54 = ecx_19 *s dwArg0C;
 	xrealloc(dwArg04, ecx_54);
 }
 
-// 08049CA0: void xnrealloc(Stack Eq_269 dwArg04, Stack Eq_1566 dwArg08, Stack Eq_1567 dwArg0C)
+// 08049CA0: void xnrealloc(Stack Eq_275 dwArg04, Stack Eq_1573 dwArg08, Stack Eq_1574 dwArg0C)
 // Called from:
 //      x2nrealloc
-void xnrealloc(Eq_269 dwArg04, Eq_1566 dwArg08, Eq_1567 dwArg0C)
+void xnrealloc(Eq_275 dwArg04, Eq_1573 dwArg08, Eq_1574 dwArg0C)
 {
 	if ((uint32) (0xFFFFFFFF /u dwArg0C) >= dwArg08 && realloc(dwArg04, dwArg08 *s dwArg0C) != null)
 		return;
 	xalloc_die();
 }
 
-// 08049CF0: Register (ptr32 void) xmalloc(Stack Eq_269 dwArg04)
+// 08049CF0: Register (ptr32 void) xmalloc(Stack Eq_275 dwArg04)
 // Called from:
 //      clone_quoting_options
 //      quotearg_n
 //      xnrealloc
 //      xclone
 //      xzalloc
-void * xmalloc(Eq_269 dwArg04)
+void * xmalloc(Eq_275 dwArg04)
 {
 	void * eax_11 = malloc(dwArg04);
 	if (eax_11 != null)
@@ -827,22 +829,22 @@ void * xmalloc(Eq_269 dwArg04)
 	xalloc_die();
 }
 
-// 08049D20: void xclone(Stack (ptr32 void) dwArg04, Stack Eq_269 dwArg08)
+// 08049D20: void xclone(Stack (ptr32 void) dwArg04, Stack Eq_275 dwArg08)
 // Called from:
 //      xmalloc
-void xclone(void * dwArg04, Eq_269 dwArg08)
+void xclone(void * dwArg04, Eq_275 dwArg08)
 {
 	memcpy(xmalloc(dwArg08), dwArg04, dwArg08);
 }
 
-// 08049D50: void xzalloc(Stack Eq_269 dwArg04)
-void xzalloc(Eq_269 dwArg04)
+// 08049D50: void xzalloc(Stack Eq_275 dwArg04)
+void xzalloc(Eq_275 dwArg04)
 {
 	memset(xmalloc(dwArg04), 0x00, dwArg04);
 }
 
-// 08049D80: void xnmalloc(Stack Eq_1609 dwArg04, Stack Eq_1610 dwArg08)
-void xnmalloc(Eq_1609 dwArg04, Eq_1610 dwArg08)
+// 08049D80: void xnmalloc(Stack Eq_1616 dwArg04, Stack Eq_1617 dwArg08)
+void xnmalloc(Eq_1616 dwArg04, Eq_1617 dwArg08)
 {
 	if ((uint32) (0xFFFFFFFF /u dwArg08) >= dwArg04 && malloc(dwArg04 *s dwArg08) != null)
 		return;
@@ -878,7 +880,7 @@ void __libc_csu_init(word32 ecx, word32 edx)
 	int32 edx_30 = edx_29 >> 0x02;
 	if (edx_29 >> 0x02 > 0x00)
 	{
-		Eq_1663 esi_35 = 0x00;
+		Eq_1670 esi_35 = 0x00;
 		do
 		{
 			(*((char *) g_a804B828 + esi_35 * 0x04))();

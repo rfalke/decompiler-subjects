@@ -37,7 +37,7 @@ void fn0C00_0100(byte bh, byte Eq_50::* di)
 	do
 	{
 		byte bl_88 = (byte) bx_111;
-		struct Eq_66 Eq_50::* cx_35;
+		struct Eq_66 Eq_50::* cx_35 = &Eq_50::tFFFFF8C0;
 		do
 		{
 			word16 ax_46 = SEQ(ah_42, cx_35[320]) + SEQ(dh_84, cx_35[1]);

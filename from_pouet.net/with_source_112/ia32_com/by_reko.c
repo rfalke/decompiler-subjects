@@ -24,7 +24,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, byte ch, byte Eq_11::* di)
 		do
 		{
 			byte Eq_11::* di_49;
-			word16 cx_147;
+			word16 cx_147 = SEQ(SLICE(cx_170, byte, 8), 0x20);
 			di_53 = di_49;
 			do
 			{
@@ -39,7 +39,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, byte ch, byte Eq_11::* di)
 			cx_170 = cx_127;
 		} while (cx_170 != 0x01);
 		di += si_100;
-		uint32 dx_ax_86 = (uint32) (uint16) di;
+		uint32 dx_ax_86 = (uint32) di;
 		uint16 dx_88 = (uint16) (dx_ax_86 % 0x0140);
 		if (((uint16) (dx_ax_86 /u 0x0140) & 0x7F) == 0x00)
 			si_100 = si_100 ^ 0x7E;

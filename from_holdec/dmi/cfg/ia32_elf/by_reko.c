@@ -89,7 +89,7 @@ void main(Eq_11 dwArg04)
 	basic_8_forever_loop(dwArg04);
 	basic_9_dead_block();
 	ui32 esi_32 = ~dwArg04;
-	uint32 eax_98 = (uint32) (uint8) (dwArg04 > 0x04);
+	uint32 eax_98 = (uint32) (int8) (dwArg04 > 0x04);
 	intermediate_1_short_circuit_and(eax_98, esi_32 & 0x01);
 	intermediate_2_short_circuit_or(eax_98, esi_32 & 0x01);
 	intermediate_10_loop_with_one_break(dwArg04);
@@ -648,7 +648,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804B0F4 - 0x0804B0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804B0F8)[edi_33]();

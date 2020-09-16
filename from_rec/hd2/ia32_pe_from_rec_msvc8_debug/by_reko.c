@@ -105,7 +105,7 @@ Eq_2 fn004110C3(Eq_2 edx, Eq_2 ebx, Eq_2 esi, Eq_2 edi, struct Eq_9 * es, struct
 	while (dwLoc68_331 < dwArg0C)
 	{
 		Eq_2 eax_239 = fp - 0x53 + dwLoc68_331 *s 0x03;
-		word32 ecx_230 = (word32) Mem58[dwArg04 + dwLoc68_331:byte];
+		word32 ecx_230 = CONVERT(Mem58[dwArg04 + dwLoc68_331:byte], byte, word32);
 		sprintf(eax_239, " %02lX", ecx_230);
 		fn00411168(es, ds, ecx_230);
 		edx = dwLoc68_331 *s 0x03;
@@ -130,12 +130,12 @@ Eq_2 fn004110C3(Eq_2 edx, Eq_2 ebx, Eq_2 esi, Eq_2 edi, struct Eq_9 * es, struct
 	while (dwLoc68_344 < dwArg0C)
 	{
 		Eq_232 bLoc013C_370;
-		if ((word32) Mem99[dwArg04 + dwLoc68_344:byte] >= 0x20)
+		if (CONVERT(Mem99[dwArg04 + dwLoc68_344:byte], byte, word32) >= 0x20)
 		{
 			edx = dwArg04 + dwLoc68_344;
 			if ((word32) *edx > 0x7E)
 				goto l00411563;
-			edx = (word32) Mem99[dwArg04 + dwLoc68_344:byte];
+			edx = CONVERT(Mem99[dwArg04 + dwLoc68_344:byte], byte, word32);
 			bLoc013C_370 = (byte) edx;
 		}
 		else
@@ -1018,7 +1018,7 @@ void fn00413000()
 	else
 	{
 		GetSystemTimeAsFileTime(fp - 0x0C);
-		ui32 eax_38 = GetTickCount() ^ (GetCurrentThreadId() ^ (GetCurrentProcessId() ^ 0x00));
+		ui32 eax_38 = GetTickCount() ^ (GetCurrentThreadId() ^ GetCurrentProcessId());
 		QueryPerformanceCounter(fp - 0x1C);
 		ui32 ecx_49 = eax_38 ^ dwLoc1C ^ dwLoc18;
 		ui32 dwLoc10_100 = ecx_49;
@@ -1114,13 +1114,13 @@ l00413933:
 					esp_130 = fp - 0x0170;
 					if (eax_148 == 0x00)
 					{
-						Eq_2171 ecx_233 = dwLoc0110;
+						Eq_2169 ecx_233 = dwLoc0110;
 						if (*((word32) dwLoc0110 + (fp - 0x010E)) != 0x5C)
 							Mem240[fp - 0x010D + dwLoc0110:byte] = 0x5C;
 						else
 							ecx_233 = dwLoc0110 - 0x01;
 						Eq_903 esi_242 = g_t417034;
-						Eq_2205 eax_243 = 0x00;
+						Eq_2203 eax_243 = 0x00;
 						word32 ecx_248 = fp - 0x010C + ecx_233;
 						do
 						{

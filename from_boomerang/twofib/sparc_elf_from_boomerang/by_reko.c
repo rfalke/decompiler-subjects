@@ -168,7 +168,7 @@ void twofib(word32 o0, struct Eq_150 * dwArg40)
 void main()
 {
 	printf("Enter number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp + ~0x13);
 	twofib(dwLoc14, fp + ~0x1F);
 }
 
@@ -186,7 +186,7 @@ word32 fn000107B8(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_196 * o1_26 = fn000107B8(o7, 0x000100BC)->ptr0018;
+	struct Eq_198 * o1_26 = fn000107B8(o7, 0x000100BC)->ptr0018;
 	word32 o0_27 = o1_26->dwFFFFFFFC;
 	if (o0_27 != ~0x00)
 	{

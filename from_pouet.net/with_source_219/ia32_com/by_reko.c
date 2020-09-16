@@ -9,7 +9,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	__outb(0x03C8, 0x00);
-	byte al_14;
+	byte al_14 = 0x00;
 	do
 	{
 		__outb(969, al_14);
@@ -19,31 +19,31 @@ void fn0C00_0100(struct Eq_2 * ds)
 	} while (al_14 != 0x00);
 	do
 	{
-		ds->r01ED = (real32) (ds->r01ED + 1.0);
-		ds->w01DF = 0x00;
-		byte Eq_127::* di_118 = &Eq_127::b0000;
+		ds->r01ED = (real32) ((real64) ds->r01ED + 1.0);
+		ds->t01DF.u0 = 0x00;
+		byte Eq_133::* di_118 = &Eq_133::b0000;
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
 		do
 		{
-			ds->r01F9 = (real32) ((real64) ds->r01D5 / (real64) ds->w01DF);
-			ds->r01F5 = (real32) ((real64) ds->r01F9 * ds->r01CD - ds->r01ED);
-			ds->r01F1 = (real32) ((real64) ds->r01F9 * ds->r01D1 + ds->r01ED);
+			ds->r01F9 = (real32) ((real64) ds->r01D5 / (real64) ds->t01DF);
+			ds->r01F5 = (real32) ((real64) ds->r01F9 * (real64) ds->r01CD - (real64) ds->r01ED);
+			ds->r01F1 = (real32) ((real64) ds->r01F9 * (real64) ds->r01D1 + (real64) ds->r01ED);
 			ds->w01DD = 0x00;
 			do
 			{
 				ds->dw01E1 = (int32) (real64) ds->r01F1;
 				ds->dw01E5 = (int32) (real64) ds->r01F5;
 				ds->t01E9 = (ds->dw01E1 ^ ds->dw01E5) & 0xFF;
-				ds->t01E9.u0 = (int32) ((real64) ds->t01E9 * (real64) ds->w01DF / ds->r01D9);
+				ds->t01E9.u0 = (int32) ((real64) ds->t01E9 * (real64) ds->t01DF / (real64) ds->r01D9);
 				0xA000->*di_118 = (byte) (ds->t01E9 >> 0x02);
-				ds->r01F1 = (real32) ((real64) ds->r01F1 + ds->r01F9);
+				ds->r01F1 = (real32) ((real64) ds->r01F1 + (real64) ds->r01F9);
 				++ds->w01DD;
 				++di_118;
 			} while (ds->w01DD < 0x0140);
-			++ds->w01DF;
-		} while (ds->w01DF < 200);
+			ds->t01DF = (word16) ds->t01DF + 1;
+		} while (ds->t01DF < 200);
 	} while (__inb(0x60) != 0x01);
 }
 

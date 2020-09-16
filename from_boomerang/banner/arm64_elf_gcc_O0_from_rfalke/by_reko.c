@@ -167,13 +167,13 @@ void main()
 	fn0000000000000F10();
 	*(ptr64 *) 0x14 = 0x2838;
 	word32 dwArg04_184 = 0x02;
-	struct Eq_108 * qwLoc08_185 = (struct Eq_108 *) 0x14;
+	union Eq_108 * qwLoc08_185 = (union Eq_108 *) 0x14;
 	while (true)
 	{
 		--dwArg04_184;
 		if (dwArg04_184 == 0x00)
 			break;
-		int32 w0_36 = qwLoc08_185->ptr0000;
+		int32 w0_36 = *qwLoc08_185;
 		fn0000000000000EF0();
 		int32 dwLoc18_189 = w0_36;
 		if (w0_36 > 0x0A)
@@ -184,7 +184,7 @@ void main()
 			int32 dwLoc10_193;
 			for (dwLoc10_193 = 0x00; dwLoc10_193 < dwLoc18_189; ++dwLoc10_193)
 			{
-				int32 w0_63 = (word32) (qwLoc08_185->ptr0000 + (word64) dwLoc4C);
+				int32 w0_63 = (word32) *((char *) *qwLoc08_185 + (int64) dwLoc4C);
 				int32 dwLoc1C_198 = w0_63 - 0x20;
 				if (w0_63 < 0x20)
 					dwLoc1C_198 = 0x00;
@@ -194,20 +194,20 @@ void main()
 					int32 w1_98 = 0x00 - dwLoc1C_198;
 					int32 w0_85 = dwLoc1C_198 < 0x00 ? dwLoc1C_198 + 0x07 : dwLoc1C_198;
 					ui32 w1_103 = w1_98 < 0x00 ? dwLoc1C_198 & 0x07 : -(w1_98 & 0x07);
-					Mem115[fp + ~0x6F + (int64) ((int32) ((dwLoc10_193 << 3) + dwLoc14_200)):byte] = (byte) (word32) Mem73[0x0000000000013048<p64>[(int64) (int32) ((w0_85 >> 3 << 3) - (w0_85 >> 3) + dwLoc0C_191) * 8] + (int64) ((int32) (((w1_103 << 3) - w1_103) + dwLoc14_200)):byte];
+					Mem115[fp + ~0x6F + CONVERT((dwLoc10_193 << 3) + dwLoc14_200, word32, int64):byte] = SLICE(CONVERT(Mem73[0x0000000000013048<p64>[CONVERT((w0_85 >> 3 << 3) - (w0_85 >> 3) + dwLoc0C_191, word32, int64) * 8] + CONVERT(((w1_103 << 3) - w1_103) + dwLoc14_200, word32, int64):byte], byte, word32), byte, 0);
 				}
-				Mem125[fp + ~0x6F + (int64) ((int32) ((dwLoc10_193 << 3) + 0x07)):byte] = 0x20;
+				Mem125[fp + ~0x6F + CONVERT((dwLoc10_193 << 3) + 0x07, word32, int64):byte] = 0x20;
 			}
 			int32 dwLoc10_207 = (dwLoc18_189 << 3) - 0x01;
-			while (dwLoc10_207 >= 0x00 && (word32) Mem134[(fp + ~0x6F) + (word64) dwLoc4C:byte] == 0x20)
+			while (dwLoc10_207 >= 0x00 && CONVERT(Mem134[(fp + ~0x6F) + CONVERT(dwLoc4C, int32, int64):byte], byte, word32) == 0x20)
 			{
-				Mem148[fp + ~0x6F + (word64) dwLoc4C:byte] = 0x00;
+				Mem148[fp + ~0x6F + CONVERT(dwLoc4C, int32, int64):byte] = 0x00;
 				--dwLoc10_207;
 			}
 			fn0000000000000F50();
 		}
 		fn0000000000000F50();
-		++qwLoc08_185;
+		qwLoc08_185 = (union Eq_108 *) ((char *) qwLoc08_185 + 8);
 	}
 }
 

@@ -272,6 +272,7 @@
 0804CBD5: warning: Procedure camlUnix__write_1242 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0804CB85: warning: Procedure camlUnix__read_1237 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0804BC4A: warning: Unable to resolve imported reference sqrt.
+0804BC7D: warning: Unexpected 1 fstsw;cmp mask for jnz mnemonic.
 0804B7FC: warning: Procedure camlSource__sort_floats_1031 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 0804A8E4: warning: Unable to resolve imported reference ceil.
 0804A8C4: warning: Unable to resolve imported reference sigsuspend.
@@ -372,17 +373,17 @@
 08049DE4: warning: Unable to resolve imported reference fmod.
 08049DC4: warning: Unable to resolve imported reference ldexp.
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.Analysis.StackPointerBackpropagator.MatchStackOffsetPattern (Reko.Core.Expressions.Identifier sp) [0x0001f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.StackPointerBackpropagator.BackpropagateStackPointer (Reko.Core.Expressions.Identifier spAtExit) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.StackPointerBackpropagator.BackpropagateStackPointer () [0x0002f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x00118] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+  at Reko.Analysis.StackPointerBackpropagator.MatchStackOffsetPattern (Reko.Core.Expressions.Identifier sp) [0x0001f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.StackPointerBackpropagator.BackpropagateStackPointer (Reko.Core.Expressions.Identifier spAtExit) [0x00012] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.StackPointerBackpropagator.BackpropagateStackPointer () [0x0002f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x00113] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
   at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00183] in <b195e9013e6f4bfe9c4a55d515fad233>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 

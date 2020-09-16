@@ -9,7 +9,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	byte al_16 = 0x13;
-	Eq_10 wLoc02_219 = 100;
+	Eq_10 wLoc02_217 = 100;
 	do
 	{
 		ds->w01C0 = 0x00;
@@ -25,14 +25,12 @@ void fn0C00_0100(struct Eq_2 * ds)
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
 		Eq_42 bx_56 = ds->t01C2;
-		fn0C00_01CA(wLoc02_219, 0x0300, bx_56, 0xA000, ds);
+		fn0C00_01CA(wLoc02_217, 0x0300, bx_56, 0xA000, ds);
 		Eq_10 bx_71 = ds->t01BE;
-		byte al_73 = (byte) wLoc02_219;
-		byte ah_75 = SLICE(wLoc02_219, byte, 8);
+		byte al_73 = (byte) wLoc02_217;
+		byte ah_75 = SLICE(wLoc02_217, byte, 8);
 		byte bl_87 = (byte) bx_71;
-		bl_87 = (byte) bx_71;
 		byte bh_100 = SLICE(bx_71, byte, 8);
-		bh_100 = SLICE(bx_71, byte, 8);
 		if (bx_56 >= 0xE6)
 		{
 			Eq_10 ax_76 = SEQ(ah_75, al_73 - 0x05);
@@ -50,26 +48,26 @@ void fn0C00_0100(struct Eq_2 * ds)
 				}
 			}
 		}
-		Eq_10 bx_104 = SEQ(bh_100, fn0C00_01EE(bl_87));
-		ds->t01BE = bx_104;
-		Eq_10 ax_111 = (word16) wLoc02_219 + ds->w01C6;
-		byte al_112 = (byte) ax_111;
-		if (al_112 == 0x01)
+		Eq_10 bx_102 = SEQ(bh_100, fn0C00_01EE(bl_87));
+		ds->t01BE = bx_102;
+		Eq_10 ax_109 = (word16) wLoc02_217 + ds->w01C6;
+		byte al_110 = (byte) ax_109;
+		if (al_110 == 0x01)
 			ds->w01C6 = -ds->w01C6;
-		if (al_112 == 0xC6)
+		if (al_110 == 0xC6)
 			ds->w01C6 = -ds->w01C6;
-		Eq_42 cx_131 = (word16) ds->t01C2 + ds->w01C4;
-		ds->t01C2 = cx_131;
-		Eq_10 ax_141 = fn0C00_01FD(ax_111, cx_131, 0x013F, bx_104, ds);
-		word16 bx_148 = (word16) ds->t01BC + ds->w01C0;
-		Eq_10 bx_157 = SEQ(SLICE(bx_148, byte, 8), fn0C00_01EE((byte) bx_148));
-		ds->t01BC = bx_157;
-		Eq_10 ax_162 = fn0C00_01FD(ax_141, cx_131, 0x00, bx_157, ds);
-		fn0C00_01CA(ax_162, 0x0F, ds->t01C2, 0xA000, ds);
-		fn0C00_01DA(ds->t01BE, SEQ(SLICE((uint16) (uint8) fn0C00_01DA(ds->t01BC, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
-		wLoc02_219 = ax_162;
-		byte ah_215;
-	} while (bios_kbd_check_keystroke(out al_16, out ah_215));
+		Eq_42 cx_129 = (word16) ds->t01C2 + ds->w01C4;
+		ds->t01C2 = cx_129;
+		Eq_10 ax_139 = fn0C00_01FD(ax_109, cx_129, 0x013F, bx_102, ds);
+		word16 bx_146 = (word16) ds->t01BC + ds->w01C0;
+		Eq_10 bx_155 = SEQ(SLICE(bx_146, byte, 8), fn0C00_01EE((byte) bx_146));
+		ds->t01BC = bx_155;
+		Eq_10 ax_160 = fn0C00_01FD(ax_139, cx_129, 0x00, bx_155, ds);
+		fn0C00_01CA(ax_160, 0x0F, ds->t01C2, 0xA000, ds);
+		fn0C00_01DA(ds->t01BE, SEQ(SLICE((uint16) fn0C00_01DA(ds->t01BC, 0x0F, 0x00, 0xA000, ds), byte, 8), 0x0F), 0x013F, 0xA000, ds);
+		wLoc02_217 = ax_160;
+		byte ah_213;
+	} while (bios_kbd_check_keystroke(out al_16, out ah_213));
 	msdos_terminate_program20();
 }
 
@@ -119,10 +117,8 @@ byte fn0C00_01EE(byte bl)
 //      fn0C00_0100
 Eq_10 fn0C00_01FD(Eq_10 ax, Eq_42 cx, Eq_42 dx, Eq_10 bx, struct Eq_2 * ds)
 {
-	byte al_18 = (byte) ax;
-	al_18 = (byte) ax;
+	byte al_19 = (byte) ax;
 	byte ah_22 = SLICE(ax, byte, 8);
-	ah_22 = SLICE(ax, byte, 8);
 	byte bl_12 = (byte) bx;
 	byte bh_14 = SLICE(bx, byte, 8);
 	if (cx != dx)
@@ -130,7 +126,7 @@ Eq_10 fn0C00_01FD(Eq_10 ax, Eq_42 cx, Eq_42 dx, Eq_10 bx, struct Eq_2 * ds)
 	if (ax < bx || ax >= SEQ(bh_14, bl_12 + 0x0A))
 	{
 		ds->t01C2.u0 = 0xA0;
-		ax = (SEQ(ah_22, al_18 + 0x61) & 0x7F) + 0x24;
+		ax = (SEQ(ah_22, al_19 + 0x61) & 0x7F) + 0x24;
 		return ax;
 	}
 	else

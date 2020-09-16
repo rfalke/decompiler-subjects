@@ -17,6 +17,6 @@ word32 g_dw8049F10 = 0x00;
 word32 g_dw804A004 = 0x00;
 byte g_b804A028 = 0x00;
 Eq_263 g_t804A02C = 0x00;
-byte g_b804A030 = 0x00;
-byte g_b804A031 = 0x00;
+bui8 g_b804A030 = 0x00;
+bui8 g_b804A031 = 0x00;
 

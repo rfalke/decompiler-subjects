@@ -162,7 +162,7 @@ void loop2()
 {
 	int32 w9_5 = g_dw41102C;
 	ui32 w10_13 = (word32) (w9_5 < 100);
-	if ((word32) (word64) g_dw411018 <= 99)
+	if ((word32) (int64) g_dw411018 <= 99)
 	{
 		while (true)
 		{

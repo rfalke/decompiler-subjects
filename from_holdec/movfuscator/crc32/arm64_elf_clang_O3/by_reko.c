@@ -148,6 +148,13 @@ void rc_crc32(ptr64 x1, int64 x2)
 			while (x1 - x10_14 < 0x00);
 		}
 	}
+	else
+	{
+		Eq_96 q0_34 = g_t4007F0;
+		__movi_i32(0x100000001);
+		__dup_i32(0x8320);
+		__add_i32(__dup_i32(0x00), q0_34);
+	}
 }
 
 // 000000000040070C: void main(Register word32 x2_32_32)

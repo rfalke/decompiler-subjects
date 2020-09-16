@@ -8,7 +8,7 @@
 void fn0C00_0100(int16 cx, byte bh)
 {
 	__syscall(0x10);
-	byte Eq_15::* di_10;
+	byte Eq_15::* di_10 = Eq_15::a0000;
 	word16 si_13 = 0x018B;
 	int16 cx_21 = cx;
 	do
@@ -26,7 +26,7 @@ void fn0C00_0100(int16 cx, byte bh)
 		byte Eq_15::* bx_76 = SEQ(bh, 200);
 		do
 		{
-			byte Eq_15::* cx_44;
+			byte Eq_15::* cx_44 = &Eq_15::b0140;
 			do
 			{
 				0xA000->*si_40 = 0x9000->*bx_76 + 0x9000->*cx_44 + cx_44[dx_38] & SLICE(dx_38, byte, 8);

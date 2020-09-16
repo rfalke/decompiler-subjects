@@ -8,5 +8,11 @@ Eq_2 g_t108AC = Unexpected function type (fn void ())
 ;
 char g_str108C8[] = "%f";
 char g_str108D0[] = "a is %f, b is %f\n";
+char g_str108E8[] = "Equal\n";
+char g_str108F0[] = "Not Equal\n";
+char g_str10900[] = "Greater\n";
+char g_str10910[] = "Less or Equal\n";
+char g_str10920[] = "Greater or Equal\n";
+char g_str10938[] = "Less\n";
 ptr32 g_ptr20B10 = 0x00;
 

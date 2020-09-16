@@ -68,7 +68,7 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 			si_101 = si_118 + 0x3B;
 			bl_115 = 0x00;
 		}
-		byte Eq_21::* di_151;
+		byte Eq_21::* di_151 = Eq_21::a0000;
 		do
 		{
 			0xB800->*di_151 = 0x8000->*di_151;

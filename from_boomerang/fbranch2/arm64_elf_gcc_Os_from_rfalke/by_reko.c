@@ -85,14 +85,22 @@ void fn0000000000000770()
 
 #include "subject_text.h"
 
-// 0000000000000780: void main(Stack real32 dwArg04)
-void main(real32 dwArg04)
+// 0000000000000780: void main(Stack Eq_21 dwArg04)
+void main(Eq_21 dwArg04)
 {
 	fn0000000000000760();
 	fn0000000000000770();
 	if (dwArg04 == 5.0F)
 		fn0000000000000750();
 	if (dwArg04 != 5.0F)
+		fn0000000000000750();
+	if (dwArg04 < 5.0F)
+		fn0000000000000750();
+	if (dwArg04 >= 5.0F)
+		fn0000000000000750();
+	if (dwArg04 <= 5.0F)
+		fn0000000000000750();
+	if (dwArg04 > 5.0F)
 		fn0000000000000750();
 }
 

@@ -1,4 +1,4 @@
 === Using options:
-: warning: Type transformer has looped 51 times, quitting prematurely.
+0000000000000EC0: warning: AArch64 instruction cmhs	v3.16b,v1.16b,v3.16b,#0 is not supported yet.
 00011DA8: warning: Expected sizes of arrays to have been determined by now
 00011DA8: warning: Expected sizes of arrays to have been determined by now

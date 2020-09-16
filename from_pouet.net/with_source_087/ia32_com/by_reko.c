@@ -4,42 +4,47 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte ch, Register Eq_4 bx, Register (memptr (ptr16 Eq_6) Eq_5) si, Register (ptr16 Eq_6) ds)
-void fn0C00_0100(byte ah, byte ch, Eq_4 bx, struct Eq_5 Eq_6::* si, struct Eq_6 * ds)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte ch, Register byte bl, Register (memptr (ptr16 Eq_6) Eq_5) si, Register (ptr16 Eq_6) ds)
+void fn0C00_0100(byte ah, byte ch, byte bl, struct Eq_5 Eq_6::* si, struct Eq_6 * ds)
 {
+	byte bl_13 = (byte) bx;
+	Eq_10 bx_14 = SEQ(~0x05, bl_13);
 	__fninit();
-	Eq_4 di_13 = bx;
+	Eq_10 di_15 = bx_14;
+	real64 rLoc1_144 = 0.0;
 	do
 	{
-		ds->*di_13 = (int16) (sin(3.14159265358979 / (real64) (ds->*si).w003C) * (real64) (ds->*si).w0000 + (real64) (ds->*si).w0000 + (real64) (ds->*si).w0000);
-		di_13 = (word16) di_13 + 1;
-	} while (di_13 != 0x00);
+		real64 rLoc2_146 = 3.14159265358979 / (real64) (ds->*si).w003C;
+		ds->*di_15 = (int16) (sin(rLoc1_144) * (real64) (ds->*si).w0000 + (real64) (ds->*si).w0000 + (real64) (ds->*si).w0000);
+		rLoc1_144 += rLoc2_146;
+		di_15 = (word16) di_15 + 1;
+	} while (di_15 != 0x00);
 	__syscall(0x10);
-	word16 ax_110 = SEQ(ah, 0x13);
+	word16 ax_113 = SEQ(ah, 0x13);
 	while (true)
 	{
-		Eq_4 di_118 = di_13;
-		byte ch_132 = SLICE(cx, byte, 8);
-		word16 ax_46 = ax_110 + 0x01;
-		ax_73 = ax_46;
+		Eq_10 di_121 = di_15;
+		byte ch_135 = SLICE(cx, byte, 8);
+		word16 ax_49 = ax_113 + 0x01;
+		ax_76 = ax_49;
 		do
 		{
-			word16 ax_73;
-			word16 Eq_6::* si_113 = SEQ(SLICE(bx, byte, 8), ds->*((word16) bx + (uint16) ((byte) ax_73)));
-			++ax_73;
-			word16 cx_119 = SEQ(ch_132, 0xA0);
+			word16 ax_76;
+			word16 Eq_6::* si_116 = SEQ(~0x05, ds->*((word16) bx_14 + (uint16) ((byte) ax_76)));
+			++ax_76;
+			word16 cx_122 = SEQ(ch_135, 0xA0);
 			while (true)
 			{
-				ch_132 = SLICE(cx_119, byte, 8);
-				if (cx_119 == 0x00)
+				ch_135 = SLICE(cx_122, byte, 8);
+				if (cx_122 == 0x00)
 					break;
-				0xA000->*di_118 = ds->*si_113;
-				++si_113;
-				di_118 = (word16) di_118 + 2;
-				--cx_119;
+				0xA000->*di_121 = ds->*si_116;
+				++si_116;
+				di_121 = (word16) di_121 + 2;
+				--cx_122;
 			}
-		} while (di_118 < bx);
-		ax_110 = ax_46;
+		} while (di_121 < bx_14);
+		ax_113 = ax_49;
 	}
 }
 

@@ -9,27 +9,27 @@ void fn0C00_0100(byte ah, word16 cx, struct Eq_4 * bx, struct Eq_5 * es)
 {
 	byte bh_141 = SLICE(bx, byte, 8);
 	byte Eq_5::* di_10 = Eq_5::a01E9;
-	word16 ax_227 = SEQ(ah, 0x07);
+	word16 ax_224 = SEQ(ah, 0x07);
 	do
 	{
-		es->*di_10 = (byte) ax_227;
+		es->*di_10 = (byte) ax_224;
 		++di_10;
 		--cx;
-		++ax_227;
+		++ax_224;
 	} while (cx != 0x00);
 	byte Eq_5::* di_17 = Eq_5::a01E2;
 	int16 si_22 = bx->w046C;
-	Eq_30 bx_142 = SEQ(bh_141, 0x0A);
+	Eq_30 bx_100 = SEQ(bh_141, 0x0A);
 	do
 	{
-		--bx_142;
+		--bx_100;
 		si_22 *= 0x22E3;
-		Eq_37 dx_40 = (uint16) ((uint32) (uint16) si_22 % bx_142);
+		Eq_37 dx_40 = (uint16) ((uint32) si_22 % bx_100);
 		byte v21_47 = ss->*((word16) dx_40 + 0x0212);
-		ss->*((word16) dx_40 + 0x0212) = cs->*((word16) bx_142 + 0x0212);
+		ss->*((word16) dx_40 + 0x0212) = cs->*((word16) bx_100 + 0x0212);
 		es->*di_17 = v21_47;
 		++di_17;
-	} while ((byte) bx_142 != 0x04);
+	} while ((byte) bx_100 != 0x04);
 	es->*di_17 = 0x24;
 	fn0C00_018B(0x96, cs);
 	word16 bp_60 = 0x14;
@@ -37,8 +37,8 @@ void fn0C00_0100(byte ah, word16 cx, struct Eq_4 * bx, struct Eq_5 * es)
 	{
 		fn0C00_018B(~0x25, cs);
 		__syscall(33);
-		byte ch_155 = SLICE(cx, byte, 8);
-		byte bh_149 = SLICE(bx_142, byte, 8);
+		byte ch_154 = SLICE(cx, byte, 8);
+		byte bh_149 = SLICE(bx_100, byte, 8);
 		byte al_72 = cs->b01EA;
 		if (al_72 == 0x00)
 			break;
@@ -47,33 +47,33 @@ void fn0C00_0100(byte ah, word16 cx, struct Eq_4 * bx, struct Eq_5 * es)
 		--bp_60;
 		if (bp_60 == 0x00)
 			break;
-		struct Eq_97 Eq_47::* si_83 = Eq_47::a01E2;
-		word16 dx_154 = 0x6030;
-		cx = SEQ(ch_155, 0x06);
+		Eq_96 si_83 = 0x01E2;
+		word16 dx_153 = 0x6030;
+		cx = SEQ(ch_154, 0x06);
 		do
 		{
-			byte dh_108 = SLICE(dx_154, byte, 8);
-			byte dl_118 = (byte) dx_154;
-			byte al_89 = (cs->*si_83).b0000;
-			++si_83;
-			Eq_30 bx_100 = SEQ(bh_149, 0x08);
+			byte dh_108 = SLICE(dx_153, byte, 8);
+			byte dl_118 = (byte) dx_153;
+			byte al_89 = cs->*si_83;
+			si_83 = (word16) si_83 + 1;
+			bx_100 = SEQ(bh_149, 0x08);
 			if (al_89 == Mem58[cs:bx_100 + si_83:byte])
 			{
-				word16 dx_97 = dx_154 + 0x01;
+				word16 dx_97 = dx_153 + 0x01;
 				dh_108 = SLICE(dx_97, byte, 8);
 				dl_118 = (byte) dx_97;
 			}
 			do
 			{
 				--bx_100;
+				bh_149 = SLICE(bx_100, byte, 8);
 				if (bx_100 == 0x00)
 					goto l0C00_0159;
 			} while (al_89 != cs->*((word16) bx_100 + 490));
 			++dh_108;
 l0C00_0159:
-			bh_149 = SLICE(bx_100, byte, 8);
 			--cx;
-			dx_154 = SEQ(dh_108, dl_118);
+			dx_153 = SEQ(dh_108, dl_118);
 		} while (cx != 0x00);
 		if (dl_118 == 0x36)
 		{
@@ -83,15 +83,14 @@ l0C00_0159:
 		msdos_write_console_char(dl_118);
 		__syscall(33);
 		__syscall(33);
-		bx_142 = bx_100;
 	}
 	fn0C00_018B(226, cs);
 }
 
-// 0C00:018B: void fn0C00_018B(Register byte dl, Register (ptr16 Eq_47) ds)
+// 0C00:018B: void fn0C00_018B(Register byte dl, Register (ptr16 Eq_46) ds)
 // Called from:
 //      fn0C00_0100
-void fn0C00_018B(byte dl, struct Eq_47 * ds)
+void fn0C00_018B(byte dl, struct Eq_46 * ds)
 {
 	msdos_display_string(&(ds->*SEQ(0x01, dl)));
 }

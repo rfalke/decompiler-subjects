@@ -52,9 +52,13 @@ void main()
 {
 	__align(fp);
 	inst_0_values_var_0();
+	inst_0_flags_var_0();
+	inst_1_values_var_0();
+	inst_1_flags_var_0();
+	inst_2_values_var_0();
 }
 
-// 080491D0: void _start(Register (ptr32 Eq_15) edx, Stack int32 dwArg00)
+// 080491D0: void _start(Register (ptr32 Eq_27) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -112,6 +116,7 @@ void frame_dummy()
 //      main
 void inst_0_values_var_0()
 {
+	__tzcnt(~0x434B);
 }
 
 // 08049330: void inst_0_flags_var_0()
@@ -119,6 +124,7 @@ void inst_0_values_var_0()
 //      main
 void inst_0_flags_var_0()
 {
+	__tzcnt(~0x3119);
 }
 
 // 08049399: void inst_1_values_var_0()
@@ -126,6 +132,7 @@ void inst_0_flags_var_0()
 //      main
 void inst_1_values_var_0()
 {
+	__tzcnt(3528830083);
 }
 
 // 080493E2: void inst_1_flags_var_0()
@@ -133,6 +140,7 @@ void inst_1_values_var_0()
 //      main
 void inst_1_flags_var_0()
 {
+	__tzcnt(0x0CC38128);
 }
 
 // 0804944A: void inst_2_values_var_0()
@@ -329,6 +337,7 @@ void inst_15_values_var_0()
 //      main
 void inst_15_flags_var_0()
 {
+	!OVERFLOW(SLICE(cond(-0x535C33B7), bool, 4) + 643386864);
 }
 
 // 08049E36: void inst_16_values_var_0()
@@ -398,6 +407,7 @@ void inst_19_flags_var_0()
 //      main
 void inst_20_values_var_0()
 {
+	__lzcnt(33974);
 }
 
 // 0804A136: void inst_20_flags_var_0()
@@ -405,6 +415,7 @@ void inst_20_values_var_0()
 //      main
 void inst_20_flags_var_0()
 {
+	__lzcnt(52758);
 }
 
 // 0804A197: void inst_21_values_var_0()
@@ -412,6 +423,7 @@ void inst_20_flags_var_0()
 //      main
 void inst_21_values_var_0()
 {
+	__lzcnt(-0x53188130);
 }
 
 // 0804A1E0: void inst_21_flags_var_0()
@@ -419,6 +431,7 @@ void inst_21_values_var_0()
 //      main
 void inst_21_flags_var_0()
 {
+	__lzcnt(1487480408);
 }
 
 // 0804A240: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

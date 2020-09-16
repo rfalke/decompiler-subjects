@@ -26,7 +26,7 @@ void fn0C00_0100(byte ah, word16 cx, byte bl, struct Eq_5 Eq_11::* di)
 				break;
 			byte v14_25 = (bx_7->*di_15).b0001;
 			(bx_7->*di_15).b0001 = 0x00;
-			ax_13 = (uint16) (uint8) v14_25;
+			ax_13 = (uint16) v14_25;
 		}
 	}
 }

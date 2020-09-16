@@ -10,7 +10,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte Eq_9::* di)
 	__syscall(0x10);
 	struct Eq_9 * es_68 = ds_bx->ptr0002;
 l0C00_0106:
-	uint32 dx_ax_13 = (uint32) (uint16) di;
+	uint32 dx_ax_13 = (uint32) di;
 	Eq_25 ax_16 = (uint16) (dx_ax_13 /u 0x0140);
 	Eq_16 dx_15 = (uint16) (dx_ax_13 % 0x0140);
 	si = ax_16 - 0x4B;

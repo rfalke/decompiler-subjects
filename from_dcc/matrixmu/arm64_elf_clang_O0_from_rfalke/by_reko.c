@@ -149,7 +149,7 @@ void multMatrix(ptr64 x0, ptr64 x1, ptr64 x2)
 				int32 dwLoc26_104 = SEQ((word16) dwLoc24_116, wLoc26);
 				if (dwLoc24_116 >= 0x04)
 					break;
-				(x2 + (word64) dwLoc26_104 * 0x14)[(word64) SEQ(wLoc26, wLoc28_106) * 0] = (x0 + (word64) dwLoc26_104 * 0x00)[(word64) dwLoc2A * 0] * (x1 + (word64) dwLoc2A * 0x14)[(word64) SEQ(wLoc26, wLoc28_106) * 0] + (x2 + (word64) dwLoc26_104 * 0x14)[(word64) SEQ(wLoc26, wLoc28_106) * 0];
+				(x2 + (int64) dwLoc26_104 * 0x14)[(int64) SEQ(wLoc26, wLoc28_106) * 0] = (x0 + (int64) dwLoc26_104 * 0x00)[(int64) dwLoc2A * 0] * (x1 + (int64) dwLoc2A * 0x14)[(int64) SEQ(wLoc26, wLoc28_106) * 0] + (x2 + (int64) dwLoc26_104 * 0x14)[(int64) SEQ(wLoc26, wLoc28_106) * 0];
 				++dwLoc24_116;
 			}
 		}

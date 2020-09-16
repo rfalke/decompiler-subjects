@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Sequence word32 eax_16_16_di, Register uint16 cx, Register byte bl, Register word16 bp, Register word16 si, Register (ptr16 Eq_7) ds)
-void fn0C00_0100(word32 eax_16_16_di, uint16 cx, byte bl, word16 bp, word16 si, struct Eq_7 * ds)
+// 0C00:0100: void fn0C00_0100(Sequence word32 eax_16_16_di, Register byte cl, Register byte bl, Register word16 bp, Register word16 si, Register (ptr16 Eq_7) ds)
+void fn0C00_0100(word32 eax_16_16_di, byte cl, byte bl, word16 bp, word16 si, struct Eq_7 * ds)
 {
 	__syscall(0x10);
 	struct Eq_13 * bx_7 = SEQ(0xA0, bl);
@@ -16,30 +16,30 @@ void fn0C00_0100(word32 eax_16_16_di, uint16 cx, byte bl, word16 bp, word16 si, 
 		{
 			Eq_48 edx_eax_13 = (int64) eax_16_16_di_100;
 			uint16 ax_19 = (uint16) (edx_eax_13 /u 0x0140);
-			Eq_54 ax_33 = (uint16) ((word32) cx /u (ax_19 + 0x01));
-			uint16 ax_36 = (word16) ax_33 + si;
-			ui16 ax_46 = SEQ(SLICE(ax_36, byte, 8), ds->*((word16) (((uint16) (edx_eax_13 % 0x0140) - 0xA0) *s ax_33 >> 0x0C) + (uint16) ((byte) ax_36 & 0xF0))) ^ bp;
+			Eq_54 ax_35 = (uint16) ((word32) SEQ(0x20, (byte) cx) /u (ax_19 + 0x01));
+			uint16 ax_38 = (word16) ax_35 + si;
+			ui16 ax_48 = SEQ(SLICE(ax_38, byte, 8), ds->*((word16) (((uint16) (edx_eax_13 % 0x0140) - 0xA0) *s ax_35 >> 0x0C) + (uint16) ((byte) ax_38 & 0xF0))) ^ bp;
 			struct Eq_17 Eq_13::* di_9 = (word16) eax_16_16_di_100;
-			word16 eax_16_16_82 = SLICE(edx_eax_13, word16, 16);
+			word16 eax_16_16_84 = SLICE(edx_eax_13, word16, 16);
 			cx = ax_19 + 0x01;
-			byte al_53 = (byte) ax_46;
-			byte ah_60 = SLICE(ax_46, byte, 8);
-			di_56 = di_9;
+			byte al_55 = (byte) ax_48;
+			byte ah_62 = SLICE(ax_48, byte, 8);
+			di_58 = di_9;
 			do
 			{
-				struct Eq_17 Eq_13::* di_56;
-				byte al_54 = al_53 | 0x10;
-				(bx_7->*di_56).b0000 = al_54;
-				word16 ax_61 = SEQ(ah_60, al_54);
-				byte al_63 = (byte) (ax_61 + 0x01);
-				di_56 -= 0x0140;
-				ah_60 = SLICE(ax_61 + 0x01, byte, 8);
-				al_53 = al_63 & 0x0F;
-			} while ((al_63 & 0x0F) != 0x00);
-			eax_16_16_di_100 = SEQ(eax_16_16_82, &di_9->b0000 + 1);
+				struct Eq_17 Eq_13::* di_58;
+				byte al_56 = al_55 | 0x10;
+				(bx_7->*di_58).b0000 = al_56;
+				word16 ax_63 = SEQ(ah_62, al_56);
+				byte al_65 = (byte) (ax_63 + 0x01);
+				di_58 -= 0x0140;
+				ah_62 = SLICE(ax_63 + 0x01, byte, 8);
+				al_55 = al_65 & 0x0F;
+			} while ((al_65 & 0x0F) != 0x00);
+			eax_16_16_di_100 = SEQ(eax_16_16_84, &di_9->b0000 + 1);
 		} while (di_9 != &Eq_13::t0001);
 		++si;
-		eax_16_16_di_100 = SEQ(eax_16_16_82, &di_9->b0000 + 1);
+		eax_16_16_di_100 = SEQ(eax_16_16_84, &di_9->b0000 + 1);
 	} while (si != 0x00);
 }
 

@@ -155,7 +155,7 @@ void main(up32 w0)
 	}
 	else
 	{
-		switch ((word32) (2132 + (int64) ((int8) ((word32) (&g_t0964)[(uint64) ((uint32) (w0 - 0x02))]))))
+		switch ((word32) (2132 + (int64) ((int8) ((word32) (&g_t0964)[(uint64) (w0 - 0x02)]))))
 		{
 		case 0x00:
 			goto l0000000000000858;

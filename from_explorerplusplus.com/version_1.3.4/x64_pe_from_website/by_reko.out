@@ -3,7 +3,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140060D66: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140052CC7: warning: Procedure fn0000000140052C58 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014004BD9C: warning: x86 instruction 'movdqu' is not supported yet.
 000000014008EE21: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpW.
 000000014008EFA7: warning: Unable to resolve imported reference SHLWAPI.dll!SHDeleteKeyW.
 00000001400D1C75: warning: Procedure fn00000001400D1B10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
@@ -42,7 +41,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014008F552: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
 000000014008F552: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_23.
 000000014008FB65: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014008F9D4: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 0000000140001079: warning: Procedure fn0000000140001000 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140001062: warning: Procedure fn0000000140001000 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014005694D: warning: Procedure fn0000000140056918 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -66,7 +64,8 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
 000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
 000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014013E0EB: warning: x86 instruction 'cvtdq2pd' is not supported yet.
+000000014013E2F9: warning: x86 instruction 'cvtpd2dq' is not supported yet.
+000000014013E2F9: warning: x86 instruction 'cvtpd2dq' is not supported yet.
 000000014013E810: error: 
 000000014000A6A9: warning: Procedure fn000000014000A630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140018F16: warning: Procedure fn0000000140018EA0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
@@ -133,7 +132,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400CB0A3: warning: Procedure fn00000001400CAF10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014007A3D4: warning: Procedure fn000000014007A340 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014007A9C5: warning: Procedure fn000000014007A580 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-00000001400AFE16: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 00000001400B2B1D: warning: Procedure fn00000001400B2A70 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400BDC7B: warning: Procedure fn00000001400BDB10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400C0D0D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
@@ -214,7 +212,8 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400D03D3: warning: Procedure fn00000001400D0250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B61D7: warning: Procedure fn00000001400B60B0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B8060: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
-0000000140084041: warning: x86 instruction 'cvtdq2pd' is not supported yet.
+000000014000937A: warning: Procedure fn0000000140009260 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001B8E3: warning: Procedure fn000000014001B830 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B8242: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B7E44: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B82B3: warning: Procedure fn00000001400B8250 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
@@ -236,8 +235,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014000BABF: warning: Procedure fn000000014000B780 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014000BAAA: warning: Procedure fn000000014000B780 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014000B904: warning: Procedure fn000000014000B780 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000014000937A: warning: Procedure fn0000000140009260 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000014001B8E3: warning: Procedure fn000000014001B830 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140003A0D: warning: Procedure fn0000000140003930 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B101D: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsDirectoryW.
 00000001400B10E8: warning: Procedure fn00000001400B0FC0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
@@ -632,7 +629,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400D0429: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400D045E: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400D0475: warning: Procedure fn00000001400D03E0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140081E75: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 000000014007E640: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014007E6A0: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014007E700: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
@@ -806,7 +802,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400B8536: warning: Procedure fn00000001400B8425 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000001400831E1: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 00000001400B7E4F: warning: Unable to resolve imported reference SHLWAPI.dll!PathIsRootW.
 00000001400B7C71: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageHorizontalResolution.
 00000001400B7CCF: warning: Unable to resolve imported reference gdiplus.dll!GdipGetImageVerticalResolution.
@@ -935,7 +930,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014009FE6E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
 000000014009FE6E: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
 000000014009FE9A: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
-000000014009FF56: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 000000014009F8F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 000000014009F8F8: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_25.
 000000014009F92E: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
@@ -1066,7 +1060,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140092163: warning: Procedure fn0000000140092140 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140092072: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
 0000000140090BA5: warning: Procedure fn0000000140090B00 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014008FE9F: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 000000014008F3EA: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014008F3C4: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014008F3CA: warning: Procedure fn000000014008F380 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -1520,7 +1513,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007D1FE: warning: Procedure fn000000014007D1A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014007D207: warning: Procedure fn000000014007D1A3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014007D1D3: warning: Procedure fn000000014007D1BB previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014007CA78: warning: Procedure fn000000014007CA00 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014007B9B0: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
 000000014007B9B0: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
 000000014007B9B9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
@@ -1913,7 +1905,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140062B3D: warning: Procedure fn00000001400629F0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140062BFB: warning: Procedure fn0000000140062B50 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400645A8: warning: Procedure fn0000000140064560 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140062B00: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 0000000140062399: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
 0000000140062300: warning: Procedure fn0000000140062332 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014006233C: warning: Procedure fn0000000140062338 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -1950,177 +1941,19 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014004C032: warning: Procedure fn000000014004C030 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014004BEE6: warning: Procedure fn000000014004BEE4 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014004BB8D: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014004B4B2: warning: x86 instruction 'cvtdq2pd' is not supported yet.
-000000014004B5A8: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 0000000140008172: warning: Procedure fn0000000140008100 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014004A7AF: warning: x86 instruction 'movdqu' is not supported yet.
 000000014004A5B7: error: 
-000000014004A51E: warning: x86 instruction 'movdqu' is not supported yet.
 00000001400080F5: warning: Procedure fn0000000140008030 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000014004A450: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140049DFF: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A0FB: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A132: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A1CB: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A19F: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140049E7D: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140049FC8: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140049F69: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A0A9: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004A0DD: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047E3B: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047CF5: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047B6D: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047936: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047BBE: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400479D6: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047A51: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047838: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400477E0: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047788: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047700: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400476AC: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047664: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047348: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140047001: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140046FBC: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140046E36: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004641F: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140046565: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400454FF: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004545E: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140045296: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400451C6: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140043DEA: warning: x86 instruction 'movdqu' is not supported yet.
+00000001400464BA: error: The method or operation is not implemented.
+0000000140046527: error: The method or operation is not implemented.
 0000000140043AFC: error: 
-0000000140043511: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140043893: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140043830: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140043830: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004361B: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400438D5: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004374E: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400436BC: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400437C7: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140042FE3: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400430D1: warning: x86 instruction 'movdqu' is not supported yet.
-000000014004310F: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140042F22: warning: x86 instruction 'movdqu' is not supported yet.
 0000000140042C34: error: 
-0000000140042B8E: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140042ABE: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040959: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040CDB: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040C78: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040C78: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040A63: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040D1D: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040B96: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040B04: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140040C0F: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003F16B: warning: x86 instruction 'movdqu' is not supported yet.
 000000014003F0F9: error: 
-000000014003EF7C: warning: x86 instruction 'movdqu' is not supported yet.
 000000014003EF0B: error: 
-000000014003EE35: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003ED36: warning: x86 instruction 'movdqu' is not supported yet.
 000000014002CBBC: warning: Procedure fn000000014002CBBC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014003EC52: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003EB6F: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003EA86: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E982: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E87D: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E779: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E676: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E565: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E44C: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003DEBE: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003DE5F: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003DEED: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003DFDA: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003E08A: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003C3DD: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003C3BF: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003C26D: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003C0E5: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BEAE: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003C136: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BF4E: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BFC9: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BDB0: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BD58: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BCB3: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BBF7: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BB47: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003BA97: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B9E7: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B9A1: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B819: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B5E2: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B86A: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B682: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B6FD: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B4E4: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003B48C: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400397FA: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400397A4: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140039805: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400395E0: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140039554: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140039505: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400394B9: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140039100: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140038D6D: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140038D26: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140038A72: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400388C4: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140038838: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400387E9: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003879D: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400383E4: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140038051: warning: x86 instruction 'movdqu' is not supported yet.
-000000014003800A: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140037D56: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140036C9F: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140036E4D: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140036623: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400367D1: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140034CA9: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140033C08: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140032957: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140032A1E: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140032A4F: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400327A3: warning: x86 instruction 'movdqu' is not supported yet.
 0000000140032731: error: 
-00000001400325B4: warning: x86 instruction 'movdqu' is not supported yet.
 0000000140032543: error: 
-000000014003246A: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140032386: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400322A3: warning: x86 instruction 'movdqu' is not supported yet.
 000000014000EC92: warning: Procedure fn000000014000EC20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000001400321BA: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140031CA5: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140031CE2: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140031D33: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140031E2F: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140031EE6: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140030CD5: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140030BD6: warning: x86 instruction 'movdqu' is not supported yet.
-0000000140030AD2: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400309CD: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400308C9: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400307C6: warning: x86 instruction 'movdqu' is not supported yet.
-00000001400306B5: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002F0D7: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002F01B: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002EF6B: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002EEBB: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002EE0B: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002ECDD: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002ED3E: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002DD3C: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002DC6D: warning: x86 instruction 'movdqu' is not supported yet.
-000000014002DBCB: warning: x86 instruction 'movdqu' is not supported yet.
 000000014002EB1D: warning: Procedure fn000000014002EACC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001EAC: warning: Procedure fn0000000140001E20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014002B27D: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
@@ -2249,7 +2082,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014001E810: warning: Procedure fn000000014001E7C7 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014001E82E: warning: Procedure fn000000014001E812 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014001E812: warning: Procedure fn000000014001E812 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014001E134: warning: x86 instruction 'cvtdq2pd' is not supported yet.
 000000014001DFD9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014001DFD9: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_18.
 000000014001DFE5: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_17.
@@ -2261,6 +2093,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014001E009: warning: Unable to resolve imported reference SHELL32.dll!SHGetDesktopFolder.
 000000014001E0D9: warning: Procedure fn000000014001DFD1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014001E0F0: warning: Procedure fn000000014001DFD1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000014001E0FE: warning: Procedure fn000000014001DFD1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014001E20B: warning: Procedure fn000000014001E203 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014001E221: warning: Procedure fn000000014001E20E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014001DFCC: warning: Procedure fn000000014001DF50 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -2319,576 +2152,24 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140005814: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000581C: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400048C2: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-fn00000001400B82F7: error: An internal error occurred while building the expressions of fn00000001400B82F7
-    The given key 'fn00000001400B82F7_exit' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x00042] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.BlockDominatorGraph..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entry) [0x00000] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0009a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-fn00000001400D6FB0: error: An internal error occurred while building the expressions of fn00000001400D6FB0
-    Dominator graph calculation timed out.
-      at Reko.Core.Lib.DominatorGraph`1[T].Intersect (System.Collections.Generic.Dictionary`2[TKey,TValue] postdoms, T b1, T b2) [0x00069] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T].Build (Reko.Core.Lib.DirectedGraph`1[T] graph, T entryNode) [0x00106] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entryNode) [0x0001e] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Lib.BlockDominatorGraph..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Core.Block entry) [0x00000] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0009a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140005811: error: An error occurred while processing the statement Mem70[Mem52[rcx + 0<64>:word64] + 0<64>:word16] = 0<16>.
-    Invalid pointer size.
-Parameter name: bitSize
-      at Reko.Core.Types.Pointer..ctor (Reko.Core.Types.DataType pointee, System.Int32 bitSize) [0x00013] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Types.TypeFactory.CreatePointer (Reko.Core.Types.DataType pointee, System.Int32 bitSize) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.StructField (Reko.Core.Expressions.Expression eBase, Reko.Core.Expressions.Expression eStructPtr, System.Int32 offset, Reko.Core.Types.DataType dtField, System.Int32 structPtrBitSize) [0x00030] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00076] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140005D60: error: An error occurred while processing the statement Mem5549[qwLocE0_6130 + 0<64>:byte] = SLICE((uint64) (word32) Mem5512[(int64) ebx_1549 + 0x00000001400F6818<p64>:byte], byte, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400060C8: error: An error occurred while processing the statement Mem1137[r13_1138 + 0<64>:byte] = SLICE((uint64) (word32) Mem994[(int64) ebx_1057 + 0x00000001400F6818<p64>:byte], byte, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400065DA: error: An error occurred while processing the statement Mem5223[r13_1138 + 0<64>:byte] = SLICE((uint64) (word32) Mem3094[(int64) ecx_3150 + 0x00000001400F6818<p64>:byte], byte, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140016598: error: An error occurred while processing the statement rdx_106 = rdx_106 - rax_110 >> 1<64>.
-    Pulling difference int64 and (ptr64 (struct (0 T_3 t0000) (10 T_46370 t0010) (18 T_46357 t0018)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014001D3CD: error: An error occurred while processing the statement word64 r8_158 = qwArg28 - (fp - 0x458<64>).
-    Pulling difference (union (word64 u0) (word16 u2) (LPARAM u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002117F: error: An error occurred while processing the statement word64 r9_239 = 0x00000001400F7D58<p64> - rax_235.
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002A529: error: An error occurred while processing the statement rdx_147 = rdx - rax_125 >> 1<64>.
-    Pulling difference int64 and (ptr64 (struct (18 T_85575 t0018)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002C6D1: error: An error occurred while processing the statement word64 rcx_291 = rbx_207 - (int64) Mem252[(int64) esi_147 + 0x00000001400E4420<p64>:byte] - rbx_130.
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002CA84: error: An error occurred while processing the statement word64 rcx_292 = rbx_209 - (int64) Mem288[rsi_153 + 0x00000001400E4470<p64>:byte] - rbx_123.
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002FB1D: error: An error occurred while processing the statement Mem1903[r13_1164 + 0<64>:byte] = Mem1871[(int64) ebx_1511 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014002FDC1: error: An error occurred while processing the statement Mem1154[r13_1164 + 0<64>:byte] = Mem1122[(int64) ebx_910 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014003000A: error: An error occurred while processing the statement Mem3050[r13_1164 + 0<64>:byte] = Mem2969[(int64) eax_2998 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140039FB1: error: An error occurred while processing the statement Mem2177[rsi_1010 + 0<64>:byte] = Mem2137[(int64) ebx_1761 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014003A2B3: error: An error occurred while processing the statement Mem1404[rsi_1010 + 0<64>:byte] = Mem1364[(int64) ebx_1148 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014003A55F: error: An error occurred while processing the statement Mem3350[rsi_1010 + 0<64>:byte] = Mem3236[(int64) ecx_3300 + 0x00000001400F6818<p64>:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140043A27: error: An error occurred while processing the statement word64 rdx_91 = rax_109 + rdx_81 * 2<64> - rcx_84.
-    Pulling difference (union (word16 u1) ((ptr64 (struct (0 T_138336 t0000) (10 T_107734 t0010) (18 T_138325 t0018))) u0)) and (ptr64 (struct (0 T_3 t0000) (10 T_107734 t0010) (18 T_138325 t0018)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014004AFC7: error: An error occurred while processing the statement Mem29[rax + 0<64>:word64] = Mem24[rax + 0<64>:word64] & 0<64>.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000ad] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014004D46E: error: An error occurred while processing the statement branch (Mem38[rdx + 0<64>:byte] & 8<8>) == 0<8> l000000014004D475.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000ad] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400520F1: error: An error occurred while processing the statement ecx_115 = SLICE((uint64) ((int32) Mem96[(uint64) (word32) r13w_101 - 0x20<64> + 0x00000001400E82A0<p64>:byte] & 0xF<32>), word32, 0) (alias).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005210E: error: An error occurred while processing the statement edx_119 = SLICE((uint64) ((int32) Mem96[(int64) edx_119 + (int64) ecx_115 * 8<64> + 0x00000001400E82A0<p64>:byte] >> 4<32>), word32, 0) (alias).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0051d] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005472A: error: An error occurred while processing the statement Mem52[rax_19 + 8<64>:word64] = Mem7[rax_19 + 8<64>:word64] | 0xFFFFFFFFFFFFFFFF<64>.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000ad] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005490E: error: An error occurred while processing the statement Mem77[rax_42 + 8<64>:word64] = Mem27[rax_42 + 8<64>:word64] | 0xFFFFFFFFFFFFFFFF<64>.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000ad] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140056048: error: An error occurred while processing the statement word64 rdi_212 = (r10_74 << 4<64>) - rdx - 0xC<64> + 0x000000014011C970<p64>.
-    Pulling difference ui64 and (ptr64 (struct (4 T_178841 t0004) (8 T_178942 t0008) (C T_178934 t000C)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400561C7: error: An error occurred while processing the statement Mem262[rcx_258 + 0x11C750<64> + 0x0000000140000000<p64>:byte] = Mem189[rcx_258 + 0x1C<64> + rax_46:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400561E9: error: An error occurred while processing the statement Mem254[rcx_251 + 0x11C860<64> + 0x0000000140000000<p64>:byte] = Mem194[rcx_251 + 0x11D<64> + rax_46:byte].
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005ABC3: error: An error occurred while processing the statement branch r14_39 - rbx_1255 + rdx <= 1<64> l000000014005AD76.
-    Pulling difference uint64 and (ptr64 (struct 0002 (0 byte b0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005AE36: error: An error occurred while processing the statement word64 r8_537 = (uint64) SLICE((uint64) SLICE(rsi_1895, word32, 0) - (fp + 0xFFFFFFFFFFFFEBB8<64>), word32, 0).
-    Pulling difference uint64 and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitCast (Reko.Core.Expressions.Cast cast) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.Cast.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005AF18: error: An error occurred while processing the statement word64 r8_426 = (uint64) SLICE((uint64) SLICE(rsi_1899, word32, 0) - (fp + 0xFFFFFFFFFFFFEBB8<64>), word32, 0).
-    Pulling difference uint64 and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitCast (Reko.Core.Expressions.Cast cast) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.Cast.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014005E3F2: error: An error occurred while processing the statement r8 = r8 - r9_113.
-    Pulling difference (ptr64 (struct 0001 (0 byte b0000))) and (union (int64 u0) (uint64 u1))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140062608: error: An error occurred while processing the statement word64 rdx_133 = 0x00000001400EA1A8<p64> - (fp - 0x448<64>).
-    Pulling difference ptr64 and (union (LPCWSTR u1) (LPCWSTR u0) (LPWSTR u2))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140062F64: error: An error occurred while processing the statement word64 r9_141 = 0x00000001400EA188<p64> - (fp - 0x428<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140063393: error: An error occurred while processing the statement word64 r8_113 = 0x00000001400EAC9C<p64> - (fp - 0x268<64>).
-    Pulling difference ptr64 and (union (LPCWSTR u1) (LPCWSTR u0) (LPWIN32_FIND_DATAW u2))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140063745: error: An error occurred while processing the statement word64 r9_130 = 0x00000001400EA120<p64> - (fp - 0x428<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140064C28: error: An error occurred while processing the statement word32 eax_151 = SendMessageW(rcx_141, 0x1053<u64>, rbp - 0x30<64> | 0xFFFFFFFFFFFFFFFF<64>, rbp - 0x60<64>).
-    Not handling ptr64 and (union ((ptr64 (struct (FFFFFFA0 T_212783 tFFFFFFA0) (FFFFFFB0 T_212786 tFFFFFFB0))) u1) (ptr64 u0)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitApplication (Reko.Core.Expressions.Application appl, Reko.Core.Types.TypeVariable tv) [0x00053] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Application.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400684C3: error: An error occurred while processing the statement word64 rdi_177 = 0x00000001400EAC9C<p64> - (fp - 0x488<64>).
-    Pulling difference ptr64 and (union (LPWIN32_FIND_DATAW u1) (LPCWSTR u0) (LPCWSTR u2) (LPWIN32_FIND_DATAW u3))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014006BE02: error: An error occurred while processing the statement word64 rdx_221 = 0x00000001400E9DBC<p64> - (fp - 0x298<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (LPCWSTR u0) (LPCWSTR u2) (LPDWORD u4))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014006C7D6: error: An error occurred while processing the statement word64 r8_1165 = 0x00000001400EA2E0<p64> - (fp - 0x448<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 (union (word16 u1) ((arr T_225563) u0) ((arr T_423640) u3) ((arr T_423642) u6) ((arr T_423644) u9) ((arr T_423646) u12) ((arr T_423648) u15) ((arr T_423650) u19) ((arr T_423652) u22) ((arr T_423654) u30) ((arr T_423656) u33) ((arr T_423658) u36) ((arr T_423660) u39) ((arr T_423662) u42) ((arr T_423664) u45) ((arr T_423666) u48) ((arr T_423668) u51) (T_225571 u2) (T_225604 u4) (T_225612 u5) (T_225643 u7) (T_225651 u8) (T_225682 u10) (T_225690 u11) (T_225721 u13) (T_225729 u14) (T_225760 u16) (T_225768 u17) (T_225794 u18) (T_225818 u20) (T_225826 u21) (T_225857 u23) (T_225865 u24) (T_225904 u25) (T_225943 u26) (T_225982 u27) (T_226021 u28) (T_226060 u29) (T_226091 u31) (T_226099 u32) (T_226130 u34) (T_226138 u35) (T_226169 u37) (T_226177 u38) (T_226208 u40) (T_226216 u41) (T_226247 u43) (T_226255 u44) (T_226286 u46) (T_226294 u47) (T_226325 u49) (T_226333 u50) (T_226364 u52) (T_226372 u53)) u0000) (38 T_225326 t0038))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014006C79C: error: An error occurred while processing the statement word64 r8_1187 = 0x00000001400EA2D8<p64> - (fp - 0x448<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 (union (word16 u1) ((arr T_225563) u0) ((arr T_423640) u3) ((arr T_423642) u6) ((arr T_423644) u9) ((arr T_423646) u12) ((arr T_423648) u15) ((arr T_423650) u19) ((arr T_423652) u22) ((arr T_423654) u30) ((arr T_423656) u33) ((arr T_423658) u36) ((arr T_423660) u39) ((arr T_423662) u42) ((arr T_423664) u45) ((arr T_423666) u48) ((arr T_423668) u51) (T_225571 u2) (T_225604 u4) (T_225612 u5) (T_225643 u7) (T_225651 u8) (T_225682 u10) (T_225690 u11) (T_225721 u13) (T_225729 u14) (T_225760 u16) (T_225768 u17) (T_225794 u18) (T_225818 u20) (T_225826 u21) (T_225857 u23) (T_225865 u24) (T_225904 u25) (T_225943 u26) (T_225982 u27) (T_226021 u28) (T_226060 u29) (T_226091 u31) (T_226099 u32) (T_226130 u34) (T_226138 u35) (T_226169 u37) (T_226177 u38) (T_226208 u40) (T_226216 u41) (T_226247 u43) (T_226255 u44) (T_226286 u46) (T_226294 u47) (T_226325 u49) (T_226333 u50) (T_226364 u52) (T_226372 u53)) u0000) (38 T_225326 t0038))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140078301: error: An error occurred while processing the statement branch ebx_1197 >=u Mem1203[rdx_109 + 0<64>:word32] l0000000140078322.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00344] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140079AE7: error: An error occurred while processing the statement word64 rdx_87 = rbp_129 - rdi_131.
-    Pulling difference uint64 and (ptr64 (struct 0004 (0 (union (word32 u1) ((arr T_423726) u0)) u0000)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014007C157: error: An error occurred while processing the statement word64 r8_125 = qwLocA8 - (fp - 0x5C<64>).
-    Pulling difference LPCWSTR and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014007D4CF: error: An error occurred while processing the statement word64 r8_448 = fp - 0x878<64> - r11_33.
-    Pulling difference (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0)) and (ptr64 (struct (600 T_256307 t0600) (604 T_256315 t0604) (810 T_256323 t0810) (828 T_256329 t0828)))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014007D340: error: An error occurred while processing the statement word64 rbx_136 = r8_31 + 0x608<64> - (fp - 0x270<64>).
-    Not handling (ptr64 (struct 0002 (0 (union (word16 u1) ((arr T_256388) u0) (T_256396 u2) (T_256464 u3)) u0000) (600 T_256307 t0600) (604 T_256315 t0604) (810 T_256323 t0810) (828 T_256329 t0828))) and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014008219E: error: An error occurred while processing the statement word64 rdi_47 = rcx - (fp - 0x438<64>).
-    Pulling difference LPCWSTR and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400836BB: error: An error occurred while processing the statement word64 r8_80 = 0x00000001400EC1B0<p64> - (fp - 0xC28<64>).
-    Pulling difference ptr64 and (union ((ptr64 SYSTEMTIME) u1) ((ptr64 SYSTEMTIME) u0) ((ptr64 SYSTEMTIME) u4) (LPCWSTR u3) (LPWSTR u5))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140086650: error: An error occurred while processing the statement word64 rbx_241 = rdx - (r8 + 0x3C<64>).
-    Pulling difference (union (LPCWSTR u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140086887: error: An error occurred while processing the statement word64 rbx_106 = rdx - (r9 + 0xC<64>).
-    Pulling difference LPCWSTR and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-0000000140088E67: error: An error occurred while processing the statement word64 rsi_420 = r9 - (rcx + 0x1748<64>).
-    Pulling difference (union (LPCWSTR u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014008C591: error: An error occurred while processing the statement Mem103[rbp + -49<i64>:word32] = SLICE((uint64) Mem22[rsi_80 *s 0x84<64> + 0x80<64> + 0x000000014011DBC0<p64>:word32], word32, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitCast (Reko.Core.Expressions.Cast cast, Reko.Core.Types.TypeVariable tv) [0x00020] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Cast.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-000000014008F795: error: An error occurred while processing the statement word64 r8_924 = r8_915 - rax_916.
-    Pulling difference (union (ptr64 u0) (word16 u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-l00000001400B84C3: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-00000001400C130F: error: An error occurred while processing the statement word64 r11_480 = rax_448 - rax_476.
-    Pulling difference (ptr64 (struct (0 T_374468 t0000))) and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400C529B: error: An error occurred while processing the statement word64 r8_23 = rbp - (fp + 0x320<64>).
-    Pulling difference (union ((ptr64 (struct (0 T_382153 t0000))) u1) (LPCWSTR u0)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400C7FF4: error: An error occurred while processing the statement word64 r8_122 = r8_114 - (fp - 0x438<64>).
-    Pulling difference int64 and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400CA28A: error: An error occurred while processing the statement word64 r8_136 = 0x00000001400ECABC<p64> - (rbp + 0x9B0<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000) (780 T_389599 t0780))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400CEC9B: error: An error occurred while processing the statement word64 r9_158 = rax_61 - (fp + 0xFFFFFFFFFFFFF588<64>).
-    Pulling difference (union (word64 u0) (LPARAM u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400CECDC: error: An error occurred while processing the statement word64 r8_203 = rax_86 - (fp + 0xFFFFFFFFFFFFF788<64>).
-    Pulling difference (union (word64 u0) (LPARAM u1)) and ptr64
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400D0AA7: error: An error occurred while processing the statement word64 r8_714 = 0x00000001400ECA8C<p64> - rax_710.
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 (union (word16 u1) ((arr T_398976) u0) (T_398984 u2) (T_399000 u3) (T_399227 u4) (T_399262 u5)) u0000) (A10 T_399190 t0A10))) u1) (LPCWSTR u0) (LPCWSTR u2))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-00000001400D6BB0: error: An error occurred while processing the statement word64 r8_89 = 0x00000001400EBED4<p64> - (fp - 0x838<64>).
-    Pulling difference ptr64 and (union ((ptr64 (struct 0002 (0 word16 w0000))) u1) (ptr64 u0))
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-=== Killed because of CPU time limit
+error: An error occurred during decompilation. System.ArgumentException: dt
+Parameter name: Invalid bit size.
+  at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.TrashedRegisterFinder.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.TrashedRegisterFinder.ProcessBlock (Reko.Core.Block block) [0x0005c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.TrashedRegisterFinder.Compute () [0x00020] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00070] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 

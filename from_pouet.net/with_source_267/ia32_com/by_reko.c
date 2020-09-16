@@ -9,7 +9,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	__outb(0x03C8, 0x00);
-	cu16 dx_104 = 969;
+	cu16 dx_103 = 969;
 	cui16 ax_158 = 0x00;
 	do
 	{
@@ -17,19 +17,20 @@ void fn0C00_0100(struct Eq_2 * ds)
 		word16 ax_22 = __ror(ax_158, 0x08);
 		byte al_23 = (byte) ax_22;
 		__outb(969, al_23);
-		byte al_25 = al_23 | SLICE(ax_22, byte, 8);
+		byte ah_24 = SLICE(ax_22, byte, 8);
+		byte al_25 = al_23 | ah_24;
 		__outb(969, al_25);
-		word16 ax_29 = __ror(SEQ(SLICE(ax_22, byte, 8), al_25), 0x08);
-		word16 ax_33 = SEQ(SLICE(ax_29, byte, 8), (byte) ax_29 + 0x01);
-		ax_158 = ax_33 + 0x02;
-	} while (ax_33 != 0x02);
+		word16 ax_28 = __ror(SEQ(ah_24, al_25), 0x08);
+		word16 ax_32 = SEQ(SLICE(ax_28, byte, 8), (byte) ax_28 + 0x01);
+		ax_158 = ax_32 + 0x02;
+	} while (ax_32 != 0x02);
 	while (true)
 	{
-		ds->w01A5 = dx_104;
+		ds->w01A5 = dx_103;
 		ds->t01A7.u0 = 0x00;
-		struct Eq_62 Eq_78::* si_133 = &Eq_78::t7D00;
-		byte cl_45;
-		for (cl_45 = 0x00; cl_45 != 100; ++cl_45)
+		struct Eq_62 Eq_78::* si_132 = &Eq_78::t7D00;
+		byte cl_44;
+		for (cl_44 = 0x00; cl_44 != 100; ++cl_44)
 		{
 			ds->t01A7.u0 = (byte) ds->t01A7.u0 + 1;
 			ds->w01A5 -= ds->t01A7;
@@ -37,20 +38,20 @@ void fn0C00_0100(struct Eq_2 * ds)
 			cui16 dx_161 = 0x00;
 			do
 			{
-				(~0x5C03->*si_133).b0000 = (byte) dx_164 - ds->b01AC ^ (byte) __ror(ds->w01A9, 0x08);
+				(~0x5C03->*si_132).b0000 = (byte) dx_164 - ds->b01AC ^ (byte) __ror(ds->w01A9, 0x08);
 				ds->w01A9 -= dx_164;
-				si_133 = &si_133->b0000 + 1;
+				si_132 = &si_132->b0000 + 1;
 				dx_161 = dx_164 + 0x01;
 				dx_164 = dx_161;
 			} while (dx_164 != 0x013F);
-			si_133 -= 0x0280;
+			si_132 -= 0x0280;
 		}
-		byte al_93;
-		byte ah_94;
-		if (bios_kbd_check_keystroke(out al_93, out ah_94))
+		byte al_92;
+		byte ah_93;
+		if (bios_kbd_check_keystroke(out al_92, out ah_93))
 			break;
 		ds->w01AB += 0x0200;
-		dx_104 = 0x03DA;
+		dx_103 = 0x03DA;
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) != 0x00);

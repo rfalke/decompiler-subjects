@@ -10,30 +10,30 @@ void fn0C00_0100(struct Eq_2 * ds)
 	__syscall(0x10);
 	do
 	{
-		byte Eq_24::* di_14 = Eq_24::a020D;
+		byte Eq_25::* di_14 = Eq_25::a020D;
 		word16 cx_15;
 		for (cx_15 = 0xFA00; cx_15 != 0x00; --cx_15)
 		{
 			cs->*di_14 = 0x00;
 			++di_14;
 		}
-		real64 rLoc1_207 = (real64) ds->r01FB + ds->r01F3;
+		real64 rLoc1_207 = (real64) ds->r01FB + (real64) ds->r01F3;
 		ds->r01FB = (real32) rLoc1_207;
 		ds->r01FF = (real32) rLoc1_207;
 		int16 cx_117;
 		for (cx_117 = 0x015E; cx_117 != 0x00; --cx_117)
 		{
 			ds->w0207 = cx_117;
-			real64 rLoc1_210 = (real64) ds->r01FB - ds->r01FF - ds->r01FF;
+			real64 rLoc1_210 = (real64) ds->r01FB - (real64) ds->r01FF - (real64) ds->r01FF;
 			real64 rLoc1_211 = cos(rLoc1_210);
 			ds->r0203 = (real32) sin(rLoc1_210);
-			real64 rLoc2_214 = (real64) ds->r01FF - ds->r01F7;
+			real64 rLoc2_214 = (real64) ds->r01FF - (real64) ds->r01F7;
 			ds->r01FF = (real32) rLoc2_214;
 			real64 rLoc2_215 = rLoc2_214 * (real64) ds->w01EF;
 			real64 rLoc2_216 = cos(rLoc2_215);
-			ds->w020B = (int16) ((sin(rLoc2_215) * (real64) ds->w01ED - (real64) ds->w0207 / (real64) ds->w01EF) * ds->r0203 + (real64) ds->w01EB);
+			ds->w020B = (int16) ((sin(rLoc2_215) * (real64) ds->w01ED - (real64) ds->w0207 / (real64) ds->w01EF) * (real64) ds->r0203 + (real64) ds->w01EB);
 			ds->w0209 = (int16) (rLoc1_211 * (rLoc2_216 * (real64) ds->w01ED - (real64) ds->w0207 / (real64) ds->w01F1) + (real64) ds->w01E9);
-			Eq_36 di_100 = ds->w020B *s 0x0140 + ds->w0209 + 525;
+			Eq_37 di_100 = ds->w020B *s 0x0140 + ds->w0209 + 525;
 			byte Eq_2::* si_192 = &Eq_2::b01D0;
 			byte dh_110;
 			for (dh_110 = 0x05; dh_110 != 0x00; --dh_110)
@@ -53,7 +53,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		byte Eq_190::* di_126 = Eq_190::a0000;
+		byte Eq_195::* di_126 = Eq_195::a0000;
 		byte Eq_2::* si_133 = Eq_2::a020D;
 		word16 cx_134;
 		for (cx_134 = 0xFA00; cx_134 != 0x00; --cx_134)

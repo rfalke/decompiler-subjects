@@ -17,31 +17,31 @@ void fn0C00_0100(byte ah, Eq_3 bx, word16 di)
 		bp_15 -= 0x027F;
 		do
 		{
-			byte cl_101 = 0x00;
+			byte cl_103 = 0x00;
 			int16 dx_27 = SLICE(bx * ax_25, word16, 16);
 			do
 			{
 				int32 dx_ax_39 = ((word16) bx.u0 + dx_27) *s (bx - dx_27);
 				Eq_3 ax_49 = __rcr((word16) dx_ax_39, 0x08, SLICE(cond(dx_ax_39), bool, 1)) + bp_15;
 				bx = ax_49;
-				uint16 cx_62 = (uint16) (uint8) cl_101;
+				uint16 cx_62 = (uint16) cl_103;
 				if (ax_49 > 0x00)
 					break;
-				++cl_101;
+				++cl_103;
 				dx_27 += di;
-				cx_62 = (uint16) (uint8) cl_101;
-			} while (cl_101 != 0x00);
+				cx_62 = (uint16) cl_103;
+			} while (cl_103 != 0x00);
 			__syscall(0x10);
-			ax_25 = cx_62;
 			bx.u0 = 0x00;
 			++bp_15;
-			cx_14 = cx_112 - 0x01;
-			cx_112 = cx_14;
-		} while (cx_112 != 0x01);
+			cx_14 = cx_114 - 0x01;
+			ax_25 = SEQ(0x0C, (byte) cx_62);
+			cx_114 = cx_14;
+		} while (cx_114 != 0x01);
 		++di;
-		cx_11 = cx_111 - 0x01;
-		cx_111 = cx_11;
-	} while (cx_111 != 0x01);
+		cx_11 = cx_113 - 0x01;
+		cx_113 = cx_11;
+	} while (cx_113 != 0x01);
 	while (true)
 		;
 }

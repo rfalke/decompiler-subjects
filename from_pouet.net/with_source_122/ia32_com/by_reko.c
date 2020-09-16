@@ -14,10 +14,10 @@ void fn0C00_0100(byte ah, uint8 cl, uint8 ch)
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
 		++cl;
-		cui16 bx_93 = 399;
+		cui16 bx_92 = 399;
 		do
 		{
-			bcu8 bl_38 = (byte) bx_96;
+			bcu8 bl_38 = (byte) bx_95;
 			do
 				;
 			while ((__inb(0x03DA) & 0x01) != 0x00);
@@ -29,9 +29,9 @@ void fn0C00_0100(byte ah, uint8 cl, uint8 ch)
 			__outb(969, bl_38 >> 0x01);
 			ch += bl_38 >> 0x01;
 			__outb(969, ch);
-			bx_93 = bx_96 - 0x01;
-			bx_96 = bx_93;
-		} while (bx_96 != 0x01);
+			bx_92 = bx_95 - 0x01;
+			bx_95 = bx_92;
+		} while (bx_95 != 0x01);
 		word16 ax_60 = SEQ(ah, __inb(0x60));
 		uint8 al_65 = (byte) (ax_60 - 0x01);
 		ah = SLICE(ax_60 - 0x01, byte, 8);

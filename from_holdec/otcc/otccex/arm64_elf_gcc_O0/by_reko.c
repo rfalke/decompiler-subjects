@@ -207,11 +207,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x29Out)
 	else
 	{
 		struct Eq_114 * x29_20;
-		word64 x19_22;
-		fib(w0 - 0x01, out x19_22, out x29_20);
+		word64 x19_72;
+		fib(w0 - 0x01, out x19_72, out x29_20);
 		word64 x19_33;
-		word64 x29_72;
-		w0_37 = (word32) x19_33 + fib(x29_20->dw002C - 0x02, out x19_33, out x29_72);
+		word64 x29_73;
+		w0_37 = (word32) x19_33 + fib(x29_20->dw002C - 0x02, out x19_33, out x29_73);
 	}
 	x19Out = qwLoc20;
 	x29Out = <invalid>;
@@ -244,7 +244,7 @@ int32 print_num(int32 w0, int32 w1, union Eq_147 & w2Out, ptr64 & x29Out, ptr64 
 			dwArg00_92 = w0_28 + 0x57;
 		else
 			dwArg00_92 = w0_28 + 0x30;
-		(word64) dwLoc12_97 + 0x00 = (word64) (byte) (uint32) (uint8) dwArg00_92;
+		null[(int64) dwLoc12_97] = (byte) (uint32) (uint8) dwArg00_92;
 		int32 w0_51 = dwLoc0C_107 / w1;
 		++dwArg04_100;
 		dwLoc0C_107 = w0_51;
@@ -263,12 +263,12 @@ void main(int32 w0, word32 w1)
 {
 	if (w0 == 0x02 || w0 == 0x03)
 	{
-		int32 w0_25 = (int64) (int32) (w1 + 0x04) + 0x00;
+		int32 w0_25 = null[(int64) (w1 + 0x04) / 4];
 		fn0000000000000880();
 		*g_ptr11FA0 = 0x0A;
 		if (w0 > 0x02)
 		{
-			int32 w0_39 = (int64) (int32) (w1 + 0x08) + 0x00;
+			int32 w0_39 = null[(int64) (w1 + 0x08) / 4];
 			fn0000000000000880();
 			*g_ptr11FA0 = w0_39;
 			if (*g_ptr11FA0 <= 0x01 || *g_ptr11FA0 > 0x24)
@@ -278,12 +278,12 @@ void main(int32 w0, word32 w1)
 			}
 		}
 		fn0000000000000900();
-		word64 x19_65;
-		word32 w2_78;
-		struct Eq_230 * x29_82;
+		struct Eq_227 * x29_82;
 		word64 x30_83;
+		word64 x19_272;
 		word64 x29_273;
-		print_num(fib(w0_25, out x19_65, out x29_273), *g_ptr11FA0, out w2_78, out x29_82, out x30_83);
+		word32 w2_274;
+		print_num(fib(w0_25, out x19_272, out x29_273), *g_ptr11FA0, out w2_274, out x29_82, out x30_83);
 		fn0000000000000910();
 		fn0000000000000900();
 		if (x29_82->dw0028 > 0x0C)
@@ -291,7 +291,7 @@ void main(int32 w0, word32 w1)
 		else
 		{
 			x29_82->dw0024 = (word32) 2744;
-			<anonymous> * x0_104 = (word64) x29_82->dw0012;
+			<anonymous> * x0_104 = (int64) x29_82->dw0012;
 			word64 x0_113;
 			word64 x1_114;
 			word64 x3_115;
@@ -300,10 +300,10 @@ void main(int32 w0, word32 w1)
 			x0_104();
 			word32 x1_32_32_192 = SLICE(x1_114, word32, 32);
 			word32 w2_130;
-			word64 x29_274;
-			word64 x30_275;
-			word32 w1_129 = print_num((word32) x0_113, *g_ptr11FA0, out w2_130, out x29_274, out x30_275);
-			word64 x2_249 = SEQ(SLICE(x2_116, word32, 32), w2_130);
+			word64 x29_275;
+			word64 x30_276;
+			word32 w1_129 = print_num((word32) x0_113, *g_ptr11FA0, out w2_130, out x29_275, out x30_276);
+			word64 x2_248 = SEQ(SLICE(x2_116, word32, 32), w2_130);
 		}
 		fn0000000000000910();
 	}

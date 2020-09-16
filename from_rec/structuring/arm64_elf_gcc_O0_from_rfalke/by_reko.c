@@ -165,7 +165,7 @@ void loop1()
 	*g_ptr10FC0 = 0x00;
 	while (*g_ptr10FC0 <= 99)
 	{
-		g_ptr10FD8[(int64) (int32) *g_ptr10FC0] = *g_ptr10FC0;
+		g_ptr10FD8[(int64) *g_ptr10FC0] = *g_ptr10FC0;
 		++*g_ptr10FC0;
 	}
 	leave();
@@ -179,7 +179,7 @@ void loop2(word32 dwArg04)
 	{
 		do
 		{
-			word32 w0_24 = dwArg04 + (g_ptr10FD8[(int64) ((int32) (*g_ptr10FC0))] + *g_ptr10FA8);
+			word32 w0_24 = dwArg04 + (g_ptr10FD8[(int64) (*g_ptr10FC0)] + *g_ptr10FA8);
 			dwArg04 = w0_24;
 			if (w0_24 == 0x0A)
 				dwArg04 = w0_24 + 0x0C;

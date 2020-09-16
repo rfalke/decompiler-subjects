@@ -13,7 +13,7 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 	for (cx_25 = 0x0100; cx_25 != 0x00; --cx_25)
 	{
 		ss->w0200 = cx_25;
-		ds->*bx_19 = (int16) (sin((real64) ss->w0200 * ds->r01EE) * ds->r01F2);
+		ds->*bx_19 = (int16) (sin((real64) ss->w0200 * (real64) ds->r01EE) * (real64) ds->r01F2);
 		++bx_19;
 	}
 	__outb(0x03C8, 0x00);
@@ -34,7 +34,7 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 	}
 	do
 	{
-		Eq_77 ax_64 = ds->t0304;
+		Eq_79 ax_64 = ds->t0304;
 		ds->t0302 = ax_64;
 		ds->w0300 = ax_64 << 0x08;
 		do
@@ -43,7 +43,7 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 		do
 			;
 		while (((byte) __inw(0x03DA) & 0x08) == 0x00);
-		byte Eq_111::* di_147 = &Eq_111::b0000;
+		byte Eq_113::* di_147 = &Eq_113::b0000;
 		word16 cx_183 = 200;
 		do
 		{

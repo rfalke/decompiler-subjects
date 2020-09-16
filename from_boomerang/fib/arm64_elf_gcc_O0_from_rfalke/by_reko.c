@@ -166,11 +166,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x29Out)
 	else
 	{
 		struct Eq_113 * x29_20;
-		word64 x19_22;
-		fib(w0 - 0x01, out x19_22, out x29_20);
+		word64 x19_72;
+		fib(w0 - 0x01, out x19_72, out x29_20);
 		word64 x19_33;
-		word64 x29_72;
-		w0_37 = (word32) x19_33 + fib(x29_20->dw002C - 0x02, out x19_33, out x29_72);
+		word64 x29_73;
+		w0_37 = (word32) x19_33 + fib(x29_20->dw002C - 0x02, out x19_33, out x29_73);
 	}
 	x19Out = qwLoc20;
 	x29Out = <invalid>;

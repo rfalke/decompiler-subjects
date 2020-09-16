@@ -4,8 +4,8 @@
 
 #include "subject.h"
 
-struct Eq_436 * g_ptrFFFA0000;
-Eq_383 g_t0007;
+struct Eq_435 * g_ptrFFFA0000;
+Eq_382 g_t0007;
 struct Eq_31 * g_ptrC000;
 struct Eq_16 * g_ptr40000;
 

@@ -181,9 +181,9 @@ word64 fib(int32 w0, ptr64 & x19Out)
 //      fib
 void fib.part.0()
 {
-	word64 x19_30;
 	word64 x19_59;
-	fib((word32) fib(w0 - 0x01, out x19_59) - 0x01, out x19_30);
+	word64 x19_60;
+	fib((word32) fib(w0 - 0x01, out x19_59) - 0x01, out x19_60);
 	fn0000000000000730();
 }
 

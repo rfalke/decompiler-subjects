@@ -167,6 +167,11 @@ void rc_crc32(ptr64 x1, word64 x2)
 			while (x5_9 - x1 != 0x00);
 		}
 	}
+	else
+	{
+		__movi_i32(0x400000004);
+		__movi_i32(0x100000001);
+	}
 }
 
 // 00000000000009B0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

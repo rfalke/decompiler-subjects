@@ -1,18 +1,2 @@
 === Using options:
-0000000000198018: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-000000000013C020: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-00000000001B0020: warning: AArch64 instruction smulh	x0,w1,w0 is not supported yet.
-000000000019A014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000141018: warning: AArch64 instruction smulh	x0,w2,w0 is not supported yet.
-0000000000195020: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-00000000001AB018: warning: AArch64 instruction smulh	x0,w1,w0 is not supported yet.
-0000000000136014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000140034: warning: AArch64 instruction smulh	x1,w2,w0 is not supported yet.
-0000000000194014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-000000000013B014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000135014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000197014: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000131CDC: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-0000000000191EF4: warning: AArch64 instruction smulh	x1,w0,w1 is not supported yet.
-00000000001A024C: warning: AArch64 instruction smulh	x1,w2,w0 is not supported yet.
 === Killed because of CPU time limit

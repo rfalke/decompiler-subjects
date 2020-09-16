@@ -43,7 +43,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		{
 			0xA000->*di_10 = 0x3F;
 			byte Eq_47::* di_74 = di_10 + 1;
-			uint32 dx_ax_78 = (uint32) (uint16) (di_74 - 0x01);
+			uint32 dx_ax_78 = (uint32) (di_74 - 0x01);
 			uint16 dx_81 = (uint16) (dx_ax_78 % ds->w0179);
 			uint16 ax_82 = (uint16) (dx_ax_78 /u ds->w0179);
 			if (dx_81 == 0x00)

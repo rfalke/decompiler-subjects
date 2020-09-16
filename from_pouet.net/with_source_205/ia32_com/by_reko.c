@@ -25,7 +25,7 @@ void fn0C00_0100()
 				ci16 dx_82 = (word16) (ax_41 * ax_41 + (ax_67 + ~0x0F) * (ax_67 + ~0x0F));
 				Eq_51 ax_94 = (int16) ((int32) (dx_82 >> 0x01 << 0x04) / ax_37) + di_20;
 				byte bLoc0A_198 = (byte) ax_94;
-				if ((uint16) (uint8) Mem95[ss:fp - 0x0154 + si_153:byte] > ax_94)
+				if (CONVERT(Mem95[ss:fp - 0x0154 + si_153:byte], byte, uint16) > ax_94)
 				{
 					int16 dx_104 = (dx_82 >> 0x01) - (ax_37 >> 0x02);
 					int16 wLoc0C_186 = dx_104;
@@ -33,9 +33,9 @@ void fn0C00_0100()
 						wLoc0C_186 = 0x00;
 					byte bLoc0C_212 = (byte) ((wLoc0C_186 >> 0x04) + 0x10);
 					Eq_51 wLoc08_191 = ax_94;
-					while ((uint16) (uint8) Mem124[ss:fp - 0x0154 + si_153:byte] > wLoc08_191)
+					while (CONVERT(Mem124[ss:fp - 0x0154 + si_153:byte], byte, uint16) > wLoc08_191)
 					{
-						SEQ(SLICE(ptrLoc06_218, selector, 16), SLICE(ptrLoc06_218, word16, 0) + si_153)[wLoc08_191 * 0x0140] = SLICE((uint16) (uint8) bLoc0C_212, byte, 0);
+						SEQ(SLICE(ptrLoc06_218, selector, 16), SLICE(ptrLoc06_218, word16, 0) + si_153)[wLoc08_191 * 0x0140] = SLICE(CONVERT(bLoc0C_212, byte, uint16), byte, 0);
 						wLoc08_191 = (word16) wLoc08_191.u0 + 1;
 					}
 					Mem151[ss:fp - 0x0154 + si_153:byte] = bLoc0A_198;

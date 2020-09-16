@@ -158,14 +158,14 @@ void main()
 				{
 					Eq_172 r0_84 = (dwLoc70_193 >> 0x03) + (r0_93 < 0x00);
 					Eq_175 r0_93 = (dwLoc70_193 >> 0x03) + (r0_84 < 0x00);
-					Mem103[(dwLoc7C_189 << 0x03) + (fp + ~0x87) + dwLoc78_195 + 0x28:byte] = (byte) (word32) Mem69[(dwLoc70_193 - (r0_93 << 0x03)) * 0x07 + dwLoc78_195 + 0x100120F4[(r0_84 * 0x07 + dwLoc80_187) * 0x04]:byte];
+					Mem103[(dwLoc7C_189 << 0x03) + (fp + ~0x87) + dwLoc78_195 + 0x28:byte] = SLICE(CONVERT(Mem69[(dwLoc70_193 - (r0_93 << 0x03)) * 0x07 + dwLoc78_195 + 0x100120F4[(r0_84 * 0x07 + dwLoc80_187) * 0x04]:byte], byte, word32), byte, 0);
 					dwLoc78_195 = (word32) dwLoc78_195 + 1;
 				}
 				((char *) fp - 0x0088 + (dwLoc7C_189 << 0x03))[47] = 0x20;
 				dwLoc7C_189 = (word32) dwLoc7C_189.u0 + 1;
 			}
 			int32 dwLoc7C_202 = (dwLoc74_185 << 0x03) + ~0x00;
-			while (dwLoc7C_202 >= 0x00 && ((word32) Mem122[(fp + ~0x5F) + dwLoc7C_202:byte] & 0xFF) == 0x20)
+			while (dwLoc7C_202 >= 0x00 && (CONVERT(Mem122[(fp + ~0x5F) + dwLoc7C_202:byte], byte, word32) & 0xFF) == 0x20)
 			{
 				Mem135[fp + ~0x5F + dwLoc7C_202:byte] = 0x00;
 				dwLoc7C_202 += ~0x00;

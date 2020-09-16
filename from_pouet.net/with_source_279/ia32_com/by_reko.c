@@ -4,79 +4,80 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register word16 cx, Register (memptr (ptr16 Eq_122) byte) di, Register (ptr16 Eq_4) ds)
-void fn0C00_0100(word16 cx, byte Eq_122::* di, struct Eq_4 * ds)
+// 0C00:0100: void fn0C00_0100(Register word16 cx, Register (memptr (ptr16 Eq_13) byte) di, Register (ptr16 Eq_4) ds)
+void fn0C00_0100(word16 cx, byte Eq_13::* di, struct Eq_4 * ds)
 {
 	__fninit();
 	__syscall(0x10);
+	struct Eq_13 * ax_16 = SEQ(SLICE(cs, byte, 8) + 0x10, (byte) cs);
 	do
 	{
-		byte al_19 = (byte) cx;
-		__outb(0x03C8, al_19);
-		byte al_21 = -al_19;
-		__outb(969, al_21);
-		__outb(969, al_21);
-		__outb(969, al_21);
+		byte al_21 = (byte) cx;
+		__outb(0x03C8, al_21);
+		byte al_23 = -al_21;
+		__outb(969, al_23);
+		__outb(969, al_23);
+		__outb(969, al_23);
 		--cx;
 	} while (cx != 0x00);
-	real64 rLoc1_230 = 0.0;
+	real64 rLoc1_235 = 0.0;
 	do
 	{
 		ds->dw0408 = ds->dw0408 *s 0x000343FD + 2531011;
-		cui16 bp_117;
-		for (bp_117 = 0x0C; bp_117 != 0x40; bp_117 += 0x04)
+		cui16 bp_119;
+		for (bp_119 = 0x0C; bp_119 != 0x40; bp_119 += 0x04)
 		{
-			int16 Eq_4::* si_101 = Eq_4::a0200;
-			real64 rLoc2_231 = 0.0;
+			int16 Eq_4::* si_103 = Eq_4::a0200;
+			real64 rLoc2_236 = 0.0;
 			do
 			{
-				Eq_71 dx_ax_51 = (uint32) (uint16) di;
-				int16 cx_46 = bp_117 | ds->w040A & 0x03;
-				ds->w0300 = (((int16) (dx_ax_51 / 0x0140) - 100) *s cx_46 >> 0x03) - 200;
-				int16 dx_57 = ((int16) (dx_ax_51 % 0x0140) - 0xA0) *s cx_46;
-				real64 rLoc2_233 = rLoc2_231 + (real64) ds->w0300;
-				word16 cx_102 = 0x03;
-				real64 rLoc3_234 = (real64) ds->r01F4;
-				real64 rLoc4_235 = 0.0;
+				Eq_78 dx_ax_53 = (uint32) di;
+				int16 cx_48 = bp_119 | ds->w040A & 0x03;
+				ds->w0300 = (((int16) (dx_ax_53 / 0x0140) - 100) *s cx_48 >> 0x03) - 200;
+				int16 dx_59 = ((int16) (dx_ax_53 % 0x0140) - 0xA0) *s cx_48;
+				real64 rLoc2_238 = rLoc2_236 + (real64) ds->w0300;
+				word16 cx_104 = 0x03;
+				real64 rLoc3_239 = (real64) ds->r01F4;
+				real64 rLoc4_240 = 0.0;
 				do
 				{
-					ds->w0300 = (dx_57 >> 0x02) - ds->*si_101;
-					real64 rLoc5_236 = (real64) ds->w0300;
-					--cx_102;
-					rLoc4_235 += rLoc5_236 * rLoc5_236;
-					++si_101;
-					byte ch_227 = SLICE(cx_102, byte, 8);
-				} while (cx_102 != 0x00);
-				rLoc2_231 = rLoc2_233 + rLoc3_234 / rLoc4_235;
-			} while (si_101 != &Eq_4::w0218);
-			ds->w0300 = (int16) rLoc2_231;
-			int16 v25_112 = ds->w0300 - 0x01;
-			ds->w0300 = v25_112;
-			if (v25_112 >= 0x00)
+					ds->w0300 = (dx_59 >> 0x02) - ds->*si_103;
+					real64 rLoc5_241 = (real64) ds->w0300;
+					--cx_104;
+					rLoc4_240 += rLoc5_241 * rLoc5_241;
+					++si_103;
+					byte ch_229 = SLICE(cx_104, byte, 8);
+				} while (cx_104 != 0x00);
+				rLoc2_236 = rLoc2_238 + rLoc3_239 / rLoc4_240;
+			} while (si_103 != &Eq_4::w0218);
+			ds->w0300 = (int16) rLoc2_236;
+			int16 v25_114 = ds->w0300 - 0x01;
+			ds->w0300 = v25_114;
+			if (v25_114 >= 0x00)
 				break;
 		}
-		cs->*di = (byte) (SEQ(SLICE(bp_117, byte, 8), (byte) bp_117 + cs->*di) >> 0x01);
+		ax_16->*di = (byte) (SEQ(SLICE(bp_119, byte, 8), (byte) bp_119 + ax_16->*di) >> 0x01);
 		++di;
-		bool Z_140 = SLICE(cond(di), bool, 2);
-		if (di == &Eq_122::b0000)
+		bool v29_231 = di != &Eq_13::b0000;
+		if (di == &Eq_13::b0000)
 		{
 			do
 			{
-				0xA000->*di = cs->*di;
+				0xA000->*di = ax_16->*di;
 				++di;
-			} while (di != &Eq_122::b0000);
-			rLoc1_230 += ds->r01F8;
-			int16 Eq_4::* si_158 = Eq_4::a0200;
-			int16 cx_159;
+			} while (di != &Eq_13::b0000);
+			rLoc1_235 += (real64) ds->r01F8;
+			int16 Eq_4::* si_160 = Eq_4::a0200;
+			int16 cx_161 = SEQ(ch_229, 0x0C);
 			do
 			{
-				ds->*si_158 = cx_159;
-				ds->*si_158 = (int16) (sin(((real64) (ds->*si_158) / (real64) ds->w01FE + rLoc1_230) * (real64) (ds->*si_158)) * (real64) ds->w01FC);
-				++si_158;
-				--cx_159;
-			} while (cx_159 != 0x00);
-			Z_140 = SLICE(cond((int16) __inb(0x60) - 0x01), bool, 2);
+				ds->*si_160 = cx_161;
+				ds->*si_160 = (int16) (sin(((real64) (ds->*si_160) / (real64) ds->w01FE + rLoc1_235) * (real64) (ds->*si_160)) * (real64) ds->w01FC);
+				++si_160;
+				--cx_161;
+			} while (cx_161 != 0x00);
+			v29_231 = (int16) __inb(0x60) != 0x01;
 		}
-	} while (Z_140);
+	} while (v29_231);
 }
 

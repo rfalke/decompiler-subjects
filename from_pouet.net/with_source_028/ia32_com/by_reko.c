@@ -12,7 +12,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, word16 cx, byte Eq_10::* di)
 	word16 cx_41 = cx;
 	while (true)
 	{
-		uint32 dx_ax_13 = (uint32) (uint16) di;
+		uint32 dx_ax_13 = (uint32) di;
 		++di;
 		ds_37->*di = ds_37->*di ^ (byte) (((uint16) (dx_ax_13 /u 0x02) + 0x02 & (uint16) (dx_ax_13 % 0x02)) >> (byte) cx_46);
 		cx_41 = cx_46;

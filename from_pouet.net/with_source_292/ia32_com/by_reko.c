@@ -7,7 +7,7 @@
 // 0C00:0100: void fn0C00_0100(Register cu16 cx, Register Eq_3 bx, Register (ptr16 Eq_4) ds)
 void fn0C00_0100(cu16 cx, Eq_3 bx, struct Eq_4 * ds)
 {
-	int8 Top_160 = 0;
+	int8 Top_167 = 0;
 	__syscall(0x10);
 	__outb(0x03C8, (byte) (SEQ(ah, 0x13) | 3834));
 	do
@@ -16,114 +16,112 @@ void fn0C00_0100(cu16 cx, Eq_3 bx, struct Eq_4 * ds)
 		byte al_28 = (byte) (cx << 0x01);
 		__outb(969, al_28);
 		byte ah_34 = SLICE(cx << 0x01, byte, 8);
-		cui16 ax_33 = SEQ(SLICE(cx << 0x01, byte, 8), al_28 & 0x3F);
+		cui16 ax_33 = SEQ(ah_34, al_28 & 0x3F);
 		if ((al_28 & 0x3F) > 0x1F)
 			ax_33 = SEQ(ah_34, 0x1F);
 		__outb(969, (byte) (ax_33 << 0x01));
 		--cx;
-		byte ch_256 = SLICE(cx, byte, 8);
+		byte ch_262 = SLICE(cx, byte, 8);
 	} while (cx != 0x00);
 	__outb(0x61, 0x13);
 	do
 	{
 		ds->wFA04 = 0x19;
-		byte Eq_232::* di_196 = &Eq_232::b0000;
-		Eq_3 dx_211 = ~0x4F;
+		byte Eq_230::* di_202 = &Eq_230::b0000;
+		Eq_3 dx_217 = ~0x4F;
 		do
 		{
-			Eq_3 bp_208 = ~0x9F;
+			Eq_3 bp_214 = ~0x9F;
 			do
 			{
 				__fninit();
 				ds->tFA00.u0 = 0x04;
-				int8 Top_68 = Top_160 - 1;
-				Top_68->r0000 = (real64) ds->tFA00;
-				ds->tFA00 = dx_289;
-				Top_68->rFFFFFFFF = (real64) ds->tFA00;
-				Top_68->rFFFFFFFF /= (real64) ds->wFA04;
-				ds->tFA00 = bp_208;
-				Top_68->rFFFFFFFE = (real64) ds->tFA00;
-				Top_68->rFFFFFFFE /= (real64) ds->wFA04;
+				int8 Top_67 = Top_167 - 1;
+				Top_67->r0000 = (real64) ds->tFA00;
+				ds->tFA00 = dx_292;
+				Top_67->rFFFFFFFF = (real64) ds->tFA00;
+				Top_67->rFFFFFFFF /= (real64) ds->wFA04;
+				ds->tFA00 = bp_214;
+				Top_67->rFFFFFFFE = (real64) ds->tFA00;
+				Top_67->rFFFFFFFE /= (real64) ds->wFA04;
 				ds->tFA00 = bx;
-				Top_68->rFFFFFFFD = (real64) ds->tFA00;
+				Top_67->rFFFFFFFD = (real64) ds->tFA00;
 				ds->tFA00.u0 = 0x52;
-				Top_68->rFFFFFFFD /= (real64) ds->tFA00;
-				Top_68->rFFFFFFFC = Top_68->rFFFFFFFC;
-				Top_68->rFFFFFFFC += (real64) ds->tFA00;
-				Top_68->rFFFFFFFC = cos(Top_68->rFFFFFFFC);
-				int8 Top_121 = Top_68 - 4;
-				word16 cx_122 = SEQ(ch_256, 0x02);
+				Top_67->rFFFFFFFD /= (real64) ds->tFA00;
+				Top_67->rFFFFFFFC = Top_67->rFFFFFFFD;
+				Top_67->rFFFFFFFC += (real64) ds->tFA00;
+				Top_67->rFFFFFFFC = cos(Top_67->rFFFFFFFC);
+				int8 Top_124 = Top_67 - 4;
+				word16 cx_125 = SEQ(ch_262, 0x02);
 				do
 				{
-					real64 v20_93 = Top_288->r0000;
-					int8 Top_94 = Top_288 - 1;
-					Top_94->r0001 = cos(v20_93);
-					Top_94->r0000 = sin(v20_93);
-					Top_94->rFFFFFFFF = Top_94->r0002;
+					real64 v21_93 = Top_291->r0000;
+					int8 Top_94 = Top_291 - 1;
+					Top_94->r0001 = cos(v21_93);
+					Top_94->r0000 = sin(v21_93);
+					Top_94->rFFFFFFFF = Top_94->r0003;
 					Top_94->rFFFFFFFF *= Top_94->r0000;
-					Top_94->rFFFFFFFE = Top_94->r0003;
+					Top_94->rFFFFFFFE = Top_94->r0004;
 					Top_94->rFFFFFFFE *= Top_94->r0001;
 					Top_94->rFFFFFFFF += Top_94->rFFFFFFFE;
 					ds->tFA00.u3 = (real32) Top_94->rFFFFFFFF;
 					Top_94->r0000 *= Top_94->r0004;
-					Top_94->rFFFFFFFF = Top_94->r0002;
+					Top_94->rFFFFFFFF = Top_94->r0003;
 					Top_94->r0001 *= Top_94->rFFFFFFFF;
 					Top_94->r0001 -= Top_94->r0000;
 					Top_94->r0004 = Top_94->r0001;
 					Top_94->r0001 = (real64) ds->tFA00;
 					Top_94->r0003 = Top_94->r0001;
-					--cx_122;
-					Top_121 = Top_94 + 2;
-					byte ch_270 = SLICE(cx_122, byte, 8);
-					Top_288 = Top_121;
-				} while (cx_122 != 0x00);
+					--cx_125;
+					Top_124 = Top_94 + 2;
+					byte ch_274 = SLICE(cx_125, byte, 8);
+					Top_291 = Top_124;
+				} while (cx_125 != 0x00);
 				Top_94->r0001 = 0.0;
 				ds->tFA00.u0 = 0x80;
 				Top_94->r0000 = (real64) ds->tFA00;
 				Top_94->rFFFFFFFF = 0.0;
-				word16 cx_175 = SEQ(ch_270, 0x70);
+				word16 cx_182 = SEQ(ch_274, 0x70);
 				do
 				{
-					int8 Top_139 = Top_288 - 2;
-					Top_139->r0000 += Top_139->r0003;
-					Top_139->rFFFFFFFF = Top_139->r0003;
-					Top_139->r0001 += Top_139->rFFFFFFFF;
-					Top_139->rFFFFFFFF = Top_139->r0004;
-					Top_139->r0002 += Top_139->rFFFFFFFF;
-					Top_139->rFFFFFFFF = Top_139->r0000;
-					ds->tFA00.u0 = (int16) Top_139->rFFFFFFFF;
-					Eq_3 dl_168 = ds->tFA00;
-					Top_139->rFFFFFFFF = Top_139->r0001;
-					ds->tFA00.u0 = (int16) Top_139->rFFFFFFFF;
-					word16 ax_163 = ds->tFA00 - bx;
-					ds->tFA00.u0 = (int16) Top_139->r0000;
-					bcu8 cl_177 = (byte) cx_175;
-					cl_177 = (byte) cx_175;
-					ch_256 = SLICE(cx_175, byte, 8);
-					ch_256 = SLICE(cx_175, byte, 8);
-					byte bl_184 = (byte) bx;
-					Top_160 = Top_139;
-					bcu8 al_166 = (byte) (ax_163 ^ ds->tFA00);
-					if (dl_168 <= al_166 >> 0x02 || ~0x00 - dl_168 <= al_166 >> 0x02)
+					int8 Top_142 = Top_291 - 2;
+					Top_142->r0000 += Top_142->r0003;
+					Top_142->rFFFFFFFF = Top_142->r0004;
+					Top_142->r0001 += Top_142->rFFFFFFFF;
+					Top_142->rFFFFFFFF = Top_142->r0005;
+					Top_142->r0002 += Top_142->rFFFFFFFF;
+					Top_142->rFFFFFFFF = Top_142->r0001;
+					ds->tFA00.u0 = (int16) Top_142->rFFFFFFFF;
+					Eq_3 dl_175 = ds->tFA00;
+					Top_142->rFFFFFFFF = Top_142->r0002;
+					ds->tFA00.u0 = (int16) Top_142->rFFFFFFFF;
+					word16 ax_170 = ds->tFA00 - bx;
+					ds->tFA00.u0 = (int16) Top_142->r0000;
+					bcu8 cl_184 = (byte) cx_182;
+					ch_262 = SLICE(cx_182, byte, 8);
+					byte bl_190 = (byte) bx;
+					Top_167 = Top_142;
+					bcu8 al_173 = (byte) (ax_170 ^ ds->tFA00);
+					if (dl_175 <= al_173 >> 0x02 || ~0x00 - dl_175 <= al_173 >> 0x02)
 						break;
-					--cx_175;
-					cl_177 = (byte) cx_175;
-					ch_256 = SLICE(cx_175, byte, 8);
-				} while (cx_175 != 0x00);
-				0xA140->*di_196 = bl_184 << 0x03 & 0xE0 | cl_177 >> 0x02;
-				++di_196;
-				bp_208 = (word16) bp_208 + 1;
-			} while (bp_208 != 0xA0);
-			dx_211 = (word16) dx_289 + 1;
-			dx_289 = dx_211;
-		} while (dx_289 != 0x4F);
-		uint16 ax_227 = ds->*((word16) (bx >> 0x04 & 0x06) + 0x0100) >> ((byte) bx & 0x01);
-		__outb(66, (byte) ax_227);
-		__outb(66, SLICE(ax_227, byte, 8));
-		ch_256 = SLICE(bx, byte, 8);
+					--cx_182;
+					cl_184 = (byte) cx_182;
+					ch_262 = SLICE(cx_182, byte, 8);
+				} while (cx_182 != 0x00);
+				0xA140->*di_202 = bl_190 << 0x03 & 0xE0 | cl_184 >> 0x02;
+				++di_202;
+				bp_214 = (word16) bp_214 + 1;
+			} while (bp_214 != 0xA0);
+			dx_217 = (word16) dx_292 + 1;
+			dx_292 = dx_217;
+		} while (dx_292 != 0x4F);
+		uint16 ax_233 = ds->*((word16) (bx >> 0x04 & 0x06) + 0x0100) >> ((byte) bx & 0x01);
+		__outb(66, (byte) ax_233);
+		__outb(66, SLICE(ax_233, byte, 8));
+		ch_262 = SLICE(bx, byte, 8);
 		bx = (word16) bx.u2 + 1;
-		byte al_235;
-		byte ah_236;
-	} while (bios_kbd_check_keystroke(out al_235, out ah_236));
+		byte al_241;
+		byte ah_242;
+	} while (bios_kbd_check_keystroke(out al_241, out ah_242));
 }
 

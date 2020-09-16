@@ -114,7 +114,7 @@ void shift(char * dwArg04)
 	Eq_75 dwLoc80_45 = 0x00;
 	while (dwLoc80_45 < strlen(dwArg04))
 	{
-		Mem39[fp - 0x7C + dwLoc80_45:byte] = SLICE((word32) Mem15[dwLoc80_45 + dwArg04:byte], byte, 0) - 0x03;
+		Mem39[fp - 0x7C + dwLoc80_45:byte] = SLICE(CONVERT(Mem15[dwLoc80_45 + dwArg04:byte], byte, word32), byte, 0) - 0x03;
 		dwLoc80_45 = (word32) dwLoc80_45 + 1;
 	}
 	*((word32) dwLoc80_45 + (fp - 0x7C)) = 0x00;

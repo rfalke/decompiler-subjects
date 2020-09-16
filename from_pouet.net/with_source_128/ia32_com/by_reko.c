@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register word16 bp, Register (memptr (ptr16 Eq_64) byte) di, Register (ptr16 Eq_4) ds)
-void fn0C00_0100(word16 bp, byte Eq_64::* di, struct Eq_4 * ds)
+// 0C00:0100: void fn0C00_0100(Register word16 bp, Register (memptr (ptr16 Eq_65) byte) di, Register (ptr16 Eq_4) ds)
+void fn0C00_0100(word16 bp, byte Eq_65::* di, struct Eq_4 * ds)
 {
 	bios_video_set_mode(0x13);
 	cui16 cx_89 = 0x00;
@@ -25,7 +25,7 @@ void fn0C00_0100(word16 bp, byte Eq_64::* di, struct Eq_4 * ds)
 	real64 rLoc1_78 = (real64) ds->t03C7;
 	do
 	{
-		rLoc1_78 = cos(rLoc1_78) * ds->r03C8;
+		rLoc1_78 = cos(rLoc1_78) * (real64) ds->r03C8;
 		ds->t03C7.u1 = (real32) rLoc1_78;
 		0xA000->*di = (byte) (bp + dx_26 ^ dx_26 ^ ds->t03C7);
 		ds->t03C7.u2 = (word16) ds->t03C7.u2 + bp;

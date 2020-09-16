@@ -183,7 +183,7 @@ void c(word64 x1_32_32_w0)
 	fn00000000000006E0();
 	if (w0 <= 0x06)
 	{
-		switch ((word32) (2284 + (int64) ((int32) (&g_t0C00)[(uint64) ((uint32) (w0 - 0x02)) / 4])))
+		switch ((word32) (2284 + (int64) (&g_t0C00)[(uint64) (w0 - 0x02) / 4]))
 		{
 		case 0x00:
 			d(0x02);

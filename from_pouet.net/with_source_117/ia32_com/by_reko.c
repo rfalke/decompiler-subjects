@@ -23,7 +23,7 @@ void fn0C00_0100(byte ah, word16 cx, word16 bp, Eq_5 di)
 			int16 ax_34 = ax_22 - 0x78 + dx_24;
 			int32 dx_ax_35 = ax_34 *s ax_34;
 			Eq_22 ax_36 = (word16) dx_ax_35;
-			word16 ax_48 = (uint16) (SEQ(SEQ(SLICE(dx_ax_35, byte, 24), 0x09), ax_36) /u (((ax_22 - 0x78) *s (ax_22 - 0x78) + ax_36) + 0x0A)) + bp;
+			word16 ax_48 = CONVERT(SEQ(SEQ(SLICE(dx_ax_35, byte, 24), 0x09), ax_36) /u (((ax_22 - 0x78) *s (ax_22 - 0x78) + ax_36) + 0x0A), word16, uint16) + bp;
 			byte al_52 = ((byte) (ax_48 >> 0x01) & 0x3F) + 0x20;
 			0xA000->*di = al_52;
 			byte ah_66 = SLICE(ax_48 >> 0x01, byte, 8);

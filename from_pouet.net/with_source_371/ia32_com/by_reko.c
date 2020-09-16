@@ -13,24 +13,18 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 	word16 cx_10 = 0x00;
 	while (true)
 	{
-		byte SCZDO_24;
 		0C00:10A8();
-		if (!SLICE(SCZDO_24, bool, 1))
+		if (Test(UGE,false))
 			break;
 		word16 cx_28;
-		byte SCZDO_32;
 		0C00:10A8();
-		struct Eq_19 Eq_38::* sp_37;
+		struct Eq_18 Eq_34::* sp_37;
 		word16 cx_39;
-		word16 bx_40;
-		byte SCZDO_43;
 		0C00:10A8();
-		byte bh_53 = SLICE(bx_40, byte, 8);
-		if (!SLICE(SCZDO_43, bool, 1))
+		if (Test(UGE,false))
 		{
 			if (cx_39 != 0x00)
 			{
-				byte SCZDO_108;
 				0C00:10A8();
 				fn0C00_1113();
 				return;
@@ -38,7 +32,7 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 		}
 		byte bl_48 = ds->*si_46;
 		(ss->*sp_37).ptrFFFFFFFE = si_46 + 1;
-		byte Eq_3::* si_57 = di_100 + ~SEQ(bh_53, bl_48);
+		byte Eq_3::* si_57 = di_100 + ~SEQ(0x10, bl_48);
 		word16 cx_101;
 		for (cx_101 = cx_39 + 0x02; cx_101 != 0x00; --cx_101)
 		{
@@ -50,9 +44,8 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 		while (true)
 		{
 			word16 dx_74;
-			byte SCZDO_76;
 			0C00:10A8();
-			if (!SLICE(SCZDO_76, bool, 1))
+			if (Test(ULT,false))
 				break;
 			ds->*si_46 = ds->*si_46 ^ (byte) (dx_74 - 0x01);
 			es->*di_100 = ds->*si_46;
@@ -60,7 +53,6 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 			++di_100;
 		}
 	}
-	byte SCZDO_123;
 	0C00:10A8();
 	fn0C00_1100();
 }

@@ -64,7 +64,7 @@ void _start(void (* g1)(), word32 o1, word32 o2, word32 o3, word32 o4, word32 o5
 	{
 		atexit(&g_t10748);
 		g_ptr20944 = fp + 0x44 + ((_init(o1, o2, o3, o4, o5, o7) << 0x02) + 0x04);
-		main();
+		exit(main());
 	}
 	else
 		atexit(g1);
@@ -84,7 +84,7 @@ word32 fn00010510(word32 o7, word32 l7)
 //      _fini
 void __do_global_dtors_aux(word32 o3, word32 o4, word32 o5, word32 o7)
 {
-	struct Eq_47 * l7_23 = fn00010510(o7, 66164);
+	struct Eq_51 * l7_23 = fn00010510(o7, 66164);
 	ui32 l1_20 = 0x00;
 	word32 o2_124 = (word32) *l7_23->ptr000C;
 	if (o2_124 != 0x00)
@@ -125,7 +125,7 @@ void call___do_global_dtors_aux()
 //      _init
 void frame_dummy(word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
-	struct Eq_47 * l7_23 = fn00010510(o7, 0x000101B4);
+	struct Eq_51 * l7_23 = fn00010510(o7, 0x000101B4);
 	if (l7_23->dw0020 == 0x00)
 	{
 		word32 * i0_36 = l7_23->ptr0014;
@@ -142,12 +142,15 @@ void call_frame_dummy()
 {
 }
 
-// 0001066C: void main()
+// 0001066C: Register word32 main()
 // Called from:
 //      _start
-void main()
+word32 main()
 {
 	printf("a andn b is %d\n", ~305419896 & 0x55AA55AA);
+	printf("b orn  a is %d\n", ~0x55AA55AA | 305419896);
+	printf("a xorn c is %d\n", ~0xCDDC0198);
+	return 0x00;
 }
 
 // 000106C4: Register word32 fn000106C4(Register word32 o7, Register word32 l7)
@@ -164,7 +167,7 @@ word32 fn000106C4(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_169 * o1_26 = fn000106C4(o7, 0x000100C0)->ptr0018;
+	struct Eq_191 * o1_26 = fn000106C4(o7, 0x000100C0)->ptr0018;
 	word32 o0_27 = o1_26->dwFFFFFFFC;
 	if (o0_27 != ~0x00)
 	{

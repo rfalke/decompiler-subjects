@@ -144,9 +144,9 @@ void main(int32 w0, word64 (* x1)[])
 		ui64 x19_29 = x19_26 + 0x01;
 		if (w21_17 <= (word32) x19_29)
 			break;
-		word64 x20_43;
 		word64 x21_44;
-		hexdump(x22_19[x19_29], out x19_26, out x20_43, out x21_44, out x22_19);
+		word64 x20_110;
+		hexdump(x22_19[x19_29], out x19_26, out x20_110, out x21_44, out x22_19);
 		w21_17 = (word32) x21_44;
 	}
 }
@@ -244,15 +244,15 @@ word64 dumpline(ptr64 x0, int32 w2)
 	fn0000000000000890();
 	fn0000000000000950();
 	word32 w0_85 = (word32) (fp + ~0x47);
-	byte x3_87[] = fp + ~0x47 + (int64) ((int32) w0_85);
+	byte x3_87[] = fp + ~0x47 + (int64) w0_85;
 	int64 x0_243;
 	for (x0_243 = 0x00; w21_47 > (word32) x0_243; ++x0_243)
 	{
 		word32 w1_106 = (word32) (x0 + x0_243);
 		x3_87[x0_243] = (byte) ((uint32) (uint8) (w1_106 - 0x20) <= 0x5E ? w1_106 : 0x2E);
 	}
-	int64 x1_120 = (int64) (int32) w24_69;
-	byte x19_125[] = fp + ~0x47 + ((int64) ((int32) (w0_85 + w24_69)) - x1_120);
+	int64 x1_120 = (int64) w24_69;
+	byte x19_125[] = fp + ~0x47 + ((int64) (w0_85 + w24_69) - x1_120);
 	for (; (word32) x1_120 <= 0x0F; ++x1_120)
 		x19_125[x1_120] = 0x20;
 	fn0000000000000950();
@@ -266,7 +266,7 @@ word64 dumpline(ptr64 x0, int32 w2)
 word64 hexdump(word64 x0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out)
 {
 	word64 x0_129;
-	struct Eq_235 * x29_39 = fp + -0x00B8;
+	struct Eq_232 * x29_39 = fp + -0x00B8;
 	if ((word32) __stat(x0) != 0x00)
 	{
 		fn00000000000008E0();
@@ -280,7 +280,7 @@ word64 hexdump(word64 x0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 				word32 w21_59 = (word32) (fp + ~0x87);
 				if (w0_55 == 0x00)
 					break;
-				x19_38 += (int64) (int32) w21_59;
+				x19_38 += (int64) w21_59;
 				x29_39 = dumpline(fp + ~0x87, w0_55);
 			}
 			fn00000000000008D0();

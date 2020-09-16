@@ -8,13 +8,13 @@
 void fn0C00_0100(Eq_2 cx, word16 dx, cu16 bx, Eq_5 si, cui16 di)
 {
 	__syscall(0x10);
-	cu16 bx_130 = bx;
+	cu16 bx_126 = bx;
 	do
 	{
-		cu8 al_13 = 0xD2 - (byte) bx_130;
-		Eq_5 ax_17 = (uint16) (uint8) al_13;
+		cu8 al_13 = 0xD2 - (byte) bx_126;
+		Eq_5 ax_17 = (uint16) al_13;
 		byte ah_37 = SLICE(si, byte, 8);
-		cu8 al_34 = (byte) (si - (bx_130 - (di & 0x0F) >> 0x01));
+		cu8 al_34 = (byte) (si - (bx_126 - (di & 0x0F) >> 0x01));
 		si = ax_17;
 		cui16 di_29 = di;
 		word16 ax_38 = SEQ(ah_37, al_34);
@@ -33,7 +33,7 @@ void fn0C00_0100(Eq_2 cx, word16 dx, cu16 bx, Eq_5 si, cui16 di)
 				0xA000->*((word16) cx + ((word16) ax_55 + 1)) = al_60;
 		}
 		di = di_29;
-		bx_130 = SEQ(ah_37, al_34);
+		bx_126 = SEQ(ah_37, al_34);
 	} while (__inb(0x60) != 0x01);
 }
 

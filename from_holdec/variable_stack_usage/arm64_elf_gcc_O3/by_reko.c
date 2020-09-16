@@ -71,11 +71,12 @@ void fn00000000000006E0()
 
 #include "subject_text.h"
 
-// 00000000000006F0: void main(Register word64 x0)
-void main(word64 x0)
+// 00000000000006F0: void main(Register word64 x0, Register word64 x30)
+void main(word64 x0, word64 x30)
 {
 	word32 w0 = (word32) x0;
-	with_array(SEQ(SLICE(with_alloca(x0), word32, 32), w0));
+	word64 x30_24;
+	with_array(SEQ(SLICE(with_alloca(x0, x30, out x30_24), word32, 32), w0), x30_24);
 }
 
 // 000000000000071C: void _start()
@@ -167,26 +168,27 @@ void fill(word64 x1)
 	fn00000000000006C0();
 }
 
-// 0000000000000888: void with_array(Register word64 x0)
+// 0000000000000888: void with_array(Register word64 x0, Register word64 x30)
 // Called from:
 //      main
-void with_array(word64 x0)
+void with_array(word64 x0, word64 x30)
 {
-	word32 * sp_15 = fp + -8 - (__sbfiz(x0, 2) + 0x12 & 0x00);
+	__sbfiz(x0, 2);
 	fn00000000000006C0();
-	g_dw1103C = g_dw1103C + *sp_15 + 0x0F;
+	g_dw1103C = g_dw1103C + (word32) x30 + 0x0F;
 }
 
-// 00000000000008D8: Register word64 with_alloca(Register word64 x0)
+// 00000000000008D8: Register word64 with_alloca(Register word64 x0, Register word64 x30, Register out ptr64 x30Out)
 // Called from:
 //      main
-word64 with_alloca(word64 x0)
+word64 with_alloca(word64 x0, word64 x30, ptr64 & x30Out)
 {
-	word32 * sp_15 = fp + -8 - (__sbfiz(x0, 2) + 0x1E & 0x00);
+	__sbfiz(x0, 2);
 	fn00000000000006C0();
-	word32 w0_23 = g_dw1103C + *sp_15;
+	word32 w0_23 = g_dw1103C + (word32) x30;
 	g_dw1103C = w0_23 + 0x0F;
-	return SEQ(SLICE(sp_15, word32, 32), w0_23 + 0x0F);
+	x30Out = qwArg00;
+	return SEQ(SLICE(fp + -8, word32, 32), w0_23 + 0x0F);
 }
 
 // 0000000000000928: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

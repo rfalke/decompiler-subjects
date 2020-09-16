@@ -149,15 +149,15 @@ word64 fill(word64 x1)
 	return x1_13;
 }
 
-// 0000000000400604: void with_array(Sequence ui64 x9_32_32_w0, Register word32 x1_32_32)
+// 0000000000400604: void with_array(Sequence word64 x9_32_32_w0, Register word32 x1_32_32)
 // Called from:
 //      main
-void with_array(ui64 x9_32_32_w0, word32 x1_32_32)
+void with_array(word64 x9_32_32_w0, word32 x1_32_32)
 {
 	word32 w0 = (word32) x9_32_32_w0;
 	fill(SEQ(x1_32_32, w0));
 	use(fp - 0x1C);
-	use(fp + ~0x27 - ((x9_32_32_w0 << 2) + 0x0F & 0x00));
+	use(fp + ~0x27);
 	use(fp - 0x20);
 }
 
@@ -167,10 +167,10 @@ void with_array(ui64 x9_32_32_w0, word32 x1_32_32)
 word64 with_alloca(word64 x8_32_32_w0, word32 x1_32_32, ptr64 & x9Out, ptr64 & x19Out)
 {
 	word32 w0 = (word32) x8_32_32_w0;
-	word32 * x19_27 = fp + ~0x27 - (__sbfiz(x8_32_32_w0, 2) + 0x0F & 0x00);
+	__sbfiz(x8_32_32_w0, 2);
 	word64 x1_35 = fill(SEQ(x1_32_32, w0));
 	use(fp - 0x1C);
-	use(x19_27);
+	use(fp + ~0x27);
 	x9Out = use(fp - 0x20);
 	x19Out = qwLoc10;
 	return x1_35;

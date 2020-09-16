@@ -246,7 +246,7 @@ void copy2_four_times(word16 * x0, word16 * x1, int32 w2)
 {
 	if (w2 >= 0x01)
 	{
-		word32 w8_47;
+		word32 w8_47 = 0x04 - w2;
 		do
 		{
 			if (w8_47 != 0x01)
@@ -281,7 +281,7 @@ void copy2_eight_times(struct Eq_365 * x0, word16 * x1, int32 w2, word64 x10)
 	word32 x10_32_32 = SLICE(x10, word32, 32);
 	if (w2 >= 0x01)
 	{
-		word32 w8_10;
+		word32 w8_10 = 0x08 - w2;
 		do
 		{
 			up32 w10_11 = w8_10 - 0x01;

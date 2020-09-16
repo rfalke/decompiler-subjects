@@ -339,12 +339,12 @@ void main()
 	word32 ecx_62 = 200;
 	while (ecx_62 != 0x00)
 	{
-		esi_19 = (word16 *) ((char *) esi_128 + 1);
-		edi_23 = (word16 *) ((char *) edi_129 + 1);
+		esi_19 = (word16 *) ((char *) esi_136 + 1);
+		edi_23 = (word16 *) ((char *) edi_137 + 1);
 		--ecx_62;
-		esi_128 = esi_19;
-		edi_129 = edi_23;
-		if (*esi_128 == *edi_129)
+		esi_136 = esi_19;
+		edi_137 = edi_23;
+		if (*esi_136 == *edi_137)
 			return;
 	}
 }

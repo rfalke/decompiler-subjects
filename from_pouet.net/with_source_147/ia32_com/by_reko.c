@@ -24,7 +24,7 @@ void fn0C00_0100(byte ah, byte ch, struct Eq_4 * ds)
 	do
 	{
 		struct Eq_42 Eq_4::* si_31 = Eq_4::a0100;
-		word16 cx_130;
+		word16 cx_130 = SEQ(ch, 0x03);
 		do
 		{
 			real64 rLoc2_157 = sqrt((real64) (ds->*si_31).w0000);

@@ -86,16 +86,16 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		di_102 -= 0x1A30;
 	}
 	fn0C00_02FB(ds);
-	word16 cx_532;
-	fn0C00_0365(ds, out cx_532);
+	byte cl_534;
+	fn0C00_0365(ds, out cl_534);
 	struct Eq_190 Eq_3::* bx_150 = &Eq_3::t0000;
-	cui16 dx_526 = 0x0100;
+	cui16 dx_528 = 0x0100;
 	while (true)
 	{
-		cu8 dl_162 = (byte) dx_526;
+		cu8 dl_162 = (byte) dx_528;
 		byte bl_179 = (byte) bx_150;
 		byte bh_185 = SLICE(bx_150, byte, 8);
-		uint16 ax_161 = (uint16) (uint8) (ds->*bx_150).b045F + 0x60;
+		uint16 ax_161 = (uint16) (ds->*bx_150).b045F + 0x60;
 		if (dl_162 > 0x05)
 			ax_161 = 0x60;
 		struct Eq_190 Eq_3::* bx_184;
@@ -103,16 +103,16 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		bx_184 = bx_150;
 		if (dl_162 > 0x01)
 			bx_184 = SEQ(bh_185, bl_179 << 0x01);
-		uint16 ax_201 = (uint16) (uint8) (ds->*bx_184).b045F;
+		uint16 ax_201 = (uint16) (ds->*bx_184).b045F;
 		if (dl_162 != 0x01 && (dl_162 <= 0x03 || dl_162 > 0x05) && dl_162 != 0x07)
 			ds->w040E = ax_201 + 0x01A0;
 		else
 			ds->w040E = 0x01A0 - ax_201;
-		byte dh_245 = SLICE(dx_526, byte, 8);
+		byte dh_245 = SLICE(dx_528, byte, 8);
 		byte bl_246 = (byte) bx_150 + dh_245;
-		cui16 dx_217 = dx_526;
-		byte al_259 = (byte) (uint16) (uint8) fn0C00_02FB(ds);
-		byte dl_250 = (byte) dx_526;
+		cui16 dx_217 = dx_528;
+		byte al_259 = (byte) (uint16) fn0C00_02FB(ds);
+		byte dl_250 = (byte) dx_528;
 		bx_150 = SEQ(SLICE(bx_150, byte, 8), bl_246);
 		if (bl_246 == ~0x00)
 		{
@@ -125,17 +125,17 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		msdos_get_stdin_status();
 		if (al_259 != 0x00)
 			break;
-		dx_526 = dx_217;
+		dx_528 = dx_217;
 	}
-	word16 cx_533;
-	msdos_flush_buffer_and_read_stdin(fn0C00_0365(ds, out cx_533));
+	byte cl_535;
+	msdos_flush_buffer_and_read_stdin(fn0C00_0365(ds, out cl_535));
 	bios_video_set_mode(0x03);
 	bios_video_load_ROM_8x8_dbl_dot_patterns(0x00);
 	fn0C00_038B();
 	word16 bx_290 = 0x00;
 	struct Eq_35 * es_294 = ds->ptr0415;
-	struct Eq_296 Eq_35::* di_295 = &Eq_35::t066C;
-	Eq_298 si_296 = 0x0417;
+	struct Eq_294 Eq_35::* di_295 = &Eq_35::t066C;
+	Eq_296 si_296 = 0x0417;
 	do
 	{
 		bool C_309 = SLICE(cond(si_296 - 0x0437), bool, 1);
@@ -176,27 +176,29 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		++di_351;
 	}
 	bios_video_set_cursor_position(bh_514, 0x32, 0x00);
-	word16 cx_534;
-	fn0C00_0365(ds, out cx_534);
+	byte cl_536;
+	fn0C00_0365(ds, out cl_536);
 	byte al_373;
 	bios_kbd_get_keystroke(out al_373);
-	word16 cx_379;
-	fn0C00_0365(ds, out cx_379);
+	byte cl_537;
+	fn0C00_0365(ds, out cl_537);
 	__syscall(0x10);
+	Eq_187 cx_379 = <invalid>;
+	word16 cx_390 = SEQ(22, (byte) cx_379);
 	while (true)
 	{
-		byte ch_515 = SLICE(cx_379, byte, 8);
-		if (cx_379 == 0x00)
+		byte ch_517 = SLICE(cx_390, byte, 8);
+		if (cx_390 == 0x00)
 			break;
 		es_350->*di_351 = 0x00;
 		++di_351;
-		--cx_379;
+		--cx_390;
 	}
 	word16 Eq_3::* si_392 = Eq_3::a03D4;
 	struct Eq_35 * es_396 = ds->ptr0415;
 	word16 Eq_35::* di_397 = Eq_35::a0066;
 	word16 cx_399;
-	for (cx_399 = SEQ(ch_515, 0x1D); cx_399 != 0x00; --cx_399)
+	for (cx_399 = SEQ(ch_517, 0x1D); cx_399 != 0x00; --cx_399)
 	{
 		es_396->*di_397 = ds->*si_392;
 		++si_392;
@@ -239,20 +241,20 @@ byte fn0C00_02FB(struct Eq_3 * ds)
 	do
 		;
 	while ((__inb(0x03DA) & 0x08) == 0x00);
-	__outw(0x03D4, SEQ((byte) (uint16) ((uint32) (uint16) ds->w0410 % 0x10), 0x08));
-	uint16 dx_65 = (uint16) ((uint32) (uint16) (ds->w040E - 0x01) % 0x09);
+	__outw(0x03D4, SEQ((byte) (uint16) ((uint32) ds->w0410 % 0x10), 0x08));
+	uint16 dx_65 = (uint16) ((uint32) (ds->w040E - 0x01) % 0x09);
 	__outb(0x03C0, 0x33);
 	byte al_69 = (byte) dx_65;
 	__outb(0x03C0, al_69 | 0x20);
 	return al_69 | 0x20;
 }
 
-// 0C00:0365: Register byte fn0C00_0365(Register (ptr16 Eq_3) ds, Register out ptr16 cxOut)
+// 0C00:0365: Register byte fn0C00_0365(Register (ptr16 Eq_3) ds, Register out Eq_187 clOut)
 // Called from:
 //      fn0C00_0100
-byte fn0C00_0365(struct Eq_3 * ds, ptr16 & cxOut)
+byte fn0C00_0365(struct Eq_3 * ds, union Eq_187 & clOut)
 {
-	ptr16 cx_22 = 0x1F;
+	word16 cx_22 = 0x1F;
 	do
 	{
 		do
@@ -268,7 +270,7 @@ byte fn0C00_0365(struct Eq_3 * ds, ptr16 & cxOut)
 		cx_76 = cx_22;
 	} while (cx_76 != 0x01);
 	ds->b0414 = -ds->b0414;
-	cxOut = cx_22;
+	clOut.u0 = <invalid>;
 	return al_51;
 }
 

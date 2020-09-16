@@ -7,93 +7,93 @@
 // 0C00:0100: void fn0C00_0100(Register byte ah, Register byte ch, Register word16 bx, Register (ptr16 Eq_5) ds)
 void fn0C00_0100(byte ah, byte ch, word16 bx, struct Eq_5 * ds)
 {
-	int8 Top_112 = 0;
+	int8 Top_119 = 0;
 	__syscall(0x10);
 	ds->w0200 = 63036;
-	__outb(0x03C8, (byte) ax_296);
-	byte bh_232 = ah;
+	__outb(0x03C8, (byte) ax_303);
+	byte bh_239 = ah;
 	do
 	{
-		byte al_28 = (byte) ax_298;
+		byte al_28 = (byte) ax_305;
 		__outb(969, al_28);
 		__outb(969, al_28);
 		__outb(969, al_28);
-		ax_296 = ax_298 + 0x01;
-		ax_298 = ax_296;
-	} while (ax_298 != 0x01);
-	word16 bp_122 = ax_298 + 0x01;
+		ax_303 = ax_305 + 0x01;
+		ax_305 = ax_303;
+	} while (ax_305 != 0x01);
+	word16 bp_129 = ax_305 + 0x01;
 	do
 	{
-		int8 Top_41 = Top_112 - 1;
+		int8 Top_41 = Top_119 - 1;
 		Top_41->r0000 = 0.0;
-		int16 bx_114;
+		int16 bx_121 = SEQ(bh_239, 0x32);
 		do
 		{
 			Top_41->rFFFFFFFF = 0.0;
-			word16 cx_110 = SEQ(ch, 200);
+			word16 cx_117 = SEQ(ch, 200);
 			do
 			{
-				ds->w020A = bx_114;
+				ds->w020A = bx_121;
 				Top_41->rFFFFFFFE = (real64) ds->w020A;
-				Top_41->rFFFFFFFD = Top_41->rFFFFFFFF;
+				Top_41->rFFFFFFFD = Top_41->r0000;
 				Top_41->rFFFFFFFD *= Top_41->rFFFFFFFD;
 				Top_41->rFFFFFFFD *= (real64) ds->w01F8;
-				Top_41->rFFFFFFFC = Top_41->rFFFFFFFE;
-				real64 v20_60 = Top_41->rFFFFFFFC;
-				Top_41->rFFFFFFFC = cos(v20_60);
-				Top_41->rFFFFFFFB = sin(v20_60);
-				Top_41->rFFFFFFFA = Top_41->rFFFFFFFA;
+				Top_41->rFFFFFFFC = Top_41->rFFFFFFFF;
+				real64 v22_62 = Top_41->rFFFFFFFC;
+				Top_41->rFFFFFFFC = cos(v22_62);
+				Top_41->rFFFFFFFB = sin(v22_62);
+				Top_41->rFFFFFFFA = Top_41->rFFFFFFFB;
 				Top_41->rFFFFFFFA *= Top_41->rFFFFFFFA;
 				Top_41->rFFFFFFFB *= Top_41->rFFFFFFFA;
 				Top_41->rFFFFFFFB *= Top_41->rFFFFFFFD;
-				real64 v21_70 = Top_41->rFFFFFFFB;
+				real64 v24_73 = Top_41->rFFFFFFFB;
 				Top_41->rFFFFFFFB = Top_41->rFFFFFFFC;
-				Top_41->rFFFFFFFC = v21_70;
-				Top_41->rFFFFFFFA = Top_41->rFFFFFFFA;
+				Top_41->rFFFFFFFC = v24_73;
+				Top_41->rFFFFFFFA = Top_41->rFFFFFFFB;
 				Top_41->rFFFFFFFA *= Top_41->rFFFFFFFA;
 				Top_41->rFFFFFFFB *= Top_41->rFFFFFFFA;
 				Top_41->rFFFFFFFD *= Top_41->rFFFFFFFB;
-				Top_41->rFFFFFFFB = Top_41->rFFFFFFFD;
-				Top_41->rFFFFFFFA = Top_41->rFFFFFFFC;
-				Top_41->rFFFFFFF9 = Top_41->rFFFFFFFB;
+				Top_41->rFFFFFFFB = Top_41->rFFFFFFFE;
+				Top_41->rFFFFFFFA = Top_41->rFFFFFFFD;
+				Top_41->rFFFFFFF9 = Top_41->rFFFFFFFC;
 				ds->w0204 = ~0x4A;
-				byte bl_89 = (byte) bx_114;
-				fn0C00_01B9(&ds->w0200, bl_89, bp_122, 0x9000, Top_41->rFFFFFFF9, Top_41->rFFFFFFFA, Top_41->rFFFFFFFB);
+				byte bl_96 = (byte) bx_121;
+				fn0C00_01B9(&ds->w0200, bl_96, bp_129, 0x9000, Top_41->rFFFFFFF9, Top_41->rFFFFFFFA, Top_41->rFFFFFFFB);
 				ds->w0204 = 65511;
-				byte ah_164 = SLICE((uint16) (uint8) fn0C00_01B9(&ds->w0200, bl_89, bp_122, 0x9000, Top_41->rFFFFFFFC, Top_41->rFFFFFFFD, Top_41->rFFFFFFFE), byte, 8);
-				Top_41->rFFFFFFFF += ds->r01F0;
-				--cx_110;
-				ch = SLICE(cx_110, byte, 8);
-			} while (cx_110 != 0x00);
+				byte ah_171 = SLICE((uint16) fn0C00_01B9(&ds->w0200, bl_96, bp_129, 0x9000, Top_41->rFFFFFFFC, Top_41->rFFFFFFFD, Top_41->rFFFFFFFE), byte, 8);
+				Top_41->rFFFFFFFF += (real64) ds->r01F0;
+				--cx_117;
+				ch = SLICE(cx_117, byte, 8);
+			} while (cx_117 != 0x00);
 			__ffree(Top_41->rFFFFFFFF);
-			Top_41->r0000 += ds->r01F4;
-			Top_112 = Top_41;
-			--bx_114;
-		} while (bx_114 != 0x00);
+			Top_41->r0000 += (real64) ds->r01F4;
+			Top_119 = Top_41;
+			--bx_121;
+		} while (bx_121 != 0x00);
 		++ds->w0200;
 		if (ds->w0200 == 5050)
 		{
 			ds->w0200 = 63036;
-			bp_122 = ~bp_122;
+			bp_129 = ~bp_129;
 		}
-		Eq_304 di_155 = 0x00;
+		Eq_305 di_162 = 0x00;
 		do
 		{
-			cu8 al_162 = 0x9000->*di_155 + 0x9000->*((word16) di_155 + 1);
-			cu8 al_167 = al_162 + 0x9000->*((word16) di_155 + 0x0141);
-			byte ah_170 = (bool) (al_167 < 0x00) + ((bool) (al_162 < 0x00) + ah_164);
-			Eq_312 bx_171 = 0xA0;
+			cu8 al_169 = 0x9000->*di_162 + 0x9000->*((word16) di_162 + 1);
+			cu8 al_174 = al_169 + 0x9000->*((word16) di_162 + 0x0141);
+			byte ah_177 = (bool) (al_174 < 0x00) + ((bool) (al_169 < 0x00) + ah_171);
+			Eq_313 bx_178 = 0xA0;
 			if ((ds->b0201 & 0x02) == 0x00)
-				bx_171.u0 = 0x0140;
-			byte al_184 = al_167 + Mem160[0x9000:bx_171 + di_155:byte];
-			cu16 ax_189 = SEQ((bool) (al_184 < 0x00) + ah_170, al_184);
-			0xA000->*di_155 = (byte) (ax_189 >> 0x02);
-			ah_164 = SLICE(ax_189 >> 0x02, byte, 8);
-			0x9000->*di_155 = ah_164;
-			di_155 = (word16) di_155 + 1;
-		} while (di_155 != 0x00);
-		bh_232 = SLICE(bx_114, byte, 8);
-		ch = SLICE(cx_110, byte, 8);
+				bx_178.u0 = 0x0140;
+			byte al_191 = al_174 + Mem167[0x9000:bx_178 + di_162:byte];
+			cu16 ax_196 = SEQ((bool) (al_191 < 0x00) + ah_177, al_191);
+			0xA000->*di_162 = (byte) (ax_196 >> 0x02);
+			ah_171 = SLICE(ax_196 >> 0x02, byte, 8);
+			0x9000->*di_162 = ah_171;
+			di_162 = (word16) di_162 + 1;
+		} while (di_162 != 0x00);
+		bh_239 = SLICE(bx_121, byte, 8);
+		ch = SLICE(cx_117, byte, 8);
 	} while (__inb(0x60) != 0x01);
 }
 
@@ -104,11 +104,11 @@ byte fn0C00_01B9(struct Eq_213 * ds_si, byte bl, word16 bp, struct Eq_216 * fs, 
 {
 	real64 rArg0_59 = rArg1 + (real64) ds_si->w0000;
 	ds_si->t0008.u0 = (int16) ((rArg0 + (real64) ds_si->w0000) * ((((rArg2 + (real64) ds_si->w0004) + (real64) ds_si->wFFFFFFFA) / (real64) ds_si->wFFFFFFFC) * rArg0_59) + (real64) ds_si->wFFFFFFFA);
-	real64 rArg2_69 = rArg0_59 + (real64) ds_si->wFFFFFFFE;
+	real64 rArg2_69 = rArg0_59 + (real64) ds_si->tFFFFFFFE;
 	if (bp != 0x00)
 		rArg2_69 = -rArg2_69;
 	ds_si->t0006.u0 = (int16) rArg2_69;
-	*((word16) ds_si->t0006 + (word16) (ds_si->wFFFFFFFE * ds_si->t0008) * 0x02) = bl;
+	*((word16) ds_si->t0006 + (word16) (ds_si->tFFFFFFFE * ds_si->t0008) * 0x02) = bl;
 	return SLICE(di, byte, 8);
 }
 

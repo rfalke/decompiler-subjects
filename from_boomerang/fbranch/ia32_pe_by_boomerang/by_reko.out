@@ -1,31 +1,34 @@
 === Using options:
+Packer 'Microsoft Visual C++ 7.0' detected.
+warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 7.0'.
 00404F25: warning: Procedure fn00404F20 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00404D14: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13404) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00146] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+    Not handling (ptr32 (struct (0 (arr T_13097) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 00405B34: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13445) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00146] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+    Not handling (ptr32 (struct (0 (arr T_13138) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 l00405BE8: warning: Non-integral switch expression
 00401C9A: warning: Expected sizes of arrays to have been determined by now
 00404D2C: warning: Expected sizes of arrays to have been determined by now
 00404EC8: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
+004090C8: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now
 0040B5F8: warning: Expected sizes of arrays to have been determined by now
 0040B5FC: warning: Expected sizes of arrays to have been determined by now
@@ -37,6 +40,7 @@ l00405BE8: warning: Non-integral switch expression
 00404EC8: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
+004090C8: warning: Expected sizes of arrays to have been determined by now
 00409708: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now
 0040B5F8: warning: Expected sizes of arrays to have been determined by now

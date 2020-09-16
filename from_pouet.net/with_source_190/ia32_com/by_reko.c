@@ -4,63 +4,68 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds, FpuStack real64 rLoc2)
-void fn0C00_0100(struct Eq_2 * ds, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds)
+void fn0C00_0100(struct Eq_2 * ds)
 {
 	bios_video_set_mode(0x13);
 	__outb(0x03C8, 0x00);
-	byte al_13;
+	byte al_13 = 0x00;
 	do
 	{
 		__outb(969, al_13);
 		++al_13;
 	} while (al_13 != 0x00);
-	struct Eq_25 Eq_36::* bx_32 = Eq_36::a0000;
+	byte ah_20 = SLICE(cs, byte, 8);
+	byte al_22 = (byte) cs;
+	struct Eq_29 * ax_23 = SEQ(ah_20 + 0x10, al_22);
+	struct Eq_29 * ax_26 = SEQ(ah_20 + 0x20, al_22);
+	struct Eq_37 Eq_29::* bx_35 = Eq_29::a0000;
+	real64 rLoc1_147 = 0.0;
 	do
 	{
-		rLoc2 = sin(rLoc2) * (real64) ds->ptr01C6;
-		(cs->*bx_32).w0000 = (int16) rLoc2;
-		(cs->*bx_32).w0000 = 0x00;
-		struct Eq_44 Eq_36::* bx_53 = bx_32 + 1;
-		bx_32 = (struct Eq_25 Eq_36::*) (bx_53 + 1);
-	} while (bx_53 != &Eq_36::t0001);
-	struct Eq_51 Eq_2::* di_59 = &Eq_2::t010A;
+		(ax_26->*bx_35).w0000 = (int16) (sin(rLoc1_147) * (real64) ds->t01C6);
+		(ax_23->*bx_35).w0000 = 0x00;
+		struct Eq_57 Eq_29::* bx_57 = bx_35 + 1;
+		rLoc1_147 += (real64) ds->r01C8;
+		bx_35 = (struct Eq_37 Eq_29::*) (bx_57 + 1);
+	} while (bx_57 != &Eq_29::t0001);
+	struct Eq_68 Eq_2::* di_63 = &Eq_2::t010A;
 	do
 	{
-		int16 si_63 = (ds->*di_59).w0000;
-		Eq_53 bx_172 = 0x00;
+		int16 si_67 = (ds->*di_63).w0000;
+		Eq_70 bx_173 = 0x00;
 		do
 		{
-			bi8 bl_67 = (byte) bx_175;
-			bi8 bh_74 = SLICE(bx_175, byte, 8);
-			if (bh_74 *s bh_74 + bl_67 *s bl_67 <=u 2499)
-				cs->*((word16) bx_175 + si_63) = 0xC9;
-			bx_172 = (word16) bx_175 + 1;
-			bx_175 = bx_172;
-		} while (bx_175 != 0x01);
-		word16 di_91 = di_59 - 0x01;
-		di_59 = di_91 - 0x01;
-	} while (di_91 != ~0xFE);
+			bi8 bl_71 = (byte) bx_176;
+			bi8 bh_78 = SLICE(bx_176, byte, 8);
+			if (bh_78 *s bh_78 + bl_71 *s bl_71 <=u 2499)
+				ax_23->*((word16) bx_176 + si_67) = 0xC9;
+			bx_173 = (word16) bx_176 + 1;
+			bx_176 = bx_173;
+		} while (bx_176 != 0x01);
+		word16 di_95 = di_63 - 0x01;
+		di_63 = di_95 - 0x01;
+	} while (di_95 != ~0xFE);
 	do
 	{
-		fn0C00_0171(0xA000, ds, cs, cs);
-		byte al_108;
-		byte ah_109;
-	} while (bios_kbd_check_keystroke(out al_108, out ah_109));
+		fn0C00_0171(0xA000, ds, ax_23, ax_26);
+		byte al_112;
+		byte ah_113;
+	} while (bios_kbd_check_keystroke(out al_112, out ah_113));
 	bios_video_set_mode(0x03);
 }
 
-// 0C00:0171: void fn0C00_0171(Register (ptr16 Eq_85) es, Register (ptr16 Eq_2) ds, Register (ptr16 Eq_36) fs, Register (ptr16 Eq_36) gs)
+// 0C00:0171: void fn0C00_0171(Register (ptr16 Eq_102) es, Register (ptr16 Eq_2) ds, Register (ptr16 Eq_29) fs, Register (ptr16 Eq_29) gs)
 // Called from:
 //      fn0C00_0100
-void fn0C00_0171(struct Eq_85 * es, struct Eq_2 * ds, struct Eq_36 * fs, struct Eq_36 * gs)
+void fn0C00_0171(struct Eq_102 * es, struct Eq_2 * ds, struct Eq_29 * fs, struct Eq_29 * gs)
 {
-	struct Eq_32 Eq_36::* bx_6 = ds->ptr01C6;
-	ds->w01CE = (gs->*bx_6).w0000;
-	word16 si_10 = (gs->*bx_6).w4000;
+	Eq_46 bx_6 = ds->t01C6;
+	ds->w01CE = gs->*bx_6;
+	word16 si_10 = gs->*((word16) bx_6 + 0x00004000);
 	word16 dx_106 = 0x00;
 	word16 bp_105 = 0x00;
-	byte Eq_85::* di_103 = &Eq_85::b0000;
+	byte Eq_102::* di_103 = &Eq_102::b0000;
 	word16 cx_108 = 200;
 	do
 	{
@@ -70,13 +75,13 @@ void fn0C00_0171(struct Eq_85 * es, struct Eq_2 * ds, struct Eq_36 * fs, struct 
 		di_79 = di_103;
 		for (cx_43 = 0x0140; cx_43 != 0x00; --cx_43)
 		{
-			byte Eq_85::* di_79;
+			byte Eq_102::* di_79;
 			word16 dx_47;
 			word16 bp_44;
 			dx_47 += ds->w01CE;
 			bp_44 += si_10;
 			byte al_55 = 0x14;
-			Eq_137 bx_124 = SEQ(SLICE(bp_44, byte, 8), SLICE(dx_47, byte, 8));
+			Eq_154 bx_124 = SEQ(SLICE(bp_44, byte, 8), SLICE(dx_47, byte, 8));
 			while (Mem60[fs:bx_124 + Mem60[ds:0x01CC:word16]:byte] == 0x00)
 			{
 				bx_124 *= 0x02;

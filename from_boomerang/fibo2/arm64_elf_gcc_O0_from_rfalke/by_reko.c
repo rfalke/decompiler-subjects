@@ -173,12 +173,12 @@ int32 fib2(int32 w0)
 	int32 w0_17;
 	if (w0 > 0x01)
 	{
-		word64 x29_21;
-		word64 x19_23;
-		fib1(out x19_23, out x29_21);
+		word64 x29_71;
+		word64 x19_70;
+		fib1(out x19_70, out x29_71);
 		word64 x19_34;
-		word64 x29_70;
-		w0_17 = (word32) x19_34 + fib1(out x19_34, out x29_70);
+		word64 x29_72;
+		w0_17 = (word32) x19_34 + fib1(out x19_34, out x29_72);
 	}
 	else
 		w0_17 = w0;

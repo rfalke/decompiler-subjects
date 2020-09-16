@@ -193,10 +193,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000A28: Register word64 dumpline(Register ptr64 x0, Register int32 w2)
+// 0000000000000A28: Register word64 dumpline(Register (arr byte) x0, Register int32 w2)
 // Called from:
 //      hexdump
-word64 dumpline(ptr64 x0, int32 w2)
+word64 dumpline(byte x0[], int32 w2)
 {
 	fn0000000000000850();
 	int32 dwLoc6C_182 = w2;
@@ -217,29 +217,29 @@ word64 dumpline(ptr64 x0, int32 w2)
 		if (dwArg04_184 > 0x0F)
 			break;
 		fn0000000000000820();
-		(word64) fp - 80 + ((word64) fp - 80) = (word32 *) g_dw0E40;
+		Mem76[fp + ~0x4F + (fp + ~0x4F):word32] = Mem64[0x0000000000000E40<p64>:word32];
 	}
 	fn0000000000000820();
-	(word64) fp - 80 + (word64) dwLoc44_198 = g_t0E48;
-	word32 w0_80 = (word32) ((word64) fp - 80);
+	Mem89[fp + ~0x4F + CONVERT(dwLoc44_198, int32, int64):word32] = Mem81[0x0000000000000E48<p64>:word32];
+	word32 w0_80 = SLICE(fp + ~0x4F, word32, 0);
 	int32 dwArg04_200 = 0x00;
 	while (true)
 	{
-		Eq_161 dwLoc44_218 = SEQ((word16) dwLoc42, wLoc44);
+		int32 dwLoc44_218 = SEQ((word16) dwLoc42, wLoc44);
 		if (dwArg04_200 >= dwLoc6C_182)
 			break;
 		word32 w0_119;
 		word32 w2_102 = w0_80 + 0x03 + dwArg04_200;
-		if ((word32) (x0 + (word64) dwLoc42) > 0x1F && (word32) (x0 + (word64) dwLoc42) <= 0x7E)
-			w0_119 = (word32) (x0 + (word64) dwLoc42);
+		if ((word32) x0[(int64) dwLoc42] > 0x1F && (word32) x0[(int64) dwLoc42] <= 0x7E)
+			w0_119 = (word32) x0[(int64) dwLoc42];
 		else
 			w0_119 = 0x2E;
-		(word64) fp - 80 + (int64) ((int32) w2_102) = (byte) w0_119;
+		Mem133[fp + ~0x4F + CONVERT(w2_102, word32, int64):byte] = SLICE(w0_119, byte, 0);
 		++dwArg04_200;
 	}
 	for (; dwArg04_200 <= 0x0F; ++dwArg04_200)
-		(word64) fp - 80 + (int64) ((int32) (dwArg04_200 + (w0_80 + 0x03))) = 0x20;
-	Mem162[fp + ~0x4F + (dwLoc44_218 + dwLoc42):word16] = (word16) (word32) Mem138[0x0000000000000E50<p64>:word16];
+		Mem150[fp + ~0x4F + CONVERT(dwArg04_200 + (w0_80 + 0x03), word32, int64):byte] = 0x20;
+	Mem162[fp + ~0x4F + CONVERT(dwLoc44_218 + dwLoc42, int32, int32):word16] = SLICE(CONVERT(Mem138[0x0000000000000E50<p64>:word16], word16, word32), word16, 0);
 	fn00000000000008B0();
 	return x30;
 }
@@ -250,7 +250,7 @@ word64 dumpline(ptr64 x0, int32 w2)
 word64 hexdump(word64 x0)
 {
 	word64 x0_120;
-	struct Eq_224 * x29_34 = fp + -200;
+	struct Eq_223 * x29_34 = fp + -200;
 	if ((word32) __stat(x0) != 0x00)
 	{
 		fn0000000000000830();
@@ -273,7 +273,7 @@ word64 hexdump(word64 x0)
 				if (x29_34->dw00BC == 0x00)
 					break;
 				x29_34 = dumpline((char *) &x29_34->dw005E + 74, x29_34->dw00BC);
-				x29_34->qw00C8 += (word64) x29_34->dw005E;
+				x29_34->qw00C8 += (int64) x29_34->dw005E;
 			}
 			word32 x0_32_32_125 = x29_34->dw00C4;
 			fn0000000000000860();
@@ -289,7 +289,7 @@ void main(int32 w0, word64 x1[])
 	int32 dwArg04_60;
 	int32 dwLoc12_75 = SEQ(wLoc10, SLICE(x1, word16, 48));
 	for (dwArg04_60 = 0x01; dwArg04_60 < w0; ++dwArg04_60)
-		hexdump(x1[(word64) dwLoc12_75]);
+		hexdump(x1[(int64) dwLoc12_75]);
 }
 
 // 0000000000000D88: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

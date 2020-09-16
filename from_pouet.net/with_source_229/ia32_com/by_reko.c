@@ -7,137 +7,138 @@
 // 0C00:0100: void fn0C00_0100(Register word16 cx, Register (memptr (ptr16 Eq_4) Eq_3) si, Register (ptr16 Eq_4) ds)
 void fn0C00_0100(word16 cx, struct Eq_3 Eq_4::* si, struct Eq_4 * ds)
 {
-	int8 Top_167 = 0;
+	int8 Top_172 = 0;
 	__syscall(0x10);
-	word16 cx_231 = cx;
+	struct Eq_4 * ax_11 = SEQ(SLICE(ds, byte, 8) + 0x01, (byte) ds);
+	word16 cx_236 = cx;
 	do
 	{
-		uint8 cl_12 = (byte) cx_237;
-		__outb(0x03C8, cl_12);
-		__outb(969, cl_12);
-		__outb(969, cl_12 >> 0x02);
-		__outb(969, cl_12 >> 0x02);
-		uint8 al_100 = cl_12 >> 0x02;
-		byte ch_186 = SLICE(cx_237 - 0x01, byte, 8);
-		cx_231 = cx_237 - 0x01;
-		cx_237 = cx_231;
-	} while (cx_237 != 0x01);
+		uint8 cl_14 = (byte) cx_242;
+		__outb(0x03C8, cl_14);
+		__outb(969, cl_14);
+		__outb(969, cl_14 >> 0x02);
+		__outb(969, cl_14 >> 0x02);
+		uint8 al_100 = cl_14 >> 0x02;
+		byte ch_191 = SLICE(cx_242 - 0x01, byte, 8);
+		cx_236 = cx_242 - 0x01;
+		cx_242 = cx_236;
+	} while (cx_242 != 0x01);
 	do
 	{
-		byte Eq_4::* di_108 = &Eq_4::b0000;
-		ci16 bx_120;
-		for (bx_120 = ~0x63; bx_120 < 100; ++bx_120)
+		byte Eq_4::* di_113 = &Eq_4::b0000;
+		ci16 bx_125;
+		for (bx_125 = ~0x63; bx_125 < 100; ++bx_125)
 		{
-			ci16 dx_114;
-			for (dx_114 = ~0x9F; dx_114 < 0xA0; ++dx_114)
+			ci16 dx_119;
+			for (dx_119 = ~0x9F; dx_119 < 0xA0; ++dx_119)
 			{
 				__fninit();
-				int8 Top_26 = Top_167 - 1;
-				Top_26->t0000.u0 = 0.0;
-				si[2] = dx_114;
-				Top_26->tFFFFFFFF.u0 = (real64) si[2];
-				Top_26->tFFFFFFFE.u0 = (real64) ds->r010D;
-				Top_26->tFFFFFFFE = sqrt(Top_26->tFFFFFFFE);
-				Top_26->tFFFFFFFE = sin(Top_26->tFFFFFFFE);
-				Top_26->tFFFFFFFE *= (real64) ds->w017E;
-				Top_26->tFFFFFFFF += Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFE = Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFE *= Top_26->tFFFFFFFE;
-				si[1] = bx_120;
-				Top_26->tFFFFFFFD.u0 = (real64) si[1];
-				Top_26->tFFFFFFFD *= Top_26->tFFFFFFFD;
-				Top_26->tFFFFFFFE += Top_26->tFFFFFFFD;
-				Top_26->tFFFFFFFE += Top_26->tFFFFFFFE;
-				Eq_67 v18_52 = Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFE = Top_26->tFFFFFFFF;
-				Top_26->tFFFFFFFF = v18_52;
-				Top_26->tFFFFFFFE += Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFE = -Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFD = Top_26->tFFFFFFFE;
-				Top_26->tFFFFFFFD += Top_26->tFFFFFFFD;
-				Top_26->tFFFFFFFC = Top_26->tFFFFFFFD;
-				Top_26->tFFFFFFFC *= Top_26->tFFFFFFFC;
-				Top_26->tFFFFFFFD = Top_26->tFFFFFFFC - Top_26->tFFFFFFFD;
-				Eq_47 cx_210 = SEQ(ch_186, 0x04);
+				int8 Top_28 = Top_172 - 1;
+				Top_28->t0000.u0 = 0.0;
+				si[2] = dx_119;
+				Top_28->tFFFFFFFF.u0 = (real64) si[2];
+				Top_28->tFFFFFFFE.u0 = (real64) ds->r010D;
+				Top_28->tFFFFFFFE = sqrt(Top_28->tFFFFFFFE);
+				Top_28->tFFFFFFFE = sin(Top_28->tFFFFFFFE);
+				Top_28->tFFFFFFFE *= (real64) ds->w017E;
+				Top_28->tFFFFFFFF += Top_28->tFFFFFFFE;
+				Top_28->tFFFFFFFE = Top_28->tFFFFFFFF;
+				Top_28->tFFFFFFFE *= Top_28->tFFFFFFFE;
+				si[1] = bx_125;
+				Top_28->tFFFFFFFD.u0 = (real64) si[1];
+				Top_28->tFFFFFFFD *= Top_28->tFFFFFFFD;
+				Top_28->tFFFFFFFE += Top_28->tFFFFFFFD;
+				Top_28->tFFFFFFFE += Top_28->tFFFFFFFE;
+				Eq_73 v19_55 = Top_28->tFFFFFFFE;
+				Top_28->tFFFFFFFE = Top_28->tFFFFFFFF;
+				Top_28->tFFFFFFFF = v19_55;
+				Top_28->tFFFFFFFE += Top_28->tFFFFFFFE;
+				Top_28->tFFFFFFFE = -Top_28->tFFFFFFFE;
+				Top_28->tFFFFFFFD = Top_28->tFFFFFFFF;
+				Top_28->tFFFFFFFD += Top_28->tFFFFFFFD;
+				Top_28->tFFFFFFFC = Top_28->tFFFFFFFE;
+				Top_28->tFFFFFFFC *= Top_28->tFFFFFFFC;
+				Top_28->tFFFFFFFD = Top_28->tFFFFFFFC - Top_28->tFFFFFFFD;
+				Eq_53 cx_215 = SEQ(ch_191, 0x04);
 				do
 				{
-					byte cl_220;
-					Eq_47 cx_86;
-					Top_26->tFFFFFFFC.u0 = 1.44269504088896;
-					Top_26->tFFFFFFFC *= Top_26->tFFFFFFFF;
-					Top_26->tFFFFFFFD += Top_26->tFFFFFFFC;
-					Top_167 = Top_26 - 3;
-					if (Top_26->tFFFFFFFD >= Top_26->t0000)
+					byte cl_225;
+					Eq_53 cx_91;
+					Top_28->tFFFFFFFC.u0 = 1.44269504088896;
+					Top_28->tFFFFFFFC *= Top_28->tFFFFFFFF;
+					Top_28->tFFFFFFFD += Top_28->tFFFFFFFC;
+					Top_172 = Top_28 - 3;
+					if (Top_28->tFFFFFFFD >= Top_28->t0000)
 					{
-						Eq_55 ax_80 = <invalid>;
-						al_100 = (byte) ax_80;
-						ch_186 = SLICE(cx_79, byte, 8);
-						cl_220 = (byte) cx_79;
-						Eq_47 cx_79;
-						byte al_235;
-						if (fn0C00_01AF(cx_210, si, ds, Top_26->tFFFFFFFC, Top_26->tFFFFFFFD, Top_26->tFFFFFFFF, Top_26->t0000, out al_235, out cx_79))
+						Eq_61 ax_85 = <invalid>;
+						al_100 = (byte) ax_85;
+						ch_191 = SLICE(cx_84, byte, 8);
+						cl_225 = (byte) cx_84;
+						Eq_53 cx_84;
+						byte al_240;
+						if (fn0C00_01AF(cx_215, si, ds, Top_28->tFFFFFFFD, Top_28->tFFFFFFFE, Top_28->tFFFFFFFF, Top_28->t0000, out al_240, out cx_84))
 							break;
-						Eq_55 ax_87 = <invalid>;
-						al_100 = (byte) ax_87;
-						ch_186 = SLICE(cx_86, byte, 8);
-						cl_220 = (byte) cx_86;
-						cx_210 = cx_86;
-						byte al_236;
-						if (fn0C00_01AF(cx_79, si, ds, Top_26->tFFFFFFFC, Top_26->tFFFFFFFD, Top_26->tFFFFFFFF, Top_26->t0000, out al_236, out cx_86))
+						Eq_61 ax_92 = <invalid>;
+						al_100 = (byte) ax_92;
+						ch_191 = SLICE(cx_91, byte, 8);
+						cl_225 = (byte) cx_91;
+						cx_215 = cx_91;
+						byte al_241;
+						if (fn0C00_01AF(cx_84, si, ds, Top_28->tFFFFFFFD, Top_28->tFFFFFFFE, Top_28->tFFFFFFFF, Top_28->t0000, out al_241, out cx_91))
 							break;
 					}
-					--cx_210;
-					ch_186 = SLICE(cx_210, byte, 8);
-					cl_220 = (byte) cx_210;
-				} while (cx_210 != 0x00);
-				ds->*di_108 = al_100;
-				++di_108;
+					--cx_215;
+					ch_191 = SLICE(cx_215, byte, 8);
+					cl_225 = (byte) cx_215;
+				} while (cx_215 != 0x00);
+				ax_11->*di_113 = al_100;
+				++di_113;
 			}
 		}
-		word16 Eq_392::* di_150 = Eq_392::a0000;
+		word16 Eq_399::* di_155 = Eq_399::a0000;
 		si = &Eq_4::b0000;
-		word16 cx_154 = SEQ(0x7D, cl_220);
+		word16 cx_159 = SEQ(0x7D, cl_225);
 		while (true)
 		{
-			ch_186 = SLICE(cx_154, byte, 8);
-			if (cx_154 == 0x00)
+			ch_191 = SLICE(cx_159, byte, 8);
+			if (cx_159 == 0x00)
 				break;
-			0xA000->*di_150 = (ds->*si).w0000;
+			0xA000->*di_155 = (ax_11->*si).w0000;
 			++si;
-			++di_150;
-			--cx_154;
+			++di_155;
+			--cx_159;
 		}
-		Top_26->tFFFFFFFC.u0 = 0.301029995663981;
-		Top_26->tFFFFFFFC += ds->r010D;
-		ds->r010D = (real32) Top_26->tFFFFFFFC;
-		Top_167 = Top_26 - 3;
-		byte ah_170;
-	} while (bios_kbd_check_keystroke(out al_100, out ah_170));
+		Top_28->tFFFFFFFC.u0 = 0.301029995663981;
+		Top_28->tFFFFFFFC += (real64) ds->r010D;
+		ds->r010D = (real32) Top_28->tFFFFFFFC;
+		Top_172 = Top_28 - 3;
+		byte ah_175;
+	} while (bios_kbd_check_keystroke(out al_100, out ah_175));
 	bios_video_set_mode(0x03);
 	msdos_terminate_program20();
 }
 
-// 0C00:01AF: FlagGroup bool fn0C00_01AF(Register Eq_47 cx, Register (memptr (ptr16 Eq_4) Eq_3) si, Register (ptr16 Eq_4) ds, FpuStack Eq_67 rLoc1, FpuStack Eq_67 rArg0, FpuStack Eq_67 rArg2, FpuStack Eq_67 rArg3, Register out Eq_55 alOut, Register out Eq_47 cxOut)
+// 0C00:01AF: FlagGroup bool fn0C00_01AF(Register Eq_53 cx, Register (memptr (ptr16 Eq_4) Eq_3) si, Register (ptr16 Eq_4) ds, FpuStack Eq_73 rArg0, FpuStack Eq_73 rArg1, FpuStack Eq_73 rArg2, FpuStack Eq_73 rArg3, Register out Eq_61 alOut, Register out Eq_53 cxOut)
 // Called from:
 //      fn0C00_0100
-bool fn0C00_01AF(Eq_47 cx, struct Eq_3 Eq_4::* si, struct Eq_4 * ds, Eq_67 rLoc1, Eq_67 rArg0, Eq_67 rArg2, Eq_67 rArg3, union Eq_55 & alOut, union Eq_47 & cxOut)
+bool fn0C00_01AF(Eq_53 cx, struct Eq_3 Eq_4::* si, struct Eq_4 * ds, Eq_73 rArg0, Eq_73 rArg1, Eq_73 rArg2, Eq_73 rArg3, union Eq_61 & alOut, union Eq_53 & cxOut)
 {
-	Eq_67 rLoc1_76 = sqrt(rLoc1);
+	Eq_73 rLoc1_79 = sqrt(rArg0);
 	if (!C)
-		rLoc1_76 = -rLoc1_76;
-	Eq_67 rLoc1_85 = (rLoc1_76 + rArg0) / rArg2;
-	bool C_111 = SLICE(cond(rLoc1_85 - rArg3), bool, 1);
-	if (rLoc1_85 >= rArg3)
+		rLoc1_79 = -rLoc1_79;
+	Eq_73 rLoc1_88 = (rLoc1_79 + rArg1) / rArg2;
+	bool C_114 = SLICE(cond(rLoc1_88 - rArg3), bool, 1);
+	if (rLoc1_88 >= rArg3)
 	{
-		real64 rLoc2_94 = atan(rLoc1_85, (real64) si[1] * rLoc1_85);
-		real64 rLoc3_97 = (real64) ds->w0175 * rLoc1_85 + ds->r010D;
+		real64 rLoc2_97 = atan(rLoc1_88, (real64) si[1] * rLoc1_88);
+		real64 rLoc3_100 = (real64) ds->w0175 * rLoc1_88 + (real64) ds->r010D;
 		(ds->*si).w0000 = cx;
-		real64 rLoc3_98 = rLoc3_97 - (real64) (ds->*si).w0000;
-		(ds->*si).w0000.u0 = (int16) (fabs(sin(1.0)) * (real64) ds->w017E);
-		C_111 = SLICE(cond(sin(rLoc2_94 + rLoc3_98) - rArg3), bool, 1);
+		Eq_73 rLoc3_101 = rLoc3_100 - (real64) (ds->*si).w0000;
+		(ds->*si).w0000.u0 = (int16) (fabs(sin(rLoc3_101)) * (real64) ds->w017E);
+		C_114 = SLICE(cond(sin(rLoc2_97 + rLoc3_101) - rArg3), bool, 1);
 	}
 	alOut.u0 = <invalid>;
 	cxOut = cx;
-	return C_111;
+	return C_114;
 }
 

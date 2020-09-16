@@ -106,12 +106,12 @@ void main(int32 dwArg04)
 			fn0000000000000730();
 			x0_32_32_w22_176 = SEQ(SLICE(x21_69, word32, 32), (word32) x22_70);
 		}
-		word64 x19_97;
-		word64 x29_103;
-		word64 x20_187;
-		word64 x21_188;
-		word64 x22_189;
-		fib(x0_32_32_w22_176, out x19_97, out x20_187, out x21_188, out x22_189, out x29_103);
+		word64 x19_187;
+		word64 x20_188;
+		word64 x21_189;
+		word64 x22_190;
+		word64 x29_191;
+		fib(x0_32_32_w22_176, out x19_187, out x20_188, out x21_189, out x22_190, out x29_191);
 		fn0000000000000730();
 	}
 	fn0000000000000730();
@@ -209,89 +209,89 @@ word64 fib(word64 x0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x2
 		x29Out = x30;
 		return x0;
 	}
-	word32 w19_124;
-	ptr64 x21_111;
+	word32 w19_122;
+	ptr64 x21_109;
 	if (w0 == 0x02)
 	{
-		x21_111 = 0x00;
-		w19_124 = 0x01;
+		x21_109 = 0x00;
+		w19_122 = 0x01;
 		goto l000000000000098C;
 	}
 	if (w0 == 0x03)
 	{
 		fn0000000000000730();
-		x21_111 = 0x00;
-		w19_124 = 0x01;
+		x21_109 = 0x00;
+		w19_122 = 0x01;
 		goto l000000000000098C;
 	}
-	word64 x19_41;
-	word64 x20_42;
-	word64 x21_392;
-	word64 x22_393;
-	word64 x29_394;
-	fib(x0, out x19_41, out x20_42, out x21_392, out x22_393, out x29_394);
+	word64 x22_389;
+	word64 x29_390;
+	word64 x19_386;
+	word64 x20_387;
+	word64 x21_388;
+	fib(x0, out x19_386, out x20_387, out x21_388, out x22_389, out x29_390);
 	word64 x19_60;
 	word64 x20_61;
-	word64 x22_395;
-	word64 x29_396;
-	fib(x0, out x19_60, out x20_61, out x21_111, out x22_395, out x29_396);
+	word64 x29_392;
+	word64 x22_391;
+	fib(x0, out x19_60, out x20_61, out x21_109, out x22_391, out x29_392);
 	fn0000000000000730();
-	w19_124 = (word32) x19_60;
+	w19_122 = (word32) x19_60;
 	if ((word32) x20_61 <= 0x01)
 	{
 		fn0000000000000730();
 		goto l000000000000098C;
 	}
-	word64 x22_94;
-	word64 x20_398;
-	word64 x21_399;
-	word64 x29_400;
-	word64 x19_397;
-	fib(x0, out x19_397, out x20_398, out x21_399, out x22_94, out x29_400);
-	word64 x19_109;
-	word64 x20_110;
-	word64 x22_112;
-	word64 x29_401;
-	fib(x0, out x19_109, out x20_110, out x21_111, out x22_112, out x29_401);
+	word64 x21_395;
+	word64 x22_396;
+	word64 x29_397;
+	word64 x19_393;
+	word64 x20_394;
+	fib(x0, out x19_393, out x20_394, out x21_395, out x22_396, out x29_397);
+	word64 x19_107;
+	word64 x20_108;
+	word64 x22_398;
+	word64 x29_399;
+	fib(x0, out x19_107, out x20_108, out x21_109, out x22_398, out x29_399);
 	fn0000000000000730();
 	fn0000000000000730();
-	w19_124 = (word32) x19_109;
-	int32 w20_129 = (word32) x20_110;
-	if (w20_129 <= 0x01)
+	w19_122 = (word32) x19_107;
+	int32 w20_127 = (word32) x20_108;
+	if (w20_127 <= 0x01)
 	{
-		if (w20_129 == 0x01)
+		if (w20_127 == 0x01)
 			goto l0000000000000A50;
 	}
 	else
 	{
-		word64 x20_140;
-		word64 x22_142;
+		word64 x19_400;
+		word64 x20_401;
+		word64 x21_402;
+		word64 x22_403;
 		word64 x29_404;
-		word64 x19_402;
-		word64 x21_403;
-		fib(x0, out x19_402, out x20_140, out x21_403, out x22_142, out x29_404);
-		word64 x19_160;
-		word64 x20_161;
-		word64 x22_163;
-		word64 x29_405;
-		fib(x0, out x19_160, out x20_161, out x21_111, out x22_163, out x29_405);
+		fib(x0, out x19_400, out x20_401, out x21_402, out x22_403, out x29_404);
+		word64 x19_156;
+		word64 x22_159;
+		word64 x20_405;
+		word64 x29_406;
+		fib(x0, out x19_156, out x20_405, out x21_109, out x22_159, out x29_406);
 		fn0000000000000730();
-		w19_124 = (word32) x19_160;
-		if ((word32) x22_163 > 0x01)
+		w19_122 = (word32) x19_156;
+		if ((word32) x22_159 > 0x01)
 		{
-			word64 x22_188;
-			word64 x19_406;
-			word64 x20_407;
-			word64 x21_408;
-			word64 x29_409;
-			fib(x0, out x19_406, out x20_407, out x21_408, out x22_188, out x29_409);
-			word64 x19_203;
-			word64 x20_204;
-			word64 x22_206;
-			word64 x29_410;
-			fib(x0, out x19_203, out x20_204, out x21_111, out x22_206, out x29_410);
+			word64 x19_407;
+			word64 x20_408;
+			word64 x21_409;
+			word64 x22_410;
+			word64 x29_411;
+			fib(x0, out x19_407, out x20_408, out x21_409, out x22_410, out x29_411);
+			word64 x19_197;
+			word64 x20_412;
+			word64 x22_413;
+			word64 x29_414;
+			fib(x0, out x19_197, out x20_412, out x21_109, out x22_413, out x29_414);
 			fn0000000000000730();
-			w19_124 = (word32) x19_203;
+			w19_122 = (word32) x19_197;
 		}
 	}
 l0000000000000A50:
@@ -303,7 +303,7 @@ l000000000000098C:
 	x21Out = x20;
 	x22Out = x21;
 	x29Out = x29;
-	return SEQ(SLICE(x21_111 + 2920, word32, 32), w19_124);
+	return SEQ(SLICE(x21_109 + 2920, word32, 32), w19_122);
 }
 
 // 0000000000000AD0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -7,163 +7,165 @@
 // 0C00:0100: void fn0C00_0100(Register byte cl, Register byte ch, Register Eq_4 bx, Register (ptr16 Eq_5) ds)
 void fn0C00_0100(byte cl, byte ch, Eq_4 bx, struct Eq_5 * ds)
 {
-	Eq_6 Top_138 = 0;
+	Eq_6 Top_135 = 0;
 	__syscall(0x10);
 	msdos_display_string(&ds->b01F2);
-	cu16 ah_cl_383 = SEQ(0x09, cl);
+	cu16 ah_cl_385 = SEQ(0x09, cl);
 	do
 	{
-		byte cl_19 = (byte) ah_cl_383;
+		byte cl_19 = (byte) ah_cl_385;
 		__outb(0x03C8, cl_19);
-		byte al_26 = (byte) (ah_cl_383 >> 0x02);
+		byte al_26 = (byte) (ah_cl_385 >> 0x02);
 		__outb(969, al_26);
 		__outb(969, al_26);
 		__outb(969, al_26);
 		word16 cx_28 = SEQ(ch, cl_19);
 		ch = SLICE(cx_28 - 0x01, byte, 8);
-		ah_cl_383 = SEQ(SLICE(ah_cl_383 >> 0x02, byte, 8), (byte) (cx_28 - 0x01));
-		Eq_4 bx_386 = bx;
+		ah_cl_385 = SEQ(SLICE(ah_cl_385 >> 0x02, byte, 8), (byte) (cx_28 - 0x01));
+		Eq_4 bx_388 = bx;
 	} while (cx_28 != 0x01);
 	do
 	{
-		bcu8 bh_41 = SLICE(bx_386, byte, 8);
-		cu8 bl_32 = (byte) bx_386;
-		struct Eq_60 Eq_5::* cx_226 = SEQ(ch, 0x02);
-		Eq_63 dx_398 = 0x04FB;
+		bcu8 bh_41 = SLICE(bx_388, byte, 8);
+		cu8 bl_32 = (byte) bx_388;
+		word16 cx_240 = SEQ(ch, 0x02);
+		Eq_63 dx_400 = 0x04FB;
 		if (bl_32 <= ~0x04)
 		{
-			cx_226 = SEQ(ch, 0x02);
-			dx_398.u0 = 0x04FB;
+			cx_240 = SEQ(ch, 0x02);
+			dx_400.u0 = 0x04FB;
 			if (bl_32 >= 0x04)
 			{
-				cx_226 = SEQ(ch, 0x02);
-				dx_398.u0 = 0x04FB;
-				if ((Mem44[0xA000:((word16) (bh_41 >>u 0x02) << 0x06) + SEQ(bh_41 >>u 0x02, bl_32 >>u 0x02) + ~0x21C3:byte] & ~0x04) <=u 0x00)
+				cx_240 = SEQ(ch, 0x02);
+				dx_400.u0 = 0x04FB;
+				if ((Mem44[0xA000:(CONVERT(bh_41 >>u 0x02, byte, word16) << 0x06) + SEQ(bh_41 >>u 0x02, bl_32 >>u 0x02) + ~0x21C3:byte] & ~0x04) <=u 0x00)
 				{
-					cx_226 = SEQ(ch, 0x02);
-					dx_398 = SEQ(SLICE(bx_386 & 0x0F0F, byte, 8), (byte) (bx_386 & 0x0F0F) + SLICE(bx_386 & 0x0F0F, byte, 8)) << 0x02;
+					byte dh_61 = SLICE(bx_388 & 0x0F0F, byte, 8);
+					cx_240 = SEQ(ch, 0x02);
+					dx_400 = SEQ(dh_61, (byte) (bx_388 & 0x0F0F) + dh_61) << 0x02;
 				}
 			}
 		}
-		0x8000->*bx_386 = (byte) dx_398;
-		ch = SLICE(cx_226, byte, 8);
-		--bx_386;
-		Eq_63 dx_395 = dx_398;
-	} while (bx_386 != 0x00);
+		0x8000->*bx_388 = (byte) dx_400;
+		ch = SLICE(cx_240, byte, 8);
+		--bx_388;
+		Eq_63 dx_397 = dx_400;
+	} while (bx_388 != 0x00);
 	do
 	{
-		struct Eq_117 Eq_5::* bx_79 = &Eq_5::t0400;
+		struct Eq_116 Eq_5::* bx_76 = &Eq_5::t0400;
 		do
 		{
-			bx_285 = SEQ(bh_284, bl_99 + 0x08);
-			cx_226 = (struct Eq_60 Eq_5::*) ((char *) &cx_226->w0000 + 1);
-			(ds->*bx_79).w0000 = (int16) (cx_226 + (ds->*bx_79).w0000 / 2);
-			struct Eq_134 * Top_88 = Top_138 - 1;
-			Top_88->r0000 = (real64) (ds->*bx_79).w0000;
-			Top_88->r0000 /= (real64) ds->w01FA;
-			real64 v27_91 = Top_88->r0000;
-			Top_88->r0000 = cos(v27_91);
-			Top_88->rFFFFFFFF = sin(v27_91);
-			(ds->*bx_79).r001F = (real32) Top_88->rFFFFFFFF;
-			(ds->*bx_79).r0023 = (real32) Top_88->r0000;
-			byte bl_99 = (byte) bx_79;
-			byte bh_284 = SLICE(bx_79, byte, 8);
-			byte cl_225 = (byte) cx_226;
-			byte ch_215 = SLICE(cx_226, byte, 8);
-			Top_138 = (char *) &Top_88->r0000 + 1;
-			bx_79 = bx_285;
+			bx_284 = SEQ(bh_283, bl_96 + 0x08);
+			++cx_240;
+			(ds->*bx_76).w0000 += cx_240;
+			struct Eq_133 * Top_85 = Top_135 - 1;
+			Top_85->r0000 = (real64) (ds->*bx_76).w0000;
+			Top_85->r0000 /= (real64) ds->w01FA;
+			real64 v27_88 = Top_85->r0000;
+			Top_85->r0000 = cos(v27_88);
+			Top_85->rFFFFFFFF = sin(v27_88);
+			(ds->*bx_76).r001F = (real32) Top_85->rFFFFFFFF;
+			(ds->*bx_76).r0023 = (real32) Top_85->r0000;
+			byte bl_96 = (byte) bx_76;
+			byte bh_283 = SLICE(bx_76, byte, 8);
+			byte cl_224 = (byte) cx_240;
+			byte ch_214 = SLICE(cx_240, byte, 8);
+			Top_135 = (char *) &Top_85->r0000 + 1;
+			bx_76 = bx_284;
 		} while (P);
-		byte bh_103 = 0x03;
-		Eq_63 dx_392 = dx_395;
+		byte bh_100 = 0x03;
+		Eq_63 dx_394 = dx_397;
 		do
 		{
-			ci16 bp_104 = 0x80;
-			Eq_63 dx_388 = dx_392;
+			ci16 bp_101 = 0x80;
+			Eq_63 dx_390 = dx_394;
 l0C00_0173:
-			byte dh_317 = SLICE(dx_403, byte, 8);
-			struct Eq_201 Eq_5::* di_105 = &Eq_5::t041D;
-			byte al_107 = (byte) dx_403;
-			struct Eq_199 Eq_5::* bx_115 = SEQ(bh_103, ch_215);
+			byte dh_316 = SLICE(dx_405, byte, 8);
+			struct Eq_200 Eq_5::* di_102 = &Eq_5::t041D;
+			byte al_104 = (byte) dx_405;
+			struct Eq_198 Eq_5::* bx_112 = SEQ(bh_100, ch_214);
 			do
 			{
-				int16 ax_113 = (int16) (al_107 - 0x80);
-				(ds->*bx_115).w0000 = ax_113;
-				struct Eq_215 Eq_5::* bx_119 = bx_115 + 1;
-				byte ah_249 = SLICE(ax_113, byte, 8);
-				al_107 = dh_317;
-				bx_115 = (struct Eq_199 Eq_5::*) (bx_119 + 1);
-				byte bh_134 = SLICE(bx_119 + 1, byte, 8);
+				int16 ax_110 = (int16) (al_104 - 0x80);
+				(ds->*bx_112).w0000 = ax_110;
+				struct Eq_214 Eq_5::* bx_116 = bx_112 + 1;
+				byte ah_248 = SLICE(ax_110, byte, 8);
+				al_104 = dh_316;
+				bx_112 = (struct Eq_198 Eq_5::*) (bx_116 + 1);
+				byte bh_131 = SLICE(bx_116 + 1, byte, 8);
 				if (!P)
-					bx_115 = SEQ(bh_134, 0x00);
-				byte bh_332 = SLICE(bx_115, byte, 8);
-				++di_105;
+					bx_112 = SEQ(bh_131, 0x00);
+				byte bh_331 = SLICE(bx_112, byte, 8);
+				++di_102;
 			} while (P);
-			(ds->*bx_115).w0000 = bp_104;
-			struct Eq_229 Eq_5::* bx_141 = SEQ(bh_332, 0x00);
+			(ds->*bx_112).w0000 = bp_101;
+			struct Eq_228 Eq_5::* bx_138 = SEQ(bh_331, 0x00);
 			do
 			{
-				--Top_138;
-				*Top_138 = (real64) (ds->*bx_141).w0000;
-				struct Eq_241 Eq_5::* bx_144 = bx_141 + 1;
-				bx_141 = (struct Eq_229 Eq_5::*) (bx_144 + 1);
-				bh_103 = SLICE(bx_144 + 1, byte, 8);
+				--Top_135;
+				*Top_135 = (real64) (ds->*bx_138).w0000;
+				struct Eq_240 Eq_5::* bx_141 = bx_138 + 1;
+				bx_138 = (struct Eq_228 Eq_5::*) (bx_141 + 1);
+				bh_100 = SLICE(bx_141 + 1, byte, 8);
 			} while (P);
 			do
 			{
-				*((word32) Top_138 - 1) = *Top_138;
-				*((word32) Top_138 - 1) *= (ds->*di_105).r0000;
-				*((word32) Top_138 - 2) = *((word32) Top_138 + 1);
-				*((word32) Top_138 - 2) *= di_105[4];
-				*((word32) Top_138 - 1) += *((word32) Top_138 - 2);
-				real64 v31_161 = *((word32) Top_138 - 1);
-				*((word32) Top_138 - 1) = *((word32) Top_138 + 1);
-				*((word32) Top_138 + 1) = v31_161;
-				*((word32) Top_138 - 1) *= di_105[4];
-				real64 v32_165 = *((word32) Top_138 - 1);
-				*((word32) Top_138 - 1) = *((word32) Top_138 + 2);
-				*((word32) Top_138 + 2) = v32_165;
-				*((word32) Top_138 - 1) *= (ds->*di_105).r0000;
-				*((word32) Top_138 + 2) -= *((word32) Top_138 - 1);
-				real64 v33_171 = *Top_138;
-				*Top_138 = *((word32) Top_138 + 1);
-				*((word32) Top_138 + 1) = v33_171;
-				di_105 += 8;
+				*((word32) Top_135 - 1) = *((word32) Top_135 + 1);
+				*((word32) Top_135 - 1) *= (real64) (ds->*di_102).r0000;
+				*((word32) Top_135 - 2) = *((word32) Top_135 + 2);
+				*((word32) Top_135 - 2) *= (real64) di_102[4];
+				*((word32) Top_135 - 1) += *((word32) Top_135 - 2);
+				real64 v33_160 = *((word32) Top_135 - 1);
+				*((word32) Top_135 - 1) = *((word32) Top_135 + 1);
+				*((word32) Top_135 + 1) = v33_160;
+				*((word32) Top_135 - 1) *= (real64) di_102[4];
+				real64 v34_164 = *((word32) Top_135 - 1);
+				*((word32) Top_135 - 1) = *((word32) Top_135 + 2);
+				*((word32) Top_135 + 2) = v34_164;
+				*((word32) Top_135 - 1) *= (real64) (ds->*di_102).r0000;
+				*((word32) Top_135 + 2) -= *((word32) Top_135 - 1);
+				real64 v35_170 = *Top_135;
+				*Top_135 = *((word32) Top_135 + 1);
+				*((word32) Top_135 + 1) = v35_170;
+				di_102 += 8;
 			} while (P);
-			*Top_138 += (real64) ds->w01FC;
-			*Top_138 /= (real64) ds->w01FE;
-			*Top_138 = *((word32) Top_138 + 2) / *Top_138;
-			*((word32) Top_138 + 1) /= *Top_138;
-			bx_144[1] = (int16) *((word32) Top_138 + 1);
-			int16 di_185 = bx_144[1] *s 0x0140;
-			bx_144[1] = (int16) *((word32) Top_138 + 2);
-			Eq_418 di_188 = di_185 + bx_144[1];
-			ds->*((word16) di_188 + 0x00007DA0) += ds->*dx_403 >> 0x05;
-			Top_138 = (word32) Top_138 + 3;
-			bool Z_204 = SLICE(cond((word16) dx_403 + 1), bool, 2);
+			*Top_135 += (real64) ds->w01FC;
+			*Top_135 /= (real64) ds->w01FE;
+			*Top_135 = *((word32) Top_135 + 2) / *Top_135;
+			*((word32) Top_135 + 1) /= *Top_135;
+			bx_141[1] = (int16) *((word32) Top_135 + 1);
+			int16 di_184 = bx_141[1] *s 0x0140;
+			bx_141[1] = (int16) *((word32) Top_135 + 2);
+			Eq_421 di_187 = di_184 + bx_141[1];
+			ds->*((word16) di_187 + 0x00007DA0) += ds->*dx_405 >> 0x05;
+			Top_135 = (word32) Top_135 + 3;
+			bool v40_350 = dx_405 != 0x01;
 			do
 			{
-				dx_388 = (word16) dx_403 + 1;
-				dx_403 = dx_388;
-				if (Z_204)
+				dx_390 = (word16) dx_405 + 1;
+				dx_405 = dx_390;
+				if (v40_350)
 					goto l0C00_0173;
-				bp_104 = -bp_104;
-				Z_204 = SLICE(cond(bp_104), bool, 2);
-			} while (bp_104 < 0x00);
-			ch_215 += 0x02;
-			cx_226 = SEQ(ch_215, cl_225);
-			dx_392 = (word16) dx_403 + 1;
+				bp_101 = -bp_101;
+				v40_350 = bp_101 != 0x00;
+			} while (bp_101 < 0x00);
+			ch_214 += 0x02;
+			struct Eq_457 Eq_5::* cx_225 = SEQ(ch_214, cl_224);
+			dx_394 = (word16) dx_405 + 1;
 		} while (P);
-		struct Eq_60 Eq_5::* di_227 = cx_226;
-		struct Eq_60 Eq_5::* si_228 = cx_226;
+		struct Eq_457 Eq_5::* di_226 = cx_225;
+		struct Eq_457 Eq_5::* si_227 = cx_225;
+		cx_240 = SEQ(0x78, cl_224);
 		do
 		{
-			(0xA000->*di_227).w0000 = (ds->*si_228).w0000;
-			++di_227;
-			(ds->*di_227).wFFFFFFFE = (word16) dx_403 + 1;
-			++si_228;
-			--cx_226;
-		} while (cx_226 != &Eq_5::t0000);
-		dx_395 = (word16) dx_403 + 1;
-	} while (SEQ(ah_249, __inb(0x60)) != 0x01);
+			(0xA000->*di_226).w0000 = (ds->*si_227).w0000;
+			++di_226;
+			(ds->*di_226).wFFFFFFFE = (word16) dx_405 + 1;
+			++si_227;
+			--cx_240;
+		} while (cx_240 != 0x00);
+		dx_397 = (word16) dx_405 + 1;
+	} while (SEQ(ah_248, __inb(0x60)) != 0x01);
 }
 

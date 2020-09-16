@@ -2872,7 +2872,7 @@ word32 inst_116_flags_var_0()
 //      main
 word32 inst_117_values_var_0()
 {
-	return -0x31EB9090 + 0x326C9090;
+	return -0x31EB9090 - 3457445744;
 }
 
 // 0804F55A: Register word32 inst_117_flags_var_0()
@@ -5472,7 +5472,7 @@ word32 inst_237_flags_var_0()
 word32 inst_238_values_var_0()
 {
 	word32 eax_29 = -2686712972;
-	return eax_29 + 1228681025 + SEQ(3653, OVERFLOW(eax_29), 0x39) + 1218628882;
+	return eax_29 + 1228681025 + SEQ(3653, (int8) OVERFLOW(eax_29), 0x39) + 1218628882;
 }
 
 // 080549D4: Register word32 inst_238_flags_var_0()
@@ -5480,7 +5480,7 @@ word32 inst_238_values_var_0()
 //      main
 word32 inst_238_flags_var_0()
 {
-	OVERFLOW(-1416877445);
+	al_26 = (int8) OVERFLOW(-1416877445);
 	return 0x00;
 }
 
@@ -5490,7 +5490,7 @@ word32 inst_238_flags_var_0()
 word32 inst_239_values_var_0()
 {
 	word32 eax_29 = -2749579295;
-	return eax_29 + SEQ(~0x16B4, !OVERFLOW(eax_29), 117) + 3130539690;
+	return eax_29 + SEQ(~0x16B4, (int8) (!OVERFLOW(eax_29)), 117) + 3130539690;
 }
 
 // 08054A7B: Register word32 inst_239_flags_var_0()
@@ -5498,7 +5498,7 @@ word32 inst_239_values_var_0()
 //      main
 word32 inst_239_flags_var_0()
 {
-	OVERFLOW(-626464942);
+	ch_26 = (int8) !OVERFLOW(-626464942);
 	return 0x00;
 }
 
@@ -5508,7 +5508,7 @@ word32 inst_239_flags_var_0()
 word32 inst_240_values_var_0()
 {
 	word32 eax_29 = -0x4F910691;
-	return eax_29 + SEQ(~0x00285648, Test(ULT,eax_29 == 0x00)) + 0x77E74F90;
+	return eax_29 + SEQ(~0x00285648, (int8) Test(ULT,eax_29 == 0x00)) + 0x77E74F90;
 }
 
 // 08054B22: Register word32 inst_240_flags_var_0()
@@ -5525,7 +5525,7 @@ word32 inst_240_flags_var_0()
 word32 inst_241_values_var_0()
 {
 	word32 eax_29 = -1944136022;
-	return eax_29 + 625271174 + SEQ(8034435, Test(UGE,eax_29 == 0x00)) + 0xD403C4D0;
+	return eax_29 + 625271174 + SEQ(8034435, (int8) Test(UGE,eax_29 == 0x00)) + 0xD403C4D0;
 }
 
 // 08054BC9: Register word32 inst_241_flags_var_0()
@@ -5542,7 +5542,7 @@ word32 inst_241_flags_var_0()
 word32 inst_242_values_var_0()
 {
 	word32 eax_29 = -3206878763;
-	return eax_29 + 0x5BF5F054 + SEQ(~0x5952, eax_29 == 0x00, 0x06) + 3162645969;
+	return eax_29 + 0x5BF5F054 + SEQ(~0x5952, (int8) (eax_29 == 0x00), 0x06) + 3162645969;
 }
 
 // 08054C70: Register word32 inst_242_flags_var_0()
@@ -5559,7 +5559,7 @@ word32 inst_242_flags_var_0()
 word32 inst_243_values_var_0()
 {
 	word32 eax_29 = -3413236645;
-	return SEQ(SLICE(eax_29, word16, 16), eax_29 != 0x00, (byte) eax_29) + 3413245605;
+	return SEQ(SLICE(eax_29, word16, 16), (int8) (eax_29 != 0x00), (byte) eax_29) + 3413245605;
 }
 
 // 08054D17: Register word32 inst_243_flags_var_0()
@@ -5576,7 +5576,7 @@ word32 inst_243_flags_var_0()
 word32 inst_244_values_var_0()
 {
 	word32 eax_29 = -3923059275;
-	return eax_29 + 0x417DCE90 + SEQ(15045, eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2), 220) - 2456661537;
+	return eax_29 + 0x417DCE90 + SEQ(15045, (int8) (eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)), 220) - 2456661537;
 }
 
 // 08054DBE: Register word32 inst_244_flags_var_0()
@@ -5593,7 +5593,7 @@ word32 inst_244_flags_var_0()
 word32 inst_245_values_var_0()
 {
 	word32 eax_29 = -0x0D826BCB;
-	return eax_29 + ~0x62F06BD0 + SEQ(0x8870, eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2), 0x32) - 402466966;
+	return eax_29 + ~0x62F06BD0 + SEQ(0x8870, (int8) (eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)), 0x32) - 402466966;
 }
 
 // 08054E65: Register word32 inst_245_flags_var_0()
@@ -5610,7 +5610,7 @@ word32 inst_245_flags_var_0()
 word32 inst_246_values_var_0()
 {
 	int32 eax_29 = -1872888355;
-	return eax_29 + SEQ(0x00D20C9D, eax_29 < 0x00) + 2643813666;
+	return eax_29 + SEQ(0x00D20C9D, (int8) (eax_29 < 0x00)) + 2643813666;
 }
 
 // 08054F0C: Register word32 inst_246_flags_var_0()
@@ -5627,7 +5627,7 @@ word32 inst_246_flags_var_0()
 word32 inst_247_values_var_0()
 {
 	int32 eax_29 = -4155658188;
-	return SEQ(SLICE(eax_29, word16, 16), eax_29 >= 0x00, (byte) eax_29) - 0x084D0134;
+	return SEQ(SLICE(eax_29, word16, 16), (int8) (eax_29 >= 0x00), (byte) eax_29) - 0x084D0134;
 }
 
 // 08054FB3: Register word32 inst_247_flags_var_0()
@@ -5643,7 +5643,7 @@ word32 inst_247_flags_var_0()
 //      main
 word32 inst_248_values_var_0()
 {
-	return -3623636064 + SEQ(48420, P, 232) + 0x1AD84A78;
+	return -3623636064 + SEQ(48420, (int8) P, 232) + 0x1AD84A78;
 }
 
 // 0805505A: Register word32 inst_248_flags_var_0()
@@ -5659,7 +5659,7 @@ word32 inst_248_flags_var_0()
 //      main
 word32 inst_249_values_var_0()
 {
-	return -1457777302 + 0xC5265D0C + SEQ(36143, P, 0xA8) - 4218516254;
+	return -1457777302 + 0xC5265D0C + SEQ(36143, (int8) P, 0xA8) - 4218516254;
 }
 
 // 08055101: Register word32 inst_249_flags_var_0()
@@ -5676,7 +5676,7 @@ word32 inst_249_flags_var_0()
 word32 inst_250_values_var_0()
 {
 	int32 eax_29 = -2979805798;
-	return eax_29 + 0x668E58F7 + SEQ(0x4AAA, eax_29 < 0x00) + 0x4AC3376F;
+	return eax_29 + 0x668E58F7 + SEQ(0x4AAA, (int8) (eax_29 < 0x00)) + 0x4AC3376F;
 }
 
 // 080551A8: Register word32 inst_250_flags_var_0()
@@ -5693,7 +5693,7 @@ word32 inst_250_flags_var_0()
 word32 inst_251_values_var_0()
 {
 	int32 eax_29 = -600169862;
-	return eax_29 + 0x5E9DD705 + SEQ(47221, eax_29 >= 0x00, 0x80) - ~0x0CB30600;
+	return eax_29 + 0x5E9DD705 + SEQ(47221, (int8) (eax_29 >= 0x00), 0x80) - ~0x0CB30600;
 }
 
 // 0805524F: Register word32 inst_251_flags_var_0()
@@ -5710,7 +5710,7 @@ word32 inst_251_flags_var_0()
 word32 inst_252_values_var_0()
 {
 	int32 eax_29 = -~0x1692A2A4;
-	return eax_29 + 2193881391 + SEQ(54508, eax_29 <= 0x00, ~0x48) + 2445108085;
+	return eax_29 + 2193881391 + SEQ(54508, (int8) (eax_29 <= 0x00), ~0x48) + 2445108085;
 }
 
 // 080552F6: Register word32 inst_252_flags_var_0()
@@ -5727,7 +5727,7 @@ word32 inst_252_flags_var_0()
 word32 inst_253_values_var_0()
 {
 	int32 eax_29 = -1856153423;
-	return eax_29 + 3967647934 + SEQ(0x26F6, eax_29 > 0x00, 0x61) - 0xA4D0D9D0;
+	return eax_29 + 3967647934 + SEQ(0x26F6, (int8) (eax_29 > 0x00), 0x61) - 0xA4D0D9D0;
 }
 
 // 0805539D: Register word32 inst_253_flags_var_0()
@@ -6406,7 +6406,7 @@ word32 inst_280_values_var_0()
 //      main
 word32 inst_280_flags_var_0()
 {
-	Eq_9888 ebx_29 = __xadd(0xB8644860, 3464055624);
+	Eq_9909 ebx_29 = __xadd(0xB8644860, 3464055624);
 	word32 ebp_31 = 0x00;
 	if (ebx_29 < 0x00)
 		ebp_31 = 0x01;

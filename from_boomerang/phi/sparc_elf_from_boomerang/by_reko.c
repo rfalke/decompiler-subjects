@@ -175,8 +175,8 @@ Eq_153 fib(Eq_153 o0, union Eq_153 & l0Out, struct Eq_155 & i6Out)
 word32 main()
 {
 	printf("Input number: ");
-	scanf("%d", 0x00);
-	struct Eq_202 * i6_36;
+	scanf("%d", fp + ~0x13);
+	struct Eq_205 * i6_36;
 	word32 l0_68;
 	i6_36->dwFFFFFFE8 = fib(dwLoc14, out l0_68, out i6_36);
 	printf("fibonacci(%d) = %d\n", i6_36->dwFFFFFFEC, i6_36->dwFFFFFFE8);
@@ -197,7 +197,7 @@ word32 fn000107AC(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_235 * o1_26 = fn000107AC(o7, 0x000100BC)->ptr0018;
+	struct Eq_238 * o1_26 = fn000107AC(o7, 0x000100BC)->ptr0018;
 	word32 o0_27 = o1_26->dwFFFFFFFC;
 	if (o0_27 != ~0x00)
 	{

@@ -74,10 +74,10 @@ void fn08048360()
 void main(word64 qwArg04, byte ** dwArg08)
 {
 	__align(fp);
-	exit(intermediate_1_cmp_with_are_constant(dwArg04) + intermediate_2_cmp_with_extra(dwArg04) + intermediate_3_division_by_multiplication(dwArg04) + intermediate_4_swap_with_xor(0x30, 0x61) + advanced_1_boolean_minization((uint32) ((uint8) (dwArg04 == 0x00)), ~dwArg04 & 0x01, (word32) (dwArg04 == (SLICE(dwArg04 *s 0x55555556, word32, 32) - (dwArg04 >> 0x1F)) * 0x03)) + (int32) (*(*dwArg08)));
+	exit(intermediate_1_cmp_with_are_constant(dwArg04) + intermediate_2_cmp_with_extra(dwArg04) + intermediate_3_division_by_multiplication(dwArg04) + intermediate_4_swap_with_xor(0x30, 0x61) + advanced_1_boolean_minization((uint32) ((int8) (dwArg04 == 0x00)), ~dwArg04 & 0x01, (word32) ((int8) (dwArg04 == (SLICE(dwArg04 *s 0x55555556, word32, 32) - (dwArg04 >> 0x1F)) * 0x03))) + (int32) (*(*dwArg08)));
 }
 
-// 080483F7: void _start(Register (ptr32 Eq_77) edx, Stack int32 dwArg00)
+// 080483F7: void _start(Register (ptr32 Eq_78) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -199,7 +199,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

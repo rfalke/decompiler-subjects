@@ -4,85 +4,89 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte dl, Register (memptr (ptr16 Eq_13) Eq_4) bx, Register (memptr (ptr16 Eq_6) word16) si, Register (ptr16 Eq_6) ds, FpuStack real64 rLoc2)
-void fn0C00_0100(byte ah, byte dl, struct Eq_4 Eq_13::* bx, word16 Eq_6::* si, struct Eq_6 * ds, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte dl, Register (memptr (ptr16 Eq_12) Eq_4) bx, Register (memptr (ptr16 Eq_6) word16) si, Register (ptr16 Eq_6) ds)
+void fn0C00_0100(byte ah, byte dl, struct Eq_4 Eq_12::* bx, word16 Eq_6::* si, struct Eq_6 * ds)
 {
 	__syscall(0x10);
-	struct Eq_13 * dx_7 = SEQ(0x70, dl);
-	struct Eq_13 * dx_10 = SEQ(0x80, dl);
+	struct Eq_12 * dx_7 = SEQ(0x70, dl);
+	struct Eq_12 * dx_10 = SEQ(0x80, dl);
+	real64 rLoc1_317 = 0.0;
 	do
 	{
-		rLoc2 = sin(rLoc2) * (real64) ds->w015D;
-		(dx_10->*bx).w0000 = (int16) rLoc2;
+		(dx_10->*bx).w0000 = (int16) (sin(rLoc1_317) * (real64) ds->w015D);
+		rLoc1_317 += (real64) ds->r018B;
 		(dx_7->*bx).w0000 = si;
-		struct Eq_34 Eq_13::* bx_35 = bx + 1;
-		bx = (struct Eq_4 Eq_13::*) (bx_35 + 1);
-	} while (bx_35 != &Eq_13::t0001);
+		struct Eq_39 Eq_12::* bx_36 = bx + 1;
+		bx = (struct Eq_4 Eq_12::*) (bx_36 + 1);
+	} while (bx_36 != &Eq_12::t0001);
 	word16 cx_414 = SEQ(ah, 0x13);
-	struct Eq_44 Eq_13::* bx_417 = bx_35 + 1;
+	struct Eq_49 Eq_12::* bx_417 = bx_36 + 1;
 	do
 	{
-		byte ch_282 = SLICE(cx_422, byte, 8);
-		int16 ax_52 = ds->*si;
+		byte ch_283 = SLICE(cx_422, byte, 8);
+		int16 ax_53 = ds->*si;
 		++si;
-		struct Eq_44 Eq_13::* bx_411 = bx_417;
+		struct Eq_49 Eq_12::* bx_411 = bx_417;
 		do
 		{
-			bi8 bl_58 = (byte) bx_423;
-			bi8 bh_65 = SLICE(bx_423, byte, 8);
-			Mem78[dx_7:bx_423 + ax_52:byte] = Mem74[dx_7:bx_423 + ax_52:byte] - ch_282 - (bh_65 *s bh_65 + bl_58 *s bl_58 <u 0x0383);
+			bi8 bl_59 = (byte) bx_423;
+			bi8 bh_66 = SLICE(bx_423, byte, 8);
+			Mem79[dx_7:bx_423 + ax_53:byte] = Mem75[dx_7:bx_423 + ax_53:byte] - ch_283 - (bh_66 *s bh_66 + bl_59 *s bl_59 <u 0x0383);
+			struct Eq_69 Eq_12::* bx_294 = bx_423 + 1;
 			bx_411 = bx_423 + 1;
 			bx_423 = bx_411;
-		} while (bx_423 != &Eq_13::t0001);
+		} while (bx_423 != &Eq_12::t0001);
 		cx_414 = cx_422 - 0x01;
 		bx_417 = bx_423 + 1;
 		cx_422 = cx_414;
 	} while (cx_422 != 0x01);
 	do
 	{
-		struct Eq_13 * dx_102 = dx_10;
-		byte Eq_13::* bx_132 = bx_423 + 1;
-		ui16 si_90 = bx_423[1];
-		int16 bp_91 = bx_423[0x00002001];
-		byte Eq_110::* di_115 = &Eq_110::b0000;
-		word16 cx_126 = SEQ(SLICE(cx_422 - 0x01, byte, 8), 200);
+		struct Eq_12 * dx_103 = dx_10;
+		Eq_89 si_91 = (dx_10->*bx_294).a0000[0];
+		int16 bp_92 = (dx_10->*bx_294).w2000;
+		byte Eq_117::* di_116 = &Eq_117::b0000;
+		word16 cx_127 = SEQ(SLICE(cx_422 - 0x01, byte, 8), 200);
+		bx_133 = bx_294;
 		do
 		{
-			word16 cx_146 = 0x0140;
-			bx_148 = bx_132;
-			dx_151 = dx_102;
-			di_175 = di_115;
+			struct Eq_69 Eq_12::* bx_133;
+			word16 cx_147 = 0x0140;
+			bx_149 = bx_133;
+			dx_152 = dx_103;
+			di_176 = di_116;
 			do
 			{
-				byte Eq_110::* di_175;
-				struct Eq_13 * dx_151;
-				byte Eq_13::* bx_148;
-				byte Eq_13::* bx_150 = bx_148 + bp_91;
-				struct Eq_13 * dx_153 = dx_151 + si_90 / 2;
-				cu8 al_180;
-				Eq_98 bx_181 = SEQ(SLICE(bx_150, byte, 8), SLICE(dx_153, byte, 8));
+				byte Eq_117::* di_176;
+				struct Eq_12 * dx_152;
+				struct Eq_69 Eq_12::* bx_149;
+				struct Eq_69 Eq_12::* bx_151 = bx_149 + bp_92 / 0x00002002;
+				word16 dx_154 = dx_152 + si_91;
+				cu8 al_181 = 0x12;
+				Eq_105 bx_182 = SEQ(SLICE(bx_151, byte, 8), SLICE(dx_154, byte, 8));
 				do
 				{
-					bx_181 *= 0x02;
-					al_180 -= 0x03;
-				} while (dx_7->*((word16) bx_181 + 0x0100) < al_180);
-				0xA000->*di_175 = al_180 + 0x10;
-				bx_148 = bx_150;
-				dx_151 = dx_153;
-				++di_175;
-				cx_146 = cx_421 - 0x01;
-				cx_421 = cx_146;
+					bx_182 *= 0x02;
+					al_181 -= 0x03;
+				} while (dx_7->*((word16) bx_182 + 0x0100) < al_181);
+				0xA000->*di_176 = al_181 + 0x10;
+				bx_149 = bx_151;
+				dx_152 = dx_154;
+				++di_176;
+				cx_147 = cx_421 - 0x01;
+				cx_421 = cx_147;
 			} while (cx_421 != 0x01);
-			di_115 += 320;
-			bx_132 -= si_90;
-			dx_102 += bp_91 / 2;
-			cx_126 = cx_420 - 0x01;
-			cx_420 = cx_126;
+			di_116 += 320;
+			bx_133 -= si_91;
+			dx_103 += bp_92 / 2;
+			cx_127 = cx_420 - 0x01;
+			cx_420 = cx_127;
 		} while (cx_420 != 0x01);
 		ds->b015E += 0x04;
-		byte al_260;
-		byte ah_261;
-	} while (bios_kbd_check_keystroke(out al_260, out ah_261));
+		bx_294 = SEQ(SLICE(bx_294, byte, 8) + 0x01, (byte) bx_294);
+		byte al_261;
+		byte ah_262;
+	} while (bios_kbd_check_keystroke(out al_261, out ah_262));
 	bios_video_set_mode(0x03);
 }
 

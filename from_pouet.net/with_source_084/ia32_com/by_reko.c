@@ -20,7 +20,7 @@ void fn0C00_0100(word16 ax, word16 bx, Eq_4 bp, struct Eq_5 Eq_23::* di)
 		++di;
 		byte ch_80 = SLICE(cx_27, byte, 8);
 	} while (cx_27 != 0x00);
-	word16 cx_52;
+	word16 cx_52 = SEQ(ch_80, 0x06);
 	do
 	{
 		do

@@ -169,11 +169,11 @@ int32 fib2(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	else
 	{
 		word64 x19_27;
-		word64 x20_28;
-		fib2(w0 - 0x01, out x19_27, out x20_28);
+		word64 x20_80;
+		fib2(w0 - 0x01, out x19_27, out x20_80);
 		word64 x20_40;
-		word64 x19_80;
-		int32 w0_43 = fib2((word32) x19_27 - 0x02, out x19_80, out x20_40) + (word32) x20_40;
+		word64 x19_81;
+		int32 w0_43 = fib2((word32) x19_27 - 0x02, out x19_81, out x20_40) + (word32) x20_40;
 		x19Out = qwLoc10;
 		x20Out = x19;
 		return w0_43;
@@ -193,9 +193,9 @@ void main(int32 dwArg04)
 {
 	fn0000000000000730();
 	fn0000000000000720();
-	word64 x19_24;
-	word64 x20_53;
-	fib2(dwArg04, out x19_24, out x20_53);
+	word64 x19_53;
+	word64 x20_54;
+	fib2(dwArg04, out x19_53, out x20_54);
 	fn0000000000000730();
 }
 

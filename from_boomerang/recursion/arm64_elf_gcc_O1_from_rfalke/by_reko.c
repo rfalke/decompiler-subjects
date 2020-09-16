@@ -212,7 +212,7 @@ void c(word64 x1_32_32_w0)
 	fn00000000000006E0();
 	if (w0 > 0x06)
 		goto l0000000000000994;
-	int32 w0_28 = (word32) (2444 + (int64) ((int8) ((word32) (&g_t0BBC)[(uint64) ((uint32) (w0 - 0x02))])));
+	int32 w0_28 = (word32) (2444 + (int64) ((int8) ((word32) (&g_t0BBC)[(uint64) (w0 - 0x02)])));
 	switch (w0)
 	{
 	case 0x02:

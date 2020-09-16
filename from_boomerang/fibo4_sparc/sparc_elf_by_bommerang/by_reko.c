@@ -168,7 +168,7 @@ int32 fib(int32 i4)
 word32 main()
 {
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp + ~0x13);
 	printf("fibonacci(%d) = %d\n", dwLoc14, fib(dwLoc14));
 	return 0x00;
 }
@@ -187,7 +187,7 @@ word32 fn0001075C(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_205 * o5_26 = fn0001075C(o7, 0x000100B8)->ptr0018;
+	struct Eq_208 * o5_26 = fn0001075C(o7, 0x000100B8)->ptr0018;
 	if (o5_26->dwFFFFFFFC != ~0x00)
 	{
 		l0_31 = &o5_26->dwFFFFFFFC;

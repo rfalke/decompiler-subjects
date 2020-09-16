@@ -84,7 +84,7 @@ void fn0C00_0179(word16 esp_16_16, struct Eq_11 * es, struct Eq_3 * ds)
 	real64 rLoc2_80 = (real64) ds->w01FF;
 	real64 rLoc1_87 = (real64) ds->w01FD / (rLoc2_80 / (rLoc3_82 + (rLoc3_82 + 1.0)));
 	ds->w01FF = (int16) -rLoc2_80;
-	ds->w01FD = (int16) (rLoc1_87 * ds->r01F7);
+	ds->w01FD = (int16) (rLoc1_87 * (real64) ds->r01F7);
 	((char *) (word16) ((ds->w01FF + 0x62) * 0x0140) + 0x00A0)[ds->w01FD] = 0x0E;
 }
 

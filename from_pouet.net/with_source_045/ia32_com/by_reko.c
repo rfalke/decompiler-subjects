@@ -10,25 +10,25 @@ void fn0C00_0100(struct Eq_2 * ds_di, int16 cx, byte dh, struct Eq_5 Eq_21::* bx
 	int16 di = (word16) ds_di;
 	__syscall(0x10);
 	Eq_15 ds_ax_8 = ds_di->t0002;
-	word16 ax_46 = (word16) ds_ax_8;
-	struct Eq_21 * ds_49 = SLICE(ds_ax_8, selector, 16);
+	word16 ax_45 = (word16) ds_ax_8;
+	struct Eq_21 * ds_48 = SLICE(ds_ax_8, selector, 16);
 	do
 	{
-		ax_48 = SEQ(ah_47, al_44);
-		word16 ax_10 = ax_46 + 0x01;
+		ax_47 = SEQ(ah_46, al_43);
+		word16 ax_10 = ax_45 + 0x01;
 		cu8 al_11 = (byte) ax_10;
 		byte ah_12 = SLICE(ax_10, byte, 8);
 		cu8 Eq_21::* bx_20 = bx - 0x01;
-		cu8 v14_25 = ds_49->*bx_20 - dh - (ds_49->*bx_20 >= ((bool) __aas(al_11, ah_12, &al_11, &ah_12) + (al_11 + (ds_49->*bx).bFFFFFEBF)) + bx[di]);
-		ds_49->*bx_20 = v14_25;
-		int32 dx_ax_39 = si *s cx;
+		cu8 v14_25 = ds_48->*bx_20 - dh - (ds_48->*bx_20 >= ((bool) __aas(al_11, ah_12, &al_11, &ah_12) + (al_11 + (ds_48->*bx).bFFFFFEBF)) + bx[di]);
+		ds_48->*bx_20 = v14_25;
+		int32 dx_ax_38 = si *s cx;
 		bx = bx_20 - bp - (v14_25 < 0x00);
-		word16 ax_35 = SEQ(SLICE(ax_10, byte, 8), __inb(0x60));
-		byte ah_47 = SLICE(dx_ax_39, byte, 8);
-		dh = SLICE(dx_ax_39, byte, 24);
-		byte al_44 = bx[(uint16) (byte) dx_ax_39];
-		cx = ax_35 - 0x01;
-		ax_46 = ax_48;
-	} while (ax_35 != 0x01);
+		word16 ax_34 = SEQ(ah_12, __inb(0x60));
+		byte ah_46 = SLICE(dx_ax_38, byte, 8);
+		dh = SLICE(dx_ax_38, byte, 24);
+		byte al_43 = bx[(uint16) (byte) dx_ax_38];
+		cx = ax_34 - 0x01;
+		ax_45 = ax_47;
+	} while (ax_34 != 0x01);
 }
 

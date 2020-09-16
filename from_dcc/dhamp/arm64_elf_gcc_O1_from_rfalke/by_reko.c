@@ -201,13 +201,27 @@ void sq(word64 x0)
 	}
 }
 
-// 0000000000000A60: void sroot()
-void sroot()
+// 0000000000000A60: void sroot(Register real64 d0)
+void sroot(real64 d0)
 {
+	real64 d1_14 = d0 * 0.5;
+	if (d0 > (d0 * 0.5) * g_r0AB8)
+	{
+		real64 d4_12 = g_r0AB8;
+		do
+		{
+			real64 d3_15 = d0 / d1_14;
+			real64 d2_16 = d3_15 - d1_14;
+			if (d2_16 < 0.0)
+				d2_16 = -d2_16;
+			real64 d1_22 = d3_15 + d1_14;
+			d1_14 = d1_22 * 0.5;
+		} while (d1_22 * 0.5 * d4_12 < d2_16);
+	}
 }
 
-// 0000000000000AC0: void abs()
-void abs()
+// 0000000000000AC0: void abs(Register real64 d0)
+void abs(real64 d0)
 {
 }
 
@@ -227,11 +241,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	if (w0 > 0x02)
 	{
 		word64 x19_27;
-		word64 x20_28;
-		fib(w0 - 0x01, out x19_27, out x20_28);
+		word64 x20_81;
+		fib(w0 - 0x01, out x19_27, out x20_81);
 		word64 x20_40;
-		word64 x19_81;
-		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_81, out x20_40);
+		word64 x19_82;
+		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_82, out x20_40);
 		x19Out = qwLoc10;
 		x20Out = x19;
 		return w0_43;
@@ -359,7 +373,7 @@ void main(word64 x19, word64 x23, word64 x25, word64 x30)
 		}
 		++w19_35;
 	}
-	<anonymous> * x0_78 = 3500 + (int64) ((int8) ((word32) (&g_t0F4C)[(uint64) ((uint32) w0_42)]));
+	<anonymous> * x0_78 = 3500 + (int64) ((int8) ((word32) (&g_t0F4C)[(uint64) w0_42]));
 	x0_78();
 }
 

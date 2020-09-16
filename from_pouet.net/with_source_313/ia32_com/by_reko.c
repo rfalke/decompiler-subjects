@@ -43,9 +43,9 @@ void fn0C00_0100(struct Eq_2 * ds)
 		Eq_87 bx_79 = ds->t01A7;
 		ds->t01AF = bx_79;
 		fn0C00_01BB(ax_77, 0x030E, bx_79, 0xA000, ds);
-		byte dh_166 = SLICE((uint16) (uint8) fn0C00_01CB(ds->t01A3, SEQ(SLICE((uint16) (uint8) fn0C00_01CB(ds->t01A1, 778, 0x01, 0xA000, ds), byte, 8), 0x0C), 0x013E, 0xA000, ds), byte, 8);
+		byte dh_166 = SLICE((uint16) fn0C00_01CB(ds->t01A3, SEQ(SLICE((uint16) fn0C00_01CB(ds->t01A1, 778, 0x01, 0xA000, ds), byte, 8), 0x0C), 0x013E, 0xA000, ds), byte, 8);
 		Eq_87 bx_112 = 0x00;
-		word16 cx_115;
+		word16 cx_115 = ds->w01B5;
 		Eq_86 dx_167 = SEQ(dh_166, 0x0F);
 		do
 		{
@@ -54,7 +54,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 			--cx_115;
 		} while (cx_115 != 0x00);
 		Eq_87 bx_130 = 0x013F;
-		word16 cx_132;
+		word16 cx_132 = ds->w01B7;
 		do
 		{
 			fn0C00_01BB(0x00, dx_167, bx_130, 0xA000, ds);

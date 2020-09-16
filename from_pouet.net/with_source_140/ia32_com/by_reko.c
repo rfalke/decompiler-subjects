@@ -14,7 +14,7 @@ void fn0C00_0100(byte ah, union Eq_10 Eq_4::* bx, struct Eq_4 * ds)
 	word16 ax_117 = SEQ(ah, 0x13);
 	while (true)
 	{
-		*((word16) ((int16) (cos((real64) cx_12 + (real64) ds->r0064) * cos((real64) cx_12 * ds->r015F) * (real64) 0x50) + 0xAA) + ((int16) (sin((real64) cx_12 + (real64) ds->r0064) * (real64) 100) + 100) * 0x0140) = (byte) ax_121;
+		*((word16) ((int16) (cos((real64) cx_12 + (real64) ds->r0064) * cos((real64) cx_12 * ds->r015F) * 80.0) + 0xAA) + ((int16) (sin((real64) cx_12 + (real64) ds->r0064) * 100.0) + 100) * 0x0140) = (byte) ax_121;
 		--cx_12;
 		ax_117 = ax_121;
 		ax_121 = ax_117;

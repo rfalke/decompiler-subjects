@@ -115,7 +115,7 @@ int32 fib(int32 dwArg04)
 		int32 ebx_17 = 0x01;
 		if (dwArg04 > 0x02)
 		{
-			int32 edx_19;
+			int32 edx_19 = dwArg04 - 0x02;
 			do
 			{
 				ecx_16 += ebx_17;
@@ -133,7 +133,7 @@ void main()
 {
 	__align(fp - 0x0C);
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x08);
 	printf("fibonacci(%d) = %d\n", dwLoc08, fib(dwLoc08));
 }
 

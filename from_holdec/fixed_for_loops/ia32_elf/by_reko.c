@@ -436,7 +436,7 @@ word32 var0018_0123456789()
 word32 var0019_0123456789()
 {
 	fputs("0019 signed start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected='0123456789' >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -452,7 +452,7 @@ word32 var0019_0123456789()
 word32 var0020_0123456789()
 {
 	fputs("0020 signed start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected='0123456789' >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -2618,7 +2618,7 @@ word32 var0150_0123456789()
 word32 var0151_0123456789()
 {
 	fputs("0151 signed start:-20, iter:10, inc:+1, order:buj cmp:< 0 exp:+68      expected='0123456789' >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -2634,7 +2634,7 @@ word32 var0151_0123456789()
 word32 var0152_0123456789()
 {
 	fputs("0152 signed start:-20, iter:10, inc:+1, order:buj cmp:<=0 exp:+68      expected='0123456789' >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -3206,7 +3206,7 @@ word32 var0186_0()
 word32 var0187_0()
 {
 	fputs("0187 signed start:0, iter:1, inc:+1, order:buj cmp:< 0 exp:+48         expected='0'   >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -3222,7 +3222,7 @@ word32 var0187_0()
 word32 var0188_0()
 {
 	fputs("0188 signed start:0, iter:1, inc:+1, order:buj cmp:<=0 exp:+48         expected='0'   >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -5388,7 +5388,7 @@ word32 var0318_0()
 word32 var0319_0()
 {
 	fputs("0319 signed start:-20, iter:1, inc:+1, order:buj cmp:< 0 exp:+68       expected='0'   >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -5404,7 +5404,7 @@ word32 var0319_0()
 word32 var0320_0()
 {
 	fputs("0320 signed start:-20, iter:1, inc:+1, order:buj cmp:<=0 exp:+68       expected='0'   >", g_ptr806A020);
-	int32 ebx_18;
+	int32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -7355,7 +7355,7 @@ word32 var0438_0123456789()
 word32 var0439_0123456789()
 {
 	fputs("0439 unsign start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected='0123456789' >", g_ptr806A020);
-	up32 ebx_18;
+	up32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -7371,7 +7371,7 @@ word32 var0439_0123456789()
 word32 var0440_0123456789()
 {
 	fputs("0440 unsign start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected='0123456789' >", g_ptr806A020);
-	up32 ebx_18;
+	up32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -9676,7 +9676,7 @@ word32 var0580_0()
 word32 var0581_0()
 {
 	fputs("0581 unsign start:0, iter:1, inc:+1, order:buj cmp:< 0 exp:+48         expected='0'   >", g_ptr806A020);
-	up32 ebx_18;
+	up32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -9692,7 +9692,7 @@ word32 var0581_0()
 word32 var0582_0()
 {
 	fputs("0582 unsign start:0, iter:1, inc:+1, order:buj cmp:<=0 exp:+48         expected='0'   >", g_ptr806A020);
-	up32 ebx_18;
+	up32 ebx_18 = 0x30;
 	do
 	{
 		putchar(ebx_18 + 0x00);
@@ -12752,7 +12752,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0806A0F0 - 0x0806A0F4;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_32;
+		int32 edi_32 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0806A0F4)[edi_32]();

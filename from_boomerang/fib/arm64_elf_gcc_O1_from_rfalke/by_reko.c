@@ -160,11 +160,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	else
 	{
 		word64 x19_27;
-		word64 x20_28;
-		fib(w0 - 0x01, out x19_27, out x20_28);
+		word64 x20_80;
+		fib(w0 - 0x01, out x19_27, out x20_80);
 		word64 x20_40;
-		word64 x19_80;
-		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_80, out x20_40);
+		word64 x19_81;
+		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_81, out x20_40);
 		x19Out = qwLoc10;
 		x20Out = x19;
 		return w0_43;

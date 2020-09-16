@@ -4,50 +4,48 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte bl, Register (ptr16 Eq_3) ds, FpuStack real64 rLoc2)
-void fn0C00_0100(byte bl, struct Eq_3 * ds, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register byte bl, Register (ptr16 Eq_3) ds)
+void fn0C00_0100(byte bl, struct Eq_3 * ds)
 {
 	__syscall(0x10);
-	Eq_10 bx_9 = SEQ(0xF0, bl);
-	Eq_13 cx_12 = 0x0100;
-	bx_34 = bx_9;
+	struct Eq_9 Eq_3::* bx_9 = SEQ(0xF0, bl);
+	Eq_12 cx_12 = 0x0100;
+	bx_35 = bx_9;
 	do
 	{
-		Eq_10 bx_34;
+		struct Eq_9 Eq_3::* bx_35;
 		ss->t0200 = cx_12;
-		real64 rLoc1_229 = (real64) ss->t0200 * ss->t01F8;
-		real64 rLoc2_233 = sin(rLoc2) * (real64) ss->w01FC;
-		rLoc2 = sin(rLoc1_229 + rLoc1_229) * (real64) ss->w01FE;
-		ds->*bx_34 = (int16) (rLoc2_233 + rLoc2);
-		struct Eq_47 Eq_3::* bx_37 = (word16) bx_34 + 1;
+		real64 rLoc1_238 = (real64) ss->t0200 * (real64) ss->t01F8;
+		(ds->*bx_35).t0000 = (int16) (sin(rLoc1_238) * (real64) ss->w01FC + sin(rLoc1_238 + rLoc1_238) * (real64) ss->w01FE);
+		struct Eq_46 Eq_3::* bx_38 = bx_35 + 1;
 		--cx_12;
-		bx_34 = bx_37 + 1;
-		bcu8 bl_185 = (byte) (bx_37 + 1);
-		bcu8 ch_189 = SLICE(cx_12, byte, 8);
+		bx_35 = (struct Eq_9 Eq_3::*) (bx_38 + 1);
+		bcu8 bl_194 = (byte) (bx_38 + 1);
+		bcu8 ch_198 = SLICE(cx_12, byte, 8);
 	} while (cx_12 != 0x00);
 	__outb(0x03C8, 0x13);
-	bcu8 ah_188 = 0x00;
-	struct Eq_70 Eq_3::* si_192 = Eq_3::a01E9;
-	byte bh_48 = 0x04;
+	bcu8 ah_197 = 0x00;
+	struct Eq_69 Eq_3::* si_201 = Eq_3::a01E9;
+	byte bh_49 = 0x04;
 	do
 	{
-		byte cl_49;
-		for (cl_49 = 0x40; cl_49 != 0x00; --cl_49)
+		byte cl_50;
+		for (cl_50 = 0x40; cl_50 != 0x00; --cl_50)
 		{
-			__outb(969, bl_185 >> 0x01);
-			__outb(969, ah_188 >> 0x01);
-			__outb(969, ch_189 >> 0x01);
-			bl_185 += (ds->*si_192).b0000;
-			ah_188 += (ds->*si_192).b0001;
-			ch_189 += (ds->*si_192).b0002;
+			__outb(969, bl_194 >> 0x01);
+			__outb(969, ah_197 >> 0x01);
+			__outb(969, ch_198 >> 0x01);
+			bl_194 += (ds->*si_201).b0000;
+			ah_197 += (ds->*si_201).b0001;
+			ch_198 += (ds->*si_201).b0002;
 		}
-		bl_185 -= (ds->*si_192).b0000;
-		--bh_48;
-		ch_189 -= (ds->*si_192).b0002;
-		ah_188 -= (ds->*si_192).b0001;
-		++si_192;
-		ui16 bx_119 = SEQ(bh_48, bl_185);
-	} while (bh_48 != 0x00);
+		bl_194 -= (ds->*si_201).b0000;
+		--bh_49;
+		ch_198 -= (ds->*si_201).b0002;
+		ah_197 -= (ds->*si_201).b0001;
+		++si_201;
+		ui16 bx_120 = SEQ(bh_49, bl_194);
+	} while (bh_49 != 0x00);
 	do
 	{
 		do
@@ -56,21 +54,21 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds, real64 rLoc2)
 		do
 			;
 		while (((byte) __inw(0x03DA) & 0x08) == 0x00);
-		byte Eq_212::* di_109 = &Eq_212::b0000;
-		word16 dx_112;
-		for (dx_112 = 200; dx_112 != 0x00; --dx_112)
+		byte Eq_220::* di_110 = &Eq_220::b0000;
+		word16 dx_113;
+		for (dx_113 = 200; dx_113 != 0x00; --dx_113)
 		{
-			ui16 cx_113;
-			for (cx_113 = 0x0140; cx_113 != 0x00; --cx_113)
+			ui16 cx_114;
+			for (cx_114 = 0x0140; cx_114 != 0x00; --cx_114)
 			{
-				word16 ax_138 = cx_113 + (word16) ss->t01F8;
-				cu16 v25_132 = *((word16) bx_9 + (((dx_112 - ((word16) ss->t01F8 * 0x02 - bx_119)) + cx_113) - (word16) ss->t0200) * 0x02);
-				ui16 ax_142 = __rcl(ax_138, 0x01, SLICE(cond(ax_138), bool, 1));
-				Eq_182 bx_155 = cx_113 * 0x02;
-				word16 bx_159 = bx_155 + Mem135[ds:bx_155 + bx_9:word16] + dx_112 - cx_113 + Mem135[ss:0x0204:word16];
-				0xA000->*di_109 = (byte) ((word16) *((word16) bx_9 + bx_159 * 0x02) + ((word16) (*((word16) bx_9 + (((word16) ss->t0200 + dx_112) - ax_142) * 0x02)) + v25_132) >> 0x03);
-				bx_119 = bx_159 * 0x02;
-				++di_109;
+				word16 ax_141 = cx_114 + (word16) ss->t01F8;
+				cu16 v26_135 = *((char *) &(ds->*bx_9).t0000 + (uint16) ((byte) (((dx_113 - ((word16) ss->t01F8 * 0x02 - bx_120)) + cx_114) - (word16) ss->t0200)) * 0x02);
+				word16 ax_145 = __rcl(ax_141, 0x01, SLICE(cond(ax_141), bool, 1));
+				uint16 bx_161 = (uint16) (byte) cx_114;
+				uint16 bx_169 = (uint16) (byte) ((word16) ss->t0204.u0 + ((((char *) (*((char *) (&(ds->*bx_9).t0000) + bx_161 * 0x02)) + bx_161 * 0x02) + dx_113) - cx_114));
+				Mem177[0xA000:di_110 + 0x00:byte] = SLICE(v26_135 + SEQ(ds, bx_9)[CONVERT(SLICE((CONVERT(Mem138[ss:0x0200:byte], byte, word16) + dx_113) - ax_145, byte, 0), byte, uint16) * 0x02] + SEQ(ds, bx_9)[bx_169 * 0x02] >>u 0x03, byte, 0);
+				bx_120 = bx_169 * 0x02;
+				++di_110;
 			}
 		}
 		--ss->t0204;

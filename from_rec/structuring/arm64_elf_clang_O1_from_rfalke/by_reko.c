@@ -157,7 +157,7 @@ void loop1()
 // 00000000004005D0: void loop2()
 void loop2()
 {
-	int32 w8_30 = (word32) (word64) g_dw411018;
+	int32 w8_30 = (word32) (int64) g_dw411018;
 	int32 w11_11 = g_dw41102C;
 	do
 	{

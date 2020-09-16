@@ -192,11 +192,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x29Out)
 	if (w0 > 0x02)
 	{
 		struct Eq_143 * x29_21;
-		word64 x19_23;
-		fib(w0 - 0x01, out x19_23, out x29_21);
+		word64 x19_72;
+		fib(w0 - 0x01, out x19_72, out x29_21);
 		word64 x19_34;
-		word64 x29_72;
-		w0_17 = (word32) x19_34 + fib(x29_21->dw002C - 0x02, out x19_34, out x29_72);
+		word64 x29_73;
+		w0_17 = (word32) x19_34 + fib(x29_21->dw002C - 0x02, out x19_34, out x29_73);
 	}
 	else
 		w0_17 = 0x01;

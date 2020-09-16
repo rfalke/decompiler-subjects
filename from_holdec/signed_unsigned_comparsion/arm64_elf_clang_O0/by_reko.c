@@ -161,8 +161,8 @@ void main(word32 x0_32_32)
 	while (sp_10->t000C < 0x0A)
 	{
 		sp_10 = (struct Eq_108 *) <invalid>;
-		word64 x29_38;
-		x0_32_32 = SLICE(f(SEQ(x0_32_32, sp_10->t000C), sp_10->t000C, out x29_38), word32, 32);
+		word64 x29_69;
+		x0_32_32 = SLICE(f(SEQ(x0_32_32, sp_10->t000C), sp_10->t000C, out x29_69), word32, 32);
 		sp_10->t000C = (word32) sp_10->t000C + 1;
 	}
 }

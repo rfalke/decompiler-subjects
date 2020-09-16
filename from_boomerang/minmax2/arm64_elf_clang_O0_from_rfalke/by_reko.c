@@ -167,8 +167,8 @@ void main()
 	word64 x29_109;
 	sp_64->dw0008 = (word32) test(w8_60, out x29_109);
 	struct Eq_136 * sp_80 = (struct Eq_136 *) <invalid>;
-	word64 x29_86;
-	sp_80->dw0004 = (word32) test(0x05, out x29_86);
+	word64 x29_110;
+	sp_80->dw0004 = (word32) test(0x05, out x29_110);
 }
 
 // 00000000004006B8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

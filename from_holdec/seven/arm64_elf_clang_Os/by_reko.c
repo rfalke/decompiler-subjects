@@ -154,22 +154,22 @@ void main(word32 x8_32_32, word64 x21)
 	word32 x21_32_32_107 = SLICE(x21, word32, 32);
 	uint32 w23_30 = 0x00;
 	ui64 x21_108 = SEQ(x21_32_32_107, 0x4925);
-	ui64 x8_182 = SEQ(x8_32_32, 0x00);
+	ui64 x8_181 = SEQ(x8_32_32, 0x00);
 	do
 	{
-		uint64 x8_41 = x8_182 * x21_108;
-		uint32 w8_34 = (word32) x8_182;
+		uint64 x8_41 = x8_181 * x21_108;
+		uint32 w8_34 = (word32) x8_181;
 		uint32 w8_44 = (word32) (x8_41 >> 32);
-		uint32 w5_46 = (word32) (x8_182 * x21_108 >> 32);
+		uint32 w5_46 = (word32) (x8_181 * x21_108 >> 32);
 		word32 x8_32_32_105 = SLICE(x8_41 >> 32, word32, 32);
 		uint32 w8_48 = w8_44 + (w8_34 - w8_44 >> 1);
 		uint32 w9_49 = w5_46 + (w8_34 - w5_46 >> 1);
 		if (w5_46 != w8_48 >> 2 || w9_49 >> 2 != w8_48 >> 2)
 			fn0000000000400480();
 		w23_30 = w8_34;
-		x8_182 = SEQ(x8_32_32_105, w8_34 + 0x4240);
-		w23_185 = w23_30;
-	} while (w8_34 >= w23_185);
+		x8_181 = SEQ(x8_32_32_105, w8_34 + 0x4240);
+		w23_184 = w23_30;
+	} while (w8_34 >= w23_184);
 }
 
 // 00000000004006F0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

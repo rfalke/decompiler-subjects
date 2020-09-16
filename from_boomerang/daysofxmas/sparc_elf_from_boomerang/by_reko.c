@@ -181,9 +181,9 @@ Eq_16 main(Eq_16 o0, Eq_16 o1, struct Eq_35 * o2, ptr32 o4, ptr32 o5, ptr32 o7, 
 	ptr32 i7_141 = o7;
 	if (o0 > 0x01)
 	{
-		Eq_212 NZV_229;
+		bool v25_359;
 		if (o0 > 0x02)
-			NZV_229.u0 = SLICE(cond(o0 - o1), bool, 3);
+			v25_359 = o0 - o1 < 0x00;
 		else
 		{
 			word32 i1_164;
@@ -195,33 +195,33 @@ Eq_16 main(Eq_16 o0, Eq_16 o1, struct Eq_35 * o2, ptr32 o4, ptr32 o5, ptr32 o7, 
 			ptr32 o4_194;
 			ptr32 o5_196;
 			ptr32 o7_199;
-			word32 i0_414;
-			word32 i4_415;
-			word32 i5_416;
-			word32 i7_417;
-			word32 i0_418;
-			word32 i1_419;
-			word32 i4_420;
-			word32 i5_421;
-			word32 i7_422;
+			word32 i0_417;
+			word32 i4_418;
+			word32 i5_419;
+			word32 i7_420;
+			word32 i0_421;
+			word32 i1_422;
 			word32 i4_423;
 			word32 i5_424;
 			word32 i7_425;
-			main(~0x4E, ~0x0C, (word32) main(~0x56, 0x01 - i1_164, (word32) main(~0x55, 0x00, &o2->b0000 + 1, o4, o5, o7, out o4_171, out o5_173, out o7_176, out i0_414, out i1_164, out i2_166, out i4_415, out i5_416, out i7_417) + i2_166, o4_171, o5_173, o7_176, out o4_194, out o5_196, out o7_199, out i0_418, out i1_419, out i2_189, out i4_420, out i5_421, out i7_422) + i2_189, o4_194, o5_196, o7_199, out o4, out o5, out o7, out i0_207, out i1_130, out i2_132, out i4_423, out i5_424, out i7_425);
-			NZV_229.u0 = SLICE(cond(i0_207 - i1_130), bool, 3);
+			word32 i4_426;
+			word32 i5_427;
+			word32 i7_428;
+			main(~0x4E, ~0x0C, (word32) main(~0x56, 0x01 - i1_164, (word32) main(~0x55, 0x00, &o2->b0000 + 1, o4, o5, o7, out o4_171, out o5_173, out o7_176, out i0_417, out i1_164, out i2_166, out i4_418, out i5_419, out i7_420) + i2_166, o4_171, o5_173, o7_176, out o4_194, out o5_196, out o7_199, out i0_421, out i1_422, out i2_189, out i4_423, out i5_424, out i7_425) + i2_189, o4_194, o5_196, o7_199, out o4, out o5, out o7, out i0_207, out i1_130, out i2_132, out i4_426, out i5_427, out i7_428);
+			v25_359 = i0_207 - i1_130 < 0x00;
 		}
 		Eq_16 o1_261;
-		if (!NZV_229)
-			o1_261 = (word32) i0_207 - 27;
+		if (!v25_359)
+			o1_261 = (word32) i0_207.u0 - 27;
 		else
 		{
-			Eq_16 o0_233 = (word32) i0_207 + 1;
+			Eq_16 o0_233 = (word32) i0_207.u0 + 1;
 			word32 i0_244;
-			word32 i1_426;
-			word32 i4_427;
-			word32 i5_428;
-			word32 i7_429;
-			main(o0_233, i1_130, i2_132, o4, o5, o7, out o4, out o5, out o7, out i0_244, out i1_426, out i2_132, out i4_427, out i5_428, out i7_429);
+			word32 i1_429;
+			word32 i4_430;
+			word32 i5_431;
+			word32 i7_432;
+			main(o0_233, i1_130, i2_132, o4, o5, o7, out o4, out o5, out o7, out i0_244, out i1_429, out i2_132, out i4_430, out i5_431, out i7_432);
 			o1_261 = i0_244 + ~0x1A;
 		}
 		word32 i0_274;
@@ -244,11 +244,11 @@ Eq_16 main(Eq_16 o0, Eq_16 o1, struct Eq_35 * o2, ptr32 o4, ptr32 o5, ptr32 o7, 
 		o2_150 = &g_t10930;
 		o0_151.u0 = 0x02;
 l00010718:
-		word32 o4_430;
-		word32 o5_431;
-		word32 o7_432;
-		word32 i0_433;
-		i0_128 = main(o0_151, o1_152, o2_150, o4, o5, o7, out o4_430, out o5_431, out o7_432, out i0_433, out i1_130, out i2_132, out i4_13, out i5_138, out i7_141);
+		word32 o4_433;
+		word32 o5_434;
+		word32 o7_435;
+		word32 i0_436;
+		i0_128 = main(o0_151, o1_152, o2_150, o4, o5, o7, out o4_433, out o5_434, out o7_435, out i0_436, out i1_130, out i2_132, out i4_13, out i5_138, out i7_141);
 		goto l00010884;
 	}
 	if (o0 >= 0x00)
@@ -271,15 +271,15 @@ l000107D8:
 		ptr32 o4_116;
 		ptr32 o5_118;
 		ptr32 o7_121;
-		word32 i0_434;
-		word32 i1_435;
-		word32 i4_436;
-		word32 i5_437;
-		word32 i7_438;
-		word32 o4_439;
-		word32 o5_440;
-		word32 o7_441;
-		if (main(0x00, main(~0x3C, o1_97, &g_t10930.b0000 + 24, o4, o5, o7, out o4_116, out o5_118, out o7_121, out i0_434, out i1_435, out i2_111, out i4_436, out i5_437, out i7_438), i2_111 + 0x01, o4_116, o5_118, o7_121, out o4_439, out o5_440, out o7_441, out i0_128, out i1_130, out i2_132, out i4_13, out i5_138, out i7_141) != 0x00)
+		word32 i0_437;
+		word32 i1_438;
+		word32 i4_439;
+		word32 i5_440;
+		word32 i7_441;
+		word32 o4_442;
+		word32 o5_443;
+		word32 o7_444;
+		if (main(0x00, main(~0x3C, o1_97, &g_t10930.b0000 + 24, o4, o5, o7, out o4_116, out o5_118, out o7_121, out i0_437, out i1_438, out i2_111, out i4_439, out i5_440, out i7_441), i2_111 + 0x01, o4_116, o5_118, o7_121, out o4_442, out o5_443, out o7_444, out i0_128, out i1_130, out i2_132, out i4_13, out i5_138, out i7_141) != 0x00)
 			goto l000107D8;
 	}
 	else

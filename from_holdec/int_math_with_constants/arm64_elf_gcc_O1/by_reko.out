@@ -1,7 +1,3 @@
 === Using options:
-000000000009458C: warning: AArch64 instruction smulh	x3,w2,w3 is not supported yet.
-000000000009D7CC: warning: AArch64 instruction smulh	x2,w3,w2 is not supported yet.
-00000000000CC0DC: warning: AArch64 instruction smulh	x3,w2,w3 is not supported yet.
-00000000000D531C: warning: AArch64 instruction smulh	x2,w3,w2 is not supported yet.
 0010CD08: warning: Expected sizes of arrays to have been determined by now
 0010CD08: warning: Expected sizes of arrays to have been determined by now

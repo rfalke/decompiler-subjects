@@ -159,14 +159,14 @@ int32 fib2(int32 w0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x29Out)
 {
 	if (w0 >= 0x02)
 	{
-		word64 x20_24;
 		word64 x19_25;
-		word64 x29_82;
-		fib2(w0 - 0x01, out x19_25, out x20_24, out x29_82);
+		word64 x20_82;
+		word64 x29_83;
+		fib2(w0 - 0x01, out x19_25, out x20_82, out x29_83);
 		word64 x20_36;
-		word64 x19_83;
-		word64 x29_84;
-		w0 = fib2((word32) x19_25, out x19_83, out x20_36, out x29_84) + (word32) x20_36;
+		word64 x19_84;
+		word64 x29_85;
+		w0 = fib2((word32) x19_25, out x19_84, out x20_36, out x29_85) + (word32) x20_36;
 	}
 	x19Out = <invalid>;
 	x20Out = <invalid>;
@@ -179,10 +179,10 @@ void main(word64 x20)
 {
 	fn00000000004004E0();
 	fn00000000004004D0();
-	word64 x29_28;
 	word64 x19_61;
 	word64 x20_62;
-	fib2(SLICE(x20, word32, 32), out x19_61, out x20_62, out x29_28);
+	word64 x29_63;
+	fib2(SLICE(x20, word32, 32), out x19_61, out x20_62, out x29_63);
 	fn00000000004004E0();
 }
 

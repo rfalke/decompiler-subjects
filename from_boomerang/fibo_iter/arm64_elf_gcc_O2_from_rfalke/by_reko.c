@@ -84,7 +84,7 @@ void main(int32 dwArg04)
 	fn0000000000000720();
 	if (dwArg04 > 0x01 && dwArg04 != 0x02)
 	{
-		int32 w3_27;
+		int32 w3_27 = 0x02;
 		do
 			++w3_27;
 		while (dwArg04 != w3_27);
@@ -175,7 +175,7 @@ void fib(int32 w0)
 		return;
 	if (w0 == 0x02)
 		return;
-	int32 w2_11;
+	int32 w2_11 = 0x02;
 	do
 		++w2_11;
 	while (w0 != w2_11);

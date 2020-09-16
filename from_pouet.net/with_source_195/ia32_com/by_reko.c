@@ -7,90 +7,90 @@
 // 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds)
 void fn0C00_0100(struct Eq_2 * ds)
 {
-	Eq_3 Top_115 = 0;
+	Eq_3 Top_120 = 0;
 	__syscall(0x10);
 	do
 	{
-		word16 Eq_16::* di_169 = Eq_16::a0000;
-		word16 cx_172;
-		for (cx_172 = 0x6400; cx_172 != 0x00; --cx_172)
+		word16 Eq_16::* di_174 = Eq_16::a0000;
+		word16 cx_177;
+		for (cx_177 = 0x6400; cx_177 != 0x00; --cx_177)
 		{
-			0x4000->*di_169 = 0x5151;
-			++di_169;
+			0x4000->*di_174 = 0x5151;
+			++di_174;
 		}
 		ds->w01D5 = 0x40;
-		Eq_13 cx_124;
-		for (cx_124 = 0x4000; cx_124 != 0x00; --cx_124)
+		Eq_13 cx_129;
+		for (cx_129 = 0x4000; cx_129 != 0x00; --cx_129)
 		{
 			__fninit();
-			ds->t01D3.u1 = (uint16) (uint8) (0x0C00->*cx_124);
-			struct Eq_39 * Top_51 = Top_115 - 1;
+			ds->t01D3.u1 = (uint16) (0x0C00->*cx_129);
+			struct Eq_38 * Top_51 = Top_120 - 1;
 			Top_51->r0000 = (real64) ds->t01D3;
-			ds->t01D3 = (cx_124 & 0x7F) << 0x01;
+			ds->t01D3 = (cx_129 & 0x7F) << 0x01;
 			Top_51->rFFFFFFFF = (real64) ds->t01D3;
 			Top_51->rFFFFFFFF -= (real64) ds->w01D5;
 			Top_51->rFFFFFFFF += Top_51->r0000;
-			ds->t01D3 = cx_124 >> 0x07;
+			ds->t01D3 = cx_129 >> 0x07;
 			Top_51->rFFFFFFFE = (real64) ds->t01D3;
 			Top_51->rFFFFFFFE -= (real64) ds->w01D5;
-			Top_51->rFFFFFFFD = Top_51->rFFFFFFFF;
+			Top_51->rFFFFFFFD = Top_51->r0000;
 			Top_51->rFFFFFFFC = (real64) ds->r01DB;
 			Top_51->rFFFFFFFC = -Top_51->rFFFFFFFC;
-			real64 v16_72 = Top_51->rFFFFFFFC;
-			Top_51->rFFFFFFFC = cos(v16_72);
-			Top_51->rFFFFFFFB = sin(v16_72);
-			Top_51->rFFFFFFFA = Top_51->rFFFFFFFB;
+			real64 v17_73 = Top_51->rFFFFFFFC;
+			Top_51->rFFFFFFFC = cos(v17_73);
+			Top_51->rFFFFFFFB = sin(v17_73);
+			Top_51->rFFFFFFFA = Top_51->rFFFFFFFC;
 			Top_51->rFFFFFFFA *= Top_51->rFFFFFFFF;
-			Top_51->rFFFFFFF9 = Top_51->rFFFFFFFA;
+			Top_51->rFFFFFFF9 = Top_51->rFFFFFFFB;
 			Top_51->rFFFFFFF9 *= Top_51->rFFFFFFFE;
 			Top_51->rFFFFFFF9 += Top_51->rFFFFFFFA;
-			real64 v17_83 = Top_51->rFFFFFFF9;
+			real64 v20_86 = Top_51->rFFFFFFF9;
 			Top_51->rFFFFFFF9 = Top_51->rFFFFFFFB;
-			Top_51->rFFFFFFFB = v17_83;
+			Top_51->rFFFFFFFB = v20_86;
 			Top_51->rFFFFFFF9 *= Top_51->rFFFFFFFF;
 			Top_51->rFFFFFFF9 = -Top_51->rFFFFFFF9;
-			real64 v18_88 = Top_51->rFFFFFFF9;
+			real64 v21_91 = Top_51->rFFFFFFF9;
 			Top_51->rFFFFFFF9 = Top_51->rFFFFFFFC;
-			Top_51->rFFFFFFFC = v18_88;
+			Top_51->rFFFFFFFC = v21_91;
 			Top_51->rFFFFFFF9 *= Top_51->rFFFFFFFE;
 			Top_51->rFFFFFFF9 += Top_51->rFFFFFFFC;
 			__ffree(Top_51->rFFFFFFFF);
-			Top_51->rFFFFFFF8 = Top_51->rFFFFFFFC;
-			Top_51->rFFFFFFF7 = Top_51->rFFFFFFFA;
+			Top_51->rFFFFFFF8 = Top_51->rFFFFFFFD;
+			Top_51->rFFFFFFF7 = Top_51->rFFFFFFFB;
 			ds->t01D3.u0 = 0x0140;
 			Top_51->rFFFFFFF7 /= Top_51->rFFFFFFF9;
 			Top_51->rFFFFFFF7 *= (real64) ds->t01D3;
-			real64 v19_100 = Top_51->rFFFFFFF7;
+			real64 v24_105 = Top_51->rFFFFFFF7;
 			Top_51->rFFFFFFF7 = Top_51->rFFFFFFF8;
-			Top_51->rFFFFFFF8 = v19_100;
+			Top_51->rFFFFFFF8 = v24_105;
 			Top_51->rFFFFFFF7 += (real64) ds->w01CD;
 			Top_51->rFFFFFFF7 /= Top_51->rFFFFFFF9;
 			Top_51->rFFFFFFF7 *= (real64) ds->t01D3;
-			real64 v20_106 = Top_51->rFFFFFFF7;
+			real64 v25_111 = Top_51->rFFFFFFF7;
 			Top_51->rFFFFFFF7 = Top_51->rFFFFFFF8;
-			Top_51->rFFFFFFF8 = v20_106;
+			Top_51->rFFFFFFF8 = v25_111;
 			ds->w01D7 = (int16) Top_51->rFFFFFFF7;
-			real64 v21_111 = Top_51->rFFFFFFF8;
+			real64 v26_116 = Top_51->rFFFFFFF8;
 			Top_51->rFFFFFFF8 = Top_51->rFFFFFFF9;
-			Top_51->rFFFFFFF9 = v21_111;
+			Top_51->rFFFFFFF9 = v26_116;
 			ds->t01D3.u0 = (int16) Top_51->rFFFFFFF8;
-			Eq_365 bx_117 = ds->t01D3 *s 0x0140 + ds->w01D7;
-			0x4000->*bx_117 += 0x0C00->*cx_124;
-			Top_115 = Top_51 - 7;
+			Eq_364 bx_122 = ds->t01D3 *s 0x0140 + ds->w01D7;
+			0x4000->*bx_122 += 0x0C00->*cx_129;
+			Top_120 = Top_51 - 7;
 		}
 		Top_51->rFFFFFFF8 = (real64) ds->r01CF;
 		Top_51->rFFFFFFF7 = (real64) ds->r01DB;
 		Top_51->rFFFFFFF7 += Top_51->rFFFFFFF8;
 		ds->r01DB = (real32) Top_51->rFFFFFFF7;
-		Top_115 = Top_51 - 9;
-		word16 Eq_16::* si_139 = Eq_16::a0000;
-		word16 Eq_436::* di_142 = Eq_436::a1900;
-		word16 cx_143;
-		for (cx_143 = 0x6400; cx_143 != 0x00; --cx_143)
+		Top_120 = Top_51 - 9;
+		word16 Eq_16::* si_144 = Eq_16::a0000;
+		word16 Eq_435::* di_147 = Eq_435::a1900;
+		word16 cx_148;
+		for (cx_148 = 0x6400; cx_148 != 0x00; --cx_148)
 		{
-			0xA000->*di_142 = 0x4000->*si_139;
-			++si_139;
-			++di_142;
+			0xA000->*di_147 = 0x4000->*si_144;
+			++si_144;
+			++di_147;
 		}
 	} while ((int16) __inb(0x60) != 0x01);
 	__syscall(0x10);

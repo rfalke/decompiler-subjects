@@ -136,33 +136,33 @@ void use_int(int32 dwArg04)
 // 08048490: void read_ints()
 void read_ints()
 {
-	printf("%f", (real64) (int16) g_b804A062 + g_r8048930 + (real64) g_w804A060 + (real64) g_dw804A05C + (real64) g_dw804A058 + (real64) g_qw804A050);
+	printf("%f", (real64) (int16) g_b804A062 + (real64) g_r8048930 + (real64) g_w804A060 + (real64) g_dw804A05C + (real64) g_dw804A058 + (real64) g_qw804A050);
 }
 
 // 080484E0: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint16 wLoc06_27 = __fstcw();
-	uint16 ax_10 = (word16) (word32) wLoc06_27;
-	__fldcw(ax_10);
-	__fldcw(wLoc06_27);
-	__fldcw(ax_10);
-	__fldcw(wLoc06_27);
-	word32 eax_13 = (word32) (int16) rArg04;
-	g_b804A062 = (byte) eax_13;
-	g_w804A060 = (word16) eax_13;
-	__fldcw(ax_10);
+	uint16 wLoc06_28 = __fstcw();
+	uint16 ax_11 = SEQ(0x0C, (byte) (word32) wLoc06_28);
+	__fldcw(ax_11);
+	__fldcw(wLoc06_28);
+	__fldcw(ax_11);
+	__fldcw(wLoc06_28);
+	word32 eax_14 = (word32) (int16) rArg04;
+	g_b804A062 = (byte) eax_14;
+	g_w804A060 = (word16) eax_14;
+	__fldcw(ax_11);
 	g_qw804A050 = (int64) rArg04;
-	__fldcw(wLoc06_27);
-	int32 dwLoc10_32 = (int32) rArg04;
-	g_dw804A05C = dwLoc10_32;
-	g_dw804A058 = dwLoc10_32;
+	__fldcw(wLoc06_28);
+	int32 dwLoc10_33 = (int32) rArg04;
+	g_dw804A05C = dwLoc10_33;
+	g_dw804A058 = dwLoc10_33;
 }
 
 // 08048550: void read_floats()
 void read_floats()
 {
-	printf("%f", g_r804A048 + 0.0 + g_r804A040 + (real64) g_r804A030);
+	printf("%f", (real64) g_r804A048 + 0.0 + g_r804A040 + (real64) g_r804A030);
 }
 
 // 08048590: void write_floats(Stack real64 rArg04)
@@ -221,30 +221,30 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	printf("%f", -rArg04);
 }
 
-// 08048700: void compare_floats(Stack Eq_278 rArg04, Stack Eq_278 rArg0C)
-void compare_floats(Eq_278 rArg04, Eq_278 rArg0C)
+// 08048700: void compare_floats(Stack Eq_282 rArg04, Stack Eq_282 rArg0C)
+void compare_floats(Eq_282 rArg04, Eq_282 rArg0C)
 {
-	Eq_280 eax_20 = (uint32) (uint8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_284 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_20.u0 = 0x00;
 	printf("%d", eax_20);
-	Eq_295 eax_53 = (uint32) (uint8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_299 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_53.u0 = 0x01;
 	printf("%d", eax_53);
-	printf("%d", (uint32) (uint8) (rArg04 > rArg0C));
-	printf("%d", (uint32) (uint8) (rArg04 >= rArg0C));
-	printf("%d", (word32) (rArg04 > rArg0C));
-	printf("%d", (uint32) (uint8) (rArg0C >= rArg04));
+	printf("%d", (uint32) (int8) (rArg04 > rArg0C));
+	printf("%d", (uint32) (int8) (rArg04 >= rArg0C));
+	printf("%d", (word32) (int8) (rArg04 > rArg0C));
+	printf("%d", (uint32) (int8) (rArg0C >= rArg04));
 }
 
-// 080487F0: void constants(Stack real64 rArg04, FpuStack real64 rLoc2)
-void constants(real64 rArg04, real64 rLoc2)
+// 080487F0: void constants(Stack real64 rArg04)
+void constants(real64 rArg04)
 {
-	printf("%f", rLoc2 + rArg04);
-	printf("%f", rArg04 * g_r8048934);
+	printf("%f", rArg04 + rArg04);
+	printf("%f", rArg04 * (real64) g_r8048934);
 	printf("%f", rArg04 * g_r8048940);
-	printf("%f", rArg04 * g_r8048938);
+	printf("%f", rArg04 * (real64) g_r8048938);
 	printf("%f", rArg04 * g_r8048948);
 }
 
@@ -255,7 +255,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

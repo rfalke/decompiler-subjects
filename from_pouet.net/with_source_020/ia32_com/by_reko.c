@@ -4,17 +4,17 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register word16 dx, Register (memptr (ptr16 Eq_6) Eq_4) bx, Register (memptr (ptr16 Eq_26) byte) di, Register (ptr16 Eq_6) ds)
-void fn0C00_0100(byte ah, word16 dx, struct Eq_4 Eq_6::* bx, byte Eq_26::* di, struct Eq_6 * ds)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register word16 dx, Register (memptr (ptr16 Eq_6) Eq_4) bx, Register (memptr (ptr16 Eq_25) byte) di, Register (ptr16 Eq_6) ds)
+void fn0C00_0100(byte ah, word16 dx, struct Eq_4 Eq_6::* bx, byte Eq_25::* di, struct Eq_6 * ds)
 {
 	while (true)
 	{
 		__syscall(0x10);
-		struct Eq_26 * es_45 = bx[2];
+		struct Eq_25 * es_45 = bx[2];
 		do
 		{
-			word16 ax_16 = SEQ(ah, Mem10[ds:0x0103:byte]) + di + (ax_22 <u 0x00);
-			cup16 ax_22 = __aam((byte) ax_16) - bx - (ax_16 < 0x00);
+			word16 ax_16 = SEQ(ah, Mem10[ds:0x0103:byte]) + di + C;
+			word16 ax_22 = __aam((byte) ax_16) - bx - (ax_16 < 0x00);
 			es_45->*di = (byte) ax_22;
 			ah = SLICE(ax_22, byte, 8);
 			++di;

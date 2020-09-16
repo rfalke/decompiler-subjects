@@ -1,11 +1,11 @@
 === Using options:
 0800:10C8: warning: Procedure fn0800_10C6 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0800:0E88: error: An error occurred while processing the statement word16 di_328 = di_313 - (fp - 0x8A<16>).
-    Not handling (memptr T_198 (struct (0 T_946 t0000))) and mp16 yet.
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <dd67853e12af42c98e3fb9464292041c>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
+0800:0E88: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
+    Not handling (memptr T_195 (struct (0 T_940 t0000))) and mp16 yet.
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 l0800_0C5E: warning: Non-integral switch expression

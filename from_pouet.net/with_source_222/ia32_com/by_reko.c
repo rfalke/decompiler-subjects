@@ -10,27 +10,27 @@ void fn0C00_0100(byte ah, byte ch, byte bh, cu16 bp, byte Eq_40::* di, struct Eq
 	Eq_8 Top_3 = 0;
 	__syscall(0x10);
 	__outb(0x03C8, 0x00);
-	word16 ax_210 = SEQ(ah, 0x00);
+	word16 ax_208 = SEQ(ah, 0x00);
 	do
 	{
-		byte al_20 = (byte) ax_218;
+		byte al_20 = (byte) ax_215;
 		__outb(969, al_20);
 		__outb(969, al_20);
 		__outb(969, al_20);
 		++di;
 		0x9000->*di = 0x00;
-		byte ah_116 = SLICE(ax_218 + 0x01, byte, 8);
-		ax_210 = ax_218 + 0x01;
-		ax_218 = ax_210;
-	} while (ax_218 != 0x01);
-	byte dh_120 = 0x00;
+		byte ah_115 = SLICE(ax_215 + 0x01, byte, 8);
+		ax_208 = ax_215 + 0x01;
+		ax_215 = ax_208;
+	} while (ax_215 != 0x01);
+	byte dh_119 = 0x00;
 	do
 	{
 		__wait();
 		__fninit();
-		struct Eq_83 * Top_37 = Top_3 - 1;
+		struct Eq_81 * Top_37 = Top_3 - 1;
 		Top_37->r0000 = (real64) ds->r01F6;
-		Top_37->r0000 += ds->r01FA;
+		Top_37->r0000 += (real64) ds->r01FA;
 		ds->r01F6 = (real32) Top_37->r0000;
 		real64 v17_44 = Top_37->r0000;
 		Top_37->r0000 = cos(v17_44);
@@ -40,104 +40,100 @@ void fn0C00_0100(byte ah, byte ch, byte bh, cu16 bp, byte Eq_40::* di, struct Eq
 		if ((bp & 0x0400) != 0x00)
 		{
 			Eq_57 bx_60 = <invalid>;
-			Eq_57 dx_62 = <invalid>;
+			Eq_57 dx_61 = <invalid>;
 			bh = SLICE(bx_60, byte, 8);
-			dh_120 = SLICE(dx_62, byte, 8);
-			byte dh_214;
-			byte bh_215;
-			word16 cx_213;
-			ah_116 = SLICE((uint16) (uint8) fn0C00_0180(ah_116, ch, dh_120, bh, bp, &Eq_7::t01FE, &Eq_7::t01FF, ds, 0x9000, Top_37->rFFFFFFFF, Top_37->r0000, out cx_213, out dh_214, out bh_215), byte, 8);
+			dh_119 = SLICE(dx_61, byte, 8);
+			byte bh_212;
+			byte dh_211;
+			ah_115 = SLICE((uint16) fn0C00_0180(ah_115, ch, dh_119, bh, bp, &Eq_7::t01FE, &Eq_7::t01FF, ds, 0x9000, Top_37->rFFFFFFFF, Top_37->r0000, out dh_211, out bh_212), byte, 8);
 		}
-		struct Eq_53 Eq_40::* di_67 = Eq_40::a0000;
-		word16 cx_102 = 0x00;
+		struct Eq_53 Eq_40::* di_66 = Eq_40::a0000;
+		word16 cx_101 = 0x00;
 		do
 		{
-			cu8 al_75 = (byte) (0x9000->*di_67).b0000.u0 + di_67[1];
-			cu8 al_80 = al_75 + di_67[0x0141];
-			cu8 al_84 = al_80 + di_67[320];
-			cu16 ax_88 = SEQ((bool) (al_84 < 0x00) + ((bool) (al_80 < 0x00) + ((bool) (al_75 < 0x00) + ah_116)), al_84);
-			Eq_97 al_92 = (byte) (ax_88 >> 0x02);
-			ah_116 = SLICE(ax_88 >> 0x02, byte, 8);
-			if (ax_88 >> 0x02 != 0x00)
-				--al_92;
-			(0x9000->*di_67).b0000 = al_92;
-			--cx_102;
-			++di_67;
-			byte ch_117 = SLICE(cx_102, byte, 8);
-		} while (cx_102 != 0x00);
-		byte dh_216;
-		byte bh_217;
-		word16 cx_133;
-		fn0C00_0180(ah_116, ch_117, dh_120, bh, bp, &Eq_7::t01FE, &Eq_7::t01FE, ds, 0x9000, Top_37->rFFFFFFFF, Top_37->r0000, out cx_133, out dh_216, out bh_217);
-		Eq_57 bx_132 = <invalid>;
-		Eq_57 dx_134 = <invalid>;
-		bh = SLICE(bx_132, byte, 8);
-		dh_120 = SLICE(dx_134, byte, 8);
-		struct Eq_168 Eq_40::* di_140 = Eq_40::a0000;
+			cu8 al_74 = (byte) (0x9000->*di_66).b0000.u0 + di_66[1];
+			cu8 al_79 = al_74 + di_66[0x0141];
+			cu8 al_83 = al_79 + di_66[320];
+			cu16 ax_87 = SEQ((bool) (al_83 < 0x00) + ((bool) (al_79 < 0x00) + ((bool) (al_74 < 0x00) + ah_115)), al_83);
+			Eq_93 al_91 = (byte) (ax_87 >> 0x02);
+			ah_115 = SLICE(ax_87 >> 0x02, byte, 8);
+			if (ax_87 >> 0x02 != 0x00)
+				--al_91;
+			(0x9000->*di_66).b0000 = al_91;
+			--cx_101;
+			++di_66;
+			byte ch_116 = SLICE(cx_101, byte, 8);
+			byte cl_188 = (byte) cx_101;
+		} while (cx_101 != 0x00);
+		byte dh_213;
+		byte bh_214;
+		fn0C00_0180(ah_115, ch_116, dh_119, bh, bp, &Eq_7::t01FE, &Eq_7::t01FE, ds, 0x9000, Top_37->rFFFFFFFF, Top_37->r0000, out dh_213, out bh_214);
+		Eq_57 bx_131 = <invalid>;
+		Eq_57 dx_132 = <invalid>;
+		bh = SLICE(bx_131, byte, 8);
+		dh_119 = SLICE(dx_132, byte, 8);
+		struct Eq_164 Eq_40::* di_138 = Eq_40::a0000;
+		word16 cx_149 = SEQ(~0x00, cl_188);
 		do
 		{
-			Eq_97 ax_146 = (0x9000->*di_140).t0000;
-			(0xA000->*di_140).t0000 = (byte) ax_146;
-			--cx_133;
-			ah_116 = SLICE(ax_146, byte, 8);
-			++di_140;
-			ch = SLICE(cx_133, byte, 8);
-		} while (cx_133 != 0x00);
+			Eq_93 ax_144 = (0x9000->*di_138).t0000;
+			(0xA000->*di_138).t0000 = (byte) ax_144;
+			--cx_149;
+			ah_115 = SLICE(ax_144, byte, 8);
+			++di_138;
+			ch = SLICE(cx_149, byte, 8);
+		} while (cx_149 != 0x00);
 	} while (__inb(0x60) != 0x01);
 }
 
-// 0C00:0180: Register byte fn0C00_0180(Register byte ah, Register byte ch, Register byte dh, Register byte bh, Register cu16 bp, Register (memptr (ptr16 Eq_7) Eq_72) si, Register (memptr (ptr16 Eq_7) Eq_72) di, Register (ptr16 Eq_7) ds, Register (ptr16 Eq_40) fs, FpuStack real64 rArg0, FpuStack real64 rArg1, Register out ptr16 cxOut, Register out Eq_57 dhOut, Register out Eq_57 bhOut)
+// 0C00:0180: Register byte fn0C00_0180(Register byte ah, Register byte ch, Register byte dh, Register byte bh, Register cu16 bp, Register (memptr (ptr16 Eq_7) Eq_71) si, Register (memptr (ptr16 Eq_7) Eq_71) di, Register (ptr16 Eq_7) ds, Register (ptr16 Eq_40) fs, FpuStack real64 rArg0, FpuStack real64 rArg1, Register out Eq_57 dhOut, Register out Eq_57 bhOut)
 // Called from:
 //      fn0C00_0100
-byte fn0C00_0180(byte ah, byte ch, byte dh, byte bh, cu16 bp, struct Eq_72 Eq_7::* si, struct Eq_72 Eq_7::* di, struct Eq_7 * ds, struct Eq_40 * fs, real64 rArg0, real64 rArg1, ptr16 & cxOut, union Eq_57 & dhOut, union Eq_57 & bhOut)
+byte fn0C00_0180(byte ah, byte ch, byte dh, byte bh, cu16 bp, struct Eq_71 Eq_7::* si, struct Eq_71 Eq_7::* di, struct Eq_7 * ds, struct Eq_40 * fs, real64 rArg0, real64 rArg1, union Eq_57 & dhOut, union Eq_57 & bhOut)
 {
 	word16 ax_162 = SEQ(ah, 0x5F);
 	do
 	{
-		int16 bx_148 = SEQ(bh, 0x5F);
+		int16 bx_150 = SEQ(bh, 0x5F);
 		do
 		{
-			(ds->*si).w0000 = bx_148;
+			(ds->*si).w0000 = bx_150;
 			(ds->*di).w0000 -= 0x2F;
 			ds->w0200 = ax_162;
 			(ds->*si).w0002 -= 0x2F;
-			real64 rLoc2_195 = (real64) (ds->*si).w0002;
-			real64 rLoc3_198 = rLoc2_195 * rArg0;
-			real64 rLoc1_194 = (real64) (ds->*si).w0000;
-			(ds->*si).w0000 = (int16) (rLoc3_198 - rLoc3_198 * rArg1);
-			(ds->*si).w0002 = (int16) (rLoc2_195 * rArg0 + rLoc1_194 * rArg1);
-			byte al_171 = (byte) ax_162;
-			byte ah_174 = SLICE(ax_162, byte, 8);
-			byte bl_170 = (byte) bx_148;
-			byte bh_186 = SLICE(bx_148, byte, 8);
-			byte dl_136 = 0x3F;
+			real64 rLoc1_195 = (real64) (ds->*si).w0000;
+			real64 rLoc2_196 = (real64) (ds->*si).w0002;
+			(ds->*si).w0000 = (int16) (rLoc1_195 * rArg0 - rLoc2_196 * rArg1);
+			(ds->*si).w0002 = (int16) (rLoc2_196 * rArg0 + rLoc1_195 * rArg1);
+			byte al_172 = (byte) ax_162;
+			byte ah_175 = SLICE(ax_162, byte, 8);
+			byte bl_171 = (byte) bx_150;
+			byte bh_187 = SLICE(bx_150, byte, 8);
+			byte dl_138 = 0x3F;
 			do
 			{
-				ui8 cl_48 = dl_265 ^ bl_170 ^ al_171;
-				ui16 cx_80 = SEQ(ch, cl_48) ^ bp >> 0x01;
-				byte cl_81 = (byte) cx_80;
-				cu16 dx_62 = SEQ(dh, dl_265);
-				word16 cx_99 = SEQ(SLICE(cx_80, byte, 8), cl_81 & 0x3F);
-				if ((cl_81 & 0x3F) >= 0x20)
+				ui16 cx_82 = SEQ(ch, dl_262 ^ bl_171 ^ al_172) ^ bp >> 0x01;
+				byte cl_83 = (byte) cx_82;
+				cu16 dx_64 = SEQ(dh, dl_262);
+				word16 cx_101 = SEQ(SLICE(cx_82, byte, 8), cl_83 & 0x3F);
+				if ((cl_83 & 0x3F) >= 0x20)
 				{
-					uint8 Eq_40::* ax_97 = (word16) ((ds->w0200 + 0x70 - (dx_62 >> 0x01)) * 0x0140) + (((ds->*si).w0000 + (dx_62 >> 0x01)) + 0x93);
-					uint8 cl_103 = (byte) (cx_99 - (dx_62 >> 0x01));
+					uint8 Eq_40::* ax_99 = (word16) ((ds->w0200 + 0x70 - (dx_64 >> 0x01)) * 0x0140) + (((ds->*si).w0000 + (dx_64 >> 0x01)) + 0x93);
+					uint8 cl_105 = (byte) (cx_101 - (dx_64 >> 0x01));
 					if (di != si)
-						cl_103 >>= 0x01;
-					fs->*ax_97 = cl_103;
+						cl_105 >>= 0x01;
+					fs->*ax_99 = cl_105;
 				}
-				bh = bh_186;
-				dl_136 = dl_265 - 0x01;
-				dl_265 = dl_136;
-			} while (dl_265 != 0x01);
-			bx_148 = SEQ(bh_186, bl_170 - 0x01);
-		} while (bl_170 != 0x01);
-		ax_162 = SEQ(ah_174, al_171 - 0x01);
-		ptr16 cx_246 = SEQ(ch, cl_48);
-	} while (al_171 != 0x01);
-	cxOut = cx_246;
+				bh = bh_187;
+				dl_138 = dl_262 - 0x01;
+				dl_262 = dl_138;
+			} while (dl_262 != 0x01);
+			bx_150 = SEQ(bh_187, bl_171 - 0x01);
+		} while (bl_171 != 0x01);
+		ax_162 = SEQ(ah_175, al_172 - 0x01);
+	} while (al_172 != 0x01);
 	dhOut.u0 = <invalid>;
 	bhOut.u0 = <invalid>;
-	return ah_174;
+	return ah_175;
 }
 

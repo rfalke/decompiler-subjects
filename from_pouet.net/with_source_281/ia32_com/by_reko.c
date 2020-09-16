@@ -4,91 +4,91 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds, FpuStack real64 rLoc5, FpuStack real64 rLoc2)
-void fn0C00_0100(struct Eq_2 * ds, real64 rLoc5, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register (ptr16 Eq_2) ds)
+void fn0C00_0100(struct Eq_2 * ds)
 {
 	__fninit();
 	__syscall(0x10);
 	msdos_display_string(&ds->b01EB);
 	int16 si_15 = 0x01EB;
-	Eq_21 bx_162 = 0x00;
+	Eq_19 bx_163 = 0x00;
 	do
 	{
-		cui16 ax_32 = bx_162 & 0x1F1F;
-		byte bl_39 = (byte) bx_162;
-		byte bh_41 = SLICE(bx_162, byte, 8);
+		cui16 ax_32 = bx_163 & 0x1F1F;
+		byte bl_39 = (byte) bx_163;
+		byte bh_41 = SLICE(bx_163, byte, 8);
 		uint8 al_33 = (byte) ax_32;
 		cu8 ah_36 = SLICE(ax_32, byte, 8);
 		if (al_33 < 0x1C && ah_36 < 0x1C)
 			al_33 = bl_39 ^ bh_41;
-		0x8000->*bx_162 = al_33 >> 0x02;
-		bx_162 = (word16) bx_162 + 1;
-	} while (bx_162 != 0x00);
-	word16 cx_57 = 0x11;
+		0x8000->*bx_163 = al_33 >> 0x02;
+		bx_163 = (word16) bx_163 + 1;
+	} while (bx_163 != 0x00);
+	word16 cx_55 = 0x11;
 	do
 	{
 		do
 		{
-			0x8000->*bx_162 = 0x8000->*bx_162 + 0x8000->*((word16) bx_162 + 1) + 0x8000->*((word16) bx_162 + 0x0100) + 0x8000->*((word16) bx_162 + 0x0101) >> 0x02;
-			bx_162 = (word16) bx_162 + 1;
-		} while (bx_162 != 0x00);
-		--cx_57;
-		byte cl_240 = (byte) cx_57;
-	} while (cx_57 != 0x00);
-	real64 rLoc1_285 = (real64) cs->w01F6;
-	word16 cx_172 = SEQ(0x04, cl_240);
+			0x8000->*bx_163 = 0x8000->*bx_163 + 0x8000->*((word16) bx_163 + 1) + 0x8000->*((word16) bx_163 + 0x0100) + 0x8000->*((word16) bx_163 + 0x0101) >> 0x02;
+			bx_163 = (word16) bx_163 + 1;
+		} while (bx_163 != 0x00);
+		--cx_55;
+		byte cl_241 = (byte) cx_55;
+	} while (cx_55 != 0x00);
+	real64 rLoc1_286 = (real64) cs->w01F6;
+	word16 cx_173 = SEQ(0x04, cl_241);
 	do
 	{
-		cs->t01EB.u0 = (int16) rLoc1_285;
-		real64 rLoc2_290 = (real64) cs->w01F8 / rLoc2 + (real64) cs->w01FA;
-		Eq_93 dl_102 = cs->t01EB;
-		real64 rLoc3_292 = rLoc2_290 + (real64) cs->w01F6;
+		cs->t01EB.u0 = (int16) rLoc1_286;
+		Eq_96 dl_100 = cs->t01EB;
+		real64 rLoc2_290 = (real64) cs->w01F8 / rLoc1_286 + (real64) cs->w01FA;
+		real64 rLoc3_292 = rLoc1_286 + (real64) cs->w01F6;
+		real64 rLoc4_293 = 0.0;
 		do
 		{
-			real64 rLoc5_296 = cos(rLoc5);
-			cs->t01EB.u0 = (int16) ((real64) cs->w01E3 / (sin(rLoc5) * rLoc3_292 + (real64) cs->w01A1) * rLoc5_296 * rLoc2_290);
-			Eq_93 ax_130 = cs->t01EB;
-			rLoc5 = rLoc5_296 * rLoc3_292;
-			cs->t01EB.u0 = (int16) rLoc5;
-			byte bh_147 = SLICE(bx_162, byte, 8);
-			Eq_93 di_134 = cs->t01EB;
-			if (ax_130 <= 0xE7 && di_134 <= 0x9F)
+			real64 rLoc5_296 = cos(rLoc4_293);
+			cs->t01EB.u0 = (int16) ((real64) cs->w01E3 / (sin(rLoc4_293) * rLoc3_292 + (real64) cs->w01A1) * rLoc5_296 * rLoc2_290);
+			Eq_96 ax_131 = cs->t01EB;
+			cs->t01EB.u0 = (int16) (rLoc5_296 * rLoc3_292);
+			byte bh_148 = SLICE(bx_163, byte, 8);
+			Eq_96 di_135 = cs->t01EB;
+			if (ax_131 <= 0xE7 && di_135 <= 0x9F)
 			{
-				Eq_96 di_142 = (word16) ((ax_130 - 0x28) *s 0x0140) + ((word16) di_134.u2 + 0x00A0);
-				0x7000->*di_142 = dl_102;
-				ss->*((word16) di_142 + 986) = bh_147;
+				Eq_99 di_143 = (word16) ((ax_131 - 0x28) *s 0x0140) + ((word16) di_135.u2 + 0x00A0);
+				0x7000->*di_143 = dl_100;
+				ss->*((word16) di_143 + 986) = bh_148;
 			}
-			bx_162 = (word16) bx_162 + 32;
-		} while (bx_162 != 0x00);
-		--cx_172;
-		rLoc2 = rLoc2_290;
-		rLoc1_285 *= cs->r01FC;
-		byte cl_276 = (byte) cx_172;
-	} while (cx_172 != 0x00);
+			rLoc4_293 += (real64) cs->r01F2;
+			bx_163 = (word16) bx_163 + 32;
+		} while (bx_163 != 0x00);
+		--cx_173;
+		rLoc1_286 *= (real64) cs->r01FC;
+		byte cl_277 = (byte) cx_173;
+	} while (cx_173 != 0x00);
 	do
 	{
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
 		__outb(0x03C8, 0x00);
-		byte al_187;
+		byte al_188 = 0x00;
 		do
 		{
-			__outb(969, al_187);
-			__outb(969, al_187);
-			__outb(969, al_187);
-			--al_187;
-		} while (al_187 != 0x00);
-		struct Eq_208 Eq_106::* di_195 = Eq_106::a0A00;
-		word16 cx_212 = SEQ(~0x19, cl_276);
+			__outb(969, al_188);
+			__outb(969, al_188);
+			__outb(969, al_188);
+			--al_188;
+		} while (al_188 != 0x00);
+		struct Eq_213 Eq_109::* di_196 = Eq_109::a0A00;
+		word16 cx_213 = SEQ(~0x19, cl_277);
 		do
 		{
-			(0xA000->*di_195).b0000 = ~(0x8000->*((char *) SEQ(di_195[986], (0x7000->*di_195).b0000) + si_15));
-			--cx_212;
-			++di_195;
-			cl_276 = (byte) cx_212;
-		} while (cx_212 != 0x00);
+			(0xA000->*di_196).b0000 = ~(0x8000->*((char *) SEQ(di_196[986], (0x7000->*di_196).b0000) + si_15));
+			--cx_213;
+			++di_196;
+			cl_277 = (byte) cx_213;
+		} while (cx_213 != 0x00);
 		si_15 -= 0x0101;
-	} while ((uint16) (uint8) __inb(0x60) != 0x01);
+	} while ((uint16) __inb(0x60) != 0x01);
 }
 

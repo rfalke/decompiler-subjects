@@ -7,12 +7,12 @@
 byte g_bFFBFAE94;
 <anonymous> g_t0001;
 <anonymous> g_t0005;
-Eq_2220 g_t0041;
-Eq_2220 g_t005A;
-Eq_2220 g_t0061;
-Eq_2220 g_t007A;
-Eq_1955 g_t00FF;
-Eq_2220 g_t0100;
+Eq_2165 g_t0041;
+Eq_2165 g_t005A;
+Eq_2165 g_t0061;
+Eq_2165 g_t007A;
+Eq_1903 g_t00FF;
+Eq_2165 g_t0100;
 <anonymous> g_t4014CD = <code>;
 <anonymous> * g_a402878[] = 
 	{
@@ -42,7 +42,7 @@ int32 g_dw4050B0 = 3;
 word32 g_dw4050B4 = 0x07;
 ui32 g_dw4050B8 = 0x0A;
 word32 g_dw4050BC = 0x8C;
-Eq_5723 g_a4050E0[19] = 
+Eq_5595 g_a4050E0[19] = 
 	{
 		
 		{
@@ -129,7 +129,7 @@ byte g_a405170[5] =
 		0x08,
 		0x00,
 	};
-Eq_5725 g_a405178[6] = 
+Eq_5597 g_a405178[6] = 
 	{
 		
 		{
@@ -214,10 +214,10 @@ word32 g_dw4055B0 = 0x00;
 struct _EXCEPTION_POINTERS * g_ptr4055B4 = null;
 word32 g_dw4056BC = 0x00;
 <anonymous> * g_ptr4056C0 = null;
-ui32 g_dw4056C4 = 0x00;
-Eq_4521 g_t4056C8 = null;
-Eq_4521 g_t4056CC = null;
-Eq_4521 g_t4056D0 = null;
+word32 g_dw4056C4 = 0x00;
+Eq_4391 g_t4056C8 = null;
+Eq_4391 g_t4056CC = null;
+Eq_4391 g_t4056D0 = null;
 Eq_8 g_t4056DC = 
 	{
 		0x00
@@ -231,7 +231,7 @@ word32 g_dw4056F8 = 0x00;
 word32 g_dw4056FC = 0x00;
 <anonymous> * g_ptr405700 = null;
 ui32 g_dw405704 = 0x00;
-Eq_3113 g_t405708 = 
+Eq_3036 g_t405708 = 
 	{
 		0
 	};
@@ -516,7 +516,7 @@ byte g_a405740[257] =
 		0x00,
 		0x00,
 	};
-Eq_1929 g_a405840[] = 
+Eq_1877 g_a405840[] = 
 	{
 	};
 byte g_a405841[257] = 
@@ -1041,7 +1041,7 @@ Eq_8 g_t405944 =
 	{
 		0x00
 	};
-Eq_357 g_t405948 = null;
+Eq_356 g_t405948 = null;
 Eq_8 g_t405960 = 
 	{
 		0x00

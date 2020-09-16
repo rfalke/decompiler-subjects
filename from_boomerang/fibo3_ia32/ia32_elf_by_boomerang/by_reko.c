@@ -126,7 +126,7 @@ void main()
 {
 	__align(fp - 0x1C);
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x0C);
 	printf("fibonacci(%d) = %d\n", dwLoc0C, fib(dwLoc0C));
 }
 
@@ -137,7 +137,7 @@ void __libc_csu_init(word32 ecx)
 	int32 eax_30 = 134518516 - 134518516;
 	if (eax_30 >> 0x02 == 0x00)
 		return;
-	Eq_131 edi_35 = 0x00;
+	Eq_133 edi_35 = 0x00;
 	<anonymous> ** esi_38 = (<anonymous> **) 134518516;
 	do
 	{
@@ -160,7 +160,7 @@ void __do_global_ctors_aux(word32 edx)
 	<anonymous> * eax_14 = g_ptr8049534;
 	if (eax_14 != (<anonymous> *) ~0x00)
 	{
-		struct Eq_149 * ebx_17 = &g_ptr8049534;
+		struct Eq_151 * ebx_17 = &g_ptr8049534;
 		do
 		{
 			eax_14();

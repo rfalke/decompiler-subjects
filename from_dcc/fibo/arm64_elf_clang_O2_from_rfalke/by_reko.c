@@ -158,7 +158,7 @@ void main(word64 x24)
 	int32 dwLoc40_100 = (word32) x24;
 	if (dwLoc3C_97 >= 0x01)
 	{
-		int32 w23_44;
+		int32 w23_44 = 0x00;
 		do
 		{
 			fn0000000000400530();

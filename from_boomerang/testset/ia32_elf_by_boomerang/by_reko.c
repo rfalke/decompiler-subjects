@@ -98,13 +98,13 @@ void frame_dummy()
 		fn00000000();
 }
 
-// 08048370: void main(Stack byte bArg04)
-void main(byte bArg04)
+// 08048370: void main(Stack Eq_81 dwArg04)
+void main(Eq_81 dwArg04)
 {
 	__align(fp - 0x0C);
 	printf("Hello, set\n");
-	printf("argc <u 3: %d\n", (uint32) (uint8) (dwArg04 < 0x03));
-	printf("(argc - 4) >= 0: %d\n", (uint32) (uint8) (dwArg04 >= 0x04));
+	printf("argc <u 3: %d\n", (uint32) (int8) (dwArg04 < 0x03));
+	printf("(argc - 4) >= 0: %d\n", (uint32) (int8) (dwArg04 >= 0x04));
 }
 
 // 080483C8: void __libc_csu_init(Register word32 edx)
@@ -112,7 +112,7 @@ void __libc_csu_init(word32 edx)
 {
 	_init(edx);
 	int32 edx_30 = 0x08049690 - 0x08049690;
-	Eq_119 esi_31 = 0x00;
+	Eq_118 esi_31 = 0x00;
 	int32 edx_32 = edx_30 >> 0x02;
 	if (edx_30 >> 0x02 > 0x00)
 	{

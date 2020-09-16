@@ -4,72 +4,74 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte cl, Register (ptr16 Eq_4) es, Register (ptr16 Eq_5) ds, FpuStack real64 rLoc2)
-void fn0C00_0100(byte ah, byte cl, struct Eq_4 * es, struct Eq_5 * ds, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register byte ah, Register byte cl, Register (ptr16 Eq_4) es, Register (ptr16 Eq_5) ds)
+void fn0C00_0100(byte ah, byte cl, struct Eq_4 * es, struct Eq_5 * ds)
 {
 	__syscall(0x10);
-	word16 ax_206 = SEQ(ah, 0x13);
+	real64 rLoc1_174 = 0.0;
+	word16 ax_202 = SEQ(ah, 0x13);
 	while (true)
 	{
-		byte al_166 = (byte) ax_206;
-		byte Eq_4::* di_134 = Eq_4::a0400;
-		word16 cx_137 = SEQ(~0x05, cl);
+		byte al_167 = (byte) ax_202;
+		byte Eq_4::* di_135 = Eq_4::a0400;
+		word16 cx_138 = SEQ(~0x05, cl);
 		while (true)
 		{
-			word16 ax_158 = ax_206;
-			byte cl_164 = (byte) cx_137;
-			if (cx_137 == 0x00)
+			word16 ax_159 = ax_202;
+			byte cl_165 = (byte) cx_138;
+			if (cx_138 == 0x00)
 				break;
-			es->*di_134 = al_166;
-			++di_134;
-			--cx_137;
+			es->*di_135 = al_167;
+			++di_135;
+			--cx_138;
 		}
-		cup16 di_103 = 0x0400;
+		cup16 di_104 = 0x0400;
 		do
 		{
-			real64 rLoc2_179 = rLoc2 / (real64) 0x20;
-			real64 rLoc2_180 = cos(rLoc2_179);
-			word16 ax_48 = ax_158 + 0x01;
-			word16 ax_70 = SEQ(SLICE(ax_48, byte, 8), fn0C00_0171(fp - 6, (byte) ax_48, 0xFE00, di_209, es, sin(rLoc2_179)));
-			fn0C00_015E(fp - 6, (byte) (ax_70 + 0x01), 0xFE00, di_209 + 0x96, es);
-			fn0C00_0171(fp - 6, 0x04, 0xFE00, di_209, es, rLoc2_180);
-			byte ah_157 = SLICE(ax_70 + 0x01, byte, 8);
-			rLoc2 = 1.0;
-			byte al_100 = __inb(0x60);
-			if (al_100 == 0x01)
+			ax_160 = SEQ(ah_158, al_101);
+			real64 rLoc2_180 = rLoc1_174 / 32.0;
+			real64 rLoc2_181 = cos(rLoc2_180);
+			word16 ax_49 = ax_159 + 0x01;
+			word16 ax_71 = SEQ(SLICE(ax_49, byte, 8), fn0C00_0171(fp - 6, (byte) ax_49, 0xFE00, di_205, es, sin(rLoc2_180)));
+			fn0C00_015E(fp - 6, (byte) (ax_71 + 0x01), 0xFE00, di_205 + 0x96, es);
+			fn0C00_0171(fp - 6, 0x04, 0xFE00, di_205, es, rLoc2_181);
+			byte ah_158 = SLICE(ax_71 + 0x01, byte, 8);
+			rLoc1_174 += 1.0;
+			byte al_101 = __inb(0x60);
+			if (al_101 == 0x01)
 				msdos_terminate_program20();
-			di_103 = di_209 + 0x0140;
-			ax_158 = SEQ(ah_157, al_100);
-			di_209 = di_103;
-		} while (di_209 < 0xFCC0);
-		byte Eq_5::* si_113 = Eq_5::a0400;
-		byte Eq_120::* di_114 = Eq_120::a0000;
-		word16 cx_117 = SEQ(~0x05, cl_164);
+			di_104 = di_205 + 0x0140;
+			di_205 = di_104;
+			ax_159 = ax_160;
+		} while (di_205 < 0xFCC0);
+		byte Eq_5::* si_114 = Eq_5::a0400;
+		byte Eq_122::* di_115 = Eq_122::a0000;
+		word16 cx_118 = SEQ(~0x05, cl_165);
 		while (true)
 		{
-			cl = (byte) cx_117;
-			if (cx_117 == 0x00)
+			cl = (byte) cx_118;
+			if (cx_118 == 0x00)
 				break;
-			0xA000->*di_114 = ds->*si_113;
-			++si_113;
-			++di_114;
-			--cx_117;
+			0xA000->*di_115 = ds->*si_114;
+			++si_114;
+			++di_115;
+			--cx_118;
 		}
-		ax_206 = SEQ(ah_157, al_100);
+		ax_202 = SEQ(ah_158, al_101);
 	}
 }
 
-// 0C00:015E: Register ui8 fn0C00_015E(Sequence (ptr32 Eq_59) ds_bx, Register ui8 al, Register Eq_61 bp, Register cup16 di, Register (ptr16 Eq_4) es)
+// 0C00:015E: Register ui8 fn0C00_015E(Sequence (ptr32 Eq_60) ds_bx, Register ui8 al, Register Eq_62 bp, Register cup16 di, Register (ptr16 Eq_4) es)
 // Called from:
 //      fn0C00_0100
 //      fn0C00_0171
-ui8 fn0C00_015E(struct Eq_59 * ds_bx, ui8 al, Eq_61 bp, cup16 di, struct Eq_4 * es)
+ui8 fn0C00_015E(struct Eq_60 * ds_bx, ui8 al, Eq_62 bp, cup16 di, struct Eq_4 * es)
 {
-	struct Eq_137 Eq_4::* di_12 = di + ds_bx->w0000;
+	struct Eq_139 Eq_4::* di_12 = di + ds_bx->w0000;
 	do
 	{
 		(es->*di_12).b0000 = al;
-		Eq_145 di_14 = di_12 + 1;
+		Eq_147 di_14 = di_12 + 1;
 		es->*di_14 = al;
 		ui8 al_17 = al ^ 0x08;
 		es->*((word16) di_14 + 1) = al_17;
@@ -80,10 +82,10 @@ ui8 fn0C00_015E(struct Eq_59 * ds_bx, ui8 al, Eq_61 bp, cup16 di, struct Eq_4 * 
 	return al_17 ^ 0x08;
 }
 
-// 0C00:0171: Register ui8 fn0C00_0171(Sequence (ptr32 Eq_59) ds_bx, Register ui8 al, Register Eq_61 bp, Register cup16 di, Register (ptr16 Eq_4) es, FpuStack real64 rArg0)
+// 0C00:0171: Register ui8 fn0C00_0171(Sequence (ptr32 Eq_60) ds_bx, Register ui8 al, Register Eq_62 bp, Register cup16 di, Register (ptr16 Eq_4) es, FpuStack real64 rArg0)
 // Called from:
 //      fn0C00_0100
-ui8 fn0C00_0171(struct Eq_59 * ds_bx, ui8 al, Eq_61 bp, cup16 di, struct Eq_4 * es, real64 rArg0)
+ui8 fn0C00_0171(struct Eq_60 * ds_bx, ui8 al, Eq_62 bp, cup16 di, struct Eq_4 * es, real64 rArg0)
 {
 	ds_bx->w0000 = (int16) (rArg0 * (real64) ds_bx->w0004);
 	return fn0C00_015E(ds_bx, al, bp, di + 0xAA, es);

@@ -15,9 +15,6 @@ char g_str40201D[] = "in main: %d\n";
 <anonymous> * g_a403E10[] = 
 	{
 	};
-Eq_9 g_t404024 = 
-	{
-		0x2A
-	};
+word32 g_dw404024 = 0x2A;
 byte g_b404028 = 0x00;
 

@@ -33,7 +33,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 		++di_346;
 		--cx_349;
 	}
-	byte ch_115 = SLICE(fn0C00_02AE(SEQ(SLICE((uint16) (uint8) fn0C00_0268(SEQ(ch_79, 0x00), 0x00, &Eq_2::b02C2, &Eq_86::b4BE4, 0xA000, ds), byte, 8), 0x28), 0x40), byte, 8);
+	byte ch_115 = SLICE(fn0C00_02AE(SEQ(SLICE((uint16) fn0C00_0268(SEQ(ch_79, 0x00), 0x00, &Eq_2::b02C2, &Eq_86::b4BE4, 0xA000, ds), byte, 8), 0x28), 0x40), byte, 8);
 	fn0C00_029C(0x05, 0x0A);
 	fn0C00_02A7(&ds->b055F);
 	fn0C00_029C(0x06, 0x0A);
@@ -43,27 +43,27 @@ void fn0C00_0100(struct Eq_2 * ds)
 	fn0C00_02A7(&ds->b057D);
 	fn0C00_029C(0x06, 0x0A);
 	fn0C00_02A7(&ds->b058F);
-	word16 cx_137 = fn0C00_02AE(SEQ(ch_135, 0x38), 0x40);
 	byte Eq_86::* di_144 = Eq_86::a3200;
+	word16 cx_149 = SEQ(0x14, (byte) fn0C00_02AE(SEQ(ch_135, 0x38), 0x40));
 	while (true)
 	{
-		byte ch_152 = SLICE(cx_137, byte, 8);
-		if (cx_137 == 0x00)
+		byte ch_152 = SLICE(cx_149, byte, 8);
+		if (cx_149 == 0x00)
 			break;
 		0xA000->*di_144 = 0x00;
 		++di_144;
-		--cx_137;
+		--cx_149;
 	}
 	byte ch_166 = SLICE(fn0C00_02AE(SEQ(ch_152, 0x18), 0x40), byte, 8);
 	ds->b02BF = 77;
 	ds->w02C0 = 0xF3;
-	byte ch_191 = SLICE(fn0C00_02AE(SEQ(SLICE((uint16) (uint8) fn0C00_0268(SEQ(ch_166, 0x00), 0x00, &Eq_2::b059E, &Eq_86::b5C16, 0xA000, ds), byte, 8), 0x12), 0x40), byte, 8);
+	byte ch_191 = SLICE(fn0C00_02AE(SEQ(SLICE((uint16) fn0C00_0268(SEQ(ch_166, 0x00), 0x00, &Eq_2::b059E, &Eq_86::b5C16, 0xA000, ds), byte, 8), 0x12), 0x40), byte, 8);
 	A000:5F91 = (byte *) 0x00;
 	byte ch_204 = SLICE(fn0C00_02AE(SEQ(ch_191, 0x14), 0x40), byte, 8);
 	ds->b02BF = 0xA9;
 	ds->w02C0 = 151;
-	struct Eq_203 Eq_86::* di_224 = &Eq_86::t7D99;
-	word16 cx_228 = SEQ(SLICE(fn0C00_02AE(SEQ(SLICE((uint16) (uint8) fn0C00_0268(SEQ(ch_204, 0x00), 0x00, &Eq_2::b02C2, &Eq_86::b4BE4, 0xA000, ds), byte, 8), 0x40), 0x40), byte, 8), 0x09);
+	struct Eq_204 Eq_86::* di_224 = &Eq_86::t7D99;
+	word16 cx_228 = SEQ(SLICE(fn0C00_02AE(SEQ(SLICE((uint16) fn0C00_0268(SEQ(ch_204, 0x00), 0x00, &Eq_2::b02C2, &Eq_86::b4BE4, 0xA000, ds), byte, 8), 0x40), 0x40), byte, 8), 0x09);
 	do
 	{
 		do
@@ -94,7 +94,7 @@ void fn0C00_0100(struct Eq_2 * ds)
 	do
 	{
 		byte cl_286 = (byte) cx_377;
-		fn0C00_0289(0x00, (uint16) (uint8) cl_286);
+		fn0C00_0289(0x00, (uint16) cl_286);
 		fn0C00_02AE(SEQ(SLICE(cx_377, byte, 8), (cl_286 & 0x01) + 0x01), 0x40);
 		cx_373 = cx_377 - 0x01;
 		cx_377 = cx_373;

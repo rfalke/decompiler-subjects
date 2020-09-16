@@ -7,19 +7,19 @@
 word16 g_w00C8;
 <anonymous> g_t06B0 = <code>;
 word16 g_w0C64 = 0x0FE0;
-Eq_135 g_t0EE0 = 
+Eq_134 g_t0EE0 = 
 	{
 		
 		{
 		},
 	};
-Eq_225 g_t0EF0 = 
+Eq_222 g_t0EF0 = 
 	{
 		
 		{
 		},
 	};
-Eq_411 g_t0F10 = 
+Eq_406 g_t0F10 = 
 	{
 		
 		{

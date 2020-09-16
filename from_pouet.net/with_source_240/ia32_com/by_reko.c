@@ -119,7 +119,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 			byte ch_349 = SLICE(cx_408 - 0x01, byte, 8);
 			cx_408 = cx_106;
 		} while (cx_408 != 0x01);
-		byte Eq_78::* bx_175;
+		byte Eq_78::* bx_175 = &Eq_78::b013F;
 		do
 		{
 			byte ah_176 = 0x00;
@@ -135,7 +135,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		do
 		{
 			word16 cx_220;
-			byte Eq_78::* si_227 = di_212 - 0x0141 + (uint16) ((uint8) (__inb(0x40) & 0x03));
+			byte Eq_78::* si_227 = di_212 - 0x0141 + (uint16) (__inb(0x40) & 0x03);
 			for (cx_220 = 0x0140; cx_220 != 0x00; --cx_220)
 			{
 				0xA000->*di_212 = 0xA000->*si_227;

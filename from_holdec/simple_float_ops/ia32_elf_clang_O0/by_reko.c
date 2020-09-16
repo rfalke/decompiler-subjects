@@ -121,7 +121,7 @@ void frame_dummy()
 //      constants
 void use(real64 rArg04)
 {
-	printf("%f", (real64) (uint128) (uint64) (real64) (uint128) (uint64) rArg04);
+	printf("%f", (real64) (uint128) (real64) (uint128) rArg04);
 }
 
 // 08048450: void use_int(Stack int32 dwArg04)
@@ -132,17 +132,17 @@ void use_int(int32 dwArg04)
 	printf("%d", dwArg04);
 }
 
-// 08048480: void read_ints(Register Eq_94 xmm1)
-void read_ints(Eq_94 xmm1)
+// 08048480: void read_ints(Register Eq_92 xmm1)
+void read_ints(Eq_92 xmm1)
 {
-	use((real64) (uint128) (uint64) ((real64) (uint128) (uint64) (real64) g_t804A030 + (((((real64) ((int32) g_b804A020) + (real64) __xorps(xmm1, xmm1)) + (real64) ((int32) g_w804A022)) + (real64) g_dw804A024) + (real64) g_dw804A028)));
+	use((real64) (uint128) ((real64) (uint128) (real64) g_t804A030 + (((((real64) ((int32) g_b804A020) + (real64) __xorps(xmm1, xmm1)) + (real64) ((int32) g_w804A022)) + (real64) g_dw804A024) + (real64) g_dw804A028)));
 }
 
 // 08048520: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint128 xmm0_15 = (uint128) (uint64) rArg04;
-	g_b804A020 = (byte) (int32) xmm0_15;
+	uint128 xmm0_15 = (uint128) rArg04;
+	g_b804A020 = (byte) (int32) (real64) xmm0_15;
 	real64 rLoc14_56 = (real64) xmm0_15;
 	g_w804A022 = (word16) (int32) rLoc14_56;
 	g_dw804A024 = (int32) rLoc14_56;
@@ -150,24 +150,24 @@ void write_ints(real64 rArg04)
 	uint16 wLoc26_59 = __fstcw();
 	__fldcw(3199);
 	__fldcw(wLoc26_59);
-	int64 qwLoc24_62 = (int64) (real64) (uint128) (uint64) rLoc14_56;
+	int64 qwLoc24_62 = (int64) (real64) (uint128) rLoc14_56;
 	g_dw804A034 = SLICE(qwLoc24_62, word32, 32);
 	g_t804A030 = (word32) qwLoc24_62;
 }
 
-// 080485B0: void read_floats(Register Eq_94 xmm1)
-void read_floats(Eq_94 xmm1)
+// 080485B0: void read_floats(Register Eq_92 xmm1)
+void read_floats(Eq_92 xmm1)
 {
-	use((real64) (uint128) (uint64) (real64) (uint128) (uint64) ((real64) g_r804A048 + (((real64) ((uint128) ((uint32) g_r804A038)) + (real64) __xorps(xmm1, xmm1)) + (real64) ((uint128) ((uint64) g_r804A040)))));
+	use((real64) (uint128) (real64) (uint128) ((real64) g_r804A048 + (((real64) ((real32) ((uint128) g_r804A038)) + (real64) __xorps(xmm1, xmm1)) + (real64) ((uint128) g_r804A040))));
 }
 
 // 08048620: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	uint128 xmm0_9 = (uint128) (uint64) rArg04;
-	g_r804A038 = (real32) xmm0_9;
+	uint128 xmm0_9 = (uint128) rArg04;
+	g_r804A038 = (real32) (real64) xmm0_9;
 	real64 rLoc0C_26 = (real64) xmm0_9;
-	g_r804A040 = (real64) (uint128) (uint64) rLoc0C_26;
+	g_r804A040 = (real64) (uint128) rLoc0C_26;
 	g_r804A048 = (real80) rLoc0C_26;
 }
 
@@ -180,7 +180,7 @@ void converting_between_floats_f1()
 // 08048680: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	g_r804A038 = (real32) (uint128) (uint32) (real32) (real64) g_r804A048;
+	g_r804A038 = (real32) (uint128) (real32) (real64) g_r804A048;
 }
 
 // 080486A0: void converting_between_floats_d1()
@@ -192,7 +192,7 @@ void converting_between_floats_d1()
 // 080486C0: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	g_r804A040 = (real64) (uint128) (uint64) (real64) g_r804A048;
+	g_r804A040 = (real64) (uint128) (real64) g_r804A048;
 }
 
 // 080486F0: void converting_between_floats_l1()
@@ -210,42 +210,42 @@ void converting_between_floats_l2()
 // 08048730: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(real64 rArg04, real64 rArg0C)
 {
-	uint128 xmm0_10 = (uint128) (uint64) rArg0C;
-	real64 rLoc0C_111 = (real64) (uint128) (uint64) rArg04;
-	use((real64) (uint128) (uint64) rLoc0C_111 + (real64) xmm0_10);
+	uint128 xmm0_10 = (uint128) rArg0C;
+	real64 rLoc0C_111 = (real64) (uint128) rArg04;
+	use((real64) (uint128) rLoc0C_111 + (real64) xmm0_10);
 	real64 rLoc14_112 = (real64) xmm0_10;
-	use((real64) (uint128) (uint64) rLoc0C_111 - (real64) ((uint128) ((uint64) rLoc14_112)));
-	use((real64) (uint128) (uint64) rLoc14_112 - (real64) ((uint128) ((uint64) rLoc0C_111)));
-	use((real64) (uint128) (uint64) rLoc0C_111 * (real64) ((uint128) ((uint64) rLoc14_112)));
-	use((real64) (uint128) (uint64) rLoc0C_111 / (real64) ((uint128) ((uint64) rLoc14_112)));
-	use((real64) (uint128) (uint64) rLoc14_112 / (real64) ((uint128) ((uint64) rLoc0C_111)));
-	use((real64) __xorpd((uint128) (uint64) rLoc0C_111, g_t8048AC0));
+	use((real64) (uint128) rLoc0C_111 - (real64) ((uint128) rLoc14_112));
+	use((real64) (uint128) rLoc14_112 - (real64) ((uint128) rLoc0C_111));
+	use((real64) (uint128) rLoc0C_111 * (real64) ((uint128) rLoc14_112));
+	use((real64) (uint128) rLoc0C_111 / (real64) ((uint128) rLoc14_112));
+	use((real64) (uint128) rLoc14_112 / (real64) ((uint128) rLoc0C_111));
+	use((real64) __xorpd((uint128) rLoc0C_111, g_t8048AC0));
 }
 
 // 08048800: void compare_floats(Stack real64 rArg04, Stack real64 rArg0C)
 void compare_floats(real64 rArg04, real64 rArg0C)
 {
-	real64 rLoc0C_119 = (real64) (uint128) (uint64) rArg04;
-	Eq_338 rLoc14_120 = (real64) (uint128) (uint64) rArg0C;
-	uint128 xmm0_13 = (uint128) (uint64) rLoc0C_119;
-	use_int((word32) ((real64) xmm0_13 == rLoc14_120 & !PARITY_EVEN((real64) xmm0_13 - rLoc14_120) & 0x01));
-	uint128 xmm0_31 = (uint128) (uint64) rLoc0C_119;
-	use_int((word32) (((real64) xmm0_31 != rLoc14_120 | PARITY_EVEN((real64) xmm0_31 - rLoc14_120)) & 0x01));
-	use_int((word32) ((real64) (uint128) (uint64) rLoc0C_119 > rLoc14_120 & 0x01));
-	use_int((word32) ((real64) (uint128) (uint64) rLoc0C_119 >= rLoc14_120 & 0x01));
-	use_int((word32) ((real64) (uint128) (uint64) rLoc14_120 > (uint128) ((uint64) rLoc0C_119) & 0x01));
-	use_int((word32) ((real64) (uint128) (uint64) rLoc14_120 >= (uint128) ((uint64) rLoc0C_119) & 0x01));
+	real64 rLoc0C_119 = (real64) (uint128) rArg04;
+	Eq_312 rLoc14_120 = (real64) (uint128) rArg0C;
+	uint128 xmm0_13 = (uint128) rLoc0C_119;
+	use_int((word32) ((int8) ((real64) xmm0_13 == rLoc14_120) & (int8) (!PARITY_EVEN((real64) xmm0_13 - rLoc14_120)) & 0x01));
+	uint128 xmm0_31 = (uint128) rLoc0C_119;
+	use_int((word32) (((int8) ((real64) xmm0_31 != rLoc14_120) | (int8) PARITY_EVEN((real64) xmm0_31 - rLoc14_120)) & 0x01));
+	use_int((word32) ((int8) ((real64) (uint128) rLoc0C_119 > rLoc14_120) & 0x01));
+	use_int((word32) ((int8) ((real64) (uint128) rLoc0C_119 >= rLoc14_120) & 0x01));
+	use_int((word32) ((int8) ((real64) (uint128) rLoc14_120 > (real64) ((uint128) rLoc0C_119)) & 0x01));
+	use_int((word32) ((int8) ((real64) (uint128) rLoc14_120 >= (real64) ((uint128) rLoc0C_119)) & 0x01));
 }
 
 // 080488E0: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {
-	real64 rLoc0C_74 = (real64) (uint128) (uint64) rArg04;
-	use((real64) (uint128) (uint64) g_r8048AF0 * rLoc0C_74);
-	use((real64) (uint128) (uint64) g_r8048AE8 * rLoc0C_74);
-	use((real64) (uint128) (uint64) g_r8048AE0 * rLoc0C_74);
-	use((real64) (uint128) (uint64) g_r8048AD8 * rLoc0C_74);
-	use((real64) (uint128) (uint64) g_r8048AD0 * rLoc0C_74);
+	real64 rLoc0C_74 = (real64) (uint128) rArg04;
+	use((real64) (uint128) g_r8048AF0 * rLoc0C_74);
+	use((real64) (uint128) g_r8048AE8 * rLoc0C_74);
+	use((real64) (uint128) g_r8048AE0 * rLoc0C_74);
+	use((real64) (uint128) g_r8048AD8 * rLoc0C_74);
+	use((real64) (uint128) g_r8048AD0 * rLoc0C_74);
 }
 
 // 08048970: void main()
@@ -262,7 +262,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

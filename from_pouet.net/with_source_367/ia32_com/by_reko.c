@@ -11,32 +11,32 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 	word16 ax_11 = fn0C00_014D(ds->a0156 + 420, out si_13);
 	word16 si_21;
 	word16 ax_19 = fn0C00_014D(si_13, out si_21);
-	word16 Eq_3::* si_31;
+	byte Eq_3::* si_31;
 	fn0C00_014D(si_21, out si_31);
 	cup16 ax_24 = ax_19 + si_21;
 	Eq_27 si_41 = ax_24 + 0x06;
-	Eq_27 ax_42 = ds->*si_31 + (ax_11 + 0x0100);
-	if (ax_42 > ax_24 + 0x06)
+	Eq_27 ax_44 = (uint16) (ds->*si_31) + (ax_11 + 0x0100);
+	if (ax_44 > ax_24 + 0x06)
 	{
-		Eq_44 si_49 = ax_24 + 0x05;
-		Eq_47 di_50 = ax_42 - 0x01;
-		word16 cx_52;
-		for (cx_52 = ax_19; cx_52 != 0x00; --cx_52)
+		Eq_45 si_51 = ax_24 + 0x05;
+		Eq_48 di_52 = ax_44 - 0x01;
+		word16 cx_54;
+		for (cx_54 = ax_19; cx_54 != 0x00; --cx_54)
 		{
-			es->*di_50 = ds->*si_49;
-			--si_49;
-			--di_50;
+			es->*di_52 = ds->*si_51;
+			--si_51;
+			--di_52;
 		}
-		si_41 = ax_42;
+		si_41 = ax_44;
 	}
-	Eq_27 di_65 = si_41;
-	byte Eq_3::* si_70 = Eq_3::a0156;
-	word16 cx_71;
-	for (cx_71 = 0x01A0; cx_71 != 0x00; --cx_71)
+	Eq_27 di_67 = si_41;
+	byte Eq_3::* si_72 = Eq_3::a0156;
+	word16 cx_73;
+	for (cx_73 = 0x01A0; cx_73 != 0x00; --cx_73)
 	{
-		es->*di_65 = ds->*si_70;
-		++si_70;
-		di_65 = (word16) di_65 + 1;
+		es->*di_67 = ds->*si_72;
+		++si_72;
+		di_67 = (word16) di_67 + 1;
 	}
 }
 
@@ -45,7 +45,7 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 //      fn0C00_0100
 word16 fn0C00_014D(word16 * ds_si, ptr16 & siOut)
 {
-	struct Eq_80 * ds = SLICE(ds_si, selector, 16);
+	struct Eq_81 * ds = SLICE(ds_si, selector, 16);
 	word16 si_8;
 	fn0C00_0152(ds_si, out si_8);
 	ptr16 si_12;

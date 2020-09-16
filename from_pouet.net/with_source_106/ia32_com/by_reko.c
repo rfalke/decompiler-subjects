@@ -8,7 +8,7 @@
 void fn0C00_0100(byte ch, byte bh)
 {
 	__syscall(0x10);
-	ui16 bx_85 = SEQ(bh, 0x03);
+	ui16 bx_83 = SEQ(bh, 0x03);
 	do
 	{
 		byte Eq_25::* di_12 = &Eq_25::b0000;
@@ -21,11 +21,11 @@ void fn0C00_0100(byte ch, byte bh)
 			uint16 si_22 = 0x0280;
 			do
 			{
-				uint16 dx_31 = (uint16) (SEQ(dx_19, ax_20 + 0x0281 - si_22) % bx_85);
+				uint16 dx_31 = (uint16) (SEQ(dx_19, ax_20 + 0x0281 - si_22) % bx_83);
 				0xA000->*di_12 = (byte) dx_31 & 0x0F;
 				uint16 si_45 = si_22 - 0x01;
-				byte bl_73 = (byte) bx_85;
-				byte bh_83 = SLICE(bx_85, byte, 8);
+				byte bl_73 = (byte) bx_83;
+				byte bh_87 = SLICE(bx_83, byte, 8);
 				++di_12;
 				dx_19 = 0x00;
 				ax_20 = dx_31;
@@ -43,10 +43,10 @@ void fn0C00_0100(byte ch, byte bh)
 				return;
 			byte al_59 = 0000:046C;
 			dx_19 = SEQ(ah_63, al_59 & 0x0F);
-			ah_52 = SLICE(dx_136, byte, 8);
-			dx_136 = dx_19;
-		} while ((byte) dx_136 - (al_59 & 0x0F) <= 0x00);
-		bx_85 = SEQ(bh_83, bl_73 + 0x01);
+			ah_52 = SLICE(dx_134, byte, 8);
+			dx_134 = dx_19;
+		} while ((byte) dx_134 - (al_59 & 0x0F) <= 0x00);
+		bx_83 = SEQ(bh_87, bl_73 + 0x01);
 	} while (bl_73 != 0x01);
 }
 

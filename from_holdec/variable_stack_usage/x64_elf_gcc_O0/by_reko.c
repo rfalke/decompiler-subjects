@@ -86,7 +86,7 @@ void frame_dummy()
 //      with_alloca
 void use(word32 * rdi)
 {
-	g_dw601028 = (word32) (uint64) (word32) (uint64) (g_dw601028 + *rdi);
+	g_dw601028 = (word32) (uint64) (g_dw601028 + *rdi);
 }
 
 // 0000000000400515: void fill(Register word32 esi, Register (ptr64 void) rdi)
@@ -103,7 +103,7 @@ void fill(word32 esi, void * rdi)
 //      main
 void with_array(word32 edi)
 {
-	uint64 rax_43 = (word64) (fp - 0x48 - (uint64) ((uint128) ((uint64) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x12)) /u 0x10) *s 0x10) + 3 >> 0x02;
+	uint64 rax_43 = (word64) (fp - 0x48 - (uint64) ((uint128) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x12) /u 0x10) *s 0x10) + 3 >> 0x02;
 	fill((word32) (uint64) (word32) (uint64) edi, rax_43 << 0x02);
 	use(fp - 44);
 	use(rax_43 << 0x02);
@@ -115,7 +115,7 @@ void with_array(word32 edi)
 //      main
 void with_alloca(word32 edi)
 {
-	uint64 rax_29 = (word64) (fp - 0x28 - (uint64) ((uint128) ((uint64) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x1E)) /u 0x10) *s 0x10) + 0x0F >> 0x04;
+	uint64 rax_29 = (word64) (fp - 0x28 - (uint64) ((uint128) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x1E) /u 0x10) *s 0x10) + 0x0F >> 0x04;
 	fill((word32) (uint64) (word32) (uint64) edi, rax_29 << 0x04);
 	use(fp - 0x14);
 	use(rax_29 << 0x04);
@@ -138,7 +138,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_218 rbx_42 = 0x00;
+		Eq_214 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

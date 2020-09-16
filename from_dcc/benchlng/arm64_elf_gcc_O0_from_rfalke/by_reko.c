@@ -160,12 +160,13 @@ void main()
 	fn0000000000000730();
 	fn0000000000000720();
 	fn0000000000000720();
-	int64 qwLoc08_80 = 0x01;
-	while (qwLoc08_80 - qwLoc20 <= 0x00)
+	int64 qwLoc08_135 = 0x01;
+	while (qwLoc08_135 - qwLoc20 <= 0x00)
 	{
-		if (true)
+		int64 qwArg00_138;
+		for (qwArg00_138 = 0x01; qwArg00_138 <= 0x28; ++qwArg00_138)
 			;
-		++qwLoc08_80;
+		++qwLoc08_135;
 	}
 	fn0000000000000730();
 }

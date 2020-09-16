@@ -5,7 +5,8 @@
 #include "subject.h"
 
 <anonymous> g_t07C0 = <code>;
-Eq_326 g_t0F4C = 
+real64 g_r0AB8 = 1e-06;
+Eq_354 g_t0F4C = 
 	{
 		
 		{

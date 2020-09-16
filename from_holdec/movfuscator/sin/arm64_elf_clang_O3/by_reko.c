@@ -136,7 +136,7 @@ void frame_dummy(word64 x29, word64 x30)
 // 00000000004006C0: void main()
 void main()
 {
-	Eq_85 s8_107;
+	Eq_85 s8_107 = g_t400908;
 	real32 s15_58 = g_r400924;
 	Eq_85 s9_59 = g_t400928;
 	do

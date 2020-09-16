@@ -102,12 +102,12 @@ void main(word64 x19, int32 dwArg00)
 			int32 w1_55 = x29_11[38];
 			if (w1_55 <= 0x02)
 				goto l000000000000083C;
-			int32 w3_58;
+			int32 w3_58 = w1_55;
 			do
 			{
 				word64 x19_64;
-				word64 x20_65;
-				fib(w3_58 - 0x01, out x19_64, out x20_65, out x29_11);
+				word64 x20_125;
+				fib(w3_58 - 0x01, out x19_64, out x20_125, out x29_11);
 				w3_58 -= 0x02;
 				w19_107 = (word32) x19_64;
 			} while (w3_58 > 0x02);

@@ -38,11 +38,11 @@ l0C00_0136:
 		bh_39 = SLICE(bx_402, byte, 8);
 		bl_25 = (byte) bx_402;
 	}
-	word16 cx_663;
-	word16 dx_666;
+	word16 cx_666;
 	word16 dx_669;
+	word16 dx_672;
+	bool v35_425;
 	ci8 al_103;
-	bool Z_143;
 	__syscall(33);
 	cl_106 = dh_100;
 	if ((dh_100 & ~0x07) == 0xB0)
@@ -54,7 +54,7 @@ l0C00_014A:
 			__ror(0xCC, cl_106);
 			__syscall(33);
 			__syscall(33);
-			dx_669 = SEQ(dh_100, 0x6C - (cl_106 & 0x04));
+			dx_672 = SEQ(dh_100, 0x6C - (cl_106 & 0x04));
 			if (dh_100 == 0x02)
 				goto l0C00_0164;
 l0C00_0179:
@@ -70,10 +70,10 @@ l0C00_0179:
 			if (dh_100 != 0x00)
 				goto l0C00_01A7;
 			dh_100 += 0x02;
-			Z_143 = SLICE(cond(dh_100), bool, 2);
+			v35_425 = dh_100 != 0x00;
 l0C00_018F:
 			cl_106 = __ror(cl_106, 0x03);
-		} while (Z_143);
+		} while (v35_425);
 	}
 	dh_100 &= 0x05;
 	al_103 = dh_100;
@@ -97,7 +97,7 @@ l0C00_01B7:
 						al_160 = (al_157 & 0x0F) + 0x30;
 					__syscall(33);
 				}
-				dx_669 = SEQ(dh_152, al_160);
+				dx_672 = SEQ(dh_152, al_160);
 				if (dh_152 < 0x00)
 				{
 					word16 cx_226;
@@ -107,25 +107,25 @@ l0C00_01B7:
 					fn0C00_0247();
 					byte al_232 = (byte) ax_229;
 					Eq_188 CZ_276 = SLICE(SCZOP_231, bool, 2);
-					byte cl_426 = (byte) cx_226;
-					byte dl_427 = (byte) dx_228;
-					byte ah_428 = SLICE(ax_229, byte, 8);
+					byte cl_429 = (byte) cx_226;
+					byte dl_430 = (byte) dx_228;
+					byte ah_431 = SLICE(ax_229, byte, 8);
 					return;
 				}
 l0C00_0164:
-				cx_663 = SEQ(ch_108 + bh_39, cl_106);
-				dx_666 = dx_669;
+				cx_666 = SEQ(ch_108 + bh_39, cl_106);
+				dx_669 = dx_672;
 				goto l0C00_0166;
 			}
-			cx_663 = SEQ(ch_108, cl_106);
-			dx_666 = SEQ(dh_100, 0x8A);
+			cx_666 = SEQ(ch_108, cl_106);
+			dx_669 = SEQ(dh_100, 0x8A);
 			if (al_103 != 0x00)
 			{
 l0C00_0166:
 				ah = 0x02;
-				dl = (byte) dx_666;
-				cl = (byte) cx_663;
-				ch_108 = SLICE(cx_663, byte, 8);
+				dl = (byte) dx_669;
+				cl = (byte) cx_666;
+				ch_108 = SLICE(cx_666, byte, 8);
 				if (ch_108 == ~0x26)
 				{
 					bios_video_set_mode(0x03);
@@ -138,7 +138,7 @@ l0C00_0166:
 			goto l0C00_014A;
 		}
 		dh_100 += bh_39;
-		Z_143 = SLICE(cond(dh_100), bool, 2);
+		v35_425 = dh_100 != 0x00;
 		if (dh_100 == 0x00)
 			goto l0C00_01B7;
 		goto l0C00_018F;

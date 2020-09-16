@@ -74,7 +74,7 @@ void main(up32 w0)
 {
 	if (w0 > 0x07)
 		goto l0000000000000714;
-	switch ((word32) (0x070C + (int64) ((int8) ((word32) (&g_t0940)[(uint64) ((uint32) (w0 - 0x02))]))))
+	switch ((word32) (0x070C + (int64) ((int8) ((word32) (&g_t0940)[(uint64) (w0 - 0x02)]))))
 	{
 	case 0x00:
 		goto l0000000000000710;

@@ -46,9 +46,9 @@ void fn0C00_0100(byte bh, byte bl)
 	uint32 dx_ax_79 = di_17 * SEQ(0x5A, __inb(0x40));
 	Eq_12 dx_80 = SLICE(dx_ax_79, word16, 16);
 	byte ah_121 = SLICE(dx_ax_79, byte, 8);
-	Eq_12 bp_275 = dx_80;
+	Eq_12 bp_273 = dx_80;
 	Eq_12 di_130 = 0x0785;
-	Eq_12 si_252 = 0xB800;
+	Eq_12 si_250 = 0xB800;
 	word16 bx_105 = SEQ(bh, bl);
 	Eq_100 cx_154 = SEQ(ch_153, ss->*((word16) dx_80 - 0x0078));
 	if (bl != 0x00)
@@ -76,12 +76,12 @@ void fn0C00_0100(byte bh, byte bl)
 	{
 		byte al_139 = __inb(0x03DA);
 	} while ((al_139 & 0x08) != 0x00);
-	word16 cx_609;
-	fn0C00_01D9(di_130, al_139 & 0x08, cx_154, out cx_609);
+	word16 cx_612;
+	fn0C00_01D9(di_130, al_139 & 0x08, cx_154, out cx_612);
 	Eq_183 C_158 = <invalid>;
 	word16 ax_181;
 	word16 bx_183;
-	Eq_100 ax_599;
+	Eq_100 ax_602;
 	fn0C00_0000();
 	byte bh_188 = SLICE(bx_183, byte, 8);
 	byte al_189 = (byte) ax_181;

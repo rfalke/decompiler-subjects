@@ -167,14 +167,14 @@ ptr64 copy1_four_times(word16 * x0, int16 * x1, ptr64 x2)
 	ptr64 x2_114 = x2;
 	if (w0_24 <= 0x03)
 	{
-		switch ((word32) (0x08D8 + (int64) ((int32) (&g_t0EE0)[(uint64) ((uint32) w0_24) / 4])))
+		switch ((word32) (0x08D8 + (int64) (&g_t0EE0)[(uint64) w0_24 / 4]))
 		{
 		case 0x00:
 			do
 			{
 				*qwLoc18_79 = (word16) (word32) *qwLoc20_80;
-				struct Eq_148 * qwLoc20_86 = qwLoc20_80 + 1;
-				struct Eq_151 * qwLoc18_84 = qwLoc18_79 + 1;
+				struct Eq_146 * qwLoc20_86 = qwLoc20_80 + 1;
+				struct Eq_149 * qwLoc18_84 = qwLoc18_79 + 1;
 				qwLoc18_84->w0000 = (word16) (word32) qwLoc20_86->w0000;
 				qwLoc18_84->w0002 = (word16) (word32) qwLoc20_86->w0002;
 				qwLoc18_84->w0004 = (word16) (word32) qwLoc20_86->w0004;
@@ -203,14 +203,14 @@ ptr64 copy1_eight_times(word16 * x0, int16 * x1, ptr64 x2)
 	ptr64 x2_102 = x2;
 	if (w0_24 <= 0x07)
 	{
-		switch ((word32) (2524 + (int64) ((int32) (&g_t0EF0)[(uint64) ((uint32) w0_24) / 4])))
+		switch ((word32) (2524 + (int64) (&g_t0EF0)[(uint64) w0_24 / 4]))
 		{
 		case 0x00:
 			do
 			{
 				*qwLoc18_115 = (word16) (word32) *qwLoc20_116;
-				struct Eq_238 * qwLoc20_122 = qwLoc20_116 + 1;
-				struct Eq_241 * qwLoc18_120 = qwLoc18_115 + 1;
+				struct Eq_234 * qwLoc20_122 = qwLoc20_116 + 1;
+				struct Eq_237 * qwLoc18_120 = qwLoc18_115 + 1;
 				qwLoc18_120->w0000 = (word16) (word32) qwLoc20_122->w0000;
 				qwLoc18_120->w0002 = (word16) (word32) qwLoc20_122->w0002;
 				qwLoc18_120->w0004 = (word16) (word32) qwLoc20_122->w0004;
@@ -293,16 +293,16 @@ void copy2_eight_times(word16 * x0, int16 * x1, word64 x2)
 				x1_27 = qwLoc08_110 + 1;
 				goto l0000000000000C6C;
 			}
-			x0_26 = 0x0C64 + (int64) ((int32) (&g_t0F10)[(uint64) ((uint32) (w0_22 - 0x01)) / 4]);
+			x0_26 = 0x0C64 + (int64) (&g_t0F10)[(uint64) (w0_22 - 0x01) / 4];
 			x1_27 = &g_w0C64;
 			switch ((word32) x0_26)
 			{
 			case 0x00:
 l0000000000000C6C:
 				*x0_26 = (word16) (word32) *qwLoc10_111;
-				struct Eq_425 * qwLoc10_118 = qwLoc10_111 + 1;
+				struct Eq_419 * qwLoc10_118 = qwLoc10_111 + 1;
 				*x1_27 = (word16) (word32) qwLoc10_118->w0000;
-				struct Eq_436 * qwLoc08_119 = x1_27 + 1;
+				struct Eq_430 * qwLoc08_119 = x1_27 + 1;
 				qwLoc08_119->w0000 = (word16) (word32) qwLoc10_118->w0002;
 				qwLoc08_119->w0002 = (word16) (word32) qwLoc10_118->w0004;
 				qwLoc08_119->w0004 = (word16) (word32) qwLoc10_118->w0006;

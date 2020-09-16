@@ -23,7 +23,7 @@ void fn0C00_0100(byte Eq_4::* si, byte Eq_25::* di, struct Eq_4 * ds)
 			ah_14 = SLICE(ax_15 - 0x01, byte, 8);
 			++di;
 		} while (di != &Eq_25::b0000);
-		uint16 ax_28 = (uint16) (uint8) __inb(0x60);
+		uint16 ax_28 = (uint16) __inb(0x60);
 		ah_14 = SLICE(ax_28 - 0x01, byte, 8);
 	} while (ax_28 != 0x01);
 }

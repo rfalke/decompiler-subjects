@@ -23,7 +23,7 @@ word64 g_qw12FC0 = 0x00;
 <anonymous> * g_ptr13020 = &g_t0ED0;
 <anonymous> * g_ptr13028 = &g_t0ED0;
 <anonymous> * g_ptr13030 = &g_t0ED0;
-Eq_181 g_t13048 = 
+Eq_178 g_t13048 = 
 	{
 		
 		{

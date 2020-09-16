@@ -24,7 +24,7 @@ word64 g_qw410FE0 = 0x00;
 <anonymous> * g_ptr411040 = &g_t4005C0;
 word32 g_dw411058 = 0x00;
 byte g_b411060 = 0x00;
-Eq_390 g_t411068 = 
+Eq_387 g_t411068 = 
 	{
 		
 		{

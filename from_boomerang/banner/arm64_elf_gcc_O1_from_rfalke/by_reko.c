@@ -171,8 +171,7 @@ void main(word64 x22, word64 x24)
 	fn0000000000000EF0();
 	int32 w0_46 = (word32) 0x12D0;
 	int32 w23_50 = w0_46 <= 0x0A ? w0_46 : 0x0A;
-	ui32 w26_52 = (w23_50 << 3) - 0x01;
-	int64 x21_60 = (int64) (int32) w26_52;
+	int64 x21_60 = (int64) ((w23_50 << 3) - 0x01);
 	int64 x22_57 = SEQ(x22_32_32_54, w23_50 - 0x01) + 0x01 << 3;
 	word32 w20_177;
 	int64 x24_64 = x21_60 - SEQ(x24_32_32_62, (w23_50 << 3) - 0x01);
@@ -188,12 +187,12 @@ void main(word64 x22, word64 x24)
 				int32 w1_81 = w1_77 >= 0x20 ? w1_77 - 0x20 : 0x00;
 				int32 w0_85 = w1_81 < 0x00 ? w1_81 + 0x07 : w1_81;
 				ui32 w1_94 = ((w1_81 & 0x07) << 3) - (w1_81 & 0x07);
-				Eq_181 x5_91 = (&g_t13048)[(int64) (int32) (w20_177 + ((w0_85 >> 3) << 3) - (w0_85 >> 3)) / 8];
-				ui32 w0_100;
+				Eq_178 x5_91 = (&g_t13048)[(int64) (w20_177 + ((w0_85 >> 3) << 3) - (w0_85 >> 3)) / 8];
+				ui32 w0_100 = w1_94;
 				word32 w1_98 = (word32) x6_390 - w1_94;
 				do
 				{
-					Mem107[fp + ~0x47 + (int64) ((int32) (w1_98 + w0_100)):byte] = (byte) (word32) Mem101[x5_91 + (int64) ((int32) w0_100):byte];
+					Mem107[fp + ~0x47 + CONVERT(w1_98 + w0_100, word32, int64):byte] = SLICE(CONVERT(Mem101[x5_91 + CONVERT(w0_100, word32, int64):byte], byte, word32), byte, 0);
 					++w0_100;
 				} while (w0_100 != w1_94 + 0x07);
 				Mem118[fp + ~0x47 + x6_390 + 7:byte] = 0x20;
@@ -202,11 +201,11 @@ void main(word64 x22, word64 x24)
 				x6_390 = x6_387;
 			} while (x6_390 + 0x08 - x22_57 != 0x00);
 		}
-		if ((w26_52 & 0x00) != 0x00 && (word32) Mem137[(fp + ~0x47) + x21_60:byte] == 0x20)
+		if (0x00 != 0x00 && CONVERT(Mem137[(fp + ~0x47) + x21_60:byte], byte, word32) == 0x20)
 		{
 			word64 x0_143 = fp + ~0x47 + x21_60;
 			word64 x3_148 = fp + ~0x47 + x24_64;
-			int64 x2_154 = (int64) (int32) ((w23_50 << 3) - 0x02);
+			int64 x2_154 = (int64) ((w23_50 << 3) - 0x02);
 			do
 			{
 				*x0_143 = 0x00;

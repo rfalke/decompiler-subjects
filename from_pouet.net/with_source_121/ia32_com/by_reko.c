@@ -10,15 +10,15 @@ void fn0C00_0100(byte bh, byte bl, struct Eq_4 * ds)
 	bios_video_set_mode(0x13);
 	bios_video_set_cursor_position(bh, 0x07, 0x0F);
 	msdos_display_string(&ds->b0136);
-	cui16 cx_56 = 0x013F;
+	cui16 cx_58 = 0x013F;
 	do
 	{
 		__syscall(0x10);
 		bios_video_set_CGA_palette(bh, bl);
 		__syscall(0x10);
-		cx_56 = cx_59 - 0x01;
-		cx_59 = cx_56;
-	} while (cx_59 != 0x01);
+		cx_58 = cx_61 - 0x01;
+		cx_61 = cx_58;
+	} while (cx_61 != 0x01);
 	bios_video_set_mode(0x03);
 }
 

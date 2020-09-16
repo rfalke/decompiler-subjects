@@ -200,7 +200,7 @@ void fact(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	int32 w1_11;
+	int32 w1_11 = 0x02;
 	do
 		++w1_11;
 	while (w0 >= w1_11);
@@ -215,11 +215,11 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	if (w0 > 0x02)
 	{
 		word64 x19_27;
-		word64 x20_28;
-		fib(w0 - 0x01, out x19_27, out x20_28);
+		word64 x20_81;
+		fib(w0 - 0x01, out x19_27, out x20_81);
 		word64 x20_40;
-		word64 x19_81;
-		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_81, out x20_40);
+		word64 x19_82;
+		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out x19_82, out x20_40);
 		x19Out = qwLoc10;
 		x20Out = x19;
 		return w0_43;
@@ -238,12 +238,12 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 int32 print_num(int32 w0, Eq_148 w1, ptr64 & x29Out, ptr64 & x30Out)
 {
 	fn0000000000000890();
-	int32 w20_25;
+	int32 w20_25 = w0;
 	word32 w19_34 = 0x0100;
 	do
 	{
 		int32 w0_38 = w20_25 - (w20_25 / w1) * w1;
-		(int64) (int32) w19_34 + 0x00 = (int64) (byte) (w0_38 < 0x0A ? w0_38 + 0x30 : w0_38 + 0x57);
+		null[(int64) w19_34] = (byte) (w0_38 < 0x0A ? w0_38 + 0x30 : w0_38 + 0x57);
 		++w19_34;
 		w20_25 /= w1;
 	} while (w20_25 != 0x00);
@@ -264,18 +264,18 @@ void help()
 	fn00000000000008D0();
 }
 
-// 0000000000000BA0: void main(Register Eq_200 w0, Register word32 w1, Register word64 x21)
-void main(Eq_200 w0, word32 w1, word64 x21)
+// 0000000000000BA0: void main(Register Eq_199 w0, Register word32 w1, Register word64 x21)
+void main(Eq_199 w0, word32 w1, word64 x21)
 {
 	word32 x21_32_32_104 = SLICE(x21, word32, 32);
 	if (w0 <= 0x03)
 	{
-		int32 w0_27 = (int64) (int32) (w1 + 0x04) + 0x00;
+		int32 w0_27 = null[(int64) (w1 + 0x04) / 4];
 		fn0000000000000880();
 		*g_ptr11FA0 = (union Eq_148 *) 0x0A;
 		if (w0 > 0x02)
 		{
-			Eq_148 w0_39 = (int64) (int32) (w1 + 0x08) + 0x00;
+			Eq_148 w0_39 = null[(int64) (w1 + 0x08) / 4];
 			fn0000000000000880();
 			*g_ptr11FA0 = (union Eq_148 *) w0_39;
 			if (w0_39 > 0x24)
@@ -296,7 +296,7 @@ void main(Eq_200 w0, word32 w1, word64 x21)
 			fn0000000000000900();
 		else
 		{
-			<anonymous> * x1_101 = (int64) (int32) (word32) 2664;
+			<anonymous> * x1_101 = (int64) (word32) 2664;
 			word64 x0_112;
 			word64 x3_114;
 			word64 x2_115;

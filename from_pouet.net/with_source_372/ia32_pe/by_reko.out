@@ -1,12 +1,14 @@
-Using options:
+=== Using options:
+Packer 'UPX v0.89.6 - v1.02 / v1.05 - v1.22' detected.
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.Environments.Windows.Win32Emulator.EnsureProc (Reko.Environments.Windows.Win32Emulator+Module module, System.String procName, System.Action`1[T] emulator, Reko.Core.Serialization.ProcedureCharacteristics chars) [0x0002b] in <e0676101949b42a58c8296ed1c63e500>:0 
-  at Reko.Environments.Windows.Win32Emulator.Reko.Core.IImportResolver.ResolveProcedure (System.String moduleName, System.String importName, Reko.Core.IPlatform platform) [0x00008] in <e0676101949b42a58c8296ed1c63e500>:0 
-  at Reko.Core.NamedImportReference.ResolveImportedProcedure (Reko.Core.IImportResolver resolver, Reko.Core.IPlatform platform, Reko.Core.AddressContext ctx) [0x00000] in <b2493f84bc1c4ae0a3abd1f5c5378f54>:0 
-  at Reko.Environments.Windows.Win32Emulator.InterceptCallsToImports (System.Collections.Generic.Dictionary`2[TKey,TValue] importReferences) [0x00018] in <e0676101949b42a58c8296ed1c63e500>:0 
-  at Reko.Environments.Windows.Win32Emulator..ctor (Reko.Core.SegmentMap map, Reko.Core.IPlatform platform, System.Collections.Generic.Dictionary`2[TKey,TValue] importReferences) [0x00040] in <e0676101949b42a58c8296ed1c63e500>:0 
-  at Reko.ImageLoaders.OdbgScript.OdbgScriptLoader.Load (Reko.Core.Address addrLoad) [0x00051] in <ad131e8c2a36414da92789eb43cb5c64>:0 
-  at Reko.ImageLoaders.MzExe.ExeImageLoader.Load (Reko.Core.Address addrLoad) [0x00006] in <0357ca995fbb47e7b10cf02ff1a7b01b>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0006f] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.DecompilerDriver.Load (System.String fileName, System.String loaderName) [0x00062] in <6a264ef1b92c4115b517d6a392a986a9>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0001f] in <dc0e44df5cc444f3808f49ca9ab72f91>:0 
+  at Reko.Environments.Windows.Win32Emulator.EnsureProc (Reko.Environments.Windows.Win32Emulator+Module module, System.String procName, System.Action`1[T] emulator, Reko.Core.Serialization.ProcedureCharacteristics chars) [0x0002a] in <33496dde0b35464eb32854d06cf76225>:0 
+  at Reko.Environments.Windows.Win32Emulator.Reko.Core.IDynamicLinker.ResolveProcedure (System.String moduleName, System.String importName, Reko.Core.IPlatform platform) [0x00008] in <33496dde0b35464eb32854d06cf76225>:0 
+  at Reko.Core.NamedImportReference.ResolveImportedProcedure (Reko.Core.IDynamicLinker resolver, Reko.Core.IPlatform platform, Reko.Core.AddressContext ctx) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Environments.Windows.Win32Emulator.InterceptCallsToImports (System.Collections.Generic.Dictionary`2[TKey,TValue] importReferences) [0x00018] in <33496dde0b35464eb32854d06cf76225>:0 
+  at Reko.Environments.Windows.Win32Emulator..ctor (Reko.Core.SegmentMap map, Reko.Core.IPlatform platform, System.Collections.Generic.Dictionary`2[TKey,TValue] importReferences) [0x00040] in <33496dde0b35464eb32854d06cf76225>:0 
+  at Reko.Environments.Windows.Win32Platform.CreateEmulator (Reko.Core.SegmentMap segmentMap, System.Collections.Generic.Dictionary`2[TKey,TValue] importReferences) [0x00000] in <33496dde0b35464eb32854d06cf76225>:0 
+  at Reko.ImageLoaders.OdbgScript.OdbgScriptLoader.Load (Reko.Core.Address addrLoad) [0x0004c] in <5131d6d770ce410db91321ab14a3f8c9>:0 
+  at Reko.ImageLoaders.MzExe.ExeImageLoader.Load (Reko.Core.Address addrLoad) [0x00006] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 

@@ -1,12 +1,12 @@
 === Using options:
 error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at Reko.Core.Dfa.Automaton+<GetMatches>d__5.MoveNext () [0x0005f] in <dd67853e12af42c98e3fb9464292041c>:0 
+  at Reko.Core.Dfa.Automaton+<GetMatches>d__5.MoveNext () [0x0005f] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at System.Collections.Generic.List`1[T].AddEnumerable (System.Collections.Generic.IEnumerable`1[T] enumerable) [0x00059] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at System.Collections.Generic.List`1[T]..ctor (System.Collections.Generic.IEnumerable`1[T] collection) [0x00062] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at System.Linq.Enumerable.ToList[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x00018] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.FindMainFunction (Reko.Core.Program program, Reko.Core.Address addrEntry) [0x0005b] in <5a4136b852b04610ac9a7d716d8a6de5>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00042] in <5a4136b852b04610ac9a7d716d8a6de5>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <5a4136b852b04610ac9a7d716d8a6de5>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0008f] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <4f9e4953ec124ff795bb138cf8ef3040>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <b195e9013e6f4bfe9c4a55d515fad233>:0 
+  at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.FindMainFunction (Reko.Core.Program program, Reko.Core.Address addrEntry) [0x0005b] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
+  at Reko.ImageLoaders.Elf.ElfLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00042] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
+  at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
+  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0008f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 

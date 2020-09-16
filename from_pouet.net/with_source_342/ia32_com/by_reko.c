@@ -84,14 +84,14 @@ Eq_133 fn0C00_017F(Eq_133 ax, struct Eq_3 * ds)
 	ui16 ax_25 = SEQ(ah_24, 0x0C);
 	__outw(0x03D4, ax_25);
 	Eq_133 ah_32 = ds->t04EA;
-	__outw(0x03D4, ax_25 + 0x01);
+	__outw(0x03D4, SEQ(ah_32, (byte) (ax_25 + 0x01)));
 	__sti();
 	do
 	{
-		byte al_35 = __inb(0x03DA);
-		Eq_133 ax_41 = SEQ(ah_32, al_35);
-	} while ((al_35 & 0x08) == 0x00);
-	return ax_41;
+		byte al_37 = __inb(0x03DA);
+		Eq_133 ax_43 = SEQ(ah_32, al_37);
+	} while ((al_37 & 0x08) == 0x00);
+	return ax_43;
 }
 
 // 0C00:01A4: void fn0C00_01A4(Register (ptr16 Eq_3) ds)
@@ -171,7 +171,7 @@ void fn0C00_01FE(struct Eq_3 * ds)
 {
 	ds->t04EC = (word16) ds->t04EC + 6;
 	ds->t04EC &= 0x7F;
-	Eq_291 bx_12 = ds->t04EC;
+	Eq_293 bx_12 = ds->t04EC;
 	word16 Eq_3::* di_13 = Eq_3::a04F0;
 	word16 cx_14 = 0x80;
 	do
@@ -182,9 +182,9 @@ void fn0C00_01FE(struct Eq_3 * ds)
 		bx_12 = (word16) bx_12 + 1 & 0x7F;
 		byte ch_58 = SLICE(cx_14, byte, 8);
 	} while (cx_14 != 0x00);
-	Eq_334 bx_35 = (word16) ds->t04EC.u0 + 32 & 0x7F;
+	Eq_336 bx_35 = (word16) ds->t04EC.u0 + 32 & 0x7F;
 	byte Eq_3::* di_38 = Eq_3::a05F0;
-	word16 cx_56;
+	word16 cx_56 = SEQ(ch_58, 0x80);
 	do
 	{
 		ds->*di_38 = (byte) (int16) (byte) ((int16) (ds->*((word16) bx_35 + 1121)) *s 22 >> 0x07);
@@ -202,7 +202,7 @@ void fn0C00_0251(struct Eq_14 * es, struct Eq_3 * ds)
 	Eq_133 di_6 = ds->t04E8;
 	ui8 ah_26 = 0x01;
 	word16 bp_10;
-	Eq_377 bx_12 = 0x00;
+	Eq_379 bx_12 = 0x00;
 	for (bp_10 = 0x04; bp_10 != 0x00; --bp_10)
 	{
 		__outw(0x03C4, SEQ(ah_26, 0x02));
@@ -212,8 +212,8 @@ void fn0C00_0251(struct Eq_14 * es, struct Eq_3 * ds)
 		bx_41 = bx_12;
 		do
 		{
-			Eq_377 bx_41;
-			struct Eq_385 Eq_14::* di_44 = di_22 + ds->*((word16) bx_41 + 0x04F0);
+			Eq_379 bx_41;
+			struct Eq_387 Eq_14::* di_44 = di_22 + ds->*((word16) bx_41 + 0x04F0);
 			byte dl_46 = ds->*((word16) (bx_41 >> 0x01) + 0x05F0);
 			word16 cx_49;
 			si_51 = si_19;
@@ -241,18 +241,18 @@ void fn0C00_0251(struct Eq_14 * es, struct Eq_3 * ds)
 void fn0C00_02A6(struct Eq_14 * es, struct Eq_3 * ds)
 {
 	__outw(0x03C4, 0x0102);
-	struct Eq_444 Eq_3::* si_19 = &Eq_3::t2A70;
+	struct Eq_446 Eq_3::* si_19 = &Eq_3::t2A70;
 	ui8 ah_54 = 0x01;
-	struct Eq_448 Eq_14::* di_10 = (word16) ds->t04E8 + 0x00005500;
+	struct Eq_450 Eq_14::* di_10 = (word16) ds->t04E8 + 0x00005500;
 	word16 bp_12;
 	for (bp_12 = 0x04; bp_12 != 0x00; --bp_12)
 	{
-		struct Eq_448 Eq_14::* di_15 = di_10;
+		struct Eq_450 Eq_14::* di_15 = di_10;
 		word16 cx_21 = 0x08;
 		si_29 = si_19;
 		do
 		{
-			struct Eq_444 Eq_3::* si_29;
+			struct Eq_446 Eq_3::* si_29;
 			word16 cx_27;
 			for (cx_27 = 0x52; cx_27 != 0x00; --cx_27)
 			{
@@ -270,12 +270,12 @@ void fn0C00_02A6(struct Eq_14 * es, struct Eq_3 * ds)
 	}
 }
 
-// 0C00:02D9: Register (ptr16 Eq_495) fn0C00_02D9(Register (ptr16 Eq_3) ds, Register (ptr16 Eq_4) fs)
+// 0C00:02D9: Register (ptr16 Eq_497) fn0C00_02D9(Register (ptr16 Eq_3) ds, Register (ptr16 Eq_4) fs)
 // Called from:
 //      fn0C00_0100
-struct Eq_495 * fn0C00_02D9(struct Eq_3 * ds, struct Eq_4 * fs)
+struct Eq_497 * fn0C00_02D9(struct Eq_3 * ds, struct Eq_4 * fs)
 {
-	byte Eq_513::* di_10 = Eq_513::a2A70;
+	byte Eq_515::* di_10 = Eq_515::a2A70;
 	byte Eq_3::* si_11 = Eq_3::a2A72;
 	word16 cx_12;
 	for (cx_12 = 0x0A40; cx_12 != 0x00; --cx_12)
@@ -289,17 +289,17 @@ struct Eq_495 * fn0C00_02D9(struct Eq_3 * ds, struct Eq_4 * fs)
 	if (v11_16 != 0x00)
 		return;
 	ds->w045F = 0x04;
-	Eq_528 gs_ax_25 = fs->t010C;
-	struct Eq_531 * gs_88 = SLICE(gs_ax_25, selector, 16);
-	Eq_533 bx_27 = ((word16) (ds->*((word16) ds->t04EE + 955)) << 0x03) + (word16) gs_ax_25;
-	struct Eq_544 Eq_513::* di_29 = &Eq_513::t2BB0;
+	Eq_530 gs_ax_25 = fs->t010C;
+	struct Eq_533 * gs_88 = SLICE(gs_ax_25, selector, 16);
+	Eq_535 bx_27 = ((word16) (ds->*((word16) ds->t04EE + 955)) << 0x03) + (word16) gs_ax_25;
+	struct Eq_546 Eq_515::* di_29 = &Eq_515::t2BB0;
 	word16 cx_30;
 	for (cx_30 = 0x08; cx_30 != 0x00; --cx_30)
 	{
 		ci16 dx_31;
 		for (dx_31 = 0x07; dx_31 >= 0x00; --dx_31)
 		{
-			(cs->*di_29).b0000 = __bt(gs_88->*bx_27, dx_31) << 0x05;
+			(cs->*di_29).b0000 = (int8) __bt(gs_88->*bx_27, dx_31) << 0x05;
 			di_29 = &di_29->b0000 + 1;
 		}
 		++di_29;
@@ -323,7 +323,7 @@ void fn0C00_0344(struct Eq_2 * es, struct Eq_3 * ds)
 		cu16 cx_41 = 0x48;
 		do
 		{
-			es->*di_36 = (((ds->a0387[0x08 - (cx_60 - 0x01 >> 0x03)] & 0x80000000 >> (byte) (0x1F - (bp_42 - 0x01 >> 0x02))) == 0x00 ^ 0x01) << 0x06) + 0x29;
+			es->*di_36 = (((int8) ((ds->a0387[0x08 - (cx_60 - 0x01 >> 0x03)] & 0x80000000 >> (byte) (0x1F - (bp_42 - 0x01 >> 0x02))) == 0x00) ^ 0x01) << 0x06) + 0x29;
 			++di_36;
 			cx_41 = cx_60 - 0x01;
 			cx_60 = cx_41;

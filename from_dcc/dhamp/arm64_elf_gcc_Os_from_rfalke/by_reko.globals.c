@@ -8,7 +8,8 @@
 byte g_a08D8[] = 
 	{
 	};
-Eq_46 g_t0EC0 = 
+real64 g_r0C08 = 1e-06;
+Eq_45 g_t0EC0 = 
 	{
 		
 		{

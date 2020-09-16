@@ -6,19 +6,19 @@
 
 word16 g_w00C8;
 <anonymous> g_t06B0 = <code>;
-Eq_171 g_t0CB8 = 
+Eq_170 g_t0CB8 = 
 	{
 		
 		{
 		},
 	};
-Eq_260 g_t0CBC = 
+Eq_258 g_t0CBC = 
 	{
 		
 		{
 		},
 	};
-Eq_533 g_t0CC4 = 
+Eq_530 g_t0CC4 = 
 	{
 		
 		{

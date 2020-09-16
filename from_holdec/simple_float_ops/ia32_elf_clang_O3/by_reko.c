@@ -116,7 +116,7 @@ void frame_dummy()
 // 08048410: void use(Stack real64 rArg04)
 void use(real64 rArg04)
 {
-	printf("%f", (real64) (uint128) (uint64) rArg04);
+	printf("%f", (real64) (uint128) rArg04);
 }
 
 // 08048430: void use_int(Stack int32 dwArg04)
@@ -134,8 +134,8 @@ void read_ints()
 // 080484B0: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) (uint64) rArg04;
-	int32 eax_7 = (int32) xmm0_6;
+	uint128 xmm0_6 = (uint128) rArg04;
+	int32 eax_7 = (int32) (real64) xmm0_6;
 	g_b804A020 = (byte) eax_7;
 	g_w804A022 = (word16) eax_7;
 	g_dw804A024 = eax_7;
@@ -148,25 +148,25 @@ void write_ints(real64 rArg04)
 	g_t804A030 = (word32) qwLoc14_37;
 }
 
-// 08048520: void read_floats(Register Eq_155 xmm1)
-void read_floats(Eq_155 xmm1)
+// 08048520: void read_floats(Register Eq_154 xmm1)
+void read_floats(Eq_154 xmm1)
 {
-	printf("%f", (real64) g_r804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((uint128) ((uint32) g_r804A038))) + g_r804A040));
+	printf("%f", (real64) g_r804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((real32) ((uint128) g_r804A038))) + g_r804A040));
 }
 
 // 08048570: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) (uint64) rArg04;
+	uint128 xmm0_6 = (uint128) rArg04;
 	g_r804A040 = (real64) xmm0_6;
-	g_r804A038 = (real32) xmm0_6;
+	g_r804A038 = (real32) (real64) xmm0_6;
 	g_r804A048 = (real80) (real64) xmm0_6;
 }
 
 // 080485A0: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	g_r804A038 = (real32) (uint128) (uint64) g_r804A040;
+	g_r804A038 = (real32) (real64) (uint128) g_r804A040;
 }
 
 // 080485C0: void converting_between_floats_f2()
@@ -178,7 +178,7 @@ void converting_between_floats_f2()
 // 080485D0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	g_r804A040 = (real64) (uint128) (uint32) g_r804A038;
+	g_r804A040 = (real64) (real32) (uint128) g_r804A038;
 }
 
 // 080485F0: void converting_between_floats_d2()
@@ -202,29 +202,30 @@ void converting_between_floats_l2()
 // 08048620: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(real64 rArg04, real64 rArg0C)
 {
-	printf("%f", (real64) (uint128) (uint64) rArg04 + rArg0C);
-	printf("%f", (real64) (uint128) (uint64) rArg04 - rArg0C);
-	printf("%f", (real64) (uint128) (uint64) rArg0C - (real64) ((uint128) ((uint64) rArg04)));
-	printf("%f", (real64) (uint128) (uint64) rArg04 * rArg0C);
-	printf("%f", (real64) (uint128) (uint64) rArg04 / rArg0C);
-	printf("%f", (real64) (uint128) (uint64) rArg0C / (real64) ((uint128) ((uint64) rArg04)));
-	printf("%f", __movlpd(__xorpd((uint128) (uint64) rArg04, g_t8048960)));
+	printf("%f", (real64) (uint128) rArg04 + rArg0C);
+	printf("%f", (real64) (uint128) rArg04 - rArg0C);
+	printf("%f", (real64) (uint128) rArg0C - (real64) ((uint128) rArg04));
+	printf("%f", (real64) (uint128) rArg04 * rArg0C);
+	printf("%f", (real64) (uint128) rArg04 / rArg0C);
+	printf("%f", (real64) (uint128) rArg0C / (real64) ((uint128) rArg04));
+	printf("%f", __movlpd(__xorpd((uint128) rArg04, g_t8048960)));
 }
 
-// 08048710: void compare_floats()
-void compare_floats()
+// 08048710: void compare_floats(Stack real64 rArg04, Stack real64 rArg0C)
+void compare_floats(real64 rArg04, real64 rArg0C)
 {
+	printf("%d", (word32) ((real64) (uint128) rArg04 == rArg0C ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
 }
 
 // 080487E0: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) (uint64) rArg04;
+	uint128 xmm0_6 = (uint128) rArg04;
 	printf("%f", (real64) xmm0_6 + (real64) xmm0_6);
-	printf("%f", (real64) (uint128) (uint64) g_r8048970 * rArg04);
-	printf("%f", (real64) (uint128) (uint64) g_r8048978 * rArg04);
-	printf("%f", (real64) (uint128) (uint64) g_r8048980 * rArg04);
-	printf("%f", (real64) (uint128) (uint64) rArg04 * g_r8048988);
+	printf("%f", (real64) (uint128) g_r8048970 * rArg04);
+	printf("%f", (real64) (uint128) g_r8048978 * rArg04);
+	printf("%f", (real64) (uint128) g_r8048980 * rArg04);
+	printf("%f", (real64) (uint128) rArg04 * g_r8048988);
 }
 
 // 08048890: void main()
@@ -241,7 +242,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

@@ -14,7 +14,7 @@ void fn0C00_0100(uint16 * ds_si, uint16 cx, byte bh, byte Eq_31::* di)
 		++bx_11;
 		do
 		{
-			uint32 dx_ax_18 = (uint32) (uint16) di;
+			uint32 dx_ax_18 = (uint32) di;
 			uint16 dx_20 = (uint16) (dx_ax_18 % 0x0140);
 			uint16 ax_21 = (uint16) (dx_ax_18 /u 0x0140);
 			do

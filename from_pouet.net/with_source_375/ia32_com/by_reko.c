@@ -18,14 +18,14 @@ void fn0C00_0100(byte al, byte cl, cui16 bx, byte Eq_6::* bp, struct Eq_6 * es, 
 	if ((bx & 0x1688) != 0x00)
 	{
 		__syscall(0x10);
-		byte Eq_7::* bx_34;
+		byte Eq_7::* bx_34 = Eq_7::a1BF9;
 		do
 		{
 			ds->*bx_34 = es->*bp;
 			++bp;
 			++bx_34;
 		} while (bx_34 != &Eq_7::bFFFFDC07);
-		ds->w158B = SEQ(0x02, (byte) (uint16) (uint8) fn0C00_0181(&ds->b019C) << 0x04);
+		ds->w158B = SEQ(0x02, (byte) (uint16) fn0C00_0181(&ds->b019C) << 0x04);
 		fn0C00_0181(&ds->b01D4);
 	}
 	else
@@ -37,7 +37,7 @@ void fn0C00_0100(byte al, byte cl, cui16 bx, byte Eq_6::* bp, struct Eq_6 * es, 
 //      fn0C00_0100
 byte fn0C00_0181(char * ds_dx)
 {
-	struct Eq_78 * ds = SLICE(ds_dx, selector, 16);
+	struct Eq_77 * ds = SLICE(ds_dx, selector, 16);
 	msdos_display_string(ds_dx);
 	byte al_10;
 	byte ah_11 = bios_kbd_get_keystroke(out al_10);

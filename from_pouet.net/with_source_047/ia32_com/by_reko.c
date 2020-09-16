@@ -11,7 +11,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte Eq_11::* cx, byte dl, byte dh)
 	struct Eq_11 * ds_46 = ds_bx->ptr0002;
 	while (true)
 	{
-		ds_46->*cx = (dl & SLICE(cx, byte, 8)) < 0x00;
+		ds_46->*cx = (int8) ((dl & SLICE(cx, byte, 8)) < 0x00);
 		byte bh_17 = SLICE(cx, byte, 8);
 		byte bl_19 = (byte) cx;
 		dl -= bh_17;

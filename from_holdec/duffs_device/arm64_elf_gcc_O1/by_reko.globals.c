@@ -8,19 +8,19 @@ word16 g_w00C8;
 <anonymous> g_t06B0 = <code>;
 word16 g_w08B8 = 0x22;
 int16 g_w0958 = 0x0022;
-Eq_133 g_t0C98 = 
+Eq_132 g_t0C98 = 
 	{
 		
 		{
 		},
 	};
-Eq_226 g_t0C9C = 
+Eq_224 g_t0C9C = 
 	{
 		
 		{
 		},
 	};
-Eq_494 g_t0CA4 = 
+Eq_491 g_t0CA4 = 
 	{
 		
 		{

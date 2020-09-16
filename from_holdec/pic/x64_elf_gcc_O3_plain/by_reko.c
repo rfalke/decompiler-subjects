@@ -33,11 +33,11 @@ void _init()
 // 0000000000401040: void main()
 void main()
 {
-	Eq_7 rsi_6 = (uint64) g_t404024;
+	Eq_7 rsi_6 = (uint64) g_dw404024;
 	printf("in main: %d\n", rsi_6);
-	uint64 rax_10 = (uint64) g_t404024;
-	g_t404024 = rax_10 + 0x01;
-	printf("in func: %d\n", SEQ(SLICE(rsi_6, word32, 32), rax_10 + 0x01));
+	word32 esi_12 = (word32) ((uint64) g_dw404024 + 0x01);
+	g_dw404024 = esi_12;
+	printf("in func: %d\n", SEQ(SLICE(rsi_6, word32, 32), esi_12));
 }
 
 // 0000000000401080: void _start(Register (ptr64 Eq_33) rdx, Stack Eq_34 qwArg00)
@@ -91,7 +91,7 @@ void frame_dummy()
 // 0000000000401170: void a_func()
 void a_func()
 {
-	printf("in func: %d\n", (uint64) g_t404024);
+	printf("in func: %d\n", (uint64) g_dw404024);
 }
 
 // 0000000000401190: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)

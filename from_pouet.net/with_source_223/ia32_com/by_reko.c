@@ -7,12 +7,12 @@
 // 0C00:0100: void fn0C00_0100(Register word16 cx, Register Eq_3 si, Register Eq_3 di, Register (ptr16 Eq_5) ds)
 void fn0C00_0100(word16 cx, Eq_3 si, Eq_3 di, struct Eq_5 * ds)
 {
-	Eq_6 Top_107 = 0;
+	Eq_6 Top_108 = 0;
 	bios_video_set_mode(0x13);
-	word16 cx_193 = cx;
+	word16 cx_194 = cx;
 	do
 	{
-		char cl_12 = (byte) cx_197;
+		char cl_12 = (byte) cx_198;
 		__outb(0x03C8, cl_12);
 		__outb(969, cl_12);
 		__outb(969, cl_12);
@@ -20,42 +20,42 @@ void fn0C00_0100(word16 cx, Eq_3 si, Eq_3 di, struct Eq_5 * ds)
 		if (al_20 >= 0x3F)
 			al_20 = 0x3F;
 		__outb(969, al_20);
-		cx_193 = cx_197 - 0x01;
-		cx_197 = cx_193;
-	} while (cx_197 != 0x01);
+		cx_194 = cx_198 - 0x01;
+		cx_198 = cx_194;
+	} while (cx_198 != 0x01);
 	do
 	{
-		struct Eq_45 * Top_31 = Top_107 - 1;
+		struct Eq_45 * Top_31 = Top_108 - 1;
 		Top_31->r0000 = (real64) ss->r01F6;
 		Top_31->r0000 /= (real64) ds->w01F0;
 		ss->r0202 = (real32) Top_31->r0000;
 		Top_31->rFFFFFFFF = (real64) ss->r01FA;
-		Top_31->rFFFFFFFF -= ss->r01F2;
+		Top_31->rFFFFFFFF -= (real64) ss->r01F2;
 		Top_31->rFFFFFFFF /= (real64) ds->w01F0;
 		ss->r0206 = (real32) Top_31->rFFFFFFFF;
 		ds->w01F0 += 0x14;
-		Top_107 = Top_31 - 1;
+		Top_108 = Top_31 - 1;
 		do
 		{
 			ds->t01EA = di;
-			--Top_107;
-			*Top_107 = (real64) ss->r0202;
-			*Top_107 *= (real64) ds->t01EA;
-			ss->r020A = (real32) *Top_107;
+			--Top_108;
+			*Top_108 = (real64) ss->r0202;
+			*Top_108 *= (real64) ds->t01EA;
+			ss->r020A = (real32) *Top_108;
 			do
 			{
 				ds->t01EA = si;
-				--Top_107;
-				*Top_107 = (real64) ss->r0206;
-				*Top_107 *= (real64) ds->t01EA;
-				*Top_107 += ss->r01F2;
-				ss->r020E = (real32) *Top_107;
+				--Top_108;
+				*Top_108 = (real64) ss->r0206;
+				*Top_108 *= (real64) ds->t01EA;
+				*Top_108 += (real64) ss->r01F2;
+				ss->r020E = (real32) *Top_108;
 				ss->r0212 = 0.0F;
 				ss->r0216 = 0.0F;
-				cup16 cx_110 = 0x00;
+				cup16 cx_111 = 0x00;
 				do
 				{
-					Eq_123 Top_74 = Top_107 - 1;
+					Eq_124 Top_74 = Top_108 - 1;
 					*Top_74 = (real64) ss->r0216;
 					*Top_74 *= *Top_74;
 					*((word32) Top_74 + 1) = *Top_74;
@@ -65,8 +65,8 @@ void fn0C00_0100(word16 cx, Eq_3 si, Eq_3 di, struct Eq_5 * ds)
 					__wait();
 					__wait();
 					__fninit();
-					byte cl_124 = (byte) cx_110;
-					Top_107 = Top_74 - 1;
+					byte cl_125 = (byte) cx_111;
+					Top_108 = Top_74 - 1;
 					if (*((word32) Top_74 - 1) >= ds->t01EC)
 						break;
 					*((byte) Top_74 - 2) = (real64) ss->r0216;
@@ -74,20 +74,20 @@ void fn0C00_0100(word16 cx, Eq_3 si, Eq_3 di, struct Eq_5 * ds)
 					*((byte) Top_74 - 3) = (real64) ss->r0212;
 					*((byte) Top_74 - 3) *= *((byte) Top_74 - 3);
 					*((byte) Top_74 - 3) -= *((byte) Top_74 - 2);
-					*((byte) Top_74 - 3) += ss->r020A;
+					*((byte) Top_74 - 3) += (real64) ss->r020A;
 					*((byte) Top_74 - 1) = *((byte) Top_74 - 3);
 					*((byte) Top_74 - 4) = (real64) ss->r0212;
 					*((byte) Top_74 - 4) += *((byte) Top_74 - 4);
-					*((byte) Top_74 - 4) *= ss->r0216;
-					*((byte) Top_74 - 4) += ss->r020E;
+					*((byte) Top_74 - 4) *= (real64) ss->r0216;
+					*((byte) Top_74 - 4) += (real64) ss->r020E;
 					ss->r0216 = (real32) *((byte) Top_74 - 4);
-					*((byte) Top_74 - 5) = *((byte) Top_74 - 2);
+					*((byte) Top_74 - 5) = *((byte) Top_74 - 1);
 					ss->r0212 = (real32) *((byte) Top_74 - 5);
-					++cx_110;
-					Top_107 = Top_74 - 5;
-					cl_124 = (byte) cx_110;
-				} while (cx_110 < 0x3F);
-				0xA000->*((word16) di + (word16) (si *s 0x0140)) = cl_124;
+					++cx_111;
+					Top_108 = Top_74 - 5;
+					cl_125 = (byte) cx_111;
+				} while (cx_111 < 0x3F);
+				0xA000->*((word16) di + (word16) (si *s 0x0140)) = cl_125;
 				si = (word16) si.u0 + 1;
 			} while (si <= 200);
 			si.u0 = 0x00;

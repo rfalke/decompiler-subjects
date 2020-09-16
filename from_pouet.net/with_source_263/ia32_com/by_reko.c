@@ -4,27 +4,27 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ch, Register byte bl, Register Eq_4 bp, Register (memptr (ptr16 Eq_72) byte) di, Register (ptr16 Eq_6) ds)
-void fn0C00_0100(byte ch, byte bl, Eq_4 bp, byte Eq_72::* di, struct Eq_6 * ds)
+// 0C00:0100: void fn0C00_0100(Register byte ch, Register byte bl, Register byte bpl, Register (memptr (ptr16 Eq_71) byte) di, Register (ptr16 Eq_6) ds)
+void fn0C00_0100(byte ch, byte bl, byte bpl, byte Eq_71::* di, struct Eq_6 * ds)
 {
 	__syscall(0x10);
 	msdos_display_string(&ds->b01AC);
 	msdos_set_interrupt_vector(0x1C, &ds->b016E);
 	__outb(0x0331, 0x3F);
-	byte al_117 = (byte) bx;
-	word16 cx_107;
+	byte al_119 = (byte) bx;
+	word16 cx_109 = SEQ(ch, 0x18);
 	do
 	{
-		__outb(969, al_117);
-		--cx_107;
-	} while (cx_107 != 0x00);
+		__outb(969, al_119);
+		--cx_109;
+	} while (cx_109 != 0x00);
 	do
 	{
-		uint32 dx_ax_35 = (uint32) (uint16) di;
-		Eq_49 ax_40 = (uint16) (dx_ax_35 /u ds->w0150);
+		uint32 dx_ax_35 = (uint32) di;
+		Eq_48 ax_40 = (uint16) (dx_ax_35 /u ds->w0150);
 		uint16 dx_39 = (uint16) (dx_ax_35 % ds->w0150);
-		Eq_4 ax_41 = (word16) ax_40 + 1;
-		Eq_61 dx_42 = dx_39 - 0xA0;
+		Eq_57 ax_41 = (word16) ax_40 + 1;
+		Eq_60 dx_42 = dx_39 - 0xA0;
 		do
 			dx_42 = -dx_42;
 		while (dx_42 < 0x00);
@@ -32,16 +32,16 @@ void fn0C00_0100(byte ch, byte bl, Eq_4 bp, byte Eq_72::* di, struct Eq_6 * ds)
 		{
 			++di;
 			ax_41 = dx_39 - 0xA0;
-			--cx_107;
-			if (cx_107 != 0x00)
+			--cx_109;
+			if (cx_109 != 0x00)
 				continue;
 		}
-		word32 dx_ax_89 = (word32) (dx_39 - 0xA0);
-		0xA000->*di = (word16) ((-(int16) ((word32) bp / ax_41) & 0x3F) *s 0x0140) + (int16) (SEQ(SLICE(dx_ax_89, word16, 16), (word16) dx_ax_89 *s 0x32) / ax_41) + 0x30 << 0x01;
+		word32 dx_ax_91 = (word32) (dx_39 - 0xA0);
+		0xA000->*di = (word16) ((-(int16) ((word32) SEQ(0x10, (byte) bp) / ax_41) & 0x3F) *s 0x0140) + (int16) (SEQ(SLICE(dx_ax_91, word16, 16), (word16) dx_ax_91 *s 0x32) / ax_41) + 0x30 << 0x01;
 		bp = ax_41;
 		++di;
-		--cx_107;
-		if (cx_107 != 0x00)
+		--cx_109;
+		if (cx_109 != 0x00)
 			continue;
 		--ds->w0147;
 	} while (__inw(0x60) != 0x01);

@@ -17,17 +17,17 @@ void fn0C00_0100(byte Eq_68::* bx, int16 bp, struct Eq_4 Eq_68::* di)
 		__outb(969, (cl_17 & 0x0F) + ch_22 << 0x01);
 		__outb(969, ch_22 << 0x02);
 		++cl_17;
-		int16 ax_276 = SEQ(0x20, ch_22 << 0x02);
+		int16 ax_278 = SEQ(0x20, ch_22 << 0x02);
 	} while (cl_17 != 0x00);
 	cui16 cx_102 = 0x28;
 	do
 	{
-		word16 dx_387 = (word16) (ax_276 *s 0x6261) + 0x01;
+		word16 dx_390 = (word16) (ax_278 *s 0x6261) + 0x01;
 		do
 		{
-			bi8 dh_61 = SLICE(dx_400, byte, 8);
-			bi8 dl_52 = (byte) dx_400;
-			cu8 cl_45 = (byte) cx_401;
+			bi8 dh_61 = SLICE(dx_403, byte, 8);
+			bi8 dl_52 = (byte) dx_403;
+			cu8 cl_45 = (byte) cx_404;
 			if (cl_45 >= 0x26)
 				0x6000->*bx = cl_45;
 			Eq_53 ax_64 = dh_61 *s dh_61 + dl_52 *s dl_52;
@@ -36,23 +36,23 @@ void fn0C00_0100(byte Eq_68::* bx, int16 bp, struct Eq_4 Eq_68::* di)
 				al_70 = ~0x00;
 			0x6000->*bx += ~al_70;
 			++bx;
-			byte bh_306 = SLICE(bx, byte, 8);
-			dx_387 = dx_400 + 0x01;
-			dx_400 = dx_387;
+			byte bh_308 = SLICE(bx, byte, 8);
+			dx_390 = dx_403 + 0x01;
+			dx_403 = dx_390;
 		} while (bx != &Eq_68::b0000);
-		ax_276 = dx_400 + 0x01;
-		byte ah_111 = SLICE(dx_400 + 0x01, byte, 8);
-		cx_102 = cx_401 - 0x01;
-		byte ch_297 = SLICE(cx_401 - 0x01, byte, 8);
-		cx_401 = cx_102;
-	} while (cx_401 != 0x01);
-	word16 cx_123;
+		ax_278 = dx_403 + 0x01;
+		byte ah_111 = SLICE(dx_403 + 0x01, byte, 8);
+		cx_102 = cx_404 - 0x01;
+		byte ch_299 = SLICE(cx_404 - 0x01, byte, 8);
+		cx_404 = cx_102;
+	} while (cx_404 != 0x01);
+	word16 cx_123 = SEQ(ch_299, 0x07);
 	do
 	{
 		do
 		{
 			byte bl_110 = di[0x00FF] + (0x6000->*di).bFFFFFEFF;
-			cu16 ax_115 = SEQ(ah_111, (0x6000->*di).b0000 + di[1]) + SEQ(bh_306, bl_110);
+			cu16 ax_115 = SEQ(ah_111, (0x6000->*di).b0000 + di[1]) + SEQ(bh_308, bl_110);
 			Eq_135 al_118 = (byte) (ax_115 >> 0x02);
 			(0x6000->*di).b0000 = al_118;
 			ah_111 = SLICE(ax_115 >> 0x02, byte, 8);
@@ -60,53 +60,59 @@ void fn0C00_0100(byte Eq_68::* bx, int16 bp, struct Eq_4 Eq_68::* di)
 		} while (di != &Eq_68::b0000);
 		--cx_123;
 	} while (cx_123 != 0x00);
-	union Eq_152 Eq_68::* bx_244 = SEQ(bh_306, bl_110);
+	union Eq_152 Eq_68::* bx_246 = SEQ(bh_308, bl_110);
 	do
 	{
 		do
 		{
-			byte bh_147 = SLICE(bx_399, byte, 8);
+			byte bh_147 = SLICE(bx_402, byte, 8);
 			word16 si_148 = (word16) bh_147;
-			Eq_171 ax_154 = (uint16) ((uint32) (uint16) SEQ(0x40, al_118) /u (si_148 + 0x20));
-			union Eq_135 Eq_68::* ax_171 = SEQ((byte) ((word32) ax_154 + bp), SLICE(ax_154 *s (si_148 + 0x20), byte, 16));
-			byte al_181 = (word16) (0x6000->*ax_171) + 0x6000->*((char *) ax_171 + bp);
-			byte Eq_68::* bx_187 = SEQ(bh_147, (byte) bx_399 + (SLICE((al_181 << 0x02) *s (al_181 << 0x02), byte, 8) >> 0x02));
-			cui16 ax_191 = SEQ(0x7000->*bx_187, 0x6000->*bx_187);
-			0x7000->*bx_399 = (byte) (ax_191 & 0x0FF0) + SLICE(ax_191 & 0x0FF0, byte, 8);
-			al_118 = 0x6000->*ax_171;
-			uint16 ax_206 = SEQ(al_118 - 0x40, al_118);
+			int8 bl_158 = (byte) bx_402;
+			Eq_171 ax_154 = (uint16) ((uint32) SEQ(0x40, al_118) /u (si_148 + 0x20));
+			union Eq_135 Eq_68::* ax_173 = SEQ((byte) ((word32) ax_154 + bp), SLICE(ax_154 *s SEQ(bl_158, (byte) (si_148 + 0x20)), byte, 16));
+			byte al_183 = (word16) (0x6000->*ax_173) + 0x6000->*((char *) ax_173 + bp);
+			byte Eq_68::* bx_189 = SEQ(bh_147, bl_158 + (SLICE((al_183 << 0x02) *s (al_183 << 0x02), byte, 8) >> 0x02));
+			cui16 ax_193 = SEQ(0x7000->*bx_189, 0x6000->*bx_189);
+			0x7000->*bx_402 = (byte) (ax_193 & 0x0FF0) + SLICE(ax_193 & 0x0FF0, byte, 8);
+			al_118 = 0x6000->*ax_173;
+			union Eq_152 Eq_68::* bx_198 = bx_402;
+			uint16 ax_208 = SEQ(al_118 - 0x40, al_118);
 			if (al_118 >= 0x40)
 			{
-				Eq_160 dx_231 = (word32) ax_206;
-				cu8 ah_338 = SLICE(dx_231, byte, 8);
-				Eq_135 cl_210 = 0x6000->*ax_171;
-				union Eq_152 Eq_68::* di_211 = bx_399;
+				Eq_160 dx_233 = (word32) ax_208;
+				cu8 ah_342 = SLICE(dx_233, byte, 8);
+				Eq_135 cl_212 = 0x6000->*ax_173;
+				union Eq_152 Eq_68::* di_213 = bx_402;
 				do
 				{
-					bcu8 al_215 = (byte) cl_210 + SLICE(dx_231, byte, 8);
-					0x7000->*bx_399 = al_215 >> 0x04;
-					0x7000->*di_211 = al_215 >> 0x04;
-					al_118 = al_215 >> 0x04;
-					di_211 -= 0x0100;
-					if (bh_147 == 0x01)
+					bx_339 = SEQ(bh_226 + 0x01, bl_338);
+					bcu8 al_217 = (byte) cl_212 + SLICE(dx_233, byte, 8);
+					0x7000->*bx_198 = al_217 >> 0x04;
+					0x7000->*di_213 = al_217 >> 0x04;
+					byte bh_226 = SLICE(bx_198, byte, 8);
+					byte bl_338 = (byte) bx_198;
+					al_118 = al_217 >> 0x04;
+					di_213 -= 0x0100;
+					if (bh_226 == 0x01)
 						break;
-					dx_231 += ax_154 << 0x02;
-				} while (SLICE(dx_231, byte, 8) < ah_338);
+					dx_233 += ax_154 << 0x02;
+					bx_198 = bx_339;
+				} while (SLICE(dx_233, byte, 8) < ah_342);
 			}
-			bx_244 = (union Eq_152 Eq_68::*) ((char *) bx_399 + 1);
-			bx_244 = (union Eq_152 Eq_68::*) ((char *) bx_399 + 1);
-			bx_399 = bx_244;
-		} while (bx_399 != &Eq_68::t0001);
+			bx_246 = (union Eq_152 Eq_68::*) ((char *) bx_402 + 1);
+			bx_246 = (union Eq_152 Eq_68::*) ((char *) bx_402 + 1);
+			bx_402 = bx_246;
+		} while (bx_402 != &Eq_68::t0001);
 		do
 		{
-			byte v36_252 = 0x7000->*bx_244;
-			0x7000->*bx_244 = 0x00;
-			0xA000->*((char *) bx_244 - 96) = v36_252;
-			bx_244 = (union Eq_152 Eq_68::*) ((char *) bx_244 + 1);
-		} while (bx_244 != &Eq_68::b0000);
-		uint16 ax_268 = (uint16) (uint8) __inb(0x60);
+			byte v36_254 = 0x7000->*bx_246;
+			0x7000->*bx_246 = 0x00;
+			0xA000->*((char *) bx_246 - 96) = v36_254;
+			bx_246 = (union Eq_152 Eq_68::*) ((char *) bx_246 + 1);
+		} while (bx_246 != &Eq_68::b0000);
+		uint16 ax_270 = (uint16) __inb(0x60);
 		++bp;
-		al_118 = (byte) (ax_268 - 0x01);
-	} while (ax_268 != 0x01);
+		al_118 = (byte) (ax_270 - 0x01);
+	} while (ax_270 != 0x01);
 }
 

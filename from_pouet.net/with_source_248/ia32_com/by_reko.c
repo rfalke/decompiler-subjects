@@ -28,7 +28,7 @@ void fn0C00_0100(word16 ax, byte cl, Eq_4 dx, Eq_5 bx, struct Eq_6 * es)
 		do
 		{
 			ax_220 = SEQ(ah_219, 0x01);
-			uint32 dx_ax_34 = (uint32) (uint16) ((word16) dx + __rcl(si_13 + 0x01, (byte) cx_286, C));
+			uint32 dx_ax_34 = (uint32) ((word16) dx + __rcl(si_13 + 0x01, (byte) cx_286, C));
 			dx.u0 = (uint16) (dx_ax_34 % 0x06D1);
 			si_13 = ax_218;
 			byte dh_228 = SLICE(dx, byte, 8);
@@ -44,8 +44,8 @@ void fn0C00_0100(word16 ax, byte cl, Eq_4 dx, Eq_5 bx, struct Eq_6 * es)
 		cx_274 = cx_286 - 0x01;
 		cx_287 = cx_274;
 	} while (cx_286 != 0x01);
-	word16 Eq_101::* di_195 = &Eq_101::w0000;
-	ptr16 dx_227;
+	word16 Eq_100::* di_195 = &Eq_100::w0000;
+	ptr16 dx_227 = SEQ(dh_228, 0x19);
 	do
 	{
 		word16 cx_198 = SEQ(ch_223, 0x50);
@@ -62,8 +62,8 @@ void fn0C00_0100(word16 ax, byte cl, Eq_4 dx, Eq_5 bx, struct Eq_6 * es)
 	} while (dx_227 != 0x00);
 	do
 	{
-		byte Eq_67::* si_137;
-		byte Eq_101::* di_136;
+		byte Eq_66::* si_137;
+		byte Eq_100::* di_136;
 		ptr16 dx_281;
 		fn0C00_01E8(dx_227, out dx_281, out si_137, out di_136);
 		bios_video_set_cursor_position(SLICE(bx, byte, 8), SLICE(dx_281, byte, 8), (byte) dx_281);
@@ -93,7 +93,7 @@ void fn0C00_0100(word16 ax, byte cl, Eq_4 dx, Eq_5 bx, struct Eq_6 * es)
 		if (ax_143 == 0x01)
 		{
 			bci8 al_168 = cs->*si_137;
-			struct Eq_211 Eq_67::* si_169 = si_137 + 1;
+			struct Eq_210 Eq_66::* si_169 = si_137 + 1;
 			bx = bx_133;
 			if ((al_168 & 0x40) != 0x00)
 				continue;
@@ -107,24 +107,24 @@ void fn0C00_0100(word16 ax, byte cl, Eq_4 dx, Eq_5 bx, struct Eq_6 * es)
 	msdos_terminate_program20();
 }
 
-// 0C00:0181: Register cui16 fn0C00_0181(Register ptr16 dx, Register Eq_5 bh, Register word16 bp, Register (ptr16 Eq_101) es, Register (ptr16 Eq_67) ds, Register out ptr16 dxOut, Register out (ptr16 Eq_188) bxOut, Register out Eq_189 siOut, Register out Eq_190 diOut)
+// 0C00:0181: Register cui16 fn0C00_0181(Register ptr16 dx, Register Eq_5 bh, Register word16 bp, Register (ptr16 Eq_100) es, Register (ptr16 Eq_66) ds, Register out ptr16 dxOut, Register out (ptr16 Eq_187) bxOut, Register out Eq_188 siOut, Register out Eq_189 diOut)
 // Called from:
 //      fn0C00_0100
 //      fn0C00_0181
-cui16 fn0C00_0181(ptr16 dx, Eq_5 bh, word16 bp, struct Eq_101 * es, struct Eq_67 * ds, ptr16 & dxOut, struct Eq_188 & bxOut, union Eq_189 & siOut, union Eq_190 & diOut)
+cui16 fn0C00_0181(ptr16 dx, Eq_5 bh, word16 bp, struct Eq_100 * es, struct Eq_66 * ds, ptr16 & dxOut, struct Eq_187 & bxOut, union Eq_188 & siOut, union Eq_189 & diOut)
 {
 	cu8 dl = (byte) dx;
 	cu8 dh = SLICE(dx, byte, 8);
 	Eq_5 bh = SLICE(bx, byte, 8);
-	struct Eq_188 * bx_135 = bx;
+	struct Eq_187 * bx_135 = bx;
 	if (dl < 0x50)
 	{
 		bx_135 = bx;
 		if (dh < 0x19)
 		{
 			word16 dx_16;
-			struct Eq_255 Eq_67::* si_17;
-			cui16 ax_26 = SEQ(SLICE((uint16) (uint8) fn0C00_01E8(dx, out dx_16, out si_17, out di), byte, 8), (ds->*si_17).b0000);
+			struct Eq_254 Eq_66::* si_17;
+			cui16 ax_26 = SEQ(SLICE((uint16) fn0C00_01E8(dx, out dx_16, out si_17, out di), byte, 8), (ds->*si_17).b0000);
 			si = &si_17->b0001;
 			cui16 ax_134 = ax_26 & 0xFF;
 			byte ah_147 = SLICE(ax_26 & 0xFF, byte, 8);
@@ -142,45 +142,45 @@ cui16 fn0C00_0181(ptr16 dx, Eq_5 bh, word16 bp, struct Eq_101 * es, struct Eq_67
 				if ((al_35 & 0x0F) == 0x00)
 				{
 					es->*di = 0x20;
-					word16 dx_71;
-					word16 bx_236;
-					word16 si_237;
-					word16 di_238;
-					fn0C00_0181(dx_16 - 0x01, bh, bp, es, ds, out dx_71, out bx_236, out si_237, out di_238);
+					word16 dx_236;
+					word16 bx_237;
+					word16 si_238;
+					word16 di_239;
+					fn0C00_0181(dx_16 - 0x01, bh, bp, es, ds, out dx_236, out bx_237, out si_238, out di_239);
 					word16 dx_81;
-					word16 bx_239;
-					word16 si_240;
-					word16 di_241;
-					fn0C00_0181(dx, bh, bp, es, ds, out dx_81, out bx_239, out si_240, out di_241);
+					word16 bx_240;
+					word16 si_241;
+					word16 di_242;
+					fn0C00_0181(dx, bh, bp, es, ds, out dx_81, out bx_240, out si_241, out di_242);
 					word16 dx_89;
-					word16 bx_242;
-					word16 si_243;
-					word16 di_244;
-					fn0C00_0181(dx_81 + 0x01, bh, bp, es, ds, out dx_89, out bx_242, out si_243, out di_244);
-					word16 dx_97;
-					word16 bx_245;
-					word16 si_246;
-					word16 di_247;
-					fn0C00_0181(dx_89 + 0x01, bh, bp, es, ds, out dx_97, out bx_245, out si_246, out di_247);
-					word16 dx_107;
-					word16 bx_248;
-					word16 si_249;
-					word16 di_250;
-					fn0C00_0181(dx, bh, bp, es, ds, out dx_107, out bx_248, out si_249, out di_250);
-					word16 dx_117;
+					word16 bx_243;
+					word16 si_244;
+					word16 di_245;
+					fn0C00_0181(dx_81 + 0x01, bh, bp, es, ds, out dx_89, out bx_243, out si_244, out di_245);
+					word16 dx_246;
+					word16 bx_247;
+					word16 si_248;
+					word16 di_249;
+					fn0C00_0181(dx_89 + 0x01, bh, bp, es, ds, out dx_246, out bx_247, out si_248, out di_249);
+					word16 dx_250;
 					word16 bx_251;
 					word16 si_252;
 					word16 di_253;
-					fn0C00_0181(dx, bh, bp, es, ds, out dx_117, out bx_251, out si_252, out di_253);
-					word16 dx_125;
+					fn0C00_0181(dx, bh, bp, es, ds, out dx_250, out bx_251, out si_252, out di_253);
+					word16 dx_117;
 					word16 bx_254;
 					word16 si_255;
 					word16 di_256;
-					fn0C00_0181(dx_117 - 0x01, bh, bp, es, ds, out dx_125, out bx_254, out si_255, out di_256);
-					word16 dx_257;
+					fn0C00_0181(dx, bh, bp, es, ds, out dx_117, out bx_254, out si_255, out di_256);
+					word16 dx_125;
+					word16 bx_257;
 					word16 si_258;
 					word16 di_259;
-					ax_134 = fn0C00_0181(dx_125 - 0x01, bh, bp, es, ds, out dx_257, out bx_135, out si_258, out di_259);
+					fn0C00_0181(dx_117 - 0x01, bh, bp, es, ds, out dx_125, out bx_257, out si_258, out di_259);
+					word16 dx_260;
+					word16 si_261;
+					word16 di_262;
+					ax_134 = fn0C00_0181(dx_125 - 0x01, bh, bp, es, ds, out dx_260, out bx_135, out si_261, out di_262);
 				}
 				else
 				{
@@ -210,16 +210,17 @@ l0C00_01E6:
 	return ax;
 }
 
-// 0C00:01E8: Register byte fn0C00_01E8(Register ptr16 dx, Register out ptr16 dxOut, Register out Eq_122 siOut, Register out Eq_123 diOut)
+// 0C00:01E8: Register byte fn0C00_01E8(Register ptr16 dx, Register out ptr16 dxOut, Register out ptr16 siOut, Register out Eq_122 diOut)
 // Called from:
 //      fn0C00_0100
 //      fn0C00_0181
-byte fn0C00_01E8(ptr16 dx, ptr16 & dxOut, union Eq_122 & siOut, union Eq_123 & diOut)
+byte fn0C00_01E8(ptr16 dx, ptr16 & dxOut, ptr16 & siOut, union Eq_122 & diOut)
 {
 	byte dh = SLICE(dx, byte, 8);
-	dxOut = dx;
 	int16 ax_6 = (int16) dh;
-	siOut = ax_6 *s 0x50 + dx + 0x0251;
+	dxOut = dx;
+	int16 ax_13 = ax_6 *s 0x50 + dx;
+	siOut = SEQ(SLICE(ax_13, byte, 8) - dh, (byte) ax_13) + 0x0251;
 	diOut = (ax_6 *s ~0xAF + dx) * 0x02;
 	return SLICE(si, byte, 8);
 }

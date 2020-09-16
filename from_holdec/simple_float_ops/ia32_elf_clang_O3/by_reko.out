@@ -8,6 +8,5 @@
 080488B8: warning: The format specifier '%z' passed to *printf is not known.
 080488B8: warning: The format specifier '%z' passed to *printf is not known.
 080488B8: warning: The format specifier '%z' passed to *printf is not known.
-0804871A: warning: x86 instruction 'cmpsd' is not supported yet.
 08048400: warning: Call target address 00000000 is invalid.
 08048373: warning: Call target address 00000000 is invalid.

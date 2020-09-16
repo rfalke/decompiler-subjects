@@ -28,7 +28,7 @@ void fn0C00_0100(struct Eq_2 Eq_10::* di)
 		}
 		(ss->*sp_6).ptr0000 = 0x00;
 		struct Eq_16 Eq_10::* di_21 = Eq_10::a0000;
-		word16 cx_244;
+		word16 cx_244 = SEQ(ch_243, 200);
 		do
 		{
 			(es_9->*di_21).b0000 = 0x0F;
@@ -66,7 +66,7 @@ void fn0C00_0100(struct Eq_2 Eq_10::* di)
 			ds_14->w01FB = -ds_14->w01FB;
 		wchar_t bx_101 = bx_63 + ds_14->w01FB;
 		Eq_126 di_107 = dx_81 *s 0x0140 + bx_101;
-		word16 cx_115;
+		word16 cx_115 = SEQ(ch_254, 0x04);
 		do
 		{
 			es_9->*di_107 = 0x5C5C5C5C;

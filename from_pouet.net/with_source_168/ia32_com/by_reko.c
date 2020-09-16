@@ -4,25 +4,26 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte ah, FpuStack real64 rLoc2)
-void fn0C00_0100(byte ah, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register byte ah)
+void fn0C00_0100(byte ah)
 {
 	__syscall(0x10);
-	ci16 dx_44;
+	real64 rLoc1_100 = 0.0;
+	ci16 dx_45 = SLICE((int32) SEQ(ah, 0x13), word16, 16);
 	do
 	{
-		real64 rLoc2_102 = rLoc2 / (real64) 0x20;
-		cos(rLoc2_102);
-		sin(rLoc2_102);
-		fn0C00_0160((byte) ((uint16) (uint8) fn0C00_0160(0x01, dx_44) + 0x01), dx_44);
-		fn0C00_0160(0x04, dx_44);
-		rLoc2 = 1.0;
+		real64 rLoc2_103 = rLoc1_100 / 32.0;
+		cos(rLoc2_103);
+		sin(rLoc2_103);
+		fn0C00_0160((byte) ((uint16) fn0C00_0160(0x01, dx_45) + 0x01), dx_45);
+		fn0C00_0160(0x04, dx_45);
+		rLoc1_100 += 1.0;
 		if (__inb(0x60) == 0x01)
 			goto l0C00_015E;
-		++dx_44;
-	} while (dx_44 < 200);
-	byte al_91;
-	bios_kbd_get_keystroke(out al_91);
+		++dx_45;
+	} while (dx_45 < 200);
+	byte al_92;
+	bios_kbd_get_keystroke(out al_92);
 l0C00_015E:
 	msdos_terminate_program20();
 }

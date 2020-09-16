@@ -32979,26 +32979,24 @@ void signed_long_int_div()
 void signed_long_int_modulo()
 {
 	struct Eq_235306 * x1_6 = g_ptrA7F40;
-	int64 x2_9 = x1_6->qw0008;
 	struct Eq_235309 * x0_7 = g_ptrA7FB8;
 	int64 x3_11 = x1_6->qw0010;
 	int64 x4_12 = x1_6->qw0028;
+	int64 x2_16 = x1_6->qw0008 >= 0x00 ? 0x00 : -0x00;
 	x0_7->qw0000 = 0x00;
-	x0_7->qw0008 = x2_9 >= 0x00 ? x2_9 & 0x00 : -(x2_9 & 0x00);
+	x0_7->qw0008 = x2_16;
 	int64 x3_25 = x1_6->qw0018;
 	x0_7->qw0010 = x3_11 - (x3_11 / 0x03 + (x3_11 / 0x03 << 1));
-	int64 x2_27 = 0x00 - x3_25;
 	int64 x3_33 = x1_6->qw0020;
-	x0_7->qw0018 = x2_27 < 0x00 ? x3_25 & 0x00 : -(x2_27 & 0x00);
+	x0_7->qw0018 = x3_25 > 0x00 ? 0x00 : -0x00;
 	x0_7->qw0020 = x3_33 - (x3_33 / 0x05 + (x3_33 / 0x05 << 2));
 	int64 x4_43 = x1_6->qw0030;
 	x0_7->qw0028 = x4_12 - (x4_12 / 0x06) * 0x06;
 	int64 x3_48 = x1_6->qw0038;
 	int64 x4_49 = x1_6->qw0048;
 	x0_7->qw0030 = x4_43 - (x4_43 / 0x07) * 0x07;
-	int64 x2_51 = 0x00 - x3_48;
 	int64 x3_57 = x1_6->qw0040;
-	x0_7->qw0038 = x2_51 < 0x00 ? x3_48 & 0x00 : -(x2_51 & 0x00);
+	x0_7->qw0038 = x3_48 > 0x00 ? 0x00 : -0x00;
 	x0_7->qw0040 = x3_57 - (x3_57 / 0x09 + (x3_57 / 0x09 << 3));
 	int64 x4_67 = x1_6->qw0050;
 	x0_7->qw0048 = x4_49 - (x4_49 / 0x0A) * 0x0A;
@@ -33012,8 +33010,7 @@ void signed_long_int_modulo()
 	x0_7->qw0068 = x4_82 - (x4_82 / 0x0E) * 0x0E;
 	int64 x3_92 = x1_6->qw0078;
 	x0_7->qw0070 = x4_87 - (x4_87 / 0x0F) * 0x0F;
-	int64 x2_94 = 0x00 - x3_92;
-	x0_7->qw0078 = x2_94 < 0x00 ? x3_92 & 0x00 : -(x2_94 & 0x00);
+	x0_7->qw0078 = x3_92 > 0x00 ? 0x00 : -0x00;
 	int64 x3_103 = x1_6->qw0080;
 	int64 x4_105 = x1_6->qw0088;
 	x0_7->qw0080 = x3_103 - (x3_103 / 0x11 + (x3_103 / 0x11 << 4));
@@ -33045,8 +33042,7 @@ void signed_long_int_modulo()
 	x0_7->qw00E8 = x4_168 - (x4_168 / 0x1E) * 0x1E;
 	int64 x3_178 = x1_6->qw00F8;
 	x0_7->qw00F0 = x4_173 - (x4_173 / 0x1F) * 0x1F;
-	int64 x2_180 = 0x00 - x3_178;
-	x0_7->qw00F8 = x2_180 < 0x00 ? x3_178 & 0x00 : -(x2_180 & 0x00);
+	x0_7->qw00F8 = x3_178 > 0x00 ? 0x00 : -0x00;
 	int64 x3_189 = x1_6->qw0100;
 	int64 x4_191 = x1_6->qw0108;
 	x0_7->qw0100 = x3_189 - (x3_189 / 33 + (x3_189 / 33 << 5));
@@ -33110,8 +33106,7 @@ void signed_long_int_modulo()
 	x0_7->qw01E8 = x4_334 - (x4_334 / 0x3E) * 0x3E;
 	int64 x3_344 = x1_6->qw01F8;
 	x0_7->qw01F0 = x4_339 - (x4_339 / 0x3F) * 0x3F;
-	int64 x2_346 = 0x00 - x3_344;
-	x0_7->qw01F8 = x2_346 < 0x00 ? x3_344 & 0x00 : -(x2_346 & 0x00);
+	x0_7->qw01F8 = x3_344 > 0x00 ? 0x00 : -0x00;
 	int64 x3_354 = x1_6->qw0200;
 	int64 x4_355 = x1_6->qw0208;
 	x0_7->qw0200 = x3_354 - (x3_354 / 0x41 + (x3_354 / 0x41 << 6));
@@ -33239,8 +33234,7 @@ void signed_long_int_modulo()
 	x0_7->qw03E8 = x4_658 - (x4_658 / 0x7E) * 0x7E;
 	int64 x3_668 = x1_6->qw03F8;
 	x0_7->qw03F0 = x4_663 - (x4_663 / 0x7F) * 0x7F;
-	int64 x2_670 = 0x00 - x3_668;
-	x0_7->qw03F8 = x2_670 < 0x00 ? x3_668 & 0x00 : -(x2_670 & 0x00);
+	x0_7->qw03F8 = x3_668 > 0x00 ? 0x00 : -0x00;
 	int64 x3_678 = x1_6->qw0400;
 	int64 x4_679 = x1_6->qw0408;
 	x0_7->qw0400 = x3_678 - (x3_678 / 0x81 + (x3_678 / 0x81 << 7));
@@ -33497,8 +33491,7 @@ void signed_long_int_modulo()
 	x0_7->qw07E8 = x5_1306 - (x5_1306 / 0xFE) * 0xFE;
 	int64 x3_1316 = x0_957->qw07F8;
 	x0_7->qw07F0 = x5_1311 - (x5_1311 / 0xFF) * 0xFF;
-	int64 x2_1318 = 0x00 - x3_1316;
-	x0_7->qw07F8 = x2_1318 < 0x00 ? x3_1316 & 0x00 : -(x2_1318 & 0x00);
+	x0_7->qw07F8 = x3_1316 > 0x00 ? 0x00 : -0x00;
 	int64 x3_1326 = x0_957->qw0800;
 	int64 x5_1327 = x0_957->qw0808;
 	x0_7->qw0800 = x3_1326 - (x3_1326 / 0x0101 + (x3_1326 / 0x0101 << 8));
@@ -34011,11 +34004,9 @@ void signed_long_int_modulo()
 	int64 x5_2598 = x1_1874->qw0FF0;
 	x0_1870->qw0FE8 = x5_2593 - (x5_2593 / 0x01FE) * 0x01FE;
 	x0_1870->qw0FF0 = x5_2598 - (x5_2598 / 0x01FF) * 0x01FF;
-	int64 x3_2604 = x1_1874->qw0FF8;
-	int64 x2_2606 = 0x00 - x3_2604;
 	int64 x5_2605 = x1_1874->qw1008;
 	int64 x3_2612 = x1_1874->qw1000;
-	x0_1870->qw0FF8 = x2_2606 < 0x00 ? x3_2604 & 0x00 : -(x2_2606 & 0x00);
+	x0_1870->qw0FF8 = x1_1874->qw0FF8 > 0x00 ? 0x00 : -0x00;
 	x0_1870->qw1000 = x3_2612 - (x3_2612 / 0x0201 + (x3_2612 / 0x0201 << 9));
 	int64 x5_2622 = x1_1874->qw1010;
 	x0_1870->qw1008 = x5_2605 - (x5_2605 / 0x0202) * 0x0202;
@@ -35053,8 +35044,8 @@ void signed_long_int_modulo()
 //      main
 void unsigned_long_int_add()
 {
-	struct Eq_272363 * x0_6 = g_ptrA7F30;
-	struct Eq_272366 * x1_7 = g_ptrA7FD8;
+	struct Eq_272321 * x0_6 = g_ptrA7F30;
+	struct Eq_272324 * x1_7 = g_ptrA7FD8;
 	x1_7->qw0000 = x0_6->qw0000 + 0x01;
 	x1_7->qw0008 = x0_6->qw0008 + 0x02;
 	x1_7->qw0010 = x0_6->qw0010 + 0x03;
@@ -35485,9 +35476,9 @@ void unsigned_long_int_add()
 	uint64 x0_1290 = x0_6->qw0D60;
 	x1_7->qw0D58 = x0_6->qw0D58 + 0x01AC;
 	x1_7->qw0D60 = x0_1290 + 0x01AD;
-	struct Eq_272363 * x0_1296 = g_ptrA7F30;
+	struct Eq_272321 * x0_1296 = g_ptrA7F30;
 	x1_7->qw0D68 = x0_1296->qw0D68 + 0x01AE;
-	struct Eq_272366 * x1_1301 = g_ptrA7FD8;
+	struct Eq_272324 * x1_1301 = g_ptrA7FD8;
 	x1_1301->qw0D70 = x0_1296->qw0D70 + 0x01AF;
 	x1_1301->qw0D78 = x0_1296->qw0D78 + 0x01B0;
 	x1_1301->qw0D80 = x0_1296->qw0D80 + 0x01B1;
@@ -35775,8 +35766,8 @@ void unsigned_long_int_add()
 	uint64 x0_2155 = x0_1296->qw1658;
 	x1_1301->qw1650 = x0_1296->qw1650 + 0x02CB;
 	x1_1301->qw1658 = x0_2155 + 0x02CC;
-	struct Eq_272363 * x0_2162 = g_ptrA7F30;
-	struct Eq_272366 * x1_2163 = g_ptrA7FD8;
+	struct Eq_272321 * x0_2162 = g_ptrA7F30;
+	struct Eq_272324 * x1_2163 = g_ptrA7FD8;
 	x1_2163->qw1660 = x0_2162->qw1660 + 717;
 	x1_2163->qw1668 = x0_2162->qw1668 + 0x02CE;
 	x1_2163->qw1670 = x0_2162->qw1670 + 0x02CF;
@@ -36064,8 +36055,8 @@ void unsigned_long_int_add()
 	uint64 x0_3017 = x0_2162->qw1F48;
 	x1_2163->qw1F40 = x0_2162->qw1F40 + 1001;
 	x1_2163->qw1F48 = x0_3017 + 1002;
-	struct Eq_272363 * x1_3024 = g_ptrA7F30;
-	struct Eq_272366 * x0_3025 = g_ptrA7FD8;
+	struct Eq_272321 * x1_3024 = g_ptrA7F30;
+	struct Eq_272324 * x0_3025 = g_ptrA7FD8;
 	x0_3025->qw1F50 = x1_3024->qw1F50 + 1003;
 	x0_3025->qw1F58 = x1_3024->qw1F58 + 1004;
 	x0_3025->qw1F60 = x1_3024->qw1F60 + 1005;
@@ -36096,8 +36087,8 @@ void unsigned_long_int_add()
 //      main
 void unsigned_long_int_mult()
 {
-	struct Eq_272363 * x1_8 = g_ptrA7F30;
-	struct Eq_272366 * x0_9 = g_ptrA7FD8;
+	struct Eq_272321 * x1_8 = g_ptrA7F30;
+	struct Eq_272324 * x0_9 = g_ptrA7FD8;
 	x0_9->qw0000 = x1_8->qw0000;
 	x0_9->qw0008 = x1_8->qw0008 << 1;
 	x0_9->qw0010 = x1_8->qw0010 * 0x03;
@@ -36350,8 +36341,8 @@ void unsigned_long_int_mult()
 	uint64 x1_991 = x1_8->qw07D0;
 	x0_9->qw07C8 = x1_8->qw07C8 * 0xFA;
 	x0_9->qw07D0 = x1_991 * 0xFB;
-	struct Eq_272363 * x1_1000 = g_ptrA7F30;
-	struct Eq_272366 * x0_999 = g_ptrA7FD8;
+	struct Eq_272321 * x1_1000 = g_ptrA7F30;
+	struct Eq_272324 * x0_999 = g_ptrA7FD8;
 	x0_999->qw07D8 = x1_1000->qw07D8 * 252;
 	x0_999->qw07E0 = x1_1000->qw07E0 * 0xFD;
 	x0_999->qw07E8 = x1_1000->qw07E8 * 0xFE;
@@ -36601,9 +36592,9 @@ void unsigned_long_int_mult()
 	x0_999->qw0F88 = x1_1000->qw0F88 * 0x01F2;
 	x0_999->qw0F90 = x1_1000->qw0F90 * 499;
 	x0_999->qw0F98 = x1_1000->qw0F98 * 500;
-	struct Eq_272366 * x1_1998 = g_ptrA7FD8;
+	struct Eq_272324 * x1_1998 = g_ptrA7FD8;
 	x0_999->qw0FA0 = x1_1000->qw0FA0 * 0x01F5;
-	struct Eq_272363 * x0_2002 = g_ptrA7F30;
+	struct Eq_272321 * x0_2002 = g_ptrA7F30;
 	x1_1998->qw0FA8 = x0_2002->qw0FA8 * 0x01F6;
 	x1_1998->qw0FB0 = x0_2002->qw0FB0 * 0x01F7;
 	x1_1998->qw0FB8 = x0_2002->qw0FB8 * 0x01F8;
@@ -36856,8 +36847,8 @@ void unsigned_long_int_mult()
 	uint64 x0_2998 = x0_2002->qw1778;
 	x1_1998->qw1770 = x0_2002->qw1770 * 0x02EF;
 	x1_1998->qw1778 = x0_2998 * 0x02F0;
-	struct Eq_272363 * x0_3007 = g_ptrA7F30;
-	struct Eq_272366 * x1_3006 = g_ptrA7FD8;
+	struct Eq_272321 * x0_3007 = g_ptrA7F30;
+	struct Eq_272324 * x1_3006 = g_ptrA7FD8;
 	x1_3006->qw1780 = x0_3007->qw1780 * 0x02F1;
 	x1_3006->qw1788 = x0_3007->qw1788 * 0x02F2;
 	x1_3006->qw1790 = x0_3007->qw1790 * 755;
@@ -37107,9 +37098,9 @@ void unsigned_long_int_mult()
 	x1_3006->qw1F30 = x0_3007->qw1F30 * 999;
 	x1_3006->qw1F38 = x0_3007->qw1F38 * 1000;
 	x1_3006->qw1F40 = x0_3007->qw1F40 * 1001;
-	struct Eq_272366 * x0_4006 = g_ptrA7FD8;
+	struct Eq_272324 * x0_4006 = g_ptrA7FD8;
 	x1_3006->qw1F48 = x0_3007->qw1F48 * 1002;
-	struct Eq_272363 * x1_4010 = g_ptrA7F30;
+	struct Eq_272321 * x1_4010 = g_ptrA7F30;
 	x0_4006->qw1F50 = x1_4010->qw1F50 * 1003;
 	x0_4006->qw1F58 = x1_4010->qw1F58 * 1004;
 	x0_4006->qw1F60 = x1_4010->qw1F60 * 1005;
@@ -37140,8 +37131,8 @@ void unsigned_long_int_mult()
 //      main
 void unsigned_long_int_div()
 {
-	struct Eq_272363 * x0_8 = g_ptrA7F30;
-	struct Eq_272366 * x1_9 = g_ptrA7FD8;
+	struct Eq_272321 * x0_8 = g_ptrA7F30;
+	struct Eq_272324 * x1_9 = g_ptrA7FD8;
 	x1_9->qw0000 = x0_8->qw0000;
 	x1_9->qw0008 = x0_8->qw0008 >> 1;
 	x1_9->qw0010 = x0_8->qw0010 /u 0x03;
@@ -37395,8 +37386,8 @@ void unsigned_long_int_div()
 	uint64 x0_1002 = x0_8->qw07D8;
 	x1_9->qw07D0 = x0_8->qw07D0 /u 0xFB;
 	x1_9->qw07D8 = x0_1002 /u 252;
-	struct Eq_272363 * x0_1011 = g_ptrA7F30;
-	struct Eq_272366 * x1_1010 = g_ptrA7FD8;
+	struct Eq_272321 * x0_1011 = g_ptrA7F30;
+	struct Eq_272324 * x1_1010 = g_ptrA7FD8;
 	x1_1010->qw07E0 = x0_1011->qw07E0 /u 0xFD;
 	x1_1010->qw07E8 = x0_1011->qw07E8 /u 0xFE;
 	x1_1010->qw07F0 = x0_1011->qw07F0 /u 0xFF;
@@ -37646,9 +37637,9 @@ void unsigned_long_int_div()
 	x1_1010->qw0F90 = x0_1011->qw0F90 /u 499;
 	x1_1010->qw0F98 = x0_1011->qw0F98 /u 500;
 	x1_1010->qw0FA0 = x0_1011->qw0FA0 /u 0x01F5;
-	struct Eq_272366 * x0_2009 = g_ptrA7FD8;
+	struct Eq_272324 * x0_2009 = g_ptrA7FD8;
 	x1_1010->qw0FA8 = x0_1011->qw0FA8 /u 0x01F6;
-	struct Eq_272363 * x1_2013 = g_ptrA7F30;
+	struct Eq_272321 * x1_2013 = g_ptrA7F30;
 	x0_2009->qw0FB0 = x1_2013->qw0FB0 /u 0x01F7;
 	x0_2009->qw0FB8 = x1_2013->qw0FB8 /u 0x01F8;
 	x0_2009->qw0FC0 = x1_2013->qw0FC0 /u 505;
@@ -37901,8 +37892,8 @@ void unsigned_long_int_div()
 	uint64 x1_3010 = x1_2013->qw1780;
 	x0_2009->qw1778 = x1_2013->qw1778 /u 0x02F0;
 	x0_2009->qw1780 = x1_3010 /u 0x02F1;
-	struct Eq_272363 * x1_3019 = g_ptrA7F30;
-	struct Eq_272366 * x0_3020 = g_ptrA7FD8;
+	struct Eq_272321 * x1_3019 = g_ptrA7F30;
+	struct Eq_272324 * x0_3020 = g_ptrA7FD8;
 	x0_3020->qw1788 = x1_3019->qw1788 /u 0x02F2;
 	x0_3020->qw1790 = x1_3019->qw1790 /u 755;
 	x0_3020->qw1798 = x1_3019->qw1798 /u 0x02F4;
@@ -38154,9 +38145,9 @@ void unsigned_long_int_div()
 	uint64 x1_4014 = x1_3019->qw1F50;
 	x0_3020->qw1F48 = x1_3019->qw1F48 /u 1002;
 	x0_3020->qw1F50 = x1_4014 /u 1003;
-	struct Eq_272363 * x1_4022 = g_ptrA7F30;
+	struct Eq_272321 * x1_4022 = g_ptrA7F30;
 	x0_3020->qw1F58 = x1_4022->qw1F58 /u 1004;
-	struct Eq_272366 * x0_4029 = g_ptrA7FD8;
+	struct Eq_272324 * x0_4029 = g_ptrA7FD8;
 	x0_4029->qw1F60 = x1_4022->qw1F60 /u 1005;
 	x0_4029->qw1F68 = x1_4022->qw1F68 /u 0x03EE;
 	x0_4029->qw1F70 = x1_4022->qw1F70 /u 1007;
@@ -38191,16 +38182,15 @@ void unsigned_long_int_div()
 //      main
 void unsigned_long_int_modulo()
 {
-	struct Eq_272363 * x1_6 = g_ptrA7F30;
-	struct Eq_272366 * x0_7 = g_ptrA7FD8;
-	uint64 x2_9 = x1_6->qw0008;
+	struct Eq_272321 * x1_6 = g_ptrA7F30;
+	struct Eq_272324 * x0_7 = g_ptrA7FD8;
 	uint64 x3_11 = x1_6->qw0010;
 	uint64 x4_12 = x1_6->qw0028;
 	x0_7->qw0000 = 0x00;
-	x0_7->qw0008 = x2_9 & 0x00;
+	x0_7->qw0008 = 0x00;
 	uint64 x3_22 = x1_6->qw0020;
 	x0_7->qw0010 = x3_11 - (x3_11 /u 0x03 + (x3_11 /u 0x03 << 1));
-	x0_7->qw0018 = x1_6->qw0018 & 0x00;
+	x0_7->qw0018 = 0x00;
 	x0_7->qw0020 = x3_22 - (x3_22 /u 0x05 + (x3_22 /u 0x05 << 2));
 	uint64 x4_35 = x1_6->qw0030;
 	x0_7->qw0028 = x4_12 - (x4_12 /u 0x06) * 0x06;
@@ -38556,7 +38546,7 @@ void unsigned_long_int_modulo()
 	uint64 x3_924 = x1_6->qw05C0;
 	x0_7->qw05B8 = x4_919 - (x4_919 /u 0xB8) * 0xB8;
 	x0_7->qw05C0 = x3_924 - (x3_924 /u 0xB9) * 0xB9;
-	struct Eq_272363 * x0_933 = g_ptrA7F30;
+	struct Eq_272321 * x0_933 = g_ptrA7F30;
 	uint64 x4_934 = x0_933->qw05C8;
 	uint64 x4_937 = x0_933->qw05D0;
 	x0_7->qw05C8 = x4_934 - (x4_934 /u 0xBA) * 0xBA;
@@ -38921,11 +38911,11 @@ void unsigned_long_int_modulo()
 	uint64 x3_1838 = x0_933->qw0B70;
 	x0_7->qw0B68 = x4_1833 - (x4_1833 /u 366) * 366;
 	x0_7->qw0B70 = x3_1838 - (x3_1838 /u 0x016F) * 0x016F;
-	struct Eq_272363 * x0_1846 = g_ptrA7F30;
+	struct Eq_272321 * x0_1846 = g_ptrA7F30;
 	uint64 x4_1847 = x0_1846->qw0B78;
 	x0_7->qw0B78 = x4_1847 - (x4_1847 /u 0x0170) * 0x0170;
 	uint64 x4_1853 = x0_1846->qw0B80;
-	struct Eq_272366 * x1_1854 = g_ptrA7FD8;
+	struct Eq_272324 * x1_1854 = g_ptrA7FD8;
 	uint64 x4_1857 = x0_1846->qw0B88;
 	x1_1854->qw0B80 = x4_1853 - (x4_1853 /u 0x0171) * 0x0171;
 	uint64 x4_1862 = x0_1846->qw0B90;
@@ -39288,9 +39278,9 @@ void unsigned_long_int_modulo()
 	uint64 x3_2756 = x0_1846->qw1128;
 	x1_1854->qw1120 = x4_2751 - (x4_2751 /u 0x0225) * 0x0225;
 	x1_1854->qw1128 = x3_2756 - (x3_2756 /u 0x0226) * 0x0226;
-	struct Eq_272363 * x0_2765 = g_ptrA7F30;
+	struct Eq_272321 * x0_2765 = g_ptrA7F30;
 	uint64 x4_2767 = x0_2765->qw1130;
-	struct Eq_272366 * x1_2766 = g_ptrA7FD8;
+	struct Eq_272324 * x1_2766 = g_ptrA7FD8;
 	uint64 x4_2770 = x0_2765->qw1138;
 	x1_2766->qw1130 = x4_2767 - (x4_2767 /u 0x0227) * 0x0227;
 	uint64 x4_2775 = x0_2765->qw1140;
@@ -39654,9 +39644,9 @@ void unsigned_long_int_modulo()
 	uint64 x3_3670 = x0_2765->qw16D8;
 	x1_2766->qw16D0 = x4_3665 - (x4_3665 /u 0x02DB) * 0x02DB;
 	x1_2766->qw16D8 = x3_3670 - (x3_3670 /u 0x02DC) * 0x02DC;
-	struct Eq_272363 * x0_3679 = g_ptrA7F30;
+	struct Eq_272321 * x0_3679 = g_ptrA7F30;
 	uint64 x4_3681 = x0_3679->qw16E0;
-	struct Eq_272366 * x1_3680 = g_ptrA7FD8;
+	struct Eq_272324 * x1_3680 = g_ptrA7FD8;
 	uint64 x4_3684 = x0_3679->qw16E8;
 	x1_3680->qw16E0 = x4_3681 - (x4_3681 /u 0x02DD) * 0x02DD;
 	x1_3680->qw16E8 = x4_3684 - (x4_3684 /u 0x02DE) * 0x02DE;
@@ -40020,7 +40010,7 @@ void unsigned_long_int_modulo()
 	uint64 x3_4584 = x0_3679->qw1C88;
 	x1_3680->qw1C80 = x4_4579 - (x4_4579 /u 0x0391) * 0x0391;
 	x1_3680->qw1C88 = x3_4584 - (x3_4584 /u 0x0392) * 0x0392;
-	struct Eq_272363 * x0_4593 = g_ptrA7F30;
+	struct Eq_272321 * x0_4593 = g_ptrA7F30;
 	uint64 x5_4594 = x0_4593->qw1C90;
 	uint64 x5_4597 = x0_4593->qw1C98;
 	x1_3680->qw1C90 = x5_4594 - (x5_4594 /u 0x0393) * 0x0393;
@@ -40202,9 +40192,9 @@ void unsigned_long_int_modulo()
 	x1_3680->qw1F50 = x5_5032 - (x5_5032 /u 1003) * 1003;
 	uint64 x4_5042 = x0_4593->qw1F60;
 	x1_3680->qw1F58 = x5_5037 - (x5_5037 /u 1004) * 1004;
-	struct Eq_272366 * x0_5047 = g_ptrA7FD8;
+	struct Eq_272324 * x0_5047 = g_ptrA7FD8;
 	x1_3680->qw1F60 = x4_5042 - (x4_5042 /u 1005) * 1005;
-	struct Eq_272363 * x1_5051 = g_ptrA7F30;
+	struct Eq_272321 * x1_5051 = g_ptrA7F30;
 	uint64 x4_5052 = x1_5051->qw1F68;
 	uint64 x4_5055 = x1_5051->qw1F70;
 	x0_5047->qw1F68 = x4_5052 - (x4_5052 /u 0x03EE) * 0x03EE;
@@ -40250,8 +40240,8 @@ void unsigned_long_int_modulo()
 //      main
 void signed_long_long_add()
 {
-	struct Eq_309328 * x0_6 = g_ptrA7F70;
-	struct Eq_309331 * x1_7 = g_ptrA7F48;
+	struct Eq_309277 * x0_6 = g_ptrA7F70;
+	struct Eq_309280 * x1_7 = g_ptrA7F48;
 	x1_7->qw0000 = x0_6->qw0000 + 0x01;
 	x1_7->qw0008 = x0_6->qw0008 + 0x02;
 	x1_7->qw0010 = x0_6->qw0010 + 0x03;
@@ -40682,9 +40672,9 @@ void signed_long_long_add()
 	int64 x0_1290 = x0_6->qw0D60;
 	x1_7->qw0D58 = x0_6->qw0D58 + 0x01AC;
 	x1_7->qw0D60 = x0_1290 + 0x01AD;
-	struct Eq_309328 * x0_1296 = g_ptrA7F70;
+	struct Eq_309277 * x0_1296 = g_ptrA7F70;
 	x1_7->qw0D68 = x0_1296->qw0D68 + 0x01AE;
-	struct Eq_309331 * x1_1301 = g_ptrA7F48;
+	struct Eq_309280 * x1_1301 = g_ptrA7F48;
 	x1_1301->qw0D70 = x0_1296->qw0D70 + 0x01AF;
 	x1_1301->qw0D78 = x0_1296->qw0D78 + 0x01B0;
 	x1_1301->qw0D80 = x0_1296->qw0D80 + 0x01B1;
@@ -40972,8 +40962,8 @@ void signed_long_long_add()
 	int64 x0_2155 = x0_1296->qw1658;
 	x1_1301->qw1650 = x0_1296->qw1650 + 0x02CB;
 	x1_1301->qw1658 = x0_2155 + 0x02CC;
-	struct Eq_309328 * x0_2162 = g_ptrA7F70;
-	struct Eq_309331 * x1_2163 = g_ptrA7F48;
+	struct Eq_309277 * x0_2162 = g_ptrA7F70;
+	struct Eq_309280 * x1_2163 = g_ptrA7F48;
 	x1_2163->qw1660 = x0_2162->qw1660 + 717;
 	x1_2163->qw1668 = x0_2162->qw1668 + 0x02CE;
 	x1_2163->qw1670 = x0_2162->qw1670 + 0x02CF;
@@ -41261,8 +41251,8 @@ void signed_long_long_add()
 	int64 x0_3017 = x0_2162->qw1F48;
 	x1_2163->qw1F40 = x0_2162->qw1F40 + 1001;
 	x1_2163->qw1F48 = x0_3017 + 1002;
-	struct Eq_309328 * x1_3024 = g_ptrA7F70;
-	struct Eq_309331 * x0_3025 = g_ptrA7F48;
+	struct Eq_309277 * x1_3024 = g_ptrA7F70;
+	struct Eq_309280 * x0_3025 = g_ptrA7F48;
 	x0_3025->qw1F50 = x1_3024->qw1F50 + 1003;
 	x0_3025->qw1F58 = x1_3024->qw1F58 + 1004;
 	x0_3025->qw1F60 = x1_3024->qw1F60 + 1005;
@@ -41293,8 +41283,8 @@ void signed_long_long_add()
 //      main
 void signed_long_long_mult()
 {
-	struct Eq_309328 * x1_8 = g_ptrA7F70;
-	struct Eq_309331 * x0_9 = g_ptrA7F48;
+	struct Eq_309277 * x1_8 = g_ptrA7F70;
+	struct Eq_309280 * x0_9 = g_ptrA7F48;
 	x0_9->qw0000 = x1_8->qw0000;
 	x0_9->qw0008 = x1_8->qw0008 << 1;
 	x0_9->qw0010 = x1_8->qw0010 * 0x03;
@@ -41547,8 +41537,8 @@ void signed_long_long_mult()
 	int64 x1_991 = x1_8->qw07D0;
 	x0_9->qw07C8 = x1_8->qw07C8 * 0xFA;
 	x0_9->qw07D0 = x1_991 * 0xFB;
-	struct Eq_309328 * x1_1000 = g_ptrA7F70;
-	struct Eq_309331 * x0_999 = g_ptrA7F48;
+	struct Eq_309277 * x1_1000 = g_ptrA7F70;
+	struct Eq_309280 * x0_999 = g_ptrA7F48;
 	x0_999->qw07D8 = x1_1000->qw07D8 * 252;
 	x0_999->qw07E0 = x1_1000->qw07E0 * 0xFD;
 	x0_999->qw07E8 = x1_1000->qw07E8 * 0xFE;
@@ -41798,9 +41788,9 @@ void signed_long_long_mult()
 	x0_999->qw0F88 = x1_1000->qw0F88 * 0x01F2;
 	x0_999->qw0F90 = x1_1000->qw0F90 * 499;
 	x0_999->qw0F98 = x1_1000->qw0F98 * 500;
-	struct Eq_309331 * x1_1998 = g_ptrA7F48;
+	struct Eq_309280 * x1_1998 = g_ptrA7F48;
 	x0_999->qw0FA0 = x1_1000->qw0FA0 * 0x01F5;
-	struct Eq_309328 * x0_2002 = g_ptrA7F70;
+	struct Eq_309277 * x0_2002 = g_ptrA7F70;
 	x1_1998->qw0FA8 = x0_2002->qw0FA8 * 0x01F6;
 	x1_1998->qw0FB0 = x0_2002->qw0FB0 * 0x01F7;
 	x1_1998->qw0FB8 = x0_2002->qw0FB8 * 0x01F8;
@@ -42053,8 +42043,8 @@ void signed_long_long_mult()
 	int64 x0_2998 = x0_2002->qw1778;
 	x1_1998->qw1770 = x0_2002->qw1770 * 0x02EF;
 	x1_1998->qw1778 = x0_2998 * 0x02F0;
-	struct Eq_309328 * x0_3007 = g_ptrA7F70;
-	struct Eq_309331 * x1_3006 = g_ptrA7F48;
+	struct Eq_309277 * x0_3007 = g_ptrA7F70;
+	struct Eq_309280 * x1_3006 = g_ptrA7F48;
 	x1_3006->qw1780 = x0_3007->qw1780 * 0x02F1;
 	x1_3006->qw1788 = x0_3007->qw1788 * 0x02F2;
 	x1_3006->qw1790 = x0_3007->qw1790 * 755;
@@ -42304,9 +42294,9 @@ void signed_long_long_mult()
 	x1_3006->qw1F30 = x0_3007->qw1F30 * 999;
 	x1_3006->qw1F38 = x0_3007->qw1F38 * 1000;
 	x1_3006->qw1F40 = x0_3007->qw1F40 * 1001;
-	struct Eq_309331 * x0_4006 = g_ptrA7F48;
+	struct Eq_309280 * x0_4006 = g_ptrA7F48;
 	x1_3006->qw1F48 = x0_3007->qw1F48 * 1002;
-	struct Eq_309328 * x1_4010 = g_ptrA7F70;
+	struct Eq_309277 * x1_4010 = g_ptrA7F70;
 	x0_4006->qw1F50 = x1_4010->qw1F50 * 1003;
 	x0_4006->qw1F58 = x1_4010->qw1F58 * 1004;
 	x0_4006->qw1F60 = x1_4010->qw1F60 * 1005;
@@ -42337,8 +42327,8 @@ void signed_long_long_mult()
 //      main
 void signed_long_long_div()
 {
-	struct Eq_309328 * x0_8 = g_ptrA7F70;
-	struct Eq_309331 * x1_9 = g_ptrA7F48;
+	struct Eq_309277 * x0_8 = g_ptrA7F70;
+	struct Eq_309280 * x1_9 = g_ptrA7F48;
 	x1_9->qw0000 = x0_8->qw0000;
 	x1_9->qw0008 = x0_8->qw0008 / 0x02;
 	x1_9->qw0010 = x0_8->qw0010 / 0x03;
@@ -42591,8 +42581,8 @@ void signed_long_long_div()
 	int64 x0_1005 = x0_8->qw07D0;
 	x1_9->qw07C8 = x0_8->qw07C8 / 0xFA;
 	x1_9->qw07D0 = x0_1005 / 0xFB;
-	struct Eq_309328 * x0_1014 = g_ptrA7F70;
-	struct Eq_309331 * x1_1013 = g_ptrA7F48;
+	struct Eq_309277 * x0_1014 = g_ptrA7F70;
+	struct Eq_309280 * x1_1013 = g_ptrA7F48;
 	x1_1013->qw07D8 = x0_1014->qw07D8 / 252;
 	x1_1013->qw07E0 = x0_1014->qw07E0 / 0xFD;
 	x1_1013->qw07E8 = x0_1014->qw07E8 / 0xFE;
@@ -42844,8 +42834,8 @@ void signed_long_long_div()
 	int64 x0_2008 = x0_1014->qw0FA0;
 	x1_1013->qw0F98 = x0_1014->qw0F98 / 500;
 	x1_1013->qw0FA0 = x0_2008 / 0x01F5;
-	struct Eq_309328 * x0_2018 = g_ptrA7F70;
-	struct Eq_309331 * x1_2016 = g_ptrA7F48;
+	struct Eq_309277 * x0_2018 = g_ptrA7F70;
+	struct Eq_309280 * x1_2016 = g_ptrA7F48;
 	x1_2016->qw0FA8 = x0_2018->qw0FA8 / 0x01F6;
 	x1_2016->qw0FB0 = x0_2018->qw0FB0 / 0x01F7;
 	x1_2016->qw0FB8 = x0_2018->qw0FB8 / 0x01F8;
@@ -43098,8 +43088,8 @@ void signed_long_long_div()
 	int64 x0_3016 = x0_2018->qw1778;
 	x1_2016->qw1770 = x0_2018->qw1770 / 0x02EF;
 	x1_2016->qw1778 = x0_3016 / 0x02F0;
-	struct Eq_309328 * x0_3025 = g_ptrA7F70;
-	struct Eq_309331 * x1_3024 = g_ptrA7F48;
+	struct Eq_309277 * x0_3025 = g_ptrA7F70;
+	struct Eq_309280 * x1_3024 = g_ptrA7F48;
 	x1_3024->qw1780 = x0_3025->qw1780 / 0x02F1;
 	x1_3024->qw1788 = x0_3025->qw1788 / 0x02F2;
 	x1_3024->qw1790 = x0_3025->qw1790 / 755;
@@ -43349,9 +43339,9 @@ void signed_long_long_div()
 	x1_3024->qw1F30 = x0_3025->qw1F30 / 999;
 	x1_3024->qw1F38 = x0_3025->qw1F38 / 1000;
 	x1_3024->qw1F40 = x0_3025->qw1F40 / 1001;
-	struct Eq_309331 * x0_4024 = g_ptrA7F48;
+	struct Eq_309280 * x0_4024 = g_ptrA7F48;
 	x1_3024->qw1F48 = x0_3025->qw1F48 / 1002;
-	struct Eq_309328 * x1_4028 = g_ptrA7F70;
+	struct Eq_309277 * x1_4028 = g_ptrA7F70;
 	x0_4024->qw1F50 = x1_4028->qw1F50 / 1003;
 	x0_4024->qw1F58 = x1_4028->qw1F58 / 1004;
 	x0_4024->qw1F60 = x1_4028->qw1F60 / 1005;
@@ -43388,27 +43378,25 @@ void signed_long_long_div()
 //      main
 void signed_long_long_modulo()
 {
-	struct Eq_309328 * x1_6 = g_ptrA7F70;
-	int64 x2_9 = x1_6->qw0008;
-	struct Eq_309331 * x0_7 = g_ptrA7F48;
+	struct Eq_309277 * x1_6 = g_ptrA7F70;
+	struct Eq_309280 * x0_7 = g_ptrA7F48;
 	int64 x3_11 = x1_6->qw0010;
 	int64 x4_12 = x1_6->qw0028;
+	int64 x2_16 = x1_6->qw0008 >= 0x00 ? 0x00 : -0x00;
 	x0_7->qw0000 = 0x00;
-	x0_7->qw0008 = x2_9 >= 0x00 ? x2_9 & 0x00 : -(x2_9 & 0x00);
+	x0_7->qw0008 = x2_16;
 	int64 x3_25 = x1_6->qw0018;
 	x0_7->qw0010 = x3_11 - (x3_11 / 0x03 + (x3_11 / 0x03 << 1));
-	int64 x2_27 = 0x00 - x3_25;
 	int64 x3_33 = x1_6->qw0020;
-	x0_7->qw0018 = x2_27 < 0x00 ? x3_25 & 0x00 : -(x2_27 & 0x00);
+	x0_7->qw0018 = x3_25 > 0x00 ? 0x00 : -0x00;
 	x0_7->qw0020 = x3_33 - (x3_33 / 0x05 + (x3_33 / 0x05 << 2));
 	int64 x4_43 = x1_6->qw0030;
 	x0_7->qw0028 = x4_12 - (x4_12 / 0x06) * 0x06;
 	int64 x3_48 = x1_6->qw0038;
 	int64 x4_49 = x1_6->qw0048;
 	x0_7->qw0030 = x4_43 - (x4_43 / 0x07) * 0x07;
-	int64 x2_51 = 0x00 - x3_48;
 	int64 x3_57 = x1_6->qw0040;
-	x0_7->qw0038 = x2_51 < 0x00 ? x3_48 & 0x00 : -(x2_51 & 0x00);
+	x0_7->qw0038 = x3_48 > 0x00 ? 0x00 : -0x00;
 	x0_7->qw0040 = x3_57 - (x3_57 / 0x09 + (x3_57 / 0x09 << 3));
 	int64 x4_67 = x1_6->qw0050;
 	x0_7->qw0048 = x4_49 - (x4_49 / 0x0A) * 0x0A;
@@ -43422,8 +43410,7 @@ void signed_long_long_modulo()
 	x0_7->qw0068 = x4_82 - (x4_82 / 0x0E) * 0x0E;
 	int64 x3_92 = x1_6->qw0078;
 	x0_7->qw0070 = x4_87 - (x4_87 / 0x0F) * 0x0F;
-	int64 x2_94 = 0x00 - x3_92;
-	x0_7->qw0078 = x2_94 < 0x00 ? x3_92 & 0x00 : -(x2_94 & 0x00);
+	x0_7->qw0078 = x3_92 > 0x00 ? 0x00 : -0x00;
 	int64 x3_103 = x1_6->qw0080;
 	int64 x4_105 = x1_6->qw0088;
 	x0_7->qw0080 = x3_103 - (x3_103 / 0x11 + (x3_103 / 0x11 << 4));
@@ -43455,8 +43442,7 @@ void signed_long_long_modulo()
 	x0_7->qw00E8 = x4_168 - (x4_168 / 0x1E) * 0x1E;
 	int64 x3_178 = x1_6->qw00F8;
 	x0_7->qw00F0 = x4_173 - (x4_173 / 0x1F) * 0x1F;
-	int64 x2_180 = 0x00 - x3_178;
-	x0_7->qw00F8 = x2_180 < 0x00 ? x3_178 & 0x00 : -(x2_180 & 0x00);
+	x0_7->qw00F8 = x3_178 > 0x00 ? 0x00 : -0x00;
 	int64 x3_189 = x1_6->qw0100;
 	int64 x4_191 = x1_6->qw0108;
 	x0_7->qw0100 = x3_189 - (x3_189 / 33 + (x3_189 / 33 << 5));
@@ -43520,8 +43506,7 @@ void signed_long_long_modulo()
 	x0_7->qw01E8 = x4_334 - (x4_334 / 0x3E) * 0x3E;
 	int64 x3_344 = x1_6->qw01F8;
 	x0_7->qw01F0 = x4_339 - (x4_339 / 0x3F) * 0x3F;
-	int64 x2_346 = 0x00 - x3_344;
-	x0_7->qw01F8 = x2_346 < 0x00 ? x3_344 & 0x00 : -(x2_346 & 0x00);
+	x0_7->qw01F8 = x3_344 > 0x00 ? 0x00 : -0x00;
 	int64 x3_354 = x1_6->qw0200;
 	int64 x4_355 = x1_6->qw0208;
 	x0_7->qw0200 = x3_354 - (x3_354 / 0x41 + (x3_354 / 0x41 << 6));
@@ -43649,8 +43634,7 @@ void signed_long_long_modulo()
 	x0_7->qw03E8 = x4_658 - (x4_658 / 0x7E) * 0x7E;
 	int64 x3_668 = x1_6->qw03F8;
 	x0_7->qw03F0 = x4_663 - (x4_663 / 0x7F) * 0x7F;
-	int64 x2_670 = 0x00 - x3_668;
-	x0_7->qw03F8 = x2_670 < 0x00 ? x3_668 & 0x00 : -(x2_670 & 0x00);
+	x0_7->qw03F8 = x3_668 > 0x00 ? 0x00 : -0x00;
 	int64 x3_678 = x1_6->qw0400;
 	int64 x4_679 = x1_6->qw0408;
 	x0_7->qw0400 = x3_678 - (x3_678 / 0x81 + (x3_678 / 0x81 << 7));
@@ -43761,7 +43745,7 @@ void signed_long_long_modulo()
 	int64 x3_947 = x1_6->qw05B0;
 	x0_7->qw05A8 = x4_942 - (x4_942 / 0xB6) * 0xB6;
 	x0_7->qw05B0 = x3_947 - (x3_947 / 0xB7) * 0xB7;
-	struct Eq_309328 * x0_957 = g_ptrA7F70;
+	struct Eq_309277 * x0_957 = g_ptrA7F70;
 	int64 x5_958 = x0_957->qw05B8;
 	int64 x5_961 = x0_957->qw05C0;
 	x0_7->qw05B8 = x5_958 - (x5_958 / 0xB8) * 0xB8;
@@ -43907,8 +43891,7 @@ void signed_long_long_modulo()
 	x0_7->qw07E8 = x5_1306 - (x5_1306 / 0xFE) * 0xFE;
 	int64 x3_1316 = x0_957->qw07F8;
 	x0_7->qw07F0 = x5_1311 - (x5_1311 / 0xFF) * 0xFF;
-	int64 x2_1318 = 0x00 - x3_1316;
-	x0_7->qw07F8 = x2_1318 < 0x00 ? x3_1316 & 0x00 : -(x2_1318 & 0x00);
+	x0_7->qw07F8 = x3_1316 > 0x00 ? 0x00 : -0x00;
 	int64 x3_1326 = x0_957->qw0800;
 	int64 x5_1327 = x0_957->qw0808;
 	x0_7->qw0800 = x3_1326 - (x3_1326 / 0x0101 + (x3_1326 / 0x0101 << 8));
@@ -44126,9 +44109,9 @@ void signed_long_long_modulo()
 	x0_7->qw0B50 = x5_1855 - (x5_1855 / 363) * 363;
 	int64 x3_1865 = x0_957->qw0B60;
 	x0_7->qw0B58 = x5_1860 - (x5_1860 / 0x016C) * 0x016C;
-	struct Eq_309331 * x0_1870 = g_ptrA7F48;
+	struct Eq_309280 * x0_1870 = g_ptrA7F48;
 	x0_7->qw0B60 = x3_1865 - (x3_1865 / 0x016D) * 0x016D;
-	struct Eq_309328 * x1_1874 = g_ptrA7F70;
+	struct Eq_309277 * x1_1874 = g_ptrA7F70;
 	int64 x5_1875 = x1_1874->qw0B68;
 	int64 x5_1878 = x1_1874->qw0B70;
 	x0_1870->qw0B68 = x5_1875 - (x5_1875 / 366) * 366;
@@ -44421,11 +44404,9 @@ void signed_long_long_modulo()
 	int64 x5_2598 = x1_1874->qw0FF0;
 	x0_1870->qw0FE8 = x5_2593 - (x5_2593 / 0x01FE) * 0x01FE;
 	x0_1870->qw0FF0 = x5_2598 - (x5_2598 / 0x01FF) * 0x01FF;
-	int64 x3_2604 = x1_1874->qw0FF8;
-	int64 x2_2606 = 0x00 - x3_2604;
 	int64 x5_2605 = x1_1874->qw1008;
 	int64 x3_2612 = x1_1874->qw1000;
-	x0_1870->qw0FF8 = x2_2606 < 0x00 ? x3_2604 & 0x00 : -(x2_2606 & 0x00);
+	x0_1870->qw0FF8 = x1_1874->qw0FF8 > 0x00 ? 0x00 : -0x00;
 	x0_1870->qw1000 = x3_2612 - (x3_2612 / 0x0201 + (x3_2612 / 0x0201 << 9));
 	int64 x5_2622 = x1_1874->qw1010;
 	x0_1870->qw1008 = x5_2605 - (x5_2605 / 0x0202) * 0x0202;
@@ -44493,12 +44474,12 @@ void signed_long_long_modulo()
 	x0_1870->qw1100 = x5_2772 - (x5_2772 / 0x0221) * 0x0221;
 	int64 x3_2782 = x1_1874->qw1110;
 	x0_1870->qw1108 = x5_2777 - (x5_2777 / 0x0222) * 0x0222;
-	struct Eq_309328 * x1_2787 = g_ptrA7F70;
+	struct Eq_309277 * x1_2787 = g_ptrA7F70;
 	x0_1870->qw1110 = x3_2782 - (x3_2782 / 0x0223) * 0x0223;
 	int64 x4_2790 = x1_2787->qw1118;
 	int64 x4_2793 = x1_2787->qw1120;
 	x0_1870->qw1118 = x4_2790 - (x4_2790 / 0x0224) * 0x0224;
-	struct Eq_309331 * x0_2798 = g_ptrA7F48;
+	struct Eq_309280 * x0_2798 = g_ptrA7F48;
 	int64 x4_2800 = x1_2787->qw1128;
 	x0_2798->qw1120 = x4_2793 - (x4_2793 / 0x0225) * 0x0225;
 	int64 x4_2805 = x1_2787->qw1130;
@@ -44862,9 +44843,9 @@ void signed_long_long_modulo()
 	int64 x3_3700 = x1_2787->qw16C8;
 	x0_2798->qw16C0 = x4_3695 - (x4_3695 / 0x02D9) * 0x02D9;
 	x0_2798->qw16C8 = x3_3700 - (x3_3700 / 0x02DA) * 0x02DA;
-	struct Eq_309328 * x0_3709 = g_ptrA7F70;
+	struct Eq_309277 * x0_3709 = g_ptrA7F70;
 	int64 x4_3711 = x0_3709->qw16D0;
-	struct Eq_309331 * x1_3710 = g_ptrA7F48;
+	struct Eq_309280 * x1_3710 = g_ptrA7F48;
 	int64 x4_3714 = x0_3709->qw16D8;
 	x1_3710->qw16D0 = x4_3711 - (x4_3711 / 0x02DB) * 0x02DB;
 	int64 x4_3719 = x0_3709->qw16E0;
@@ -45228,7 +45209,7 @@ void signed_long_long_modulo()
 	int64 x3_4614 = x0_3709->qw1C78;
 	x1_3710->qw1C70 = x4_4609 - (x4_4609 / 911) * 911;
 	x1_3710->qw1C78 = x3_4614 - (x3_4614 / 0x0390) * 0x0390;
-	struct Eq_309328 * x1_4623 = g_ptrA7F70;
+	struct Eq_309277 * x1_4623 = g_ptrA7F70;
 	int64 x4_4624 = x1_4623->qw1C80;
 	int64 x4_4627 = x1_4623->qw1C88;
 	x1_3710->qw1C80 = x4_4624 - (x4_4624 / 0x0391) * 0x0391;
@@ -45411,9 +45392,9 @@ void signed_long_long_modulo()
 	int64 x3_5072 = x1_4623->qw1F50;
 	x1_3710->qw1F48 = x4_5067 - (x4_5067 / 1002) * 1002;
 	x1_3710->qw1F50 = x3_5072 - (x3_5072 / 1003) * 1003;
-	struct Eq_309328 * x1_5081 = g_ptrA7F70;
+	struct Eq_309277 * x1_5081 = g_ptrA7F70;
 	int64 x4_5083 = x1_5081->qw1F58;
-	struct Eq_309331 * x0_5082 = g_ptrA7F48;
+	struct Eq_309280 * x0_5082 = g_ptrA7F48;
 	x0_5082->qw1F58 = x4_5083 - (x4_5083 / 1004) * 1004;
 	int64 x4_5088 = x1_5081->qw1F60;
 	int64 x4_5091 = x1_5081->qw1F68;
@@ -45463,8 +45444,8 @@ void signed_long_long_modulo()
 //      main
 void unsigned_long_long_add()
 {
-	struct Eq_346385 * x0_6 = g_ptrA7FD0;
-	struct Eq_346388 * x1_7 = g_ptrA7F28;
+	struct Eq_346292 * x0_6 = g_ptrA7FD0;
+	struct Eq_346295 * x1_7 = g_ptrA7F28;
 	x1_7->qw0000 = x0_6->qw0000 + 0x01;
 	x1_7->qw0008 = x0_6->qw0008 + 0x02;
 	x1_7->qw0010 = x0_6->qw0010 + 0x03;
@@ -45895,9 +45876,9 @@ void unsigned_long_long_add()
 	uint64 x0_1290 = x0_6->qw0D60;
 	x1_7->qw0D58 = x0_6->qw0D58 + 0x01AC;
 	x1_7->qw0D60 = x0_1290 + 0x01AD;
-	struct Eq_346385 * x0_1296 = g_ptrA7FD0;
+	struct Eq_346292 * x0_1296 = g_ptrA7FD0;
 	x1_7->qw0D68 = x0_1296->qw0D68 + 0x01AE;
-	struct Eq_346388 * x1_1301 = g_ptrA7F28;
+	struct Eq_346295 * x1_1301 = g_ptrA7F28;
 	x1_1301->qw0D70 = x0_1296->qw0D70 + 0x01AF;
 	x1_1301->qw0D78 = x0_1296->qw0D78 + 0x01B0;
 	x1_1301->qw0D80 = x0_1296->qw0D80 + 0x01B1;
@@ -46185,8 +46166,8 @@ void unsigned_long_long_add()
 	uint64 x0_2155 = x0_1296->qw1658;
 	x1_1301->qw1650 = x0_1296->qw1650 + 0x02CB;
 	x1_1301->qw1658 = x0_2155 + 0x02CC;
-	struct Eq_346385 * x0_2162 = g_ptrA7FD0;
-	struct Eq_346388 * x1_2163 = g_ptrA7F28;
+	struct Eq_346292 * x0_2162 = g_ptrA7FD0;
+	struct Eq_346295 * x1_2163 = g_ptrA7F28;
 	x1_2163->qw1660 = x0_2162->qw1660 + 717;
 	x1_2163->qw1668 = x0_2162->qw1668 + 0x02CE;
 	x1_2163->qw1670 = x0_2162->qw1670 + 0x02CF;
@@ -46474,8 +46455,8 @@ void unsigned_long_long_add()
 	uint64 x0_3017 = x0_2162->qw1F48;
 	x1_2163->qw1F40 = x0_2162->qw1F40 + 1001;
 	x1_2163->qw1F48 = x0_3017 + 1002;
-	struct Eq_346385 * x1_3024 = g_ptrA7FD0;
-	struct Eq_346388 * x0_3025 = g_ptrA7F28;
+	struct Eq_346292 * x1_3024 = g_ptrA7FD0;
+	struct Eq_346295 * x0_3025 = g_ptrA7F28;
 	x0_3025->qw1F50 = x1_3024->qw1F50 + 1003;
 	x0_3025->qw1F58 = x1_3024->qw1F58 + 1004;
 	x0_3025->qw1F60 = x1_3024->qw1F60 + 1005;
@@ -46506,8 +46487,8 @@ void unsigned_long_long_add()
 //      main
 void unsigned_long_long_mult()
 {
-	struct Eq_346385 * x1_8 = g_ptrA7FD0;
-	struct Eq_346388 * x0_9 = g_ptrA7F28;
+	struct Eq_346292 * x1_8 = g_ptrA7FD0;
+	struct Eq_346295 * x0_9 = g_ptrA7F28;
 	x0_9->qw0000 = x1_8->qw0000;
 	x0_9->qw0008 = x1_8->qw0008 << 1;
 	x0_9->qw0010 = x1_8->qw0010 * 0x03;
@@ -46760,8 +46741,8 @@ void unsigned_long_long_mult()
 	uint64 x1_991 = x1_8->qw07D0;
 	x0_9->qw07C8 = x1_8->qw07C8 * 0xFA;
 	x0_9->qw07D0 = x1_991 * 0xFB;
-	struct Eq_346385 * x1_1000 = g_ptrA7FD0;
-	struct Eq_346388 * x0_999 = g_ptrA7F28;
+	struct Eq_346292 * x1_1000 = g_ptrA7FD0;
+	struct Eq_346295 * x0_999 = g_ptrA7F28;
 	x0_999->qw07D8 = x1_1000->qw07D8 * 252;
 	x0_999->qw07E0 = x1_1000->qw07E0 * 0xFD;
 	x0_999->qw07E8 = x1_1000->qw07E8 * 0xFE;
@@ -47011,9 +46992,9 @@ void unsigned_long_long_mult()
 	x0_999->qw0F88 = x1_1000->qw0F88 * 0x01F2;
 	x0_999->qw0F90 = x1_1000->qw0F90 * 499;
 	x0_999->qw0F98 = x1_1000->qw0F98 * 500;
-	struct Eq_346388 * x1_1998 = g_ptrA7F28;
+	struct Eq_346295 * x1_1998 = g_ptrA7F28;
 	x0_999->qw0FA0 = x1_1000->qw0FA0 * 0x01F5;
-	struct Eq_346385 * x0_2002 = g_ptrA7FD0;
+	struct Eq_346292 * x0_2002 = g_ptrA7FD0;
 	x1_1998->qw0FA8 = x0_2002->qw0FA8 * 0x01F6;
 	x1_1998->qw0FB0 = x0_2002->qw0FB0 * 0x01F7;
 	x1_1998->qw0FB8 = x0_2002->qw0FB8 * 0x01F8;
@@ -47266,8 +47247,8 @@ void unsigned_long_long_mult()
 	uint64 x0_2998 = x0_2002->qw1778;
 	x1_1998->qw1770 = x0_2002->qw1770 * 0x02EF;
 	x1_1998->qw1778 = x0_2998 * 0x02F0;
-	struct Eq_346385 * x0_3007 = g_ptrA7FD0;
-	struct Eq_346388 * x1_3006 = g_ptrA7F28;
+	struct Eq_346292 * x0_3007 = g_ptrA7FD0;
+	struct Eq_346295 * x1_3006 = g_ptrA7F28;
 	x1_3006->qw1780 = x0_3007->qw1780 * 0x02F1;
 	x1_3006->qw1788 = x0_3007->qw1788 * 0x02F2;
 	x1_3006->qw1790 = x0_3007->qw1790 * 755;
@@ -47517,9 +47498,9 @@ void unsigned_long_long_mult()
 	x1_3006->qw1F30 = x0_3007->qw1F30 * 999;
 	x1_3006->qw1F38 = x0_3007->qw1F38 * 1000;
 	x1_3006->qw1F40 = x0_3007->qw1F40 * 1001;
-	struct Eq_346388 * x0_4006 = g_ptrA7F28;
+	struct Eq_346295 * x0_4006 = g_ptrA7F28;
 	x1_3006->qw1F48 = x0_3007->qw1F48 * 1002;
-	struct Eq_346385 * x1_4010 = g_ptrA7FD0;
+	struct Eq_346292 * x1_4010 = g_ptrA7FD0;
 	x0_4006->qw1F50 = x1_4010->qw1F50 * 1003;
 	x0_4006->qw1F58 = x1_4010->qw1F58 * 1004;
 	x0_4006->qw1F60 = x1_4010->qw1F60 * 1005;
@@ -47550,8 +47531,8 @@ void unsigned_long_long_mult()
 //      main
 void unsigned_long_long_div()
 {
-	struct Eq_346385 * x0_8 = g_ptrA7FD0;
-	struct Eq_346388 * x1_9 = g_ptrA7F28;
+	struct Eq_346292 * x0_8 = g_ptrA7FD0;
+	struct Eq_346295 * x1_9 = g_ptrA7F28;
 	x1_9->qw0000 = x0_8->qw0000;
 	x1_9->qw0008 = x0_8->qw0008 >> 1;
 	x1_9->qw0010 = x0_8->qw0010 /u 0x03;
@@ -47805,8 +47786,8 @@ void unsigned_long_long_div()
 	uint64 x0_1002 = x0_8->qw07D8;
 	x1_9->qw07D0 = x0_8->qw07D0 /u 0xFB;
 	x1_9->qw07D8 = x0_1002 /u 252;
-	struct Eq_346385 * x0_1011 = g_ptrA7FD0;
-	struct Eq_346388 * x1_1010 = g_ptrA7F28;
+	struct Eq_346292 * x0_1011 = g_ptrA7FD0;
+	struct Eq_346295 * x1_1010 = g_ptrA7F28;
 	x1_1010->qw07E0 = x0_1011->qw07E0 /u 0xFD;
 	x1_1010->qw07E8 = x0_1011->qw07E8 /u 0xFE;
 	x1_1010->qw07F0 = x0_1011->qw07F0 /u 0xFF;
@@ -48056,9 +48037,9 @@ void unsigned_long_long_div()
 	x1_1010->qw0F90 = x0_1011->qw0F90 /u 499;
 	x1_1010->qw0F98 = x0_1011->qw0F98 /u 500;
 	x1_1010->qw0FA0 = x0_1011->qw0FA0 /u 0x01F5;
-	struct Eq_346388 * x0_2009 = g_ptrA7F28;
+	struct Eq_346295 * x0_2009 = g_ptrA7F28;
 	x1_1010->qw0FA8 = x0_1011->qw0FA8 /u 0x01F6;
-	struct Eq_346385 * x1_2013 = g_ptrA7FD0;
+	struct Eq_346292 * x1_2013 = g_ptrA7FD0;
 	x0_2009->qw0FB0 = x1_2013->qw0FB0 /u 0x01F7;
 	x0_2009->qw0FB8 = x1_2013->qw0FB8 /u 0x01F8;
 	x0_2009->qw0FC0 = x1_2013->qw0FC0 /u 505;
@@ -48311,8 +48292,8 @@ void unsigned_long_long_div()
 	uint64 x1_3010 = x1_2013->qw1780;
 	x0_2009->qw1778 = x1_2013->qw1778 /u 0x02F0;
 	x0_2009->qw1780 = x1_3010 /u 0x02F1;
-	struct Eq_346385 * x1_3019 = g_ptrA7FD0;
-	struct Eq_346388 * x0_3020 = g_ptrA7F28;
+	struct Eq_346292 * x1_3019 = g_ptrA7FD0;
+	struct Eq_346295 * x0_3020 = g_ptrA7F28;
 	x0_3020->qw1788 = x1_3019->qw1788 /u 0x02F2;
 	x0_3020->qw1790 = x1_3019->qw1790 /u 755;
 	x0_3020->qw1798 = x1_3019->qw1798 /u 0x02F4;
@@ -48564,9 +48545,9 @@ void unsigned_long_long_div()
 	uint64 x1_4014 = x1_3019->qw1F50;
 	x0_3020->qw1F48 = x1_3019->qw1F48 /u 1002;
 	x0_3020->qw1F50 = x1_4014 /u 1003;
-	struct Eq_346385 * x1_4022 = g_ptrA7FD0;
+	struct Eq_346292 * x1_4022 = g_ptrA7FD0;
 	x0_3020->qw1F58 = x1_4022->qw1F58 /u 1004;
-	struct Eq_346388 * x0_4029 = g_ptrA7F28;
+	struct Eq_346295 * x0_4029 = g_ptrA7F28;
 	x0_4029->qw1F60 = x1_4022->qw1F60 /u 1005;
 	x0_4029->qw1F68 = x1_4022->qw1F68 /u 0x03EE;
 	x0_4029->qw1F70 = x1_4022->qw1F70 /u 1007;
@@ -48601,16 +48582,15 @@ void unsigned_long_long_div()
 //      main
 void unsigned_long_long_modulo()
 {
-	struct Eq_346385 * x1_6 = g_ptrA7FD0;
-	struct Eq_346388 * x0_7 = g_ptrA7F28;
-	uint64 x2_9 = x1_6->qw0008;
+	struct Eq_346292 * x1_6 = g_ptrA7FD0;
+	struct Eq_346295 * x0_7 = g_ptrA7F28;
 	uint64 x3_11 = x1_6->qw0010;
 	uint64 x4_12 = x1_6->qw0028;
 	x0_7->qw0000 = 0x00;
-	x0_7->qw0008 = x2_9 & 0x00;
+	x0_7->qw0008 = 0x00;
 	uint64 x3_22 = x1_6->qw0020;
 	x0_7->qw0010 = x3_11 - (x3_11 /u 0x03 + (x3_11 /u 0x03 << 1));
-	x0_7->qw0018 = x1_6->qw0018 & 0x00;
+	x0_7->qw0018 = 0x00;
 	x0_7->qw0020 = x3_22 - (x3_22 /u 0x05 + (x3_22 /u 0x05 << 2));
 	uint64 x4_35 = x1_6->qw0030;
 	x0_7->qw0028 = x4_12 - (x4_12 /u 0x06) * 0x06;
@@ -48966,7 +48946,7 @@ void unsigned_long_long_modulo()
 	uint64 x3_924 = x1_6->qw05C0;
 	x0_7->qw05B8 = x4_919 - (x4_919 /u 0xB8) * 0xB8;
 	x0_7->qw05C0 = x3_924 - (x3_924 /u 0xB9) * 0xB9;
-	struct Eq_346385 * x0_933 = g_ptrA7FD0;
+	struct Eq_346292 * x0_933 = g_ptrA7FD0;
 	uint64 x4_934 = x0_933->qw05C8;
 	uint64 x4_937 = x0_933->qw05D0;
 	x0_7->qw05C8 = x4_934 - (x4_934 /u 0xBA) * 0xBA;
@@ -49331,11 +49311,11 @@ void unsigned_long_long_modulo()
 	uint64 x3_1838 = x0_933->qw0B70;
 	x0_7->qw0B68 = x4_1833 - (x4_1833 /u 366) * 366;
 	x0_7->qw0B70 = x3_1838 - (x3_1838 /u 0x016F) * 0x016F;
-	struct Eq_346385 * x0_1846 = g_ptrA7FD0;
+	struct Eq_346292 * x0_1846 = g_ptrA7FD0;
 	uint64 x4_1847 = x0_1846->qw0B78;
 	x0_7->qw0B78 = x4_1847 - (x4_1847 /u 0x0170) * 0x0170;
 	uint64 x4_1853 = x0_1846->qw0B80;
-	struct Eq_346388 * x1_1854 = g_ptrA7F28;
+	struct Eq_346295 * x1_1854 = g_ptrA7F28;
 	uint64 x4_1857 = x0_1846->qw0B88;
 	x1_1854->qw0B80 = x4_1853 - (x4_1853 /u 0x0171) * 0x0171;
 	uint64 x4_1862 = x0_1846->qw0B90;
@@ -49698,9 +49678,9 @@ void unsigned_long_long_modulo()
 	uint64 x3_2756 = x0_1846->qw1128;
 	x1_1854->qw1120 = x4_2751 - (x4_2751 /u 0x0225) * 0x0225;
 	x1_1854->qw1128 = x3_2756 - (x3_2756 /u 0x0226) * 0x0226;
-	struct Eq_346385 * x0_2765 = g_ptrA7FD0;
+	struct Eq_346292 * x0_2765 = g_ptrA7FD0;
 	uint64 x4_2767 = x0_2765->qw1130;
-	struct Eq_346388 * x1_2766 = g_ptrA7F28;
+	struct Eq_346295 * x1_2766 = g_ptrA7F28;
 	uint64 x4_2770 = x0_2765->qw1138;
 	x1_2766->qw1130 = x4_2767 - (x4_2767 /u 0x0227) * 0x0227;
 	uint64 x4_2775 = x0_2765->qw1140;
@@ -50064,9 +50044,9 @@ void unsigned_long_long_modulo()
 	uint64 x3_3670 = x0_2765->qw16D8;
 	x1_2766->qw16D0 = x4_3665 - (x4_3665 /u 0x02DB) * 0x02DB;
 	x1_2766->qw16D8 = x3_3670 - (x3_3670 /u 0x02DC) * 0x02DC;
-	struct Eq_346385 * x0_3679 = g_ptrA7FD0;
+	struct Eq_346292 * x0_3679 = g_ptrA7FD0;
 	uint64 x4_3681 = x0_3679->qw16E0;
-	struct Eq_346388 * x1_3680 = g_ptrA7F28;
+	struct Eq_346295 * x1_3680 = g_ptrA7F28;
 	uint64 x4_3684 = x0_3679->qw16E8;
 	x1_3680->qw16E0 = x4_3681 - (x4_3681 /u 0x02DD) * 0x02DD;
 	x1_3680->qw16E8 = x4_3684 - (x4_3684 /u 0x02DE) * 0x02DE;
@@ -50430,7 +50410,7 @@ void unsigned_long_long_modulo()
 	uint64 x3_4584 = x0_3679->qw1C88;
 	x1_3680->qw1C80 = x4_4579 - (x4_4579 /u 0x0391) * 0x0391;
 	x1_3680->qw1C88 = x3_4584 - (x3_4584 /u 0x0392) * 0x0392;
-	struct Eq_346385 * x0_4593 = g_ptrA7FD0;
+	struct Eq_346292 * x0_4593 = g_ptrA7FD0;
 	uint64 x5_4594 = x0_4593->qw1C90;
 	uint64 x5_4597 = x0_4593->qw1C98;
 	x1_3680->qw1C90 = x5_4594 - (x5_4594 /u 0x0393) * 0x0393;
@@ -50612,9 +50592,9 @@ void unsigned_long_long_modulo()
 	x1_3680->qw1F50 = x5_5032 - (x5_5032 /u 1003) * 1003;
 	uint64 x4_5042 = x0_4593->qw1F60;
 	x1_3680->qw1F58 = x5_5037 - (x5_5037 /u 1004) * 1004;
-	struct Eq_346388 * x0_5047 = g_ptrA7F28;
+	struct Eq_346295 * x0_5047 = g_ptrA7F28;
 	x1_3680->qw1F60 = x4_5042 - (x4_5042 /u 1005) * 1005;
-	struct Eq_346385 * x1_5051 = g_ptrA7FD0;
+	struct Eq_346292 * x1_5051 = g_ptrA7FD0;
 	uint64 x4_5052 = x1_5051->qw1F68;
 	uint64 x4_5055 = x1_5051->qw1F70;
 	x0_5047->qw1F68 = x4_5052 - (x4_5052 /u 0x03EE) * 0x03EE;

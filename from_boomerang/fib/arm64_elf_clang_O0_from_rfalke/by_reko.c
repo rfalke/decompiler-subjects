@@ -137,8 +137,8 @@ void frame_dummy(word64 x29, word64 x30)
 void main()
 {
 	struct Eq_85 * sp_13 = (struct Eq_85 *) <invalid>;
-	word64 x29_16;
-	sp_13->dw0008 = fib(0x0A, out x29_16);
+	word64 x29_44;
+	sp_13->dw0008 = fib(0x0A, out x29_44);
 	fn0000000000400480();
 	sp_13->dw0004 = (word32) 0x00400720;
 }

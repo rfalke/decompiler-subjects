@@ -19,7 +19,7 @@ void fn0C00_0100(int8 ch, struct Eq_3 Eq_5::* bx, word16 si, struct Eq_5 * ds)
 		{
 			word16 bx_13 = bx + 1;
 			byte bh_38 = SLICE(bx_13, byte, 8);
-			uint8 bl_17;
+			uint8 bl_17 = (byte) bx_13;
 			do
 			{
 				ax_15 = (int16) ((int32) ax_15 / SEQ(ch, bl_17)) + si;

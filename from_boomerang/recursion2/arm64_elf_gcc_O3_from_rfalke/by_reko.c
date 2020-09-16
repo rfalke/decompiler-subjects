@@ -163,9 +163,9 @@ void frame_dummy(word64 x29, word64 x30)
 word64 f(word64 * x29, word64 x30)
 {
 	word32 sp_32_32_62 = SLICE(fp, word32, 32);
-	ui32 w1_5 = g_dw12038;
+	word32 w1_5 = g_dw12038;
 	g_dw12038 = w1_5 - 0x01;
-	if ((w1_5 - 0x01 & 0x00) == 0x00)
+	if (0x00 == 0x00)
 	{
 		g_dw12074 += 11;
 		return x30;
@@ -173,9 +173,9 @@ word64 f(word64 * x29, word64 x30)
 	else
 	{
 		word32 w0_17;
-		ui32 w2_13 = g_dw1203C;
+		word32 w2_13 = g_dw1203C;
 		g_dw1203C = w2_13 - 0x01;
-		if ((w2_13 - 0x01 & 0x00) != 0x00)
+		if (0x00 != 0x00)
 		{
 			g_dw12038 = w1_5 - 0x02;
 			if (w1_5 != 0x01)
@@ -189,7 +189,7 @@ word64 f(word64 * x29, word64 x30)
 					if (w1_5 != 0x02)
 					{
 						g_dw1203C = w2_13 - 0x03;
-						struct Eq_180 * sp_63 = SEQ(sp_32_32_62, w2_13 - 0x02);
+						struct Eq_176 * sp_63 = SEQ(sp_32_32_62, w2_13 - 0x02);
 						if (w2_13 != 0x02)
 						{
 							sp_63->ptrFFFFFFF0 = x29;
@@ -218,7 +218,7 @@ word64 f(word64 * x29, word64 x30)
 	}
 }
 
-// 00000000000009A0: Register word64 c(Register word64 x30, Register out (ptr64 Eq_216) x20Out, Register out ptr64 x29Out, Register out ptr64 x30Out)
+// 00000000000009A0: Register word64 c(Register word64 x30, Register out (ptr64 Eq_212) x20Out, Register out ptr64 x29Out, Register out ptr64 x30Out)
 // Called from:
 //      c
 //      d
@@ -227,25 +227,22 @@ word64 f(word64 * x29, word64 x30)
 //      j
 //      k
 //      l
-word64 c(word64 x30, struct Eq_216 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
+word64 c(word64 x30, struct Eq_212 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
 {
-	ui32 w0_19 = g_dw12040;
-	g_dw12040 = w0_19 - 0x01;
+	--g_dw12040;
 	word64 * x29_30 = fp + -24;
-	struct Eq_230 * x19_16 = &g_ptr12000;
-	if ((w0_19 - 0x01 & 0x00) != 0x00)
+	struct Eq_225 * x19_16 = &g_ptr12000;
+	if (0x00 != 0x00)
 	{
 		word32 w0_25;
-		ui32 w0_22 = g_dw12044;
-		g_dw12044 = w0_22 - 0x01;
-		if ((w0_22 - 0x01 & 0x00) != 0x00)
+		--g_dw12044;
+		if (0x00 != 0x00)
 		{
-			ui32 w0_26 = g_dw12048;
-			g_dw12048 = w0_26 - 0x01;
-			if ((w0_26 - 0x01 & 0x00) != 0x00)
+			--g_dw12048;
+			if (0x00 != 0x00)
 			{
-				word64 x20_574;
-				x19_16 = c(x30, out x20_574, out x29_30, out x30);
+				word64 x20_568;
+				x19_16 = c(x30, out x20_568, out x29_30, out x30);
 			}
 			w0_25 = g_dw12074 + 0x07;
 		}
@@ -253,20 +250,19 @@ word64 c(word64 x30, struct Eq_216 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
 			w0_25 = g_dw12074;
 		g_dw12074 = w0_25 + 0x05;
 	}
-	struct Eq_237 * x1_50 = &x19_16->dw0038;
-	ui32 w0_52 = x1_50->dw0014;
-	x1_50->dw0014 = w0_52 - 0x01;
-	struct Eq_249 * x20_207 = &g_ptr12000;
-	if ((w0_52 - 0x01 & 0x00) != 0x00)
+	struct Eq_230 * x1_50 = &x19_16->dw0038;
+	--x1_50->dw0014;
+	struct Eq_241 * x20_205 = &g_ptr12000;
+	if (0x00 != 0x00)
 	{
-		ui32 w0_55 = x19_16->dw0038;
+		word32 w0_55 = x19_16->dw0038;
 		x19_16->dw0038 = w0_55 - 0x01;
-		if ((w0_55 - 0x01 & 0x00) != 0x00)
+		if (0x00 != 0x00)
 		{
 			word32 w0_120;
-			ui32 w2_62 = x1_50->dw0004;
+			word32 w2_62 = x1_50->dw0004;
 			x1_50->dw0004 = w2_62 - 0x01;
-			if ((w2_62 - 0x01 & 0x00) != 0x00)
+			if (0x00 != 0x00)
 			{
 				word32 w0_118;
 				x19_16->dw0038 = w0_55 - 0x02;
@@ -304,43 +300,37 @@ word64 c(word64 x30, struct Eq_216 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
 		else
 			g_dw12074 += 11;
 	}
-	struct Eq_294 * x1_134 = &x19_16->dw0038;
-	ui32 w0_136 = x1_134->dw0018;
-	x1_134->dw0018 = w0_136 - 0x01;
-	if ((w0_136 - 0x01 & 0x00) != 0x00)
+	struct Eq_278 * x1_134 = &x19_16->dw0038;
+	--x1_134->dw0018;
+	if (0x00 != 0x00)
 	{
 		word32 w0_143;
-		ui32 w0_139 = x1_134->dw001C;
-		x1_134->dw001C = w0_139 - 0x01;
-		if ((w0_139 - 0x01 & 0x00) != 0x00)
+		--x1_134->dw001C;
+		if (0x00 != 0x00)
 			w0_143 = g_dw12074 + 0x13;
 		else
 			w0_143 = g_dw12074;
 		g_dw12074 = w0_143 + 0x11;
 	}
-	struct Eq_409 * x0_152 = &x19_16->dw0038;
-	ui32 w1_154 = x0_152->dw0020;
-	x0_152->dw0020 = w1_154 - 0x01;
-	if ((w1_154 - 0x01 & 0x00) != 0x00)
+	struct Eq_386 * x0_152 = &x19_16->dw0038;
+	--x0_152->dw0020;
+	if (0x00 != 0x00)
 	{
 		word32 w0_161;
-		ui32 w1_157 = x0_152->dw0024;
-		x0_152->dw0024 = w1_157 - 0x01;
-		if ((w1_157 - 0x01 & 0x00) != 0x00)
+		--x0_152->dw0024;
+		if (0x00 != 0x00)
 		{
 			word32 w0_165;
-			ui32 w1_162 = x0_152->dw0028;
-			x0_152->dw0028 = w1_162 - 0x01;
-			if ((w1_162 - 0x01 & 0x00) != 0x00)
+			--x0_152->dw0028;
+			if (0x00 != 0x00)
 			{
-				ui32 w1_166 = x0_152->dw0010;
-				x0_152->dw0010 = w1_166 - 0x01;
-				if ((w1_166 - 0x01 & 0x00) != 0x00)
+				--x0_152->dw0010;
+				if (0x00 != 0x00)
 				{
-					word64 x29_575;
-					x19_16 = c(x30, out x20_207, out x29_575, out x30);
+					word64 x29_569;
+					x19_16 = c(x30, out x20_205, out x29_569, out x30);
 				}
-				w0_165 = x20_207->dw0074 + 0x07;
+				w0_165 = x20_205->dw0074 + 0x07;
 			}
 			else
 				w0_165 = g_dw12074;
@@ -348,36 +338,33 @@ word64 c(word64 x30, struct Eq_216 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
 		}
 		else
 			w0_161 = g_dw12074;
-		x20_207->dw0074 = w0_161 + 0x17;
+		x20_205->dw0074 = w0_161 + 0x17;
 	}
-	struct Eq_455 * x19_229 = &x19_16->dw0038;
-	ui32 w0_231 = x19_229->dw002C;
-	x19_229->dw002C = w0_231 - 0x01;
-	if ((w0_231 - 0x01 & 0x00) == 0x00)
+	struct Eq_426 * x19_227 = &x19_16->dw0038;
+	--x19_227->dw002C;
+	if (0x00 == 0x00)
 	{
-		x20_207->dw0074 += 0x03;
+		x20_205->dw0074 += 0x03;
 		return;
 	}
 	else
 	{
-		word32 w0_254;
-		ui32 w0_251 = x19_229->dw0030;
-		x19_229->dw0030 = w0_251 - 0x01;
-		if ((w0_251 - 0x01 & 0x00) != 0x00)
+		word32 w0_252;
+		--x19_227->dw0030;
+		if (0x00 != 0x00)
 		{
-			ui32 w0_255 = x19_229->dw0034;
-			x19_229->dw0034 = w0_255 - 0x01;
-			if ((w0_255 - 0x01 & 0x00) != 0x00)
+			--x19_227->dw0034;
+			if (0x00 != 0x00)
 			{
-				word64 x30_577;
-				word64 x29_576;
-				c(x30, out x20_207, out x29_576, out x30_577);
+				word64 x30_571;
+				word64 x29_570;
+				c(x30, out x20_205, out x29_570, out x30_571);
 			}
-			w0_254 = x20_207->dw0074 + 0x02;
+			w0_252 = x20_205->dw0074 + 0x02;
 		}
 		else
-			w0_254 = x20_207->dw0074;
-		x20_207->dw0074 = w0_254 + 0x20;
+			w0_252 = x20_205->dw0074;
+		x20_205->dw0074 = w0_252 + 0x20;
 		return;
 	}
 }
@@ -385,22 +372,20 @@ word64 c(word64 x30, struct Eq_216 & x20Out, ptr64 & x29Out, ptr64 & x30Out)
 // 0000000000000C10: void d(Register word64 x30)
 void d(word64 x30)
 {
-	ui32 w1_6 = g_dw12044;
-	g_dw12044 = w1_6 - 0x01;
-	if ((w1_6 - 0x01 & 0x00) == 0x00)
+	--g_dw12044;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x05;
 	else
 	{
-		ui32 w1_13 = g_dw12048;
-		g_dw12048 = w1_13 - 0x01;
-		if ((w1_13 - 0x01 & 0x00) == 0x00)
+		--g_dw12048;
+		if (0x00 == 0x00)
 			g_dw12074 += 0x0C;
 		else
 		{
-			word64 x20_74;
-			word64 x29_75;
-			word64 x30_76;
-			c(x30, out x20_74, out x29_75, out x30_76);
+			word64 x20_73;
+			word64 x29_74;
+			word64 x30_75;
+			c(x30, out x20_73, out x29_74, out x30_75);
 			g_dw12074 += 0x0C;
 		}
 	}
@@ -411,28 +396,24 @@ void d(word64 x30)
 //      main
 void b(word64 x30)
 {
-	ui32 w1_6 = g_dw1206C;
-	g_dw1206C = w1_6 - 0x01;
-	if ((w1_6 - 0x01 & 0x00) == 0x00)
+	--g_dw1206C;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x02;
 	else
 	{
-		ui32 w1_21 = g_dw12040;
-		g_dw12040 = w1_21 - 0x01;
+		--g_dw12040;
 		word64 * x29_20 = fp + -8;
-		if ((w1_21 - 0x01 & 0x00) != 0x00)
+		if (0x00 != 0x00)
 		{
 			word32 w0_27;
-			ui32 w1_24 = g_dw12044;
-			g_dw12044 = w1_24 - 0x01;
-			if ((w1_24 - 0x01 & 0x00) != 0x00)
+			--g_dw12044;
+			if (0x00 != 0x00)
 			{
-				ui32 w1_28 = g_dw12048;
-				g_dw12048 = w1_28 - 0x01;
-				if ((w1_28 - 0x01 & 0x00) != 0x00)
+				--g_dw12048;
+				if (0x00 != 0x00)
 				{
-					word64 x20_541;
-					c(x30, out x20_541, out x29_20, out x30);
+					word64 x20_535;
+					c(x30, out x20_535, out x29_20, out x30);
 				}
 				w0_27 = g_dw12074 + 0x07;
 			}
@@ -440,19 +421,18 @@ void b(word64 x30)
 				w0_27 = g_dw12074;
 			g_dw12074 = w0_27 + 0x05;
 		}
-		ui32 w0_54 = g_dw1204C;
-		g_dw1204C = w0_54 - 0x01;
-		if ((w0_54 - 0x01 & 0x00) != 0x00)
+		--g_dw1204C;
+		if (0x00 != 0x00)
 		{
 			word32 w0_119;
-			ui32 w0_57 = g_dw12038;
+			word32 w0_57 = g_dw12038;
 			g_dw12038 = w0_57 - 0x01;
-			if ((w0_57 - 0x01 & 0x00) != 0x00)
+			if (0x00 != 0x00)
 			{
 				word32 w0_117;
-				ui32 w2_62 = g_dw1203C;
+				word32 w2_62 = g_dw1203C;
 				g_dw1203C = w2_62 - 0x01;
-				if ((w2_62 - 0x01 & 0x00) != 0x00)
+				if (0x00 != 0x00)
 				{
 					g_dw12038 = w0_57 - 0x02;
 					if (w0_57 != 0x01)
@@ -489,40 +469,34 @@ void b(word64 x30)
 				w0_119 = g_dw12074;
 			g_dw12074 = w0_119 + 11;
 		}
-		ui32 w0_135 = g_dw12050;
-		g_dw12050 = w0_135 - 0x01;
-		if ((w0_135 - 0x01 & 0x00) != 0x00)
+		--g_dw12050;
+		if (0x00 != 0x00)
 		{
 			word32 w0_142;
-			ui32 w0_138 = g_dw12054;
-			g_dw12054 = w0_138 - 0x01;
-			if ((w0_138 - 0x01 & 0x00) != 0x00)
+			--g_dw12054;
+			if (0x00 != 0x00)
 				w0_142 = g_dw12074 + 0x13;
 			else
 				w0_142 = g_dw12074;
 			g_dw12074 = w0_142 + 0x11;
 		}
-		ui32 w1_153 = g_dw12058;
-		g_dw12058 = w1_153 - 0x01;
-		if ((w1_153 - 0x01 & 0x00) != 0x00)
+		--g_dw12058;
+		if (0x00 != 0x00)
 		{
 			word32 w0_160;
-			ui32 w1_156 = g_dw1205C;
-			g_dw1205C = w1_156 - 0x01;
-			if ((w1_156 - 0x01 & 0x00) != 0x00)
+			--g_dw1205C;
+			if (0x00 != 0x00)
 			{
 				word32 w0_164;
-				ui32 w1_161 = g_dw12060;
-				g_dw12060 = w1_161 - 0x01;
-				if ((w1_161 - 0x01 & 0x00) != 0x00)
+				--g_dw12060;
+				if (0x00 != 0x00)
 				{
-					ui32 w1_165 = g_dw12048;
-					g_dw12048 = w1_165 - 0x01;
-					if ((w1_165 - 0x01 & 0x00) != 0x00)
+					--g_dw12048;
+					if (0x00 != 0x00)
 					{
-						word64 x20_542;
-						word64 x29_543;
-						c(x30, out x20_542, out x29_543, out x30);
+						word64 x20_536;
+						word64 x29_537;
+						c(x30, out x20_536, out x29_537, out x30);
 					}
 					w0_164 = g_dw12074 + 0x07;
 				}
@@ -534,31 +508,28 @@ void b(word64 x30)
 				w0_160 = g_dw12074;
 			g_dw12074 = w0_160 + 0x17;
 		}
-		ui32 w0_203 = g_dw12064;
-		g_dw12064 = w0_203 - 0x01;
-		if ((w0_203 - 0x01 & 0x00) == 0x00)
+		--g_dw12064;
+		if (0x00 == 0x00)
 			g_dw12074 += 0x05;
 		else
 		{
-			word32 w0_242;
-			ui32 w0_238 = g_dw12068;
-			g_dw12068 = w0_238 - 0x01;
-			if ((w0_238 - 0x01 & 0x00) != 0x00)
+			word32 w0_240;
+			--g_dw12068;
+			if (0x00 != 0x00)
 			{
-				ui32 w0_243 = g_dw1206C;
-				g_dw1206C = w0_243 - 0x01;
-				if ((w0_243 - 0x01 & 0x00) != 0x00)
+				--g_dw1206C;
+				if (0x00 != 0x00)
 				{
-					word64 x20_544;
-					word64 x30_546;
-					word64 x29_545;
-					c(x30, out x20_544, out x29_545, out x30_546);
+					word64 x20_538;
+					word64 x30_540;
+					word64 x29_539;
+					c(x30, out x20_538, out x29_539, out x30_540);
 				}
-				w0_242 = g_dw12074 + 0x1F;
+				w0_240 = g_dw12074 + 0x1F;
 			}
 			else
-				w0_242 = g_dw12074 + 0x1D;
-			g_dw12074 = w0_242 + 0x05;
+				w0_240 = g_dw12074 + 0x1D;
+			g_dw12074 = w0_240 + 0x05;
 		}
 	}
 }
@@ -566,27 +537,25 @@ void b(word64 x30)
 // 0000000000000F20: void e(Register word64 x30)
 void e(word64 x30)
 {
-	ui32 w2_6 = g_dw12048;
+	word32 w2_6 = g_dw12048;
 	g_dw12048 = w2_6 - 0x01;
-	if ((w2_6 - 0x01 & 0x00) == 0x00)
+	if (0x00 == 0x00)
 		g_dw12074 += 0x07;
 	else
 	{
-		ui32 w1_21 = g_dw12040;
-		g_dw12040 = w1_21 - 0x01;
+		--g_dw12040;
 		word64 * x29_20 = fp + -8;
-		if ((w1_21 - 0x01 & 0x00) != 0x00)
+		if (0x00 != 0x00)
 		{
 			word32 w0_27;
-			ui32 w1_24 = g_dw12044;
-			g_dw12044 = w1_24 - 0x01;
-			if ((w1_24 - 0x01 & 0x00) != 0x00)
+			--g_dw12044;
+			if (0x00 != 0x00)
 			{
 				g_dw12048 = w2_6 - 0x02;
 				if (w2_6 != 0x01)
 				{
-					word64 x20_549;
-					c(x30, out x20_549, out x29_20, out x30);
+					word64 x20_541;
+					c(x30, out x20_541, out x29_20, out x30);
 				}
 				w0_27 = g_dw12074 + 0x07;
 			}
@@ -594,19 +563,18 @@ void e(word64 x30)
 				w0_27 = g_dw12074;
 			g_dw12074 = w0_27 + 0x05;
 		}
-		ui32 w0_56 = g_dw1204C;
-		g_dw1204C = w0_56 - 0x01;
-		if ((w0_56 - 0x01 & 0x00) != 0x00)
+		--g_dw1204C;
+		if (0x00 != 0x00)
 		{
 			word32 w0_121;
-			ui32 w0_59 = g_dw12038;
+			word32 w0_59 = g_dw12038;
 			g_dw12038 = w0_59 - 0x01;
-			if ((w0_59 - 0x01 & 0x00) != 0x00)
+			if (0x00 != 0x00)
 			{
 				word32 w0_119;
-				ui32 w2_64 = g_dw1203C;
+				word32 w2_64 = g_dw1203C;
 				g_dw1203C = w2_64 - 0x01;
-				if ((w2_64 - 0x01 & 0x00) != 0x00)
+				if (0x00 != 0x00)
 				{
 					g_dw12038 = w0_59 - 0x02;
 					if (w0_59 != 0x01)
@@ -643,40 +611,34 @@ void e(word64 x30)
 				w0_121 = g_dw12074;
 			g_dw12074 = w0_121 + 11;
 		}
-		ui32 w0_137 = g_dw12050;
-		g_dw12050 = w0_137 - 0x01;
-		if ((w0_137 - 0x01 & 0x00) != 0x00)
+		--g_dw12050;
+		if (0x00 != 0x00)
 		{
 			word32 w0_144;
-			ui32 w0_140 = g_dw12054;
-			g_dw12054 = w0_140 - 0x01;
-			if ((w0_140 - 0x01 & 0x00) != 0x00)
+			--g_dw12054;
+			if (0x00 != 0x00)
 				w0_144 = g_dw12074 + 0x13;
 			else
 				w0_144 = g_dw12074;
 			g_dw12074 = w0_144 + 0x11;
 		}
-		ui32 w1_155 = g_dw12058;
-		g_dw12058 = w1_155 - 0x01;
-		if ((w1_155 - 0x01 & 0x00) != 0x00)
+		--g_dw12058;
+		if (0x00 != 0x00)
 		{
 			word32 w0_162;
-			ui32 w1_158 = g_dw1205C;
-			g_dw1205C = w1_158 - 0x01;
-			if ((w1_158 - 0x01 & 0x00) != 0x00)
+			--g_dw1205C;
+			if (0x00 != 0x00)
 			{
 				word32 w0_166;
-				ui32 w1_163 = g_dw12060;
-				g_dw12060 = w1_163 - 0x01;
-				if ((w1_163 - 0x01 & 0x00) != 0x00)
+				--g_dw12060;
+				if (0x00 != 0x00)
 				{
-					ui32 w1_167 = g_dw12048;
-					g_dw12048 = w1_167 - 0x01;
-					if ((w1_167 - 0x01 & 0x00) != 0x00)
+					--g_dw12048;
+					if (0x00 != 0x00)
 					{
-						word64 x20_550;
-						word64 x29_551;
-						c(x30, out x20_550, out x29_551, out x30);
+						word64 x20_542;
+						word64 x29_543;
+						c(x30, out x20_542, out x29_543, out x30);
 					}
 					w0_166 = g_dw12074 + 0x07;
 				}
@@ -688,31 +650,28 @@ void e(word64 x30)
 				w0_162 = g_dw12074;
 			g_dw12074 = w0_162 + 0x17;
 		}
-		ui32 w0_205 = g_dw12064;
-		g_dw12064 = w0_205 - 0x01;
-		if ((w0_205 - 0x01 & 0x00) == 0x00)
+		--g_dw12064;
+		if (0x00 == 0x00)
 			g_dw12074 += 0x0A;
 		else
 		{
-			word32 w0_248;
-			ui32 w0_244 = g_dw12068;
-			g_dw12068 = w0_244 - 0x01;
-			if ((w0_244 - 0x01 & 0x00) != 0x00)
+			word32 w0_244;
+			--g_dw12068;
+			if (0x00 != 0x00)
 			{
-				ui32 w0_249 = g_dw1206C;
-				g_dw1206C = w0_249 - 0x01;
-				if ((w0_249 - 0x01 & 0x00) != 0x00)
+				--g_dw1206C;
+				if (0x00 != 0x00)
 				{
-					word64 x20_552;
-					word64 x30_554;
-					word64 x29_553;
-					c(x30, out x20_552, out x29_553, out x30_554);
+					word64 x20_544;
+					word64 x30_546;
+					word64 x29_545;
+					c(x30, out x20_544, out x29_545, out x30_546);
 				}
-				w0_248 = g_dw12074 + 0x1F;
+				w0_244 = g_dw12074 + 0x1F;
 			}
 			else
-				w0_248 = g_dw12074 + 0x1D;
-			g_dw12074 = w0_248 + 0x0A;
+				w0_244 = g_dw12074 + 0x1D;
+			g_dw12074 = w0_244 + 0x0A;
 		}
 	}
 }
@@ -721,16 +680,16 @@ void e(word64 x30)
 void g(word64 x29, word64 x30)
 {
 	word32 sp_32_32_73 = SLICE(fp, word32, 32);
-	ui32 w3_6 = g_dw1203C;
+	word32 w3_6 = g_dw1203C;
 	g_dw1203C = w3_6 - 0x01;
-	if ((w3_6 - 0x01 & 0x00) == 0x00)
+	if (0x00 == 0x00)
 		g_dw12074 += 0x0D;
 	else
 	{
 		word32 w0_17;
-		ui32 w2_13 = g_dw12038;
+		word32 w2_13 = g_dw12038;
 		g_dw12038 = w2_13 - 0x01;
-		if ((w2_13 - 0x01 & 0x00) != 0x00)
+		if (0x00 != 0x00)
 		{
 			g_dw1203C = w3_6 - 0x02;
 			if (w3_6 != 0x01)
@@ -748,7 +707,7 @@ void g(word64 x29, word64 x30)
 						if (w2_13 != 0x02)
 						{
 							g_dw1203C = w3_6 - 0x04;
-							struct Eq_1406 * sp_74 = SEQ(sp_32_32_73, w3_6 - 0x03);
+							struct Eq_1261 * sp_74 = SEQ(sp_32_32_73, w3_6 - 0x03);
 							if (w3_6 != 0x03)
 							{
 								sp_74->qwFFFFFFF0 = x29;
@@ -783,9 +742,8 @@ void g(word64 x29, word64 x30)
 // 0000000000001300: void h()
 void h()
 {
-	ui32 w0_6 = g_dw12054;
-	g_dw12054 = w0_6 - 0x01;
-	if ((w0_6 - 0x01 & 0x00) == 0x00)
+	--g_dw12054;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x11;
 	else
 		g_dw12074 += 0x24;
@@ -800,25 +758,22 @@ void i()
 // 0000000000001358: void j(Register word64 x30)
 void j(word64 x30)
 {
-	ui32 w1_6 = g_dw1205C;
-	g_dw1205C = w1_6 - 0x01;
-	if ((w1_6 - 0x01 & 0x00) == 0x00)
+	--g_dw1205C;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x17;
 	else
 	{
 		word32 w0_17;
-		ui32 w1_13 = g_dw12060;
-		g_dw12060 = w1_13 - 0x01;
-		if ((w1_13 - 0x01 & 0x00) != 0x00)
+		--g_dw12060;
+		if (0x00 != 0x00)
 		{
-			ui32 w1_18 = g_dw12048;
-			g_dw12048 = w1_18 - 0x01;
-			if ((w1_18 - 0x01 & 0x00) != 0x00)
+			--g_dw12048;
+			if (0x00 != 0x00)
 			{
-				word64 x30_96;
-				word64 x29_95;
-				word64 x20_94;
-				c(x30, out x20_94, out x29_95, out x30_96);
+				word64 x30_94;
+				word64 x29_93;
+				word64 x20_92;
+				c(x30, out x20_92, out x29_93, out x30_94);
 				g_dw12074 += 0x39;
 				return;
 			}
@@ -833,22 +788,20 @@ void j(word64 x30)
 // 0000000000001400: void k(Register word64 x30)
 void k(word64 x30)
 {
-	ui32 w1_6 = g_dw12060;
-	g_dw12060 = w1_6 - 0x01;
-	if ((w1_6 - 0x01 & 0x00) == 0x00)
+	--g_dw12060;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x1B;
 	else
 	{
-		ui32 w1_13 = g_dw12048;
-		g_dw12048 = w1_13 - 0x01;
-		if ((w1_13 - 0x01 & 0x00) == 0x00)
+		--g_dw12048;
+		if (0x00 == 0x00)
 			g_dw12074 += 0x22;
 		else
 		{
-			word64 x20_74;
-			word64 x29_75;
-			word64 x30_76;
-			c(x30, out x20_74, out x29_75, out x30_76);
+			word64 x20_73;
+			word64 x29_74;
+			word64 x30_75;
+			c(x30, out x20_73, out x29_74, out x30_75);
 			g_dw12074 += 0x22;
 		}
 	}
@@ -857,22 +810,20 @@ void k(word64 x30)
 // 0000000000001480: void l(Register word64 x30)
 void l(word64 x30)
 {
-	ui32 w1_6 = g_dw12068;
-	g_dw12068 = w1_6 - 0x01;
-	if ((w1_6 - 0x01 & 0x00) == 0x00)
+	--g_dw12068;
+	if (0x00 == 0x00)
 		g_dw12074 += 0x1D;
 	else
 	{
-		ui32 w1_13 = g_dw1206C;
-		g_dw1206C = w1_13 - 0x01;
-		if ((w1_13 - 0x01 & 0x00) == 0x00)
+		--g_dw1206C;
+		if (0x00 == 0x00)
 			g_dw12074 += 0x1F;
 		else
 		{
-			word64 x20_74;
-			word64 x29_75;
-			word64 x30_76;
-			c(x30, out x20_74, out x29_75, out x30_76);
+			word64 x20_73;
+			word64 x29_74;
+			word64 x30_75;
+			c(x30, out x20_73, out x29_74, out x30_75);
 			g_dw12074 += 0x1F;
 		}
 	}

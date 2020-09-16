@@ -157,7 +157,7 @@ void main()
 			word16 wLoc2A_189 = SLICE(qwLoc30, word16, 48);
 			if ((word32) wLoc1E > 0x28)
 				break;
-			qwLoc30 = SEQ(wLoc2A_189, (word16) ((word32) ((word32) wLoc1C > (word32) wLoc1E) & 0x01), wLoc2E_188, (word16) (wLoc1A + wLoc1E));
+			qwLoc30 = SEQ(wLoc2A_189, (word16) ((word32) ((word32) wLoc1C > (word32) wLoc1E) & 0x01), wLoc2E_188, (int16) (wLoc1A + wLoc1E));
 		}
 		++qwLoc28_161;
 	}

@@ -149,7 +149,7 @@ void __libc_csu_fini()
 	if (eax_25 != ~0x00)
 	{
 		<anonymous> ** esi_32 = 0x080497D0 + eax_25 * 0x04;
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			(*esi_32)();

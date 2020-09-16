@@ -221,11 +221,11 @@ word64 text(word32 w2)
 //      main
 void add_disk(int32 w1)
 {
-	struct Eq_130 * x0_24 = g_ptr11FA8[(word64) dwLoc0A].ptr0000;
-	int32 x2_19[] = g_ptr11FA8[(word64) dwLoc0A].ptr0000[0];
+	struct Eq_130 * x0_24 = g_ptr11FA8[(int64) dwLoc0A].ptr0000;
+	int32 x2_19[] = g_ptr11FA8[(int64) dwLoc0A].ptr0000[0];
 	word32 w1_25 = x0_24->dw0008;
 	x0_24->dw0008 = w1_25 + 0x01;
-	x2_19[(int64) (int32) w1_25] = w1;
+	x2_19[(int64) w1_25] = w1;
 	text(w2);
 	fn00000000000008E0();
 	fn00000000000008D0();
@@ -236,7 +236,7 @@ void add_disk(int32 w1)
 //      move
 word64 remove_disk()
 {
-	struct Eq_130 * x0_22 = g_ptr11FA8[(word64) dwLoc1A].ptr0000;
+	struct Eq_130 * x0_22 = g_ptr11FA8[(int64) dwLoc1A].ptr0000;
 	--x0_22->dw0008;
 	return SEQ(SLICE(x0_48, word32, 32), text(w2)->dw002C);
 }
@@ -258,11 +258,11 @@ word64 move(word64 x0)
 	return <invalid>;
 }
 
-// 0000000000000CE4: void main(Register int32 w0, Register (ptr64 Eq_218) x1)
-void main(int32 w0, struct Eq_218 * x1)
+// 0000000000000CE4: void main(Register int32 w0, Register (ptr64 Eq_217) x1)
+void main(int32 w0, struct Eq_217 * x1)
 {
 	fn00000000000008C0();
-	struct Eq_222 * x29_44 = fp + -24;
+	struct Eq_221 * x29_44 = fp + -24;
 	if (w0 > 0x01)
 	{
 		int32 w0_26 = x1->dw0008;
@@ -273,10 +273,10 @@ void main(int32 w0, struct Eq_218 * x1)
 l0000000000000D50:
 			while (true)
 			{
-				struct Eq_222 * x29_57;
+				struct Eq_221 * x29_57;
 				if (x29_44->dw001C > 0x02)
 					break;
-				g_ptr11FA8[(word64) x29_57->dw000E].ptr0000 = (int32 (*)[]) new_tower(out x29_57);
+				g_ptr11FA8[(int64) x29_57->dw000E].ptr0000 = (int32 (*)[]) new_tower(out x29_57);
 				++x29_57->dw001C;
 				x29_44 = x29_57;
 			}

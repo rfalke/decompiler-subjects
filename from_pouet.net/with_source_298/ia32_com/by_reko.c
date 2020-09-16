@@ -11,66 +11,66 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 	__outb(0x40, 0x13);
 	__outb(0x40, 0x13);
 	bios_video_set_mode(0x13);
-	real64 rLoc1_315 = 1.0;
+	real64 rLoc1_323 = 1.0;
 	word32 edx_12 = 0036:010C;
-	struct Eq_29 Eq_3::* bx_293 = SEQ(0x02, bl);
+	struct Eq_29 Eq_3::* bx_301 = SEQ(0x02, bl);
 	do
 	{
 		up32 ecx_17 = 0036:010C - edx_12;
-		word16 cx_274 = (word16) ecx_17;
+		word16 cx_28 = (word16) ecx_17;
 		if (ecx_17 > 0x00)
 		{
 			edx_12 += ecx_17;
 			do
 			{
-				rLoc1_315 *= (ds->*bx_293).rFFFFFFF4;
-				--cx_274;
-			} while (cx_274 != 0x00);
+				rLoc1_323 *= (real64) (ds->*bx_301).rFFFFFFF4;
+				--cx_28;
+			} while (cx_28 != 0x00);
 		}
-		byte Eq_3::* di_193 = &bx_293->dw0004 + 2;
-		int16 bp_215;
-		for (bp_215 = 100; bp_215 != ~0x63; --bp_215)
+		byte Eq_3::* di_201 = &bx_301->dw0004 + 2;
+		int16 bp_223;
+		for (bp_223 = 100; bp_223 != ~0x63; --bp_223)
 		{
 			int16 dx_100;
 			for (dx_100 = 0xA0; dx_100 != ~0x9F; --dx_100)
 			{
-				real64 rLoc2_328 = (real64) 0036:010C * (ds->*bx_293).rFFFFFFF8;
-				(ds->*bx_293).w0000 = bp_215;
-				real64 rLoc3_329 = (real64) (ds->*bx_293).w0000;
-				(ds->*bx_293).w0000 = dx_100;
-				real64 rLoc4_330 = (real64) (ds->*bx_293).w0000;
-				real64 rLoc5_332 = rLoc4_330 * rLoc4_330;
-				real64 rLoc3_345 = rLoc3_329 * (rLoc2_328 + sqrt(rLoc5_332 + rLoc5_332 * rLoc5_332) * (sin(rLoc3_329) * (ds->*bx_293).rFFFFFFFC));
-				real64 rLoc4_343 = rLoc4_330 * rLoc1_315;
-				real64 rLoc7_353 = cos(rLoc3_345) * rLoc4_343;
-				real64 rLoc3_355 = rLoc3_345 * (sin(rLoc3_345) * rLoc4_343) + rLoc4_343;
-				real64 rLoc4_357 = rLoc4_343 - rLoc4_343 * rLoc7_353 + (ds->*bx_293).rFFFFFFE4;
-				real64 rLoc3_359 = rLoc3_355 + (ds->*bx_293).rFFFFFFEC;
-				real64 rLoc5_360 = 0.0;
-				real64 rLoc6_361 = 0.0;
-				word16 cx_155;
-				for (cx_155 = 0x0100; cx_155 != 0x00; --cx_155)
+				real64 rLoc2_336 = (real64) 0036:010C * (real64) (ds->*bx_301).rFFFFFFF8;
+				(ds->*bx_301).w0000 = bp_223;
+				real64 rLoc3_337 = (real64) (ds->*bx_301).w0000;
+				(ds->*bx_301).w0000 = dx_100;
+				real64 rLoc4_338 = (real64) (ds->*bx_301).w0000;
+				real64 rLoc2_349 = rLoc2_336 + sqrt(rLoc3_337 * rLoc3_337 + rLoc4_338 * rLoc4_338) * (sin(rLoc2_336) * (real64) (ds->*bx_301).rFFFFFFFC);
+				real64 rLoc7_357 = cos(rLoc2_349);
+				real64 rLoc4_351 = rLoc4_338 * rLoc1_323;
+				real64 rLoc3_353 = rLoc3_337 * rLoc1_323;
+				real64 rLoc3_363 = rLoc3_353 * (sin(rLoc2_349) * rLoc4_351) + rLoc4_351;
+				real64 rLoc4_365 = rLoc4_351 - rLoc3_353 * (rLoc7_357 * rLoc4_351) + (ds->*bx_301).rFFFFFFE4;
+				real64 rLoc3_367 = rLoc3_363 + (ds->*bx_301).rFFFFFFEC;
+				real64 rLoc5_368 = 0.0;
+				real64 rLoc6_369 = 0.0;
+				word16 cx_162;
+				for (cx_162 = 0x0100; cx_162 != 0x00; --cx_162)
 				{
-					rLoc7_353 = rLoc5_360 * rLoc5_360;
-					(ds->*bx_293).dw0004 = (int32) rLoc7_353;
-					real64 rLoc7_367 = rLoc7_353 * rLoc6_361 * rLoc5_360;
-					rLoc5_360 = rLoc7_367 + rLoc7_367 + rLoc3_359;
-					rLoc6_361 = rLoc6_361 - rLoc7_353 + rLoc4_357;
-					if ((ds->*bx_293).dw0004 >= 0x04)
+					real64 rLoc7_380 = rLoc5_368 * rLoc5_368;
+					(ds->*bx_301).dw0004 = (int32) rLoc7_380;
+					real64 rLoc7_374 = rLoc6_369 * rLoc6_369 * rLoc5_368;
+					rLoc5_368 = rLoc7_374 + rLoc7_374 + rLoc3_367;
+					rLoc6_369 = rLoc6_369 - rLoc7_380 + rLoc4_365;
+					if ((ds->*bx_301).dw0004 >= 0x04)
 						break;
 				}
-				ds->*di_193 = ((byte) cx_155 & 0x3F) + 0x10;
-				++di_193;
+				ds->*di_201 = ((byte) cx_162 & 0x3F) + 0x10;
+				++di_201;
 			}
 		}
-		word32 Eq_182::* di_218 = Eq_182::a0000;
-		struct Eq_167 Eq_3::* si_222 = &bx_293->dw0004 + 2;
-		word16 cx_223;
-		for (cx_223 = 16000; cx_223 != 0x00; --cx_223)
+		word32 Eq_186::* di_226 = Eq_186::a0000;
+		struct Eq_171 Eq_3::* si_230 = &bx_301->dw0004 + 2;
+		word16 cx_231;
+		for (cx_231 = 16000; cx_231 != 0x00; --cx_231)
 		{
-			0xA000->*di_218 = (ds->*si_222).dw0000;
-			++si_222;
-			++di_218;
+			0xA000->*di_226 = (ds->*si_230).dw0000;
+			++si_230;
+			++di_226;
 		}
 	} while (__inb(0x60) != 0x01);
 }

@@ -5,6 +5,15 @@
 #include "subject.h"
 
 <anonymous> g_t06B0 = <code>;
+Eq_96 g_t08D8 = 
+	{
+		-3.141593F
+	};
+real32 g_r08DC = 0.1963495F;
+Eq_96 g_t08E0 = 
+	{
+		3.151593F
+	};
 <anonymous> * g_a10D98[] = 
 	{
 	};
@@ -18,5 +27,6 @@ word64 g_qw10FC0 = 0x00;
 <anonymous> * g_ptr11008 = &g_t06B0;
 <anonymous> * g_ptr11010 = &g_t06B0;
 <anonymous> * g_ptr11018 = &g_t06B0;
+<anonymous> * g_ptr11020 = &g_t06B0;
 byte g_b11038 = 0x00;
 

@@ -220,11 +220,11 @@ void text(int32 w2)
 //      main
 void add_disk(word32 w0, int32 w1)
 {
-	struct Eq_129 * x4_14 = g_ptr11FA8[(int64) (int32) w0].ptr0000;
+	struct Eq_129 * x4_14 = g_ptr11FA8[(int64) w0].ptr0000;
 	int32 x6_15[] = x4_14->ptr0000;
 	word32 w5_16 = x4_14->dw0008;
 	x4_14->dw0008 = w5_16 + 0x01;
-	x6_15[(int64) (int32) w5_16 / 4] = w1;
+	x6_15[(int64) w5_16 / 4] = w1;
 	text(w2);
 	fn00000000000008E0();
 	fn00000000000008D0();
@@ -235,11 +235,11 @@ void add_disk(word32 w0, int32 w1)
 //      move
 word64 remove_disk(word32 w0)
 {
-	struct Eq_129 * x4_17 = g_ptr11FA8[(int64) (int32) w0].ptr0000;
+	struct Eq_129 * x4_17 = g_ptr11FA8[(int64) w0].ptr0000;
 	int32 x5_18[] = x4_17->ptr0000;
 	word32 w3_19 = x4_17->dw0008;
 	x4_17->dw0008 = w3_19 - 0x01;
-	int32 w19_22 = x5_18[(int64) (int32) (w3_19 - 0x01) / 4];
+	int32 w19_22 = x5_18[(int64) (w3_19 - 0x01) / 4];
 	text(w19_22);
 	return SEQ(SLICE(x0_31, word32, 32), w19_22);
 }
@@ -267,8 +267,8 @@ ptr64 move(word64 x0, ptr64 & x21Out)
 	}
 }
 
-// 0000000000000C28: void main(Register int32 w0, Register (ptr64 Eq_226) x1)
-void main(int32 w0, struct Eq_226 * x1)
+// 0000000000000C28: void main(Register int32 w0, Register (ptr64 Eq_222) x1)
+void main(int32 w0, struct Eq_222 * x1)
 {
 	fn00000000000008B0();
 	if (w0 > 0x01)

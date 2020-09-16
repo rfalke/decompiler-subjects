@@ -15,48 +15,48 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 	{
 		struct Eq_9 Eq_3::* bx_24;
 		ss->t0200 = cx_12;
-		(ds->*bx_24).t0000 = (int16) (sin((real64) ss->t0200 * ds->r01F8) * ds->r01FC);
-		struct Eq_35 Eq_3::* bx_27 = bx_24 + 1;
+		(ds->*bx_24).t0000 = (int16) (sin((real64) ss->t0200 * (real64) ds->r01F8) * (real64) ds->r01FC);
+		struct Eq_37 Eq_3::* bx_27 = bx_24 + 1;
 		--cx_12;
 		bx_24 = (struct Eq_9 Eq_3::*) (bx_27 + 1);
-		byte bl_169 = (byte) (bx_27 + 1);
-		byte ch_173 = SLICE(cx_12, byte, 8);
+		byte bl_179 = (byte) (bx_27 + 1);
+		byte ch_183 = SLICE(cx_12, byte, 8);
 	} while (cx_12 != 0x00);
 	__outb(0x03C8, 0x13);
-	byte ah_172 = 0x00;
-	cu16 di_168 = 0x00;
+	byte ah_182 = 0x00;
+	cu16 di_178 = 0x00;
 	byte bh_38;
 	for (bh_38 = 0x04; bh_38 != 0x00; --bh_38)
 	{
 		byte cl_39;
 		for (cl_39 = 0x40; cl_39 != 0x00; --cl_39)
 		{
-			__outb(969, bl_169);
-			__outb(969, ah_172);
-			__outb(969, ch_173);
-			Eq_71 si_44 = (di_168 >> 0x04 & 0x0C) + 0x01E7;
-			bl_169 += ds->*si_44;
-			ah_172 += ds->*((word16) si_44 + 1);
-			ch_173 += ds->*((word16) si_44 + 2);
-			++di_168;
+			__outb(969, bl_179);
+			__outb(969, ah_182);
+			__outb(969, ch_183);
+			Eq_73 si_44 = (di_178 >> 0x04 & 0x0C) + 0x01E7;
+			bl_179 += ds->*si_44;
+			ah_182 += ds->*((word16) si_44 + 1);
+			ch_183 += ds->*((word16) si_44 + 2);
+			++di_178;
 		}
-		ch_173 -= ds->*((word16) si_44 + 2);
-		ah_172 -= ds->*((word16) si_44 + 1);
-		bl_169 -= ds->*si_44;
+		ch_183 -= ds->*((word16) si_44 + 2);
+		ah_182 -= ds->*((word16) si_44 + 1);
+		bl_179 -= ds->*si_44;
 	}
 	do
 	{
-		byte Eq_187::* di_148 = &Eq_187::b0000;
-		word16 dx_152;
-		for (dx_152 = 0x00; (byte) dx_152 != 200; ++dx_152)
+		byte Eq_199::* di_158 = &Eq_199::b0000;
+		word16 dx_162;
+		for (dx_162 = 0x00; (byte) dx_162 != 200; ++dx_162)
 		{
 			word16 cx_100;
 			for (cx_100 = 0x0140; cx_100 != 0x00; --cx_100)
 			{
-				ss->w0204 = (*((char *) &(ds->*bx_9).t0000 + ((word32) ss->t0200 + (SEQ(SLICE(dx_152, byte, 8), (byte) dx_152 >> 0x01) + cx_100)) * 0x02) >> 0x02) + dx_152;
-				word16 bx_134 = (word16) ss->b0208;
-				Mem149[0xA000:di_148 + 0x00:byte] = SLICE((((SEQ(ds, bx_9)[(dx_152 + Mem113[ss:0x0200:word16]) * 0x02] >> 0x02) + cx_100 ^ Mem113[ss:0x0204:word16]) & 0x1F) + SEQ(ds, bx_9)[(((word16) Mem113[ss:0x0208:byte] + cx_100) + dx_152) * 0x02] + SEQ(ds, bx_9)[((word16) Mem113[ss:0x0209:byte] + cx_100) * 0x02] + SEQ(ds, bx_9)[((SEQ(SLICE(bx_134, byte, 8), SLICE(bx_134, byte, 0) + Mem113[ss:0x0209:byte]) + cx_100) + dx_152) * 0x02] >>u 0x03, byte, 0);
-				++di_148;
+				ss->w0204 = (*((char *) &(ds->*bx_9).t0000 + (uint16) ((byte) ((word32) ss->t0200 + (SEQ(SLICE(dx_162, byte, 8), (byte) dx_162 >> 0x01) + cx_100))) * 0x02) >> 0x02) + dx_162;
+				word16 bx_142 = (word16) ss->b0208;
+				Mem159[0xA000:di_158 + 0x00:byte] = SLICE((((SEQ(ds, bx_9)[CONVERT(SLICE(dx_162 + Mem115[ss:0x0200:word16], byte, 0), byte, uint16) * 0x02] >> 0x02) + cx_100 ^ Mem115[ss:0x0204:word16]) & 0x1F) + SEQ(ds, bx_9)[CONVERT(SLICE((CONVERT(Mem115[ss:0x0208:byte], byte, word16) + cx_100) + dx_162, byte, 0), byte, uint16) * 0x02] + SEQ(ds, bx_9)[CONVERT(SLICE(CONVERT(Mem115[ss:0x0209:byte], byte, word16) + cx_100, byte, 0), byte, uint16) * 0x02] + SEQ(ds, bx_9)[CONVERT(SLICE((SEQ(SLICE(bx_142, byte, 8), SLICE(bx_142, byte, 0) + Mem115[ss:0x0209:byte]) + cx_100) + dx_162, byte, 0), byte, uint16) * 0x02] >>u 0x03, byte, 0);
+				++di_158;
 			}
 		}
 		ss->b0208 += 0x02;

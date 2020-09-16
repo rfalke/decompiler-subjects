@@ -1,4 +1,6 @@
 === Using options:
+Packer 'Microsoft Visual C++ 8' detected.
+warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 004073CC: warning: Procedure fn00407390 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00404F51: warning: Procedure fn00404F47 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00406F02: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
@@ -6,22 +8,71 @@
 0040C161: warning: Procedure fn0040C150 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0040BDF4: warning: Procedure fn0040B67E previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0040BDF4: warning: Procedure fn0040B67E previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00401ACD: warning: x86 instruction 'movdqu' is not supported yet.
+00405E49: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
+00401888: error: An error occurred while processing the statement word32 edi_153 = dwArg0C - ebx_103.
+    Pulling difference (union ((ptr32 (struct (0 T_1139 t0000))) u1) (ptr32 u0)) and (ptr32 (struct 0010 (0 word128 ow0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+00401890: error: An error occurred while processing the statement word32 edi_156 = fp - 0x1C<32> - ebx_103.
+    Pulling difference (union ((ptr32 (struct (0 T_1139 t0000))) u1) (ptr32 u0)) and (ptr32 (struct 0010 (0 word128 ow0000)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+004018EC: error: An error occurred while processing the statement word32 ebx_197 = ebx_103 - dwArg0C.
+    Pulling difference (ptr32 (struct 0010 (0 word128 ow0000))) and (union ((ptr32 (struct (0 T_1138 t0000))) u0) ((ptr32 (union ((struct 0010 (FFFFFFE0 word128 owFFFFFFE0) (FFFFFFF0 word128 owFFFFFFF0) (0 word128 ow0000)) u0) ((struct 0020) u1))) u1))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x000b8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+0040680B: error: An error occurred while processing the statement word32 eax_456 = edx - Mem455[ebp_1036 + 0xFFFFE530<32>:word32].
+    Pulling difference (union ((ptr32 (struct (0 (arr T_615) a0000) (1 T_624 t0001) (2 T_630 t0002) (3 T_612 t0003) (4 T_680 t0004) (5 T_689 t0005) (6 T_695 t0006) (7 T_677 t0007) (8 T_744 t0008) (9 T_750 t0009) (A T_756 t000A) (B T_769 t000B) (C T_814 t000C) (D T_820 t000D) (E T_826 t000E) (F T_808 t000F) (6C T_9904 t006C))) u0) (ptr32 u1)) and (ptr32 (struct (0 T_618 t0000) (1 T_624 t0001) (2 T_630 t0002) (3 T_612 t0003) (4 T_683 t0004) (5 T_689 t0005) (6 T_695 t0006) (7 T_677 t0007) (8 T_744 t0008) (9 T_750 t0009) (A T_756 t000A) (B T_769 t000B) (C T_814 t000C) (D T_820 t000D) (E T_826 t000E) (F T_808 t000F)))
+      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+l00406014: warning: Non-integral switch expression
+00405F78: warning: Expected sizes of arrays to have been determined by now
+00406114: warning: Expected sizes of arrays to have been determined by now
 00411198: warning: Expected sizes of arrays to have been determined by now
 0041119C: warning: Expected sizes of arrays to have been determined by now
 00412C48: warning: Expected sizes of arrays to have been determined by now
 00413368: warning: Expected sizes of arrays to have been determined by now
 0041336C: warning: Expected sizes of arrays to have been determined by now
+00416130: warning: Expected sizes of arrays to have been determined by now
+00416530: warning: Expected sizes of arrays to have been determined by now
+00416930: warning: Expected sizes of arrays to have been determined by now
+00416D30: warning: Expected sizes of arrays to have been determined by now
+00417130: warning: Expected sizes of arrays to have been determined by now
 004175B0: warning: Expected sizes of arrays to have been determined by now
 00418000: warning: Expected sizes of arrays to have been determined by now
 00418004: warning: Expected sizes of arrays to have been determined by now
+00418400: warning: Expected sizes of arrays to have been determined by now
 00419A54: warning: Expected sizes of arrays to have been determined by now
+00405F78: warning: Expected sizes of arrays to have been determined by now
+00406114: warning: Expected sizes of arrays to have been determined by now
 00411198: warning: Expected sizes of arrays to have been determined by now
 0041119C: warning: Expected sizes of arrays to have been determined by now
 00412C48: warning: Expected sizes of arrays to have been determined by now
 00413368: warning: Expected sizes of arrays to have been determined by now
 0041336C: warning: Expected sizes of arrays to have been determined by now
+00416130: warning: Expected sizes of arrays to have been determined by now
+00416530: warning: Expected sizes of arrays to have been determined by now
+00416930: warning: Expected sizes of arrays to have been determined by now
+00416D30: warning: Expected sizes of arrays to have been determined by now
+00417130: warning: Expected sizes of arrays to have been determined by now
 004175B0: warning: Expected sizes of arrays to have been determined by now
 00418000: warning: Expected sizes of arrays to have been determined by now
 00418004: warning: Expected sizes of arrays to have been determined by now
+00418400: warning: Expected sizes of arrays to have been determined by now
 00419A54: warning: Expected sizes of arrays to have been determined by now

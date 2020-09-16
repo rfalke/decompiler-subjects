@@ -142,15 +142,15 @@ void use(word32 * x0)
 	g_dw411034 += *x0;
 }
 
-// 000000000040060C: Register word64 fill(Register word32 w1, Register out ptr64 x29Out)
+// 000000000040060C: Register int64 fill(Register word32 w1, Register out ptr64 x29Out)
 // Called from:
 //      with_array
 //      with_alloca
-word64 fill(word32 w1, ptr64 & x29Out)
+int64 fill(word32 w1, ptr64 & x29Out)
 {
 	fn0000000000400460();
 	x29Out = x30;
-	return (word64) SEQ((word16) w1, wLoc16);
+	return (int64) SEQ((word16) w1, wLoc16);
 }
 
 // 0000000000400644: Register word64 with_array(Sequence word64 x9_32_32_w0)

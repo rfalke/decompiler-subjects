@@ -258,19 +258,19 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 // 0000000000400B9C: void stest(Register (ptr64 Eq_215) x0, Register (ptr64 Eq_216) x1)
 void stest(struct Eq_215 * x0, struct Eq_216 * x1)
 {
-	word128 q0_6 = g_ow400DF0;
-	word128 q1_7 = g_ow400E00;
+	Eq_217 q0_6 = g_t400DF0;
+	Eq_220 q1_7 = g_t400E00;
 	word32 w9_11;
 	for (w9_11 = 0x00; w9_11 != 9000; ++w9_11)
 	{
-		x0->ow0000 = q0_6;
+		x0->t0000 = q0_6;
 		x0->b0010 = 0x00;
-		x1->ow0000 = q1_7;
+		x1->t0000 = q1_7;
 		x1->b0010 = 0x00;
-		ui32 w13_25 = (word32) x0->ow0000;
-		byte * x14_30 = (char *) &x0->ow0000 + 1;
-		byte * x15_32 = (char *) &x1->ow0000 + 1;
-		if (w13_25 == (word32) x1->ow0000)
+		ui32 w13_25 = (word32) x0->t0000;
+		byte * x14_30 = (char *) &x0->t0000 + 1;
+		byte * x15_32 = (char *) &x1->t0000 + 1;
+		if (w13_25 == (word32) x1->t0000)
 		{
 			do
 			{

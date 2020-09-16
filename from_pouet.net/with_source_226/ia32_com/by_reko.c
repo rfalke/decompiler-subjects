@@ -13,126 +13,126 @@ void fn0C00_0100(word16 cx, byte dh, byte dl, Eq_5 bx, Eq_6 si, Eq_7 di, struct 
 	word16 dx_21 = 0x03C8;
 	do
 	{
-		__outb(dx_21, (byte) ax_343);
+		__outb(dx_21, (byte) ax_347);
 		dx_21 = SEQ(SLICE(dx_21, byte, 8), 0xC9);
-		bu8 al_31 = (byte) __shld(ax_343, cx, 0x0E);
+		bu8 al_31 = (byte) __shld(ax_347, cx, 0x0E);
 		__outb(dx_21, al_31);
 		bu8 ah_35 = SLICE((byte) cx * al_31, byte, 8);
 		__outb(dx_21, ah_35);
 		--cx;
-		byte cl_301 = (byte) cx;
-		ax_343 = SEQ(ah_35, ah_35);
+		byte cl_305 = (byte) cx;
+		ax_347 = SEQ(ah_35, ah_35);
 	} while (cx != 0x00);
 	do
 	{
-		real64 rLoc1_318 = sqrt(-(real64) (ds->*di));
-		ds->*di = (int16) (rLoc1_318 + rLoc1_318);
+		real64 rLoc1_322 = sqrt(-(real64) (ds->*di));
+		ds->*di = (int16) (rLoc1_322 + rLoc1_322);
 		bi8 al_42 = (byte) bx;
 		dx_17->*bx = (byte) (al_42 *s al_42 + SLICE(bx *s bx, word16, 16) - 0x3FC0);
-		Eq_86 Top_157 = 0;
+		Eq_86 Top_161 = 0;
 		bx = (word16) bx + 1;
 	} while (bx != 0x00);
-	Eq_92 bx_166 = 0x8484;
+	Eq_92 bx_170 = 0x8484;
 	do
 	{
-		Mem76[ds:bx_166 + si:word16] = Mem74[ds:bx_166 + si:word16] + 0x01;
+		Mem76[ds:bx_170 + si:word16] = Mem74[ds:bx_170 + si:word16] + 0x01;
 		__fninit();
-		--Top_157;
-		*Top_157 = 0.0;
-		word16 cx_174;
+		--Top_161;
+		*Top_161 = 0.0;
+		word16 cx_178 = SEQ(0x02, cl_305);
 		do
 		{
-			int8 Top_83 = Top_157 - 1;
-			Top_83->r0000 = Top_83->r0000;
-			real64 v26_86 = Top_83->r0000;
-			Top_83->r0000 = cos(v26_86);
-			Top_83->rFFFFFFFF = sin(v26_86);
-			Top_83->rFFFFFFFE = Top_83->r0000;
-			Top_83->rFFFFFFFE *= ds->*((word16) si + 53);
-			real64 v27_96 = Top_83->rFFFFFFFE;
-			Top_83->rFFFFFFFE = cos(v27_96);
-			Top_83->rFFFFFFFD = sin(v27_96);
-			Top_83->rFFFFFFFD += (real64) (ds->*((word16) si + 53));
-			Top_83->rFFFFFFFD *= Top_83->rFFFFFFFF;
-			Top_83->r0000 *= Top_83->rFFFFFFFD;
-			Eq_95 Top_103 = Top_83 - 2;
+			int8 Top_85 = Top_161 - 1;
+			Top_85->r0000 = (real64) *Top_161;
+			real64 v27_87 = Top_85->r0000;
+			Top_85->r0000 = cos(v27_87);
+			Top_85->rFFFFFFFF = sin(v27_87);
+			Top_85->rFFFFFFFE = Top_85->r0001;
+			Top_85->rFFFFFFFE *= (real64) (ds->*((word16) si + 53));
+			real64 v29_98 = Top_85->rFFFFFFFE;
+			Top_85->rFFFFFFFE = cos(v29_98);
+			Top_85->rFFFFFFFD = sin(v29_98);
+			Top_85->rFFFFFFFD += (real64) (ds->*((word16) si + 53));
+			Top_85->rFFFFFFFD *= Top_85->rFFFFFFFF;
+			Top_85->r0000 *= Top_85->rFFFFFFFD;
+			int8 Top_105 = Top_85 - 2;
 			do
 			{
-				struct Eq_94 * Top_105 = Top_103 - 1;
-				Top_105->r0000 = Top_105->r0001;
-				Top_105->rFFFFFFFF = Top_105->r0000;
-				ST115[Top_105 + -2:real64] = (real64) Mem114[ds:bx_166 + si:int16];
-				Top_105->rFFFFFFFE *= ds->*((word16) si + 49);
-				real64 v28_117 = Top_105->rFFFFFFFE;
-				Top_105->rFFFFFFFE = cos(v28_117);
-				Top_105->rFFFFFFFD = sin(v28_117);
-				Top_105->rFFFFFFFD *= Top_105->rFFFFFFFF;
-				Top_105->r0000 *= Top_105->rFFFFFFFD;
-				Top_105->rFFFFFFFE *= Top_105->r0001;
-				Top_105->r0002 *= Top_105->rFFFFFFFE;
-				Top_105->r0002 += Top_105->rFFFFFFFF;
-				Top_105->r0001 -= Top_105->r0000;
-				ST132[Top_105 + 0x00:real64] = (real64) Mem114[ds:bx_166 + si:int16];
-				Top_105->r0000 /= (real64) (ds->*((word16) si + 0x0044));
-				Top_105->r0000 = sin(Top_105->r0000);
-				Top_105->r0000 *= (real64) (ds->*((word16) si + 0x0044));
-				Top_105->r0000 += (real64) (ds->*((word16) si + 61));
-				Top_105->r0001 *= Top_105->r0000;
-				Mem140[ds:bx_166 + di:int16] = (int16) ST137[Top_105 + 1:real64];
-				struct Eq_267 Eq_8::* di_142 = (word16) di + 1;
-				Top_103 = &Top_105->r0002;
-				di = di_142 + 1;
-			} while (di_142 == &Eq_8::t0001);
-			di = -(di_142 + 1);
-			Top_105->r0002 *= (real64) (ds->*di);
-			ds->*di = (int16) Top_105->r0002;
-			real64 rRet0_171;
-			bx_166 = fn0C00_0102(si, bx_166, si, di, ds, dx_17, dx_11, Top_105->r0003, out rRet0_171);
-			Top_105->r0003 = rRet0_171;
-			Top_157 = &Top_105->r0003;
-			--cx_174;
-		} while (cx_174 != 0x00);
+				struct Eq_94 * Top_109 = Top_105 - 1;
+				Top_109->r0000 = (real64) *((byte) Top_105 + 1);
+				Top_109->rFFFFFFFF = Top_109->r0001;
+				ST119[Top_109 + -2:real64] = CONVERT(Mem118[ds:bx_170 + si:int16], int16, real64);
+				Top_109->rFFFFFFFE *= (real64) (ds->*((word16) si + 49));
+				real64 v32_121 = Top_109->rFFFFFFFE;
+				Top_109->rFFFFFFFE = cos(v32_121);
+				Top_109->rFFFFFFFD = sin(v32_121);
+				Top_109->rFFFFFFFD *= Top_109->rFFFFFFFF;
+				Top_109->r0000 *= Top_109->rFFFFFFFD;
+				Top_109->rFFFFFFFE *= Top_109->r0001;
+				Top_109->r0002 *= Top_109->rFFFFFFFE;
+				Top_109->r0002 += Top_109->rFFFFFFFF;
+				Top_109->r0001 -= Top_109->r0000;
+				ST136[Top_109 + 0x00:real64] = CONVERT(Mem118[ds:bx_170 + si:int16], int16, real64);
+				Top_109->r0000 /= (real64) (ds->*((word16) si + 0x0044));
+				Top_109->r0000 = sin(Top_109->r0000);
+				Top_109->r0000 *= (real64) (ds->*((word16) si + 0x0044));
+				Top_109->r0000 += (real64) (ds->*((word16) si + 61));
+				Top_109->r0001 *= Top_109->r0000;
+				Mem144[ds:bx_170 + di:int16] = CONVERT(ST141[Top_109 + 1:real64], real64, int16);
+				struct Eq_268 Eq_8::* di_146 = (word16) di + 1;
+				Top_105 = &Top_109->r0002;
+				di = di_146 + 1;
+			} while (di_146 == &Eq_8::t0001);
+			di = -(di_146 + 1);
+			Top_109->r0002 *= (real64) (ds->*di);
+			ds->*di = (int16) Top_109->r0002;
+			real64 rRet0_175;
+			bx_170 = fn0C00_0102(si, bx_170, si, di, ds, dx_17, dx_11, Top_109->r0003, out rRet0_175);
+			Top_109->r0003 = rRet0_175;
+			Top_161 = &Top_109->r0003;
+			--cx_178;
+		} while (cx_178 != 0x00);
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		word16 bx_211 = Mem209[ds:bx_166 + si:word16] *s 0x0141;
-		Eq_418 si_212 = 0x00;
-		di_234 = di;
-		cx_243 = cx_174;
+		word16 bx_215 = Mem213[ds:bx_170 + si:word16] *s 0x0141;
+		Eq_420 si_216 = 0x00;
+		di_238 = di;
+		cx_247 = cx_178;
 		do
 		{
-			word16 cx_243;
-			Eq_7 di_234;
-			byte v32_219 = dx_11->*si_212;
-			dx_11->*si_212 = 0x84;
-			uint8 al_222 = v32_219 + 0x7C;
-			if (v32_219 == 0x7C)
-				al_222 = Mem220[0xA000:bx_211 + si_212:byte] >>u 0x01;
-			0xA000->*di_234 = ~al_222;
-			di_234 = (word16) di_234 + 1;
-			si_212 = (word16) si_212 + 1;
-			bx_211 = (word16) bx_211 + 1;
-			--cx_243;
-		} while (cx_243 != 0x00);
-		cl_301 = (byte) cx_174;
+			word16 cx_247;
+			Eq_7 di_238;
+			byte v36_223 = dx_11->*si_216;
+			dx_11->*si_216 = 0x84;
+			uint8 al_226 = v36_223 + 0x7C;
+			if (v36_223 == 0x7C)
+				al_226 = Mem224[0xA000:bx_215 + si_216:byte] >>u 0x01;
+			0xA000->*di_238 = ~al_226;
+			di_238 = (word16) di_238 + 1;
+			si_216 = (word16) si_216 + 1;
+			bx_215 = (word16) bx_215 + 1;
+			--cx_247;
+		} while (cx_247 != 0x00);
+		cl_305 = (byte) cx_178;
 	} while (__inb(0x60) != 0x01);
 	msdos_terminate_program20();
 }
 
-// 0C00:0102: Register Eq_92 fn0C00_0102(Register Eq_6 dx, Register Eq_92 bx, Register Eq_6 si, Register Eq_7 di, Register (ptr16 Eq_8) ds, Register (ptr16 Eq_8) fs, Register (ptr16 Eq_15) gs, FpuStack real64 rArg0, FpuStack out Eq_304 rArg0Out)
+// 0C00:0102: Register Eq_92 fn0C00_0102(Register Eq_6 dx, Register Eq_92 bx, Register Eq_6 si, Register Eq_7 di, Register (ptr16 Eq_8) ds, Register (ptr16 Eq_8) fs, Register (ptr16 Eq_15) gs, FpuStack real64 rArg0, FpuStack out Eq_305 rArg0Out)
 // Called from:
 //      fn0C00_0100
-Eq_92 fn0C00_0102(Eq_6 dx, Eq_92 bx, Eq_6 si, Eq_7 di, struct Eq_8 * ds, struct Eq_8 * fs, struct Eq_15 * gs, real64 rArg0, union Eq_304 & rArg0Out)
+Eq_92 fn0C00_0102(Eq_6 dx, Eq_92 bx, Eq_6 si, Eq_7 di, struct Eq_8 * ds, struct Eq_8 * fs, struct Eq_15 * gs, real64 rArg0, union Eq_305 & rArg0Out)
 {
 	word16 bp_25 = Mem0[ds:bx + 0x00:word16] *s 0x0140 + Mem0[ds:bx + di:word16];
 	do
 	{
 		do
 		{
-			Eq_205 al_16 = fs->*bx;
+			Eq_206 al_16 = fs->*bx;
 			byte bl_33 = (byte) bx;
 			byte bh_41 = SLICE(bx, byte, 8);
-			uint16 ax_20 = (uint16) (uint8) al_16;
+			uint16 ax_20 = (uint16) al_16;
 			if (al_16 != 0x00)
 			{
 				ci8 al_26 = (byte) ((word16) dx.u1 + ax_20 >> 0x03);
@@ -145,7 +145,7 @@ Eq_92 fn0C00_0102(Eq_6 dx, Eq_92 bx, Eq_6 si, Eq_7 di, struct Eq_8 * ds, struct 
 		bp_25 = (word16) si + ((word16) bp_25 + 32);
 		bx = SEQ(bh_41 + 0x08, bl_33 + 0x08);
 	} while (!OVERFLOW(bh_41 + 0x08));
-	rArg0Out = rArg0 + ds->*((word16) si + 49);
+	rArg0Out = rArg0 + (real64) (ds->*((word16) si + 49));
 	return bx;
 }
 

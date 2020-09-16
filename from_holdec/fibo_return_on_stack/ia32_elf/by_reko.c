@@ -136,7 +136,7 @@ void main()
 {
 	__align(fp - 4);
 	printf("Input number: ");
-	__isoc99_scanf("%d", 0x00);
+	__isoc99_scanf("%d", fp - 0x10);
 	printf("fibonacci(%d) = %d %d\n", dwLoc10, fibo_normal(dwLoc10), fibo_return_on_stack(dwLoc10));
 }
 
@@ -152,7 +152,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 edi_29 = 0x08049870 - 0x08049870;
 	if (edi_29 >> 0x02 != 0x00)
 	{
-		Eq_150 esi_34 = 0x00;
+		Eq_152 esi_34 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x08049870)[esi_34]();

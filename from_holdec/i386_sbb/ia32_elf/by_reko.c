@@ -206,10 +206,10 @@ word32 sbb_simu(Eq_12 dwArg04, cu8 bArg08, word32 dwArg0C)
 	bcu8 cl_48 = (byte) eax_40;
 	word32 ebx_59 = (word32) (al_21 >> 0x07);
 	word32 ebx_66 = (word32) bArg08;
-	Eq_330 cl_25 = dl_22 < bArg08;
-	Eq_332 bl_33 = al_21 < (byte) dwArg0C;
+	int8 cl_25 = (int8) (dl_22 < bArg08);
+	int8 bl_33 = (int8) (al_21 < (byte) dwArg0C);
 	word32 eax_126 = (word32) (byte) eax_40;
-	if ((byte) ((SEQ(SLICE(eax_40, word24, 8), cl_48 >> 0x07) ^ ebx_59) & SEQ(SLICE(dwArg0C, word24, 8), (byte) dwArg0C >> 0x07 == cl_48 >> 0x07)) != (byte) ((SEQ(SLICE(dwArg04, word24, 8), dl_22 >> 0x07) ^ ebx_59) & SEQ(SLICE(ebx_66, word24, 8), (byte) ebx_66 >> 0x07 == al_21 >> 0x07)))
+	if ((byte) ((SEQ(SLICE(eax_40, word24, 8), cl_48 >> 0x07) ^ ebx_59) & SEQ(SLICE(dwArg0C, word24, 8), (int8) ((byte) dwArg0C >> 0x07 == cl_48 >> 0x07))) != (byte) ((SEQ(SLICE(dwArg04, word24, 8), dl_22 >> 0x07) ^ ebx_59) & SEQ(SLICE(ebx_66, word24, 8), (int8) ((byte) ebx_66 >> 0x07 == al_21 >> 0x07))))
 		eax_126 += 0x00010000;
 	word32 edx_92 = eax_126 + 0x01000000;
 	if ((cl_25 | bl_33) != 0x00)
@@ -224,7 +224,7 @@ ui32 sub(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
 	uint8 al_9 = (byte) (eax_5 - (word32) bArg08);
-	return (SEQ(SLICE(eax_5, word24, 8), al_9) & 0xFF) + (SEQ(0x00, al_9 < 0x00, OVERFLOW(al_9)) << 0x10);
+	return (SEQ(SLICE(eax_5, word24, 8), al_9) & 0xFF) + (SEQ(0x00, (int8) (al_9 < 0x00), (int8) OVERFLOW(al_9)) << 0x10);
 }
 
 // 080494E9: Register ui32 sbb_set(Stack byte bArg04, Stack byte bArg08)
@@ -234,7 +234,7 @@ ui32 sbb_set(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
 	uint8 al_10 = (byte) (eax_5 - (word32) bArg08) - true;
-	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, al_10 < 0x00, OVERFLOW(al_10)) << 0x10);
+	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, (int8) (al_10 < 0x00), (int8) OVERFLOW(al_10)) << 0x10);
 }
 
 // 0804950C: Register ui32 sbb_clear(Stack byte bArg04, Stack byte bArg08)
@@ -244,7 +244,7 @@ ui32 sbb_clear(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
 	uint8 al_10 = (byte) (eax_5 - (word32) bArg08);
-	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, al_10 < 0x00, OVERFLOW(al_10)) << 0x10);
+	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, (int8) (al_10 < 0x00), (int8) OVERFLOW(al_10)) << 0x10);
 }
 
 // 08049530: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

@@ -11,7 +11,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 	msdos_display_string(&ds->b01F1);
 	byte ah_10 = 0x09;
 	byte dh_159 = 0x01;
-	struct Eq_19 Eq_3::* bx_14;
+	struct Eq_19 Eq_3::* bx_14 = &Eq_3::t0A00;
 	do
 	{
 		bx_14[61961] = (0xA000->*bx_14).b0000;

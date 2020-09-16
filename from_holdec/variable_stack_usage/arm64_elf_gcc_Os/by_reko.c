@@ -173,10 +173,10 @@ void fill(word64 x1)
 void with_array(word64 x0, word32 x1_32_32)
 {
 	word32 w0_21 = (word32) x0;
-	word32 * sp_17 = fp + -0x0A - (__sbfiz(x0, 2) + 0x12 & 0x00);
+	__sbfiz(x0, 2);
 	fill(SEQ(x1_32_32, w0_21));
 	use(fp);
-	use(sp_17);
+	use(fp + -0x0A);
 	use(fp + 1);
 }
 
@@ -186,10 +186,10 @@ void with_array(word64 x0, word32 x1_32_32)
 word64 with_alloca(word64 x0, word32 x1_32_32, ptr64 & x1Out)
 {
 	word32 w0_21 = (word32) x0;
-	word32 * sp_17 = fp + -0x0A - (__sbfiz(x0, 2) + 0x1E & 0x00);
+	__sbfiz(x0, 2);
 	fill(SEQ(x1_32_32, w0_21));
 	use(fp);
-	use(sp_17);
+	use(fp + -0x0A);
 	x1Out = use(fp + 1);
 	return SEQ(SLICE(fp + 1, word32, 32), w0_39);
 }

@@ -15,8 +15,5 @@ Eq_35 g_t400660 = Unexpected function type (fn void ())
 	};
 word64 g_qw600E18 = 0x00;
 byte g_b601024 = 0x00;
-Eq_84 g_t601028 = 
-	{
-		0x00
-	};
+word32 g_dw601028 = 0x00;
 

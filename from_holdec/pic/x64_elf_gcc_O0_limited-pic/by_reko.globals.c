@@ -13,9 +13,6 @@ Eq_22 g_t401200 = Unexpected function type (fn void ())
 <anonymous> * g_a403E10[] = 
 	{
 	};
-Eq_71 g_t404024 = 
-	{
-		0x2A
-	};
+word32 g_dw404024 = 0x2A;
 byte g_b404028 = 0x00;
 

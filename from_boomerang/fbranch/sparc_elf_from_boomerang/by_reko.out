@@ -2,7 +2,5 @@
 00010674: warning: Unable to resolve imported reference __register_frame_info.
 000106AC: warning: Unable to resolve imported reference _Jv_RegisterClasses.
 00010858: warning: Call target address 00000018 is invalid.
-0001075C: warning: SPARC instruction 'fbe' is not supported yet.
-0001079C: warning: SPARC instruction 'fble' is not supported yet.
 000105D0: warning: Call target address 5441424C is invalid.
 00010608: warning: Unable to resolve imported reference __deregister_frame_info.

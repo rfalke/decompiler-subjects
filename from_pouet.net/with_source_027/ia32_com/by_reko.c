@@ -12,14 +12,14 @@ void fn0C00_0100()
 	struct Eq_9 Eq_20::* di_11 = &Eq_20::t0000;
 	do
 	{
-		ax_44 = SEQ(ah_43, al_19);
+		ax_43 = SEQ(ah_18, al_19);
 		word16 ax_16 = di_11 + ax_14;
-		byte al_19 = (byte) ax_16 + SLICE(ax_16, byte, 8);
+		byte ah_18 = SLICE(ax_16, byte, 8);
+		byte al_19 = (byte) ax_16 + ah_18;
 		(0xA000->*di_11).t0000 = al_19;
 		struct Eq_9 Eq_20::* di_22 = di_11 + 1;
-		byte ah_43 = SLICE(ax_16, byte, 8);
 		di_11 = di_22;
-		ax_14 = ax_44;
+		ax_14 = ax_43;
 	} while (di_22 != &Eq_20::t0000);
 	word16 Eq_20::* si_33 = Eq_20::a002D;
 	while (true)

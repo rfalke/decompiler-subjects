@@ -8,7 +8,7 @@
 void fn0C00_0100()
 {
 	bios_video_set_mode(0x13);
-	byte Eq_45::* bx_24 = &Eq_45::b0000;
+	byte Eq_44::* bx_24 = &Eq_44::b0000;
 	do
 	{
 		word16 cx_43;
@@ -19,7 +19,7 @@ void fn0C00_0100()
 			0C00:0164 = 0C00:0166;
 			word16 ax_20 = __ror(0C00:0162, 0x08);
 			0C00:0162 = (word16 *) ax_20;
-			byte al_38 = (uint16) ((uint32) (uint16) ax_20 % 0x04) + 0x0168;
+			byte al_38 = (uint16) ((uint32) ax_20 % 0x04) + 0x0168;
 			0xA000->*bx_24 = al_38;
 			++bx_24;
 		}

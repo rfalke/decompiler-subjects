@@ -9,21 +9,21 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 {
 	bios_video_load_ROM_8x8_dbl_dot_patterns(bl);
 	__syscall(0x10);
-	uint8 ah_183 = 0x10;
+	uint8 ah_182 = 0x10;
 	do
 	{
 		Eq_15 di_15 = 0x00;
 		do
 		{
 			ui8 al_23 = 0x9000->*di_15 + 0x9000->*((word16) di_15 + 2);
-			ui16 al_ah_216 = SEQ(al_23, ah_183) + SEQ(0x9000->*((word16) di_15 + 0x00A0), C_26);
-			ui16 al_ah_218 = al_ah_216 + SEQ(0x9000->*((word16) di_15 - 2), C_32);
-			cu8 al_36 = SLICE(al_ah_218, byte, 8);
-			cu16 ax_40 = SEQ((bool) (al_36 < 0x00) + (byte) al_ah_218, al_36);
+			ui16 al_ah_215 = SEQ(al_23, ah_182) + SEQ(0x9000->*((word16) di_15 + 0x00A0), C_26);
+			ui16 al_ah_217 = al_ah_215 + SEQ(0x9000->*((word16) di_15 - 2), C_32);
+			cu8 al_36 = SLICE(al_ah_217, byte, 8);
+			cu16 ax_40 = SEQ((bool) (al_36 < 0x00) + (byte) al_ah_217, al_36);
 			C_26.u1 = SLICE(cond(al_23), bool, 1);
-			C_32.u1 = SLICE(cond(SLICE(al_ah_216, byte, 8)), bool, 1);
+			C_32.u1 = SLICE(cond(SLICE(al_ah_215, byte, 8)), bool, 1);
 			byte al_44 = (byte) (ax_40 >> 0x02);
-			ah_183 = SLICE(ax_40 >> 0x02, byte, 8);
+			ah_182 = SLICE(ax_40 >> 0x02, byte, 8);
 			if (ax_40 >> 0x02 >= 0x07)
 				al_44 -= 0x07;
 			if (di_15 >= 0x1FE0)
@@ -39,47 +39,47 @@ void fn0C00_0100(byte bl, struct Eq_3 * ds)
 		do
 		{
 			uint8 al_71 = di_67[2000];
-			word16 cx_84 = ds->a01E7[(uint16) (uint8) (SEQ(ah_183, al_71) /u 0x0F)];
+			word16 cx_84 = ds->a01E7[(uint16) (uint8) (SEQ(ah_182, al_71) /u 0x0F)];
 			di_67[1999] = cx_84;
 			struct Eq_111 Eq_21::* di_88 = -di_67;
 			di_88[2000] = SEQ(SLICE(cx_84, byte, 8), al_71);
 			Eq_118 di_92 = -di_88;
-			ah_183 = 0x00;
+			ah_182 = 0x00;
 			di_67 = di_92 - 0x02;
 		} while (di_92 != 0x02);
 		struct Eq_124 Eq_21::* di_104 = Eq_21::a0000;
 		struct Eq_126 Eq_21::* si_108 = Eq_21::a0000;
-		cu8 bl_125 = 0x00;
-		byte bh_139;
-		for (bh_139 = 0x00; bh_139 != 0x19; ++bh_139)
+		cu8 bl_124 = 0x00;
+		byte bh_138;
+		for (bh_138 = 0x00; bh_138 != 0x19; ++bh_138)
 		{
 			do
 			{
 				if ((0x8000->*di_104).b0001 == 0x00)
 				{
-					word16 cx_109 = (0x8000->*si_108).w0000;
-					(0x8000->*di_104).w0000 = SEQ(SLICE(cx_109, byte, 8), 0x01);
-					struct Eq_153 Eq_21::* di_114 = -di_104;
-					(0x8000->*di_114).w1F3E = SEQ(SLICE(cx_109, byte, 8), 0x02);
+					byte ch_111 = (0x8000->*si_108).b0001;
+					(0x8000->*di_104).w0000 = SEQ(ch_111, 0x01);
+					struct Eq_152 Eq_21::* di_114 = -di_104;
+					(0x8000->*di_114).w1F3E = SEQ(ch_111, 0x02);
 					di_104 = -di_114;
 				}
-				word16 si_128 = (char *) &si_108->w0000 + 1;
+				word16 si_127 = &si_108->b0001;
 				di_104 = &di_104->b0001 + 0x009F;
-				++bl_125;
-				si_108 = si_128 + 0x01;
-			} while (bl_125 < 0x33);
+				++bl_124;
+				si_108 = si_127 + 0x01;
+			} while (bl_124 < 0x33);
 			di_104 -= 8158;
-			si_108 = si_128 + 0x3B;
-			bl_125 = 0x00;
+			si_108 = si_127 + 0x3B;
+			bl_124 = 0x00;
 		}
-		byte Eq_21::* di_163;
+		byte Eq_21::* di_162 = Eq_21::a0000;
 		do
 		{
-			0xB800->*di_163 = 0x8000->*di_163;
-			++di_163;
-		} while (di_163 != Eq_21::a0000);
-		byte al_182;
-	} while (bios_kbd_check_keystroke(out al_182, out ah_183));
+			0xB800->*di_162 = 0x8000->*di_162;
+			++di_162;
+		} while (di_162 != Eq_21::a0000);
+		byte al_181;
+	} while (bios_kbd_check_keystroke(out al_181, out ah_182));
 	bios_video_set_mode(0x03);
 }
 

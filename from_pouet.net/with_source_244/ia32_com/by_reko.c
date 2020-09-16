@@ -28,7 +28,7 @@ void fn0C00_0100(word16 cx, byte bl, struct Eq_4 * ds)
 	do
 	{
 		word16 Eq_4::* si_162 = &Eq_4::w01FE;
-		byte Eq_4::* bx_262;
+		byte Eq_4::* bx_262 = SEQ(0x03, bl);
 		do
 		{
 			ds->*bx_262 = ch_250;
@@ -82,7 +82,7 @@ void fn0C00_0100(word16 cx, byte bl, struct Eq_4 * ds)
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		Eq_182 di_180;
+		Eq_182 di_180 = ~0x061F;
 		word16 Eq_4::* si_181 = &Eq_4::wFFFFF9E0;
 		do
 		{

@@ -15,12 +15,12 @@ void fn0C00_0100(byte Eq_20::* bx, byte Eq_123::* di)
 	cui16 cx_187 = 0x20;
 	do
 	{
-		word16 dx_245 = (word16) (dx_10 *s ax_11) + 0x01;
+		word16 dx_244 = (word16) (dx_10 *s ax_11) + 0x01;
 		do
 		{
-			bi8 dh_37 = SLICE(dx_245, byte, 8);
-			bi8 dl_28 = (byte) dx_245;
-			cu8 cl_21 = (byte) cx_252;
+			bi8 dh_37 = SLICE(dx_244, byte, 8);
+			bi8 dl_28 = (byte) dx_244;
+			cu8 cl_21 = (byte) cx_251;
 			if (cl_21 >= 0x1E)
 				ds_8->*bx = cl_21;
 			int16 ax_40 = dh_37 *s dh_37 + dl_28 *s dl_28;
@@ -30,15 +30,15 @@ void fn0C00_0100(byte Eq_20::* bx, byte Eq_123::* di)
 				ah_41 = 0x1F;
 			ds_8->*bx += ah_41;
 			--bx;
-			dx_10 = dx_245 + 0x01;
+			dx_10 = dx_244 + 0x01;
 			byte bh_121 = SLICE(bx, byte, 8);
 			byte bl_206 = (byte) bx;
 			ax_11 = SEQ(ah_41, al_164);
-			++dx_245;
+			++dx_244;
 		} while (bx != &Eq_20::b0000);
-		cx_187 = cx_252 - 0x01;
-		cx_252 = cx_187;
-	} while (cx_252 != 0x01);
+		cx_187 = cx_251 - 0x01;
+		cx_251 = cx_187;
+	} while (cx_251 != 0x01);
 	Eq_75 bp_123 = 0x00;
 	do
 	{

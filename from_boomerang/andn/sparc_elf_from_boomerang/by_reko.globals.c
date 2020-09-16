@@ -7,5 +7,7 @@
 Eq_2 g_t10748 = Unexpected function type (fn void ())
 ;
 char g_str10768[] = "a andn b is %d\n";
+char g_str10778[] = "b orn  a is %d\n";
+char g_str10788[] = "a xorn c is %d\n";
 ptr32 g_ptr20944 = 0x00;
 

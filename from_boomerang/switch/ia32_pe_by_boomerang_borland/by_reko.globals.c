@@ -42,12 +42,18 @@ Eq_34 g_t40A152 =
 		116,
 	};
 word32 g_dw40A5CC = 0x00;
-Eq_1048 g_t40B570 = 
+byte g_a40B1FA[] = 
+	{
+	};
+Eq_1033 g_t40B570 = 
 	{
 		0x00,
 		0x01,
 	};
-struct Eq_1048 * g_ptr40B59C = &g_t40B570;
+struct Eq_1033 * g_ptr40B59C = &g_t40B570;
 <anonymous> * g_ptr40B780 = &g_t404FE0;
 <anonymous> * g_ptr40B784 = &g_t404FE0;
+byte g_a40CA55[] = 
+	{
+	};
 

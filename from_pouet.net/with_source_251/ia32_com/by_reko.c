@@ -89,10 +89,10 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_2 * ds)
 //      fn0C00_0100
 real64 fn0C00_01DD(real64 rArg0, real64 rArg1, real64 rArg2, union Eq_58 & rArg2Out, union Eq_59 & rArg3Out)
 {
-	real64 rArg0_33 = cos(rArg0);
-	real64 rLoc1_34 = sin(rArg0);
-	rArg2Out = rArg0_33 * rLoc1_34 - rArg1 * rArg0_33;
-	rArg3Out = rLoc1_34 * rArg2 + rArg0_33 * rArg1;
+	real64 rArg0_35 = cos(rArg0);
+	real64 rLoc1_36 = sin(rArg0);
+	rArg2Out = rArg1 * rLoc1_36 - rArg2 * rArg0_35;
+	rArg3Out = rLoc1_36 * rArg2 + rArg0_35 * rArg1;
 	return rArg3;
 }
 

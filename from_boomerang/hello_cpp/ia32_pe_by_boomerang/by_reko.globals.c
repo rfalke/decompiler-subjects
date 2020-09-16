@@ -5,38 +5,38 @@
 #include "subject.h"
 
 byte g_bFFBD53C1;
-<anonymous> * g_ptrFFFFFFFF;
+Eq_6920 g_tFFFFFFFF;
 Eq_320 g_t0001;
 Eq_277 g_t0004;
-Eq_17609 g_a0011[];
-Eq_15085 g_t0041;
-Eq_15085 g_t005A;
-Eq_15085 g_t0061;
-Eq_15085 g_t007A;
+Eq_17551 g_a0011[];
+Eq_15037 g_t0041;
+Eq_15037 g_t005A;
+Eq_15037 g_t0061;
+Eq_15037 g_t007A;
 <anonymous> g_t0094;
 Eq_320 g_t00FF;
-Eq_15085 g_t0100;
+Eq_15037 g_t0100;
 <anonymous> g_t366EE9;
 <anonymous> * g_ptr4110CD = &g_t366EE9;
 <anonymous> g_t4112DF = <code>;
 <anonymous> g_t4112F3 = <code>;
-Eq_1512 g_t411CF4 = 
+Eq_1498 g_t411CF4 = 
 	{
 		1,
 		&g_t411CFC,
 	};
-Eq_1523 g_t411CFC = 
+Eq_1509 g_t411CFC = 
 	{
 		
 		{
 		},
 	};
-Eq_1512 g_t411E3D = 
+Eq_1498 g_t411E3D = 
 	{
 		1,
 		&g_t411E45,
 	};
-Eq_1523 g_t411E45 = 
+Eq_1509 g_t411E45 = 
 	{
 		
 		{
@@ -56,7 +56,7 @@ int32 g_t413180() = Unexpected function type (fn int32 ())
 <anonymous> * g_a41F458[] = 
 	{
 	};
-Eq_17730 g_a4251F8[] = 
+Eq_17672 g_a4251F8[] = 
 	{
 	};
 word32 g_dw425594 = 0x61772027;
@@ -69,6 +69,9 @@ word32 g_a4255A8[] =
 	};
 byte g_b425B78 = 0x2E;
 word16 g_a426C18[] = 
+	{
+	};
+byte g_a4273C0[] = 
 	{
 	};
 ptr32 g_a427828[129] = 
@@ -214,42 +217,42 @@ word32 g_dw427A2C = 0x00;
 <anonymous> * g_ptr428A34 = null;
 <anonymous> * g_ptr428B40 = fn00411212;
 word32 g_dw428B44 = 0x02;
-Eq_17727 g_a428B60[] = 
+Eq_17669 g_a428B60[] = 
 	{
 	};
 Eq_3 g_t428B68 = 
 	{
 		0x100000001
 	};
-Eq_17728 g_a428B70[] = 
+Eq_17670 g_a428B70[] = 
 	{
 	};
 Eq_3 g_t428B80 = 
 	{
 		4346384
 	};
-struct Eq_15538 g_t428B90 = 
+struct Eq_15485 g_t428B90 = 
 	{
 		11,
 	};
-Eq_17691 g_a428B98[] = 
+Eq_17633 g_a428B98[] = 
 	{
 	};
 int32 g_dw428C08 = 3;
 word32 g_dw428C0C = 0x07;
 int32 g_dw428C10 = 0x0A;
 word32 g_dw428C14 = 0x8C;
-Eq_8935 g_t428C34 = 
+Eq_8894 g_t428C34 = 
 	{
 		0x80,
 	};
 Eq_3 g_a428C60[] = 
 	{
 	};
-Eq_17734 g_a428C64[] = 
+Eq_17679 g_a428C64[] = 
 	{
 	};
-Eq_11559 g_t428D18 = -1;
+Eq_11511 g_t428D18 = -1;
 ui32 g_a428D1C[] = 
 	{
 	};
@@ -276,7 +279,7 @@ Eq_3 g_t428D5B =
 	{
 		0x425FFC00426004BD
 	};
-Eq_17747 g_a428D5C[] = 
+Eq_17692 g_a428D5C[] = 
 	{
 	};
 byte g_a428D78[4] = 
@@ -286,7 +289,7 @@ byte g_a428D78[4] =
 		0x04,
 		0x08,
 	};
-Eq_17571 g_a428D80[] = 
+Eq_17513 g_a428D80[] = 
 	{
 	};
 Eq_3 g_t428EB0 = 
@@ -313,7 +316,7 @@ Eq_3 g_t428EF4 =
 Eq_3 g_a429220[] = 
 	{
 	};
-Eq_17583 g_a429224[] = 
+Eq_17525 g_a429224[] = 
 	{
 	};
 Eq_3 g_t4295CC = 
@@ -326,12 +329,9 @@ Eq_3 g_t4295FC =
 	};
 word32 g_dw429604 = 0x00;
 word32 g_dw42960C = 0x00;
-Eq_650 g_t429610 = null;
+Eq_648 g_t429610 = null;
 word32 g_dw429628 = 0x00;
-Eq_1074 g_t42962C = 
-	{
-		0x00
-	};
+word32 g_dw42962C = 0x00;
 Eq_3 g_t429630 = 
 	{
 		0x00
@@ -362,7 +362,7 @@ word32 g_dw429690 = 0x00;
 byte g_b42979C = 0x00;
 word32 g_dw4297D4 = 0x00;
 <anonymous> * g_ptr4297D8 = null;
-Eq_650 g_t4297DC = null;
+Eq_648 g_t4297DC = null;
 Eq_3 g_t4297E0 = 
 	{
 		0x00
@@ -379,19 +379,19 @@ Eq_3 g_t4297EC =
 	{
 		0x00
 	};
-Eq_650 g_t4297F0 = null;
-Eq_650 g_t4297F4 = null;
-Eq_650 g_t4297F8 = null;
-Eq_650 g_t4297FC = null;
-Eq_650 g_t429800 = null;
-Eq_650 g_t429804 = null;
-Eq_650 g_t429808 = null;
-Eq_650 g_t42980C = null;
-Eq_650 g_t429810 = null;
-Eq_650 g_t429814 = null;
-Eq_650 g_t429818 = null;
-Eq_650 g_t42981C = null;
-Eq_650 g_t429820 = null;
+Eq_648 g_t4297F0 = null;
+Eq_648 g_t4297F4 = null;
+Eq_648 g_t4297F8 = null;
+Eq_648 g_t4297FC = null;
+Eq_648 g_t429800 = null;
+Eq_648 g_t429804 = null;
+Eq_648 g_t429808 = null;
+Eq_648 g_t42980C = null;
+Eq_648 g_t429810 = null;
+Eq_648 g_t429814 = null;
+Eq_648 g_t429818 = null;
+Eq_648 g_t42981C = null;
+Eq_648 g_t429820 = null;
 Eq_3 g_t429824 = 
 	{
 		0x00
@@ -412,11 +412,11 @@ Eq_3 g_t429850 =
 up32 g_dw429854 = 0x00;
 uint32 g_dw429858 = 0x00;
 word32 g_dw429864 = 0x00;
-Eq_650 g_t4298C4 = null;
-Eq_650 g_t4298C8 = null;
-Eq_650 g_t4298CC = null;
-Eq_650 g_t4298D0 = null;
-Eq_650 g_t4298D4 = null;
+Eq_648 g_t4298C4 = null;
+Eq_648 g_t4298C8 = null;
+Eq_648 g_t4298CC = null;
+Eq_648 g_t4298D0 = null;
+Eq_648 g_t4298D4 = null;
 <anonymous> * g_ptr4298DC = null;
 <anonymous> * g_ptr4298E0 = null;
 <anonymous> * g_ptr4298E4 = null;
@@ -453,7 +453,7 @@ Eq_3 g_t42ACA8 =
 		0x00
 	};
 int32 g_dw42ACAC = 0;
-Eq_8466 g_t42ACB0 = 
+Eq_8429 g_t42ACB0 = 
 	{
 		0
 	};
@@ -1506,7 +1506,7 @@ byte g_a42AE60[256] =
 	};
 <anonymous> * g_ptr42AF60 = null;
 <anonymous> * g_ptr42AF6C = null;
-struct Eq_11695 * g_ptr42AF7C = null;
+struct Eq_11647 * g_ptr42AF7C = null;
 Eq_3 g_t42AF80 = 
 	{
 		0x00
@@ -1516,7 +1516,7 @@ Eq_3 g_t42AF94 =
 	{
 		0x00
 	};
-struct Eq_6955 * g_ptr42AFE0 = null;
+struct Eq_6920 * g_ptr42AFE0 = null;
 word32 g_dw42B0E0 = 0x00;
 Eq_3 g_t42B0F0 = 
 	{

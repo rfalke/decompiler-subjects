@@ -1,36 +1,7 @@
 === Using options:
 080483AD: warning: Call target address 00000000 is invalid.
-0805D714: warning: x86 instruction 'movdqu' is not supported yet.
-080A5ED1: warning: x86 instruction 'movdqu' is not supported yet.
-0804840C: warning: x86 instruction 'movdqu' is not supported yet.
-0804840C: warning: x86 instruction 'movdqu' is not supported yet.
-08048F76: warning: x86 instruction 'movdqu' is not supported yet.
-0805CBAA: warning: x86 instruction 'movdqu' is not supported yet.
-0805CBAA: warning: x86 instruction 'movdqu' is not supported yet.
-0805F527: warning: x86 instruction 'movdqu' is not supported yet.
-08068968: warning: x86 instruction 'movdqu' is not supported yet.
-08068968: warning: x86 instruction 'movdqu' is not supported yet.
-08069570: warning: x86 instruction 'movdqu' is not supported yet.
-0807DA6E: warning: x86 instruction 'movdqu' is not supported yet.
-0807DA6E: warning: x86 instruction 'movdqu' is not supported yet.
-0807E676: warning: x86 instruction 'movdqu' is not supported yet.
-0808E49A: warning: x86 instruction 'movdqu' is not supported yet.
-0808E49A: warning: x86 instruction 'movdqu' is not supported yet.
-0808FCA0: warning: x86 instruction 'movdqu' is not supported yet.
-080A46CB: warning: x86 instruction 'movdqu' is not supported yet.
-080A46CB: warning: x86 instruction 'movdqu' is not supported yet.
-080B754A: warning: x86 instruction 'movdqu' is not supported yet.
-080B754A: warning: x86 instruction 'movdqu' is not supported yet.
-080B8D50: warning: x86 instruction 'movdqu' is not supported yet.
-080CD77B: warning: x86 instruction 'movdqu' is not supported yet.
-080CD77B: warning: x86 instruction 'movdqu' is not supported yet.
-080CEF81: warning: x86 instruction 'movdqu' is not supported yet.
-080E05FA: warning: x86 instruction 'movdqu' is not supported yet.
-080E05FA: warning: x86 instruction 'movdqu' is not supported yet.
-080E3616: warning: x86 instruction 'movdqu' is not supported yet.
-080FEB0A: warning: x86 instruction 'movdqu' is not supported yet.
-080FEB0A: warning: x86 instruction 'movdqu' is not supported yet.
-08101B26: warning: x86 instruction 'movdqu' is not supported yet.
+0805D758: warning: x86 instruction 'vpsraw' is not supported yet.
+08048FBA: warning: x86 instruction 'vpsraw' is not supported yet.
 08048400: warning: Call target address 00000000 is invalid.
 08048373: warning: Call target address 00000000 is invalid.
 === Killed because of CPU time limit

@@ -11,10 +11,10 @@ void fn0C00_0100(byte ch, byte bh)
 	__outb(0x03C8, 0x00);
 	uint8 dl_143 = 0xC9;
 	ui8 dh_148 = 0x03;
-	word16 cx_192 = SEQ(ch, ~0x00);
+	word16 cx_190 = SEQ(ch, ~0x00);
 	do
 	{
-		byte cl_13 = (byte) cx_195;
+		byte cl_13 = (byte) cx_193;
 		uint8 al_14 = ~0x00 - cl_13;
 		if (al_14 >= 0x40)
 			al_14 = 0x3F;
@@ -25,14 +25,14 @@ void fn0C00_0100(byte ch, byte bh)
 			al_24 = 0x3F;
 		__outb(969, al_24);
 		__outb(969, 0x00);
-		byte cl_131 = (byte) (cx_195 - 0x01);
-		cx_192 = cx_195 - 0x01;
-		cx_195 = cx_192;
-	} while (cx_195 != 0x01);
+		byte cl_131 = (byte) (cx_193 - 0x01);
+		cx_190 = cx_193 - 0x01;
+		cx_193 = cx_190;
+	} while (cx_193 != 0x01);
 	do
 	{
 		word16 Eq_75::* di_49 = Eq_75::aFFFFF780;
-		word16 cx_155;
+		word16 cx_155 = SEQ(0x02, cl_131);
 		do
 		{
 			dl_143 = __ror(dl_143 ^ dh_148, 0x01);
@@ -41,7 +41,7 @@ void fn0C00_0100(byte ch, byte bh)
 			++di_49;
 			--cx_155;
 		} while (cx_155 != 0x00);
-		word16 cx_100;
+		word16 cx_100 = ~cx_155;
 		struct Eq_87 Eq_75::* di_126 = &Eq_75::t0000;
 		do
 		{

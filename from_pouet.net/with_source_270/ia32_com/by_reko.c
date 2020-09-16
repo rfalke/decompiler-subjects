@@ -7,23 +7,23 @@
 // 0C00:0100: void fn0C00_0100(Register word16 bx, Register byte FPUF)
 void fn0C00_0100(word16 bx, byte FPUF)
 {
-	int8 Top_142 = 0;
+	int8 Top_154 = 0;
 	__syscall(0x10);
 	do
 	{
 		++cs->w01F8;
 		++cs->w01FE;
 		cs->t0200.u0 = ~0x63;
-		byte Eq_12::* di_151 = &Eq_12::b0000;
+		byte Eq_12::* di_163 = &Eq_12::b0000;
 		do
 		{
 			cs->w0202 = cs->w01FE;
-			word16 cx_159;
-			for (cx_159 = 0x0140; cx_159 != 0x00; --cx_159)
+			word16 cx_171;
+			for (cx_171 = 0x0140; cx_171 != 0x00; --cx_171)
 			{
 				__wait();
 				__fninit();
-				int8 Top_39 = Top_142 - 1;
+				int8 Top_39 = Top_154 - 1;
 				Top_39->r0000 = (real64) cs->w0202;
 				Top_39->r0000 *= Top_39->r0000;
 				Top_39->rFFFFFFFF = (real64) cs->t0200;
@@ -38,21 +38,21 @@ void fn0C00_0100(word16 bx, byte FPUF)
 				Top_39->rFFFFFFFE = (real64) cs->w01F2;
 				Top_39->rFFFFFFFE *= Top_39->rFFFFFFFE;
 				Top_39->rFFFFFFFE -= (real64) cs->w01F4;
-				Top_39->rFFFFFFFD = Top_39->rFFFFFFFD;
+				Top_39->rFFFFFFFD = Top_39->rFFFFFFFE;
 				Top_39->rFFFFFFFD *= Top_39->r0000;
 				Top_39->rFFFFFFFD += Top_39->rFFFFFFFD;
 				Top_39->rFFFFFFFD += Top_39->rFFFFFFFD;
-				Top_39->rFFFFFFFC = Top_39->rFFFFFFFE;
+				Top_39->rFFFFFFFC = Top_39->rFFFFFFFF;
 				Top_39->rFFFFFFFC *= Top_39->rFFFFFFFC;
 				Top_39->rFFFFFFFC -= Top_39->rFFFFFFFD;
 				__wait();
-				Top_142 = Top_39 - 4;
-				byte al_144 = (byte) bx;
-				byte ah_171 = SLICE(bx, byte, 8);
+				Top_154 = Top_39 - 4;
+				byte al_156 = (byte) bx;
+				byte ah_183 = SLICE(bx, byte, 8);
 				if (Test(UGE,SLICE(FPUF, bool, 1)))
 				{
 					Top_39->rFFFFFFFC = sqrt(Top_39->rFFFFFFFC);
-					Top_39->rFFFFFFFB = Top_39->rFFFFFFFF;
+					Top_39->rFFFFFFFB = Top_39->r0000;
 					Top_39->rFFFFFFFB += Top_39->rFFFFFFFB;
 					Top_39->rFFFFFFFA = 0.0;
 					Top_39->rFFFFFFFA -= Top_39->rFFFFFFFF;
@@ -70,27 +70,27 @@ void fn0C00_0100(word16 bx, byte FPUF)
 					Top_39->rFFFFFFF7 *= Top_39->rFFFFFFFA;
 					Top_39->rFFFFFFF7 += (real64) cs->w01F2;
 					__ffree(Top_39->rFFFFFFFA);
-					Top_39->rFFFFFFF6 = Top_39->rFFFFFFF8;
+					Top_39->rFFFFFFF6 = Top_39->rFFFFFFF9;
 					Top_39->rFFFFFFF6 -= (real64) cs->w01F8;
-					Top_39->rFFFFFFF5 = Top_39->rFFFFFFF7;
+					Top_39->rFFFFFFF5 = Top_39->rFFFFFFF8;
 					Top_39->rFFFFFFF5 -= (real64) cs->w01FA;
-					Top_39->rFFFFFFF4 = Top_39->rFFFFFFF6;
+					Top_39->rFFFFFFF4 = Top_39->rFFFFFFF7;
 					Top_39->rFFFFFFF4 -= (real64) cs->w01FC;
-					Top_39->rFFFFFFF3 = Top_39->rFFFFFFF3;
+					Top_39->rFFFFFFF3 = Top_39->rFFFFFFF4;
 					Top_39->rFFFFFFF3 *= Top_39->rFFFFFFF3;
-					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF4;
+					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF5;
 					Top_39->rFFFFFFF2 *= Top_39->rFFFFFFF2;
 					Top_39->rFFFFFFF3 += Top_39->rFFFFFFF2;
-					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF5;
+					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF6;
 					Top_39->rFFFFFFF2 *= Top_39->rFFFFFFF2;
 					Top_39->rFFFFFFF3 += Top_39->rFFFFFFF2;
 					Top_39->rFFFFFFF3 = sqrt(Top_39->rFFFFFFF3);
 					Top_39->rFFFFFFF3 *= (real64) cs->w01F6;
-					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF3;
-					Top_39->rFFFFFFF7 *= Top_39->rFFFFFFF2;
 					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF4;
-					Top_39->rFFFFFFF8 *= Top_39->rFFFFFFF2;
+					Top_39->rFFFFFFF7 *= Top_39->rFFFFFFF2;
 					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF5;
+					Top_39->rFFFFFFF8 *= Top_39->rFFFFFFF2;
+					Top_39->rFFFFFFF2 = Top_39->rFFFFFFF6;
 					Top_39->rFFFFFFF2 *= Top_39->rFFFFFFF9;
 					Top_39->rFFFFFFF2 += Top_39->rFFFFFFF7;
 					Top_39->rFFFFFFF2 += Top_39->rFFFFFFF8;
@@ -98,16 +98,16 @@ void fn0C00_0100(word16 bx, byte FPUF)
 					Top_39->rFFFFFFF2 *= (real64) cs->w01F6;
 					Top_39->rFFFFFFF2 = fabs(Top_39->rFFFFFFF2);
 					cs->t0204.u0 = (int16) Top_39->rFFFFFFF2;
-					Top_142 = Top_39 - 0x0D;
-					al_144 = (byte) cs->t0204.u1 + 16;
+					Top_154 = Top_39 - 0x0D;
+					al_156 = (byte) cs->t0204.u1 + 16;
 				}
-				0xA000->*di_151 = al_144;
+				0xA000->*di_163 = al_156;
 				++cs->w0202;
-				++di_151;
+				++di_163;
 			}
 			cs->t0200 = (word16) cs->t0200 + 1;
 		} while (cs->t0200 != 100);
-	} while (cs->b01FF != 0x01 && SEQ(ah_171, __inb(0x60)) != 0x01);
+	} while (cs->b01FF != 0x01 && SEQ(ah_183, __inb(0x60)) != 0x01);
 	__syscall(0x10);
 }
 

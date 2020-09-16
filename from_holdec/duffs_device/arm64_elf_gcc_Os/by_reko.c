@@ -167,7 +167,7 @@ void copy1_four_times(struct Eq_26 * x0, int16 * x1, ui32 w2)
 	up32 w2_12 = w3_8 < 0x00 ? w2 & 0x03 : -(w3_8 & 0x03);
 	if (w2_12 > 0x03)
 		return;
-	word32 w2_22 = (word32) (0x092C + (int64) ((int8) ((word32) (&g_t0C40)[(uint64) ((uint32) w2_12)])));
+	word32 w2_22 = (word32) (0x092C + (int64) ((int8) ((word32) (&g_t0C40)[(uint64) w2_12])));
 	switch (w2_22)
 	{
 	case 0x00:
@@ -177,9 +177,9 @@ l000000000000092C:
 	case 0x01:
 l0000000000000938:
 		x0->wFFFFFFFC = (word16) w2_22;
-		struct Eq_180 * x0_44 = &x0->wFFFFFFFC + 3;
+		struct Eq_179 * x0_44 = &x0->wFFFFFFFC + 3;
 		x0_44->wFFFFFFFC = (word16) (word32) *x1;
-		struct Eq_191 * x1_45 = x1 + 1;
+		struct Eq_190 * x1_45 = x1 + 1;
 		x0_44->wFFFFFFFE = (word16) (word32) x1_45->w0000;
 		x0_44->w0002 = (word16) (word32) x1_45->w0002;
 		--w5_54;
@@ -209,7 +209,7 @@ void copy1_eight_times(struct Eq_35 * x0, int16 * x1, ui32 w2)
 	up32 w2_12 = w3_8 < 0x00 ? w2 & 0x07 : -(w3_8 & 0x07);
 	if (w2_12 > 0x07)
 		return;
-	word32 w2_22 = (word32) (2492 + (int64) ((int8) ((word32) (&g_t0C44)[(uint64) ((uint32) w2_12)])));
+	word32 w2_22 = (word32) (2492 + (int64) ((int8) ((word32) (&g_t0C44)[(uint64) w2_12])));
 	switch (w2_22)
 	{
 	case 0x00:
@@ -219,9 +219,9 @@ l00000000000009BC:
 	case 0x01:
 l00000000000009D8:
 		x0->wFFFFFFFC = (word16) w2_22;
-		struct Eq_261 * x0_61 = &x0->wFFFFFFFC + 3;
+		struct Eq_259 * x0_61 = &x0->wFFFFFFFC + 3;
 		x0_61->wFFFFFFFC = (word16) (word32) *x1;
-		struct Eq_272 * x1_62 = x1 + 1;
+		struct Eq_270 * x1_62 = x1 + 1;
 		x0_61->wFFFFFFFE = (word16) (word32) x1_62->w0000;
 		x0_61->w0000 = (word16) (word32) x1_62->w0002;
 		x0_61->w0002 = (word16) (word32) x1_62->w0004;
@@ -267,7 +267,7 @@ void copy2_four_times(struct Eq_44 * x0, int16 * x1, int32 w2)
 {
 	if (w2 > 0x00)
 	{
-		word32 w2_47;
+		word32 w2_47 = 0x04 - w2;
 		do
 		{
 			struct Eq_44 * x3_17;
@@ -312,13 +312,13 @@ void copy2_eight_times(ptr64 x0, int16 * x1, int32 w2)
 {
 	if (w2 > 0x00)
 	{
-		word32 w2_11;
+		word32 w2_11 = 0x08 - w2;
 		do
 		{
 			up32 w3_12 = w2_11 - 0x01;
 			if (w3_12 <= 0x06)
 			{
-				<anonymous> * x3_66 = 0x0B10 + (int64) ((int8) ((word32) (&g_t0C4C)[(uint64) ((uint32) w3_12)]));
+				<anonymous> * x3_66 = 0x0B10 + (int64) ((int8) ((word32) (&g_t0C4C)[(uint64) w3_12]));
 				word64 x3_71;
 				word64 x5_72;
 				word32 w6_73;
@@ -327,9 +327,9 @@ void copy2_eight_times(ptr64 x0, int16 * x1, int32 w2)
 				x3_66();
 				return;
 			}
-			struct Eq_409 * x0_20 = x0 + 0x02;
+			struct Eq_407 * x0_20 = x0 + 0x02;
 			x0_20->wFFFFFFFC = (word16) (word32) *x1;
-			struct Eq_420 * x1_21 = x1 + 1;
+			struct Eq_418 * x1_21 = x1 + 1;
 			x0_20->wFFFFFFFE = (word16) (word32) x1_21->w0000;
 			x0_20->w0000 = (word16) (word32) x1_21->w0002;
 			x0_20->w0002 = (word16) (word32) x1_21->w0004;

@@ -11,28 +11,28 @@ void fn0C00_0100(byte cl, struct Eq_3 * es, struct Eq_3 * ds)
 	cui16 dx_18 = 0x3F;
 	do
 	{
-		cu8 dl_300 = (byte) dx_18;
+		cu8 dl_299 = (byte) dx_18;
 		byte Eq_3::* di_10 = Eq_3::a01F8;
 		word16 cx_11 = SEQ(~0x05, cl);
 		while (true)
 		{
-			byte ch_326 = SLICE(cx_11, byte, 8);
+			byte ch_325 = SLICE(cx_11, byte, 8);
 			if (cx_11 == 0x00)
 				break;
 			es->*di_10 = 0x00;
 			++di_10;
 			--cx_11;
 		}
-		struct Eq_12 Eq_3::* si_105 = &Eq_3::t01BE;
-		cui16 cx_197 = SEQ(ch_326, 0x06);
-		if (dl_300 > 0x06)
+		struct Eq_12 Eq_3::* si_104 = &Eq_3::t01BE;
+		cui16 cx_196 = SEQ(ch_325, 0x06);
+		if (dl_299 > 0x06)
 			--dx_18;
 		do
 		{
-			byte ch_342 = SLICE(cx_442, byte, 8);
-			word16 ax_24 = (ds->*si_105).t0000;
-			struct Eq_41 Eq_3::* si_25 = si_105 + 1;
-			if (cx_442 == dx_18)
+			byte ch_341 = SLICE(cx_441, byte, 8);
+			word16 ax_24 = (ds->*si_104).t0000;
+			struct Eq_41 Eq_3::* si_25 = si_104 + 1;
+			if (cx_441 == dx_18)
 			{
 				ci8 al_39 = (byte) ax_24;
 				if (ax_24 == 0x00)
@@ -51,64 +51,64 @@ void fn0C00_0100(byte cl, struct Eq_3 * es, struct Eq_3 * ds)
 					}
 				}
 			}
-			byte Eq_3::* di_122 = (word16) ((uint16) (uint8) (ds->*si_25).w0000 * 0x0140) + (uint16) ((uint8) (ds->*si_25).b0001) + 0x01F8;
-			uint16 bx_102 = (uint16) (uint8) si_25[1];
-			byte al_104 = (ds->*si_25).b0003;
-			si_105 = (struct Eq_12 Eq_3::*) (si_25 + 2);
+			byte Eq_3::* di_121 = (word16) ((uint16) (ds->*si_25).w0000 * 0x0140) + (uint16) (ds->*si_25).b0001 + 0x01F8;
+			uint16 bx_101 = (uint16) si_25[1];
+			byte al_103 = (ds->*si_25).b0003;
+			si_104 = (struct Eq_12 Eq_3::*) (si_25 + 2);
 			do
 			{
-				struct Eq_176 Eq_3::* si_110 = &si_105->b0001;
-				byte ah_111 = (ds->*si_110).w0000;
-				si_105 = (struct Eq_12 Eq_3::*) &si_110->b0001;
-				word16 cx_116 = SEQ(ch_342, (ds->*si_105).t0000);
+				struct Eq_173 Eq_3::* si_109 = &si_104->b0001;
+				byte ah_110 = (ds->*si_109).w0000;
+				si_104 = (struct Eq_12 Eq_3::*) &si_109->b0001;
+				word16 cx_115 = SEQ(ch_341, (ds->*si_104).t0000);
 				do
 				{
-					uint16 cx_120;
-					for (cx_120 = bx_102; cx_120 != 0x00; --cx_120)
+					uint16 cx_119;
+					for (cx_119 = bx_101; cx_119 != 0x00; --cx_119)
 					{
-						es->*di_122 = al_104;
-						++di_122;
+						es->*di_121 = al_103;
+						++di_121;
 					}
-					word16 di_124 = di_122 - bx_102;
-					di_122 = di_124 + 0x0140;
-					byte cl_150 = (byte) cx_443;
-					if ((ah_111 & 0x10) != 0x00)
+					word16 di_123 = di_121 - bx_101;
+					di_121 = di_123 + 0x0140;
+					byte cl_149 = (byte) cx_442;
+					if ((ah_110 & 0x10) != 0x00)
 					{
-						di_122 = di_124 + 322;
-						bx_102 -= 0x02;
+						di_121 = di_123 + 322;
+						bx_101 -= 0x02;
 					}
-					if ((ah_111 & 0x01) != 0x00)
-						bx_102 += 0x02;
-					if ((cl_150 & 0x01) != 0x00)
+					if ((ah_110 & 0x01) != 0x00)
+						bx_101 += 0x02;
+					if ((cl_149 & 0x01) != 0x00)
 					{
-						if ((ah_111 & 0x02) != 0x00)
-							--bx_102;
-						if ((ah_111 & 0x20) != 0x00)
+						if ((ah_110 & 0x02) != 0x00)
+							--bx_101;
+						if ((ah_110 & 0x20) != 0x00)
 						{
-							--di_122;
-							++bx_102;
+							--di_121;
+							++bx_101;
 						}
 					}
-					cx_116 = cx_443 - 0x01;
-					ch_342 = SLICE(cx_443 - 0x01, byte, 8);
-					cx_443 = cx_116;
-				} while (cx_443 != 0x01);
-			} while ((ah_111 & 0x80) != 0x00);
-			cx_197 = cx_442 - 0x01;
-			cx_442 = cx_197;
-		} while (cx_442 != 0x01);
-		word16 Eq_3::* si_202 = Eq_3::a01F8;
-		word16 Eq_203::* di_203 = Eq_203::a0000;
-		word16 cx_206;
-		for (cx_206 = 0x7D00; cx_206 != 0x00; --cx_206)
+					cx_115 = cx_442 - 0x01;
+					ch_341 = SLICE(cx_442 - 0x01, byte, 8);
+					cx_442 = cx_115;
+				} while (cx_442 != 0x01);
+			} while ((ah_110 & 0x80) != 0x00);
+			cx_196 = cx_441 - 0x01;
+			cx_441 = cx_196;
+		} while (cx_441 != 0x01);
+		word16 Eq_3::* si_201 = Eq_3::a01F8;
+		word16 Eq_200::* di_202 = Eq_200::a0000;
+		word16 cx_205;
+		for (cx_205 = 0x7D00; cx_205 != 0x00; --cx_205)
 		{
-			0xA000->*di_203 = ds->*si_202;
-			++si_202;
-			++di_203;
+			0xA000->*di_202 = ds->*si_201;
+			++si_201;
+			++di_202;
 		}
 		es = ds;
-		word16 cx_238;
-		for (cx_238 = 0x08; cx_238 != 0x00; --cx_238)
+		word16 cx_237;
+		for (cx_237 = 0x08; cx_237 != 0x00; --cx_237)
 		{
 			do
 				;
@@ -117,7 +117,7 @@ void fn0C00_0100(byte cl, struct Eq_3 * es, struct Eq_3 * ds)
 				;
 			while ((__inb(0x03DA) & 0x08) == 0x00);
 		}
-		cl = (byte) cx_206;
+		cl = (byte) cx_205;
 	} while (__inb(0x60) != 0x01);
 }
 

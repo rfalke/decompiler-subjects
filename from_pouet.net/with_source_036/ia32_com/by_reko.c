@@ -11,7 +11,7 @@ void fn0C00_0100(struct Eq_2 * ds_bx, word16 cx, byte Eq_10::* di)
 	struct Eq_10 * ds_36 = ds_bx->ptr0002;
 	while (true)
 	{
-		uint32 dx_ax_13 = (uint32) (uint16) di;
+		uint32 dx_ax_13 = (uint32) di;
 		++di;
 		ds_36->*di = ds_36->*di ^ (byte) (((uint16) (dx_ax_13 /u 0x02) + 0x02 & (uint16) (dx_ax_13 % 0x02) ^ cx) >> (byte) cx);
 		if (ds_36->*di == 0x00)

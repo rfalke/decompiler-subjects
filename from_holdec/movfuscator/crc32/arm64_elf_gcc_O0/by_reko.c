@@ -172,7 +172,7 @@ void rc_crc32(ptr64 x1, ptr64 x2)
 				else
 					dwLoc04_115 >>= 1;
 			}
-			*((char *) g_a11050 + (word64) dwLoc2C * 4) = (union Eq_107 *) dwLoc04_115;
+			*((char *) g_a11050 + (int64) dwLoc2C * 4) = (union Eq_107 *) dwLoc04_115;
 			dwLoc08_113 = (word32) dwLoc08_113.u0 + 1;
 		}
 		g_dw11048 = 0x01;

@@ -97,9 +97,9 @@ void main(int32 dwArg00, int32 dwArg04)
 			fn0000000000000710();
 		fn0000000000000770();
 		fn0000000000000760();
-		word64 x19_68;
+		word64 x19_94;
 		word64 x20_69;
-		fib(dwArg04, out x19_68, out x20_69);
+		fib(dwArg04, out x19_94, out x20_69);
 		fn0000000000000770();
 		w20_36 = (word32) x20_69;
 	}

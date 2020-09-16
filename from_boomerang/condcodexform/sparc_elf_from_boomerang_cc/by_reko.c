@@ -166,14 +166,14 @@ void main(int32 o0)
 		o1_49 = 68332;
 	else
 		o1_49 = 0x00010B04;
+	bool v24_217;
 	word32 i1_114;
-	bool Z_122;
 	if (o0_20 != 0x00)
 	{
 		if (o0_31 != 68188 || (o3_37 != 68236 || (o2_43 != 68284 || o1_49 != 68332)))
 		{
 			i1_114 = 0x00;
-			Z_122 = SLICE(cond(0x00), bool, 2);
+			v24_217 = 0x00 == 0x00;
 			goto l00010C44;
 		}
 		i1_114 = 0x01;
@@ -182,9 +182,9 @@ void main(int32 o0)
 		i1_114 = 0x01;
 	else
 		i1_114 = 0x00;
-	Z_122 = SLICE(cond(i1_114), bool, 2);
+	v24_217 = i1_114 == 0x00;
 l00010C44:
-	if (!Z_122)
+	if (!v24_217)
 		printf("Pass\n");
 	else
 		printf("Failed!\n");

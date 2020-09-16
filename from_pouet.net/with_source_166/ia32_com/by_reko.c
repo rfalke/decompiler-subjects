@@ -26,7 +26,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 		} while (cx_40 != 0x00);
 		ds->t0178 -= 6861;
 		ds->t017C -= 11063;
-		struct Eq_95 Eq_3::* bx_47;
+		struct Eq_95 Eq_3::* bx_47 = &Eq_3::tFFFFFA00;
 		do
 		{
 			byte al_51 = bx_47[388];

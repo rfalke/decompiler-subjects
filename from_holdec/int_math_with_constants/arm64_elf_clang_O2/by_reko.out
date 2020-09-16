@@ -1,6 +1,2 @@
 === Using options:
-00000000004971B4: warning: AArch64 instruction smulh	x10,w22,w10 is not supported yet.
-00000000004A2CA4: warning: AArch64 instruction smulh	x7,w5,w9 is not supported yet.
-00000000004D6CB0: warning: AArch64 instruction smulh	x10,w22,w10 is not supported yet.
-00000000004E27A0: warning: AArch64 instruction smulh	x7,w5,w9 is not supported yet.
 === Killed because of CPU time limit

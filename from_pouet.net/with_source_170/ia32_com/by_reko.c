@@ -60,9 +60,9 @@ void fn0C00_0100(byte bh, wchar_t si)
 //      fn0C00_0100
 Eq_97 fn0C00_0168(byte Eq_13::* di, union Eq_34 & dxOut)
 {
-	uint32 dx_ax_8 = (uint32) (uint16) di;
-	Eq_101 ax_11 = (uint16) (dx_ax_8 /u 0x0140);
-	Eq_105 dx_10 = (uint16) (dx_ax_8 % 0x0140);
+	uint32 dx_ax_8 = (uint32) di;
+	Eq_100 ax_11 = (uint16) (dx_ax_8 /u 0x0140);
+	Eq_104 dx_10 = (uint16) (dx_ax_8 % 0x0140);
 	Eq_97 ax_13 = ax_11 - 100;
 	if (ax_11 < 100)
 		ax_13 = 100 - ax_11;

@@ -133,17 +133,17 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000004005E0: void cparam(Register ui32 w0)
+// 00000000004005E0: void cparam()
 // Called from:
 //      main
-void cparam(ui32 w0)
+void cparam()
 {
 }
 
 // 000000000040060C: void main(Register word32 w0)
 void main(word32 w0)
 {
-	cparam(w0 - 0x03);
+	cparam();
 	fn0000000000400480();
 }
 

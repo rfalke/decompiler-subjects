@@ -10,7 +10,7 @@ Eq_25 g_t80488D0 = Unexpected function type (fn void ())
 ;
 Eq_26 g_t8048930 = Unexpected function type (fn void ())
 ;
-Eq_155 g_t8048960 = 
+Eq_154 g_t8048960 = 
 	{
 		
 		{
@@ -32,7 +32,7 @@ byte g_b804A020 = 0x01;
 word16 g_w804A022 = 0x02;
 int32 g_dw804A024 = 3;
 int32 g_dw804A028 = 4;
-Eq_113 g_t804A030 = 
+Eq_112 g_t804A030 = 
 	{
 		5
 	};

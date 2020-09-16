@@ -102,7 +102,7 @@ void frame_dummy()
 void main(int32 dwArg04)
 {
 	__align(fp - 0x0C);
-	printf("Result is %d\n", (int32) (dwArg04 > 0x01));
+	printf("Result is %d\n", (int32) (int8) (dwArg04 > 0x01));
 }
 
 // 08048350: void __libc_csu_init(Register word32 edx)

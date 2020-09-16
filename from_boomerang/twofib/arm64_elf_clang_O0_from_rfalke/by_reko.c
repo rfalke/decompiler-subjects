@@ -172,8 +172,8 @@ void main(word64 x29)
 	fn00000000004004E0();
 	fn00000000004004A0();
 	struct Eq_94 * sp_30 = (struct Eq_94 *) <invalid>;
-	word64 x29_34;
-	sp_30->t0010 = twofib((word32) x29, out x29_34);
+	word64 x29_64;
+	sp_30->t0010 = twofib((word32) x29, out x29_64);
 	fn00000000004004E0();
 	sp_30->dw0000 = (word32) 0x004007EA;
 }

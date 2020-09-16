@@ -136,8 +136,7 @@ void frame_dummy(word64 x29, word64 x30)
 // 00000000004005E0: void main(Register up32 w0)
 void main(up32 w0)
 {
-	word32 sp_32_32_66 = SLICE(fp - 0x28, word32, 32);
-	sp_32_32_66 = SLICE(fp - 0x28, word32, 32);
+	word32 sp_32_32_67 = SLICE(fp - 0x28, word32, 32);
 	if (w0 >= 0x2800)
 		fn0000000000400480();
 	if (w0 < 0xF0000000)
@@ -145,11 +144,11 @@ void main(up32 w0)
 	if (w0 >= 0x02)
 		fn0000000000400480();
 	int32 w8_57 = 0x00 - w0;
-	struct Eq_107 * sp_69 = SEQ(sp_32_32_66, w8_57 + 0x02);
+	struct Eq_105 * sp_68 = SEQ(sp_32_32_67, w8_57 + 0x02);
 	if (w8_57 < 0x02)
 	{
 		fn0000000000400480();
-		sp_69->dw0004 = (word32) 0x0040076B;
+		sp_68->dw0004 = (word32) 0x0040076B;
 	}
 }
 

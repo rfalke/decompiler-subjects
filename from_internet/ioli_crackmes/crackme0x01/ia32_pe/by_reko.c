@@ -123,11 +123,11 @@ void fn00401460()
 	if (eax_23 == ~0x00)
 	{
 		eax_23 = 0x00;
-		bool Z_28 = SLICE(cond(g_dw402E44), bool, 2);
-		while (Z_28)
+		bool v14_82 = g_dw402E44 != 0x00;
+		while (v14_82)
 		{
 			++eax_23;
-			Z_28 = SLICE(cond((&g_dw402E44)[eax_23 * 0x04]), bool, 2);
+			v14_82 = (&g_dw402E44)[eax_23 * 0x04] != 0x00;
 		}
 	}
 	ui32 ebx_38 = eax_23;

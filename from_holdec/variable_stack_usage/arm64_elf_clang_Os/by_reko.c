@@ -141,43 +141,45 @@ void use(word32 * x0)
 	g_dw411034 += *x0;
 }
 
-// 00000000004005F8: void fill(Register (ptr64 word32) x1)
-void fill(word32 * x1)
+// 00000000004005F8: void fill(Register ptr64 x1)
+void fill(ptr64 x1)
 {
 	__sbfiz(x1, 2);
 	fn0000000000400460();
 }
 
-// 0000000000400604: void with_array(Sequence ui64 x8_32_32_w0, Register word32 x0_32_32)
+// 0000000000400604: void with_array(Sequence word64 x8_32_32_w0, Register word32 x0_32_32, Register word64 x19)
 // Called from:
 //      main
-void with_array(ui64 x8_32_32_w0, word32 x0_32_32)
+void with_array(word64 x8_32_32_w0, word32 x0_32_32, word64 x19)
 {
 	word32 w0 = (word32) x8_32_32_w0;
 	__sbfiz(SEQ(x0_32_32, w0), 2);
 	fn0000000000400460();
-	g_dw411034 = (word32) ((char *) (fp + -24 - ((x8_32_32_w0 << 2) + 0x0F & 0x00) + g_dw411034) + 0x0F);
+	g_dw411034 = g_dw411034 + (word32) x19 + 0x0F;
 }
 
-// 0000000000400664: Register (ptr64 word32) with_alloca(Register (ptr64 word32) x0, Register out ptr64 x8Out, Register out ptr64 x19Out)
+// 0000000000400664: Register ptr64 with_alloca(Register ptr64 x0, Register word64 x19, Register out ptr64 x8Out, Register out ptr64 x19Out)
 // Called from:
 //      main
-word32 * with_alloca(word32 * x0, ptr64 & x8Out, ptr64 & x19Out)
+ptr64 with_alloca(ptr64 x0, word64 x19, ptr64 & x8Out, ptr64 & x19Out)
 {
-	word32 * x19_21 = fp + -24 - (__sbfiz(x0, 2) + 0x0F & 0x00);
+	__sbfiz(x0, 2);
 	fn0000000000400460();
-	g_dw411034 = g_dw411034 + *x19_21 + 0x0F;
+	g_dw411034 = g_dw411034 + (word32) x19 + 0x0F;
 	x8Out = 0x00411000;
 	x19Out = qwLoc10;
-	return x19_21;
+	return fp + -24;
 }
 
-// 00000000004006BC: void main(Register (ptr64 word32) x0)
-void main(word32 * x0)
+// 00000000004006BC: void main(Register ptr64 x0, Register word64 x19)
+void main(ptr64 x0, word64 x19)
 {
-	word64 x19_26;
-	word64 x8_29;
-	with_array(SEQ(SLICE(x8_29, word32, 32), (word32) x19_26), SLICE(with_alloca(x0, out x8_29, out x19_26), word32, 32));
+	word32 x19_32_32_18 = SLICE(x19, word32, 32);
+	word32 w0 = (word32) x0;
+	word64 x19_28;
+	word64 x8_31;
+	with_array(SEQ(SLICE(x8_31, word32, 32), (word32) x19_28), SLICE(with_alloca(x0, SEQ(x19_32_32_18, w0), out x8_31, out x19_28), word32, 32), x19_28);
 }
 
 // 00000000004006E8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

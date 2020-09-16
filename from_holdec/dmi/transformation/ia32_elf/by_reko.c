@@ -136,7 +136,7 @@ void frame_dummy()
 //      main
 uint32 basic_1_ternary_simple(Eq_11 dwArg04)
 {
-	return (uint32) (1) (dwArg04 != 0x2A);
+	return (uint32) (int8) (dwArg04 != 0x2A);
 }
 
 // 080484D0: Register word32 basic_2_ternary_other(Stack Eq_11 dwArg04)
@@ -344,7 +344,7 @@ uint32 __divdi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, u
 		{
 			if (dwLoc2C_228 == 0x00)
 				ecx_154.u1 = (uint32) (0x01 /u dwLoc2C_228);
-			uint64 edx_eax_158 = (uint64) (uint32) edx_57;
+			uint64 edx_eax_158 = (uint64) edx_57;
 			ebp_124.u0 = (uint32) (edx_eax_158 /u ecx_154);
 			ecx_123 = (uint32) (SEQ((uint32) (edx_eax_158 % ecx_154), eax_60) /u ecx_154);
 		}
@@ -438,7 +438,7 @@ Eq_135 __moddi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, u
 		{
 			if (dwLoc3C_291 == 0x00)
 				ecx_210.u1 = (uint32) (0x01 /u dwLoc3C_291);
-			dwLoc3C_314.u1 = (uint32) (SEQ((uint32) ((uint64) (uint32) edi_58 % ecx_210), esi_55) % ecx_210);
+			dwLoc3C_314.u1 = (uint32) (SEQ((uint32) ((uint64) edi_58 % ecx_210), esi_55) % ecx_210);
 		}
 		eax_173 = dwLoc3C_314;
 		edx_174.u0 = 0x00;
@@ -558,7 +558,7 @@ uint32 __udivdi3(Eq_48 qwArg04, Eq_135 dwArg0C, Eq_135 dwArg10, union Eq_280 & e
 		Eq_135 ebp_144 = dwArg0C;
 		if (dwArg0C == 0x00)
 			ebp_144.u1 = (uint32) (0x01 /u dwArg0C);
-		uint64 edx_eax_157 = (uint64) (uint32) dwArg08;
+		uint64 edx_eax_157 = (uint64) dwArg08;
 		edi_165.u0 = (uint32) (edx_eax_157 /u ebp_144);
 		ebx_171 = (uint32) (SEQ((uint32) (edx_eax_157 % ebp_144), dwArg04) /u ebp_144);
 l08048CDC:
@@ -588,7 +588,7 @@ Eq_135 __umoddi3(Eq_48 qwArg04, int64 qwArg0C, union Eq_135 & edxOut)
 			Eq_135 ebp_182 = dwArg0C;
 			if (dwArg0C == 0x00)
 				ebp_182.u1 = (uint32) (0x01 /u dwArg0C);
-			edx_204.u1 = (uint32) (SEQ((uint32) ((uint64) (uint32) dwArg08 % ebp_182), dwArg04) % ebp_182);
+			edx_204.u1 = (uint32) (SEQ((uint32) ((uint64) dwArg08 % ebp_182), dwArg04) % ebp_182);
 		}
 		edxOut.u0 = 0x00;
 		return edx_204;
@@ -651,7 +651,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804B0F4 - 0x0804B0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804B0F8)[edi_33]();

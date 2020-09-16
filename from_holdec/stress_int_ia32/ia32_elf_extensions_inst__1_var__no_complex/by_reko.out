@@ -1,12 +1,4 @@
 === Using options:
-0804940E: warning: x86 instruction 'tzcnt' is not supported yet.
-0804A20C: warning: x86 instruction 'lzcnt' is not supported yet.
-0804A1C3: warning: x86 instruction 'lzcnt' is not supported yet.
-0804A162: warning: x86 instruction 'lzcnt' is not supported yet.
-0804A118: warning: x86 instruction 'lzcnt' is not supported yet.
-080493C5: warning: x86 instruction 'tzcnt' is not supported yet.
-0804935C: warning: x86 instruction 'tzcnt' is not supported yet.
-08049312: warning: x86 instruction 'tzcnt' is not supported yet.
 0804929D: warning: Call target address 00000000 is invalid.
 08049250: warning: Call target address 00000000 is invalid.
 080492E0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

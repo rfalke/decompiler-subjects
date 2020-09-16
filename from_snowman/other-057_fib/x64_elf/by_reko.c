@@ -91,14 +91,14 @@ word32 fib(Eq_69 edi)
 	if (edi <= 0x01)
 		rax_40 = (uint64) edi;
 	else
-		rax_40 = (uint64) (word32) (uint64) ((uint32) fib((uint64) (word32) (uint64) ((word32) (uint64) edi - 0x02)) + (word32) ((uint64) ((uint32) fib((uint64) ((word32) ((uint64) ((word32) ((uint64) edi) - 0x01)))))));
+		rax_40 = (uint64) (fib((uint64) (word32) (uint64) ((word32) (uint64) edi - 0x02)) + (word32) ((uint64) fib((uint64) ((word32) ((uint64) ((word32) ((uint64) edi) - 0x01))))));
 	return (word32) rax_40;
 }
 
 // 0000000000400543: void main()
 void main()
 {
-	printf("%d", (uint64) (word32) (uint64) (uint32) fib(0x05));
+	printf("%d", (uint64) (word32) (uint64) fib(0x05));
 }
 
 // 0000000000400570: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -108,7 +108,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	_init();
 	word32 r15d_81 = (word32) (uint64) edi;
 	int64 rbp_30 = 6293336 - 0x00600750;
-	Eq_132 rbx_31 = 0x00;
+	Eq_127 rbx_31 = 0x00;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
 		do

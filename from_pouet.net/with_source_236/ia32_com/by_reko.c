@@ -11,80 +11,81 @@ void fn0C00_0100(cui16 bp, struct Eq_3 * es, struct Eq_4 * ds)
 	__fninit();
 	__syscall(0x10);
 	word16 cx_10 = 0x7D00;
-	word16 Eq_3::* di_217 = Eq_3::a0500;
+	word16 Eq_3::* di_222 = Eq_3::a0500;
 	while (true)
 	{
-		byte ch_226 = SLICE(cx_10, byte, 8);
+		byte ch_231 = SLICE(cx_10, byte, 8);
 		if (cx_10 == 0x00)
 			break;
-		es->*di_217 = 0x00;
-		++di_217;
+		es->*di_222 = 0x00;
+		++di_222;
 		--cx_10;
 	}
-	struct Eq_20 Eq_4::* di_224 = Eq_4::a0000;
-	int16 cx_227;
+	struct Eq_20 Eq_4::* di_229 = Eq_4::a0000;
+	real64 rLoc2_282 = (real64) ds->w01F5;
+	int16 cx_232 = SEQ(ch_231, 200);
 	do
 	{
-		real64 rLoc3_278 = (real64) ds->w01F3;
+		real64 rLoc3_283 = (real64) ds->w01F3;
 		word16 dx_40;
 		for (dx_40 = 0x0140; dx_40 != 0x00; --dx_40)
 		{
-			real64 rLoc4_281 = rLoc3_278 * rLoc3_278;
-			(0x7000->*di_224).w0000 = (int16) ((real64) ds->w01FB / sqrt(rLoc4_281 + rLoc4_281 * rLoc4_281));
-			real64 rLoc4_290 = atan(rLoc3_278, rLoc3_278) / ds->r01F7;
-			(0x8000->*di_224).w0000 = (int16) rLoc4_290;
-			rLoc3_278 += 1.0;
-			++di_224;
+			(0x7000->*di_229).w0000 = (int16) ((real64) ds->w01FB / sqrt(rLoc2_282 * rLoc2_282 + rLoc3_283 * rLoc3_283));
+			(0x8000->*di_229).w0000 = (int16) (atan(rLoc3_283, rLoc2_282) / (real64) ds->r01F7);
+			rLoc3_283 += 1.0;
+			++di_229;
 		}
-		--cx_227;
-	} while (cx_227 != 0x00);
+		rLoc2_282 += 1.0;
+		--cx_232;
+	} while (cx_232 != 0x00);
 	__outb(0x03C8, 0x00);
-	bcu8 ah_102 = 0x00;
+	bcu8 ah_106 = 0x00;
 	do
 	{
-		uint8 al_89 = ah_345 >> 0x02;
-		__outb(969, al_89 >> 0x01);
-		__outb(969, al_89 >> 0x01);
-		__outb(969, al_89);
-		ah_102 = ah_345 + 0x01;
-		ah_345 = ah_102;
-	} while (ah_345 != 0x01);
-	int16 Eq_4::* bx_108 = &Eq_4::w0300;
+		uint8 al_93 = ah_348 >> 0x02;
+		__outb(969, al_93 >> 0x01);
+		__outb(969, al_93 >> 0x01);
+		__outb(969, al_93);
+		ah_106 = ah_348 + 0x01;
+		ah_348 = ah_106;
+	} while (ah_348 != 0x01);
+	real64 rLoc3_302 = 0.0;
+	int16 Eq_4::* bx_112 = &Eq_4::w0300;
 	do
 	{
-		bx_235 = SEQ(bh_234, bl_122 + 0x01);
-		rLoc4_290 = sin(rLoc4_290) * (real64) ds->w01FD + (real64) ds->w01FD;
-		ds->*bx_108 = (int16) rLoc4_290;
-		byte bl_122 = (byte) bx_108;
-		byte bh_234 = SLICE(bx_108, byte, 8);
-		bx_108 = bx_235;
-	} while (bl_122 != 0x01);
+		bx_240 = SEQ(bh_239, bl_127 + 0x01);
+		ds->*bx_112 = (int16) (sin(rLoc3_302) * (real64) ds->w01FD + (real64) ds->w01FD);
+		byte bl_127 = (byte) bx_112;
+		byte bh_239 = SLICE(bx_112, byte, 8);
+		rLoc3_302 += (real64) ds->r01F7;
+		bx_112 = bx_240;
+	} while (bl_127 != 0x01);
 	do
 	{
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		struct Eq_152 Eq_4::* di_133;
+		struct Eq_163 Eq_4::* di_138 = Eq_4::a0000;
 		do
 		{
-			byte bl_139 = (0x7000->*di_133).b0000;
-			byte bh_141 = (0x8000->*di_133).b0000;
-			word16 ax_151 = SEQ(bh_141, bl_139) + bp;
-			word16 bx_156 = SEQ((&ds->w0300)[(uint16) (uint8) bl_139] + bh_141, bl_139) - bp;
-			byte ch_262 = SLICE(cx_227, byte, 8);
-			ui8 al_154 = (byte) ax_151 ^ SLICE(ax_151, byte, 8);
-			ui8 bl_159 = (byte) bx_156 ^ SLICE(bx_156, byte, 8);
-			if ((bl_159 & 0x20) != 0x00)
-				bl_159 &= 0x1F;
-			uint16 ax_184 = (uint16) (uint8) di_133[0x0500];
-			byte bl_188 = (byte) (((uint16) (uint8) (bl_159 + SLICE((uint16) ((uint8) (al_154 - bl_159)) *s cx_227, byte, 8)) - ax_184 >> 0x03) + ax_184);
-			di_133[0x0500] = bl_188;
-			(0xA000->*di_133).b0000 = bl_188;
-			++di_133;
-		} while (di_133 != &Eq_4::tFFFFFA00);
-		cui16 bp_197 = bp + 0x0101;
-		bp = bp_197;
-		cx_227 = SEQ(ch_262, ss->*((word16) (bp_197 & 0xFF) + 0x0300));
+			byte bl_144 = (0x7000->*di_138).b0000;
+			byte bh_146 = (0x8000->*di_138).b0000;
+			word16 ax_156 = SEQ(bh_146, bl_144) + bp;
+			word16 bx_161 = SEQ((&ds->w0300)[(uint16) bl_144] + bh_146, bl_144) - bp;
+			byte ch_267 = SLICE(cx_232, byte, 8);
+			int8 al_159 = (byte) ax_156 ^ SLICE(ax_156, byte, 8);
+			int8 bl_164 = (byte) bx_161 ^ SLICE(bx_161, byte, 8);
+			if ((bl_164 & 0x20) != 0x00)
+				bl_164 &= 0x1F;
+			uint16 ax_189 = (uint16) di_138[0x0500];
+			byte bl_193 = (byte) (((uint16) (bl_164 + SLICE((al_159 - bl_164) *s cx_232, byte, 8)) - ax_189 >> 0x03) + ax_189);
+			di_138[0x0500] = bl_193;
+			(0xA000->*di_138).b0000 = bl_193;
+			++di_138;
+		} while (di_138 != &Eq_4::tFFFFFA00);
+		cui16 bp_202 = bp + 0x0101;
+		bp = bp_202;
+		cx_232 = SEQ(ch_267, ss->*((word16) (bp_202 & 0xFF) + 0x0300));
 	} while (__inb(0x60) != 0x01);
 }
 

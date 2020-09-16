@@ -152,12 +152,12 @@ word64 fib(word64 x0, ptr64 & x19Out, ptr64 & x29Out)
 	word64 x0_78 = x0;
 	if (w0 >= 0x02)
 	{
-		word64 x19_23;
-		word64 x29_100;
-		fib(x0, out x19_23, out x29_100);
-		word64 x19_36;
+		word64 x19_100;
 		word64 x29_101;
-		fib(x0, out x19_36, out x29_101);
+		fib(x0, out x19_100, out x29_101);
+		word64 x19_36;
+		word64 x29_102;
+		fib(x0, out x19_36, out x29_102);
 		fn00000000004004E0();
 		x29 = qwLoc10;
 		x0_78 = SEQ(SLICE(0x00400770, word32, 32), (word32) x19_36);
@@ -172,9 +172,9 @@ void main(word64 x29)
 {
 	fn00000000004004E0();
 	fn00000000004004D0();
-	word64 x29_25;
 	word64 x19_52;
-	fib(SEQ(SLICE(0x00400770, word32, 32), SLICE(x29, word32, 32)), out x19_52, out x29_25);
+	word64 x29_53;
+	fib(SEQ(SLICE(0x00400770, word32, 32), SLICE(x29, word32, 32)), out x19_52, out x29_53);
 	fn00000000004004E0();
 }
 

@@ -4,89 +4,91 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register word16 cx, Register byte bl, Register (ptr16 Eq_4) ds, FpuStack real64 rLoc2)
-void fn0C00_0100(word16 cx, byte bl, struct Eq_4 * ds, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Register word16 cx, Register byte bl, Register (ptr16 Eq_4) ds)
+void fn0C00_0100(word16 cx, byte bl, struct Eq_4 * ds)
 {
 	__syscall(0x10);
-	int16 Eq_4::* bx_24 = SEQ(0x03, bl);
+	real64 rLoc1_336 = 0.0;
+	int16 Eq_4::* bx_25 = SEQ(0x03, bl);
 	do
 	{
-		bx_260 = SEQ(bh_259, bl_28 + 0x01);
-		rLoc2 = sin(rLoc2) * (real64) ds->w01D0 + (real64) ds->w01D0;
-		ds->*bx_24 = (int16) rLoc2;
-		byte bl_28 = (byte) bx_24;
-		byte bh_259 = SLICE(bx_24, byte, 8);
-		bx_24 = bx_260;
-	} while (bl_28 != 0x01);
+		bx_264 = SEQ(bh_263, bl_29 + 0x01);
+		ds->*bx_25 = (int16) (sin(rLoc1_336) * (real64) ds->w01D0 + (real64) ds->w01D0);
+		byte bl_29 = (byte) bx_25;
+		byte bh_263 = SLICE(bx_25, byte, 8);
+		rLoc1_336 += (real64) ds->r01EE;
+		bx_25 = bx_264;
+	} while (bl_29 != 0x01);
 	do
 	{
 		__outb(0x03C8, 0x00);
-		uint8 ah_157;
+		uint8 ah_161 = 0x00;
 		do
 		{
-			uint8 al_40 = ah_157 * 0x02;
-			if (al_40 > 0x3F)
-				al_40 = 0x3F;
-			__outb(969, al_40);
-			__outb(969, ah_157);
+			uint8 al_41 = ah_161 * 0x02;
+			if (al_41 > 0x3F)
+				al_41 = 0x3F;
+			__outb(969, al_41);
+			__outb(969, ah_161);
 			__outb(969, 0x00);
-			++ah_157;
-		} while (ah_157 != 0x00);
+			++ah_161;
+		} while (ah_161 != 0x00);
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);
-		Eq_78 bp_233;
-		byte Eq_149::* di_192 = &Eq_149::b0000;
-		for (bp_233 = 200; bp_233 != 0x00; --bp_233)
+		Eq_83 bp_237;
+		byte Eq_155::* di_196 = &Eq_155::b0000;
+		for (bp_237 = 200; bp_237 != 0x00; --bp_237)
 		{
-			ds->t0200 = bp_233;
-			real64 rLoc2_342 = rLoc2 - ds->r01F6;
-			real64 rLoc2_343 = cos(rLoc2_342);
-			real64 rLoc3_344 = sin(rLoc2_342);
-			real64 rLoc4_346 = rLoc2_343 + ds->r01F6;
-			real64 rLoc4_347 = cos(rLoc4_346);
-			real64 rLoc5_348 = sin(rLoc4_346);
-			real64 rLoc6_349 = (real64) ds->w0121;
-			if (bp_233 >= 100)
-				rLoc6_349 = -rLoc6_349;
-			real64 rLoc6_358 = (rLoc6_349 - rLoc5_348 * (real64) ds->w01FA) / ((real64) ds->t0200 - (real64) ds->w01FC);
-			ds->w01B6 = (int16) rLoc6_358;
-			rLoc2 = rLoc2_343 * ((((rLoc6_358 * (real64) ds->w01FE) * rLoc5_348) * rLoc4_347) * rLoc3_344);
-			ds->w01D4 = (int16) ((rLoc5_348 - rLoc3_344) / (real64) ds->w019C);
-			ds->w01D0 = (int16) ((rLoc4_347 - rLoc2) / (real64) ds->w019C);
-			ds->t0200.u1 = (int32) rLoc3_344;
-			Eq_78 dx_122 = ds->t0200;
-			ds->t0200.u1 = (int32) rLoc2;
-			word16 cx_133 = (word32) ds->t0200 + cx;
-			cup16 si_135;
-			for (si_135 = 0x0140; si_135 != 0x00; --si_135)
+			ds->t0200 = bp_237;
+			real64 rLoc2_345 = rLoc1_336 - (real64) ds->r01F6;
+			real64 rLoc2_346 = cos(rLoc2_345);
+			real64 rLoc3_347 = sin(rLoc2_345);
+			real64 rLoc4_349 = rLoc1_336 + (real64) ds->r01F6;
+			real64 rLoc4_350 = cos(rLoc4_349);
+			real64 rLoc5_351 = sin(rLoc4_349);
+			real64 rLoc6_352 = (real64) ds->w0121;
+			if (bp_237 >= 100)
+				rLoc6_352 = -rLoc6_352;
+			real64 rLoc6_361 = (rLoc6_352 - rLoc4_350 * (real64) ds->w01FA) / ((real64) ds->t0200 - (real64) ds->w01FC);
+			ds->w01B6 = (int16) rLoc6_361;
+			real64 rLoc2_369 = rLoc2_346 * ((((rLoc6_361 * (real64) ds->w01FE) * rLoc5_351) * rLoc4_350) * rLoc3_347);
+			ds->w01D4 = (int16) ((rLoc5_351 - rLoc3_347) / (real64) ds->w019C);
+			ds->w01D0 = (int16) ((rLoc4_350 - rLoc2_369) / (real64) ds->w019C);
+			ds->t0200.u1 = (int32) rLoc3_347;
+			Eq_83 dx_126 = ds->t0200;
+			ds->t0200.u1 = (int32) rLoc2_369;
+			word16 cx_137 = (word32) ds->t0200 + cx;
+			cup16 si_139;
+			for (si_139 = 0x0140; si_139 != 0x00; --si_139)
 			{
-				byte dh_136 = SLICE(dx_122, byte, 8);
-				byte ch_143 = SLICE(cx_133, byte, 8);
-				byte bl_150 = ch_143 - ds->*SEQ(bh_259, ch_143) + dh_136;
-				ci16 ax_158 = SEQ(ah_157, ds->*SEQ(bh_259, (bl_150 + ds->*SEQ(bh_259, bl_150)) + ds->*SEQ(bh_259, (dh_136 - ds->*SEQ(bh_259, dh_136)) - ch_143)) >> 0x02);
-				uint8 al_176 = (byte) (ax_158 + 4660);
-				ah_157 = SLICE(ax_158 + 4660, byte, 8);
-				if (ax_158 < 4660)
+				byte dh_140 = SLICE(dx_126, byte, 8);
+				byte ch_147 = SLICE(cx_137, byte, 8);
+				byte bl_154 = ch_147 - ds->*SEQ(bh_263, ch_147) + dh_140;
+				ci16 ax_162 = SEQ(ah_161, ds->*SEQ(bh_263, (bl_154 + ds->*SEQ(bh_263, bl_154)) + ds->*SEQ(bh_263, (dh_140 - ds->*SEQ(bh_263, dh_140)) - ch_147)) >> 0x02);
+				uint8 al_180 = (byte) (ax_162 + 4660);
+				ah_161 = SLICE(ax_162 + 4660, byte, 8);
+				if (ax_162 < 4660)
 				{
-					al_176 = 0x00;
-					ah_157 = 0x00;
+					al_180 = 0x00;
+					ah_161 = 0x00;
 				}
-				if (si_135 <= 0x50)
+				if (si_139 <= 0x50)
 				{
-					if (si_135 == 0x50 || (bp_233 & 0x88) == 0x00)
-						al_176 >>= 0x01;
-					al_176 >>= 0x01;
+					if (si_139 == 0x50 || (bp_237 & 0x88) == 0x00)
+						al_180 >>= 0x01;
+					al_180 >>= 0x01;
 				}
-				0xA000->*di_192 = al_176;
-				++di_192;
-				cx_133 += 0x7F;
-				dx_122 = (word32) dx_122 + 4660;
+				0xA000->*di_196 = al_180;
+				++di_196;
+				cx_137 += 0x7F;
+				dx_126 = (word32) dx_126 + 4660;
 			}
-			byte ch_251 = SLICE(cx, byte, 8);
-			byte cl_287 = (byte) cx;
+			byte ch_255 = SLICE(cx, byte, 8);
+			byte cl_291 = (byte) cx;
 		}
-		cx = SEQ(ch_251 + 0x01, cl_287);
+		rLoc1_336 += (real64) ds->r01F2;
+		cx = SEQ(ch_255 + 0x01, cl_291);
 	} while (__inb(0x60) != 0x01);
 }
 

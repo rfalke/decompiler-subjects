@@ -333,9 +333,8 @@ void intermediate_6_mem_overwrite_in_block(int32 dwArg04)
 //      main
 word32 intermediate_10_subregs(ptr32 & ebxOut)
 {
-	word32 ebx_10 = SEQ(ebx_16_16, SEQ(g_b804A030, g_b804A031));
-	ptr32 ebx_18 = (word32) ((byte) ebx_10 * 0x04);
-	putchar(ebx_18 + (word32) (SLICE(ebx_10, byte, 8) * 0x02));
+	ptr32 ebx_18 = (word32) (g_b804A031 * 0x04);
+	putchar(ebx_18 + (word32) (g_b804A030 * 0x02));
 	ebxOut = ebx_18;
 	return 0x00;
 }
@@ -352,10 +351,10 @@ word32 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(int32 dwArg04)
 	return (word32) g_t804A02C + eax_15;
 }
 
-// 080488AF: Register Eq_369 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
+// 080488AF: Register Eq_363 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
 // Called from:
 //      main
-Eq_369 advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg04)
+Eq_363 advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg04)
 {
 	g_t804A02C = 0x01;
 	return strlen(dwArg04) + Mem16[0x0804A02C<p32>:word32];
@@ -368,7 +367,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

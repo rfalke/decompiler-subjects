@@ -4,17 +4,18 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Sequence (ptr32 int16) ds_di, Register byte ah, FpuStack real64 rLoc2)
-void fn0C00_0100(int16 * ds_di, byte ah, real64 rLoc2)
+// 0C00:0100: void fn0C00_0100(Sequence (ptr32 int16) ds_di, Register byte ah)
+void fn0C00_0100(int16 * ds_di, byte ah)
 {
 	word16 ax_11 = SEQ(ah, 0x12);
+	real64 rLoc1_63 = 0.0;
 	while (true)
 	{
 		__syscall(0x10);
-		real64 rLoc2_67 = sin(rLoc2 * (real64) ax_11) * (real64) 0xF0;
-		*ds_di = (int16) (sin(rLoc2_67 * (real64) 0x31) * rLoc2_67 + (real64) 0xF0);
-		*ds_di = (int16) (rLoc2_67 * cos(rLoc2_67 * (real64) 0x28) + (real64) 0xF0);
-		rLoc2 = 1.0;
+		real64 rLoc2_68 = sin(rLoc1_63 * (real64) ax_11);
+		*ds_di = (int16) (sin(rLoc1_63 * 49.0) * (rLoc2_68 * 240.0) + 240.0);
+		*ds_di = (int16) (rLoc2_68 * 240.0 * cos(rLoc1_63 * 40.0) + 240.0);
+		rLoc1_63 += 1.0;
 	}
 }
 

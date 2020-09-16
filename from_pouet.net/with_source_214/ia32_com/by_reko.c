@@ -54,7 +54,7 @@ void fn0C00_0100(byte ch, struct Eq_3 * ds)
 	{
 		__wait();
 		__fninit();
-		real64 rLoc1_209 = (real64) ds->w01FB * ds->r01F5;
+		real64 rLoc1_209 = (real64) ds->w01FB * (real64) ds->r01F5;
 		real64 rLoc1_210 = cos(rLoc1_209);
 		ds->t0203.u0 = (int16) (sin(rLoc1_209) * (real64) ds->w01F9);
 		ds->t0201.u0 = (int16) (rLoc1_210 * (real64) ds->w01F9);

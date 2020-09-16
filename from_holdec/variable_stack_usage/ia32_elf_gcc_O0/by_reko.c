@@ -136,7 +136,7 @@ void fill(word32 * dwArg04, ui32 dwArg08)
 //      main
 void with_array(ui32 dwArg04)
 {
-	struct Eq_96 * esp_30 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x12)) /u 0x10) *s 0x10;
+	struct Eq_96 * esp_30 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x12) /u 0x10) *s 0x10;
 	esp_30->dwFFFFFFF4 = dwArg04;
 	word32 eax_33 = esp_30 + 0x03 >>u 0x02;
 	esp_30->ptrFFFFFFF0 = eax_33 << 0x02;
@@ -154,7 +154,7 @@ void with_array(ui32 dwArg04)
 //      main
 void with_alloca(ui32 dwArg04)
 {
-	struct Eq_165 * esp_23 = fp - 0x1C - (uint32) ((uint64) ((uint32) ((dwArg04 << 0x02) + 0x1E)) /u 0x10) *s 0x10;
+	struct Eq_164 * esp_23 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x1E) /u 0x10) *s 0x10;
 	esp_23->dwFFFFFFF4 = dwArg04;
 	word32 eax_26 = esp_23 + 0x0F >>u 0x04;
 	esp_23->ptrFFFFFFF0 = eax_26 << 0x04;
@@ -182,7 +182,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 esi_28 = 0x0804A0F4 - 0x0804A0F8;
 	if (esi_28 >> 0x02 != 0x00)
 	{
-		int32 edi_33;
+		int32 edi_33 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0F8)[edi_33]();

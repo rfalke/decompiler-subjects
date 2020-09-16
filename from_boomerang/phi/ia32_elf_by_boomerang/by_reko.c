@@ -109,7 +109,7 @@ void main(int32 eax)
 	int32 eax_67;
 	__align(fp - 0x0C);
 	printf("Input number: ");
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x0C);
 	int32 ebx_28 = eax;
 	if (eax <= 0x01)
 	{

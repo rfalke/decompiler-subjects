@@ -197,10 +197,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000004008C0: Register word64 dumpline(Register ptr64 x0, Register int32 w2)
+// 00000000004008C0: Register word64 dumpline(Register (arr byte) x0, Register int32 w2)
 // Called from:
 //      hexdump
-word64 dumpline(ptr64 x0, int32 w2)
+word64 dumpline(byte x0[], int32 w2)
 {
 	fn00000000004006C0();
 	int32 dwLoc1C_196 = w2;
@@ -226,18 +226,18 @@ word64 dumpline(ptr64 x0, int32 w2)
 	fn0000000000400740();
 	word32 w0_52 = (word32) (fp - 0x6C);
 	int32 dwLoc70_208;
-	int32 dwLoc94_269 = SLICE(fp - 0x6C + (word64) dwLoc96_245, int32, 32);
+	int32 dwLoc94_269 = SLICE(fp - 0x6C + (int64) dwLoc96_245, int32, 32);
 	for (dwLoc70_208 = 0x00; dwLoc70_208 < dwLoc1C_196; ++dwLoc70_208)
 	{
 		word32 dwLoc9C_226;
-		if ((word32) (x0 + (word64) dwLoc94_269) >= 0x20 && (word32) (x0 + (word64) dwLoc94_269) <= 0x7E)
-			dwLoc9C_226 = (word32) (x0 + (word64) dwLoc94_269);
+		if ((word32) x0[(int64) dwLoc94_269] >= 0x20 && (word32) x0[(int64) dwLoc94_269] <= 0x7E)
+			dwLoc9C_226 = (word32) x0[(int64) dwLoc94_269];
 		else
 			dwLoc9C_226 = 0x2E;
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (int32) (w0_52 + 0x03 + dwLoc70_208)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_166) (byte) dwLoc9C_226;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (w0_52 + 0x03 + dwLoc70_208)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (byte) dwLoc9C_226;
 	}
 	for (; dwLoc70_208 < 0x10; ++dwLoc70_208)
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (int32) (w0_52 + 0x03 + dwLoc70_208)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_187) 0x20;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x6C)[(int64) (w0_52 + 0x03 + dwLoc70_208)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_186) 0x20;
 	fn0000000000400740();
 	fn0000000000400750();
 	return x30;
@@ -249,8 +249,8 @@ word64 dumpline(ptr64 x0, int32 w2)
 word64 hexdump(word64 x0, ptr64 & x29Out)
 {
 	word32 x0_32_32_126;
-	struct Eq_201 * x29_100 = fp + -8;
-	struct Eq_205 * sp_10 = fp - 0xD8;
+	struct Eq_199 * x29_100 = fp + -8;
+	struct Eq_203 * sp_10 = fp - 0xD8;
 	if ((word32) stat(x0) != 0x00)
 	{
 		fn00000000004006B0();
@@ -273,9 +273,9 @@ word64 hexdump(word64 x0, ptr64 & x29Out)
 				if (sp_10->dw001C == 0x00)
 					break;
 				x29_100 = dumpline(x29_100 - 0x20, sp_10->dw001C);
-				sp_10 = (struct Eq_205 *) <invalid>;
-				struct Eq_238 * x0_74 = sp_10->ptr0010;
-				x0_74->qw0008 += (word64) sp_10->dw000E;
+				sp_10 = (struct Eq_203 *) <invalid>;
+				struct Eq_236 * x0_74 = sp_10->ptr0010;
+				x0_74->qw0008 += (int64) sp_10->dw000E;
 			}
 			word64 x0_81 = sp_10->ptr0010->a0000[0];
 			fn00000000004006D0();
@@ -292,12 +292,12 @@ word64 hexdump(word64 x0, ptr64 & x29Out)
 // 0000000000400C14: void main()
 void main()
 {
-	struct Eq_304 * x29_22 = fp + -8;
-	struct Eq_205 * sp_10 = fp - 0x28;
+	struct Eq_302 * x29_22 = fp + -8;
+	struct Eq_203 * sp_10 = fp - 0x28;
 	while (sp_10->dw000C < x29_22->dwFFFFFFF8)
 	{
-		sp_10 = (struct Eq_205 *) <invalid>;
-		sp_10->dw0008 += (word32) hexdump(sp_10->ptr0010[(word64) sp_10->dw0006 * 0], out x29_22);
+		sp_10 = (struct Eq_203 *) <invalid>;
+		sp_10->dw0008 += (word32) hexdump(sp_10->ptr0010[(int64) sp_10->dw0006 * 0], out x29_22);
 		++sp_10->dw000C;
 	}
 }

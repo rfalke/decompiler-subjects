@@ -154,10 +154,10 @@ void multMatrix(ptr64 x0, ptr64 x1, ptr64 x2)
 			int32 dwLoc0C_106 = 0x00;
 			while (true)
 			{
-				uint16 wLoc1C_102 = SLICE(dwLoc1E_124, word16, 16);
+				word16 wLoc1C_102 = SLICE(dwLoc1E_124, word16, 16);
 				if (dwLoc0C_106 > 0x03)
 					break;
-				(x2 + (word64) dwLoc1A_116 * 0x14)[(word64) SEQ(wLoc1A_114, wLoc1C_102)] = (x0 + ((word64) dwLoc1A_116 << 4))[(word64) dwLoc1E_124] * (x1 + (word64) dwLoc1E_124 * 0x14)[(word64) SEQ(wLoc1A_114, wLoc1C_102)] + (x2 + (word64) dwLoc1A_116 * 0x14)[(word64) SEQ(wLoc1A_114, wLoc1C_102)];
+				(x2 + (int64) dwLoc1A_116 * 0x14)[(int64) SEQ(wLoc1A_114, wLoc1C_102)] = (x0 + ((int64) dwLoc1A_116 << 4))[(int64) dwLoc1E_124] * (x1 + (int64) dwLoc1E_124 * 0x14)[(int64) SEQ(wLoc1A_114, wLoc1C_102)] + (x2 + (int64) dwLoc1A_116 * 0x14)[(int64) SEQ(wLoc1A_114, wLoc1C_102)];
 				++dwLoc0C_106;
 			}
 		}

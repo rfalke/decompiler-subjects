@@ -206,26 +206,26 @@ void frame_dummy(word64 x29, word64 x30)
 //      hexdump
 word64 dumpline(byte * x0, int32 w2)
 {
-	word32 w0_118;
+	Eq_113 w0_118;
 	int32 w21_105;
-	int32 w8_120;
+	Eq_115 w8_120;
 	fn0000000000000850();
-	int32 w19_125 = w2 <= 0x10 ? w2 : 0x10;
+	Eq_119 w19_125 = w2 <= 0x10 ? w2 : 0x10;
 	if (w19_125 > 0x00)
 	{
-		ui32 w21_55;
+		ui32 w21_55 = 0x00;
 		do
 		{
 			fn0000000000000850();
 			w21_55 += 0x03;
 		} while (w21_55 != w19_125 * 0x03);
-		w21_105 = w19_125 + 0x01;
+		w21_105 = (int32) ((word64) w19_125 + 1);
 		if (w19_125 > 0x0F)
 		{
 			fn0000000000000820();
 			w0_118 = SLICE(fp + ~0x47, word32, 0);
-			Mem91[fp + ~0x47 + (int64) ((int32) w0_118):word32] = Mem33[0x0000000000000DD0<p64>:word32];
-			w8_120 = w0_118 + 0x03;
+			Mem91[fp + ~0x47 + CONVERT(w0_118, word32, int64):word32] = Mem33[0x0000000000000DD0<p64>:word32];
+			w8_120 = (word64) w0_118 + 3;
 			goto l0000000000000B10;
 		}
 	}
@@ -240,36 +240,36 @@ word64 dumpline(byte * x0, int32 w2)
 	} while (w21_105 <= 0x10);
 	fn0000000000000820();
 	w0_118 = SLICE(fp + ~0x47, word32, 0);
-	Mem119[fp + ~0x47 + (int64) ((int32) w0_118):word32] = Mem104[0x0000000000000DD0<p64>:word32];
-	w8_120 = w0_118 + 0x03;
+	Mem119[fp + ~0x47 + CONVERT(w0_118, word32, int64):word32] = Mem104[0x0000000000000DD0<p64>:word32];
+	w8_120 = (word64) w0_118 + 3;
 	if (w19_125 <= 0x00)
 	{
-		w19_125 = 0x00;
+		w19_125.u0 = 0x00;
 		goto l0000000000000B54;
 	}
 l0000000000000B10:
 	byte * x4_130 = x0;
-	int32 w2_132;
-	int32 w5_136 = w19_125 + 0x03 + w0_118;
+	Eq_115 w2_132 = w8_120;
+	Eq_115 w5_136 = (word64) w0_118 + ((word32) w19_125.u0 + 3);
 	do
 	{
 		word32 w1_143 = (word32) *x4_130;
-		Mem153[fp + ~0x47 + (int64) ((int32) w2_132):byte] = (byte) ((uint32) (uint8) (w1_143 - 0x20) <=u 0x5E ? w1_143 : 0x2E);
+		Mem153[fp + ~0x47 + CONVERT(w2_132, word32, int64):byte] = SLICE(CONVERT(SLICE(w1_143 - 0x20, uint8, 0), uint8, uint32) <=u 0x5E ? w1_143 : 0x2E, byte, 0);
 		++x4_130;
-		++w2_132;
+		w2_132 = (word64) w2_132 + 1;
 	} while (w2_132 != w5_136);
 	if (w19_125 > 0x0F)
 	{
 l0000000000000B74:
-		Mem190[fp + ~0x47 + (int64) ((int32) (w19_125 + w8_120)):word16] = (word16) (word32) Mem187[0x0000000000000DD8<p64>:word16];
+		Mem190[fp + ~0x47 + (w19_125 + w8_120):word16] = SLICE(CONVERT(Mem187[0x0000000000000DD8<p64>:word16], word16, word32), word16, 0);
 		fn00000000000008B0();
 		return x30;
 	}
 l0000000000000B54:
 	do
 	{
-		++w19_125;
-		Mem172[fp + ~0x47 + (int64) ((int32) ((w19_125 + 0x02) + w0_118)):byte] = 0x20;
+		w19_125 = (word32) w19_125.u0 + 1;
+		Mem172[fp + ~0x47 + CONVERT((w19_125 + 0x02) + w0_118, word32, int64):byte] = 0x20;
 	} while (w19_125 <= 0x0F);
 	goto l0000000000000B74;
 }
@@ -296,7 +296,7 @@ word64 hexdump(word64 x0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out)
 					word32 w20_91 = (word32) (fp + ~0x07);
 					if (w0_68 == 0x00)
 						break;
-					x19_53 += (int64) (int32) w20_91;
+					x19_53 += (int64) w20_91;
 				} while (dumpline(fp + ~0x07, w0_68)->qw0080 - x19_53 > 0x00);
 			}
 			fn0000000000000860();
@@ -327,9 +327,9 @@ void main(int32 w0, word64 x1)
 		word64 * x19_23 = x1 + 0x08;
 		do
 		{
-			word64 x20_40;
 			ui64 x21_41;
-			hexdump(*x19_23, out x19_23, out x20_40, out x21_41);
+			word64 x20_141;
+			hexdump(*x19_23, out x19_23, out x20_141, out x21_41);
 		} while (x19_23 - x21_41 != 0x00);
 	}
 }

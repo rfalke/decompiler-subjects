@@ -4,33 +4,35 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Register byte cl, Register (memptr (ptr16 Eq_42) byte) bp)
-void fn0C00_0100(byte cl, byte Eq_42::* bp)
+// 0C00:0100: void fn0C00_0100(Register byte cl, Register (memptr (ptr16 Eq_48) byte) bp)
+void fn0C00_0100(byte cl, byte Eq_48::* bp)
 {
 	__syscall(0x10);
 	do
 	{
-		struct Eq_10 Eq_13::* si_16 = Eq_13::a013F;
-		byte Eq_13::* di_17 = &Eq_13::b0000;
-		word16 cx_38 = SEQ(252, cl);
+		struct Eq_10 Eq_14::* si_16 = Eq_14::a013F;
+		byte Eq_14::* di_17 = &Eq_14::b0000;
+		word16 cx_39 = SEQ(252, cl);
 		do
 		{
-			struct Eq_9 Eq_13::* si_25 = si_16 + 1;
-			0xA000->*di_17 = (byte) ((0xA000->*si_16).w0000 + (0xA000->*si_25).wFFFFFFFF >> 0x0A);
-			--cx_38;
+			struct Eq_9 Eq_14::* si_25 = si_16 + 1;
+			word16 ax_27 = (0xA000->*si_16).w0000 + (0xA000->*si_25).wFFFFFFFF;
+			byte al_29 = (byte) ax_27;
+			0xA000->*di_17 = (byte) (SEQ(SLICE(ax_27, byte, 8) + al_29, al_29) >> 0x0A);
+			--cx_39;
 			si_16 = si_25 - 0x01;
 			++di_17;
-			byte cl_85 = (byte) cx_38;
-		} while (cx_38 != 0x00);
-		word16 cx_54 = SEQ(0x02, cl_85);
+			byte cl_86 = (byte) cx_39;
+		} while (cx_39 != 0x00);
+		word16 cx_55 = SEQ(0x02, cl_86);
 		do
 		{
 			0xA000->*di_17 = ss->*bp & 0x0F | 0x10;
-			--cx_54;
+			--cx_55;
 			++bp;
 			++di_17;
-			cl = (byte) cx_54;
-		} while (cx_54 != 0x00);
+			cl = (byte) cx_55;
+		} while (cx_55 != 0x00);
 		do
 			;
 		while ((__inb(0x03DA) & 0x08) == 0x00);

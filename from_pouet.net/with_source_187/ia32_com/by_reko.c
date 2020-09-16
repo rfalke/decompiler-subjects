@@ -21,74 +21,74 @@ void fn0C00_0100(struct Eq_2 * ds)
 	__wait();
 	__fninit();
 	ds->r01BB = ds->r01AB;
-	byte Eq_51::* di_102 = &Eq_51::b0000;
-	cup16 dx_126;
-	int8 Top_122 = 0;
-	for (dx_126 = 0x00; dx_126 < 200; ++dx_126)
+	byte Eq_51::* di_105 = &Eq_51::b0000;
+	cup16 dx_129;
+	int8 Top_125 = 0;
+	for (dx_129 = 0x00; dx_129 < 200; ++dx_129)
 	{
-		int8 Top_40 = Top_122 - 1;
+		int8 Top_40 = Top_125 - 1;
 		*Top_40 = (real64) ds->r01A7;
 		ds->r01B7 = (real32) *Top_40;
-		cup16 bx_114;
-		int8 Top_111 = Top_40 + 1;
-		for (bx_114 = 0x00; bx_114 < 0x0140; ++bx_114)
+		cup16 bx_117;
+		int8 Top_114 = Top_40 + 1;
+		for (bx_117 = 0x00; bx_117 < 0x0140; ++bx_117)
 		{
 			__wait();
 			__fninit();
-			int8 Top_47 = Top_111 - 1;
+			int8 Top_47 = Top_114 - 1;
 			Top_47->r0000 = 0.0;
 			Top_47->rFFFFFFFF = 0.0;
 			word16 cx_51 = 0x3F;
 			do
 			{
-				int8 Top_52 = Top_111 - 2;
-				Top_52->rFFFFFFFF = Top_52->rFFFFFFFF;
-				Top_52->rFFFFFFFF *= Top_52->rFFFFFFFF;
-				real64 v16_57 = Top_52->rFFFFFFFF;
+				int8 Top_52 = Top_114 - 2;
 				Top_52->rFFFFFFFF = Top_52->r0000;
-				Top_52->r0000 = v16_57;
+				Top_52->rFFFFFFFF *= Top_52->rFFFFFFFF;
+				real64 v17_58 = Top_52->rFFFFFFFF;
+				Top_52->rFFFFFFFF = Top_52->r0000;
+				Top_52->r0000 = v17_58;
 				Top_52->rFFFFFFFF *= Top_52->r0001;
 				Top_52->rFFFFFFFF += Top_52->rFFFFFFFF;
-				real64 v17_62 = Top_52->rFFFFFFFF;
+				real64 v18_63 = Top_52->rFFFFFFFF;
 				Top_52->rFFFFFFFF = Top_52->r0001;
-				Top_52->r0001 = v17_62;
+				Top_52->r0001 = v18_63;
 				Top_52->rFFFFFFFF *= Top_52->rFFFFFFFF;
 				Top_52->r0000 -= Top_52->rFFFFFFFF;
-				real64 v18_68 = Top_52->r0000;
+				real64 v19_69 = Top_52->r0000;
 				Top_52->r0000 = Top_52->r0001;
-				Top_52->r0001 = v18_68;
-				Top_52->r0000 += ds->r01BB;
-				real64 v19_74 = Top_52->r0000;
+				Top_52->r0001 = v19_69;
+				Top_52->r0000 += (real64) ds->r01BB;
+				real64 v20_75 = Top_52->r0000;
 				Top_52->r0000 = Top_52->r0001;
-				Top_52->r0001 = v19_74;
-				Top_52->r0000 += ds->r01B7;
-				Top_52->rFFFFFFFF = Top_52->r0000;
+				Top_52->r0001 = v20_75;
+				Top_52->r0000 += (real64) ds->r01B7;
+				Top_52->rFFFFFFFF = Top_52->r0001;
 				Top_52->rFFFFFFFF *= Top_52->rFFFFFFFF;
-				Top_52->rFFFFFFFE = Top_52->rFFFFFFFF;
+				Top_52->rFFFFFFFE = Top_52->r0000;
 				Top_52->rFFFFFFFE *= Top_52->rFFFFFFFE;
 				Top_52->rFFFFFFFF += Top_52->rFFFFFFFE;
 				Top_52->rFFFFFFFF = sqrt(Top_52->rFFFFFFFF);
 				ds->t01BF.u0 = (int16) Top_52->rFFFFFFFF;
-				byte cl_93 = (byte) cx_51;
+				byte cl_96 = (byte) cx_51;
 				if (ds->t01BF > 0x02)
 					break;
 				--cx_51;
-				cl_93 = (byte) cx_51;
+				cl_96 = (byte) cx_51;
 			} while (cx_51 != 0x00);
-			0xA000->*di_102 = cl_93;
+			0xA000->*di_105 = cl_96;
 			Top_52->rFFFFFFFF = (real64) ds->r01B7;
-			Top_52->rFFFFFFFF += ds->r01AF;
+			Top_52->rFFFFFFFF += (real64) ds->r01AF;
 			ds->r01B7 = (real32) Top_52->rFFFFFFFF;
-			++di_102;
-			Top_111 = Top_52;
+			++di_105;
+			Top_114 = Top_52;
 		}
 		Top_52->rFFFFFFFF = (real64) ds->r01BB;
-		Top_52->rFFFFFFFF -= ds->r01B3;
+		Top_52->rFFFFFFFF -= (real64) ds->r01B3;
 		ds->r01BB = (real32) Top_52->rFFFFFFFF;
-		Top_122 = Top_52;
+		Top_125 = Top_52;
 	}
-	byte al_133;
-	bios_kbd_get_keystroke(out al_133);
+	byte al_136;
+	bios_kbd_get_keystroke(out al_136);
 	bios_video_set_mode(0x03);
 	msdos_terminate_program20();
 }

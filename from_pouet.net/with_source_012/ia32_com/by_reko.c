@@ -4,8 +4,8 @@
 
 #include "subject_code.h"
 
-// 0C00:0100: void fn0C00_0100(Sequence (ptr32 Eq_2) ds_bx, Register byte ah, Register word16 cx, Register Eq_5 di)
-void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, word16 cx, Eq_5 di)
+// 0C00:0100: void fn0C00_0100(Sequence (ptr32 Eq_2) ds_bx, Register byte ah, Register word16 cx, Register (memptr (ptr16 Eq_6) byte) di)
+void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, word16 cx, byte Eq_6::* di)
 {
 	struct Eq_6 * es_26 = ds_bx->ptr0002;
 	__syscall(0x10);
@@ -13,11 +13,11 @@ void fn0C00_0100(struct Eq_2 * ds_bx, byte ah, word16 cx, Eq_5 di)
 	while (true)
 	{
 		es_26->*di = (byte) ax_17;
-		di = (word16) di + 1;
-		ax_17 = ax_17 - di - (ax_17 < 0x00);
+		++di;
+		ax_17 = ax_17 - di - C;
 		--cx;
 		if (cx == 0x00)
-			ax_17 = (cup16) ((bool) (ax_17 < 0x00) + ((word16) di + ax_17));
+			ax_17 = ax_17 + di + (ax_17 <u 0x00);
 	}
 }
 

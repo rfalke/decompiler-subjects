@@ -40,7 +40,7 @@ void fn0C00_0100(byte ah, byte ch, int16 dx, Eq_5 bx, struct Eq_6 * ds)
 			--cx_101;
 		}
 		Eq_81 di_45 = 0x019A;
-		word16 cx_124;
+		word16 cx_124 = SEQ(~0x08, cl_123);
 		do
 		{
 			ds->*di_45 = 0x00;

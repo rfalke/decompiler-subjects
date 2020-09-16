@@ -116,12 +116,19 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 0x1C);
-	scanf("%f", 0x00);
-	printf("a is %f, b is %f\n", (real64) 0x40A00000, (real64) rLoc0C);
-	if ((cond((real64) 0x40A00000 - (real64) rLoc0C) & 0x45) == 0x40)
+	scanf("%f", fp - 0x0C);
+	printf("a is %f, b is %f\n", (real64) 5.0F, (real64) rLoc0C);
+	if ((real64) 5.0F == (real64) rLoc0C)
 		puts("Equal");
-	if ((cond((real64) 0x40A00000 - (real64) rLoc0C) & 0x45 ^ 0x40) != 0x00)
-		puts("Not Equal");
+	0x0804847A = (ptr32) ((word16) cond((real64) 5.0F - (real64) rLoc0C) << 8);
+	if ((real64) 5.0F > (real64) rLoc0C)
+		puts("Greater");
+	if ((real64) rLoc0C >= (real64) 5.0F)
+		puts("Less or Equal");
+	if ((real64) 5.0F >= (real64) rLoc0C)
+		puts("Greater or Equal");
+	if ((real64) rLoc0C > (real64) 5.0F)
+		puts("Less");
 }
 
 // 0804851C: void __libc_csu_init(Register word32 ecx)
@@ -131,7 +138,7 @@ void __libc_csu_init(word32 ecx)
 	int32 eax_30 = 0x080497D8 - 0x080497D8;
 	if (eax_30 >> 0x02 == 0x00)
 		return;
-	Eq_141 edi_35 = 0x00;
+	Eq_161 edi_35 = 0x00;
 	<anonymous> ** esi_38 = (<anonymous> **) 0x080497D8;
 	do
 	{
@@ -154,7 +161,7 @@ void __do_global_ctors_aux(word32 edx)
 	<anonymous> * eax_14 = g_ptr8049618;
 	if (eax_14 != (<anonymous> *) ~0x00)
 	{
-		struct Eq_159 * ebx_17 = &g_ptr8049618;
+		struct Eq_179 * ebx_17 = &g_ptr8049618;
 		do
 		{
 			eax_14();

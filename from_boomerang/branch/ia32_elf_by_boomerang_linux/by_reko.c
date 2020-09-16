@@ -111,8 +111,8 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 44);
-	scanf("%d", 0x00);
-	scanf("%d", 0x00);
+	scanf("%d", fp - 0x0C);
+	scanf("%d", fp - 0x10);
 	if (dwLoc0C == 0x05)
 	{
 		fwrite(&g_v8048745, 0x01, 0x06, g_ptr8049854);
