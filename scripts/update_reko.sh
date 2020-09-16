@@ -59,13 +59,13 @@ do
     (cd "$dir" && cat subject.reko/subject_*.dis >subject.reko/all.dis)
 
     mv "$dir/subject.reko/all.asm" $dir/by_reko.asm
-    gzip -9 $dir/by_reko.asm
+    gzip -9 -n $dir/by_reko.asm
 
     mv "$dir/subject.reko/all.dis" $dir/by_reko.dis
-    gzip -9 $dir/by_reko.dis
+    gzip -9 -n $dir/by_reko.dis
 
     cleanup "$dir/subject.reko/subject.h" $dir/by_reko.h
-    gzip -9 "$dir/by_reko.h"
+    gzip -9 -n "$dir/by_reko.h"
 
     cleanup "$dir/subject.reko/all.c" $dir/by_reko.c
 
