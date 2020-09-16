@@ -3,7 +3,11 @@
 set -e
 
 ulimit -c 0
-ulimit -t 600
+# 5min
+ulimit -St 600
+ulimit -Ht unlimited
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$BOOMERANGDIR"; then
     echo "\$BOOMERANGDIR not set. The executable \$BOOMERANGDIR/boomerang will be used."

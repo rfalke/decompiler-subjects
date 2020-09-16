@@ -3,7 +3,11 @@
 set -e
 
 ulimit -c 0
-ulimit -t 600
+# 5min
+ulimit -St 600
+ulimit -Ht unlimited
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$DCCDIR"; then
     echo "\$DCCDIR not set. The executable \$DCCDIR/dcc_original will be used."

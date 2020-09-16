@@ -3,7 +3,11 @@
 set -e
 
 ulimit -c 0
-ulimit -t 600
+# 5min
+ulimit -St 600
+ulimit -Ht unlimited
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$BOOMERANGSRCDIR"; then
     echo "\$BOOMERANGSRCDIR not set. The executable \$BOOMERANGSRCDIR/build/out/bin/boomerang-cli will be used."

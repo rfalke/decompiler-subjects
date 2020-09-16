@@ -4,9 +4,11 @@ set -e
 #set -x
 
 ulimit -c 0
+# 5min
 ulimit -St 600
 ulimit -Ht unlimited
-ulimit -v 4000000
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$REKODIR" -a -z "$REKOSRCDIR"; then
     echo "Neither \$REKODIR nor \$REKOSRCDIR is set. Either the executable \$REKODIR/decompile.exe or \$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease/decompile.exe will be used by mono."

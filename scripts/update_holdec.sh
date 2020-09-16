@@ -3,6 +3,11 @@
 set -e
 
 ulimit -c 0
+# 5min
+ulimit -St 600
+ulimit -Ht unlimited
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$HOLDECJAR"; then
     echo "\$HOLDECJAR not set."

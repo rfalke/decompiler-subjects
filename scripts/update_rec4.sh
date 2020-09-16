@@ -4,9 +4,11 @@ set -e
 #set -x
 
 ulimit -c 0
+# 5min
 ulimit -St 600
 ulimit -Ht unlimited
-ulimit -v 4000000
+# 8 GB
+ulimit -v 8000000
 
 if test -z "$RECDIR"; then
     echo "\$RECDIR not set. This script executes the \$RECDIR/bin/RecCLI file."
